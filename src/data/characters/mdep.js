@@ -38,6 +38,10 @@ const moves = {
     range: 1500, tags: ['super', 'big'] }),
 };
 
+// Nomes dos golpes conforme a prancheta de sprites
+moves['5L'].name = 'Chute de Bota';
+moves['5M'].name = 'Chute Alto';
+
 export default {
   id: 'mdep',
   name: "M'DEP",

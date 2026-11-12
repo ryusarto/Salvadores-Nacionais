@@ -9,12 +9,14 @@ import { drawFighter, drawBoxes } from '../render/mannequin.js';
 import { createFx, fxEvents, fxUpdate, fxDrawBack, fxDrawFront, fxDrawScreen, drawEntities } from '../render/fx.js';
 import { createHud, drawHud } from '../render/hud.js';
 import { text, slab, halftone } from '../render/draw.js';
-import { readInput, takePressed, pollPad } from './devices.js';
+import { readInput, takePressed, pollPad, glyphs, rumble, remapPad, resetPad, PS_NAMES } from './devices.js';
+import { COMBOS } from '../data/combos.js';
+import { createTracker, trackCombo, createRunner, runnerInput, runnerDone, stepLabel } from '../core/combos.js';
 import { audioEvents, sfx } from './audio.js';
 
 const W = SYS.VIEW_W;
 const H = SYS.VIEW_H;
-const MENU = [['story', 'MODO HISTÓRIA'], ['versus', 'VERSUS CPU'], ['training', 'TREINO'], ['diff', 'DIFICULDADE']];
+const MENU = [['story', 'MODO HISTÓRIA'], ['versus', 'VERSUS CPU'], ['training', 'TREINO'], ['controls', 'CONTROLES'], ['diff', 'DIFICULDADE']];
 const loadDiff = () => {
   try {
     const n = +localStorage.getItem('sn-dificuldade');
@@ -23,7 +25,8 @@ const loadDiff = () => {
     return 0;
   }
 };
-const PAUSE = ['CONTINUAR', 'LISTA DE GOLPES', 'REINICIAR LUTA', 'SAIR'];
+const PAUSE = ['CONTINUAR', 'LISTA DE COMBOS', 'LISTA DE GOLPES', 'CONTROLES', 'REINICIAR LUTA', 'SAIR'];
+const ACTIONS = [['L', 'Leve'], ['M', 'Médio'], ['H', 'Forte'], ['S', 'Especial'], ['G', 'Defesa (Ginga)'], ['T', 'Agarrão'], ['X', 'Super'], ['start', 'Pausa'], ['back', 'Voltar']];
 const RESULT = ['REVANCHE', 'TROCAR PERSONAGEM', 'MENU'];
 const DUMMY = ['PARADO', 'DEFENDE TUDO', 'CPU'];
 const KEY_LABEL = { c1: '→ ← + Leve', c2: '↓ → + Médio', '5S': 'Especial', '6S': '→ + Especial', '2S': '↓ + Especial', '4S': '← + Especial', jS: 'No ar: Especial', SA3: 'Super com 3 barras', SA1: '↓ + Super (1 barra)' };
@@ -34,7 +37,7 @@ export function createApp(canvas, devices, opts = {}) {
   const app = {
     screen: 'title', cur: 0, mode: 'story', hero: 0, foe: null,
     st: null, brain: null, fx: createFx(), hud: createHud(), layers: buildStage(),
-    cam: (SYS.STAGE_W - W) / 2, frame: 0, paused: false, pcur: 0, moveList: false,
+    cam: (SYS.STAGE_W - W) / 2, frame: 0, paused: false, pcur: 0, sub: null, ccur: 0, kcur: 0, remap: 0, trial: null, demo: null, demoT: 0, inputLog: [], lastIn: null,
     boxes: !!opts.boxes, dummy: 0, level: SYS.DIFFICULTY[loadDiff()].level, diff: loadDiff(), stats: null, overT: 0, vsT: 0,
     autoplay: opts.autoplay || null,
   };
@@ -50,7 +53,10 @@ export function createApp(canvas, devices, opts = {}) {
     app.hud = createHud();
     app.stats = { maxCombo: 0, dmg: 0, frames: 0 };
     app.paused = false;
-    app.moveList = false;
+    app.sub = null;
+    app.trial = null;
+    app.demo = null;
+    app.inputLog = [];
     app.overT = 0;
     app.screen = 'fight';
   }
@@ -77,14 +83,80 @@ export function createApp(canvas, devices, opts = {}) {
     return EMPTY_INPUT;
   }
 
+  /** Começa o desafio de um combo; com demo = true, a CPU mostra como se faz. */
+  function startCombo(combo, demo) {
+    const st = app.st;
+    const mid = SYS.STAGE_W / 2;
+    st.f[0].x = mid - 90;
+    st.f[1].x = mid + 85;
+    st.f[0].super = SYS.SUPER.max;
+    for (const f of st.f) {
+      f.y = 0;
+      f.vy = 0;
+      f.state = 'idle';
+      f.sf = 0;
+      f.move = null;
+      f.moveKey = null;
+      f.comboHits = 0;
+    }
+    st.ents = [];
+    app.trial = createTracker(combo);
+    app.demo = demo ? createRunner(combo) : null;
+    app.demoT = 0;
+    app.dummy = 0;
+    app.paused = false;
+    app.sub = null;
+  }
+
+  /** Guarda as últimas entradas do jogador para o painel do Treino. */
+  function logInput(inp) {
+    const dirs = { '-1,-1': '↙', '0,-1': '↓', '1,-1': '↘', '-1,0': '←', '1,0': '→', '-1,1': '↖', '0,1': '↑', '1,1': '↗' };
+    const face = app.st.f[0].face;
+    const d = dirs[`${inp.x * face},${inp.y}`] || '';
+    const g = glyphs(devices);
+    const keys = ['L', 'M', 'H', 'S', 'G', 'T', 'X'];
+    const btns = keys.filter((b) => inp[b] && !(app.lastIn && app.lastIn[b])).map((b) => g[b] || b);
+    const sig = `${d}|${keys.filter((b) => inp[b]).join('')}`;
+    if (sig !== (app.lastSig || '') && (d || btns.length)) {
+      app.inputLog.unshift({ d, b: btns.join(' '), t: app.frame });
+      app.inputLog.length = Math.min(app.inputLog.length, 14);
+    }
+    app.lastSig = sig;
+    app.lastIn = inp;
+  }
+
+  /** Tela de controles: mostra o controle, testa os botões e troca o mapeamento. Retorna true para sair. */
+  function controlsTick(pr, ok, back) {
+    const rows = ACTIONS.length + 1;
+    if (app.remap) {
+      if (app.frame > app.remap && devices.lastRaw != null) {
+        remapPad(devices, ACTIONS[app.kcur][0], devices.lastRaw);
+        app.remap = 0;
+        sfx.ok();
+      } else if (pr.back && !devices.padName) app.remap = 0;
+      return false;
+    }
+    if (pr.up) app.kcur = (app.kcur + rows - 1) % rows;
+    if (pr.down) app.kcur = (app.kcur + 1) % rows;
+    if (back) return true;
+    if (ok) {
+      if (app.kcur === ACTIONS.length) resetPad(devices);
+      else if (devices.padName) {
+        devices.lastRaw = null;
+        app.remap = app.frame + 8;
+      }
+    }
+    return false;
+  }
+
   /** Um passo lógico (1/60 s). */
   function tick() {
     app.frame++;
     const pr = takePressed(devices);
     const horiz = app.screen !== 'title';
     const nav = (n, len) => (app[n] = (app[n] + len + (pr.down || (horiz && pr.right) ? 1 : 0) - (pr.up || (horiz && pr.left) ? 1 : 0)) % len);
-    const ok = pr.start || pr.L || pr.S;
-    const back = pr.back || pr.M;
+    const ok = pr.start || pr.L || pr.S || pr.ok;
+    const back = pr.back || pr.M || pr.cancel;
     if (pr.up || pr.down || pr.left || pr.right) sfx.menu();
     if (ok) sfx.ok();
 
@@ -96,10 +168,16 @@ export function createApp(canvas, devices, opts = {}) {
         try {
           localStorage.setItem('sn-dificuldade', String(app.diff));
         } catch { /* sem armazenamento: vale só nesta sessão */ }
+      } else if (ok && MENU[app.cur][0] === 'controls') {
+        app.screen = 'controls';
+        app.kcur = 0;
+        app.remap = 0;
       } else if (ok) {
         app.mode = MENU[app.cur][0];
         app.screen = 'select';
       }
+    } else if (app.screen === 'controls') {
+      if (controlsTick(pr, ok, back)) app.screen = 'title';
     } else if (app.screen === 'select') {
       const n = HEROES.length;
       app.hero = (app.hero + n + (pr.right ? 1 : 0) - (pr.left ? 1 : 0) + (pr.down ? 4 : 0) - (pr.up ? 4 : 0)) % n;
@@ -122,15 +200,33 @@ export function createApp(canvas, devices, opts = {}) {
         app.brain.level = app.level;
       }
       if (app.paused) {
-        if (app.moveList) {
-          if (ok || back) app.moveList = false;
+        if (app.sub === 'moves') {
+          if (ok || back) app.sub = null;
+        } else if (app.sub === 'controls') {
+          if (controlsTick(pr, ok, back)) app.sub = null;
+        } else if (app.sub === 'combos') {
+          const list = COMBOS[st.f[0].ch.id] || [];
+          nav('ccur', Math.max(1, list.length));
+          const combo = list[app.ccur];
+          if (back) app.sub = null;
+          else if (combo && app.mode === 'training' && (pr.L || pr.T)) startCombo(combo, true);
+          else if (combo && app.mode === 'training' && ok) startCombo(combo, false);
+          else if (ok) app.sub = null;
         } else {
           nav('pcur', PAUSE.length);
           if (back) app.paused = false;
           else if (ok) {
-            if (app.pcur === 0) app.paused = false;
-            else if (app.pcur === 1) app.moveList = true;
-            else if (app.pcur === 2) startFight();
+            const item = PAUSE[app.pcur];
+            if (item === 'CONTINUAR') app.paused = false;
+            else if (item === 'LISTA DE COMBOS') {
+              app.sub = 'combos';
+              app.ccur = 0;
+            } else if (item === 'LISTA DE GOLPES') app.sub = 'moves';
+            else if (item === 'CONTROLES') {
+              app.sub = 'controls';
+              app.kcur = 0;
+              app.remap = 0;
+            } else if (item === 'REINICIAR LUTA') startFight();
             else app.screen = 'title';
           }
         }
@@ -143,8 +239,19 @@ export function createApp(canvas, devices, opts = {}) {
       }
       // câmera lenta no nocaute
       if (st.phase === 'ko' && st.pf < 60 && app.frame % 2) return;
-      const in0 = app.p1brain ? aiInput(st, 0, app.p1brain) : readInput(devices);
+      let in0 = app.p1brain ? aiInput(st, 0, app.p1brain) : readInput(devices);
+      if (app.demo) {
+        in0 = runnerInput(app.demo, st);
+        if (runnerDone(app.demo).finished || ++app.demoT > 360) app.demo = null;
+      }
+      logInput(in0);
       step(st, in0, p2Input());
+      trackCombo(app.trial, st);
+      for (const e of st.events) {
+        if (e.t === 'hit') rumble(devices, e.side === 0 ? 0.25 : 0.7, e.side === 0 ? 0.35 : 0.5, e.super ? 160 : 70);
+        else if (e.t === 'ko') rumble(devices, 1, 1, 450);
+        else if (e.t === 'super' && e.side === 0) rumble(devices, 0.5, 0.8, 220);
+      }
       fxEvents(app.fx, st);
       audioEvents(st.events);
       fxUpdate(app.fx);
@@ -221,8 +328,8 @@ export function createApp(canvas, devices, opts = {}) {
     MENU.forEach(([id, name], i) => {
       const sel = i === app.cur;
       const label = id === 'diff' ? `◀ ${name}: ${SYS.DIFFICULTY[app.diff].name} ▶` : name;
-      slab(c, W / 2 - 340, 570 + i * 88, 680, 72, sel ? '#e02b2b' : '#2a1a22', 26);
-      text(c, (sel && id !== 'diff' ? '▶ ' : '') + label, W / 2, 608 + i * 88, 48, sel ? '#fff' : '#b8a8b4');
+      slab(c, W / 2 - 340, 560 + i * 80, 680, 66, sel ? '#e02b2b' : '#2a1a22', 26);
+      text(c, (sel && id !== 'diff' ? '▶ ' : '') + label, W / 2, 594 + i * 80, 44, sel ? '#fff' : '#b8a8b4');
     });
     controls();
   }
@@ -321,6 +428,8 @@ export function createApp(canvas, devices, opts = {}) {
     drawHud(c, st, app.hud);
     fxDrawScreen(c, fx, 'over');
     if (app.mode === 'training') {
+      drawTrial();
+      drawInputLog();
       text(c, `F1 caixas: ${app.boxes ? 'SIM' : 'NÃO'}   F2 boneco: ${DUMMY[app.dummy]}   F3 nível CPU: ${app.level + 1}`, W / 2, 160, 26, '#fff', 'center', '#12080c', 5);
       const m = a.move;
       if (m) text(c, `${m.name}  preparo ${m.startup} · ativo ${m.active} · recuperação ${m.recovery}`, W / 2, 196, 24, '#ffe14a', 'center', '#12080c', 5);
@@ -331,13 +440,15 @@ export function createApp(canvas, devices, opts = {}) {
   function drawPause() {
     c.fillStyle = 'rgba(10,4,12,.78)';
     c.fillRect(0, 0, W, H);
-    if (app.moveList) return drawMoveList();
+    if (app.sub === 'moves') return drawMoveList();
+    if (app.sub === 'combos') return drawComboList();
+    if (app.sub === 'controls') return drawControls();
     slab(c, W / 2 - 220, 190, 440, 100, '#e02b2b', 30);
     text(c, 'PAUSE', W / 2, 242, 80, '#fff');
     PAUSE.forEach((label, i) => {
       const sel = i === app.pcur;
-      slab(c, W / 2 - 320, 360 + i * 100, 640, 78, sel ? '#ffcf2a' : '#2a1a22', 24);
-      text(c, label, W / 2, 400 + i * 100, 50, sel ? '#12080c' : '#d8d0dc', 'center', sel ? null : '#12080c');
+      slab(c, W / 2 - 320, 330 + i * 92, 640, 72, sel ? '#ffcf2a' : '#2a1a22', 24);
+      text(c, label, W / 2, 367 + i * 92, 46, sel ? '#12080c' : '#d8d0dc', 'center', sel ? null : '#12080c');
     });
   }
 
@@ -370,7 +481,118 @@ export function createApp(canvas, devices, opts = {}) {
     row('Gancho acertou + segurar ↑', 'Pulo alto: emende Leve, Médio e Forte no ar');
     row('Botão de golpe ao cair', 'Rolamento: levanta rolando (← ou → escolhe o lado)');
     row('→→ / ←←', 'Correr / Recuo rápido');
-    text(c, 'ENTER ou ESC para voltar', W / 2, 1030, 30, '#d8d0dc');
+    const gg = glyphs(devices);
+    text(c, `${devices.kind === 'controle' ? '○' : 'ESC'} para voltar   ·   Leve ${gg.L} · Médio ${gg.M} · Forte ${gg.H} · Especial ${gg.S} · Defesa ${gg.G} · Agarrão ${gg.T} · Super ${gg.X}`, W / 2, 1030, 28, '#d8d0dc');
+  }
+
+  function drawComboList() {
+    const ch = app.st.f[0].ch;
+    const list = COMBOS[ch.id] || [];
+    const g = glyphs(devices);
+    slab(c, 120, 50, 980, 84, '#e02b2b', 26);
+    text(c, `LISTA DE COMBOS — ${ch.name}`, 610, 94, 46, '#fff');
+    if (!list.length) text(c, 'Este personagem ainda não tem combos na lista.', W / 2, 400, 40, '#fff');
+    list.forEach((cb, i) => {
+      const y = 170 + i * 200;
+      const sel = i === app.ccur;
+      slab(c, 120, y, 1680, 180, sel ? '#3a2430' : '#1e1218', 24, sel ? '#ffcf2a' : '#12080c');
+      text(c, `${i + 1}. ${cb.name}`, 170, y + 38, 40, sel ? '#ffcf2a' : '#fff', 'left');
+      const t = app.trial && app.trial.combo === cb ? app.trial : null;
+      if (t && t.done) text(c, '✔ COMPLETO', 1760, y + 38, 34, '#7dff8a', 'right');
+      let x = 170;
+      cb.steps.forEach((s, k) => {
+        const lab = stepLabel(s, g);
+        c.font = "italic 900 34px Impact, 'Arial Black', sans-serif";
+        const w = c.measureText(lab).width + 40;
+        slab(c, x, y + 72, w, 54, '#12080c', 12, '#5a4a52');
+        text(c, lab, x + w / 2, y + 99, 34, '#fff', 'center', null);
+        x += w + 18;
+        if (k < cb.steps.length - 1) {
+          text(c, '›', x - 4, y + 99, 40, '#ffcf2a', 'center', null);
+          x += 22;
+        }
+      });
+      text(c, cb.tip, 170, y + 155, 26, '#d8d0dc', 'left', '#12080c', 4);
+    });
+    const back = devices.kind === 'controle' ? '○' : 'ESC';
+    const hint = app.mode === 'training'
+      ? `${g.S} treinar este combo   ·   ${g.L} ver demonstração   ·   ${back} voltar`
+      : `No Treino dá para treinar cada combo e ver a demonstração   ·   ${back} voltar`;
+    text(c, hint, W / 2, 1040, 30, '#ffe14a');
+  }
+
+  function drawControls() {
+    const g = devices.padName;
+    c.fillStyle = 'rgba(10,4,12,.9)';
+    c.fillRect(0, 0, W, H);
+    slab(c, 120, 50, 900, 84, '#e02b2b', 26);
+    text(c, 'CONTROLES', 570, 94, 50, '#fff');
+    text(c, g ? `Conectado: ${g.slice(0, 70)}` : 'Nenhum controle: conecte o controle (USB ou Bluetooth) e aperte qualquer botão nele.', 160, 180, 30, g ? '#7dff8a' : '#ffcf2a', 'left');
+    const held = { ...(devices.pad || {}) };
+    for (const [k, v] of Object.entries(devices.held || {})) if (v) held[k] = true;
+    ACTIONS.forEach(([a, label], i) => {
+      const y = 230 + i * 72;
+      const sel = i === app.kcur;
+      const btn = Object.entries(devices.padMap).filter(([, v]) => v === a).map(([b]) => PS_NAMES[b] || `B${b}`).join(' / ') || '—';
+      slab(c, 160, y, 900, 60, sel ? '#3a2430' : '#1e1218', 16, sel ? '#ffcf2a' : '#12080c');
+      text(c, label, 200, y + 30, 34, '#fff', 'left', null);
+      const waiting = sel && app.remap;
+      text(c, waiting ? 'APERTE O BOTÃO NOVO…' : btn, 1020, y + 30, 34, waiting ? '#ffcf2a' : '#9ff5e8', 'right', null);
+    });
+    const yr = 230 + ACTIONS.length * 72;
+    const selR = app.kcur === ACTIONS.length;
+    slab(c, 160, yr, 900, 60, selR ? '#3a2430' : '#1e1218', 16, selR ? '#ffcf2a' : '#12080c');
+    text(c, 'RESTAURAR PADRÃO', 610, yr + 30, 34, '#fff', 'center', null);
+    // teste de botões: tudo que está apertado acende
+    slab(c, 1240, 230, 560, 600, '#1e1218', 20);
+    text(c, 'TESTE DE BOTÕES', 1520, 280, 36, '#ffcf2a');
+    for (const [k, s, x, yy] of [['up', '↑', 1520, 390], ['down', '↓', 1520, 510], ['left', '←', 1440, 450], ['right', '→', 1600, 450]]) {
+      slab(c, x - 40, yy - 34, 80, 68, held[k] ? '#7dff8a' : '#2a1a22', 10);
+      text(c, s, x, yy, 44, held[k] ? '#12080c' : '#fff', 'center', null);
+    }
+    ACTIONS.slice(0, 7).forEach(([a, label], i) => {
+      const x = 1290 + (i % 4) * 122;
+      const yy = 640 + Math.floor(i / 4) * 84;
+      slab(c, x, yy - 32, 110, 64, held[a] ? '#7dff8a' : '#2a1a22', 10);
+      text(c, label.split(' ')[0], x + 55, yy, 22, held[a] ? '#12080c' : '#fff', 'center', null);
+    });
+    text(c, g ? '✕ trocar o botão da ação escolhida   ·   ○ voltar' : 'Teclado: J K L I golpes · U defesa · O agarrão · P super · Enter pausa · ESC volta', W / 2, 1040, 30, '#ffe14a');
+  }
+
+  /** Painel do desafio de combo (Treino). */
+  function drawTrial() {
+    const t = app.trial;
+    if (!t) return;
+    const g = glyphs(devices);
+    const top = 340;
+    slab(c, 30, top, 640, 80 + t.combo.steps.length * 52, 'rgba(18,8,12,.82)', 16);
+    text(c, `${app.demo ? 'DEMONSTRAÇÃO' : 'DESAFIO'}: ${t.combo.name}`, 60, top + 32, 32, '#ffcf2a', 'left');
+    t.combo.steps.forEach((s, i) => {
+      const y = top + 82 + i * 52;
+      const done = t.done || i < t.idx;
+      const cur = !t.done && i === t.idx;
+      text(c, `${done ? '✔' : cur ? '▶' : '·'} ${stepLabel(s, g)}`, 70, y, 34, done ? '#7dff8a' : cur ? '#fff' : '#8a7a84', 'left', '#12080c', 5);
+    });
+    if (t.fails && !t.done && t.idx === 0) text(c, 'caiu: recomece do início', 60, top + 82 + t.combo.steps.length * 52, 24, '#ff8a7a', 'left', '#12080c', 4);
+  }
+
+  /** Últimas entradas do jogador (Treino). */
+  function drawInputLog() {
+    app.inputLog.forEach((e, i) => {
+      c.globalAlpha = Math.max(0.25, 1 - i * 0.06);
+      text(c, `${e.d} ${e.b}`.trim(), W - 120, 250 + i * 44, 32, '#fff', 'right', '#12080c', 5);
+    });
+    c.globalAlpha = 1;
+  }
+
+  function drawNotice() {
+    const n = devices.notice;
+    if (!n || n.t <= 0) return;
+    n.t--;
+    c.globalAlpha = Math.min(1, n.t / 30);
+    slab(c, W / 2 - 440, 940, 880, 60, '#12080c', 16, '#7dff8a');
+    text(c, n.text, W / 2, 970, 30, '#7dff8a', 'center', null);
+    c.globalAlpha = 1;
   }
 
   function drawResult() {
@@ -403,7 +625,11 @@ export function createApp(canvas, devices, opts = {}) {
     else if (app.screen === 'select') drawSelect();
     else if (app.screen === 'vs') drawVs();
     else if (app.screen === 'fight') drawFight();
-    else drawResult();
+    else if (app.screen === 'controls') {
+      backdrop();
+      drawControls();
+    } else drawResult();
+    drawNotice();
   }
 
   let last = 0;

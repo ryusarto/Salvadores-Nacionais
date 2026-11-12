@@ -32,7 +32,7 @@ const moves = {
     spawn: [{ at: 10, ...mark({ delay: 34, dmg: 1900, force: true }) }], range: 1500, tags: ['super'] }),
   // Chama uma legião de cachorros que atravessa a tela.
   SA3: mv({ name: 'Legião de Cães', btn: 'X', startup: 14, active: 40, recovery: 36, anim: ['call', 'call'], cost: { super: 3000 }, inv: [{ from: 1, to: 20, type: 'all' }],
-    spawn: [0, 1, 2, 3, 4, 5, 6, 7].map((i) => ({ at: 15 + i * 5, ...proj({ kind: 'dog', behavior: 'fly', x: -260 - (i % 3) * 60, y: i % 4 === 3 ? 120 : 0, w: 130, h: 100, vx: 27 + (i % 3) * 2, life: 110, dmg: i === 7 ? 1300 : 500, hitstun: 30, push: [15, 30], chip: 0.3, launch: i === 7 ? [14, 26] : null, kd: 'hard', color: '#a86f46' }) })),
+    spawn: [0, 1, 2, 3, 4, 5, 6, 7].map((i) => ({ at: 4 + i * 5, ...proj({ kind: 'dog', behavior: 'fly', x: -40 - (i % 3) * 50, y: i % 4 === 3 ? 120 : 0, w: 130, h: 100, vx: 27 + (i % 3) * 2, life: 110, dmg: i === 7 ? 1300 : 500, hitstun: 30, push: [15, 30], chip: 0.3, launch: i === 7 ? [14, 26] : null, kd: 'hard', color: '#a86f46' }) })),
     range: 1500, tags: ['super', 'big'] }),
 };
 

@@ -190,7 +190,7 @@ export function applyHit(st, att, def, h, src) {
   if (def.hp > 0) applyEffects(st, att, def, h.effects, false);
   att.ch.mech?.onHit?.(st, att, def, h, src);
   def.ch.mech?.onGotHit?.(st, def, att, h);
-  emit(st, { t: 'hit', side: att.side, x: hx, y: hy, power: src.m?.btn || 'S', ctr, dmg, combo: def.comboHits, launch: wasAir || !!h.launch, super: super_ });
+  emit(st, { t: 'hit', side: att.side, key: isProj ? src.ent.moveKey : att.moveKey, x: hx, y: hy, power: src.m?.btn || 'S', ctr, dmg, combo: def.comboHits, launch: wasAir || !!h.launch, super: super_ });
   return 'hit';
 }
 

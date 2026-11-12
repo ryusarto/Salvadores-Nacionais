@@ -70,7 +70,33 @@ export const hasSprites = (id) => !!REG[id] && Object.keys(REG[id]).length > 0;
 export const spriteNames = (id) => Object.keys(REG[id] || {});
 
 /**
- * Desenha o lutador com sprite, se houver tira para a animação atual.
+ * Substitutos para as animações que a prancheta ainda não tem: usa uma tira
+ * parecida do mesmo personagem, com um ajuste de pose (inclinar, deitar,
+ * girar). Assim o personagem nunca vira manequim no meio da luta.
+ */
+const FALLBACK = {
+  'defesa-em-pe': ['parado', 0.1, 'guard'], 'defesa-agachado': ['agachar', 0.6, 'guard'], 'defesa-no-ar': ['pulo', 0.3, 'guard'],
+  'dano-alto': ['parado', 0.1, 'hurt'], 'dano-baixo': ['agachar', 0.3, 'hurt'], 'dano-no-ar': ['pulo', 0.6, 'spin'],
+  caido: ['parado', 0.1, 'lie'], levantar: ['agachar', 0.5, null], tonto: ['parado', 0.1, 'dizzy'],
+  vitoria: ['parado', 0.5, null], recuo: ['andar', null, 'back'],
+};
+
+function pickStrip(set, a, f) {
+  if (set[a.name]) return { s: set[a.name], p: a.p, fx: null };
+  const fb = FALLBACK[a.name];
+  if (fb && set[fb[0]]) return { s: set[fb[0]], p: fb[1] ?? a.p, fx: fb[2] };
+  if (a.name.startsWith('golpe-') && f.move) {
+    const m = f.move;
+    const key = m.air ? 'pulo' : m.type === 'super' ? 'golpe-SA3' : m.btn === 'H' || m.type === 'special' ? 'golpe-5H' : 'golpe-5L';
+    const alt = set[key] || set['golpe-5H'] || set['golpe-5L'];
+    if (alt) return { s: alt, p: m.air ? 0.4 : a.p, fx: null };
+  }
+  if (a.name.startsWith('golpe-throw') && set['golpe-5L']) return { s: set['golpe-5L'], p: 0.5, fx: null };
+  return set.parado ? { s: set.parado, p: 0, fx: null } : null;
+}
+
+/**
+ * Desenha o lutador com sprite, se o personagem tiver tiras registradas.
  * O contexto deve estar na origem do lutador (pés), já espelhado pelo lado.
  * @returns {boolean} true se desenhou
  */
@@ -78,11 +104,37 @@ export function drawSprite(c, f, frame) {
   const set = REG[f.ch.id];
   if (!set) return false;
   const a = animFor(f, frame);
-  const s = set[a.name];
-  if (!s) return false;
-  const i = Math.min(a.index, s.n - 1);
-  const scale = (CELL / s.size) * (f.ch.spriteScale || 1);
-  const size = s.size * scale;
+  const pick = pickStrip(set, a, f);
+  if (!pick) return false;
+  const { s, p, fx } = pick;
+  const i = Math.min(s.n - 1, Math.max(0, Math.floor(p * s.n)));
+  const size = CELL * (f.ch.spriteScale || 1);
+  c.save();
+  if (fx === 'hurt' || fx === 'dizzy') {
+    c.translate(-14, 0);
+    c.rotate(-0.16 + (fx === 'dizzy' ? Math.sin(frame * 0.2) * 0.06 : 0));
+  } else if (fx === 'guard') {
+    c.translate(-8, 0);
+    c.rotate(-0.05);
+  } else if (fx === 'lie') {
+    c.translate(-150, -40);
+    c.rotate(-Math.PI / 2);
+  } else if (fx === 'spin') {
+    c.translate(0, -220);
+    c.rotate(-0.9 - Math.max(-0.6, Math.min(0.6, -f.vy * 0.03)));
+    c.translate(0, 220);
+  }
   c.drawImage(s.cv, i * s.size, 0, s.size, s.size, -size * FOOT.x, -size * FOOT.y, size, size);
+  if (fx === 'guard') {
+    // escudo de defesa desenhado pelo jogo
+    c.globalAlpha = 0.5;
+    c.strokeStyle = '#7fd4ff';
+    c.lineWidth = 10;
+    c.beginPath();
+    c.arc(60, -260, 170, -1.1, 1.1);
+    c.stroke();
+    c.globalAlpha = 1;
+  }
+  c.restore();
   return true;
 }

@@ -44,6 +44,10 @@ const moves = {
 
 const SPECIALS = ['5S', '6S', '2S', '4S', 'c1', 'c2'];
 
+// Nomes dos golpes conforme a prancheta de sprites
+moves['5L'].name = 'Pincelada';
+moves['5M'].name = 'Pincelada Larga';
+
 export default {
   id: 'franco',
   name: 'FRANCO, THE SIR!',

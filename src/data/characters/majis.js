@@ -30,6 +30,11 @@ const moves = {
     range: 1500, tags: ['super', 'big'] }),
 };
 
+// Nomes dos golpes conforme a prancheta de sprites
+moves['5L'].name = 'Guitarrada';
+moves['5M'].name = 'Guitarrada Forte';
+moves['5H'].name = 'Batida no Chão';
+
 export default {
   id: 'majis',
   name: 'MAJIS',
@@ -49,7 +54,7 @@ export default {
     },
     hud(f, o) {
       const n = o ? o.status.frost : 0;
-      return { label: 'TREMOR NO RIVAL', pips: 3, value: n, ready: o?.state === 'frozen', readyText: 'ATORDOADO!', color: '#9df0ff' };
+      return { label: 'TREMOR', pips: 3, value: n, ready: o?.state === 'frozen', readyText: 'ATORDOADO!', color: '#9df0ff' };
     },
   },
   ai: { aggression: 0.55, block: 0.5, antiAir: 0.6, range: 'mid' },

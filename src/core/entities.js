@@ -22,6 +22,7 @@ export function spawnEntity(st, f, def) {
     vx: d.vx * f.face,
     age: 0,
     hitCD: 0,
+    moveKey: f.moveKey, // golpe que criou a entidade (lista de combos)
   };
   e.x = Math.max(60, Math.min(SYS.STAGE_W - 60, e.x));
   st.ents.push(e);

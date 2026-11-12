@@ -53,8 +53,8 @@ const moves = {
     spawn: [{ at: 30, ...puddle(330) }], tags: ['super'] }),
   // O pinscher vem correndo e ataca o oponente: várias mordidas e uma última que derruba.
   SA3: mv({ name: 'Ataque do Pinscher', btn: 'X', startup: 12, active: 30, recovery: 40, anim: ['superWind', 'cast'], cost: { super: 3000 }, inv: [{ from: 1, to: 18, type: 'all' }],
-    spawn: [{ at: 12, ...dog({ force: true, x: -200, w: 170, h: 140, vx: 32, hits: 5, dmg: 640, guard: 'mid', hitstun: 36, push: [10, 20], chip: 0.3, life: 100 }) },
-      { at: 40, ...dog({ force: true, x: -200, y: 60, w: 190, h: 170, vx: 36, hits: 1, dmg: 1600, guard: 'mid', launch: [14, 28], kd: 'hard', chip: 0.3, life: 100 }) }],
+    spawn: [{ at: 6, ...dog({ force: true, x: 20, w: 170, h: 140, vx: 32, hits: 5, dmg: 640, guard: 'mid', hitstun: 36, push: [10, 20], chip: 0.3, life: 100 }) },
+      { at: 34, ...dog({ force: true, x: -40, y: 60, w: 190, h: 170, vx: 36, hits: 1, dmg: 1600, guard: 'mid', launch: [14, 28], kd: 'hard', chip: 0.3, life: 100 }) }],
     range: 1500, tags: ['super', 'big'] }),
 };
 

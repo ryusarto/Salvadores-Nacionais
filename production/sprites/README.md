@@ -48,3 +48,22 @@ O recorte do fundo e o alinhamento são feitos depois, por script.
   dos sprites (`production/qa/evidence/07-teste-leitor-de-sprites.png`).
   `npm run build` embute o que estiver em `production/sprites/final/`.
 - Nomes das tiras e quadros: `src/render/anim.js` (contrato de animação).
+
+
+## Pranchetas recebidas (recorte automático)
+
+Franco, M'Dep e Majis chegaram como pranchetas prontas, guardadas em
+`production/sprites/source/`. O recorte é feito por:
+
+```bash
+pip install rembg onnxruntime pillow numpy
+python3 tools/slice-sheet.py franco
+```
+
+A tabela `SHEETS` no script diz onde fica cada linha da prancheta; `OUTPUT`
+diz qual linha vira qual tira do jogo; `PICKS` escolhe quadros quando algum
+saiu ruim. Animações que a prancheta não tem (defesa, dano, queda, vitória)
+usam uma tira parecida do mesmo personagem com um ajuste de pose, então o
+personagem nunca vira manequim no meio da luta. Para ficarem completas, as
+próximas pranchetas precisam destas linhas: defesa em pé e agachado, dano,
+queda, levantar, vitória e os especiais (I, → + I, ↓ + I).

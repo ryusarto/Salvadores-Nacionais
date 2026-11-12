@@ -57,8 +57,15 @@ const byVy = (list, vy) => {
  */
 export function animFor(f, frame) {
   const A = STATE_ANIMS;
-  const cyc = (name) => ({ name, index: Math.floor(frame / A[name].cycle) % A[name].frames.length });
-  const one = (name, index = 0) => ({ name, index });
+  // p: progresso de 0 a 1 dentro da tira, para tiras com outro número de quadros
+  const cyc = (name) => {
+    const t = frame / (A[name].cycle * A[name].frames.length);
+    return { name, index: Math.floor(frame / A[name].cycle) % A[name].frames.length, p: t - Math.floor(t), loop: true };
+  };
+  const one = (name, index = 0) => {
+    const len = A[name] ? A[name].frames.length : 1;
+    return { name, index, p: Math.min(0.999, index / len) };
+  };
   const hurt = () => one(f.crouchBlock ? 'dano-baixo' : f.comboHits % 2 ? 'dano-alto' : 'dano-baixo');
   switch (f.state) {
     case 'idle': return cyc('parado');
@@ -81,7 +88,7 @@ export function animFor(f, frame) {
     case 'crumple': return one('tonto', bySf(A.tonto.frames, f.sf));
     case 'win': return one('vitoria', bySf(A.vitoria.frames, f.sf));
     case 'throwing': case 'throwEnd': return one('golpe-throw', 99);
-    case 'attack': return one(`golpe-${f.moveKey}`, bySf(movePicks(f.move), f.sf));
+    case 'attack': return { name: `golpe-${f.moveKey}`, index: bySf(movePicks(f.move), f.sf), p: Math.min(0.999, f.sf / f.move.total) };
     default: return cyc('parado');
   }
 }
