@@ -14,7 +14,15 @@ import { audioEvents, sfx } from './audio.js';
 
 const W = SYS.VIEW_W;
 const H = SYS.VIEW_H;
-const MENU = [['story', 'MODO HISTÓRIA'], ['versus', 'VERSUS CPU'], ['training', 'TREINO']];
+const MENU = [['story', 'MODO HISTÓRIA'], ['versus', 'VERSUS CPU'], ['training', 'TREINO'], ['diff', 'DIFICULDADE']];
+const loadDiff = () => {
+  try {
+    const n = +localStorage.getItem('sn-dificuldade');
+    return n >= 0 && n < SYS.DIFFICULTY.length ? n : 0;
+  } catch {
+    return 0;
+  }
+};
 const PAUSE = ['CONTINUAR', 'LISTA DE GOLPES', 'REINICIAR LUTA', 'SAIR'];
 const RESULT = ['REVANCHE', 'TROCAR PERSONAGEM', 'MENU'];
 const DUMMY = ['PARADO', 'DEFENDE TUDO', 'CPU'];
@@ -27,13 +35,15 @@ export function createApp(canvas, devices, opts = {}) {
     screen: 'title', cur: 0, mode: 'story', hero: 0, foe: null,
     st: null, brain: null, fx: createFx(), hud: createHud(), layers: buildStage(),
     cam: (SYS.STAGE_W - W) / 2, frame: 0, paused: false, pcur: 0, moveList: false,
-    boxes: !!opts.boxes, dummy: 0, level: 1, stats: null, overT: 0, vsT: 0,
+    boxes: !!opts.boxes, dummy: 0, level: SYS.DIFFICULTY[loadDiff()].level, diff: loadDiff(), stats: null, overT: 0, vsT: 0,
     autoplay: opts.autoplay || null,
   };
 
   function startFight() {
     const hero = HEROES[app.hero];
-    app.st = createMatch({ chars: [hero, app.foe], seed: (Date.now() & 0xffff) + 1, training: app.mode === 'training' });
+    const D = SYS.DIFFICULTY[app.diff];
+    app.level = D.level;
+    app.st = createMatch({ chars: [hero, app.foe], seed: (Date.now() & 0xffff) + 1, training: app.mode === 'training', dmgMul: app.mode === 'training' ? [1, 1] : D.dmg });
     app.brain = createBrain(app.level);
     app.p1brain = app.autoplay ? createBrain(2) : null;
     app.fx = createFx();
@@ -71,7 +81,8 @@ export function createApp(canvas, devices, opts = {}) {
   function tick() {
     app.frame++;
     const pr = takePressed(devices);
-    const nav = (n, len) => (app[n] = (app[n] + len + (pr.down || pr.right ? 1 : 0) - (pr.up || pr.left ? 1 : 0)) % len);
+    const horiz = app.screen !== 'title';
+    const nav = (n, len) => (app[n] = (app[n] + len + (pr.down || (horiz && pr.right) ? 1 : 0) - (pr.up || (horiz && pr.left) ? 1 : 0)) % len);
     const ok = pr.start || pr.L || pr.S;
     const back = pr.back || pr.M;
     if (pr.up || pr.down || pr.left || pr.right) sfx.menu();
@@ -79,12 +90,19 @@ export function createApp(canvas, devices, opts = {}) {
 
     if (app.screen === 'title') {
       nav('cur', MENU.length);
-      if (ok) {
+      const isDiff = MENU[app.cur][0] === 'diff';
+      if (isDiff && (ok || pr.left || pr.right)) {
+        app.diff = (app.diff + SYS.DIFFICULTY.length + (pr.left ? -1 : 1)) % SYS.DIFFICULTY.length;
+        try {
+          localStorage.setItem('sn-dificuldade', String(app.diff));
+        } catch { /* sem armazenamento: vale só nesta sessão */ }
+      } else if (ok) {
         app.mode = MENU[app.cur][0];
         app.screen = 'select';
       }
     } else if (app.screen === 'select') {
-      nav('hero', HEROES.length);
+      const n = HEROES.length;
+      app.hero = (app.hero + n + (pr.right ? 1 : 0) - (pr.left ? 1 : 0) + (pr.down ? 4 : 0) - (pr.up ? 4 : 0)) % n;
       if (back) app.screen = 'title';
       if (ok) {
         pickFoe();
@@ -192,17 +210,19 @@ export function createApp(canvas, devices, opts = {}) {
   }
 
   function controls(y = 1040) {
+    if (app.touchUI) return text(c, 'Direcional move · LEVE confirma · MÉDIO volta · II pausa · LEVE+MÉDIO agarrão', W / 2, y - 6, 30, '#d8d0dc', 'center', '#12080c', 5);
     text(c, 'WASD/SETAS mover   J leve · K médio · L forte · I especial   U ginga · O agarrão · P super   ENTER confirma · ESC volta', W / 2, y, 26, '#d8d0dc', 'center', '#12080c', 5);
   }
 
   function drawTitle() {
     backdrop();
     logo(W / 2, 300, 1.15);
-    text(c, 'TURNÊ PELO BRASIL — BUILD DE COMBATE', W / 2, 520, 34, '#ffcf2a');
-    MENU.forEach(([, label], i) => {
+    text(c, 'TURNÊ PELO BRASIL — BUILD DE COMBATE', W / 2, 505, 34, '#ffcf2a');
+    MENU.forEach(([id, name], i) => {
       const sel = i === app.cur;
-      slab(c, W / 2 - 300, 600 + i * 96, 600, 76, sel ? '#e02b2b' : '#2a1a22', 26);
-      text(c, (sel ? '▶ ' : '') + label, W / 2, 640 + i * 96, 52, sel ? '#fff' : '#b8a8b4');
+      const label = id === 'diff' ? `◀ ${name}: ${SYS.DIFFICULTY[app.diff].name} ▶` : name;
+      slab(c, W / 2 - 340, 570 + i * 88, 680, 72, sel ? '#e02b2b' : '#2a1a22', 26);
+      text(c, (sel && id !== 'diff' ? '▶ ' : '') + label, W / 2, 608 + i * 88, 48, sel ? '#fff' : '#b8a8b4');
     });
     controls();
   }

@@ -2,12 +2,36 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <title>SALVADORES NACIONAIS — Build de Combate</title>
 <style>
-  html, body { margin: 0; height: 100%; background: #08040a; overflow: hidden; }
-  body { display: flex; align-items: center; justify-content: center; }
-  canvas { display: block; image-rendering: auto; background: #12080c; }
+  html, body { margin: 0; height: 100%; background: #08040a; overflow: hidden; overscroll-behavior: none; }
+  body { display: flex; align-items: center; justify-content: center; touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+  canvas { display: block; background: #12080c; }
+  #touch { display: none; position: fixed; inset: 0; pointer-events: none; font-family: Impact, 'Arial Black', sans-serif; }
+  .touch #touch { display: block; }
+  #touch > * { pointer-events: auto; position: absolute; }
+  #dpad { left: max(3vw, env(safe-area-inset-left)); bottom: 6vh; width: 40vh; height: 40vh; border-radius: 50%; background: rgba(255,255,255,.10); border: 2px solid rgba(255,255,255,.35); }
+  #dpad .a { position: absolute; font-style: normal; color: rgba(255,255,255,.6); font-size: 5vh; pointer-events: none; }
+  #dpad .up { top: 5%; left: 50%; transform: translateX(-50%); }
+  #dpad .down { bottom: 5%; left: 50%; transform: translateX(-50%); }
+  #dpad .left { left: 6%; top: 50%; transform: translateY(-50%); }
+  #dpad .right { right: 6%; top: 50%; transform: translateY(-50%); }
+  #knob { position: absolute; left: 31%; top: 31%; width: 38%; height: 38%; border-radius: 50%; background: rgba(255,255,255,.28); border: 2px solid rgba(255,255,255,.6); pointer-events: none; }
+  #btns { right: max(2.5vw, env(safe-area-inset-right)); bottom: 5vh; display: grid; grid-template-columns: repeat(3, 17vh); gap: 2.2vh 2.4vh; }
+  .tb { width: 17vh; height: 17vh; border-radius: 50%; border: 2px solid rgba(255,255,255,.55); background: rgba(255,255,255,.13); color: #fff; font: italic 900 3.1vh Impact, 'Arial Black', sans-serif; padding: 0; -webkit-tap-highlight-color: transparent; }
+  .tb.on, #tpause.on { background: rgba(255,255,255,.45); transform: scale(.94); }
+  .tb-l, .tb-m, .tb-h { transform: translateY(0); }
+  .tb-s { transform: translateY(-2.5vh); } .tb-x { transform: translateY(-5vh); }
+  .tb-m { transform: translateY(-2.5vh); } .tb-h { transform: translateY(-5vh); }
+  .tb-g { border-color: rgba(53,214,192,.9); color: #9ff5e8; }
+  .tb-s { border-color: rgba(255,207,42,.9); color: #ffe14a; }
+  .tb-x { border-color: rgba(255,122,46,.9); color: #ffb37a; }
+  #tpause { top: 2vh; left: max(1.5vw, env(safe-area-inset-left)); width: 11vh; height: 8vh; border-radius: 2vh; border: 2px solid rgba(255,255,255,.4); background: rgba(0,0,0,.35); color: #fff; font: 900 3vh Arial, sans-serif; }
+  #rotate { display: none; inset: 0; background: #12080c; color: #ffcf2a; font-size: 7vw; align-items: center; justify-content: center; text-align: center; padding: 8vw; font-style: italic; }
+  @media (orientation: portrait) { .touch #rotate { display: flex; } }
 </style>
 </head>
 <body>

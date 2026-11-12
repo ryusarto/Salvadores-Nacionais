@@ -1,6 +1,7 @@
 import { SYS } from '../data/system.js';
 import { hurtbox, worldBox } from '../core/fighter.js';
 import { poseFor } from './poses.js';
+import { drawSprite } from './sprites.js';
 
 /**
  * Desenho provisório dos lutadores: um manequim articulado com as cores e a
@@ -287,6 +288,8 @@ export function drawFighter(c, f, frame) {
   const shin = look.pants === 'shorts' ? col.skin : col.bottom;
   const dark = 0.72;
 
+  const sprite = drawSprite(c, f, frame);
+  if (!sprite) {
   hair(c, J, ch, false);
   // braço e perna de trás
   limb(c, J.sh, J.elbowB, 30, shade(upper, dark));
@@ -321,6 +324,7 @@ export function drawFighter(c, f, frame) {
   limb(c, J.elbowF, J.handF, 28, sleeve || col.skin);
   blob(c, J.handF, 19, col.skin);
   weapon(c, J, f, ch);
+  } else if (look.weapon === 'whip') whip(c, J, f);
   c.shadowBlur = 0;
 
   // rastro do golpe

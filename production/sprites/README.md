@@ -43,6 +43,8 @@ O recorte do fundo e o alinhamento são feitos depois, por script.
 
 ## Situação
 
-- Guias do Franco: gerados (35 tiras).
-- Leitor de sprites no jogo: **ainda não existe**. Será escrito quando o teste
-  de consistência passar; até lá o jogo usa o manequim.
+- Guias do Franco: gerados (37 tiras, incluindo os golpes de sequência).
+- Leitor de sprites no jogo: pronto e testado com os próprios guias no lugar
+  dos sprites (`production/qa/evidence/07-teste-leitor-de-sprites.png`).
+  `npm run build` embute o que estiver em `production/sprites/final/`.
+- Nomes das tiras e quadros: `src/render/anim.js` (contrato de animação).

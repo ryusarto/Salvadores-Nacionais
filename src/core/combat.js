@@ -128,7 +128,7 @@ export function applyHit(st, att, def, h, src) {
   }
   let scale = SYS.SCALING[Math.min(def.comboHits, SYS.SCALING.length - 1)];
   if (super_) scale = Math.max(scale, SYS.SUPER_MIN_SCALE);
-  const mul = (ctr ? SYS.COUNTER.dmg : 1) * (att.ch.mech?.dmgMul?.(att, h, src) || 1);
+  const mul = (ctr ? SYS.COUNTER.dmg : 1) * (att.ch.mech?.dmgMul?.(att, h, src) || 1) * (st.dmgMul ? st.dmgMul[att.side] : 1);
   const dmg = Math.max(1, Math.round(h.dmg * scale * mul));
   const wasAir = def.y > 0 || def.state === 'air_hit';
   const wasCrouch = hurtbox(def) === SYS.BODY.crouch;
@@ -212,7 +212,7 @@ function updateThrow(st, att, def) {
   const back = att.throwDir < 0;
   const dir = back ? -att.face : att.face;
   if (back) def.x = att.x - att.face * 90;
-  const dmg = Math.round((att.throwDmg || T.dmg) * (att.ch.mech?.dmgMul?.(att, null, { type: 'throw' }) || 1));
+  const dmg = Math.round((att.throwDmg || T.dmg) * (st.dmgMul ? st.dmgMul[att.side] : 1) * (att.ch.mech?.dmgMul?.(att, null, { type: 'throw' }) || 1));
   def.hp -= dmg;
   def.comboHits = 1;
   def.comboDmg = dmg;

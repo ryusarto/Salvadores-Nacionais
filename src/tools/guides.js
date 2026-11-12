@@ -4,31 +4,14 @@ import { createMatch, step } from '../core/match.js';
 import { startMove, setState } from '../core/fighter.js';
 import { EMPTY_INPUT } from '../core/input.js';
 import { drawFighter } from '../render/mannequin.js';
+import { STATE_ANIMS, movePicks, CELL, FOOT } from '../render/anim.js';
 
 /**
  * Gera guias de pose: tiras de quadros do manequim, em células de tamanho fixo
  * com o pé sempre no mesmo ponto. Servem de referência para desenhar os sprites.
  */
-export const CELL = 768;
-const FOOT_Y = 700; // linha do chão dentro da célula
-const STATES = {
-  parado: { state: 'idle', frames: [0, 20, 40, 60] },
-  andar: { state: 'walk', frames: [0, 7, 14, 21] },
-  correr: { state: 'run', frames: [0, 4, 9, 13] },
-  agachar: { state: 'crouch', frames: [1, 2, 4, 8], sf: true },
-  pulo: { state: 'air', frames: [0, 0, 0, 0], vy: [30, 12, -6, -24], y: 180 },
-  recuo: { state: 'backdash', frames: [0] },
-  'defesa-em-pe': { state: 'blockstun', frames: [0] },
-  'defesa-agachado': { state: 'blockstun', frames: [0], crouchBlock: true },
-  'defesa-no-ar': { state: 'blockstun', frames: [0], y: 180 },
-  'dano-alto': { state: 'hitstun', frames: [0], combo: 1 },
-  'dano-baixo': { state: 'hitstun', frames: [0], combo: 2 },
-  'dano-no-ar': { state: 'air_hit', frames: [0, 0, 0], vy: [18, 0, -18], y: 200 },
-  caido: { state: 'knockdown', frames: [0] },
-  levantar: { state: 'wakeup', frames: [1, 5, 9, 13], sf: true },
-  tonto: { state: 'crumple', frames: [2, 8, 14, 20], sf: true },
-  vitoria: { state: 'win', frames: [2, 8, 14, 20], sf: true },
-};
+const FOOT_Y = CELL * FOOT.y;
+const STATES = STATE_ANIMS;
 
 /** Lista as tiras disponíveis para um personagem. */
 export function listGuides(id) {
@@ -36,11 +19,17 @@ export function listGuides(id) {
   return [...Object.keys(STATES), ...Object.keys(ch.moves).filter((k) => k !== 'click').map((k) => `golpe-${k}`)];
 }
 
+let PLAIN = false; // sem linhas nem legendas (para testar o leitor de sprites)
 function cell(c, i, label, paint) {
   c.save();
   c.translate(i * CELL, 0);
   c.fillStyle = '#8f9399';
   c.fillRect(0, 0, CELL, CELL);
+  if (PLAIN) {
+    paint();
+    c.restore();
+    return;
+  }
   c.strokeStyle = '#5a5d63';
   c.lineWidth = 2;
   c.strokeRect(1, 1, CELL - 2, CELL - 2);
@@ -63,7 +52,8 @@ function cell(c, i, label, paint) {
 }
 
 /** Desenha a tira `name` do personagem `id` no canvas. Retorna o número de quadros. */
-export function renderGuide(canvas, id, name) {
+export function renderGuide(canvas, id, name, plain = false) {
+  PLAIN = plain;
   const ch = ALL[id];
   const st = createMatch({ chars: [ch, ch], seed: 1, training: true });
   st.phase = 'fight';
@@ -74,7 +64,6 @@ export function renderGuide(canvas, id, name) {
     c.translate(CELL / 2 - f.x, FOOT_Y - SYS.GROUND_Y);
     drawFighter(c, f, frame);
   };
-  const x0 = f.x;
   if (STATES[name]) {
     const S = STATES[name];
     canvas.width = CELL * S.frames.length;
@@ -93,9 +82,7 @@ export function renderGuide(canvas, id, name) {
   }
   const key = name.replace('golpe-', '');
   const m = ch.moves[key];
-  const last = m.hits.length ? m.hits[m.hits.length - 1].to : m.startup + m.active;
-  const first = m.hits.length ? m.hits[0].from : m.startup + 1;
-  const picks = [...new Set([1, Math.max(2, Math.round(m.startup * 0.6)), first, Math.round((first + last) / 2), last, Math.round((last + m.total) / 2)])].filter((n) => n < m.total).sort((a, b) => a - b);
+  const picks = movePicks(m);
   canvas.width = CELL * picks.length;
   canvas.height = CELL;
   if (m.air) {
@@ -115,10 +102,9 @@ export function renderGuide(canvas, id, name) {
       f.vy = 0;
     }
     if (f.sf >= picks[i]) {
-      const dx = f.x - x0;
       const sf = f.sf;
       cell(c, i, `${ch.name} · ${m.name} · quadro ${sf}/${m.total}`, () => {
-        c.translate(CELL / 2 - f.x + Math.max(-160, Math.min(160, dx * 0.5)), FOOT_Y - SYS.GROUND_Y);
+        c.translate(CELL / 2 - f.x, FOOT_Y - SYS.GROUND_Y);
         drawFighter(c, f, sf);
       });
       i++;
@@ -128,3 +114,4 @@ export function renderGuide(canvas, id, name) {
 }
 
 if (typeof window !== 'undefined') window.__guides = { listGuides, renderGuide, CELL };
+export { CELL };

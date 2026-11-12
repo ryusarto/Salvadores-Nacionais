@@ -49,7 +49,7 @@ export function pollPad(d) {
   d.padPrev = now;
 }
 
-const on = (d, k) => !!(d.held[k] || d.pad?.[k]);
+const on = (d, k) => !!(d.held[k] || d.pad?.[k] || d.touch?.[k]);
 
 /** Entrada do jogador para a simulação. */
 export function readInput(d) {

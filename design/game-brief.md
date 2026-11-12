@@ -11,11 +11,15 @@ se joga de um jeito diferente.
 
 - Simulação fixa a 60 quadros por segundo; cada golpe tem preparação, impacto e recuperação.
 - Botões: Leve, Médio, Forte, Especial (direção muda o especial), Ginga, Agarrão, Super.
-- Defesa segurando para trás; golpe baixo pede defesa agachada, golpe de cima pede defesa em pé.
+- **Defesa no botão de Ginga:** em pé, agachado e no ar (no ar gasta 1,5× de Ginga). Golpe baixo pede
+  defesa agachada, golpe de cima pede defesa em pé. Defender nos 3 quadros antes do golpe é Defesa
+  Perfeita. Segurar para trás também defende. Agarrão vence a defesa.
+- **Golpes de sequência:** → ← + Leve e ↓ → + Médio, dois por herói.
+- **Dificuldade:** Fácil, Normal e Difícil mudam o nível da CPU e o dano de cada lado.
 - Combos: Leve → Médio → Forte → Especial → Super. O dano cai em combos longos
   (100, 100, 80, 70… até 10%) e há limite de golpes no ar.
-- **Ginga (6 gomos):** Esquiva de Ginga (aparar; perfeita nos 3 primeiros quadros),
-  Arrancada (1 gomo livre, 3 cancelando um golpe), Golpe Blindado (1), Especial
+- **Ginga (6 gomos):** defender gasta Ginga a cada golpe;
+  Arrancada (1 gomo com →→ na defesa, 3 cancelando um golpe), Golpe Blindado (1), Especial
   Turbinado (2). Zerou: Sem Fôlego — toma dano na defesa e fica mais tempo travado.
 - **Super (3 barras):** Super de 1 barra e Super de 3 barras.
 
@@ -38,7 +42,7 @@ se joga de um jeito diferente.
 ## Fora desta build
 
 Sprites finais, cenários pintados, música e vozes, os outros 6 chefes, dois
-jogadores no mesmo teclado, controles de toque.
+jogadores no mesmo teclado.
 
 ## Pendências conhecidas
 

@@ -36,6 +36,7 @@ export function createMatch(o) {
     winner: null,
     roundWinner: null,
     training: !!o.training,
+    dmgMul: o.dmgMul || [1, 1], // multiplicador do dano causado por cada lado (dificuldade)
     rng: makeRng(o.seed ?? 1),
   };
   return st;

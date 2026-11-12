@@ -2,17 +2,42 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <title>SALVADORES NACIONAIS — Build de Combate</title>
 <style>
-  html, body { margin: 0; height: 100%; background: #08040a; overflow: hidden; }
-  body { display: flex; align-items: center; justify-content: center; }
-  canvas { display: block; image-rendering: auto; background: #12080c; }
+  html, body { margin: 0; height: 100%; background: #08040a; overflow: hidden; overscroll-behavior: none; }
+  body { display: flex; align-items: center; justify-content: center; touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+  canvas { display: block; background: #12080c; }
+  #touch { display: none; position: fixed; inset: 0; pointer-events: none; font-family: Impact, 'Arial Black', sans-serif; }
+  .touch #touch { display: block; }
+  #touch > * { pointer-events: auto; position: absolute; }
+  #dpad { left: max(3vw, env(safe-area-inset-left)); bottom: 6vh; width: 40vh; height: 40vh; border-radius: 50%; background: rgba(255,255,255,.10); border: 2px solid rgba(255,255,255,.35); }
+  #dpad .a { position: absolute; font-style: normal; color: rgba(255,255,255,.6); font-size: 5vh; pointer-events: none; }
+  #dpad .up { top: 5%; left: 50%; transform: translateX(-50%); }
+  #dpad .down { bottom: 5%; left: 50%; transform: translateX(-50%); }
+  #dpad .left { left: 6%; top: 50%; transform: translateY(-50%); }
+  #dpad .right { right: 6%; top: 50%; transform: translateY(-50%); }
+  #knob { position: absolute; left: 31%; top: 31%; width: 38%; height: 38%; border-radius: 50%; background: rgba(255,255,255,.28); border: 2px solid rgba(255,255,255,.6); pointer-events: none; }
+  #btns { right: max(2.5vw, env(safe-area-inset-right)); bottom: 5vh; display: grid; grid-template-columns: repeat(3, 17vh); gap: 2.2vh 2.4vh; }
+  .tb { width: 17vh; height: 17vh; border-radius: 50%; border: 2px solid rgba(255,255,255,.55); background: rgba(255,255,255,.13); color: #fff; font: italic 900 3.1vh Impact, 'Arial Black', sans-serif; padding: 0; -webkit-tap-highlight-color: transparent; }
+  .tb.on, #tpause.on { background: rgba(255,255,255,.45); transform: scale(.94); }
+  .tb-l, .tb-m, .tb-h { transform: translateY(0); }
+  .tb-s { transform: translateY(-2.5vh); } .tb-x { transform: translateY(-5vh); }
+  .tb-m { transform: translateY(-2.5vh); } .tb-h { transform: translateY(-5vh); }
+  .tb-g { border-color: rgba(53,214,192,.9); color: #9ff5e8; }
+  .tb-s { border-color: rgba(255,207,42,.9); color: #ffe14a; }
+  .tb-x { border-color: rgba(255,122,46,.9); color: #ffb37a; }
+  #tpause { top: 2vh; left: max(1.5vw, env(safe-area-inset-left)); width: 11vh; height: 8vh; border-radius: 2vh; border: 2px solid rgba(255,255,255,.4); background: rgba(0,0,0,.35); color: #fff; font: 900 3vh Arial, sans-serif; }
+  #rotate { display: none; inset: 0; background: #12080c; color: #ffcf2a; font-size: 7vw; align-items: center; justify-content: center; text-align: center; padding: 8vw; font-style: italic; }
+  @media (orientation: portrait) { .touch #rotate { display: flex; } }
 </style>
 </head>
 <body>
 <canvas id="game" width="1920" height="1080"></canvas>
-<script>(() => {
+<script>window.__SPRITES={};
+(() => {
   // src/data/system.js
   var SYS = {
     FPS: 60,
@@ -43,6 +68,10 @@
       push: 150
       // largura da caixa de empurrão
     },
+    MOTION: { first: 30, last: 12 },
+    // janelas (quadros) das sequências → ← e ↓ →
+    CMD_BTN: { c1: "L", c2: "M" },
+    // botão que fecha cada sequência
     BUFFER: 7,
     // quadros que um botão apertado cedo continua valendo
     SIMUL: 3,
@@ -67,13 +96,10 @@
       regenPause: 50,
       // quadros sem recarga depois de gastar
       blockPause: 30,
-      parryStart: 400,
-      parryDrain: 9,
-      // por quadro segurando
-      parryGain: 500,
+      airGuard: 1.5,
+      // defender no ar gasta mais Ginga
       perfectWindow: 3,
       perfectFreeze: 16,
-      parryRecover: 12,
       rushRaw: 1e3,
       rushCancel: 3e3,
       blindado: 1e3,
@@ -84,6 +110,12 @@
       burnoutBlockstun: 4
     },
     RUSH: { frames: 22, speed: 21, bonusStun: 4, bonusFrames: 30 },
+    // Dificuldade: nível da CPU e multiplicador de dano [jogador, CPU]
+    DIFFICULTY: [
+      { name: "F\xC1CIL", level: 0, dmg: [1, 1] },
+      { name: "NORMAL", level: 1, dmg: [1.15, 0.6] },
+      { name: "DIF\xCDCIL", level: 2, dmg: [1.3, 0.38] }
+    ],
     SUPER: { max: 3e3, stock: 1e3, perDmgDealt: 0.07, perDmgTaken: 0.04, whiffSpecial: 20 }
   };
 
@@ -278,6 +310,33 @@
       tags: ["antiair", "reversal"],
       turbo: { dmg: 1400, inv: [{ from: 1, to: 12, type: "all" }] }
     }),
+    c1: mv({
+      name: "Ginga do Sir",
+      startup: 16,
+      active: 4,
+      recovery: 18,
+      box: bx(30, 230, 240, 150),
+      dmg: 950,
+      hitstun: 24,
+      push: [170, 120],
+      anim: ["backdash", "punchH"],
+      motion: [{ from: 1, to: 7, vx: -13 }, { from: 9, to: 17, vx: 17 }],
+      inv: [{ from: 1, to: 8, type: "throw" }, { from: 2, to: 8, type: "upper" }],
+      tags: ["mid", "advance"]
+    }),
+    c2: mv({
+      name: "Voadora Nacional",
+      startup: 12,
+      active: 8,
+      recovery: 14,
+      box: bx(20, 60, 240, 210),
+      dmg: 900,
+      launch: [9, 16],
+      anim: ["prejump", "jKick"],
+      motion: [{ from: 6, to: 20, vx: 14 }, { from: 6, to: 8, vy: 19 }],
+      flags: { landEnds: true, landRecovery: 10 },
+      tags: ["mid", "advance"]
+    }),
     SA1: mv({
       name: "Finaliza\xE7\xE3o",
       btn: "X",
@@ -306,7 +365,7 @@
       tags: ["super", "big"]
     })
   };
-  var SPECIALS = ["5S", "6S", "2S", "4S"];
+  var SPECIALS = ["5S", "6S", "2S", "4S", "c1", "c2"];
   var franco_default = {
     id: "franco",
     name: "FRANCO, THE SIR!",
@@ -424,6 +483,17 @@
       tags: ["antiair", "reversal"],
       turbo: { dmg: 1500, inv: [{ from: 1, to: 11, type: "all" }] }
     }),
+    c1: mv({
+      name: "Um-Dois",
+      startup: 6,
+      active: 9,
+      recovery: 16,
+      anim: ["punchWind", "flurry"],
+      motion: [{ from: 3, to: 14, vx: 6 }],
+      hits: [{ from: 7, to: 8, box: bx(30, 270, 190, 100), dmg: 350, hitstun: 18, push: [20, 20] }, { from: 13, to: 15, box: bx(30, 260, 220, 120), dmg: 550, hitstun: 22 }],
+      tags: ["close", "pressure"]
+    }),
+    c2: mv({ name: "Bate-Estaca", startup: 13, active: 4, recovery: 22, box: bx(30, 150, 215, 170), dmg: 900, hitstun: 30, push: [40, 90], anim: ["heavyWind", "overhead"], motion: [{ from: 5, to: 14, vx: 8 }], tags: ["close"] }),
     SA1: mv({
       name: "Scratch",
       btn: "X",
@@ -556,6 +626,8 @@
       tags: ["antiair"],
       turbo: { dmg: 1300, inv: [{ from: 1, to: 12, type: "strike" }] }
     }),
+    c1: mv({ name: "Palhetada", startup: 14, active: 1, recovery: 22, anim: ["backdash", "cast"], motion: [{ from: 1, to: 10, vx: -11 }], spawn: [{ at: 14, ...note({ vx: 10, life: 80 }) }], range: 800, tags: ["zone", "far"] }),
+    c2: mv({ name: "Slide Gelado", startup: 9, active: 12, recovery: 18, crouch: true, guard: "low", box: bx(20, 0, 230, 90), dmg: 700, launch: [4, 12], effects: frost(), anim: ["crouch", "sweep"], motion: [{ from: 6, to: 22, vx: 15 }], cancel: [], tags: ["low", "advance", "mid"] }),
     SA1: mv({
       name: "Feedback",
       btn: "X",
@@ -669,6 +741,8 @@
       tags: ["antiair"],
       turbo: { dmg: 1400, inv: [{ from: 1, to: 12, type: "strike" }] }
     }),
+    c1: mv({ name: "Pux\xE3o", startup: 12, active: 4, recovery: 22, box: bx(40, 200, 340, 170), dmg: 500, hitstun: 34, pull: 380, anim: ["castWind", "throwReach"], tags: ["mid", "pull"] }),
+    c2: mv({ name: "Cabe\xE7ada", startup: 11, active: 4, recovery: 22, box: bx(20, 290, 205, 180), dmg: 1e3, hitstun: 26, push: [260, 140], anim: ["heavyWind", "overhead"], motion: [{ from: 5, to: 14, vx: 13 }], tags: ["close", "advance"] }),
     SA1: mv({
       name: "Bombardeio",
       btn: "X",
@@ -778,6 +852,8 @@
       tags: ["antiair", "reversal"],
       turbo: { dmg: 1500, inv: [{ from: 1, to: 11, type: "all" }] }
     }),
+    c1: mv({ name: "Recuo Cortante", startup: 7, active: 4, recovery: 20, box: bx(30, 200, 390, 150), dmg: 700, push: [120, 120], anim: ["stance", "slash"], motion: [{ from: 6, to: 16, vx: -15 }], tags: ["mid"] }),
+    c2: mv({ name: "Estocada", startup: 13, active: 4, recovery: 24, box: bx(40, 250, 480, 80), dmg: 950, hitstun: 24, anim: ["heavyWind", "punchH"], motion: [{ from: 8, to: 15, vx: 12 }], tags: ["far", "poke"] }),
     SA1: mv({
       name: "Agudo",
       btn: "X",
@@ -908,6 +984,20 @@
       tags: ["air"],
       turbo: { dmg: 900, hitstun: 28, flags: { landRecovery: 5 } }
     }),
+    c1: mv({ name: "Meia-Lua", startup: 19, active: 4, recovery: 18, guard: "high", box: bx(30, 120, 270, 340), dmg: 850, hitstun: 26, anim: ["kickHigh", "overhead"], motion: [{ from: 8, to: 19, vx: 5 }], tags: ["overhead", "mid"] }),
+    c2: mv({
+      name: "Joelhada Voadora",
+      startup: 9,
+      active: 8,
+      recovery: 16,
+      box: bx(20, 120, 195, 230),
+      dmg: 850,
+      launch: [6, 26],
+      anim: ["prejump", "jKick"],
+      motion: [{ from: 5, to: 18, vx: 13 }, { from: 5, to: 7, vy: 20 }],
+      flags: { landEnds: true, landRecovery: 10 },
+      tags: ["close", "advance", "launcher"]
+    }),
     SA1: mv({
       name: "Sola de Bota",
       btn: "X",
@@ -1036,6 +1126,20 @@
       tags: ["antiair"],
       turbo: { spawn: [{ at: 8, ...dog({ vx: 12, vy: 33, g: 1.6, y: 10, dmg: 1200, guard: "mid", launch: [3, 30], life: 60 }) }] }
     }),
+    c1: mv({
+      name: "Rolamento",
+      startup: 3,
+      active: 17,
+      recovery: 9,
+      anim: ["crouch", "crouch"],
+      crouch: true,
+      motion: [{ from: 4, to: 20, vx: 22 }],
+      inv: [{ from: 3, to: 20, type: "upper" }, { from: 3, to: 20, type: "throw" }],
+      flags: { phase: true },
+      cancel: [],
+      tags: ["evade"]
+    }),
+    c2: mv({ name: "Jato de Tinta", startup: 11, active: 5, recovery: 22, box: bx(50, 220, 520, 90), dmg: 750, hitstun: 22, anim: ["castWind", "cast"], spawn: [{ at: 16, ...puddle(380) }], tags: ["far", "poke"] }),
     SA1: mv({
       name: "Grafite Total",
       btn: "X",
@@ -1150,6 +1254,20 @@
     jS: mv({ name: "Tiro Mergulho", air: true, startup: 8, active: 1, recovery: 14, anim: ["jumpUp", "jPunch"], spawn: [{ at: 8, ...shot({ spend: true, y: 200, vx: 30, vy: -26, dmg: 500 }) }], cancel: [], tags: ["air"] }),
     "2S": mv({ name: "Recarga", startup: 12, active: 1, recovery: 12, anim: ["reload", "reload"], cancel: [], hold: { at: 13, btn: "S", max: 60 }, tags: ["setup"] }),
     click: mv({ name: "Sem Bala!", startup: 8, active: 1, recovery: 16, anim: ["castWind", "shoot"], cancel: [], tags: [] }),
+    c1: mv({ name: "Coronhada", startup: 9, active: 4, recovery: 18, box: bx(30, 260, 205, 140), dmg: 800, hitstun: 22, push: [330, 200], anim: ["heavyWind", "punchH"], tags: ["close"] }),
+    c2: mv({
+      name: "Rolamento T\xE1tico",
+      startup: 3,
+      active: 17,
+      recovery: 9,
+      anim: ["crouch", "crouch"],
+      crouch: true,
+      motion: [{ from: 4, to: 20, vx: 20 }],
+      inv: [{ from: 3, to: 20, type: "upper" }, { from: 3, to: 20, type: "throw" }],
+      flags: { phase: true },
+      cancel: [],
+      tags: ["evade"]
+    }),
     SA1: mv({
       name: "Descarrega",
       btn: "X",
@@ -1200,6 +1318,10 @@
       onMoveStart(st, f, m, key) {
         if (key === "click") st.events.push({ t: "pop", str: "SEM BALA!", x: f.x, color: "#b0b0b8" });
         if (key === "SA3") f.res.ammo = AMMO;
+        if (key === "c2") f.res.ammo = Math.min(AMMO, f.res.ammo + 2);
+      },
+      onHit(st, f) {
+        if (f.moveKey === "c1") f.res.ammo = Math.min(AMMO, f.res.ammo + 1);
       },
       onMoveFrame(st, f, o, m) {
         if (f.moveKey === "2S" && f.sf === 12 && f.holdT === 0) f.res.ammo = Math.min(AMMO, f.res.ammo + 1);
@@ -1378,7 +1500,15 @@
       tapF: 99,
       tapB: 99,
       dashF: 99,
-      dashB: 99
+      dashB: 99,
+      cmdAt: {},
+      // comando de sequência reconhecido no aperto de cada botão ('c1', 'c2')
+      downEdge: 99,
+      // quadros desde que ↓ começou a ser segurado
+      sinceDown: 99,
+      // quadros desde o último quadro com ↓
+      gHeld: 0
+      // quadros com o botão de Ginga segurado (defesa perfeita)
     };
   }
   function feed(buf, raw, face, frozen = false) {
@@ -1394,13 +1524,29 @@
     buf.down = raw.y < 0;
     if (!frozen) {
       for (const b of BUTTONS) if (buf.press[b] < 99) buf.press[b]++;
-      for (const k of ["upPress", "tapF", "tapB", "dashF", "dashB"]) if (buf[k] < 99) buf[k]++;
+      for (const k of ["upPress", "tapF", "tapB", "dashF", "dashB", "downEdge", "sinceDown"]) if (buf[k] < 99) buf[k]++;
     }
+    buf.gHeld = raw.G ? buf.gHeld + 1 : 0;
+    const wasDown = buf.prev.y < 0;
+    if (buf.down && !wasDown) buf.downEdge = 0;
+    if (buf.down) buf.sinceDown = 0;
+    if (buf.up && !wasUp) buf.upPress = 0;
+    if (buf.fwd && !wasF) {
+      if (buf.tapF <= SYS.DASH.tapWindow) buf.dashF = 0;
+      buf.tapF = 0;
+    }
+    if (buf.back && !wasB) {
+      if (buf.tapB <= SYS.DASH.tapWindow) buf.dashB = 0;
+      buf.tapB = 0;
+    }
+    const M = SYS.MOTION;
+    const cmd = buf.tapB <= M.last && buf.tapF <= M.first && buf.tapF > buf.tapB ? "c1" : buf.tapF <= M.last && buf.sinceDown <= M.last + 2 && buf.downEdge <= M.first && buf.downEdge >= buf.tapF ? "c2" : null;
     const snap = { down: buf.down, fwd: buf.fwd, back: buf.back };
     for (const b of BUTTONS) {
       if (raw[b] && !buf.prev[b]) {
         buf.press[b] = 0;
         buf.dirAt[b] = snap;
+        buf.cmdAt[b] = cmd;
       }
     }
     if (buf.press.L <= SYS.SIMUL && buf.press.M <= SYS.SIMUL && raw.L && raw.M) {
@@ -1412,15 +1558,6 @@
       buf.press.X = 0;
       buf.dirAt.X = snap;
       buf.press.H = buf.press.S = 99;
-    }
-    if (buf.up && !wasUp) buf.upPress = 0;
-    if (buf.fwd && !wasF) {
-      if (buf.tapF <= SYS.DASH.tapWindow) buf.dashF = 0;
-      buf.tapF = 0;
-    }
-    if (buf.back && !wasB) {
-      if (buf.tapB <= SYS.DASH.tapWindow) buf.dashB = 0;
-      buf.tapB = 0;
     }
   }
   function take(buf, b, window2 = SYS.BUFFER) {
@@ -1446,10 +1583,11 @@
   var atWall = (f) => f.x <= SYS.WALL_PAD + 4 || f.x >= SYS.STAGE_W - SYS.WALL_PAD - 4;
   function isBlocking(def, attX, guard) {
     if (guard === "unblock" || guard === "throw") return false;
-    if (def.y > 0) return false;
-    if (!(isNeutral(def) || def.state === "blockstun")) return false;
+    const g = !!def.buf.cur.G;
+    if (def.y > 0) return g && !def.burnout && (def.state === "air" || def.state === "blockstun");
+    if (!(isNeutral(def) || def.state === "blockstun" || def.state === "guard")) return false;
     const dir = Math.sign(attX - def.x) || def.face;
-    if (def.buf.cur.x !== -dir) return false;
+    if (!g && def.buf.cur.x !== -dir) return false;
     const crouch = def.buf.down;
     if (guard === "low" && !crouch) return false;
     if (guard === "high" && crouch) return false;
@@ -1487,23 +1625,6 @@
       if (!isProj) att.hitstop = Math.max(att.hitstop, n);
     };
     const super_ = src.m?.type === "super";
-    if (def.state === "parry" && h.guard !== "unblock") {
-      const perfect = def.sf <= G.perfectWindow;
-      def.ginga = Math.min(G.max, def.ginga + (perfect ? G.pip : G.parryGain));
-      if (!isProj) att.connected = "block";
-      if (perfect) {
-        stopA(SYS.HITSTOP.H + G.perfectFreeze);
-        toNeutral(def);
-        def.hitstop = 4;
-        emit(st, { t: "perfect", side: def.side, x: hx, y: hy });
-        return "perfect";
-      }
-      stopA(SYS.HITSTOP.M);
-      def.hitstop = SYS.HITSTOP.M;
-      def.sf = Math.min(def.sf, 4);
-      emit(st, { t: "parry", side: def.side, x: hx, y: hy });
-      return "parry";
-    }
     const ctrWin = def.state === "attack" && def.move.flags.counter;
     if (ctrWin && !isProj && !super_ && def.sf >= ctrWin.from && def.sf <= ctrWin.to) {
       att.connected = "block";
@@ -1523,6 +1644,20 @@
     }
     if (isBlocking(def, attX, h.guard)) {
       const crouch = def.buf.down;
+      const inAir = def.y > 0;
+      if (!def.burnout && def.buf.gHeld > 0 && def.buf.gHeld <= G.perfectWindow) {
+        def.ginga = Math.min(G.max, def.ginga + G.pip);
+        if (!isProj) att.connected = "block";
+        stopA(SYS.HITSTOP.H + G.perfectFreeze);
+        def.hitstop = 4;
+        if (!inAir) {
+          setState(def, "guard");
+          def.crouchBlock = crouch;
+          def.face = -dir;
+        }
+        emit(st, { t: "perfect", side: def.side, x: hx, y: hy });
+        return "perfect";
+      }
       setState(def, "blockstun");
       def.crouchBlock = crouch;
       def.stun = h.blockstun + (def.burnout ? G.burnoutBlockstun : 0);
@@ -1530,7 +1665,7 @@
       const chip = def.burnout ? Math.max(h.chip, SYS.CHIP) : h.chip;
       if (chip > 0) def.hp = Math.max(def.burnout ? 0 : 1, def.hp - Math.round(h.dmg * chip));
       if (!def.burnout) {
-        def.ginga -= h.ginga;
+        def.ginga -= h.ginga * (inAir ? G.airGuard : 1);
         def.gingaPause = G.blockPause;
         if (def.ginga <= 0) enterBurnout(st, def);
       }
@@ -1549,14 +1684,14 @@
     }
     let ctr = null;
     if (def.state === "attack") ctr = def.sf > def.move.startup + def.move.active ? "punish" : "counter";
-    else if (def.state === "parryRec" || def.state === "throwEnd") ctr = "punish";
+    else if (def.state === "throwEnd") ctr = "punish";
     if (def.status.dazzle > 0) {
       ctr = ctr || "counter";
       def.status.dazzle = 0;
     }
     let scale = SYS.SCALING[Math.min(def.comboHits, SYS.SCALING.length - 1)];
     if (super_) scale = Math.max(scale, SYS.SUPER_MIN_SCALE);
-    const mul = (ctr ? SYS.COUNTER.dmg : 1) * (att.ch.mech?.dmgMul?.(att, h, src) || 1);
+    const mul = (ctr ? SYS.COUNTER.dmg : 1) * (att.ch.mech?.dmgMul?.(att, h, src) || 1) * (st.dmgMul ? st.dmgMul[att.side] : 1);
     const dmg = Math.max(1, Math.round(h.dmg * scale * mul));
     const wasAir = def.y > 0 || def.state === "air_hit";
     const wasCrouch = hurtbox(def) === SYS.BODY.crouch;
@@ -1611,7 +1746,7 @@
   function startThrow(st, att, def, h, m) {
     att.connected = "hit";
     att.throwDmg = h.dmg;
-    def.techable = m.type === "throw" && def.state !== "attack" && def.state !== "parryRec";
+    def.techable = m.type === "throw" && def.state !== "attack";
     setState(att, "throwing");
     att.throwDir = att.buf.back ? -1 : 1;
     setState(def, "thrown");
@@ -1635,7 +1770,7 @@
     const back = att.throwDir < 0;
     const dir = back ? -att.face : att.face;
     if (back) def.x = att.x - att.face * 90;
-    const dmg = Math.round((att.throwDmg || T.dmg) * (att.ch.mech?.dmgMul?.(att, null, { type: "throw" }) || 1));
+    const dmg = Math.round((att.throwDmg || T.dmg) * (st.dmgMul ? st.dmgMul[att.side] : 1) * (att.ch.mech?.dmgMul?.(att, null, { type: "throw" }) || 1));
     def.hp -= dmg;
     def.comboHits = 1;
     def.comboDmg = dmg;
@@ -1849,7 +1984,7 @@
     const B = SYS.BODY;
     if (f.state === "knockdown" || f.state === "ko" && f.y <= 0) return B.down;
     if (f.y > 0) return B.air;
-    if (f.state === "crouch" || f.state === "attack" && f.move.crouch || (f.state === "blockstun" || f.state === "hitstun") && f.crouchBlock) return B.crouch;
+    if (f.state === "crouch" || f.state === "attack" && f.move.crouch || (f.state === "blockstun" || f.state === "hitstun" || f.state === "guard") && f.crouchBlock) return B.crouch;
     return B.stand;
   }
   function worldBox(f, box) {
@@ -1966,6 +2101,7 @@
       }
     }
     if (ctx2 === "parry") {
+      if (take(b, "T")) return startMove(st, f, "throw");
       if (takeDash(b, "F") && spendGinga(st, f, G.rushRaw)) {
         setState(f, "rush");
         emit(st, { t: "rush", side: f.side });
@@ -1975,6 +2111,14 @@
     }
     for (const btn of ["H", "M", "L"]) {
       if (!peek(b, btn)) continue;
+      const cmd = b.cmdAt[btn];
+      if (cmd && SYS.CMD_BTN[cmd] === btn && moves10[cmd] && !air) {
+        const extra = canc && cur.type !== "super" && mech.extraCancel?.(st, f, cur, cmd);
+        if (!canc || extra || allow("special") && cur.type === "normal") {
+          take(b, btn);
+          if (startMove(st, f, cmd)) return true;
+        }
+      }
       const dn = b.dirAt[btn] || b;
       let key;
       if (air) key = "j" + btn;
@@ -1996,7 +2140,7 @@
       take(b, btn);
       if (startMove(st, f, key)) return true;
     }
-    if (!air && peek(b, "G", 3) && (b.fwd || canc) && !f.burnout) {
+    if (!air && canc && peek(b, "G", 3) && !f.burnout) {
       if (canc) {
         if (cur.cancel.includes("rush") && f.connected && b.fwd) {
           take(b, "G");
@@ -2005,20 +2149,13 @@
           emit(st, { t: "rush", side: f.side, cancel: true });
           return true;
         }
-      } else if (ctx2 === "neutral") {
-        take(b, "G");
-        spendGinga(st, f, G.rushRaw);
-        setState(f, "rush");
-        emit(st, { t: "rush", side: f.side });
-        return true;
       }
     }
-    if (ctx2 === "neutral" && b.cur.G && !f.burnout && f.ginga > 0) {
+    if (ctx2 === "neutral" && b.cur.G) {
       take(b, "G");
-      spendGinga(st, f, G.parryStart);
-      setState(f, "parry");
+      setState(f, "guard");
+      f.crouchBlock = b.down;
       f.vx = 0;
-      emit(st, { t: "parryStart", side: f.side });
       return true;
     }
     if (canc && cur.cancel.includes("jump") && f.connected && b.up) {
@@ -2147,7 +2284,7 @@
     }
     const b = f.buf;
     const J = SYS.JUMP;
-    if ((isNeutral(f) || f.state === "parry") && f.y <= 0) f.face = Math.sign(o.x - f.x) || f.face;
+    if ((isNeutral(f) || f.state === "guard") && f.y <= 0) f.face = Math.sign(o.x - f.x) || f.face;
     switch (f.state) {
       case "idle":
       case "walk":
@@ -2168,7 +2305,10 @@
         }
         break;
       case "air":
-        if (!tryActions(st, f, o, "air") && f.airJumps > 0 && b.upPress <= 2 && f.sf > 8) {
+        f.airGuard = false;
+        if (tryActions(st, f, o, "air")) break;
+        f.airGuard = !!b.cur.G && !f.burnout;
+        if (f.airJumps > 0 && b.upPress <= 2 && f.sf > 8) {
           f.airJumps--;
           f.vy = J.vy * 0.82;
           f.vx = (b.fwd ? J.vxF : b.back ? J.vxB : 0) * f.face;
@@ -2204,23 +2344,26 @@
       case "attack":
         attackUpdate(st, f, o);
         break;
-      case "parry": {
-        const G = SYS.GINGA;
+      case "guard":
         f.vx = 0;
+        f.crouchBlock = b.down;
         if (tryActions(st, f, o, "parry")) break;
-        f.ginga -= G.parryDrain;
-        f.gingaPause = G.regenPause;
-        if (f.ginga <= 0) {
-          enterBurnout(st, f);
-          setState(f, "parryRec");
-        } else if (!b.cur.G && f.sf >= 8) setState(f, "parryRec");
+        if (b.up) startJump(f, b.fwd ? 1 : b.back ? -1 : 0);
+        else if (!b.cur.G) toNeutral(f);
         break;
-      }
-      case "parryRec":
-        if (f.sf >= SYS.GINGA.parryRecover) toNeutral(f);
+      case "blockstun":
+        if (f.y <= 0) f.vx = 0;
+        if (--f.stun <= 0) {
+          if (f.y > 0) {
+            setState(f, "air");
+            f.airUsed = true;
+          } else if (b.cur.G) {
+            setState(f, "guard");
+            f.crouchBlock = b.down;
+          } else toNeutral(f);
+        }
         break;
       case "hitstun":
-      case "blockstun":
       case "frozen":
       case "dizzy":
       case "slip":
@@ -2302,6 +2445,8 @@
       winner: null,
       roundWinner: null,
       training: !!o.training,
+      dmgMul: o.dmgMul || [1, 1],
+      // multiplicador do dano causado por cada lado (dificuldade)
       rng: makeRng(o.seed ?? 1)
     };
     return st;
@@ -2365,7 +2510,7 @@
           emit(st, { t: "recover", side: f.side });
         }
       } else if (f.gingaPause > 0) f.gingaPause--;
-      else if (f.state !== "parry") f.ginga = Math.min(G.max, f.ginga + G.regen);
+      else if (f.state !== "guard") f.ginga = Math.min(G.max, f.ginga + G.regen);
       f.ch.mech?.tick?.(st, f, st.f[1 - f.side]);
       if (st.training) {
         const o = st.f[1 - f.side];
@@ -2470,7 +2615,12 @@
   function pressKey(brain, key, toward, extra) {
     const hold = keyInput(key, toward, extra);
     const pre = { ...hold, L: 0, M: 0, H: 0, S: 0, T: 0, X: 0 };
-    if (key === "blindado") brain.queue.push({ ...pre, G: 1 }, hold, hold);
+    if (key === "c1" || key === "c2") {
+      const a = key === "c1" ? { x: toward } : { y: -1 };
+      const b = key === "c1" ? { x: -toward } : { x: toward };
+      const btn = key === "c1" ? "L" : "M";
+      brain.queue.push({ ...EMPTY_INPUT, ...a }, { ...EMPTY_INPUT, ...a }, { ...EMPTY_INPUT, ...b }, { ...EMPTY_INPUT, ...b, [btn]: 1 }, { ...EMPTY_INPUT, ...b, [btn]: 1 });
+    } else if (key === "blindado") brain.queue.push({ ...pre, G: 1 }, hold, hold);
     else brain.queue.push(pre, hold, hold);
   }
   function aiInput(st, side2, brain) {
@@ -2543,7 +2693,7 @@
         return brain.queue.shift();
       }
     }
-    const opRec = op.state === "attack" && op.sf > op.move.startup + op.move.active || op.state === "parryRec" || op.state === "land";
+    const opRec = op.state === "attack" && op.sf > op.move.startup + op.move.active || op.state === "land";
     if (opRec && rnd() < L.punish) {
       const order = ["5H", "5M", "2M", "5S", "6S", "5L"].filter((k) => moves10[k] && moves10[k].range + 30 > dist);
       if (order.length) return pressKey(brain, order[0], toward), brain.queue.shift();
@@ -2585,7 +2735,6 @@
     }
     const r = rnd();
     if (dist > far + 60) {
-      if (r < 0.14 * aggr && dist > 600 && !me.burnout && me.ginga > 3e3) return { ...EMPTY_INPUT, x: toward, G: 1 };
       if (r < 0.3 * aggr && dist < 760) {
         brain.queue.push(...Array(3).fill({ ...EMPTY_INPUT, x: toward, y: 1 }), ...Array(15).fill(EMPTY_INPUT));
         pressKey(brain, moves10.jH ? "jH" : "jM", toward);
@@ -2929,6 +3078,7 @@
     runB: P(30, -10, 65, 85, -45, 95, -40, -60, 55, -40),
     backdash: P(-16, 6, 40, 80, 20, 90, 32, -8, -30, -42),
     blockHi: P(-6, -4, 72, 112, 62, 116, 20, -22, -20, -18),
+    blockAir: P(-4, -4, 74, 112, 64, 116, 58, -92, 22, -70, 0, 1, 228),
     blockLo: P(14, -10, 70, 112, 60, 116, 78, -112, 22, -104),
     hitHi: P(-26, -16, 12, 30, -22, 30, 12, -10, -26, -16),
     hitLo: P(34, 22, 42, 62, 30, 70, 30, -40, -20, -30),
@@ -3018,7 +3168,7 @@
         pose = POSES.prejump;
         break;
       case "air":
-        pose = lerpPose(POSES.jumpFall, POSES.jumpUp, ease((f.vy + 12) / 30));
+        pose = f.airGuard ? POSES.blockAir : lerpPose(POSES.jumpFall, POSES.jumpUp, ease((f.vy + 12) / 30));
         break;
       case "land":
         pose = lerpPose(POSES.prejump, POSES.idle, ease(sf / Math.max(1, f.landFrames)));
@@ -3035,15 +3185,11 @@
       case "tech":
         pose = POSES.backdash;
         break;
-      case "parry":
-        pose = POSES.parry;
-        tint = "#7fd4ff";
-        break;
-      case "parryRec":
-        pose = lerpPose(POSES.parry, POSES.idle, ease(sf / 12));
+      case "guard":
+        pose = lerpPose(POSES.idle, f.crouchBlock ? POSES.blockLo : POSES.blockHi, ease(sf / 3));
         break;
       case "blockstun":
-        pose = f.crouchBlock ? POSES.blockLo : POSES.blockHi;
+        pose = f.y > 0 ? POSES.blockAir : f.crouchBlock ? POSES.blockLo : POSES.blockHi;
         break;
       case "hitstun":
       case "dizzy":
@@ -3107,6 +3253,177 @@
         break;
     }
     return { pose, flip, tint };
+  }
+
+  // src/render/anim.js
+  var CELL = 768;
+  var FOOT = { x: 0.5, y: 700 / 768 };
+  var STATE_ANIMS = {
+    parado: { state: "idle", frames: [0, 20, 40, 60], cycle: 20 },
+    andar: { state: "walk", frames: [0, 7, 14, 21], cycle: 7 },
+    correr: { state: "run", frames: [0, 4, 9, 13], cycle: 4 },
+    agachar: { state: "crouch", frames: [1, 2, 4, 8], sf: true },
+    pulo: { state: "air", frames: [0, 0, 0, 0], vy: [30, 12, -6, -24], y: 180 },
+    recuo: { state: "backdash", frames: [0] },
+    "defesa-em-pe": { state: "guard", frames: [6], sf: true },
+    "defesa-agachado": { state: "guard", frames: [6], sf: true, crouchBlock: true },
+    "defesa-no-ar": { state: "blockstun", frames: [0], y: 180 },
+    "dano-alto": { state: "hitstun", frames: [0], combo: 1 },
+    "dano-baixo": { state: "hitstun", frames: [0], combo: 2 },
+    "dano-no-ar": { state: "air_hit", frames: [0, 0, 0], vy: [18, 0, -18], y: 200 },
+    caido: { state: "knockdown", frames: [0] },
+    levantar: { state: "wakeup", frames: [1, 5, 9, 13], sf: true },
+    tonto: { state: "crumple", frames: [2, 8, 14, 20], sf: true },
+    vitoria: { state: "win", frames: [2, 8, 14, 20], sf: true }
+  };
+  function movePicks(m) {
+    const last = m.hits.length ? m.hits[m.hits.length - 1].to : m.startup + m.active;
+    const first = m.hits.length ? m.hits[0].from : m.startup + 1;
+    return [.../* @__PURE__ */ new Set([1, Math.max(2, Math.round(m.startup * 0.6)), first, Math.round((first + last) / 2), last, Math.round((last + m.total) / 2)])].filter((n) => n < m.total).sort((a, b) => a - b);
+  }
+  var bySf = (frames, sf) => {
+    let i = 0;
+    while (i < frames.length - 1 && sf >= frames[i + 1]) i++;
+    return i;
+  };
+  var byVy = (list, vy) => {
+    let i = 0;
+    while (i < list.length - 1 && vy < (list[i] + list[i + 1]) / 2) i++;
+    return i;
+  };
+  function animFor(f, frame) {
+    const A = STATE_ANIMS;
+    const cyc = (name) => ({ name, index: Math.floor(frame / A[name].cycle) % A[name].frames.length });
+    const one = (name, index = 0) => ({ name, index });
+    const hurt = () => one(f.crouchBlock ? "dano-baixo" : f.comboHits % 2 ? "dano-alto" : "dano-baixo");
+    switch (f.state) {
+      case "idle":
+        return cyc("parado");
+      case "walk":
+        return cyc("andar");
+      case "dash":
+      case "run":
+      case "rush":
+      case "runstop":
+        return cyc("correr");
+      case "crouch":
+        return one("agachar", bySf(A.agachar.frames, f.sf));
+      case "prejump":
+      case "land":
+        return one("agachar", 1);
+      case "air":
+        return f.airGuard ? one("defesa-no-ar") : one("pulo", byVy(A.pulo.vy, f.vy));
+      case "backdash":
+      case "tech":
+        return one("recuo");
+      case "guard":
+        return one(f.crouchBlock ? "defesa-agachado" : "defesa-em-pe");
+      case "blockstun":
+        return one(f.y > 0 ? "defesa-no-ar" : f.crouchBlock ? "defesa-agachado" : "defesa-em-pe");
+      case "hitstun":
+      case "dizzy":
+      case "frozen":
+      case "thrown":
+        return hurt();
+      case "slip":
+        return one("dano-alto");
+      case "air_hit":
+        return one("dano-no-ar", byVy(A["dano-no-ar"].vy, f.vy));
+      case "ko":
+        return f.y > 0 ? one("dano-no-ar", 1) : one("caido");
+      case "knockdown":
+        return one("caido");
+      case "wakeup":
+        return one("levantar", bySf(A.levantar.frames, f.sf));
+      case "crumple":
+        return one("tonto", bySf(A.tonto.frames, f.sf));
+      case "win":
+        return one("vitoria", bySf(A.vitoria.frames, f.sf));
+      case "throwing":
+      case "throwEnd":
+        return one("golpe-throw", 99);
+      case "attack":
+        return one(`golpe-${f.moveKey}`, bySf(movePicks(f.move), f.sf));
+      default:
+        return cyc("parado");
+    }
+  }
+
+  // src/render/sprites.js
+  var REG = {};
+  function keyOut(img) {
+    const cv = document.createElement("canvas");
+    cv.width = img.naturalWidth || img.width;
+    cv.height = img.naturalHeight || img.height;
+    const c = cv.getContext("2d", { willReadFrequently: true });
+    c.drawImage(img, 0, 0);
+    const W3 = cv.width;
+    const H2 = cv.height;
+    const d = c.getImageData(0, 0, W3, H2);
+    const p = d.data;
+    const k = (H2 - 3) * W3 * 4 + 3 * 4;
+    if (p[k + 3] < 250) return cv;
+    const [r0, g0, b0] = [p[k], p[k + 1], p[k + 2]];
+    const TOL = 46;
+    const near = (i) => Math.abs(p[i] - r0) + Math.abs(p[i + 1] - g0) + Math.abs(p[i + 2] - b0) < TOL;
+    const seen = new Uint8Array(W3 * H2);
+    const stack = [];
+    const push = (x, y) => {
+      const n = y * W3 + x;
+      if (x < 0 || y < 0 || x >= W3 || y >= H2 || seen[n]) return;
+      seen[n] = 1;
+      if (near(n * 4)) stack.push(n);
+    };
+    for (let x = 0; x < W3; x++) {
+      push(x, 0);
+      push(x, H2 - 1);
+    }
+    for (let y = 0; y < H2; y++) {
+      push(0, y);
+      push(W3 - 1, y);
+    }
+    const cell = H2;
+    for (let x = cell; x < W3; x += cell) for (let y = 0; y < H2; y++) {
+      push(x - 1, y);
+      push(x, y);
+    }
+    while (stack.length) {
+      const n = stack.pop();
+      p[n * 4 + 3] = 0;
+      const x = n % W3;
+      const y = n / W3 | 0;
+      push(x + 1, y);
+      push(x - 1, y);
+      push(x, y + 1);
+      push(x, y - 1);
+    }
+    c.putImageData(d, 0, 0);
+    return cv;
+  }
+  function registerSprites(id, sheets) {
+    REG[id] ?? (REG[id] = {});
+    return Promise.all(Object.entries(sheets).map(([name, url]) => new Promise((res) => {
+      const img = new Image();
+      img.onload = () => {
+        const cv = keyOut(img);
+        REG[id][name] = { cv, n: Math.max(1, Math.round(cv.width / cv.height)), size: cv.height };
+        res();
+      };
+      img.onerror = () => res();
+      img.src = url;
+    })));
+  }
+  function drawSprite(c, f, frame) {
+    const set = REG[f.ch.id];
+    if (!set) return false;
+    const a = animFor(f, frame);
+    const s = set[a.name];
+    if (!s) return false;
+    const i = Math.min(a.index, s.n - 1);
+    const scale = CELL / s.size * (f.ch.spriteScale || 1);
+    const size = s.size * scale;
+    c.drawImage(s.cv, i * s.size, 0, s.size, s.size, -size * FOOT.x, -size * FOOT.y, size, size);
+    return true;
   }
 
   // src/render/mannequin.js
@@ -3382,35 +3699,38 @@
     const upper = look.sleeves === "none" ? col.skin : col.top;
     const shin = look.pants === "shorts" ? col.skin : col.bottom;
     const dark = 0.72;
-    hair(c, J, ch, false);
-    limb(c, J.sh, J.elbowB, 30, shade(upper, dark));
-    limb(c, J.elbowB, J.handB, 26, shade(sleeve || col.skin, dark));
-    blob(c, J.handB, 17, shade(col.skin, dark));
-    limb(c, J.hip, J.kneeB, 44, shade(col.bottom, dark));
-    limb(c, J.kneeB, J.footB, 36, shade(shin, dark));
-    shoe(c, J.footB, J.shinB, shade(col.shoe, dark));
-    blob(c, J.hip, 40, col.bottom);
-    limb(c, J.hip, J.neck, 84, col.top);
-    for (const [a, b, sc] of look.stripes || []) {
-      const p = (t) => [J.hip[0] + (J.neck[0] - J.hip[0]) * t, J.hip[1] + (J.neck[1] - J.hip[1]) * t];
-      c.lineCap = "butt";
-      c.beginPath();
-      c.moveTo(...p(a));
-      c.lineTo(...p(b));
-      c.strokeStyle = sc;
-      c.lineWidth = 84;
-      c.stroke();
-    }
-    limb(c, J.hip, J.kneeF, 46, col.bottom);
-    limb(c, J.kneeF, J.footF, 38, shin);
-    shoe(c, J.footF, J.shinF, col.shoe);
-    blob(c, J.head, LEN.head, col.skin);
-    hair(c, J, ch, true);
-    if (look.weapon === "whip") whip2(c, J, f);
-    limb(c, J.sh, J.elbowF, 32, upper);
-    limb(c, J.elbowF, J.handF, 28, sleeve || col.skin);
-    blob(c, J.handF, 19, col.skin);
-    weapon(c, J, f, ch);
+    const sprite = drawSprite(c, f, frame);
+    if (!sprite) {
+      hair(c, J, ch, false);
+      limb(c, J.sh, J.elbowB, 30, shade(upper, dark));
+      limb(c, J.elbowB, J.handB, 26, shade(sleeve || col.skin, dark));
+      blob(c, J.handB, 17, shade(col.skin, dark));
+      limb(c, J.hip, J.kneeB, 44, shade(col.bottom, dark));
+      limb(c, J.kneeB, J.footB, 36, shade(shin, dark));
+      shoe(c, J.footB, J.shinB, shade(col.shoe, dark));
+      blob(c, J.hip, 40, col.bottom);
+      limb(c, J.hip, J.neck, 84, col.top);
+      for (const [a, b, sc] of look.stripes || []) {
+        const p = (t) => [J.hip[0] + (J.neck[0] - J.hip[0]) * t, J.hip[1] + (J.neck[1] - J.hip[1]) * t];
+        c.lineCap = "butt";
+        c.beginPath();
+        c.moveTo(...p(a));
+        c.lineTo(...p(b));
+        c.strokeStyle = sc;
+        c.lineWidth = 84;
+        c.stroke();
+      }
+      limb(c, J.hip, J.kneeF, 46, col.bottom);
+      limb(c, J.kneeF, J.footF, 38, shin);
+      shoe(c, J.footF, J.shinF, col.shoe);
+      blob(c, J.head, LEN.head, col.skin);
+      hair(c, J, ch, true);
+      if (look.weapon === "whip") whip2(c, J, f);
+      limb(c, J.sh, J.elbowF, 32, upper);
+      limb(c, J.elbowF, J.handF, 28, sleeve || col.skin);
+      blob(c, J.handF, 19, col.skin);
+      weapon(c, J, f, ch);
+    } else if (look.weapon === "whip") whip2(c, J, f);
     c.shadowBlur = 0;
     if (f.state === "attack" && f.move.weapon !== "whip") {
       for (const h of f.move.hits) {
@@ -3482,7 +3802,7 @@
         case "perfect":
           fx.parts.push({ k: "ring", x: e.x, y: sy, r: 150, t: 0, dur: 26, color: "#aef4ff" });
           fx.flash = 0.6;
-          pop(fx, "ESQUIVA PERFEITA!", e.x, sy - 150, "#aef4ff", 62, 70);
+          pop(fx, "DEFESA PERFEITA!", e.x, sy - 150, "#aef4ff", 62, 70);
           break;
         case "armor":
           fx.parts.push({ k: "ring", x: e.x, y: sy, r: 80, t: 0, dur: 14, color: "#ffb347" });
@@ -3951,7 +4271,7 @@
     d.pad = now;
     d.padPrev = now;
   }
-  var on = (d, k) => !!(d.held[k] || d.pad?.[k]);
+  var on = (d, k) => !!(d.held[k] || d.pad?.[k] || d.touch?.[k]);
   function readInput(d) {
     return {
       ...EMPTY_INPUT,
@@ -4082,11 +4402,19 @@
   // src/ui/app.js
   var W2 = SYS.VIEW_W;
   var H = SYS.VIEW_H;
-  var MENU = [["story", "MODO HIST\xD3RIA"], ["versus", "VERSUS CPU"], ["training", "TREINO"]];
+  var MENU = [["story", "MODO HIST\xD3RIA"], ["versus", "VERSUS CPU"], ["training", "TREINO"], ["diff", "DIFICULDADE"]];
+  var loadDiff = () => {
+    try {
+      const n = +localStorage.getItem("sn-dificuldade");
+      return n >= 0 && n < SYS.DIFFICULTY.length ? n : 0;
+    } catch {
+      return 0;
+    }
+  };
   var PAUSE = ["CONTINUAR", "LISTA DE GOLPES", "REINICIAR LUTA", "SAIR"];
   var RESULT = ["REVANCHE", "TROCAR PERSONAGEM", "MENU"];
   var DUMMY = ["PARADO", "DEFENDE TUDO", "CPU"];
-  var KEY_LABEL = { "5S": "Especial", "6S": "\u2192 + Especial", "2S": "\u2193 + Especial", "4S": "\u2190 + Especial", jS: "No ar: Especial", SA1: "Super (1 barra)", SA3: "\u2193 + Super (3 barras)" };
+  var KEY_LABEL = { c1: "\u2192 \u2190 + Leve", c2: "\u2193 \u2192 + M\xE9dio", "5S": "Especial", "6S": "\u2192 + Especial", "2S": "\u2193 + Especial", "4S": "\u2190 + Especial", jS: "No ar: Especial", SA1: "Super (1 barra)", SA3: "\u2193 + Super (3 barras)" };
   function createApp(canvas2, devices2, opts = {}) {
     const c = canvas2.getContext("2d");
     const app2 = {
@@ -4107,7 +4435,8 @@
       moveList: false,
       boxes: !!opts.boxes,
       dummy: 0,
-      level: 1,
+      level: SYS.DIFFICULTY[loadDiff()].level,
+      diff: loadDiff(),
       stats: null,
       overT: 0,
       vsT: 0,
@@ -4115,7 +4444,9 @@
     };
     function startFight() {
       const hero = HEROES[app2.hero];
-      app2.st = createMatch({ chars: [hero, app2.foe], seed: (Date.now() & 65535) + 1, training: app2.mode === "training" });
+      const D = SYS.DIFFICULTY[app2.diff];
+      app2.level = D.level;
+      app2.st = createMatch({ chars: [hero, app2.foe], seed: (Date.now() & 65535) + 1, training: app2.mode === "training", dmgMul: app2.mode === "training" ? [1, 1] : D.dmg });
       app2.brain = createBrain(app2.level);
       app2.p1brain = app2.autoplay ? createBrain(2) : null;
       app2.fx = createFx();
@@ -4149,19 +4480,28 @@
     function tick() {
       app2.frame++;
       const pr = takePressed(devices2);
-      const nav = (n, len) => app2[n] = (app2[n] + len + (pr.down || pr.right ? 1 : 0) - (pr.up || pr.left ? 1 : 0)) % len;
+      const horiz = app2.screen !== "title";
+      const nav = (n, len) => app2[n] = (app2[n] + len + (pr.down || horiz && pr.right ? 1 : 0) - (pr.up || horiz && pr.left ? 1 : 0)) % len;
       const ok = pr.start || pr.L || pr.S;
       const back = pr.back || pr.M;
       if (pr.up || pr.down || pr.left || pr.right) sfx.menu();
       if (ok) sfx.ok();
       if (app2.screen === "title") {
         nav("cur", MENU.length);
-        if (ok) {
+        const isDiff = MENU[app2.cur][0] === "diff";
+        if (isDiff && (ok || pr.left || pr.right)) {
+          app2.diff = (app2.diff + SYS.DIFFICULTY.length + (pr.left ? -1 : 1)) % SYS.DIFFICULTY.length;
+          try {
+            localStorage.setItem("sn-dificuldade", String(app2.diff));
+          } catch {
+          }
+        } else if (ok) {
           app2.mode = MENU[app2.cur][0];
           app2.screen = "select";
         }
       } else if (app2.screen === "select") {
-        nav("hero", HEROES.length);
+        const n = HEROES.length;
+        app2.hero = (app2.hero + n + (pr.right ? 1 : 0) - (pr.left ? 1 : 0) + (pr.down ? 4 : 0) - (pr.up ? 4 : 0)) % n;
         if (back) app2.screen = "title";
         if (ok) {
           pickFoe();
@@ -4264,16 +4604,18 @@
       c.restore();
     }
     function controls(y = 1040) {
+      if (app2.touchUI) return text(c, "Direcional move \xB7 LEVE confirma \xB7 M\xC9DIO volta \xB7 II pausa \xB7 LEVE+M\xC9DIO agarr\xE3o", W2 / 2, y - 6, 30, "#d8d0dc", "center", "#12080c", 5);
       text(c, "WASD/SETAS mover   J leve \xB7 K m\xE9dio \xB7 L forte \xB7 I especial   U ginga \xB7 O agarr\xE3o \xB7 P super   ENTER confirma \xB7 ESC volta", W2 / 2, y, 26, "#d8d0dc", "center", "#12080c", 5);
     }
     function drawTitle() {
       backdrop();
       logo(W2 / 2, 300, 1.15);
-      text(c, "TURN\xCA PELO BRASIL \u2014 BUILD DE COMBATE", W2 / 2, 520, 34, "#ffcf2a");
-      MENU.forEach(([, label], i) => {
+      text(c, "TURN\xCA PELO BRASIL \u2014 BUILD DE COMBATE", W2 / 2, 505, 34, "#ffcf2a");
+      MENU.forEach(([id, name], i) => {
         const sel = i === app2.cur;
-        slab(c, W2 / 2 - 300, 600 + i * 96, 600, 76, sel ? "#e02b2b" : "#2a1a22", 26);
-        text(c, (sel ? "\u25B6 " : "") + label, W2 / 2, 640 + i * 96, 52, sel ? "#fff" : "#b8a8b4");
+        const label = id === "diff" ? `\u25C0 ${name}: ${SYS.DIFFICULTY[app2.diff].name} \u25B6` : name;
+        slab(c, W2 / 2 - 340, 570 + i * 88, 680, 72, sel ? "#e02b2b" : "#2a1a22", 26);
+        text(c, (sel && id !== "diff" ? "\u25B6 " : "") + label, W2 / 2, 608 + i * 88, 48, sel ? "#fff" : "#b8a8b4");
       });
       controls();
     }
@@ -4406,8 +4748,8 @@
       row("\u2193 + Forte / \u2198 + Forte", "Gancho anti-a\xE9reo / Rasteira");
       row("\u2192 + M\xE9dio", "Golpe de cima (acerta quem defende agachado)");
       row("Leve + M\xE9dio (ou O)", "Agarr\xE3o \u2014 aperte de novo para escapar");
-      row("Ginga (segurar)", "Esquiva de Ginga: apara golpes; no tempo exato, contra-ataque");
-      row("\u2192 + Ginga", "Arrancada (durante um golpe que acertou: continua o combo)");
+      row("Ginga (segurar)", "Defesa em p\xE9, agachado (com \u2193) e no ar; no tempo exato, Defesa Perfeita");
+      row("\u2192 + Ginga num golpe que acertou", "Arrancada: corre e continua o combo (\u2192\u2192 na defesa: Arrancada livre)");
       row("Ginga + Forte", "Golpe Blindado: aguenta 2 golpes e derruba");
       row("\u2192\u2192 / \u2190\u2190", "Correr / Recuo r\xE1pido");
       text(c, "ENTER ou ESC para voltar", W2 / 2, 1030, 30, "#d8d0dc");
@@ -4468,20 +4810,109 @@
     return app2;
   }
 
+  // src/ui/touch.js
+  var BUTTONS2 = [
+    ["G", "DEF", "tb-g"],
+    ["S", "ESP", "tb-s"],
+    ["X", "SUPER", "tb-x"],
+    ["L", "LEVE", "tb-l"],
+    ["M", "M\xC9DIO", "tb-m"],
+    ["H", "FORTE", "tb-h"]
+  ];
+  function createTouch(devices2, root = document.body) {
+    const wrap = document.createElement("div");
+    wrap.id = "touch";
+    wrap.innerHTML = `
+    <div id="dpad"><i class="a up">\u25B2</i><i class="a down">\u25BC</i><i class="a left">\u25C0</i><i class="a right">\u25B6</i><b id="knob"></b></div>
+    <div id="btns">${BUTTONS2.map(([k, label, cls]) => `<button class="tb ${cls}" data-k="${k}">${label}</button>`).join("")}</div>
+    <button id="tpause" data-k="start">II</button>
+    <div id="rotate">Vire o celular de lado para jogar</div>`;
+    root.appendChild(wrap);
+    devices2.touch = {};
+    const set = (k, v) => {
+      if (v && !devices2.touch[k]) devices2.pressed[k] = true;
+      devices2.touch[k] = v;
+    };
+    const show = () => document.documentElement.classList.add("touch");
+    for (const el of wrap.querySelectorAll("button")) {
+      const k = el.dataset.k;
+      const down = (e) => {
+        e.preventDefault();
+        try {
+          el.setPointerCapture(e.pointerId);
+        } catch {
+        }
+        el.classList.add("on");
+        set(k, true);
+      };
+      const up = (e) => {
+        e.preventDefault();
+        el.classList.remove("on");
+        set(k, false);
+      };
+      el.addEventListener("pointerdown", down);
+      el.addEventListener("pointerup", up);
+      el.addEventListener("pointercancel", up);
+      el.addEventListener("lostpointercapture", up);
+    }
+    const pad = wrap.querySelector("#dpad");
+    const knob = wrap.querySelector("#knob");
+    const dirs = (e) => {
+      const r = pad.getBoundingClientRect();
+      const dx = (e.clientX - (r.left + r.width / 2)) / (r.width / 2);
+      const dy = (e.clientY - (r.top + r.height / 2)) / (r.height / 2);
+      const dead = 0.22;
+      const len = Math.hypot(dx, dy);
+      const on2 = len > dead;
+      const nx = on2 ? dx / len : 0;
+      const ny = on2 ? dy / len : 0;
+      set("left", nx < -0.38);
+      set("right", nx > 0.38);
+      set("up", ny < -0.38);
+      set("down", ny > 0.38);
+      const k = Math.min(1, len);
+      knob.style.transform = `translate(${(on2 ? nx : dx) * k * 32}%, ${(on2 ? ny : dy) * k * 32}%)`;
+    };
+    const release = () => {
+      for (const k of ["left", "right", "up", "down"]) set(k, false);
+      knob.style.transform = "";
+    };
+    pad.addEventListener("pointerdown", (e) => {
+      e.preventDefault();
+      try {
+        pad.setPointerCapture(e.pointerId);
+      } catch {
+      }
+      dirs(e);
+    });
+    pad.addEventListener("pointermove", (e) => {
+      if (e.buttons || e.pointerType === "touch") dirs(e);
+    });
+    for (const ev of ["pointerup", "pointercancel", "lostpointercapture"]) pad.addEventListener(ev, release);
+    window.addEventListener("touchstart", show, { once: true, passive: true });
+    if (window.matchMedia?.("(pointer: coarse)").matches) show();
+    return { show };
+  }
+
   // src/main.js
   var canvas = document.getElementById("game");
   var devices = createDevices(window);
   var q = new URLSearchParams(location.search);
+  var touch = createTouch(devices);
+  if (q.has("touch")) touch.show();
   var app = createApp(canvas, devices, { boxes: q.has("boxes"), autoplay: q.has("auto") });
   function fit() {
     const r = Math.min(innerWidth / 1920, innerHeight / 1080);
+    app.touchUI = document.documentElement.classList.contains("touch");
     canvas.style.width = `${Math.floor(1920 * r)}px`;
     canvas.style.height = `${Math.floor(1080 * r)}px`;
   }
   addEventListener("resize", fit);
+  addEventListener("touchstart", () => setTimeout(fit, 50), { once: true, passive: true });
   fit();
   window.__app = app;
-  app.run();
+  var packs = q.get("sprites") === "off" ? {} : window.__SPRITES || {};
+  Promise.all(Object.entries(packs).map(([id, sheets]) => registerSprites(id, sheets))).then(() => app.run());
 })();
 </script>
 </body>

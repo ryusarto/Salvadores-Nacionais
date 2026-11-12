@@ -8,23 +8,26 @@ trocados pelos sprites finais sem mexer nas regras.
 
 Abra `dist/salvadores-nacionais.html` no navegador (arquivo único, sem instalação).
 
-| Ação | Teclado | Controle |
-|---|---|---|
-| Mover / pular / agachar | WASD ou setas | direcional |
-| Leve · Médio · Forte | J · K · L | X · Y · B |
-| Especial | I (com ←, →, ↓ muda o golpe) | A |
-| Ginga (aparar) | U | RB |
-| Agarrão | O, ou J+K | LB |
-| Super | P, ou L+I (↓ para o de 3 barras) | RT |
-| Pausa / lista de golpes | Enter | Start |
+| Ação | Teclado | Controle | Celular |
+|---|---|---|---|
+| Mover / pular / agachar | WASD ou setas | direcional | direcional à esquerda |
+| Leve · Médio · Forte | J · K · L | X · Y · B | LEVE · MÉDIO · FORTE |
+| Especial (com ←, →, ↓ muda o golpe) | I | A | ESP |
+| Defesa (em pé, agachado com ↓, no ar) | U ou Shift | RB | DEF |
+| Agarrão | O, ou J+K | LB | LEVE+MÉDIO |
+| Super (↓ para o de 3 barras) | P, ou L+I | RT | SUPER |
+| Golpes de sequência | → ← + J · ↓ → + K | | iguais |
+| Pausa / lista de golpes | Enter | Start | II |
 
-No Treino: F1 mostra as caixas de acerto, F2 muda o boneco, F3 muda o nível da CPU.
+No celular, jogue com o aparelho deitado. A dificuldade (Fácil, Normal, Difícil)
+fica no menu inicial. No Treino: F1 mostra as caixas de acerto, F2 muda o
+boneco, F3 muda o nível da CPU.
 
 ## Desenvolver
 
 ```bash
 npm install
-npm test        # 24 testes das regras e das mecânicas
+npm test        # testes das regras e das mecânicas
 npm run build   # gera dist/salvadores-nacionais.html
 ```
 
@@ -33,3 +36,4 @@ npm run build   # gera dist/salvadores-nacionais.html
 - `src/core/` — simulação a 60 quadros por segundo, sem depender de tela.
 - `src/render/` — manequim, cenário, efeitos e HUD (provisórios).
 - `design/game-brief.md` — o desenho do jogo.
+- `docs/ARQUITETURA.md` — como criar personagens e aplicar sprites.
