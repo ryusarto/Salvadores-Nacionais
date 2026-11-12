@@ -1,6 +1,6 @@
 import { SYS } from '../data/system.js';
 import { take } from './input.js';
-import { hurtbox, worldBox, overlap, invulnTo, isNeutral, setState, toNeutral, enterBurnout, emit } from './fighter.js';
+import { hurtbox, worldBox, overlap, invulnTo, isNeutral, setState, toNeutral, enterBurnout, emit, startMove } from './fighter.js';
 
 const atWall = (f) => f.x <= SYS.WALL_PAD + 4 || f.x >= SYS.STAGE_W - SYS.WALL_PAD - 4;
 
@@ -70,6 +70,16 @@ export function applyHit(st, att, def, h, src) {
     def.sf = Math.min(def.sf, 4);
     emit(st, { t: 'parry', side: def.side, x: hx, y: hy });
     return 'parry';
+  }
+
+  // Contra-ataque (golpes com janela de contragolpe)
+  const ctrWin = def.state === 'attack' && def.move.flags.counter;
+  if (ctrWin && !isProj && !super_ && def.sf >= ctrWin.from && def.sf <= ctrWin.to) {
+    att.connected = 'block';
+    stopA(SYS.HITSTOP.H + 6);
+    emit(st, { t: 'parry', side: def.side, x: hx, y: hy });
+    startMove(st, def, ctrWin.into);
+    return 'armor';
   }
 
   // Blindagem
@@ -177,9 +187,10 @@ function ko(st, att, def, dir) {
   emit(st, { t: 'ko', side: def.side, x: def.x });
 }
 
-function startThrow(st, att, def) {
+function startThrow(st, att, def, h, m) {
   att.connected = 'hit';
-  def.techable = def.state !== 'attack' && def.state !== 'parryRec';
+  att.throwDmg = h.dmg;
+  def.techable = m.type === 'throw' && def.state !== 'attack' && def.state !== 'parryRec';
   setState(att, 'throwing');
   att.throwDir = att.buf.back ? -1 : 1;
   setState(def, 'thrown');
@@ -204,7 +215,7 @@ function updateThrow(st, att, def) {
   const back = att.throwDir < 0;
   const dir = back ? -att.face : att.face;
   if (back) def.x = att.x - att.face * 90;
-  const dmg = Math.round((att.ch.moves.throw.hits[0].dmg || T.dmg) * (att.ch.mech?.dmgMul?.(att, null, { type: 'throw' }) || 1));
+  const dmg = Math.round((att.throwDmg || T.dmg) * (att.ch.mech?.dmgMul?.(att, null, { type: 'throw' }) || 1));
   def.hp -= dmg;
   def.comboHits = 1;
   def.comboDmg = dmg;
@@ -251,6 +262,6 @@ export function resolveCombat(st) {
     if (struck.has(p.att.side) || struck.has(p.def.side)) continue;
     if (p.att.state !== 'attack' || invulnTo(p.def, 'throw')) continue;
     p.att.hitDone[p.i] = true;
-    startThrow(st, p.att, p.def);
+    startThrow(st, p.att, p.def, p.h, p.m);
   }
 }

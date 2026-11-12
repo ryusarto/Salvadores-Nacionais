@@ -40,7 +40,7 @@ export function updateEntities(st) {
     const target = st.f[1 - e.owner];
     if (e.delay > 0) {
       e.delay--;
-      if (e.delay === 0) emit(st, { t: 'strike', kind: e.kind, x: e.x, y: e.y });
+      if (e.delay === 0 && e.behavior === 'strike') emit(st, { t: 'strike', kind: e.kind, x: e.x, y: e.y });
       continue;
     }
     e.life--;

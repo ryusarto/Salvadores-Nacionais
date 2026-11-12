@@ -14,6 +14,7 @@ export function newBuffer() {
     cur: { ...EMPTY_INPUT },
     prev: { ...EMPTY_INPUT },
     press, // quadros desde que cada botão foi apertado (99 = não vale mais)
+    dirAt: {}, // direção que estava segurada no momento do aperto de cada botão
     fwd: false,
     back: false,
     up: false,
@@ -49,15 +50,23 @@ export function feed(buf, raw, face, frozen = false) {
     for (const b of BUTTONS) if (buf.press[b] < 99) buf.press[b]++;
     for (const k of ['upPress', 'tapF', 'tapB', 'dashF', 'dashB']) if (buf[k] < 99) buf[k]++;
   }
-  for (const b of BUTTONS) if (raw[b] && !buf.prev[b]) buf.press[b] = 0;
+  const snap = { down: buf.down, fwd: buf.fwd, back: buf.back };
+  for (const b of BUTTONS) {
+    if (raw[b] && !buf.prev[b]) {
+      buf.press[b] = 0;
+      buf.dirAt[b] = snap;
+    }
+  }
 
   // Atalhos: Leve+Médio = agarrão, Forte+Especial = super.
   if (buf.press.L <= SYS.SIMUL && buf.press.M <= SYS.SIMUL && raw.L && raw.M) {
     buf.press.T = 0;
+    buf.dirAt.T = snap;
     buf.press.L = buf.press.M = 99;
   }
   if (buf.press.H <= SYS.SIMUL && buf.press.S <= SYS.SIMUL && raw.H && raw.S) {
     buf.press.X = 0;
+    buf.dirAt.X = snap;
     buf.press.H = buf.press.S = 99;
   }
 

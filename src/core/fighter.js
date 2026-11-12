@@ -86,6 +86,7 @@ export function invulnTo(f, kind, attackerAir = false, guard = 'mid') {
       if (w.type === 'all' || w.type === kind) return true;
       if (w.type === 'air' && attackerAir && kind === 'strike') return true;
       if (w.type === 'low' && guard === 'low') return true;
+      if (w.type === 'upper' && guard !== 'low' && kind !== 'throw') return true;
     }
   }
   return false;
@@ -168,7 +169,8 @@ export function tryActions(st, f, o, ctx) {
 
   // Super
   if (!air && peek(b, 'X') && allow('super') && !(canc && cur.type === 'super')) {
-    const key = b.down && f.super >= 3 * SYS.SUPER.stock && moves.SA3 ? 'SA3' : f.super >= SYS.SUPER.stock && moves.SA1 ? 'SA1' : f.super >= 3 * SYS.SUPER.stock && moves.SA3 ? 'SA3' : null;
+    const dx = b.dirAt.X || b;
+    const key = dx.down && f.super >= 3 * SYS.SUPER.stock && moves.SA3 ? 'SA3' : f.super >= SYS.SUPER.stock && moves.SA1 ? 'SA1' : f.super >= 3 * SYS.SUPER.stock && moves.SA3 ? 'SA3' : null;
     if (key && startMove(st, f, key)) {
       take(b, 'X');
       return true;
@@ -183,7 +185,8 @@ export function tryActions(st, f, o, ctx) {
   }
   // Especiais
   if (peek(b, 'S')) {
-    let key = air ? 'jS' : b.down ? '2S' : b.fwd ? '6S' : b.back ? '4S' : '5S';
+    const ds = b.dirAt.S || b;
+    let key = air ? 'jS' : ds.down ? '2S' : ds.fwd ? '6S' : ds.back ? '4S' : '5S';
     if (!moves[key] && !air) key = '5S';
     const m = moves[key];
     const extra = canc && cur.type !== 'super' && mech.extraCancel?.(st, f, cur, key);
@@ -205,17 +208,18 @@ export function tryActions(st, f, o, ctx) {
   // Normais
   for (const btn of ['H', 'M', 'L']) {
     if (!peek(b, btn)) continue;
+    const dn = b.dirAt[btn] || b;
     let key;
     if (air) key = 'j' + btn;
-    else if (b.down && b.fwd && moves['3' + btn]) key = '3' + btn;
-    else if (b.down) key = '2' + btn;
-    else if (b.fwd && moves['6' + btn]) key = '6' + btn;
-    else if (b.back && moves['4' + btn]) key = '4' + btn;
+    else if (dn.down && dn.fwd && moves['3' + btn]) key = '3' + btn;
+    else if (dn.down) key = '2' + btn;
+    else if (dn.fwd && moves['6' + btn]) key = '6' + btn;
+    else if (dn.back && moves['4' + btn]) key = '4' + btn;
     else key = '5' + btn;
     const m = moves[key];
     if (!m) continue;
     if (air && f.airUsed) continue;
-    if (canc) {
+    if (canc && !cur.flags.followNormals) {
       if (cur.type !== 'normal' || !cur.cancel.includes('chain') || !f.connected) continue;
       const up = RANK[btn] > RANK[cur.btn];
       const same = btn === 'L' && cur.btn === 'L' && f.chainL < 2;
@@ -307,14 +311,15 @@ function attackUpdate(st, f, o) {
       mech.onHold?.(st, f, m);
       if (m.hold.follow) {
         for (const [btn, key] of Object.entries(m.hold.follow)) {
-          if (btn !== 'release' && take(f.buf, btn)) return startMove(st, f, key, { fromHold: f.holdT });
+          if (btn !== 'release' && take(f.buf, btn)) {
+            f.holdLevel = f.holdT;
+            return startMove(st, f, key);
+          }
         }
       }
     } else if (m.hold.follow?.release) {
-      const lvl = f.holdT;
+      f.holdLevel = f.holdT;
       startMove(st, f, m.hold.follow.release);
-      f.holdLevel = lvl;
-      mech.onRelease?.(st, f, lvl);
       return;
     }
   }

@@ -40,8 +40,8 @@ export default {
   style: 'Equilibrado',
   mechName: 'COMPASSO',
   mechDesc: 'Conecte 2 especiais diferentes: o terceiro sai como FINAL, turbinado de graça.',
-  colors: { skin: '#b9794c', top: '#2f8a3a', top2: '#f2c318', bottom: '#2b2b33', accent: '#2a4fb8', hair: '#1c1512', shoe: '#f0f0f0' },
-  look: { hair: 'afro', weapon: null },
+  colors: { skin: '#b9794c', top: '#2f8a3a', top2: '#f2c318', bottom: '#3a3a44', accent: '#2a4fb8', hair: '#1c1512', shoe: '#f0f0f0' },
+  look: { hair: 'afro', weapon: null, sleeves: 'none', pants: 'shorts', stripes: [[0.42, 0.56, '#f2c318'], [0.56, 0.7, '#2a4fb8']] },
   walkF: 6.6, walkB: 5, jumpScale: 1, hpScale: 1,
   moves,
   mech: {
