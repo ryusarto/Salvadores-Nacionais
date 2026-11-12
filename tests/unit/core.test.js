@@ -25,7 +25,7 @@ test('dados: todo golpe de todo personagem é válido', () => {
 test('acerto: Leve de perto causa dano e atordoa; de longe erra', () => {
   let st = fight();
   tap(st, { L: 1 }, 8);
-  assert.equal(st.f[1].hp, st.f[1].maxHp - 300);
+  assert.equal(st.f[1].hp, st.f[1].maxHp - st.f[0].ch.moves['5L'].hits[0].dmg);
   assert.equal(st.f[1].state, 'hitstun');
   st = fight('franco', 'zanata', 700);
   tap(st, { L: 1 }, 20);
@@ -60,7 +60,7 @@ test('combo: Leve > Médio > Forte emenda e o dano escala', () => {
   const hits = ev.filter((e) => e.t === 'hit');
   assert.equal(st.f[1].comboHits >= 3 || hits.some((h) => h.combo === 3), true);
   const third = hits.find((h) => h.combo === 3);
-  assert.equal(third.dmg, Math.round(900 * SYS.SCALING[2]));
+  assert.equal(third.dmg, Math.round(st.f[0].ch.moves['5H'].hits[0].dmg * SYS.SCALING[2]));
 });
 
 test('agarrão: vence a defesa e pode ser escapado', () => {

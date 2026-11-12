@@ -218,12 +218,12 @@
   var NOTE_WINDOW = 300;
   var FINALE_DMG = 1.25;
   var moves = {
-    ...baseNormals({ reach: 1 }),
+    ...baseNormals({ reach: 1.06, dmg: 1.05 }),
     "5S": mv({
       name: "Flash",
-      startup: 9,
+      startup: 8,
       active: 3,
-      recovery: 19,
+      recovery: 17,
       box: bx(40, 230, 250, 200),
       dmg: 500,
       hitstun: 22,
@@ -238,9 +238,9 @@
     }),
     "6S": mv({
       name: "Giro do Guetto",
-      startup: 12,
+      startup: 11,
       active: 10,
-      recovery: 22,
+      recovery: 18,
       anim: ["spinWind", "spin"],
       fx: "spin",
       hits: [{ from: 13, to: 16, box: bx(-60, 200, 260, 150), dmg: 500, hitstun: 20 }, { from: 19, to: 22, box: bx(-60, 200, 280, 150), dmg: 600, launch: [8, 20], kd: "soft" }],
@@ -255,7 +255,7 @@
       recovery: 16,
       anim: ["punchWind", "flurry"],
       fx: "flurry",
-      hits: [0, 1, 2, 3].map((i) => ({ from: 11 + i * 4, to: 12 + i * 4, box: bx(30, 240, 210, 140), dmg: i === 3 ? 450 : 250, hitstun: 18, blockstun: 16, push: i === 3 ? [130, 90] : [25, 25], ginga: 450 })),
+      hits: [0, 1, 2, 3].map((i) => ({ from: 11 + i * 4, to: 12 + i * 4, box: bx(30, 240, 210, 140), dmg: i === 3 ? 500 : 280, hitstun: 18, blockstun: 16, push: i === 3 ? [130, 90] : [25, 25], ginga: 450 })),
       motion: [{ from: 8, to: 24, vx: 7 }],
       tags: ["close", "pressure"],
       turbo: { hits: [0, 1, 2, 3, 4, 5].map((i) => ({ from: 9 + i * 3, to: 10 + i * 3, box: bx(30, 240, 220, 140), dmg: i === 5 ? 500 : 230, hitstun: 20, blockstun: 16, push: i === 5 ? [120, 80] : [20, 20], ginga: 450, launch: i === 5 ? [5, 26] : null })), startup: 8, recovery: 14 }
@@ -315,10 +315,10 @@
     mechDesc: "Conecte 2 especiais diferentes: o terceiro sai como FINAL, turbinado de gra\xE7a.",
     colors: { skin: "#b9794c", top: "#2f8a3a", top2: "#f2c318", bottom: "#3a3a44", accent: "#2a4fb8", hair: "#1c1512", shoe: "#f0f0f0" },
     look: { hair: "afro", weapon: null, sleeves: "none", pants: "shorts", stripes: [[0.42, 0.56, "#f2c318"], [0.56, 0.7, "#2a4fb8"]] },
-    walkF: 6.6,
-    walkB: 5,
+    walkF: 7,
+    walkB: 5.3,
     jumpScale: 1,
-    hpScale: 1,
+    hpScale: 1.04,
     moves,
     mech: {
       init(f) {
@@ -615,7 +615,7 @@
     make: (st, f) => hasMark(st, f) && !o.force ? null : proj({ kind: "mark", behavior: "strike", x: 0, y: 0, w: o.w || 220, h: 760, vx: 0, delay: o.delay ?? MARK_DELAY, life: 8, dmg: o.dmg ?? 1300, hitstun: 30, blockstun: 24, push: [0, 60], ginga: 1500, launch: [0, 30], kd: "hard", stop: 14, juggle: 2, color: "#ffdf50", extra: { at_opponent: true, delay0: o.delay ?? MARK_DELAY } })
   });
   var moves4 = {
-    ...baseNormals({ reach: 0.96, dmg: 1.1, speed: 1 }),
+    ...baseNormals({ reach: 1, dmg: 1.12 }),
     "2S": mv({
       name: "Chamada",
       startup: 16,
@@ -814,7 +814,7 @@
     walkF: 7.1,
     walkB: 5.4,
     jumpScale: 1.02,
-    hpScale: 0.95,
+    hpScale: 1,
     moves: moves5,
     mech: {
       init(f) {
@@ -1114,9 +1114,9 @@
     ...baseNormals({ reach: 0.86, dmg: 0.86 }),
     "5S": mv({
       name: "Tiro",
-      startup: 11,
+      startup: 12,
       active: 1,
-      recovery: 25,
+      recovery: 27,
       anim: ["castWind", "shoot"],
       spawn: [{ at: 10, ...shot({ spend: true }) }],
       range: 1400,
@@ -1125,9 +1125,9 @@
     }),
     "6S": mv({
       name: "Tiro Baixo",
-      startup: 12,
+      startup: 14,
       active: 1,
-      recovery: 24,
+      recovery: 27,
       crouch: true,
       anim: ["crouch", "shootLow"],
       spawn: [{ at: 12, ...shot({ spend: true, y: 60, guard: "low", dmg: 500 }) }],
@@ -1188,7 +1188,7 @@
     walkF: 6.7,
     walkB: 5.3,
     jumpScale: 1,
-    hpScale: 0.94,
+    hpScale: 0.9,
     moves: moves8,
     mech: {
       init(f) {

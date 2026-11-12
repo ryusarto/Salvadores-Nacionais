@@ -39,7 +39,7 @@ export default {
   mechDesc: 'Segure ↓+Especial para carregar o Fio. Soltar = corte carregado. Na postura: Leve = corte instantâneo, Médio = contra-ataque.',
   colors: { skin: '#e0b08a', top: '#2c3140', bottom: '#3a3530', accent: '#d2edf8', hair: '#1a1418', hat: '#e8e4dc', shoe: '#f0f0f0' },
   look: { hair: 'bucket', weapon: 'katana', sleeves: 'long', glasses: true },
-  walkF: 7.1, walkB: 5.4, jumpScale: 1.02, hpScale: 0.95,
+  walkF: 7.1, walkB: 5.4, jumpScale: 1.02, hpScale: 1,
   moves,
   mech: {
     init(f) {

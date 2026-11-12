@@ -10,15 +10,15 @@ const NOTE_WINDOW = 300;
 const FINALE_DMG = 1.25;
 
 const moves = {
-  ...baseNormals({ reach: 1 }),
-  '5S': mv({ name: 'Flash', startup: 9, active: 3, recovery: 19, box: bx(40, 230, 250, 200), dmg: 500, hitstun: 22, blockstun: 22, push: [60, 50], ginga: 400, effects: [{ t: 'dazzle', n: 150, onBlock: true }], anim: ['castWind', 'cast'], fx: 'flash', tags: ['mid', 'pressure'],
+  ...baseNormals({ reach: 1.06, dmg: 1.05 }),
+  '5S': mv({ name: 'Flash', startup: 8, active: 3, recovery: 17, box: bx(40, 230, 250, 200), dmg: 500, hitstun: 22, blockstun: 22, push: [60, 50], ginga: 400, effects: [{ t: 'dazzle', n: 150, onBlock: true }], anim: ['castWind', 'cast'], fx: 'flash', tags: ['mid', 'pressure'],
     turbo: { startup: 7, dmg: 700, hitstun: 30, box: bx(40, 200, 330, 260) } }),
-  '6S': mv({ name: 'Giro do Guetto', startup: 12, active: 10, recovery: 22, anim: ['spinWind', 'spin'], fx: 'spin',
+  '6S': mv({ name: 'Giro do Guetto', startup: 11, active: 10, recovery: 18, anim: ['spinWind', 'spin'], fx: 'spin',
     hits: [{ from: 13, to: 16, box: bx(-60, 200, 260, 150), dmg: 500, hitstun: 20 }, { from: 19, to: 22, box: bx(-60, 200, 280, 150), dmg: 600, launch: [8, 20], kd: 'soft' }],
     motion: [{ from: 6, to: 22, vx: 13 }], tags: ['mid', 'advance'],
     turbo: { hits: [{ from: 13, to: 15, box: bx(-60, 200, 260, 150), dmg: 450, hitstun: 20 }, { from: 17, to: 19, box: bx(-60, 200, 270, 150), dmg: 450, hitstun: 20 }, { from: 21, to: 23, box: bx(-60, 200, 290, 170), dmg: 650, launch: [4, 30] }], recovery: 18 } }),
   '2S': mv({ name: 'Pressão Nacional', startup: 10, active: 16, recovery: 16, anim: ['punchWind', 'flurry'], fx: 'flurry',
-    hits: [0, 1, 2, 3].map((i) => ({ from: 11 + i * 4, to: 12 + i * 4, box: bx(30, 240, 210, 140), dmg: i === 3 ? 450 : 250, hitstun: 18, blockstun: 16, push: i === 3 ? [130, 90] : [25, 25], ginga: 450 })),
+    hits: [0, 1, 2, 3].map((i) => ({ from: 11 + i * 4, to: 12 + i * 4, box: bx(30, 240, 210, 140), dmg: i === 3 ? 500 : 280, hitstun: 18, blockstun: 16, push: i === 3 ? [130, 90] : [25, 25], ginga: 450 })),
     motion: [{ from: 8, to: 24, vx: 7 }], tags: ['close', 'pressure'],
     turbo: { hits: [0, 1, 2, 3, 4, 5].map((i) => ({ from: 9 + i * 3, to: 10 + i * 3, box: bx(30, 240, 220, 140), dmg: i === 5 ? 500 : 230, hitstun: 20, blockstun: 16, push: i === 5 ? [120, 80] : [20, 20], ginga: 450, launch: i === 5 ? [5, 26] : null })), startup: 8, recovery: 14 } }),
   '4S': mv({ name: 'Sobe o Som', startup: 5, active: 10, recovery: 30, anim: ['riseWind', 'rise'], fx: 'rise', box: bx(0, 200, 170, 320), dmg: 1100, launch: [4, 30], kd: 'soft',
@@ -42,7 +42,7 @@ export default {
   mechDesc: 'Conecte 2 especiais diferentes: o terceiro sai como FINAL, turbinado de graça.',
   colors: { skin: '#b9794c', top: '#2f8a3a', top2: '#f2c318', bottom: '#3a3a44', accent: '#2a4fb8', hair: '#1c1512', shoe: '#f0f0f0' },
   look: { hair: 'afro', weapon: null, sleeves: 'none', pants: 'shorts', stripes: [[0.42, 0.56, '#f2c318'], [0.56, 0.7, '#2a4fb8']] },
-  walkF: 6.6, walkB: 5, jumpScale: 1, hpScale: 1,
+  walkF: 7, walkB: 5.3, jumpScale: 1, hpScale: 1.04,
   moves,
   mech: {
     init(f) {

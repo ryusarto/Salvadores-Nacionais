@@ -25,9 +25,9 @@ const shot = (o = {}) => ({
 
 const moves = {
   ...baseNormals({ reach: 0.86, dmg: 0.86 }),
-  '5S': mv({ name: 'Tiro', startup: 11, active: 1, recovery: 25, anim: ['castWind', 'shoot'], spawn: [{ at: 10, ...shot({ spend: true }) }], range: 1400, tags: ['zone', 'far'],
+  '5S': mv({ name: 'Tiro', startup: 12, active: 1, recovery: 27, anim: ['castWind', 'shoot'], spawn: [{ at: 10, ...shot({ spend: true }) }], range: 1400, tags: ['zone', 'far'],
     turbo: { name: 'Tiro Duplo', spawn: [{ at: 9, ...shot({ spend: true }) }, { at: 15, ...shot({ spend: true }) }], recovery: 24 } }),
-  '6S': mv({ name: 'Tiro Baixo', startup: 12, active: 1, recovery: 24, crouch: true, anim: ['crouch', 'shootLow'], spawn: [{ at: 12, ...shot({ spend: true, y: 60, guard: 'low', dmg: 500 }) }], range: 1400, tags: ['zone', 'far', 'low'],
+  '6S': mv({ name: 'Tiro Baixo', startup: 14, active: 1, recovery: 27, crouch: true, anim: ['crouch', 'shootLow'], spawn: [{ at: 12, ...shot({ spend: true, y: 60, guard: 'low', dmg: 500 }) }], range: 1400, tags: ['zone', 'far', 'low'],
     turbo: { startup: 9, spawn: [{ at: 9, ...shot({ spend: true, y: 60, guard: 'low', dmg: 650, hitstun: 26 }) }] } }),
   '4S': mv({ name: 'Tiro pro Alto', startup: 8, active: 1, recovery: 26, anim: ['castWind', 'shootUp'], spawn: [{ at: 8, ...shot({ spend: true, y: 400, vx: 30, vy: 30, dmg: 700, launch: [4, 22] }) }], range: 420, cancel: [], tags: ['antiair'],
     turbo: { startup: 6, spawn: [{ at: 6, ...shot({ spend: true, y: 400, vx: 30, vy: 30, dmg: 950, launch: [4, 26] }) }] } }),
@@ -48,7 +48,7 @@ export default {
   mechDesc: '6 balas. A última é o Tiro Certeiro: mais dano e derruba. Recarregue com ↓+Especial (segure para recarregar tudo).',
   colors: { skin: '#d2a074', top: '#4a4658', bottom: '#26262c', accent: '#f7dd83', hair: '#1a1418', hat: '#d42a2a', shoe: '#e0e0e0' },
   look: { hair: 'cap', weapon: 'gun', sleeves: 'long', glasses: true },
-  walkF: 6.7, walkB: 5.3, jumpScale: 1, hpScale: 0.94,
+  walkF: 6.7, walkB: 5.3, jumpScale: 1, hpScale: 0.9,
   moves,
   mech: {
     init(f) {

@@ -13,7 +13,7 @@ const mark = (o = {}) => ({
 });
 
 const moves = {
-  ...baseNormals({ reach: 0.96, dmg: 1.1, speed: 1 }),
+  ...baseNormals({ reach: 1, dmg: 1.12 }),
   '2S': mv({ name: 'Chamada', startup: 16, active: 1, recovery: 18, anim: ['call', 'call'], spawn: [{ at: 16, ...mark() }], range: 1500, tags: ['zone', 'far', 'setup'],
     turbo: { spawn: [{ at: 12, ...mark({ delay: 80 }) }], startup: 12 } }),
   '5S': mv({ name: 'Mordida', startup: 8, active: 3, recovery: 30, guard: 'throw', box: bx(20, 140, 190, 260), dmg: 1600, anim: ['throwReach', 'throwReach'], cancel: [], tags: ['throw', 'close'],
