@@ -34,6 +34,9 @@ const moves = {
   jS: mv({ name: 'Tiro Mergulho', air: true, startup: 8, active: 1, recovery: 14, anim: ['jumpUp', 'jPunch'], spawn: [{ at: 8, ...shot({ spend: true, y: 200, vx: 30, vy: -26, dmg: 500 }) }], cancel: [], tags: ['air'] }),
   '2S': mv({ name: 'Recarga', startup: 12, active: 1, recovery: 12, anim: ['reload', 'reload'], cancel: [], hold: { at: 13, btn: 'S', max: 60 }, tags: ['setup'] }),
   click: mv({ name: 'Sem Bala!', startup: 8, active: 1, recovery: 16, anim: ['castWind', 'shoot'], cancel: [], tags: [] }),
+  c1: mv({ name: 'Coronhada', startup: 9, active: 4, recovery: 18, box: bx(30, 260, 205, 140), dmg: 800, hitstun: 22, push: [330, 200], anim: ['heavyWind', 'punchH'], tags: ['close'] }),
+  c2: mv({ name: 'Rolamento Tático', startup: 3, active: 17, recovery: 9, anim: ['crouch', 'crouch'], crouch: true, motion: [{ from: 4, to: 20, vx: 20 }],
+    inv: [{ from: 3, to: 20, type: 'upper' }, { from: 3, to: 20, type: 'throw' }], flags: { phase: true }, cancel: [], tags: ['evade'] }),
   SA1: mv({ name: 'Descarrega', btn: 'X', startup: 8, active: 24, recovery: 30, anim: ['castWind', 'shoot'], cost: { super: 1000 }, inv: [{ from: 1, to: 8, type: 'all' }],
     spawn: [0, 1, 2, 3, 4, 5].map((i) => ({ at: 9 + i * 4, ...shot({ spend: true, dmg: 520, hitstun: 26, y: 300 + (i % 3) * 30 }) })), range: 1400, tags: ['super'] }),
   SA3: mv({ name: 'DNEEEEEY!', btn: 'X', startup: 14, active: 1, recovery: 46, anim: ['superWind', 'shoot'], cost: { super: 3000 }, inv: [{ from: 1, to: 20, type: 'all' }],
@@ -60,6 +63,10 @@ export default {
     onMoveStart(st, f, m, key) {
       if (key === 'click') st.events.push({ t: 'pop', str: 'SEM BALA!', x: f.x, color: '#b0b0b8' });
       if (key === 'SA3') f.res.ammo = AMMO;
+      if (key === 'c2') f.res.ammo = Math.min(AMMO, f.res.ammo + 2); // rolar recarrega 2 balas
+    },
+    onHit(st, f) {
+      if (f.moveKey === 'c1') f.res.ammo = Math.min(AMMO, f.res.ammo + 1); // coronhada que acerta recarrega 1
     },
     onMoveFrame(st, f, o, m) {
       if (f.moveKey === '2S' && f.sf === 12 && f.holdT === 0) f.res.ammo = Math.min(AMMO, f.res.ammo + 1);

@@ -9,6 +9,7 @@ import { fight, run, tap, I, has, BACK2 } from './helpers.js';
 test('dados: todo golpe de todo personagem é válido', () => {
   for (const ch of [...HEROES, ...BOSSES]) {
     for (const k of ['5L', '5M', '5H', '2L', '2M', '2H', 'jL', 'jM', 'jH', 'throw', 'blindado', '5S', 'SA1', 'SA3']) assert.ok(ch.moves[k], `${ch.id} sem ${k}`);
+    if (!ch.boss) for (const k of ['c1', 'c2']) assert.ok(ch.moves[k], `${ch.id} sem ${k}`);
     for (const [key, m] of Object.entries(ch.moves)) {
       for (const v of [m, m.turbo].filter(Boolean)) {
         assert.ok(v.startup >= 1 && v.total > v.startup, `${ch.id}.${key} tempos`);
@@ -77,18 +78,47 @@ test('agarrão: vence a defesa e pode ser escapado', () => {
   assert.equal(st.f[1].hp, st.f[1].maxHp);
 });
 
-test('Esquiva de Ginga: apara sem dano; no tempo exato é perfeita', () => {
+test('defesa no botão: em pé, agachado e no ar; no tempo exato é perfeita', () => {
+  const G = I({ G: 1 });
   let st = fight();
-  run(st, 1, I({ L: 1 }));
-  const ev = run(st, 10, I(), I({ G: 1 }));
-  assert.ok(has(ev, 'parry') || has(ev, 'perfect'));
+  run(st, 6, I(), G); // já está defendendo
+  run(st, 1, I({ L: 1 }), G);
+  let ev = run(st, 10, I(), G);
+  assert.ok(has(ev, 'block'));
   assert.equal(st.f[1].hp, st.f[1].maxHp);
+  assert.ok(st.f[1].ginga < SYS.GINGA.max, 'defender gasta Ginga');
+
+  st = fight();
+  run(st, 6, I(), G);
+  run(st, 1, I({ y: -1, M: 1 }), G);
+  run(st, 12, I({ y: -1 }), G);
+  assert.ok(st.f[1].hp < st.f[1].maxHp, 'defesa em pé não segura golpe baixo');
+  st = fight();
+  run(st, 6, I(), I({ G: 1, y: -1 }));
+  run(st, 1, I({ y: -1, M: 1 }), I({ G: 1, y: -1 }));
+  ev = run(st, 12, I({ y: -1 }), I({ G: 1, y: -1 }));
+  assert.ok(has(ev, 'block'), 'defesa agachada segura golpe baixo');
+
+  st = fight();
+  st.f[1].y = 120;
+  st.f[1].vy = 6;
+  st.f[1].state = 'air';
+  run(st, 1, I({ H: 1 }), G);
+  ev = run(st, 16, I(), G);
+  assert.ok(has(ev, 'block') || has(ev, 'perfect'), 'defesa no ar');
+  assert.equal(st.f[1].hp, st.f[1].maxHp);
+
   st = fight();
   run(st, 1, I({ L: 1 }));
   run(st, 2);
-  const ev2 = run(st, 6, I(), I({ G: 1 }));
-  assert.ok(has(ev2, 'perfect'), 'aparar nos 3 primeiros quadros é perfeito');
-  assert.equal(st.f[1].state === 'idle' || st.f[1].state === 'crouch', true);
+  ev = run(st, 6, I(), G);
+  assert.ok(has(ev, 'perfect'), 'defender nos 3 quadros antes do golpe é perfeito');
+
+  st = fight('franco', 'zanata', 140);
+  run(st, 6, I(), G);
+  run(st, 1, I({ T: 1 }), G);
+  run(st, 40, I(), G);
+  assert.ok(st.f[1].hp < st.f[1].maxHp, 'agarrão vence a defesa');
 });
 
 test('Sem Fôlego: defender demais zera a Ginga e passa a tomar dano na defesa', () => {
@@ -118,10 +148,13 @@ test('Golpe Blindado: aguenta um golpe e derruba', () => {
   assert.equal(st.f[1].state === 'crumple' || has(ev, 'hit'), true);
 });
 
-test('Arrancada: gasta Ginga e avança', () => {
+test('Arrancada: →→ durante a defesa gasta Ginga e avança', () => {
   const st = fight('franco', 'zanata', 900);
   const x = st.f[0].x;
-  run(st, 1, I({ x: 1, G: 1 }));
+  run(st, 3, I({ G: 1 }));
+  run(st, 1, I({ G: 1, x: 1 }));
+  run(st, 2, I({ G: 1 }));
+  run(st, 1, I({ G: 1, x: 1 }));
   assert.equal(st.f[0].state, 'rush');
   run(st, 10, I({ x: 1 }));
   assert.ok(st.f[0].x > x + 150);
@@ -205,5 +238,28 @@ test('IA: todos os personagens terminam uma luta contra a chefe', () => {
       for (const f of st.f) assert.ok(Number.isFinite(f.x + f.y + f.hp + f.ginga + f.super), `${h.id} valor inválido`);
     }
     assert.equal(st.phase, 'over', `${h.id} não terminou`);
+  }
+});
+
+test('sequências: → ← + Leve e ↓ → + Médio soltam os golpes de comando de todo herói', () => {
+  for (const h of HEROES) {
+    let st = fight(h.id, 'zanata', 900);
+    run(st, 3, I({ x: 1 }));
+    run(st, 3, I({ x: -1 }));
+    run(st, 1, I({ x: -1, L: 1 }));
+    assert.equal(st.f[0].moveKey, 'c1', `${h.id} c1`);
+    st = fight(h.id, 'zanata', 900);
+    run(st, 3, I({ y: -1 }));
+    run(st, 2, I({ x: 1 }));
+    run(st, 1, I({ x: 1, M: 1 }));
+    assert.equal(st.f[0].moveKey, 'c2', `${h.id} c2`);
+    st = fight(h.id, 'zanata', 900);
+    run(st, 3, I({ x: -1 }));
+    run(st, 1, I({ x: -1, L: 1 }));
+    assert.notEqual(st.f[0].moveKey, 'c1', 'só ← + Leve não é a sequência');
+    st = fight(h.id, 'zanata', 900);
+    run(st, 40, I({ x: 1 }));
+    run(st, 1, I({ x: 1, M: 1 }));
+    assert.notEqual(st.f[0].moveKey, 'c2', 'só → + Médio não é a sequência');
   }
 });

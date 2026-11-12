@@ -25,6 +25,8 @@ const moves = {
     turbo: { dmg: 1100, launch: [-6, 24] } }),
   '4S': mv({ name: 'Lua Crescente', startup: 5, active: 9, recovery: 30, box: bx(0, 200, 240, 380), dmg: 1200, launch: [4, 30], anim: ['riseWind', 'slashUp'], inv: [{ from: 1, to: 7, type: 'strike' }], motion: [{ from: 5, to: 9, vx: 5, vy: 26 }], flags: { landEnds: true, landRecovery: 15 }, cancel: [], tags: ['antiair', 'reversal'],
     turbo: { dmg: 1500, inv: [{ from: 1, to: 11, type: 'all' }] } }),
+  c1: mv({ name: 'Recuo Cortante', startup: 7, active: 4, recovery: 20, box: bx(30, 200, 390, 150), dmg: 700, push: [120, 120], anim: ['stance', 'slash'], motion: [{ from: 6, to: 16, vx: -15 }], tags: ['mid'] }),
+  c2: mv({ name: 'Estocada', startup: 13, active: 4, recovery: 24, box: bx(40, 250, 480, 80), dmg: 950, hitstun: 24, anim: ['heavyWind', 'punchH'], motion: [{ from: 8, to: 15, vx: 12 }], tags: ['far', 'poke'] }),
   SA1: mv({ name: 'Agudo', btn: 'X', startup: 8, active: 16, recovery: 34, anim: ['superWind', 'burst'], cost: { super: 1000 }, inv: [{ from: 1, to: 12, type: 'all' }],
     hits: [{ from: 9, to: 12, box: bx(-220, 0, 540, 520), dmg: 700, hitstun: 30 }, { from: 20, to: 24, box: bx(-260, 0, 620, 560), dmg: 1300, launch: [12, 26], kd: 'hard' }], tags: ['super'] }),
   SA3: mv({ name: 'Agudo Supremo', btn: 'X', startup: 10, active: 40, recovery: 40, anim: ['stance', 'slash'], cost: { super: 3000 }, inv: [{ from: 1, to: 50, type: 'all' }],

@@ -59,7 +59,7 @@ export function hurtbox(f) {
   const B = SYS.BODY;
   if (f.state === 'knockdown' || (f.state === 'ko' && f.y <= 0)) return B.down;
   if (f.y > 0) return B.air;
-  if (f.state === 'crouch' || (f.state === 'attack' && f.move.crouch) || ((f.state === 'blockstun' || f.state === 'hitstun') && f.crouchBlock)) return B.crouch;
+  if (f.state === 'crouch' || (f.state === 'attack' && f.move.crouch) || ((f.state === 'blockstun' || f.state === 'hitstun' || f.state === 'guard') && f.crouchBlock)) return B.crouch;
   return B.stand;
 }
 
@@ -198,6 +198,7 @@ export function tryActions(st, f, o, ctx) {
     }
   }
   if (ctx === 'parry') {
+    if (take(b, 'T')) return startMove(st, f, 'throw');
     if (takeDash(b, 'F') && spendGinga(st, f, G.rushRaw)) {
       setState(f, 'rush');
       emit(st, { t: 'rush', side: f.side });
@@ -208,6 +209,15 @@ export function tryActions(st, f, o, ctx) {
   // Normais
   for (const btn of ['H', 'M', 'L']) {
     if (!peek(b, btn)) continue;
+    // Golpes de sequência (→ ← + Leve, ↓ → + Médio)
+    const cmd = b.cmdAt[btn];
+    if (cmd && SYS.CMD_BTN[cmd] === btn && moves[cmd] && !air) {
+      const extra = canc && cur.type !== 'super' && mech.extraCancel?.(st, f, cur, cmd);
+      if (!canc || extra || (allow('special') && cur.type === 'normal')) {
+        take(b, btn);
+        if (startMove(st, f, cmd)) return true;
+      }
+    }
     const dn = b.dirAt[btn] || b;
     let key;
     if (air) key = 'j' + btn;
@@ -229,8 +239,8 @@ export function tryActions(st, f, o, ctx) {
     take(b, btn);
     if (startMove(st, f, key)) return true;
   }
-  // Arrancada: Ginga com direção para frente (livre) ou cancelando um golpe que acertou
-  if (!air && peek(b, 'G', 3) && (b.fwd || canc) && !f.burnout) {
+  // Arrancada cancelando um golpe que acertou: → + Ginga. (Livre: →→ durante a defesa.)
+  if (!air && canc && peek(b, 'G', 3) && !f.burnout) {
     if (canc) {
       if (cur.cancel.includes('rush') && f.connected && b.fwd) {
         take(b, 'G');
@@ -239,21 +249,14 @@ export function tryActions(st, f, o, ctx) {
         emit(st, { t: 'rush', side: f.side, cancel: true });
         return true;
       }
-    } else if (ctx === 'neutral') {
-      take(b, 'G');
-      spendGinga(st, f, G.rushRaw);
-      setState(f, 'rush');
-      emit(st, { t: 'rush', side: f.side });
-      return true;
     }
   }
-  // Esquiva de Ginga (aparar)
-  if (ctx === 'neutral' && b.cur.G && !f.burnout && f.ginga > 0) {
+  // Defesa: segurar o botão de Ginga
+  if (ctx === 'neutral' && b.cur.G) {
     take(b, 'G');
-    spendGinga(st, f, G.parryStart);
-    setState(f, 'parry');
+    setState(f, 'guard');
+    f.crouchBlock = b.down;
     f.vx = 0;
-    emit(st, { t: 'parryStart', side: f.side });
     return true;
   }
   if (canc && cur.cancel.includes('jump') && f.connected && b.up) {
@@ -388,7 +391,7 @@ export function updateFighter(st, f, o) {
   }
   const b = f.buf;
   const J = SYS.JUMP;
-  if ((isNeutral(f) || f.state === 'parry') && f.y <= 0) f.face = Math.sign(o.x - f.x) || f.face;
+  if ((isNeutral(f) || f.state === 'guard') && f.y <= 0) f.face = Math.sign(o.x - f.x) || f.face;
 
   switch (f.state) {
     case 'idle': case 'walk': case 'crouch': case 'run': case 'runstop':
@@ -406,7 +409,10 @@ export function updateFighter(st, f, o) {
       }
       break;
     case 'air':
-      if (!tryActions(st, f, o, 'air') && f.airJumps > 0 && b.upPress <= 2 && f.sf > 8) {
+      f.airGuard = false;
+      if (tryActions(st, f, o, 'air')) break;
+      f.airGuard = !!b.cur.G && !f.burnout;
+      if (f.airJumps > 0 && b.upPress <= 2 && f.sf > 8) {
         f.airJumps--;
         f.vy = J.vy * 0.82;
         f.vx = (b.fwd ? J.vxF : b.back ? J.vxB : 0) * f.face;
@@ -442,22 +448,26 @@ export function updateFighter(st, f, o) {
     case 'attack':
       attackUpdate(st, f, o);
       break;
-    case 'parry': {
-      const G = SYS.GINGA;
+    case 'guard':
       f.vx = 0;
+      f.crouchBlock = b.down;
       if (tryActions(st, f, o, 'parry')) break;
-      f.ginga -= G.parryDrain;
-      f.gingaPause = G.regenPause;
-      if (f.ginga <= 0) {
-        enterBurnout(st, f);
-        setState(f, 'parryRec');
-      } else if (!b.cur.G && f.sf >= 8) setState(f, 'parryRec');
+      if (b.up) startJump(f, b.fwd ? 1 : b.back ? -1 : 0);
+      else if (!b.cur.G) toNeutral(f);
       break;
-    }
-    case 'parryRec':
-      if (f.sf >= SYS.GINGA.parryRecover) toNeutral(f);
+    case 'blockstun':
+      if (f.y <= 0) f.vx = 0;
+      if (--f.stun <= 0) {
+        if (f.y > 0) {
+          setState(f, 'air');
+          f.airUsed = true;
+        } else if (b.cur.G) {
+          setState(f, 'guard');
+          f.crouchBlock = b.down;
+        } else toNeutral(f);
+      }
       break;
-    case 'hitstun': case 'blockstun': case 'frozen': case 'dizzy': case 'slip':
+    case 'hitstun': case 'frozen': case 'dizzy': case 'slip':
       f.vx = 0;
       if (--f.stun <= 0) toNeutral(f);
       break;

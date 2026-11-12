@@ -20,7 +20,7 @@ const STATES = {
   recuo: { state: 'backdash', frames: [0] },
   'defesa-em-pe': { state: 'blockstun', frames: [0] },
   'defesa-agachado': { state: 'blockstun', frames: [0], crouchBlock: true },
-  aparar: { state: 'parry', frames: [0] },
+  'defesa-no-ar': { state: 'blockstun', frames: [0], y: 180 },
   'dano-alto': { state: 'hitstun', frames: [0], combo: 1 },
   'dano-baixo': { state: 'hitstun', frames: [0], combo: 2 },
   'dano-no-ar': { state: 'air_hit', frames: [0, 0, 0], vy: [18, 0, -18], y: 200 },

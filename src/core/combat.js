@@ -7,10 +7,11 @@ const atWall = (f) => f.x <= SYS.WALL_PAD + 4 || f.x >= SYS.STAGE_W - SYS.WALL_P
 /** O defensor está defendendo um golpe que vem da posição attX? */
 export function isBlocking(def, attX, guard) {
   if (guard === 'unblock' || guard === 'throw') return false;
-  if (def.y > 0) return false;
-  if (!(isNeutral(def) || def.state === 'blockstun')) return false;
+  const g = !!def.buf.cur.G;
+  if (def.y > 0) return g && !def.burnout && (def.state === 'air' || def.state === 'blockstun');
+  if (!(isNeutral(def) || def.state === 'blockstun' || def.state === 'guard')) return false;
   const dir = Math.sign(attX - def.x) || def.face;
-  if (def.buf.cur.x !== -dir) return false;
+  if (!g && def.buf.cur.x !== -dir) return false; // sem o botão, segurar para trás também defende
   const crouch = def.buf.down;
   if (guard === 'low' && !crouch) return false;
   if (guard === 'high' && crouch) return false;
@@ -53,25 +54,6 @@ export function applyHit(st, att, def, h, src) {
   const stopA = (n) => { if (!isProj) att.hitstop = Math.max(att.hitstop, n); };
   const super_ = src.m?.type === 'super';
 
-  // Aparar (Esquiva de Ginga)
-  if (def.state === 'parry' && h.guard !== 'unblock') {
-    const perfect = def.sf <= G.perfectWindow;
-    def.ginga = Math.min(G.max, def.ginga + (perfect ? G.pip : G.parryGain));
-    if (!isProj) att.connected = 'block';
-    if (perfect) {
-      stopA(SYS.HITSTOP.H + G.perfectFreeze);
-      toNeutral(def);
-      def.hitstop = 4;
-      emit(st, { t: 'perfect', side: def.side, x: hx, y: hy });
-      return 'perfect';
-    }
-    stopA(SYS.HITSTOP.M);
-    def.hitstop = SYS.HITSTOP.M;
-    def.sf = Math.min(def.sf, 4);
-    emit(st, { t: 'parry', side: def.side, x: hx, y: hy });
-    return 'parry';
-  }
-
   // Contra-ataque (golpes com janela de contragolpe)
   const ctrWin = def.state === 'attack' && def.move.flags.counter;
   if (ctrWin && !isProj && !super_ && def.sf >= ctrWin.from && def.sf <= ctrWin.to) {
@@ -96,6 +78,21 @@ export function applyHit(st, att, def, h, src) {
   // Defesa
   if (isBlocking(def, attX, h.guard)) {
     const crouch = def.buf.down;
+    const inAir = def.y > 0;
+    // Defesa perfeita: apertar o botão de defesa nos últimos quadros antes do golpe
+    if (!def.burnout && def.buf.gHeld > 0 && def.buf.gHeld <= G.perfectWindow) {
+      def.ginga = Math.min(G.max, def.ginga + G.pip);
+      if (!isProj) att.connected = 'block';
+      stopA(SYS.HITSTOP.H + G.perfectFreeze);
+      def.hitstop = 4;
+      if (!inAir) {
+        setState(def, 'guard');
+        def.crouchBlock = crouch;
+        def.face = -dir;
+      }
+      emit(st, { t: 'perfect', side: def.side, x: hx, y: hy });
+      return 'perfect';
+    }
     setState(def, 'blockstun');
     def.crouchBlock = crouch;
     def.stun = h.blockstun + (def.burnout ? G.burnoutBlockstun : 0);
@@ -103,7 +100,7 @@ export function applyHit(st, att, def, h, src) {
     const chip = def.burnout ? Math.max(h.chip, SYS.CHIP) : h.chip;
     if (chip > 0) def.hp = Math.max(def.burnout ? 0 : 1, def.hp - Math.round(h.dmg * chip));
     if (!def.burnout) {
-      def.ginga -= h.ginga;
+      def.ginga -= h.ginga * (inAir ? G.airGuard : 1);
       def.gingaPause = G.blockPause;
       if (def.ginga <= 0) enterBurnout(st, def);
     }
@@ -124,7 +121,7 @@ export function applyHit(st, att, def, h, src) {
   // Acerto
   let ctr = null;
   if (def.state === 'attack') ctr = def.sf > def.move.startup + def.move.active ? 'punish' : 'counter';
-  else if (def.state === 'parryRec' || def.state === 'throwEnd') ctr = 'punish';
+  else if (def.state === 'throwEnd') ctr = 'punish';
   if (def.status.dazzle > 0) {
     ctr = ctr || 'counter';
     def.status.dazzle = 0;
@@ -190,7 +187,7 @@ function ko(st, att, def, dir) {
 function startThrow(st, att, def, h, m) {
   att.connected = 'hit';
   att.throwDmg = h.dmg;
-  def.techable = m.type === 'throw' && def.state !== 'attack' && def.state !== 'parryRec';
+  def.techable = m.type === 'throw' && def.state !== 'attack';
   setState(att, 'throwing');
   att.throwDir = att.buf.back ? -1 : 1;
   setState(def, 'thrown');

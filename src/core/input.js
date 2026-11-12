@@ -24,6 +24,10 @@ export function newBuffer() {
     tapB: 99,
     dashF: 99,
     dashB: 99,
+    cmdAt: {}, // comando de sequência reconhecido no aperto de cada botão ('c1', 'c2')
+    downEdge: 99, // quadros desde que ↓ começou a ser segurado
+    sinceDown: 99, // quadros desde o último quadro com ↓
+    gHeld: 0, // quadros com o botão de Ginga segurado (defesa perfeita)
   };
 }
 
@@ -48,13 +52,32 @@ export function feed(buf, raw, face, frozen = false) {
 
   if (!frozen) {
     for (const b of BUTTONS) if (buf.press[b] < 99) buf.press[b]++;
-    for (const k of ['upPress', 'tapF', 'tapB', 'dashF', 'dashB']) if (buf[k] < 99) buf[k]++;
+    for (const k of ['upPress', 'tapF', 'tapB', 'dashF', 'dashB', 'downEdge', 'sinceDown']) if (buf[k] < 99) buf[k]++;
   }
+  buf.gHeld = raw.G ? buf.gHeld + 1 : 0;
+  // Direções primeiro, para o botão do mesmo quadro já enxergar a sequência
+  const wasDown = buf.prev.y < 0;
+  if (buf.down && !wasDown) buf.downEdge = 0;
+  if (buf.down) buf.sinceDown = 0;
+  if (buf.up && !wasUp) buf.upPress = 0;
+  if (buf.fwd && !wasF) {
+    if (buf.tapF <= SYS.DASH.tapWindow) buf.dashF = 0;
+    buf.tapF = 0;
+  }
+  if (buf.back && !wasB) {
+    if (buf.tapB <= SYS.DASH.tapWindow) buf.dashB = 0;
+    buf.tapB = 0;
+  }
+  // Sequências: c1 = → ← + botão · c2 = ↓ → + botão
+  const M = SYS.MOTION;
+  const cmd = buf.tapB <= M.last && buf.tapF <= M.first && buf.tapF > buf.tapB ? 'c1'
+    : buf.tapF <= M.last && buf.sinceDown <= M.last + 2 && buf.downEdge <= M.first && buf.downEdge >= buf.tapF ? 'c2' : null;
   const snap = { down: buf.down, fwd: buf.fwd, back: buf.back };
   for (const b of BUTTONS) {
     if (raw[b] && !buf.prev[b]) {
       buf.press[b] = 0;
       buf.dirAt[b] = snap;
+      buf.cmdAt[b] = cmd;
     }
   }
 
@@ -70,15 +93,6 @@ export function feed(buf, raw, face, frozen = false) {
     buf.press.H = buf.press.S = 99;
   }
 
-  if (buf.up && !wasUp) buf.upPress = 0;
-  if (buf.fwd && !wasF) {
-    if (buf.tapF <= SYS.DASH.tapWindow) buf.dashF = 0;
-    buf.tapF = 0;
-  }
-  if (buf.back && !wasB) {
-    if (buf.tapB <= SYS.DASH.tapWindow) buf.dashB = 0;
-    buf.tapB = 0;
-  }
 }
 
 /** O botão foi apertado há pouco? Consome o aperto. */

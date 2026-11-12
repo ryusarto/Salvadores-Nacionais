@@ -19,6 +19,8 @@ const moves = {
     turbo: { spawn: [{ at: 12, ...proj({ kind: 'ice', behavior: 'trap', x: 0, y: 0, w: 240, h: 140, vx: 0, delay: 16, life: 170, dmg: 700, guard: 'low', color: '#aeeeff', effects: frost(), extra: { at_opponent: true } }) }], range: 1400 } }),
   '4S': mv({ name: 'Solo Ascendente', startup: 7, active: 6, recovery: 27, box: bx(0, 220, 230, 360), dmg: 1000, launch: [4, 29], effects: frost(), anim: ['swingWind', 'swingUp'], inv: [{ from: 3, to: 12, type: 'air' }], cancel: [], tags: ['antiair'],
     turbo: { dmg: 1300, inv: [{ from: 1, to: 12, type: 'strike' }] } }),
+  c1: mv({ name: 'Palhetada', startup: 14, active: 1, recovery: 22, anim: ['backdash', 'cast'], motion: [{ from: 1, to: 10, vx: -11 }], spawn: [{ at: 14, ...note({ vx: 10, life: 80 }) }], range: 800, tags: ['zone', 'far'] }),
+  c2: mv({ name: 'Slide Gelado', startup: 9, active: 12, recovery: 18, crouch: true, guard: 'low', box: bx(20, 0, 230, 90), dmg: 700, launch: [4, 12], effects: frost(), anim: ['crouch', 'sweep'], motion: [{ from: 6, to: 22, vx: 15 }], cancel: [], tags: ['low', 'advance', 'mid'] }),
   SA1: mv({ name: 'Feedback', btn: 'X', startup: 10, active: 1, recovery: 34, anim: ['swingWind', 'swing'], cost: { super: 1000 }, inv: [{ from: 1, to: 10, type: 'all' }],
     spawn: [{ at: 10, ...note({ w: 150, h: 260, y: 120, vx: 26, life: 60, hits: 3, dmg: 650, hitstun: 26, kd: 'hard' }) }], range: 1400, tags: ['super'] }),
   SA3: mv({ name: 'Acorde Glacial', btn: 'X', startup: 12, active: 44, recovery: 40, anim: ['swingWind', 'swing'], fx: 'ice', cost: { super: 3000 }, inv: [{ from: 1, to: 56, type: 'all' }],

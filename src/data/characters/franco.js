@@ -24,6 +24,10 @@ const moves = {
   '4S': mv({ name: 'Sobe o Som', startup: 5, active: 10, recovery: 30, anim: ['riseWind', 'rise'], fx: 'rise', box: bx(0, 200, 170, 320), dmg: 1100, launch: [4, 30], kd: 'soft',
     inv: [{ from: 1, to: 9, type: 'strike' }], motion: [{ from: 5, to: 9, vx: 5, vy: 27 }], flags: { landEnds: true, landRecovery: 14 }, cancel: [], tags: ['antiair', 'reversal'],
     turbo: { dmg: 1400, inv: [{ from: 1, to: 12, type: 'all' }] } }),
+  c1: mv({ name: 'Ginga do Sir', startup: 16, active: 4, recovery: 18, box: bx(30, 230, 240, 150), dmg: 950, hitstun: 24, push: [170, 120], anim: ['backdash', 'punchH'],
+    motion: [{ from: 1, to: 7, vx: -13 }, { from: 9, to: 17, vx: 17 }], inv: [{ from: 1, to: 8, type: 'throw' }, { from: 2, to: 8, type: 'upper' }], tags: ['mid', 'advance'] }),
+  c2: mv({ name: 'Voadora Nacional', startup: 12, active: 8, recovery: 14, box: bx(20, 60, 240, 210), dmg: 900, launch: [9, 16], anim: ['prejump', 'jKick'],
+    motion: [{ from: 6, to: 20, vx: 14 }, { from: 6, to: 8, vy: 19 }], flags: { landEnds: true, landRecovery: 10 }, tags: ['mid', 'advance'] }),
   SA1: mv({ name: 'Finalização', btn: 'X', startup: 8, active: 22, recovery: 34, anim: ['superWind', 'flurry'], fx: 'beam', cost: { super: 1000 },
     hits: [0, 1, 2, 3, 4].map((i) => ({ from: 9 + i * 4, to: 10 + i * 4, box: bx(30, 200, 380, 200), dmg: i === 4 ? 900 : 350, hitstun: 26, launch: i === 4 ? [14, 22] : null, kd: 'hard', push: [20, 30] })),
     inv: [{ from: 1, to: 9, type: 'all' }], motion: [{ from: 6, to: 24, vx: 9 }], tags: ['super'] }),
@@ -32,7 +36,7 @@ const moves = {
     inv: [{ from: 1, to: 40, type: 'all' }], tags: ['super', 'big'] }),
 };
 
-const SPECIALS = ['5S', '6S', '2S', '4S'];
+const SPECIALS = ['5S', '6S', '2S', '4S', 'c1', 'c2'];
 
 export default {
   id: 'franco',

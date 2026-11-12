@@ -18,7 +18,7 @@ const MENU = [['story', 'MODO HISTÓRIA'], ['versus', 'VERSUS CPU'], ['training'
 const PAUSE = ['CONTINUAR', 'LISTA DE GOLPES', 'REINICIAR LUTA', 'SAIR'];
 const RESULT = ['REVANCHE', 'TROCAR PERSONAGEM', 'MENU'];
 const DUMMY = ['PARADO', 'DEFENDE TUDO', 'CPU'];
-const KEY_LABEL = { '5S': 'Especial', '6S': '→ + Especial', '2S': '↓ + Especial', '4S': '← + Especial', jS: 'No ar: Especial', SA1: 'Super (1 barra)', SA3: '↓ + Super (3 barras)' };
+const KEY_LABEL = { c1: '→ ← + Leve', c2: '↓ → + Médio', '5S': 'Especial', '6S': '→ + Especial', '2S': '↓ + Especial', '4S': '← + Especial', jS: 'No ar: Especial', SA1: 'Super (1 barra)', SA3: '↓ + Super (3 barras)' };
 
 /** Cria o jogo sobre um canvas. Retorna o objeto do app (útil para testes). */
 export function createApp(canvas, devices, opts = {}) {
@@ -343,8 +343,8 @@ export function createApp(canvas, devices, opts = {}) {
     row('↓ + Forte / ↘ + Forte', 'Gancho anti-aéreo / Rasteira');
     row('→ + Médio', 'Golpe de cima (acerta quem defende agachado)');
     row('Leve + Médio (ou O)', 'Agarrão — aperte de novo para escapar');
-    row('Ginga (segurar)', 'Esquiva de Ginga: apara golpes; no tempo exato, contra-ataque');
-    row('→ + Ginga', 'Arrancada (durante um golpe que acertou: continua o combo)');
+    row('Ginga (segurar)', 'Defesa em pé, agachado (com ↓) e no ar; no tempo exato, Defesa Perfeita');
+    row('→ + Ginga num golpe que acertou', 'Arrancada: corre e continua o combo (→→ na defesa: Arrancada livre)');
     row('Ginga + Forte', 'Golpe Blindado: aguenta 2 golpes e derruba');
     row('→→ / ←←', 'Correr / Recuo rápido');
     text(c, 'ENTER ou ESC para voltar', W / 2, 1030, 30, '#d8d0dc');

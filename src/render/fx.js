@@ -34,7 +34,7 @@ export function fxEvents(fx, st) {
       }
       case 'block': fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 46, t: 0, dur: 12, color: '#bfe6ff' }); fx.shake = Math.max(fx.shake, 3); break;
       case 'parry': fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 70, t: 0, dur: 16, color: '#58d6ff' }); pop(fx, 'APAROU!', e.x, sy - 110, '#58d6ff', 44); break;
-      case 'perfect': fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 150, t: 0, dur: 26, color: '#aef4ff' }); fx.flash = 0.6; pop(fx, 'ESQUIVA PERFEITA!', e.x, sy - 150, '#aef4ff', 62, 70); break;
+      case 'perfect': fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 150, t: 0, dur: 26, color: '#aef4ff' }); fx.flash = 0.6; pop(fx, 'DEFESA PERFEITA!', e.x, sy - 150, '#aef4ff', 62, 70); break;
       case 'armor': fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 80, t: 0, dur: 14, color: '#ffb347' }); break;
       case 'land': dust(fx, e.x, e.hard ? 12 : 5, e.hard ? 1.5 : 0.8); if (e.hard) fx.shake = Math.max(fx.shake, 9); break;
       case 'jump': dust(fx, e.x, 5, 0.8); break;

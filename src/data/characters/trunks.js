@@ -22,6 +22,8 @@ const moves = {
     turbo: { armor: { from: 1, to: 15, hits: 2 }, dmg: 1100, launch: [17, 13], kd: 'hard' } }),
   '4S': mv({ name: 'Gancho da Rua', startup: 6, active: 6, recovery: 28, box: bx(0, 240, 190, 330), dmg: 1100, launch: [4, 29], anim: ['riseWind', 'upper'], inv: [{ from: 2, to: 12, type: 'air' }], cancel: [], tags: ['antiair'],
     turbo: { dmg: 1400, inv: [{ from: 1, to: 12, type: 'strike' }] } }),
+  c1: mv({ name: 'Puxão', startup: 12, active: 4, recovery: 22, box: bx(40, 200, 340, 170), dmg: 500, hitstun: 34, pull: 380, anim: ['castWind', 'throwReach'], tags: ['mid', 'pull'] }),
+  c2: mv({ name: 'Cabeçada', startup: 11, active: 4, recovery: 22, box: bx(20, 290, 205, 180), dmg: 1000, hitstun: 26, push: [260, 140], anim: ['heavyWind', 'overhead'], motion: [{ from: 5, to: 14, vx: 13 }], tags: ['close', 'advance'] }),
   SA1: mv({ name: 'Bombardeio', btn: 'X', startup: 10, active: 1, recovery: 36, anim: ['call', 'call'], cost: { super: 1000 }, inv: [{ from: 1, to: 10, type: 'all' }],
     spawn: [{ at: 10, ...mark({ delay: 34, dmg: 1900, force: true }) }], range: 1500, tags: ['super'] }),
   SA3: mv({ name: 'A Ligação', btn: 'X', startup: 14, active: 1, recovery: 44, anim: ['call', 'call'], cost: { super: 3000 }, inv: [{ from: 1, to: 20, type: 'all' }],

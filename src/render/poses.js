@@ -22,6 +22,7 @@ export const POSES = {
   runB: P(30, -10, 65, 85, -45, 95, -40, -60, 55, -40),
   backdash: P(-16, 6, 40, 80, 20, 90, 32, -8, -30, -42),
   blockHi: P(-6, -4, 72, 112, 62, 116, 20, -22, -20, -18),
+  blockAir: P(-4, -4, 74, 112, 64, 116, 58, -92, 22, -70, 0, 1, 228),
   blockLo: P(14, -10, 70, 112, 60, 116, 78, -112, 22, -104),
   hitHi: P(-26, -16, 12, 30, -22, 30, 12, -10, -26, -16),
   hitLo: P(34, 22, 42, 62, 30, 70, 30, -40, -20, -30),
@@ -112,14 +113,13 @@ export function poseFor(f, frame) {
     case 'walk': pose = cyc('walkA', 'walkB', 0.22); break;
     case 'crouch': pose = lerpPose(POSES.idle, POSES.crouch, ease(sf / 4)); break;
     case 'prejump': pose = POSES.prejump; break;
-    case 'air': pose = lerpPose(POSES.jumpFall, POSES.jumpUp, ease((f.vy + 12) / 30)); break;
+    case 'air': pose = f.airGuard ? POSES.blockAir : lerpPose(POSES.jumpFall, POSES.jumpUp, ease((f.vy + 12) / 30)); break;
     case 'land': pose = lerpPose(POSES.prejump, POSES.idle, ease(sf / Math.max(1, f.landFrames))); break;
     case 'dash': case 'run': case 'rush': pose = cyc('runA', 'runB', s === 'rush' ? 0.5 : 0.36); break;
     case 'runstop': pose = lerpPose(POSES.runA, POSES.idle, ease(sf / 7)); break;
     case 'backdash': case 'tech': pose = POSES.backdash; break;
-    case 'parry': pose = POSES.parry; tint = '#7fd4ff'; break;
-    case 'parryRec': pose = lerpPose(POSES.parry, POSES.idle, ease(sf / 12)); break;
-    case 'blockstun': pose = f.crouchBlock ? POSES.blockLo : POSES.blockHi; break;
+    case 'guard': pose = lerpPose(POSES.idle, f.crouchBlock ? POSES.blockLo : POSES.blockHi, ease(sf / 3)); break;
+    case 'blockstun': pose = f.y > 0 ? POSES.blockAir : f.crouchBlock ? POSES.blockLo : POSES.blockHi; break;
     case 'hitstun': case 'dizzy': pose = f.crouchBlock ? POSES.hitLo : f.comboHits % 2 ? POSES.hitHi : POSES.hitLo; break;
     case 'frozen': pose = POSES.hitHi; tint = '#9fe8ff'; break;
     case 'slip': pose = POSES.slip; break;

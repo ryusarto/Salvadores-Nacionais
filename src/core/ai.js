@@ -37,7 +37,12 @@ function keyInput(key, toward, extra = {}) {
 function pressKey(brain, key, toward, extra) {
   const hold = keyInput(key, toward, extra);
   const pre = { ...hold, L: 0, M: 0, H: 0, S: 0, T: 0, X: 0 };
-  if (key === 'blindado') brain.queue.push({ ...pre, G: 1 }, hold, hold);
+  if (key === 'c1' || key === 'c2') {
+    const a = key === 'c1' ? { x: toward } : { y: -1 };
+    const b = key === 'c1' ? { x: -toward } : { x: toward };
+    const btn = key === 'c1' ? 'L' : 'M';
+    brain.queue.push({ ...EMPTY_INPUT, ...a }, { ...EMPTY_INPUT, ...a }, { ...EMPTY_INPUT, ...b }, { ...EMPTY_INPUT, ...b, [btn]: 1 }, { ...EMPTY_INPUT, ...b, [btn]: 1 });
+  } else if (key === 'blindado') brain.queue.push({ ...pre, G: 1 }, hold, hold);
   else brain.queue.push(pre, hold, hold);
 }
 
@@ -124,7 +129,7 @@ export function aiInput(st, side, brain) {
   }
 
   // Punir recuperação do adversário
-  const opRec = (op.state === 'attack' && op.sf > op.move.startup + op.move.active) || op.state === 'parryRec' || op.state === 'land';
+  const opRec = (op.state === 'attack' && op.sf > op.move.startup + op.move.active) || op.state === 'land';
   if (opRec && rnd() < L.punish) {
     const order = ['5H', '5M', '2M', '5S', '6S', '5L'].filter((k) => moves[k] && moves[k].range + 30 > dist);
     if (order.length) return pressKey(brain, order[0], toward), brain.queue.shift();
@@ -175,7 +180,6 @@ export function aiInput(st, side, brain) {
   // Movimento
   const r = rnd();
   if (dist > far + 60) {
-    if (r < 0.14 * aggr && dist > 600 && !me.burnout && me.ginga > 3000) return { ...EMPTY_INPUT, x: toward, G: 1 };
     if (r < 0.3 * aggr && dist < 760) {
       brain.queue.push(...Array(3).fill({ ...EMPTY_INPUT, x: toward, y: 1 }), ...Array(15).fill(EMPTY_INPUT));
       pressKey(brain, moves.jH ? 'jH' : 'jM', toward);

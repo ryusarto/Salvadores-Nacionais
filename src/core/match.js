@@ -103,7 +103,7 @@ function meters(st) {
         emit(st, { t: 'recover', side: f.side });
       }
     } else if (f.gingaPause > 0) f.gingaPause--;
-    else if (f.state !== 'parry') f.ginga = Math.min(G.max, f.ginga + G.regen);
+    else if (f.state !== 'guard') f.ginga = Math.min(G.max, f.ginga + G.regen);
     f.ch.mech?.tick?.(st, f, st.f[1 - f.side]);
     if (st.training) {
       const o = st.f[1 - f.side];

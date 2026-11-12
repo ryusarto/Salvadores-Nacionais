@@ -31,6 +31,8 @@ export const SYS = {
     push: 150, // largura da caixa de empurrão
   },
 
+  MOTION: { first: 30, last: 12 }, // janelas (quadros) das sequências → ← e ↓ →
+  CMD_BTN: { c1: 'L', c2: 'M' }, // botão que fecha cada sequência
   BUFFER: 7, // quadros que um botão apertado cedo continua valendo
   SIMUL: 3, // janela para dois botões contarem como "juntos"
 
@@ -56,12 +58,9 @@ export const SYS = {
     regen: 10, // por quadro
     regenPause: 50, // quadros sem recarga depois de gastar
     blockPause: 30,
-    parryStart: 400,
-    parryDrain: 9, // por quadro segurando
-    parryGain: 500,
+    airGuard: 1.5, // defender no ar gasta mais Ginga
     perfectWindow: 3,
     perfectFreeze: 16,
-    parryRecover: 12,
     rushRaw: 1000,
     rushCancel: 3000,
     blindado: 1000,
