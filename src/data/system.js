@@ -28,7 +28,7 @@ export const SYS = {
     crouch: { x: -75, y: 0, w: 150, h: 300 },
     air: { x: -70, y: 70, w: 140, h: 380 },
     down: { x: -160, y: 0, w: 320, h: 90 },
-    push: 128, // largura da caixa de empurrão
+    push: 150, // largura da caixa de empurrão
   },
 
   BUFFER: 7, // quadros que um botão apertado cedo continua valendo
