@@ -29,8 +29,9 @@ const moves = {
   SA1: mv({ name: 'Scratch', btn: 'X', startup: 7, active: 24, recovery: 30, anim: ['punchWind', 'flurry'], cost: { super: 1000 },
     hits: [0, 1, 2, 3, 4, 5].map((i) => ({ from: 8 + i * 4, to: 9 + i * 4, box: bx(30, 220, 240, 180), dmg: i === 5 ? 800 : 280, hitstun: 24, push: [15, 25], launch: i === 5 ? [12, 22] : null, kd: 'hard' })),
     inv: [{ from: 1, to: 8, type: 'all' }], motion: [{ from: 5, to: 26, vx: 7 }], tags: ['super'] }),
-  SA3: mv({ name: 'Vinil Fatal', btn: 'X', startup: 12, active: 30, recovery: 30, anim: ['superWind', 'cast'], cost: { super: 3000 }, inv: [{ from: 1, to: 16, type: 'all' }],
-    spawn: [0, 1, 2, 3].map((i) => ({ at: 14 + i * 8, ...vinyl({ vx: 24, y: 200 + i * 40, dmg: i === 3 ? 1400 : 800, hitstun: 30, launch: i === 3 ? [14, 26] : null, kd: 'hard', chip: 0.3 }) })), range: 1400, tags: ['super', 'big'] }),
+  // Arremessa vários discos de vinil cortantes.
+  SA3: mv({ name: 'Vinil Fatal', btn: 'X', startup: 12, active: 44, recovery: 30, anim: ['superWind', 'cast'], cost: { super: 3000 }, inv: [{ from: 1, to: 16, type: 'all' }],
+    spawn: [0, 1, 2, 3, 4, 5, 6].map((i) => ({ at: 14 + i * 6, ...vinyl({ vx: 26, y: 120 + ((i * 3) % 7) * 44, w: 96, h: 96, dmg: i === 6 ? 1300 : 520, hitstun: 30, push: [20, 30], launch: i === 6 ? [14, 26] : null, kd: 'hard', chip: 0.3 }) })), range: 1500, tags: ['super', 'big'] }),
 };
 
 export default {

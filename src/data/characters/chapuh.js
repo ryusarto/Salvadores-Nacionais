@@ -1,7 +1,8 @@
 import { mv, bx, baseNormals, proj } from '../movekit.js';
 
 /**
- * CHAPUH — truques.
+ * CHAPUH — truques. Bate com a lata de spray de pixo.
+ * Super: ATAQUE DO PINSCHER — pega o pinscher no colo e ele morde a cara do rival.
  * Mecânica: TINTA e PINSCHER. O spray deixa poças no chão (até 2): o rival que
  * andar ou correr por cima escorrega. O pinscher é um ajudante que ataca sob
  * comando e precisa de um tempo para voltar.
@@ -29,7 +30,7 @@ const dog = (o = {}) => ({
 });
 
 const moves = {
-  ...baseNormals({ reach: 1, speed: -1, dmg: 0.92 }),
+  ...baseNormals({ reach: 1.04, speed: -1, dmg: 0.92, anims: { L: 'cast', M: 'cast', H: 'overhead' } }),
   '5S': mv({ name: 'Spray', startup: 9, active: 12, recovery: 18, anim: ['castWind', 'cast'],
     hits: [0, 1, 2].map((i) => ({ from: 10 + i * 5, to: 11 + i * 5, box: bx(40, 170, 270, 210), dmg: 260, hitstun: 20, push: i === 2 ? [110, 90] : [15, 20] })),
     spawn: [{ at: 22, ...puddle(240) }], tags: ['mid', 'pressure'],
@@ -47,8 +48,10 @@ const moves = {
   SA1: mv({ name: 'Grafite Total', btn: 'X', startup: 8, active: 22, recovery: 32, anim: ['castWind', 'cast'], cost: { super: 1000 }, inv: [{ from: 1, to: 9, type: 'all' }],
     hits: [0, 1, 2, 3, 4].map((i) => ({ from: 9 + i * 4, to: 10 + i * 4, box: bx(30, 80, 420, 380), dmg: i === 4 ? 800 : 340, hitstun: 26, push: [15, 25], launch: i === 4 ? [10, 24] : null, kd: 'hard' })),
     spawn: [{ at: 30, ...puddle(330) }], tags: ['super'] }),
-  SA3: mv({ name: 'Ataque do Pinscher', btn: 'X', startup: 12, active: 1, recovery: 44, anim: ['superWind', 'cast'], cost: { super: 3000 }, inv: [{ from: 1, to: 18, type: 'all' }],
-    spawn: [{ at: 12, ...dog({ force: true, w: 280, h: 250, vx: 30, hits: 4, dmg: 1000, guard: 'mid', hitstun: 34, launch: [5, 18], kd: 'hard', life: 90 }) }], range: 1400, tags: ['super', 'big'] }),
+  // Pega o pinscher no colo e ele morde a cara do adversário.
+  SA3: mv({ name: 'Ataque do Pinscher', btn: 'X', startup: 9, active: 50, recovery: 38, anim: ['throwReach', 'throwHold'], fx: 'bite', cost: { super: 3000 }, inv: [{ from: 1, to: 60, type: 'all' }],
+    hits: [{ from: 10, to: 14, box: bx(20, 180, 300, 280), dmg: 700, hitstun: 70, push: [0, 30] }, ...[0, 1, 2, 3, 4].map((i) => ({ from: 20 + i * 6, to: 21 + i * 6, box: bx(0, 150, 360, 380), dmg: 380, hitstun: 60, push: [0, 8] })), { from: 54, to: 58, box: bx(0, 100, 400, 460), dmg: 1900, launch: [14, 28], kd: 'hard' }],
+    motion: [{ from: 5, to: 12, vx: 14 }], tags: ['super', 'big'] }),
 };
 
 export default {
@@ -67,6 +70,9 @@ export default {
     },
     tick(st, f) {
       if (f.res.dog > 0) f.res.dog--;
+    },
+    onHit(st, f, d, h, src) {
+      if (f.moveKey === 'SA3' && src.type === 'move') st.events.push({ t: 'pop', str: h.launch ? 'NHAC!' : 'AU!', x: d.x, y: 430, color: '#ffb62a', size: 44 });
     },
     hud(f) {
       return { label: 'PINSCHER', pips: 0, value: 0, text: f.res.dog > 0 ? `VOLTA EM ${Math.ceil(f.res.dog / 60)}s` : 'PRONTO', ready: f.res.dog <= 0, color: '#ffb62a' };

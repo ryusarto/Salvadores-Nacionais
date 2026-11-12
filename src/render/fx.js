@@ -42,7 +42,11 @@ export function fxEvents(fx, st) {
       case 'burnout': pop(fx, 'SEM FÔLEGO!', st.f[e.side].x, GY - 540, '#b0b0b8', 56, 80); break;
       case 'finale': pop(fx, 'FINAL!', e.x, GY - 540, '#ffe14a', 70, 60); break;
       case 'fury': pop(fx, 'FÚRIA!', e.x, GY - 560, '#ff3b3b', 80, 90); fx.flash = 0.4; break;
-      case 'freeze': pop(fx, 'CONGELOU!', e.x, GY - 540, '#9fe8ff', 60, 70); break;
+      case 'freeze': pop(fx, 'ATORDOADO!', e.x, GY - 540, '#ffe14a', 60, 70); break;
+      case 'shake': fx.shake = Math.max(fx.shake, e.n || 10); if (e.x != null) dust(fx, e.x + (Math.random() - 0.5) * 1600, 2, 1.2); break;
+      case 'wave': fx.parts.push({ k: 'ring', x: e.x, y: sy, r: e.r || 200, t: 0, dur: 18, color: e.color || '#fff' }); break;
+      case 'splat': for (let i = 0; i < 7; i++) fx.parts.push({ k: 'paint', x: e.x + (Math.random() - 0.5) * 180, y: sy + (Math.random() - 0.5) * 240, r: 18 + Math.random() * 34, t: 0, dur: 40, color: ['#e2483d', '#f2c318', '#2a4fb8', '#2f8a3a', '#b16afc'][i % 5] }); break;
+      case 'canvas': fx.parts.push({ k: 'canvas', x: e.x, t: 0, dur: 70 }); fx.flash = 0.5; break;
       case 'slip': pop(fx, 'ESCORREGOU!', e.x, GY - 500, '#ffd24a', 50, 60); dust(fx, e.x, 6); break;
       case 'dazzle': fx.parts.push({ k: 'spark', x: e.x, y: GY - 400, r: 60, t: 0, dur: 20, color: '#fff', rot: 0 }); break;
       case 'pop': pop(fx, e.str, e.x, GY - (e.y || 520), e.color || '#fff', e.size || 50, 60); break;
@@ -224,6 +228,36 @@ export function fxDrawFront(c, fx) {
       c.arc(p.x, p.y, p.r * (0.5 + t * 0.7), 0, Math.PI * 2);
       c.fill();
       c.stroke();
+    } else if (p.k === 'paint') {
+      c.fillStyle = p.color;
+      c.strokeStyle = '#12080c';
+      c.lineWidth = 4;
+      c.beginPath();
+      c.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      c.fill();
+      c.stroke();
+    } else if (p.k === 'canvas') {
+      // a tela de pintura onde o rival é jogado
+      const s = Math.min(1, t * 5);
+      c.globalAlpha = t > 0.8 ? (1 - t) / 0.2 : 1;
+      c.save();
+      c.translate(p.x, GY - 330);
+      c.rotate(-0.06);
+      c.scale(s, s);
+      c.fillStyle = '#7a4a22';
+      c.strokeStyle = '#12080c';
+      c.lineWidth = 8;
+      c.fillRect(-230, -300, 460, 600);
+      c.strokeRect(-230, -300, 460, 600);
+      c.fillStyle = '#f4ecd8';
+      c.fillRect(-196, -266, 392, 532);
+      ['#e2483d', '#f2c318', '#2a4fb8', '#2f8a3a', '#b16afc'].forEach((col, i) => {
+        c.fillStyle = col;
+        c.beginPath();
+        c.ellipse(-110 + i * 55, -120 + ((i * 97) % 260), 70, 46, i, 0, Math.PI * 2);
+        c.fill();
+      });
+      c.restore();
     } else if (p.k === 'column') {
       c.fillStyle = '#fff3b0';
       c.fillRect(p.x - 110 * (1 - t), 0, 220 * (1 - t), GY);

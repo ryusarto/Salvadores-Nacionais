@@ -190,13 +190,18 @@ function hair(c, J, ch, front) {
 }
 
 function weapon(c, J, f, ch) {
-  const w = ch.look.weapon;
+  let w = ch.look.weapon;
+  if (f.state === 'attack' && f.move.weapon === 'ak') w = 'ak';
   if (!w || w === 'whip') return;
   const h = J.handF;
   c.save();
   c.translate(h[0], h[1]);
   c.rotate(-rad(J.foreF) + Math.PI / 2);
-  if (w === 'katana') {
+  if (w === 'ak') {
+    limb(c, [-30, 0], [130, -6], 12, '#2c2c34');
+    limb(c, [-30, 0], [-62, 14], 14, '#6b4a2a');
+    limb(c, [40, 4], [52, 40], 10, '#6b4a2a');
+  } else if (w === 'katana') {
     const drawn = f.state === 'attack' && f.move.weapon !== 'sheath';
     limb(c, [0, 0], [drawn ? 190 : 120, drawn ? -30 : 40], 5, drawn ? '#e8f6ff' : '#2a2030');
   } else if (w === 'guitar') {
@@ -215,6 +220,15 @@ function weapon(c, J, f, ch) {
     c.stroke();
   } else if (w === 'knuckle') {
     blob(c, [6, 0], 17, '#f0c040');
+  } else if (w === 'camera') {
+    c.fillStyle = '#22222a';
+    c.strokeStyle = OUT;
+    c.lineWidth = 4;
+    c.beginPath();
+    c.roundRect(-14, -30, 40, 28, 5);
+    c.fill();
+    c.stroke();
+    blob(c, [8, -16], 9, '#9fd8ff');
   } else if (w === 'phone') {
     c.fillStyle = '#20202a';
     c.fillRect(-6, -22, 14, 26);
@@ -329,9 +343,51 @@ export function drawFighter(c, f, frame) {
 
   // rastro do golpe
   if (f.state === 'attack' && f.move.weapon !== 'whip') {
+    const kind = f.move.fx;
     for (const h of f.move.hits) {
       if (f.sf < h.from || f.sf > h.to + 1) continue;
       const b = h.box;
+      if (kind === 'scream') continue; // as ondas vêm dos efeitos
+      if (kind === 'laser') {
+        const y = -(b.y + b.h / 2) - 60;
+        for (const [w, colr] of [[b.h * 0.5, '#ff2a2a'], [b.h * 0.22, '#fff3f0']]) {
+          c.strokeStyle = colr;
+          c.lineWidth = w + Math.sin(f.sf * 1.7) * 8;
+          c.lineCap = 'round';
+          c.beginPath();
+          c.moveTo(J.head[0] + 30, J.head[1] - 4);
+          c.lineTo(b.x + b.w, y);
+          c.stroke();
+        }
+        continue;
+      }
+      if (kind === 'quake') {
+        c.strokeStyle = '#2a1408';
+        c.lineWidth = 9;
+        for (const s of [-1, 1]) {
+          c.beginPath();
+          c.moveTo(0, 6);
+          for (let k = 1; k < 14; k++) c.lineTo(s * k * 150, 6 + ((k * 37 + f.sf * 13) % 46) - 23);
+          c.stroke();
+        }
+        continue;
+      }
+      if (kind === 'bite') {
+        const cx0 = b.x + b.w * 0.6;
+        const cy0 = -(b.y + b.h / 2);
+        c.fillStyle = '#fff';
+        c.strokeStyle = OUT;
+        c.lineWidth = 4;
+        for (const s of [-1, 1]) {
+          c.beginPath();
+          for (let k = 0; k <= 6; k++) c.lineTo(cx0 - 70 + k * 23, cy0 + s * (k % 2 ? 12 : 58));
+          c.closePath();
+          c.fill();
+          c.stroke();
+        }
+        continue;
+      }
+      if (b.w > 900) continue;
       const cx = b.x + b.w * 0.55;
       const cy = -(b.y + b.h / 2);
       c.save();

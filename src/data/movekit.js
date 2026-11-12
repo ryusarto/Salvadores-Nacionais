@@ -55,7 +55,7 @@ export function mv(def) {
     flags: def.flags || {},
   };
   const raw = def.hits || (def.box ? [{}] : []);
-  m.hits = raw.map((h) => ({
+  m.hits = raw.map((h, idx) => ({
     from: h.from ?? m.startup + 1,
     to: h.to ?? m.startup + m.active,
     box: h.box || def.box,
@@ -69,7 +69,8 @@ export function mv(def) {
     crumple: h.crumple ?? def.crumple ?? false,
     ginga: h.ginga ?? def.ginga ?? base.ginga,
     chip: h.chip ?? def.chip ?? (m.type === 'normal' ? 0 : SYS.CHIP),
-    stop: h.stop ?? def.stop ?? base.stop,
+    // em golpes de vários acertos, só o último tem a pausa de impacto cheia
+    stop: h.stop ?? def.stop ?? (idx < raw.length - 1 ? Math.min(base.stop, 5) : base.stop),
     effects: h.effects || def.effects || [],
     juggle: h.juggle ?? def.juggle ?? 1,
     pull: h.pull ?? def.pull ?? 0,

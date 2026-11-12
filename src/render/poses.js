@@ -121,7 +121,7 @@ export function poseFor(f, frame) {
     case 'guard': pose = lerpPose(POSES.idle, f.crouchBlock ? POSES.blockLo : POSES.blockHi, ease(sf / 3)); break;
     case 'blockstun': pose = f.y > 0 ? POSES.blockAir : f.crouchBlock ? POSES.blockLo : POSES.blockHi; break;
     case 'hitstun': case 'dizzy': pose = f.crouchBlock ? POSES.hitLo : f.comboHits % 2 ? POSES.hitHi : POSES.hitLo; break;
-    case 'frozen': pose = POSES.hitHi; tint = '#9fe8ff'; break;
+    case 'frozen': pose = POSES.crumple; tint = '#ffe14a'; break;
     case 'slip': pose = POSES.slip; break;
     case 'crumple': pose = lerpPose(POSES.hitLo, POSES.crumple, ease(sf / 20)); break;
     case 'air_hit': pose = POSES.airHit.slice(); pose[10] = -55 - Math.max(-35, Math.min(35, -f.vy * 1.6)); break;

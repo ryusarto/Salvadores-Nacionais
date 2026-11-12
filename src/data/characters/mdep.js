@@ -1,7 +1,8 @@
-import { mv, bx, baseNormals } from '../movekit.js';
+import { mv, bx, baseNormals, proj } from '../movekit.js';
 
 /**
- * M'DEP — chutes e pressão aérea.
+ * M'DEP — chutes e pressão aérea. Bate com as botas: chuta em frente e pisoteia.
+ * Super: RAJADA DE AK-47.
  * Mecânica: RAJADA. Golpes normais que acertam dão Embalo (até 3). Cada Embalo
  * permite cancelar um especial em outro especial diferente. Tem pulo duplo e um
  * mergulho que muda o ângulo do pulo.
@@ -9,7 +10,7 @@ import { mv, bx, baseNormals } from '../movekit.js';
 const EMBALO_MAX = 3;
 
 const moves = {
-  ...baseNormals({ reach: 1.06, anims: { M: 'kickM', H: 'kickHigh', jH: 'jKick' } }),
+  ...baseNormals({ reach: 1.06, anims: { L: 'kickM', M: 'kickM', H: 'kickHigh', jH: 'jKick', over: 'overhead' } }),
   '5S': mv({ name: 'Bicuda', startup: 9, active: 4, recovery: 18, box: bx(30, 200, 310, 130), dmg: 800, anim: ['punchWind', 'kickM'], tags: ['mid', 'poke'],
     turbo: { startup: 7, dmg: 1000, hitstun: 28 } }),
   '6S': mv({ name: 'Rajada', startup: 11, active: 15, recovery: 20, anim: ['punchWind', 'kickHigh'],
@@ -22,15 +23,16 @@ const moves = {
     turbo: { dmg: 1400, inv: [{ from: 1, to: 11, type: 'all' }] } }),
   jS: mv({ name: 'Voadora Mergulho', air: true, startup: 8, active: 26, recovery: 2, guard: 'mid', box: bx(0, -10, 180, 170), dmg: 700, hitstun: 22, anim: ['jumpUp', 'jKick'], motion: [{ from: 8, to: 60, vx: 15, vy: -21 }], flags: { landRecovery: 9 }, cancel: [], tags: ['air'],
     turbo: { dmg: 900, hitstun: 28, flags: { landRecovery: 5 } } }),
-  c1: mv({ name: 'Meia-Lua', startup: 19, active: 4, recovery: 18, guard: 'high', box: bx(30, 120, 270, 340), dmg: 850, hitstun: 26, anim: ['kickHigh', 'overhead'], motion: [{ from: 8, to: 19, vx: 5 }], tags: ['overhead', 'mid'] }),
+  c1: mv({ name: 'Pisão Bottega', startup: 19, active: 4, recovery: 18, guard: 'high', box: bx(30, 120, 270, 340), dmg: 850, hitstun: 26, anim: ['kickHigh', 'overhead'], motion: [{ from: 8, to: 19, vx: 5 }], tags: ['overhead', 'mid'] }),
   c2: mv({ name: 'Joelhada Voadora', startup: 9, active: 8, recovery: 16, box: bx(20, 120, 195, 230), dmg: 850, launch: [6, 26], anim: ['prejump', 'jKick'],
     motion: [{ from: 5, to: 18, vx: 13 }, { from: 5, to: 7, vy: 20 }], flags: { landEnds: true, landRecovery: 10 }, tags: ['close', 'advance', 'launcher'] }),
   SA1: mv({ name: 'Sola de Bota', btn: 'X', startup: 7, active: 22, recovery: 32, anim: ['punchWind', 'kickHigh'], cost: { super: 1000 },
     hits: [0, 1, 2, 3, 4].map((i) => ({ from: 8 + i * 4, to: 9 + i * 4, box: bx(30, 160, 300, 240), dmg: i === 4 ? 900 : 330, hitstun: 26, push: [15, 25], launch: i === 4 ? [10, 26] : null, kd: 'hard' })),
     inv: [{ from: 1, to: 8, type: 'all' }], motion: [{ from: 5, to: 24, vx: 9 }], tags: ['super'] }),
-  SA3: mv({ name: 'Rajada do Dep', btn: 'X', startup: 9, active: 44, recovery: 40, anim: ['punchWind', 'flurry'], cost: { super: 3000 }, inv: [{ from: 1, to: 20, type: 'all' }],
-    hits: [...[0, 1, 2, 3, 4, 5, 6, 7].map((i) => ({ from: 10 + i * 4, to: 11 + i * 4, box: bx(20, 100, 340, 340), dmg: 300, hitstun: 30, push: [8, 20] })), { from: 48, to: 52, box: bx(0, 100, 380, 460), dmg: 1900, launch: [12, 34], kd: 'hard' }],
-    motion: [{ from: 6, to: 40, vx: 6 }], tags: ['super', 'big'] }),
+  // Puxa uma AK-47 e solta uma rajada.
+  SA3: mv({ name: 'Rajada de AK-47', btn: 'X', startup: 16, active: 40, recovery: 34, anim: ['castWind', 'shoot'], weapon: 'ak', cost: { super: 3000 }, inv: [{ from: 1, to: 20, type: 'all' }],
+    spawn: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => ({ at: 17 + i * 4, ...proj({ kind: 'shot', x: 150, y: 300 + (i % 3) * 22, w: 60, h: 30, vx: 50, life: 60, dmg: i === 9 ? 1300 : 430, hitstun: 30, push: [20, 30], chip: 0.3, launch: i === 9 ? [15, 22] : null, kd: 'hard', color: '#ffd27a' }) })),
+    range: 1500, tags: ['super', 'big'] }),
 };
 
 export default {

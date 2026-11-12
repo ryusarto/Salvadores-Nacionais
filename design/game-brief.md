@@ -25,16 +25,16 @@ se joga de um jeito diferente.
 
 ## Heróis
 
-| Herói | Estilo | Mecânica |
-|---|---|---|
-| Franco, The Sir! | Equilibrado | **Compasso:** 2 especiais diferentes conectados liberam o FINAL (turbinado grátis, +25% de dano). Especiais: Flash, Giro do Guetto, Pressão Nacional, Sobe o Som. Supers: Finalização, Libera Tudo! |
-| Belga | Boxeador | **BPM:** cada acerto sobe o ritmo (até 4): −1 quadro de recuperação e +3% de dano por nível. |
-| Majis | Média distância | **Frio:** especiais de guitarra acumulam frio; 3 acúmulos congelam. |
-| Trunks | Armadilhas e agarrões | **Chamada:** marca o chão sob o rival; o ataque cai 2,5 s depois. |
-| Ryuchi | Espadachim | **Postura da Lâmina:** carrega o Fio em 3 níveis; corte instantâneo e contra-ataque. |
-| M'Dep | Chutes e ar | **Rajada:** Embalo emenda um especial em outro; pulo duplo e mergulho. |
-| Chapuh | Truques | **Tinta e Pinscher:** poças fazem escorregar; cachorro ajudante com tempo de volta. |
-| Dney | Atirador | **Munição:** 6 balas, recarga manual, a última é o Tiro Certeiro. |
+| Herói | Como bate | Mecânica | Supers (1 barra · 3 barras) |
+|---|---|---|---|
+| Franco, The Sir! | Mãos e o flash da câmera (o flash dá dano) | **Compasso:** 2 especiais diferentes conectados liberam o FINAL (turbinado grátis, +25% de dano) | Libera Tudo! · **Obra-Prima:** pinta o rival com o pincel e o joga para dentro de uma tela |
+| Belga | Soco-inglês | **BPM:** cada acerto sobe o ritmo (até 4): −1 quadro de recuperação e +3% de dano por nível | Scratch · **Vinil Fatal:** arremessa 7 discos de vinil cortantes |
+| Majis | Guitarra | **Tremor:** especiais de guitarra acumulam tremor (lentidão); com 3, o rival fica atordoado | Feedback · **Terremoto:** toca a guitarra e o chão treme no cenário inteiro |
+| Trunks | Chutes e mordida com super dentes | **Chamada:** marca o chão sob o rival; o ataque cai 2,5 s depois | Bombardeio · **Legião de Cães:** 8 cachorros atravessam a tela |
+| Ryuchi | Espada samurai, fraco e forte | **Postura da Lâmina:** carrega o Fio em 3 níveis; corte instantâneo e contra-ataque | Três Cortes · **Agudo Supremo:** um agudo com a voz que quebra tudo em volta |
+| M'Dep | Botas: chuta em frente e pisoteia | **Rajada:** Embalo emenda um especial em outro; pulo duplo e mergulho | Sola de Bota · **Rajada de AK-47** |
+| Chapuh | Lata de spray de pixo | **Tinta e Pinscher:** poças fazem escorregar; cachorro ajudante com tempo de volta | Grafite Total · **Ataque do Pinscher:** pega o pinscher no colo e ele morde a cara do rival |
+| Dney | Glock: atira de longe, coronhada de perto e de média distância | **Munição:** 6 balas, recarga manual, a última é o Tiro Certeiro | Descarrega · **Olhar Laser:** laser que sai dos olhos |
 
 **Chefe — Capeta Zanata:** chicote de longo alcance, Laço que puxa o herói e
 **Fúria** abaixo de 40% de vida (chicote 5 quadros mais rápido, CPU mais agressiva).

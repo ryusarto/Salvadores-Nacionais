@@ -1,7 +1,8 @@
 import { mv, bx, baseNormals, proj } from '../movekit.js';
 
 /**
- * DNEY — atirador.
+ * DNEY — atirador. Atira com a Glock; de perto e de média distância dá coronhada.
+ * Super: OLHAR LASER — um laser sai dos olhos e atravessa a tela.
  * Mecânica: MUNIÇÃO. Tem 6 balas. Cada tiro gasta uma; a última do tambor é o
  * Tiro Certeiro (50% mais dano e derruba). Sem bala, o tiro falha. Recarregue
  * com ↓+Especial (segure para recarregar tudo).
@@ -25,6 +26,9 @@ const shot = (o = {}) => ({
 
 const moves = {
   ...baseNormals({ reach: 0.86, dmg: 0.86 }),
+  // De perto e de média distância ele dá coronhada com a Glock.
+  '5M': mv({ name: 'Coronhada', btn: 'M', startup: 7, active: 4, recovery: 14, box: bx(30, 270, 200, 110), dmg: 560, anim: ['punchWind', 'punchM'], motion: [{ from: 3, to: 8, vx: 5 }], tags: ['poke', 'mid'] }),
+  '5H': mv({ name: 'Coronhada Forte', btn: 'H', startup: 11, active: 5, recovery: 21, box: bx(30, 240, 235, 150), dmg: 850, push: [230, 150], anim: ['overWind', 'overhead'], motion: [{ from: 5, to: 12, vx: 8 }], tags: ['poke', 'mid', 'heavy'] }),
   '5S': mv({ name: 'Tiro', startup: 12, active: 1, recovery: 27, anim: ['castWind', 'shoot'], spawn: [{ at: 10, ...shot({ spend: true }) }], range: 1400, tags: ['zone', 'far'],
     turbo: { name: 'Tiro Duplo', spawn: [{ at: 9, ...shot({ spend: true }) }, { at: 15, ...shot({ spend: true }) }], recovery: 24 } }),
   '6S': mv({ name: 'Tiro Baixo', startup: 14, active: 1, recovery: 27, crouch: true, anim: ['crouch', 'shootLow'], spawn: [{ at: 12, ...shot({ spend: true, y: 60, guard: 'low', dmg: 500 }) }], range: 1400, tags: ['zone', 'far', 'low'],
@@ -34,13 +38,15 @@ const moves = {
   jS: mv({ name: 'Tiro Mergulho', air: true, startup: 8, active: 1, recovery: 14, anim: ['jumpUp', 'jPunch'], spawn: [{ at: 8, ...shot({ spend: true, y: 200, vx: 30, vy: -26, dmg: 500 }) }], cancel: [], tags: ['air'] }),
   '2S': mv({ name: 'Recarga', startup: 12, active: 1, recovery: 12, anim: ['reload', 'reload'], cancel: [], hold: { at: 13, btn: 'S', max: 60 }, tags: ['setup'] }),
   click: mv({ name: 'Sem Bala!', startup: 8, active: 1, recovery: 16, anim: ['castWind', 'shoot'], cancel: [], tags: [] }),
-  c1: mv({ name: 'Coronhada', startup: 9, active: 4, recovery: 18, box: bx(30, 260, 205, 140), dmg: 800, hitstun: 22, push: [330, 200], anim: ['heavyWind', 'punchH'], tags: ['close'] }),
+  c1: mv({ name: 'Coronhada Giratória', startup: 9, active: 4, recovery: 18, box: bx(30, 260, 205, 140), dmg: 800, hitstun: 22, push: [330, 200], anim: ['heavyWind', 'punchH'], tags: ['close'] }),
   c2: mv({ name: 'Rolamento Tático', startup: 3, active: 17, recovery: 9, anim: ['crouch', 'crouch'], crouch: true, motion: [{ from: 4, to: 20, vx: 20 }],
     inv: [{ from: 3, to: 20, type: 'upper' }, { from: 3, to: 20, type: 'throw' }], flags: { phase: true }, cancel: [], tags: ['evade'] }),
   SA1: mv({ name: 'Descarrega', btn: 'X', startup: 8, active: 24, recovery: 30, anim: ['castWind', 'shoot'], cost: { super: 1000 }, inv: [{ from: 1, to: 8, type: 'all' }],
     spawn: [0, 1, 2, 3, 4, 5].map((i) => ({ at: 9 + i * 4, ...shot({ spend: true, dmg: 520, hitstun: 26, y: 300 + (i % 3) * 30 }) })), range: 1400, tags: ['super'] }),
-  SA3: mv({ name: 'DNEEEEEY!', btn: 'X', startup: 14, active: 1, recovery: 46, anim: ['superWind', 'shoot'], cost: { super: 3000 }, inv: [{ from: 1, to: 20, type: 'all' }],
-    spawn: [{ at: 14, ...shot({ noLast: true, w: 220, h: 220, y: 200, vx: 40, hits: 5, dmg: 850, hitstun: 34, launch: [8, 16], life: 80 }) }], range: 1400, tags: ['super', 'big'] }),
+  // Laser que sai dos olhos: atravessa a tela inteira na altura da cabeça.
+  SA3: mv({ name: 'Olhar Laser', btn: 'X', startup: 14, active: 42, recovery: 40, anim: ['superWind', 'hitHi'], fx: 'laser', cost: { super: 3000 }, inv: [{ from: 1, to: 20, type: 'all' }],
+    hits: [...[0, 1, 2, 3, 4].map((i) => ({ from: 15 + i * 7, to: 17 + i * 7, box: bx(40, 250, 2400, 190), dmg: 520, hitstun: 34, push: [25, 30] })), { from: 52, to: 56, box: bx(40, 230, 2400, 230), dmg: 1900, launch: [16, 22], kd: 'hard' }],
+    range: 1500, tags: ['super', 'big'] }),
 };
 
 export default {
@@ -62,7 +68,6 @@ export default {
     },
     onMoveStart(st, f, m, key) {
       if (key === 'click') st.events.push({ t: 'pop', str: 'SEM BALA!', x: f.x, color: '#b0b0b8' });
-      if (key === 'SA3') f.res.ammo = AMMO;
       if (key === 'c2') f.res.ammo = Math.min(AMMO, f.res.ammo + 2); // rolar recarrega 2 balas
     },
     onHit(st, f) {

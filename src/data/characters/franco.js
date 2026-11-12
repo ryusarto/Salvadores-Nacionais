@@ -1,7 +1,8 @@
 import { mv, bx, baseNormals } from '../movekit.js';
 
 /**
- * FRANCO, THE SIR! — equilibrado.
+ * FRANCO, THE SIR! — equilibrado. Bate com as mãos e usa o flash da câmera.
+ * Supers: Libera Tudo! e Obra-Prima (pinta o rival e o joga para dentro de uma tela).
  * Mecânica: COMPASSO. Cada especial diferente que conecta (acerto ou defesa)
  * marca uma nota. Com 2 notas, o próximo especial diferente sai como FINAL:
  * versão turbinada de graça e com dano extra.
@@ -28,12 +29,13 @@ const moves = {
     motion: [{ from: 1, to: 7, vx: -13 }, { from: 9, to: 17, vx: 17 }], inv: [{ from: 1, to: 8, type: 'throw' }, { from: 2, to: 8, type: 'upper' }], tags: ['mid', 'advance'] }),
   c2: mv({ name: 'Voadora Nacional', startup: 12, active: 8, recovery: 14, box: bx(20, 60, 240, 210), dmg: 900, launch: [9, 16], anim: ['prejump', 'jKick'],
     motion: [{ from: 6, to: 20, vx: 14 }, { from: 6, to: 8, vy: 19 }], flags: { landEnds: true, landRecovery: 10 }, tags: ['mid', 'advance'] }),
-  SA1: mv({ name: 'Finalização', btn: 'X', startup: 8, active: 22, recovery: 34, anim: ['superWind', 'flurry'], fx: 'beam', cost: { super: 1000 },
-    hits: [0, 1, 2, 3, 4].map((i) => ({ from: 9 + i * 4, to: 10 + i * 4, box: bx(30, 200, 380, 200), dmg: i === 4 ? 900 : 350, hitstun: 26, launch: i === 4 ? [14, 22] : null, kd: 'hard', push: [20, 30] })),
-    inv: [{ from: 1, to: 9, type: 'all' }], motion: [{ from: 6, to: 24, vx: 9 }], tags: ['super'] }),
-  SA3: mv({ name: 'Libera Tudo!', btn: 'X', startup: 10, active: 30, recovery: 46, anim: ['superWind', 'burst'], fx: 'burst', cost: { super: 3000 },
-    hits: [{ from: 11, to: 13, box: bx(-260, 0, 520, 520), dmg: 900, hitstun: 40, launch: [0, 10] }, { from: 22, to: 24, box: bx(-320, 0, 640, 620), dmg: 900, launch: [0, 14] }, { from: 34, to: 38, box: bx(-380, 0, 760, 720), dmg: 2400, launch: [12, 34], kd: 'hard' }],
-    inv: [{ from: 1, to: 40, type: 'all' }], tags: ['super', 'big'] }),
+  SA1: mv({ name: 'Libera Tudo!', btn: 'X', startup: 9, active: 20, recovery: 38, anim: ['superWind', 'burst'], fx: 'burst', cost: { super: 1000 },
+    hits: [{ from: 10, to: 12, box: bx(-240, 0, 480, 500), dmg: 700, hitstun: 30, launch: [0, 10] }, { from: 22, to: 26, box: bx(-320, 0, 640, 620), dmg: 1300, launch: [12, 28], kd: 'hard' }],
+    inv: [{ from: 1, to: 14, type: 'all' }], tags: ['super'] }),
+  // Pinta o adversário com o pincel e joga ele para dentro de uma tela.
+  SA3: mv({ name: 'Obra-Prima', btn: 'X', startup: 10, active: 52, recovery: 40, anim: ['castWind', 'flurry'], fx: 'paint', cost: { super: 3000 },
+    hits: [{ from: 11, to: 14, box: bx(20, 120, 330, 320), dmg: 600, hitstun: 70, push: [0, 40] }, ...[0, 1, 2, 3].map((i) => ({ from: 20 + i * 7, to: 21 + i * 7, box: bx(0, 60, 420, 440), dmg: 350, hitstun: 60, push: [0, 10] })), { from: 58, to: 62, box: bx(0, 0, 460, 560), dmg: 2300, launch: [15, 30], kd: 'hard' }],
+    inv: [{ from: 1, to: 62, type: 'all' }], motion: [{ from: 6, to: 12, vx: 12 }], tags: ['super', 'big'] }),
 };
 
 const SPECIALS = ['5S', '6S', '2S', '4S', 'c1', 'c2'];
@@ -45,7 +47,7 @@ export default {
   mechName: 'COMPASSO',
   mechDesc: 'Conecte 2 especiais diferentes: o terceiro sai como FINAL, turbinado de graça.',
   colors: { skin: '#b9794c', top: '#2f8a3a', top2: '#f2c318', bottom: '#3a3a44', accent: '#2a4fb8', hair: '#1c1512', shoe: '#f0f0f0' },
-  look: { hair: 'afro', weapon: null, sleeves: 'none', pants: 'shorts', stripes: [[0.42, 0.56, '#f2c318'], [0.56, 0.7, '#2a4fb8']] },
+  look: { hair: 'afro', weapon: 'camera', sleeves: 'none', pants: 'shorts', stripes: [[0.42, 0.56, '#f2c318'], [0.56, 0.7, '#2a4fb8']] },
   walkF: 7, walkB: 5.3, jumpScale: 1, hpScale: 1.04,
   moves,
   mech: {
@@ -77,6 +79,7 @@ export default {
       f.res.noteT = NOTE_WINDOW;
     },
     onHit(st, f, d, h, src) {
+      if (f.moveKey === 'SA3' && src.type === 'move') st.events.push(h.launch ? { t: 'canvas', x: d.x } : { t: 'splat', x: d.x, y: 260 });
       if (src.type === 'move') this.note(f);
     },
     onBlocked(st, f, d, h, src) {

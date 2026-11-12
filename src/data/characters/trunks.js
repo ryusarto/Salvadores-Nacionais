@@ -1,7 +1,8 @@
 import { mv, bx, baseNormals, proj } from '../movekit.js';
 
 /**
- * TRUNKS — armadilhas e agarrões.
+ * TRUNKS — armadilhas e agarrões. Chuta e morde com super dentes.
+ * Super: LEGIÃO DE CÃES.
  * Mecânica: CHAMADA. Marca o chão onde o rival está; depois de 2,5 segundos
  * um ataque cai naquele ponto. Só existe uma marca por vez: o jogo dele é
  * segurar ou empurrar o rival para dentro dela.
@@ -13,7 +14,7 @@ const mark = (o = {}) => ({
 });
 
 const moves = {
-  ...baseNormals({ reach: 1, dmg: 1.12 }),
+  ...baseNormals({ reach: 1, dmg: 1.12, anims: { M: 'kickM', H: 'kickHigh', lowM: 'sweepM' } }),
   '2S': mv({ name: 'Chamada', startup: 16, active: 1, recovery: 18, anim: ['call', 'call'], spawn: [{ at: 16, ...mark() }], range: 1500, tags: ['zone', 'far', 'setup'],
     turbo: { spawn: [{ at: 12, ...mark({ delay: 80 }) }], startup: 12 } }),
   '5S': mv({ name: 'Mordida', startup: 8, active: 3, recovery: 30, guard: 'throw', box: bx(20, 140, 190, 260), dmg: 1600, anim: ['throwReach', 'throwReach'], cancel: [], tags: ['throw', 'close'],
@@ -23,11 +24,13 @@ const moves = {
   '4S': mv({ name: 'Gancho da Rua', startup: 6, active: 6, recovery: 28, box: bx(0, 240, 190, 330), dmg: 1100, launch: [4, 29], anim: ['riseWind', 'upper'], inv: [{ from: 2, to: 12, type: 'air' }], cancel: [], tags: ['antiair'],
     turbo: { dmg: 1400, inv: [{ from: 1, to: 12, type: 'strike' }] } }),
   c1: mv({ name: 'Puxão', startup: 12, active: 4, recovery: 22, box: bx(40, 200, 340, 170), dmg: 500, hitstun: 34, pull: 380, anim: ['castWind', 'throwReach'], tags: ['mid', 'pull'] }),
-  c2: mv({ name: 'Cabeçada', startup: 11, active: 4, recovery: 22, box: bx(20, 290, 205, 180), dmg: 1000, hitstun: 26, push: [260, 140], anim: ['heavyWind', 'overhead'], motion: [{ from: 5, to: 14, vx: 13 }], tags: ['close', 'advance'] }),
+  c2: mv({ name: 'Dentada', startup: 11, active: 4, recovery: 22, box: bx(20, 290, 215, 180), dmg: 1000, hitstun: 26, push: [260, 140], anim: ['heavyWind', 'overhead'], fx: 'bite', motion: [{ from: 5, to: 14, vx: 13 }], tags: ['close', 'advance'] }),
   SA1: mv({ name: 'Bombardeio', btn: 'X', startup: 10, active: 1, recovery: 36, anim: ['call', 'call'], cost: { super: 1000 }, inv: [{ from: 1, to: 10, type: 'all' }],
     spawn: [{ at: 10, ...mark({ delay: 34, dmg: 1900, force: true }) }], range: 1500, tags: ['super'] }),
-  SA3: mv({ name: 'A Ligação', btn: 'X', startup: 14, active: 1, recovery: 44, anim: ['call', 'call'], cost: { super: 3000 }, inv: [{ from: 1, to: 20, type: 'all' }],
-    spawn: [{ at: 14, ...mark({ delay: 48, dmg: 4000, w: 460, force: true }) }], range: 1500, tags: ['super', 'big'] }),
+  // Chama uma legião de cachorros que atravessa a tela.
+  SA3: mv({ name: 'Legião de Cães', btn: 'X', startup: 14, active: 40, recovery: 36, anim: ['call', 'call'], cost: { super: 3000 }, inv: [{ from: 1, to: 20, type: 'all' }],
+    spawn: [0, 1, 2, 3, 4, 5, 6, 7].map((i) => ({ at: 15 + i * 5, ...proj({ kind: 'dog', behavior: 'fly', x: -260 - (i % 3) * 60, y: i % 4 === 3 ? 120 : 0, w: 130, h: 100, vx: 27 + (i % 3) * 2, life: 110, dmg: i === 7 ? 1300 : 500, hitstun: 30, push: [15, 30], chip: 0.3, launch: i === 7 ? [14, 26] : null, kd: 'hard', color: '#a86f46' }) })),
+    range: 1500, tags: ['super', 'big'] }),
 };
 
 export default {
