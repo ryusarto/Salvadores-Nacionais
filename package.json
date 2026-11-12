@@ -1,0 +1,29 @@
+{
+  "name": "salvadores-nacionais",
+  "version": "1.0.0",
+  "description": "Salvadores Nacionais — jogo de luta",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node --test tests/unit/",
+    "build": "node tools/build.mjs",
+    "dev": "node tools/build.mjs --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryusarto/salvadores-nacionais.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryusarto/salvadores-nacionais/issues"
+  },
+  "homepage": "https://github.com/ryusarto/salvadores-nacionais#readme",
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  },
+  "type": "module",
+  "private": true
+}
