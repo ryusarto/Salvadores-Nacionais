@@ -36,7 +36,7 @@ const moves = {
   '2M': mv({ name: 'Jato Rasteiro', btn: 'M', startup: 9, active: 5, recovery: 16, crouch: true, guard: 'low', box: bx(50, 10, 320, 110), dmg: 560, anim: ['crouch', 'whipLow'], fx: 'spray', tags: ['poke', 'mid', 'low'] }),
   '5S': mv({ name: 'Spray', startup: 9, active: 12, recovery: 18, anim: ['castWind', 'cast'],
     hits: [0, 1, 2].map((i) => ({ from: 10 + i * 5, to: 11 + i * 5, box: bx(40, 170, 270, 210), dmg: 260, hitstun: 20, push: i === 2 ? [110, 90] : [15, 20] })),
-    spawn: [{ at: 22, ...puddle(240) }], tags: ['mid', 'pressure'],
+    spawn: [{ at: 22, ...puddle(240) }], flags: { mash: { btn: 'S', from: 10, to: 21, max: 2 } }, tags: ['mid', 'pressure'],
     turbo: { hits: [0, 1, 2].map((i) => ({ from: 9 + i * 4, to: 10 + i * 4, box: bx(40, 150, 300, 250), dmg: 360, hitstun: 22, push: [15, 20], launch: i === 2 ? [7, 24] : null })), spawn: [{ at: 20, ...puddle(260) }] } }),
   '2S': mv({ name: 'Bomba de Tinta', startup: 14, active: 1, recovery: 22, anim: ['overWind', 'overhead'], range: 620, tags: ['zone', 'far'],
     spawn: [{ at: 14, ...proj({ kind: 'paint', x: 70, y: 380, w: 64, h: 64, vx: 13, vy: 20, g: 1.5, life: 120, dmg: 500, color: '#ee547a', extra: { landSpawn: PUDDLE } }) }],

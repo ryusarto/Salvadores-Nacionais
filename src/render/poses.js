@@ -120,7 +120,9 @@ export function poseFor(f, frame) {
     case 'backdash': case 'tech': pose = POSES.backdash; break;
     case 'guard': pose = lerpPose(POSES.idle, f.crouchBlock ? POSES.blockLo : POSES.blockHi, ease(sf / 3)); break;
     case 'blockstun': pose = f.y > 0 ? POSES.blockAir : f.crouchBlock ? POSES.blockLo : POSES.blockHi; break;
-    case 'hitstun': case 'dizzy': pose = f.crouchBlock ? POSES.hitLo : f.comboHits % 2 ? POSES.hitHi : POSES.hitLo; break;
+    case 'dizzy': pose = lerpPose(POSES.crumple, POSES.hitLo, 0.5 + 0.5 * Math.sin(frame * 0.2)); tint = '#ffe14a'; break;
+    case 'techroll': pose = POSES.crouch; flip = Math.floor(sf / 4) % 2 === 1; break;
+    case 'hitstun': pose = f.crouchBlock ? POSES.hitLo : f.comboHits % 2 ? POSES.hitHi : POSES.hitLo; break;
     case 'frozen': pose = POSES.crumple; tint = '#ffe14a'; break;
     case 'slip': pose = POSES.slip; break;
     case 'crumple': pose = lerpPose(POSES.hitLo, POSES.crumple, ease(sf / 20)); break;

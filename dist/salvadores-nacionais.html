@@ -84,6 +84,19 @@
     COUNTER: { dmg: 1.2, stun: 2, punishStun: 4 },
     JUGGLE_MAX: 6,
     CHIP: 0.25,
+    // Garra: com pouca vida, o lutador recebe menos dano. [fração de vida, multiplicador]
+    GUTS: [[0.15, 0.76], [0.3, 0.88]],
+    // Tontura: apanhar muito em pouco tempo deixa tonto. Esvazia sozinha quando o lutador para de apanhar.
+    DIZZY_METER: { max: 3400, decayDelay: 100, decay: 34, immune: 540 },
+    // Empurrão na defesa: Leve + Médio enquanto defende afasta o atacante.
+    PUSHBLOCK: { cost: 1e3, push: 44 },
+    // Rolamento: apertar um botão de golpe ao cair evita ficar deitado.
+    TECH_ROLL: { frames: 24, speed: 11, window: 10 },
+    // Pulo alto depois do Gancho, para combo aéreo.
+    // `float` é a velocidade de subida dada ao adversário lançado, para os dois subirem juntos.
+    SUPER_JUMP: { vy: 1.2, vx: 5, float: 27, minY: 120 },
+    // Proteção contra agarrões seguidos: cada agarrão sofrido aumenta a imunidade ao levantar.
+    THROW_PROTECT: { extra: 14, window: 420 },
     KNOCKDOWN: { soft: 28, hard: 52, wakeup: 14, wakeThrowInv: 7 },
     CRUMPLE: 62,
     DIZZY: 110,
@@ -113,8 +126,8 @@
     // Dificuldade: nível da CPU e multiplicador de dano [jogador, CPU]
     DIFFICULTY: [
       { name: "F\xC1CIL", level: 0, dmg: [1, 1] },
-      { name: "NORMAL", level: 1, dmg: [1.15, 0.6] },
-      { name: "DIF\xCDCIL", level: 2, dmg: [1.3, 0.38] }
+      { name: "NORMAL", level: 1, dmg: [1.12, 0.6] },
+      { name: "DIF\xCDCIL", level: 2, dmg: [1.15, 0.45] }
     ],
     SUPER: { max: 3e3, stock: 1e3, perDmgDealt: 0.07, perDmgTaken: 0.04, whiffSpecial: 20 }
   };
@@ -202,11 +215,11 @@
       "5H": mv({ name: "Forte", btn: "H", startup: 11 + s, active: 5, recovery: 21, box: bx(30, 250, W3(250), 130), dmg: D(900), anim: ["heavyWind", a.H], motion: [{ from: 5, to: 12, vx: 7 }], tags: ["poke", "mid", "heavy"] }),
       "2L": mv({ name: "Leve Baixo", btn: "L", startup: 5 + s, active: 3, recovery: 9, crouch: true, guard: "low", box: bx(30, 30, W3(170), 80), dmg: D(250), anim: ["crouch", a.lowL], tags: ["poke", "close", "low"] }),
       "2M": mv({ name: "M\xE9dio Baixo", btn: "M", startup: 8 + s, active: 4, recovery: 15, crouch: true, guard: "low", box: bx(30, 20, W3(240), 80), dmg: D(550), anim: ["crouch", a.lowM], tags: ["poke", "mid", "low"] }),
-      "2H": mv({ name: "Gancho", btn: "H", startup: 8 + s, active: 6, recovery: 24, crouch: true, box: bx(10, 240, 150, 330), dmg: D(850), launch: [3, 31], anim: ["crouch", a.up], inv: [{ from: 4, to: 13, type: "air" }], cancel: ["special", "super"], tags: ["antiair", "launcher"] }),
+      "2H": mv({ name: "Gancho", btn: "H", startup: 8 + s, active: 6, recovery: 24, crouch: true, box: bx(10, 240, 150, 330), dmg: D(850), launch: [3, 31], anim: ["crouch", a.up], inv: [{ from: 4, to: 13, type: "air" }], cancel: ["special", "super", "jump"], tags: ["antiair", "launcher"] }),
       "3H": mv({ name: "Rasteira", btn: "H", startup: 10 + s, active: 4, recovery: 26, crouch: true, guard: "low", box: bx(30, 0, W3(270), 70), dmg: D(800), kd: "hard", launch: [6, 12], anim: ["crouch", a.sweep], cancel: ["super"], tags: ["low", "knockdown", "mid"] }),
       "6M": mv({ name: "Golpe de Cima", btn: "M", startup: 20, active: 3, recovery: 17, guard: "high", box: bx(30, 230, W3(190), 230), dmg: D(600), anim: ["overWind", a.over], cancel: ["super"], motion: [{ from: 8, to: 20, vx: 5 }], tags: ["overhead", "close"] }),
-      jL: mv({ name: "A\xE9reo Leve", btn: "L", air: true, startup: 4, active: 9, recovery: 4, guard: "high", box: bx(10, 130, W3(160), 130), dmg: D(300), anim: ["jumpUp", a.jL], cancel: [], tags: ["air"] }),
-      jM: mv({ name: "A\xE9reo M\xE9dio", btn: "M", air: true, startup: 6, active: 7, recovery: 5, guard: "high", box: bx(0, 80, W3(200), 150), dmg: D(500), anim: ["jumpUp", a.jM], cancel: [], tags: ["air", "crossup"] }),
+      jL: mv({ name: "A\xE9reo Leve", btn: "L", air: true, startup: 4, active: 9, recovery: 4, guard: "high", box: bx(10, 130, W3(160), 130), dmg: D(300), anim: ["jumpUp", a.jL], cancel: ["chain"], tags: ["air"] }),
+      jM: mv({ name: "A\xE9reo M\xE9dio", btn: "M", air: true, startup: 6, active: 7, recovery: 5, guard: "high", box: bx(0, 80, W3(200), 150), dmg: D(500), anim: ["jumpUp", a.jM], cancel: ["chain"], tags: ["air", "crossup"] }),
       jH: mv({ name: "A\xE9reo Forte", btn: "H", air: true, startup: 8, active: 6, recovery: 6, guard: "high", box: bx(10, 20, W3(190), 220), dmg: D(800), hitstun: 24, anim: ["jumpUp", a.jH], cancel: [], tags: ["air", "jumpin"] }),
       throw: mv({ name: "Agarr\xE3o", btn: "L", type: "throw", startup: 5, active: 3, recovery: 23, guard: "throw", box: bx(20, 140, SYS.THROW.range, 260), dmg: SYS.THROW.dmg, anim: ["throwReach", "throwReach"], cancel: [], tags: ["throw"] }),
       blindado: mv({ name: "Golpe Blindado", btn: "H", type: "utility", startup: 26, active: 4, recovery: 32, box: bx(20, 220, W3(250), 170), dmg: D(800), crumple: true, ginga: 1e3, push: [60, 260], hitstun: 30, blockstun: 22, anim: ["blindWind", "blindHit"], armor: { from: 1, to: 26, hits: 2 }, motion: [{ from: 18, to: 28, vx: 9 }], cancel: [], cost: { ginga: SYS.GINGA.blindado }, tags: ["armor"] })
@@ -251,10 +264,10 @@
   var NOTE_WINDOW = 300;
   var FINALE_DMG = 1.25;
   var moves = {
-    ...baseNormals({ reach: 1.06, dmg: 1.05 }),
+    ...baseNormals({ reach: 1.1, dmg: 1.08 }),
     // O botão Forte é o flash da câmera: o clarão dá dano.
-    "5H": mv({ name: "Flash da C\xE2mera", btn: "H", startup: 10, active: 4, recovery: 20, box: bx(40, 220, 290, 200), dmg: 950, anim: ["castWind", "cast"], fx: "flash", tags: ["poke", "mid", "heavy"] }),
-    "2H": mv({ name: "Flash pra Cima", btn: "H", startup: 8, active: 6, recovery: 24, crouch: true, box: bx(10, 240, 190, 360), dmg: 900, launch: [3, 31], anim: ["crouch", "upper"], fx: "flash", inv: [{ from: 4, to: 13, type: "air" }], cancel: ["special", "super"], tags: ["antiair", "launcher"] }),
+    "5H": mv({ name: "Flash da C\xE2mera", btn: "H", startup: 9, active: 5, recovery: 18, box: bx(40, 200, 320, 240), dmg: 1e3, motion: [{ from: 4, to: 10, vx: 7 }], anim: ["castWind", "cast"], fx: "flash", tags: ["poke", "mid", "heavy"] }),
+    "2H": mv({ name: "Flash pra Cima", btn: "H", startup: 8, active: 6, recovery: 24, crouch: true, box: bx(10, 240, 190, 360), dmg: 900, launch: [3, 31], anim: ["crouch", "upper"], fx: "flash", inv: [{ from: 4, to: 13, type: "air" }], cancel: ["special", "super", "jump"], tags: ["antiair", "launcher"] }),
     jH: mv({ name: "Flash A\xE9reo", btn: "H", air: true, startup: 8, active: 6, recovery: 6, guard: "high", box: bx(10, 0, 220, 240), dmg: 850, hitstun: 24, anim: ["jumpUp", "jPunch"], fx: "flash", cancel: [], tags: ["air", "jumpin"] }),
     "5S": mv({
       name: "Flash Ofuscante",
@@ -294,6 +307,7 @@
       fx: "flurry",
       hits: [0, 1, 2, 3].map((i) => ({ from: 11 + i * 4, to: 12 + i * 4, box: bx(30, 240, 210, 140), dmg: i === 3 ? 500 : 280, hitstun: 18, blockstun: 16, push: i === 3 ? [130, 90] : [25, 25], ginga: 450 })),
       motion: [{ from: 8, to: 24, vx: 7 }],
+      flags: { mash: { btn: "S", from: 11, to: 22, max: 2 } },
       tags: ["close", "pressure"],
       turbo: { hits: [0, 1, 2, 3, 4, 5].map((i) => ({ from: 9 + i * 3, to: 10 + i * 3, box: bx(30, 240, 220, 140), dmg: i === 5 ? 500 : 230, hitstun: 20, blockstun: 16, push: i === 5 ? [120, 80] : [20, 20], ginga: 450, launch: i === 5 ? [5, 26] : null })), startup: 8, recovery: 14 }
     }),
@@ -380,10 +394,10 @@
     mechDesc: "Conecte 2 especiais diferentes: o terceiro sai como FINAL, turbinado de gra\xE7a.",
     colors: { skin: "#b9794c", top: "#2f8a3a", top2: "#f2c318", bottom: "#3a3a44", accent: "#2a4fb8", hair: "#1c1512", shoe: "#f0f0f0" },
     look: { hair: "afro", weapon: "camera", sleeves: "none", pants: "shorts", stripes: [[0.42, 0.56, "#f2c318"], [0.56, 0.7, "#2a4fb8"]] },
-    walkF: 7,
-    walkB: 5.3,
+    walkF: 7.1,
+    walkB: 5.4,
     jumpScale: 1,
-    hpScale: 1.04,
+    hpScale: 1.1,
     moves,
     mech: {
       init(f) {
@@ -1130,6 +1144,7 @@
       anim: ["castWind", "cast"],
       hits: [0, 1, 2].map((i) => ({ from: 10 + i * 5, to: 11 + i * 5, box: bx(40, 170, 270, 210), dmg: 260, hitstun: 20, push: i === 2 ? [110, 90] : [15, 20] })),
       spawn: [{ at: 22, ...puddle(240) }],
+      flags: { mash: { btn: "S", from: 10, to: 21, max: 2 } },
       tags: ["mid", "pressure"],
       turbo: { hits: [0, 1, 2].map((i) => ({ from: 9 + i * 4, to: 10 + i * 4, box: bx(40, 150, 300, 250), dmg: 360, hitstun: 22, push: [15, 20], launch: i === 2 ? [7, 24] : null })), spawn: [{ at: 20, ...puddle(260) }] }
     }),
@@ -1643,7 +1658,7 @@
   function isBlocking(def, attX, guard) {
     if (guard === "unblock" || guard === "throw") return false;
     const g = !!def.buf.cur.G;
-    if (def.y > 0) return g && !def.burnout && (def.state === "air" || def.state === "blockstun");
+    if (def.y > 0) return g && !def.burnout && !def.airBlocked && (def.state === "air" || def.state === "blockstun");
     if (!(isNeutral(def) || def.state === "blockstun" || def.state === "guard")) return false;
     const dir = Math.sign(attX - def.x) || def.face;
     if (!g && def.buf.cur.x !== -dir) return false;
@@ -1719,6 +1734,8 @@
       }
       setState(def, "blockstun");
       def.crouchBlock = crouch;
+      def.pushblocked = false;
+      if (inAir) def.airBlocked = true;
       def.stun = h.blockstun + (def.burnout ? G.burnoutBlockstun : 0);
       def.face = -dir;
       const chip = def.burnout ? Math.max(h.chip, SYS.CHIP) : h.chip;
@@ -1750,9 +1767,18 @@
     }
     let scale = SYS.SCALING[Math.min(def.comboHits, SYS.SCALING.length - 1)];
     if (super_) scale = Math.max(scale, SYS.SUPER_MIN_SCALE);
-    const mul = (ctr ? SYS.COUNTER.dmg : 1) * (att.ch.mech?.dmgMul?.(att, h, src) || 1) * (st.dmgMul ? st.dmgMul[att.side] : 1);
+    const frac = def.hp / def.maxHp;
+    const guts = (SYS.GUTS.find(([limit]) => frac <= limit) || [0, 1])[1];
+    const mul = guts * (ctr ? SYS.COUNTER.dmg : 1) * (att.ch.mech?.dmgMul?.(att, h, src) || 1) * (st.dmgMul ? st.dmgMul[att.side] : 1);
     const dmg = Math.max(1, Math.round(h.dmg * scale * mul));
     const wasAir = def.y > 0 || def.state === "air_hit";
+    if (wasAir && def.airBlocked && def.buf.cur.G) emit(st, { t: "pop", str: "GUARDA QUEBRADA!", x: def.x, y: def.y + 420, color: "#ff5a4a", size: 46 });
+    att.thrownN = 0;
+    const DZ = SYS.DIZZY_METER;
+    if (def.dizzyImmune <= 0 && def.state !== "dizzy") {
+      def.dizzyM = Math.min(DZ.max, def.dizzyM + dmg);
+      def.dizzyT = DZ.decayDelay;
+    }
     const wasCrouch = hurtbox(def) === SYS.BODY.crouch;
     def.hp -= dmg;
     def.comboHits++;
@@ -1777,6 +1803,12 @@
       def.juggle += h.juggle;
       def.kd = h.kd || "soft";
       if (def.juggle >= SYS.JUGGLE_MAX) def.juggleLock = true;
+    } else if (def.dizzyM >= DZ.max) {
+      setState(def, "dizzy");
+      def.stun = SYS.DIZZY;
+      def.dizzyM = 0;
+      def.dizzyImmune = DZ.immune;
+      emit(st, { t: "dizzy", side: def.side, x: def.x });
     } else {
       setState(def, "hitstun");
       def.stun = stun;
@@ -1833,6 +1865,8 @@
     def.hp -= dmg;
     def.comboHits = 1;
     def.comboDmg = dmg;
+    def.thrownN++;
+    def.thrownT = SYS.THROW_PROTECT.window;
     att.super = Math.min(SYS.SUPER.max, att.super + dmg * SYS.SUPER.perDmgDealt);
     setState(att, "throwEnd");
     if (def.hp <= 0) ko(st, att, def, dir);
@@ -2015,6 +2049,18 @@
       buf: newBuffer(),
       res: {},
       status: { frost: 0, frostT: 0, dazzle: 0 },
+      dizzyM: 0,
+      dizzyT: 0,
+      dizzyImmune: 0,
+      airBlocked: false,
+      pushblocked: false,
+      thrownN: 0,
+      thrownT: 0,
+      sj: false,
+      sjNext: false,
+      mashN: 0,
+      mashLoops: 0,
+      rollDir: -1,
       rounds: 0
     };
     ch.mech?.init?.(f);
@@ -2053,7 +2099,7 @@
   var overlap = (a, b) => a.l < b.r && a.r > b.l && a.b < b.t && a.t > b.b;
   function invulnTo(f, kind, attackerAir = false, guard = "mid") {
     const s = f.state;
-    if (s === "knockdown" || s === "wakeup" || s === "tech" || s === "thrown" || s === "throwing" || s === "ko" || s === "win") return true;
+    if (s === "knockdown" || s === "wakeup" || s === "tech" || s === "techroll" || s === "thrown" || s === "throwing" || s === "ko" || s === "win") return true;
     if (s === "air_hit" && f.juggleLock) return true;
     if (kind === "throw") {
       if (f.throwInv > 0 || f.y > 0) return true;
@@ -2107,6 +2153,8 @@
     f.connected = null;
     f.armorLeft = m.armor ? m.armor.hits : 0;
     f.holdT = 0;
+    f.mashN = 0;
+    f.mashLoops = 0;
     if (m.air) f.airUsed = true;
     if (m.type === "super") {
       st.freeze = key === "SA3" ? 50 : 32;
@@ -2128,8 +2176,8 @@
     const moves10 = f.ch.moves;
     const mech = f.ch.mech || {};
     const cur = f.move;
-    const air = ctx2 === "air";
     const canc = ctx2 === "cancel";
+    const air = ctx2 === "air" || canc && f.move.air;
     const G = SYS.GINGA;
     const allow = (cat) => !canc || cur.cancel.includes(cat) && (f.connected || cur.flags.freeCancel);
     if (mech.tryCustom?.(st, f, o, ctx2)) return true;
@@ -2194,8 +2242,9 @@
       else key = "5" + btn;
       const m = moves10[key];
       if (!m) continue;
-      if (air && f.airUsed) continue;
+      if (air && f.airUsed && !(canc && f.sj)) continue;
       if (canc && !cur.flags.followNormals) {
+        if (cur.air && !f.sj) continue;
         if (cur.type !== "normal" || !cur.cancel.includes("chain") || !f.connected) continue;
         const up = RANK[btn] > RANK[cur.btn];
         const same = btn === "L" && cur.btn === "L" && f.chainL < 2;
@@ -2223,8 +2272,9 @@
       f.vx = 0;
       return true;
     }
-    if (canc && cur.cancel.includes("jump") && f.connected && b.up) {
-      startJump(f, b.fwd ? 1 : b.back ? -1 : 0);
+    if (canc && !air && cur.cancel.includes("jump") && f.connected === "hit" && b.up) {
+      startJump(f, 1);
+      f.sjNext = true;
       return true;
     }
     return false;
@@ -2287,6 +2337,19 @@
         return;
       }
     }
+    const mash = m.flags.mash;
+    if (mash && f.sf >= m.startup) {
+      if (take(f.buf, mash.btn, 0)) f.mashN++;
+      if (f.sf === mash.to && f.mashN >= 2 && f.mashLoops < mash.max) {
+        f.mashN = 0;
+        f.mashLoops++;
+        f.sf = mash.from - 1;
+        m.hits.forEach((h, i) => {
+          if (h.from >= mash.from && h.to <= mash.to) f.hitDone[i] = false;
+        });
+        emit(st, { t: "pop", str: "MAIS!", x: f.x, y: 560, color: "#ffe14a", size: 40 });
+      }
+    }
     let moved = false;
     for (const mo of m.motion) {
       if (f.sf < mo.from || f.sf > mo.to) continue;
@@ -2316,8 +2379,15 @@
   function land(st, f) {
     f.y = 0;
     f.vy = 0;
+    f.sj = false;
+    f.airBlocked = false;
     const s = f.state;
-    if (s === "air_hit") {
+    const R = SYS.TECH_ROLL;
+    if (s === "air_hit" && f.kd !== "hard" && (take(f.buf, "L", R.window) || take(f.buf, "M", R.window) || take(f.buf, "H", R.window))) {
+      f.rollDir = f.buf.fwd ? 1 : -1;
+      setState(f, "techroll");
+      emit(st, { t: "pop", str: "ROLOU!", x: f.x, y: 300, color: "#7dff8a", size: 40 });
+    } else if (s === "air_hit") {
       setState(f, "knockdown");
       f.vx = 0;
       emit(st, { t: "land", side: f.side, x: f.x, hard: true });
@@ -2343,6 +2413,10 @@
     if (f.throwInv > 0) f.throwInv--;
     if (f.rushBonus > 0) f.rushBonus--;
     if (f.status.dazzle > 0) f.status.dazzle--;
+    if (f.dizzyImmune > 0) f.dizzyImmune--;
+    if (f.dizzyT > 0) f.dizzyT--;
+    else if (f.dizzyM > 0) f.dizzyM = Math.max(0, f.dizzyM - SYS.DIZZY_METER.decay);
+    if (f.thrownT > 0 && --f.thrownT === 0) f.thrownN = 0;
     if (f.status.frost > 0 && --f.status.frostT <= 0) {
       f.status.frost--;
       f.status.frostT = 300;
@@ -2364,9 +2438,21 @@
           f.vy = J.vy * (f.ch.jumpScale || 1);
           f.y = 1;
           f.vx = (f.jumpDir > 0 ? J.vxF : f.jumpDir < 0 ? J.vxB : 0) * f.face;
+          f.sj = f.sjNext;
+          f.sjNext = false;
+          if (f.sj) {
+            f.vy *= SYS.SUPER_JUMP.vy;
+            f.vx = SYS.SUPER_JUMP.vx * f.face;
+            if (o.state === "air_hit" && !o.juggleLock) {
+              o.vy = SYS.SUPER_JUMP.float;
+              o.y = Math.max(o.y, SYS.SUPER_JUMP.minY);
+              o.vx = Math.sign(o.x - f.x) * 2;
+            }
+          }
+          f.airBlocked = false;
           f.airUsed = false;
           f.airJumps = f.ch.airJumps || 0;
-          emit(st, { t: "jump", side: f.side, x: f.x });
+          emit(st, { t: "jump", side: f.side, x: f.x, high: f.sj });
         }
         break;
       case "air":
@@ -2418,6 +2504,12 @@
         break;
       case "blockstun":
         if (f.y <= 0) f.vx = 0;
+        if (!f.pushblocked && !f.burnout && f.stun > 2 && take(b, "T")) {
+          f.pushblocked = true;
+          spendGinga(st, f, SYS.PUSHBLOCK.cost);
+          o.pushV = (Math.sign(o.x - f.x) || f.face) * SYS.PUSHBLOCK.push;
+          emit(st, { t: "pushblock", side: f.side, x: (f.x + o.x) / 2, y: f.y + 280 });
+        }
         if (--f.stun <= 0) {
           if (f.y > 0) {
             setState(f, "air");
@@ -2448,6 +2540,13 @@
         break;
       case "wakeup":
         if (f.sf >= SYS.KNOCKDOWN.wakeup) {
+          toNeutral(f);
+          f.throwInv = SYS.KNOCKDOWN.wakeThrowInv + SYS.THROW_PROTECT.extra * Math.min(2, f.thrownN);
+        }
+        break;
+      case "techroll":
+        f.vx = f.rollDir * SYS.TECH_ROLL.speed * f.face;
+        if (f.sf >= SYS.TECH_ROLL.frames) {
           toNeutral(f);
           f.throwInv = SYS.KNOCKDOWN.wakeThrowInv;
         }
@@ -2534,7 +2633,7 @@
   function bodies(st) {
     const [a, b] = st.f;
     const P2 = SYS.BODY.push;
-    const solid = (f) => f.state !== "thrown" && f.state !== "throwing" && f.state !== "knockdown" && f.state !== "ko" && !(f.state === "attack" && f.move.flags.phase && f.sf > f.move.startup && f.sf <= f.move.startup + f.move.active + 2);
+    const solid = (f) => f.state !== "thrown" && f.state !== "throwing" && f.state !== "knockdown" && f.state !== "techroll" && f.state !== "ko" && !(f.state === "attack" && f.move.flags.phase && f.sf > f.move.startup && f.sf <= f.move.startup + f.move.active + 2);
     if (solid(a) && solid(b) && Math.abs(a.y - b.y) < 260) {
       const d = b.x - a.x;
       const ov = P2 - Math.abs(d);
@@ -2702,6 +2801,8 @@
     if (st.phase !== "fight") return EMPTY_INPUT;
     if (brain.queue.length) return brain.queue.shift();
     if (me.state === "thrown" && me.sf <= 2 && rnd() < L.block * 0.6) return { ...EMPTY_INPUT, T: 1 };
+    if (me.state === "air_hit" && me.y < 70 && me.vy < 0 && me.kd !== "hard" && rnd() < 0.08 * (brain.level + 1)) return { ...EMPTY_INPUT, L: 1 };
+    if (me.state === "blockstun" && !me.pushblocked && !me.burnout && me.ginga > 2500 && rnd() < 0.012 * brain.level) return { ...EMPTY_INPUT, x: -toward, T: 1 };
     const threat = op.state === "attack" && op.move.hits.length && op.sf <= op.move.hits[op.move.hits.length - 1].to && dist < op.move.range + 170;
     const projNear = st.ents.some((e) => e.owner !== side2 && e.hit && !e.delay && Math.abs(e.x - me.x) < 330 && Math.sign(e.vx || toward * -1) === -toward);
     const markNear = st.ents.some((e) => e.owner !== side2 && e.behavior === "strike" && e.delay < 26 && Math.abs(e.x - me.x) < 170);
@@ -3256,8 +3357,15 @@
       case "blockstun":
         pose = f.y > 0 ? POSES.blockAir : f.crouchBlock ? POSES.blockLo : POSES.blockHi;
         break;
-      case "hitstun":
       case "dizzy":
+        pose = lerpPose(POSES.crumple, POSES.hitLo, 0.5 + 0.5 * Math.sin(frame * 0.2));
+        tint = "#ffe14a";
+        break;
+      case "techroll":
+        pose = POSES.crouch;
+        flip = Math.floor(sf / 4) % 2 === 1;
+        break;
+      case "hitstun":
         pose = f.crouchBlock ? POSES.hitLo : f.comboHits % 2 ? POSES.hitHi : POSES.hitLo;
         break;
       case "frozen":
@@ -3386,8 +3494,11 @@
         return one(f.crouchBlock ? "defesa-agachado" : "defesa-em-pe");
       case "blockstun":
         return one(f.y > 0 ? "defesa-no-ar" : f.crouchBlock ? "defesa-agachado" : "defesa-em-pe");
-      case "hitstun":
       case "dizzy":
+        return one("tonto", Math.floor(frame / 8) % A.tonto.frames.length);
+      case "techroll":
+        return one("agachar", 3);
+      case "hitstun":
       case "frozen":
       case "thrown":
         return hurt();
@@ -4015,6 +4126,13 @@
         case "pop":
           pop(fx, e.str, e.x, GY - (e.y || 520), e.color || "#fff", e.size || 50, 60);
           break;
+        case "dizzy":
+          pop(fx, "TONTO!", e.x, GY - 560, "#ffe14a", 70, 80);
+          break;
+        case "pushblock":
+          fx.parts.push({ k: "ring", x: e.x, y: sy, r: 120, t: 0, dur: 16, color: "#35d6c0" });
+          pop(fx, "EMPURR\xC3O!", e.x, sy - 130, "#35d6c0", 44);
+          break;
         case "grab":
           fx.parts.push({ k: "ring", x: e.x, y: sy, r: 50, t: 0, dur: 10, color: "#fff" });
           break;
@@ -4360,6 +4478,12 @@
       if (fill > 0) slab(c, gx, 100, 40 * fill, 18, f.burnout ? "#8a8a92" : "#35d6c0", 5, null);
     }
     text(c, f.burnout ? "SEM F\xD4LEGO" : "GINGA", i === 0 ? x0 + 4 : x0 + 696, 110, 20, f.burnout ? "#b0b0b8" : "#9ff5e8", i === 0 ? "left" : "right", "#12080c", 4);
+    if (f.dizzyM > 0 || f.state === "dizzy") {
+      const dz = f.state === "dizzy" ? 1 : f.dizzyM / SYS.DIZZY_METER.max;
+      const dx = i === 0 ? x0 + 96 : x0 + 700 - 96 - 270;
+      slab(c, dx, 124, 270, 10, "#2a1a22", 3);
+      slab(c, i === 0 ? dx : dx + 270 * (1 - dz), 124, 270 * dz, 10, dz > 0.75 ? "#ff5a4a" : "#ffe14a", 3, null);
+    }
     for (let k = 0; k < SYS.ROUNDS_TO_WIN; k++) {
       const rx = i === 0 ? x0 + 660 - k * 34 : x0 + 14 + k * 34;
       slab(c, rx, 98, 24, 22, k < f.rounds ? "#ffcf2a" : "#2a1a22", 4);
@@ -4971,6 +5095,9 @@
       row("Ginga (segurar)", "Defesa em p\xE9, agachado (com \u2193) e no ar; no tempo exato, Defesa Perfeita");
       row("\u2192 + Ginga num golpe que acertou", "Arrancada: corre e continua o combo (\u2192\u2192 na defesa: Arrancada livre)");
       row("Ginga + Forte", "Golpe Blindado: aguenta 2 golpes e derruba");
+      row("Leve + M\xE9dio defendendo", "Empurr\xE3o: afasta o atacante (1 gomo de Ginga)");
+      row("Gancho acertou + segurar \u2191", "Pulo alto: emende Leve, M\xE9dio e Forte no ar");
+      row("Bot\xE3o de golpe ao cair", "Rolamento: levanta rolando (\u2190 ou \u2192 escolhe o lado)");
       row("\u2192\u2192 / \u2190\u2190", "Correr / Recuo r\xE1pido");
       text(c, "ENTER ou ESC para voltar", W2 / 2, 1030, 30, "#d8d0dc");
     }

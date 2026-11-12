@@ -55,6 +55,14 @@ function side(c, st, hud, i) {
   }
   text(c, f.burnout ? 'SEM FÔLEGO' : 'GINGA', i === 0 ? x0 + 4 : x0 + 696, 110, 20, f.burnout ? '#b0b0b8' : '#9ff5e8', i === 0 ? 'left' : 'right', '#12080c', 4);
 
+  // tontura: aparece quando o lutador está apanhando muito
+  if (f.dizzyM > 0 || f.state === 'dizzy') {
+    const dz = f.state === 'dizzy' ? 1 : f.dizzyM / SYS.DIZZY_METER.max;
+    const dx = i === 0 ? x0 + 96 : x0 + 700 - 96 - 270;
+    slab(c, dx, 124, 270, 10, '#2a1a22', 3);
+    slab(c, i === 0 ? dx : dx + 270 * (1 - dz), 124, 270 * dz, 10, dz > 0.75 ? '#ff5a4a' : '#ffe14a', 3, null);
+  }
+
   // rounds
   for (let k = 0; k < SYS.ROUNDS_TO_WIN; k++) {
     const rx = i === 0 ? x0 + 660 - k * 34 : x0 + 14 + k * 34;

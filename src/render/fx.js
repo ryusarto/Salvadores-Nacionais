@@ -50,6 +50,8 @@ export function fxEvents(fx, st) {
       case 'slip': pop(fx, 'ESCORREGOU!', e.x, GY - 500, '#ffd24a', 50, 60); dust(fx, e.x, 6); break;
       case 'dazzle': fx.parts.push({ k: 'spark', x: e.x, y: GY - 400, r: 60, t: 0, dur: 20, color: '#fff', rot: 0 }); break;
       case 'pop': pop(fx, e.str, e.x, GY - (e.y || 520), e.color || '#fff', e.size || 50, 60); break;
+      case 'dizzy': pop(fx, 'TONTO!', e.x, GY - 560, '#ffe14a', 70, 80); break;
+      case 'pushblock': fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 120, t: 0, dur: 16, color: '#35d6c0' }); pop(fx, 'EMPURRÃO!', e.x, sy - 130, '#35d6c0', 44); break;
       case 'grab': fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 50, t: 0, dur: 10, color: '#fff' }); break;
       case 'tech': pop(fx, 'ESCAPOU!', e.x, sy - 140, '#fff', 46); break;
       case 'clash': fx.parts.push({ k: 'spark', x: e.x, y: sy, r: 60, t: 0, dur: 12, color: '#fff', rot: 0 }); break;

@@ -16,6 +16,13 @@ se joga de um jeito diferente.
   Perfeita. Segurar para trás também defende. Agarrão vence a defesa.
 - **Golpes de sequência:** → ← + Leve e ↓ → + Médio, dois por herói.
 - **Dificuldade:** Fácil, Normal e Difícil mudam o nível da CPU e o dano de cada lado.
+- **Combo aéreo:** Gancho (↓+Forte) acertou + segurar ↑ = pulo alto; Leve, Médio e Forte emendam no ar.
+- **Empurrão na defesa:** Leve + Médio defendendo afasta o atacante (1 gomo de Ginga).
+- **Rolamento:** botão de golpe ao cair levanta rolando (não vale em queda forte).
+- **Garra:** com pouca vida, o lutador recebe menos dano.
+- **Tontura:** apanhar muito em sequência deixa tonto; a barra aparece sob a Ginga.
+- **Defesa no ar** segura um golpe por pulo. **Agarrões seguidos** dão imunidade crescente ao levantar.
+- **Golpes de apertar repetido:** Pressão Nacional (Franco) e Spray (Chapuh) ganham acertos apertando Especial.
 - Combos: Leve → Médio → Forte → Especial → Super. O dano cai em combos longos
   (100, 100, 80, 70… até 10%) e há limite de golpes no ar.
 - **Ginga (6 gomos):** defender gasta Ginga a cada golpe;

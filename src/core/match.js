@@ -61,7 +61,7 @@ function resetRound(st) {
 function bodies(st) {
   const [a, b] = st.f;
   const P = SYS.BODY.push;
-  const solid = (f) => f.state !== 'thrown' && f.state !== 'throwing' && f.state !== 'knockdown' && f.state !== 'ko' && !(f.state === 'attack' && f.move.flags.phase && f.sf > f.move.startup && f.sf <= f.move.startup + f.move.active + 2);
+  const solid = (f) => f.state !== 'thrown' && f.state !== 'throwing' && f.state !== 'knockdown' && f.state !== 'techroll' && f.state !== 'ko' && !(f.state === 'attack' && f.move.flags.phase && f.sf > f.move.startup && f.sf <= f.move.startup + f.move.active + 2);
   if (solid(a) && solid(b) && Math.abs(a.y - b.y) < 260) {
     const d = b.x - a.x;
     const ov = P - Math.abs(d);

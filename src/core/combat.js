@@ -8,7 +8,8 @@ const atWall = (f) => f.x <= SYS.WALL_PAD + 4 || f.x >= SYS.STAGE_W - SYS.WALL_P
 export function isBlocking(def, attX, guard) {
   if (guard === 'unblock' || guard === 'throw') return false;
   const g = !!def.buf.cur.G;
-  if (def.y > 0) return g && !def.burnout && (def.state === 'air' || def.state === 'blockstun');
+  // no ar, a defesa segura um golpe por pulo: o seguinte quebra a guarda
+  if (def.y > 0) return g && !def.burnout && !def.airBlocked && (def.state === 'air' || def.state === 'blockstun');
   if (!(isNeutral(def) || def.state === 'blockstun' || def.state === 'guard')) return false;
   const dir = Math.sign(attX - def.x) || def.face;
   if (!g && def.buf.cur.x !== -dir) return false; // sem o botão, segurar para trás também defende
@@ -95,6 +96,8 @@ export function applyHit(st, att, def, h, src) {
     }
     setState(def, 'blockstun');
     def.crouchBlock = crouch;
+    def.pushblocked = false;
+    if (inAir) def.airBlocked = true;
     def.stun = h.blockstun + (def.burnout ? G.burnoutBlockstun : 0);
     def.face = -dir;
     const chip = def.burnout ? Math.max(h.chip, SYS.CHIP) : h.chip;
@@ -128,9 +131,18 @@ export function applyHit(st, att, def, h, src) {
   }
   let scale = SYS.SCALING[Math.min(def.comboHits, SYS.SCALING.length - 1)];
   if (super_) scale = Math.max(scale, SYS.SUPER_MIN_SCALE);
-  const mul = (ctr ? SYS.COUNTER.dmg : 1) * (att.ch.mech?.dmgMul?.(att, h, src) || 1) * (st.dmgMul ? st.dmgMul[att.side] : 1);
+  const frac = def.hp / def.maxHp;
+  const guts = (SYS.GUTS.find(([limit]) => frac <= limit) || [0, 1])[1];
+  const mul = guts * (ctr ? SYS.COUNTER.dmg : 1) * (att.ch.mech?.dmgMul?.(att, h, src) || 1) * (st.dmgMul ? st.dmgMul[att.side] : 1);
   const dmg = Math.max(1, Math.round(h.dmg * scale * mul));
   const wasAir = def.y > 0 || def.state === 'air_hit';
+  if (wasAir && def.airBlocked && def.buf.cur.G) emit(st, { t: 'pop', str: 'GUARDA QUEBRADA!', x: def.x, y: def.y + 420, color: '#ff5a4a', size: 46 });
+  att.thrownN = 0;
+  const DZ = SYS.DIZZY_METER;
+  if (def.dizzyImmune <= 0 && def.state !== 'dizzy') {
+    def.dizzyM = Math.min(DZ.max, def.dizzyM + dmg);
+    def.dizzyT = DZ.decayDelay;
+  }
   const wasCrouch = hurtbox(def) === SYS.BODY.crouch;
   def.hp -= dmg;
   def.comboHits++;
@@ -157,6 +169,13 @@ export function applyHit(st, att, def, h, src) {
     def.juggle += h.juggle;
     def.kd = h.kd || 'soft';
     if (def.juggle >= SYS.JUGGLE_MAX) def.juggleLock = true;
+  } else if (def.dizzyM >= DZ.max) {
+    // Tontura: fica indefeso por um tempo e depois ganha imunidade a ficar tonto de novo
+    setState(def, 'dizzy');
+    def.stun = SYS.DIZZY;
+    def.dizzyM = 0;
+    def.dizzyImmune = DZ.immune;
+    emit(st, { t: 'dizzy', side: def.side, x: def.x });
   } else {
     setState(def, 'hitstun');
     def.stun = stun;
@@ -216,6 +235,8 @@ function updateThrow(st, att, def) {
   def.hp -= dmg;
   def.comboHits = 1;
   def.comboDmg = dmg;
+  def.thrownN++;
+  def.thrownT = SYS.THROW_PROTECT.window;
   att.super = Math.min(SYS.SUPER.max, att.super + dmg * SYS.SUPER.perDmgDealt);
   setState(att, 'throwEnd');
   if (def.hp <= 0) ko(st, att, def, dir);

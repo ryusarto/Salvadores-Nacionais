@@ -65,6 +65,10 @@ export function aiInput(st, side, brain) {
   // Escapar de agarrão
   if (me.state === 'thrown' && me.sf <= 2 && rnd() < L.block * 0.6) return { ...EMPTY_INPUT, T: 1 };
 
+  // Rolar ao cair e empurrar na defesa, conforme o nível
+  if (me.state === 'air_hit' && me.y < 70 && me.vy < 0 && me.kd !== 'hard' && rnd() < 0.08 * (brain.level + 1)) return { ...EMPTY_INPUT, L: 1 };
+  if (me.state === 'blockstun' && !me.pushblocked && !me.burnout && me.ginga > 2500 && rnd() < 0.012 * brain.level) return { ...EMPTY_INPUT, x: -toward, T: 1 };
+
   // Continuar defendendo
   const threat = op.state === 'attack' && op.move.hits.length && op.sf <= op.move.hits[op.move.hits.length - 1].to && dist < op.move.range + 170;
   const projNear = st.ents.some((e) => e.owner !== side && e.hit && !e.delay && Math.abs(e.x - me.x) < 330 && Math.sign(e.vx || toward * -1) === -toward);

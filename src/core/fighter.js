@@ -23,6 +23,8 @@ export function createFighter(ch, side, x) {
     buf: newBuffer(),
     res: {},
     status: { frost: 0, frostT: 0, dazzle: 0 },
+    dizzyM: 0, dizzyT: 0, dizzyImmune: 0, airBlocked: false, pushblocked: false,
+    thrownN: 0, thrownT: 0, sj: false, sjNext: false, mashN: 0, mashLoops: 0, rollDir: -1,
     rounds: 0,
   };
   ch.mech?.init?.(f);
@@ -74,7 +76,7 @@ export const overlap = (a, b) => a.l < b.r && a.r > b.l && a.b < b.t && a.t > b.
 /** O lutador está imune a este tipo de ataque agora? kind: 'strike' | 'throw' | 'proj'. */
 export function invulnTo(f, kind, attackerAir = false, guard = 'mid') {
   const s = f.state;
-  if (s === 'knockdown' || s === 'wakeup' || s === 'tech' || s === 'thrown' || s === 'throwing' || s === 'ko' || s === 'win') return true;
+  if (s === 'knockdown' || s === 'wakeup' || s === 'tech' || s === 'techroll' || s === 'thrown' || s === 'throwing' || s === 'ko' || s === 'win') return true;
   if (s === 'air_hit' && f.juggleLock) return true;
   if (kind === 'throw') {
     if (f.throwInv > 0 || f.y > 0) return true;
@@ -133,6 +135,8 @@ export function startMove(st, f, key, opts = {}) {
   f.connected = null;
   f.armorLeft = m.armor ? m.armor.hits : 0;
   f.holdT = 0;
+  f.mashN = 0;
+  f.mashLoops = 0;
   if (m.air) f.airUsed = true;
   if (m.type === 'super') {
     st.freeze = key === 'SA3' ? 50 : 32;
@@ -160,8 +164,8 @@ export function tryActions(st, f, o, ctx) {
   const moves = f.ch.moves;
   const mech = f.ch.mech || {};
   const cur = f.move;
-  const air = ctx === 'air';
   const canc = ctx === 'cancel';
+  const air = ctx === 'air' || (canc && f.move.air);
   const G = SYS.GINGA;
   const allow = (cat) => !canc || (cur.cancel.includes(cat) && (f.connected || cur.flags.freeCancel));
 
@@ -236,8 +240,9 @@ export function tryActions(st, f, o, ctx) {
     else key = '5' + btn;
     const m = moves[key];
     if (!m) continue;
-    if (air && f.airUsed) continue;
+    if (air && f.airUsed && !(canc && f.sj)) continue; // no pulo alto, os golpes aéreos emendam
     if (canc && !cur.flags.followNormals) {
+      if (cur.air && !f.sj) continue;
       if (cur.type !== 'normal' || !cur.cancel.includes('chain') || !f.connected) continue;
       const up = RANK[btn] > RANK[cur.btn];
       const same = btn === 'L' && cur.btn === 'L' && f.chainL < 2;
@@ -267,8 +272,9 @@ export function tryActions(st, f, o, ctx) {
     f.vx = 0;
     return true;
   }
-  if (canc && cur.cancel.includes('jump') && f.connected && b.up) {
-    startJump(f, b.fwd ? 1 : b.back ? -1 : 0);
+  if (canc && !air && cur.cancel.includes('jump') && f.connected === 'hit' && b.up) {
+    startJump(f, 1);
+    f.sjNext = true; // pulo alto atrás do adversário lançado
     return true;
   }
   return false;
@@ -334,6 +340,20 @@ function attackUpdate(st, f, o) {
       return;
     }
   }
+  // Golpes de apertar repetido: apertar o botão várias vezes repete o trecho do meio
+  const mash = m.flags.mash;
+  if (mash && f.sf >= m.startup) {
+    if (take(f.buf, mash.btn, 0)) f.mashN++;
+    if (f.sf === mash.to && f.mashN >= 2 && f.mashLoops < mash.max) {
+      f.mashN = 0;
+      f.mashLoops++;
+      f.sf = mash.from - 1;
+      m.hits.forEach((h, i) => {
+        if (h.from >= mash.from && h.to <= mash.to) f.hitDone[i] = false;
+      });
+      emit(st, { t: 'pop', str: 'MAIS!', x: f.x, y: 560, color: '#ffe14a', size: 40 });
+    }
+  }
   let moved = false;
   for (const mo of m.motion) {
     if (f.sf < mo.from || f.sf > mo.to) continue;
@@ -364,8 +384,16 @@ function attackUpdate(st, f, o) {
 function land(st, f) {
   f.y = 0;
   f.vy = 0;
+  f.sj = false;
+  f.airBlocked = false;
   const s = f.state;
-  if (s === 'air_hit') {
+  const R = SYS.TECH_ROLL;
+  if (s === 'air_hit' && f.kd !== 'hard' && (take(f.buf, 'L', R.window) || take(f.buf, 'M', R.window) || take(f.buf, 'H', R.window))) {
+    // Rolamento: sai do chão rolando para o lado segurado (para trás, se nenhum)
+    f.rollDir = f.buf.fwd ? 1 : -1;
+    setState(f, 'techroll');
+    emit(st, { t: 'pop', str: 'ROLOU!', x: f.x, y: 300, color: '#7dff8a', size: 40 });
+  } else if (s === 'air_hit') {
     setState(f, 'knockdown');
     f.vx = 0;
     emit(st, { t: 'land', side: f.side, x: f.x, hard: true });
@@ -393,6 +421,10 @@ export function updateFighter(st, f, o) {
   if (f.throwInv > 0) f.throwInv--;
   if (f.rushBonus > 0) f.rushBonus--;
   if (f.status.dazzle > 0) f.status.dazzle--;
+  if (f.dizzyImmune > 0) f.dizzyImmune--;
+  if (f.dizzyT > 0) f.dizzyT--;
+  else if (f.dizzyM > 0) f.dizzyM = Math.max(0, f.dizzyM - SYS.DIZZY_METER.decay);
+  if (f.thrownT > 0 && --f.thrownT === 0) f.thrownN = 0;
   if (f.status.frost > 0 && --f.status.frostT <= 0) {
     f.status.frost--;
     f.status.frostT = 300;
@@ -411,9 +443,21 @@ export function updateFighter(st, f, o) {
         f.vy = J.vy * (f.ch.jumpScale || 1);
         f.y = 1;
         f.vx = (f.jumpDir > 0 ? J.vxF : f.jumpDir < 0 ? J.vxB : 0) * f.face;
+        f.sj = f.sjNext;
+        f.sjNext = false;
+        if (f.sj) {
+          f.vy *= SYS.SUPER_JUMP.vy;
+          f.vx = SYS.SUPER_JUMP.vx * f.face;
+          if (o.state === 'air_hit' && !o.juggleLock) {
+            o.vy = SYS.SUPER_JUMP.float;
+            o.y = Math.max(o.y, SYS.SUPER_JUMP.minY);
+            o.vx = Math.sign(o.x - f.x) * 2;
+          }
+        }
+        f.airBlocked = false;
         f.airUsed = false;
         f.airJumps = f.ch.airJumps || 0;
-        emit(st, { t: 'jump', side: f.side, x: f.x });
+        emit(st, { t: 'jump', side: f.side, x: f.x, high: f.sj });
       }
       break;
     case 'air':
@@ -465,6 +509,13 @@ export function updateFighter(st, f, o) {
       break;
     case 'blockstun':
       if (f.y <= 0) f.vx = 0;
+      // Empurrão na defesa: Leve + Médio afasta o atacante (1 gomo de Ginga)
+      if (!f.pushblocked && !f.burnout && f.stun > 2 && take(b, 'T')) {
+        f.pushblocked = true;
+        spendGinga(st, f, SYS.PUSHBLOCK.cost);
+        o.pushV = (Math.sign(o.x - f.x) || f.face) * SYS.PUSHBLOCK.push;
+        emit(st, { t: 'pushblock', side: f.side, x: (f.x + o.x) / 2, y: f.y + 280 });
+      }
       if (--f.stun <= 0) {
         if (f.y > 0) {
           setState(f, 'air');
@@ -492,6 +543,13 @@ export function updateFighter(st, f, o) {
       break;
     case 'wakeup':
       if (f.sf >= SYS.KNOCKDOWN.wakeup) {
+        toNeutral(f);
+        f.throwInv = SYS.KNOCKDOWN.wakeThrowInv + SYS.THROW_PROTECT.extra * Math.min(2, f.thrownN);
+      }
+      break;
+    case 'techroll':
+      f.vx = f.rollDir * SYS.TECH_ROLL.speed * f.face;
+      if (f.sf >= SYS.TECH_ROLL.frames) {
         toNeutral(f);
         f.throwInv = SYS.KNOCKDOWN.wakeThrowInv;
       }

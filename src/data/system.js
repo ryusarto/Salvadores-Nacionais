@@ -46,6 +46,20 @@ export const SYS = {
   JUGGLE_MAX: 6,
   CHIP: 0.25,
 
+  // Garra: com pouca vida, o lutador recebe menos dano. [fração de vida, multiplicador]
+  GUTS: [[0.15, 0.76], [0.3, 0.88]],
+  // Tontura: apanhar muito em pouco tempo deixa tonto. Esvazia sozinha quando o lutador para de apanhar.
+  DIZZY_METER: { max: 3400, decayDelay: 100, decay: 34, immune: 540 },
+  // Empurrão na defesa: Leve + Médio enquanto defende afasta o atacante.
+  PUSHBLOCK: { cost: 1000, push: 44 },
+  // Rolamento: apertar um botão de golpe ao cair evita ficar deitado.
+  TECH_ROLL: { frames: 24, speed: 11, window: 10 },
+  // Pulo alto depois do Gancho, para combo aéreo.
+  // `float` é a velocidade de subida dada ao adversário lançado, para os dois subirem juntos.
+  SUPER_JUMP: { vy: 1.2, vx: 5, float: 27, minY: 120 },
+  // Proteção contra agarrões seguidos: cada agarrão sofrido aumenta a imunidade ao levantar.
+  THROW_PROTECT: { extra: 14, window: 420 },
+
   KNOCKDOWN: { soft: 28, hard: 52, wakeup: 14, wakeThrowInv: 7 },
   CRUMPLE: 62,
   DIZZY: 110,
@@ -74,8 +88,8 @@ export const SYS = {
   // Dificuldade: nível da CPU e multiplicador de dano [jogador, CPU]
   DIFFICULTY: [
     { name: 'FÁCIL', level: 0, dmg: [1, 1] },
-    { name: 'NORMAL', level: 1, dmg: [1.15, 0.6] },
-    { name: 'DIFÍCIL', level: 2, dmg: [1.3, 0.38] },
+    { name: 'NORMAL', level: 1, dmg: [1.12, 0.6] },
+    { name: 'DIFÍCIL', level: 2, dmg: [1.15, 0.45] },
   ],
 
   SUPER: { max: 3000, stock: 1000, perDmgDealt: 0.07, perDmgTaken: 0.04, whiffSpecial: 20 },

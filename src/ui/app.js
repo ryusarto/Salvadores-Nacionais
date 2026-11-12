@@ -366,6 +366,9 @@ export function createApp(canvas, devices, opts = {}) {
     row('Ginga (segurar)', 'Defesa em pé, agachado (com ↓) e no ar; no tempo exato, Defesa Perfeita');
     row('→ + Ginga num golpe que acertou', 'Arrancada: corre e continua o combo (→→ na defesa: Arrancada livre)');
     row('Ginga + Forte', 'Golpe Blindado: aguenta 2 golpes e derruba');
+    row('Leve + Médio defendendo', 'Empurrão: afasta o atacante (1 gomo de Ginga)');
+    row('Gancho acertou + segurar ↑', 'Pulo alto: emende Leve, Médio e Forte no ar');
+    row('Botão de golpe ao cair', 'Rolamento: levanta rolando (← ou → escolhe o lado)');
     row('→→ / ←←', 'Correr / Recuo rápido');
     text(c, 'ENTER ou ESC para voltar', W / 2, 1030, 30, '#d8d0dc');
   }

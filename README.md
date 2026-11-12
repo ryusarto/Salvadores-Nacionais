@@ -37,3 +37,4 @@ npm run build   # gera dist/salvadores-nacionais.html
 - `src/render/` — manequim, cenário, efeitos e HUD (provisórios).
 - `design/game-brief.md` — o desenho do jogo.
 - `docs/ARQUITETURA.md` — como criar personagens e aplicar sprites.
+- `docs/APRENDIZADOS.md` — mecânicas trazidas do estudo de um jogo de luta clássico.

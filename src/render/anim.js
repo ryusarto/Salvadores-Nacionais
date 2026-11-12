@@ -70,7 +70,9 @@ export function animFor(f, frame) {
     case 'backdash': case 'tech': return one('recuo');
     case 'guard': return one(f.crouchBlock ? 'defesa-agachado' : 'defesa-em-pe');
     case 'blockstun': return one(f.y > 0 ? 'defesa-no-ar' : f.crouchBlock ? 'defesa-agachado' : 'defesa-em-pe');
-    case 'hitstun': case 'dizzy': case 'frozen': case 'thrown': return hurt();
+    case 'dizzy': return one('tonto', Math.floor(frame / 8) % A.tonto.frames.length);
+    case 'techroll': return one('agachar', 3);
+    case 'hitstun': case 'frozen': case 'thrown': return hurt();
     case 'slip': return one('dano-alto');
     case 'air_hit': return one('dano-no-ar', byVy(A['dano-no-ar'].vy, f.vy));
     case 'ko': return f.y > 0 ? one('dano-no-ar', 1) : one('caido');
