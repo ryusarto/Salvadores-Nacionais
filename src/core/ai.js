@@ -22,8 +22,8 @@ const LEVELS = [
 function keyInput(key, toward, extra = {}) {
   const i = { ...EMPTY_INPUT, ...extra };
   if (key === 'throw') return { ...i, T: 1 };
-  if (key === 'SA1') return { ...i, X: 1 };
-  if (key === 'SA3') return { ...i, y: -1, X: 1 };
+  if (key === 'SA1') return { ...i, y: -1, X: 1 };
+  if (key === 'SA3') return { ...i, X: 1 };
   if (key === 'blindado') return { ...i, G: 1, H: 1 };
   const d = key[0];
   const btn = key[key.length - 1];

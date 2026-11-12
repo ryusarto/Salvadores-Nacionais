@@ -252,8 +252,12 @@
   var FINALE_DMG = 1.25;
   var moves = {
     ...baseNormals({ reach: 1.06, dmg: 1.05 }),
+    // O botão Forte é o flash da câmera: o clarão dá dano.
+    "5H": mv({ name: "Flash da C\xE2mera", btn: "H", startup: 10, active: 4, recovery: 20, box: bx(40, 220, 290, 200), dmg: 950, anim: ["castWind", "cast"], fx: "flash", tags: ["poke", "mid", "heavy"] }),
+    "2H": mv({ name: "Flash pra Cima", btn: "H", startup: 8, active: 6, recovery: 24, crouch: true, box: bx(10, 240, 190, 360), dmg: 900, launch: [3, 31], anim: ["crouch", "upper"], fx: "flash", inv: [{ from: 4, to: 13, type: "air" }], cancel: ["special", "super"], tags: ["antiair", "launcher"] }),
+    jH: mv({ name: "Flash A\xE9reo", btn: "H", air: true, startup: 8, active: 6, recovery: 6, guard: "high", box: bx(10, 0, 220, 240), dmg: 850, hitstun: 24, anim: ["jumpUp", "jPunch"], fx: "flash", cancel: [], tags: ["air", "jumpin"] }),
     "5S": mv({
-      name: "Flash",
+      name: "Flash Ofuscante",
       startup: 8,
       active: 3,
       recovery: 17,
@@ -431,7 +435,7 @@
   var BPM_DECAY = 150;
   var BPM_DMG = 0.03;
   var cache = /* @__PURE__ */ new Map();
-  var vinyl = (o = {}) => proj({ kind: "vinyl", x: 100, y: 240, w: 84, h: 84, vx: 8, life: 220, dmg: 600, color: "#ffa828", ...o });
+  var vinyl = (o = {}) => proj({ kind: "vinyl", x: 100, y: 240, w: 96, h: 96, vx: 8, life: 220, dmg: 600, color: "#ffa828", ...o });
   var moves2 = {
     ...baseNormals({ reach: 0.86, speed: -1 }),
     "5S": mv({
@@ -498,16 +502,17 @@
     }),
     c2: mv({ name: "Bate-Estaca", startup: 13, active: 4, recovery: 22, box: bx(30, 150, 215, 170), dmg: 900, hitstun: 30, push: [40, 90], anim: ["heavyWind", "overhead"], motion: [{ from: 5, to: 14, vx: 8 }], tags: ["close"] }),
     SA1: mv({
-      name: "Scratch",
+      name: "Disco Duplo",
       btn: "X",
-      startup: 7,
-      active: 24,
+      startup: 9,
+      active: 14,
       recovery: 30,
-      anim: ["punchWind", "flurry"],
+      anim: ["overWind", "cast"],
       cost: { super: 1e3 },
-      hits: [0, 1, 2, 3, 4, 5].map((i) => ({ from: 8 + i * 4, to: 9 + i * 4, box: bx(30, 220, 240, 180), dmg: i === 5 ? 800 : 280, hitstun: 24, push: [15, 25], launch: i === 5 ? [12, 22] : null, kd: "hard" })),
-      inv: [{ from: 1, to: 8, type: "all" }],
-      motion: [{ from: 5, to: 26, vx: 7 }],
+      inv: [{ from: 1, to: 10, type: "all" }],
+      motion: [{ from: 1, to: 8, vx: -17 }],
+      spawn: [0, 1, 2].map((i) => ({ at: 10 + i * 6, ...vinyl({ vx: 19, w: 120, h: 120, y: 180 + i * 70, dmg: i === 2 ? 900 : 550, hitstun: 28, push: [20, 30], launch: i === 2 ? [12, 22] : null, kd: "hard", chip: 0.3 }) })),
+      range: 1500,
       tags: ["super"]
     }),
     // Arremessa vários discos de vinil cortantes.
@@ -517,10 +522,12 @@
       startup: 12,
       active: 44,
       recovery: 30,
-      anim: ["superWind", "cast"],
+      anim: ["overWind", "cast"],
       cost: { super: 3e3 },
       inv: [{ from: 1, to: 16, type: "all" }],
-      spawn: [0, 1, 2, 3, 4, 5, 6].map((i) => ({ at: 14 + i * 6, ...vinyl({ vx: 26, y: 120 + i * 3 % 7 * 44, w: 96, h: 96, dmg: i === 6 ? 1300 : 520, hitstun: 30, push: [20, 30], launch: i === 6 ? [14, 26] : null, kd: "hard", chip: 0.3 }) })),
+      motion: [{ from: 1, to: 11, vx: -17 }],
+      // pula para trás e arremessa
+      spawn: [0, 1, 2, 3, 4, 5, 6].map((i) => ({ at: 14 + i * 6, ...vinyl({ vx: 19, y: 120 + i * 3 % 7 * 44, w: 120, h: 120, dmg: i === 6 ? 1300 : 520, hitstun: 30, push: [20, 30], launch: i === 6 ? [14, 26] : null, kd: "hard", chip: 0.3 }) })),
       range: 1500,
       tags: ["super", "big"]
     })
@@ -697,6 +704,9 @@
   });
   var moves4 = {
     ...baseNormals({ reach: 1, dmg: 1.12, anims: { M: "kickM", H: "kickHigh", lowM: "sweepM" } }),
+    // O botão Forte é a mordida com os super dentes.
+    "5H": mv({ name: "Mordida", btn: "H", startup: 11, active: 5, recovery: 21, box: bx(30, 280, 240, 190), dmg: 1050, anim: ["heavyWind", "overhead"], fx: "bite", motion: [{ from: 5, to: 12, vx: 8 }], tags: ["poke", "mid", "heavy"] }),
+    jH: mv({ name: "Mordida A\xE9rea", btn: "H", air: true, startup: 8, active: 6, recovery: 6, guard: "high", box: bx(10, 40, 200, 220), dmg: 900, hitstun: 24, anim: ["jumpUp", "jHeavy"], fx: "bite", cancel: [], tags: ["air", "jumpin"] }),
     "2S": mv({
       name: "Chamada",
       startup: 16,
@@ -709,7 +719,7 @@
       turbo: { spawn: [{ at: 12, ...mark({ delay: 80 }) }], startup: 12 }
     }),
     "5S": mv({
-      name: "Mordida",
+      name: "Abocanhada",
       startup: 8,
       active: 3,
       recovery: 30,
@@ -815,6 +825,10 @@
   var slashWave = (o = {}) => proj({ kind: "slash", x: 120, y: 190, w: 70, h: 190, vx: 17, life: 90, dmg: 600, color: "#d2edf8", ...o });
   var moves5 = {
     ...baseNormals({ reach: 1.26, speed: 1, anims: { L: "slash", M: "slash", H: "slash", lowM: "whipLow", up: "slashUp", jH: "jHeavy" } }),
+    // Apertar Leve três vezes solta os Três Cortes (sai mesmo sem acertar).
+    "5L": mv({ name: "Corte Um", btn: "L", startup: 5, active: 3, recovery: 11, box: bx(30, 270, 250, 100), dmg: 320, anim: ["punchWind", "slash"], flags: { string: { btn: "L", key: "5LL" } }, tags: ["poke", "close"] }),
+    "5LL": mv({ name: "Corte Dois", btn: "L", startup: 6, active: 3, recovery: 14, box: bx(30, 220, 300, 160), dmg: 420, hitstun: 18, anim: ["slash", "slashUp"], motion: [{ from: 2, to: 7, vx: 8 }], flags: { string: { btn: "L", key: "5LLL" } }, cancel: ["special", "super", "rush"], tags: [] }),
+    "5LLL": mv({ name: "Tr\xEAs Cortes", btn: "M", startup: 8, active: 4, recovery: 22, box: bx(30, 160, 360, 260), dmg: 750, launch: [9, 20], kd: "hard", anim: ["stance", "slash"], motion: [{ from: 3, to: 10, vx: 11 }], cancel: ["special", "super"], tags: [] }),
     "2S": mv({ name: "Postura da L\xE2mina", startup: 8, active: 1, recovery: 12, anim: ["stance", "stance"], weapon: "sheath", cancel: [], hold: { at: 8, btn: "S", max: 150, follow: { L: "stL", M: "stM", release: "stRel" } }, tags: ["setup"] }),
     stL: mv({ name: "Corte Rel\xE2mpago", startup: 5, active: 3, recovery: 17, box: bx(30, 210, 360, 130), dmg: 650, hitstun: 20, anim: ["stance", "slash"], cancel: ["super"], tags: [] }),
     stM: mv({ name: "Contra-L\xE2mina", startup: 2, active: 14, recovery: 20, anim: ["stance", "parry"], weapon: "sheath", cancel: [], flags: { counter: { from: 3, to: 16, into: "stCtr" } }, tags: [] }),
@@ -865,16 +879,16 @@
     c1: mv({ name: "Recuo Cortante", startup: 7, active: 4, recovery: 20, box: bx(30, 200, 390, 150), dmg: 700, push: [120, 120], anim: ["stance", "slash"], motion: [{ from: 6, to: 16, vx: -15 }], tags: ["mid"] }),
     c2: mv({ name: "Estocada", startup: 13, active: 4, recovery: 24, box: bx(40, 250, 480, 80), dmg: 950, hitstun: 24, anim: ["heavyWind", "punchH"], motion: [{ from: 8, to: 15, vx: 12 }], tags: ["far", "poke"] }),
     SA1: mv({
-      name: "Tr\xEAs Cortes",
+      name: "Agudo",
       btn: "X",
       startup: 8,
-      active: 26,
-      recovery: 32,
-      anim: ["stance", "slash"],
+      active: 18,
+      recovery: 34,
+      anim: ["superWind", "burst"],
+      fx: "scream",
       cost: { super: 1e3 },
-      inv: [{ from: 1, to: 10, type: "all" }],
-      hits: [{ from: 9, to: 11, box: bx(0, 150, 620, 260), dmg: 500, hitstun: 30, push: [10, 30] }, { from: 19, to: 21, box: bx(0, 150, 620, 260), dmg: 500, hitstun: 30, push: [10, 30] }, { from: 30, to: 33, box: bx(0, 100, 660, 340), dmg: 1100, launch: [12, 26], kd: "hard" }],
-      motion: [{ from: 6, to: 30, vx: 6 }],
+      inv: [{ from: 1, to: 12, type: "all" }],
+      hits: [{ from: 9, to: 12, box: bx(-240, 0, 560, 540), dmg: 700, hitstun: 30, push: [30, 40] }, { from: 22, to: 26, box: bx(-300, 0, 680, 580), dmg: 1300, launch: [12, 26], kd: "hard" }],
       tags: ["super"]
     }),
     // Um agudo com a voz: as vibrações quebram tudo em volta, dos dois lados.
@@ -910,7 +924,7 @@
         f.res = {};
       },
       onMoveFrame(st, f, o, m) {
-        if (f.moveKey === "SA3" && f.sf > m.startup && f.sf < 60 && f.sf % 5 === 0) st.events.push({ t: "wave", x: f.x, y: 380, r: 160 + f.sf * 12, color: "#d2edf8" }, { t: "shake", n: 10 });
+        if ((f.moveKey === "SA3" || f.moveKey === "SA1") && f.sf > m.startup && f.sf < (f.moveKey === "SA3" ? 60 : 28) && f.sf % 5 === 0) st.events.push({ t: "wave", x: f.x, y: 380, r: 160 + f.sf * 12, color: "#d2edf8" }, { t: "shake", n: 10 });
       },
       remap(f, key) {
         return key === "stRel" ? `stRel${fio(f.holdLevel)}` : key;
@@ -930,6 +944,9 @@
   var EMBALO_MAX = 3;
   var moves6 = {
     ...baseNormals({ reach: 1.06, anims: { L: "kickM", M: "kickM", H: "kickHigh", jH: "jKick", over: "overhead" } }),
+    // O botão Forte é a pisada da bota: levanta a perna e esmaga.
+    "5H": mv({ name: "Pisada Bottega", btn: "H", startup: 13, active: 5, recovery: 20, box: bx(10, 0, 260, 230), dmg: 1e3, hitstun: 24, push: [120, 120], anim: ["kickHigh", "overhead"], fx: "stomp", motion: [{ from: 6, to: 13, vx: 7 }], tags: ["poke", "mid", "heavy"] }),
+    jH: mv({ name: "Pisada A\xE9rea", btn: "H", air: true, startup: 8, active: 8, recovery: 6, guard: "high", box: bx(-10, -20, 200, 230), dmg: 850, hitstun: 24, anim: ["jumpUp", "jHeavy"], fx: "stomp", cancel: [], tags: ["air", "jumpin"] }),
     "5S": mv({
       name: "Bicuda",
       startup: 9,
@@ -1000,7 +1017,7 @@
       tags: ["air"],
       turbo: { dmg: 900, hitstun: 28, flags: { landRecovery: 5 } }
     }),
-    c1: mv({ name: "Pis\xE3o Bottega", startup: 19, active: 4, recovery: 18, guard: "high", box: bx(30, 120, 270, 340), dmg: 850, hitstun: 26, anim: ["kickHigh", "overhead"], motion: [{ from: 8, to: 19, vx: 5 }], tags: ["overhead", "mid"] }),
+    c1: mv({ name: "Machado de Bota", startup: 19, active: 4, recovery: 18, guard: "high", box: bx(30, 120, 270, 340), dmg: 850, hitstun: 26, anim: ["kickHigh", "overhead"], motion: [{ from: 8, to: 19, vx: 5 }], tags: ["overhead", "mid"] }),
     c2: mv({
       name: "Joelhada Voadora",
       startup: 9,
@@ -1015,16 +1032,17 @@
       tags: ["close", "advance", "launcher"]
     }),
     SA1: mv({
-      name: "Sola de Bota",
+      name: "Rajada Curta de AK",
       btn: "X",
-      startup: 7,
-      active: 22,
-      recovery: 32,
-      anim: ["punchWind", "kickHigh"],
+      startup: 12,
+      active: 16,
+      recovery: 30,
+      anim: ["castWind", "shoot"],
+      weapon: "ak",
       cost: { super: 1e3 },
-      hits: [0, 1, 2, 3, 4].map((i) => ({ from: 8 + i * 4, to: 9 + i * 4, box: bx(30, 160, 300, 240), dmg: i === 4 ? 900 : 330, hitstun: 26, push: [15, 25], launch: i === 4 ? [10, 26] : null, kd: "hard" })),
-      inv: [{ from: 1, to: 8, type: "all" }],
-      motion: [{ from: 5, to: 24, vx: 9 }],
+      inv: [{ from: 1, to: 12, type: "all" }],
+      spawn: [0, 1, 2, 3].map((i) => ({ at: 13 + i * 4, ...proj({ kind: "shot", x: 150, y: 300 + i % 2 * 24, w: 60, h: 30, vx: 50, life: 60, dmg: i === 3 ? 800 : 400, hitstun: 28, push: [20, 30], chip: 0.3, launch: i === 3 ? [12, 20] : null, kd: "hard", color: "#ffd27a" }) })),
+      range: 1500,
       tags: ["super"]
     }),
     // Puxa uma AK-47 e solta uma rajada.
@@ -1049,8 +1067,8 @@
     style: "Chutes e press\xE3o a\xE9rea",
     mechName: "RAJADA",
     mechDesc: "Golpes normais que acertam d\xE3o Embalo. Gaste Embalo para emendar um especial em outro. Tem pulo duplo e mergulho.",
-    colors: { skin: "#5c3a28", top: "#272a36", bottom: "#2e2e36", accent: "#ff6063", hair: "#201418", hat: "#c8323a", shoe: "#f0f0f0" },
-    look: { hair: "bandana", weapon: null, sleeves: "long" },
+    colors: { skin: "#5c3a28", top: "#272a36", bottom: "#2e2e36", accent: "#ff6063", hair: "#201418", hat: "#c8323a", shoe: "#3b2a20" },
+    look: { hair: "bandana", weapon: null, sleeves: "long", bigBoots: true },
     walkF: 6.5,
     walkB: 5,
     jumpScale: 1.04,
@@ -1062,6 +1080,7 @@
         f.res = { embalo: 0 };
       },
       onHit(st, f, d, h, src) {
+        if (src.type === "move" && src.m.fx === "stomp") st.events.push({ t: "shake", n: 12 });
         if (src.type === "move" && src.m.type === "normal") f.res.embalo = Math.min(EMBALO_MAX, f.res.embalo + 1);
       },
       extraCancel(st, f, cur, key) {
@@ -1100,6 +1119,9 @@
   });
   var moves7 = {
     ...baseNormals({ reach: 1.04, speed: -1, dmg: 0.92, anims: { L: "cast", M: "cast", H: "overhead" } }),
+    // O botão Médio é um jato de spray preto de média distância.
+    "5M": mv({ name: "Jato de Spray", btn: "M", startup: 8, active: 5, recovery: 15, box: bx(50, 230, 330, 130), dmg: 620, anim: ["castWind", "cast"], fx: "spray", tags: ["poke", "mid", "far"] }),
+    "2M": mv({ name: "Jato Rasteiro", btn: "M", startup: 9, active: 5, recovery: 16, crouch: true, guard: "low", box: bx(50, 10, 320, 110), dmg: 560, anim: ["crouch", "whipLow"], fx: "spray", tags: ["poke", "mid", "low"] }),
     "5S": mv({
       name: "Spray",
       startup: 9,
@@ -1171,19 +1193,21 @@
       spawn: [{ at: 30, ...puddle(330) }],
       tags: ["super"]
     }),
-    // Pega o pinscher no colo e ele morde a cara do adversário.
+    // O pinscher vem correndo e ataca o oponente: várias mordidas e uma última que derruba.
     SA3: mv({
       name: "Ataque do Pinscher",
       btn: "X",
-      startup: 9,
-      active: 50,
-      recovery: 38,
-      anim: ["throwReach", "throwHold"],
-      fx: "bite",
+      startup: 12,
+      active: 30,
+      recovery: 40,
+      anim: ["superWind", "cast"],
       cost: { super: 3e3 },
-      inv: [{ from: 1, to: 60, type: "all" }],
-      hits: [{ from: 10, to: 14, box: bx(20, 180, 300, 280), dmg: 700, hitstun: 70, push: [0, 30] }, ...[0, 1, 2, 3, 4].map((i) => ({ from: 20 + i * 6, to: 21 + i * 6, box: bx(0, 150, 360, 380), dmg: 380, hitstun: 60, push: [0, 8] })), { from: 54, to: 58, box: bx(0, 100, 400, 460), dmg: 1900, launch: [14, 28], kd: "hard" }],
-      motion: [{ from: 5, to: 12, vx: 14 }],
+      inv: [{ from: 1, to: 18, type: "all" }],
+      spawn: [
+        { at: 12, ...dog({ force: true, x: -200, w: 170, h: 140, vx: 32, hits: 5, dmg: 640, guard: "mid", hitstun: 36, push: [10, 20], chip: 0.3, life: 100 }) },
+        { at: 40, ...dog({ force: true, x: -200, y: 60, w: 190, h: 170, vx: 36, hits: 1, dmg: 1600, guard: "mid", launch: [14, 28], kd: "hard", chip: 0.3, life: 100 }) }
+      ],
+      range: 1500,
       tags: ["super", "big"]
     })
   };
@@ -1208,7 +1232,7 @@
         if (f.res.dog > 0) f.res.dog--;
       },
       onHit(st, f, d, h, src) {
-        if (f.moveKey === "SA3" && src.type === "move") st.events.push({ t: "pop", str: h.launch ? "NHAC!" : "AU!", x: d.x, y: 430, color: "#ffb62a", size: 44 });
+        if (src.type === "proj" && src.ent.kind === "dog") st.events.push({ t: "pop", str: h.launch ? "NHAC!" : "AU!", x: d.x, y: 430, color: "#ffb62a", size: 44 });
       },
       hud(f) {
         return { label: "PINSCHER", pips: 0, value: 0, text: f.res.dog > 0 ? `VOLTA EM ${Math.ceil(f.res.dog / 60)}s` : "PRONTO", ready: f.res.dog <= 0, color: "#ffb62a" };
@@ -1224,6 +1248,7 @@
   // src/data/characters/dney.js
   var AMMO = 6;
   var RELOAD_EVERY = 8;
+  var AUTO_RELOAD = 150;
   var LAST_MUL = 1.5;
   var SHOTS = ["5S", "6S", "4S", "jS"];
   var shot = (o = {}) => ({
@@ -1328,7 +1353,7 @@
     name: "DNEY",
     style: "Atirador",
     mechName: "MUNI\xC7\xC3O",
-    mechDesc: "6 balas. A \xFAltima \xE9 o Tiro Certeiro: mais dano e derruba. Recarregue com \u2193+Especial (segure para recarregar tudo).",
+    mechDesc: "6 balas, que voltam devagar sozinhas. A \xFAltima \xE9 o Tiro Certeiro: mais dano e derruba. \u2193+Especial recarrega na hora.",
     colors: { skin: "#d2a074", top: "#4a4658", bottom: "#26262c", accent: "#f7dd83", hair: "#1a1418", hat: "#d42a2a", shoe: "#e0e0e0" },
     look: { hair: "cap", weapon: "gun", sleeves: "long", glasses: true },
     walkF: 6.7,
@@ -1338,7 +1363,14 @@
     moves: moves8,
     mech: {
       init(f) {
-        f.res = { ammo: AMMO };
+        f.res = { ammo: AMMO, auto: 0 };
+      },
+      tick(st, f) {
+        if (f.res.ammo >= AMMO) f.res.auto = 0;
+        else if (++f.res.auto >= AUTO_RELOAD) {
+          f.res.auto = 0;
+          f.res.ammo++;
+        }
       },
       remap(f, key) {
         return SHOTS.includes(key) && f.res.ammo <= 0 ? "click" : key;
@@ -2103,7 +2135,8 @@
     if (mech.tryCustom?.(st, f, o, ctx2)) return true;
     if (!air && peek(b, "X") && allow("super") && !(canc && cur.type === "super")) {
       const dx = b.dirAt.X || b;
-      const key = dx.down && f.super >= 3 * SYS.SUPER.stock && moves10.SA3 ? "SA3" : f.super >= SYS.SUPER.stock && moves10.SA1 ? "SA1" : f.super >= 3 * SYS.SUPER.stock && moves10.SA3 ? "SA3" : null;
+      const full = f.super >= 3 * SYS.SUPER.stock && moves10.SA3;
+      const key = full && !dx.down ? "SA3" : f.super >= SYS.SUPER.stock && moves10.SA1 ? "SA1" : full ? "SA3" : null;
       if (key && startMove(st, f, key)) {
         take(b, "X");
         return true;
@@ -2138,6 +2171,11 @@
     }
     for (const btn of ["H", "M", "L"]) {
       if (!peek(b, btn)) continue;
+      const str = canc && cur.flags.string;
+      if (str && str.btn === btn && f.sf > cur.startup + 1) {
+        take(b, btn);
+        if (startMove(st, f, str.key)) return true;
+      }
       const cmd = b.cmdAt[btn];
       if (cmd && SYS.CMD_BTN[cmd] === btn && moves10[cmd] && !air) {
         const extra = canc && cur.type !== "super" && mech.extraCancel?.(st, f, cur, cmd);
@@ -2263,7 +2301,7 @@
     for (const s of m.spawn) if (s.at === f.sf) spawnEntity(st, f, s);
     mech.onMoveFrame?.(st, f, o, m);
     if (f.state !== "attack" || f.move !== m) return;
-    if ((f.connected || m.flags.freeCancel) && f.sf > m.startup && tryActions(st, f, o, "cancel")) return;
+    if ((f.connected || m.flags.freeCancel || m.flags.string) && f.sf > m.startup && tryActions(st, f, o, "cancel")) return;
     if (f.sf >= m.total) {
       mech.onMoveEnd?.(st, f, m);
       if (f.y > 0) {
@@ -2628,8 +2666,8 @@
   function keyInput(key, toward, extra = {}) {
     const i = { ...EMPTY_INPUT, ...extra };
     if (key === "throw") return { ...i, T: 1 };
-    if (key === "SA1") return { ...i, X: 1 };
-    if (key === "SA3") return { ...i, y: -1, X: 1 };
+    if (key === "SA1") return { ...i, y: -1, X: 1 };
+    if (key === "SA3") return { ...i, X: 1 };
     if (key === "blindado") return { ...i, G: 1, H: 1 };
     const d = key[0];
     const btn = key[key.length - 1];
@@ -3263,6 +3301,7 @@
         const wind = get(m.anim[0]);
         let strikeName = m.anim[1];
         if (strikeName === "flurry") strikeName = Math.floor(sf / 3) % 2 ? "flurryA" : "flurryB";
+        if (strikeName === "cast" && m.spawn.length > 2) strikeName = Math.floor(sf / 6) % 2 ? "overWind" : "cast";
         const strike = get(strikeName);
         const last = m.hits.length ? m.hits[m.hits.length - 1].to : m.startup + m.active;
         if (m.hold && sf === m.hold.at) pose = wind;
@@ -3545,9 +3584,10 @@
     c.lineWidth = 5;
     c.stroke();
   }
-  function shoe(c, foot, ang, col) {
+  function shoe(c, foot, ang, col, big = false) {
     c.save();
     c.translate(foot[0], foot[1]);
+    if (big) c.scale(1.7, 1.7);
     c.rotate(-rad(Math.max(-60, Math.min(60, ang))) * 0.5);
     c.beginPath();
     c.roundRect(-22, -22, 62, 26, 10);
@@ -3748,7 +3788,7 @@
       blob(c, J.handB, 17, shade(col.skin, dark));
       limb(c, J.hip, J.kneeB, 44, shade(col.bottom, dark));
       limb(c, J.kneeB, J.footB, 36, shade(shin, dark));
-      shoe(c, J.footB, J.shinB, shade(col.shoe, dark));
+      shoe(c, J.footB, J.shinB, shade(col.shoe, dark), look.bigBoots);
       blob(c, J.hip, 40, col.bottom);
       limb(c, J.hip, J.neck, 84, col.top);
       for (const [a, b, sc] of look.stripes || []) {
@@ -3763,7 +3803,7 @@
       }
       limb(c, J.hip, J.kneeF, 46, col.bottom);
       limb(c, J.kneeF, J.footF, 38, shin);
-      shoe(c, J.footF, J.shinF, col.shoe);
+      shoe(c, J.footF, J.shinF, col.shoe, look.bigBoots);
       blob(c, J.head, LEN.head, col.skin);
       hair(c, J, ch, true);
       if (look.weapon === "whip") whip2(c, J, f);
@@ -3779,6 +3819,44 @@
         if (f.sf < h.from || f.sf > h.to + 1) continue;
         const b = h.box;
         if (kind === "scream") continue;
+        if (kind === "flash") {
+          const fxc = b.x + b.w * 0.45;
+          const fyc = -(b.y + b.h / 2);
+          c.fillStyle = "rgba(255,255,255,.92)";
+          c.strokeStyle = OUT2;
+          c.lineWidth = 4;
+          c.beginPath();
+          for (let k = 0; k < 20; k++) {
+            const a = k * Math.PI / 10 + f.sf;
+            const rr = (k % 2 ? 0.42 : 1) * Math.max(b.w, b.h) * 0.62;
+            c.lineTo(fxc + Math.cos(a) * rr, fyc + Math.sin(a) * rr * 0.8);
+          }
+          c.closePath();
+          c.fill();
+          c.stroke();
+          continue;
+        }
+        if (kind === "spray") {
+          for (let k = 0; k < 16; k++) {
+            const t = k / 16;
+            c.fillStyle = `rgba(14,10,16,${0.85 - t * 0.45})`;
+            c.beginPath();
+            c.arc(b.x + t * b.w + Math.sin(k * 7 + f.sf) * 14, -(b.y + b.h / 2) + Math.cos(k * 5 + f.sf * 2) * b.h * 0.35 * t, 16 + t * 34, 0, Math.PI * 2);
+            c.fill();
+          }
+          continue;
+        }
+        if (kind === "stomp") {
+          c.strokeStyle = "#fff6d0";
+          c.lineWidth = 7;
+          for (let k = -3; k <= 3; k++) {
+            c.beginPath();
+            c.moveTo(b.x + b.w * 0.5 + k * 34, -8);
+            c.lineTo(b.x + b.w * 0.5 + k * 62, -70 - (3 - Math.abs(k)) * 22);
+            c.stroke();
+          }
+          continue;
+        }
         if (kind === "laser") {
           const y = -(b.y + b.h / 2) - 60;
           for (const [w, colr] of [[b.h * 0.5, "#ff2a2a"], [b.h * 0.22, "#fff3f0"]]) {
@@ -4036,18 +4114,34 @@
         c.fill();
         c.stroke();
       } else if (e.kind === "vinyl") {
+        const r = e.w / 2;
         c.translate(x, y);
-        c.rotate(st.frame * 0.5);
-        c.fillStyle = "#17131c";
+        c.rotate(st.frame * 0.6);
+        c.fillStyle = "#dfe6ee";
         c.beginPath();
-        c.ellipse(0, 0, e.w / 2, e.w / 2, 0, 0, Math.PI * 2);
+        for (let k = 0; k < 24; k++) {
+          const a = k * Math.PI / 12;
+          const rr = k % 2 ? r * 1.22 : r * 0.98;
+          c.lineTo(Math.cos(a) * rr, Math.sin(a) * rr);
+        }
+        c.closePath();
         c.fill();
         c.stroke();
+        c.fillStyle = "#17131c";
+        c.beginPath();
+        c.arc(0, 0, r * 0.92, 0, Math.PI * 2);
+        c.fill();
+        c.strokeStyle = "#3a3344";
+        c.lineWidth = 2;
+        for (const q2 of [0.75, 0.6, 0.45]) {
+          c.beginPath();
+          c.arc(0, 0, r * q2, 0, Math.PI * 2);
+          c.stroke();
+        }
         c.fillStyle = e.color;
         c.beginPath();
-        c.arc(0, 0, e.w / 6, 0, Math.PI * 2);
+        c.arc(0, 0, r * 0.28, 0, Math.PI * 2);
         c.fill();
-        c.fillRect(-2, -e.w / 2, 4, e.w / 3);
       } else if (e.kind === "note") {
         text(c, "\u266A", x, y, e.h * 1.3, e.color);
       } else if (e.kind === "shot") {
@@ -4540,7 +4634,7 @@
   var PAUSE = ["CONTINUAR", "LISTA DE GOLPES", "REINICIAR LUTA", "SAIR"];
   var RESULT = ["REVANCHE", "TROCAR PERSONAGEM", "MENU"];
   var DUMMY = ["PARADO", "DEFENDE TUDO", "CPU"];
-  var KEY_LABEL = { c1: "\u2192 \u2190 + Leve", c2: "\u2193 \u2192 + M\xE9dio", "5S": "Especial", "6S": "\u2192 + Especial", "2S": "\u2193 + Especial", "4S": "\u2190 + Especial", jS: "No ar: Especial", SA1: "Super (1 barra)", SA3: "\u2193 + Super (3 barras)" };
+  var KEY_LABEL = { c1: "\u2192 \u2190 + Leve", c2: "\u2193 \u2192 + M\xE9dio", "5S": "Especial", "6S": "\u2192 + Especial", "2S": "\u2193 + Especial", "4S": "\u2190 + Especial", jS: "No ar: Especial", SA3: "Super com 3 barras", SA1: "\u2193 + Super (1 barra)" };
   function createApp(canvas2, devices2, opts = {}) {
     const c = canvas2.getContext("2d");
     const app2 = {

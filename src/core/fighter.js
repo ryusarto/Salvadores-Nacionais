@@ -170,7 +170,9 @@ export function tryActions(st, f, o, ctx) {
   // Super
   if (!air && peek(b, 'X') && allow('super') && !(canc && cur.type === 'super')) {
     const dx = b.dirAt.X || b;
-    const key = dx.down && f.super >= 3 * SYS.SUPER.stock && moves.SA3 ? 'SA3' : f.super >= SYS.SUPER.stock && moves.SA1 ? 'SA1' : f.super >= 3 * SYS.SUPER.stock && moves.SA3 ? 'SA3' : null;
+    // P solta o super mais forte que a barra permite; ↓ + P economiza e solta o de 1 barra.
+    const full = f.super >= 3 * SYS.SUPER.stock && moves.SA3;
+    const key = full && !dx.down ? 'SA3' : f.super >= SYS.SUPER.stock && moves.SA1 ? 'SA1' : full ? 'SA3' : null;
     if (key && startMove(st, f, key)) {
       take(b, 'X');
       return true;
@@ -209,6 +211,12 @@ export function tryActions(st, f, o, ctx) {
   // Normais
   for (const btn of ['H', 'M', 'L']) {
     if (!peek(b, btn)) continue;
+    // Sequência no mesmo botão (apertar de novo continua o golpe, mesmo errando)
+    const str = canc && cur.flags.string;
+    if (str && str.btn === btn && f.sf > cur.startup + 1) {
+      take(b, btn);
+      if (startMove(st, f, str.key)) return true;
+    }
     // Golpes de sequência (→ ← + Leve, ↓ → + Médio)
     const cmd = b.cmdAt[btn];
     if (cmd && SYS.CMD_BTN[cmd] === btn && moves[cmd] && !air) {
@@ -340,7 +348,7 @@ function attackUpdate(st, f, o) {
   for (const s of m.spawn) if (s.at === f.sf) spawnEntity(st, f, s);
   mech.onMoveFrame?.(st, f, o, m);
   if (f.state !== 'attack' || f.move !== m) return;
-  if ((f.connected || m.flags.freeCancel) && f.sf > m.startup && tryActions(st, f, o, 'cancel')) return;
+  if ((f.connected || m.flags.freeCancel || m.flags.string) && f.sf > m.startup && tryActions(st, f, o, 'cancel')) return;
   if (f.sf >= m.total) {
     mech.onMoveEnd?.(st, f, m);
     if (f.y > 0) {

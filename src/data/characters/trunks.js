@@ -15,9 +15,12 @@ const mark = (o = {}) => ({
 
 const moves = {
   ...baseNormals({ reach: 1, dmg: 1.12, anims: { M: 'kickM', H: 'kickHigh', lowM: 'sweepM' } }),
+  // O botão Forte é a mordida com os super dentes.
+  '5H': mv({ name: 'Mordida', btn: 'H', startup: 11, active: 5, recovery: 21, box: bx(30, 280, 240, 190), dmg: 1050, anim: ['heavyWind', 'overhead'], fx: 'bite', motion: [{ from: 5, to: 12, vx: 8 }], tags: ['poke', 'mid', 'heavy'] }),
+  jH: mv({ name: 'Mordida Aérea', btn: 'H', air: true, startup: 8, active: 6, recovery: 6, guard: 'high', box: bx(10, 40, 200, 220), dmg: 900, hitstun: 24, anim: ['jumpUp', 'jHeavy'], fx: 'bite', cancel: [], tags: ['air', 'jumpin'] }),
   '2S': mv({ name: 'Chamada', startup: 16, active: 1, recovery: 18, anim: ['call', 'call'], spawn: [{ at: 16, ...mark() }], range: 1500, tags: ['zone', 'far', 'setup'],
     turbo: { spawn: [{ at: 12, ...mark({ delay: 80 }) }], startup: 12 } }),
-  '5S': mv({ name: 'Mordida', startup: 8, active: 3, recovery: 30, guard: 'throw', box: bx(20, 140, 190, 260), dmg: 1600, anim: ['throwReach', 'throwReach'], cancel: [], tags: ['throw', 'close'],
+  '5S': mv({ name: 'Abocanhada', startup: 8, active: 3, recovery: 30, guard: 'throw', box: bx(20, 140, 190, 260), dmg: 1600, anim: ['throwReach', 'throwReach'], cancel: [], tags: ['throw', 'close'],
     turbo: { startup: 6, dmg: 1900, box: bx(20, 140, 240, 260) } }),
   '6S': mv({ name: 'Ombrada', startup: 15, active: 5, recovery: 24, box: bx(20, 190, 190, 230), dmg: 900, hitstun: 24, push: [430, 200], anim: ['blindWind', 'blindHit'], armor: { from: 3, to: 15, hits: 1 }, motion: [{ from: 6, to: 20, vx: 14 }], tags: ['mid', 'advance', 'armor'],
     turbo: { armor: { from: 1, to: 15, hits: 2 }, dmg: 1100, launch: [17, 13], kd: 'hard' } }),

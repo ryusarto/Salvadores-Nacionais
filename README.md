@@ -15,7 +15,7 @@ Abra `dist/salvadores-nacionais.html` no navegador (arquivo único, sem instala�
 | Especial (com ←, →, ↓ muda o golpe) | I | A | ESP |
 | Defesa (em pé, agachado com ↓, no ar) | U ou Shift | RB | DEF |
 | Agarrão | O, ou J+K | LB | LEVE+MÉDIO |
-| Super (↓ para o de 3 barras) | P, ou L+I | RT | SUPER |
+| Super (solta o mais forte; ↓ junto solta o de 1 barra) | P, ou L+I | RT | SUPER |
 | Golpes de sequência | → ← + J · ↓ → + K | | iguais |
 | Pausa / lista de golpes | Enter | Start | II |
 

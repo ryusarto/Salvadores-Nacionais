@@ -9,6 +9,7 @@ import { mv, bx, baseNormals, proj } from '../movekit.js';
  */
 const AMMO = 6;
 const RELOAD_EVERY = 8;
+const AUTO_RELOAD = 150; // quadros para ganhar 1 bala sozinho (2,5 s)
 const LAST_MUL = 1.5;
 const SHOTS = ['5S', '6S', '4S', 'jS'];
 
@@ -54,14 +55,21 @@ export default {
   name: 'DNEY',
   style: 'Atirador',
   mechName: 'MUNIÇÃO',
-  mechDesc: '6 balas. A última é o Tiro Certeiro: mais dano e derruba. Recarregue com ↓+Especial (segure para recarregar tudo).',
+  mechDesc: '6 balas, que voltam devagar sozinhas. A última é o Tiro Certeiro: mais dano e derruba. ↓+Especial recarrega na hora.',
   colors: { skin: '#d2a074', top: '#4a4658', bottom: '#26262c', accent: '#f7dd83', hair: '#1a1418', hat: '#d42a2a', shoe: '#e0e0e0' },
   look: { hair: 'cap', weapon: 'gun', sleeves: 'long', glasses: true },
   walkF: 6.7, walkB: 5.3, jumpScale: 1, hpScale: 0.9,
   moves,
   mech: {
     init(f) {
-      f.res = { ammo: AMMO };
+      f.res = { ammo: AMMO, auto: 0 };
+    },
+    tick(st, f) {
+      if (f.res.ammo >= AMMO) f.res.auto = 0;
+      else if (++f.res.auto >= AUTO_RELOAD) {
+        f.res.auto = 0;
+        f.res.ammo++;
+      }
     },
     remap(f, key) {
       return SHOTS.includes(key) && f.res.ammo <= 0 ? 'click' : key;

@@ -167,13 +167,18 @@ test('super: só sai com barra, gasta a barra e congela a tela', () => {
   assert.notEqual(st.f[0].moveKey, 'SA1');
   st.f[0].super = 1000;
   const ev = tap(st, { X: 1 }, 0);
+  assert.equal(st.f[0].moveKey, 'SA1');
   assert.ok(has(ev, 'super'));
   assert.equal(st.f[0].super, 0);
   assert.ok(st.freeze > 0);
   const st2 = fight();
   st2.f[0].super = 3000;
-  tap(st2, { y: -1, X: 1 }, 0);
-  assert.equal(st2.f[0].moveKey, 'SA3');
+  tap(st2, { X: 1 }, 0);
+  assert.equal(st2.f[0].moveKey, 'SA3', 'com 3 barras, o botão solta o super grande');
+  const st3 = fight();
+  st3.f[0].super = 3000;
+  tap(st3, { y: -1, X: 1 }, 0);
+  assert.equal(st3.f[0].moveKey, 'SA1', '↓ + super economiza a barra');
 });
 
 test('movimento: pulo, corrida e recuo', () => {

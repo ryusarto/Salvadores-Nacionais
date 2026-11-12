@@ -26,7 +26,7 @@ const loadDiff = () => {
 const PAUSE = ['CONTINUAR', 'LISTA DE GOLPES', 'REINICIAR LUTA', 'SAIR'];
 const RESULT = ['REVANCHE', 'TROCAR PERSONAGEM', 'MENU'];
 const DUMMY = ['PARADO', 'DEFENDE TUDO', 'CPU'];
-const KEY_LABEL = { c1: '→ ← + Leve', c2: '↓ → + Médio', '5S': 'Especial', '6S': '→ + Especial', '2S': '↓ + Especial', '4S': '← + Especial', jS: 'No ar: Especial', SA1: 'Super (1 barra)', SA3: '↓ + Super (3 barras)' };
+const KEY_LABEL = { c1: '→ ← + Leve', c2: '↓ → + Médio', '5S': 'Especial', '6S': '→ + Especial', '2S': '↓ + Especial', '4S': '← + Especial', jS: 'No ar: Especial', SA3: 'Super com 3 barras', SA1: '↓ + Super (1 barra)' };
 
 /** Cria o jogo sobre um canvas. Retorna o objeto do app (útil para testes). */
 export function createApp(canvas, devices, opts = {}) {

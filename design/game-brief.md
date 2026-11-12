@@ -21,20 +21,21 @@ se joga de um jeito diferente.
 - **Ginga (6 gomos):** defender gasta Ginga a cada golpe;
   Arrancada (1 gomo com →→ na defesa, 3 cancelando um golpe), Golpe Blindado (1), Especial
   Turbinado (2). Zerou: Sem Fôlego — toma dano na defesa e fica mais tempo travado.
-- **Super (3 barras):** Super de 1 barra e Super de 3 barras.
+- **Super (3 barras):** o botão de Super solta o mais forte que a barra permite (o grande com 3
+  barras, o pequeno com 1 ou 2). ↓ + Super solta sempre o pequeno, para economizar.
 
 ## Heróis
 
-| Herói | Como bate | Mecânica | Supers (1 barra · 3 barras) |
+| Herói | Como bate | Mecânica | Supers (↓+P, 1 barra · P com 3 barras) |
 |---|---|---|---|
-| Franco, The Sir! | Mãos e o flash da câmera (o flash dá dano) | **Compasso:** 2 especiais diferentes conectados liberam o FINAL (turbinado grátis, +25% de dano) | Libera Tudo! · **Obra-Prima:** pinta o rival com o pincel e o joga para dentro de uma tela |
-| Belga | Soco-inglês | **BPM:** cada acerto sobe o ritmo (até 4): −1 quadro de recuperação e +3% de dano por nível | Scratch · **Vinil Fatal:** arremessa 7 discos de vinil cortantes |
+| Franco, The Sir! | Leve e Médio com as mãos; **Forte é o flash da câmera** (em pé, agachado e no ar) | **Compasso:** 2 especiais diferentes conectados liberam o FINAL (turbinado grátis, +25% de dano) | Libera Tudo! · **Obra-Prima:** pinta o rival com o pincel e o joga para dentro de uma tela |
+| Belga | Soco-inglês | **BPM:** cada acerto sobe o ritmo (até 4): −1 quadro de recuperação e +3% de dano por nível | Disco Duplo (3 discos) · **Vinil Fatal:** pula para trás e arremessa 7 discos serrilhados |
 | Majis | Guitarra | **Tremor:** especiais de guitarra acumulam tremor (lentidão); com 3, o rival fica atordoado | Feedback · **Terremoto:** toca a guitarra e o chão treme no cenário inteiro |
-| Trunks | Chutes e mordida com super dentes | **Chamada:** marca o chão sob o rival; o ataque cai 2,5 s depois | Bombardeio · **Legião de Cães:** 8 cachorros atravessam a tela |
-| Ryuchi | Espada samurai, fraco e forte | **Postura da Lâmina:** carrega o Fio em 3 níveis; corte instantâneo e contra-ataque | Três Cortes · **Agudo Supremo:** um agudo com a voz que quebra tudo em volta |
-| M'Dep | Botas: chuta em frente e pisoteia | **Rajada:** Embalo emenda um especial em outro; pulo duplo e mergulho | Sola de Bota · **Rajada de AK-47** |
-| Chapuh | Lata de spray de pixo | **Tinta e Pinscher:** poças fazem escorregar; cachorro ajudante com tempo de volta | Grafite Total · **Ataque do Pinscher:** pega o pinscher no colo e ele morde a cara do rival |
-| Dney | Glock: atira de longe, coronhada de perto e de média distância | **Munição:** 6 balas, recarga manual, a última é o Tiro Certeiro | Descarrega · **Olhar Laser:** laser que sai dos olhos |
+| Trunks | Chutes; **Forte é a mordida** com os super dentes | **Chamada:** marca o chão sob o rival; o ataque cai 2,5 s depois | Bombardeio · **Legião de Cães:** 8 cachorros atravessam a tela |
+| Ryuchi | Espada samurai; **Leve três vezes = Três Cortes** | **Postura da Lâmina:** carrega o Fio em 3 níveis; corte instantâneo e contra-ataque | Agudo · **Agudo Supremo:** um agudo com a voz que estoura o rival e tudo em volta |
+| M'Dep | Botas grandes; **Forte é a Pisada Bottega** | **Rajada:** Embalo emenda um especial em outro; pulo duplo e mergulho | Rajada Curta de AK · **Rajada de AK-47** |
+| Chapuh | Lata de spray; **Médio é o jato de spray preto** de média distância; ↓+Especial joga a bola de tinta que deixa poça | **Tinta e Pinscher:** poças fazem escorregar; cachorro ajudante com tempo de volta | Grafite Total · **Ataque do Pinscher:** o cachorro vem correndo e ataca |
+| Dney | Glock: atira de longe, coronhada de perto e de média distância | **Munição:** 6 balas que voltam sozinhas (1 a cada 2,5 s), recarga manual, a última é o Tiro Certeiro | Descarrega · **Olhar Laser:** laser que sai dos olhos |
 
 **Chefe — Capeta Zanata:** chicote de longo alcance, Laço que puxa o herói e
 **Fúria** abaixo de 40% de vida (chicote 5 quadros mais rápido, CPU mais agressiva).

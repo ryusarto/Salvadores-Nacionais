@@ -92,9 +92,10 @@ function blob(c, p, r, col, ry = r) {
   c.lineWidth = 5;
   c.stroke();
 }
-function shoe(c, foot, ang, col) {
+function shoe(c, foot, ang, col, big = false) {
   c.save();
   c.translate(foot[0], foot[1]);
+  if (big) c.scale(1.7, 1.7);
   c.rotate(-rad(Math.max(-60, Math.min(60, ang))) * 0.5);
   c.beginPath();
   c.roundRect(-22, -22, 62, 26, 10);
@@ -311,7 +312,7 @@ export function drawFighter(c, f, frame) {
   blob(c, J.handB, 17, shade(col.skin, dark));
   limb(c, J.hip, J.kneeB, 44, shade(col.bottom, dark));
   limb(c, J.kneeB, J.footB, 36, shade(shin, dark));
-  shoe(c, J.footB, J.shinB, shade(col.shoe, dark));
+  shoe(c, J.footB, J.shinB, shade(col.shoe, dark), look.bigBoots);
   // tronco
   blob(c, J.hip, 40, col.bottom);
   limb(c, J.hip, J.neck, 84, col.top);
@@ -328,7 +329,7 @@ export function drawFighter(c, f, frame) {
   // perna da frente
   limb(c, J.hip, J.kneeF, 46, col.bottom);
   limb(c, J.kneeF, J.footF, 38, shin);
-  shoe(c, J.footF, J.shinF, col.shoe);
+  shoe(c, J.footF, J.shinF, col.shoe, look.bigBoots);
   // cabeça
   blob(c, J.head, LEN.head, col.skin);
   hair(c, J, ch, true);
@@ -348,6 +349,44 @@ export function drawFighter(c, f, frame) {
       if (f.sf < h.from || f.sf > h.to + 1) continue;
       const b = h.box;
       if (kind === 'scream') continue; // as ondas vêm dos efeitos
+      if (kind === 'flash') {
+        const fxc = b.x + b.w * 0.45;
+        const fyc = -(b.y + b.h / 2);
+        c.fillStyle = 'rgba(255,255,255,.92)';
+        c.strokeStyle = OUT;
+        c.lineWidth = 4;
+        c.beginPath();
+        for (let k = 0; k < 20; k++) {
+          const a = (k * Math.PI) / 10 + f.sf;
+          const rr = (k % 2 ? 0.42 : 1) * Math.max(b.w, b.h) * 0.62;
+          c.lineTo(fxc + Math.cos(a) * rr, fyc + Math.sin(a) * rr * 0.8);
+        }
+        c.closePath();
+        c.fill();
+        c.stroke();
+        continue;
+      }
+      if (kind === 'spray') {
+        for (let k = 0; k < 16; k++) {
+          const t = k / 16;
+          c.fillStyle = `rgba(14,10,16,${0.85 - t * 0.45})`;
+          c.beginPath();
+          c.arc(b.x + t * b.w + Math.sin(k * 7 + f.sf) * 14, -(b.y + b.h / 2) + Math.cos(k * 5 + f.sf * 2) * b.h * 0.35 * t, 16 + t * 34, 0, Math.PI * 2);
+          c.fill();
+        }
+        continue;
+      }
+      if (kind === 'stomp') {
+        c.strokeStyle = '#fff6d0';
+        c.lineWidth = 7;
+        for (let k = -3; k <= 3; k++) {
+          c.beginPath();
+          c.moveTo(b.x + b.w * 0.5 + k * 34, -8);
+          c.lineTo(b.x + b.w * 0.5 + k * 62, -70 - (3 - Math.abs(k)) * 22);
+          c.stroke();
+        }
+        continue;
+      }
       if (kind === 'laser') {
         const y = -(b.y + b.h / 2) - 60;
         for (const [w, colr] of [[b.h * 0.5, '#ff2a2a'], [b.h * 0.22, '#fff3f0']]) {

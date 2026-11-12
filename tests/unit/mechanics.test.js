@@ -140,7 +140,12 @@ test('Chapuh — Tinta e Pinscher: poça faz escorregar; cachorro tem tempo de v
 test('Dney — Munição: tiros gastam balas, sem bala falha, recarga e Tiro Certeiro', () => {
   const st = fight('dney', 'zanata', 800);
   const f = st.f[0];
-  for (let i = 0; i < 5; i++) tap(st, { S: 1 }, 45);
+  const noAuto = () => { f.res.auto = -100000; }; // segura a recarga automática nesta parte do teste
+  for (let i = 0; i < 5; i++) {
+    tap(st, { S: 1 }, 1);
+    noAuto();
+    run(st, 44);
+  }
   assert.equal(f.res.ammo, 1);
   const hp = st.f[1].hp;
   const ev = tap(st, { S: 1 }, 45);
@@ -155,6 +160,12 @@ test('Dney — Munição: tiros gastam balas, sem bala falha, recarga e Tiro Cer
   run(st, 70, I({ y: -1, S: 1 }));
   run(st, 20);
   assert.equal(f.res.ammo, 6, 'segurar recarrega tudo');
+
+  const s2 = fight('dney', 'zanata', 800);
+  tap(s2, { S: 1 }, 40);
+  assert.equal(s2.f[0].res.ammo, 5);
+  run(s2, 150);
+  assert.equal(s2.f[0].res.ammo, 6, 'as balas voltam sozinhas com o tempo');
 });
 
 test('Zanata — Fúria: com pouca vida o chicote recupera mais rápido', () => {
@@ -166,4 +177,24 @@ test('Zanata — Fúria: com pouca vida o chicote recupera mais rápido', () => 
   assert.ok(has(ev, 'fury'));
   tap(st, { S: 1 }, 0);
   assert.equal(f.move.total, base - 5);
+});
+
+test('Ryuchi — Leve, Leve, Leve solta os Três Cortes, mesmo sem acertar', () => {
+  const st = fight('ryuchi', 'zanata', 900);
+  const f = st.f[0];
+  tap(st, { L: 1 }, 7);
+  assert.equal(f.moveKey, '5L');
+  tap(st, { L: 1 }, 8);
+  assert.equal(f.moveKey, '5LL');
+  tap(st, { L: 1 }, 4);
+  assert.equal(f.moveKey, '5LLL');
+});
+
+test('golpes temáticos: flash do Franco, pisada do Dep, mordida do Trunks e jato do Chapuh causam dano', () => {
+  for (const [id, btn, name] of [['franco', 'H', 'Flash da Câmera'], ['mdep', 'H', 'Pisada Bottega'], ['trunks', 'H', 'Mordida'], ['chapuh', 'M', 'Jato de Spray']]) {
+    const st = fight(id, 'zanata', 200);
+    tap(st, { [btn]: 1 }, 30);
+    assert.equal(st.f[0].ch.moves['5' + btn].name, name);
+    assert.ok(st.f[1].hp < st.f[1].maxHp, `${id}: ${name} acerta`);
+  }
 });

@@ -11,7 +11,7 @@ const BPM_DECAY = 150;
 const BPM_DMG = 0.03;
 const cache = new Map();
 
-const vinyl = (o = {}) => proj({ kind: 'vinyl', x: 100, y: 240, w: 84, h: 84, vx: 8, life: 220, dmg: 600, color: '#ffa828', ...o });
+const vinyl = (o = {}) => proj({ kind: 'vinyl', x: 100, y: 240, w: 96, h: 96, vx: 8, life: 220, dmg: 600, color: '#ffa828', ...o });
 
 const moves = {
   ...baseNormals({ reach: 0.86, speed: -1 }),
@@ -26,12 +26,11 @@ const moves = {
   c1: mv({ name: 'Um-Dois', startup: 6, active: 9, recovery: 16, anim: ['punchWind', 'flurry'], motion: [{ from: 3, to: 14, vx: 6 }],
     hits: [{ from: 7, to: 8, box: bx(30, 270, 190, 100), dmg: 350, hitstun: 18, push: [20, 20] }, { from: 13, to: 15, box: bx(30, 260, 220, 120), dmg: 550, hitstun: 22 }], tags: ['close', 'pressure'] }),
   c2: mv({ name: 'Bate-Estaca', startup: 13, active: 4, recovery: 22, box: bx(30, 150, 215, 170), dmg: 900, hitstun: 30, push: [40, 90], anim: ['heavyWind', 'overhead'], motion: [{ from: 5, to: 14, vx: 8 }], tags: ['close'] }),
-  SA1: mv({ name: 'Scratch', btn: 'X', startup: 7, active: 24, recovery: 30, anim: ['punchWind', 'flurry'], cost: { super: 1000 },
-    hits: [0, 1, 2, 3, 4, 5].map((i) => ({ from: 8 + i * 4, to: 9 + i * 4, box: bx(30, 220, 240, 180), dmg: i === 5 ? 800 : 280, hitstun: 24, push: [15, 25], launch: i === 5 ? [12, 22] : null, kd: 'hard' })),
-    inv: [{ from: 1, to: 8, type: 'all' }], motion: [{ from: 5, to: 26, vx: 7 }], tags: ['super'] }),
+  SA1: mv({ name: 'Disco Duplo', btn: 'X', startup: 9, active: 14, recovery: 30, anim: ['overWind', 'cast'], cost: { super: 1000 }, inv: [{ from: 1, to: 10, type: 'all' }], motion: [{ from: 1, to: 8, vx: -17 }],
+    spawn: [0, 1, 2].map((i) => ({ at: 10 + i * 6, ...vinyl({ vx: 19, w: 120, h: 120, y: 180 + i * 70, dmg: i === 2 ? 900 : 550, hitstun: 28, push: [20, 30], launch: i === 2 ? [12, 22] : null, kd: 'hard', chip: 0.3 }) })), range: 1500, tags: ['super'] }),
   // Arremessa vários discos de vinil cortantes.
-  SA3: mv({ name: 'Vinil Fatal', btn: 'X', startup: 12, active: 44, recovery: 30, anim: ['superWind', 'cast'], cost: { super: 3000 }, inv: [{ from: 1, to: 16, type: 'all' }],
-    spawn: [0, 1, 2, 3, 4, 5, 6].map((i) => ({ at: 14 + i * 6, ...vinyl({ vx: 26, y: 120 + ((i * 3) % 7) * 44, w: 96, h: 96, dmg: i === 6 ? 1300 : 520, hitstun: 30, push: [20, 30], launch: i === 6 ? [14, 26] : null, kd: 'hard', chip: 0.3 }) })), range: 1500, tags: ['super', 'big'] }),
+  SA3: mv({ name: 'Vinil Fatal', btn: 'X', startup: 12, active: 44, recovery: 30, anim: ['overWind', 'cast'], cost: { super: 3000 }, inv: [{ from: 1, to: 16, type: 'all' }], motion: [{ from: 1, to: 11, vx: -17 }], // pula para trás e arremessa
+    spawn: [0, 1, 2, 3, 4, 5, 6].map((i) => ({ at: 14 + i * 6, ...vinyl({ vx: 19, y: 120 + ((i * 3) % 7) * 44, w: 120, h: 120, dmg: i === 6 ? 1300 : 520, hitstun: 30, push: [20, 30], launch: i === 6 ? [14, 26] : null, kd: 'hard', chip: 0.3 }) })), range: 1500, tags: ['super', 'big'] }),
 };
 
 export default {

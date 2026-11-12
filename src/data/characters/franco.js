@@ -12,7 +12,11 @@ const FINALE_DMG = 1.25;
 
 const moves = {
   ...baseNormals({ reach: 1.06, dmg: 1.05 }),
-  '5S': mv({ name: 'Flash', startup: 8, active: 3, recovery: 17, box: bx(40, 230, 250, 200), dmg: 500, hitstun: 22, blockstun: 22, push: [60, 50], ginga: 400, effects: [{ t: 'dazzle', n: 150, onBlock: true }], anim: ['castWind', 'cast'], fx: 'flash', tags: ['mid', 'pressure'],
+  // O botão Forte é o flash da câmera: o clarão dá dano.
+  '5H': mv({ name: 'Flash da Câmera', btn: 'H', startup: 10, active: 4, recovery: 20, box: bx(40, 220, 290, 200), dmg: 950, anim: ['castWind', 'cast'], fx: 'flash', tags: ['poke', 'mid', 'heavy'] }),
+  '2H': mv({ name: 'Flash pra Cima', btn: 'H', startup: 8, active: 6, recovery: 24, crouch: true, box: bx(10, 240, 190, 360), dmg: 900, launch: [3, 31], anim: ['crouch', 'upper'], fx: 'flash', inv: [{ from: 4, to: 13, type: 'air' }], cancel: ['special', 'super'], tags: ['antiair', 'launcher'] }),
+  jH: mv({ name: 'Flash Aéreo', btn: 'H', air: true, startup: 8, active: 6, recovery: 6, guard: 'high', box: bx(10, 0, 220, 240), dmg: 850, hitstun: 24, anim: ['jumpUp', 'jPunch'], fx: 'flash', cancel: [], tags: ['air', 'jumpin'] }),
+  '5S': mv({ name: 'Flash Ofuscante', startup: 8, active: 3, recovery: 17, box: bx(40, 230, 250, 200), dmg: 500, hitstun: 22, blockstun: 22, push: [60, 50], ginga: 400, effects: [{ t: 'dazzle', n: 150, onBlock: true }], anim: ['castWind', 'cast'], fx: 'flash', tags: ['mid', 'pressure'],
     turbo: { startup: 7, dmg: 700, hitstun: 30, box: bx(40, 200, 330, 260) } }),
   '6S': mv({ name: 'Giro do Guetto', startup: 11, active: 10, recovery: 18, anim: ['spinWind', 'spin'], fx: 'spin',
     hits: [{ from: 13, to: 16, box: bx(-60, 200, 260, 150), dmg: 500, hitstun: 20 }, { from: 19, to: 22, box: bx(-60, 200, 280, 150), dmg: 600, launch: [8, 20], kd: 'soft' }],

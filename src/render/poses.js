@@ -138,6 +138,7 @@ export function poseFor(f, frame) {
       const wind = get(m.anim[0]);
       let strikeName = m.anim[1];
       if (strikeName === 'flurry') strikeName = Math.floor(sf / 3) % 2 ? 'flurryA' : 'flurryB';
+      if (strikeName === 'cast' && m.spawn.length > 2) strikeName = Math.floor(sf / 6) % 2 ? 'overWind' : 'cast';
       const strike = get(strikeName);
       const last = m.hits.length ? m.hits[m.hits.length - 1].to : m.startup + m.active;
       if (m.hold && sf === m.hold.at) pose = wind;

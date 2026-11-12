@@ -2,7 +2,7 @@ import { mv, bx, baseNormals, proj } from '../movekit.js';
 
 /**
  * CHAPUH — truques. Bate com a lata de spray de pixo.
- * Super: ATAQUE DO PINSCHER — pega o pinscher no colo e ele morde a cara do rival.
+ * Super: ATAQUE DO PINSCHER — o cachorro vem correndo e ataca o rival.
  * Mecânica: TINTA e PINSCHER. O spray deixa poças no chão (até 2): o rival que
  * andar ou correr por cima escorrega. O pinscher é um ajudante que ataca sob
  * comando e precisa de um tempo para voltar.
@@ -31,6 +31,9 @@ const dog = (o = {}) => ({
 
 const moves = {
   ...baseNormals({ reach: 1.04, speed: -1, dmg: 0.92, anims: { L: 'cast', M: 'cast', H: 'overhead' } }),
+  // O botão Médio é um jato de spray preto de média distância.
+  '5M': mv({ name: 'Jato de Spray', btn: 'M', startup: 8, active: 5, recovery: 15, box: bx(50, 230, 330, 130), dmg: 620, anim: ['castWind', 'cast'], fx: 'spray', tags: ['poke', 'mid', 'far'] }),
+  '2M': mv({ name: 'Jato Rasteiro', btn: 'M', startup: 9, active: 5, recovery: 16, crouch: true, guard: 'low', box: bx(50, 10, 320, 110), dmg: 560, anim: ['crouch', 'whipLow'], fx: 'spray', tags: ['poke', 'mid', 'low'] }),
   '5S': mv({ name: 'Spray', startup: 9, active: 12, recovery: 18, anim: ['castWind', 'cast'],
     hits: [0, 1, 2].map((i) => ({ from: 10 + i * 5, to: 11 + i * 5, box: bx(40, 170, 270, 210), dmg: 260, hitstun: 20, push: i === 2 ? [110, 90] : [15, 20] })),
     spawn: [{ at: 22, ...puddle(240) }], tags: ['mid', 'pressure'],
@@ -48,10 +51,11 @@ const moves = {
   SA1: mv({ name: 'Grafite Total', btn: 'X', startup: 8, active: 22, recovery: 32, anim: ['castWind', 'cast'], cost: { super: 1000 }, inv: [{ from: 1, to: 9, type: 'all' }],
     hits: [0, 1, 2, 3, 4].map((i) => ({ from: 9 + i * 4, to: 10 + i * 4, box: bx(30, 80, 420, 380), dmg: i === 4 ? 800 : 340, hitstun: 26, push: [15, 25], launch: i === 4 ? [10, 24] : null, kd: 'hard' })),
     spawn: [{ at: 30, ...puddle(330) }], tags: ['super'] }),
-  // Pega o pinscher no colo e ele morde a cara do adversário.
-  SA3: mv({ name: 'Ataque do Pinscher', btn: 'X', startup: 9, active: 50, recovery: 38, anim: ['throwReach', 'throwHold'], fx: 'bite', cost: { super: 3000 }, inv: [{ from: 1, to: 60, type: 'all' }],
-    hits: [{ from: 10, to: 14, box: bx(20, 180, 300, 280), dmg: 700, hitstun: 70, push: [0, 30] }, ...[0, 1, 2, 3, 4].map((i) => ({ from: 20 + i * 6, to: 21 + i * 6, box: bx(0, 150, 360, 380), dmg: 380, hitstun: 60, push: [0, 8] })), { from: 54, to: 58, box: bx(0, 100, 400, 460), dmg: 1900, launch: [14, 28], kd: 'hard' }],
-    motion: [{ from: 5, to: 12, vx: 14 }], tags: ['super', 'big'] }),
+  // O pinscher vem correndo e ataca o oponente: várias mordidas e uma última que derruba.
+  SA3: mv({ name: 'Ataque do Pinscher', btn: 'X', startup: 12, active: 30, recovery: 40, anim: ['superWind', 'cast'], cost: { super: 3000 }, inv: [{ from: 1, to: 18, type: 'all' }],
+    spawn: [{ at: 12, ...dog({ force: true, x: -200, w: 170, h: 140, vx: 32, hits: 5, dmg: 640, guard: 'mid', hitstun: 36, push: [10, 20], chip: 0.3, life: 100 }) },
+      { at: 40, ...dog({ force: true, x: -200, y: 60, w: 190, h: 170, vx: 36, hits: 1, dmg: 1600, guard: 'mid', launch: [14, 28], kd: 'hard', chip: 0.3, life: 100 }) }],
+    range: 1500, tags: ['super', 'big'] }),
 };
 
 export default {
@@ -72,7 +76,7 @@ export default {
       if (f.res.dog > 0) f.res.dog--;
     },
     onHit(st, f, d, h, src) {
-      if (f.moveKey === 'SA3' && src.type === 'move') st.events.push({ t: 'pop', str: h.launch ? 'NHAC!' : 'AU!', x: d.x, y: 430, color: '#ffb62a', size: 44 });
+      if (src.type === 'proj' && src.ent.kind === 'dog') st.events.push({ t: 'pop', str: h.launch ? 'NHAC!' : 'AU!', x: d.x, y: 430, color: '#ffb62a', size: 44 });
     },
     hud(f) {
       return { label: 'PINSCHER', pips: 0, value: 0, text: f.res.dog > 0 ? `VOLTA EM ${Math.ceil(f.res.dog / 60)}s` : 'PRONTO', ready: f.res.dog <= 0, color: '#ffb62a' };

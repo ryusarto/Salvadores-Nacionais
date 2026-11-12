@@ -11,6 +11,9 @@ const EMBALO_MAX = 3;
 
 const moves = {
   ...baseNormals({ reach: 1.06, anims: { L: 'kickM', M: 'kickM', H: 'kickHigh', jH: 'jKick', over: 'overhead' } }),
+  // O botão Forte é a pisada da bota: levanta a perna e esmaga.
+  '5H': mv({ name: 'Pisada Bottega', btn: 'H', startup: 13, active: 5, recovery: 20, box: bx(10, 0, 260, 230), dmg: 1000, hitstun: 24, push: [120, 120], anim: ['kickHigh', 'overhead'], fx: 'stomp', motion: [{ from: 6, to: 13, vx: 7 }], tags: ['poke', 'mid', 'heavy'] }),
+  jH: mv({ name: 'Pisada Aérea', btn: 'H', air: true, startup: 8, active: 8, recovery: 6, guard: 'high', box: bx(-10, -20, 200, 230), dmg: 850, hitstun: 24, anim: ['jumpUp', 'jHeavy'], fx: 'stomp', cancel: [], tags: ['air', 'jumpin'] }),
   '5S': mv({ name: 'Bicuda', startup: 9, active: 4, recovery: 18, box: bx(30, 200, 310, 130), dmg: 800, anim: ['punchWind', 'kickM'], tags: ['mid', 'poke'],
     turbo: { startup: 7, dmg: 1000, hitstun: 28 } }),
   '6S': mv({ name: 'Rajada', startup: 11, active: 15, recovery: 20, anim: ['punchWind', 'kickHigh'],
@@ -23,12 +26,12 @@ const moves = {
     turbo: { dmg: 1400, inv: [{ from: 1, to: 11, type: 'all' }] } }),
   jS: mv({ name: 'Voadora Mergulho', air: true, startup: 8, active: 26, recovery: 2, guard: 'mid', box: bx(0, -10, 180, 170), dmg: 700, hitstun: 22, anim: ['jumpUp', 'jKick'], motion: [{ from: 8, to: 60, vx: 15, vy: -21 }], flags: { landRecovery: 9 }, cancel: [], tags: ['air'],
     turbo: { dmg: 900, hitstun: 28, flags: { landRecovery: 5 } } }),
-  c1: mv({ name: 'Pisão Bottega', startup: 19, active: 4, recovery: 18, guard: 'high', box: bx(30, 120, 270, 340), dmg: 850, hitstun: 26, anim: ['kickHigh', 'overhead'], motion: [{ from: 8, to: 19, vx: 5 }], tags: ['overhead', 'mid'] }),
+  c1: mv({ name: 'Machado de Bota', startup: 19, active: 4, recovery: 18, guard: 'high', box: bx(30, 120, 270, 340), dmg: 850, hitstun: 26, anim: ['kickHigh', 'overhead'], motion: [{ from: 8, to: 19, vx: 5 }], tags: ['overhead', 'mid'] }),
   c2: mv({ name: 'Joelhada Voadora', startup: 9, active: 8, recovery: 16, box: bx(20, 120, 195, 230), dmg: 850, launch: [6, 26], anim: ['prejump', 'jKick'],
     motion: [{ from: 5, to: 18, vx: 13 }, { from: 5, to: 7, vy: 20 }], flags: { landEnds: true, landRecovery: 10 }, tags: ['close', 'advance', 'launcher'] }),
-  SA1: mv({ name: 'Sola de Bota', btn: 'X', startup: 7, active: 22, recovery: 32, anim: ['punchWind', 'kickHigh'], cost: { super: 1000 },
-    hits: [0, 1, 2, 3, 4].map((i) => ({ from: 8 + i * 4, to: 9 + i * 4, box: bx(30, 160, 300, 240), dmg: i === 4 ? 900 : 330, hitstun: 26, push: [15, 25], launch: i === 4 ? [10, 26] : null, kd: 'hard' })),
-    inv: [{ from: 1, to: 8, type: 'all' }], motion: [{ from: 5, to: 24, vx: 9 }], tags: ['super'] }),
+  SA1: mv({ name: 'Rajada Curta de AK', btn: 'X', startup: 12, active: 16, recovery: 30, anim: ['castWind', 'shoot'], weapon: 'ak', cost: { super: 1000 }, inv: [{ from: 1, to: 12, type: 'all' }],
+    spawn: [0, 1, 2, 3].map((i) => ({ at: 13 + i * 4, ...proj({ kind: 'shot', x: 150, y: 300 + (i % 2) * 24, w: 60, h: 30, vx: 50, life: 60, dmg: i === 3 ? 800 : 400, hitstun: 28, push: [20, 30], chip: 0.3, launch: i === 3 ? [12, 20] : null, kd: 'hard', color: '#ffd27a' }) })),
+    range: 1500, tags: ['super'] }),
   // Puxa uma AK-47 e solta uma rajada.
   SA3: mv({ name: 'Rajada de AK-47', btn: 'X', startup: 16, active: 40, recovery: 34, anim: ['castWind', 'shoot'], weapon: 'ak', cost: { super: 3000 }, inv: [{ from: 1, to: 20, type: 'all' }],
     spawn: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => ({ at: 17 + i * 4, ...proj({ kind: 'shot', x: 150, y: 300 + (i % 3) * 22, w: 60, h: 30, vx: 50, life: 60, dmg: i === 9 ? 1300 : 430, hitstun: 30, push: [20, 30], chip: 0.3, launch: i === 9 ? [15, 22] : null, kd: 'hard', color: '#ffd27a' }) })),
@@ -41,8 +44,8 @@ export default {
   style: 'Chutes e pressão aérea',
   mechName: 'RAJADA',
   mechDesc: 'Golpes normais que acertam dão Embalo. Gaste Embalo para emendar um especial em outro. Tem pulo duplo e mergulho.',
-  colors: { skin: '#5c3a28', top: '#272a36', bottom: '#2e2e36', accent: '#ff6063', hair: '#201418', hat: '#c8323a', shoe: '#f0f0f0' },
-  look: { hair: 'bandana', weapon: null, sleeves: 'long' },
+  colors: { skin: '#5c3a28', top: '#272a36', bottom: '#2e2e36', accent: '#ff6063', hair: '#201418', hat: '#c8323a', shoe: '#3b2a20' },
+  look: { hair: 'bandana', weapon: null, sleeves: 'long', bigBoots: true },
   walkF: 6.5, walkB: 5, jumpScale: 1.04, hpScale: 0.97, airJumps: 1,
   moves,
   mech: {
@@ -50,6 +53,7 @@ export default {
       f.res = { embalo: 0 };
     },
     onHit(st, f, d, h, src) {
+      if (src.type === 'move' && src.m.fx === 'stomp') st.events.push({ t: 'shake', n: 12 });
       if (src.type === 'move' && src.m.type === 'normal') f.res.embalo = Math.min(EMBALO_MAX, f.res.embalo + 1);
     },
     extraCancel(st, f, cur, key) {

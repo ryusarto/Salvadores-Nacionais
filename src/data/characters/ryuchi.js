@@ -15,6 +15,10 @@ const slashWave = (o = {}) => proj({ kind: 'slash', x: 120, y: 190, w: 70, h: 19
 
 const moves = {
   ...baseNormals({ reach: 1.26, speed: 1, anims: { L: 'slash', M: 'slash', H: 'slash', lowM: 'whipLow', up: 'slashUp', jH: 'jHeavy' } }),
+  // Apertar Leve três vezes solta os Três Cortes (sai mesmo sem acertar).
+  '5L': mv({ name: 'Corte Um', btn: 'L', startup: 5, active: 3, recovery: 11, box: bx(30, 270, 250, 100), dmg: 320, anim: ['punchWind', 'slash'], flags: { string: { btn: 'L', key: '5LL' } }, tags: ['poke', 'close'] }),
+  '5LL': mv({ name: 'Corte Dois', btn: 'L', startup: 6, active: 3, recovery: 14, box: bx(30, 220, 300, 160), dmg: 420, hitstun: 18, anim: ['slash', 'slashUp'], motion: [{ from: 2, to: 7, vx: 8 }], flags: { string: { btn: 'L', key: '5LLL' } }, cancel: ['special', 'super', 'rush'], tags: [] }),
+  '5LLL': mv({ name: 'Três Cortes', btn: 'M', startup: 8, active: 4, recovery: 22, box: bx(30, 160, 360, 260), dmg: 750, launch: [9, 20], kd: 'hard', anim: ['stance', 'slash'], motion: [{ from: 3, to: 10, vx: 11 }], cancel: ['special', 'super'], tags: [] }),
   '2S': mv({ name: 'Postura da Lâmina', startup: 8, active: 1, recovery: 12, anim: ['stance', 'stance'], weapon: 'sheath', cancel: [], hold: { at: 8, btn: 'S', max: 150, follow: { L: 'stL', M: 'stM', release: 'stRel' } }, tags: ['setup'] }),
   stL: mv({ name: 'Corte Relâmpago', startup: 5, active: 3, recovery: 17, box: bx(30, 210, 360, 130), dmg: 650, hitstun: 20, anim: ['stance', 'slash'], cancel: ['super'], tags: [] }),
   stM: mv({ name: 'Contra-Lâmina', startup: 2, active: 14, recovery: 20, anim: ['stance', 'parry'], weapon: 'sheath', cancel: [], flags: { counter: { from: 3, to: 16, into: 'stCtr' } }, tags: [] }),
@@ -28,9 +32,8 @@ const moves = {
     turbo: { dmg: 1500, inv: [{ from: 1, to: 11, type: 'all' }] } }),
   c1: mv({ name: 'Recuo Cortante', startup: 7, active: 4, recovery: 20, box: bx(30, 200, 390, 150), dmg: 700, push: [120, 120], anim: ['stance', 'slash'], motion: [{ from: 6, to: 16, vx: -15 }], tags: ['mid'] }),
   c2: mv({ name: 'Estocada', startup: 13, active: 4, recovery: 24, box: bx(40, 250, 480, 80), dmg: 950, hitstun: 24, anim: ['heavyWind', 'punchH'], motion: [{ from: 8, to: 15, vx: 12 }], tags: ['far', 'poke'] }),
-  SA1: mv({ name: 'Três Cortes', btn: 'X', startup: 8, active: 26, recovery: 32, anim: ['stance', 'slash'], cost: { super: 1000 }, inv: [{ from: 1, to: 10, type: 'all' }],
-    hits: [{ from: 9, to: 11, box: bx(0, 150, 620, 260), dmg: 500, hitstun: 30, push: [10, 30] }, { from: 19, to: 21, box: bx(0, 150, 620, 260), dmg: 500, hitstun: 30, push: [10, 30] }, { from: 30, to: 33, box: bx(0, 100, 660, 340), dmg: 1100, launch: [12, 26], kd: 'hard' }],
-    motion: [{ from: 6, to: 30, vx: 6 }], tags: ['super'] }),
+  SA1: mv({ name: 'Agudo', btn: 'X', startup: 8, active: 18, recovery: 34, anim: ['superWind', 'burst'], fx: 'scream', cost: { super: 1000 }, inv: [{ from: 1, to: 12, type: 'all' }],
+    hits: [{ from: 9, to: 12, box: bx(-240, 0, 560, 540), dmg: 700, hitstun: 30, push: [30, 40] }, { from: 22, to: 26, box: bx(-300, 0, 680, 580), dmg: 1300, launch: [12, 26], kd: 'hard' }], tags: ['super'] }),
   // Um agudo com a voz: as vibrações quebram tudo em volta, dos dois lados.
   SA3: mv({ name: 'Agudo Supremo', btn: 'X', startup: 12, active: 46, recovery: 40, anim: ['superWind', 'burst'], fx: 'scream', cost: { super: 3000 }, inv: [{ from: 1, to: 58, type: 'all' }],
     hits: [...[0, 1, 2, 3].map((i) => ({ from: 13 + i * 9, to: 15 + i * 9, box: bx(-360 - i * 110, 0, 720 + i * 220, 620), dmg: 480, hitstun: 36, push: [30, 40] })), { from: 54, to: 58, box: bx(-900, 0, 1800, 700), dmg: 2300, launch: [15, 30], kd: 'hard' }],
@@ -52,7 +55,7 @@ export default {
       f.res = {};
     },
     onMoveFrame(st, f, o, m) {
-      if (f.moveKey === 'SA3' && f.sf > m.startup && f.sf < 60 && f.sf % 5 === 0) st.events.push({ t: 'wave', x: f.x, y: 380, r: 160 + f.sf * 12, color: '#d2edf8' }, { t: 'shake', n: 10 });
+      if ((f.moveKey === 'SA3' || f.moveKey === 'SA1') && f.sf > m.startup && f.sf < (f.moveKey === 'SA3' ? 60 : 28) && f.sf % 5 === 0) st.events.push({ t: 'wave', x: f.x, y: 380, r: 160 + f.sf * 12, color: '#d2edf8' }, { t: 'shake', n: 10 });
     },
     remap(f, key) {
       return key === 'stRel' ? `stRel${fio(f.holdLevel)}` : key;

@@ -132,18 +132,35 @@ export function drawEntities(c, st) {
       c.fill();
       c.stroke();
     } else if (e.kind === 'vinyl') {
+      // disco de vinil cortante: borda serrilhada girando
+      const r = e.w / 2;
       c.translate(x, y);
-      c.rotate(st.frame * 0.5);
-      c.fillStyle = '#17131c';
+      c.rotate(st.frame * 0.6);
+      c.fillStyle = '#dfe6ee';
       c.beginPath();
-      c.ellipse(0, 0, e.w / 2, e.w / 2, 0, 0, Math.PI * 2);
+      for (let k = 0; k < 24; k++) {
+        const a = (k * Math.PI) / 12;
+        const rr = k % 2 ? r * 1.22 : r * 0.98;
+        c.lineTo(Math.cos(a) * rr, Math.sin(a) * rr);
+      }
+      c.closePath();
       c.fill();
       c.stroke();
+      c.fillStyle = '#17131c';
+      c.beginPath();
+      c.arc(0, 0, r * 0.92, 0, Math.PI * 2);
+      c.fill();
+      c.strokeStyle = '#3a3344';
+      c.lineWidth = 2;
+      for (const q of [0.75, 0.6, 0.45]) {
+        c.beginPath();
+        c.arc(0, 0, r * q, 0, Math.PI * 2);
+        c.stroke();
+      }
       c.fillStyle = e.color;
       c.beginPath();
-      c.arc(0, 0, e.w / 6, 0, Math.PI * 2);
+      c.arc(0, 0, r * 0.28, 0, Math.PI * 2);
       c.fill();
-      c.fillRect(-2, -e.w / 2, 4, e.w / 3);
     } else if (e.kind === 'note') {
       text(c, '♪', x, y, e.h * 1.3, e.color);
     } else if (e.kind === 'shot') {
