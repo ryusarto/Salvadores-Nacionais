@@ -63,6 +63,14 @@ def keep_main(sub):
 
 def frames_of(path, equal=0):
     a = np.asarray(Image.open(path).convert('RGBA'))
+    if isinstance(equal, list):  # cortes marcados à mão (x em pixels da prancheta)
+        out = []
+        for x0, x1 in zip(equal[:-1], equal[1:]):
+            sub = keep_main(a[:, x0:x1])
+            ys = np.where((sub[:, :, 3] > 40).any(axis=1))[0]
+            xs2 = np.where((sub[:, :, 3] > 40).any(axis=0))[0]
+            out.append((sub[ys.min(): ys.max() + 1, xs2.min(): xs2.max() + 1], ys.max() + 1))
+        return out
     if equal:  # quadros encostados: corta no vão mais vazio perto de cada divisa
         occ = (a[:, :, 3] > 40).sum(axis=0).astype(float)
         xs = np.where(occ > 0)[0]
@@ -122,12 +130,15 @@ def main():
         own = path.endswith('^') or '^' in path
         path = path.replace('^', '')
         equal = 0
-        if '%' in path:  # tira=arquivo%4 divide em 4 colunas iguais
+        if '|' in path:  # tira=arquivo|0,215,448,... cortes marcados à mão
+            path, cuts = path.split('|', 1)
+            equal = [int(v) for v in cuts.split(',')]
+        elif '%' in path:  # tira=arquivo%4 divide em 4 colunas iguais
             path, n = path.rsplit('%', 1)
             equal = int(n)
         fl = frames_of(path, equal)
         ground = max(b for _, b in fl)
-        sc_here = (STAND / fl[0][0].shape[0]) if own else sc
+        sc_here = (STAND / max(f[0].shape[0] for f in fl)) if own else sc  # ^: o quadro mais alto é o personagem em pé
         if pick:
             fl = [fl[i] for i in pick]
         strip = Image.new('RGBA', (CELL * len(fl), CELL), (0, 0, 0, 0))
