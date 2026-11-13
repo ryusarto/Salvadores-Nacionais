@@ -1,0 +1,278 @@
+
+> salvadores-nacionais@1.0.0 test
+> node --test tests/unit/*.test.js
+
+TAP version 13
+# Subtest: walk selects forward/backward art relative to facing on either side
+ok 1 - walk selects forward/backward art relative to facing on either side
+  ---
+  duration_ms: 0.65625
+  type: 'test'
+  ...
+# Subtest: backdash plays all four poses within its actual 21-frame duration
+ok 2 - backdash plays all four poses within its actual 21-frame duration
+  ---
+  duration_ms: 1.587875
+  type: 'test'
+  ...
+# Subtest: backdash timing is local, restarts on a new dash, and clamps at end
+ok 3 - backdash timing is local, restarts on a new dash, and clamps at end
+  ---
+  duration_ms: 0.212583
+  type: 'test'
+  ...
+# Subtest: throw escape keeps its held pose instead of using backdash timing
+ok 4 - throw escape keeps its held pose instead of using backdash timing
+  ---
+  duration_ms: 0.067
+  type: 'test'
+  ...
+# Subtest: Dney physical strikes display contact throughout their real hit windows
+ok 5 - Dney physical strikes display contact throughout their real hit windows
+  ---
+  duration_ms: 0.201041
+  type: 'test'
+  ...
+# Subtest: Dney recovery actions animate all frames; throw release uses the impact pose
+ok 6 - Dney recovery actions animate all frames; throw release uses the impact pose
+  ---
+  duration_ms: 0.148792
+  type: 'test'
+  ...
+# Subtest: Dney new actions have distinct image files and no obsolete aliases
+ok 7 - Dney new actions have distinct image files and no obsolete aliases
+  ---
+  duration_ms: 4.867583
+  type: 'test'
+  ...
+# Subtest: lista de combos: todo herói tem pelo menos 3 combos
+ok 8 - lista de combos: todo herói tem pelo menos 3 combos
+  ---
+  duration_ms: 0.364292
+  type: 'test'
+  ...
+# Subtest: lista de combos: cada combo da lista funciona de verdade no jogo
+ok 9 - lista de combos: cada combo da lista funciona de verdade no jogo
+  ---
+  duration_ms: 20.081916
+  type: 'test'
+  ...
+# Subtest: dados: todo golpe de todo personagem é válido
+ok 10 - dados: todo golpe de todo personagem é válido
+  ---
+  duration_ms: 3.003583
+  type: 'test'
+  ...
+# Subtest: acerto: Leve de perto causa dano e atordoa; de longe erra
+ok 11 - acerto: Leve de perto causa dano e atordoa; de longe erra
+  ---
+  duration_ms: 3.320084
+  type: 'test'
+  ...
+# Subtest: defesa: segurar para trás defende; baixo e de cima exigem a defesa certa
+ok 12 - defesa: segurar para trás defende; baixo e de cima exigem a defesa certa
+  ---
+  duration_ms: 0.946167
+  type: 'test'
+  ...
+# Subtest: combo: Leve > Médio > Forte emenda e o dano escala
+ok 13 - combo: Leve > Médio > Forte emenda e o dano escala
+  ---
+  duration_ms: 0.477542
+  type: 'test'
+  ...
+# Subtest: agarrão: vence a defesa e pode ser escapado
+ok 14 - agarrão: vence a defesa e pode ser escapado
+  ---
+  duration_ms: 0.949542
+  type: 'test'
+  ...
+# Subtest: defesa no botão: em pé, agachado e no ar; no tempo exato é perfeita
+ok 15 - defesa no botão: em pé, agachado e no ar; no tempo exato é perfeita
+  ---
+  duration_ms: 1.201917
+  type: 'test'
+  ...
+# Subtest: Sem Fôlego: defender demais zera a Ginga e passa a tomar dano na defesa
+ok 16 - Sem Fôlego: defender demais zera a Ginga e passa a tomar dano na defesa
+  ---
+  duration_ms: 0.54075
+  type: 'test'
+  ...
+# Subtest: Golpe Blindado: aguenta um golpe e derruba
+ok 17 - Golpe Blindado: aguenta um golpe e derruba
+  ---
+  duration_ms: 0.370708
+  type: 'test'
+  ...
+# Subtest: Arrancada: →→ durante a defesa gasta Ginga e avança
+ok 18 - Arrancada: →→ durante a defesa gasta Ginga e avança
+  ---
+  duration_ms: 0.355791
+  type: 'test'
+  ...
+# Subtest: super: só sai com barra, gasta a barra e congela a tela
+ok 19 - super: só sai com barra, gasta a barra e congela a tela
+  ---
+  duration_ms: 1.19275
+  type: 'test'
+  ...
+# Subtest: movimento: pulo, corrida e recuo
+ok 20 - movimento: pulo, corrida e recuo
+  ---
+  duration_ms: 1.032375
+  type: 'test'
+  ...
+# Subtest: nocaute e rounds: quem zera a vida perde o round; 2 rounds vencem a luta
+ok 21 - nocaute e rounds: quem zera a vida perde o round; 2 rounds vencem a luta
+  ---
+  duration_ms: 1.944292
+  type: 'test'
+  ...
+# Subtest: paredes: ninguém sai do cenário nem atravessa o outro
+ok 22 - paredes: ninguém sai do cenário nem atravessa o outro
+  ---
+  duration_ms: 2.684208
+  type: 'test'
+  ...
+# Subtest: determinismo: mesma semente, mesma luta
+ok 23 - determinismo: mesma semente, mesma luta
+  ---
+  duration_ms: 31.410292
+  type: 'test'
+  ...
+# Subtest: IA: todos os personagens terminam uma luta contra a chefe
+ok 24 - IA: todos os personagens terminam uma luta contra a chefe
+  ---
+  duration_ms: 128.159833
+  type: 'test'
+  ...
+# Subtest: sequências: → ← + Leve e ↓ → + Médio soltam os golpes de comando de todo herói
+ok 25 - sequências: → ← + Leve e ↓ → + Médio soltam os golpes de comando de todo herói
+  ---
+  duration_ms: 1.243042
+  type: 'test'
+  ...
+# Subtest: Franco — Compasso: 2 especiais diferentes liberam o FINAL turbinado e mais forte
+ok 26 - Franco — Compasso: 2 especiais diferentes liberam o FINAL turbinado e mais forte
+  ---
+  duration_ms: 5.029333
+  type: 'test'
+  ...
+# Subtest: Belga — BPM: acertos sobem o ritmo, encurtam a recuperação e levar golpe derruba
+ok 27 - Belga — BPM: acertos sobem o ritmo, encurtam a recuperação e levar golpe derruba
+  ---
+  duration_ms: 1.736583
+  type: 'test'
+  ...
+# Subtest: Majis — Frio: 3 acúmulos congelam o rival
+ok 28 - Majis — Frio: 3 acúmulos congelam o rival
+  ---
+  duration_ms: 1.638541
+  type: 'test'
+  ...
+# Subtest: Trunks — Chamada: uma marca por vez, e o ataque cai depois do tempo
+ok 29 - Trunks — Chamada: uma marca por vez, e o ataque cai depois do tempo
+  ---
+  duration_ms: 2.851167
+  type: 'test'
+  ...
+# Subtest: Ryuchi — Postura: o Fio carrega com o tempo e o contra-ataque responde a um golpe
+ok 30 - Ryuchi — Postura: o Fio carrega com o tempo e o contra-ataque responde a um golpe
+  ---
+  duration_ms: 3.0975
+  type: 'test'
+  ...
+# Subtest: M'Dep — Rajada: Embalo emenda um especial em outro; pulo duplo
+ok 31 - M'Dep — Rajada: Embalo emenda um especial em outro; pulo duplo
+  ---
+  duration_ms: 1.379792
+  type: 'test'
+  ...
+# Subtest: Chapuh — Tinta e Pinscher: poça faz escorregar; cachorro tem tempo de volta
+ok 32 - Chapuh — Tinta e Pinscher: poça faz escorregar; cachorro tem tempo de volta
+  ---
+  duration_ms: 1.189334
+  type: 'test'
+  ...
+# Subtest: Dney — Munição: tiros gastam balas, sem bala falha, recarga e Tiro Certeiro
+ok 33 - Dney — Munição: tiros gastam balas, sem bala falha, recarga e Tiro Certeiro
+  ---
+  duration_ms: 5.818041
+  type: 'test'
+  ...
+# Subtest: Zanata — Fúria: com pouca vida o chicote recupera mais rápido
+ok 34 - Zanata — Fúria: com pouca vida o chicote recupera mais rápido
+  ---
+  duration_ms: 0.984834
+  type: 'test'
+  ...
+# Subtest: Ryuchi — Leve, Leve, Leve solta os Três Cortes, mesmo sem acertar
+ok 35 - Ryuchi — Leve, Leve, Leve solta os Três Cortes, mesmo sem acertar
+  ---
+  duration_ms: 1.047917
+  type: 'test'
+  ...
+# Subtest: golpes temáticos: flash do Franco, pisada do Dep, mordida do Trunks e jato do Chapuh causam dano
+ok 36 - golpes temáticos: flash do Franco, pisada do Dep, mordida do Trunks e jato do Chapuh causam dano
+  ---
+  duration_ms: 1.385958
+  type: 'test'
+  ...
+# Subtest: Garra: com pouca vida o lutador recebe menos dano
+ok 37 - Garra: com pouca vida o lutador recebe menos dano
+  ---
+  duration_ms: 2.928042
+  type: 'test'
+  ...
+# Subtest: Tontura: apanhar muito em sequência deixa tonto; a barra esvazia sozinha
+ok 38 - Tontura: apanhar muito em sequência deixa tonto; a barra esvazia sozinha
+  ---
+  duration_ms: 2.049167
+  type: 'test'
+  ...
+# Subtest: Empurrão na defesa: Leve + Médio afasta o atacante e gasta Ginga
+ok 39 - Empurrão na defesa: Leve + Médio afasta o atacante e gasta Ginga
+  ---
+  duration_ms: 0.363583
+  type: 'test'
+  ...
+# Subtest: Rolamento: apertar um botão ao cair levanta rolando; queda forte não permite
+ok 40 - Rolamento: apertar um botão ao cair levanta rolando; queda forte não permite
+  ---
+  duration_ms: 1.556209
+  type: 'test'
+  ...
+# Subtest: Combo aéreo: Gancho + ↑ dá pulo alto e os golpes aéreos emendam
+ok 41 - Combo aéreo: Gancho + ↑ dá pulo alto e os golpes aéreos emendam
+  ---
+  duration_ms: 1.510375
+  type: 'test'
+  ...
+# Subtest: Defesa no ar: segura um golpe por pulo, o seguinte quebra a guarda
+ok 42 - Defesa no ar: segura um golpe por pulo, o seguinte quebra a guarda
+  ---
+  duration_ms: 0.591417
+  type: 'test'
+  ...
+# Subtest: Agarrões seguidos: cada agarrão sofrido aumenta a imunidade ao levantar
+ok 43 - Agarrões seguidos: cada agarrão sofrido aumenta a imunidade ao levantar
+  ---
+  duration_ms: 0.918541
+  type: 'test'
+  ...
+# Subtest: Golpe de apertar repetido: apertar Especial várias vezes aumenta os acertos da Pressão Nacional
+ok 44 - Golpe de apertar repetido: apertar Especial várias vezes aumenta os acertos da Pressão Nacional
+  ---
+  duration_ms: 1.036792
+  type: 'test'
+  ...
+1..44
+# tests 44
+# suites 0
+# pass 44
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 257.888208

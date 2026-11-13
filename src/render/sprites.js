@@ -86,6 +86,10 @@ function pickStrip(set, a, f) {
   const alias = f.ch.spriteAlias?.[a.name];
   if (alias && set[alias]) return { s: set[alias], p: a.p, fx: null };
   if (set[a.name]) return { s: set[a.name], p: a.p, fx: null };
+  // Elenco ainda sem caminhada reversa: reproduzir o ciclo comum ao contrário.
+  if (a.name === 'andar-tras' && set.andar) {
+    return { s: set.andar, p: Math.max(0, Math.min(0.999, 1 - a.p)), fx: null };
+  }
   const fb = FALLBACK[a.name];
   if (fb && set[fb[0]]) return { s: set[fb[0]], p: fb[1] ?? a.p, fx: fb[2] };
   if (a.name.startsWith('golpe-') && f.move) {

@@ -1,0 +1,1434 @@
+{
+  "character": "dney",
+  "date": "2026-11-13",
+  "generator": "built-in image_gen",
+  "references": "User-supplied Dney idle/walk sprites and Dney reference sheet",
+  "cells": [
+    512,
+    512
+  ],
+  "authoringCells": [
+    768,
+    768
+  ],
+  "footNormalized": [
+    0.5,
+    0.9114583333333334
+  ],
+  "framesPerStrip": 4,
+  "assets": [
+    {
+      "name": "andar-tras",
+      "runtime": "../../final/dney/andar-tras.webp",
+      "prompt": "Use case: identity-preserve. Create a production animation sprite strip for DNEY in Salvadores Nacionais. The two attached local images are identity and finished linework references, NOT poses to repeat. Preserve the EXACT same young brown-skinned man, curly black afro mullet, small goatee, earring, cream oversized t-shirt, purple tactical vest with the small existing NO CHANCE chest patch, loose purple cargo pants and cream sneakers. Match the reference's exceptionally detailed inked comic illustration, sharp black contours, stipple shadows, mauve and cream palette, consistent facial structure and anatomy. ACTION: WALK BACKWARDS toward screen LEFT while ALWAYS facing screen RIGHT and watching opponent. Exactly FOUR distinct full body animation frames, ONE horizontal row of FOUR equal square cells, wide 4:1 strip. Each figure fits entirely inside its cell, same scale and stable head height, feet near 91% cell height, centered on local cell 50% x. Backward gait: 1 rear/left foot reaches backward to left, front knee soft; 2 weight transfers onto rear foot and front foot draws back; 3 opposite step with front foot reaching backward past support foot; 4 recovery passing pose to seamlessly repeat frame 1. Torso stays upright with slight lean away to left, cautious relaxed arms raised slightly for balance, knees soft, no forward striding. Clear changes in foot placement. True transparent background, no floor, no shadow, no labels, no panel borders, no extra figures, no weapon, no motion trails, no effects. This is new animation of the same character, never turn his face or chest left, never mirror him. Keep shoes and hair fully visible in all four cells.",
+      "sha256": "f83c87b6e35e594134fe5b1d980cdfc81d9fcfeaf74194e224cb879d36685c3a",
+      "normalization": {
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "frameCount": 4,
+        "cell": [
+          768,
+          768
+        ],
+        "strip": [
+          3072,
+          768
+        ],
+        "scale": 0.6772334293948127,
+        "nominalStandingHeight": 470,
+        "foot": [
+          384,
+          700
+        ],
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "transparentPixels": 2124986,
+        "frames": [
+          {
+            "frame": 1,
+            "sourceBounds": [
+              38,
+              13,
+              481,
+              709
+            ],
+            "placedBounds": [
+              235,
+              229,
+              535,
+              700
+            ]
+          },
+          {
+            "frame": 2,
+            "sourceBounds": [
+              662,
+              15,
+              983,
+              707
+            ],
+            "placedBounds": [
+              313,
+              230,
+              530,
+              699
+            ]
+          },
+          {
+            "frame": 3,
+            "sourceBounds": [
+              1139,
+              17,
+              1568,
+              708
+            ],
+            "placedBounds": [
+              239,
+              231,
+              530,
+              699
+            ]
+          },
+          {
+            "frame": 4,
+            "sourceBounds": [
+              1775,
+              15,
+              2049,
+              709
+            ],
+            "placedBounds": [
+              308,
+              230,
+              494,
+              700
+            ]
+          }
+        ],
+        "status": "NORMALIZED_NOT_PLAYTESTED"
+      },
+      "sourceArchiveEntry": "raw/andar-tras.png"
+    },
+    {
+      "name": "recuo",
+      "runtime": "../../final/dney/recuo.webp",
+      "prompt": "Use case: identity-preserve. Production BACKDASH animation strip for DNEY, Salvadores Nacionais 2D fighter. References identify the EXACT character and illustration quality. Preserve this same brown-skinned young man with dense black curly afro mullet, small goatee, stud earring, oversized cream t-shirt, purple tactical vest marked NO CHANCE, baggy purple cargo pants and off-white sneakers. Match crisp finely inked black contours, mauve and cream palette, detailed comic-book stipple/halftone shadows. ACTION: QUICK EVASIVE BACKWARD DASH to the LEFT, always LOOKING RIGHT at opponent. This is a short grounded backward hop, NOT walking and NOT running forward. FOUR chronological distinct full-body poses in ONE horizontal strip, FOUR evenly spaced equal square cells. 1 anticipation: knees bent, hips lowered, chest faces right, weight on front/right foot, arms lifted slightly away from body. 2 explosive backward push: front/right leg extends, rear leg folds under body, torso leans slightly right while hips retreat left, arms brace in front of chest, shoe soles barely clear floor. 3 airborne backward recoil: both knees flexed, both feet slightly above common baseline, torso compact and head STILL right, clothing trailing subtly right; show athletic readable silhouette. 4 soft landing: rear/left foot planted, front foot regains stance, knees bent absorbing, settling toward reference idle. Stable identity, face, costume and body volume in all four frames. All figures centered within their cells without cumulative travel across cells, keep relative altitude change for hop, baseline near 91% cell height, full hair and footwear visible with margin. True transparent background. No ground, no shadows, no motion lines, no effects, no gun, no labels or numbers, no scenery, no extra panels. Finished game sprite art, same exact reference aesthetic, not a new character design.",
+      "sha256": "51b53d21c6f037fb884ca78eeddf0fe1fba7b37c222e986ba29728fffbcbd519",
+      "normalization": {
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "frameCount": 4,
+        "cell": [
+          768,
+          768
+        ],
+        "strip": [
+          3072,
+          768
+        ],
+        "scale": 0.6772334293948127,
+        "nominalStandingHeight": 470,
+        "foot": [
+          384,
+          700
+        ],
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "transparentPixels": 2047157,
+        "frames": [
+          {
+            "frame": 1,
+            "sourceBounds": [
+              42,
+              53,
+              466,
+              711
+            ],
+            "placedBounds": [
+              241,
+              253,
+              528,
+              699
+            ]
+          },
+          {
+            "frame": 2,
+            "sourceBounds": [
+              560,
+              55,
+              1066,
+              710
+            ],
+            "placedBounds": [
+              195,
+              255,
+              538,
+              699
+            ]
+          },
+          {
+            "frame": 3,
+            "sourceBounds": [
+              1154,
+              17,
+              1510,
+              635
+            ],
+            "placedBounds": [
+              270,
+              229,
+              511,
+              648
+            ]
+          },
+          {
+            "frame": 4,
+            "sourceBounds": [
+              1663,
+              54,
+              2108,
+              712
+            ],
+            "placedBounds": [
+              234,
+              254,
+              535,
+              700
+            ]
+          }
+        ],
+        "status": "NORMALIZED_NOT_PLAYTESTED"
+      },
+      "sourceArchiveEntry": "raw/recuo.png"
+    },
+    {
+      "name": "golpe-5L",
+      "runtime": "../../final/dney/golpe-5L.webp",
+      "prompt": "Use case: identity-preserve. Production sprite animation for DNEY in Salvadores Nacionais. Input images are identity/style references: same brown-skinned young man, dense black curly afro mullet, short goatee, stud earring, cream oversized t-shirt, purple tactical vest with existing NO CHANCE patch, loose purple cargo pants, cream sneakers. Preserve face, body proportions and costume EXACTLY. Match the supplied detailed inked comic artwork: crisp black contours, stipple shadows, mauve/cream colors, fine facial and clothing detail. Full body lateral three-quarter fighting view, always facing RIGHT. Exactly FOUR chronological poses in ONE horizontal row, four equal-width slots. True transparent background. Full hair, hands and shoes in each slot; no overlap between figures. Common ground line at 92% image height, same scale in all four poses, no cumulative travel between slots. No scenery, no floor, no ground shadow, no labels/numbers, no speedlines, no hit effects, no projectile, no extra figures. Movement must be anatomically coherent and readable. LIGHT STANDING JAB, no gun. Pose1 guard hands raised, elbows in. Pose2 fast short lead-fist extension at chest height, other hand guarding jaw. Pose3 jab full extension toward right, compact planted stance and slight shoulder rotation. Pose4 fist retracts to guard. Keep body upright, do not do a big haymaker or gun attack.",
+      "sha256": "43d7a725d9d3f849480d9151f6403588661cd6cb19e3f9c9adf2c265f813a271",
+      "normalization": {
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "frameCount": 4,
+        "cell": [
+          768,
+          768
+        ],
+        "strip": [
+          3072,
+          768
+        ],
+        "scale": 0.6772334293948127,
+        "nominalStandingHeight": 470,
+        "foot": [
+          384,
+          700
+        ],
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "transparentPixels": 2084440,
+        "frames": [
+          {
+            "frame": 1,
+            "sourceBounds": [
+              126,
+              19,
+              433,
+              713
+            ],
+            "placedBounds": [
+              281,
+              230,
+              489,
+              700
+            ]
+          },
+          {
+            "frame": 2,
+            "sourceBounds": [
+              628,
+              18,
+              987,
+              713
+            ],
+            "placedBounds": [
+              275,
+              229,
+              518,
+              700
+            ]
+          },
+          {
+            "frame": 3,
+            "sourceBounds": [
+              1169,
+              18,
+              1619,
+              713
+            ],
+            "placedBounds": [
+              275,
+              229,
+              580,
+              700
+            ]
+          },
+          {
+            "frame": 4,
+            "sourceBounds": [
+              1710,
+              19,
+              2034,
+              713
+            ],
+            "placedBounds": [
+              275,
+              230,
+              494,
+              700
+            ]
+          }
+        ],
+        "status": "NORMALIZED_NOT_PLAYTESTED"
+      },
+      "sourceArchiveEntry": "raw/golpe-5L.png"
+    },
+    {
+      "name": "golpe-2L",
+      "runtime": "../../final/dney/golpe-2L.webp",
+      "prompt": "Use case: identity-preserve. Production sprite animation for DNEY in Salvadores Nacionais. Input images are identity/style references: same brown-skinned young man, dense black curly afro mullet, short goatee, stud earring, cream oversized t-shirt, purple tactical vest with existing NO CHANCE patch, loose purple cargo pants, cream sneakers. Preserve face, body proportions and costume EXACTLY. Match the supplied detailed inked comic artwork: crisp black contours, stipple shadows, mauve/cream colors, fine facial and clothing detail. Full body lateral three-quarter fighting view, always facing RIGHT. Exactly FOUR chronological poses in ONE horizontal row, four equal-width slots. True transparent background. Full hair, hands and shoes in each slot; no overlap between figures. Common ground line at 92% image height, same scale in all four poses, no cumulative travel between slots. No scenery, no floor, no ground shadow, no labels/numbers, no speedlines, no hit effects, no projectile, no extra figures. Movement must be anatomically coherent and readable. CROUCHING LIGHT LOW KICK, no gun. All poses low, hips below standing waist height. Pose1 low crouching guard. Pose2 lead foot begins quick short extension to right. Pose3 lead leg delivers compact straight low kick just above floor to right, rear knee bent, upper body low, hands protecting face. Pose4 foot retracts back to crouch. Feet remain visible, no muzzle flashes.",
+      "sha256": "6fa999c9e67fc453668ce3581dfc6e0959663be461b25aafb60e852a2527b5fe",
+      "normalization": {
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "frameCount": 4,
+        "cell": [
+          768,
+          768
+        ],
+        "strip": [
+          3072,
+          768
+        ],
+        "scale": 0.6772334293948127,
+        "nominalStandingHeight": 470,
+        "foot": [
+          384,
+          700
+        ],
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "transparentPixels": 2118695,
+        "frames": [
+          {
+            "frame": 1,
+            "sourceBounds": [
+              67,
+              185,
+              426,
+              678
+            ],
+            "placedBounds": [
+              257,
+              365,
+              500,
+              699
+            ]
+          },
+          {
+            "frame": 2,
+            "sourceBounds": [
+              555,
+              187,
+              988,
+              679
+            ],
+            "placedBounds": [
+              230,
+              367,
+              523,
+              700
+            ]
+          },
+          {
+            "frame": 3,
+            "sourceBounds": [
+              1071,
+              197,
+              1623,
+              679
+            ],
+            "placedBounds": [
+              199,
+              374,
+              573,
+              700
+            ]
+          },
+          {
+            "frame": 4,
+            "sourceBounds": [
+              1702,
+              186,
+              2061,
+              679
+            ],
+            "placedBounds": [
+              257,
+              366,
+              500,
+              700
+            ]
+          }
+        ],
+        "status": "NORMALIZED_NOT_PLAYTESTED"
+      },
+      "sourceArchiveEntry": "raw/golpe-2L.png"
+    },
+    {
+      "name": "golpe-2M",
+      "runtime": "../../final/dney/golpe-2M.webp",
+      "prompt": "Use case: identity-preserve. Production sprite animation for DNEY in Salvadores Nacionais. Input images are identity/style references: same brown-skinned young man, dense black curly afro mullet, short goatee, stud earring, cream oversized t-shirt, purple tactical vest with existing NO CHANCE patch, loose purple cargo pants, cream sneakers. Preserve face, body proportions and costume EXACTLY. Match the supplied detailed inked comic artwork: crisp black contours, stipple shadows, mauve/cream colors, fine facial and clothing detail. Full body lateral three-quarter fighting view, always facing RIGHT. Exactly FOUR chronological poses in ONE horizontal row, four equal-width slots. True transparent background. Full hair, hands and shoes in each slot; no overlap between figures. Common ground line at 92% image height, same scale in all four poses, no cumulative travel between slots. No scenery, no floor, no ground shadow, no labels/numbers, no speedlines, no hit effects, no projectile, no extra figures. Movement must be anatomically coherent and readable. CROUCHING MEDIUM SWEEP KICK, no gun. Pose1 low crouch balanced on rear leg. Pose2 hips rotate and front leg begins to extend along ground. Pose3 front leg fully extended horizontally RIGHT at ankle/shin height for a medium-range low kick, rear knee deeply bent, torso compact over rear support, hand bracing for balance. Pose4 leg retracts into low guard. Distinct from short low jab kick: larger reach and deliberate hip rotation. No shooting.",
+      "sha256": "1b7b9e1f5350adafdf97f27cc814bd4d09b7e87af0311c17da84e6632e242bf7",
+      "normalization": {
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "frameCount": 4,
+        "cell": [
+          768,
+          768
+        ],
+        "strip": [
+          3072,
+          768
+        ],
+        "scale": 0.6772334293948127,
+        "nominalStandingHeight": 470,
+        "foot": [
+          384,
+          700
+        ],
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "transparentPixels": 2118361,
+        "frames": [
+          {
+            "frame": 1,
+            "sourceBounds": [
+              55,
+              187,
+              412,
+              666
+            ],
+            "placedBounds": [
+              264,
+              376,
+              506,
+              700
+            ]
+          },
+          {
+            "frame": 2,
+            "sourceBounds": [
+              502,
+              193,
+              1040,
+              666
+            ],
+            "placedBounds": [
+              197,
+              380,
+              561,
+              700
+            ]
+          },
+          {
+            "frame": 3,
+            "sourceBounds": [
+              1074,
+              194,
+              1664,
+              665
+            ],
+            "placedBounds": [
+              187,
+              380,
+              587,
+              699
+            ]
+          },
+          {
+            "frame": 4,
+            "sourceBounds": [
+              1736,
+              187,
+              2076,
+              666
+            ],
+            "placedBounds": [
+              266,
+              376,
+              496,
+              700
+            ]
+          }
+        ],
+        "status": "NORMALIZED_NOT_PLAYTESTED"
+      },
+      "sourceArchiveEntry": "raw/golpe-2M.png"
+    },
+    {
+      "name": "golpe-2H",
+      "runtime": "../../final/dney/golpe-2H.webp",
+      "prompt": "Use case: identity-preserve. Production sprite animation for DNEY in Salvadores Nacionais. Input images are identity/style references: same brown-skinned young man, dense black curly afro mullet, short goatee, stud earring, cream oversized t-shirt, purple tactical vest with existing NO CHANCE patch, loose purple cargo pants, cream sneakers. Preserve face, body proportions and costume EXACTLY. Match the supplied detailed inked comic artwork: crisp black contours, stipple shadows, mauve/cream colors, fine facial and clothing detail. Full body lateral three-quarter fighting view, always facing RIGHT. Exactly FOUR chronological poses in ONE horizontal row, four equal-width slots. True transparent background. Full hair, hands and shoes in each slot; no overlap between figures. Common ground line at 92% image height, same scale in all four poses, no cumulative travel between slots. No scenery, no floor, no ground shadow, no labels/numbers, no speedlines, no hit effects, no projectile, no extra figures. Movement must be anatomically coherent and readable. Crouching physical UPPERCUT, no weapon. 1 deep crouch with fist coiled at hip; 2 rising hip rotation, fist begins upward; 3 full powerful uppercut with closed fist ABOVE head to right, rear hand guarding chest; 4 controlled recovery to guard. Clear upward physical strike, no gun.",
+      "sha256": "2b46d6a197f51dcfd4aa66515ec4cd94d59f9929a9682638790eaf80f0a04998",
+      "normalization": {
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "frameCount": 4,
+        "cell": [
+          768,
+          768
+        ],
+        "strip": [
+          3072,
+          768
+        ],
+        "scale": 0.84,
+        "nominalStandingHeight": 470,
+        "foot": [
+          384,
+          700
+        ],
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "transparentPixels": 2111170,
+        "frames": [
+          {
+            "frame": 1,
+            "sourceBounds": [
+              160,
+              257,
+              432,
+              659
+            ],
+            "placedBounds": [
+              281,
+              362,
+              509,
+              700
+            ]
+          },
+          {
+            "frame": 2,
+            "sourceBounds": [
+              666,
+              191,
+              941,
+              659
+            ],
+            "placedBounds": [
+              277,
+              307,
+              508,
+              700
+            ]
+          },
+          {
+            "frame": 3,
+            "sourceBounds": [
+              1197,
+              78,
+              1502,
+              659
+            ],
+            "placedBounds": [
+              271,
+              212,
+              527,
+              700
+            ]
+          },
+          {
+            "frame": 4,
+            "sourceBounds": [
+              1690,
+              161,
+              1969,
+              659
+            ],
+            "placedBounds": [
+              267,
+              282,
+              501,
+              700
+            ]
+          }
+        ],
+        "status": "NORMALIZED_NOT_PLAYTESTED"
+      },
+      "editPrompt": "Edit this Dney uppercut sprite strip to fix cropped raised fist. Preserve the exact same DNEY character, comic ink quality, purple vest, cream t-shirt, cargo trousers, sneakers and four animation poses. Recompose the entire four-pose strip with generous TRANSPARENT MARGIN ABOVE the raised fist and below shoes. Scale ALL four figures uniformly down by about 15% inside the same strip, keeping their existing relative size and baseline. The third pose must show the ENTIRE clenched fist including all knuckles, arm and complete footwear. True transparency, no scenery, no labels, no new text, no extra figures, four full body poses in one row. Do not change costume or anatomy.",
+      "sourceArchiveEntry": "raw/golpe-2H.png"
+    },
+    {
+      "name": "golpe-3H",
+      "runtime": "../../final/dney/golpe-3H.webp",
+      "prompt": "Use case: identity-preserve. Production sprite animation for DNEY in Salvadores Nacionais. Input images are identity/style references: same brown-skinned young man, dense black curly afro mullet, short goatee, stud earring, cream oversized t-shirt, purple tactical vest with existing NO CHANCE patch, loose purple cargo pants, cream sneakers. Preserve face, body proportions and costume EXACTLY. Match the supplied detailed inked comic artwork: crisp black contours, stipple shadows, mauve/cream colors, fine facial and clothing detail. Full body lateral three-quarter fighting view, always facing RIGHT. Exactly FOUR chronological poses in ONE horizontal row, four equal-width slots. True transparent background. Full hair, hands and shoes in each slot; no overlap between figures. Common ground line at 92% image height, same scale in all four poses, no cumulative travel between slots. No scenery, no floor, no ground shadow, no labels/numbers, no speedlines, no hit effects, no projectile, no extra figures. Movement must be anatomically coherent and readable. Physical full LOW SWEEP kick, no weapon. 1 deep low crouch; 2 one palm braces ground and lead leg extends; 3 front leg stretched fully RIGHT almost along floor at ankle height, rear leg folded beneath hips, torso very low; 4 retract leg into crouch. Not a roll. Keep extended shoe inside own slot.",
+      "sha256": "7c0cbf9a436a71bfbeaecad901726e64ca88d0271dd5e37eac642e4f4c61fc12",
+      "normalization": {
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "frameCount": 4,
+        "cell": [
+          768,
+          768
+        ],
+        "strip": [
+          3072,
+          768
+        ],
+        "scale": 0.6772334293948127,
+        "nominalStandingHeight": 470,
+        "foot": [
+          384,
+          700
+        ],
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "transparentPixels": 2137857,
+        "frames": [
+          {
+            "frame": 1,
+            "sourceBounds": [
+              41,
+              197,
+              396,
+              692
+            ],
+            "placedBounds": [
+              278,
+              362,
+              518,
+              697
+            ]
+          },
+          {
+            "frame": 2,
+            "sourceBounds": [
+              504,
+              252,
+              1041,
+              696
+            ],
+            "placedBounds": [
+              188,
+              398,
+              552,
+              699
+            ]
+          },
+          {
+            "frame": 3,
+            "sourceBounds": [
+              1090,
+              324,
+              1688,
+              697
+            ],
+            "placedBounds": [
+              169,
+              447,
+              574,
+              700
+            ]
+          },
+          {
+            "frame": 4,
+            "sourceBounds": [
+              1770,
+              239,
+              2112,
+              692
+            ],
+            "placedBounds": [
+              279,
+              390,
+              511,
+              697
+            ]
+          }
+        ],
+        "status": "NORMALIZED_NOT_PLAYTESTED"
+      },
+      "sourceArchiveEntry": "raw/golpe-3H.png"
+    },
+    {
+      "name": "golpe-6M",
+      "runtime": "../../final/dney/golpe-6M.webp",
+      "prompt": "Use case: identity-preserve. Production sprite animation for DNEY in Salvadores Nacionais. Input images are identity/style references: same brown-skinned young man, dense black curly afro mullet, short goatee, stud earring, cream oversized t-shirt, purple tactical vest with existing NO CHANCE patch, loose purple cargo pants, cream sneakers. Preserve face, body proportions and costume EXACTLY. Match the supplied detailed inked comic artwork: crisp black contours, stipple shadows, mauve/cream colors, fine facial and clothing detail. Full body lateral three-quarter fighting view, always facing RIGHT. Exactly FOUR chronological poses in ONE horizontal row, four equal-width slots. True transparent background. Full hair, hands and shoes in each slot; no overlap between figures. Common ground line at 92% image height, same scale in all four poses, no cumulative travel between slots. No scenery, no floor, no ground shadow, no labels/numbers, no speedlines, no hit effects, no projectile, no extra figures. Movement must be anatomically coherent and readable. Physical OVERHEAD DOWNWARD ELBOW, no weapon. 1 upright guard; 2 elbow winds up ABOVE forehead; 3 elbow slams DOWN and RIGHT at enemy head height, forward knee bends, rear hand guards; 4 recover to guard. Not an uppercut. Lift then clear downward impact.",
+      "sha256": "319efb38fef3dc46f46ef7ad0725b129d2a20dfb231dfbd7e2897b9d4c00bc58",
+      "normalization": {
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "frameCount": 4,
+        "cell": [
+          768,
+          768
+        ],
+        "strip": [
+          3072,
+          768
+        ],
+        "scale": 0.6772334293948127,
+        "nominalStandingHeight": 470,
+        "foot": [
+          384,
+          700
+        ],
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "transparentPixels": 2104148,
+        "frames": [
+          {
+            "frame": 1,
+            "sourceBounds": [
+              130,
+              24,
+              453,
+              712
+            ],
+            "placedBounds": [
+              275,
+              234,
+              494,
+              700
+            ]
+          },
+          {
+            "frame": 2,
+            "sourceBounds": [
+              641,
+              11,
+              988,
+              711
+            ],
+            "placedBounds": [
+              267,
+              225,
+              502,
+              699
+            ]
+          },
+          {
+            "frame": 3,
+            "sourceBounds": [
+              1124,
+              82,
+              1539,
+              711
+            ],
+            "placedBounds": [
+              244,
+              273,
+              525,
+              699
+            ]
+          },
+          {
+            "frame": 4,
+            "sourceBounds": [
+              1712,
+              24,
+              2038,
+              712
+            ],
+            "placedBounds": [
+              274,
+              234,
+              495,
+              700
+            ]
+          }
+        ],
+        "status": "NORMALIZED_NOT_PLAYTESTED"
+      },
+      "sourceArchiveEntry": "raw/golpe-6M.png"
+    },
+    {
+      "name": "golpe-jL",
+      "runtime": "../../final/dney/golpe-jL.webp",
+      "prompt": "Use case: identity-preserve. Production sprite animation for DNEY in Salvadores Nacionais. Input images are identity/style references: same brown-skinned young man, dense black curly afro mullet, short goatee, stud earring, cream oversized t-shirt, purple tactical vest with existing NO CHANCE patch, loose purple cargo pants, cream sneakers. Preserve face, body proportions and costume EXACTLY. Match the supplied detailed inked comic artwork: crisp black contours, stipple shadows, mauve/cream colors, fine facial and clothing detail. Full body lateral three-quarter fighting view, always facing RIGHT. Exactly FOUR chronological poses in ONE horizontal row, four equal-width slots. True transparent background. Full hair, hands and shoes in each slot; no overlap between figures. Common ground line at 92% image height, same scale in all four poses, no cumulative travel between slots. No scenery, no floor, no ground shadow, no labels/numbers, no speedlines, no hit effects, no projectile, no extra figures. Movement must be anatomically coherent and readable. AIRBORNE LIGHT PUNCH no weapon. 1 airborne tucked knees and guard; 2 short lead fist begins extension; 3 short physical punch RIGHT at chest height with other hand guarding, legs bent; 4 retract fist and prepare landing. All poses airborne with space under feet.",
+      "sha256": "47ea0f6c1516b04e9b41b5dd4b7eb9413edf89096795785c0c8467f99978400c",
+      "normalization": {
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "frameCount": 4,
+        "cell": [
+          768,
+          768
+        ],
+        "strip": [
+          3072,
+          768
+        ],
+        "scale": 0.6772334293948127,
+        "nominalStandingHeight": 470,
+        "foot": [
+          384,
+          700
+        ],
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "transparentPixels": 2121593,
+        "frames": [
+          {
+            "frame": 1,
+            "sourceBounds": [
+              123,
+              21,
+              431,
+              624
+            ],
+            "placedBounds": [
+              315,
+              274,
+              524,
+              682
+            ]
+          },
+          {
+            "frame": 2,
+            "sourceBounds": [
+              633,
+              21,
+              988,
+              626
+            ],
+            "placedBounds": [
+              313,
+              274,
+              553,
+              684
+            ]
+          },
+          {
+            "frame": 3,
+            "sourceBounds": [
+              1157,
+              26,
+              1602,
+              625
+            ],
+            "placedBounds": [
+              311,
+              277,
+              612,
+              683
+            ]
+          },
+          {
+            "frame": 4,
+            "sourceBounds": [
+              1696,
+              26,
+              2012,
+              650
+            ],
+            "placedBounds": [
+              310,
+              277,
+              524,
+              700
+            ]
+          }
+        ],
+        "status": "NORMALIZED_NOT_PLAYTESTED"
+      },
+      "sourceArchiveEntry": "raw/golpe-jL.png"
+    },
+    {
+      "name": "golpe-jM",
+      "runtime": "../../final/dney/golpe-jM.webp",
+      "prompt": "Use case: identity-preserve. Production sprite animation for DNEY in Salvadores Nacionais. Input images are identity/style references: same brown-skinned young man, dense black curly afro mullet, short goatee, stud earring, cream oversized t-shirt, purple tactical vest with existing NO CHANCE patch, loose purple cargo pants, cream sneakers. Preserve face, body proportions and costume EXACTLY. Match the supplied detailed inked comic artwork: crisp black contours, stipple shadows, mauve/cream colors, fine facial and clothing detail. Full body lateral three-quarter fighting view, always facing RIGHT. Exactly FOUR chronological poses in ONE horizontal row, four equal-width slots. True transparent background. Full hair, hands and shoes in each slot; no overlap between figures. Common ground line at 92% image height, same scale in all four poses, no cumulative travel between slots. No scenery, no floor, no ground shadow, no labels/numbers, no speedlines, no hit effects, no projectile, no extra figures. Movement must be anatomically coherent and readable. AIRBORNE MEDIUM SIDE KICK no weapon. 1 airborne guard front knee tucked; 2 hip rotates and leg begins extension; 3 full horizontal kick RIGHT at waist/chest height, back leg bent behind, arms counterbalance; 4 knee retracts into airborne guard. All poses airborne. Physical kick no gun.",
+      "sha256": "5267a02841cc81d5523fea63045a75f545bb4829ea49fbd2de580edb16fa6902",
+      "normalization": {
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "frameCount": 4,
+        "cell": [
+          768,
+          768
+        ],
+        "strip": [
+          3072,
+          768
+        ],
+        "scale": 0.6772334293948127,
+        "nominalStandingHeight": 470,
+        "foot": [
+          384,
+          700
+        ],
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "transparentPixels": 2120022,
+        "frames": [
+          {
+            "frame": 1,
+            "sourceBounds": [
+              131,
+              27,
+              440,
+              677
+            ],
+            "placedBounds": [
+              349,
+              260,
+              558,
+              700
+            ]
+          },
+          {
+            "frame": 2,
+            "sourceBounds": [
+              564,
+              30,
+              1005,
+              646
+            ],
+            "placedBounds": [
+              317,
+              262,
+              616,
+              679
+            ]
+          },
+          {
+            "frame": 3,
+            "sourceBounds": [
+              1042,
+              31,
+              1680,
+              581
+            ],
+            "placedBounds": [
+              279,
+              263,
+              711,
+              635
+            ]
+          },
+          {
+            "frame": 4,
+            "sourceBounds": [
+              1752,
+              29,
+              2035,
+              666
+            ],
+            "placedBounds": [
+              350,
+              262,
+              542,
+              693
+            ]
+          }
+        ],
+        "status": "NORMALIZED_NOT_PLAYTESTED"
+      },
+      "sourceArchiveEntry": "raw/golpe-jM.png"
+    },
+    {
+      "name": "golpe-jH",
+      "runtime": "../../final/dney/golpe-jH.webp",
+      "prompt": "Use case: identity-preserve. Production sprite animation for DNEY in Salvadores Nacionais. Input images are identity/style references: same brown-skinned young man, dense black curly afro mullet, short goatee, stud earring, cream oversized t-shirt, purple tactical vest with existing NO CHANCE patch, loose purple cargo pants, cream sneakers. Preserve face, body proportions and costume EXACTLY. Match the supplied detailed inked comic artwork: crisp black contours, stipple shadows, mauve/cream colors, fine facial and clothing detail. Full body lateral three-quarter fighting view, always facing RIGHT. Exactly FOUR chronological poses in ONE horizontal row, four equal-width slots. True transparent background. Full hair, hands and shoes in each slot; no overlap between figures. Common ground line at 92% image height, same scale in all four poses, no cumulative travel between slots. No scenery, no floor, no ground shadow, no labels/numbers, no speedlines, no hit effects, no projectile, no extra figures. Movement must be anatomically coherent and readable. AIRBORNE HEAVY DESCENDING KICK no weapon. 1 knees raised in jump; 2 wind up front knee; 3 powerful striking leg extends diagonally DOWN-RIGHT, sneaker sole to enemy torso, back leg bent, torso compact over kicking hip; 4 retract into landing preparation. Different from horizontal kick. No gun.",
+      "sha256": "b20a6b4c68f49b8a4fa22ad8e04882d389d0eb0708167e3001d959cc22fcbe2d",
+      "normalization": {
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "frameCount": 4,
+        "cell": [
+          768,
+          768
+        ],
+        "strip": [
+          3072,
+          768
+        ],
+        "scale": 0.6772334293948127,
+        "nominalStandingHeight": 470,
+        "foot": [
+          384,
+          700
+        ],
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "transparentPixels": 2123467,
+        "frames": [
+          {
+            "frame": 1,
+            "sourceBounds": [
+              82,
+              152,
+              446,
+              707
+            ],
+            "placedBounds": [
+              267,
+              324,
+              514,
+              700
+            ]
+          },
+          {
+            "frame": 2,
+            "sourceBounds": [
+              576,
+              22,
+              951,
+              556
+            ],
+            "placedBounds": [
+              228,
+              236,
+              482,
+              598
+            ]
+          },
+          {
+            "frame": 3,
+            "sourceBounds": [
+              1119,
+              86,
+              1594,
+              652
+            ],
+            "placedBounds": [
+              131,
+              280,
+              453,
+              663
+            ]
+          },
+          {
+            "frame": 4,
+            "sourceBounds": [
+              1711,
+              58,
+              2048,
+              698
+            ],
+            "placedBounds": [
+              303,
+              261,
+              531,
+              694
+            ]
+          }
+        ],
+        "status": "NORMALIZED_NOT_PLAYTESTED"
+      },
+      "sourceArchiveEntry": "raw/golpe-jH.png"
+    },
+    {
+      "name": "golpe-throw",
+      "runtime": "../../final/dney/golpe-throw.webp",
+      "prompt": "Use case: identity-preserve. Production sprite animation for DNEY in Salvadores Nacionais. Input images are identity/style references: same brown-skinned young man, dense black curly afro mullet, short goatee, stud earring, cream oversized t-shirt, purple tactical vest with existing NO CHANCE patch, loose purple cargo pants, cream sneakers. Preserve face, body proportions and costume EXACTLY. Match the supplied detailed inked comic artwork: crisp black contours, stipple shadows, mauve/cream colors, fine facial and clothing detail. Full body lateral three-quarter fighting view, always facing RIGHT. Exactly FOUR chronological poses in ONE horizontal row, four equal-width slots. True transparent background. Full hair, hands and shoes in each slot; no overlap between figures. Common ground line at 92% image height, same scale in all four poses, no cumulative travel between slots. No scenery, no floor, no ground shadow, no labels/numbers, no speedlines, no hit effects, no projectile, no extra figures. Movement must be anatomically coherent and readable. PHYSICAL THROW, only Dney visible, invisible imaginary opponent RIGHT. 1 both hands reach to right at chest height; 2 grip pulls to chest and hips rotate into throw; 3 torso bends and arms swing down-right releasing imaginary opponent over hip; 4 recover guard. No second person. No weapon. Two arms and two legs only.",
+      "sha256": "ed26f921827cdf39e66dde201c7f4dea12ab95f394bcc6b3a5be1cdc437ffb51",
+      "normalization": {
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "frameCount": 4,
+        "cell": [
+          768,
+          768
+        ],
+        "strip": [
+          3072,
+          768
+        ],
+        "scale": 0.6772334293948127,
+        "nominalStandingHeight": 470,
+        "foot": [
+          384,
+          700
+        ],
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "transparentPixels": 2056394,
+        "frames": [
+          {
+            "frame": 1,
+            "sourceBounds": [
+              70,
+              12,
+              564,
+              713
+            ],
+            "placedBounds": [
+              241,
+              225,
+              576,
+              700
+            ]
+          },
+          {
+            "frame": 2,
+            "sourceBounds": [
+              587,
+              22,
+              1007,
+              713
+            ],
+            "placedBounds": [
+              243,
+              232,
+              527,
+              700
+            ]
+          },
+          {
+            "frame": 3,
+            "sourceBounds": [
+              1102,
+              90,
+              1589,
+              713
+            ],
+            "placedBounds": [
+              234,
+              278,
+              564,
+              700
+            ]
+          },
+          {
+            "frame": 4,
+            "sourceBounds": [
+              1651,
+              17,
+              2100,
+              713
+            ],
+            "placedBounds": [
+              233,
+              229,
+              537,
+              700
+            ]
+          }
+        ],
+        "status": "NORMALIZED_NOT_PLAYTESTED"
+      },
+      "sourceArchiveEntry": "raw/golpe-throw.png"
+    },
+    {
+      "name": "golpe-blindado",
+      "runtime": "../../final/dney/golpe-blindado.webp",
+      "prompt": "Use case: identity-preserve. Production sprite animation for DNEY in Salvadores Nacionais. Input images are identity/style references: same brown-skinned young man, dense black curly afro mullet, short goatee, stud earring, cream oversized t-shirt, purple tactical vest with existing NO CHANCE patch, loose purple cargo pants, cream sneakers. Preserve face, body proportions and costume EXACTLY. Match the supplied detailed inked comic artwork: crisp black contours, stipple shadows, mauve/cream colors, fine facial and clothing detail. Full body lateral three-quarter fighting view, always facing RIGHT. Exactly FOUR chronological poses in ONE horizontal row, four equal-width slots. True transparent background. Full hair, hands and shoes in each slot; no overlap between figures. Common ground line at 92% image height, same scale in all four poses, no cumulative travel between slots. No scenery, no floor, no ground shadow, no labels/numbers, no speedlines, no hit effects, no projectile, no extra figures. Movement must be anatomically coherent and readable. ARMORED HEAVY SHOULDER/FOREARM BLOW no weapon. 1 planted guard forearms crossed before purple vest; 2 deeply coiled windup shoulder back and rear leg loaded; 3 body drives RIGHT with bent elbow/shoulder impact, front foot planted rear leg driving; 4 heavy recovery into guard. No glow or hit effects; engine provides effects.",
+      "sha256": "3eb5f182ad339da84113d0d00f44181eb59bf3439164b600300e76609be70e85",
+      "normalization": {
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "frameCount": 4,
+        "cell": [
+          768,
+          768
+        ],
+        "strip": [
+          3072,
+          768
+        ],
+        "scale": 0.6772334293948127,
+        "nominalStandingHeight": 470,
+        "foot": [
+          384,
+          700
+        ],
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "transparentPixels": 2084392,
+        "frames": [
+          {
+            "frame": 1,
+            "sourceBounds": [
+              87,
+              23,
+              457,
+              704
+            ],
+            "placedBounds": [
+              259,
+              239,
+              510,
+              700
+            ]
+          },
+          {
+            "frame": 2,
+            "sourceBounds": [
+              565,
+              104,
+              980,
+              704
+            ],
+            "placedBounds": [
+              244,
+              294,
+              525,
+              700
+            ]
+          },
+          {
+            "frame": 3,
+            "sourceBounds": [
+              1068,
+              109,
+              1583,
+              703
+            ],
+            "placedBounds": [
+              212,
+              297,
+              561,
+              699
+            ]
+          },
+          {
+            "frame": 4,
+            "sourceBounds": [
+              1678,
+              28,
+              2092,
+              704
+            ],
+            "placedBounds": [
+              245,
+              242,
+              525,
+              700
+            ]
+          }
+        ],
+        "status": "NORMALIZED_NOT_PLAYTESTED"
+      },
+      "sourceArchiveEntry": "raw/golpe-blindado.png"
+    },
+    {
+      "name": "escape-agarrao",
+      "runtime": "../../final/dney/escape-agarrao.webp",
+      "prompt": "Use case: identity-preserve. Production sprite animation for DNEY in Salvadores Nacionais. Input images are identity/style references: same brown-skinned young man, dense black curly afro mullet, short goatee, stud earring, cream oversized t-shirt, purple tactical vest with existing NO CHANCE patch, loose purple cargo pants, cream sneakers. Preserve face, body proportions and costume EXACTLY. Match the supplied detailed inked comic artwork: crisp black contours, stipple shadows, mauve/cream colors, fine facial and clothing detail. Full body lateral three-quarter fighting view, always facing RIGHT. Exactly FOUR chronological poses in ONE horizontal row, four equal-width slots. True transparent background. Full hair, hands and shoes in each slot; no overlap between figures. Common ground line at 92% image height, same scale in all four poses, no cumulative travel between slots. No scenery, no floor, no ground shadow, no labels/numbers, no speedlines, no hit effects, no projectile, no extra figures. Movement must be anatomically coherent and readable. THROW ESCAPE / TECH no weapon. 1 hands rise toward invisible enemy grip RIGHT; 2 forearms cross before chest; 3 elbows open outward sharply to break grip, torso recoils LEFT while eyes still face right and feet stay planted; 4 recover guard. Only Dney, no opponent. Not a jump or backdash.",
+      "sha256": "86d42f120bfafd9abffa83e30ba45b260b2142c5dca1ff5f0c5c43b0f8b52d3b",
+      "normalization": {
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "frameCount": 4,
+        "cell": [
+          768,
+          768
+        ],
+        "strip": [
+          3072,
+          768
+        ],
+        "scale": 0.6772334293948127,
+        "nominalStandingHeight": 470,
+        "foot": [
+          384,
+          700
+        ],
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "transparentPixels": 2069172,
+        "frames": [
+          {
+            "frame": 1,
+            "sourceBounds": [
+              89,
+              17,
+              488,
+              716
+            ],
+            "placedBounds": [
+              256,
+              227,
+              526,
+              700
+            ]
+          },
+          {
+            "frame": 2,
+            "sourceBounds": [
+              634,
+              15,
+              1010,
+              716
+            ],
+            "placedBounds": [
+              257,
+              225,
+              512,
+              700
+            ]
+          },
+          {
+            "frame": 3,
+            "sourceBounds": [
+              1125,
+              18,
+              1553,
+              716
+            ],
+            "placedBounds": [
+              224,
+              227,
+              514,
+              700
+            ]
+          },
+          {
+            "frame": 4,
+            "sourceBounds": [
+              1704,
+              18,
+              2085,
+              716
+            ],
+            "placedBounds": [
+              256,
+              227,
+              514,
+              700
+            ]
+          }
+        ],
+        "status": "NORMALIZED_NOT_PLAYTESTED"
+      },
+      "editPrompt": "Background extraction only. Keep the four DNEY comic sprite figures EXACTLY as drawn: same pixels of face, hair, cream shirt, purple vest, purple cargo pants, shoes and four poses. Remove ALL white background and floor shadows completely, replacing them with TRUE TRANSPARENCY (RGBA alpha 0). Preserve the cream clothing and white shoes; do not erase their details. No floor, no shadows, no replacement background, no checkerboard pattern baked into image. One horizontal four-pose strip, identical composition. This is a transparent game sprite cutout, not a sheet on white paper.",
+      "sourceArchiveEntry": "raw/escape-agarrao.png"
+    },
+    {
+      "name": "recuperacao-rolamento",
+      "runtime": "../../final/dney/recuperacao-rolamento.webp",
+      "prompt": "Use case: identity-preserve. Production sprite animation for DNEY in Salvadores Nacionais. Input images are identity/style references: same brown-skinned young man, dense black curly afro mullet, short goatee, stud earring, cream oversized t-shirt, purple tactical vest with existing NO CHANCE patch, loose purple cargo pants, cream sneakers. Preserve face, body proportions and costume EXACTLY. Match the supplied detailed inked comic artwork: crisp black contours, stipple shadows, mauve/cream colors, fine facial and clothing detail. Full body lateral three-quarter fighting view, always facing RIGHT. Exactly FOUR chronological poses in ONE horizontal row, four equal-width slots. True transparent background. Full hair, hands and shoes in each slot; no overlap between figures. Common ground line at 92% image height, same scale in all four poses, no cumulative travel between slots. No scenery, no floor, no ground shadow, no labels/numbers, no speedlines, no hit effects, no projectile, no extra figures. Movement must be anatomically coherent and readable. GROUND RECOVERY SOMERSAULT no weapon. 1 low crouch hands brace ground chin tucks; 2 shoulder rolls onto ground with hips over shoulders and knees folded tightly; 3 passes through tucked low seated pose, shoes swing toward ground; 4 pushes into low crouched guard facing RIGHT. No cumulative travel across frames. Entire figure including legs within each cell. Exactly two arms and two legs, no duplicate limbs.",
+      "sha256": "e7c90d903ceab80b3ee40b4fdf28aa286cc81110d3d4c70f0fe8ea870f4b4e41",
+      "normalization": {
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "frameCount": 4,
+        "cell": [
+          768,
+          768
+        ],
+        "strip": [
+          3072,
+          768
+        ],
+        "scale": 0.6772334293948127,
+        "nominalStandingHeight": 470,
+        "foot": [
+          384,
+          700
+        ],
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "transparentPixels": 2139592,
+        "frames": [
+          {
+            "frame": 1,
+            "sourceBounds": [
+              60,
+              277,
+              446,
+              685
+            ],
+            "placedBounds": [
+              253,
+              424,
+              514,
+              700
+            ]
+          },
+          {
+            "frame": 2,
+            "sourceBounds": [
+              575,
+              241,
+              983,
+              682
+            ],
+            "placedBounds": [
+              258,
+              399,
+              534,
+              698
+            ]
+          },
+          {
+            "frame": 3,
+            "sourceBounds": [
+              1131,
+              235,
+              1605,
+              683
+            ],
+            "placedBounds": [
+              217,
+              396,
+              538,
+              699
+            ]
+          },
+          {
+            "frame": 4,
+            "sourceBounds": [
+              1712,
+              226,
+              2083,
+              684
+            ],
+            "placedBounds": [
+              259,
+              389,
+              510,
+              699
+            ]
+          }
+        ],
+        "status": "NORMALIZED_NOT_PLAYTESTED"
+      },
+      "sourceArchiveEntry": "raw/recuperacao-rolamento.png"
+    }
+  ],
+  "sourceDelivery": "Separate local archive: DNEY_COMPLETO_FONTES.zip"
+}

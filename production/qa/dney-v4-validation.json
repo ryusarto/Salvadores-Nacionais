@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-13",
+  "character": "dney",
+  "newAnimations": 15,
+  "newFrames": 60,
+  "runtimeStripsTotal": 42,
+  "node": { "tests": 44, "passed": 44, "failed": 0 },
+  "browser": {
+    "page": "production/qa/dney-sprites.html",
+    "imageComparisons": 60,
+    "passed": 60,
+    "mirrorReviewed": true,
+    "trainingBoot": true,
+    "inputsExercised": ["backward walk", "forward walk", "light attack", "double backward input", "pause"],
+    "scope": "Image selection and rendering checks plus a short training smoke test; not a full natural playthrough or balance test."
+  },
+  "assets": {
+    "format": "lossless WebP RGBA",
+    "runtimeCell": [512, 512],
+    "framesPerStrip": 4,
+    "authoringCell": [768, 768],
+    "transparentBackgroundVerified": true,
+    "allFramesInsideCells": true
+  }
+}

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR"><meta charset="utf-8"><title>Dney — revisão das animações</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#17131d;color:#eee4f0;font:15px system-ui}
+header{padding:22px 28px;border-bottom:1px solid #44334e}h1{margin:0 0 8px;font-size:25px}p{margin:7px 0;color:#c8b5cf}
+button,a{color:#fff;background:#5f3a70;border:1px solid #a87bc0;border-radius:6px;padding:9px 14px;margin:4px;cursor:pointer}
+#grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:20px}
+article{background:#282130;border:1px solid #51415b;border-radius:8px;overflow:hidden}h2{font-size:16px;margin:12px 14px}canvas{width:100%;display:block}
+#status{font-weight:700}#checks{white-space:pre-wrap;padding:0 25px 25px}@media(max-width:700px){#grid{grid-template-columns:1fr 1fr}}
+</style>
+<header><h1>Dney — 15 animações novas</h1><p>Locomoção, golpes físicos e recuperação. Arte aplicada pelo leitor real do jogo.</p>
+<button id="pause">Pausar</button><button id="mirror">Trocar lado</button><button id="next">Próximo quadro</button>
+<a href="../../dist/salvadores-nacionais.html">Jogar</a><p id="status">Carregando imagens…</p></header>
+<main id="grid"></main><pre id="checks"></pre>
+<script type="module">
+import dney from '../../src/data/characters/dney.js';
+import { createFighter } from '../../src/core/fighter.js';
+import { animFor } from '../../src/render/anim.js';
+import { drawSprite, registerSprites } from '../../src/render/sprites.js';
+import { buildStage, drawStage } from '../../src/render/stage.js';
+const actions=[
+ ['andar-tras','Caminhada para trás','walk'],['recuo','Recuo rápido','backdash'],
+ ['golpe-5L','Soco leve','attack'],['golpe-2L','Leve baixo','attack'],['golpe-2M','Médio baixo','attack'],
+ ['golpe-2H','Gancho','attack'],['golpe-3H','Rasteira','attack'],['golpe-6M','Ataque de cima','attack'],
+ ['golpe-jL','Aéreo leve','attack'],['golpe-jM','Aéreo médio','attack'],['golpe-jH','Aéreo forte','attack'],
+ ['golpe-throw','Agarrão','throwing'],['golpe-blindado','Golpe blindado','attack'],
+ ['escape-agarrao','Escape de agarrão','tech'],['recuperacao-rolamento','Rolamento de recuperação','techroll']
+];
+const images={};
+const statusNode=document.getElementById('status');
+await Promise.all(actions.map(async([name])=>{
+ const im=new Image();im.src='../sprites/final/dney/'+name+'.webp';await im.decode();images[name]=im;
+ if(im.naturalWidth!==2048||im.naturalHeight!==512)throw Error('Dimensões: '+name);
+}));
+await registerSprites('dney',Object.fromEntries(actions.map(([name])=>[name,images[name].src])));
+const layers=buildStage(), panels=[];
+for(const [name,label,state]of actions){
+ const article=document.createElement('article');article.innerHTML='<h2>'+label+'</h2>';
+ const cv=document.createElement('canvas');cv.width=640;cv.height=420;article.append(cv);grid.append(article);
+ panels.push({name,state,cv,c:cv.getContext('2d')});
+}
+let playing=true,side=1,frame=0,selected=0;
+pause.onclick=()=>{playing=!playing;pause.textContent=playing?'Pausar':'Reproduzir';};
+mirror.onclick=()=>{side*=-1;};
+next.onclick=()=>{playing=false;pause.textContent='Reproduzir';selected=(selected+1)%4;};
+function fighterFor(panel,index){
+ const f=createFighter(dney,0,0);f.face=side;f.state=panel.state;f.vx=-5*side;f.sf=[0,6,12,19][index];
+ if(panel.state==='techroll')f.sf=[0,6,12,18][index];
+ if(panel.state==='attack'){
+  f.moveKey=panel.name.slice(6);f.move=dney.moves[f.moveKey];
+  const m=f.move;f.sf=[0,Math.max(1,Math.floor(m.hits[0].from*0.65)),m.hits[0].from,m.total-1][index];
+ }
+ if(panel.name==='golpe-throw'){
+  if(index===0){f.state='attack';f.moveKey='throw';f.move=dney.moves.throw;f.sf=0;}
+  else{f.state=index===1?'throwing':'throwEnd';f.sf=index===3?21:0;}
+ }
+ return f;
+}
+// Compare actual drawSprite pixels against the requested strip and frame.
+// This catches an alias/fallback showing the wrong action despite a present file.
+const actual=document.createElement('canvas'),expected=document.createElement('canvas');
+actual.width=expected.width=actual.height=expected.height=768;
+const ac=actual.getContext('2d',{willReadFrequently:true}),ec=expected.getContext('2d',{willReadFrequently:true});
+let cases=0;
+for(const panel of panels)for(let i=0;i<4;i++){
+ const f=fighterFor(panel,i);const clock=panel.state==='walk'?i*7:0;
+ const a=animFor(f,clock),index=Math.min(3,Math.floor(a.p*4));
+ if(a.name!==panel.name)throw Error('Contrato: '+panel.name+' selecionou '+a.name);
+ ac.clearRect(0,0,768,768);ec.clearRect(0,0,768,768);
+ ac.save();ac.translate(384,700);if(!drawSprite(ac,f,clock))throw Error('Sem sprite: '+panel.name);ac.restore();
+ ec.drawImage(images[panel.name],index*512,0,512,512,0,0,768,768);
+ const aa=ac.getImageData(0,0,768,768).data,bb=ec.getImageData(0,0,768,768).data;
+ for(let k=0;k<aa.length;k++)if(aa[k]!==bb[k])throw Error('Arte diferente: '+panel.name+' quadro '+i);
+ cases++;
+}
+statusNode.textContent='PASSOU — '+cases+' verificações de imagem no leitor real; 15 tiras carregadas.';
+checks.textContent='Verificados: dimensões, carregamento, seleção da ação e igualdade de pixels entre a imagem solicitada e o desenho do jogo.\nA revisão visual de movimento e o teste de comandos complementam estas verificações.';
+function loop(){
+ const i=playing?Math.floor(frame/15)%4:selected;
+ for(const panel of panels){
+  const {c,cv}=panel;c.clearRect(0,0,cv.width,cv.height);
+  c.save();c.scale(640/1920,420/1080);drawStage(c,layers,340);c.restore();
+  c.save();c.translate(320,390);c.scale(.6*side,.6);
+  drawSprite(c,fighterFor(panel,i),panel.state==='walk'?i*7:0);c.restore();
+  c.fillStyle='#f5e8fa';c.font='14px system-ui';c.fillText('Quadro '+(i+1)+'/4',16,30);
+ }
+ if(playing)frame++;requestAnimationFrame(loop);
+}
+loop();
+</script>
