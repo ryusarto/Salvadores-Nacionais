@@ -20,7 +20,8 @@ CELL = 512
 FOOT_Y = round(700 * CELL / 768)
 STAND = round(470 * CELL / 768)
 
-# trecho: (y0, y1, x0, x1, quadros) em pixels da prancheta; no lugar do número de
+# trecho: (y0, y1, x0, x1, quadros[, 'alt']) em pixels da prancheta; com 'alt', o trecho vem da
+# prancheta alternativa (spec['alt']), com escala própria tirada do 'idle' dela; no lugar do número de
 # quadros pode vir a lista de cortes (x relativo a x0) quando os quadros se encostam
 SHEETS = {
     'franco': {
@@ -47,6 +48,36 @@ SHEETS = {
             'dano-no-ar': ('queda', [1, 2, 2]), 'caido': ('queda', [4]), 'levantar': ('queda', [5, 6, 7, 8]),
             'golpe-5L': ('fraco', None), 'golpe-5M': ('medio', None), 'golpe-5H': ('forte', None),
             'golpe-SA3': ('especial', None), 'golpe-throw': ('fraco', [0, 2, 4, 5]),
+        },
+    },
+    'mdep': {
+        'ref_width': 1125,
+        # prancheta rotulada: só para as poses que a principal não tem (defesa agachada e queda)
+        'alt': {'path': 'production/sprites/source/mdep-v2-rotulada.webp', 'ref_width': 1125, 'idle': (6, 98, 288, 1060, 8)},
+        'sections': {
+            'idle': (6, 116, 40, 1110, 10),
+            'andar': (126, 224, 25, 1095, 10),
+            'correr': (236, 328, 5, 1112, 10),
+            'agachar': (330, 412, 8, 445, 5),
+            'pulo': (330, 412, 500, 1118, [10, 90, 193, 295, 408, 512, 612]),
+            'defesa': (420, 507, 8, 445, 5),
+            'dano': (420, 507, 556, 1100, 7),
+            'chute': (515, 601, 8, 470, 5),
+            'pisao': (515, 601, 552, 1108, 6),
+            # os clarões dos tiros ligam os quadros: cortes marcados à mão
+            'ak': (611, 703, 5, 1112, [2, 100, 210, 315, 430, 540, 647, 757, 870, 995, 1105]),
+            # começa depois do rótulo "DEFESA (GUARDA)" que fica em cima do primeiro quadro
+            'guarda-baixa': (377, 448, 250, 380, 2, 'alt'),
+            'queda': (377, 448, 725, 1115, 6, 'alt'),
+        },
+        'strips': {
+            'parado': ('idle', None), 'andar': ('andar', None), 'correr': ('correr', None),
+            'agachar': ('agachar', [0, 2, 3, 4]), 'pulo': ('pulo', [1, 2, 3, 4]), 'recuo': ('andar', [6, 5, 4, 3]),
+            'defesa-em-pe': ('defesa', [2]), 'defesa-agachado': ('guarda-baixa', [0]),
+            'dano-alto': ('dano', [0, 1]), 'dano-baixo': ('dano', [1]), 'dano-no-ar': ('dano', [2, 3, 4]),
+            'caido': ('queda', [3]), 'levantar': ('queda', [4, 5]), 'tonto': ('dano', [5, 6]),
+            'golpe-5L': ('chute', None), 'golpe-5M': ('chute', None), 'golpe-5H': ('pisao', None),
+            'golpe-c1': ('pisao', None), 'golpe-SA3': ('ak', None), 'golpe-SA1': ('ak', [0, 2, 4, 6, 8, 9]),
         },
     },
 }
@@ -113,28 +144,42 @@ def main():
     who, path = sys.argv[1], sys.argv[2]
     debug = sys.argv[sys.argv.index('--debug') + 1] if '--debug' in sys.argv else None
     spec = SHEETS[who]
-    sheet = np.asarray(Image.open(path).convert('RGBA'))
-    # a mesma prancheta em outra resolução: as coordenadas acompanham a largura
-    k = sheet.shape[1] / spec.get('ref_width', sheet.shape[1])
-    frames = {}
-    for name, (y0, y1, x0, x1, n) in spec['sections'].items():
+    sheets = {'main': (np.asarray(Image.open(path).convert('RGBA')), spec.get('ref_width'))}
+    if 'alt' in spec:
+        sheets['alt'] = (np.asarray(Image.open(spec['alt']['path']).convert('RGBA')), spec['alt'].get('ref_width'))
+
+    def cut(src, y0, y1, x0, x1, n):
+        sheet, ref = sheets[src]
+        # a mesma prancheta em outra resolução: as coordenadas acompanham a largura
+        k = sheet.shape[1] / (ref or sheet.shape[1])
         y0, y1, x0, x1 = (round(v * k) for v in (y0, y1, x0, x1))
-        if isinstance(n, list):
-            n = [round(v * k) for v in n]
         band = sheet[y0:y1, x0:x1]
+        cuts = list(zip([round(v * k) for v in n][:-1], [round(v * k) for v in n][1:])) if isinstance(n, list) else split(band[:, :, 3], n)
         out = []
-        cuts = list(zip(n[:-1], n[1:])) if isinstance(n, list) else split(band[:, :, 3], n)
         for a, b in cuts:
             piece = clean(band[:, a:b])
             ys, xs = np.where(piece[:, :, 3] > 40)
             out.append(None if len(ys) == 0 else (piece[ys.min(): ys.max() + 1, xs.min(): xs.max() + 1], (y1 - y0) - (ys.max() + 1)))
-        frames[name] = out
-    idle = [f[0].shape[0] for f in frames['idle'] if f]
-    sc = STAND / float(np.median(idle))
+        return out
+
+    frames = {}
+    src_of = {}
+    for name, sec in spec['sections'].items():
+        src = sec[5] if len(sec) > 5 else 'main'
+        frames[name] = cut(src, *sec[:5])
+        src_of[name] = src
+    scales = {}
+    for src, idle_sec in (('main', spec['sections']['idle']), ('alt', spec.get('alt', {}).get('idle'))):
+        if idle_sec is None:
+            continue
+        fl = frames['idle'] if src == 'main' else cut('alt', *idle_sec)
+        scales[src] = STAND / float(np.median([f[0].shape[0] for f in fl if f]))
+    sc = scales['main']
     out_dir = f'production/sprites/final/{who}'
     os.makedirs(out_dir, exist_ok=True)
     for strip_name, (sec, pick) in spec['strips'].items():
         fl = frames[sec]
+        sc = scales[src_of[sec]]
         fl = [fl[i] for i in pick] if pick else fl
         fl = [f for f in fl if f]
         strip = Image.new('RGBA', (CELL * len(fl), CELL), (0, 0, 0, 0))
