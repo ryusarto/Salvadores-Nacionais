@@ -1,12 +1,15 @@
 # Salvadores Nacionais
 
-Jogo de luta 2D para navegador. Esta é a **build de combate**: as regras da luta
-estão completas e os lutadores aparecem como manequins provisórios, que serão
-trocados pelos sprites finais sem mexer nas regras.
+Jogo de luta 2D para navegador, com 8 heróis e a chefona Capeta Zanata.
+
+**Jogue online:** https://ryusarto.github.io/Salvadores-Nacionais/
+
+O código é aberto (licença MIT): qualquer pessoa pode copiar, alterar e
+melhorar o jogo. Veja [Contribuir](#contribuir).
 
 ## Jogar
 
-Abra `dist/salvadores-nacionais.html` no navegador (arquivo único, sem instalação).
+Abra o link acima, ou baixe `dist/salvadores-nacionais.html` e abra no navegador (arquivo único, sem instalação).
 
 | Ação | Teclado | Controle (PS5/PS4/Xbox) | Celular |
 |---|---|---|---|
@@ -57,3 +60,20 @@ npm run build   # gera dist/salvadores-nacionais.html
 - `docs/APRENDIZADOS.md` — mecânicas trazidas do estudo de um jogo de luta clássico.
 - `src/data/combos.js` — lista de combos; `node tools/combos-check.mjs` executa todos.
 - `tools/slice-sheet.py` — recorta uma prancheta de sprites em tiras do jogo.
+
+## Contribuir
+
+Qualquer pessoa pode mexer no jogo:
+
+1. Clique em **Fork** no topo desta página: o GitHub cria uma cópia do jogo na sua conta.
+2. Altere o que quiser na sua cópia (golpes em `src/data/characters/`, números em
+   `src/data/system.js`, sprites em `production/sprites/`).
+3. Rode `npm test` e `npm run build` e abra `dist/salvadores-nacionais.html` para testar.
+4. Para mandar a mudança para o jogo oficial, abra um **Pull Request**. Depois de
+   aceito, ele aparece no link de jogar.
+
+Ideias e problemas também podem ser enviados pela aba **Issues**.
+
+## Licença
+
+[MIT](LICENSE): use, copie, altere e distribua à vontade, mantendo o aviso de licença.
