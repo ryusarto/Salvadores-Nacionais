@@ -24,6 +24,7 @@ STAND = round(470 * CELL / 768)
 # quadros pode vir a lista de cortes (x relativo a x0) quando os quadros se encostam
 SHEETS = {
     'franco': {
+        'ref_width': 1500,  # coordenadas medidas numa prancheta de 1500 px de largura
         'sections': {
             'idle': (8, 115, 380, 1190, 9),
             'andar': (131, 231, 365, 1188, 8),
@@ -113,8 +114,13 @@ def main():
     debug = sys.argv[sys.argv.index('--debug') + 1] if '--debug' in sys.argv else None
     spec = SHEETS[who]
     sheet = np.asarray(Image.open(path).convert('RGBA'))
+    # a mesma prancheta em outra resolução: as coordenadas acompanham a largura
+    k = sheet.shape[1] / spec.get('ref_width', sheet.shape[1])
     frames = {}
     for name, (y0, y1, x0, x1, n) in spec['sections'].items():
+        y0, y1, x0, x1 = (round(v * k) for v in (y0, y1, x0, x1))
+        if isinstance(n, list):
+            n = [round(v * k) for v in n]
         band = sheet[y0:y1, x0:x1]
         out = []
         cuts = list(zip(n[:-1], n[1:])) if isinstance(n, list) else split(band[:, :, 3], n)
