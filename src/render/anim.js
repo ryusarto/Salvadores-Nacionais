@@ -8,6 +8,8 @@
  *
  * Cada tira é uma imagem com N células quadradas lado a lado.
  */
+import { SYS } from '../data/system.js';
+
 export const CELL = 768; // tamanho da célula do guia, em pixels
 export const FOOT = { x: 0.5, y: 700 / 768 }; // ponto do pé dentro da célula
 
@@ -15,10 +17,13 @@ export const FOOT = { x: 0.5, y: 700 / 768 }; // ponto do pé dentro da célula
 export const STATE_ANIMS = {
   parado: { state: 'idle', frames: [0, 20, 40, 60], cycle: 20 },
   andar: { state: 'walk', frames: [0, 7, 14, 21], cycle: 7 },
+  'andar-tras': { state: 'walk', frames: [0, 7, 14, 21], cycle: 7 },
   correr: { state: 'run', frames: [0, 4, 9, 13], cycle: 4 },
   agachar: { state: 'crouch', frames: [1, 2, 4, 8], sf: true },
   pulo: { state: 'air', frames: [0, 0, 0, 0], vy: [30, 12, -6, -24], y: 180 },
-  recuo: { state: 'backdash', frames: [0] },
+  recuo: { state: 'backdash', frames: [0, 5, 11, 16], sf: true },
+  'escape-agarrao': { state: 'tech', frames: [0, 5, 10, 15], sf: true },
+  'recuperacao-rolamento': { state: 'techroll', frames: [0, 6, 12, 18], sf: true },
   'defesa-em-pe': { state: 'guard', frames: [6] , sf: true },
   'defesa-agachado': { state: 'guard', frames: [6], sf: true, crouchBlock: true },
   'defesa-no-ar': { state: 'blockstun', frames: [0], y: 180 },
@@ -67,18 +72,23 @@ export function animFor(f, frame) {
     return { name, index, p: Math.min(0.999, index / len) };
   };
   const hurt = () => one(f.crouchBlock ? 'dano-baixo' : f.comboHits % 2 ? 'dano-alto' : 'dano-baixo');
+  const timed = (name, duration) => {
+    const p = Math.max(0, Math.min(0.999, f.sf / duration));
+    return { name, p, index: Math.floor(p * 4) };
+  };
   switch (f.state) {
     case 'idle': return cyc('parado');
-    case 'walk': return cyc('andar');
+    case 'walk': return cyc(f.vx * f.face < 0 ? 'andar-tras' : 'andar');
     case 'dash': case 'run': case 'rush': case 'runstop': return cyc('correr');
     case 'crouch': return one('agachar', bySf(A.agachar.frames, f.sf));
     case 'prejump': case 'land': return one('agachar', 1);
     case 'air': return f.airGuard ? one('defesa-no-ar') : one('pulo', byVy(A.pulo.vy, f.vy));
-    case 'backdash': case 'tech': return one('recuo');
+    case 'backdash': return timed('recuo', SYS.BACKDASH.frames);
+    case 'tech': return f.ch?.spriteRecovery ? timed('escape-agarrao', 20) : one('recuo');
     case 'guard': return one(f.crouchBlock ? 'defesa-agachado' : 'defesa-em-pe');
     case 'blockstun': return one(f.y > 0 ? 'defesa-no-ar' : f.crouchBlock ? 'defesa-agachado' : 'defesa-em-pe');
     case 'dizzy': return one('tonto', Math.floor(frame / 8) % A.tonto.frames.length);
-    case 'techroll': return one('agachar', 3);
+    case 'techroll': return f.ch?.spriteRecovery ? timed('recuperacao-rolamento', SYS.TECH_ROLL.frames) : one('agachar', 3);
     case 'hitstun': case 'frozen': case 'thrown': return hurt();
     case 'slip': return one('dano-alto');
     case 'air_hit': return one('dano-no-ar', byVy(A['dano-no-ar'].vy, f.vy));
@@ -87,8 +97,27 @@ export function animFor(f, frame) {
     case 'wakeup': return one('levantar', bySf(A.levantar.frames, f.sf));
     case 'crumple': return one('tonto', bySf(A.tonto.frames, f.sf));
     case 'win': return one('vitoria', bySf(A.vitoria.frames, f.sf));
-    case 'throwing': case 'throwEnd': return one('golpe-throw', 99);
-    case 'attack': return { name: `golpe-${f.moveKey}`, index: bySf(movePicks(f.move), f.sf), p: Math.min(0.999, f.sf / f.move.total) };
+    case 'throwing': case 'throwEnd': {
+      if (!f.ch?.spriteRecovery) return one('golpe-throw', 99);
+      // Reach is the attack's first pose; hold the grip until actual release.
+      const p = f.state === 'throwing'
+        ? 0.25 + Math.min(0.249, f.sf / SYS.THROW.hold * 0.25)
+        : Math.min(0.999, 0.5 + f.sf / 22 * 0.5);
+      return { name: 'golpe-throw', p, index: Math.floor(p * 4) };
+    }
+    case 'attack': {
+      const m = f.move;
+      if (f.ch?.spritePhasedMoves?.includes(f.moveKey)) {
+        const first = m.hits.length ? m.hits[0].from : m.startup + 1;
+        const last = m.hits.length ? m.hits[m.hits.length - 1].to : m.startup + m.active;
+        // Four drawings: preparation, wind-up, contact, recovery. The contact
+        // pose follows the actual hit window, not a quarter of total duration.
+        const p = f.sf < first ? Math.min(0.499, f.sf / first * 0.5)
+          : f.sf <= last ? 0.5 : Math.min(0.999, 0.75 + (f.sf - last) / Math.max(1, m.total - last) * 0.25);
+        return { name: `golpe-${f.moveKey}`, p, index: Math.floor(p * 4) };
+      }
+      return { name: `golpe-${f.moveKey}`, index: bySf(movePicks(m), f.sf), p: Math.min(0.999, f.sf / m.total) };
+    }
     default: return cyc('parado');
   }
 }

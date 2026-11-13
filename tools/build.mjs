@@ -3,11 +3,13 @@
 // Os sprites em production/sprites/final/<personagem>/<tira>.png entram embutidos.
 import { build } from 'esbuild';
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, relative, dirname, sep } from 'node:path';
 
 const arg = (k, d) => (process.argv.find((a) => a.startsWith(`--${k}=`)) || '').split('=')[1] || d;
 const spritesDir = arg('sprites', 'production/sprites/final');
 const outFile = arg('out', 'dist/salvadores-nacionais.html');
+const externalAssets = process.argv.includes('--external-assets');
+const assetURL = p => relative(dirname(outFile), p).split(sep).map(encodeURIComponent).join('/');
 
 const sprites = {};
 if (existsSync(spritesDir)) {
@@ -19,7 +21,9 @@ if (existsSync(spritesDir)) {
     sprites[id] = {};
     for (const f of files) {
       const mime = f.endsWith('.webp') ? 'image/webp' : 'image/png';
-      sprites[id][f.replace(/\.(png|webp)$/, '')] = `data:${mime};base64,${readFileSync(join(dir, f)).toString('base64')}`;
+      sprites[id][f.replace(/\.(png|webp)$/, '')] = externalAssets
+        ? assetURL(join(dir, f))
+        : `data:${mime};base64,${readFileSync(join(dir, f)).toString('base64')}`;
     }
   }
 }
@@ -30,7 +34,8 @@ if (existsSync('production/stages')) {
     const m = f.match(/^(.+)\.(jpg|jpeg|webp|png)$/);
     if (!m) continue;
     const mime = m[2] === 'png' ? 'image/png' : m[2] === 'webp' ? 'image/webp' : 'image/jpeg';
-    stages[m[1]] = `data:${mime};base64,${readFileSync(join('production/stages', f)).toString('base64')}`;
+    stages[m[1]] = externalAssets ? assetURL(join('production/stages', f))
+      : `data:${mime};base64,${readFileSync(join('production/stages', f)).toString('base64')}`;
   }
 }
 const out = await build({ entryPoints: ['src/main.js'], bundle: true, format: 'iife', minify: process.argv.includes('--min'), write: false, target: 'es2020' });

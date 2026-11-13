@@ -61,7 +61,10 @@ export default {
   walkF: 6.5, walkB: 5.1, jumpScale: 1, hpScale: 0.86,
   moves,
   // Qual tira do kit de sprites cada animação usa (production/sprites/final/dney)
-  spriteAlias: { 'golpe-5L': 'golpe-c1', 'golpe-2L': 'golpe-6S', 'golpe-2M': 'golpe-6S', 'golpe-2H': 'golpe-4S', 'golpe-3H': 'golpe-c2', 'golpe-6M': 'golpe-5H', 'golpe-jL': 'golpe-jS', 'golpe-jM': 'golpe-jS', 'golpe-throw': 'golpe-c1', 'golpe-blindado': 'golpe-5H' },
+  spriteAlias: {},
+  // Kit próprio para escape, recuperação e fases do agarrão.
+  spriteRecovery: true,
+  spritePhasedMoves: ['5L', '2L', '2M', '2H', '3H', '6M', 'jL', 'jM', 'jH', 'throw', 'blindado'],
   mech: {
     init(f) {
       f.res = { ammo: AMMO, auto: 0 };

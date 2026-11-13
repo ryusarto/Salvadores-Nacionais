@@ -9,7 +9,15 @@ melhorar o jogo. Veja [Contribuir](#contribuir).
 
 ## Jogar
 
-Abra o link acima, ou baixe `dist/salvadores-nacionais.html` e abra no navegador (arquivo único, sem instalação).
+Abra o link acima para jogar a versão original.
+Neste fork, a build em `dist/salvadores-nacionais.html` carrega as imagens de
+`production/sprites/final/` separadamente. Sirva a raiz do projeto por HTTP
+(por exemplo, `python3 -m http.server 8000`) e abra `http://localhost:8000/dist/salvadores-nacionais.html`.
+Para gerar uma edição offline de arquivo único, execute
+`node tools/build.mjs --out=dist/salvadores-nacionais-offline.html`.
+
+O kit de 15 animações novas do Dney pode ser revisado em
+[`production/qa/dney-sprites.html`](production/qa/dney-sprites.html).
 
 | Ação | Teclado | Controle (PS5/PS4/Xbox) | Celular |
 |---|---|---|---|
