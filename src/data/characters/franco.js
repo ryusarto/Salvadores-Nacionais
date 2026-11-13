@@ -58,6 +58,8 @@ export default {
   look: { hair: 'afro', weapon: 'camera', sleeves: 'none', pants: 'shorts', stripes: [[0.42, 0.56, '#f2c318'], [0.56, 0.7, '#2a4fb8']] },
   walkF: 7.1, walkB: 5.4, jumpScale: 1, hpScale: 1.1,
   moves,
+  // Qual tira do kit de sprites cada animação usa (production/sprites/final/franco)
+  spriteAlias: { 'golpe-SA1': 'golpe-SA3', 'golpe-5M': 'golpe-5L' },
   mech: {
     init(f) {
       f.res = { notes: [], noteT: 0, finale: false };

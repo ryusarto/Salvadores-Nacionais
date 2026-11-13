@@ -23,10 +23,20 @@ if (existsSync(spritesDir)) {
     }
   }
 }
+// Cenários pintados: production/stages/<fase>.(jpg|webp|png)
+const stages = {};
+if (existsSync('production/stages')) {
+  for (const f of readdirSync('production/stages')) {
+    const m = f.match(/^(.+)\.(jpg|jpeg|webp|png)$/);
+    if (!m) continue;
+    const mime = m[2] === 'png' ? 'image/png' : m[2] === 'webp' ? 'image/webp' : 'image/jpeg';
+    stages[m[1]] = `data:${mime};base64,${readFileSync(join('production/stages', f)).toString('base64')}`;
+  }
+}
 const out = await build({ entryPoints: ['src/main.js'], bundle: true, format: 'iife', minify: process.argv.includes('--min'), write: false, target: 'es2020' });
-const js = `window.__SPRITES=${JSON.stringify(sprites)};\n${out.outputFiles[0].text}`.replace(/<\/script>/g, '<\\/script>');
+const js = `window.__SPRITES=${JSON.stringify(sprites)};window.__STAGES=${JSON.stringify(stages)};\n${out.outputFiles[0].text}`.replace(/<\/script>/g, '<\\/script>');
 const html = readFileSync('src/index.html', 'utf8').replace('/*__BUNDLE__*/', () => js);
 mkdirSync('dist', { recursive: true });
 writeFileSync(outFile, html);
 const n = Object.entries(sprites).map(([id, s]) => `${id}: ${Object.keys(s).length} tiras`).join(', ');
-console.log(`${outFile} — ${(html.length / 1024).toFixed(0)} KB${n ? ` — sprites: ${n}` : ' — sem sprites (manequim)'}`);
+console.log(`${outFile} — ${(html.length / 1024).toFixed(0)} KB${n ? ` — sprites: ${n}` : ' — sem sprites (manequim)'}${Object.keys(stages).length ? ` — cenários: ${Object.keys(stages).join(', ')}` : ''}`);

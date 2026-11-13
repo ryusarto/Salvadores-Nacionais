@@ -1,6 +1,7 @@
 import { createApp } from './ui/app.js';
 import { createDevices } from './ui/devices.js';
 import { registerSprites } from './render/sprites.js';
+import { setStageImage } from './render/stage.js';
 import { createTouch } from './ui/touch.js';
 
 const canvas = document.getElementById('game');
@@ -23,4 +24,10 @@ window.__app = app; // acesso para testes automáticos
 
 // Sprites embutidos pelo empacotador (production/sprites/final). ?sprites=off força o manequim.
 const packs = q.get('sprites') === 'off' ? {} : window.__SPRITES || {};
+const belem = (window.__STAGES || {}).belem;
+if (belem && q.get('stage') !== 'off') {
+  const img = new Image();
+  img.onload = () => setStageImage(img);
+  img.src = belem;
+}
 Promise.all(Object.entries(packs).map(([id, sheets]) => registerSprites(id, sheets))).then(() => app.run());

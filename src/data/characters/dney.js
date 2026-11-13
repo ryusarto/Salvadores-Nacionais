@@ -60,6 +60,8 @@ export default {
   look: { hair: 'cap', weapon: 'gun', sleeves: 'long', glasses: true },
   walkF: 6.7, walkB: 5.3, jumpScale: 1, hpScale: 0.9,
   moves,
+  // Qual tira do kit de sprites cada animação usa (production/sprites/final/dney)
+  spriteAlias: { 'golpe-SA1': 'golpe-c1', 'golpe-5M': 'golpe-5H', 'golpe-c1': 'golpe-5H', 'golpe-6S': 'golpe-5S', 'golpe-4S': 'golpe-5S', 'golpe-jS': 'golpe-5S', 'golpe-click': 'golpe-5S', 'golpe-5L': 'golpe-5S' },
   mech: {
     init(f) {
       f.res = { ammo: AMMO, auto: 0 };

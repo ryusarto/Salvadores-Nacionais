@@ -52,6 +52,8 @@ export default {
   look: { hair: 'bandana', weapon: null, sleeves: 'long', bigBoots: true },
   walkF: 6.5, walkB: 5, jumpScale: 1.04, hpScale: 0.97, airJumps: 1,
   moves,
+  // Qual tira do kit de sprites cada animação usa (production/sprites/final/mdep)
+  spriteAlias: { 'golpe-SA1': 'golpe-SA3', 'golpe-jH': 'golpe-5H' },
   mech: {
     init(f) {
       f.res = { embalo: 0 };

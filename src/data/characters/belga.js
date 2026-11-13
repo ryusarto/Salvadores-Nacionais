@@ -43,6 +43,8 @@ export default {
   look: { hair: 'beanie', weapon: 'knuckle', sleeves: 'none' },
   walkF: 6.8, walkB: 5.2, jumpScale: 1, hpScale: 1.05,
   moves,
+  // Qual tira do kit de sprites cada animação usa (production/sprites/final/belga)
+  spriteAlias: { 'golpe-SA1': 'golpe-SA3', 'golpe-5S': 'golpe-SA3' },
   mech: {
     init(f) {
       f.res = { bpm: 0, t: 0 };

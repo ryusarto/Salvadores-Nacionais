@@ -67,3 +67,28 @@ usam uma tira parecida do mesmo personagem com um ajuste de pose, então o
 personagem nunca vira manequim no meio da luta. Para ficarem completas, as
 próximas pranchetas precisam destas linhas: defesa em pé e agachado, dano,
 queda, levantar, vitória e os especiais (I, → + I, ↓ + I).
+
+## Kit de tiras (os oito heróis)
+
+As tiras de `production/sprites/final/` vêm do kit montado a partir das
+pranchetas aprovadas (70 tiras originais). As 234 tiras extras da versão
+"cobertura completa" eram cópias exatas de outras tiras e ficaram de fora: o
+jogo já faz essas substituições sozinho.
+
+Para importar um kit novo (tiras de 768 px com o pé em 384, 700):
+
+```bash
+python3 tools/import-kit.py pasta-do-kit [personagem ...]
+```
+
+O importador recorta cada quadro de novo com IA (tira sobras da prancheta),
+iguala o tamanho dos golpes ao do personagem parado e grava WebP de 512 px.
+Quando o nome da tira não bate com o golpe do jogo, a ficha do personagem diz
+qual tira usar em `spriteAlias` (por exemplo, a ambulância do Trunks é o
+super de 1 barra).
+
+## Cenário
+
+Um cenário pintado em `production/stages/belem.jpg` (ou .webp/.png) entra no
+lugar do cenário desenhado por código. A imagem é ampliada para ficar um pouco
+mais larga que a tela e desliza com a câmera.

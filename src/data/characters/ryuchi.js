@@ -50,6 +50,8 @@ export default {
   look: { hair: 'bucket', weapon: 'katana', sleeves: 'long', glasses: true },
   walkF: 7.1, walkB: 5.4, jumpScale: 1.02, hpScale: 1,
   moves,
+  // Qual tira do kit de sprites cada animação usa (production/sprites/final/ryuchi)
+  spriteAlias: { 'golpe-c2': 'golpe-c1', 'golpe-SA1': 'golpe-SA3', 'golpe-5LL': 'golpe-5L', 'golpe-5LLL': 'golpe-c1', 'golpe-stL': 'golpe-5L', 'golpe-stRel0': 'golpe-5H', 'golpe-stRel1': 'golpe-5H', 'golpe-stRel2': 'golpe-5H', 'golpe-stRel3': 'golpe-c1', 'golpe-stCtr': 'golpe-5H' },
   mech: {
     init(f) {
       f.res = {};

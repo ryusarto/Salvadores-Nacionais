@@ -237,8 +237,32 @@ export function buildStage() {
   return [sky, far, mid, near];
 }
 
+/**
+ * Cenário pintado (opcional). Quando existe uma imagem para a fase, ela
+ * substitui o cenário desenhado por código. A imagem é ampliada para ficar
+ * um pouco mais larga que a tela e desliza devagar com a câmera.
+ * `horizon` é a altura do encontro do chão com o fundo, de 0 (topo) a 1 (base).
+ */
+const PAINTED = { img: null, horizon: 0.65, parallax: 0.35 };
+export function setStageImage(img, opts = {}) {
+  PAINTED.img = img;
+  Object.assign(PAINTED, opts);
+}
+
+function drawPainted(c, cam) {
+  const img = PAINTED.img;
+  const wantW = VW + SCROLL * PAINTED.parallax;
+  const s = Math.max(wantW / img.width, VH / img.height);
+  const dh = img.height * s;
+  // o horizonte da pintura fica um pouco acima dos pés dos lutadores
+  const top = Math.min(0, Math.max(VH - dh, SYS.GROUND_Y - 250 - PAINTED.horizon * dh));
+  const sx = (cam * PAINTED.parallax) / s;
+  c.drawImage(img, sx, -top / s, VW / s, VH / s, 0, 0, VW, VH);
+}
+
 /** Desenha o cenário para a posição de câmera `cam` (0 até STAGE_W - VIEW_W). */
 export function drawStage(c, layers, cam) {
+  if (PAINTED.img && PAINTED.img.complete !== false && PAINTED.img.width) return drawPainted(c, cam);
   for (const L of layers) c.drawImage(L.cv, Math.round(cam * L.factor), 0, VW, VH, 0, 0, VW, VH);
   // chão em perspectiva
   const top = 826;

@@ -69,6 +69,8 @@ export default {
   look: { hair: 'spikes', weapon: 'spray', sleeves: 'long' },
   walkF: 7.2, walkB: 5.5, jumpScale: 1.03, hpScale: 0.93,
   moves,
+  // Qual tira do kit de sprites cada animação usa (production/sprites/final/chapuh)
+  spriteAlias: { 'golpe-5S': 'golpe-SA1', 'golpe-SA3': 'golpe-6S', 'golpe-4S': 'golpe-6S', 'golpe-5M': 'golpe-c1', 'golpe-2M': 'golpe-c1', 'golpe-c2': 'golpe-c1' },
   mech: {
     init(f) {
       f.res = { dog: 0 };

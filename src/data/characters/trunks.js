@@ -48,6 +48,8 @@ export default {
   look: { hair: 'dreads', weapon: 'phone', sleeves: 'long' },
   walkF: 5.7, walkB: 4.5, jumpScale: 0.96, hpScale: 1.1,
   moves,
+  // Qual tira do kit de sprites cada animação usa (production/sprites/final/trunks)
+  spriteAlias: { 'golpe-SA1': 'golpe-SA3', 'golpe-SA3': 'golpe-6S', 'golpe-6S': 'golpe-5H', 'golpe-c2': 'golpe-5H' },
   mech: {
     init(f) {
       f.res = {};

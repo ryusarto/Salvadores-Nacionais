@@ -45,6 +45,8 @@ export default {
   look: { hair: 'spikes', weapon: 'guitar' },
   walkF: 6.2, walkB: 4.8, jumpScale: 1, hpScale: 1,
   moves,
+  // Qual tira do kit de sprites cada animação usa (production/sprites/final/majis)
+  spriteAlias: { 'golpe-SA1': 'golpe-SA3' },
   mech: {
     init(f) {
       f.res = {};

@@ -82,6 +82,9 @@ const FALLBACK = {
 };
 
 function pickStrip(set, a, f) {
+  // a ficha do personagem pode dizer qual tira do kit cada animação usa
+  const alias = f.ch.spriteAlias?.[a.name];
+  if (alias && set[alias]) return { s: set[alias], p: a.p, fx: null };
   if (set[a.name]) return { s: set[a.name], p: a.p, fx: null };
   const fb = FALLBACK[a.name];
   if (fb && set[fb[0]]) return { s: set[fb[0]], p: fb[1] ?? a.p, fx: fb[2] };
