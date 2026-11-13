@@ -120,7 +120,8 @@ export function drawSprite(c, f, frame) {
     c.translate(-8, 0);
     c.rotate(-0.05);
   } else if (fx === 'lie') {
-    c.translate(-150, -40);
+    // deitado: o corpo fica centrado sobre o lutador, com a cabeça para trás
+    c.translate(230, -70);
     c.rotate(-Math.PI / 2);
   } else if (fx === 'spin') {
     c.translate(0, -220);
