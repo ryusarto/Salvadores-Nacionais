@@ -9,9 +9,9 @@ melhorar o jogo. Veja [Contribuir](#contribuir).
 
 ## Jogar
 
-Abra o link acima para jogar a versão original.
-Neste fork, a build em `dist/salvadores-nacionais.html` carrega as imagens de
-`production/sprites/final/` separadamente. Sirva a raiz do projeto por HTTP
+Abra o link acima para jogar.
+A build em `dist/salvadores-nacionais.html` carrega as imagens de
+`production/sprites/final/` separadamente. Para jogar no seu computador, sirva a raiz do projeto por HTTP
 (por exemplo, `python3 -m http.server 8000`) e abra `http://localhost:8000/dist/salvadores-nacionais.html`.
 Para gerar uma edição offline de arquivo único, execute
 `node tools/build.mjs --out=dist/salvadores-nacionais-offline.html`.
