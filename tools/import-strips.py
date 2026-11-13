@@ -2,7 +2,8 @@
 """Importa tiras soltas e transparentes (uma imagem por animação, quadros lado a lado).
 
 Uso:
-  python3 tools/import-strips.py <personagem> --ref <imagem-em-pe> <tira>=<imagem> [<tira>=<imagem> ...]
+  python3 tools/import-strips.py <personagem> --ref <imagem-em-pe> <tira>=<imagem>[@quadros] ...
+  (ex.: defesa-em-pe=defesa.png@0 usa só o primeiro quadro)
 
 --ref é uma tira com o personagem em pé: a altura dele define a escala de todas.
 Os quadros são separados pelos espaços transparentes entre eles. O chão de cada
@@ -20,8 +21,17 @@ FOOT_Y = round(700 * CELL / 768)
 STAND = round(470 * CELL / 768)
 
 
-def frames_of(path):
+def frames_of(path, equal=0):
     a = np.asarray(Image.open(path).convert('RGBA'))
+    if equal:  # efeito liga os quadros: divide em colunas iguais
+        w = a.shape[1] // equal
+        out = []
+        for i in range(equal):
+            sub = a[:, i * w:(i + 1) * w]
+            ys = np.where((sub[:, :, 3] > 40).any(axis=1))[0]
+            xs = np.where((sub[:, :, 3] > 40).any(axis=0))[0]
+            out.append((sub[ys.min(): ys.max() + 1, xs.min(): xs.max() + 1], ys.max() + 1))
+        return out
     fg = a[:, :, 3] > 40
     cols = fg.sum(axis=0) > 0
     runs = []
@@ -53,8 +63,18 @@ def main():
     out_dir = f'production/sprites/final/{who}'
     os.makedirs(out_dir, exist_ok=True)
     for name, path in pairs:
-        fl = frames_of(path)
+        pick = None
+        if '@' in path:  # tira=arquivo@0,2 usa só esses quadros
+            path, sel = path.rsplit('@', 1)
+            pick = [int(i) for i in sel.split(',')]
+        equal = 0
+        if '%' in path:  # tira=arquivo%4 divide em 4 colunas iguais
+            path, n = path.rsplit('%', 1)
+            equal = int(n)
+        fl = frames_of(path, equal)
         ground = max(b for _, b in fl)
+        if pick:
+            fl = [fl[i] for i in pick]
         strip = Image.new('RGBA', (CELL * len(fl), CELL), (0, 0, 0, 0))
         for i, (px, bottom) in enumerate(fl):
             img = Image.fromarray(px, 'RGBA')

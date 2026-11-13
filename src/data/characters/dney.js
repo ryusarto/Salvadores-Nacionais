@@ -61,7 +61,7 @@ export default {
   walkF: 6.7, walkB: 5.3, jumpScale: 1, hpScale: 0.9,
   moves,
   // Qual tira do kit de sprites cada animação usa (production/sprites/final/dney)
-  spriteAlias: { 'golpe-SA1': 'golpe-5S', 'recuo': 'andar', 'defesa-em-pe': 'golpe-5M', 'defesa-agachado': 'agachar', 'golpe-c1': 'golpe-5M', 'golpe-2L': 'golpe-5M', 'golpe-2M': 'golpe-5M', 'golpe-6S': 'golpe-5S', 'golpe-4S': 'golpe-5S', 'golpe-jS': 'golpe-5S', 'golpe-click': 'golpe-5S', 'golpe-5L': 'golpe-5S' },
+  spriteAlias: { 'golpe-5L': 'golpe-c1', 'golpe-2L': 'golpe-6S', 'golpe-2M': 'golpe-6S', 'golpe-2H': 'golpe-4S', 'golpe-3H': 'golpe-c2', 'golpe-6M': 'golpe-5H', 'golpe-jL': 'golpe-jS', 'golpe-jM': 'golpe-jS', 'golpe-throw': 'golpe-c1', 'golpe-blindado': 'golpe-5H' },
   mech: {
     init(f) {
       f.res = { ammo: AMMO, auto: 0 };
