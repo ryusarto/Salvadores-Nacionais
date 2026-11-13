@@ -92,3 +92,16 @@ super de 1 barra).
 Um cenário pintado em `production/stages/belem.jpg` (ou .webp/.png) entra no
 lugar do cenário desenhado por código. A imagem é ampliada para ficar um pouco
 mais larga que a tela e desliza com a câmera.
+
+## Pranchetas transparentes (Franco v2)
+
+Pranchetas que já vêm com fundo transparente entram sem modelo de recorte:
+
+```bash
+python3 tools/import-sheet.py franco production/sprites/source/franco-v2.png
+```
+
+A tabela `SHEETS` em `tools/import-sheet.py` diz onde fica cada linha e qual
+quadro vira cada tira (inclusive defesa, dano, queda e levantar). Quando os
+quadros se encostam, a linha leva a lista de cortes no lugar do número de
+quadros.

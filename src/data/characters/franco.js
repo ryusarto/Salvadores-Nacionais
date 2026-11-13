@@ -59,7 +59,7 @@ export default {
   walkF: 7.1, walkB: 5.4, jumpScale: 1, hpScale: 1.1,
   moves,
   // Qual tira do kit de sprites cada animação usa (production/sprites/final/franco)
-  spriteAlias: { 'golpe-SA1': 'golpe-SA3', 'golpe-5M': 'golpe-5L' },
+  spriteAlias: { 'golpe-SA1': 'golpe-SA3', 'golpe-2L': 'golpe-5L', 'golpe-2M': 'golpe-5M', 'golpe-6M': 'golpe-5M', 'golpe-c1': 'golpe-5M', 'golpe-5S': 'golpe-5H', 'golpe-2H': 'golpe-5H', 'tonto': 'dano-alto' },
   mech: {
     init(f) {
       f.res = { notes: [], noteT: 0, finale: false };
