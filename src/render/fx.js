@@ -55,7 +55,20 @@ export function fxEvents(fx, st) {
       case 'grab': fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 50, t: 0, dur: 10, color: '#fff' }); break;
       case 'tech': pop(fx, 'ESCAPOU!', e.x, sy - 140, '#fff', 46); break;
       case 'clash': fx.parts.push({ k: 'spark', x: e.x, y: sy, r: 60, t: 0, dur: 12, color: '#fff', rot: 0 }); break;
-      case 'strike': fx.parts.push({ k: 'column', x: e.x, t: 0, dur: 18 }); fx.shake = Math.max(fx.shake, 16); fx.flash = 0.35; break;
+      case 'strike':
+        if (e.kind === 'ambulance') {
+          // explosão da ambulância
+          fx.parts.push({ k: 'spark', x: e.x, y: GY - 120, r: 340, t: 0, dur: 26, color: '#ffb13d', rot: 0 }, { k: 'spark', x: e.x, y: GY - 160, r: 220, t: 0, dur: 20, color: '#fff3b0', rot: 0.4 });
+          for (let i = 0; i < 18; i++) fx.parts.push({ k: 'dust', x: e.x + (Math.random() - 0.5) * 260, y: GY - Math.random() * 200, vx: (Math.random() - 0.5) * 22, vy: -Math.random() * 12, r: 30 + Math.random() * 40, t: 0, dur: 40 + Math.random() * 20 });
+          pop(fx, 'KABUM!', e.x, GY - 420, '#ff3b30', 120, 70);
+          fx.shake = Math.max(fx.shake, 30);
+          fx.flash = 0.7;
+        } else {
+          fx.parts.push({ k: 'column', x: e.x, t: 0, dur: 18 });
+          fx.shake = Math.max(fx.shake, 16);
+          fx.flash = 0.35;
+        }
+        break;
       case 'splash': dust(fx, e.x, 4, 0.6); break;
       case 'super': fx.dark = st.freeze + 14; fx.banner = { name: e.name, side: e.side, level: e.level, t: 0, dur: st.freeze + 30 }; break;
       case 'ko': fx.big = { str: 'K.O.', t: 0, dur: 130, color: '#ff2f2f' }; fx.flash = 1; fx.shake = 26; break;
@@ -111,6 +124,48 @@ export function drawEntities(c, st) {
     c.save();
     c.lineWidth = 5;
     c.strokeStyle = '#12080c';
+    if (e.kind === 'ambulance') {
+      // ambulância despencando do céu até o chão, girando, com a sirene piscando
+      const t = e.delay > 0 ? 1 - e.delay / (e.delay0 || 26) : 1;
+      const ay = -220 + (GY - 120 + 220) * t * t;
+      c.translate(x, ay);
+      c.rotate(-0.5 + t * 0.35);
+      c.lineWidth = 6;
+      c.fillStyle = '#f4f2ee';
+      c.beginPath();
+      c.roundRect(-170, -80, 340, 160, 16);
+      c.fill();
+      c.stroke();
+      c.fillStyle = '#ff3b30';
+      c.fillRect(-170, 10, 340, 26);
+      c.fillRect(-28, -60, 56, 18);
+      c.fillRect(-9, -79, 18, 56);
+      c.fillStyle = '#7fd4ff';
+      c.fillRect(90, -60, 60, 50);
+      c.strokeRect(90, -60, 60, 50);
+      c.fillStyle = Math.floor(st.frame / 4) % 2 ? '#ff3b30' : '#3b82ff';
+      c.fillRect(-60, -104, 120, 24);
+      c.strokeRect(-60, -104, 120, 24);
+      c.fillStyle = '#1a1418';
+      for (const wx of [-100, 100]) {
+        c.beginPath();
+        c.arc(wx, 84, 32, 0, Math.PI * 2);
+        c.fill();
+      }
+      c.restore();
+      if (e.delay > 0) {
+        // alvo no chão
+        c.save();
+        c.strokeStyle = '#ff3b30';
+        c.lineWidth = 6;
+        c.globalAlpha = 0.5 + 0.5 * Math.sin(st.frame * 0.5);
+        c.beginPath();
+        c.ellipse(x, GY, e.w / 2, 26, 0, 0, Math.PI * 2);
+        c.stroke();
+        c.restore();
+      }
+      continue;
+    }
     if (e.behavior === 'strike') {
       const t = e.delay > 0 ? 1 - e.delay / (e.delay0 || 150) : 1;
       c.globalAlpha = e.delay > 0 ? 0.5 + 0.5 * Math.sin(st.frame * (0.2 + t * 0.6)) : 1;

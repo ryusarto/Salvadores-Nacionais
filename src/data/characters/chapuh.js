@@ -1,7 +1,7 @@
 import { mv, bx, baseNormals, proj } from '../movekit.js';
 
 /**
- * CHAPUH — truques. Bate com a lata de spray de pixo.
+ * CHAPUH — truques. Bate com a lata de spray de pixo; o especial é um rajadão de pichação de longo alcance.
  * Super: ATAQUE DO PINSCHER — o cachorro vem correndo e ataca o rival.
  * Mecânica: TINTA e PINSCHER. O spray deixa poças no chão (até 2): o rival que
  * andar ou correr por cima escorrega. O pinscher é um ajudante que ataca sob
@@ -34,10 +34,11 @@ const moves = {
   // O botão Médio é um jato de spray preto de média distância.
   '5M': mv({ name: 'Jato de Spray', btn: 'M', startup: 8, active: 5, recovery: 15, box: bx(50, 230, 330, 130), dmg: 620, anim: ['castWind', 'cast'], fx: 'spray', tags: ['poke', 'mid', 'far'] }),
   '2M': mv({ name: 'Jato Rasteiro', btn: 'M', startup: 9, active: 5, recovery: 16, crouch: true, guard: 'low', box: bx(50, 10, 320, 110), dmg: 560, anim: ['crouch', 'whipLow'], fx: 'spray', tags: ['poke', 'mid', 'low'] }),
-  '5S': mv({ name: 'Spray', startup: 9, active: 12, recovery: 18, anim: ['castWind', 'cast'],
-    hits: [0, 1, 2].map((i) => ({ from: 10 + i * 5, to: 11 + i * 5, box: bx(40, 170, 270, 210), dmg: 260, hitstun: 20, push: i === 2 ? [110, 90] : [15, 20] })),
-    spawn: [{ at: 22, ...puddle(240) }], flags: { mash: { btn: 'S', from: 10, to: 21, max: 2 } }, tags: ['mid', 'pressure'],
-    turbo: { hits: [0, 1, 2].map((i) => ({ from: 9 + i * 4, to: 10 + i * 4, box: bx(40, 150, 300, 250), dmg: 360, hitstun: 22, push: [15, 20], launch: i === 2 ? [7, 24] : null })), spawn: [{ at: 20, ...puddle(260) }] } }),
+  // Rajadão de pichação: um jato largo de spray que alcança longe e deixa poça no fim.
+  '5S': mv({ name: 'Rajadão de Pichação', startup: 9, active: 18, recovery: 18, anim: ['castWind', 'cast'], fx: 'spray',
+    hits: [0, 1, 2, 3].map((i) => ({ from: 10 + i * 5, to: 11 + i * 5, box: bx(40, 160, 560, 230), dmg: 240, hitstun: 22, push: i === 3 ? [130, 100] : [10, 18] })),
+    spawn: [{ at: 26, ...puddle(430) }], flags: { mash: { btn: 'S', from: 10, to: 26, max: 2 } }, range: 600, tags: ['mid', 'far', 'pressure'],
+    turbo: { hits: [0, 1, 2, 3].map((i) => ({ from: 9 + i * 4, to: 10 + i * 4, box: bx(40, 140, 620, 270), dmg: 330, hitstun: 24, push: [10, 18], launch: i === 3 ? [7, 24] : null })), spawn: [{ at: 24, ...puddle(470) }] } }),
   '2S': mv({ name: 'Bomba de Tinta', startup: 14, active: 1, recovery: 22, anim: ['overWind', 'overhead'], range: 620, tags: ['zone', 'far'],
     spawn: [{ at: 14, ...proj({ kind: 'paint', x: 70, y: 380, w: 64, h: 64, vx: 13, vy: 20, g: 1.5, life: 120, dmg: 500, color: '#ee547a', extra: { landSpawn: PUDDLE } }) }],
     turbo: { startup: 10, spawn: [{ at: 10, ...proj({ kind: 'paint', x: 70, y: 380, w: 80, h: 80, vx: 17, vy: 20, g: 1.5, life: 120, dmg: 750, launch: [5, 20], color: '#6fc2ef', extra: { landSpawn: PUDDLE } }) }] } }),

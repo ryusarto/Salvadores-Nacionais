@@ -55,13 +55,16 @@ export function rumble(d, strong = 0.6, weak = 0.4, ms = 90) {
 }
 
 export function createDevices(target = window) {
-  const d = { held: {}, pressed: {}, padPrev: {}, padMap: loadPad(), padName: null, rawPrev: [], lastRaw: null, notice: null, kind: 'teclado' };
+  const d = { held: {}, pressed: {}, padPrev: {}, padMap: loadPad(), padName: null, rawPrev: [], lastRaw: null, notice: null, kind: 'teclado', kbPressed: {}, pads: {} };
   target.addEventListener('keydown', (e) => {
     const k = KEYMAP[e.code];
     if (!k) return;
     d.kind = 'teclado';
     e.preventDefault();
-    if (!d.held[k]) d.pressed[k] = true;
+    if (!d.held[k]) {
+      d.pressed[k] = true;
+      d.kbPressed[k] = true;
+    }
     d.held[k] = true;
   });
   target.addEventListener('keyup', (e) => {
@@ -72,40 +75,111 @@ export function createDevices(target = window) {
   return d;
 }
 
-/** Lê o controle (se houver) e mistura com o teclado. Chame uma vez por quadro de tela. */
+/**
+ * Lê todos os controles conectados. Cada controle tem seu próprio estado em
+ * `d.pads[índice]` (usado no versus de dois jogadores); a soma de todos vai
+ * para `d.pad`, que serve os menus e o jogo de um jogador.
+ * Chame uma vez por quadro de tela.
+ */
 export function pollPad(d) {
-  const pads = typeof navigator !== 'undefined' && navigator.getGamepads ? navigator.getGamepads() : [];
-  const p = [...pads].find((x) => x && x.connected);
-  const now = {};
-  const name = p ? p.id : null;
-  if (name !== d.padName) {
-    d.notice = name ? { text: `CONTROLE CONECTADO: ${padLabel(name)}`, t: 240 } : d.padName ? { text: 'CONTROLE DESCONECTADO', t: 180 } : d.notice;
-    d.padName = name;
+  const list = typeof navigator !== 'undefined' && navigator.getGamepads ? [...navigator.getGamepads()].filter((x) => x && x.connected) : [];
+  const first = list[0] || null;
+  const name = first ? first.id : null;
+  const seen = new Set();
+  for (const p of list) {
+    seen.add(p.index);
+    if (!d.pads[p.index]) {
+      d.pads[p.index] = { id: p.id, now: {}, prev: {}, pressed: {}, raw: [] };
+      d.notice = { text: `CONTROLE ${p.index + 1} CONECTADO: ${padLabel(p.id)}`, t: 240 };
+    }
   }
-  d.gamepad = p || null;
-  if (p) {
+  for (const idx of Object.keys(d.pads)) {
+    if (!seen.has(+idx)) {
+      delete d.pads[idx];
+      d.notice = { text: `CONTROLE ${+idx + 1} DESCONECTADO`, t: 180 };
+    }
+  }
+  d.padName = name;
+  d.gamepad = first;
+  d.gamepads = list;
+  const union = {};
+  for (const p of list) {
+    const s = d.pads[p.index];
+    const now = {};
     const raw = p.buttons.map((b) => b.pressed || b.value > 0.5);
     raw.forEach((on, i) => {
-      if (on && !d.rawPrev[i]) {
+      if (on && !s.raw[i]) {
         d.lastRaw = i;
         d.kind = 'controle';
-        if (i === 0) d.pressed.ok = true;
-        if (i === 1) d.pressed.cancel = true;
+        if (i === 0) {
+          d.pressed.ok = true;
+          s.pressed.ok = true;
+        }
+        if (i === 1) {
+          d.pressed.cancel = true;
+          s.pressed.cancel = true;
+        }
       }
       const act = d.padMap[i];
       if (on && act) now[act] = true;
     });
-    d.rawPrev = raw;
+    s.raw = raw;
     if (p.axes[0] < -0.45) now.left = true;
     if (p.axes[0] > 0.45) now.right = true;
     if (p.axes[1] < -0.55) now.up = true;
     if (p.axes[1] > 0.55) now.down = true;
+    for (const k of Object.keys(now)) {
+      if (!s.prev[k]) s.pressed[k] = true;
+      union[k] = true;
+    }
+    s.now = now;
+    s.prev = now;
   }
-  for (const k of new Set([...Object.keys(now), ...Object.keys(d.padPrev)])) {
-    if (now[k] && !d.padPrev[k]) d.pressed[k] = true;
+  for (const k of Object.keys(union)) if (!d.padPrev[k]) d.pressed[k] = true;
+  d.pad = union;
+  d.padPrev = union;
+}
+
+/**
+ * Fontes de entrada para o versus: 'kb' (teclado) ou o índice de um controle.
+ */
+export function readInputFrom(d, src) {
+  if (src == null) return { ...EMPTY_INPUT };
+  const has = src === 'kb' ? (k) => !!(d.held[k] || d.touch?.[k]) : (k) => !!d.pads[src]?.now[k];
+  return {
+    ...EMPTY_INPUT,
+    x: (has('right') ? 1 : 0) - (has('left') ? 1 : 0),
+    y: (has('up') ? 1 : 0) - (has('down') ? 1 : 0),
+    L: +has('L'), M: +has('M'), H: +has('H'), S: +has('S'), G: +has('G'), T: +has('T'), X: +has('X'),
+  };
+}
+
+/** Apertos novos de uma fonte (teclado ou um controle), para menus por jogador. Limpa a lista. */
+export function takePressedFrom(d, src) {
+  if (src === 'kb') {
+    const p = d.kbPressed;
+    d.kbPressed = {};
+    return p;
   }
-  d.pad = now;
-  d.padPrev = now;
+  const s = d.pads[src];
+  if (!s) return {};
+  const p = s.pressed;
+  s.pressed = {};
+  return p;
+}
+
+/** Limpa os apertos guardados de todas as fontes (ao trocar de tela). */
+export function clearPressed(d) {
+  d.kbPressed = {};
+  for (const s of Object.values(d.pads)) s.pressed = {};
+}
+
+/** Vibração de um controle específico. */
+export function rumbleOn(d, src, strong, weak, ms) {
+  const p = (d.gamepads || []).find((g) => g.index === src);
+  try {
+    p?.vibrationActuator?.playEffect?.('dual-rumble', { duration: ms, strongMagnitude: strong, weakMagnitude: weak });
+  } catch { /* controle sem vibração */ }
 }
 
 /** Nome curto do controle a partir do identificador do navegador. */

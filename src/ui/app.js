@@ -9,14 +9,14 @@ import { drawFighter, drawBoxes } from '../render/mannequin.js';
 import { createFx, fxEvents, fxUpdate, fxDrawBack, fxDrawFront, fxDrawScreen, drawEntities } from '../render/fx.js';
 import { createHud, drawHud } from '../render/hud.js';
 import { text, slab, halftone } from '../render/draw.js';
-import { readInput, takePressed, pollPad, glyphs, rumble, remapPad, resetPad, PS_NAMES } from './devices.js';
+import { readInput, takePressed, pollPad, glyphs, rumble, remapPad, resetPad, PS_NAMES, readInputFrom, takePressedFrom, clearPressed, rumbleOn, padLabel } from './devices.js';
 import { COMBOS } from '../data/combos.js';
 import { createTracker, trackCombo, createRunner, runnerInput, runnerDone, stepLabel } from '../core/combos.js';
 import { audioEvents, sfx } from './audio.js';
 
 const W = SYS.VIEW_W;
 const H = SYS.VIEW_H;
-const MENU = [['story', 'MODO HISTÓRIA'], ['versus', 'VERSUS CPU'], ['training', 'TREINO'], ['controls', 'CONTROLES'], ['diff', 'DIFICULDADE']];
+const MENU = [['story', 'MODO HISTÓRIA'], ['versus', 'VERSUS CPU'], ['vs2', 'VERSUS 2 JOGADORES'], ['training', 'TREINO'], ['controls', 'CONTROLES'], ['diff', 'DIFICULDADE']];
 const loadDiff = () => {
   try {
     const n = +localStorage.getItem('sn-dificuldade');
@@ -40,13 +40,16 @@ export function createApp(canvas, devices, opts = {}) {
     cam: (SYS.STAGE_W - W) / 2, frame: 0, paused: false, pcur: 0, sub: null, ccur: 0, kcur: 0, remap: 0, trial: null, demo: null, demoT: 0, inputLog: [], lastIn: null,
     boxes: !!opts.boxes, dummy: 0, level: SYS.DIFFICULTY[loadDiff()].level, diff: loadDiff(), stats: null, overT: 0, vsT: 0,
     autoplay: opts.autoplay || null,
+    slots: [null, null], ready: [false, false], hero2: 1,
   };
 
   function startFight() {
     const hero = HEROES[app.hero];
     const D = SYS.DIFFICULTY[app.diff];
     app.level = D.level;
-    app.st = createMatch({ chars: [hero, app.foe], seed: (Date.now() & 0xffff) + 1, training: app.mode === 'training', dmgMul: app.mode === 'training' ? [1, 1] : D.dmg });
+    const fair = app.mode === 'training' || app.mode === 'vs2';
+    if (app.mode === 'vs2') app.foe = HEROES[app.hero2];
+    app.st = createMatch({ chars: [hero, app.foe], seed: (Date.now() & 0xffff) + 1, training: app.mode === 'training', dmgMul: fair ? [1, 1] : D.dmg });
     app.brain = createBrain(app.level);
     app.p1brain = app.autoplay ? createBrain(2) : null;
     app.fx = createFx();
@@ -72,6 +75,7 @@ export function createApp(canvas, devices, opts = {}) {
 
   function p2Input() {
     const st = app.st;
+    if (app.mode === 'vs2') return readInputFrom(devices, app.slots[1]);
     if (app.mode !== 'training' || app.dummy === 2) return aiInput(st, 1, app.brain);
     if (app.dummy === 1) {
       const a = st.f[0];
@@ -81,6 +85,70 @@ export function createApp(canvas, devices, opts = {}) {
       return { ...EMPTY_INPUT, x: -(Math.sign(a.x - me.x) || 1), y: low || !high ? (high ? 0 : -1) : 0 };
     }
     return EMPTY_INPUT;
+  }
+
+  /** Nome curto de uma fonte de entrada (teclado ou controle). */
+  function srcName(src) {
+    if (src === 'kb') return 'TECLADO';
+    const p = devices.pads[src];
+    return p ? `CONTROLE ${src + 1} — ${padLabel(p.id)}` : `CONTROLE ${src + 1}`;
+  }
+
+  /** Fontes que podem entrar no versus: o teclado e cada controle conectado. */
+  function sources() {
+    return ['kb', ...Object.keys(devices.pads).map(Number)];
+  }
+
+  /** Tela de entrada: cada jogador aperta ✕ (ou Enter) no seu controle. */
+  function joinTick(back) {
+    for (const src of sources()) {
+      const p = takePressedFrom(devices, src);
+      const join = p.ok || p.S || p.start || (src === 'kb' && (p.L || p.S));
+      const leave = p.cancel || p.back || (src === 'kb' && p.M);
+      const at = app.slots.indexOf(src);
+      if (leave && at >= 0) {
+        app.slots[at] = null;
+        app.ready[at] = false;
+      } else if (join && at < 0) {
+        const free = app.slots.indexOf(null);
+        if (free >= 0) {
+          app.slots[free] = src;
+          sfx.ok();
+          rumbleOn(devices, src, 0.4, 0.6, 150);
+        }
+      }
+    }
+    if (back && app.slots.every((s) => s === null)) return 'exit';
+    if (app.slots.every((s) => s !== null)) {
+      app.ready = [false, false];
+      app.hero2 = (app.hero + 1) % HEROES.length;
+      return 'select';
+    }
+    return null;
+  }
+
+  /** Escolha simultânea: cada jogador move o próprio cursor e confirma. */
+  function select2Tick() {
+    const n = HEROES.length;
+    for (let i = 0; i < 2; i++) {
+      const src = app.slots[i];
+      const p = takePressedFrom(devices, src);
+      const key = i === 0 ? 'hero' : 'hero2';
+      const okp = p.ok || p.S || p.start || (src === 'kb' && p.L);
+      const backp = p.cancel || p.back || (src === 'kb' && p.M);
+      if (!app.ready[i]) {
+        const mv = (p.right ? 1 : 0) - (p.left ? 1 : 0) + (p.down ? 4 : 0) - (p.up ? 4 : 0);
+        if (mv) {
+          app[key] = (app[key] + n + mv) % n;
+          sfx.menu();
+        }
+        if (okp) {
+          app.ready[i] = true;
+          sfx.ok();
+        } else if (backp) return 'back';
+      } else if (backp) app.ready[i] = false;
+    }
+    return app.ready[0] && app.ready[1] ? 'go' : null;
   }
 
   /** Começa o desafio de um combo; com demo = true, a CPU mostra como se faz. */
@@ -172,9 +240,33 @@ export function createApp(canvas, devices, opts = {}) {
         app.screen = 'controls';
         app.kcur = 0;
         app.remap = 0;
+      } else if (ok && MENU[app.cur][0] === 'vs2') {
+        app.mode = 'vs2';
+        app.slots = [null, null];
+        app.ready = [false, false];
+        clearPressed(devices);
+        app.screen = 'join';
       } else if (ok) {
         app.mode = MENU[app.cur][0];
         app.screen = 'select';
+      }
+    } else if (app.screen === 'join') {
+      const r = joinTick(back);
+      if (r === 'exit') app.screen = 'title';
+      else if (r === 'select') {
+        clearPressed(devices);
+        app.screen = 'select2';
+      }
+    } else if (app.screen === 'select2') {
+      const r = select2Tick();
+      if (r === 'back') {
+        app.slots = [null, null];
+        clearPressed(devices);
+        app.screen = 'join';
+      } else if (r === 'go') {
+        app.foe = HEROES[app.hero2];
+        app.vsT = 0;
+        app.screen = 'vs';
       }
     } else if (app.screen === 'controls') {
       if (controlsTick(pr, ok, back)) app.screen = 'title';
@@ -189,7 +281,10 @@ export function createApp(canvas, devices, opts = {}) {
       }
     } else if (app.screen === 'vs') {
       app.vsT++;
-      if (back) app.screen = 'select';
+      if (back) {
+        app.ready = [false, false];
+        app.screen = app.mode === 'vs2' ? 'select2' : 'select';
+      }
       else if ((ok && app.vsT > 20) || app.vsT > 240) startFight();
     } else if (app.screen === 'fight') {
       const st = app.st;
@@ -239,7 +334,7 @@ export function createApp(canvas, devices, opts = {}) {
       }
       // câmera lenta no nocaute
       if (st.phase === 'ko' && st.pf < 60 && app.frame % 2) return;
-      let in0 = app.p1brain ? aiInput(st, 0, app.p1brain) : readInput(devices);
+      let in0 = app.p1brain ? aiInput(st, 0, app.p1brain) : app.mode === 'vs2' ? readInputFrom(devices, app.slots[0]) : readInput(devices);
       if (app.demo) {
         in0 = runnerInput(app.demo, st);
         if (runnerDone(app.demo).finished || ++app.demoT > 360) app.demo = null;
@@ -248,7 +343,14 @@ export function createApp(canvas, devices, opts = {}) {
       step(st, in0, p2Input());
       trackCombo(app.trial, st);
       for (const e of st.events) {
-        if (e.t === 'hit') rumble(devices, e.side === 0 ? 0.25 : 0.7, e.side === 0 ? 0.35 : 0.5, e.super ? 160 : 70);
+        if (app.mode === 'vs2') {
+          // cada controle vibra pelo seu lutador: forte quando apanha, leve quando acerta
+          if (e.t === 'hit') {
+            rumbleOn(devices, app.slots[e.side], 0.25, 0.35, 70);
+            rumbleOn(devices, app.slots[1 - e.side], 0.7, 0.5, e.super ? 160 : 90);
+          } else if (e.t === 'ko') for (const s of app.slots) rumbleOn(devices, s, 1, 1, 450);
+          else if (e.t === 'super') rumbleOn(devices, app.slots[e.side], 0.5, 0.8, 220);
+        } else if (e.t === 'hit') rumble(devices, e.side === 0 ? 0.25 : 0.7, e.side === 0 ? 0.35 : 0.5, e.super ? 160 : 70);
         else if (e.t === 'ko') rumble(devices, 1, 1, 450);
         else if (e.t === 'super' && e.side === 0) rumble(devices, 0.5, 0.8, 220);
       }
@@ -270,7 +372,11 @@ export function createApp(canvas, devices, opts = {}) {
       nav('cur', RESULT.length);
       if (ok) {
         if (app.cur === 0) startFight();
-        else if (app.cur === 1) app.screen = 'select';
+        else if (app.cur === 1) {
+          app.ready = [false, false];
+          clearPressed(devices);
+          app.screen = app.mode === 'vs2' ? 'select2' : 'select';
+        }
         else app.screen = 'title';
         app.cur = 0;
       }
@@ -368,6 +474,73 @@ export function createApp(canvas, devices, opts = {}) {
     controls();
   }
 
+  const P_COL = ['#ffcf2a', '#35d6c0'];
+
+  function drawJoin() {
+    backdrop('#160b12');
+    slab(c, 60, 50, 900, 90, '#e02b2b', 30);
+    text(c, 'VERSUS 2 JOGADORES', 510, 96, 58, '#fff');
+    text(c, 'Cada jogador aperta ✕ no seu controle (ou Enter no teclado) para entrar.', W / 2, 220, 36, '#fff');
+    for (let i = 0; i < 2; i++) {
+      const x = i === 0 ? 260 : 1060;
+      const src = app.slots[i];
+      slab(c, x, 300, 600, 420, src !== null ? '#2a1a22' : '#1a1016', 30, P_COL[i]);
+      text(c, `JOGADOR ${i + 1}`, x + 300, 380, 64, P_COL[i]);
+      if (src !== null) {
+        text(c, srcName(src), x + 300, 500, 30, '#fff');
+        text(c, 'PRONTO!', x + 300, 600, 70, '#7dff8a');
+      } else {
+        const blink = Math.floor(app.frame / 30) % 2;
+        text(c, blink ? 'APERTE ✕' : 'AGUARDANDO…', x + 300, 540, 56, '#d8d0dc');
+      }
+    }
+    const n = Object.keys(devices.pads).length;
+    text(c, n ? `${n} controle(s) conectado(s)` : 'Nenhum controle conectado: ligue os controles por USB ou Bluetooth e aperte um botão em cada um.', W / 2, 820, 32, n >= 2 ? '#7dff8a' : '#ffcf2a');
+    text(c, '○ sai da vaga (com as duas vagas vazias, volta ao menu)   ·   ESC volta ao menu', W / 2, 1040, 30, '#d8d0dc');
+  }
+
+  function drawSelect2() {
+    backdrop('#160b12');
+    slab(c, W / 2 - 420, 30, 840, 80, '#e02b2b', 30);
+    text(c, 'ESCOLHAM SEUS SALVADORES', W / 2, 72, 50, '#fff');
+    const picks = [HEROES[app.hero], HEROES[app.hero2]];
+    for (let i = 0; i < 2; i++) {
+      const ch = picks[i];
+      const cx = i === 0 ? 300 : W - 300;
+      preview(ch, cx, 860, 1.05, i === 0 ? 1 : -1);
+      slab(c, cx - 270, 880, 540, 80, '#12080c', 24, P_COL[i]);
+      text(c, ch.name, cx, 920, 42, P_COL[i]);
+      text(c, `J${i + 1} · ${srcName(app.slots[i])}`, cx, 160, 26, P_COL[i]);
+      if (app.ready[i]) {
+        c.save();
+        c.translate(cx, 500);
+        c.rotate(-0.1);
+        text(c, 'PRONTO!', 0, 0, 90, '#7dff8a', 'center', '#12080c', 14);
+        c.restore();
+      }
+    }
+    // grade central, com os dois cursores
+    const cols = 4;
+    HEROES.forEach((h, i) => {
+      const x = 590 + (i % cols) * 190;
+      const y = 200 + Math.floor(i / cols) * 230;
+      const s1 = i === app.hero;
+      const s2 = i === app.hero2;
+      slab(c, x, y, 170, 200, s1 && s2 ? '#7dff8a' : s1 ? P_COL[0] : s2 ? P_COL[1] : '#2a1a22', 10);
+      c.save();
+      c.beginPath();
+      c.rect(x - 6, y + 4, 182, 192);
+      c.clip();
+      preview(h, x + 85, y + 300, 0.55);
+      c.restore();
+      slab(c, x - 4, y + 160, 178, 40, '#12080c', 8);
+      text(c, h.name.split(',')[0], x + 85, y + 180, 24, '#fff', 'center', '#12080c', 5);
+      if (s1) text(c, 'J1', x + 20, y + 24, 28, P_COL[0], 'center', '#12080c', 5);
+      if (s2) text(c, 'J2', x + 150, y + 24, 28, P_COL[1], 'center', '#12080c', 5);
+    });
+    text(c, 'Cada um move o seu cursor   ·   ✕ confirma   ·   ○ desfaz', W / 2, 1040, 30, '#d8d0dc');
+  }
+
   function wrap(str, x, y, maxW, size, color) {
     c.font = `italic 900 ${size}px Impact, 'Arial Black', sans-serif`;
     let line = '';
@@ -399,11 +572,15 @@ export function createApp(canvas, devices, opts = {}) {
     text(c, a.name, 430, 106, 56, '#fff');
     slab(c, W - 780, 60, 700, 90, '#e02b2b', 26);
     text(c, b.name, W - 430, 106, 56, '#fff');
+    if (app.mode === 'vs2') {
+      text(c, 'JOGADOR 1', 430, 170, 34, '#ffcf2a');
+      text(c, 'JOGADOR 2', W - 430, 170, 34, '#35d6c0');
+    }
     if (app.mode === 'story' && b.place) {
       slab(c, W / 2 - 330, 800, 660, 80, '#ffcf2a', 22);
       text(c, `CAPÍTULO 1 — ${b.place}`, W / 2, 842, 46, '#12080c', 'center', null);
     }
-    text(c, 'ENTER para começar', W / 2, 1010, 34, '#d8d0dc');
+    text(c, devices.kind === 'controle' ? '✕ para começar' : 'ENTER para começar', W / 2, 1010, 34, '#d8d0dc');
   }
 
   function drawFight() {
@@ -426,6 +603,10 @@ export function createApp(canvas, devices, opts = {}) {
     if (app.boxes) for (const f of st.f) drawBoxes(c, f);
     c.restore();
     drawHud(c, st, app.hud);
+    if (app.mode === 'vs2') {
+      text(c, 'J1', 90, 168, 34, '#ffcf2a');
+      text(c, 'J2', W - 90, 168, 34, '#35d6c0');
+    }
     fxDrawScreen(c, fx, 'over');
     if (app.mode === 'training') {
       drawTrial();
@@ -600,11 +781,12 @@ export function createApp(canvas, devices, opts = {}) {
     const st = app.st;
     const win = st.winner === 0;
     const me = st.f[0];
-    preview(win ? me.ch : st.f[1].ch, 430, 940, 1.5, 1);
+    preview(win || st.winner === null ? me.ch : st.f[1].ch, 430, 940, 1.5, 1);
     c.save();
     c.translate(1180, 250);
     c.rotate(-0.06);
-    text(c, win ? 'VITÓRIA!' : st.winner === null ? 'EMPATE' : 'DERROTA', 0, 0, 210, win ? '#ffcf2a' : '#e02b2b', 'center', '#12080c', 26);
+    if (app.mode === 'vs2') text(c, st.winner === null ? 'EMPATE' : `JOGADOR ${st.winner + 1} VENCE!`, 0, 0, 150, st.winner === 1 ? '#35d6c0' : '#ffcf2a', 'center', '#12080c', 22);
+    else text(c, win ? 'VITÓRIA!' : st.winner === null ? 'EMPATE' : 'DERROTA', 0, 0, 210, win ? '#ffcf2a' : '#e02b2b', 'center', '#12080c', 26);
     c.restore();
     const s = app.stats;
     const rows = [['TEMPO DE LUTA', `${Math.round(s.frames / 60)} s`], ['COMBO MÁXIMO', `${s.maxCombo} golpes`], ['DANO CAUSADO', String(s.dmg)], ['ROUNDS', `${st.f[0].rounds} x ${st.f[1].rounds}`]];
@@ -623,6 +805,8 @@ export function createApp(canvas, devices, opts = {}) {
     c.setTransform(canvas.width / W, 0, 0, canvas.height / H, 0, 0);
     if (app.screen === 'title') drawTitle();
     else if (app.screen === 'select') drawSelect();
+    else if (app.screen === 'join') drawJoin();
+    else if (app.screen === 'select2') drawSelect2();
     else if (app.screen === 'vs') drawVs();
     else if (app.screen === 'fight') drawFight();
     else if (app.screen === 'controls') {

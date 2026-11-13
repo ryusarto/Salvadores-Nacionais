@@ -25,6 +25,12 @@ aperte qualquer botão; aparece "CONTROLE CONECTADO". Nos menus, ✕ confirma e
 trocar o mapeamento; a troca fica salva no navegador. O controle vibra nos
 acertos.
 
+**Versus 2 jogadores:** no menu, escolha VERSUS 2 JOGADORES e cada pessoa
+aperta ✕ no seu controle para entrar (o teclado também pode ser um dos
+jogadores, com Enter). Cada um escolhe o personagem com o próprio cursor e
+confirma com ✕; ○ desfaz. Na luta, cada controle comanda o seu lutador e vibra
+pelo seu lado. Não há desvantagem de dificuldade nesse modo.
+
 **Lista de combos:** na pausa, cada personagem tem 4 combos. No Treino, escolha
 um combo para treinar (o painel marca cada etapa que você acerta) ou peça a
 demonstração (a CPU mostra como se faz). O Treino também mostra as últimas

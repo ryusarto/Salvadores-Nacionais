@@ -16,6 +16,7 @@ se joga de um jeito diferente.
   Perfeita. Segurar para trás também defende. Agarrão vence a defesa.
 - **Golpes de sequência:** → ← + Leve e ↓ → + Médio, dois por herói.
 - **Dificuldade:** Fácil, Normal e Difícil mudam o nível da CPU e o dano de cada lado.
+- **Modos:** História (contra a Zanata), Versus CPU, **Versus 2 jogadores** (dois controles, ou controle e teclado) e Treino com lista de combos.
 - **Combo aéreo:** Gancho (↓+Forte) acertou + segurar ↑ = pulo alto; Leve, Médio e Forte emendam no ar.
 - **Empurrão na defesa:** Leve + Médio defendendo afasta o atacante (1 gomo de Ginga).
 - **Rolamento:** botão de golpe ao cair levanta rolando (não vale em queda forte).
@@ -38,10 +39,10 @@ se joga de um jeito diferente.
 | Franco, The Sir! | Leve e Médio com as mãos; **Forte é o flash da câmera** (em pé, agachado e no ar) | **Compasso:** 2 especiais diferentes conectados liberam o FINAL (turbinado grátis, +25% de dano) | Libera Tudo! · **Obra-Prima:** pinta o rival com o pincel e o joga para dentro de uma tela |
 | Belga | Soco-inglês | **BPM:** cada acerto sobe o ritmo (até 4): −1 quadro de recuperação e +3% de dano por nível | Disco Duplo (3 discos) · **Vinil Fatal:** pula para trás e arremessa 7 discos serrilhados |
 | Majis | Guitarra | **Tremor:** especiais de guitarra acumulam tremor (lentidão); com 3, o rival fica atordoado | Feedback · **Terremoto:** toca a guitarra e o chão treme no cenário inteiro |
-| Trunks | Chutes; **Forte é a mordida** com os super dentes | **Chamada:** marca o chão sob o rival; o ataque cai 2,5 s depois | Bombardeio · **Legião de Cães:** 8 cachorros atravessam a tela |
+| Trunks | Chutes; **Forte é a mordida** com os super dentes | **Chamada:** marca o chão sob o rival; o ataque cai 2,5 s depois | **A Ligação:** uma ambulância despenca e explode em cima do rival · **Legião de Cães:** 8 cachorros atravessam a tela |
 | Ryuchi | Espada samurai; **Leve três vezes = Três Cortes** | **Postura da Lâmina:** carrega o Fio em 3 níveis; corte instantâneo e contra-ataque | Agudo · **Agudo Supremo:** um agudo com a voz que estoura o rival e tudo em volta |
 | M'Dep | Botas grandes; **Forte é a Pisada Bottega** | **Rajada:** Embalo emenda um especial em outro; pulo duplo e mergulho | Rajada Curta de AK · **Rajada de AK-47** |
-| Chapuh | Lata de spray; **Médio é o jato de spray preto** de média distância; ↓+Especial joga a bola de tinta que deixa poça | **Tinta e Pinscher:** poças fazem escorregar; cachorro ajudante com tempo de volta | Grafite Total · **Ataque do Pinscher:** o cachorro vem correndo e ataca |
+| Chapuh | Lata de spray; **Médio é o jato de spray preto** de média distância; **Especial é o Rajadão de Pichação**, de longo alcance; ↓+Especial joga a bola de tinta que deixa poça | **Tinta e Pinscher:** poças fazem escorregar; cachorro ajudante com tempo de volta | Grafite Total · **Ataque do Pinscher:** o cachorro vem correndo e ataca |
 | Dney | Glock: atira de longe, coronhada de perto e de média distância | **Munição:** 6 balas que voltam sozinhas (1 a cada 2,5 s), recarga manual, a última é o Tiro Certeiro | Descarrega · **Olhar Laser:** laser que sai dos olhos |
 
 **Chefe — Capeta Zanata:** chicote de longo alcance, Laço que puxa o herói e

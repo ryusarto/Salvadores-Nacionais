@@ -780,16 +780,17 @@
     }),
     c1: mv({ name: "Pux\xE3o", startup: 12, active: 4, recovery: 22, box: bx(40, 200, 340, 170), dmg: 500, hitstun: 34, pull: 380, anim: ["castWind", "throwReach"], tags: ["mid", "pull"] }),
     c2: mv({ name: "Dentada", startup: 11, active: 4, recovery: 22, box: bx(20, 290, 215, 180), dmg: 1e3, hitstun: 26, push: [260, 140], anim: ["heavyWind", "overhead"], fx: "bite", motion: [{ from: 5, to: 14, vx: 13 }], tags: ["close", "advance"] }),
+    // A Ligação: ele faz uma ligação e uma ambulância despenca do céu em cima do rival e explode.
     SA1: mv({
-      name: "Bombardeio",
+      name: "A Liga\xE7\xE3o",
       btn: "X",
-      startup: 10,
+      startup: 8,
       active: 1,
-      recovery: 36,
+      recovery: 34,
       anim: ["call", "call"],
       cost: { super: 1e3 },
-      inv: [{ from: 1, to: 10, type: "all" }],
-      spawn: [{ at: 10, ...mark({ delay: 34, dmg: 1900, force: true }) }],
+      inv: [{ from: 1, to: 12, type: "all" }],
+      spawn: [{ at: 8, make: (st, f) => proj({ kind: "ambulance", behavior: "strike", x: 0, y: 0, w: 380, h: 900, vx: 0, delay: 26, life: 10, dmg: 2100, hitstun: 40, blockstun: 26, push: [0, 70], ginga: 2e3, launch: [3, 32], kd: "hard", stop: 18, juggle: 3, chip: 0.35, color: "#ff3b30", extra: { at_opponent: true, delay0: 26 } }) }],
       range: 1500,
       tags: ["super"]
     }),
@@ -1142,17 +1143,20 @@
     // O botão Médio é um jato de spray preto de média distância.
     "5M": mv({ name: "Jato de Spray", btn: "M", startup: 8, active: 5, recovery: 15, box: bx(50, 230, 330, 130), dmg: 620, anim: ["castWind", "cast"], fx: "spray", tags: ["poke", "mid", "far"] }),
     "2M": mv({ name: "Jato Rasteiro", btn: "M", startup: 9, active: 5, recovery: 16, crouch: true, guard: "low", box: bx(50, 10, 320, 110), dmg: 560, anim: ["crouch", "whipLow"], fx: "spray", tags: ["poke", "mid", "low"] }),
+    // Rajadão de pichação: um jato largo de spray que alcança longe e deixa poça no fim.
     "5S": mv({
-      name: "Spray",
+      name: "Rajad\xE3o de Picha\xE7\xE3o",
       startup: 9,
-      active: 12,
+      active: 18,
       recovery: 18,
       anim: ["castWind", "cast"],
-      hits: [0, 1, 2].map((i) => ({ from: 10 + i * 5, to: 11 + i * 5, box: bx(40, 170, 270, 210), dmg: 260, hitstun: 20, push: i === 2 ? [110, 90] : [15, 20] })),
-      spawn: [{ at: 22, ...puddle(240) }],
-      flags: { mash: { btn: "S", from: 10, to: 21, max: 2 } },
-      tags: ["mid", "pressure"],
-      turbo: { hits: [0, 1, 2].map((i) => ({ from: 9 + i * 4, to: 10 + i * 4, box: bx(40, 150, 300, 250), dmg: 360, hitstun: 22, push: [15, 20], launch: i === 2 ? [7, 24] : null })), spawn: [{ at: 20, ...puddle(260) }] }
+      fx: "spray",
+      hits: [0, 1, 2, 3].map((i) => ({ from: 10 + i * 5, to: 11 + i * 5, box: bx(40, 160, 560, 230), dmg: 240, hitstun: 22, push: i === 3 ? [130, 100] : [10, 18] })),
+      spawn: [{ at: 26, ...puddle(430) }],
+      flags: { mash: { btn: "S", from: 10, to: 26, max: 2 } },
+      range: 600,
+      tags: ["mid", "far", "pressure"],
+      turbo: { hits: [0, 1, 2, 3].map((i) => ({ from: 9 + i * 4, to: 10 + i * 4, box: bx(40, 140, 620, 270), dmg: 330, hitstun: 24, push: [10, 18], launch: i === 3 ? [7, 24] : null })), spawn: [{ at: 24, ...puddle(470) }] }
     }),
     "2S": mv({
       name: "Bomba de Tinta",
@@ -4208,9 +4212,17 @@
           fx.parts.push({ k: "spark", x: e.x, y: sy, r: 60, t: 0, dur: 12, color: "#fff", rot: 0 });
           break;
         case "strike":
-          fx.parts.push({ k: "column", x: e.x, t: 0, dur: 18 });
-          fx.shake = Math.max(fx.shake, 16);
-          fx.flash = 0.35;
+          if (e.kind === "ambulance") {
+            fx.parts.push({ k: "spark", x: e.x, y: GY - 120, r: 340, t: 0, dur: 26, color: "#ffb13d", rot: 0 }, { k: "spark", x: e.x, y: GY - 160, r: 220, t: 0, dur: 20, color: "#fff3b0", rot: 0.4 });
+            for (let i = 0; i < 18; i++) fx.parts.push({ k: "dust", x: e.x + (Math.random() - 0.5) * 260, y: GY - Math.random() * 200, vx: (Math.random() - 0.5) * 22, vy: -Math.random() * 12, r: 30 + Math.random() * 40, t: 0, dur: 40 + Math.random() * 20 });
+            pop(fx, "KABUM!", e.x, GY - 420, "#ff3b30", 120, 70);
+            fx.shake = Math.max(fx.shake, 30);
+            fx.flash = 0.7;
+          } else {
+            fx.parts.push({ k: "column", x: e.x, t: 0, dur: 18 });
+            fx.shake = Math.max(fx.shake, 16);
+            fx.flash = 0.35;
+          }
           break;
         case "splash":
           dust(fx, e.x, 4, 0.6);
@@ -4274,6 +4286,46 @@
       c.save();
       c.lineWidth = 5;
       c.strokeStyle = "#12080c";
+      if (e.kind === "ambulance") {
+        const t = e.delay > 0 ? 1 - e.delay / (e.delay0 || 26) : 1;
+        const ay = -220 + (GY - 120 + 220) * t * t;
+        c.translate(x, ay);
+        c.rotate(-0.5 + t * 0.35);
+        c.lineWidth = 6;
+        c.fillStyle = "#f4f2ee";
+        c.beginPath();
+        c.roundRect(-170, -80, 340, 160, 16);
+        c.fill();
+        c.stroke();
+        c.fillStyle = "#ff3b30";
+        c.fillRect(-170, 10, 340, 26);
+        c.fillRect(-28, -60, 56, 18);
+        c.fillRect(-9, -79, 18, 56);
+        c.fillStyle = "#7fd4ff";
+        c.fillRect(90, -60, 60, 50);
+        c.strokeRect(90, -60, 60, 50);
+        c.fillStyle = Math.floor(st.frame / 4) % 2 ? "#ff3b30" : "#3b82ff";
+        c.fillRect(-60, -104, 120, 24);
+        c.strokeRect(-60, -104, 120, 24);
+        c.fillStyle = "#1a1418";
+        for (const wx of [-100, 100]) {
+          c.beginPath();
+          c.arc(wx, 84, 32, 0, Math.PI * 2);
+          c.fill();
+        }
+        c.restore();
+        if (e.delay > 0) {
+          c.save();
+          c.strokeStyle = "#ff3b30";
+          c.lineWidth = 6;
+          c.globalAlpha = 0.5 + 0.5 * Math.sin(st.frame * 0.5);
+          c.beginPath();
+          c.ellipse(x, GY, e.w / 2, 26, 0, 0, Math.PI * 2);
+          c.stroke();
+          c.restore();
+        }
+        continue;
+      }
       if (e.behavior === "strike") {
         const t = e.delay > 0 ? 1 - e.delay / (e.delay0 || 150) : 1;
         c.globalAlpha = e.delay > 0 ? 0.5 + 0.5 * Math.sin(st.frame * (0.2 + t * 0.6)) : 1;
@@ -4676,13 +4728,16 @@
     }
   }
   function createDevices(target = window) {
-    const d = { held: {}, pressed: {}, padPrev: {}, padMap: loadPad(), padName: null, rawPrev: [], lastRaw: null, notice: null, kind: "teclado" };
+    const d = { held: {}, pressed: {}, padPrev: {}, padMap: loadPad(), padName: null, rawPrev: [], lastRaw: null, notice: null, kind: "teclado", kbPressed: {}, pads: {} };
     target.addEventListener("keydown", (e) => {
       const k = KEYMAP[e.code];
       if (!k) return;
       d.kind = "teclado";
       e.preventDefault();
-      if (!d.held[k]) d.pressed[k] = true;
+      if (!d.held[k]) {
+        d.pressed[k] = true;
+        d.kbPressed[k] = true;
+      }
       d.held[k] = true;
     });
     target.addEventListener("keyup", (e) => {
@@ -4695,38 +4750,101 @@
     return d;
   }
   function pollPad(d) {
-    const pads = typeof navigator !== "undefined" && navigator.getGamepads ? navigator.getGamepads() : [];
-    const p = [...pads].find((x) => x && x.connected);
-    const now = {};
-    const name = p ? p.id : null;
-    if (name !== d.padName) {
-      d.notice = name ? { text: `CONTROLE CONECTADO: ${padLabel(name)}`, t: 240 } : d.padName ? { text: "CONTROLE DESCONECTADO", t: 180 } : d.notice;
-      d.padName = name;
+    const list = typeof navigator !== "undefined" && navigator.getGamepads ? [...navigator.getGamepads()].filter((x) => x && x.connected) : [];
+    const first = list[0] || null;
+    const name = first ? first.id : null;
+    const seen = /* @__PURE__ */ new Set();
+    for (const p of list) {
+      seen.add(p.index);
+      if (!d.pads[p.index]) {
+        d.pads[p.index] = { id: p.id, now: {}, prev: {}, pressed: {}, raw: [] };
+        d.notice = { text: `CONTROLE ${p.index + 1} CONECTADO: ${padLabel(p.id)}`, t: 240 };
+      }
     }
-    d.gamepad = p || null;
-    if (p) {
+    for (const idx of Object.keys(d.pads)) {
+      if (!seen.has(+idx)) {
+        delete d.pads[idx];
+        d.notice = { text: `CONTROLE ${+idx + 1} DESCONECTADO`, t: 180 };
+      }
+    }
+    d.padName = name;
+    d.gamepad = first;
+    d.gamepads = list;
+    const union = {};
+    for (const p of list) {
+      const s = d.pads[p.index];
+      const now = {};
       const raw = p.buttons.map((b) => b.pressed || b.value > 0.5);
       raw.forEach((on2, i) => {
-        if (on2 && !d.rawPrev[i]) {
+        if (on2 && !s.raw[i]) {
           d.lastRaw = i;
           d.kind = "controle";
-          if (i === 0) d.pressed.ok = true;
-          if (i === 1) d.pressed.cancel = true;
+          if (i === 0) {
+            d.pressed.ok = true;
+            s.pressed.ok = true;
+          }
+          if (i === 1) {
+            d.pressed.cancel = true;
+            s.pressed.cancel = true;
+          }
         }
         const act = d.padMap[i];
         if (on2 && act) now[act] = true;
       });
-      d.rawPrev = raw;
+      s.raw = raw;
       if (p.axes[0] < -0.45) now.left = true;
       if (p.axes[0] > 0.45) now.right = true;
       if (p.axes[1] < -0.55) now.up = true;
       if (p.axes[1] > 0.55) now.down = true;
+      for (const k of Object.keys(now)) {
+        if (!s.prev[k]) s.pressed[k] = true;
+        union[k] = true;
+      }
+      s.now = now;
+      s.prev = now;
     }
-    for (const k of /* @__PURE__ */ new Set([...Object.keys(now), ...Object.keys(d.padPrev)])) {
-      if (now[k] && !d.padPrev[k]) d.pressed[k] = true;
+    for (const k of Object.keys(union)) if (!d.padPrev[k]) d.pressed[k] = true;
+    d.pad = union;
+    d.padPrev = union;
+  }
+  function readInputFrom(d, src) {
+    if (src == null) return { ...EMPTY_INPUT };
+    const has = src === "kb" ? (k) => !!(d.held[k] || d.touch?.[k]) : (k) => !!d.pads[src]?.now[k];
+    return {
+      ...EMPTY_INPUT,
+      x: (has("right") ? 1 : 0) - (has("left") ? 1 : 0),
+      y: (has("up") ? 1 : 0) - (has("down") ? 1 : 0),
+      L: +has("L"),
+      M: +has("M"),
+      H: +has("H"),
+      S: +has("S"),
+      G: +has("G"),
+      T: +has("T"),
+      X: +has("X")
+    };
+  }
+  function takePressedFrom(d, src) {
+    if (src === "kb") {
+      const p2 = d.kbPressed;
+      d.kbPressed = {};
+      return p2;
     }
-    d.pad = now;
-    d.padPrev = now;
+    const s = d.pads[src];
+    if (!s) return {};
+    const p = s.pressed;
+    s.pressed = {};
+    return p;
+  }
+  function clearPressed(d) {
+    d.kbPressed = {};
+    for (const s of Object.values(d.pads)) s.pressed = {};
+  }
+  function rumbleOn(d, src, strong, weak, ms) {
+    const p = (d.gamepads || []).find((g) => g.index === src);
+    try {
+      p?.vibrationActuator?.playEffect?.("dual-rumble", { duration: ms, strongMagnitude: strong, weakMagnitude: weak });
+    } catch {
+    }
   }
   function padLabel(id) {
     if (/dualsense|0ce6|0df2/i.test(id)) return "DUALSENSE (PS5)";
@@ -5029,7 +5147,7 @@
   // src/ui/app.js
   var W2 = SYS.VIEW_W;
   var H = SYS.VIEW_H;
-  var MENU = [["story", "MODO HIST\xD3RIA"], ["versus", "VERSUS CPU"], ["training", "TREINO"], ["controls", "CONTROLES"], ["diff", "DIFICULDADE"]];
+  var MENU = [["story", "MODO HIST\xD3RIA"], ["versus", "VERSUS CPU"], ["vs2", "VERSUS 2 JOGADORES"], ["training", "TREINO"], ["controls", "CONTROLES"], ["diff", "DIFICULDADE"]];
   var loadDiff = () => {
     try {
       const n = +localStorage.getItem("sn-dificuldade");
@@ -5076,13 +5194,18 @@
       stats: null,
       overT: 0,
       vsT: 0,
-      autoplay: opts.autoplay || null
+      autoplay: opts.autoplay || null,
+      slots: [null, null],
+      ready: [false, false],
+      hero2: 1
     };
     function startFight() {
       const hero = HEROES[app2.hero];
       const D = SYS.DIFFICULTY[app2.diff];
       app2.level = D.level;
-      app2.st = createMatch({ chars: [hero, app2.foe], seed: (Date.now() & 65535) + 1, training: app2.mode === "training", dmgMul: app2.mode === "training" ? [1, 1] : D.dmg });
+      const fair = app2.mode === "training" || app2.mode === "vs2";
+      if (app2.mode === "vs2") app2.foe = HEROES[app2.hero2];
+      app2.st = createMatch({ chars: [hero, app2.foe], seed: (Date.now() & 65535) + 1, training: app2.mode === "training", dmgMul: fair ? [1, 1] : D.dmg });
       app2.brain = createBrain(app2.level);
       app2.p1brain = app2.autoplay ? createBrain(2) : null;
       app2.fx = createFx();
@@ -5106,6 +5229,7 @@
     }
     function p2Input() {
       const st = app2.st;
+      if (app2.mode === "vs2") return readInputFrom(devices2, app2.slots[1]);
       if (app2.mode !== "training" || app2.dummy === 2) return aiInput(st, 1, app2.brain);
       if (app2.dummy === 1) {
         const a = st.f[0];
@@ -5115,6 +5239,62 @@
         return { ...EMPTY_INPUT, x: -(Math.sign(a.x - me.x) || 1), y: low || !high ? high ? 0 : -1 : 0 };
       }
       return EMPTY_INPUT;
+    }
+    function srcName(src) {
+      if (src === "kb") return "TECLADO";
+      const p = devices2.pads[src];
+      return p ? `CONTROLE ${src + 1} \u2014 ${padLabel(p.id)}` : `CONTROLE ${src + 1}`;
+    }
+    function sources() {
+      return ["kb", ...Object.keys(devices2.pads).map(Number)];
+    }
+    function joinTick(back) {
+      for (const src of sources()) {
+        const p = takePressedFrom(devices2, src);
+        const join = p.ok || p.S || p.start || src === "kb" && (p.L || p.S);
+        const leave = p.cancel || p.back || src === "kb" && p.M;
+        const at = app2.slots.indexOf(src);
+        if (leave && at >= 0) {
+          app2.slots[at] = null;
+          app2.ready[at] = false;
+        } else if (join && at < 0) {
+          const free = app2.slots.indexOf(null);
+          if (free >= 0) {
+            app2.slots[free] = src;
+            sfx.ok();
+            rumbleOn(devices2, src, 0.4, 0.6, 150);
+          }
+        }
+      }
+      if (back && app2.slots.every((s) => s === null)) return "exit";
+      if (app2.slots.every((s) => s !== null)) {
+        app2.ready = [false, false];
+        app2.hero2 = (app2.hero + 1) % HEROES.length;
+        return "select";
+      }
+      return null;
+    }
+    function select2Tick() {
+      const n = HEROES.length;
+      for (let i = 0; i < 2; i++) {
+        const src = app2.slots[i];
+        const p = takePressedFrom(devices2, src);
+        const key = i === 0 ? "hero" : "hero2";
+        const okp = p.ok || p.S || p.start || src === "kb" && p.L;
+        const backp = p.cancel || p.back || src === "kb" && p.M;
+        if (!app2.ready[i]) {
+          const mv2 = (p.right ? 1 : 0) - (p.left ? 1 : 0) + (p.down ? 4 : 0) - (p.up ? 4 : 0);
+          if (mv2) {
+            app2[key] = (app2[key] + n + mv2) % n;
+            sfx.menu();
+          }
+          if (okp) {
+            app2.ready[i] = true;
+            sfx.ok();
+          } else if (backp) return "back";
+        } else if (backp) app2.ready[i] = false;
+      }
+      return app2.ready[0] && app2.ready[1] ? "go" : null;
     }
     function startCombo(combo, demo) {
       const st = app2.st;
@@ -5198,9 +5378,33 @@
           app2.screen = "controls";
           app2.kcur = 0;
           app2.remap = 0;
+        } else if (ok && MENU[app2.cur][0] === "vs2") {
+          app2.mode = "vs2";
+          app2.slots = [null, null];
+          app2.ready = [false, false];
+          clearPressed(devices2);
+          app2.screen = "join";
         } else if (ok) {
           app2.mode = MENU[app2.cur][0];
           app2.screen = "select";
+        }
+      } else if (app2.screen === "join") {
+        const r = joinTick(back);
+        if (r === "exit") app2.screen = "title";
+        else if (r === "select") {
+          clearPressed(devices2);
+          app2.screen = "select2";
+        }
+      } else if (app2.screen === "select2") {
+        const r = select2Tick();
+        if (r === "back") {
+          app2.slots = [null, null];
+          clearPressed(devices2);
+          app2.screen = "join";
+        } else if (r === "go") {
+          app2.foe = HEROES[app2.hero2];
+          app2.vsT = 0;
+          app2.screen = "vs";
         }
       } else if (app2.screen === "controls") {
         if (controlsTick(pr, ok, back)) app2.screen = "title";
@@ -5215,8 +5419,10 @@
         }
       } else if (app2.screen === "vs") {
         app2.vsT++;
-        if (back) app2.screen = "select";
-        else if (ok && app2.vsT > 20 || app2.vsT > 240) startFight();
+        if (back) {
+          app2.ready = [false, false];
+          app2.screen = app2.mode === "vs2" ? "select2" : "select";
+        } else if (ok && app2.vsT > 20 || app2.vsT > 240) startFight();
       } else if (app2.screen === "fight") {
         const st = app2.st;
         if (pr.boxes) app2.boxes = !app2.boxes;
@@ -5264,7 +5470,7 @@
           return;
         }
         if (st.phase === "ko" && st.pf < 60 && app2.frame % 2) return;
-        let in0 = app2.p1brain ? aiInput(st, 0, app2.p1brain) : readInput(devices2);
+        let in0 = app2.p1brain ? aiInput(st, 0, app2.p1brain) : app2.mode === "vs2" ? readInputFrom(devices2, app2.slots[0]) : readInput(devices2);
         if (app2.demo) {
           in0 = runnerInput(app2.demo, st);
           if (runnerDone(app2.demo).finished || ++app2.demoT > 360) app2.demo = null;
@@ -5273,7 +5479,13 @@
         step(st, in0, p2Input());
         trackCombo(app2.trial, st);
         for (const e of st.events) {
-          if (e.t === "hit") rumble(devices2, e.side === 0 ? 0.25 : 0.7, e.side === 0 ? 0.35 : 0.5, e.super ? 160 : 70);
+          if (app2.mode === "vs2") {
+            if (e.t === "hit") {
+              rumbleOn(devices2, app2.slots[e.side], 0.25, 0.35, 70);
+              rumbleOn(devices2, app2.slots[1 - e.side], 0.7, 0.5, e.super ? 160 : 90);
+            } else if (e.t === "ko") for (const s of app2.slots) rumbleOn(devices2, s, 1, 1, 450);
+            else if (e.t === "super") rumbleOn(devices2, app2.slots[e.side], 0.5, 0.8, 220);
+          } else if (e.t === "hit") rumble(devices2, e.side === 0 ? 0.25 : 0.7, e.side === 0 ? 0.35 : 0.5, e.super ? 160 : 70);
           else if (e.t === "ko") rumble(devices2, 1, 1, 450);
           else if (e.t === "super" && e.side === 0) rumble(devices2, 0.5, 0.8, 220);
         }
@@ -5295,8 +5507,11 @@
         nav("cur", RESULT.length);
         if (ok) {
           if (app2.cur === 0) startFight();
-          else if (app2.cur === 1) app2.screen = "select";
-          else app2.screen = "title";
+          else if (app2.cur === 1) {
+            app2.ready = [false, false];
+            clearPressed(devices2);
+            app2.screen = app2.mode === "vs2" ? "select2" : "select";
+          } else app2.screen = "title";
           app2.cur = 0;
         }
       }
@@ -5384,6 +5599,69 @@
       text(c, MENU.find((m) => m[0] === app2.mode)[1], 440, 168, 34, "#ffcf2a");
       controls();
     }
+    const P_COL = ["#ffcf2a", "#35d6c0"];
+    function drawJoin() {
+      backdrop("#160b12");
+      slab(c, 60, 50, 900, 90, "#e02b2b", 30);
+      text(c, "VERSUS 2 JOGADORES", 510, 96, 58, "#fff");
+      text(c, "Cada jogador aperta \u2715 no seu controle (ou Enter no teclado) para entrar.", W2 / 2, 220, 36, "#fff");
+      for (let i = 0; i < 2; i++) {
+        const x = i === 0 ? 260 : 1060;
+        const src = app2.slots[i];
+        slab(c, x, 300, 600, 420, src !== null ? "#2a1a22" : "#1a1016", 30, P_COL[i]);
+        text(c, `JOGADOR ${i + 1}`, x + 300, 380, 64, P_COL[i]);
+        if (src !== null) {
+          text(c, srcName(src), x + 300, 500, 30, "#fff");
+          text(c, "PRONTO!", x + 300, 600, 70, "#7dff8a");
+        } else {
+          const blink = Math.floor(app2.frame / 30) % 2;
+          text(c, blink ? "APERTE \u2715" : "AGUARDANDO\u2026", x + 300, 540, 56, "#d8d0dc");
+        }
+      }
+      const n = Object.keys(devices2.pads).length;
+      text(c, n ? `${n} controle(s) conectado(s)` : "Nenhum controle conectado: ligue os controles por USB ou Bluetooth e aperte um bot\xE3o em cada um.", W2 / 2, 820, 32, n >= 2 ? "#7dff8a" : "#ffcf2a");
+      text(c, "\u25CB sai da vaga (com as duas vagas vazias, volta ao menu)   \xB7   ESC volta ao menu", W2 / 2, 1040, 30, "#d8d0dc");
+    }
+    function drawSelect2() {
+      backdrop("#160b12");
+      slab(c, W2 / 2 - 420, 30, 840, 80, "#e02b2b", 30);
+      text(c, "ESCOLHAM SEUS SALVADORES", W2 / 2, 72, 50, "#fff");
+      const picks = [HEROES[app2.hero], HEROES[app2.hero2]];
+      for (let i = 0; i < 2; i++) {
+        const ch = picks[i];
+        const cx = i === 0 ? 300 : W2 - 300;
+        preview(ch, cx, 860, 1.05, i === 0 ? 1 : -1);
+        slab(c, cx - 270, 880, 540, 80, "#12080c", 24, P_COL[i]);
+        text(c, ch.name, cx, 920, 42, P_COL[i]);
+        text(c, `J${i + 1} \xB7 ${srcName(app2.slots[i])}`, cx, 160, 26, P_COL[i]);
+        if (app2.ready[i]) {
+          c.save();
+          c.translate(cx, 500);
+          c.rotate(-0.1);
+          text(c, "PRONTO!", 0, 0, 90, "#7dff8a", "center", "#12080c", 14);
+          c.restore();
+        }
+      }
+      const cols = 4;
+      HEROES.forEach((h, i) => {
+        const x = 590 + i % cols * 190;
+        const y = 200 + Math.floor(i / cols) * 230;
+        const s1 = i === app2.hero;
+        const s2 = i === app2.hero2;
+        slab(c, x, y, 170, 200, s1 && s2 ? "#7dff8a" : s1 ? P_COL[0] : s2 ? P_COL[1] : "#2a1a22", 10);
+        c.save();
+        c.beginPath();
+        c.rect(x - 6, y + 4, 182, 192);
+        c.clip();
+        preview(h, x + 85, y + 300, 0.55);
+        c.restore();
+        slab(c, x - 4, y + 160, 178, 40, "#12080c", 8);
+        text(c, h.name.split(",")[0], x + 85, y + 180, 24, "#fff", "center", "#12080c", 5);
+        if (s1) text(c, "J1", x + 20, y + 24, 28, P_COL[0], "center", "#12080c", 5);
+        if (s2) text(c, "J2", x + 150, y + 24, 28, P_COL[1], "center", "#12080c", 5);
+      });
+      text(c, "Cada um move o seu cursor   \xB7   \u2715 confirma   \xB7   \u25CB desfaz", W2 / 2, 1040, 30, "#d8d0dc");
+    }
     function wrap(str, x, y, maxW, size, color) {
       c.font = `italic 900 ${size}px Impact, 'Arial Black', sans-serif`;
       let line = "";
@@ -5414,11 +5692,15 @@
       text(c, a.name, 430, 106, 56, "#fff");
       slab(c, W2 - 780, 60, 700, 90, "#e02b2b", 26);
       text(c, b.name, W2 - 430, 106, 56, "#fff");
+      if (app2.mode === "vs2") {
+        text(c, "JOGADOR 1", 430, 170, 34, "#ffcf2a");
+        text(c, "JOGADOR 2", W2 - 430, 170, 34, "#35d6c0");
+      }
       if (app2.mode === "story" && b.place) {
         slab(c, W2 / 2 - 330, 800, 660, 80, "#ffcf2a", 22);
         text(c, `CAP\xCDTULO 1 \u2014 ${b.place}`, W2 / 2, 842, 46, "#12080c", "center", null);
       }
-      text(c, "ENTER para come\xE7ar", W2 / 2, 1010, 34, "#d8d0dc");
+      text(c, devices2.kind === "controle" ? "\u2715 para come\xE7ar" : "ENTER para come\xE7ar", W2 / 2, 1010, 34, "#d8d0dc");
     }
     function drawFight() {
       const st = app2.st;
@@ -5440,6 +5722,10 @@
       if (app2.boxes) for (const f of st.f) drawBoxes(c, f);
       c.restore();
       drawHud(c, st, app2.hud);
+      if (app2.mode === "vs2") {
+        text(c, "J1", 90, 168, 34, "#ffcf2a");
+        text(c, "J2", W2 - 90, 168, 34, "#35d6c0");
+      }
       fxDrawScreen(c, fx, "over");
       if (app2.mode === "training") {
         drawTrial();
@@ -5601,11 +5887,12 @@
       const st = app2.st;
       const win = st.winner === 0;
       const me = st.f[0];
-      preview(win ? me.ch : st.f[1].ch, 430, 940, 1.5, 1);
+      preview(win || st.winner === null ? me.ch : st.f[1].ch, 430, 940, 1.5, 1);
       c.save();
       c.translate(1180, 250);
       c.rotate(-0.06);
-      text(c, win ? "VIT\xD3RIA!" : st.winner === null ? "EMPATE" : "DERROTA", 0, 0, 210, win ? "#ffcf2a" : "#e02b2b", "center", "#12080c", 26);
+      if (app2.mode === "vs2") text(c, st.winner === null ? "EMPATE" : `JOGADOR ${st.winner + 1} VENCE!`, 0, 0, 150, st.winner === 1 ? "#35d6c0" : "#ffcf2a", "center", "#12080c", 22);
+      else text(c, win ? "VIT\xD3RIA!" : st.winner === null ? "EMPATE" : "DERROTA", 0, 0, 210, win ? "#ffcf2a" : "#e02b2b", "center", "#12080c", 26);
       c.restore();
       const s = app2.stats;
       const rows = [["TEMPO DE LUTA", `${Math.round(s.frames / 60)} s`], ["COMBO M\xC1XIMO", `${s.maxCombo} golpes`], ["DANO CAUSADO", String(s.dmg)], ["ROUNDS", `${st.f[0].rounds} x ${st.f[1].rounds}`]];
@@ -5623,6 +5910,8 @@
       c.setTransform(canvas2.width / W2, 0, 0, canvas2.height / H, 0, 0);
       if (app2.screen === "title") drawTitle();
       else if (app2.screen === "select") drawSelect();
+      else if (app2.screen === "join") drawJoin();
+      else if (app2.screen === "select2") drawSelect2();
       else if (app2.screen === "vs") drawVs();
       else if (app2.screen === "fight") drawFight();
       else if (app2.screen === "controls") {

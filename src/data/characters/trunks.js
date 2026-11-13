@@ -2,7 +2,7 @@ import { mv, bx, baseNormals, proj } from '../movekit.js';
 
 /**
  * TRUNKS — armadilhas e agarrões. Chuta e morde com super dentes.
- * Super: LEGIÃO DE CÃES.
+ * Supers: A LIGAÇÃO (uma ambulância cai e explode) e LEGIÃO DE CÃES.
  * Mecânica: CHAMADA. Marca o chão onde o rival está; depois de 2,5 segundos
  * um ataque cai naquele ponto. Só existe uma marca por vez: o jogo dele é
  * segurar ou empurrar o rival para dentro dela.
@@ -28,8 +28,10 @@ const moves = {
     turbo: { dmg: 1400, inv: [{ from: 1, to: 12, type: 'strike' }] } }),
   c1: mv({ name: 'Puxão', startup: 12, active: 4, recovery: 22, box: bx(40, 200, 340, 170), dmg: 500, hitstun: 34, pull: 380, anim: ['castWind', 'throwReach'], tags: ['mid', 'pull'] }),
   c2: mv({ name: 'Dentada', startup: 11, active: 4, recovery: 22, box: bx(20, 290, 215, 180), dmg: 1000, hitstun: 26, push: [260, 140], anim: ['heavyWind', 'overhead'], fx: 'bite', motion: [{ from: 5, to: 14, vx: 13 }], tags: ['close', 'advance'] }),
-  SA1: mv({ name: 'Bombardeio', btn: 'X', startup: 10, active: 1, recovery: 36, anim: ['call', 'call'], cost: { super: 1000 }, inv: [{ from: 1, to: 10, type: 'all' }],
-    spawn: [{ at: 10, ...mark({ delay: 34, dmg: 1900, force: true }) }], range: 1500, tags: ['super'] }),
+  // A Ligação: ele faz uma ligação e uma ambulância despenca do céu em cima do rival e explode.
+  SA1: mv({ name: 'A Ligação', btn: 'X', startup: 8, active: 1, recovery: 34, anim: ['call', 'call'], cost: { super: 1000 }, inv: [{ from: 1, to: 12, type: 'all' }],
+    spawn: [{ at: 8, make: (st, f) => proj({ kind: 'ambulance', behavior: 'strike', x: 0, y: 0, w: 380, h: 900, vx: 0, delay: 26, life: 10, dmg: 2100, hitstun: 40, blockstun: 26, push: [0, 70], ginga: 2000, launch: [3, 32], kd: 'hard', stop: 18, juggle: 3, chip: 0.35, color: '#ff3b30', extra: { at_opponent: true, delay0: 26 } }) }],
+    range: 1500, tags: ['super'] }),
   // Chama uma legião de cachorros que atravessa a tela.
   SA3: mv({ name: 'Legião de Cães', btn: 'X', startup: 14, active: 40, recovery: 36, anim: ['call', 'call'], cost: { super: 3000 }, inv: [{ from: 1, to: 20, type: 'all' }],
     spawn: [0, 1, 2, 3, 4, 5, 6, 7].map((i) => ({ at: 4 + i * 5, ...proj({ kind: 'dog', behavior: 'fly', x: -40 - (i % 3) * 50, y: i % 4 === 3 ? 120 : 0, w: 130, h: 100, vx: 27 + (i % 3) * 2, life: 110, dmg: i === 7 ? 1300 : 500, hitstun: 30, push: [15, 30], chip: 0.3, launch: i === 7 ? [14, 26] : null, kd: 'hard', color: '#a86f46' }) })),
