@@ -14,7 +14,7 @@ const mark = (o = {}) => ({
 });
 
 const moves = {
-  ...baseNormals({ reach: 1, dmg: 1.12, anims: { M: 'kickM', H: 'kickHigh', lowM: 'sweepM' } }),
+  ...baseNormals({ reach: 1.05, dmg: 1.22, anims: { M: 'kickM', H: 'kickHigh', lowM: 'sweepM' } }),
   // O botão Forte é a mordida com os super dentes.
   '5H': mv({ name: 'Mordida', btn: 'H', startup: 11, active: 5, recovery: 21, box: bx(30, 280, 240, 190), dmg: 1050, anim: ['heavyWind', 'overhead'], fx: 'bite', motion: [{ from: 5, to: 12, vx: 8 }], tags: ['poke', 'mid', 'heavy'] }),
   jH: mv({ name: 'Mordida Aérea', btn: 'H', air: true, startup: 8, active: 6, recovery: 6, guard: 'high', box: bx(10, 40, 200, 220), dmg: 900, hitstun: 24, anim: ['jumpUp', 'jHeavy'], fx: 'bite', cancel: [], tags: ['air', 'jumpin'] }),
@@ -46,7 +46,7 @@ export default {
   mechDesc: 'Marca o chão sob o rival; segundos depois, um ataque cai ali. Segure ou empurre o rival para a marca.',
   colors: { skin: '#9a6a48', top: '#4a2a7a', bottom: '#3a3a40', accent: '#ffdf50', hair: '#6b4a2a', shoe: '#e8e8e8' },
   look: { hair: 'dreads', weapon: 'phone', sleeves: 'long' },
-  walkF: 5.7, walkB: 4.5, jumpScale: 0.96, hpScale: 1.1,
+  walkF: 6.2, walkB: 4.8, jumpScale: 0.98, hpScale: 1.18,
   moves,
   // Qual tira do kit de sprites cada animação usa (production/sprites/final/trunks)
   spriteAlias: { 'golpe-SA1': 'golpe-SA3', 'golpe-SA3': 'golpe-6S', 'golpe-6S': 'golpe-5H', 'golpe-c2': 'golpe-5H' },

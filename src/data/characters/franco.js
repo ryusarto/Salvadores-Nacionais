@@ -56,7 +56,7 @@ export default {
   mechDesc: 'Conecte 2 especiais diferentes: o terceiro sai como FINAL, turbinado de graça.',
   colors: { skin: '#b9794c', top: '#2f8a3a', top2: '#f2c318', bottom: '#3a3a44', accent: '#2a4fb8', hair: '#1c1512', shoe: '#f0f0f0' },
   look: { hair: 'afro', weapon: 'camera', sleeves: 'none', pants: 'shorts', stripes: [[0.42, 0.56, '#f2c318'], [0.56, 0.7, '#2a4fb8']] },
-  walkF: 7.1, walkB: 5.4, jumpScale: 1, hpScale: 1.1,
+  walkF: 7.2, walkB: 5.5, jumpScale: 1, hpScale: 1.16,
   moves,
   // Qual tira do kit de sprites cada animação usa (production/sprites/final/franco)
   spriteAlias: { 'golpe-SA1': 'golpe-SA3', 'golpe-2L': 'golpe-5L', 'golpe-2M': 'golpe-5M', 'golpe-6M': 'golpe-5M', 'golpe-c1': 'golpe-5M', 'golpe-5S': 'golpe-5H', 'golpe-2H': 'golpe-5H', 'tonto': 'dano-alto' },

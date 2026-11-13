@@ -58,7 +58,7 @@ export default {
   mechDesc: '6 balas, que voltam devagar sozinhas. A última é o Tiro Certeiro: mais dano e derruba. ↓+Especial recarrega na hora.',
   colors: { skin: '#d2a074', top: '#4a4658', bottom: '#26262c', accent: '#f7dd83', hair: '#1a1418', hat: '#d42a2a', shoe: '#e0e0e0' },
   look: { hair: 'cap', weapon: 'gun', sleeves: 'long', glasses: true },
-  walkF: 6.7, walkB: 5.3, jumpScale: 1, hpScale: 0.9,
+  walkF: 6.5, walkB: 5.1, jumpScale: 1, hpScale: 0.86,
   moves,
   // Qual tira do kit de sprites cada animação usa (production/sprites/final/dney)
   spriteAlias: { 'golpe-5L': 'golpe-c1', 'golpe-2L': 'golpe-6S', 'golpe-2M': 'golpe-6S', 'golpe-2H': 'golpe-4S', 'golpe-3H': 'golpe-c2', 'golpe-6M': 'golpe-5H', 'golpe-jL': 'golpe-jS', 'golpe-jM': 'golpe-jS', 'golpe-throw': 'golpe-c1', 'golpe-blindado': 'golpe-5H' },
