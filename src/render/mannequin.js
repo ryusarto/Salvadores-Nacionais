@@ -3,6 +3,7 @@ import { hurtbox, worldBox } from '../core/fighter.js';
 import { poseFor } from './poses.js';
 import { drawSprite, hasSprites, hasSpriteStrip } from './sprites.js';
 import { drawChapuhAttack } from './chapuh-art.js';
+import { drawMajisAttack, drawMajisStatus } from './majis-art.js';
 
 /**
  * Desenho provisório dos lutadores: um manequim articulado com as cores e a
@@ -344,7 +345,8 @@ export function drawFighter(c, f, frame) {
   c.shadowBlur = 0;
 
   // rastro do golpe; as novas tiras usam os efeitos separados de tinta.
-  const artEffect = sprite && drawChapuhAttack(c, f);
+  if (sprite) drawMajisStatus(c, f, frame);
+  const artEffect = sprite && (drawChapuhAttack(c, f) || drawMajisAttack(c, f));
   if (!artEffect && f.state === 'attack' && f.move.weapon !== 'whip') {
     const kind = f.move.fx;
     for (const h of f.move.hits) {

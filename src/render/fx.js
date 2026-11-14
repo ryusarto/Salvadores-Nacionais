@@ -2,6 +2,7 @@ import { SYS } from '../data/system.js';
 import { text, burst, slab } from './draw.js';
 import { drawSpriteEffect, hasSpriteStrip } from './sprites.js';
 import { drawChapuhEntity } from './chapuh-art.js';
+import { drawMajisEntity } from './majis-art.js';
 
 /**
  * Efeitos visuais. Lê os eventos que a simulação emite a cada quadro e cria
@@ -141,7 +142,7 @@ export function drawEntities(c, st) {
     c.save();
     c.lineWidth = 5;
     c.strokeStyle = '#12080c';
-    if (drawChapuhEntity(c, e)) { c.restore(); continue; }
+    if (drawChapuhEntity(c, e) || drawMajisEntity(c, e)) { c.restore(); continue; }
     if (e.kind === 'ambulance') {
       // ambulância despencando do céu até o chão, girando, com a sirene piscando
       const t = e.delay > 0 ? 1 - e.delay / (e.delay0 || 26) : 1;
