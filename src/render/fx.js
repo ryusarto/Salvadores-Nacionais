@@ -1,5 +1,6 @@
 import { SYS } from '../data/system.js';
 import { text, burst, slab } from './draw.js';
+import { drawSpriteEffect, hasSpriteStrip } from './sprites.js';
 
 /**
  * Efeitos visuais. Lê os eventos que a simulação emite a cada quadro e cria
@@ -22,6 +23,12 @@ function dust(fx, x, n = 6, pow = 1) {
 export function fxEvents(fx, st) {
   for (const e of st.events) {
     const sy = GY - (e.y || 0);
+    const actor = st.f[e.side];
+    if (actor?.ch?.spriteProfile === 'ten-frame') {
+      const name = ({ hit: 'fx-impacto', block: 'fx-defesa', land: 'fx-poeira', jump: 'fx-poeira' })[e.t]
+        || (e.t === 'pop' && e.str === 'RAJADA!' ? 'fx-embalo' : null);
+      if (name && hasSpriteStrip(actor.ch.id, name)) fx.parts.push({ k: 'sprite', id: actor.ch.id, name, x: e.x, y: name === 'fx-poeira' ? GY - 35 : e.t === 'pop' ? GY - 350 : sy, r: name === 'fx-poeira' ? 320 : 240, t: 0, dur: 20 });
+    }
     switch (e.t) {
       case 'hit': {
         const r = POWER[e.power] || 50;
@@ -121,6 +128,15 @@ export function drawEntities(c, st) {
   for (const e of st.ents) {
     const x = e.x;
     const y = GY - e.y - e.h / 2;
+    const owner = st.f[e.owner];
+    if (e.kind === 'shot' && owner?.ch?.spriteProfile === 'ten-frame' && hasSpriteStrip(owner.ch.id, 'fx-ak-projetil')) {
+      c.save();
+      c.translate(x, y);
+      c.scale(e.dir, 1);
+      drawSpriteEffect(c, owner.ch.id, 'fx-ak-projetil', (e.age % 20) / 20, 0, 0, Math.max(100, e.w * 2), 80);
+      c.restore();
+      continue;
+    }
     c.save();
     c.lineWidth = 5;
     c.strokeStyle = '#12080c';
@@ -280,7 +296,8 @@ export function fxDrawFront(c, fx) {
   for (const p of fx.parts) {
     const t = p.t / p.dur;
     c.globalAlpha = 1 - t * t;
-    if (p.k === 'spark') burst(c, p.x, p.y, p.r * (0.6 + t * 0.9), 8, p.color, 0.42, p.rot);
+    if (p.k === 'sprite') drawSpriteEffect(c, p.id, p.name, t, p.x, p.y, p.r);
+    else if (p.k === 'spark') burst(c, p.x, p.y, p.r * (0.6 + t * 0.9), 8, p.color, 0.42, p.rot);
     else if (p.k === 'ring') {
       c.strokeStyle = p.color;
       c.lineWidth = 10 * (1 - t) + 2;

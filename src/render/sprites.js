@@ -1,4 +1,5 @@
 import { animFor, CELL, FOOT } from './anim.js';
+import { spriteProgress } from './sprite-timing.js';
 
 /**
  * Leitor de sprites. Cada personagem pode registrar tiras de imagem com os
@@ -68,6 +69,30 @@ export function registerSprites(id, sheets) {
 
 export const hasSprites = (id) => !!REG[id] && Object.keys(REG[id]).length > 0;
 export const spriteNames = (id) => Object.keys(REG[id] || {});
+export const hasSpriteStrip = (id, name) => !!REG[id]?.[name];
+
+/** Draw an isolated effect cell. All coordinates are visual only. */
+export function drawSpriteEffect(c, id, name, progress, x, y, width = 240, height = width) {
+  const s = REG[id]?.[name];
+  if (!s) return false;
+  const i = Math.max(0, Math.min(s.n - 1, Math.floor(progress * s.n)));
+  c.drawImage(s.cv, i * s.size, 0, s.size, s.size, x - width / 2, y - height / 2, width, height);
+  return true;
+}
+
+function attackEffects(c, f) {
+  if (f.ch.spriteProfile !== 'ten-frame' || f.state !== 'attack') return;
+  const m = f.move;
+  if (m.weapon === 'ak') {
+    const at = m.spawn.map(s => s.at).filter(at => at <= f.sf).at(-1);
+    if (at != null && f.sf - at < 6) drawSpriteEffect(c, f.ch.id, 'fx-ak-disparo', (f.sf - at) / 6, 195, -325, 180);
+  }
+  for (const h of m.hits) if (f.sf >= h.from && f.sf <= h.to + 3) {
+    const stomp = m.fx === 'stomp';
+    drawSpriteEffect(c, f.ch.id, stomp ? 'fx-pisao' : 'fx-chute', (f.sf - h.from) / Math.max(1, h.to - h.from + 4), h.box.x + h.box.w / 2, stomp ? -35 : -(h.box.y + h.box.h / 2), stomp ? 350 : 280);
+    break;
+  }
+}
 
 /**
  * Substitutos para as animações que a prancheta ainda não tem: usa uma tira
@@ -111,6 +136,7 @@ export function drawSprite(c, f, frame) {
   const set = REG[f.ch.id];
   if (!set) return false;
   const a = animFor(f, frame);
+  a.p = spriteProgress(f, a);
   const pick = pickStrip(set, a, f);
   if (!pick) return false;
   const { s, p, fx } = pick;
@@ -133,6 +159,7 @@ export function drawSprite(c, f, frame) {
     c.translate(0, 220);
   }
   c.drawImage(s.cv, i * s.size, 0, s.size, s.size, -size * FOOT.x, -size * FOOT.y, size, size);
+  attackEffects(c, f);
   if (fx === 'guard') {
     // escudo de defesa desenhado pelo jogo
     c.globalAlpha = 0.5;
