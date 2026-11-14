@@ -1,0 +1,52 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Majis — comparação de escala</title>
+<style>body{margin:0;background:#18191f;color:#f5eddf;font:16px system-ui}main{max-width:1140px;margin:auto;padding:22px}h1{margin:0 0 10px}p{line-height:1.5;color:#cfc6b8}a{color:#f4cf92}nav,.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:18px 0}button,select{font:inherit;background:#4a3a30;color:#fff;border:1px solid #a88a67;border-radius:7px;padding:10px;cursor:pointer}canvas{width:100%;height:auto;display:block;background:#e9e5db;border-radius:8px}.note{font-size:14px}#status{min-height:24px;color:#ffe2b3}</style>
+<main><h1>Majis — comparação de escala</h1><p>Repouso e ação usam a mesma escala e a mesma base dos pés. A postura pode mudar a altura visível; cabeça, tronco e instrumento devem manter suas proporções.</p>
+<nav><a href="../../dist/salvadores-nacionais.html">Jogar</a><a href="majis-sprites.html">Todas as animações</a><a href="majis-validacao.json">Relatório</a></nav>
+<div class="controls"><label>Ação <select id="action" aria-label="Escolher ação"><option value="golpe-5H">Forte — L + frente</option><option value="golpe-6M">Golpe de cima</option><option value="vitoria">Vitória</option><option value="golpe-jH">Forte aéreo</option><option value="golpe-2S">Onda Grave</option><option value="pulo">Pulo</option><option value="defesa-no-ar">Defesa no ar</option></select></label><button id="play">Pausar</button><button id="next">Próximo quadro</button><button id="simulate">Reproduzir entrada L + frente</button><label><input id="mirror" type="checkbox">Espelhar</label></div>
+<p id="status">Carregando imagens…</p><canvas id="view" width="1140" height="600" aria-label="Repouso à esquerda e ação à direita"></canvas>
+<p class="note">Referência em repouso: cerca de 470px no arquivo original, antes da escala igual aplicada aos dois painéis. O botão de entrada reproduz o comando no motor real de combate; a seleção permite conferir também os quatro quadros da vitória.</p></main>
+<script type="module">
+import majis from '../../src/data/characters/majis.js';
+import zanata from '../../src/data/characters/zanata.js';
+import { createFighter } from '../../src/core/fighter.js';
+import { createMatch, step } from '../../src/core/match.js';
+import { EMPTY_INPUT } from '../../src/core/input.js';
+import { animFor, moveArtWindow } from '../../src/render/anim.js';
+import { drawSprite, registerSprites } from '../../src/render/sprites.js';
+const select=document.querySelector('#action'),canvas=document.querySelector('#view'),c=canvas.getContext('2d'),status=document.querySelector('#status');
+const manifest=await fetch('../sprites/source/majis-v2/manifest.json').then(r=>r.json());
+const names=['parado',...Array.from(select.options,o=>o.value)];
+const pack=Object.fromEntries(names.map(name=>{const a=manifest.sequences.find(s=>s.name===name);return[name,'../sprites/final/majis/'+name+'.webp?v='+a.runtimeSha256.slice(0,12)];}));
+await registerSprites('majis',pack,{trueAlpha:true});
+const reference=createFighter(majis,0,0);reference.state='idle';
+let clock=0,phase=0,playing=true,sim=null,simFrames=0,inputMove='',last=0,accumulator=0;
+function fixture(){
+ const f=createFighter(majis,0,0),name=select.value;
+ if(name==='vitoria'){f.state='win';f.sf=[2,8,14,20][phase];}
+ else if(name==='pulo'){f.state='air';f.y=160;f.vy=[30,12,-6,-24][phase];}
+ else if(name==='defesa-no-ar'){f.state='blockstun';f.y=160;f.sf=phase*3;}
+ else{f.state='attack';f.moveKey=name.slice(6);f.move=majis.moves[f.moveKey];const[first]=moveArtWindow(f.move);f.sf=[0,Math.floor(first*.65),first,f.move.total-1][phase];}
+ return f;
+}
+function panel(f,x,frame){c.save();c.translate(x,530);c.scale(document.querySelector('#mirror').checked?-.85:.85,.85);drawSprite(c,f,frame);c.restore();}
+function paint(){
+ const f=sim?sim.f[0]:fixture(),a=animFor(f,clock);
+ c.clearRect(0,0,1140,600);c.fillStyle='#302b27';c.font='bold 22px system-ui';c.fillText('REPOUSO — REFERÊNCIA',90,42);c.fillText(select.options[select.selectedIndex].text.toUpperCase(),665,42);
+ c.strokeStyle='#8b7861';c.beginPath();c.moveTo(25,530.5);c.lineTo(1115,530.5);c.moveTo(570.5,65);c.lineTo(570.5,575);c.stroke();
+ panel(reference,285,0);panel(f,855,clock);
+ const n=Math.min(4,Math.floor(a.p*4)+1);
+ status.textContent=(inputMove?'Entrada real selecionou '+inputMove+' · ':'')+a.name+' · quadro '+n+' de 4';
+}
+select.onchange=()=>{sim=null;inputMove='';phase=0;clock=0;paint();};
+document.querySelector('#play').onclick=()=>{playing=!playing;document.querySelector('#play').textContent=playing?'Pausar':'Reproduzir';};
+document.querySelector('#next').onclick=()=>{sim=null;playing=false;document.querySelector('#play').textContent='Reproduzir';phase=(phase+1)%4;paint();};
+document.querySelector('#mirror').onchange=paint;
+document.querySelector('#simulate').onclick=()=>{select.value='golpe-5H';sim=createMatch({chars:[majis,zanata],seed:1});sim.phase='fight';sim.f[0].x=1000;sim.f[1].x=1700;simFrames=0;inputMove='';playing=true;accumulator=0;document.querySelector('#play').textContent='Pausar';};
+function tick(now){
+ accumulator+=Math.min(80,now-last);last=now;
+ while(accumulator>=1000/60){accumulator-=1000/60;if(!playing)continue;clock++;if(sim){step(sim,simFrames++===0?{...EMPTY_INPUT,x:1,H:1}:EMPTY_INPUT,EMPTY_INPUT);if(sim.f[0].moveKey)inputMove=sim.f[0].moveKey;}else phase=Math.floor(clock/18)%4;}
+ paint();requestAnimationFrame(tick);
+}
+paint();requestAnimationFrame(tick);
+</script></html>
