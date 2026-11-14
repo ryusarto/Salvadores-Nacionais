@@ -69,6 +69,24 @@ export function registerSprites(id, sheets) {
 export const hasSprites = (id) => !!REG[id] && Object.keys(REG[id]).length > 0;
 export const spriteNames = (id) => Object.keys(REG[id] || {});
 
+/** Camada independente (ajudante/efeito), com recorte único por tira e escala proporcional. */
+export function drawSpriteLayer(c, id, name, index, { x, y, w, h, face = 1, anchor = 'center', crop = [0, 0, CELL, CELL] }) {
+  const s = REG[id]?.[name];
+  if (!s) return false;
+  const i = Math.max(0, Math.min(s.n - 1, Math.floor(index)));
+  const [cx, cy, cw, ch] = crop;
+  const scale = Math.min(w / cw, h / ch);
+  const dw = cw * scale, dh = ch * scale, ratio = s.size / CELL;
+  const dx = anchor === 'left' ? 0 : -dw / 2;
+  const dy = anchor === 'bottom' ? -dh : -dh / 2;
+  c.save();
+  c.translate(x, y);
+  c.scale(face, 1);
+  c.drawImage(s.cv, i * s.size + cx * ratio, cy * ratio, cw * ratio, ch * ratio, dx, dy, dw, dh);
+  c.restore();
+  return true;
+}
+
 /**
  * Substitutos para as animações que a prancheta ainda não tem: usa uma tira
  * parecida do mesmo personagem, com um ajuste de pose (inclinar, deitar,

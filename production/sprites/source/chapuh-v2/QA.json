@@ -1,0 +1,776 @@
+{
+  "sequences": [
+    {
+      "name": "parado",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "d399d81509f38451b86fa697d8fe51ca37f736f4fe4e1a0f43debb936eeb6b0c",
+        "d6a033fd2ed37a0c4deeaef4b24def20d4450ecddd87a643eb8128f0471f44fd",
+        "ad30fac2e0dbb9f67a3986a39e4521a1e621edfb7f03665f95c4e5765c6e9f23",
+        "96fcc0cc6d338dc2516e613aa8ea935c68c963d4963af5f277a3d7db6b900bf3"
+      ],
+      "flags": []
+    },
+    {
+      "name": "andar",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "f1596673f5270fc62fe4907d3f1ddf38809127b0c001e30a8ec36e078ac59908",
+        "16844b549378409528b352ade77f4577b7254aa1f44003bcf65666fda1cccab4",
+        "373cc215a626e950b3d10ac9e5abb4654f905f4defc24cdf99f05dbee8fbb672",
+        "fb7dbd15f28f68817f280f49f499c7b2346f975a99ca7032f694ee89a48d733f"
+      ],
+      "flags": []
+    },
+    {
+      "name": "andar-tras",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "dd671e0196424e495a55e6755996444e0dc3086de7fc939de2b3825fd4f3726a",
+        "943c68fd011baf751b5d4fdd82ebf98bb709d1f3cb409856626e7d7c2002973e",
+        "5da3da33490cdecea1204fc315a2b2a0972776cee30a3cc501b96d7d147828bb",
+        "6748c2bc42faa885d570728c2c7fc8ca991cafcad495decba547eb9d87757c7a"
+      ],
+      "flags": []
+    },
+    {
+      "name": "correr",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "67152f18be5832b3e04d1179ffaf04882bae9ca7deab9940270de58c8e307f70",
+        "4d1b5ab2e4b22600fc81cfa84ef52466f9d5e98be1ff131d98ea344905fff252",
+        "8c05a71db1280aecef91de16f6c0fe9fabd095b2d24022c114a9960bb7357e55",
+        "877089fc60a76b09c71053f67c768c8d87e5c45974c95797439c9836b896ad56"
+      ],
+      "flags": []
+    },
+    {
+      "name": "agachar",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "60c076f54331bd0a16accf97776986fd4d3174357715577f7dd9bfed0ac1b49e",
+        "6f525b198015ec0b93d1024fbe89e6adbe5e2d8005a0301415e019bff847340a",
+        "d1b2095eb9b1500b7839adbeadca20a14c4bd9d0a11d060466bfe3221a406998",
+        "c73f80a72a9d3a9e7e48c7f048d00a311e6a5931da06c3d714979593f5721984"
+      ],
+      "flags": []
+    },
+    {
+      "name": "pulo",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "fd18b948e3601d6f74235923418768e31221f39d28f96727456a386fd2ba756f",
+        "33f83bfb16d5962fb000496df8b34eca6e213cb99cd3d2c27c65eb94ddafac42",
+        "83af5687be0f45998a3cb0536d295d2e94c8e89ab8ecd10afd748ff30e8ec418",
+        "395cf6b1231accf6f0fdf537700026cefaf4f5969f8a41e9c24c243e98c4e341"
+      ],
+      "flags": []
+    },
+    {
+      "name": "recuo",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "6b3233453afae42397240c0d222d882190f28b025e949ba113d9dcea351c8db1",
+        "827f53a02bc957d4fc3797beb1dc762d355709ce3820b6fbc6926f5e4da54ea7",
+        "681c395dbd8fcff6a5cae2e2da86d9afe50a7647a097966d5bc2d5532b041a7f",
+        "fe136b9030a8f473af2cb065ff9e0cfe16b00143a0f1d3b628f3bb0ce3a9a685"
+      ],
+      "flags": []
+    },
+    {
+      "name": "escape-agarrao",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "2610efbbbbc6294e10ead15b031478c9432fd08eb8bfcb82b1a9751d852f098f",
+        "a685ae4c9c2460b1dbef564c9dabe4fe203b96960dd152236d4f32734a15464a",
+        "f60db2722032761932c1404eb224ecfaecd271da87d4bc8af4ff6135e225fec7",
+        "779c661f89d6f8e8f828c4d322deeb2fe453bb74d5f3cdc8e9c379e67a24b12a"
+      ],
+      "flags": []
+    },
+    {
+      "name": "recuperacao-rolamento",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "53687eee38825d5ea11a931760bccaaaad51ad6dfbe7435ce6466f464dedd31f",
+        "8f255db59be6cb5a46d122d533bbef584101e32067fa039f9359c3bfceb9d4c8",
+        "352377740e1fb3c3b66bdb5d5c19aff01a94e04da15edd91f484fcdc4eca3b3c",
+        "d7c71caeff60de7b3c4fc8571759d66fff0440df955846e0c95629050bb2655d"
+      ],
+      "flags": []
+    },
+    {
+      "name": "defesa-em-pe",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "e275abad31309db3bab67efb2d089cc4f0cbf09f7b66c4d409573d4749737d37",
+        "128eda3d941f2f02b3ca263d453cbad85a33d16b3fbf0065a357fefc2edd21df",
+        "39bc6c79f832e7bad2fcda3b94b34549b0a96db2c34e33e2f55492a61f7da532",
+        "520f24ceac4d95921b69f80990f0724f814ebbf0d9ce47d3618c4bd1b8d9e482"
+      ],
+      "flags": []
+    },
+    {
+      "name": "defesa-agachado",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "6468e71357033bd17950427215962b9ca49f2b5257bfddc766b60d08961e4211",
+        "a5c45584360c3991e50cfe65c66b3030d26286ef26b0c5ae0c1c3b6b794030de",
+        "0639645941ee5b05206f3dadf80f48be5088ef78d13cc662c0d2b4d630331e77",
+        "2ab07d38d0a730fd0606c4e768f461902f904664a59a994c44bf783fa2a8239e"
+      ],
+      "flags": []
+    },
+    {
+      "name": "defesa-no-ar",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "e6a9793fae76e634c96dbc308059e9885e473b92cecae957a554968d2f91dd25",
+        "164a421d12d03cf899c233be600adf553b84f625f3312ef2a88404aa6cc82401",
+        "45520d6ba26c924e4e135dafd60ff5d906eebf6a4b008a6ee7cfcfa797b5ff5c",
+        "eb19067789726ab551903bc64a0f810bfc2783a9a147d759c7507cb3813a6630"
+      ],
+      "flags": []
+    },
+    {
+      "name": "dano-alto",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "3e546b7979c558bcbd9d4626a41456203a6b4deeca3c3cf1f5f0aa2e6a2df266",
+        "ba76c63e271f862d8dccfc9ed0a6796aa37b9fb749ef1d44108291c67f503918",
+        "dda2a7d730e09536e842475388f7ba9ea504ad1d6f113484ef21505c02659cbb",
+        "85b12a6101a404c2f358bd2e28b018aba341bf393f0dfb157ec9ae134096faa8"
+      ],
+      "flags": []
+    },
+    {
+      "name": "dano-baixo",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "2b3713c1d3529bf0189dfbdfa2af05da061827cf8821209045947881185138c9",
+        "18c0bdf5c0da93eb48e3e8f75d831004d3fb9d14dcae98ff148f7a8dd9cb6d97",
+        "0408df621e38272f7f36cd8b24c8d69a679de553d1682a3c9b9ca280dc808573",
+        "2525fa9036c37d20db5b5270ac24ba7c235909c287676e72a58396c1be604835"
+      ],
+      "flags": []
+    },
+    {
+      "name": "dano-no-ar",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "9f0dd2b3b739567557ecac16da6fc22188495237e333a95694adca08069e1f45",
+        "d804f56e139653cc457efc20e46f157047d326eae3fcca8bb4b7560220b9dfc0",
+        "ecdfd085342c73d380d6840be741f131eeaef99c0154405cfef133766b170861",
+        "2c887cd3afa12b8c748918f91f0851d4ebd5e5faf76813c8398323ef67ede612"
+      ],
+      "flags": []
+    },
+    {
+      "name": "caido",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "0218fe3d41ae507d8edbb6e55a6bc480acdf18fd4ea2344ec35fccc0a326de55",
+        "4c49e551dcc5ff7a50144cfc22d446ab6d15c011c525354013dd98447ecc300e",
+        "3caa2433e9b47e70a3fb2c9958940f6c219927e2dca0d5bcbbc2401d2bb35911",
+        "e3304dde9978023934a926398ede9d036dcdc054b84e8108c2a8151068cf21f9"
+      ],
+      "flags": []
+    },
+    {
+      "name": "levantar",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "b3c6bd7f54a1d8630f99ab443f4e642b58dabdac40ea50045a7b49a9c2c18f94",
+        "95ea3ce5ecb928402d7443408b6fc4c4a192761349dd39f64dc2a6ade40a18f7",
+        "4d06e59412d233b4c86d6d65736ed2232ce718367bc2d64a05264aee8097d45e",
+        "704a18826ef86b72027376deb84c56366e98f285ec989c33545cec74797e55bb"
+      ],
+      "flags": []
+    },
+    {
+      "name": "tonto",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "c72dd59ffa68eebd17c972e2b9038b88bdbfbd9e987cbeb4ff9027ce5e4c9419",
+        "d6dd8e9f7452b73caa472d149a3da30529ae46f7f8248c18456d20e3a4ca3970",
+        "813879b149b3c3551eaf403b4bfdde8c6fab8a57d2d2b702c03f11e33d93549a",
+        "8a7d9f61bc1bbbe0a3d0369a4218244ed7a1f380dd58db15a7f900b409d78d06"
+      ],
+      "flags": []
+    },
+    {
+      "name": "vitoria",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "f5f573616948416dbc431347c34183e333aaa2a9ca6c235ea2ff76b5d5ae93a0",
+        "611dc93033c119710f1b91fbf583d374efa14d9dd4d0243a7af14de97c03a56b",
+        "6d81778b4afe9eba3b414ce349492bd4072ae3eb0e6eb1a520c6da79149b1114",
+        "382ce09a430855fa4c3b741407b89d52555092920471a8c06057dba3ae277daf"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-5L",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "10f39bc9148f3d658e5b170c2ea6bcbc881214c8d70efce59c2a73ea94cf1517",
+        "8594e4dc5c7e4ecca348cb02fe05a44fda57a34cbd5854fbfb64308f9b90ab9a",
+        "703e050f5e4dc6ee0502aae663390d2fae8343aca65dcf4be46f136cceb0398c",
+        "b559ae34258e45b395b6ba47a18fa52aa44b84bc13d4ddad80305d14e5014fff"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-5M",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "1d241eb3916941d12198e253bd1977d8aa3748637973fd634382166035353b33",
+        "2f6acb62872f8bcca9da514b3a4b2e6468aa317b7a6eb05556415d9358e76ac6",
+        "e7c13252c8d9a7c60adac99b43fcd17b332632ccfac04e865b4c44e725383b1d",
+        "a4d7d2d7066d2268c372f496f7aad20ba70e72c14d2f90ce4b7564c7a2096f90"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-5H",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "8f1b2e4b213453d452cc95283f5fe35e2a318b75c990b9e3469b622cc1ffa6f2",
+        "fe478930cb75b4e76f974edbfbdfff45b6196a46fde1a4f07b9ebff627705cd2",
+        "b8545ba8556480494720718e898d0389db89f27d180c5a9a9777e0fcd509e9e1",
+        "979e7585327ffc3008cac72638ed2960282ce412b1a064f5c84954f7c02130d5"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-2L",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "9b2eba555b82bbc261a6b029520dbfbe9e10acc47cf1afa8f69e2c42c9044000",
+        "585fd3090008dd249e781edd189f537f885df5dba08f7da08eb4c02df7f14200",
+        "6cf48ba61dcba0fa3f57abed22486115fd89b2dee5ada2af22230ecb712c97a4",
+        "d02aadaf52a1bca0e528f2c02446c3cb0a8c92f04141b4c16d82c678e796ed5a"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-2M",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "d864e844eae4792db4eac729408fa0876ca0aed5ade3b2593588cc1d67ed35bd",
+        "129835e19272ec379a81593ce7617395b6c925dc0245a0a83bbb25efada35b40",
+        "5d5494f1d67faa8836b72d2bf7d913ba9755280b6420b8caeee11f8a76410a10",
+        "582482f43ca6b091f6b04a18cf4e69e27b5eb4e22bf2e1c5c820762325bc2ace"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-2H",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "cf0079c34467ab15b6a7f602412a1c63e933da65047fc517090e4ceea29ceb02",
+        "606f3b257d36db77e69c9429078d480ed7dc4e3d988e8e4679ddb8a943c3c284",
+        "6993a08008486799781ef85578f8600f522aa3c8a0c2886a72ca7229ed96ce76",
+        "2fe2d56806b547c2e1242615d1d39c8fa0c9a9ea20e5de5bdb989af643bb5953"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-3H",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "e45a080de3b62fa5dabe28a814b5131e8dcde51aca317926864b86c534d3a4b9",
+        "3722f263063dfad72278fed1b74cfc357370f6c93d517ba6ed8a8c5398a2c5f8",
+        "5c07b7fc9c7c5aed027d757fa1c4d35ea1df46f28bbe4bfa9efcb342fed4ee67",
+        "eba6aa6dcd2dd61e5ff20ca0d5da865322e6d6c60cfef0b48e8ac68950921126"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-6M",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "0002f4093b05e4c602e1f17d00b666af451e33accc6eec577f6a3ff0f14b06b3",
+        "a87181bdfd8147620def0da524b5bf0780fc238e60e2f131d5292a588238d26d",
+        "7842daa17ea11acf0de3177e62a7333418fb9ca48952de854bd23c06ac0c3716",
+        "97e6069986e07701b4a5d0fdb1c52f756a2012d35b60966d5016eb9138a9945e"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-jL",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "2c1ba270fd3269f930fc10cbbf359137cfd6776b9623e7c516afc806d535f3ef",
+        "b5691971009be604247e8cdbdefc520d22551fe068c0e05923c67431ff47efa4",
+        "9243fca2b13965d664624d045d35870c0a2540993f4b605fd8a8399497eb0c68",
+        "82662e4daeff3e0dd88c27cf7ea6b34b2b83ee1f7d11b7af1c5c1ce47d2bbc24"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-jM",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "ff689362dbed3dce52ac08865827a5082ab52322336de5bbcea37b335027603a",
+        "fc96ac9b8f4f7ff59840f5b2050330977d46f7828b8705d62a0ff6d288c73821",
+        "22d085c31a24902ef32ae9ab990ede4d421a2ead7ecdcf4106e7a2899f0135ea",
+        "7e17e57dd2f384e16a08a6d8fa38b363f9d31d5e418fecad68877ae44fc95823"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-jH",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "848ad3cc80bdc3d3745fb5d2e8fbec9ebbae8dd231801d209fab8ebf8aef28d6",
+        "30527a99bd7025dff7d3cdecba4a67b305e01c2437af3aada5ab773c9785f6a4",
+        "e34b848f155f72ec5d8cc70e0a594aa669eb901b71f0e0974aa1beb8f28045d0",
+        "85bcb7866fb2c2a7e479cc809271d2841e9c89e4bf9a47056a832508bf711d25"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-throw",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "07e91493f173b989572aad33fa78ac4c0aefef5bcb11df7d2dca89ebf9d7cc49",
+        "ac62dbfbfaa6b66f99f600e208570ff68bf2ce58fcfb7e761ee48ec766c57fce",
+        "bf16b02dae8ab797500dad59e94513bf45b4f5b90182c8a65b47ed5cc9f179f6",
+        "a920e37a4c929accfa0dd190f2421bade2e46c32315b6ee7d2d5cc90f3fe19dd"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-blindado",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "f009eb5d3a67851bc7caae39da89c9282e9dd774f696b7c3d13da91b7a2eb58a",
+        "b8d638c9541446ffbd3f0480d4abc68f3c5fa093005bbbef9c5bea97290aa2c3",
+        "171f7c4ba6426f96964cede8e196338b20af0250fa95e7c284ca13e9b8c233de",
+        "c6881afd5da35ccd7a91838b2eace0019add2ac54907c1fdfddcddaea283ab04"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-5S",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "4e928adf646b4dff5d73ae0188408d2e82f480e50840c37fd2818f2804a2c58f",
+        "53a8c2a573aa72531a2dae4ed78c691139d4f164a53a219fdd1d75c41be5b8d1",
+        "e8cdc9fd9373d0f3c012e2008a860bfabb1c2df5c334b5fa8a567069f318dae4",
+        "228d9182159134ced9ae1a37d0c89ad93e6deb660e9262f76c24e5edbf2ad83f"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-2S",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "7984fd55e9e7cffa3e10823466ba148e4e652b27508a37a8ad6b8ad0d61efc61",
+        "f9f3d1eda50c5312634819a56818f36d99243e1837e96d5aabaa0014ec17cf47",
+        "bf705ea2d162400d4fc73fa465db68098249717c33a736dbf8b0e69d6b545d3b",
+        "4571aede7515383c9280730e7f3108f0e10fdd10a10358382a202e978db1a47c"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-6S",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "c100b402f282e8f283f1ae8c2677cfe24c78a29276e6d9ce562a05806ed6a1ec",
+        "9a1b49fd3a855544e224f4f2172ef168f03c94152df2a5fcb4bd3467fbeb24d8",
+        "36555d682ac20e0c40a1397a0905fd4caa41cddc22fb2d4f74c32c7616dd6453",
+        "73edc6b3968f7219445dc6b4b5f12057f54adb36adcf6ae8043af8c53c9f61e6"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-4S",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "0bcaf070e802a79fa2fbdc5d06eba60d53f387793e1a5ddaced1d82e477f3295",
+        "73a370a994d8f7882f6f48c1b158f5d8c8cf4130dd75f8c26b73a6583b37a237",
+        "64f29dfb58016fd6815c8d868342f522bcc84b8b7e2a51700ed18482a046a4a3",
+        "cde7f4098a8361a62a97a47b3cbe305aa8b17edc80eeca198cc191d700e9d0ef"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-c1",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "0f903b0845387d2b4e1bd82fabb88e617e0f8fa3f196c30e8a4b812c5ef98f7d",
+        "2d728398c2e16e0d64b8b950b0e7a8c9e4ee805d68a3e209001763e4f33920a3",
+        "aadd279639d8362679e6074b3cf19490e7dbebb73a359c8ac410cd81aefa4c3d",
+        "cbd6ea2358b8380066e51d1ef28759638cad112e8d2bcf2dbd06279705383142"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-c2",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "2ade7d0a5cfa8b00b95e901a38f0c3b64c9a105222aa92d0d79391530a7b1f9d",
+        "452ed5c4ab3903fb632ff13c37cd7c0c60fd26716820314b910c6deea9ca8327",
+        "9941643ba9c4512eaaa3a06d2fc1022f5c604170b125de5fb216479700d6cece",
+        "3f17a3566a7cb6a7245ec5420c658937e4a4c5f49816f5069dceaf0ae39189dc"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-SA1",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "db2deba93b9c2d96da8db187a7c0c2671a9becd344eba9c54abca98875dd5737",
+        "b2cf79d0948272011f493492e754604093a94fa41c1c3134a9cf48263e11a8ae",
+        "91175aa2bcbfb720a3db14c2fb7b66712983cdb05c2f7b9175fd3c608f0da529",
+        "a2a9223437367610e4c7889286eacd1a3a4ba3d4427748aaec6c8b837498e8a8"
+      ],
+      "flags": []
+    },
+    {
+      "name": "golpe-SA3",
+      "category": "character",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "a79fe6131ef86b3c3f94fa9f15a13efcc7e27573b8d59601e6757c35dca4e5de",
+        "cdc43016ec56661a3ea4b3a460f16a58fbebd436565618d5b6b53bb819a01911",
+        "6fb69248fe5d5363d149da3ccece00a552ff2441d0695de5140be1bde4b9ffac",
+        "36d140ce34eab29b18c402751c9c1a5344de86d5998e3204f738fde50df1bdd7"
+      ],
+      "flags": []
+    },
+    {
+      "name": "pinscher-correr",
+      "category": "extra",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "6644872761f77559abb41b08bf72d0d8d3084223579b748bba38607e3fe45228",
+        "5d1482462710d264e1d176ba8a307c078e3dc578be44fbe9d0b28c0e45ff6f44",
+        "39871d2aeec8d9697ae4c75c4f42847e7583990e4d1564e92d7538e03a27a7c8",
+        "d68003ab56e8a9336909b7a1100137dd859bf87061f8bed8d31356799d5f0bdc"
+      ],
+      "flags": []
+    },
+    {
+      "name": "pinscher-salto",
+      "category": "extra",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "6ad02f51d888bf4e24edca6245f714048e7429096e96ca46e3aa51cd0718def4",
+        "020adfcae17e33ae46717f45ada178f5db57cc5b521b5aa248c3c8f1ca56b2e1",
+        "c712b8b54142e63bf05837ead9c91495ff290418284efc8f15ddd605697bf0d9",
+        "d823a95a9a1f56216429b4d333d5da4923bdbc36b086005ad32579462e89fd32"
+      ],
+      "flags": []
+    },
+    {
+      "name": "pinscher-mordidas",
+      "category": "extra",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "4db009d68903b0e6d66f016e2c8afe1c066ed993f8e1122af685f496eb95fc94",
+        "8c2c36997687783d38cf33ccdd92774fae2de74c45e96fa82de35847fa521dc3",
+        "84453dbec65cc7ecab77b0614269e88da7ae4ca4e042ee3343f75a834536ac53",
+        "7174d7454f9df1ab3ccc5967eb50fb34aeac4186dd1aea6d53c62ceb9cbc17cc"
+      ],
+      "flags": []
+    },
+    {
+      "name": "pinscher-final",
+      "category": "extra",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "f92faa748511d983fe63e13632f1dff4a3c3c3f06c2d933d355d00c730540718",
+        "8329806efb2d083c32e88835bf1ca06498f5d3e5daa7485f8a1ee785d5cf6068",
+        "a677c4104ac638eb4ada248144c2e76c5fdcdb8aa282413393c00863cd8b87e4",
+        "643d831e94ff413245f5b7f84aba59fd41b2f5bac4c0a25ebb6aa070a30661a8"
+      ],
+      "flags": []
+    },
+    {
+      "name": "fx-spray-preto",
+      "category": "extra",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "64c1de9ce901650bfd0a2201f104e7e52767fe38cca3cf66a76e408b8c8e6a87",
+        "2cbfb13c689711d2b207f2f762a7b5340caf47fe676a945f16a718121f07d723",
+        "e51f1e1a771d6decd4952f9d8ce765802bc14e760a4b4197160679ce5180ee56",
+        "4dd5a04af0682d3b051b765940711741bfbc883db7f1e71d39afbbcc361326af"
+      ],
+      "flags": []
+    },
+    {
+      "name": "fx-bomba-tinta",
+      "category": "extra",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "dbb3f713f0ebffc9b3895395bc7a4ef1107561c8fc9f413eef215cef8d03a2e6",
+        "ade28070acb01b5bfe6e6be15627d9dfb1fcd70fa0f457545f268d03b8800849",
+        "825b51222656acac339a559472f0b1d12797a30c651f7231793520b7bb00c7fc",
+        "19ab9f546c1443b2127cb29065266e8c93fb8ae85310ed6195c5b89635d0c474"
+      ],
+      "flags": []
+    },
+    {
+      "name": "fx-poca-tinta",
+      "category": "extra",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "2d5fb56b5073e147e194e820baed7d59a4dca8c90ee3b496b85c578903257298",
+        "8e29c5be7ae0d2b33c03a2dcbf8c4a5815937b3e7a78d8111c0aa53387a398f7",
+        "892faa3c2e4b86b9cbc9f4b7184faca6ca805a6578c1046945f1478d23cbb311",
+        "b0705b8e170597a51c09c17b16d1c32b203cc23bda8f58e3011e490bb207c357"
+      ],
+      "flags": []
+    },
+    {
+      "name": "fx-grafite-total",
+      "category": "extra",
+      "size": [
+        3072,
+        768
+      ],
+      "unique": true,
+      "frameHashes": [
+        "439db24dc357df07cd406bc51b61904e41a13c200855b58922d69d7482dc6268",
+        "0a433e69b96bd2ee374784796b97b6f83d73e4d491a88f1204e8da336942aebf",
+        "91a50b323548f4ebee2a2396f1bb300ed9bd52a3a5373e3ad9a95e53b8ea3c39",
+        "a30eb728474d6285df7fd8debe7176ec70d92f16cc324b4f9d3acf04a2cb1333"
+      ],
+      "flags": []
+    }
+  ],
+  "characters": 40,
+  "extras": 8,
+  "frames": 192,
+  "passed": true
+}

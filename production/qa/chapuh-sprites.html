@@ -1,0 +1,35 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chapuh — revisão da integração</title>
+<style>body{margin:0;background:#17191f;color:#f7edda;font:15px system-ui}header{padding:24px;position:sticky;top:0;background:#17191ff5;z-index:1}h1{margin:0 0 8px}p{color:#cac0ad}button,a{font:inherit;padding:9px 14px;margin:4px;color:#fff;background:#65472d;border:1px solid #c59a67;border-radius:6px;cursor:pointer}main{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:16px}article{background:#282c35;border-radius:9px;overflow:hidden}h2{font-size:14px;padding:0 12px}canvas{width:100%;display:block}#checks{white-space:pre-wrap;padding:24px}@media(max-width:900px){main{grid-template-columns:repeat(2,1fr)}}</style>
+<header><h1>CHAPUH — 40 animações + 8 camadas</h1><p>Arte pelo leitor real do jogo. Pinscher caramelo, spray, bomba, poça e Grafite Total.</p><button id="pause">Pausar</button><button id="mirror">Trocar lado</button><button id="next">Próximo quadro</button><a href="../../dist/salvadores-nacionais.html">Jogar</a><a href="../sprites/source/chapuh-v2/preview.html">Originais e expressões</a><p id="status">Carregando…</p></header><main id="grid"></main><pre id="checks"></pre>
+<script type="module">
+import chapuh from '../../src/data/characters/chapuh.js';
+import { createFighter } from '../../src/core/fighter.js';
+import { animFor, moveArtWindow } from '../../src/render/anim.js';
+import { drawSprite, drawSpriteLayer, registerSprites } from '../../src/render/sprites.js';
+import { drawFighter } from '../../src/render/mannequin.js';
+import { CHAPUH_ART_CROPS } from '../../src/data/chapuh-art.js';
+const manifest=await(await fetch('../sprites/source/chapuh-v2/manifest.json')).json();
+const states={parado:'idle',andar:'walk','andar-tras':'walk',correr:'run',agachar:'crouch',pulo:'air',recuo:'backdash','escape-agarrao':'tech','recuperacao-rolamento':'techroll','defesa-em-pe':'guard','defesa-agachado':'guard','defesa-no-ar':'blockstun','dano-alto':'hitstun','dano-baixo':'hitstun','dano-no-ar':'air_hit',caido:'knockdown',levantar:'wakeup',tonto:'dizzy',vitoria:'win'};
+const actions=manifest.sequences.map(s=>({name:s.name,state:states[s.name]||'attack'}));
+const images={},packs={};
+for(const id of ['chapuh','chapuh-fx']){const names=id==='chapuh'?actions.map(a=>a.name):Object.keys(CHAPUH_ART_CROPS);packs[id]={};await Promise.all(names.map(async name=>{const im=new Image();im.src='../sprites/final/'+id+'/'+name+'.webp';await im.decode();if(im.naturalWidth!==(id==='chapuh'?3072:2048)||im.naturalHeight!==(id==='chapuh'?768:512))throw Error('Dimensões '+name);images[name]=im;packs[id][name]=im.src}));await registerSprites(id,packs[id]);}
+let side=1,playing=true,selected=0,clock=0;
+function sample(a,i){const f=createFighter(chapuh,0,0);f.face=side;f.state=a.state;f.sf=[0,6,12,19][i];f.vx=(a.name==='andar-tras'?-5:5)*side;f.comboHits=1;let global=[0,7,14,21][i];
+if(a.state==='attack'){f.moveKey=a.name.slice(6);f.move=chapuh.moves[f.moveKey];const [first]=moveArtWindow(f.move);f.sf=[0,Math.max(1,Math.floor(first*.65)),first,f.move.total-1][i];}
+if(a.name==='parado')global=i*20;if(a.name==='correr')global=i*4;
+if(a.name==='agachar')f.sf=[1,2,4,8][i];if(a.name==='pulo'){f.y=160;f.vy=[30,12,-6,-24][i];}
+if(a.name==='escape-agarrao')f.sf=i*5;if(a.name==='recuperacao-rolamento')f.sf=i*6;
+if(a.name.startsWith('defesa-')){f.sf=i*3;f.crouchBlock=a.name==='defesa-agachado';if(a.name==='defesa-no-ar')f.y=160;}
+if(['dano-alto','dano-baixo'].includes(a.name)){f.sf=i*5;f.crouchBlock=a.name==='dano-baixo';}
+if(a.name==='dano-no-ar'){f.y=160;f.vy=[24,6,-8,-24][i];}
+if(a.name==='caido')f.sf=i*4;if(['levantar','vitoria'].includes(a.name))f.sf=[2,8,14,20][i];
+if(a.name==='levantar')f.sf=[1,5,9,13][i];if(a.name==='tonto')global=i*8;
+return {f,global};}
+const actual=document.createElement('canvas'),expected=document.createElement('canvas');actual.width=expected.width=actual.height=expected.height=768;
+const ac=actual.getContext('2d',{willReadFrequently:true}),ec=expected.getContext('2d',{willReadFrequently:true});let cases=0,failures=[];
+for(const a of actions)for(let i=0;i<4;i++){const {f,global}=sample(a,i);const pose=animFor(f,global);if(Math.floor(pose.p*4)!==i){failures.push(a.name+' fase '+i);continue;}ac.clearRect(0,0,768,768);ec.clearRect(0,0,768,768);ac.save();ac.translate(384,700);drawSprite(ac,f,global);ac.restore();ec.drawImage(images[a.name],i*768,0,768,768,0,0,768,768);const aa=ac.getImageData(0,0,768,768).data,bb=ec.getImageData(0,0,768,768).data;let delta=0;for(let j=0;j<aa.length;j++)if(Math.abs(aa[j]-bb[j])>2)delta++;if(delta)failures.push(a.name+' pixels '+delta);cases++;}
+window.__chapuhQA={cases,failures,loaded:Object.keys(images).length};document.getElementById('status').textContent=failures.length?'Falhas na comparação: '+failures.length:cases+' comparações de quadros passaram · '+Object.keys(images).length+' tiras carregadas';document.getElementById('checks').textContent=JSON.stringify(window.__chapuhQA,null,2);
+const panels=[];for(const a of [...actions,...Object.keys(CHAPUH_ART_CROPS).map(name=>({name,extra:true}))]){const el=document.createElement('article');el.innerHTML='<h2>'+a.name+'</h2>';const cv=document.createElement('canvas');cv.width=480;cv.height=420;el.append(cv);document.getElementById('grid').append(el);panels.push({...a,cv,c:cv.getContext('2d')});}
+document.getElementById('pause').onclick=()=>{playing=!playing;document.getElementById('pause').textContent=playing?'Pausar':'Reproduzir'};document.getElementById('mirror').onclick=()=>{side*=-1};document.getElementById('next').onclick=()=>{playing=false;selected=(selected+1)%4;document.getElementById('pause').textContent='Reproduzir'};
+function tick(){clock++;const i=playing?Math.floor(clock/15)%4:selected;for(const p of panels){const c=p.c;c.clearRect(0,0,480,420);c.strokeStyle='#807158';c.beginPath();c.moveTo(0,380);c.lineTo(480,380);c.stroke();if(p.extra)drawSpriteLayer(c,'chapuh-fx',p.name,i,{x:240,y:230,w:400,h:280,face:side,crop:CHAPUH_ART_CROPS[p.name]});else{const {f,global}=sample(p,i);c.save();c.translate(240,380);c.scale(.52,.52);c.translate(0,-930+f.y);drawFighter(c,f,global);c.restore();}}requestAnimationFrame(tick);}tick();
+</script></html>
