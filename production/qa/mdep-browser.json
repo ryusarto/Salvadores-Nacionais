@@ -1,0 +1,16 @@
+{
+  "scope": "MDEP v3 with Majis, Chapuh and the francothesir Franco/Dney contribution",
+  "sourceMain": "2b62a61e2b514d7471bc405446f6d5e4068fe91c",
+  "sourceFranco": "5bfc336",
+  "technicalExport": { "sequences": 49, "cells": 490, "cellSize": [768,768], "stripSize": [7680,768], "missingMovements": [], "duplicateCellsWithinAction": 0, "sourceBoundaryContacts": 0 },
+  "automatedTests": { "passed": 66, "failed": 0, "report": "mdep-tests.txt" },
+  "browser": {
+    "majis": { "actualReaderPixelComparisons": 160, "failures": [], "loadedStrips": 48 },
+    "mdep": { "observedInTraining": ["idle", "walking", "SA1 short burst", "SA3 long burst with confirmed hits"], "preview": ["ten-frame selection", "aerial kick frame 6", "light background transparency", "mirror control"], "readerCoverage": "Every state, attack and turbo variant selects its dedicated strip in mdep-art.test.js. Manual browser checks are representative, not an exhaustive playthrough." },
+    "franco": { "observedInTraining": ["idle", "walking", "SA3 Obra-Prima with confirmed hits, painting and suction layers"] },
+    "consoleErrorsObserved": [],
+    "evidence": ["evidence/combined-roster.jpg", "evidence/mdep-rajada.jpg", "evidence/mdep-preview.jpg", "evidence/franco-obra-prima.jpg"]
+  },
+  "scale": { "uniformRuntimeScale": 0.85, "nativeUpscaling": false, "notes": "Five contact sheets were reviewed, with source-group camera corrections documented in the manifest. Compact poses are not independently enlarged to fill their cells. This is generated raster animation with visual anatomical review, not a skeleton-based numerical guarantee." },
+  "combatRules": "Core simulation, move damage, hitboxes, physics, resources and cancel rules were preserved. Changes concern art selection, loading, timing and visual effects."
+}

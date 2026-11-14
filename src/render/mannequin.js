@@ -1,9 +1,10 @@
 import { SYS } from '../data/system.js';
 import { hurtbox, worldBox } from '../core/fighter.js';
 import { poseFor } from './poses.js';
-import { drawSprite, hasSprites } from './sprites.js';
+import { drawSprite, hasSprites, hasSpriteStrip } from './sprites.js';
 import { drawChapuhAttack } from './chapuh-art.js';
 import { drawMajisAttack, drawMajisStatus } from './majis-art.js';
+import { drawCharacterFx } from './character-fx.js';
 
 /**
  * Desenho provisório dos lutadores: um manequim articulado com as cores e a
@@ -294,7 +295,7 @@ export function drawFighter(c, f, frame) {
 
   c.save();
   c.translate(f.x + shake, gy - f.y);
-  c.scale(f.face * (flip && !(ch.spriteStatePhases && hasSprites(ch.id)) ? -1 : 1), 1);
+  c.scale(f.face * (flip && !((ch.spriteStatePhases || ch.spriteProfile === 'ten-frame') && hasSprites(ch.id)) ? -1 : 1), 1);
   if (tint) {
     c.shadowColor = tint;
     c.shadowBlur = 34;
@@ -346,12 +347,13 @@ export function drawFighter(c, f, frame) {
 
   // rastro do golpe; as novas tiras usam os efeitos separados de tinta.
   if (sprite) drawMajisStatus(c, f, frame);
-  const artEffect = sprite && (drawChapuhAttack(c, f) || drawMajisAttack(c, f));
+  const artEffect = sprite && (drawChapuhAttack(c, f) || drawMajisAttack(c, f) || drawCharacterFx(c, f));
   if (!artEffect && f.state === 'attack' && f.move.weapon !== 'whip') {
     const kind = f.move.fx;
     for (const h of f.move.hits) {
       if (f.sf < h.from || f.sf > h.to + 1) continue;
       const b = h.box;
+      if (sprite && ch.spriteProfile === 'ten-frame' && hasSpriteStrip(ch.id, kind === 'stomp' ? 'fx-pisao' : 'fx-chute')) continue;
       if (kind === 'scream') continue; // as ondas vêm dos efeitos
       if (kind === 'flash') {
         const fxc = b.x + b.w * 0.45;

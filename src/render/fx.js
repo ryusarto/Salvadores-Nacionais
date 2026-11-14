@@ -1,5 +1,6 @@
 import { SYS } from '../data/system.js';
 import { text, burst, slab } from './draw.js';
+import { drawSpriteEffect, hasSpriteStrip, drawEffect } from './sprites.js';
 import { drawChapuhEntity } from './chapuh-art.js';
 import { drawMajisEntity } from './majis-art.js';
 
@@ -24,6 +25,29 @@ function dust(fx, x, n = 6, pow = 1) {
 export function fxEvents(fx, st) {
   for (const e of st.events) {
     const sy = GY - (e.y || 0);
+    const actor = st.f[e.side];
+    if (actor?.ch?.spriteProfile === 'ten-frame') {
+      const name = ({ hit: 'fx-impacto', block: 'fx-defesa', land: 'fx-poeira', jump: 'fx-poeira' })[e.t]
+        || (e.t === 'pop' && e.str === 'RAJADA!' ? 'fx-embalo' : null);
+      if (name && hasSpriteStrip(actor.ch.id, name)) fx.parts.push({ k: 'sprite', id: actor.ch.id, name, x: e.x, y: name === 'fx-poeira' ? GY - 35 : e.t === 'pop' ? GY - 350 : sy, r: name === 'fx-poeira' ? 320 : 240, t: 0, dur: 20 });
+    }
+    const layer = (id, name, x, y, w, h = w, dur = 16, face = 1) => fx.parts.push({ k: 'sprite', id, name, x, y, w, h, dur, face, t: 0 });
+    if (e.t === 'spawn' && e.kind === 'shot' && actor?.ch.id === 'dney') {
+      const low = actor.moveKey === '6S', up = actor.moveKey === '4S', air = actor.moveKey === 'jS';
+      const angle = up ? -.78 : air ? .72 : 0;
+      layer('dney', 'disparo', e.x, sy, 240, 200, 10, actor.face);
+      fx.parts.at(-1).angle = angle;
+      layer('dney', 'recarga', e.x - actor.face * 90, sy + 45, 54, 54, 20, actor.face);
+    }
+    if (e.t === 'hit' && actor && ['dney','franco'].includes(actor.ch.id)) {
+      const id = actor.ch.id;
+      layer(id, id === 'dney' ? (e.key === 'SA3' ? 'laser-impacto' : 'impacto') : (/H|5S/.test(e.key || '') ? 'flash-impacto' : 'tinta-impacto'), e.x, sy, 230);
+      if (id === 'franco' && e.key === 'SA3' && !fx.parts.some(p => p.k === 'absorb' && p.side === 1 - e.side)) {
+        fx.parts.push({ k:'absorb', side:1-e.side, x:st.f[1-e.side].x, y:GY-st.f[1-e.side].y, target:actor.x+actor.face*520, t:0, dur:Math.max(12,62-actor.sf), face:actor.face });
+      }
+    }
+    if (e.t === 'move' && actor?.ch.id === 'dney' && e.key === '2S') layer('dney','recarga', actor.x, GY-actor.y-260, 70,70,22,actor.face);
+    if (e.t === 'canvas' && st.f.some(f => f.ch.id === 'franco')) continue;
     switch (e.t) {
       case 'hit': {
         const r = POWER[e.power] || 50;
@@ -123,6 +147,15 @@ export function drawEntities(c, st) {
   for (const e of st.ents) {
     const x = e.x;
     const y = GY - e.y - e.h / 2;
+    const owner = st.f[e.owner];
+    if (e.kind === 'shot' && owner?.ch?.spriteProfile === 'ten-frame' && hasSpriteStrip(owner.ch.id, 'fx-ak-projetil')) {
+      c.save();
+      c.translate(x, y);
+      c.scale(e.dir, 1);
+      drawSpriteEffect(c, owner.ch.id, 'fx-ak-projetil', (e.age % 20) / 20, 0, 0, Math.max(100, e.w * 2), 80);
+      c.restore();
+      continue;
+    }
     c.save();
     c.lineWidth = 5;
     c.strokeStyle = '#12080c';
@@ -224,6 +257,12 @@ export function drawEntities(c, st) {
     } else if (e.kind === 'note') {
       text(c, '♪', x, y, e.h * 1.3, e.color);
     } else if (e.kind === 'shot') {
+      c.save();
+      c.translate(x,y);
+      c.rotate(Math.atan2(-e.vy,e.vx));
+      const drawn = owner?.ch.id === 'dney' && drawEffect(c, 'dney', 'projetil', (e.age % 12) / 12, -100, -30, 200, 60);
+      c.restore();
+      if (drawn) { c.restore(); continue; }
       c.fillStyle = e.color;
       c.beginPath();
       c.ellipse(x, y, e.w / 2 + 12, 9, Math.atan2(-e.vy, e.vx), 0, Math.PI * 2);
@@ -282,8 +321,20 @@ export function drawEntities(c, st) {
 export function fxDrawFront(c, fx) {
   for (const p of fx.parts) {
     const t = p.t / p.dur;
+    if (p.k === 'absorb') continue;
+    if (p.k === 'sprite' && p.id !== 'mdep') {
+      c.save();
+      c.globalAlpha = 1;
+      c.translate(p.x,p.y);
+      c.scale(p.face,1);
+      c.rotate(p.angle || 0);
+      drawEffect(c,p.id,p.name,t,-p.w/2,-p.h/2,p.w,p.h);
+      c.restore();
+      continue;
+    }
     c.globalAlpha = 1 - t * t;
-    if (p.k === 'spark') burst(c, p.x, p.y, p.r * (0.6 + t * 0.9), 8, p.color, 0.42, p.rot);
+    if (p.k === 'sprite') drawSpriteEffect(c, p.id, p.name, t, p.x, p.y, p.r);
+    else if (p.k === 'spark') burst(c, p.x, p.y, p.r * (0.6 + t * 0.9), 8, p.color, 0.42, p.rot);
     else if (p.k === 'ring') {
       c.strokeStyle = p.color;
       c.lineWidth = 10 * (1 - t) + 2;
