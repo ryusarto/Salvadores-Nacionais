@@ -54,12 +54,14 @@ export default {
   style: 'Equilibrado',
   mechName: 'COMPASSO',
   mechDesc: 'Conecte 2 especiais diferentes: o terceiro sai como FINAL, turbinado de graça.',
-  colors: { skin: '#b9794c', top: '#2f8a3a', top2: '#f2c318', bottom: '#3a3a44', accent: '#2a4fb8', hair: '#1c1512', shoe: '#f0f0f0' },
-  look: { hair: 'afro', weapon: 'camera', sleeves: 'none', pants: 'shorts', stripes: [[0.42, 0.56, '#f2c318'], [0.56, 0.7, '#2a4fb8']] },
+  colors: { skin: '#b9794c', top: '#d7b18e', top2: '#f2c318', bottom: '#39323e', accent: '#f321a5', hair: '#1c1512', shoe: '#f0f0f0' },
+  look: { hair: 'cap', weapon: 'camera', sleeves: 'short', pants: 'long' },
   walkF: 7.2, walkB: 5.5, jumpScale: 1, hpScale: 1.16,
   moves,
   // Qual tira do kit de sprites cada animação usa (production/sprites/final/franco)
-  spriteAlias: { 'golpe-SA1': 'golpe-SA3', 'golpe-2L': 'golpe-5L', 'golpe-2M': 'golpe-5M', 'golpe-6M': 'golpe-5M', 'golpe-c1': 'golpe-5M', 'golpe-5S': 'golpe-5H', 'golpe-2H': 'golpe-5H', 'tonto': 'dano-alto' },
+  spriteAlias: {},
+  spriteRecovery: true,
+  spritePhasedMoves: Object.keys(moves),
   mech: {
     init(f) {
       f.res = { notes: [], noteT: 0, finale: false };

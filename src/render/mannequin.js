@@ -2,6 +2,7 @@ import { SYS } from '../data/system.js';
 import { hurtbox, worldBox } from '../core/fighter.js';
 import { poseFor } from './poses.js';
 import { drawSprite } from './sprites.js';
+import { drawCharacterFx } from './character-fx.js';
 
 /**
  * Desenho provisório dos lutadores: um manequim articulado com as cores e a
@@ -343,7 +344,8 @@ export function drawFighter(c, f, frame) {
   c.shadowBlur = 0;
 
   // rastro do golpe
-  if (f.state === 'attack' && f.move.weapon !== 'whip') {
+  const customFx = drawCharacterFx(c, f);
+  if (!customFx && f.state === 'attack' && f.move.weapon !== 'whip') {
     const kind = f.move.fx;
     for (const h of f.move.hits) {
       if (f.sf < h.from || f.sf > h.to + 1) continue;

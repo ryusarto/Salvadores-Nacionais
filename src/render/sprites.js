@@ -69,6 +69,15 @@ export function registerSprites(id, sheets) {
 export const hasSprites = (id) => !!REG[id] && Object.keys(REG[id]).length > 0;
 export const spriteNames = (id) => Object.keys(REG[id] || {});
 
+/** Draw a separate effect layer; coordinates are local to the caller. */
+export function drawEffect(c, id, name, p, x, y, w, h = w) {
+  const s = REG['fx-' + id]?.[name];
+  if (!s) return false;
+  const i = Math.min(s.n - 1, Math.max(0, Math.floor(p * s.n)));
+  c.drawImage(s.cv, i * s.size, 0, s.size, s.size, x, y, w, h);
+  return true;
+}
+
 /**
  * Substitutos para as animações que a prancheta ainda não tem: usa uma tira
  * parecida do mesmo personagem, com um ajuste de pose (inclinar, deitar,
@@ -86,6 +95,8 @@ function pickStrip(set, a, f) {
   const alias = f.ch.spriteAlias?.[a.name];
   if (alias && set[alias]) return { s: set[alias], p: a.p, fx: null };
   if (set[a.name]) return { s: set[a.name], p: a.p, fx: null };
+  const base = a.name.replace(/-turbo$/, '');
+  if (set[base]) return { s: set[base], p: a.p, fx: null };
   // Elenco ainda sem caminhada reversa: reproduzir o ciclo comum ao contrário.
   if (a.name === 'andar-tras' && set.andar) {
     return { s: set.andar, p: Math.max(0, Math.min(0.999, 1 - a.p)), fx: null };
