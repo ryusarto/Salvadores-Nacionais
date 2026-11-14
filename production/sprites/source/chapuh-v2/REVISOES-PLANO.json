@@ -1,0 +1,27 @@
+[
+  {
+    "name": "vitoria",
+    "action": "Victory four poses as before, but the raised spray can, fingers and nozzle MUST be fully visible with at least 50 pixels of transparent margin above them inside each quadrant. Shrink ALL four figures uniformly to fit; never crop or cross the middle grid line.",
+    "reason": "Margem superior insuficiente ao levantar a lata."
+  },
+  {
+    "name": "golpe-2M",
+    "action": "FOUR LOW CROUCHING poses. EVERY frame is a deep crouch; NEVER stand upright. TL deep low crouched guard, TR aim spray can at shin height RIGHT, BL fully extend spray nozzle low RIGHT keeping hips close to ground, BR retract into the SAME low crouched guard. Expressions: sly focused smirk, narrowing eyes, concentrated slight effort, confident reset. No paint jet. All limbs stay well within each quadrant.",
+    "reason": "Manter o golpe baixo agachado em todos os quadros."
+  },
+  {
+    "name": "golpe-3H",
+    "action": "FOUR LOW CROUCHING leg-sweep poses; NO standing frame. TL deep crouch; TR LEFT palm braces ground and RIGHT hand keeps spray against chest; BL extend RIGHT leg in low sweeping kick RIGHT while bent LEFT knee supports body; BR retract into crouch. Entire extended boot and all fingers fully inside the BOTTOM-LEFT quadrant, with 60 pixels blank margin to its right edge; shrink all four figures uniformly if needed. Expressions: sly focus, concentration, gritted effort, satisfied focus. No FX.",
+    "reason": "Corrigir início em pé e margem do pé estendido."
+  },
+  {
+    "name": "golpe-2H",
+    "action": "FOUR uppercut animation phases, each full body inside its OWN quadrant with at least 60 pixels padding ABOVE and BELOW. Keep ALL four figures at one uniformly SMALLER scale. TL deep crouch can at hip; TR coil torso; BL powerful rising RIGHT-handed CAN UPPERCUT above head, mouth open exertion shout; BR recover upright focused guard. The raised can and fingertips must stay BELOW the top boundary of the bottom-left cell, not overlap the top-left cell. No effects.",
+    "reason": "Lata erguida atravessou a divisão entre linhas."
+  },
+  {
+    "name": "golpe-jM",
+    "action": "Four AIRBORNE medium kick phases. ALL four poses floating with bent/tucked legs except the extended kicking leg. TL airborne knees tucked, TR coil hip, BL extend RIGHT boot horizontally RIGHT in a powerful kick, BR retract airborne knee. Keep every boot/finger/hat wholly inside its quadrant with 60 pixel blank margins on ALL sides, uniformly smaller scale as needed. Face: focused, strained, gritted teeth on kick, determined recovery. Can in right hand. No ground or effects.",
+    "reason": "Aumentar a margem do chute aéreo."
+  }
+]

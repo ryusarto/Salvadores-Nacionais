@@ -85,3 +85,7 @@ Ideias e problemas também podem ser enviados pela aba **Issues**.
 ## Licença
 
 [MIT](LICENSE): use, copie, altere e distribua à vontade, mantendo o aviso de licença.
+
+## Chapuh completo
+
+40 animações alinhadas em células de 768 × 768 com origem dos pés (384,700), além de oito camadas do pinscher caramelo e da tinta. Revisão: [production/qa/chapuh-sprites.html](production/qa/chapuh-sprites.html). Fontes e prompts: [production/sprites/source/chapuh-v2](production/sprites/source/chapuh-v2).

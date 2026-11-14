@@ -1,7 +1,8 @@
 import { SYS } from '../data/system.js';
 import { hurtbox, worldBox } from '../core/fighter.js';
 import { poseFor } from './poses.js';
-import { drawSprite, hasSpriteStrip } from './sprites.js';
+import { drawSprite, hasSprites, hasSpriteStrip } from './sprites.js';
+import { drawChapuhAttack } from './chapuh-art.js';
 
 /**
  * Desenho provisório dos lutadores: um manequim articulado com as cores e a
@@ -292,7 +293,7 @@ export function drawFighter(c, f, frame) {
 
   c.save();
   c.translate(f.x + shake, gy - f.y);
-  c.scale(f.face * (flip ? -1 : 1), 1);
+  c.scale(f.face * (flip && !((ch.spriteStatePhases || ch.spriteProfile === 'ten-frame') && hasSprites(ch.id)) ? -1 : 1), 1);
   if (tint) {
     c.shadowColor = tint;
     c.shadowBlur = 34;
@@ -342,8 +343,9 @@ export function drawFighter(c, f, frame) {
   } else if (look.weapon === 'whip') whip(c, J, f);
   c.shadowBlur = 0;
 
-  // rastro do golpe
-  if (f.state === 'attack' && f.move.weapon !== 'whip') {
+  // rastro do golpe; as novas tiras usam os efeitos separados de tinta.
+  const artEffect = sprite && drawChapuhAttack(c, f);
+  if (!artEffect && f.state === 'attack' && f.move.weapon !== 'whip') {
     const kind = f.move.fx;
     for (const h of f.move.hits) {
       if (f.sf < h.from || f.sf > h.to + 1) continue;

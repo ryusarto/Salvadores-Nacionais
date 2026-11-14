@@ -1,0 +1,66 @@
+{
+  "framesPerSequence": 4,
+  "dogIdentity": "Uniform CARAMEL BROWN fur over ENTIRE body, face, head, ears, neck, back, chest, all legs, paws and tail. Base warm caramel #B97437, golden brown highlights #DFA064, warm brown shadows #7F4826. NO BLACK FUR, no black saddle/mask/patches, no black-and-tan markings. Black is allowed only for ink outlines, nose and pupils. Preserve tiny miniature-pinscher build, large upright pointed ears, lean legs and gold/yellow collar. PHOTO IDENTITY: match this exact tiny dog from the supplied two photos: compact little body with a softly rounded chest/belly, large round very dark brown eyes, domed rounded forehead, short tapered muzzle with black nose, broad triangular ears with softly rounded tips (one ear may tilt slightly outward), delicate short legs and small paws, short natural caramel coat. Not a long narrow Doberman head, not an elongated athletic body. Keep a simple golden game collar; no clothing. Keep playful alert expression and energetic fierce expressions for attacks. Translating photos into same inked HQ/3-tone cel-shaded/halftone style as Chapuh.",
+  "jobs": [
+    {
+      "name": "pinscher-correr",
+      "action": "Whole-body SOLID CARAMEL BROWN miniature pinscher, no black fur patches. Four-phase gallop RIGHT: stretched forepaws; tucked passing; stretched hind propulsion; airborne tucked.",
+      "status": "generated",
+      "selectedOriginal": "extras/raw/pinscher-correr.png",
+      "strip": "extras/tiras-768/pinscher-correr.png"
+    },
+    {
+      "name": "pinscher-salto",
+      "action": "Whole-body SOLID CARAMEL BROWN miniature pinscher. Anti-air leap UP-RIGHT: crouch hind-leg load; rise diagonal; apex front paws reaching and jaws open; descending landing.",
+      "status": "generated",
+      "selectedOriginal": "extras/raw/pinscher-salto.png",
+      "strip": "extras/tiras-768/pinscher-salto.png"
+    },
+    {
+      "name": "pinscher-mordidas",
+      "action": "Whole-body SOLID CARAMEL BROWN miniature pinscher. Four midair bite phases RIGHT: lunge jaws open; snap shut; recoil coil; second snap jaws open. No victim, no blood.",
+      "status": "generated",
+      "selectedOriginal": "extras/raw/pinscher-mordidas.png",
+      "strip": "extras/tiras-768/pinscher-mordidas.png"
+    },
+    {
+      "name": "pinscher-final",
+      "action": "Whole-body SOLID CARAMEL BROWN miniature pinscher. Powerful final lunging bite RIGHT: hind-leg crouch; explosive stretched airborne launch; wide jaw snap forepaws extended; retract legs. No blood or opponent.",
+      "status": "generated",
+      "selectedOriginal": "extras/raw/pinscher-final-v2.png",
+      "strip": "extras/tiras-768/pinscher-final.png"
+    },
+    {
+      "name": "fx-spray-preto",
+      "action": "Effect only, NO character. Four stages of BLACK graffiti spray jet travelling RIGHT: narrow mist starting at left; expanding dense cone of black paint with charcoal grey edge; broad sustained long black ink blast; fading mist droplets. Crisp black comic ink, subtle charcoal highlights, readable against light or colored game backgrounds. No can, no hand. Each entire jet wholly inside quadrant with 50 pixel margin.",
+      "status": "generated",
+      "selectedOriginal": "extras/raw/fx-spray-preto.png",
+      "strip": "extras/tiras-768/fx-spray-preto.png"
+    },
+    {
+      "name": "fx-bomba-tinta",
+      "action": "Effect only, NO character. A small round PINK paint bomb projectile, same object at four rotation phases moving RIGHT. Sealed pink paint canister with black rim and simple unlettered cap, angular comic highlights, a few pink droplets trailing left. Four clean separate complete projectile drawings, no fuse, no flame, no explosion, no lettering.",
+      "status": "generated",
+      "selectedOriginal": "extras/raw/fx-bomba-tinta.png",
+      "strip": "extras/tiras-768/fx-bomba-tinta.png"
+    },
+    {
+      "name": "fx-poca-tinta",
+      "action": "Effect only, NO character. Pink paint puddle splashing then settling, four stages: compact splash impact pink #ee547a; low spreading splash; broad flat glossy puddle viewed shallow side angle; settled puddle with small ripples. Thin dark outline and three-tone pink shading. Same ground anchor in every cell, transparent surrounding. No actual floor.",
+      "status": "generated",
+      "selectedOriginal": "extras/raw/fx-poca-tinta.png",
+      "strip": "extras/tiras-768/fx-poca-tinta.png"
+    },
+    {
+      "name": "fx-grafite-total",
+      "action": "Effect only, NO character. Grafite Total super paint wave, four stages travelling RIGHT: coiled magenta pink paint curl at lower-left; growing huge diagonal pink ink arc; wide pink and cyan splash wave with limited mustard highlights; dissipating paint droplets. Comic black ink outlines and halftone, dramatic 2D fighting-game effect. No typography, letters, objects or person, no glow background. Entire effect inside each quadrant with 60 pixel margin.",
+      "status": "generated",
+      "selectedOriginal": "extras/raw/fx-grafite-total.png",
+      "strip": "extras/tiras-768/fx-grafite-total.png"
+    }
+  ],
+  "references": [
+    "A404633D-8038-41CF-BD9F-1C2403CAAB45.JPG",
+    "CBD131FD-E830-46BF-B2DB-09DEAAC2EA52.JPG"
+  ]
+}
