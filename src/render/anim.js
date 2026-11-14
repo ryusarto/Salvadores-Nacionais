@@ -134,9 +134,9 @@ export function animFor(f, frame) {
         // pose follows the actual hit window, not a quarter of total duration.
         const p = f.sf < first ? Math.min(0.499, f.sf / first * 0.5)
           : f.sf <= last ? 0.5 : Math.min(0.999, 0.75 + (f.sf - last) / Math.max(1, m.total - last) * 0.25);
-        return { name: `golpe-${f.moveKey}`, p, index: Math.floor(p * 4) };
+        return { name: `golpe-${f.moveKey}${f.move?.isTurbo || f.res?.finale ? '-turbo' : ''}`, p, index: Math.floor(p * 4) };
       }
-      return { name: `golpe-${f.moveKey}`, index: bySf(movePicks(m), f.sf), p: Math.min(0.999, f.sf / m.total) };
+      return { name: `golpe-${f.moveKey}${f.move?.isTurbo || f.res?.finale ? '-turbo' : ''}`, index: bySf(movePicks(m), f.sf), p: Math.min(0.999, f.sf / m.total) };
     }
     default: return cyc('parado');
   }

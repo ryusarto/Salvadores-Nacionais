@@ -163,6 +163,15 @@ export function drawSpriteLayer(c, id, name, index, { x, y, w, h, face = 1, anch
   return true;
 }
 
+/** Draw a separate effect layer; coordinates are local to the caller. */
+export function drawEffect(c, id, name, p, x, y, w, h = w) {
+  const s = REG['fx-' + id] && readyStrip(REG['fx-' + id], name);
+  if (!s) return false;
+  const i = Math.min(s.n - 1, Math.max(0, Math.floor(p * s.n)));
+  c.drawImage(s.cv, i * s.size, 0, s.size, s.size, x, y, w, h);
+  return true;
+}
+
 /**
  * Substitutos para as animações que a prancheta ainda não tem: usa uma tira
  * parecida do mesmo personagem, com um ajuste de pose (inclinar, deitar,
@@ -182,6 +191,9 @@ function pickStrip(set, a, f) {
   if (aliased) return { s: aliased, p: a.p, fx: null };
   const exact = readyStrip(set, a.name);
   if (exact) return { s: exact, p: a.p, fx: null };
+  const base = a.name.replace(/-turbo$/, '');
+  const baseStrip = base !== a.name && readyStrip(set, base);
+  if (baseStrip) return { s: baseStrip, p: a.p, fx: null };
   if (set[a.name]?.lazy) {
     const idle = readyStrip(set, 'parado');
     return idle ? { s: idle, p: 0, fx: null } : null;

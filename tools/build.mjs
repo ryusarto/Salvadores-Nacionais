@@ -4,12 +4,14 @@
 import { build } from 'esbuild';
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs';
 import { join, relative, dirname, sep } from 'node:path';
+import { createHash } from 'node:crypto';
 
 const arg = (k, d) => (process.argv.find((a) => a.startsWith(`--${k}=`)) || '').split('=')[1] || d;
 const spritesDir = arg('sprites', 'production/sprites/final');
 const outFile = arg('out', 'dist/salvadores-nacionais.html');
 const externalAssets = process.argv.includes('--external-assets');
-const assetURL = p => relative(dirname(outFile), p).split(sep).map(encodeURIComponent).join('/');
+const assetURL = p => relative(dirname(outFile), p).split(sep).map(encodeURIComponent).join('/')
+  + '?v=' + createHash('sha256').update(readFileSync(p)).digest('hex').slice(0, 12);
 
 const sprites = {};
 if (existsSync(spritesDir)) {

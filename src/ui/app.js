@@ -5,6 +5,7 @@ import { createFighter } from '../core/fighter.js';
 import { createBrain, aiInput } from '../core/ai.js';
 import { EMPTY_INPUT } from '../core/input.js';
 import { buildStage, drawStage } from '../render/stage.js';
+import { drawEffect } from '../render/sprites.js';
 import { drawFighter, drawBoxes } from '../render/mannequin.js';
 import { createFx, fxEvents, fxUpdate, fxDrawBack, fxDrawFront, fxDrawScreen, drawEntities } from '../render/fx.js';
 import { createHud, drawHud } from '../render/hud.js';
@@ -597,7 +598,25 @@ export function createApp(canvas, devices, opts = {}) {
     c.translate(-app.cam + sx, sy);
     fxDrawBack(c, fx);
     const order = b.state === 'attack' || a.state === 'hitstun' || a.state === 'thrown' ? [a, b] : [b, a];
-    for (const f of order) drawFighter(c, f, app.frame + f.side * 17);
+    for (const f of order) {
+      const absorb = fx.parts.find(p => p.k === 'absorb' && p.side === f.side);
+      c.save();
+      if (absorb) {
+        const t = absorb.t / absorb.dur;
+        const scale = Math.max(.08, 1 - t * .92);
+        c.translate(absorb.x + (absorb.target - absorb.x) * t, absorb.y - 220 * t);
+        c.scale(scale, Math.max(.06, 1 - t));
+        c.translate(-f.x, -(SYS.GROUND_Y - f.y));
+        c.globalAlpha = Math.max(.1, 1 - t);
+      }
+      drawFighter(c, f, app.frame + f.side * 17);
+      if (absorb && absorb.t / absorb.dur > .35) {
+        c.translate(f.x, SYS.GROUND_Y - f.y);
+        c.scale(absorb.face,1);
+        drawEffect(c,'franco','adversario-sugado',absorb.t/absorb.dur,-220,-480,440,480);
+      }
+      c.restore();
+    }
     drawEntities(c, st);
     fxDrawFront(c, fx);
     if (app.boxes) for (const f of st.f) drawBoxes(c, f);
