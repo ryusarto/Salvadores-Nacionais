@@ -89,3 +89,7 @@ Ideias e problemas também podem ser enviados pela aba **Issues**.
 ## Chapuh completo
 
 40 animações alinhadas em células de 768 × 768 com origem dos pés (384,700), além de oito camadas do pinscher caramelo e da tinta. Revisão: [production/qa/chapuh-sprites.html](production/qa/chapuh-sprites.html). Fontes e prompts: [production/sprites/source/chapuh-v2](production/sprites/source/chapuh-v2).
+
+### Majis — sprites completos
+
+40 animações e 8 FX próprios, alinhados em células de 768×768 com apoio em (384,700). Figurino e rosto conforme referências, cabelo preto, Flying V e silhueta magra. [Revisão das animações e efeitos](production/qa/majis-sprites.html). Fontes e prompts em `production/sprites/source/majis-v2/`.

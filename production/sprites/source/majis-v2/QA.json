@@ -1,0 +1,2146 @@
+{
+  "character": "majis",
+  "cell": [
+    768,
+    768
+  ],
+  "foot": [
+    384,
+    700
+  ],
+  "strips": 48,
+  "frames": 192,
+  "passed": true,
+  "standing": {
+    "x": 263,
+    "y": 233,
+    "w": 288,
+    "h": 468,
+    "bottom": 701,
+    "pixels": 44294
+  },
+  "checks": [
+    {
+      "name": "parado",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 263,
+          "y": 233,
+          "w": 288,
+          "h": 468,
+          "bottom": 701,
+          "pixels": 44294
+        },
+        {
+          "x": 264,
+          "y": 230,
+          "w": 287,
+          "h": 470,
+          "bottom": 700,
+          "pixels": 45348
+        },
+        {
+          "x": 263,
+          "y": 229,
+          "w": 288,
+          "h": 471,
+          "bottom": 700,
+          "pixels": 44753
+        },
+        {
+          "x": 263,
+          "y": 229,
+          "w": 288,
+          "h": 471,
+          "bottom": 700,
+          "pixels": 44755
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "andar",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 233,
+          "y": 233,
+          "w": 307,
+          "h": 468,
+          "bottom": 701,
+          "pixels": 43805
+        },
+        {
+          "x": 231,
+          "y": 229,
+          "w": 267,
+          "h": 470,
+          "bottom": 699,
+          "pixels": 40359
+        },
+        {
+          "x": 234,
+          "y": 232,
+          "w": 305,
+          "h": 469,
+          "bottom": 701,
+          "pixels": 42689
+        },
+        {
+          "x": 241,
+          "y": 229,
+          "w": 256,
+          "h": 471,
+          "bottom": 700,
+          "pixels": 39211
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "andar-tras",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 272,
+          "y": 234,
+          "w": 266,
+          "h": 466,
+          "bottom": 700,
+          "pixels": 45598
+        },
+        {
+          "x": 240,
+          "y": 235,
+          "w": 256,
+          "h": 465,
+          "bottom": 700,
+          "pixels": 46011
+        },
+        {
+          "x": 260,
+          "y": 231,
+          "w": 242,
+          "h": 470,
+          "bottom": 701,
+          "pixels": 45624
+        },
+        {
+          "x": 246,
+          "y": 229,
+          "w": 254,
+          "h": 471,
+          "bottom": 700,
+          "pixels": 44623
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "correr",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 181,
+          "y": 235,
+          "w": 383,
+          "h": 470,
+          "bottom": 705,
+          "pixels": 53899
+        },
+        {
+          "x": 214,
+          "y": 235,
+          "w": 343,
+          "h": 407,
+          "bottom": 642,
+          "pixels": 50240
+        },
+        {
+          "x": 185,
+          "y": 234,
+          "w": 390,
+          "h": 470,
+          "bottom": 704,
+          "pixels": 53712
+        },
+        {
+          "x": 213,
+          "y": 235,
+          "w": 348,
+          "h": 418,
+          "bottom": 653,
+          "pixels": 49769
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "agachar",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 265,
+          "y": 229,
+          "w": 282,
+          "h": 471,
+          "bottom": 700,
+          "pixels": 42684
+        },
+        {
+          "x": 234,
+          "y": 257,
+          "w": 294,
+          "h": 444,
+          "bottom": 701,
+          "pixels": 42955
+        },
+        {
+          "x": 239,
+          "y": 290,
+          "w": 309,
+          "h": 411,
+          "bottom": 701,
+          "pixels": 45463
+        },
+        {
+          "x": 226,
+          "y": 337,
+          "w": 309,
+          "h": 363,
+          "bottom": 700,
+          "pixels": 42857
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "pulo",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 250,
+          "y": 291,
+          "w": 294,
+          "h": 423,
+          "bottom": 714,
+          "pixels": 52210
+        },
+        {
+          "x": 231,
+          "y": 232,
+          "w": 292,
+          "h": 457,
+          "bottom": 689,
+          "pixels": 51986
+        },
+        {
+          "x": 246,
+          "y": 232,
+          "w": 296,
+          "h": 383,
+          "bottom": 615,
+          "pixels": 47927
+        },
+        {
+          "x": 207,
+          "y": 237,
+          "w": 311,
+          "h": 471,
+          "bottom": 708,
+          "pixels": 53585
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "recuo",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 246,
+          "y": 237,
+          "w": 313,
+          "h": 470,
+          "bottom": 707,
+          "pixels": 47650
+        },
+        {
+          "x": 217,
+          "y": 251,
+          "w": 354,
+          "h": 448,
+          "bottom": 699,
+          "pixels": 50053
+        },
+        {
+          "x": 255,
+          "y": 234,
+          "w": 268,
+          "h": 414,
+          "bottom": 648,
+          "pixels": 47460
+        },
+        {
+          "x": 220,
+          "y": 298,
+          "w": 323,
+          "h": 408,
+          "bottom": 706,
+          "pixels": 47811
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "escape-agarrao",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 247,
+          "y": 232,
+          "w": 305,
+          "h": 469,
+          "bottom": 701,
+          "pixels": 46090
+        },
+        {
+          "x": 212,
+          "y": 234,
+          "w": 304,
+          "h": 465,
+          "bottom": 699,
+          "pixels": 51527
+        },
+        {
+          "x": 214,
+          "y": 229,
+          "w": 345,
+          "h": 471,
+          "bottom": 700,
+          "pixels": 53069
+        },
+        {
+          "x": 199,
+          "y": 230,
+          "w": 314,
+          "h": 470,
+          "bottom": 700,
+          "pixels": 49775
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "recuperacao-rolamento",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 169,
+          "y": 402,
+          "w": 428,
+          "h": 299,
+          "bottom": 701,
+          "pixels": 70494
+        },
+        {
+          "x": 150,
+          "y": 357,
+          "w": 450,
+          "h": 344,
+          "bottom": 701,
+          "pixels": 71800
+        },
+        {
+          "x": 235,
+          "y": 298,
+          "w": 391,
+          "h": 402,
+          "bottom": 700,
+          "pixels": 71376
+        },
+        {
+          "x": 192,
+          "y": 249,
+          "w": 408,
+          "h": 451,
+          "bottom": 700,
+          "pixels": 73154
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "defesa-em-pe",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 263,
+          "y": 229,
+          "w": 243,
+          "h": 471,
+          "bottom": 700,
+          "pixels": 43968
+        },
+        {
+          "x": 230,
+          "y": 248,
+          "w": 253,
+          "h": 453,
+          "bottom": 701,
+          "pixels": 46046
+        },
+        {
+          "x": 261,
+          "y": 247,
+          "w": 240,
+          "h": 454,
+          "bottom": 701,
+          "pixels": 45742
+        },
+        {
+          "x": 261,
+          "y": 230,
+          "w": 245,
+          "h": 470,
+          "bottom": 700,
+          "pixels": 44160
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "defesa-agachado",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 253,
+          "y": 359,
+          "w": 253,
+          "h": 341,
+          "bottom": 700,
+          "pixels": 52450
+        },
+        {
+          "x": 236,
+          "y": 371,
+          "w": 257,
+          "h": 329,
+          "bottom": 700,
+          "pixels": 52897
+        },
+        {
+          "x": 246,
+          "y": 378,
+          "w": 256,
+          "h": 323,
+          "bottom": 701,
+          "pixels": 51088
+        },
+        {
+          "x": 245,
+          "y": 367,
+          "w": 261,
+          "h": 333,
+          "bottom": 700,
+          "pixels": 53158
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "defesa-no-ar",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 249,
+          "y": 293,
+          "w": 304,
+          "h": 419,
+          "bottom": 712,
+          "pixels": 50124
+        },
+        {
+          "x": 255,
+          "y": 296,
+          "w": 227,
+          "h": 416,
+          "bottom": 712,
+          "pixels": 45273
+        },
+        {
+          "x": 234,
+          "y": 294,
+          "w": 369,
+          "h": 400,
+          "bottom": 694,
+          "pixels": 54308
+        },
+        {
+          "x": 236,
+          "y": 292,
+          "w": 260,
+          "h": 397,
+          "bottom": 689,
+          "pixels": 50890
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "dano-alto",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 254,
+          "y": 229,
+          "w": 299,
+          "h": 471,
+          "bottom": 700,
+          "pixels": 45262
+        },
+        {
+          "x": 236,
+          "y": 232,
+          "w": 288,
+          "h": 467,
+          "bottom": 699,
+          "pixels": 45387
+        },
+        {
+          "x": 244,
+          "y": 239,
+          "w": 312,
+          "h": 462,
+          "bottom": 701,
+          "pixels": 50298
+        },
+        {
+          "x": 226,
+          "y": 232,
+          "w": 314,
+          "h": 467,
+          "bottom": 699,
+          "pixels": 48303
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "dano-baixo",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 264,
+          "y": 230,
+          "w": 279,
+          "h": 470,
+          "bottom": 700,
+          "pixels": 43857
+        },
+        {
+          "x": 237,
+          "y": 261,
+          "w": 315,
+          "h": 439,
+          "bottom": 700,
+          "pixels": 43018
+        },
+        {
+          "x": 284,
+          "y": 307,
+          "w": 321,
+          "h": 393,
+          "bottom": 700,
+          "pixels": 40509
+        },
+        {
+          "x": 242,
+          "y": 306,
+          "w": 309,
+          "h": 394,
+          "bottom": 700,
+          "pixels": 40705
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "dano-no-ar",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 191,
+          "y": 271,
+          "w": 374,
+          "h": 441,
+          "bottom": 712,
+          "pixels": 46234
+        },
+        {
+          "x": 143,
+          "y": 291,
+          "w": 432,
+          "h": 367,
+          "bottom": 658,
+          "pixels": 47586
+        },
+        {
+          "x": 221,
+          "y": 309,
+          "w": 305,
+          "h": 324,
+          "bottom": 633,
+          "pixels": 43942
+        },
+        {
+          "x": 159,
+          "y": 321,
+          "w": 404,
+          "h": 375,
+          "bottom": 696,
+          "pixels": 53276
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "caido",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 249,
+          "y": 230,
+          "w": 275,
+          "h": 471,
+          "bottom": 701,
+          "pixels": 41838
+        },
+        {
+          "x": 178,
+          "y": 276,
+          "w": 356,
+          "h": 424,
+          "bottom": 700,
+          "pixels": 45024
+        },
+        {
+          "x": 205,
+          "y": 453,
+          "w": 359,
+          "h": 246,
+          "bottom": 699,
+          "pixels": 41329
+        },
+        {
+          "x": 157,
+          "y": 535,
+          "w": 420,
+          "h": 166,
+          "bottom": 701,
+          "pixels": 36209
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "levantar",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 170,
+          "y": 516,
+          "w": 434,
+          "h": 184,
+          "bottom": 700,
+          "pixels": 42796
+        },
+        {
+          "x": 158,
+          "y": 444,
+          "w": 418,
+          "h": 256,
+          "bottom": 700,
+          "pixels": 47121
+        },
+        {
+          "x": 239,
+          "y": 350,
+          "w": 323,
+          "h": 350,
+          "bottom": 700,
+          "pixels": 51679
+        },
+        {
+          "x": 229,
+          "y": 229,
+          "w": 299,
+          "h": 471,
+          "bottom": 700,
+          "pixels": 44746
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "tonto",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 267,
+          "y": 229,
+          "w": 285,
+          "h": 471,
+          "bottom": 700,
+          "pixels": 45098
+        },
+        {
+          "x": 246,
+          "y": 232,
+          "w": 296,
+          "h": 468,
+          "bottom": 700,
+          "pixels": 45580
+        },
+        {
+          "x": 282,
+          "y": 229,
+          "w": 285,
+          "h": 470,
+          "bottom": 699,
+          "pixels": 45247
+        },
+        {
+          "x": 260,
+          "y": 229,
+          "w": 286,
+          "h": 470,
+          "bottom": 699,
+          "pixels": 45643
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "vitoria",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 255,
+          "y": 168,
+          "w": 299,
+          "h": 532,
+          "bottom": 700,
+          "pixels": 55780
+        },
+        {
+          "x": 233,
+          "y": 173,
+          "w": 327,
+          "h": 528,
+          "bottom": 701,
+          "pixels": 61266
+        },
+        {
+          "x": 207,
+          "y": 183,
+          "w": 372,
+          "h": 517,
+          "bottom": 700,
+          "pixels": 63227
+        },
+        {
+          "x": 226,
+          "y": 182,
+          "w": 351,
+          "h": 518,
+          "bottom": 700,
+          "pixels": 60028
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-5L",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 254,
+          "y": 228,
+          "w": 299,
+          "h": 472,
+          "bottom": 700,
+          "pixels": 46403
+        },
+        {
+          "x": 216,
+          "y": 240,
+          "w": 273,
+          "h": 460,
+          "bottom": 700,
+          "pixels": 45303
+        },
+        {
+          "x": 206,
+          "y": 243,
+          "w": 412,
+          "h": 457,
+          "bottom": 700,
+          "pixels": 50288
+        },
+        {
+          "x": 233,
+          "y": 233,
+          "w": 295,
+          "h": 468,
+          "bottom": 701,
+          "pixels": 46429
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-5M",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 245,
+          "y": 229,
+          "w": 306,
+          "h": 471,
+          "bottom": 700,
+          "pixels": 45657
+        },
+        {
+          "x": 202,
+          "y": 233,
+          "w": 318,
+          "h": 467,
+          "bottom": 700,
+          "pixels": 49155
+        },
+        {
+          "x": 179,
+          "y": 253,
+          "w": 465,
+          "h": 447,
+          "bottom": 700,
+          "pixels": 50384
+        },
+        {
+          "x": 236,
+          "y": 232,
+          "w": 317,
+          "h": 468,
+          "bottom": 700,
+          "pixels": 46624
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-5H",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 232,
+          "y": 164,
+          "w": 350,
+          "h": 535,
+          "bottom": 699,
+          "pixels": 59304
+        },
+        {
+          "x": 181,
+          "y": 158,
+          "w": 325,
+          "h": 542,
+          "bottom": 700,
+          "pixels": 59079
+        },
+        {
+          "x": 203,
+          "y": 235,
+          "w": 409,
+          "h": 464,
+          "bottom": 699,
+          "pixels": 67979
+        },
+        {
+          "x": 183,
+          "y": 175,
+          "w": 371,
+          "h": 525,
+          "bottom": 700,
+          "pixels": 61051
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-2L",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 232,
+          "y": 270,
+          "w": 297,
+          "h": 431,
+          "bottom": 701,
+          "pixels": 47882
+        },
+        {
+          "x": 243,
+          "y": 318,
+          "w": 297,
+          "h": 382,
+          "bottom": 700,
+          "pixels": 45712
+        },
+        {
+          "x": 213,
+          "y": 325,
+          "w": 374,
+          "h": 376,
+          "bottom": 701,
+          "pixels": 47982
+        },
+        {
+          "x": 250,
+          "y": 325,
+          "w": 292,
+          "h": 376,
+          "bottom": 701,
+          "pixels": 46588
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-2M",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 247,
+          "y": 360,
+          "w": 270,
+          "h": 340,
+          "bottom": 700,
+          "pixels": 47361
+        },
+        {
+          "x": 235,
+          "y": 367,
+          "w": 267,
+          "h": 333,
+          "bottom": 700,
+          "pixels": 43094
+        },
+        {
+          "x": 217,
+          "y": 391,
+          "w": 395,
+          "h": 309,
+          "bottom": 700,
+          "pixels": 44732
+        },
+        {
+          "x": 267,
+          "y": 371,
+          "w": 275,
+          "h": 329,
+          "bottom": 700,
+          "pixels": 45663
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-2H",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 219,
+          "y": 307,
+          "w": 376,
+          "h": 393,
+          "bottom": 700,
+          "pixels": 58143
+        },
+        {
+          "x": 161,
+          "y": 235,
+          "w": 367,
+          "h": 465,
+          "bottom": 700,
+          "pixels": 61396
+        },
+        {
+          "x": 241,
+          "y": 189,
+          "w": 320,
+          "h": 511,
+          "bottom": 700,
+          "pixels": 58368
+        },
+        {
+          "x": 211,
+          "y": 196,
+          "w": 327,
+          "h": 505,
+          "bottom": 701,
+          "pixels": 54379
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-3H",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 221,
+          "y": 360,
+          "w": 286,
+          "h": 340,
+          "bottom": 700,
+          "pixels": 46003
+        },
+        {
+          "x": 190,
+          "y": 365,
+          "w": 382,
+          "h": 336,
+          "bottom": 701,
+          "pixels": 48521
+        },
+        {
+          "x": 206,
+          "y": 376,
+          "w": 415,
+          "h": 324,
+          "bottom": 700,
+          "pixels": 48372
+        },
+        {
+          "x": 254,
+          "y": 359,
+          "w": 286,
+          "h": 341,
+          "bottom": 700,
+          "pixels": 46854
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-6M",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 250,
+          "y": 174,
+          "w": 319,
+          "h": 526,
+          "bottom": 700,
+          "pixels": 56362
+        },
+        {
+          "x": 181,
+          "y": 174,
+          "w": 305,
+          "h": 527,
+          "bottom": 701,
+          "pixels": 60854
+        },
+        {
+          "x": 172,
+          "y": 190,
+          "w": 495,
+          "h": 511,
+          "bottom": 701,
+          "pixels": 68151
+        },
+        {
+          "x": 232,
+          "y": 169,
+          "w": 331,
+          "h": 531,
+          "bottom": 700,
+          "pixels": 58226
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-jL",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 212,
+          "y": 288,
+          "w": 324,
+          "h": 421,
+          "bottom": 709,
+          "pixels": 43992
+        },
+        {
+          "x": 242,
+          "y": 278,
+          "w": 292,
+          "h": 377,
+          "bottom": 655,
+          "pixels": 46783
+        },
+        {
+          "x": 241,
+          "y": 273,
+          "w": 325,
+          "h": 395,
+          "bottom": 668,
+          "pixels": 48923
+        },
+        {
+          "x": 228,
+          "y": 272,
+          "w": 292,
+          "h": 408,
+          "bottom": 680,
+          "pixels": 46886
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-jM",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 250,
+          "y": 272,
+          "w": 295,
+          "h": 431,
+          "bottom": 703,
+          "pixels": 43056
+        },
+        {
+          "x": 207,
+          "y": 267,
+          "w": 267,
+          "h": 381,
+          "bottom": 648,
+          "pixels": 39919
+        },
+        {
+          "x": 209,
+          "y": 277,
+          "w": 392,
+          "h": 367,
+          "bottom": 644,
+          "pixels": 43831
+        },
+        {
+          "x": 226,
+          "y": 276,
+          "w": 259,
+          "h": 401,
+          "bottom": 677,
+          "pixels": 42244
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-jH",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 242,
+          "y": 189,
+          "w": 357,
+          "h": 525,
+          "bottom": 714,
+          "pixels": 70131
+        },
+        {
+          "x": 139,
+          "y": 163,
+          "w": 319,
+          "h": 532,
+          "bottom": 695,
+          "pixels": 73801
+        },
+        {
+          "x": 165,
+          "y": 190,
+          "w": 476,
+          "h": 516,
+          "bottom": 706,
+          "pixels": 71764
+        },
+        {
+          "x": 163,
+          "y": 215,
+          "w": 464,
+          "h": 500,
+          "bottom": 715,
+          "pixels": 74239
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-throw",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 262,
+          "y": 231,
+          "w": 289,
+          "h": 470,
+          "bottom": 701,
+          "pixels": 45208
+        },
+        {
+          "x": 200,
+          "y": 239,
+          "w": 377,
+          "h": 462,
+          "bottom": 701,
+          "pixels": 51062
+        },
+        {
+          "x": 210,
+          "y": 291,
+          "w": 343,
+          "h": 410,
+          "bottom": 701,
+          "pixels": 50655
+        },
+        {
+          "x": 236,
+          "y": 230,
+          "w": 330,
+          "h": 469,
+          "bottom": 699,
+          "pixels": 49044
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-blindado",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 246,
+          "y": 230,
+          "w": 308,
+          "h": 470,
+          "bottom": 700,
+          "pixels": 49012
+        },
+        {
+          "x": 222,
+          "y": 280,
+          "w": 322,
+          "h": 421,
+          "bottom": 701,
+          "pixels": 52391
+        },
+        {
+          "x": 176,
+          "y": 277,
+          "w": 438,
+          "h": 422,
+          "bottom": 699,
+          "pixels": 54761
+        },
+        {
+          "x": 193,
+          "y": 236,
+          "w": 371,
+          "h": 465,
+          "bottom": 701,
+          "pixels": 51797
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-5S",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 262,
+          "y": 229,
+          "w": 286,
+          "h": 470,
+          "bottom": 699,
+          "pixels": 46069
+        },
+        {
+          "x": 224,
+          "y": 230,
+          "w": 332,
+          "h": 470,
+          "bottom": 700,
+          "pixels": 48685
+        },
+        {
+          "x": 247,
+          "y": 233,
+          "w": 310,
+          "h": 468,
+          "bottom": 701,
+          "pixels": 47052
+        },
+        {
+          "x": 251,
+          "y": 231,
+          "w": 308,
+          "h": 470,
+          "bottom": 701,
+          "pixels": 47223
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-6S",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 255,
+          "y": 229,
+          "w": 292,
+          "h": 471,
+          "bottom": 700,
+          "pixels": 43109
+        },
+        {
+          "x": 137,
+          "y": 243,
+          "w": 312,
+          "h": 458,
+          "bottom": 701,
+          "pixels": 50253
+        },
+        {
+          "x": 159,
+          "y": 252,
+          "w": 506,
+          "h": 448,
+          "bottom": 700,
+          "pixels": 50396
+        },
+        {
+          "x": 188,
+          "y": 245,
+          "w": 347,
+          "h": 456,
+          "bottom": 701,
+          "pixels": 45083
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-2S",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 204,
+          "y": 229,
+          "w": 385,
+          "h": 471,
+          "bottom": 700,
+          "pixels": 65398
+        },
+        {
+          "x": 199,
+          "y": 231,
+          "w": 385,
+          "h": 470,
+          "bottom": 701,
+          "pixels": 67189
+        },
+        {
+          "x": 193,
+          "y": 264,
+          "w": 431,
+          "h": 437,
+          "bottom": 701,
+          "pixels": 68571
+        },
+        {
+          "x": 204,
+          "y": 237,
+          "w": 386,
+          "h": 463,
+          "bottom": 700,
+          "pixels": 64755
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-4S",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 194,
+          "y": 332,
+          "w": 367,
+          "h": 369,
+          "bottom": 701,
+          "pixels": 47838
+        },
+        {
+          "x": 150,
+          "y": 271,
+          "w": 333,
+          "h": 429,
+          "bottom": 700,
+          "pixels": 49387
+        },
+        {
+          "x": 262,
+          "y": 178,
+          "w": 224,
+          "h": 521,
+          "bottom": 699,
+          "pixels": 50487
+        },
+        {
+          "x": 166,
+          "y": 229,
+          "w": 340,
+          "h": 471,
+          "bottom": 700,
+          "pixels": 50043
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-c1",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 260,
+          "y": 214,
+          "w": 291,
+          "h": 471,
+          "bottom": 685,
+          "pixels": 47296
+        },
+        {
+          "x": 224,
+          "y": 212,
+          "w": 293,
+          "h": 455,
+          "bottom": 667,
+          "pixels": 48484
+        },
+        {
+          "x": 235,
+          "y": 230,
+          "w": 307,
+          "h": 440,
+          "bottom": 670,
+          "pixels": 48189
+        },
+        {
+          "x": 233,
+          "y": 214,
+          "w": 301,
+          "h": 456,
+          "bottom": 670,
+          "pixels": 47844
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-c2",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 257,
+          "y": 230,
+          "w": 282,
+          "h": 471,
+          "bottom": 701,
+          "pixels": 44381
+        },
+        {
+          "x": 208,
+          "y": 290,
+          "w": 316,
+          "h": 410,
+          "bottom": 700,
+          "pixels": 45474
+        },
+        {
+          "x": 231,
+          "y": 334,
+          "w": 420,
+          "h": 367,
+          "bottom": 701,
+          "pixels": 56614
+        },
+        {
+          "x": 238,
+          "y": 338,
+          "w": 325,
+          "h": 362,
+          "bottom": 700,
+          "pixels": 53155
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-SA1",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 250,
+          "y": 233,
+          "w": 312,
+          "h": 466,
+          "bottom": 699,
+          "pixels": 45932
+        },
+        {
+          "x": 235,
+          "y": 229,
+          "w": 322,
+          "h": 471,
+          "bottom": 700,
+          "pixels": 47989
+        },
+        {
+          "x": 210,
+          "y": 289,
+          "w": 390,
+          "h": 411,
+          "bottom": 700,
+          "pixels": 48300
+        },
+        {
+          "x": 232,
+          "y": 242,
+          "w": 328,
+          "h": 459,
+          "bottom": 701,
+          "pixels": 46697
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "golpe-SA3",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 238,
+          "y": 233,
+          "w": 311,
+          "h": 467,
+          "bottom": 700,
+          "pixels": 46818
+        },
+        {
+          "x": 178,
+          "y": 233,
+          "w": 379,
+          "h": 467,
+          "bottom": 700,
+          "pixels": 52053
+        },
+        {
+          "x": 184,
+          "y": 285,
+          "w": 394,
+          "h": 416,
+          "bottom": 701,
+          "pixels": 60369
+        },
+        {
+          "x": 225,
+          "y": 229,
+          "w": 331,
+          "h": 471,
+          "bottom": 700,
+          "pixels": 51189
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "fx-nota-sonica",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 156,
+          "y": 211,
+          "w": 454,
+          "h": 347,
+          "bottom": 558,
+          "pixels": 69429
+        },
+        {
+          "x": 61,
+          "y": 168,
+          "w": 647,
+          "h": 434,
+          "bottom": 602,
+          "pixels": 131619
+        },
+        {
+          "x": 50,
+          "y": 100,
+          "w": 670,
+          "h": 570,
+          "bottom": 670,
+          "pixels": 178241
+        },
+        {
+          "x": 121,
+          "y": 217,
+          "w": 525,
+          "h": 333,
+          "bottom": 550,
+          "pixels": 85462
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "fx-power-chord",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 222,
+          "y": 233,
+          "w": 324,
+          "h": 304,
+          "bottom": 537,
+          "pixels": 18164
+        },
+        {
+          "x": 89,
+          "y": 138,
+          "w": 588,
+          "h": 493,
+          "bottom": 631,
+          "pixels": 92582
+        },
+        {
+          "x": 63,
+          "y": 99,
+          "w": 645,
+          "h": 572,
+          "bottom": 671,
+          "pixels": 123264
+        },
+        {
+          "x": 105,
+          "y": 149,
+          "w": 559,
+          "h": 471,
+          "bottom": 620,
+          "pixels": 33261
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "fx-onda-grave",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 87,
+          "y": 635,
+          "w": 596,
+          "h": 66,
+          "bottom": 701,
+          "pixels": 16043
+        },
+        {
+          "x": 62,
+          "y": 451,
+          "w": 644,
+          "h": 250,
+          "bottom": 701,
+          "pixels": 46529
+        },
+        {
+          "x": 45,
+          "y": 230,
+          "w": 681,
+          "h": 471,
+          "bottom": 701,
+          "pixels": 141505
+        },
+        {
+          "x": 88,
+          "y": 555,
+          "w": 591,
+          "h": 147,
+          "bottom": 702,
+          "pixels": 13011
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "fx-solo-ascendente",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 237,
+          "y": 501,
+          "w": 296,
+          "h": 200,
+          "bottom": 701,
+          "pixels": 15917
+        },
+        {
+          "x": 196,
+          "y": 269,
+          "w": 378,
+          "h": 431,
+          "bottom": 700,
+          "pixels": 46717
+        },
+        {
+          "x": 178,
+          "y": 129,
+          "w": 414,
+          "h": 571,
+          "bottom": 700,
+          "pixels": 82181
+        },
+        {
+          "x": 189,
+          "y": 135,
+          "w": 390,
+          "h": 565,
+          "bottom": 700,
+          "pixels": 36974
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "fx-slide-palco",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 225,
+          "y": 538,
+          "w": 319,
+          "h": 163,
+          "bottom": 701,
+          "pixels": 19083
+        },
+        {
+          "x": 71,
+          "y": 514,
+          "w": 626,
+          "h": 187,
+          "bottom": 701,
+          "pixels": 52231
+        },
+        {
+          "x": 43,
+          "y": 419,
+          "w": 681,
+          "h": 282,
+          "bottom": 701,
+          "pixels": 92636
+        },
+        {
+          "x": 91,
+          "y": 551,
+          "w": 586,
+          "h": 150,
+          "bottom": 701,
+          "pixels": 19323
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "fx-feedback",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 234,
+          "y": 222,
+          "w": 301,
+          "h": 326,
+          "bottom": 548,
+          "pixels": 38757
+        },
+        {
+          "x": 128,
+          "y": 161,
+          "w": 511,
+          "h": 448,
+          "bottom": 609,
+          "pixels": 100438
+        },
+        {
+          "x": 74,
+          "y": 100,
+          "w": 622,
+          "h": 571,
+          "bottom": 671,
+          "pixels": 170274
+        },
+        {
+          "x": 170,
+          "y": 173,
+          "w": 428,
+          "h": 424,
+          "bottom": 597,
+          "pixels": 67249
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "fx-terremoto",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 173,
+          "y": 612,
+          "w": 424,
+          "h": 89,
+          "bottom": 701,
+          "pixels": 11766
+        },
+        {
+          "x": 66,
+          "y": 520,
+          "w": 635,
+          "h": 182,
+          "bottom": 702,
+          "pixels": 44144
+        },
+        {
+          "x": 44,
+          "y": 188,
+          "w": 682,
+          "h": 512,
+          "bottom": 700,
+          "pixels": 163435
+        },
+        {
+          "x": 93,
+          "y": 553,
+          "w": 585,
+          "h": 149,
+          "bottom": 702,
+          "pixels": 22626
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    },
+    {
+      "name": "fx-tremor",
+      "size": [
+        3072,
+        768
+      ],
+      "frames": [
+        {
+          "x": 191,
+          "y": 154,
+          "w": 386,
+          "h": 460,
+          "bottom": 614,
+          "pixels": 15547
+        },
+        {
+          "x": 152,
+          "y": 139,
+          "w": 465,
+          "h": 490,
+          "bottom": 629,
+          "pixels": 40276
+        },
+        {
+          "x": 126,
+          "y": 99,
+          "w": 517,
+          "h": 571,
+          "bottom": 670,
+          "pixels": 76250
+        },
+        {
+          "x": 170,
+          "y": 152,
+          "w": 429,
+          "h": 465,
+          "bottom": 617,
+          "pixels": 20398
+        }
+      ],
+      "uniqueFrames": 4,
+      "inside": true,
+      "transparentCorners": true
+    }
+  ],
+  "unitTests": {
+    "passed": 53,
+    "failed": 0
+  },
+  "browser": {
+    "frameComparisons": 160,
+    "failures": [],
+    "loaded": 48,
+    "mirroringChecked": true
+  }
+}

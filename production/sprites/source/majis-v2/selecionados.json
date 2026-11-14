@@ -1,0 +1,290 @@
+[
+  {
+    "name": "parado",
+    "original": "raw/parado.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "andar",
+    "original": "raw/andar.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "andar-tras",
+    "original": "raw/andar-tras.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "correr",
+    "original": "raw/correr.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "agachar",
+    "original": "raw/agachar.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "pulo",
+    "original": "raw/pulo.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "recuo",
+    "original": "raw/recuo.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "escape-agarrao",
+    "original": "raw/escape-agarrao.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "recuperacao-rolamento",
+    "original": "raw/recuperacao-rolamento.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "defesa-em-pe",
+    "original": "raw/defesa-em-pe.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "defesa-no-ar",
+    "original": "raw/defesa-no-ar.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "dano-alto",
+    "original": "raw/dano-alto.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "dano-baixo",
+    "original": "raw/dano-baixo.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "dano-no-ar",
+    "original": "raw/dano-no-ar.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "caido",
+    "original": "raw/caido.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "levantar",
+    "original": "raw/levantar.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "tonto",
+    "original": "raw/tonto.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "vitoria",
+    "original": "raw/vitoria.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-5L",
+    "original": "raw/golpe-5L.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-5M",
+    "original": "raw/golpe-5M.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-5H",
+    "original": "raw/golpe-5H.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-2L",
+    "original": "raw/golpe-2L.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-2H",
+    "original": "raw/golpe-2H.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-3H",
+    "original": "raw/golpe-3H.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-6M",
+    "original": "raw/golpe-6M.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-jL",
+    "original": "raw/golpe-jL.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-jM",
+    "original": "raw/golpe-jM.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-jH",
+    "original": "raw/golpe-jH.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-throw",
+    "original": "raw/golpe-throw.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-blindado",
+    "original": "raw/golpe-blindado.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-5S",
+    "original": "raw/golpe-5S.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-6S",
+    "original": "raw/golpe-6S.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-2S",
+    "original": "raw/golpe-2S.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-4S",
+    "original": "raw/golpe-4S.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-c2",
+    "original": "raw/golpe-c2.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-SA1",
+    "original": "raw/golpe-SA1.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "golpe-SA3",
+    "original": "raw/golpe-SA3.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "fx-nota-sonica",
+    "original": "raw/fx-nota-sonica.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "fx-power-chord",
+    "original": "raw/fx-power-chord.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "fx-onda-grave",
+    "original": "raw/fx-onda-grave.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "fx-solo-ascendente",
+    "original": "raw/fx-solo-ascendente.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "fx-slide-palco",
+    "original": "raw/fx-slide-palco.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "fx-feedback",
+    "original": "raw/fx-feedback.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "fx-terremoto",
+    "original": "raw/fx-terremoto.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "fx-tremor",
+    "original": "raw/fx-tremor.png",
+    "layout": "grid",
+    "revised": false
+  },
+  {
+    "name": "defesa-agachado",
+    "original": "raw/defesa-agachado.png",
+    "layout": "grid",
+    "revised": true
+  },
+  {
+    "name": "golpe-2M",
+    "original": "raw/golpe-2M.png",
+    "layout": "grid",
+    "revised": true
+  },
+  {
+    "name": "golpe-c1",
+    "original": "raw/golpe-c1.png",
+    "layout": "grid",
+    "revised": true
+  }
+]

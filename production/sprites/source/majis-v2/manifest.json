@@ -1,0 +1,4333 @@
+{
+  "character": "majis",
+  "generatedWith": "built-in image_gen",
+  "cell": 768,
+  "foot": [
+    384,
+    700
+  ],
+  "framesPerSequence": 4,
+  "sequences": [
+    {
+      "name": "parado",
+      "extra": false,
+      "original": "raw/parado.png",
+      "strip": "tiras-768/parado.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7580645161290323,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 154,
+          "y": 4,
+          "w": 379,
+          "h": 617,
+          "pixels": 76246,
+          "edge": 0
+        },
+        {
+          "x": 781,
+          "y": 2,
+          "w": 380,
+          "h": 619,
+          "pixels": 78099,
+          "edge": 0
+        },
+        {
+          "x": 155,
+          "y": 628,
+          "w": 380,
+          "h": 620,
+          "pixels": 77084,
+          "edge": 0
+        },
+        {
+          "x": 782,
+          "y": 629,
+          "w": 378,
+          "h": 619,
+          "pixels": 76820,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 621
+        },
+        {
+          "x": 940.5,
+          "y": 621
+        },
+        {
+          "x": 313.5,
+          "y": 1248
+        },
+        {
+          "x": 940.5,
+          "y": 1248
+        }
+      ],
+      "normalized": [
+        {
+          "left": 262,
+          "top": 231
+        },
+        {
+          "left": 262,
+          "top": 229
+        },
+        {
+          "left": 262,
+          "top": 228
+        },
+        {
+          "left": 262,
+          "top": 229
+        }
+      ],
+      "hashes": [
+        "0b71d4de74f80a0297c2e7d3df027e6d6aeb662b8d5012036ce3dac2391e8124",
+        "44edafc804ff95f9dde406422a6ea8016452e50c35385c3c853ddca0a679357e",
+        "9be0dc3c19cd45841f3a3685c24af362c82c6c1cc88ac430880aa219a5eb994f",
+        "f67cbcbad0c55a3b111983ec607bbee4e66966d4c75a54bd9b2f9f82384b2282"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "andar",
+      "extra": false,
+      "original": "raw/andar.png",
+      "strip": "tiras-768/andar.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7717569786535303,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 118,
+          "y": 6,
+          "w": 396,
+          "h": 605,
+          "pixels": 72619,
+          "edge": 0
+        },
+        {
+          "x": 742,
+          "y": 5,
+          "w": 347,
+          "h": 608,
+          "pixels": 67050,
+          "edge": 0
+        },
+        {
+          "x": 120,
+          "y": 633,
+          "w": 394,
+          "h": 606,
+          "pixels": 70920,
+          "edge": 0
+        },
+        {
+          "x": 755,
+          "y": 632,
+          "w": 333,
+          "h": 609,
+          "pixels": 65258,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 611
+        },
+        {
+          "x": 940.5,
+          "y": 613
+        },
+        {
+          "x": 313.5,
+          "y": 1239
+        },
+        {
+          "x": 940.5,
+          "y": 1241
+        }
+      ],
+      "normalized": [
+        {
+          "left": 232,
+          "top": 232
+        },
+        {
+          "left": 229,
+          "top": 229
+        },
+        {
+          "left": 233,
+          "top": 231
+        },
+        {
+          "left": 239,
+          "top": 228
+        }
+      ],
+      "hashes": [
+        "ddd39e75febba5334acbbc6374d88149a419c07772fd26d4dc4f88df4fc74d9b",
+        "3ff33afe0c4a60c409191706878277171287ac3cf3636c342fa4cfee7993ba39",
+        "c05287b63e3e2473f6f91f4d5d88084bc940e4c210d0d4505a7ec7b5bd13b829",
+        "40e787edd7fb59e1c55fbae0d65c1f973ee299d1c4ef5f577c5660e4d9bf1227"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "andar-tras",
+      "extra": false,
+      "original": "raw/andar-tras.png",
+      "strip": "tiras-768/andar-tras.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7642276422764228,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 168,
+          "y": 7,
+          "w": 347,
+          "h": 609,
+          "pixels": 77354,
+          "edge": 0
+        },
+        {
+          "x": 753,
+          "y": 8,
+          "w": 333,
+          "h": 606,
+          "pixels": 77723,
+          "edge": 0
+        },
+        {
+          "x": 151,
+          "y": 631,
+          "w": 316,
+          "h": 613,
+          "pixels": 77089,
+          "edge": 0
+        },
+        {
+          "x": 760,
+          "y": 628,
+          "w": 331,
+          "h": 615,
+          "pixels": 75647,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 616
+        },
+        {
+          "x": 940.5,
+          "y": 614
+        },
+        {
+          "x": 313.5,
+          "y": 1244
+        },
+        {
+          "x": 940.5,
+          "y": 1243
+        }
+      ],
+      "normalized": [
+        {
+          "left": 271,
+          "top": 233
+        },
+        {
+          "left": 239,
+          "top": 235
+        },
+        {
+          "left": 258,
+          "top": 230
+        },
+        {
+          "left": 245,
+          "top": 228
+        }
+      ],
+      "hashes": [
+        "e3c9ef09370475976eb437096da2bd11860a0cf31b2fd15a74f7e7be4429ff92",
+        "3fe1587f3835ff527cb3faf3df86856b4152994853a4f09f601e304deeacff4c",
+        "72d3412e7b49bc785abb0c46583ac67a72e7dce621b9ccaa1d518377fd4967fa",
+        "70de8f51a3495bcc42d09c84d4df3889e1c045afac58621acbe8bb55679a0f76"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "correr",
+      "extra": false,
+      "original": "raw/correr.png",
+      "strip": "tiras-768/correr.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7768595041322314,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 53,
+          "y": 10,
+          "w": 491,
+          "h": 603,
+          "pixels": 88279,
+          "edge": 0
+        },
+        {
+          "x": 723,
+          "y": 10,
+          "w": 440,
+          "h": 523,
+          "pixels": 82410,
+          "edge": 0
+        },
+        {
+          "x": 58,
+          "y": 636,
+          "w": 500,
+          "h": 605,
+          "pixels": 87986,
+          "edge": 0
+        },
+        {
+          "x": 721,
+          "y": 637,
+          "w": 446,
+          "h": 536,
+          "pixels": 81447,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 608.19
+        },
+        {
+          "x": 940.5,
+          "y": 608.19
+        },
+        {
+          "x": 313.5,
+          "y": 1235.19
+        },
+        {
+          "x": 940.5,
+          "y": 1235.19
+        }
+      ],
+      "normalized": [
+        {
+          "left": 180,
+          "top": 234
+        },
+        {
+          "left": 213,
+          "top": 234
+        },
+        {
+          "left": 184,
+          "top": 233
+        },
+        {
+          "left": 212,
+          "top": 234
+        }
+      ],
+      "hashes": [
+        "439640a0cc766c59471587d9d0e5c2b93ea81dda68892b9df6466d14005bb6ba",
+        "f1ac6bc3ed91107ec50f4f0d5dc13112ddde68239b89a41f5745aaa4620e919a",
+        "c7a3172be214f7f1d7b859735bbeed80214b62dc398555fc83ed34a8f0ef1993",
+        "65e8e68056a822a2c4756ec4c2fbd600f00350bc113e0d166564909e1a4bde4a"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "agachar",
+      "extra": false,
+      "original": "raw/agachar.png",
+      "strip": "tiras-768/agachar.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.752,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 156,
+          "y": 4,
+          "w": 374,
+          "h": 625,
+          "pixels": 74715,
+          "edge": 0
+        },
+        {
+          "x": 741,
+          "y": 40,
+          "w": 391,
+          "h": 589,
+          "pixels": 75219,
+          "edge": 0
+        },
+        {
+          "x": 121,
+          "y": 694,
+          "w": 409,
+          "h": 545,
+          "pixels": 79392,
+          "edge": 0
+        },
+        {
+          "x": 731,
+          "y": 757,
+          "w": 410,
+          "h": 482,
+          "pixels": 75242,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 629
+        },
+        {
+          "x": 940.5,
+          "y": 629
+        },
+        {
+          "x": 313.5,
+          "y": 1239
+        },
+        {
+          "x": 940.5,
+          "y": 1239
+        }
+      ],
+      "normalized": [
+        {
+          "left": 264,
+          "top": 228
+        },
+        {
+          "left": 232,
+          "top": 256
+        },
+        {
+          "left": 238,
+          "top": 289
+        },
+        {
+          "left": 225,
+          "top": 336
+        }
+      ],
+      "hashes": [
+        "710a0a343888fc6c0da501b2cbabcace4dcfa2cd86ffa0cf94c0488d77b0c969",
+        "c42b0e7dea768653b75ad6c38e7860e8314d3b125fe5bbf2ca51b889ba8de803",
+        "be82887fd6ea4af1c8f431e5a244f3b9429b354f2c50308cdbcb9e024c48a734",
+        "5dcab0f2dd45bacd409b3db43ca646944f5be8198a2d5a92b00081c04969fcdb"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "pulo",
+      "extra": false,
+      "original": "raw/pulo.png",
+      "strip": "tiras-768/pulo.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7704918032786885,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 140,
+          "y": 79,
+          "w": 380,
+          "h": 547,
+          "pixels": 86912,
+          "edge": 0
+        },
+        {
+          "x": 743,
+          "y": 1,
+          "w": 378,
+          "h": 593,
+          "pixels": 86840,
+          "edge": 0
+        },
+        {
+          "x": 135,
+          "y": 628,
+          "w": 383,
+          "h": 497,
+          "pixels": 80139,
+          "edge": 2
+        },
+        {
+          "x": 711,
+          "y": 635,
+          "w": 402,
+          "h": 610,
+          "pixels": 89309,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 609.22
+        },
+        {
+          "x": 940.5,
+          "y": 609.22
+        },
+        {
+          "x": 313.5,
+          "y": 1235.22
+        },
+        {
+          "x": 940.5,
+          "y": 1235.22
+        }
+      ],
+      "normalized": [
+        {
+          "left": 249,
+          "top": 290
+        },
+        {
+          "left": 230,
+          "top": 231
+        },
+        {
+          "left": 245,
+          "top": 232
+        },
+        {
+          "left": 206,
+          "top": 236
+        }
+      ],
+      "hashes": [
+        "552697450a35710a86c3fbfc03e563f259dc35016212746ca5c16b054023c16b",
+        "d354aec2f8cc2c13400186311d34a2c373f11ece869cce143566491fc221d62b",
+        "3e311bd524efae1ea40f19c2cdd24aa6ab1e7dfd4962d6cacbb76ff9265c9b90",
+        "41fde439db08a3df427d2bfbd988ab18f8decb58f6f94cb268161f2721ca7b29"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "recuo",
+      "extra": false,
+      "original": "raw/recuo.png",
+      "strip": "tiras-768/recuo.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7755775577557755,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 136,
+          "y": 10,
+          "w": 402,
+          "h": 606,
+          "pixels": 78390,
+          "edge": 0
+        },
+        {
+          "x": 724,
+          "y": 29,
+          "w": 458,
+          "h": 579,
+          "pixels": 82525,
+          "edge": 0
+        },
+        {
+          "x": 148,
+          "y": 635,
+          "w": 346,
+          "h": 532,
+          "pixels": 78088,
+          "edge": 0
+        },
+        {
+          "x": 730,
+          "y": 718,
+          "w": 415,
+          "h": 525,
+          "pixels": 78752,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 608.19
+        },
+        {
+          "x": 940.5,
+          "y": 608.19
+        },
+        {
+          "x": 313.5,
+          "y": 1235.19
+        },
+        {
+          "x": 940.5,
+          "y": 1235.19
+        }
+      ],
+      "normalized": [
+        {
+          "left": 245,
+          "top": 235
+        },
+        {
+          "left": 215,
+          "top": 249
+        },
+        {
+          "left": 254,
+          "top": 233
+        },
+        {
+          "left": 219,
+          "top": 297
+        }
+      ],
+      "hashes": [
+        "997f32844424a426f9773301b84ecbafca54f27549a22c2df9b83a34c7985eb9",
+        "afa15bdfd1a74a1aa593e6aa9199751105c906b61a389aee0cd3a0a37cb7ac57",
+        "7a460c7539b85ec3c25791da5e38bd287cc199fbbbb448da8b1dc6e31fcbf7e6",
+        "4fc1141cf7fb5dfc86b568a1c2f490a6c640c1f6b9751d55ac08f0ed8a894d9e"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "escape-agarrao",
+      "extra": false,
+      "original": "raw/escape-agarrao.png",
+      "strip": "tiras-768/escape-agarrao.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7717569786535303,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 137,
+          "y": 10,
+          "w": 394,
+          "h": 606,
+          "pixels": 76470,
+          "edge": 0
+        },
+        {
+          "x": 717,
+          "y": 13,
+          "w": 395,
+          "h": 603,
+          "pixels": 85600,
+          "edge": 0
+        },
+        {
+          "x": 94,
+          "y": 634,
+          "w": 446,
+          "h": 609,
+          "pixels": 88233,
+          "edge": 0
+        },
+        {
+          "x": 702,
+          "y": 636,
+          "w": 407,
+          "h": 608,
+          "pixels": 82816,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 616
+        },
+        {
+          "x": 940.5,
+          "y": 616
+        },
+        {
+          "x": 313.5,
+          "y": 1243
+        },
+        {
+          "x": 940.5,
+          "y": 1244
+        }
+      ],
+      "normalized": [
+        {
+          "left": 246,
+          "top": 231
+        },
+        {
+          "left": 210,
+          "top": 233
+        },
+        {
+          "left": 213,
+          "top": 228
+        },
+        {
+          "left": 198,
+          "top": 229
+        }
+      ],
+      "hashes": [
+        "895d8ca83694b9b643f2420c94148a863315b87652a8fb57201616dd1a843833",
+        "2976415aaa158acde4a39516cd9143ebbb6a7f9d01655568f889303eabe3eeec",
+        "143cd1eb4496fbf65402c121d9d33e2babd1347dedaa1a85a3821d8796556d53",
+        "d6d5b423ca3c0d2cadb5a51ce0fce22a108c209388b315cb6b913f36830ac033"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "recuperacao-rolamento",
+      "extra": false,
+      "original": "raw/recuperacao-rolamento.png",
+      "strip": "tiras-768/recuperacao-rolamento.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7653061224489796,
+      "targetHeight": 450,
+      "sourceBounds": [
+        {
+          "x": 33,
+          "y": 202,
+          "w": 558,
+          "h": 389,
+          "pixels": 119559,
+          "edge": 0
+        },
+        {
+          "x": 636,
+          "y": 140,
+          "w": 587,
+          "h": 448,
+          "pixels": 121788,
+          "edge": 0
+        },
+        {
+          "x": 118,
+          "y": 713,
+          "w": 511,
+          "h": 524,
+          "pixels": 121089,
+          "edge": 0
+        },
+        {
+          "x": 690,
+          "y": 645,
+          "w": 533,
+          "h": 588,
+          "pixels": 124047,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 591
+        },
+        {
+          "x": 940.5,
+          "y": 588
+        },
+        {
+          "x": 313.5,
+          "y": 1237
+        },
+        {
+          "x": 940.5,
+          "y": 1233
+        }
+      ],
+      "normalized": [
+        {
+          "left": 168,
+          "top": 401
+        },
+        {
+          "left": 149,
+          "top": 356
+        },
+        {
+          "left": 233,
+          "top": 297
+        },
+        {
+          "left": 191,
+          "top": 248
+        }
+      ],
+      "hashes": [
+        "deaf85e7aa7670af58e2bcefc9c40e1e3e49b91696a17fd9bbaed7e0444bfccf",
+        "049e6758daac892d8f23a51548071c422b63836993eaaea15127af71ac23c5e3",
+        "231a90a817a3cc055854328bd9b14056c9dccb059021d8e0350f41f302f31856",
+        "366c10262415bcf6b2157d7a94336f65e7107cf5d42e7e30c68dbdc82f399251"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "defesa-em-pe",
+      "extra": false,
+      "original": "raw/defesa-em-pe.png",
+      "strip": "tiras-768/defesa-em-pe.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.762987012987013,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 154,
+          "y": 3,
+          "w": 318,
+          "h": 616,
+          "pixels": 74592,
+          "edge": 0
+        },
+        {
+          "x": 740,
+          "y": 27,
+          "w": 331,
+          "h": 592,
+          "pixels": 78182,
+          "edge": 0
+        },
+        {
+          "x": 153,
+          "y": 654,
+          "w": 314,
+          "h": 593,
+          "pixels": 77589,
+          "edge": 0
+        },
+        {
+          "x": 780,
+          "y": 631,
+          "w": 321,
+          "h": 615,
+          "pixels": 75135,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 619
+        },
+        {
+          "x": 940.5,
+          "y": 619
+        },
+        {
+          "x": 313.5,
+          "y": 1247
+        },
+        {
+          "x": 940.5,
+          "y": 1246
+        }
+      ],
+      "normalized": [
+        {
+          "left": 261,
+          "top": 228
+        },
+        {
+          "left": 229,
+          "top": 247
+        },
+        {
+          "left": 260,
+          "top": 246
+        },
+        {
+          "left": 260,
+          "top": 229
+        }
+      ],
+      "hashes": [
+        "3d79467676981534f4160e67cc9af3380b80c56cd95424fe8b4c48dcbc65b5f3",
+        "1c745b4d8987dcd3d3e852285aad6d2eaed02d947c476925458b4c333737c5c9",
+        "7a2e10866ba5a64e4e1974e14537a348b2f9ca400f264f43907a8c7488c39d10",
+        "1b43176cd1791d3c6dac8c5b847a640c49466a7ec380d9736a09c26f4e784cec"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "defesa-agachado",
+      "extra": false,
+      "original": "raw/defesa-agachado.png",
+      "strip": "tiras-768/defesa-agachado.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.5954465849387041,
+      "targetHeight": 340,
+      "sourceBounds": [
+        {
+          "x": 94,
+          "y": 37,
+          "w": 424,
+          "h": 571,
+          "pixels": 146665,
+          "edge": 0
+        },
+        {
+          "x": 693,
+          "y": 54,
+          "w": 431,
+          "h": 552,
+          "pixels": 148195,
+          "edge": 0
+        },
+        {
+          "x": 84,
+          "y": 692,
+          "w": 428,
+          "h": 541,
+          "pixels": 142622,
+          "edge": 0
+        },
+        {
+          "x": 707,
+          "y": 675,
+          "w": 438,
+          "h": 559,
+          "pixels": 149001,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 608
+        },
+        {
+          "x": 940.5,
+          "y": 606
+        },
+        {
+          "x": 313.5,
+          "y": 1233
+        },
+        {
+          "x": 940.5,
+          "y": 1234
+        }
+      ],
+      "normalized": [
+        {
+          "left": 252,
+          "top": 359
+        },
+        {
+          "left": 235,
+          "top": 370
+        },
+        {
+          "left": 246,
+          "top": 377
+        },
+        {
+          "left": 244,
+          "top": 366
+        }
+      ],
+      "hashes": [
+        "4aee6e021c5ee2a3666fc7188c410f0e2ff10519395c7cd0a1426fa32fee300e",
+        "f9e9f1a9ad8d8b6e1247a307a623c6922ff959279f8ade496463328fbd03de6a",
+        "1bec4ba55dc87f5ea1308ce1ddb4bb42022dabd9015907d3396bbc66db780c1e",
+        "e98e8a1fcda508a6a4cfcf64efecd1a80767d7e9fecf70ca091429d33ac2fa46"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "defesa-no-ar",
+      "extra": false,
+      "original": "raw/defesa-no-ar.png",
+      "strip": "tiras-768/defesa-no-ar.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.6774193548387096,
+      "targetHeight": 420,
+      "sourceBounds": [
+        {
+          "x": 114,
+          "y": 12,
+          "w": 448,
+          "h": 620,
+          "pixels": 108232,
+          "edge": 0
+        },
+        {
+          "x": 750,
+          "y": 19,
+          "w": 334,
+          "h": 614,
+          "pixels": 97915,
+          "edge": 2
+        },
+        {
+          "x": 92,
+          "y": 637,
+          "w": 544,
+          "h": 590,
+          "pixels": 117389,
+          "edge": 0
+        },
+        {
+          "x": 723,
+          "y": 633,
+          "w": 383,
+          "h": 586,
+          "pixels": 110035,
+          "edge": 2
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 614.37
+        },
+        {
+          "x": 940.5,
+          "y": 614.37
+        },
+        {
+          "x": 313.5,
+          "y": 1235.37
+        },
+        {
+          "x": 940.5,
+          "y": 1235.37
+        }
+      ],
+      "normalized": [
+        {
+          "left": 248,
+          "top": 291
+        },
+        {
+          "left": 254,
+          "top": 295
+        },
+        {
+          "left": 233,
+          "top": 293
+        },
+        {
+          "left": 235,
+          "top": 292
+        }
+      ],
+      "hashes": [
+        "e49aada73bb91a124e7a2f63ad2e61b06a52886a43f78727734888106f81bc02",
+        "b84cbd5c0b404fce25a6ae4e423a4e91a11be507eb020c3f67d7049379407171",
+        "043c7a421af5666952b6672482e88831bf8c0bcfe33f8bdd2351eb2380189b2e",
+        "23845363373b27841fbe610f3605cae604f0dcf478d7ccba7f75e9560497ab49"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "dano-alto",
+      "extra": false,
+      "original": "raw/dano-alto.png",
+      "strip": "tiras-768/dano-alto.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7704918032786885,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 144,
+          "y": 7,
+          "w": 388,
+          "h": 610,
+          "pixels": 75549,
+          "edge": 0
+        },
+        {
+          "x": 749,
+          "y": 9,
+          "w": 372,
+          "h": 605,
+          "pixels": 75542,
+          "edge": 0
+        },
+        {
+          "x": 132,
+          "y": 642,
+          "w": 404,
+          "h": 598,
+          "pixels": 83758,
+          "edge": 0
+        },
+        {
+          "x": 735,
+          "y": 636,
+          "w": 407,
+          "h": 605,
+          "pixels": 80381,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 617
+        },
+        {
+          "x": 940.5,
+          "y": 614
+        },
+        {
+          "x": 313.5,
+          "y": 1240
+        },
+        {
+          "x": 940.5,
+          "y": 1241
+        }
+      ],
+      "normalized": [
+        {
+          "left": 252,
+          "top": 228
+        },
+        {
+          "left": 235,
+          "top": 232
+        },
+        {
+          "left": 243,
+          "top": 238
+        },
+        {
+          "left": 224,
+          "top": 232
+        }
+      ],
+      "hashes": [
+        "dc1f2d3a9c495ffdad74695ba42a9174964c171c6fd84fad1338dab09489bdf5",
+        "8bfc5f3bc96ce668a2a8ec1788b231ce479172533bd6ed06b0f7a8aabe8ab13b",
+        "14ba57bb67f13d6472690e4ae4c4cf66520a2706c0be5de6d01e45b674de8ab9",
+        "61774548029ccea9caf9f69af131508c01ae6fc75281f76cdc03c110771cefd2"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "dano-baixo",
+      "extra": false,
+      "original": "raw/dano-baixo.png",
+      "strip": "tiras-768/dano-baixo.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7605177993527508,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 156,
+          "y": 7,
+          "w": 366,
+          "h": 618,
+          "pixels": 75052,
+          "edge": 0
+        },
+        {
+          "x": 748,
+          "y": 48,
+          "w": 413,
+          "h": 576,
+          "pixels": 73636,
+          "edge": 0
+        },
+        {
+          "x": 183,
+          "y": 724,
+          "w": 421,
+          "h": 516,
+          "pixels": 69423,
+          "edge": 0
+        },
+        {
+          "x": 753,
+          "y": 722,
+          "w": 406,
+          "h": 517,
+          "pixels": 69539,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 625
+        },
+        {
+          "x": 940.5,
+          "y": 624
+        },
+        {
+          "x": 313.5,
+          "y": 1240
+        },
+        {
+          "x": 940.5,
+          "y": 1239
+        }
+      ],
+      "normalized": [
+        {
+          "left": 263,
+          "top": 228
+        },
+        {
+          "left": 236,
+          "top": 260
+        },
+        {
+          "left": 283,
+          "top": 306
+        },
+        {
+          "left": 240,
+          "top": 305
+        }
+      ],
+      "hashes": [
+        "3626fbbc24529ab662a06427a1d550431df1c930071c27fc904fa1648985c69b",
+        "fd9f3ba515778766f45327997f5f4f4e9279d1f357c84502cec03fdaf11b8a9c",
+        "802270cc115a13f445ff4fbfa8912ffdc342d9cc867c189ea076c2f13a355e3a",
+        "7902eeb2227c28786c454142f3b969cf14d9f106a91407dcf9b8a6f30b362ea0"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "dano-no-ar",
+      "extra": false,
+      "original": "raw/dano-no-ar.png",
+      "strip": "tiras-768/dano-no-ar.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.6951026856240127,
+      "targetHeight": 440,
+      "sourceBounds": [
+        {
+          "x": 37,
+          "y": 12,
+          "w": 537,
+          "h": 633,
+          "pixels": 94352,
+          "edge": 0
+        },
+        {
+          "x": 595,
+          "y": 42,
+          "w": 620,
+          "h": 526,
+          "pixels": 96985,
+          "edge": 0
+        },
+        {
+          "x": 79,
+          "y": 675,
+          "w": 437,
+          "h": 464,
+          "pixels": 89671,
+          "edge": 0
+        },
+        {
+          "x": 618,
+          "y": 691,
+          "w": 580,
+          "h": 538,
+          "pixels": 108894,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 628.79
+        },
+        {
+          "x": 940.5,
+          "y": 628.79
+        },
+        {
+          "x": 313.5,
+          "y": 1235.79
+        },
+        {
+          "x": 940.5,
+          "y": 1235.79
+        }
+      ],
+      "normalized": [
+        {
+          "left": 190,
+          "top": 270
+        },
+        {
+          "left": 142,
+          "top": 291
+        },
+        {
+          "left": 220,
+          "top": 309
+        },
+        {
+          "left": 158,
+          "top": 320
+        }
+      ],
+      "hashes": [
+        "4ed0f5b7f225656c059bb4c24e46498385ee4330131b9ef9c7873ef9287f9f70",
+        "f031bc8eb14b1a3ce2d2fce0db09d97e69beac6c4d2ffebaec44ac5d3e4c4ec1",
+        "e09c7c34de5f323a87b6e35da4e7f082bf05e0b794965c1954d037e0682a40fa",
+        "8b7563585bf04bbefc4705c1d5b2e309bf3047a61f519145dfbc4ac9356c02e7"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "caido",
+      "extra": false,
+      "original": "raw/caido.png",
+      "strip": "tiras-768/caido.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.6994047619047619,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 121,
+          "y": 13,
+          "w": 392,
+          "h": 672,
+          "pixels": 84463,
+          "edge": 0
+        },
+        {
+          "x": 647,
+          "y": 74,
+          "w": 509,
+          "h": 605,
+          "pixels": 90785,
+          "edge": 0
+        },
+        {
+          "x": 56,
+          "y": 867,
+          "w": 513,
+          "h": 351,
+          "pixels": 83419,
+          "edge": 0
+        },
+        {
+          "x": 617,
+          "y": 975,
+          "w": 599,
+          "h": 236,
+          "pixels": 73245,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 685
+        },
+        {
+          "x": 940.5,
+          "y": 679
+        },
+        {
+          "x": 313.5,
+          "y": 1218
+        },
+        {
+          "x": 940.5,
+          "y": 1211
+        }
+      ],
+      "normalized": [
+        {
+          "left": 248,
+          "top": 229
+        },
+        {
+          "left": 177,
+          "top": 275
+        },
+        {
+          "left": 203,
+          "top": 453
+        },
+        {
+          "left": 156,
+          "top": 534
+        }
+      ],
+      "hashes": [
+        "b2f9c9bbdb5bca5250d81042ae526df0b4c3cd50bad910a3c4ce860a5bc44863",
+        "512bc5b03f1a589b55588861748064121a8cc762235b403f64a6da41df5ea34b",
+        "3559345fa8f2f94b65e0c66f3ae9f0940c31c5fef5447733a3b450341aa13dff",
+        "bbb9315f1b11910228ce78bf42c0fb44571ba8c89e87bb46cfcfbb71b1a87c64"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "levantar",
+      "extra": false,
+      "original": "raw/levantar.png",
+      "strip": "tiras-768/levantar.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7692307692307693,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 35,
+          "y": 289,
+          "w": 565,
+          "h": 238,
+          "pixels": 71630,
+          "edge": 0
+        },
+        {
+          "x": 647,
+          "y": 196,
+          "w": 542,
+          "h": 332,
+          "pixels": 78896,
+          "edge": 0
+        },
+        {
+          "x": 126,
+          "y": 770,
+          "w": 419,
+          "h": 454,
+          "pixels": 86685,
+          "edge": 0
+        },
+        {
+          "x": 738,
+          "y": 622,
+          "w": 390,
+          "h": 611,
+          "pixels": 74805,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 527
+        },
+        {
+          "x": 940.5,
+          "y": 528
+        },
+        {
+          "x": 313.5,
+          "y": 1224
+        },
+        {
+          "x": 940.5,
+          "y": 1233
+        }
+      ],
+      "normalized": [
+        {
+          "left": 168,
+          "top": 515
+        },
+        {
+          "left": 157,
+          "top": 443
+        },
+        {
+          "left": 238,
+          "top": 349
+        },
+        {
+          "left": 227,
+          "top": 228
+        }
+      ],
+      "hashes": [
+        "912039a03057cf225b0ffcfe2b2b7b827a2eba48378eb8aa01fc8c985d898ded",
+        "6e42a281357829476ec8a5f7f69fe3dc86a55183b45e42b60a13f6dc50c09b9e",
+        "06843533691601307d829a96f68431854114c3f02cd510e824a2e00e95acf070",
+        "080e0a4a6779b14720591cb59df7b42e55902bedc00a66b6b49b050edcf8a90c"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "tonto",
+      "extra": false,
+      "original": "raw/tonto.png",
+      "strip": "tiras-768/tonto.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7592891760904685,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 159,
+          "y": 2,
+          "w": 375,
+          "h": 619,
+          "pixels": 77333,
+          "edge": 0
+        },
+        {
+          "x": 760,
+          "y": 5,
+          "w": 388,
+          "h": 614,
+          "pixels": 78075,
+          "edge": 0
+        },
+        {
+          "x": 178,
+          "y": 629,
+          "w": 375,
+          "h": 618,
+          "pixels": 77567,
+          "edge": 0
+        },
+        {
+          "x": 776,
+          "y": 628,
+          "w": 377,
+          "h": 619,
+          "pixels": 78465,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 621
+        },
+        {
+          "x": 940.5,
+          "y": 619
+        },
+        {
+          "x": 313.5,
+          "y": 1247
+        },
+        {
+          "x": 940.5,
+          "y": 1247
+        }
+      ],
+      "normalized": [
+        {
+          "left": 265,
+          "top": 228
+        },
+        {
+          "left": 245,
+          "top": 232
+        },
+        {
+          "left": 280,
+          "top": 229
+        },
+        {
+          "left": 258,
+          "top": 228
+        }
+      ],
+      "hashes": [
+        "aea39c3760f700add046f5680ca32e2107dfb5bba07c08e32a68327e35964092",
+        "882ac0b8d90e845b9219e7f155fd3e94b7951fdd70b3a6f56946f712456da4aa",
+        "76325a28c0718724b7c10567e02fcecca4f95b1f91c793e26e70d613bb0394db",
+        "7b718355c5b239b17ca1530734fd136375dfd70bbe65d9a3577eefa924803cac"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "vitoria",
+      "extra": false,
+      "original": "raw/vitoria.png",
+      "strip": "tiras-768/vitoria.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.8548387096774194,
+      "targetHeight": 530,
+      "sourceBounds": [
+        {
+          "x": 163,
+          "y": 3,
+          "w": 349,
+          "h": 620,
+          "pixels": 75540,
+          "edge": 0
+        },
+        {
+          "x": 765,
+          "y": 6,
+          "w": 382,
+          "h": 617,
+          "pixels": 82990,
+          "edge": 0
+        },
+        {
+          "x": 108,
+          "y": 644,
+          "w": 434,
+          "h": 605,
+          "pixels": 85659,
+          "edge": 0
+        },
+        {
+          "x": 757,
+          "y": 643,
+          "w": 410,
+          "h": 605,
+          "pixels": 81330,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 623
+        },
+        {
+          "x": 940.5,
+          "y": 623
+        },
+        {
+          "x": 313.5,
+          "y": 1249
+        },
+        {
+          "x": 940.5,
+          "y": 1248
+        }
+      ],
+      "normalized": [
+        {
+          "left": 254,
+          "top": 168
+        },
+        {
+          "left": 232,
+          "top": 171
+        },
+        {
+          "left": 207,
+          "top": 181
+        },
+        {
+          "left": 225,
+          "top": 181
+        }
+      ],
+      "hashes": [
+        "a1b7ba9aedfb12420d93e737fbd7ea72dc4e46184c86848cb30585b6d98596b0",
+        "6f14dcdef3ac21c65ce8e7eeca2f8259d0e45416f6e07343b95a6640fa0f05d5",
+        "9229f644f9cfb998a27e3ab7eaf9096432c9134cc3430e6265ce5590307b320b",
+        "1ac69858f0a29bdee112ff6b413899e91d37f65409e5a1c73122ed44496f2ed3"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-5L",
+      "extra": false,
+      "original": "raw/golpe-5L.png",
+      "strip": "tiras-768/golpe-5L.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.766721044045677,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 145,
+          "y": 6,
+          "w": 388,
+          "h": 613,
+          "pixels": 77921,
+          "edge": 0
+        },
+        {
+          "x": 721,
+          "y": 17,
+          "w": 357,
+          "h": 600,
+          "pixels": 76120,
+          "edge": 0
+        },
+        {
+          "x": 82,
+          "y": 648,
+          "w": 536,
+          "h": 595,
+          "pixels": 84781,
+          "edge": 0
+        },
+        {
+          "x": 744,
+          "y": 635,
+          "w": 383,
+          "h": 609,
+          "pixels": 78042,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 619
+        },
+        {
+          "x": 940.5,
+          "y": 617
+        },
+        {
+          "x": 313.5,
+          "y": 1243
+        },
+        {
+          "x": 940.5,
+          "y": 1244
+        }
+      ],
+      "normalized": [
+        {
+          "left": 253,
+          "top": 228
+        },
+        {
+          "left": 214,
+          "top": 238
+        },
+        {
+          "left": 205,
+          "top": 242
+        },
+        {
+          "left": 232,
+          "top": 232
+        }
+      ],
+      "hashes": [
+        "19ff4528bedb5fb875db426e827ec1c85fc8fc1a86f3a2fc041fb2baf33c1e5f",
+        "a1bb467dde5bfda93cd499291025afe24e97f68897aa0072cc6226c211a2d1ea",
+        "7a3056039451e2587e1377a60b4489c78c2c3a49a5feffa8683ace890d21becc",
+        "ba1a3b26ea0495cbc9585794294c735617361ba707591f88af582e43e92fae9c"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-5M",
+      "extra": false,
+      "original": "raw/golpe-5M.png",
+      "strip": "tiras-768/golpe-5M.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7717569786535303,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 134,
+          "y": 7,
+          "w": 395,
+          "h": 609,
+          "pixels": 75838,
+          "edge": 0
+        },
+        {
+          "x": 705,
+          "y": 13,
+          "w": 412,
+          "h": 604,
+          "pixels": 81760,
+          "edge": 0
+        },
+        {
+          "x": 49,
+          "y": 654,
+          "w": 602,
+          "h": 578,
+          "pixels": 83657,
+          "edge": 0
+        },
+        {
+          "x": 750,
+          "y": 635,
+          "w": 409,
+          "h": 604,
+          "pixels": 77370,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 616
+        },
+        {
+          "x": 940.5,
+          "y": 617
+        },
+        {
+          "x": 313.5,
+          "y": 1232
+        },
+        {
+          "x": 940.5,
+          "y": 1239
+        }
+      ],
+      "normalized": [
+        {
+          "left": 244,
+          "top": 228
+        },
+        {
+          "left": 201,
+          "top": 232
+        },
+        {
+          "left": 178,
+          "top": 252
+        },
+        {
+          "left": 235,
+          "top": 232
+        }
+      ],
+      "hashes": [
+        "00dabcb9de769a6becf4dc72118b6e29390517d5a23d9055c35f2784095f3139",
+        "60375e10d1fe38dbdd0f0e679f7539654ce73a7431985032a7ecefa4b23be254",
+        "44542ad97536d19e2bb0b3ce9d1af0b376a3298fbeea2c35fb22d7248e02cd4b",
+        "49239498ce7534d1d7c3a722b7b4db816628b7a953dd75b958ea63258c5753d3"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-5H",
+      "extra": false,
+      "original": "raw/golpe-5H.png",
+      "strip": "tiras-768/golpe-5H.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.864,
+      "targetHeight": 540,
+      "sourceBounds": [
+        {
+          "x": 137,
+          "y": 9,
+          "w": 405,
+          "h": 619,
+          "pixels": 78850,
+          "edge": 0
+        },
+        {
+          "x": 706,
+          "y": 3,
+          "w": 374,
+          "h": 625,
+          "pixels": 78239,
+          "edge": 0
+        },
+        {
+          "x": 104,
+          "y": 709,
+          "w": 473,
+          "h": 537,
+          "pixels": 90467,
+          "edge": 0
+        },
+        {
+          "x": 707,
+          "y": 641,
+          "w": 429,
+          "h": 608,
+          "pixels": 81056,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 628
+        },
+        {
+          "x": 940.5,
+          "y": 628
+        },
+        {
+          "x": 313.5,
+          "y": 1246
+        },
+        {
+          "x": 940.5,
+          "y": 1249
+        }
+      ],
+      "normalized": [
+        {
+          "left": 230,
+          "top": 163
+        },
+        {
+          "left": 180,
+          "top": 158
+        },
+        {
+          "left": 201,
+          "top": 234
+        },
+        {
+          "left": 181,
+          "top": 173
+        }
+      ],
+      "hashes": [
+        "0466c78047430cbccc32989376bb1b943ab886b35905cadb8209a2590ef582d0",
+        "78a62ab825e92feff13ac655f8b13d10fc8c94669795d718ede7924fa2f8144f",
+        "453f5af2749aa8c9f91ac7df92680c7d307e002177e8e58b2d740670d1bd8ce2",
+        "82da294db145f7831e6f10ede5dd30f57e1a171971a1caba1f99ee5698a66331"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-2L",
+      "extra": false,
+      "original": "raw/golpe-2L.png",
+      "strip": "tiras-768/golpe-2L.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.6969205834683955,
+      "targetHeight": 430,
+      "sourceBounds": [
+        {
+          "x": 96,
+          "y": 6,
+          "w": 425,
+          "h": 617,
+          "pixels": 97491,
+          "edge": 0
+        },
+        {
+          "x": 737,
+          "y": 71,
+          "w": 426,
+          "h": 546,
+          "pixels": 93014,
+          "edge": 0
+        },
+        {
+          "x": 69,
+          "y": 704,
+          "w": 535,
+          "h": 538,
+          "pixels": 97605,
+          "edge": 0
+        },
+        {
+          "x": 748,
+          "y": 704,
+          "w": 419,
+          "h": 538,
+          "pixels": 94908,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 623
+        },
+        {
+          "x": 940.5,
+          "y": 617
+        },
+        {
+          "x": 313.5,
+          "y": 1242
+        },
+        {
+          "x": 940.5,
+          "y": 1242
+        }
+      ],
+      "normalized": [
+        {
+          "left": 231,
+          "top": 269
+        },
+        {
+          "left": 241,
+          "top": 318
+        },
+        {
+          "left": 212,
+          "top": 324
+        },
+        {
+          "left": 248,
+          "top": 324
+        }
+      ],
+      "hashes": [
+        "26e95059f47ba6a725c49afae9e9bc63093e2941819e1a89fa1ee70a72b234af",
+        "c6f2d0bf26914634aad310a0aa248a627b99bfdadb868b4082f9610ea1adebf7",
+        "ba4729ed6ca63c0115fc34538995fe190893570db0c414b6e84858a972fbdcb7",
+        "cee718087c860299abe61d73ac9e0ffd34eafe5bbee8fbae6b5eaed456b2b4af"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-2M",
+      "extra": false,
+      "original": "raw/golpe-2M.png",
+      "strip": "tiras-768/golpe-2M.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.6204379562043796,
+      "targetHeight": 340,
+      "sourceBounds": [
+        {
+          "x": 93,
+          "y": 67,
+          "w": 435,
+          "h": 548,
+          "pixels": 122243,
+          "edge": 0
+        },
+        {
+          "x": 701,
+          "y": 80,
+          "w": 430,
+          "h": 536,
+          "pixels": 110822,
+          "edge": 0
+        },
+        {
+          "x": 44,
+          "y": 708,
+          "w": 636,
+          "h": 497,
+          "pixels": 114950,
+          "edge": 0
+        },
+        {
+          "x": 752,
+          "y": 680,
+          "w": 442,
+          "h": 530,
+          "pixels": 117268,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 615
+        },
+        {
+          "x": 940.5,
+          "y": 616
+        },
+        {
+          "x": 313.5,
+          "y": 1205
+        },
+        {
+          "x": 940.5,
+          "y": 1210
+        }
+      ],
+      "normalized": [
+        {
+          "left": 246,
+          "top": 359
+        },
+        {
+          "left": 234,
+          "top": 366
+        },
+        {
+          "left": 216,
+          "top": 390
+        },
+        {
+          "left": 266,
+          "top": 370
+        }
+      ],
+      "hashes": [
+        "ae4800554958cacdde73b5b656689be64a0c3f173c2004b2e48cc45771afafc4",
+        "98d8086383f7c870e883a23df45496811e06df4fc85b3b7480fbde3afad2abe2",
+        "bad598297a177b7401c32c00b61a486856a49cad83e34d69deb0beedad03b66d",
+        "780e1b1f26a1a411475b62c09cf371c2d321eaeacd0ae02236eea3769b43bb9e"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-2H",
+      "extra": false,
+      "original": "raw/golpe-2H.png",
+      "strip": "tiras-768/golpe-2H.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.8146964856230032,
+      "targetHeight": 510,
+      "sourceBounds": [
+        {
+          "x": 111,
+          "y": 113,
+          "w": 461,
+          "h": 483,
+          "pixels": 86904,
+          "edge": 0
+        },
+        {
+          "x": 666,
+          "y": 26,
+          "w": 451,
+          "h": 570,
+          "pixels": 91596,
+          "edge": 0
+        },
+        {
+          "x": 137,
+          "y": 616,
+          "w": 394,
+          "h": 626,
+          "pixels": 87183,
+          "edge": 0
+        },
+        {
+          "x": 729,
+          "y": 621,
+          "w": 400,
+          "h": 619,
+          "pixels": 81044,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 596
+        },
+        {
+          "x": 940.5,
+          "y": 596
+        },
+        {
+          "x": 313.5,
+          "y": 1242
+        },
+        {
+          "x": 940.5,
+          "y": 1240
+        }
+      ],
+      "normalized": [
+        {
+          "left": 217,
+          "top": 305
+        },
+        {
+          "left": 159,
+          "top": 234
+        },
+        {
+          "left": 239,
+          "top": 188
+        },
+        {
+          "left": 210,
+          "top": 194
+        }
+      ],
+      "hashes": [
+        "a86d379acdfcfd798750d317b33387fd10eb9437f4708987498d4678d9863e3f",
+        "3e02c67ba04716436e24eb9003568eabce20d9fc15d4f329e7be86ec57534e2e",
+        "87c4e4787ce9a64730eb9fecedd033c3a5b914825b46f467fec8891a086332dc",
+        "c9c5bca233d868eaf20232e019aed6afd009c87b2d538faa8777087ccfc24150"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-3H",
+      "extra": false,
+      "original": "raw/golpe-3H.png",
+      "strip": "tiras-768/golpe-3H.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.6215722120658135,
+      "targetHeight": 340,
+      "sourceBounds": [
+        {
+          "x": 51,
+          "y": 42,
+          "w": 460,
+          "h": 546,
+          "pixels": 117911,
+          "edge": 0
+        },
+        {
+          "x": 628,
+          "y": 58,
+          "w": 613,
+          "h": 539,
+          "pixels": 123900,
+          "edge": 0
+        },
+        {
+          "x": 28,
+          "y": 705,
+          "w": 667,
+          "h": 521,
+          "pixels": 123981,
+          "edge": 0
+        },
+        {
+          "x": 731,
+          "y": 671,
+          "w": 459,
+          "h": 547,
+          "pixels": 119866,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 588
+        },
+        {
+          "x": 940.5,
+          "y": 597
+        },
+        {
+          "x": 313.5,
+          "y": 1226
+        },
+        {
+          "x": 940.5,
+          "y": 1218
+        }
+      ],
+      "normalized": [
+        {
+          "left": 220,
+          "top": 359
+        },
+        {
+          "left": 189,
+          "top": 364
+        },
+        {
+          "left": 205,
+          "top": 375
+        },
+        {
+          "left": 253,
+          "top": 359
+        }
+      ],
+      "hashes": [
+        "a9814ea202367d647ccd41b267ecccb5ca38bc6acc5b6a4123547cb4c1589ef2",
+        "809172f3d40c6ae2628628a95e8c47b9a6e1f09a61b19e7eee922f6950c70a5c",
+        "2b3d9eca911dd0fb6eee51ff8e83db9dba5fc4af6894deec947d7ebf75535ae5",
+        "adee2f6391e60229a6fd078c257e1fb9f0fd713107564601007d919cd13bd477"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-6M",
+      "extra": false,
+      "original": "raw/golpe-6M.png",
+      "strip": "tiras-768/golpe-6M.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.8631921824104235,
+      "targetHeight": 530,
+      "sourceBounds": [
+        {
+          "x": 158,
+          "y": 11,
+          "w": 370,
+          "h": 607,
+          "pixels": 74925,
+          "edge": 0
+        },
+        {
+          "x": 706,
+          "y": 6,
+          "w": 353,
+          "h": 609,
+          "pixels": 81075,
+          "edge": 0
+        },
+        {
+          "x": 68,
+          "y": 656,
+          "w": 574,
+          "h": 590,
+          "pixels": 90635,
+          "edge": 0
+        },
+        {
+          "x": 764,
+          "y": 633,
+          "w": 383,
+          "h": 614,
+          "pixels": 77530,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 618
+        },
+        {
+          "x": 940.5,
+          "y": 615
+        },
+        {
+          "x": 313.5,
+          "y": 1246
+        },
+        {
+          "x": 940.5,
+          "y": 1247
+        }
+      ],
+      "normalized": [
+        {
+          "left": 248,
+          "top": 174
+        },
+        {
+          "left": 180,
+          "top": 173
+        },
+        {
+          "left": 170,
+          "top": 189
+        },
+        {
+          "left": 230,
+          "top": 168
+        }
+      ],
+      "hashes": [
+        "58cc8c7307e480ec96433ecd4f3630d89555ab9ff8f6c29edf88bdc145f5be4a",
+        "7a636e430d5f3f1b8d2335429ef75870b25885afd6b165e0f7108196c18950a6",
+        "33ac37f9d76c1b202fc3dfcfd98b2b1476b234fb04109084f3fc5796d602281c",
+        "b8df601dd233ecbe89fcbfcc56acadb97a646956d8b9b59c4b146663291b5cb8"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-jL",
+      "extra": false,
+      "original": "raw/golpe-jL.png",
+      "strip": "tiras-768/golpe-jL.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7023411371237458,
+      "targetHeight": 420,
+      "sourceBounds": [
+        {
+          "x": 69,
+          "y": 18,
+          "w": 460,
+          "h": 598,
+          "pixels": 88078,
+          "edge": 0
+        },
+        {
+          "x": 739,
+          "y": 2,
+          "w": 415,
+          "h": 537,
+          "pixels": 93833,
+          "edge": 0
+        },
+        {
+          "x": 110,
+          "y": 628,
+          "w": 462,
+          "h": 561,
+          "pixels": 98120,
+          "edge": 0
+        },
+        {
+          "x": 719,
+          "y": 626,
+          "w": 415,
+          "h": 580,
+          "pixels": 94159,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 604.31
+        },
+        {
+          "x": 940.5,
+          "y": 604.31
+        },
+        {
+          "x": 313.5,
+          "y": 1235.31
+        },
+        {
+          "x": 940.5,
+          "y": 1235.31
+        }
+      ],
+      "normalized": [
+        {
+          "left": 211,
+          "top": 287
+        },
+        {
+          "left": 241,
+          "top": 276
+        },
+        {
+          "left": 240,
+          "top": 272
+        },
+        {
+          "left": 227,
+          "top": 271
+        }
+      ],
+      "hashes": [
+        "fa81207177d6cbb25e8e654db93e64922f2cec68425e6230a8397c9bd4fae53b",
+        "9f328a258623c8137c4fa2f55cfb148612c179e002c943f3305ab4bdf3f1e132",
+        "9f27dfa8e17ad1881dfabcfd80c7b6110764f0804c74ca5611bfe82d7afdf7ea",
+        "75a5618836747d601b829fa2c2f7edc464295cfc56f62eb888652389ccd6945e"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-jM",
+      "extra": false,
+      "original": "raw/golpe-jM.png",
+      "strip": "tiras-768/golpe-jM.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7166666666666667,
+      "targetHeight": 430,
+      "sourceBounds": [
+        {
+          "x": 127,
+          "y": 11,
+          "w": 410,
+          "h": 600,
+          "pixels": 82747,
+          "edge": 0
+        },
+        {
+          "x": 694,
+          "y": 4,
+          "w": 371,
+          "h": 530,
+          "pixels": 76778,
+          "edge": 0
+        },
+        {
+          "x": 69,
+          "y": 645,
+          "w": 547,
+          "h": 511,
+          "pixels": 84475,
+          "edge": 0
+        },
+        {
+          "x": 720,
+          "y": 644,
+          "w": 360,
+          "h": 559,
+          "pixels": 81384,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 608.19
+        },
+        {
+          "x": 940.5,
+          "y": 608.19
+        },
+        {
+          "x": 313.5,
+          "y": 1235.19
+        },
+        {
+          "x": 940.5,
+          "y": 1235.19
+        }
+      ],
+      "normalized": [
+        {
+          "left": 249,
+          "top": 271
+        },
+        {
+          "left": 206,
+          "top": 266
+        },
+        {
+          "left": 207,
+          "top": 276
+        },
+        {
+          "left": 225,
+          "top": 275
+        }
+      ],
+      "hashes": [
+        "85b5eb1ea8aeb728fe0c9af9234fbb6f398629674f698dc4cd166ddf1f2db538",
+        "4b3d7fefcebcc8e80432998342925cd86ecb8d93e2ba54a2210f5b11559ec51a",
+        "2c3b20f6e2d6b53c83d2e0a0b38405fa8180f3642150bbae4a0f9f42a910eba9",
+        "48018126a231debdad205f5001fbdffd7fffa001a4886a3993488ffff8c60200"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-jH",
+      "extra": false,
+      "original": "raw/golpe-jH.png",
+      "strip": "tiras-768/golpe-jH.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.8833333333333333,
+      "targetHeight": 530,
+      "sourceBounds": [
+        {
+          "x": 154,
+          "y": 40,
+          "w": 403,
+          "h": 594,
+          "pixels": 89001,
+          "edge": 0
+        },
+        {
+          "x": 664,
+          "y": 10,
+          "w": 361,
+          "h": 600,
+          "pixels": 93733,
+          "edge": 0
+        },
+        {
+          "x": 65,
+          "y": 659,
+          "w": 538,
+          "h": 582,
+          "pixels": 91171,
+          "edge": 0
+        },
+        {
+          "x": 692,
+          "y": 686,
+          "w": 524,
+          "h": 565,
+          "pixels": 94307,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 617.46
+        },
+        {
+          "x": 940.5,
+          "y": 617.46
+        },
+        {
+          "x": 313.5,
+          "y": 1235.46
+        },
+        {
+          "x": 940.5,
+          "y": 1235.46
+        }
+      ],
+      "normalized": [
+        {
+          "left": 241,
+          "top": 188
+        },
+        {
+          "left": 138,
+          "top": 162
+        },
+        {
+          "left": 163,
+          "top": 189
+        },
+        {
+          "left": 163,
+          "top": 213
+        }
+      ],
+      "hashes": [
+        "6178d65466299225d507d75ecc5c7b5404cf98b94edc539178e00e9d25b606e9",
+        "580a231a1c61615c0ee388fb2bc4807fde682004f33f75d879892b3a5193e25b",
+        "30d305bcc65bad9c264276a2a843861fa9b08f7dad3bd0e57e88a061b6e6041c",
+        "a59664a6626b8ac007026e671bd176502505f431022e8f75a6fba67d535e9bee"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-throw",
+      "extra": false,
+      "original": "raw/golpe-throw.png",
+      "strip": "tiras-768/golpe-throw.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7642276422764228,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 153,
+          "y": 8,
+          "w": 379,
+          "h": 613,
+          "pixels": 76415,
+          "edge": 0
+        },
+        {
+          "x": 699,
+          "y": 12,
+          "w": 494,
+          "h": 603,
+          "pixels": 86337,
+          "edge": 0
+        },
+        {
+          "x": 86,
+          "y": 708,
+          "w": 448,
+          "h": 535,
+          "pixels": 85857,
+          "edge": 0
+        },
+        {
+          "x": 748,
+          "y": 630,
+          "w": 431,
+          "h": 615,
+          "pixels": 83131,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 621
+        },
+        {
+          "x": 940.5,
+          "y": 615
+        },
+        {
+          "x": 313.5,
+          "y": 1243
+        },
+        {
+          "x": 940.5,
+          "y": 1245
+        }
+      ],
+      "normalized": [
+        {
+          "left": 260,
+          "top": 230
+        },
+        {
+          "left": 198,
+          "top": 238
+        },
+        {
+          "left": 209,
+          "top": 290
+        },
+        {
+          "left": 235,
+          "top": 228
+        }
+      ],
+      "hashes": [
+        "0ba44c146da64bdaca521f540fd65e9d02d6130acc1dc87e8916dd7ad8cb3c66",
+        "e8c228cac45dad54ce767663c0282a46ba54e5b408ad87d24bc489b17794f3bd",
+        "fdcbae9e65c41fbd71adc67f1e8608869335032a32edb648f9911168f8bd33be",
+        "7a2ccc379487754b95fb4772412060899071326ce953bea3fc52c91c2fef5377"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-blindado",
+      "extra": false,
+      "original": "raw/golpe-blindado.png",
+      "strip": "tiras-768/golpe-blindado.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7617504051863857,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 133,
+          "y": 4,
+          "w": 403,
+          "h": 617,
+          "pixels": 83601,
+          "edge": 0
+        },
+        {
+          "x": 728,
+          "y": 66,
+          "w": 422,
+          "h": 551,
+          "pixels": 89218,
+          "edge": 0
+        },
+        {
+          "x": 41,
+          "y": 689,
+          "w": 574,
+          "h": 554,
+          "pixels": 93493,
+          "edge": 0
+        },
+        {
+          "x": 690,
+          "y": 639,
+          "w": 486,
+          "h": 609,
+          "pixels": 88423,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 621
+        },
+        {
+          "x": 940.5,
+          "y": 617
+        },
+        {
+          "x": 313.5,
+          "y": 1243
+        },
+        {
+          "x": 940.5,
+          "y": 1248
+        }
+      ],
+      "normalized": [
+        {
+          "left": 245,
+          "top": 228
+        },
+        {
+          "left": 221,
+          "top": 279
+        },
+        {
+          "left": 175,
+          "top": 276
+        },
+        {
+          "left": 192,
+          "top": 235
+        }
+      ],
+      "hashes": [
+        "4ea0812aa2d528fce90e45acf8bb9a50b0ec3a19e72034cee381603be37b58e2",
+        "84493167ecd56c9dfc41abf71cb59b11ed2feb11e49c44ae3ec1763dca165b6b",
+        "da2973bd1d40c534976f2a6ebdd5757cc37f0112c7e369b25aa5b1d6db9cb878",
+        "323025df05050b9d40903c2f035af11c59131a401663c12e2db076b30d077968"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-5S",
+      "extra": false,
+      "original": "raw/golpe-5S.png",
+      "strip": "tiras-768/golpe-5S.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7654723127035831,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 153,
+          "y": 8,
+          "w": 373,
+          "h": 614,
+          "pixels": 77679,
+          "edge": 0
+        },
+        {
+          "x": 732,
+          "y": 8,
+          "w": 434,
+          "h": 613,
+          "pixels": 82337,
+          "edge": 0
+        },
+        {
+          "x": 135,
+          "y": 638,
+          "w": 404,
+          "h": 610,
+          "pixels": 79543,
+          "edge": 0
+        },
+        {
+          "x": 767,
+          "y": 635,
+          "w": 401,
+          "h": 612,
+          "pixels": 79712,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 622
+        },
+        {
+          "x": 940.5,
+          "y": 621
+        },
+        {
+          "x": 313.5,
+          "y": 1248
+        },
+        {
+          "x": 940.5,
+          "y": 1247
+        }
+      ],
+      "normalized": [
+        {
+          "left": 260,
+          "top": 228
+        },
+        {
+          "left": 223,
+          "top": 229
+        },
+        {
+          "left": 246,
+          "top": 232
+        },
+        {
+          "left": 250,
+          "top": 230
+        }
+      ],
+      "hashes": [
+        "d313b51006c511bf3b05163ce68ca3fde1e52afc60df742c9ef415146608e3f3",
+        "b8edd30c48dd1e955b298aee275fc9969009c19300ed2e97d44fc5c51420d04a",
+        "a636736b2e0cd460b8acda4ac7c3fdb08f977758302ed55bc4619f06a4e83a23",
+        "7157df16c1c705be2d71206a339b47c62c6105d4a36f07358880faed26c6187a"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-6S",
+      "extra": false,
+      "original": "raw/golpe-6S.png",
+      "strip": "tiras-768/golpe-6S.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7692307692307693,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 146,
+          "y": 2,
+          "w": 378,
+          "h": 611,
+          "pixels": 72044,
+          "edge": 0
+        },
+        {
+          "x": 620,
+          "y": 15,
+          "w": 404,
+          "h": 595,
+          "pixels": 83957,
+          "edge": 0
+        },
+        {
+          "x": 22,
+          "y": 662,
+          "w": 657,
+          "h": 582,
+          "pixels": 84248,
+          "edge": 0
+        },
+        {
+          "x": 685,
+          "y": 652,
+          "w": 452,
+          "h": 591,
+          "pixels": 75320,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 613
+        },
+        {
+          "x": 940.5,
+          "y": 610
+        },
+        {
+          "x": 313.5,
+          "y": 1244
+        },
+        {
+          "x": 940.5,
+          "y": 1243
+        }
+      ],
+      "normalized": [
+        {
+          "left": 254,
+          "top": 228
+        },
+        {
+          "left": 136,
+          "top": 241
+        },
+        {
+          "left": 158,
+          "top": 251
+        },
+        {
+          "left": 186,
+          "top": 244
+        }
+      ],
+      "hashes": [
+        "ae89a66c0caa2ba65afb7aa1c3e555c48c4506adfbd69aeaf79f7ed08e7ed213",
+        "603a2fcf3e3a15e08bb9162499bbb083ee2956bc021ae116c07a0186f51db843",
+        "96e4afe3233455bc02ca05aac5f662c54e476c353ba371960cb978e43ed82c89",
+        "a0a42fa24de96f3b2586fae93b6b9ee532ade1813fe82e636cb539c80a57f72b"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-2S",
+      "extra": false,
+      "original": "raw/golpe-2S.png",
+      "strip": "tiras-768/golpe-2S.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7605177993527508,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 78,
+          "y": 5,
+          "w": 506,
+          "h": 618,
+          "pixels": 112066,
+          "edge": 0
+        },
+        {
+          "x": 698,
+          "y": 6,
+          "w": 505,
+          "h": 616,
+          "pixels": 114984,
+          "edge": 0
+        },
+        {
+          "x": 63,
+          "y": 669,
+          "w": 565,
+          "h": 573,
+          "pixels": 117470,
+          "edge": 0
+        },
+        {
+          "x": 705,
+          "y": 636,
+          "w": 508,
+          "h": 608,
+          "pixels": 111227,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 623
+        },
+        {
+          "x": 940.5,
+          "y": 622
+        },
+        {
+          "x": 313.5,
+          "y": 1242
+        },
+        {
+          "x": 940.5,
+          "y": 1244
+        }
+      ],
+      "normalized": [
+        {
+          "left": 203,
+          "top": 228
+        },
+        {
+          "left": 198,
+          "top": 230
+        },
+        {
+          "left": 192,
+          "top": 263
+        },
+        {
+          "left": 203,
+          "top": 236
+        }
+      ],
+      "hashes": [
+        "38adccf78a6eadb90037a6e45242d97977e022503818fb7b31e13a515a083a1f",
+        "32945177b1e3407b93186f36e1789924c78dbe468ed4580da0efa067d71a0a06",
+        "c7abce5b686b715b695e8ee132c077f03be72961d54236b4f7e4b102ac6c205e",
+        "e4873e90d3a719bb57b50975bc332aa03f7713748055760b299147b1f0f2e18e"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-4S",
+      "extra": false,
+      "original": "raw/golpe-4S.png",
+      "strip": "tiras-768/golpe-4S.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7761194029850746,
+      "targetHeight": 520,
+      "sourceBounds": [
+        {
+          "x": 69,
+          "y": 91,
+          "w": 471,
+          "h": 474,
+          "pixels": 78603,
+          "edge": 0
+        },
+        {
+          "x": 638,
+          "y": 14,
+          "w": 429,
+          "h": 553,
+          "pixels": 81244,
+          "edge": 0
+        },
+        {
+          "x": 157,
+          "y": 575,
+          "w": 288,
+          "h": 670,
+          "pixels": 82739,
+          "edge": 0
+        },
+        {
+          "x": 660,
+          "y": 637,
+          "w": 438,
+          "h": 606,
+          "pixels": 82307,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 565
+        },
+        {
+          "x": 940.5,
+          "y": 567
+        },
+        {
+          "x": 313.5,
+          "y": 1245
+        },
+        {
+          "x": 940.5,
+          "y": 1243
+        }
+      ],
+      "normalized": [
+        {
+          "left": 193,
+          "top": 331
+        },
+        {
+          "left": 148,
+          "top": 269
+        },
+        {
+          "left": 261,
+          "top": 178
+        },
+        {
+          "left": 165,
+          "top": 228
+        }
+      ],
+      "hashes": [
+        "27ad23aa6fa7f23167099c1337a36f5e0b782453f5d9dde72ab6b76be16e5fa5",
+        "f803bb621bfbf792ae20fcc2e6e25f5b2a43aa623ab4417f3f38a25f7f020d9c",
+        "46546e67fdb09d9750fc37ca509f04040ca5268db6c1f96ebf1c8c375aa757a4",
+        "073b28a46e096f0c5835926414ea94b8f8b43862f54988d7c799cc0f85c1a07f"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-c1",
+      "extra": false,
+      "original": "raw/golpe-c1.png",
+      "strip": "tiras-768/golpe-c1.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.9108527131782945,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 178,
+          "y": 76,
+          "w": 319,
+          "h": 516,
+          "pixels": 56376,
+          "edge": 0
+        },
+        {
+          "x": 766,
+          "y": 72,
+          "w": 320,
+          "h": 500,
+          "pixels": 57970,
+          "edge": 0
+        },
+        {
+          "x": 150,
+          "y": 721,
+          "w": 337,
+          "h": 480,
+          "pixels": 57433,
+          "edge": 0
+        },
+        {
+          "x": 776,
+          "y": 703,
+          "w": 330,
+          "h": 500,
+          "pixels": 57206,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 608.19
+        },
+        {
+          "x": 940.5,
+          "y": 608.19
+        },
+        {
+          "x": 313.5,
+          "y": 1235.19
+        },
+        {
+          "x": 940.5,
+          "y": 1235.19
+        }
+      ],
+      "normalized": [
+        {
+          "left": 259,
+          "top": 213
+        },
+        {
+          "left": 223,
+          "top": 210
+        },
+        {
+          "left": 233,
+          "top": 230
+        },
+        {
+          "left": 232,
+          "top": 213
+        }
+      ],
+      "hashes": [
+        "3d7e78a559644f6a64f73dda5e1463ebf3243a97517ab8d715dd25edf97264df",
+        "0bce0cdcd1c430813b88f752702626227b6cb2ee3cc85dab0c26496e70d99f1d",
+        "1d31236e9382508dcf7121d56c5bb924208d049168ff84246815907de0095e44",
+        "f9b0a3d703af8bce429c4ac0e4cd861c15e6332220639611763105b4c72bd6d3"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-c2",
+      "extra": false,
+      "original": "raw/golpe-c2.png",
+      "strip": "tiras-768/golpe-c2.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7286821705426356,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 140,
+          "y": 2,
+          "w": 386,
+          "h": 645,
+          "pixels": 82704,
+          "edge": 0
+        },
+        {
+          "x": 699,
+          "y": 84,
+          "w": 433,
+          "h": 563,
+          "pixels": 84891,
+          "edge": 0
+        },
+        {
+          "x": 104,
+          "y": 728,
+          "w": 575,
+          "h": 502,
+          "pixels": 105463,
+          "edge": 0
+        },
+        {
+          "x": 741,
+          "y": 735,
+          "w": 445,
+          "h": 497,
+          "pixels": 99329,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 647
+        },
+        {
+          "x": 940.5,
+          "y": 647
+        },
+        {
+          "x": 313.5,
+          "y": 1230
+        },
+        {
+          "x": 940.5,
+          "y": 1232
+        }
+      ],
+      "normalized": [
+        {
+          "left": 256,
+          "top": 229
+        },
+        {
+          "left": 207,
+          "top": 288
+        },
+        {
+          "left": 230,
+          "top": 333
+        },
+        {
+          "left": 237,
+          "top": 336
+        }
+      ],
+      "hashes": [
+        "a36a50f78d1ad71c3cad936754eb4168db88606b818c79f6b3a10dcde54fb8a1",
+        "8c95d19efbdb1ca9f7bbb7bdff41e0fd4a50ff7c0d45ae2860140d6eed5695e5",
+        "d3474828912a1fbac7c78758190573a94d3397812a77a3ac6498c95e9c8b441b",
+        "91f18e67e81a3be99a614c9ddb5fb5427da97db69e54c9c866213d52325bf04d"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-SA1",
+      "extra": false,
+      "original": "raw/golpe-SA1.png",
+      "strip": "tiras-768/golpe-SA1.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7556270096463023,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 137,
+          "y": 10,
+          "w": 413,
+          "h": 617,
+          "pixels": 79651,
+          "edge": 0
+        },
+        {
+          "x": 743,
+          "y": 5,
+          "w": 426,
+          "h": 622,
+          "pixels": 83132,
+          "edge": 0
+        },
+        {
+          "x": 84,
+          "y": 697,
+          "w": 515,
+          "h": 543,
+          "pixels": 83776,
+          "edge": 0
+        },
+        {
+          "x": 741,
+          "y": 639,
+          "w": 432,
+          "h": 607,
+          "pixels": 80844,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 627
+        },
+        {
+          "x": 940.5,
+          "y": 627
+        },
+        {
+          "x": 313.5,
+          "y": 1240
+        },
+        {
+          "x": 940.5,
+          "y": 1246
+        }
+      ],
+      "normalized": [
+        {
+          "left": 249,
+          "top": 232
+        },
+        {
+          "left": 233,
+          "top": 228
+        },
+        {
+          "left": 209,
+          "top": 288
+        },
+        {
+          "left": 232,
+          "top": 240
+        }
+      ],
+      "hashes": [
+        "8b63fac21fc947ec2e7eb45c7e49fe11cd1a86a63ba9b5f74adf8d182909a87b",
+        "5ff50c329859205c796249f8a275d107c49f3c77d42887e524bb3e5b5f33ab40",
+        "c8029a33c3be541b83d36ee36c953ab0fbb2209bb10715abf3f15dc4dec526ef",
+        "9243a4c2be718471826c18169ab7423d4fd36387ed99d915967bc7b9cf8be4bd"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "golpe-SA3",
+      "extra": false,
+      "original": "raw/golpe-SA3.png",
+      "strip": "tiras-768/golpe-SA3.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.7580645161290323,
+      "targetHeight": 470,
+      "sourceBounds": [
+        {
+          "x": 122,
+          "y": 3,
+          "w": 409,
+          "h": 615,
+          "pixels": 80755,
+          "edge": 0
+        },
+        {
+          "x": 669,
+          "y": 3,
+          "w": 498,
+          "h": 615,
+          "pixels": 89414,
+          "edge": 0
+        },
+        {
+          "x": 51,
+          "y": 701,
+          "w": 518,
+          "h": 547,
+          "pixels": 104016,
+          "edge": 0
+        },
+        {
+          "x": 731,
+          "y": 628,
+          "w": 436,
+          "h": 620,
+          "pixels": 87951,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313.5,
+          "y": 618
+        },
+        {
+          "x": 940.5,
+          "y": 618
+        },
+        {
+          "x": 313.5,
+          "y": 1248
+        },
+        {
+          "x": 940.5,
+          "y": 1248
+        }
+      ],
+      "normalized": [
+        {
+          "left": 237,
+          "top": 232
+        },
+        {
+          "left": 177,
+          "top": 232
+        },
+        {
+          "left": 183,
+          "top": 284
+        },
+        {
+          "left": 224,
+          "top": 228
+        }
+      ],
+      "hashes": [
+        "ba99f6aa6547e7f14db1496b974d60db28f8ffd26af598cf07522d84a455d5fd",
+        "a44a8d1b0a7f4a513e9b5f3713181c96471f479cd0a55642895e72bd3e70a46f",
+        "90837f5349f19ef8f52e2f0e0557bef0c26d35dae162df83b9fb9470fbec99cb",
+        "a7ee91f7c245351fc3fe0c40d9a9f133b4e211d69491c92243e5a5859d638b28"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "fx-nota-sonica",
+      "extra": true,
+      "original": "raw/fx-nota-sonica.png",
+      "strip": "tiras-768/fx-nota-sonica.png",
+      "originalSize": [
+        1261,
+        1247
+      ],
+      "scale": 1.2258064516129032,
+      "targetHeight": 570,
+      "sourceBounds": [
+        {
+          "x": 101,
+          "y": 164,
+          "w": 369,
+          "h": 282,
+          "pixels": 43755,
+          "edge": 0
+        },
+        {
+          "x": 651,
+          "y": 135,
+          "w": 527,
+          "h": 354,
+          "pixels": 84333,
+          "edge": 0
+        },
+        {
+          "x": 34,
+          "y": 707,
+          "w": 545,
+          "h": 465,
+          "pixels": 114957,
+          "edge": 0
+        },
+        {
+          "x": 705,
+          "y": 807,
+          "w": 427,
+          "h": 271,
+          "pixels": 54051,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 285.5,
+          "y": 305
+        },
+        {
+          "x": 914.5,
+          "y": 312
+        },
+        {
+          "x": 306.5,
+          "y": 939.5
+        },
+        {
+          "x": 918.5,
+          "y": 942.5
+        }
+      ],
+      "normalized": [
+        {
+          "left": 155,
+          "top": 209
+        },
+        {
+          "left": 59,
+          "top": 165
+        },
+        {
+          "left": 48,
+          "top": 97
+        },
+        {
+          "left": 120,
+          "top": 215
+        }
+      ],
+      "hashes": [
+        "507492dd1238c9e13bfbfbbfe4f2a9a148a3905ed24cbf565571a20d9dd60b13",
+        "3811e1c2ebd0a634810b7b29f562d827da183de26f509d732dbab771e1d95423",
+        "48361b0ed0a621917dae0916e32890bf98adeed67c0c61d0e4a9d5b90aeb1c18",
+        "47d05cbcf2f83ee90cb3a5028355a072944bbff4ff34bae29f3319da88694934"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "fx-power-chord",
+      "extra": true,
+      "original": "raw/fx-power-chord.png",
+      "strip": "tiras-768/fx-power-chord.png",
+      "originalSize": [
+        1263,
+        1246
+      ],
+      "scale": 1.1491935483870968,
+      "targetHeight": 570,
+      "sourceBounds": [
+        {
+          "x": 291,
+          "y": 183,
+          "w": 281,
+          "h": 263,
+          "pixels": 13251,
+          "edge": 0
+        },
+        {
+          "x": 688,
+          "y": 103,
+          "w": 509,
+          "h": 428,
+          "pixels": 68956,
+          "edge": 0
+        },
+        {
+          "x": 57,
+          "y": 678,
+          "w": 559,
+          "h": 496,
+          "pixels": 91768,
+          "edge": 0
+        },
+        {
+          "x": 716,
+          "y": 730,
+          "w": 485,
+          "h": 410,
+          "pixels": 24111,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 431.5,
+          "y": 314.5
+        },
+        {
+          "x": 942.5,
+          "y": 317
+        },
+        {
+          "x": 336.5,
+          "y": 926
+        },
+        {
+          "x": 958.5,
+          "y": 935
+        }
+      ],
+      "normalized": [
+        {
+          "left": 220,
+          "top": 231
+        },
+        {
+          "left": 89,
+          "top": 136
+        },
+        {
+          "left": 61,
+          "top": 97
+        },
+        {
+          "left": 103,
+          "top": 146
+        }
+      ],
+      "hashes": [
+        "938286e48065e25b61006cae13139de78fdc0cb6a188a9607380aea3e4d095a1",
+        "7739d41fdc68411994c37ec055fd8e8359d223030a4c01fd88930db78fc8edac",
+        "b6fba89507844e9e0e7e8e62d50ddd800723a79a49b89f9ef0de1d2f83fe3f63",
+        "e666cdd514c1c29a5d1fd6d72cd40ed16c2d36bea001abd48f9cda352f1ccf43"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "fx-onda-grave",
+      "extra": true,
+      "original": "raw/fx-onda-grave.png",
+      "strip": "tiras-768/fx-onda-grave.png",
+      "originalSize": [
+        1288,
+        1221
+      ],
+      "scale": 1.1785095320623917,
+      "targetHeight": 570,
+      "sourceBounds": [
+        {
+          "x": 72,
+          "y": 516,
+          "w": 503,
+          "h": 56,
+          "pixels": 10791,
+          "edge": 0
+        },
+        {
+          "x": 687,
+          "y": 363,
+          "w": 545,
+          "h": 211,
+          "pixels": 32683,
+          "edge": 0
+        },
+        {
+          "x": 35,
+          "y": 731,
+          "w": 577,
+          "h": 398,
+          "pixels": 100335,
+          "edge": 0
+        },
+        {
+          "x": 711,
+          "y": 1004,
+          "w": 500,
+          "h": 124,
+          "pixels": 8925,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 323.5,
+          "y": 572
+        },
+        {
+          "x": 959.5,
+          "y": 574
+        },
+        {
+          "x": 323.5,
+          "y": 1129
+        },
+        {
+          "x": 961,
+          "y": 1128
+        }
+      ],
+      "normalized": [
+        {
+          "left": 85,
+          "top": 632
+        },
+        {
+          "left": 60,
+          "top": 449
+        },
+        {
+          "left": 42,
+          "top": 229
+        },
+        {
+          "left": 87,
+          "top": 552
+        }
+      ],
+      "hashes": [
+        "f4441303e8d553b1c2348dfc41719889269fb4a195f1e6e8191670289819fb3f",
+        "ee2f10284724b97650aa787a4823c71432e510938a3bec06b9b6a8d573fe1c47",
+        "64ea83115b50aeed674a2a1071707233d6c2028f404c61a99e47f469e1aba34c",
+        "7c0a35f55ed3df67d973d04a4e7fbe3e7c37f1c8d5f43629003c0c8f853cd55d"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "fx-solo-ascendente",
+      "extra": true,
+      "original": "raw/fx-solo-ascendente.png",
+      "strip": "tiras-768/fx-solo-ascendente.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 1.119842829076621,
+      "targetHeight": 570,
+      "sourceBounds": [
+        {
+          "x": 196,
+          "y": 385,
+          "w": 263,
+          "h": 178,
+          "pixels": 12070,
+          "edge": 0
+        },
+        {
+          "x": 784,
+          "y": 180,
+          "w": 336,
+          "h": 384,
+          "pixels": 35939,
+          "edge": 0
+        },
+        {
+          "x": 165,
+          "y": 683,
+          "w": 370,
+          "h": 509,
+          "pixels": 63402,
+          "edge": 0
+        },
+        {
+          "x": 784,
+          "y": 685,
+          "w": 347,
+          "h": 504,
+          "pixels": 27696,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 327.5,
+          "y": 563
+        },
+        {
+          "x": 952,
+          "y": 564
+        },
+        {
+          "x": 350,
+          "y": 1192
+        },
+        {
+          "x": 957.5,
+          "y": 1189
+        }
+      ],
+      "normalized": [
+        {
+          "left": 235,
+          "top": 498
+        },
+        {
+          "left": 194,
+          "top": 268
+        },
+        {
+          "left": 175,
+          "top": 128
+        },
+        {
+          "left": 187,
+          "top": 133
+        }
+      ],
+      "hashes": [
+        "cd3a1348f8ff2ba2b686d601b6a5fad44b7bb7e452fb9b842249026f4268d5bf",
+        "1243ceffedbdbaf7b5c8bd6db7545333a205013feb11a47211dd83d825de2a4c",
+        "b202fa3b383ceb159085086674f1bb4eba6a19579d27eea7fa5be37124f4ee3e",
+        "a5f959b8eda97a02f98dc3a96e26b5c952389402da80da640d86b1afb4feb24e"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "fx-slide-palco",
+      "extra": true,
+      "original": "raw/fx-slide-palco.png",
+      "strip": "tiras-768/fx-slide-palco.png",
+      "originalSize": [
+        1263,
+        1246
+      ],
+      "scale": 1.2686567164179106,
+      "targetHeight": 570,
+      "sourceBounds": [
+        {
+          "x": 211,
+          "y": 351,
+          "w": 250,
+          "h": 128,
+          "pixels": 11530,
+          "edge": 0
+        },
+        {
+          "x": 703,
+          "y": 335,
+          "w": 491,
+          "h": 147,
+          "pixels": 31700,
+          "edge": 0
+        },
+        {
+          "x": 46,
+          "y": 866,
+          "w": 536,
+          "h": 221,
+          "pixels": 56756,
+          "edge": 0
+        },
+        {
+          "x": 715,
+          "y": 959,
+          "w": 460,
+          "h": 118,
+          "pixels": 11535,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 336,
+          "y": 479
+        },
+        {
+          "x": 948.5,
+          "y": 482
+        },
+        {
+          "x": 314,
+          "y": 1087
+        },
+        {
+          "x": 945,
+          "y": 1077
+        }
+      ],
+      "normalized": [
+        {
+          "left": 223,
+          "top": 535
+        },
+        {
+          "left": 70,
+          "top": 511
+        },
+        {
+          "left": 41,
+          "top": 417
+        },
+        {
+          "left": 90,
+          "top": 548
+        }
+      ],
+      "hashes": [
+        "33d2853c05f288883a4d63889505d56e5e51d1d94727980c92a8816413cb3141",
+        "1bc473912007ff8d035a115c1591304522922a9c3d613b87a15bc665bbd08b1e",
+        "b30ba6e512e9d0be2cef7ab98b0ee39536763db45662c5086cab2fb3fc5afb68",
+        "828b43568ee6321454da1732cd1a52f8954ed6b34465c8cf6af2a51d838fe1e2"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "fx-feedback",
+      "extra": true,
+      "original": "raw/fx-feedback.png",
+      "strip": "tiras-768/fx-feedback.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 1.1354581673306774,
+      "targetHeight": 570,
+      "sourceBounds": [
+        {
+          "x": 159,
+          "y": 159,
+          "w": 264,
+          "h": 287,
+          "pixels": 29378,
+          "edge": 0
+        },
+        {
+          "x": 735,
+          "y": 108,
+          "w": 449,
+          "h": 393,
+          "pixels": 75986,
+          "edge": 0
+        },
+        {
+          "x": 74,
+          "y": 675,
+          "w": 546,
+          "h": 502,
+          "pixels": 129351,
+          "edge": 0
+        },
+        {
+          "x": 753,
+          "y": 739,
+          "w": 376,
+          "h": 373,
+          "pixels": 50701,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 291,
+          "y": 302.5
+        },
+        {
+          "x": 959.5,
+          "y": 304.5
+        },
+        {
+          "x": 347,
+          "y": 926
+        },
+        {
+          "x": 941,
+          "y": 925.5
+        }
+      ],
+      "normalized": [
+        {
+          "left": 232,
+          "top": 219
+        },
+        {
+          "left": 127,
+          "top": 159
+        },
+        {
+          "left": 72,
+          "top": 97
+        },
+        {
+          "left": 168,
+          "top": 170
+        }
+      ],
+      "hashes": [
+        "8812400c76b1ffab7e22be911221260c86cc4d59a30a415b56f82c0d5da8d063",
+        "bd2c00885f37226106e3fd01edc703e6238e9493153f8297a67c8752e0dd4420",
+        "fefa9d1c5e777e984dcb4f50bd9e65309b0c2a6c875a3571e17aedff6c09e6b3",
+        "36974976892ef86dfe232d55ad076a041802197e56d0bbfd7eb6018c85dde670"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "fx-terremoto",
+      "extra": true,
+      "original": "raw/fx-terremoto.png",
+      "strip": "tiras-768/fx-terremoto.png",
+      "originalSize": [
+        1262,
+        1246
+      ],
+      "scale": 1.1846689895470384,
+      "targetHeight": 570,
+      "sourceBounds": [
+        {
+          "x": 146,
+          "y": 496,
+          "w": 356,
+          "h": 74,
+          "pixels": 7774,
+          "edge": 0
+        },
+        {
+          "x": 674,
+          "y": 421,
+          "w": 534,
+          "h": 152,
+          "pixels": 30318,
+          "edge": 0
+        },
+        {
+          "x": 37,
+          "y": 738,
+          "w": 574,
+          "h": 431,
+          "pixels": 114236,
+          "edge": 0
+        },
+        {
+          "x": 697,
+          "y": 1039,
+          "w": 493,
+          "h": 125,
+          "pixels": 14886,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 324,
+          "y": 570
+        },
+        {
+          "x": 941,
+          "y": 573
+        },
+        {
+          "x": 324,
+          "y": 1169
+        },
+        {
+          "x": 943.5,
+          "y": 1164
+        }
+      ],
+      "normalized": [
+        {
+          "left": 171,
+          "top": 610
+        },
+        {
+          "left": 65,
+          "top": 518
+        },
+        {
+          "left": 42,
+          "top": 187
+        },
+        {
+          "left": 90,
+          "top": 550
+        }
+      ],
+      "hashes": [
+        "e8e7040f448a85075d950ec1067a8fd98c100a0a532d09da60c89e587924277c",
+        "7e95159358eff75f144bf8904285554cc0bc8a5d55bf53de10159866059ed00f",
+        "0732f6a6a58f72779cc59b8c00ab9133c417a209a30d13f2558697701ea30a66",
+        "a7565a2c1d571198c0f154f470fc0a1129ec6ffe720e375c1fc2975c3f4c08a7"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    },
+    {
+      "name": "fx-tremor",
+      "extra": true,
+      "original": "raw/fx-tremor.png",
+      "strip": "tiras-768/fx-tremor.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "scale": 1.0363636363636364,
+      "targetHeight": 570,
+      "sourceBounds": [
+        {
+          "x": 127,
+          "y": 86,
+          "w": 372,
+          "h": 442,
+          "pixels": 13005,
+          "edge": 0
+        },
+        {
+          "x": 703,
+          "y": 68,
+          "w": 448,
+          "h": 472,
+          "pixels": 33118,
+          "edge": 0
+        },
+        {
+          "x": 65,
+          "y": 630,
+          "w": 498,
+          "h": 550,
+          "pixels": 66082,
+          "edge": 0
+        },
+        {
+          "x": 730,
+          "y": 723,
+          "w": 413,
+          "h": 448,
+          "pixels": 16955,
+          "edge": 0
+        }
+      ],
+      "origins": [
+        {
+          "x": 313,
+          "y": 307
+        },
+        {
+          "x": 927,
+          "y": 304
+        },
+        {
+          "x": 314,
+          "y": 905
+        },
+        {
+          "x": 936.5,
+          "y": 947
+        }
+      ],
+      "normalized": [
+        {
+          "left": 189,
+          "top": 153
+        },
+        {
+          "left": 150,
+          "top": 137
+        },
+        {
+          "left": 124,
+          "top": 97
+        },
+        {
+          "left": 168,
+          "top": 150
+        }
+      ],
+      "hashes": [
+        "d856c23a2314ef2cf911555732127922466d9a06e2e7fe27f72f9b5a511b933e",
+        "71156a89f4e489aa132efdc039b235f479b7cc8c584eb7eb773009de73b88275",
+        "6a4c7e07f3b6ec8f2fd6a6793d7f75342cf8db603a840be62011073aac55ee2b",
+        "e56c9831b0b3adb7e525649d7a6dbd56cb87cf9a810a9dbfb26c8f8ca0eb1e0b"
+      ],
+      "uniqueFrames": 4,
+      "outerEdge": false
+    }
+  ],
+  "completed": 48
+}
