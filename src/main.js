@@ -3,6 +3,7 @@ import { createDevices } from './ui/devices.js';
 import { registerSprites } from './render/sprites.js';
 import { setStageImage } from './render/stage.js';
 import { createTouch } from './ui/touch.js';
+import mdep from './data/characters/mdep.js';
 
 const canvas = document.getElementById('game');
 const devices = createDevices(window);
@@ -30,4 +31,8 @@ if (belem && q.get('stage') !== 'off') {
   img.onload = () => setStageImage(img);
   img.src = belem;
 }
-Promise.all(Object.entries(packs).map(([id, sheets]) => registerSprites(id, sheets))).then(() => app.run());
+Promise.all(Object.entries(packs).map(([id, sheets]) => registerSprites(id, sheets,
+  id === 'mdep' && mdep.spriteProfile === 'ten-frame' ? {
+    lazy: true, trueAlpha: true, maxDecoded: 12, frames: 10, cellSize: 768,
+    preload: ['parado', 'andar', 'correr', 'agachar', 'pulo', 'defesa-em-pe', 'dano-alto', 'golpe-5L', 'fx-impacto', 'fx-defesa', 'fx-pisao', 'fx-ak-disparo'],
+  } : undefined))).then(() => app.run());

@@ -22,3 +22,23 @@ test('held crouch stays low and knockdown selects the settled pose', () => {
   assert.ok(spriteProgress({ ch, state: 'crouch', sf: 100 }, { p: 0.75 }) < 0.5);
   assert.equal(spriteProgress({ ch, state: 'knockdown' }, { p: 0 }), 0.999);
 });
+
+test('guard and reaction art advance while combat counters stay unchanged', () => {
+  const ch = { spriteProfile: 'ten-frame' };
+  assert.ok(spriteProgress({ ch, state: 'guard', sf: 20 }, { p: 0 }) >= 0.4);
+  const hurt = { ch, state: 'hitstun', sf: 19, stun: 1 };
+  const before = JSON.stringify(hurt);
+  assert.equal(Math.floor(spriteProgress(hurt, { p: 0 }) * 10), 9);
+  assert.equal(JSON.stringify(hurt), before);
+  assert.equal(Math.floor(spriteProgress({ ch, state: 'wakeup', sf: 13 }, { p: 0 }) * 10), 9);
+  assert.equal(spriteProgress({ ch, state: 'knockdown', sf: 0 }, { p: 0 }), 0);
+  assert.equal(spriteProgress({ ch, state: 'knockdown', sf: 25 }, { p: 0 }), 0.999);
+});
+
+test('jump drawings follow ascent, apex and descent continuously', () => {
+  const ch = { spriteProfile: 'ten-frame', jumpScale: 1 };
+  const pick = vy => spriteProgress({ ch, state: 'air', vy }, { p: 0 });
+  assert.equal(pick(36), 0);
+  assert.equal(pick(0), 0.5);
+  assert.equal(pick(-36), 0.999);
+});

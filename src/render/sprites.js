@@ -7,6 +7,59 @@ import { spriteProgress } from './sprite-timing.js';
  * desenha o manequim: dá para aplicar a arte aos poucos, tira por tira.
  */
 const REG = {}; // id do personagem → { nome da tira → { cv, n, size } }
+const LIMITS = {};
+let access = 0;
+
+function trimDecoded(id, keep) {
+  const set = REG[id];
+  const loaded = Object.values(set).filter(s => s.lazy && s.cv);
+  const limit = LIMITS[id] || Infinity;
+  const oldest = loaded.filter(s => s !== keep && s.name !== 'parado').sort((a, b) => a.used - b.used);
+  while (loaded.length > limit && oldest.length) {
+    oldest.shift().cv = null;
+    loaded.pop();
+  }
+}
+
+function loadStrip(s) {
+  if (s.cv || s.failed) return Promise.resolve();
+  if (s.loading) return s.loading;
+  s.loading = new Promise(resolve => {
+    const img = new Image();
+    img.onload = () => {
+      s.cv = s.trueAlpha ? img : keyOut(img);
+      s.n = Math.max(1, Math.round(img.naturalWidth / img.naturalHeight));
+      s.size = img.naturalHeight;
+      s.used = ++access;
+      trimDecoded(s.id, s);
+      s.loading = null;
+      resolve();
+    };
+    img.onerror = () => { s.failed = true; s.loading = null; resolve(); };
+    img.src = s.url;
+  });
+  return s.loading;
+}
+
+function readyStrip(set, name) {
+  const s = set[name];
+  if (!s) return null;
+  s.used = ++access;
+  if (!s.cv) { loadStrip(s); return null; }
+  return s;
+}
+
+// Warm the browser's compressed-file cache without retaining decoded atlases.
+async function cacheFiles(urls) {
+  if (typeof fetch !== 'function') return;
+  let next = 0;
+  await Promise.all(Array.from({ length: Math.min(3, urls.length) }, async () => {
+    while (next < urls.length) {
+      const url = urls[next++];
+      try { const response = await fetch(url, { cache: 'force-cache' }); if (response.ok) await response.arrayBuffer(); } catch { /* Drawing retains the existing fallback on load errors. */ }
+    }
+  }));
+}
 
 /** Remove o fundo liso de uma tira: apaga, a partir das bordas, a cor do canto. */
 function keyOut(img) {
@@ -53,27 +106,25 @@ function keyOut(img) {
  * @param {Object<string,string>} sheets nome da tira → URL (ou data URI) da imagem
  * @returns {Promise<void>}
  */
-export function registerSprites(id, sheets) {
+export function registerSprites(id, sheets, options = {}) {
   REG[id] ??= {};
-  return Promise.all(Object.entries(sheets).map(([name, url]) => new Promise((res) => {
-    const img = new Image();
-    img.onload = () => {
-      const cv = keyOut(img);
-      REG[id][name] = { cv, n: Math.max(1, Math.round(cv.width / cv.height)), size: cv.height };
-      res();
-    };
-    img.onerror = () => res();
-    img.src = url;
-  })));
+  LIMITS[id] = options.maxDecoded || Infinity;
+  const preload = new Set(options.preload || ['parado']);
+  for (const [name, url] of Object.entries(sheets)) {
+    REG[id][name] = { id, name, url, n: options.frames || 1, size: options.cellSize || CELL, cv: null, lazy: !!options.lazy, trueAlpha: !!options.trueAlpha, used: 0 };
+  }
+  if (options.lazy) void cacheFiles(Object.values(sheets));
+  return Promise.all(Object.values(REG[id]).filter(s => !options.lazy || preload.has(s.name)).map(loadStrip));
 }
 
 export const hasSprites = (id) => !!REG[id] && Object.keys(REG[id]).length > 0;
 export const spriteNames = (id) => Object.keys(REG[id] || {});
-export const hasSpriteStrip = (id, name) => !!REG[id]?.[name];
+export const hasSpriteStrip = (id, name) => !!REG[id] && !!readyStrip(REG[id], name);
+export const decodedSpriteNames = id => Object.values(REG[id] || {}).filter(s => s.cv).map(s => s.name);
 
 /** Draw an isolated effect cell. All coordinates are visual only. */
 export function drawSpriteEffect(c, id, name, progress, x, y, width = 240, height = width) {
-  const s = REG[id]?.[name];
+  const s = REG[id] && readyStrip(REG[id], name);
   if (!s) return false;
   const i = Math.max(0, Math.min(s.n - 1, Math.floor(progress * s.n)));
   c.drawImage(s.cv, i * s.size, 0, s.size, s.size, x - width / 2, y - height / 2, width, height);
@@ -109,22 +160,32 @@ const FALLBACK = {
 function pickStrip(set, a, f) {
   // a ficha do personagem pode dizer qual tira do kit cada animação usa
   const alias = f.ch.spriteAlias?.[a.name];
-  if (alias && set[alias]) return { s: set[alias], p: a.p, fx: null };
-  if (set[a.name]) return { s: set[a.name], p: a.p, fx: null };
+  const aliased = alias && readyStrip(set, alias);
+  if (aliased) return { s: aliased, p: a.p, fx: null };
+  const exact = readyStrip(set, a.name);
+  if (exact) return { s: exact, p: a.p, fx: null };
+  if (set[a.name]?.lazy) {
+    const idle = readyStrip(set, 'parado');
+    return idle ? { s: idle, p: 0, fx: null } : null;
+  }
   // Elenco ainda sem caminhada reversa: reproduzir o ciclo comum ao contrário.
-  if (a.name === 'andar-tras' && set.andar) {
-    return { s: set.andar, p: Math.max(0, Math.min(0.999, 1 - a.p)), fx: null };
+  const walking = a.name === 'andar-tras' && readyStrip(set, 'andar');
+  if (walking) {
+    return { s: walking, p: Math.max(0, Math.min(0.999, 1 - a.p)), fx: null };
   }
   const fb = FALLBACK[a.name];
-  if (fb && set[fb[0]]) return { s: set[fb[0]], p: fb[1] ?? a.p, fx: fb[2] };
+  const fallback = fb && readyStrip(set, fb[0]);
+  if (fallback) return { s: fallback, p: fb[1] ?? a.p, fx: fb[2] };
   if (a.name.startsWith('golpe-') && f.move) {
     const m = f.move;
     const key = m.air ? 'pulo' : m.type === 'super' ? 'golpe-SA3' : m.btn === 'H' || m.type === 'special' ? 'golpe-5H' : 'golpe-5L';
-    const alt = set[key] || set['golpe-5H'] || set['golpe-5L'];
+    const alt = readyStrip(set, key) || readyStrip(set, 'golpe-5H') || readyStrip(set, 'golpe-5L');
     if (alt) return { s: alt, p: m.air ? 0.4 : a.p, fx: null };
   }
-  if (a.name.startsWith('golpe-throw') && set['golpe-5L']) return { s: set['golpe-5L'], p: 0.5, fx: null };
-  return set.parado ? { s: set.parado, p: 0, fx: null } : null;
+  const throwFallback = a.name.startsWith('golpe-throw') && readyStrip(set, 'golpe-5L');
+  if (throwFallback) return { s: throwFallback, p: 0.5, fx: null };
+  const idle = readyStrip(set, 'parado');
+  return idle ? { s: idle, p: 0, fx: null } : null;
 }
 
 /**
@@ -143,6 +204,12 @@ export function drawSprite(c, f, frame) {
   const i = Math.min(s.n - 1, Math.max(0, Math.floor(p * s.n)));
   const size = CELL * (f.ch.spriteScale || 1);
   c.save();
+  if (f.ch.spriteProfile === 'ten-frame' && f.state === 'attack' && f.move?.weapon === 'ak') {
+    const at = f.move.spawn.filter(shot => shot.at <= f.sf).at(-1)?.at;
+    const recoil = at == null ? 0 : Math.max(0, 1 - (f.sf - at) / 4);
+    c.translate(-5 * recoil, 0);
+    c.rotate(-0.008 * recoil);
+  }
   if (fx === 'hurt' || fx === 'dizzy') {
     c.translate(-14, 0);
     c.rotate(-0.16 + (fx === 'dizzy' ? Math.sin(frame * 0.2) * 0.06 : 0));
