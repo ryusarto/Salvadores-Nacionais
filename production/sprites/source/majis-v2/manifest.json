@@ -90,13 +90,14 @@
         }
       ],
       "hashes": [
-        "0b71d4de74f80a0297c2e7d3df027e6d6aeb662b8d5012036ce3dac2391e8124",
-        "44edafc804ff95f9dde406422a6ea8016452e50c35385c3c853ddca0a679357e",
-        "9be0dc3c19cd45841f3a3685c24af362c82c6c1cc88ac430880aa219a5eb994f",
-        "f67cbcbad0c55a3b111983ec607bbee4e66966d4c75a54bd9b2f9f82384b2282"
+        "cf62ee67260938429cfa2717efb5cc937b3de9bf817c2eb8d384e52f1f873003",
+        "da1ba18cb5e4a8ba16c57f522ec880b7c29c798cfdebd41579bb625b1c2ff6c9",
+        "569436d9341a8a007d460700e3d84dc13f65c910e096ce6f7a34000a55101761",
+        "bd234ea6f80e8323e6463edab5478eefc6f2dff26fe02615c49bb5f27e986643"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "c2598bfdc1b091f07ca1cc71493a91f9780cbc8859fa0ab4e9caec0a32da9562"
     },
     {
       "name": "andar",
@@ -180,13 +181,14 @@
         }
       ],
       "hashes": [
-        "ddd39e75febba5334acbbc6374d88149a419c07772fd26d4dc4f88df4fc74d9b",
-        "3ff33afe0c4a60c409191706878277171287ac3cf3636c342fa4cfee7993ba39",
-        "c05287b63e3e2473f6f91f4d5d88084bc940e4c210d0d4505a7ec7b5bd13b829",
-        "40e787edd7fb59e1c55fbae0d65c1f973ee299d1c4ef5f577c5660e4d9bf1227"
+        "5c91f7de44df21e64a007fb09cc050217454cc111a152c99167923612e60e6e9",
+        "c7be896a27852abdffe36d68c26c958ac55a746987a49afb463e335469266711",
+        "d5c01b436effa823580e3bb63d487fb8fc9d397b176d3cae341a0dbf4422fd89",
+        "631a04762bd9673cd882161bb398edcf2934c8efcf4985227532e00f7e22d792"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "c93974c020a2c23ce74efe314337f906ae41b08bf0c477c1f93540364d989f2e"
     },
     {
       "name": "andar-tras",
@@ -270,13 +272,14 @@
         }
       ],
       "hashes": [
-        "e3c9ef09370475976eb437096da2bd11860a0cf31b2fd15a74f7e7be4429ff92",
-        "3fe1587f3835ff527cb3faf3df86856b4152994853a4f09f601e304deeacff4c",
-        "72d3412e7b49bc785abb0c46583ac67a72e7dce621b9ccaa1d518377fd4967fa",
-        "70de8f51a3495bcc42d09c84d4df3889e1c045afac58621acbe8bb55679a0f76"
+        "be13ce4e44623a42529aeddc185b319220918eddbecc0f02b8b3cef1cac250cf",
+        "a4a0e014577f0fbc8c6f1a2f2476df58218a17d8783221b244df319cb83ebb35",
+        "295b7b64cf95e70b1f8d60c827f04ade5310c1d43fa8efcc3dcd3b116bd10064",
+        "63bbaeaf352af7ea0925314c85ecd7aed6872df728bc51cbeaa9554e06954c6c"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "a334cd0933f50ac137a259dd5cb5466b047cd1e50ec8f39ca32200f5d431e114"
     },
     {
       "name": "correr",
@@ -360,13 +363,14 @@
         }
       ],
       "hashes": [
-        "439640a0cc766c59471587d9d0e5c2b93ea81dda68892b9df6466d14005bb6ba",
-        "f1ac6bc3ed91107ec50f4f0d5dc13112ddde68239b89a41f5745aaa4620e919a",
-        "c7a3172be214f7f1d7b859735bbeed80214b62dc398555fc83ed34a8f0ef1993",
-        "65e8e68056a822a2c4756ec4c2fbd600f00350bc113e0d166564909e1a4bde4a"
+        "336d9c9cebe6d156449e647cbb3a66e931627bc7965de273af39ebda68fc614b",
+        "137032f1b4d85d265f9ad8d3fe3ad4b72824a6785ae785b9fc382d9af6e7c085",
+        "1740698c1d9f688807b713898b3726e7a595ff314fa2b2347e9a012af8713736",
+        "2f55341dbbc7481b476e46270aa8fbde521411a749ae2458b0627608d665cb9d"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "0527a43667bf5911f4087e59676c2a1df99a96a494cf19d8db5d2ea46d55591c"
     },
     {
       "name": "agachar",
@@ -450,13 +454,14 @@
         }
       ],
       "hashes": [
-        "710a0a343888fc6c0da501b2cbabcace4dcfa2cd86ffa0cf94c0488d77b0c969",
-        "c42b0e7dea768653b75ad6c38e7860e8314d3b125fe5bbf2ca51b889ba8de803",
-        "be82887fd6ea4af1c8f431e5a244f3b9429b354f2c50308cdbcb9e024c48a734",
-        "5dcab0f2dd45bacd409b3db43ca646944f5be8198a2d5a92b00081c04969fcdb"
+        "8a4458237de0c2e499687744a21073c030117e699f3b7f8209488c201ff4fb65",
+        "9df6bd934eac657ba86b1ece526c4046a59acae948f4c73f5b0d4a51a3e3aca3",
+        "82f08351297a1a020c65f78cfa4138bde09c13e6414ec59768b4aa36edf361c5",
+        "0383fda52d8aa1aa16ff53b9e7cd65b1b43121f034fe991ee697c5b811c67add"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "4b8c01771331e232e359096104d4ed81d661e45735a1605826608c3bd30940f4"
     },
     {
       "name": "pulo",
@@ -467,8 +472,8 @@
         1254,
         1254
       ],
-      "scale": 0.7704918032786885,
-      "targetHeight": 470,
+      "scale": 0.6780327868852459,
+      "targetHeight": 413.6,
       "sourceBounds": [
         {
           "x": 140,
@@ -523,30 +528,37 @@
       ],
       "normalized": [
         {
-          "left": 249,
-          "top": 290
+          "left": 266.3613114754098,
+          "top": 340.4934557377049
         },
         {
-          "left": 230,
-          "top": 231
+          "left": 250.08852459016393,
+          "top": 287.6068983606557
         },
         {
-          "left": 245,
-          "top": 232
+          "left": 262.9711475409836,
+          "top": 288.28493114754093
         },
         {
-          "left": 206,
-          "top": 236
+          "left": 228.39147540983606,
+          "top": 293.03116065573766
         }
       ],
       "hashes": [
-        "552697450a35710a86c3fbfc03e563f259dc35016212746ca5c16b054023c16b",
-        "d354aec2f8cc2c13400186311d34a2c373f11ece869cce143566491fc221d62b",
-        "3e311bd524efae1ea40f19c2cdd24aa6ab1e7dfd4962d6cacbb76ff9265c9b90",
-        "41fde439db08a3df427d2bfbd988ab18f8decb58f6f94cb268161f2721ca7b29"
+        "b6b4a673d82c7a6048d8b10e6db292b855319dc0121ad08a495a6ecd262eac77",
+        "71933f6cfb2c9792bf5019da68eff26636b62aaf5d1e69d5e092258a73743671",
+        "ccb52b4a4bd9bf4cd4d1b58c0ce668b7dbe8d8ed6187eab249823343c07945de",
+        "1f4b3f25d23bbeb5dfa854f9f397958997f2182b07c6e387a8b97dc060b6148b"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "scaleCorrection": {
+        "previousScale": 0.7704918032786885,
+        "previousTargetHeight": 470,
+        "factor": 0.88,
+        "reason": "Match the approved idle body/head scale; remove per-action enlargement."
+      },
+      "runtimeSha256": "37034cb148229c7569e05fccb5a24420b6bf7a13943877e1563631a01cf0e26b"
     },
     {
       "name": "recuo",
@@ -630,13 +642,14 @@
         }
       ],
       "hashes": [
-        "997f32844424a426f9773301b84ecbafca54f27549a22c2df9b83a34c7985eb9",
-        "afa15bdfd1a74a1aa593e6aa9199751105c906b61a389aee0cd3a0a37cb7ac57",
-        "7a460c7539b85ec3c25791da5e38bd287cc199fbbbb448da8b1dc6e31fcbf7e6",
-        "4fc1141cf7fb5dfc86b568a1c2f490a6c640c1f6b9751d55ac08f0ed8a894d9e"
+        "c1e9e7fa4ea69f44e3663fff65a4070d9a38d6b8f942910f4b363dbfeab28d73",
+        "05470e91cc3d79a32c5fa02610dd8eb0d1d38cc3df2d9c554b36f0defcc1b4dc",
+        "dfc94fffc89b1a484f9ef96fc0a918c2d0375bd43a426a01b165ac263b066c33",
+        "c7deda75832ca853576f9697784c4c6f261be5e8fd97e1529c18a614faf8593a"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "1f265c741aac7dd4bb853ea7518dbf76ccf4c5ef92e9ddfcc1d80e37d40d60e4"
     },
     {
       "name": "escape-agarrao",
@@ -720,13 +733,14 @@
         }
       ],
       "hashes": [
-        "895d8ca83694b9b643f2420c94148a863315b87652a8fb57201616dd1a843833",
-        "2976415aaa158acde4a39516cd9143ebbb6a7f9d01655568f889303eabe3eeec",
-        "143cd1eb4496fbf65402c121d9d33e2babd1347dedaa1a85a3821d8796556d53",
-        "d6d5b423ca3c0d2cadb5a51ce0fce22a108c209388b315cb6b913f36830ac033"
+        "06ab6eaa093cafd2f3962c1d9253ff564effd77bce06a6593834d84d8f82cf1f",
+        "bb0d317e3c22c5fa8cc331cd3d0bbb4b05880a36ec33f5f8b360875463b08987",
+        "76dc52110ae291d24d73c3c36df15fce7d240ed4f49e49112db57dad26aa6fbe",
+        "6b71e3157262946a71975be7b6d670886fb22f776182de4e26b89ba615eaa879"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "9d442ce7d9bc6c28ccdf4b703c2b721597f4122da321315139512f1486e4571f"
     },
     {
       "name": "recuperacao-rolamento",
@@ -810,13 +824,14 @@
         }
       ],
       "hashes": [
-        "deaf85e7aa7670af58e2bcefc9c40e1e3e49b91696a17fd9bbaed7e0444bfccf",
-        "049e6758daac892d8f23a51548071c422b63836993eaaea15127af71ac23c5e3",
-        "231a90a817a3cc055854328bd9b14056c9dccb059021d8e0350f41f302f31856",
-        "366c10262415bcf6b2157d7a94336f65e7107cf5d42e7e30c68dbdc82f399251"
+        "418783271e45cbe99eaff3315c94a0f5dca599358f201f32370ca0720593cf97",
+        "81b0d6c836d1087006e05cf2774642ae22001216b44c4c3952011d134529ec20",
+        "b1cdf0b11abfde9bffdc7338839c754d4545ae234ee671dd9e020ec6fdf39e40",
+        "73359acf6b3040aed8efd2aef0f87620748b50f03f64b6abf741db6d7ca52c68"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "586243b66be3a8553e9332e962d2d739da7cdf8f8543eb3ea38039574ef379f2"
     },
     {
       "name": "defesa-em-pe",
@@ -900,13 +915,14 @@
         }
       ],
       "hashes": [
-        "3d79467676981534f4160e67cc9af3380b80c56cd95424fe8b4c48dcbc65b5f3",
-        "1c745b4d8987dcd3d3e852285aad6d2eaed02d947c476925458b4c333737c5c9",
-        "7a2e10866ba5a64e4e1974e14537a348b2f9ca400f264f43907a8c7488c39d10",
-        "1b43176cd1791d3c6dac8c5b847a640c49466a7ec380d9736a09c26f4e784cec"
+        "8d8429ebf02deb2dc01acb0de2fbff543e11cdd59648f201a8faef99fe6593a7",
+        "0ce8611718fe5d0ded37a7b4abc45198562398652d56199939550372e9ed7ef4",
+        "380a6af5bc12bf9d4ad29880abb71fec0486939b271fb5430fcd8739157aff6a",
+        "49aceebdb9c2476caee6f9c95c9362a65f30817a95182115e7ef0c5142192432"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "7c6738147971e2ed4674a00d7c8fd054c6addf9d6a81722d6667c5901d9c9e1e"
     },
     {
       "name": "defesa-agachado",
@@ -990,13 +1006,14 @@
         }
       ],
       "hashes": [
-        "4aee6e021c5ee2a3666fc7188c410f0e2ff10519395c7cd0a1426fa32fee300e",
-        "f9e9f1a9ad8d8b6e1247a307a623c6922ff959279f8ade496463328fbd03de6a",
-        "1bec4ba55dc87f5ea1308ce1ddb4bb42022dabd9015907d3396bbc66db780c1e",
-        "e98e8a1fcda508a6a4cfcf64efecd1a80767d7e9fecf70ca091429d33ac2fa46"
+        "7b183f9ae836d111e67d1a51d8b0eb36c07fee5af8bfb3f1e8953dcb20b213ab",
+        "87eca483cc4f9845422841c93db8ae4025ef5b1a600dc59da312144255765d16",
+        "10977d5f2aec599dfe4d78ddfa765794f4a6a28fd092aac4079c4a72017bf77f",
+        "718b1dd622773a3a02fcf8101b3f2189d8e5a28d0e3f1bc82839ccc701cc98ff"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "428d563b9aa08b630e14828b3d2328cda355d13e8589e4695cbb7d795f845450"
     },
     {
       "name": "defesa-no-ar",
@@ -1007,8 +1024,8 @@
         1254,
         1254
       ],
-      "scale": 0.6774193548387096,
-      "targetHeight": 420,
+      "scale": 0.6096774193548387,
+      "targetHeight": 377.99999999999994,
       "sourceBounds": [
         {
           "x": 114,
@@ -1063,30 +1080,37 @@
       ],
       "normalized": [
         {
-          "left": 248,
-          "top": 291
+          "left": 262.3693548387097,
+          "top": 332.7486129032258
         },
         {
-          "left": 254,
-          "top": 295
+          "left": 267.85645161290324,
+          "top": 337.01635483870973
         },
         {
-          "left": 233,
-          "top": 293
+          "left": 248.95645161290324,
+          "top": 335.1873225806453
         },
         {
-          "left": 235,
-          "top": 292
+          "left": 251.3951612903226,
+          "top": 332.74861290322593
         }
       ],
       "hashes": [
-        "e49aada73bb91a124e7a2f63ad2e61b06a52886a43f78727734888106f81bc02",
-        "b84cbd5c0b404fce25a6ae4e423a4e91a11be507eb020c3f67d7049379407171",
-        "043c7a421af5666952b6672482e88831bf8c0bcfe33f8bdd2351eb2380189b2e",
-        "23845363373b27841fbe610f3605cae604f0dcf478d7ccba7f75e9560497ab49"
+        "f482608e7c5eb16b287e02c206a0a4085832fce4136ebf0ca3251a23a4cc6192",
+        "db95b3c848b680e4484b63edac8ba16c385ee960f4599a19b1cdda09067f66d9",
+        "c686ea27c19c66779eb251ea05ae2248edae06672b8819bcebfeaaca7bf86a57",
+        "76e2f0f99fc33c12aaec947b2051bc632986cb6f44ae3231ba1395080e0d18f8"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "scaleCorrection": {
+        "previousScale": 0.6774193548387096,
+        "previousTargetHeight": 420,
+        "factor": 0.9,
+        "reason": "Match the approved idle body/head scale; remove per-action enlargement."
+      },
+      "runtimeSha256": "61fda9c7e0a1bb721b786c45d3cd52d227391c7c4ae1c30ad2895aafde3f41c6"
     },
     {
       "name": "dano-alto",
@@ -1170,13 +1194,14 @@
         }
       ],
       "hashes": [
-        "dc1f2d3a9c495ffdad74695ba42a9174964c171c6fd84fad1338dab09489bdf5",
-        "8bfc5f3bc96ce668a2a8ec1788b231ce479172533bd6ed06b0f7a8aabe8ab13b",
-        "14ba57bb67f13d6472690e4ae4c4cf66520a2706c0be5de6d01e45b674de8ab9",
-        "61774548029ccea9caf9f69af131508c01ae6fc75281f76cdc03c110771cefd2"
+        "507beabb135c971f42f074ed1be0f2e8a78e8f99c4541e63307ca742b200271b",
+        "7afaec12e09ec7b8a824d715ed05e6e055c63dc158ea55f00c8fb4c6d7123940",
+        "f244bd1f362edb7f14e114db060723363b2808482e6e4aeefb1f4dff583277c8",
+        "b92f42b5208d601927427484566298c4bc01cc6f037e022f4aec6960211225c7"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "a7a695f863bbc56451128af217e41ff43672cfa22dd36f1fa09bcb3164586ce4"
     },
     {
       "name": "dano-baixo",
@@ -1260,13 +1285,14 @@
         }
       ],
       "hashes": [
-        "3626fbbc24529ab662a06427a1d550431df1c930071c27fc904fa1648985c69b",
-        "fd9f3ba515778766f45327997f5f4f4e9279d1f357c84502cec03fdaf11b8a9c",
-        "802270cc115a13f445ff4fbfa8912ffdc342d9cc867c189ea076c2f13a355e3a",
-        "7902eeb2227c28786c454142f3b969cf14d9f106a91407dcf9b8a6f30b362ea0"
+        "08551e9ed46376880297d5d359a87e8f05271b8914e28b5f2757f03755bde0be",
+        "d256a73769420deccd5850b02b60526b4c65b629089c62bae663bfe9d3ba111b",
+        "daf683eff50c2ec756cc13ada5629bb11861cb3a7ab6a8021926256563c9da67",
+        "1c2a3c310b8b7404b815dca41a36368227d864664ec0ba325774f96eb72691da"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "9c647a70eecee8ccbcf962d99e497c969180fa994cc1a0f042f1eb568a7603ae"
     },
     {
       "name": "dano-no-ar",
@@ -1350,13 +1376,14 @@
         }
       ],
       "hashes": [
-        "4ed0f5b7f225656c059bb4c24e46498385ee4330131b9ef9c7873ef9287f9f70",
-        "f031bc8eb14b1a3ce2d2fce0db09d97e69beac6c4d2ffebaec44ac5d3e4c4ec1",
-        "e09c7c34de5f323a87b6e35da4e7f082bf05e0b794965c1954d037e0682a40fa",
-        "8b7563585bf04bbefc4705c1d5b2e309bf3047a61f519145dfbc4ac9356c02e7"
+        "5cbbb0d597c2edb14dcce5218308ec4c6d1171970e25ee057ff326eaaf1174b1",
+        "dadd63a9a448ca119b3679b38d0ba474d5ae86b7863a73630d524d06c1091183",
+        "7d02917d3162497ac316968ec9df8cb8d41094e3912675edebb0187c298a42ca",
+        "723fb980b74cf3f5577d8619ab46e2b34a08f8f1df32b58f730821d78a36b907"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "36d0bbfe8f0295dcb4672e8fc39ed6a77191c4afa45ce802d5eceb9b1f6fa1ad"
     },
     {
       "name": "caido",
@@ -1440,13 +1467,14 @@
         }
       ],
       "hashes": [
-        "b2f9c9bbdb5bca5250d81042ae526df0b4c3cd50bad910a3c4ce860a5bc44863",
-        "512bc5b03f1a589b55588861748064121a8cc762235b403f64a6da41df5ea34b",
-        "3559345fa8f2f94b65e0c66f3ae9f0940c31c5fef5447733a3b450341aa13dff",
-        "bbb9315f1b11910228ce78bf42c0fb44571ba8c89e87bb46cfcfbb71b1a87c64"
+        "31ebb286c1c93594571e43e8922baf97c10d9e0ddbe4303d3f8e38d220da36c7",
+        "3959e2c1a652c063398b5bdb93d9feb6b3a078b5e5801c8f2263361d979350fb",
+        "75224ed959aeeaab9c56af7aa4bc1e2a0e578f9c38fcbaf68ffdd91a8cae9af7",
+        "a03bfa3eb187d3b903eea76124e1e19c73866572b1e370737a29e06369df492a"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "420352fc561478e39f3bb8aac03501815001b301de0752a79322166eb76c6ab6"
     },
     {
       "name": "levantar",
@@ -1530,13 +1558,14 @@
         }
       ],
       "hashes": [
-        "912039a03057cf225b0ffcfe2b2b7b827a2eba48378eb8aa01fc8c985d898ded",
-        "6e42a281357829476ec8a5f7f69fe3dc86a55183b45e42b60a13f6dc50c09b9e",
-        "06843533691601307d829a96f68431854114c3f02cd510e824a2e00e95acf070",
-        "080e0a4a6779b14720591cb59df7b42e55902bedc00a66b6b49b050edcf8a90c"
+        "6c32243b2078bb19b4c0584751d8f02a31ac1cf3c0abcaae4317a193beeb2de4",
+        "72ea2a96c60443030b0f0fbb846068a1f0766f15a1909ed75c0b3883c6c96500",
+        "c969906b640b9e1933449042cae02807a8c4d80e5773dfd0f8c6954b3cc6737e",
+        "7e717f2e1dcefdfb706cf1b86c871956ba61799082392b18d809b08796c6c631"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "357af381e960c6938df669baeab3e60fa621a9c75848024d8ab5a93c964d1ef5"
     },
     {
       "name": "tonto",
@@ -1620,13 +1649,14 @@
         }
       ],
       "hashes": [
-        "aea39c3760f700add046f5680ca32e2107dfb5bba07c08e32a68327e35964092",
-        "882ac0b8d90e845b9219e7f155fd3e94b7951fdd70b3a6f56946f712456da4aa",
-        "76325a28c0718724b7c10567e02fcecca4f95b1f91c793e26e70d613bb0394db",
-        "7b718355c5b239b17ca1530734fd136375dfd70bbe65d9a3577eefa924803cac"
+        "281e43a945c5ac904b9b49098fae285412dfc4fa7f1db6b5de378bfeaeeaf07a",
+        "e1e276e528b633371851f63d7fc788f87f3381705ad274fb80b2a8d167a8772a",
+        "d5857c62d646601a8fbebbc21544e55d0925ce830489c7fef13a8d3eb88d5f77",
+        "9f73eba07fa8cab08e7cc6ea72335fef0dd44e4347615d05b5aaa90d4b5490d2"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "64bc04cf6f328b48a0f02f4a0b395b0450df394f767d29b6a856129af5bb7d29"
     },
     {
       "name": "vitoria",
@@ -1637,8 +1667,8 @@
         1254,
         1254
       ],
-      "scale": 0.8548387096774194,
-      "targetHeight": 530,
+      "scale": 0.7580645161290323,
+      "targetHeight": 470,
       "sourceBounds": [
         {
           "x": 163,
@@ -1693,30 +1723,37 @@
       ],
       "normalized": [
         {
-          "left": 254,
-          "top": 168
+          "left": 269.9112903225806,
+          "top": 230
         },
         {
-          "left": 232,
-          "top": 171
+          "left": 250.95967741935485,
+          "top": 232.27419354838707
         },
         {
-          "left": 207,
-          "top": 181
+          "left": 228.21774193548387,
+          "top": 241.3709677419355
         },
         {
-          "left": 225,
-          "top": 181
+          "left": 244.8951612903226,
+          "top": 241.3709677419355
         }
       ],
       "hashes": [
-        "a1b7ba9aedfb12420d93e737fbd7ea72dc4e46184c86848cb30585b6d98596b0",
-        "6f14dcdef3ac21c65ce8e7eeca2f8259d0e45416f6e07343b95a6640fa0f05d5",
-        "9229f644f9cfb998a27e3ab7eaf9096432c9134cc3430e6265ce5590307b320b",
-        "1ac69858f0a29bdee112ff6b413899e91d37f65409e5a1c73122ed44496f2ed3"
+        "87fd1164c7f08fdc16d415351929ef3cc26e26fcbbca18ceb2e0753d9cab7433",
+        "aa6cd87fc6b9b44b48a82d7770e787c359c98b721f975b6a2bb9cd55a5fb0194",
+        "4f8c8b2197b57268723ba1d4ef2bb3914102ab2df9de197dc084c4bdad6d3523",
+        "3e3d65fc60e08058ee7c9671dae4f5485dc12132fc8c90aa9aa4498104f49a74"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "scaleCorrection": {
+        "previousScale": 0.8548387096774194,
+        "previousTargetHeight": 530,
+        "factor": 0.8867924528301887,
+        "reason": "Match the approved idle body/head scale; remove per-action enlargement."
+      },
+      "runtimeSha256": "31b82acfdc794dd19d229368258cfc0471172e1422e20af844b618a47ef06430"
     },
     {
       "name": "golpe-5L",
@@ -1800,13 +1837,14 @@
         }
       ],
       "hashes": [
-        "19ff4528bedb5fb875db426e827ec1c85fc8fc1a86f3a2fc041fb2baf33c1e5f",
-        "a1bb467dde5bfda93cd499291025afe24e97f68897aa0072cc6226c211a2d1ea",
-        "7a3056039451e2587e1377a60b4489c78c2c3a49a5feffa8683ace890d21becc",
-        "ba1a3b26ea0495cbc9585794294c735617361ba707591f88af582e43e92fae9c"
+        "81487deea6b89192b7af7a34fa1a9410ce99ddc4c0d91b58d0c494ba010a4254",
+        "f3f2db553f768c3ff1c4a5eb903d587de8e4f1f7d47010f36870b84ad94e7de6",
+        "5fb1e0b2a257818bac315b72d9c2c20414ee884a2709722b8ec08568f9138f5f",
+        "9087436c048390370d9aacfbd606c14e013a8eba9dfb60c92eca78085ce698ec"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "50d9aca2d83123afc1556d1f18941f44d0ddf452d799b0383ffb09284f217285"
     },
     {
       "name": "golpe-5M",
@@ -1890,13 +1928,14 @@
         }
       ],
       "hashes": [
-        "00dabcb9de769a6becf4dc72118b6e29390517d5a23d9055c35f2784095f3139",
-        "60375e10d1fe38dbdd0f0e679f7539654ce73a7431985032a7ecefa4b23be254",
-        "44542ad97536d19e2bb0b3ce9d1af0b376a3298fbeea2c35fb22d7248e02cd4b",
-        "49239498ce7534d1d7c3a722b7b4db816628b7a953dd75b958ea63258c5753d3"
+        "5cbcdb30ff57683fff63037b3eedd1dc7ce8a1e8dc2c8b59bd6049d9bfb26f44",
+        "ef4e98acef7ea54a3738532688967459283e1aaec3e79eca40d4b19cf80a13fa",
+        "85fa6829eb50823a26fd0662f4e8b58994ac4dd282e01d13e7421d40273b7f7b",
+        "80ecdd0bd868a98b36d16deb291acf15673f7b2cc6871726005b032918a2a2fe"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "b696dad7f8395537b0603557c8a3c39858a861338bee4e608dc75b6858fa0f03"
     },
     {
       "name": "golpe-5H",
@@ -1907,8 +1946,8 @@
         1254,
         1254
       ],
-      "scale": 0.864,
-      "targetHeight": 540,
+      "scale": 0.7592891760904685,
+      "targetHeight": 474.55573505654286,
       "sourceBounds": [
         {
           "x": 137,
@@ -1963,30 +2002,37 @@
       ],
       "normalized": [
         {
-          "left": 230,
-          "top": 163
+          "left": 249.9854604200323,
+          "top": 230
         },
         {
-          "left": 180,
-          "top": 158
+          "left": 205.94668820678513,
+          "top": 225.44426494345714
         },
         {
-          "left": 201,
-          "top": 234
+          "left": 224.92891760904683,
+          "top": 292.2617124394184
         },
         {
-          "left": 181,
-          "top": 173
+          "left": 206.7059773828756,
+          "top": 238.35218093699513
         }
       ],
       "hashes": [
-        "0466c78047430cbccc32989376bb1b943ab886b35905cadb8209a2590ef582d0",
-        "78a62ab825e92feff13ac655f8b13d10fc8c94669795d718ede7924fa2f8144f",
-        "453f5af2749aa8c9f91ac7df92680c7d307e002177e8e58b2d740670d1bd8ce2",
-        "82da294db145f7831e6f10ede5dd30f57e1a171971a1caba1f99ee5698a66331"
+        "bc32118a12c096dd8b4c3c610f38b408c5cab6c285b9bc246f7b11f8156b6daa",
+        "6be2be07b82b7c838b496a35f5cd2d66fcf762fb502158d6bebdb1650c8f0638",
+        "a05059f104daa15aaf94bea7ab41cbb491212d9f08d8739af98239ffc65e1665",
+        "da2bb4270aa800138234764775264eceb7ff5bd36fcc6a8807258a7030aec766"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "scaleCorrection": {
+        "previousScale": 0.864,
+        "previousTargetHeight": 540,
+        "factor": 0.8788069167713756,
+        "reason": "Match the approved idle body/head scale; remove per-action enlargement."
+      },
+      "runtimeSha256": "edfe25fbd6d181c3c053d8db6f114676bc0aea04e45310eeb482feb78b7b420b"
     },
     {
       "name": "golpe-2L",
@@ -2070,13 +2116,14 @@
         }
       ],
       "hashes": [
-        "26e95059f47ba6a725c49afae9e9bc63093e2941819e1a89fa1ee70a72b234af",
-        "c6f2d0bf26914634aad310a0aa248a627b99bfdadb868b4082f9610ea1adebf7",
-        "ba4729ed6ca63c0115fc34538995fe190893570db0c414b6e84858a972fbdcb7",
-        "cee718087c860299abe61d73ac9e0ffd34eafe5bbee8fbae6b5eaed456b2b4af"
+        "6206e84860d91751f9589c8f924eaba8400875623105303bd8f0d78f9b4849dd",
+        "f325b50984b2b9f6856b2d1355f4fff7befbeb53a7831cbfbcfa813316f78a82",
+        "cd7a7bf1d89da12c96958c6a2808abec39dad3d720410cfa072b60700fe6f852",
+        "669e3bb7260d5d35eb0d7a52aeae7e6117636af6dc0a1209768e3c6da638e30e"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "fcbb70b336af4c56ed9672524b8dc149c6901f6fcaf9a39e9a6b1df07813ec43"
     },
     {
       "name": "golpe-2M",
@@ -2160,13 +2207,14 @@
         }
       ],
       "hashes": [
-        "ae4800554958cacdde73b5b656689be64a0c3f173c2004b2e48cc45771afafc4",
-        "98d8086383f7c870e883a23df45496811e06df4fc85b3b7480fbde3afad2abe2",
-        "bad598297a177b7401c32c00b61a486856a49cad83e34d69deb0beedad03b66d",
-        "780e1b1f26a1a411475b62c09cf371c2d321eaeacd0ae02236eea3769b43bb9e"
+        "43b203e2f63c63202b6b7ed0e59ba4302d286ff649701c6f1a0e191c412c5ae4",
+        "01ccf0e807bf84ffc173dd745e971e3220b49d7a18bf762affb3315d2d0b6e3e",
+        "92f778667490084525f59b66e138050b05573d51a1756556172e82bc238868d3",
+        "a969a2e2f298931d42c0887267f04cbf4f177610a240b2a2bf3e21e6c6a16fa0"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "ba883144b98a133374b80bed909f9aac6319ff5ec5d20571ba3c5b66c0cb250d"
     },
     {
       "name": "golpe-2H",
@@ -2250,13 +2298,14 @@
         }
       ],
       "hashes": [
-        "a86d379acdfcfd798750d317b33387fd10eb9437f4708987498d4678d9863e3f",
-        "3e02c67ba04716436e24eb9003568eabce20d9fc15d4f329e7be86ec57534e2e",
-        "87c4e4787ce9a64730eb9fecedd033c3a5b914825b46f467fec8891a086332dc",
-        "c9c5bca233d868eaf20232e019aed6afd009c87b2d538faa8777087ccfc24150"
+        "44a7a65342f483d40085e84acb83f192c11a2a58c0fbf42cdba11c0001c2c463",
+        "3eeb0d2a08b87726196b2fe62366eeb36851b6bd2f5a56686eef6e474ef7e8ed",
+        "35ef8f2759e082f0f8c30e414c5a146d6b203ac1ee0183392987b90338e8952f",
+        "4e181a9ab8bb1280bb7ec3b06486af5f26efddba7caf39d64086a4a2d6aaa3a7"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "cbae25bb0bc4d111061951d33a364f97b278e7b9e9676cb55e28ef953c6adeda"
     },
     {
       "name": "golpe-3H",
@@ -2340,13 +2389,14 @@
         }
       ],
       "hashes": [
-        "a9814ea202367d647ccd41b267ecccb5ca38bc6acc5b6a4123547cb4c1589ef2",
-        "809172f3d40c6ae2628628a95e8c47b9a6e1f09a61b19e7eee922f6950c70a5c",
-        "2b3d9eca911dd0fb6eee51ff8e83db9dba5fc4af6894deec947d7ebf75535ae5",
-        "adee2f6391e60229a6fd078c257e1fb9f0fd713107564601007d919cd13bd477"
+        "3e8d2e23ddd69bf5d2c821a40cb70442300551af2d6cb0a4f036bc8ba637e424",
+        "b02be1913d565a395c58f6e672265fde0e68dde8a0243d28baf6df6ce2d5e939",
+        "4c7fbda262cf135f1e5f762a3a81ef65d11119a83816835120cc6179a1e429f3",
+        "4c97a2a1c5d3184a9d4d5e5b0619836d828af9fadf9775b9775362356de6a2d7"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "4377d31ab8c0c9aac811607bf484732448ed43a8bd4aa9c83c2a26e805c936de"
     },
     {
       "name": "golpe-6M",
@@ -2357,8 +2407,8 @@
         1254,
         1254
       ],
-      "scale": 0.8631921824104235,
-      "targetHeight": 530,
+      "scale": 0.7742998352553541,
+      "targetHeight": 475.42009884678737,
       "sourceBounds": [
         {
           "x": 158,
@@ -2413,30 +2463,37 @@
       ],
       "normalized": [
         {
-          "left": 248,
-          "top": 174
+          "left": 263.59637561779243,
+          "top": 230.00000000000006
         },
         {
-          "left": 180,
-          "top": 173
+          "left": 202.42668863261946,
+          "top": 228.4514003294894
         },
         {
-          "left": 170,
-          "top": 189
+          "left": 193.90939044481058,
+          "top": 243.1630971993411
         },
         {
-          "left": 230,
-          "top": 168
+          "left": 247.33607907743,
+          "top": 224.57990115321263
         }
       ],
       "hashes": [
-        "58cc8c7307e480ec96433ecd4f3630d89555ab9ff8f6c29edf88bdc145f5be4a",
-        "7a636e430d5f3f1b8d2335429ef75870b25885afd6b165e0f7108196c18950a6",
-        "33ac37f9d76c1b202fc3dfcfd98b2b1476b234fb04109084f3fc5796d602281c",
-        "b8df601dd233ecbe89fcbfcc56acadb97a646956d8b9b59c4b146663291b5cb8"
+        "cd6eacbe02d5e8327f68e5365c2fa5bdf7490c638c20c6b679f9d24ddc3b9992",
+        "87b61f1546d4abeb6c8edb5d499058ecd2a1df9ff8a7ee118a3be5f9a6bc2657",
+        "bb361b61b2dd7377a27781678f7417b28d7d777c4394823e70d6f32e4dcb075c",
+        "c63bd31a8ba0e19ae881b3b97aa11f608e601adf331d10b504053dfa07a62891"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "scaleCorrection": {
+        "previousScale": 0.8631921824104235,
+        "previousTargetHeight": 530,
+        "factor": 0.8970190544279008,
+        "reason": "Match the approved idle body/head scale; remove per-action enlargement."
+      },
+      "runtimeSha256": "ac9175d9fdf6ef94740a88a340521bf642121a2e9984d400acca1921c4905c65"
     },
     {
       "name": "golpe-jL",
@@ -2520,13 +2577,14 @@
         }
       ],
       "hashes": [
-        "fa81207177d6cbb25e8e654db93e64922f2cec68425e6230a8397c9bd4fae53b",
-        "9f328a258623c8137c4fa2f55cfb148612c179e002c943f3305ab4bdf3f1e132",
-        "9f27dfa8e17ad1881dfabcfd80c7b6110764f0804c74ca5611bfe82d7afdf7ea",
-        "75a5618836747d601b829fa2c2f7edc464295cfc56f62eb888652389ccd6945e"
+        "f0d864707738f34b3cbc93ae1068991e7be62d42567081fa1e45d069ae6ae4d2",
+        "e06537d6d99eae21a0aa1af3733a5a0186316e7fb0292e274dfa8cd51b6dc091",
+        "6dc1eb6bbe46eb726a2ca282d19594660d4f129e645b96441ab187bcdda15f60",
+        "3e2e276346836b0c864feb0c0107c06785fc69738b42e2871e628a606fd748c9"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "2ace00fde431979851a7a8fc18d8a1df63c99b9282159c5ddccb42ee2f2e7f6a"
     },
     {
       "name": "golpe-jM",
@@ -2610,13 +2668,14 @@
         }
       ],
       "hashes": [
-        "85b5eb1ea8aeb728fe0c9af9234fbb6f398629674f698dc4cd166ddf1f2db538",
-        "4b3d7fefcebcc8e80432998342925cd86ecb8d93e2ba54a2210f5b11559ec51a",
-        "2c3b20f6e2d6b53c83d2e0a0b38405fa8180f3642150bbae4a0f9f42a910eba9",
-        "48018126a231debdad205f5001fbdffd7fffa001a4886a3993488ffff8c60200"
+        "0d66dd537db366f1f4fdef13bf1120c6dae04de263f6d3ae712df2faab91490e",
+        "78eb9ec64ee8355a40ebd8f9e4f83fc92d63c51f9cb5efcca38f152fea9bcf54",
+        "e8dd4f21a074bf9e77e29733c9aa47bebfb8b86387712745ee0af7a43c4abb3b",
+        "3565f4323093c0167b9bfb52f84ce9ee3429ae8ae4a043ed5326f07126050a45"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "d7044d35210d546e7f8f6fad7717686fd3e62d9c98df4b860b19cbb0c5396aac"
     },
     {
       "name": "golpe-jH",
@@ -2627,8 +2686,8 @@
         1254,
         1254
       ],
-      "scale": 0.8833333333333333,
-      "targetHeight": 530,
+      "scale": 0.6625,
+      "targetHeight": 397.5,
       "sourceBounds": [
         {
           "x": 154,
@@ -2683,30 +2742,37 @@
       ],
       "normalized": [
         {
-          "left": 241,
-          "top": 188
+          "left": 278.33125,
+          "top": 317.43275
         },
         {
-          "left": 138,
-          "top": 162
+          "left": 200.81875,
+          "top": 297.55775
         },
         {
-          "left": 163,
-          "top": 189
+          "left": 219.36875,
+          "top": 318.09524999999996
         },
         {
-          "left": 163,
-          "top": 213
+          "left": 219.36875,
+          "top": 335.98275
         }
       ],
       "hashes": [
-        "6178d65466299225d507d75ecc5c7b5404cf98b94edc539178e00e9d25b606e9",
-        "580a231a1c61615c0ee388fb2bc4807fde682004f33f75d879892b3a5193e25b",
-        "30d305bcc65bad9c264276a2a843861fa9b08f7dad3bd0e57e88a061b6e6041c",
-        "a59664a6626b8ac007026e671bd176502505f431022e8f75a6fba67d535e9bee"
+        "329513b24bcbf582593542302bf938b3c84a8a58a51be926f68b86fa10d1e15d",
+        "f0d0c17e62301e18572d47e7e9db730fc4db1070f96831fb2c6b288870c24dc9",
+        "afaadfbe5b4e3ad5c5d5ea33f988433ce6e0fac9370f429719c80ee43aaaf75c",
+        "f3f23524415084f7059ac3822c11cff5e0461dd90dabaf66014c6f8da90c92b8"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "scaleCorrection": {
+        "previousScale": 0.8833333333333333,
+        "previousTargetHeight": 530,
+        "factor": 0.75,
+        "reason": "Match the approved idle body/head scale; remove per-action enlargement."
+      },
+      "runtimeSha256": "fe9971849582c0e996e25dc9b59b0f02b1b3eaab24cd10bd495e9178782638fb"
     },
     {
       "name": "golpe-throw",
@@ -2790,13 +2856,14 @@
         }
       ],
       "hashes": [
-        "0ba44c146da64bdaca521f540fd65e9d02d6130acc1dc87e8916dd7ad8cb3c66",
-        "e8c228cac45dad54ce767663c0282a46ba54e5b408ad87d24bc489b17794f3bd",
-        "fdcbae9e65c41fbd71adc67f1e8608869335032a32edb648f9911168f8bd33be",
-        "7a2ccc379487754b95fb4772412060899071326ce953bea3fc52c91c2fef5377"
+        "5a32bfe035085d6cc5a467e23f0a236e85e658d5da93bf221b0b91ddd0701e79",
+        "407cc3924dd4f67b4d29ef2764a90bd8f14d320c76b1af5bed3f665b9404bb2d",
+        "2a07da3af030de2c066859b429d9d72cd5fefe2944d4b1bd86dce03827d84776",
+        "381509d773165140727eec8836e33ad7ebf91ba2dba74cef662bf2a57bdd72b5"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "6254f38af430586ce368b760b741311d8d98f4d88f3227c0147ed522f4611837"
     },
     {
       "name": "golpe-blindado",
@@ -2880,13 +2947,14 @@
         }
       ],
       "hashes": [
-        "4ea0812aa2d528fce90e45acf8bb9a50b0ec3a19e72034cee381603be37b58e2",
-        "84493167ecd56c9dfc41abf71cb59b11ed2feb11e49c44ae3ec1763dca165b6b",
-        "da2973bd1d40c534976f2a6ebdd5757cc37f0112c7e369b25aa5b1d6db9cb878",
-        "323025df05050b9d40903c2f035af11c59131a401663c12e2db076b30d077968"
+        "abaff4fa1b00b14273c779b70b19082f6ad43689dee12919aa789bf5deec1dc0",
+        "f26758985e82ddbb52bd44aff6823e83f136aacf0cd82c6dc1f8cc916ff363a4",
+        "e50faebfd53518465d3879c645bf20a0f67ca32bb6194501af9532d9215753a3",
+        "d8980e59e15da690c1100fa63fd243acffd01b62ca36a033c0e971fe6fff47dd"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "cd26b8c56cfc86b14762889f57a7fd0e6ed9e66227b1c49a5805ab35564110f0"
     },
     {
       "name": "golpe-5S",
@@ -2970,13 +3038,14 @@
         }
       ],
       "hashes": [
-        "d313b51006c511bf3b05163ce68ca3fde1e52afc60df742c9ef415146608e3f3",
-        "b8edd30c48dd1e955b298aee275fc9969009c19300ed2e97d44fc5c51420d04a",
-        "a636736b2e0cd460b8acda4ac7c3fdb08f977758302ed55bc4619f06a4e83a23",
-        "7157df16c1c705be2d71206a339b47c62c6105d4a36f07358880faed26c6187a"
+        "135c4c64080767bbf03013277fb5e14afba7b8bcdc31cee5dfa0f63b91951643",
+        "59f3f9fb8151bb17df1c3c2d514c16272411f34a0e75428776237f4b12beae43",
+        "62500842b7e3d8edd4a783820492ca1c600833c707ea873300c16ca0c23ab8e5",
+        "100caee67fa910b267c47a5437b661c36f1463c7f9c6857b7c26f5b2322edd8b"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "3fc9f33c1ba55e6162864e7df2faf177467f5ab61bc6bbab7cbbd0dcb1617c73"
     },
     {
       "name": "golpe-6S",
@@ -3060,13 +3129,14 @@
         }
       ],
       "hashes": [
-        "ae89a66c0caa2ba65afb7aa1c3e555c48c4506adfbd69aeaf79f7ed08e7ed213",
-        "603a2fcf3e3a15e08bb9162499bbb083ee2956bc021ae116c07a0186f51db843",
-        "96e4afe3233455bc02ca05aac5f662c54e476c353ba371960cb978e43ed82c89",
-        "a0a42fa24de96f3b2586fae93b6b9ee532ade1813fe82e636cb539c80a57f72b"
+        "9c9510b4ecae7581afdcfdb2ab5c0f91de5c99c33020e4003b5ec5517b9104c7",
+        "8ed25de5406628b28ac1acbe3feca9a3ac8e7c39bcf2b12cdbe81aad41ef5695",
+        "7b4c7c21f218f64bb633b3c433f000da3fff7a5d3181f07cdd345b0cd3f871c9",
+        "177ab68029b5a90b7543fc189b4d043a33476e9a709e73a3c9e6b7aee6556f72"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "1dbf565a97e37d7e7e8ae665a855b9ff2d1c30b50f498f52f4d892a94378f22b"
     },
     {
       "name": "golpe-2S",
@@ -3077,8 +3147,8 @@
         1254,
         1254
       ],
-      "scale": 0.7605177993527508,
-      "targetHeight": 470,
+      "scale": 0.6084142394822006,
+      "targetHeight": 376,
       "sourceBounds": [
         {
           "x": 78,
@@ -3133,30 +3203,37 @@
       ],
       "normalized": [
         {
-          "left": 203,
-          "top": 228
+          "left": 240.71844660194176,
+          "top": 324
         },
         {
-          "left": 198,
-          "top": 230
+          "left": 236.45954692556634,
+          "top": 325.21682847896443
         },
         {
-          "left": 192,
-          "top": 263
+          "left": 231.59223300970874,
+          "top": 351.37864077669906
         },
         {
-          "left": 203,
-          "top": 236
+          "left": 240.71844660194176,
+          "top": 330.08414239482204
         }
       ],
       "hashes": [
-        "38adccf78a6eadb90037a6e45242d97977e022503818fb7b31e13a515a083a1f",
-        "32945177b1e3407b93186f36e1789924c78dbe468ed4580da0efa067d71a0a06",
-        "c7abce5b686b715b695e8ee132c077f03be72961d54236b4f7e4b102ac6c205e",
-        "e4873e90d3a719bb57b50975bc332aa03f7713748055760b299147b1f0f2e18e"
+        "a5b6f4257a04fe60b6b2086c43fec9d4d6003cefd8cebd1b0e95655369aea275",
+        "e45b0a1580a5a55389415def4641ca39cfe3ba2cf5d9b3298e056a713e78b4cf",
+        "937c6c73e058e7ad6d0c2986b7d17acec4200494016a29581414557917c88ade",
+        "5bc75670e2056d63df7e0ede17ff39832d497322e8f0ba38e5bb6c11f971c435"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "scaleCorrection": {
+        "previousScale": 0.7605177993527508,
+        "previousTargetHeight": 470,
+        "factor": 0.8,
+        "reason": "Match the approved idle body/head scale; remove per-action enlargement."
+      },
+      "runtimeSha256": "026f115a9944745e42cce6699679e9ce1cbaf7cd3b56a8b62df3ac1441ba7faf"
     },
     {
       "name": "golpe-4S",
@@ -3240,13 +3317,14 @@
         }
       ],
       "hashes": [
-        "27ad23aa6fa7f23167099c1337a36f5e0b782453f5d9dde72ab6b76be16e5fa5",
-        "f803bb621bfbf792ae20fcc2e6e25f5b2a43aa623ab4417f3f38a25f7f020d9c",
-        "46546e67fdb09d9750fc37ca509f04040ca5268db6c1f96ebf1c8c375aa757a4",
-        "073b28a46e096f0c5835926414ea94b8f8b43862f54988d7c799cc0f85c1a07f"
+        "e0a628c2187055cb794968a157de1d1506531cb054f12e1b9db85df559d03c1b",
+        "373afb072cc37f14ce3cb0f6b702bff4146c24cb4c3d5fbd9c7f3c14fb54ac83",
+        "3c897a9939156d55495e0e6f8bf0bb45055c13efea852ec663c4f1d079df18ac",
+        "79932754640093d02bb80f03bed32e8baa7c2e1b3693295fe5bd28f60f2f32b8"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "f3f93d651d0bdf312f7ab802e3461320b2ba0a2386fe461977b4a5c88b555e35"
     },
     {
       "name": "golpe-c1",
@@ -3330,13 +3408,14 @@
         }
       ],
       "hashes": [
-        "3d7e78a559644f6a64f73dda5e1463ebf3243a97517ab8d715dd25edf97264df",
-        "0bce0cdcd1c430813b88f752702626227b6cb2ee3cc85dab0c26496e70d99f1d",
-        "1d31236e9382508dcf7121d56c5bb924208d049168ff84246815907de0095e44",
-        "f9b0a3d703af8bce429c4ac0e4cd861c15e6332220639611763105b4c72bd6d3"
+        "bfb8cee6b85349048a844ace91bdcd4f0aec83339fad2c9c8cd06dab62921c81",
+        "41bf9a7f51a47de323f63a3cbe029ef149e8a95cc3d68dc83efc8ebeae16f29b",
+        "d68ffef98acf832d854dd241706509c05464961f5ee92a8cf7d9462ff65cdc15",
+        "071acfa1a54051f0d99fbaad804193b673cdd90462e398fd09ca66f164ef9480"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "937fd270eb4ffcf39a8415ac34f16a952471cc433754ee50c815ef75ab48bfc4"
     },
     {
       "name": "golpe-c2",
@@ -3420,13 +3499,14 @@
         }
       ],
       "hashes": [
-        "a36a50f78d1ad71c3cad936754eb4168db88606b818c79f6b3a10dcde54fb8a1",
-        "8c95d19efbdb1ca9f7bbb7bdff41e0fd4a50ff7c0d45ae2860140d6eed5695e5",
-        "d3474828912a1fbac7c78758190573a94d3397812a77a3ac6498c95e9c8b441b",
-        "91f18e67e81a3be99a614c9ddb5fb5427da97db69e54c9c866213d52325bf04d"
+        "d9e7afce414727996e7de0bd658d53bb1309978732f1d00cee8ae215ae9b07dd",
+        "8411446cb2495edadfdff37a4d7f6f4da0131ba18c919a95c5eb82dfee45bd2b",
+        "9d81ae2b41735513bfc851322a498492d69d7ef996c02413be6be343e3fdf8fc",
+        "32296c4e9d1a5d0508a7b579037c41d91f7f5fcb42b873adf794ee198a904046"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "bdf2c18dd3c9f5705da22005d600cbc525a8b6f783cd4997956be04180835e0a"
     },
     {
       "name": "golpe-SA1",
@@ -3510,13 +3590,14 @@
         }
       ],
       "hashes": [
-        "8b63fac21fc947ec2e7eb45c7e49fe11cd1a86a63ba9b5f74adf8d182909a87b",
-        "5ff50c329859205c796249f8a275d107c49f3c77d42887e524bb3e5b5f33ab40",
-        "c8029a33c3be541b83d36ee36c953ab0fbb2209bb10715abf3f15dc4dec526ef",
-        "9243a4c2be718471826c18169ab7423d4fd36387ed99d915967bc7b9cf8be4bd"
+        "2996da30a913660c49eff5606df82c2f18d46900668f8abf1d8cf4700f2794be",
+        "951c1ecb0251ab80f441e0a6be02b3a7a9c57bda74697fc52d2601aefd04d547",
+        "501706efc7fbeeac27b5fedbea948475effd33c1ffc712d893d54ca8029f3aac",
+        "1f3392f2791299fd29f7faeea3c11750d155cb88e897232e13bcbe9e5639601e"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "65bb292aad68693fff8150491946351f331acbca900332d2a4babd8949edae9f"
     },
     {
       "name": "golpe-SA3",
@@ -3600,13 +3681,14 @@
         }
       ],
       "hashes": [
-        "ba99f6aa6547e7f14db1496b974d60db28f8ffd26af598cf07522d84a455d5fd",
-        "a44a8d1b0a7f4a513e9b5f3713181c96471f479cd0a55642895e72bd3e70a46f",
-        "90837f5349f19ef8f52e2f0e0557bef0c26d35dae162df83b9fb9470fbec99cb",
-        "a7ee91f7c245351fc3fe0c40d9a9f133b4e211d69491c92243e5a5859d638b28"
+        "c603fcbe0fd5207b162038f6a0b1054d769a0e28f3a636ce074c485c270374c4",
+        "113ce289fb87a14942ac4a13f41f0dff0d3555088e93e854d2d7377d5c7aa393",
+        "fea450ffe3b7e4df500618862d2e1aa4d6dac3b19f6bf1a71203072f34cc9f00",
+        "b976a355c011e62339a9d63b354ac5ec24a77385ed880886e135a95e5a9062a1"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "33da2a0dd7e19fa877e2dea23a95c2217ddbf665b9a70fc6fbb583a8de8b413c"
     },
     {
       "name": "fx-nota-sonica",
@@ -3690,13 +3772,14 @@
         }
       ],
       "hashes": [
-        "507492dd1238c9e13bfbfbbfe4f2a9a148a3905ed24cbf565571a20d9dd60b13",
-        "3811e1c2ebd0a634810b7b29f562d827da183de26f509d732dbab771e1d95423",
-        "48361b0ed0a621917dae0916e32890bf98adeed67c0c61d0e4a9d5b90aeb1c18",
-        "47d05cbcf2f83ee90cb3a5028355a072944bbff4ff34bae29f3319da88694934"
+        "8b374edbac6e33901442dfa2f13f6ffc82360380f74cd4c35c67963bd2945687",
+        "aba48a70c32bfc2c9f87fca2d887e9d10f4107a5caaaf5c05c1af72a56cec97d",
+        "5c7a764db8d2e05fa965648571a4333dd24c2686420dc958accd8156783f8779",
+        "5cb7ceae64d22fb7da03b582bde3b155fd58438c804085c9dd09df06226602c1"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "b780b741ada66dc4806caca6bb92dbe18c494d132508f0a3d50096c05030b7b5"
     },
     {
       "name": "fx-power-chord",
@@ -3780,13 +3863,14 @@
         }
       ],
       "hashes": [
-        "938286e48065e25b61006cae13139de78fdc0cb6a188a9607380aea3e4d095a1",
-        "7739d41fdc68411994c37ec055fd8e8359d223030a4c01fd88930db78fc8edac",
-        "b6fba89507844e9e0e7e8e62d50ddd800723a79a49b89f9ef0de1d2f83fe3f63",
-        "e666cdd514c1c29a5d1fd6d72cd40ed16c2d36bea001abd48f9cda352f1ccf43"
+        "cd0957d9c46277de67d3729ac5a6215aa19fb5f23bafc9e958af1ccd4130a2eb",
+        "0cc82d3117c44d1fb5b1e1fe5fd165e7295dad6625ff1af3f23407fa5be63bb2",
+        "c5ddf14bfe058a88e3b5efece800b2dfa3b8a26c0f59e77147163eb1a114445b",
+        "54d31270b9e82b30c86c171bae2017b54a6d5bf407921eab34a5bbfb6790e6ed"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "6b008c184339d58d836f54b7ab6b7cc4d830747c52d30a91ddbf5e379a5bee03"
     },
     {
       "name": "fx-onda-grave",
@@ -3870,13 +3954,14 @@
         }
       ],
       "hashes": [
-        "f4441303e8d553b1c2348dfc41719889269fb4a195f1e6e8191670289819fb3f",
-        "ee2f10284724b97650aa787a4823c71432e510938a3bec06b9b6a8d573fe1c47",
-        "64ea83115b50aeed674a2a1071707233d6c2028f404c61a99e47f469e1aba34c",
-        "7c0a35f55ed3df67d973d04a4e7fbe3e7c37f1c8d5f43629003c0c8f853cd55d"
+        "b5a7f42c0367465de22fab7f8eeae56fd56c0ab0091b3b8e50b06a43cdd99225",
+        "6541270a1ab0832ae847bbabc7064a845190a660f9d6c84ed4f759e2d6000936",
+        "4ddc5ca507646be27f00342ac32be404b753d90f2c843a3ccc0153b043c502cb",
+        "10975f426a4ab1fb3e3d0647fe278b31c9858f769a73f75210e3301021eac295"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "b7c00b0900ea7ffc398bf583896127373a094cfcc29e5c6896bd927e105cffed"
     },
     {
       "name": "fx-solo-ascendente",
@@ -3960,13 +4045,14 @@
         }
       ],
       "hashes": [
-        "cd3a1348f8ff2ba2b686d601b6a5fad44b7bb7e452fb9b842249026f4268d5bf",
-        "1243ceffedbdbaf7b5c8bd6db7545333a205013feb11a47211dd83d825de2a4c",
-        "b202fa3b383ceb159085086674f1bb4eba6a19579d27eea7fa5be37124f4ee3e",
-        "a5f959b8eda97a02f98dc3a96e26b5c952389402da80da640d86b1afb4feb24e"
+        "88b2f96790ca2dbd006ddc552a853ad4c4ce7b77b4a33f86ea170a8b7511c953",
+        "52e81a6b585599d8c314ae9ece30d19ff506d7d2a56b48e5c4abe8defcc81cc8",
+        "b36ac5ba8923d932f659c439c05010174722b44a5af2e9059c0a073c2bc014ec",
+        "2d842e7236c6c515781ade2cb790aece0c6f03c42bd600b4ce1ac2b18e1bccf5"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "15fe330c25f457eebf4511c7e1c534611948ade318a61e383c5de8499b7b661f"
     },
     {
       "name": "fx-slide-palco",
@@ -4050,13 +4136,14 @@
         }
       ],
       "hashes": [
-        "33d2853c05f288883a4d63889505d56e5e51d1d94727980c92a8816413cb3141",
-        "1bc473912007ff8d035a115c1591304522922a9c3d613b87a15bc665bbd08b1e",
-        "b30ba6e512e9d0be2cef7ab98b0ee39536763db45662c5086cab2fb3fc5afb68",
-        "828b43568ee6321454da1732cd1a52f8954ed6b34465c8cf6af2a51d838fe1e2"
+        "831cbee320f8649e01cbbc0d7a5901a60d5438fa7ed7bcd9ad3354449c056e9f",
+        "165b5b1401340a6c47d42e0f2db0ab0cac63fcba07db6ac615858aad3328db4b",
+        "7fe42a7df08b04e7f9323d786d149113abfed5516c2ee987efbaf8048432276b",
+        "51e7a6cace297ca35929e54e1c0e6b664463861b110ee96d2443836db67b3165"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "7a447ce207c095f27ea08052a8c81e023f1aa75429d59b7db003bd086264396d"
     },
     {
       "name": "fx-feedback",
@@ -4140,13 +4227,14 @@
         }
       ],
       "hashes": [
-        "8812400c76b1ffab7e22be911221260c86cc4d59a30a415b56f82c0d5da8d063",
-        "bd2c00885f37226106e3fd01edc703e6238e9493153f8297a67c8752e0dd4420",
-        "fefa9d1c5e777e984dcb4f50bd9e65309b0c2a6c875a3571e17aedff6c09e6b3",
-        "36974976892ef86dfe232d55ad076a041802197e56d0bbfd7eb6018c85dde670"
+        "51ab53b0b10e61f8557c2f2dd213f652140fb4984878122b5892f76c5b495b0e",
+        "285a6ea056a5e53abf825911ffdd35f50b3ce02ce462407f262af3f1c8821272",
+        "63b7d251de8519f9ad1f9a16f164cbcb738b220fe09b7233c3b85aef86a909d8",
+        "2ce00d69e15076466d55a7858fba6282046bb8415a99260843ce619e53f3692d"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "a127bcda2659c47dc2f261d1749e3417e74b381ebc3c1b872719fe867ed236b6"
     },
     {
       "name": "fx-terremoto",
@@ -4230,13 +4318,14 @@
         }
       ],
       "hashes": [
-        "e8e7040f448a85075d950ec1067a8fd98c100a0a532d09da60c89e587924277c",
-        "7e95159358eff75f144bf8904285554cc0bc8a5d55bf53de10159866059ed00f",
-        "0732f6a6a58f72779cc59b8c00ab9133c417a209a30d13f2558697701ea30a66",
-        "a7565a2c1d571198c0f154f470fc0a1129ec6ffe720e375c1fc2975c3f4c08a7"
+        "747383f6ebf2402585c09dbaf48de583ade22f3c13d93f2bdcad00e339ed6e9b",
+        "e1b461ddfcdc6772e0e3f6bf163fb6db9949c2f3b8591f11e7765d39aef1d581",
+        "a27c5a6ec058796cee0df348e9be5e52b151e230ed5c8aeb1aa474da9c19e87a",
+        "160b80a594784c4e64fa910607c285b0e6bd55998b1cf81242c44cc3499ba7ab"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "b6826e1c3b6ed9b4827f6c4d0f417b6b2dc863c59d7c6139d8c61e6552119b43"
     },
     {
       "name": "fx-tremor",
@@ -4320,14 +4409,25 @@
         }
       ],
       "hashes": [
-        "d856c23a2314ef2cf911555732127922466d9a06e2e7fe27f72f9b5a511b933e",
-        "71156a89f4e489aa132efdc039b235f479b7cc8c584eb7eb773009de73b88275",
-        "6a4c7e07f3b6ec8f2fd6a6793d7f75342cf8db603a840be62011073aac55ee2b",
-        "e56c9831b0b3adb7e525649d7a6dbd56cb87cf9a810a9dbfb26c8f8ca0eb1e0b"
+        "53ceb7fab5616f1c920f43a60421cdf07803899c656ad57593c6143a17a5206f",
+        "a16660619ae006eeb74283bc63965a2e3a0e4aaed5243926e6885a228963300e",
+        "132dfc565af65e32beb0dd9539f7196d1e2535c088852ae79c1a32a89b4ed1f6",
+        "92c5e10d34dd7cfd21d594219e6bdb7c96c0f0e7dcd2517d220e39d527a088aa"
       ],
       "uniqueFrames": 4,
-      "outerEdge": false
+      "outerEdge": false,
+      "runtimeSha256": "0edcd8220d5d1728cbaf4ed7b6c4fb33a3a77e9eb0ab8b14097f97ba647d8668"
     }
   ],
-  "completed": 48
+  "completed": 48,
+  "scaleReference": {
+    "sequence": "parado",
+    "standingHeight": 470,
+    "foot": [
+      384,
+      700
+    ],
+    "policy": "Uniform scale per entire four-frame sequence; no frame-by-frame height fitting. Compact poses retain anatomical size."
+  },
+  "frameHashAlgorithm": "sha256-rgba8"
 }

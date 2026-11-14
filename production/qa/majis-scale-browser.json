@@ -1,0 +1,10 @@
+{
+  "issue": "Majis enlarged when pressing keyboard L with forward and when entering victory",
+  "input": { "keyboard": "L + forward", "logical": "H + forward", "resolvedMove": "5H", "observedThroughActualSimulation": true },
+  "correctedSequences": ["golpe-5H", "golpe-6M", "vitoria", "golpe-jH", "golpe-2S", "pulo", "defesa-no-ar"],
+  "browser": { "actualReaderPixelComparisons": 160, "failures": [], "loadedStrips": 48, "scaleComparison": ["idle versus heavy initial pose", "heavy input simulation", "idle versus victory initial pose"], "consoleErrorsObserved": [] },
+  "automatedTests": { "passed": 69, "failed": 0, "report": "majis-tests.txt" },
+  "geometryReport": "majis-validacao.json",
+  "evidence": ["evidence/majis-heavy-scale.jpg", "evidence/majis-victory-scale.jpg"],
+  "implementation": "Uniform per-sequence re-export from existing source boards; foot pivot and atlas dimensions preserved. No simulation or runtime character-scale changes."
+}
