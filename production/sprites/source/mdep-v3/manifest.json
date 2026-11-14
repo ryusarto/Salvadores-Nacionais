@@ -1,6 +1,6 @@
 {
   "character": "MDEP",
-  "status": "integrated_release_candidate",
+  "status": "validated_game_assets",
   "scope": "all_planned_animations",
   "design": "red hoodie; white/red headscarf; silver chains; black wide cargo; large black lug boots; no glasses",
   "contract": {
@@ -16873,7 +16873,11 @@
       ]
     },
     "visual": "Five contact sheets reviewed; final browser checks are recorded separately in production/qa/mdep-browser.json.",
-    "automatedTests": "See production/qa/mdep-tests.txt"
+    "automatedTests": {
+      "passed": 66,
+      "failed": 0
+    },
+    "browserReport": "../../../qa/mdep-browser.json"
   },
   "delivery": "Standalone ZIP includes individual frames, strips, animated previews and prompts. Frame paths below refer to that delivery, not to repository files."
 }
