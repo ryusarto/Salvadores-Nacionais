@@ -1,0 +1,3055 @@
+{
+  "character": "chapuh",
+  "generatedWith": "built-in image_gen",
+  "cell": 768,
+  "foot": [
+    384,
+    700
+  ],
+  "framesPerSequence": 4,
+  "notes": "40 tiras com células reais de 768px, pés (384,700), altura parada aproximada de 470px, alinhada a Dney/Franco/Mdep/Ryuchi.",
+  "sequences": [
+    {
+      "name": "parado",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0363636363636364,
+      "original": "raw/parado-v2.png",
+      "strip": "tiras-768/parado.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 212,
+          "y": 44,
+          "w": 220,
+          "h": 549,
+          "pixels": 72968,
+          "edge": 0
+        },
+        {
+          "x": 211,
+          "y": 44,
+          "w": 221,
+          "h": 549,
+          "pixels": 72469,
+          "edge": 0
+        },
+        {
+          "x": 211,
+          "y": 45,
+          "w": 224,
+          "h": 548,
+          "pixels": 75936,
+          "edge": 0
+        },
+        {
+          "x": 213,
+          "y": 43,
+          "w": 219,
+          "h": 550,
+          "pixels": 72653,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 265,
+          "y": 133.87
+        },
+        {
+          "x": 264,
+          "y": 133.87
+        },
+        {
+          "x": 266,
+          "y": 134.64
+        },
+        {
+          "x": 265.5,
+          "y": 133.10000000000002
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "andar",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0536044362292052,
+      "original": "raw/andar-v2.png",
+      "strip": "tiras-768/andar.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 178,
+          "y": 50,
+          "w": 320,
+          "h": 541,
+          "pixels": 77767,
+          "edge": 0
+        },
+        {
+          "x": 170,
+          "y": 50,
+          "w": 292,
+          "h": 541,
+          "pixels": 70454,
+          "edge": 0
+        },
+        {
+          "x": 147,
+          "y": 53,
+          "w": 336,
+          "h": 536,
+          "pixels": 68702,
+          "edge": 0
+        },
+        {
+          "x": 214,
+          "y": 53,
+          "w": 224,
+          "h": 537,
+          "pixels": 67665,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 282,
+          "y": 133.10000000000002
+        },
+        {
+          "x": 258.5,
+          "y": 133.10000000000002
+        },
+        {
+          "x": 257,
+          "y": 136.95000000000005
+        },
+        {
+          "x": 269,
+          "y": 136.18
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "andar-tras",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0536044362292052,
+      "original": "raw/andar-tras-v2.png",
+      "strip": "tiras-768/andar-tras.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 221,
+          "y": 53,
+          "w": 214,
+          "h": 540,
+          "pixels": 71331,
+          "edge": 0
+        },
+        {
+          "x": 175,
+          "y": 54,
+          "w": 247,
+          "h": 541,
+          "pixels": 70404,
+          "edge": 0
+        },
+        {
+          "x": 168,
+          "y": 55,
+          "w": 249,
+          "h": 529,
+          "pixels": 70431,
+          "edge": 0
+        },
+        {
+          "x": 188,
+          "y": 55,
+          "w": 194,
+          "h": 533,
+          "pixels": 68272,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 271,
+          "y": 133.87
+        },
+        {
+          "x": 240.5,
+          "y": 132.33000000000004
+        },
+        {
+          "x": 234,
+          "y": 143.11
+        },
+        {
+          "x": 225.5,
+          "y": 139.26
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "correr",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.1003861003861004,
+      "original": "raw/correr-v2.png",
+      "strip": "tiras-768/correr.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 79,
+          "y": 66,
+          "w": 496,
+          "h": 515,
+          "pixels": 95582,
+          "edge": 0
+        },
+        {
+          "x": 179,
+          "y": 66,
+          "w": 252,
+          "h": 518,
+          "pixels": 64635,
+          "edge": 0
+        },
+        {
+          "x": 61,
+          "y": 67,
+          "w": 537,
+          "h": 511,
+          "pixels": 95529,
+          "edge": 0
+        },
+        {
+          "x": 97,
+          "y": 39,
+          "w": 405,
+          "h": 467,
+          "pixels": 83969,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 271,
+          "y": 147.40999999999997
+        },
+        {
+          "x": 246.5,
+          "y": 148.10000000000002
+        },
+        {
+          "x": 273.5,
+          "y": 147.26
+        },
+        {
+          "x": 240.5,
+          "y": 105.22
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "agachar",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0458715596330275,
+      "original": "raw/agachar-v2.png",
+      "strip": "tiras-768/agachar.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 213,
+          "y": 48,
+          "w": 220,
+          "h": 545,
+          "pixels": 73056,
+          "edge": 0
+        },
+        {
+          "x": 203,
+          "y": 92,
+          "w": 229,
+          "h": 501,
+          "pixels": 71618,
+          "edge": 0
+        },
+        {
+          "x": 209,
+          "y": 155,
+          "w": 245,
+          "h": 434,
+          "pixels": 65685,
+          "edge": 0
+        },
+        {
+          "x": 186,
+          "y": 211,
+          "w": 259,
+          "h": 378,
+          "pixels": 62313,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 265.5,
+          "y": 133.10000000000002
+        },
+        {
+          "x": 260,
+          "y": 168.51999999999998
+        },
+        {
+          "x": 274.5,
+          "y": 222.42000000000002
+        },
+        {
+          "x": 258,
+          "y": 267.08
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "pulo",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 520,
+      "scale": 0.9285714285714286,
+      "original": "raw/pulo.png",
+      "strip": "tiras-768/pulo.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 184,
+          "y": 86,
+          "w": 317,
+          "h": 528,
+          "pixels": 85607,
+          "edge": 0
+        },
+        {
+          "x": 145,
+          "y": 34,
+          "w": 357,
+          "h": 560,
+          "pixels": 80482,
+          "edge": 0
+        },
+        {
+          "x": 169,
+          "y": 29,
+          "w": 370,
+          "h": 406,
+          "pixels": 71652,
+          "edge": 0
+        },
+        {
+          "x": 160,
+          "y": 163,
+          "w": 342,
+          "h": 448,
+          "pixels": 78307,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 283.5,
+          "y": 234.93
+        },
+        {
+          "x": 265,
+          "y": 193.60000000000002
+        },
+        {
+          "x": 294,
+          "y": 155.71000000000004
+        },
+        {
+          "x": 272,
+          "y": 288.68
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "recuo",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.1067961165048543,
+      "original": "raw/recuo.png",
+      "strip": "tiras-768/recuo.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 193,
+          "y": 124,
+          "w": 343,
+          "h": 471,
+          "pixels": 89814,
+          "edge": 0
+        },
+        {
+          "x": 104,
+          "y": 78,
+          "w": 386,
+          "h": 515,
+          "pixels": 90716,
+          "edge": 0
+        },
+        {
+          "x": 139,
+          "y": 32,
+          "w": 281,
+          "h": 500,
+          "pixels": 80662,
+          "edge": 0
+        },
+        {
+          "x": 133,
+          "y": 91,
+          "w": 311,
+          "h": 506,
+          "pixels": 89793,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 312,
+          "y": 197.06
+        },
+        {
+          "x": 237.5,
+          "y": 157.33000000000004
+        },
+        {
+          "x": 218.5,
+          "y": 102.42000000000002
+        },
+        {
+          "x": 228,
+          "y": 170.02999999999997
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "escape-agarrao",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0124333925399644,
+      "original": "raw/escape-agarrao.png",
+      "strip": "tiras-768/escape-agarrao.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 212,
+          "y": 32,
+          "w": 222,
+          "h": 563,
+          "pixels": 77986,
+          "edge": 0
+        },
+        {
+          "x": 159,
+          "y": 70,
+          "w": 297,
+          "h": 525,
+          "pixels": 75801,
+          "edge": 0
+        },
+        {
+          "x": 165,
+          "y": 49,
+          "w": 367,
+          "h": 541,
+          "pixels": 88380,
+          "edge": 0
+        },
+        {
+          "x": 170,
+          "y": 32,
+          "w": 290,
+          "h": 559,
+          "pixels": 85879,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 265.5,
+          "y": 133.10000000000002
+        },
+        {
+          "x": 250,
+          "y": 162.36
+        },
+        {
+          "x": 291.5,
+          "y": 150.04000000000002
+        },
+        {
+          "x": 258,
+          "y": 136.18
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "recuperacao-rolamento",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0142348754448398,
+      "original": "raw/recuperacao-rolamento.png",
+      "strip": "tiras-768/recuperacao-rolamento.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 77,
+          "y": 231,
+          "w": 494,
+          "h": 377,
+          "pixels": 99706,
+          "edge": 0
+        },
+        {
+          "x": 90,
+          "y": 191,
+          "w": 391,
+          "h": 421,
+          "pixels": 89174,
+          "edge": 0
+        },
+        {
+          "x": 138,
+          "y": 174,
+          "w": 411,
+          "h": 417,
+          "pixels": 95911,
+          "edge": 0
+        },
+        {
+          "x": 177,
+          "y": 26,
+          "w": 263,
+          "h": 562,
+          "pixels": 89891,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 266.5,
+          "y": 315.09000000000003
+        },
+        {
+          "x": 228,
+          "y": 285.21000000000004
+        },
+        {
+          "x": 286.5,
+          "y": 267.29
+        },
+        {
+          "x": 251,
+          "y": 150.33000000000004
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "defesa-em-pe",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.025179856115108,
+      "original": "raw/defesa-em-pe.png",
+      "strip": "tiras-768/defesa-em-pe.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 191,
+          "y": 40,
+          "w": 254,
+          "h": 556,
+          "pixels": 85757,
+          "edge": 0
+        },
+        {
+          "x": 186,
+          "y": 47,
+          "w": 257,
+          "h": 549,
+          "pixels": 84735,
+          "edge": 0
+        },
+        {
+          "x": 189,
+          "y": 49,
+          "w": 275,
+          "h": 546,
+          "pixels": 87946,
+          "edge": 0
+        },
+        {
+          "x": 191,
+          "y": 44,
+          "w": 255,
+          "h": 553,
+          "pixels": 83636,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 260.5,
+          "y": 133.10000000000002
+        },
+        {
+          "x": 257,
+          "y": 139.26
+        },
+        {
+          "x": 269.5,
+          "y": 140.8
+        },
+        {
+          "x": 261,
+          "y": 135.40999999999997
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "defesa-agachado",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 350,
+      "scale": 0.6554307116104869,
+      "original": "raw/defesa-agachado.png",
+      "strip": "tiras-768/defesa-agachado.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 100,
+          "y": 67,
+          "w": 420,
+          "h": 532,
+          "pixels": 132791,
+          "edge": 0
+        },
+        {
+          "x": 101,
+          "y": 67,
+          "w": 419,
+          "h": 532,
+          "pixels": 132015,
+          "edge": 0
+        },
+        {
+          "x": 101,
+          "y": 84,
+          "w": 424,
+          "h": 515,
+          "pixels": 134638,
+          "edge": 0
+        },
+        {
+          "x": 101,
+          "y": 65,
+          "w": 420,
+          "h": 534,
+          "pixels": 133797,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 254,
+          "y": 303.27
+        },
+        {
+          "x": 254,
+          "y": 303.27
+        },
+        {
+          "x": 256,
+          "y": 312.51
+        },
+        {
+          "x": 254.5,
+          "y": 302.5
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "defesa-no-ar",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 430,
+      "scale": 0.7706093189964157,
+      "original": "raw/defesa-no-ar.png",
+      "strip": "tiras-768/defesa-no-ar.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 148,
+          "y": 51,
+          "w": 329,
+          "h": 558,
+          "pixels": 107916,
+          "edge": 0
+        },
+        {
+          "x": 158,
+          "y": 43,
+          "w": 276,
+          "h": 480,
+          "pixels": 79633,
+          "edge": 0
+        },
+        {
+          "x": 154,
+          "y": 68,
+          "w": 459,
+          "h": 494,
+          "pixels": 102246,
+          "edge": 0
+        },
+        {
+          "x": 160,
+          "y": 49,
+          "w": 292,
+          "h": 504,
+          "pixels": 84626,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 255,
+          "y": 270.13
+        },
+        {
+          "x": 242.5,
+          "y": 250.32999999999998
+        },
+        {
+          "x": 310,
+          "y": 271.86
+        },
+        {
+          "x": 250.5,
+          "y": 259.47
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "dano-alto",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0178571428571428,
+      "original": "raw/dano-alto.png",
+      "strip": "tiras-768/dano-alto.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 192,
+          "y": 42,
+          "w": 252,
+          "h": 557,
+          "pixels": 86943,
+          "edge": 0
+        },
+        {
+          "x": 155,
+          "y": 39,
+          "w": 348,
+          "h": 560,
+          "pixels": 98356,
+          "edge": 0
+        },
+        {
+          "x": 183,
+          "y": 48,
+          "w": 276,
+          "h": 550,
+          "pixels": 94469,
+          "edge": 0
+        },
+        {
+          "x": 186,
+          "y": 43,
+          "w": 268,
+          "h": 555,
+          "pixels": 88718,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 260.5,
+          "y": 135.40999999999997
+        },
+        {
+          "x": 272,
+          "y": 133.10000000000002
+        },
+        {
+          "x": 263.5,
+          "y": 140.8
+        },
+        {
+          "x": 262.5,
+          "y": 136.95000000000005
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "dano-baixo",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 0.9547738693467337,
+      "original": "raw/dano-baixo.png",
+      "strip": "tiras-768/dano-baixo.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 195,
+          "y": 17,
+          "w": 249,
+          "h": 597,
+          "pixels": 91847,
+          "edge": 0
+        },
+        {
+          "x": 172,
+          "y": 57,
+          "w": 237,
+          "h": 557,
+          "pixels": 88157,
+          "edge": 0
+        },
+        {
+          "x": 205,
+          "y": 144,
+          "w": 247,
+          "h": 463,
+          "pixels": 79406,
+          "edge": 0
+        },
+        {
+          "x": 166,
+          "y": 75,
+          "w": 247,
+          "h": 530,
+          "pixels": 86762,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 261.5,
+          "y": 133.10000000000002
+        },
+        {
+          "x": 234,
+          "y": 162.36
+        },
+        {
+          "x": 270.5,
+          "y": 231.66000000000003
+        },
+        {
+          "x": 233.5,
+          "y": 182.38
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "dano-no-ar",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0363636363636364,
+      "original": "raw/dano-no-ar.png",
+      "strip": "tiras-768/dano-no-ar.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 127,
+          "y": 60,
+          "w": 436,
+          "h": 550,
+          "pixels": 99590,
+          "edge": 0
+        },
+        {
+          "x": 44,
+          "y": 139,
+          "w": 494,
+          "h": 380,
+          "pixels": 103216,
+          "edge": 0
+        },
+        {
+          "x": 88,
+          "y": 141,
+          "w": 499,
+          "h": 440,
+          "pixels": 114784,
+          "edge": 0
+        },
+        {
+          "x": 60,
+          "y": 169,
+          "w": 496,
+          "h": 395,
+          "pixels": 105538,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 289,
+          "y": 174.10000000000002
+        },
+        {
+          "x": 233,
+          "y": 215.62
+        },
+        {
+          "x": 281.5,
+          "y": 231.88
+        },
+        {
+          "x": 250.5,
+          "y": 249.3
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "caido",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 330,
+      "scale": 0.8108108108108109,
+      "original": "raw/caido.png",
+      "strip": "tiras-768/caido.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 24,
+          "y": 184,
+          "w": 598,
+          "h": 407,
+          "pixels": 130670,
+          "edge": 0
+        },
+        {
+          "x": 29,
+          "y": 240,
+          "w": 573,
+          "h": 354,
+          "pixels": 118058,
+          "edge": 0
+        },
+        {
+          "x": 33,
+          "y": 245,
+          "w": 569,
+          "h": 349,
+          "pixels": 115545,
+          "edge": 0
+        },
+        {
+          "x": 29,
+          "y": 245,
+          "w": 573,
+          "h": 349,
+          "pixels": 115403,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 264.5,
+          "y": 333.9
+        },
+        {
+          "x": 258,
+          "y": 370.01
+        },
+        {
+          "x": 259.5,
+          "y": 373.09000000000003
+        },
+        {
+          "x": 257.5,
+          "y": 373.09000000000003
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "levantar",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.027027027027027,
+      "original": "raw/levantar.png",
+      "strip": "tiras-768/levantar.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 42,
+          "y": 356,
+          "w": 559,
+          "h": 236,
+          "pixels": 81719,
+          "edge": 0
+        },
+        {
+          "x": 39,
+          "y": 266,
+          "w": 567,
+          "h": 314,
+          "pixels": 98556,
+          "edge": 0
+        },
+        {
+          "x": 112,
+          "y": 188,
+          "w": 413,
+          "h": 409,
+          "pixels": 90808,
+          "edge": 0
+        },
+        {
+          "x": 164,
+          "y": 38,
+          "w": 305,
+          "h": 555,
+          "pixels": 91788,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 264.5,
+          "y": 406.89
+        },
+        {
+          "x": 265.5,
+          "y": 333.29
+        },
+        {
+          "x": 261,
+          "y": 275.6
+        },
+        {
+          "x": 259,
+          "y": 156.10000000000002
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "tonto",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0160427807486632,
+      "original": "raw/tonto.png",
+      "strip": "tiras-768/tonto.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 212,
+          "y": 41,
+          "w": 221,
+          "h": 554,
+          "pixels": 73989,
+          "edge": 0
+        },
+        {
+          "x": 195,
+          "y": 72,
+          "w": 237,
+          "h": 523,
+          "pixels": 77558,
+          "edge": 0
+        },
+        {
+          "x": 195,
+          "y": 52,
+          "w": 261,
+          "h": 539,
+          "pixels": 82969,
+          "edge": 0
+        },
+        {
+          "x": 198,
+          "y": 30,
+          "w": 234,
+          "h": 561,
+          "pixels": 81945,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 265,
+          "y": 138.49
+        },
+        {
+          "x": 256,
+          "y": 162.36
+        },
+        {
+          "x": 268,
+          "y": 150.04000000000002
+        },
+        {
+          "x": 257.5,
+          "y": 133.10000000000002
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "vitoria",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.3013698630136987,
+      "original": "raw/vitoria-v2.png",
+      "strip": "tiras-768/vitoria.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 234,
+          "y": 118,
+          "w": 168,
+          "h": 427,
+          "pixels": 43984,
+          "edge": 0
+        },
+        {
+          "x": 220,
+          "y": 119,
+          "w": 171,
+          "h": 427,
+          "pixels": 44442,
+          "edge": 0
+        },
+        {
+          "x": 223,
+          "y": 96,
+          "w": 191,
+          "h": 438,
+          "pixels": 46562,
+          "edge": 0
+        },
+        {
+          "x": 217,
+          "y": 96,
+          "w": 193,
+          "h": 438,
+          "pixels": 46799,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 262,
+          "y": 143.88
+        },
+        {
+          "x": 245.5,
+          "y": 143.88
+        },
+        {
+          "x": 262.5,
+          "y": 132.33000000000004
+        },
+        {
+          "x": 256,
+          "y": 132.33000000000004
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-5L",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.030741410488246,
+      "original": "raw/golpe-5L.png",
+      "strip": "tiras-768/golpe-5L.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 200,
+          "y": 44,
+          "w": 235,
+          "h": 551,
+          "pixels": 78201,
+          "edge": 0
+        },
+        {
+          "x": 176,
+          "y": 57,
+          "w": 256,
+          "h": 539,
+          "pixels": 83181,
+          "edge": 0
+        },
+        {
+          "x": 169,
+          "y": 51,
+          "w": 390,
+          "h": 544,
+          "pixels": 89837,
+          "edge": 0
+        },
+        {
+          "x": 201,
+          "y": 42,
+          "w": 232,
+          "h": 553,
+          "pixels": 79124,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 260,
+          "y": 134.64
+        },
+        {
+          "x": 246.5,
+          "y": 143.88
+        },
+        {
+          "x": 308,
+          "y": 140.02999999999997
+        },
+        {
+          "x": 260,
+          "y": 133.10000000000002
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-5M",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0288808664259927,
+      "original": "raw/golpe-5M.png",
+      "strip": "tiras-768/golpe-5M.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 207,
+          "y": 40,
+          "w": 226,
+          "h": 554,
+          "pixels": 75377,
+          "edge": 0
+        },
+        {
+          "x": 214,
+          "y": 43,
+          "w": 219,
+          "h": 551,
+          "pixels": 74326,
+          "edge": 0
+        },
+        {
+          "x": 212,
+          "y": 42,
+          "w": 258,
+          "h": 552,
+          "pixels": 78930,
+          "edge": 0
+        },
+        {
+          "x": 205,
+          "y": 41,
+          "w": 229,
+          "h": 553,
+          "pixels": 75873,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 262.5,
+          "y": 133.10000000000002
+        },
+        {
+          "x": 266,
+          "y": 135.40999999999997
+        },
+        {
+          "x": 284,
+          "y": 134.64
+        },
+        {
+          "x": 262,
+          "y": 133.87
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-5H",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0106382978723405,
+      "original": "raw/golpe-5H.png",
+      "strip": "tiras-768/golpe-5H.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 196,
+          "y": 43,
+          "w": 244,
+          "h": 553,
+          "pixels": 81451,
+          "edge": 0
+        },
+        {
+          "x": 142,
+          "y": 32,
+          "w": 337,
+          "h": 564,
+          "pixels": 98442,
+          "edge": 0
+        },
+        {
+          "x": 125,
+          "y": 96,
+          "w": 385,
+          "h": 484,
+          "pixels": 94254,
+          "edge": 0
+        },
+        {
+          "x": 169,
+          "y": 41,
+          "w": 274,
+          "h": 539,
+          "pixels": 84956,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 260.5,
+          "y": 141.57
+        },
+        {
+          "x": 253,
+          "y": 133.10000000000002
+        },
+        {
+          "x": 260.5,
+          "y": 195.47000000000003
+        },
+        {
+          "x": 248.5,
+          "y": 152.35000000000002
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-2L",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 380,
+      "scale": 0.7279693486590039,
+      "original": "raw/golpe-2L.png",
+      "strip": "tiras-768/golpe-2L.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 150,
+          "y": 80,
+          "w": 311,
+          "h": 522,
+          "pixels": 95618,
+          "edge": 0
+        },
+        {
+          "x": 142,
+          "y": 106,
+          "w": 341,
+          "h": 496,
+          "pixels": 96546,
+          "edge": 0
+        },
+        {
+          "x": 119,
+          "y": 125,
+          "w": 456,
+          "h": 469,
+          "pixels": 98906,
+          "edge": 0
+        },
+        {
+          "x": 160,
+          "y": 84,
+          "w": 312,
+          "h": 511,
+          "pixels": 96337,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 250.5,
+          "y": 279.4
+        },
+        {
+          "x": 255,
+          "y": 294.03
+        },
+        {
+          "x": 280.5,
+          "y": 309.43
+        },
+        {
+          "x": 258.5,
+          "y": 285.56
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-2M",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 360,
+      "scale": 0.7377049180327869,
+      "original": "raw/golpe-2M-v2.png",
+      "strip": "tiras-768/golpe-2M.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 105,
+          "y": 89,
+          "w": 391,
+          "h": 488,
+          "pixels": 123011,
+          "edge": 0
+        },
+        {
+          "x": 86,
+          "y": 112,
+          "w": 414,
+          "h": 464,
+          "pixels": 116574,
+          "edge": 0
+        },
+        {
+          "x": 82,
+          "y": 107,
+          "w": 495,
+          "h": 465,
+          "pixels": 132650,
+          "edge": 0
+        },
+        {
+          "x": 102,
+          "y": 87,
+          "w": 400,
+          "h": 485,
+          "pixels": 123723,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 246.5,
+          "y": 294.8
+        },
+        {
+          "x": 241,
+          "y": 308.65999999999997
+        },
+        {
+          "x": 268,
+          "y": 307.89
+        },
+        {
+          "x": 247.5,
+          "y": 297.11
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-2H",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 620,
+      "scale": 1.3333333333333333,
+      "original": "raw/golpe-2H-v2.png",
+      "strip": "tiras-768/golpe-2H.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 213,
+          "y": 184,
+          "w": 241,
+          "h": 354,
+          "pixels": 49136,
+          "edge": 0
+        },
+        {
+          "x": 156,
+          "y": 140,
+          "w": 245,
+          "h": 401,
+          "pixels": 55728,
+          "edge": 0
+        },
+        {
+          "x": 225,
+          "y": 61,
+          "w": 229,
+          "h": 465,
+          "pixels": 54050,
+          "edge": 0
+        },
+        {
+          "x": 189,
+          "y": 108,
+          "w": 205,
+          "h": 419,
+          "pixels": 48224,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 283,
+          "y": 207.79000000000002
+        },
+        {
+          "x": 209.5,
+          "y": 160.05
+        },
+        {
+          "x": 290.5,
+          "y": 93.83000000000001
+        },
+        {
+          "x": 226.5,
+          "y": 141.34000000000003
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-3H",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 340,
+      "scale": 0.7522123893805309,
+      "original": "raw/golpe-3H-v2.png",
+      "strip": "tiras-768/golpe-3H.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 132,
+          "y": 126,
+          "w": 355,
+          "h": 452,
+          "pixels": 104177,
+          "edge": 0
+        },
+        {
+          "x": 103,
+          "y": 141,
+          "w": 420,
+          "h": 440,
+          "pixels": 113147,
+          "edge": 0
+        },
+        {
+          "x": 53,
+          "y": 118,
+          "w": 558,
+          "h": 408,
+          "pixels": 105844,
+          "edge": 0
+        },
+        {
+          "x": 168,
+          "y": 115,
+          "w": 374,
+          "h": 410,
+          "pixels": 94451,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 253.5,
+          "y": 310.2
+        },
+        {
+          "x": 256,
+          "y": 317.13
+        },
+        {
+          "x": 270,
+          "y": 335.61
+        },
+        {
+          "x": 287,
+          "y": 334.07
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-6M",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0674157303370786,
+      "original": "raw/golpe-6M.png",
+      "strip": "tiras-768/golpe-6M.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 149,
+          "y": 109,
+          "w": 329,
+          "h": 500,
+          "pixels": 88456,
+          "edge": 0
+        },
+        {
+          "x": 164,
+          "y": 14,
+          "w": 359,
+          "h": 534,
+          "pixels": 92358,
+          "edge": 0
+        },
+        {
+          "x": 126,
+          "y": 155,
+          "w": 399,
+          "h": 450,
+          "pixels": 96753,
+          "edge": 0
+        },
+        {
+          "x": 161,
+          "y": 81,
+          "w": 302,
+          "h": 525,
+          "pixels": 90329,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 256,
+          "y": 201.82
+        },
+        {
+          "x": 288,
+          "y": 108.33000000000001
+        },
+        {
+          "x": 268.5,
+          "y": 238.63
+        },
+        {
+          "x": 254.5,
+          "y": 178.02999999999997
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-jL",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 500,
+      "scale": 0.9259259259259259,
+      "original": "raw/golpe-jL.png",
+      "strip": "tiras-768/golpe-jL.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 165,
+          "y": 83,
+          "w": 280,
+          "h": 526,
+          "pixels": 87246,
+          "edge": 0
+        },
+        {
+          "x": 122,
+          "y": 46,
+          "w": 362,
+          "h": 478,
+          "pixels": 86930,
+          "edge": 0
+        },
+        {
+          "x": 151,
+          "y": 42,
+          "w": 420,
+          "h": 500,
+          "pixels": 93379,
+          "edge": 0
+        },
+        {
+          "x": 149,
+          "y": 43,
+          "w": 286,
+          "h": 540,
+          "pixels": 87894,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 248,
+          "y": 232.01
+        },
+        {
+          "x": 246.5,
+          "y": 188.66000000000003
+        },
+        {
+          "x": 300.5,
+          "y": 188.72000000000003
+        },
+        {
+          "x": 236,
+          "y": 198.23000000000002
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-jM",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 480,
+      "scale": 1.0434782608695652,
+      "original": "raw/golpe-jM-v2.png",
+      "strip": "tiras-768/golpe-jM.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 184,
+          "y": 91,
+          "w": 251,
+          "h": 460,
+          "pixels": 65397,
+          "edge": 0
+        },
+        {
+          "x": 160,
+          "y": 97,
+          "w": 291,
+          "h": 454,
+          "pixels": 69086,
+          "edge": 0
+        },
+        {
+          "x": 132,
+          "y": 89,
+          "w": 433,
+          "h": 399,
+          "pixels": 71544,
+          "edge": 0
+        },
+        {
+          "x": 152,
+          "y": 82,
+          "w": 277,
+          "h": 456,
+          "pixels": 67640,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 252,
+          "y": 182.39999999999998
+        },
+        {
+          "x": 248,
+          "y": 186.25
+        },
+        {
+          "x": 292.5,
+          "y": 164.91000000000003
+        },
+        {
+          "x": 232.5,
+          "y": 171.48000000000002
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-jH",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 500,
+      "scale": 0.8741258741258742,
+      "original": "raw/golpe-jH.png",
+      "strip": "tiras-768/golpe-jH.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 156,
+          "y": 121,
+          "w": 363,
+          "h": 477,
+          "pixels": 90813,
+          "edge": 0
+        },
+        {
+          "x": 139,
+          "y": 22,
+          "w": 380,
+          "h": 572,
+          "pixels": 91931,
+          "edge": 0
+        },
+        {
+          "x": 152,
+          "y": 92,
+          "w": 330,
+          "h": 518,
+          "pixels": 87565,
+          "edge": 0
+        },
+        {
+          "x": 140,
+          "y": 32,
+          "w": 359,
+          "h": 499,
+          "pixels": 91840,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 277,
+          "y": 274.91
+        },
+        {
+          "x": 269.5,
+          "y": 207.23000000000002
+        },
+        {
+          "x": 259,
+          "y": 257.96000000000004
+        },
+        {
+          "x": 261,
+          "y": 201.51
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-throw",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0106382978723405,
+      "original": "raw/golpe-throw.png",
+      "strip": "tiras-768/golpe-throw.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 166,
+          "y": 54,
+          "w": 370,
+          "h": 539,
+          "pixels": 91876,
+          "edge": 0
+        },
+        {
+          "x": 122,
+          "y": 81,
+          "w": 430,
+          "h": 513,
+          "pixels": 95297,
+          "edge": 0
+        },
+        {
+          "x": 121,
+          "y": 50,
+          "w": 421,
+          "h": 554,
+          "pixels": 107713,
+          "edge": 0
+        },
+        {
+          "x": 153,
+          "y": 36,
+          "w": 322,
+          "h": 564,
+          "pixels": 93488,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 294,
+          "y": 152.35000000000002
+        },
+        {
+          "x": 280,
+          "y": 172.37
+        },
+        {
+          "x": 274,
+          "y": 140.8
+        },
+        {
+          "x": 256.5,
+          "y": 133.10000000000002
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-blindado",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0124333925399644,
+      "original": "raw/golpe-blindado.png",
+      "strip": "tiras-768/golpe-blindado.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 217,
+          "y": 40,
+          "w": 222,
+          "h": 563,
+          "pixels": 76338,
+          "edge": 0
+        },
+        {
+          "x": 149,
+          "y": 81,
+          "w": 310,
+          "h": 525,
+          "pixels": 83535,
+          "edge": 0
+        },
+        {
+          "x": 90,
+          "y": 73,
+          "w": 497,
+          "h": 524,
+          "pixels": 110496,
+          "edge": 0
+        },
+        {
+          "x": 152,
+          "y": 64,
+          "w": 310,
+          "h": 535,
+          "pixels": 88918,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 270.5,
+          "y": 133.10000000000002
+        },
+        {
+          "x": 246,
+          "y": 162.36
+        },
+        {
+          "x": 281,
+          "y": 163.89999999999998
+        },
+        {
+          "x": 249.5,
+          "y": 154.66000000000003
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-5S",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0124333925399644,
+      "original": "raw/golpe-5S.png",
+      "strip": "tiras-768/golpe-5S.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 195,
+          "y": 36,
+          "w": 262,
+          "h": 558,
+          "pixels": 87444,
+          "edge": 0
+        },
+        {
+          "x": 82,
+          "y": 64,
+          "w": 422,
+          "h": 532,
+          "pixels": 95110,
+          "edge": 0
+        },
+        {
+          "x": 88,
+          "y": 63,
+          "w": 423,
+          "h": 533,
+          "pixels": 94739,
+          "edge": 0
+        },
+        {
+          "x": 191,
+          "y": 33,
+          "w": 259,
+          "h": 563,
+          "pixels": 85384,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 269,
+          "y": 136.95000000000005
+        },
+        {
+          "x": 235,
+          "y": 156.97000000000003
+        },
+        {
+          "x": 242,
+          "y": 156.2
+        },
+        {
+          "x": 263,
+          "y": 133.10000000000002
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-2S",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0196779964221825,
+      "original": "raw/golpe-2S.png",
+      "strip": "tiras-768/golpe-2S.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 206,
+          "y": 35,
+          "w": 230,
+          "h": 559,
+          "pixels": 77786,
+          "edge": 0
+        },
+        {
+          "x": 93,
+          "y": 49,
+          "w": 409,
+          "h": 545,
+          "pixels": 106463,
+          "edge": 0
+        },
+        {
+          "x": 145,
+          "y": 38,
+          "w": 436,
+          "h": 556,
+          "pixels": 97287,
+          "edge": 0
+        },
+        {
+          "x": 130,
+          "y": 45,
+          "w": 312,
+          "h": 548,
+          "pixels": 85680,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 264,
+          "y": 133.10000000000002
+        },
+        {
+          "x": 239.5,
+          "y": 143.88
+        },
+        {
+          "x": 306.5,
+          "y": 135.40999999999997
+        },
+        {
+          "x": 227.5,
+          "y": 141.57
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-6S",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0070671378091873,
+      "original": "raw/golpe-6S.png",
+      "strip": "tiras-768/golpe-6S.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 199,
+          "y": 34,
+          "w": 236,
+          "h": 563,
+          "pixels": 78413,
+          "edge": 0
+        },
+        {
+          "x": 195,
+          "y": 34,
+          "w": 242,
+          "h": 564,
+          "pixels": 82994,
+          "edge": 0
+        },
+        {
+          "x": 186,
+          "y": 34,
+          "w": 374,
+          "h": 563,
+          "pixels": 93438,
+          "edge": 0
+        },
+        {
+          "x": 203,
+          "y": 32,
+          "w": 233,
+          "h": 566,
+          "pixels": 79582,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 259.5,
+          "y": 135.40999999999997
+        },
+        {
+          "x": 259,
+          "y": 135.40999999999997
+        },
+        {
+          "x": 316,
+          "y": 135.40999999999997
+        },
+        {
+          "x": 262.5,
+          "y": 133.10000000000002
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-4S",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 0.9947643979057592,
+      "original": "raw/golpe-4S.png",
+      "strip": "tiras-768/golpe-4S.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 200,
+          "y": 27,
+          "w": 239,
+          "h": 566,
+          "pixels": 81447,
+          "edge": 0
+        },
+        {
+          "x": 150,
+          "y": 105,
+          "w": 284,
+          "h": 489,
+          "pixels": 83009,
+          "edge": 0
+        },
+        {
+          "x": 162,
+          "y": 22,
+          "w": 346,
+          "h": 573,
+          "pixels": 98321,
+          "edge": 0
+        },
+        {
+          "x": 185,
+          "y": 25,
+          "w": 245,
+          "h": 570,
+          "pixels": 83086,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 262,
+          "y": 138.49
+        },
+        {
+          "x": 234.5,
+          "y": 197.77999999999997
+        },
+        {
+          "x": 277.5,
+          "y": 133.10000000000002
+        },
+        {
+          "x": 250,
+          "y": 135.40999999999997
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-c1",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 460,
+      "scale": 0.8041958041958042,
+      "original": "raw/golpe-c1.png",
+      "strip": "tiras-768/golpe-c1.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 169,
+          "y": 35,
+          "w": 282,
+          "h": 572,
+          "pixels": 95543,
+          "edge": 0
+        },
+        {
+          "x": 155,
+          "y": 227,
+          "w": 332,
+          "h": 375,
+          "pixels": 74463,
+          "edge": 0
+        },
+        {
+          "x": 146,
+          "y": 161,
+          "w": 359,
+          "h": 435,
+          "pixels": 95559,
+          "edge": 0
+        },
+        {
+          "x": 140,
+          "y": 181,
+          "w": 364,
+          "h": 416,
+          "pixels": 91072,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 253.5,
+          "y": 247.02999999999997
+        },
+        {
+          "x": 262.5,
+          "y": 365.46000000000004
+        },
+        {
+          "x": 265.5,
+          "y": 322.73
+        },
+        {
+          "x": 263,
+          "y": 335.82
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-c2",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.030741410488246,
+      "original": "raw/golpe-c2.png",
+      "strip": "tiras-768/golpe-c2.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 213,
+          "y": 42,
+          "w": 220,
+          "h": 552,
+          "pixels": 74910,
+          "edge": 0
+        },
+        {
+          "x": 171,
+          "y": 52,
+          "w": 278,
+          "h": 543,
+          "pixels": 74744,
+          "edge": 0
+        },
+        {
+          "x": 171,
+          "y": 57,
+          "w": 337,
+          "h": 537,
+          "pixels": 82572,
+          "edge": 0
+        },
+        {
+          "x": 211,
+          "y": 40,
+          "w": 227,
+          "h": 553,
+          "pixels": 76022,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 265.5,
+          "y": 133.87
+        },
+        {
+          "x": 252.5,
+          "y": 140.8
+        },
+        {
+          "x": 282.5,
+          "y": 145.42000000000002
+        },
+        {
+          "x": 267,
+          "y": 133.10000000000002
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-SA1",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 0.976027397260274,
+      "original": "raw/golpe-SA1.png",
+      "strip": "tiras-768/golpe-SA1.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 190,
+          "y": 31,
+          "w": 249,
+          "h": 584,
+          "pixels": 85895,
+          "edge": 0
+        },
+        {
+          "x": 91,
+          "y": 113,
+          "w": 393,
+          "h": 501,
+          "pixels": 105428,
+          "edge": 0
+        },
+        {
+          "x": 75,
+          "y": 95,
+          "w": 522,
+          "h": 505,
+          "pixels": 119684,
+          "edge": 0
+        },
+        {
+          "x": 72,
+          "y": 111,
+          "w": 473,
+          "h": 489,
+          "pixels": 111523,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 257,
+          "y": 133.10000000000002
+        },
+        {
+          "x": 231,
+          "y": 195.47000000000003
+        },
+        {
+          "x": 278,
+          "y": 192.39
+        },
+        {
+          "x": 251,
+          "y": 203.94
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    },
+    {
+      "name": "golpe-SA3",
+      "status": "generated",
+      "normalizationVersion": 2,
+      "targetHeight": 570,
+      "scale": 1.0124333925399644,
+      "original": "raw/golpe-SA3.png",
+      "strip": "tiras-768/golpe-SA3.png",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "frameBounds": [
+        {
+          "x": 206,
+          "y": 38,
+          "w": 228,
+          "h": 555,
+          "pixels": 78380,
+          "edge": 0
+        },
+        {
+          "x": 109,
+          "y": 85,
+          "w": 342,
+          "h": 508,
+          "pixels": 93871,
+          "edge": 0
+        },
+        {
+          "x": 103,
+          "y": 82,
+          "w": 487,
+          "h": 513,
+          "pixels": 106689,
+          "edge": 0
+        },
+        {
+          "x": 147,
+          "y": 31,
+          "w": 301,
+          "h": 563,
+          "pixels": 95804,
+          "edge": 0
+        }
+      ],
+      "transparentCorners": true,
+      "unclipped": true,
+      "previewCrop": [
+        {
+          "x": 262.5,
+          "y": 139.26
+        },
+        {
+          "x": 222.5,
+          "y": 176.22000000000003
+        },
+        {
+          "x": 289,
+          "y": 171.60000000000002
+        },
+        {
+          "x": 240,
+          "y": 133.10000000000002
+        }
+      ],
+      "alignment": {
+        "cell": 768,
+        "foot": [
+          384,
+          700
+        ],
+        "scale": 0.82421875,
+        "standingHeight": 470
+      }
+    }
+  ],
+  "completed": 40,
+  "expected": 40
+}
