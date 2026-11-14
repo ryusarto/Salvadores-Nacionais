@@ -48,12 +48,13 @@ export default {
   style: 'Chutes e pressão aérea',
   mechName: 'RAJADA',
   mechDesc: 'Golpes normais que acertam dão Embalo. Gaste Embalo para emendar um especial em outro. Tem pulo duplo e mergulho.',
-  colors: { skin: '#5c3a28', top: '#272a36', bottom: '#2e2e36', accent: '#ff6063', hair: '#201418', hat: '#c8323a', shoe: '#3b2a20' },
+  colors: { skin: '#9a6245', top: '#db202b', bottom: '#222226', accent: '#ff6063', hair: '#201418', hat: '#f5eee6', shoe: '#141417' },
   look: { hair: 'bandana', weapon: null, sleeves: 'long', bigBoots: true },
   walkF: 6.9, walkB: 5.2, jumpScale: 1.04, hpScale: 1.06, airJumps: 1,
   moves,
-  // Qual tira do kit de sprites cada animação usa (production/sprites/final/mdep)
-  spriteAlias: { 'golpe-jH': 'golpe-5H', 'golpe-jS': 'golpe-5H', 'golpe-2M': 'golpe-5M', 'golpe-6S': 'golpe-5H', 'golpe-c2': 'golpe-5L' },
+  spriteProfile: 'ten-frame',
+  spriteRecovery: true,
+  spriteScale: 0.85,
   mech: {
     init(f) {
       f.res = { embalo: 0 };

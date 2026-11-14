@@ -1,6 +1,19 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { spriteProgress } from '../../src/render/sprite-timing.js';
+import mdep from '../../src/data/characters/mdep.js';
+
+test('both rifle supers keep the rifle aimed throughout every actual shot', () => {
+  for (const key of ['SA1', 'SA3']) {
+    const move = mdep.moves[key], before = JSON.stringify(move);
+    for (const shot of move.spawn) {
+      const index = Math.floor(spriteProgress({ ch: mdep, state: 'attack', move, sf: shot.at }, { p: 0 }) * 10);
+      assert.ok(index === 4 || index === 5, `${key} shot at ${shot.at}: frame ${index}`);
+    }
+    assert.equal(Math.floor(spriteProgress({ ch: mdep, state: 'attack', move, sf: move.total - 1 }, { p: 0 }) * 10), 9);
+    assert.equal(JSON.stringify(move), before);
+  }
+});
 
 test('ten-frame art follows hit windows without changing combat data', () => {
   const m = { startup: 13, active: 5, total: 38, hits: [{ from: 14, to: 18 }], spawn: [] };

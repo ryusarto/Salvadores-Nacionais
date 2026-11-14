@@ -128,15 +128,16 @@ export function animFor(f, frame) {
     }
     case 'attack': {
       const m = f.move;
+      const variant = f.ch?.spriteTurboMoves?.includes(f.moveKey) && (m.isTurbo || f.res?.finale) ? '-turbo' : '';
       if (f.ch?.spritePhasedMoves?.includes(f.moveKey)) {
         const [first, last] = moveArtWindow(m);
         // Four drawings: preparation, wind-up, contact, recovery. The contact
         // pose follows the actual hit window, not a quarter of total duration.
         const p = f.sf < first ? Math.min(0.499, f.sf / first * 0.5)
           : f.sf <= last ? 0.5 : Math.min(0.999, 0.75 + (f.sf - last) / Math.max(1, m.total - last) * 0.25);
-        return { name: `golpe-${f.moveKey}${f.move?.isTurbo || f.res?.finale ? '-turbo' : ''}`, p, index: Math.floor(p * 4) };
+        return { name: `golpe-${f.moveKey}${variant}`, p, index: Math.floor(p * 4) };
       }
-      return { name: `golpe-${f.moveKey}${f.move?.isTurbo || f.res?.finale ? '-turbo' : ''}`, index: bySf(movePicks(m), f.sf), p: Math.min(0.999, f.sf / m.total) };
+      return { name: `golpe-${f.moveKey}${variant}`, index: bySf(movePicks(m), f.sf), p: Math.min(0.999, f.sf / m.total) };
     }
     default: return cyc('parado');
   }

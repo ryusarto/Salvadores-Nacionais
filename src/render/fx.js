@@ -260,7 +260,7 @@ export function drawEntities(c, st) {
       c.save();
       c.translate(x,y);
       c.rotate(Math.atan2(-e.vy,e.vx));
-      const drawn = drawEffect(c, 'dney', 'projetil', (e.age % 12) / 12, -100, -30, 200, 60);
+      const drawn = owner?.ch.id === 'dney' && drawEffect(c, 'dney', 'projetil', (e.age % 12) / 12, -100, -30, 200, 60);
       c.restore();
       if (drawn) { c.restore(); continue; }
       c.fillStyle = e.color;

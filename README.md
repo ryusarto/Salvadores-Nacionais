@@ -93,3 +93,11 @@ Ideias e problemas também podem ser enviados pela aba **Issues**.
 ### Majis — sprites completos
 
 40 animações e 8 FX próprios, alinhados em células de 768×768 com apoio em (384,700). Figurino e rosto conforme referências, cabelo preto, Flying V e silhueta magra. [Revisão das animações e efeitos](production/qa/majis-sprites.html). Fontes e prompts em `production/sprites/source/majis-v2/`.
+
+### MDEP — dez quadros por ação
+
+49 tiras PNG com alpha: 19 estados, 22 golpes e 8 efeitos separados. Cada tira tem dez células de 768×768, sem ampliar poses dobradas para simular definição. Moletom vermelho, lenço branco/vermelho, cargo preta e botas grandes, sem óculos. [Prévia interativa](production/qa/mdep-sprites.html) e [manifesto e prompts](production/sprites/source/mdep-v3/). SA1 e SA3 compartilham a sequência compatível do fuzil; os quatro e dez disparos seguem o combate real.
+
+### Franco — integração do fork francothesir
+
+44 tiras próprias e 18 efeitos separados, incluindo especiais turbinados, flashes, tinta e Obra-Prima. A mesma integração acrescenta sete efeitos do Dney e o laser dos olhos. [Registro da contribuição](production/qa/FRANCO-DNEY.md). As contribuições de Majis e Chapuh foram preservadas.

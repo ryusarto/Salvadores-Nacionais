@@ -62,6 +62,7 @@ export default {
   spriteAlias: {},
   spriteRecovery: true,
   spritePhasedMoves: Object.keys(moves),
+  spriteTurboMoves: Object.keys(moves).filter(key => moves[key].turbo),
   mech: {
     init(f) {
       f.res = { notes: [], noteT: 0, finale: false };

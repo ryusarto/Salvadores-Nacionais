@@ -8,6 +8,12 @@ export function spriteProgress(f, animation) {
   if (f.state === 'attack' && f.move) {
     const m = f.move;
     const first = m.hits.length ? m.hits[0].from : m.spawn.length ? Math.min(...m.spawn.map(s => s.at)) : m.startup + 1;
+    if (m.weapon === 'ak' && m.spawn.length) {
+      const lastShot = Math.max(...m.spawn.map(s => s.at)) + 3;
+      if (f.sf < first) return Math.min(0.399, f.sf / Math.max(1, first) * 0.4);
+      if (f.sf <= lastShot) return Math.min(0.599, 0.4 + (f.sf - first) / Math.max(1, lastShot - first + 1) * 0.2);
+      return Math.min(0.999, 0.6 + (f.sf - lastShot) / Math.max(1, m.total - lastShot - 1) * 0.4);
+    }
     const last = m.hits.length ? m.hits.at(-1).to : Math.max(first, m.startup + m.active);
     if (f.sf < first) return Math.min(0.499, f.sf / Math.max(1, first) * 0.5);
     if (f.sf <= last) return Math.min(0.699, 0.5 + (f.sf - first) / Math.max(1, last - first + 1) * 0.2);

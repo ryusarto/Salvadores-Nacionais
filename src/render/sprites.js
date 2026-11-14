@@ -50,15 +50,22 @@ function readyStrip(set, name) {
 }
 
 // Warm the browser's compressed-file cache without retaining decoded atlases.
-async function cacheFiles(urls) {
+const cacheQueue = [];
+let cacheWorkers = 0;
+function cacheFiles(urls) {
   if (typeof fetch !== 'function') return;
-  let next = 0;
-  await Promise.all(Array.from({ length: Math.min(3, urls.length) }, async () => {
-    while (next < urls.length) {
-      const url = urls[next++];
-      try { const response = await fetch(url, { cache: 'force-cache' }); if (response.ok) await response.arrayBuffer(); } catch { /* Drawing retains the existing fallback on load errors. */ }
-    }
-  }));
+  cacheQueue.push(...urls);
+  while (cacheWorkers < 3 && cacheQueue.length) {
+    cacheWorkers++;
+    void (async () => {
+      try {
+        while (cacheQueue.length) {
+          const url = cacheQueue.shift();
+          try { const response = await fetch(url, { cache: 'force-cache' }); if (response.ok) await response.arrayBuffer(); } catch { /* Drawing retains the existing fallback on load errors. */ }
+        }
+      } finally { cacheWorkers--; }
+    })();
+  }
 }
 
 /** Remove o fundo liso de uma tira: apaga, a partir das bordas, a cor do canto. */
@@ -136,7 +143,7 @@ function attackEffects(c, f) {
   const m = f.move;
   if (m.weapon === 'ak') {
     const at = m.spawn.map(s => s.at).filter(at => at <= f.sf).at(-1);
-    if (at != null && f.sf - at < 6) drawSpriteEffect(c, f.ch.id, 'fx-ak-disparo', (f.sf - at) / 6, 195, -325, 180);
+    if (at != null && f.sf - at < 6) drawSpriteEffect(c, f.ch.id, 'fx-ak-disparo', (f.sf - at) / 6, 205, -395, 180);
   }
   for (const h of m.hits) if (f.sf >= h.from && f.sf <= h.to + 3) {
     const stomp = m.fx === 'stomp';

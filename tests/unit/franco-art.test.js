@@ -4,6 +4,16 @@ import { existsSync } from 'node:fs';
 import franco from '../../src/data/characters/franco.js';
 import { animFor, STATE_ANIMS } from '../../src/render/anim.js';
 import { createFx, fxEvents } from '../../src/render/fx.js';
+import majis from '../../src/data/characters/majis.js';
+import chapuh from '../../src/data/characters/chapuh.js';
+import mdep from '../../src/data/characters/mdep.js';
+
+test('Franco turbo variants do not rename the other integrated characters\' strips', () => {
+  for (const ch of [majis, chapuh, mdep]) for (const [key, base] of Object.entries(ch.moves)) {
+    if (!base.turbo) continue;
+    assert.equal(animFor({ ch, state:'attack', move:base.turbo, moveKey:key, sf:1 },0).name,'golpe-'+key);
+  }
+});
 
 test('Franco has dedicated art for every move, state and turbo', () => {
   for (const name of [...Object.keys(STATE_ANIMS), ...Object.keys(franco.moves).map(k => 'golpe-' + k), ...Object.keys(franco.moves).filter(k => franco.moves[k].turbo).map(k => 'golpe-' + k + '-turbo')]) {
