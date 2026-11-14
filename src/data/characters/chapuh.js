@@ -9,7 +9,7 @@ import { mv, bx, baseNormals, proj } from '../movekit.js';
  */
 const DOG_CD = 170;
 const PUDDLE_MAX = 2;
-const PUDDLE = { kind: 'paint', behavior: 'puddle', y: 0, w: 200, h: 40, vx: 0, life: 420, hitsLeft: 0, hit: null, color: '#ee547a', slip: 40, delay: 0 };
+const PUDDLE = { kind: 'paint', behavior: 'puddle', art: 'fx-poca-tinta', y: 0, w: 200, h: 40, vx: 0, life: 420, hitsLeft: 0, hit: null, color: '#ee547a', slip: 40, delay: 0 };
 
 const puddle = (x) => ({
   make: (st, f) => {
@@ -25,7 +25,8 @@ const dog = (o = {}) => ({
       return null;
     }
     if (!o.force) f.res.dog = DOG_CD;
-    return proj({ kind: 'dog', behavior: 'fly', x: 90, y: 0, w: 120, h: 90, vx: 19, life: 80, dmg: 700, hitstun: 24, guard: 'low', color: '#a86f46', ...o });
+    return proj({ kind: 'dog', behavior: 'fly', x: 90, y: 0, w: 120, h: 90, vx: 19, life: 80, dmg: 700, hitstun: 24, guard: 'low', color: '#a86f46', ...o,
+      extra: { art: o.art || 'pinscher-correr', ...o.extra } });
   },
 });
 
@@ -40,12 +41,12 @@ const moves = {
     spawn: [{ at: 26, ...puddle(430) }], flags: { mash: { btn: 'S', from: 10, to: 26, max: 2 } }, range: 600, tags: ['mid', 'far', 'pressure'],
     turbo: { hits: [0, 1, 2, 3].map((i) => ({ from: 9 + i * 4, to: 10 + i * 4, box: bx(40, 140, 620, 270), dmg: 330, hitstun: 24, push: [10, 18], launch: i === 3 ? [7, 24] : null })), spawn: [{ at: 24, ...puddle(470) }] } }),
   '2S': mv({ name: 'Bomba de Tinta', startup: 14, active: 1, recovery: 22, anim: ['overWind', 'overhead'], range: 620, tags: ['zone', 'far'],
-    spawn: [{ at: 14, ...proj({ kind: 'paint', x: 70, y: 380, w: 64, h: 64, vx: 13, vy: 20, g: 1.5, life: 120, dmg: 500, color: '#ee547a', extra: { landSpawn: PUDDLE } }) }],
-    turbo: { startup: 10, spawn: [{ at: 10, ...proj({ kind: 'paint', x: 70, y: 380, w: 80, h: 80, vx: 17, vy: 20, g: 1.5, life: 120, dmg: 750, launch: [5, 20], color: '#6fc2ef', extra: { landSpawn: PUDDLE } }) }] } }),
+    spawn: [{ at: 14, ...proj({ kind: 'paint', x: 70, y: 380, w: 64, h: 64, vx: 13, vy: 20, g: 1.5, life: 120, dmg: 500, color: '#ee547a', extra: { landSpawn: PUDDLE, art: 'fx-bomba-tinta' } }) }],
+    turbo: { startup: 10, spawn: [{ at: 10, ...proj({ kind: 'paint', x: 70, y: 380, w: 80, h: 80, vx: 17, vy: 20, g: 1.5, life: 120, dmg: 750, launch: [5, 20], color: '#6fc2ef', extra: { landSpawn: PUDDLE, art: 'fx-bomba-tinta' } }) }] } }),
   '6S': mv({ name: 'Pega, Pinscher!', startup: 12, active: 1, recovery: 20, anim: ['castWind', 'cast'], spawn: [{ at: 12, ...dog() }], range: 1400, tags: ['zone', 'far', 'low'],
     turbo: { spawn: [{ at: 10, ...dog({ hits: 2, dmg: 520, vx: 23 }) }] } }),
-  '4S': mv({ name: 'Pula, Pinscher!', startup: 10, active: 1, recovery: 22, anim: ['castWind', 'upper'], spawn: [{ at: 10, ...dog({ vx: 11, vy: 31, g: 1.6, y: 10, dmg: 900, guard: 'mid', launch: [3, 26], life: 60 }) }], range: 420, tags: ['antiair'],
-    turbo: { spawn: [{ at: 8, ...dog({ vx: 12, vy: 33, g: 1.6, y: 10, dmg: 1200, guard: 'mid', launch: [3, 30], life: 60 }) }] } }),
+  '4S': mv({ name: 'Pula, Pinscher!', startup: 10, active: 1, recovery: 22, anim: ['castWind', 'upper'], spawn: [{ at: 10, ...dog({ art: 'pinscher-salto', vx: 11, vy: 31, g: 1.6, y: 10, dmg: 900, guard: 'mid', launch: [3, 26], life: 60 }) }], range: 420, tags: ['antiair'],
+    turbo: { spawn: [{ at: 8, ...dog({ art: 'pinscher-salto', vx: 12, vy: 33, g: 1.6, y: 10, dmg: 1200, guard: 'mid', launch: [3, 30], life: 60 }) }] } }),
   c1: mv({ name: 'Rolamento', startup: 3, active: 17, recovery: 9, anim: ['crouch', 'crouch'], crouch: true, motion: [{ from: 4, to: 20, vx: 22 }],
     inv: [{ from: 3, to: 20, type: 'upper' }, { from: 3, to: 20, type: 'throw' }], flags: { phase: true }, cancel: [], tags: ['evade'] }),
   c2: mv({ name: 'Jato de Tinta', startup: 11, active: 5, recovery: 22, box: bx(50, 220, 520, 90), dmg: 750, hitstun: 22, anim: ['castWind', 'cast'], spawn: [{ at: 16, ...puddle(380) }], tags: ['far', 'poke'] }),
@@ -54,8 +55,8 @@ const moves = {
     spawn: [{ at: 30, ...puddle(330) }], tags: ['super'] }),
   // O pinscher vem correndo e ataca o oponente: várias mordidas e uma última que derruba.
   SA3: mv({ name: 'Ataque do Pinscher', btn: 'X', startup: 12, active: 30, recovery: 40, anim: ['superWind', 'cast'], cost: { super: 3000 }, inv: [{ from: 1, to: 18, type: 'all' }],
-    spawn: [{ at: 6, ...dog({ force: true, x: 20, w: 170, h: 140, vx: 32, hits: 5, dmg: 640, guard: 'mid', hitstun: 36, push: [10, 20], chip: 0.3, life: 100 }) },
-      { at: 34, ...dog({ force: true, x: -40, y: 60, w: 190, h: 170, vx: 36, hits: 1, dmg: 1600, guard: 'mid', launch: [14, 28], kd: 'hard', chip: 0.3, life: 100 }) }],
+    spawn: [{ at: 6, ...dog({ art: 'pinscher-mordidas', extra: { travelArt: 'pinscher-correr' }, force: true, x: 20, w: 170, h: 140, vx: 32, hits: 5, dmg: 640, guard: 'mid', hitstun: 36, push: [10, 20], chip: 0.3, life: 100 }) },
+      { at: 34, ...dog({ art: 'pinscher-final', force: true, x: -40, y: 60, w: 190, h: 170, vx: 36, hits: 1, dmg: 1600, guard: 'mid', launch: [14, 28], kd: 'hard', chip: 0.3, life: 100 }) }],
     range: 1500, tags: ['super', 'big'] }),
 };
 
@@ -69,8 +70,10 @@ export default {
   look: { hair: 'spikes', weapon: 'spray', sleeves: 'long' },
   walkF: 7.2, walkB: 5.5, jumpScale: 1.03, hpScale: 0.93,
   moves,
-  // Qual tira do kit de sprites cada animação usa (production/sprites/final/chapuh)
-  spriteAlias: { 'golpe-5S': 'golpe-SA1', 'golpe-SA3': 'golpe-6S', 'golpe-4S': 'golpe-6S', 'golpe-5M': 'golpe-c1', 'golpe-2M': 'golpe-c1', 'golpe-c2': 'golpe-c1' },
+  spriteAlias: {},
+  spriteRecovery: true,
+  spriteStatePhases: true,
+  spritePhasedMoves: Object.keys(moves),
   mech: {
     init(f) {
       f.res = { dog: 0 };

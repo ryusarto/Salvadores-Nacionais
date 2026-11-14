@@ -1,0 +1,432 @@
+{
+  "checks": [
+    {
+      "character": "franco",
+      "key": "5L",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "5M",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "5H",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "2L",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "2M",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "2H",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "3H",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "6M",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "jL",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "jM",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "jH",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "throw",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "blindado",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "5S",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "5S",
+      "turbo": true,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "6S",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "6S",
+      "turbo": true,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "2S",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "2S",
+      "turbo": true,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "4S",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "4S",
+      "turbo": true,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "c1",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "c2",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "SA1",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "franco",
+      "key": "SA3",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "5L",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "5M",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "5H",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "2L",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "2M",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "2H",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "3H",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "6M",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "jL",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "jM",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "jH",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "throw",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "blindado",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "5S",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "5S",
+      "turbo": true,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "6S",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "6S",
+      "turbo": true,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "4S",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "4S",
+      "turbo": true,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "jS",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "2S",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "click",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "c1",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "c2",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "SA1",
+      "turbo": false,
+      "painted": true
+    },
+    {
+      "character": "dney",
+      "key": "SA3",
+      "turbo": false,
+      "painted": true
+    }
+  ],
+  "names": {
+    "franco": [
+      "agachar",
+      "andar-tras",
+      "andar",
+      "caido",
+      "correr",
+      "dano-alto",
+      "dano-baixo",
+      "dano-no-ar",
+      "defesa-agachado",
+      "defesa-em-pe",
+      "defesa-no-ar",
+      "escape-agarrao",
+      "golpe-2H",
+      "golpe-2L",
+      "golpe-2M",
+      "golpe-2S-turbo",
+      "golpe-2S",
+      "golpe-3H",
+      "golpe-4S-turbo",
+      "golpe-4S",
+      "golpe-5H",
+      "golpe-5L",
+      "golpe-5M",
+      "golpe-5S-turbo",
+      "golpe-5S",
+      "golpe-6M",
+      "golpe-6S-turbo",
+      "golpe-6S",
+      "golpe-SA1",
+      "golpe-SA3",
+      "golpe-blindado",
+      "golpe-c1",
+      "golpe-c2",
+      "golpe-jH",
+      "golpe-jL",
+      "golpe-jM",
+      "golpe-throw",
+      "levantar",
+      "parado",
+      "pulo",
+      "recuo",
+      "recuperacao-rolamento",
+      "tonto",
+      "vitoria"
+    ],
+    "dney": [
+      "agachar",
+      "andar-tras",
+      "andar",
+      "caido",
+      "correr",
+      "dano-alto",
+      "dano-baixo",
+      "dano-no-ar",
+      "defesa-agachado",
+      "defesa-em-pe",
+      "defesa-no-ar",
+      "escape-agarrao",
+      "golpe-2H",
+      "golpe-2L",
+      "golpe-2M",
+      "golpe-2S",
+      "golpe-3H",
+      "golpe-4S",
+      "golpe-5H",
+      "golpe-5L",
+      "golpe-5M",
+      "golpe-5S",
+      "golpe-6M",
+      "golpe-6S",
+      "golpe-SA1",
+      "golpe-SA3",
+      "golpe-blindado",
+      "golpe-c1",
+      "golpe-c2",
+      "golpe-click",
+      "golpe-jH",
+      "golpe-jL",
+      "golpe-jM",
+      "golpe-jS",
+      "golpe-throw",
+      "levantar",
+      "parado",
+      "pulo",
+      "recuo",
+      "recuperacao-rolamento",
+      "tonto",
+      "vitoria"
+    ],
+    "fxFranco": [
+      "adversario-sugado",
+      "flash-aereo",
+      "flash-cima",
+      "flash-horizontal",
+      "flash-impacto",
+      "flash-obturador",
+      "quadro-abertura",
+      "quadro-fechamento",
+      "quadro-obra-prima",
+      "quadro-succao",
+      "tinta-final-turbo",
+      "tinta-giro",
+      "tinta-impacto",
+      "tinta-libera-tudo",
+      "tinta-pincelada-curta",
+      "tinta-pincelada-larga",
+      "tinta-pressao",
+      "tinta-sobe-som"
+    ],
+    "fxDney": [
+      "disparo",
+      "impacto",
+      "laser-carga",
+      "laser-feixe",
+      "laser-impacto",
+      "projetil",
+      "recarga"
+    ]
+  },
+  "errors": []
+}

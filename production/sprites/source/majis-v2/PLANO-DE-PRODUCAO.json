@@ -1,0 +1,325 @@
+{
+  "character": "majis",
+  "status": "generated-and-integrated",
+  "referenceArt": "production/sprites/source/majis-prancheta.png",
+  "cell": [
+    768,
+    768
+  ],
+  "foot": [
+    384,
+    700
+  ],
+  "framesPerStrip": 4,
+  "states": [
+    "parado",
+    "andar",
+    "andar-tras",
+    "correr",
+    "agachar",
+    "pulo",
+    "recuo",
+    "escape-agarrao",
+    "recuperacao-rolamento",
+    "defesa-em-pe",
+    "defesa-agachado",
+    "defesa-no-ar",
+    "dano-alto",
+    "dano-baixo",
+    "dano-no-ar",
+    "caido",
+    "levantar",
+    "tonto",
+    "vitoria"
+  ],
+  "moves": [
+    {
+      "key": "5L",
+      "strip": "golpe-5L",
+      "name": "Guitarrada",
+      "activeWindow": [
+        6,
+        8
+      ],
+      "turboWindow": null
+    },
+    {
+      "key": "5M",
+      "strip": "golpe-5M",
+      "name": "Guitarrada Forte",
+      "activeWindow": [
+        9,
+        12
+      ],
+      "turboWindow": null
+    },
+    {
+      "key": "5H",
+      "strip": "golpe-5H",
+      "name": "Batida no Chão",
+      "activeWindow": [
+        13,
+        17
+      ],
+      "turboWindow": null
+    },
+    {
+      "key": "2L",
+      "strip": "golpe-2L",
+      "name": "Leve Baixo",
+      "activeWindow": [
+        7,
+        9
+      ],
+      "turboWindow": null
+    },
+    {
+      "key": "2M",
+      "strip": "golpe-2M",
+      "name": "Médio Baixo",
+      "activeWindow": [
+        10,
+        13
+      ],
+      "turboWindow": null
+    },
+    {
+      "key": "2H",
+      "strip": "golpe-2H",
+      "name": "Gancho",
+      "activeWindow": [
+        10,
+        15
+      ],
+      "turboWindow": null
+    },
+    {
+      "key": "3H",
+      "strip": "golpe-3H",
+      "name": "Rasteira",
+      "activeWindow": [
+        12,
+        15
+      ],
+      "turboWindow": null
+    },
+    {
+      "key": "6M",
+      "strip": "golpe-6M",
+      "name": "Golpe de Cima",
+      "activeWindow": [
+        21,
+        23
+      ],
+      "turboWindow": null
+    },
+    {
+      "key": "jL",
+      "strip": "golpe-jL",
+      "name": "Aéreo Leve",
+      "activeWindow": [
+        5,
+        13
+      ],
+      "turboWindow": null
+    },
+    {
+      "key": "jM",
+      "strip": "golpe-jM",
+      "name": "Aéreo Médio",
+      "activeWindow": [
+        7,
+        13
+      ],
+      "turboWindow": null
+    },
+    {
+      "key": "jH",
+      "strip": "golpe-jH",
+      "name": "Aéreo Forte",
+      "activeWindow": [
+        9,
+        14
+      ],
+      "turboWindow": null
+    },
+    {
+      "key": "throw",
+      "strip": "golpe-throw",
+      "name": "Agarrão",
+      "activeWindow": [
+        6,
+        8
+      ],
+      "turboWindow": null
+    },
+    {
+      "key": "blindado",
+      "strip": "golpe-blindado",
+      "name": "Golpe Blindado",
+      "activeWindow": [
+        27,
+        30
+      ],
+      "turboWindow": null
+    },
+    {
+      "key": "5S",
+      "strip": "golpe-5S",
+      "name": "Riff",
+      "activeWindow": [
+        13,
+        13
+      ],
+      "turboWindow": [
+        11,
+        11
+      ]
+    },
+    {
+      "key": "6S",
+      "strip": "golpe-6S",
+      "name": "Power Chord",
+      "activeWindow": [
+        17,
+        21
+      ],
+      "turboWindow": [
+        14,
+        18
+      ]
+    },
+    {
+      "key": "2S",
+      "strip": "golpe-2S",
+      "name": "Onda Grave",
+      "activeWindow": [
+        15,
+        15
+      ],
+      "turboWindow": [
+        12,
+        12
+      ]
+    },
+    {
+      "key": "4S",
+      "strip": "golpe-4S",
+      "name": "Solo Ascendente",
+      "activeWindow": [
+        8,
+        13
+      ],
+      "turboWindow": [
+        8,
+        13
+      ]
+    },
+    {
+      "key": "c1",
+      "strip": "golpe-c1",
+      "name": "Palhetada",
+      "activeWindow": [
+        14,
+        14
+      ],
+      "turboWindow": null
+    },
+    {
+      "key": "c2",
+      "strip": "golpe-c2",
+      "name": "Slide de Palco",
+      "activeWindow": [
+        10,
+        21
+      ],
+      "turboWindow": null
+    },
+    {
+      "key": "SA1",
+      "strip": "golpe-SA1",
+      "name": "Feedback",
+      "activeWindow": [
+        10,
+        10
+      ],
+      "turboWindow": null
+    },
+    {
+      "key": "SA3",
+      "strip": "golpe-SA3",
+      "name": "Terremoto",
+      "activeWindow": [
+        17,
+        64
+      ],
+      "turboWindow": null
+    }
+  ],
+  "effects": [
+    {
+      "name": "fx-nota-sonica",
+      "moves": [
+        "5S",
+        "c1"
+      ],
+      "purpose": "Projétil sonoro de Riff e Palhetada, incluindo versão turbo."
+    },
+    {
+      "name": "fx-power-chord",
+      "moves": [
+        "6S"
+      ],
+      "purpose": "Arco frontal da guitarrada."
+    },
+    {
+      "name": "fx-onda-grave",
+      "moves": [
+        "2S"
+      ],
+      "purpose": "Antecipação, erupção e dissipação da onda rasteira, normal e turbo."
+    },
+    {
+      "name": "fx-solo-ascendente",
+      "moves": [
+        "4S"
+      ],
+      "purpose": "Arco sonoro ascendente antiaéreo."
+    },
+    {
+      "name": "fx-slide-palco",
+      "moves": [
+        "c2"
+      ],
+      "purpose": "Rastro de atrito do slide."
+    },
+    {
+      "name": "fx-feedback",
+      "moves": [
+        "SA1"
+      ],
+      "purpose": "Onda sonora grande de três acertos."
+    },
+    {
+      "name": "fx-terremoto",
+      "moves": [
+        "SA3"
+      ],
+      "purpose": "Pulsos de vibração no chão e explosão final."
+    },
+    {
+      "name": "fx-tremor",
+      "moves": [
+        "status"
+      ],
+      "purpose": "Acúmulo de tremor e atordoamento no adversário."
+    }
+  ],
+  "requirements": [
+    "Preservar roupa, guitarra e identidade da prancheta; ajustar rosto usando a foto solicitada.",
+    "Criar desenhos próprios para todos os estados e ataques; remover aliases substitutos apenas após integração.",
+    "Separar arte do lutador e FX; manter regras, alcance e dano existentes.",
+    "Integrar no jogo, validar quadros e escala, rebuild e publicar no fork como no Chapuh."
+  ],
+  "visual": "Fotografias fornecidas: rosto, cabelo preto em pontas, figurino monocromático, corpo magro, pouco busto, Flying V e tatuagens."
+}

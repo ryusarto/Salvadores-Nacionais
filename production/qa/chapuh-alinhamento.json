@@ -1,0 +1,255 @@
+{
+  "cell": [
+    768,
+    768
+  ],
+  "foot": [
+    384,
+    700
+  ],
+  "standingVisibleHeight": 469,
+  "standingBottom": 699,
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "agachar.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "andar-tras.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "andar.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "caido.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "correr.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "dano-alto.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "dano-baixo.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "dano-no-ar.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "defesa-agachado.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "defesa-em-pe.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "defesa-no-ar.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "escape-agarrao.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-2H.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-2L.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-2M.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-2S.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-3H.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-4S.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-5H.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-5L.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-5M.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-5S.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-6M.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-6S.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-SA1.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-SA3.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-blindado.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-c1.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-c2.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-jH.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-jL.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-jM.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "golpe-throw.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "levantar.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "parado.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "pulo.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "recuo.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "recuperacao-rolamento.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "tonto.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    },
+    {
+      "name": "vitoria.webp",
+      "width": 3072,
+      "height": 768,
+      "passed": true
+    }
+  ]
+}

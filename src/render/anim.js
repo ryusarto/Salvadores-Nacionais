@@ -45,6 +45,13 @@ export function movePicks(m) {
     .sort((a, b) => a - b);
 }
 
+/** Golpes sem hitbox usam os instantes reais de criação dos projéteis/ajudantes. */
+export function moveArtWindow(m) {
+  if (m.hits.length) return [m.hits[0].from, m.hits[m.hits.length - 1].to];
+  if (m.spawn.length) return [Math.min(...m.spawn.map(s => s.at)), Math.max(...m.spawn.map(s => s.at))];
+  return [m.startup + 1, m.startup + m.active];
+}
+
 const bySf = (frames, sf) => {
   let i = 0;
   while (i < frames.length - 1 && sf >= frames[i + 1]) i++;
@@ -76,6 +83,20 @@ export function animFor(f, frame) {
     const p = Math.max(0, Math.min(0.999, f.sf / duration));
     return { name, p, index: Math.floor(p * 4) };
   };
+  // Tiras de quatro fases do Chapuh. Outros personagens conservam seu contrato.
+  if (f.ch?.spriteStatePhases) {
+    const guard = f.y > 0 ? 'defesa-no-ar' : f.crouchBlock ? 'defesa-agachado' : 'defesa-em-pe';
+    if (f.state === 'guard' || f.state === 'blockstun') return timed(guard, 12);
+    if (f.state === 'air' && f.airGuard) return timed('defesa-no-ar', 12);
+    if (['hitstun', 'frozen', 'thrown', 'slip'].includes(f.state)) {
+      return timed(f.crouchBlock ? 'dano-baixo' : f.comboHits % 2 ? 'dano-alto' : 'dano-baixo', 18);
+    }
+    if (f.state === 'air_hit' || (f.state === 'ko' && f.y > 0)) {
+      const index = byVy([24, 6, -8, -24], f.vy);
+      return { name: 'dano-no-ar', index, p: index / 4 };
+    }
+    if (f.state === 'knockdown' || (f.state === 'ko' && f.y <= 0)) return timed('caido', 16);
+  }
   switch (f.state) {
     case 'idle': return cyc('parado');
     case 'walk': return cyc(f.vx * f.face < 0 ? 'andar-tras' : 'andar');
@@ -107,16 +128,16 @@ export function animFor(f, frame) {
     }
     case 'attack': {
       const m = f.move;
+      const variant = f.ch?.spriteTurboMoves?.includes(f.moveKey) && (m.isTurbo || f.res?.finale) ? '-turbo' : '';
       if (f.ch?.spritePhasedMoves?.includes(f.moveKey)) {
-        const first = m.hits.length ? m.hits[0].from : m.startup + 1;
-        const last = m.hits.length ? m.hits[m.hits.length - 1].to : m.startup + m.active;
+        const [first, last] = moveArtWindow(m);
         // Four drawings: preparation, wind-up, contact, recovery. The contact
         // pose follows the actual hit window, not a quarter of total duration.
         const p = f.sf < first ? Math.min(0.499, f.sf / first * 0.5)
           : f.sf <= last ? 0.5 : Math.min(0.999, 0.75 + (f.sf - last) / Math.max(1, m.total - last) * 0.25);
-        return { name: `golpe-${f.moveKey}`, p, index: Math.floor(p * 4) };
+        return { name: `golpe-${f.moveKey}${variant}`, p, index: Math.floor(p * 4) };
       }
-      return { name: `golpe-${f.moveKey}`, index: bySf(movePicks(m), f.sf), p: Math.min(0.999, f.sf / m.total) };
+      return { name: `golpe-${f.moveKey}${variant}`, index: bySf(movePicks(m), f.sf), p: Math.min(0.999, f.sf / m.total) };
     }
     default: return cyc('parado');
   }
