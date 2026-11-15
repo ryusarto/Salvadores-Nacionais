@@ -101,3 +101,23 @@ Ideias e problemas também podem ser enviados pela aba **Issues**.
 ### Franco — integração do fork francothesir
 
 44 tiras próprias e 18 efeitos separados, incluindo especiais turbinados, flashes, tinta e Obra-Prima. A mesma integração acrescenta sete efeitos do Dney e o laser dos olhos. [Registro da contribuição](production/qa/FRANCO-DNEY.md). As contribuições de Majis e Chapuh foram preservadas.
+
+### Trunks — seis frames de 500px por animação
+
+40 animações próprias e 8 camadas auxiliares, cada uma em imagem separada com
+seis frames de 500×500px e alpha real: **288 frames**. PNGs em pranchas de
+1500×1000 e tiras de 3000×500, com proporções calibradas pela referência do
+personagem. Inclui todos os estados, golpes, supers, cães e ambulância.
+[Prévia em 500px](production/qa/trunks-sprites.html) e
+[fontes e instruções](production/sprites/source/trunks-v3/README.md).
+
+### Belga — seis frames de 500px por animação
+
+Rosto, porte, boné, tatuagens, colete bege e calça estampada baseados nas
+referências fotográficas. **40 animações e 8 efeitos, 288 frames** com alpha
+real, proporções calibradas e uma animação por PNG de 1500×1000. Tiras do jogo
+em 3000×500. O Um-Dois acompanha os dois contatos; os supers acompanham os três
+e sete lançamentos reais de vinil. As regras de combate e o BPM são preservados.
+[Prévia em 500px](production/qa/belga-sprites.html),
+[prévia independente para baixar](production/qa/belga-previa-500px.html) e
+[fontes e instruções](LEIA-ME-BELGA.md).

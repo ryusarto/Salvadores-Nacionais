@@ -1,0 +1,630 @@
+[
+  {
+    "name": "parado",
+    "effect": false,
+    "source": "originais/parado.png",
+    "faceArea": 1108,
+    "faceRegion": {
+      "area": 1108,
+      "x": 253,
+      "y": 25,
+      "w": 36,
+      "h": 49
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. Animation: IDLE BREATHING, a seamless six-frame loop. Frame1 relaxed upright stance, hands near hoodie pockets. Frame2 gentle inhale raising chest slightly. Frame3 fullest inhale shoulders subtly raised. Frame4 gentle exhale with loose combat readiness. Frame5 chest settles and dreadlocks sway minimally. Frame6 returns nearly to frame1 for seamless looping. Keep feet planted at the same point in ALL six frames, head height changes no more than 4 pixels. No walking, attacks, crouch or other animations.",
+    "repairPrompt": "Clean transparent alpha, remove cloudy backdrop; preserve six drawings."
+  },
+  {
+    "name": "andar",
+    "effect": false,
+    "source": "originais/andar.png",
+    "faceArea": 1111,
+    "faceRegion": {
+      "area": 1111,
+      "x": 257,
+      "y": 26,
+      "w": 35,
+      "h": 49
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE animation only: FORWARD WALK, six-frame seamless gait cycle, always facing RIGHT. F1 right heel reaches forward, left toes push off. F2 weight transfers to right foot, left heel lifts. F3 left leg passes under hips with bent knee. F4 left heel reaches forward, right toes push off. F5 weight transfers left, right heel lifts. F6 right leg passes under hips ready to loop to F1. Natural alternating opposite arm swing, relaxed fists instead of hands in pockets, dreadlocks subtle follow-through. Same hips height within 10px, same anatomical lengths and head size in every frame. No run or jump. Both feet never stretched beyond own cell."
+  },
+  {
+    "name": "andar-tras",
+    "effect": false,
+    "source": "originais/andar-tras.png",
+    "faceArea": 1092,
+    "faceRegion": {
+      "area": 1092,
+      "x": 264,
+      "y": 34,
+      "w": 32,
+      "h": 50
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE animation only: BACKWARDS WALK in guarded fighting stance, always FACING RIGHT while stepping LEFT. Six distinct successive reverse gait frames: F1 rear left foot reaches backward, fists up. F2 weight shifts backward. F3 front right foot draws inward, knees soft. F4 front right foot reaches backward while left pushes. F5 transfer weight and keep head facing right. F6 return passing reverse step, loops into F1. Small guarded arm movements, shoulders face right, do not turn to face left. Entire body in each cell, fixed body scale."
+  },
+  {
+    "name": "correr",
+    "effect": false,
+    "source": "originais/correr.png",
+    "faceArea": 1226,
+    "faceRegion": {
+      "area": 1226,
+      "x": 296,
+      "y": 36,
+      "w": 36,
+      "h": 52
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE animation only: FORWARD SPRINT, six-frame running loop facing RIGHT. F1 long right-foot forward stride, opposite left arm forward. F2 right foot contacts, torso leans slightly forward. F3 right leg pushes and left knee drives high. F4 long left-foot forward stride, opposite right arm forward. F5 left foot contacts compressing knee. F6 left leg pushes with right knee driving high to loop. Dreadlocks flow back naturally, fists pump, both legs alternate, full sneakers visible. Only the stride changes; same head and body scale throughout. No effects or speed lines."
+  },
+  {
+    "name": "agachar",
+    "effect": false,
+    "source": "originais/agachar.png",
+    "faceArea": 1092,
+    "faceRegion": {
+      "area": 1092,
+      "x": 254,
+      "y": 26,
+      "w": 35,
+      "h": 49
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE animation only: STANDING TO CROUCH transition, six consecutive progressively LOWER poses. F1 upright loose combat guard. F2 knees bend slightly. F3 half squat, hands raised. F4 deeper squat with hips close to heels. F5 full deep crouch, elbows protect ribs. F6 settles and HOLDS the deepest crouch, both shoes planted, looking right. The last frames must stay crouched, NOT rise again. Keep head size identical to the standing first frame; bent body gets naturally shorter and leaves more empty room above, NEVER enlarge it. Hands not in pockets."
+  },
+  {
+    "name": "pulo",
+    "effect": false,
+    "source": "originais/pulo.png",
+    "faceArea": 1374,
+    "faceRegion": {
+      "area": 1374,
+      "x": 272,
+      "y": 49,
+      "w": 46,
+      "h": 51
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE animation only: JUMP, six phases facing RIGHT. F1 leaving the ground with rear foot extended and knees beginning to rise. F2 rising with one knee high and arms balanced. F3 rising with both knees tucked. F4 apex with legs opening slightly and body upright. F5 descending, lower legs start extending. F6 descending with knees flexed ready to land, arms braced. All SIX are airborne character poses, no floor and no dust. Keep anatomical/head scale identical in all frames. The game provides vertical movement; keep the pelvis centered within each equal cell and do not add a trajectory."
+  },
+  {
+    "name": "recuo",
+    "effect": false,
+    "source": "originais/recuo.png",
+    "faceArea": 1081,
+    "faceRegion": {
+      "area": 1081,
+      "x": 253,
+      "y": 26,
+      "w": 36,
+      "h": 48
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE animation only: BACKDASH retreat, six phases, always facing RIGHT. F1 upright loose guard. F2 knees coil and upper body leans away from opponent to the left. F3 strong push from front foot launching body backward with back leg reaching left. F4 slide backward in compact guarded stance. F5 rear foot braces and front leg draws in. F6 settles back into combat guard. Same body/head scale and baseline; only poses change. No walking cycle, no effects, no shadow."
+  },
+  {
+    "name": "escape-agarrao",
+    "effect": false,
+    "source": "originais/escape-agarrao.png",
+    "faceArea": 1083,
+    "faceRegion": {
+      "area": 1083,
+      "x": 252,
+      "y": 27,
+      "w": 35,
+      "h": 48
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE animation only: ESCAPE AN OPPONENT'S GRAB, six phases, NO opponent in the picture. F1 alert guard facing right. F2 hands and forearms cross tightly before torso. F3 shoulders tense, palms begin forcefully separating imagined grabbing hands. F4 both arms burst apart outward, torso leans back. F5 one foot braces backward and hands regain protective position. F6 returns to ready guard. Strong readable six-part motion, same face/head proportions and planted sneakers, no extra floating arms, no other character, no effects."
+  },
+  {
+    "name": "recuperacao-rolamento",
+    "effect": false,
+    "source": "originais/recuperacao-rolamento.png",
+    "faceArea": 1626,
+    "faceRegion": {
+      "area": 1626,
+      "x": 305,
+      "y": 140,
+      "w": 41,
+      "h": 63
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: SHOULDER RECOVERY ROLL from left to right. F1 low kneeling crouch, one hand braces near floor. F2 head tucks and shoulder lowers. F3 curled body rolling onto shoulder, knees folded near chest, soles face upward. F4 tightly tucked body rolling over upper back with legs overhead, head and dreadlocks naturally follow. F5 one knee plants under torso while a hand pushes up. F6 rises into low ready crouch. Whole figure visible including hair/hands/shoes, NO drawn floor. Keep fixed anatomical/head scale: curled frames must be compact, not enlarged to match standing height. Realistic readable anatomy, six separate snapshots of the SAME roll."
+  },
+  {
+    "name": "defesa-em-pe",
+    "effect": false,
+    "source": "originais/defesa-em-pe.png",
+    "faceArea": 1223,
+    "faceRegion": {
+      "area": 1223,
+      "x": 251,
+      "y": 28,
+      "w": 37,
+      "h": 50
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: STANDING BLOCK. Six consecutive frames of raising guard and bracing a hit. F1 upright loose guard with fists before chest. F2 forearms rise toward face. F3 forearms cross tightly protecting face and chest. F4 IMPACT BRACE: compact shoulders, knees slightly bend, face determined behind raised arms. F5 absorbs force with slight backward lean, forearms remain high. F6 holds solid closed standing block, does NOT return to idle. No opponent or hit effects. Same fixed head/limb scale as reference."
+  },
+  {
+    "name": "defesa-agachado",
+    "effect": false,
+    "source": "originais/defesa-agachado.png",
+    "faceArea": 2116,
+    "faceRegion": {
+      "area": 2116,
+      "x": 293,
+      "y": 112,
+      "w": 49,
+      "h": 72
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: CROUCHING BLOCK. All six poses remain in a LOW CROUCH with head and limbs SAME actual size as the standing reference, shorter silhouette naturally. F1 deep crouch fists ready. F2 front forearm raises before cheek. F3 rear forearm reinforces and elbow protects ribs. F4 compact low crossed-arm impact brace, knees compressed. F5 leaning back slightly absorbing pressure. F6 held crouching block with both arms protecting head/torso. Do not stand up or enlarge the crouching figure. Full sneakers visible and feet planted, no opponent/effects."
+  },
+  {
+    "name": "defesa-no-ar",
+    "effect": false,
+    "source": "originais/defesa-no-ar.png",
+    "faceArea": 1845,
+    "faceRegion": {
+      "area": 1845,
+      "x": 246,
+      "y": 48,
+      "w": 45,
+      "h": 63
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: AERIAL BLOCK. Six sequential airborne guard frames. F1 knees tucked, arms open in ready position. F2 front forearm rises near face. F3 both forearms cross before head and torso. F4 knees tuck tightly and crossed forearms brace an aerial impact. F5 recoils slightly backwards retaining air guard. F6 settles into held aerial guard with knees still bent. No floor or trajectory, no opponent or effects. Same anatomical scale and head size as standing reference; folded silhouette is shorter, never enlarge it."
+  },
+  {
+    "name": "dano-alto",
+    "effect": false,
+    "source": "originais/dano-alto.png",
+    "faceArea": 1098,
+    "faceRegion": {
+      "area": 1098,
+      "x": 253,
+      "y": 25,
+      "w": 36,
+      "h": 49
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: HIGH HIT REACTION, six progressive frames, no opponent/blood/effects. F1 upright loose guard facing right. F2 jaw jerks slightly backward, eyebrows react. F3 shoulders and upper chest recoil. F4 deepest backward recoil: chest open, chin lifted, pained face, knees braced. F5 bends forward slightly recovering breath with hands before chest. F6 held stagger ready to recover. Feet grounded, same head/limb sizes and anatomical scale in all six frames, natural body distortion only."
+  },
+  {
+    "name": "dano-baixo",
+    "effect": false,
+    "source": "originais/dano-baixo.png",
+    "faceArea": 1104,
+    "faceRegion": {
+      "area": 1104,
+      "x": 253,
+      "y": 26,
+      "w": 35,
+      "h": 48
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: LOW BODY HIT REACTION, six progressive frames, no opponent/blood/effects. F1 upright loose combat guard. F2 abdomen contracts and face winces. F3 knees bend as one hand moves toward stomach. F4 folds forward sharply clutching belly with both hands, pained face. F5 deepest compact abdominal stagger with hips down. F6 remains hunched in low stagger, looking right. Fixed head size and limb lengths as standing reference: shorter bent figures must not be enlarged. Sneakers remain fully visible at the common baseline."
+  },
+  {
+    "name": "dano-no-ar",
+    "effect": false,
+    "source": "originais/dano-no-ar.png",
+    "faceArea": 1386,
+    "faceRegion": {
+      "area": 1386,
+      "x": 121,
+      "y": 206,
+      "w": 47,
+      "h": 58
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE SINGLE ANIMATION: AIRBORNE DAMAGE REACTION in SIX chronological poses. Frame1 airborne torso recoils backward, knees lifted, arms loose. Frame2 chest leans farther backward, lower legs swing forward. Frame3 back arches suspended with legs forward, dreadlocks trailing. Frame4 torso tilts diagonally back with head LEFT of feet and knees bent. Frame5 descending nearly horizontal on back, arms loose. Frame6 descending on back with legs extending, ready for knockdown. Same face/head size and actual limb lengths in all six frames, no growth or per-frame zoom. All six drawings isolated entirely inside their own 512px square cell. Draw ONLY character silhouettes. The reference demonstrates clean transparent alpha: preserve that. Empty canvas must be truly fully transparent ALPHA ZERO, especially all corners, margins and between drawings. No white or pale-gray fill, no haze, no shadows, no scenery, no target or impact effects.",
+    "repairPrompt": "REMOVE BACKGROUND: edit this exact SIX-FRAME sprite sheet, preserving all six full-body drawings, their poses, scale, detailed clothing and locations on the 1536x1024 three-column two-row canvas. The white/gray background is currently only partly transparent: that is INCORRECT. Completely remove EVERY white gray foggy background pixel outside the actual character silhouettes. All corners and every empty gap MUST have ALPHA EXACTLY ZERO, not alpha 30%, 50% or 99%. No replacement color, checkerboard, glow, drop shadow or haze. Preserve the character pixels and sharp black outlines. Keep original high resolution and six frames unchanged. Export clean isolated game sprites on REAL fully empty transparent background.",
+    "regeneratedForAlpha": true
+  },
+  {
+    "name": "caido",
+    "effect": false,
+    "source": "originais/caido.png",
+    "faceArea": 1400,
+    "faceRegion": {
+      "area": 1400,
+      "x": 185,
+      "y": 279,
+      "w": 55,
+      "h": 53
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: KNOCKDOWN AND LYING FALL. F1 bends and drops onto one knee after a hit. F2 torso falls sideways/backward onto hip, hands open. F3 rolls onto lower back with knees lifted. F4 shoulders and back hit the implied ground, head LEFT and feet RIGHT. F5 legs stretch and settle along floor line. F6 lying flat on BACK, head left and shoes right, unconscious but no injury or blood. Six progressive snapshots of a single fall. Fixed anatomical scale from standing reference, head size remains unchanged even when body is horizontal. Entire horizontal figure inside every cell, legs can be bent to fit but never shrink only one limb. No floor/shadows/effects."
+  },
+  {
+    "name": "levantar",
+    "effect": false,
+    "source": "originais/levantar.png",
+    "faceArea": 1142,
+    "faceRegion": {
+      "area": 1142,
+      "x": 51,
+      "y": 369,
+      "w": 50,
+      "h": 48
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: GET UP FROM KNOCKDOWN. F1 lying flat on back, head LEFT feet RIGHT. F2 rolls to side and braces on elbow. F3 pushes torso upward using one palm, knees bent. F4 kneels on one knee under torso. F5 rises from knee with hands recovering guard. F6 fully upright loose combat guard facing RIGHT. Same anatomical/head scale through all six poses, do not enlarge lying/kneeling figures. Complete body, consistent costume, no floor or extra objects."
+  },
+  {
+    "name": "tonto",
+    "effect": false,
+    "source": "originais/tonto.png",
+    "faceArea": 1279,
+    "faceRegion": {
+      "area": 1279,
+      "x": 279,
+      "y": 50,
+      "w": 39,
+      "h": 57
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: DIZZY STAGGER LOOP. Six progressive poses, all facing roughly right. F1 slight hunch loose arms, unfocused eyes. F2 head sways left, knees soft. F3 torso sways backward, hands loose. F4 hand lifts toward forehead, face dazed. F5 head rolls down and body sways forward. F6 loose stagger close to starting pose for a loop. Feet remain in same area, no stars, symbols or external effects. Fixed head and body scale, same facial identity."
+  },
+  {
+    "name": "vitoria",
+    "effect": false,
+    "source": "originais/vitoria.png",
+    "faceArea": 1108,
+    "faceRegion": {
+      "area": 1108,
+      "x": 252,
+      "y": 26,
+      "w": 36,
+      "h": 48
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: VICTORY CELEBRATION. F1 relaxed upright fighting stance. F2 chin lifts confidently and one fist rises to chest. F3 grin spreads showing large white teeth, fist rises beside face. F4 broad confident toothy smile, raised fist triumphantly overhead but inside cell. F5 lowers fist beside shoulder with proud smile. F6 settles into confident held victory pose, fist raised and gold cross clearly visible. Same body/head scale, all sneakers and hair visible. No lettering, confetti, effects or other figures."
+  },
+  {
+    "name": "golpe-5L",
+    "effect": false,
+    "source": "originais/golpe-5L.png",
+    "faceArea": 1116,
+    "faceRegion": {
+      "area": 1116,
+      "x": 252,
+      "y": 28,
+      "w": 35,
+      "h": 50
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: LIGHT JAB. Six distinct progressive frames: F1 ready guard with fists up out of pockets. F2 front shoulder and fist cock slightly back. F3 elbow starts extending RIGHT. F4 CONTACT: front fist fully extended horizontally RIGHT at chest height, rear fist protects jaw. F5 front elbow flexes retracting punch. F6 return to ready guard. Fast readable straight punch, no kick, same anatomy and scale across all six frames, planted feet, crisp hands. No trails, sparks, opponent or effects."
+  },
+  {
+    "name": "golpe-5M",
+    "effect": false,
+    "source": "originais/golpe-5M.png",
+    "faceArea": 1019,
+    "faceRegion": {
+      "area": 1019,
+      "x": 247,
+      "y": 36,
+      "w": 30,
+      "h": 50
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: MEDIUM SIDE KICK. Six progressive frames: F1 ready guard. F2 shift weight to rear supporting leg. F3 raise forward knee high and coil foot. F4 CONTACT: extend sneaker and leg horizontally RIGHT at torso height, support knee bent, fists protect chest. F5 retract kicking knee in front of body. F6 plant foot and return to guard. Same anatomical lengths and head scale, no growth during kick, entire extended foot must stay inside the square cell. No effects or target."
+  },
+  {
+    "name": "golpe-5H",
+    "effect": false,
+    "source": "originais/golpe-5H.png",
+    "faceArea": 1335,
+    "faceRegion": {
+      "area": 1335,
+      "x": 255,
+      "y": 34,
+      "w": 36,
+      "h": 56
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: STANDING SUPER TEETH BITE, NOT a kick. Six successive frames: F1 fists ready, knees slightly bent. F2 torso coils back and jaw begins opening. F3 mouth opens VERY WIDE revealing exaggerated huge clean WHITE TEETH while dreadlocks lag. F4 CONTACT: head and shoulders LUNGE RIGHT, enormous white teeth snap closed, rear leg pushes. F5 head recoils and jaw closes after bite. F6 returns to low combat guard. Comedic super teeth can enlarge the JAW only; skull, torso, limbs keep the same fixed scale. No blood, opponents, effects or separate floating jaws."
+  },
+  {
+    "name": "golpe-2L",
+    "effect": false,
+    "source": "originais/golpe-2L.png",
+    "faceArea": 1191,
+    "faceRegion": {
+      "area": 1191,
+      "x": 282,
+      "y": 169,
+      "w": 34,
+      "h": 55
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: CROUCHING LIGHT LOW KICK. Six phases: F1 deep low guard crouch. F2 weight shifts onto rear bent leg. F3 front knee uncoils beginning kick. F4 CONTACT: short front sneaker kick extending RIGHT at opponent shin/ankle height, torso remains low and compact. F5 retract kicking foot under body. F6 returns to held crouching guard. Keep fixed head size and full anatomical lengths from STANDING reference; crouched body is naturally much shorter, NEVER enlarge it to fill square cell. Full feet visible, no effects or opponents."
+  },
+  {
+    "name": "golpe-2M",
+    "effect": false,
+    "source": "originais/golpe-2M.png",
+    "faceArea": 1533,
+    "faceRegion": {
+      "area": 1533,
+      "x": 279,
+      "y": 156,
+      "w": 41,
+      "h": 62
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: CROUCHING MEDIUM SWEEP KICK. Six phases: F1 low guarded crouch. F2 hips rotate, rear knee supports weight. F3 lead leg begins extending right near floor. F4 CONTACT: long sneaker kick fully stretched RIGHT at ankle height, low torso and bent support knee, one fist guarding head. F5 retract long extended leg. F6 settle back into low guard. Same head size and actual anatomy as standing reference, crouched poses must stay naturally SHORT with empty space above. No stretching body to fill cell, no target/effects."
+  },
+  {
+    "name": "golpe-2H",
+    "effect": false,
+    "source": "originais/golpe-2H.png",
+    "faceArea": 1435,
+    "faceRegion": {
+      "area": 1435,
+      "x": 276,
+      "y": 152,
+      "w": 39,
+      "h": 56
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: CROUCHING UPPERCUT LAUNCHER. Six phases: F1 deep crouch fists up. F2 fist drops back beside hip with torso coiling. F3 knees begin pushing up as fist travels forward/up. F4 CONTACT: upward fist extends diagonally RIGHT above head with body rising from crouch, other fist guards chest. F5 upward follow-through with elbow starting to bend and feet planted. F6 drops into guarded crouch recovery. Same head/limb size from first to last, full raised fist stays inside cell, no opponent, aura, trails or effects."
+  },
+  {
+    "name": "golpe-3H",
+    "effect": false,
+    "source": "originais/golpe-3H.png",
+    "faceArea": 1768,
+    "faceRegion": {
+      "area": 1768,
+      "x": 310,
+      "y": 167,
+      "w": 45,
+      "h": 63
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: FULL LOW SWEEP. Six phases: F1 deep crouch guard. F2 one hand braces downward and hip pivots. F3 kicking leg swings forward along implied floor. F4 CONTACT: long sweeping leg almost horizontal RIGHT at floor height, opposite knee deeply bent, supporting hand low, torso near ground. F5 sweeping leg folds back, hips rotate toward neutral. F6 returns to compact crouch guard. Full body and feet inside each cell; SAME head/limb sizes as standing reference, short bent figure is not enlarged. No floor, motion trails, targets or effects."
+  },
+  {
+    "name": "golpe-6M",
+    "effect": false,
+    "source": "originais/golpe-6M.png",
+    "faceArea": 1135,
+    "faceRegion": {
+      "area": 1135,
+      "x": 252,
+      "y": 28,
+      "w": 37,
+      "h": 49
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: OVERHEAD HAMMERFIST. Six phases: F1 loose guard hands out of pockets. F2 front fist rises beside head. F3 raise fist above forehead, body coils. F4 CONTACT: powerful downward forward hammerfist RIGHT at imagined opponent head/shoulder level, body leans into strike, knees flex. F5 follow through with fist low then retract elbow. F6 balanced guard restored. Entire fist and hair must stay inside own cell even overhead. Same head size and anatomical scale, no target or effects."
+  },
+  {
+    "name": "golpe-jL",
+    "effect": false,
+    "source": "originais/golpe-jL.png",
+    "faceArea": 1250,
+    "faceRegion": {
+      "area": 1250,
+      "x": 251,
+      "y": 34,
+      "w": 36,
+      "h": 53
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: AIR LIGHT PUNCH. Six successive airborne phases: F1 knees tucked, fists in ready guard. F2 front fist cocks back near jaw. F3 elbow begins extending RIGHT at chest level. F4 CONTACT: straight punch fully extended RIGHT while both feet remain off ground, rear fist guards cheek. F5 front arm retracts with knees held bent. F6 returns to airborne guard ready for landing. Same head and limb lengths as standing reference; do not enlarge compact airborne body. No floor, trajectory, opponent or effects."
+  },
+  {
+    "name": "golpe-jM",
+    "effect": false,
+    "source": "originais/golpe-jM.png",
+    "faceArea": 1357,
+    "faceRegion": {
+      "area": 1357,
+      "x": 259,
+      "y": 52,
+      "w": 39,
+      "h": 55
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: AIR MEDIUM KICK. Six airborne phases: F1 knees tucked, guard. F2 torso turns slightly with one knee lifting. F3 kicking knee coils forward. F4 CONTACT: strong sneaker kick extends diagonally down RIGHT at opponent upper torso, opposite leg remains bent, arms balance. F5 retract kicking leg. F6 returns to compact airborne guard. Keep actual head/limb scale unchanged, complete shoe stays in each cell, no target, floor, trajectory or effects."
+  },
+  {
+    "name": "golpe-jH",
+    "effect": false,
+    "source": "originais/golpe-jH.png",
+    "faceArea": 2232,
+    "faceRegion": {
+      "area": 2232,
+      "x": 279,
+      "y": 53,
+      "w": 48,
+      "h": 65
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: AERIAL SUPER TEETH BITE. Six airborne phases: F1 knees tucked fists ready and mouth closed. F2 hunch torso back and start opening jaw. F3 open mouth huge with exaggerated WHITE SUPER TEETH, dreads lag behind. F4 CONTACT: lunge head/shoulders RIGHT while airborne and snap huge white teeth, both knees bent. F5 withdraw head and close jaw. F6 return to compact airborne guard. Skull and body scale constant; ONLY comic jaw/teeth exaggerated. This MUST be a BITE, no punch or kick, no blood/target/floor/effects."
+  },
+  {
+    "name": "golpe-throw",
+    "effect": false,
+    "source": "originais/golpe-throw.png",
+    "faceArea": 1259,
+    "faceRegion": {
+      "area": 1259,
+      "x": 249,
+      "y": 25,
+      "w": 36,
+      "h": 50
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: REGULAR GRAPPLE THROW. No opponent drawn. Six phases: F1 ready stance fists out of pockets. F2 both open hands reach RIGHT at chest height. F3 close both hands around imaginary opponent, shoulders tense. F4 strongly twist hips and torso pulling the grip inward/down toward chest. F5 throw and release both hands forcefully RIGHT while stepping through. F6 retract arms into balanced fighting guard. Fixed limb lengths and head size, entire body and hands within cell. No phantom opponent, no extra limbs, no effects.",
+    "repairPrompt": "REMOVE BACKGROUND: edit this exact SIX-FRAME sprite sheet, preserving all six full-body drawings, their poses, scale, detailed clothing and locations on the 1536x1024 three-column two-row canvas. The white/gray background is currently only partly transparent: that is INCORRECT. Completely remove EVERY white gray foggy background pixel outside the actual character silhouettes. All corners and every empty gap MUST have ALPHA EXACTLY ZERO, not alpha 30%, 50% or 99%. No replacement color, checkerboard, glow, drop shadow or haze. Preserve the character pixels and sharp black outlines. Keep original high resolution and six frames unchanged. Export clean isolated game sprites on REAL fully empty transparent background."
+  },
+  {
+    "name": "golpe-blindado",
+    "effect": false,
+    "source": "originais/golpe-blindado.png",
+    "faceArea": 1234,
+    "faceRegion": {
+      "area": 1234,
+      "x": 253,
+      "y": 30,
+      "w": 37,
+      "h": 51
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: ARMORED BODY STRIKE. Six phases: F1 solid grounded guard with fists up. F2 plant feet wider and tuck elbows. F3 turn right shoulder forward while coiling torso backward. F4 CONTACT: explosively drive shoulder and tucked forearm RIGHT, rear leg pushes, front knee braces, fierce face. F5 forward follow-through and shoulder begins recoiling. F6 regain solid guard. Head and body same scale, no shield, glow, armor costume, target, trails or effects. He still wears the normal purple hoodie and plaid pants."
+  },
+  {
+    "name": "golpe-2S",
+    "effect": false,
+    "source": "originais/golpe-2S.png",
+    "faceArea": 1123,
+    "faceRegion": {
+      "area": 1123,
+      "x": 253,
+      "y": 26,
+      "w": 36,
+      "h": 48
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: CHAMADA phone-call trap setup. Six phases: F1 upright loose stance. F2 right hand reaches into hoodie pocket. F3 pull out a BLACK SMARTPHONE and raise it toward cheek. F4 ACTION: hold phone to RIGHT EAR while free hand points DOWN and RIGHT marking an imagined target. F5 speaks into phone, finger still points down. F6 lowers phone toward chest, returns to ready stance. This is only the character phone-call motion. No target marker, ambulance, dogs, screen glow, lettering or effects. Same scale as reference."
+  },
+  {
+    "name": "golpe-5S",
+    "effect": false,
+    "source": "originais/golpe-5S.png",
+    "faceArea": 1345,
+    "faceRegion": {
+      "area": 1345,
+      "x": 243,
+      "y": 25,
+      "w": 39,
+      "h": 52
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: ABOCANHADA command grab BITE. Six phases: F1 ready guard, hands visible. F2 both open hands reach RIGHT toward imagined opponent. F3 hands clench holding imaginary opponent as mouth opens into HUGE WHITE SUPER TEETH. F4 CONTACT: head lunges RIGHT and huge jaw bites while both arms pull inward, knees brace. F5 pulls head back after bite with teeth closing. F6 releases hands into guarded stance. No other character, no floating body parts, no blood, no effects. Same skull/limb/body scale; exaggerated jaw only."
+  },
+  {
+    "name": "golpe-6S",
+    "effect": false,
+    "source": "originais/golpe-6S.png",
+    "faceArea": 1054,
+    "faceRegion": {
+      "area": 1054,
+      "x": 251,
+      "y": 30,
+      "w": 33,
+      "h": 48
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: OMBRADA SHOULDER CHARGE. Six phases: F1 upright fists-out guard. F2 lower center of gravity and draw right shoulder backward. F3 rear leg coils, elbow tucks tight against ribs and torso turns right shoulder toward opponent. F4 CONTACT: powerful shoulder-first charge RIGHT, head behind leading shoulder, rear leg fully pushes, front knee braced. F5 step through and absorb forward momentum. F6 retract shoulder and return to balanced guard. No punch or kick, constant body/head scale, no target/trails/effects."
+  },
+  {
+    "name": "golpe-4S",
+    "effect": false,
+    "source": "originais/golpe-4S.png",
+    "faceArea": 1092,
+    "faceRegion": {
+      "area": 1092,
+      "x": 253,
+      "y": 26,
+      "w": 36,
+      "h": 48
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: GANCHO DA RUA STANDING RISING UPPERCUT. Six phases: F1 standing ready guard. F2 lower hips and pull fist near hip. F3 rotate hips and begin rising with elbow traveling upward. F4 CONTACT: fist extends diagonally RIGHT ABOVE HEAD, heels slightly lift, strong upward punch with chin tucked and dreadlocks following. F5 upward follow-through with elbow bending, body remains tall. F6 lands into standing guard. Unlike crouching launcher this starts and ends standing. Same head/limb scale, raised fist fully inside cell, no target/effects."
+  },
+  {
+    "name": "golpe-c1",
+    "effect": false,
+    "source": "originais/golpe-c1.png",
+    "faceArea": 1141,
+    "faceRegion": {
+      "area": 1141,
+      "x": 254,
+      "y": 28,
+      "w": 37,
+      "h": 49
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: PUXAO pulling grapple. Six phases: F1 upright ready guard, fists visible. F2 extend lead open hand far RIGHT at shoulder height. F3 both hands close gripping invisible opponent in front. F4 ACTION/CONTACT: pull both clenched hands strongly toward chest while torso twists back LEFT, knees flex and rear foot braces. F5 finish pulling motion with hands against ribs. F6 release imaginary grip and regain guard. No opponent or extra hands, constant head/body scale, no effects."
+  },
+  {
+    "name": "golpe-c2",
+    "effect": false,
+    "source": "originais/golpe-c2.png",
+    "faceArea": 1320,
+    "faceRegion": {
+      "area": 1320,
+      "x": 271,
+      "y": 50,
+      "w": 34,
+      "h": 56
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: DENTADA RUSHING SUPER-TEETH BITE. Six phases: F1 low tense guard with mouth closed. F2 rear leg coils and jaw begins to open. F3 jaw opens into enormous WHITE SUPER TEETH and head draws back. F4 CONTACT: powerful forward step RIGHT with head and shoulders lunging, huge white teeth snap toward imagined target, front knee flexes. F5 recoil head while stepping through and closing jaw. F6 settles into low guard. A bite, no kick/punch. Same skull/limb scale, only jaw exaggerated, no blood/target/effects."
+  },
+  {
+    "name": "golpe-SA1",
+    "effect": false,
+    "source": "originais/golpe-SA1.png",
+    "faceArea": 1139,
+    "faceRegion": {
+      "area": 1139,
+      "x": 253,
+      "y": 25,
+      "w": 35,
+      "h": 48
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: SUPER A LIGACAO character calls down an ambulance. Six phases: F1 relaxed confident upright stance. F2 hand reaches pocket. F3 pull out BLACK smartphone and bring toward ear. F4 ACTION: phone held to RIGHT EAR while free hand points UP to sky, confident grin. F5 keep phone at ear, index finger raised, grin with white teeth. F6 lower phone and free hand toward relaxed guard. Phone and character ONLY; ambulance/explosion are separate assets, do NOT draw them. Same body/head scale, all raised finger/hair within cell, no lettering/effects."
+  },
+  {
+    "name": "golpe-SA3",
+    "effect": false,
+    "source": "originais/golpe-SA3.png",
+    "faceArea": 1099,
+    "faceRegion": {
+      "area": 1099,
+      "x": 252,
+      "y": 26,
+      "w": 35,
+      "h": 48
+    },
+    "prompt": "PRODUCTION SPRITE ANIMATION, HIGH DEFINITION. ONE IMAGE = ONE animation only, exactly SIX sequential full-body frames of the SAME character. Landscape canvas 3:2 aspect ratio, target 1536 x 1024 pixels, exact invisible grid THREE COLUMNS x TWO ROWS, six square 512x512 cells. Each cell will be exported at 500x500 pixels, so render the artwork at native high definition, NOT tiny figures, NOT 4x4, no collage of different actions. Frame order left-to-right top row then left-to-right bottom row. Every frame has identical anatomical scale: standing head-to-sole height about 400 pixels per 500px cell, identical head size about 48px and limb lengths in every frame. Keep entire body inside its own cell, including hair and sneakers, with generous empty margin. Soles baseline at 91.2% cell height; body/stance origin at 50% width. Bent poses are naturally shorter, never enlarge crouched or curled poses. Camera fixed 3/4 SIDE VIEW facing RIGHT. Match TRUNKS, the ORIGINAL Brazilian fighting-game character in the reference (not Dragon Ball): tan brown skin, slim young adult male, shoulder-length honey blond dreadlocks with dark roots, purple baggy HOODIE, gold chain with large CROSS, dark plum grey plaid baggy trousers, chunky white sneakers with red accents. Same face, clothes, hair, plaid, cross, proportions and line weight throughout. Sharply detailed comic-book ink drawing, crisp black outlines, three tone cel shading, subtle halftone, clean edges. Entire background must have REAL alpha transparency, alpha ZERO outside character silhouettes. NO simulated checkerboard, grey/black backdrop, haze, text, labels, border, grid, floor, ground shadow, motion trails, glow or effects. Use all six cells at equal scale. ONE ANIMATION: SUPER LEGIAO DE CAES, the fighter whistles and commands dogs. Six phases: F1 upright confident stance, hands visible. F2 raise TWO fingers of one hand toward lips. F3 fingers at mouth making a strong whistle, cheeks tense. F4 ACTION: remove fingers and extend free arm RIGHT with open commanding hand, fierce grin. F5 keep commanding arm extended and laugh with large white teeth. F6 lower arm into triumphant relaxed guard. Character ONLY, no dogs or whistle symbols or sound effects. Same head/limb/body scale and entire hands within each cell."
+  },
+  {
+    "name": "caes-correr",
+    "effect": true,
+    "source": "originais/caes-correr.png",
+    "faceArea": null,
+    "faceRegion": null,
+    "prompt": "HIGH DEFINITION TECHNICAL GAME SPRITE ANIMATION. Exactly ONE animation per image, SIX sequential frames on a 1536x1024 LANDSCAPE canvas, invisible uniform THREE COLUMNS by TWO ROWS, six 512x512 square cells. Frames progress left-to-right top then bottom. One complete dog in each cell, no human character, no text/grid/floor/shadow/background. Crisp comic ink, black outlines, three tone cel shading, subtle halftone matching a Brazilian 2D fighting game. Real completely transparent alpha background, alpha ZERO everywhere outside the dog, no checkerboard or haze. Fixed side-view camera facing RIGHT, same head/limb/anatomical scale in ALL six drawings; entire paws/ears/tail visible with empty margin, no clipped tails. Target 500x500 export per cell, detailed sharp native art. ONE ANIMATION: CARAMEL STREET DOG RUN LOOP. Medium lean Brazilian caramel-brown mongrel with dark muzzle and floppy pointed ears, not a pinscher. SIX successive running gait phases: F1 right foreleg long forward, hind legs extended back; F2 forepaw contacts, rear legs gather; F3 compact bound with hind legs under belly; F4 opposite foreleg forward, back paws push; F5 extended airborne gallop; F6 compact alternating passing stride to loop into F1. Same dog identity and size all frames, face right, aggressive playful game helper, no effects."
+  },
+  {
+    "name": "caes-mordida",
+    "effect": true,
+    "source": "originais/caes-mordida.png",
+    "faceArea": null,
+    "faceRegion": null,
+    "prompt": "HIGH DEFINITION TECHNICAL GAME SPRITE ANIMATION. Exactly ONE animation per image, SIX sequential frames on a 1536x1024 LANDSCAPE canvas, invisible uniform THREE COLUMNS by TWO ROWS, six 512x512 square cells. Frames progress left-to-right top then bottom. One complete dog in each cell, no human character, no text/grid/floor/shadow/background. Crisp comic ink, black outlines, three tone cel shading, subtle halftone matching a Brazilian 2D fighting game. Real completely transparent alpha background, alpha ZERO everywhere outside the dog, no checkerboard or haze. Fixed side-view camera facing RIGHT, same head/limb/anatomical scale in ALL six drawings; entire paws/ears/tail visible with empty margin, no clipped tails. Target 500x500 export per cell, detailed sharp native art. ONE ANIMATION: SAME medium caramel-brown Brazilian mongrel with dark muzzle performs a LUNGING BITE. Six frames: F1 low running approach. F2 gathers legs and lowers head. F3 opens jaws showing clean white teeth. F4 leaps/lunges RIGHT with open jaws biting an invisible target. F5 closes jaws on the imaginary target with paws extended forward. F6 lands bracing forepaws and retracts head. No target drawn, no blood, no injuries, no trails/effects. Same dog head/body/paw scale throughout."
+  },
+  {
+    "name": "caes-salto",
+    "effect": true,
+    "source": "originais/caes-salto.png",
+    "faceArea": null,
+    "faceRegion": null,
+    "prompt": "HIGH DEFINITION TECHNICAL GAME SPRITE ANIMATION. Exactly ONE animation per image, SIX sequential frames on a 1536x1024 LANDSCAPE canvas, invisible uniform THREE COLUMNS by TWO ROWS, six 512x512 square cells. Frames progress left-to-right top then bottom. One complete dog in each cell, no human character, no text/grid/floor/shadow/background. Crisp comic ink, black outlines, three tone cel shading, subtle halftone matching a Brazilian 2D fighting game. Real completely transparent alpha background, alpha ZERO everywhere outside the dog, no checkerboard or haze. Fixed side-view camera facing RIGHT, same head/limb/anatomical scale in ALL six drawings; entire paws/ears/tail visible with empty margin, no clipped tails. Target 500x500 export per cell, detailed sharp native art. ONE ANIMATION: DARK BROWN STREET DOG JUMP. Medium dark-brown Brazilian mongrel with lighter tan eyebrows, muzzle and paws. Six phases: F1 low crouch preparing. F2 rear legs push and front paws lift. F3 rises with paws tucked. F4 apex with front legs beginning to extend. F5 descends with forepaws ready. F6 forepaws land and back paws gather. Same full dog and head size in all frames, camera fixed facing right, no trajectory/ground/effects."
+  },
+  {
+    "name": "caes-final",
+    "effect": true,
+    "source": "originais/caes-final.png",
+    "faceArea": null,
+    "faceRegion": null,
+    "prompt": "HIGH DEFINITION TECHNICAL GAME SPRITE ANIMATION. Exactly ONE animation per image, SIX sequential frames on a 1536x1024 LANDSCAPE canvas, invisible uniform THREE COLUMNS by TWO ROWS, six 512x512 square cells. Frames progress left-to-right top then bottom. One complete dog in each cell, no human character, no text/grid/floor/shadow/background. Crisp comic ink, black outlines, three tone cel shading, subtle halftone matching a Brazilian 2D fighting game. Real completely transparent alpha background, alpha ZERO everywhere outside the dog, no checkerboard or haze. Fixed side-view camera facing RIGHT, same head/limb/anatomical scale in ALL six drawings; entire paws/ears/tail visible with empty margin, no clipped tails. Target 500x500 export per cell, detailed sharp native art. ONE ANIMATION: LARGE BLACK-AND-TAN STREET DOG FINAL CHARGE. Broad-chested Brazilian mongrel black coat with tan eyebrows, muzzle and legs, slightly larger/more powerful than caramel dog. Six progressive phases: F1 low aggressive sprint. F2 powerful rear-leg push. F3 gathered jump with jaws beginning to open. F4 long rightward leaping charge with wide white teeth and front paws reaching. F5 jaws close and body starts descending. F6 lands into strong low brace. Constant dog anatomy/head scale across frames, no victim/blood, no effects."
+  },
+  {
+    "name": "ambulancia-queda",
+    "effect": true,
+    "source": "originais/ambulancia-queda.png",
+    "faceArea": null,
+    "faceRegion": null,
+    "prompt": "Create a HIGH DEFINITION TRANSPARENT 2D fighting-game effect animation. ONE IMAGE = ONE animation. EXACTLY SIX sequential frames in a 1536x1024 LANDSCAPE canvas, invisible uniform THREE COLUMNS by TWO ROWS, six 512x512 cells to export at 500x500. Order left-to-right top then bottom. Clean black comic ink outlines, three-tone cel shading, consistent scale/camera per frame. Every separate effect fully inside its own cell with clear empty margins. Real alpha transparency: every empty background pixel alpha ZERO. No white/black/grey backdrops or fog, no checkerboard, labels, grid, floor, ground shadow or text. Only the requested effect, no humans, no dogs. Ignore the reference's multi-action layout; copy its comic art style only. SINGLE ANIMATION: WHITE AND RED AMBULANCE FALLING FROM SKY. Six successive drawings of the SAME compact white red emergency van, red siren, red cross emblem, blue windows, black wheels, no writing. F1 vehicle tilted nose-down RIGHT 10 degrees. F2 nose-down 25 degrees. F3 40 degrees. F4 55 degrees. F5 75 degrees almost vertical. F6 nose-down vertically about to hit implied floor. Same vehicle size, perspective and wheel count across frames; rotation only. Entire van and siren inside every cell. Do not draw ground, impact, explosion, target or speed lines."
+  },
+  {
+    "name": "fx-explosao",
+    "effect": true,
+    "source": "originais/fx-explosao.png",
+    "faceArea": null,
+    "faceRegion": null,
+    "prompt": "Create a HIGH DEFINITION TRANSPARENT 2D fighting-game effect animation. ONE IMAGE = ONE animation. EXACTLY SIX sequential frames in a 1536x1024 LANDSCAPE canvas, invisible uniform THREE COLUMNS by TWO ROWS, six 512x512 cells to export at 500x500. Order left-to-right top then bottom. Clean black comic ink outlines, three-tone cel shading, consistent scale/camera per frame. Every separate effect fully inside its own cell with clear empty margins. Real alpha transparency: every empty background pixel alpha ZERO. No white/black/grey backdrops or fog, no checkerboard, labels, grid, floor, ground shadow or text. Only the requested effect, no humans, no dogs. Ignore the reference's multi-action layout; copy its comic art style only. SINGLE ANIMATION: COMIC EXPLOSION. Six consecutive isolated explosion phases. F1 tiny white yellow ignition star. F2 compact jagged yellow orange burst. F3 broad bright yellow core with orange expanding fire. F4 maximum orange yellow fireball with black-ink edged billows and a few small debris. F5 fire subsides into separated brown grey smoke puffs. F6 small dissipating smoke fragments with large transparent gaps. Fixed center and camera; changing size is part of the explosion animation. No vehicle, floor, humans, text, rectangular glow or full-canvas haze. Background fully alpha zero."
+  },
+  {
+    "name": "fx-marca",
+    "effect": true,
+    "source": "originais/fx-marca.png",
+    "faceArea": null,
+    "faceRegion": null,
+    "prompt": "Create a HIGH DEFINITION TRANSPARENT 2D fighting-game effect animation. ONE IMAGE = ONE animation. EXACTLY SIX sequential frames in a 1536x1024 LANDSCAPE canvas, invisible uniform THREE COLUMNS by TWO ROWS, six 512x512 cells to export at 500x500. Order left-to-right top then bottom. Clean black comic ink outlines, three-tone cel shading, consistent scale/camera per frame. Every separate effect fully inside its own cell with clear empty margins. Real alpha transparency: every empty background pixel alpha ZERO. No white/black/grey backdrops or fog, no checkerboard, labels, grid, floor, ground shadow or text. Only the requested effect, no humans, no dogs. Ignore the reference's multi-action layout; copy its comic art style only. SINGLE ANIMATION: GROUND TARGET WARNING MARKER. Six progressive yellow/gold comic targeting decal frames. F1 small thin segmented ellipse. F2 segmented ellipse expands. F3 two concentric elliptical rings. F4 four triangular inward-pointing pointers appear at north/south/east/west of oval. F5 heavier gold rings and larger pointers, threatening warning spikes. F6 brightest final warning oval with outlined gold spikes. Same flat elliptical perspective from above, center fixed. Marker only, no floor, no shadows, no light spilling outside object, no rectangular background, no words/digits. Transparent gaps inside rings and all background alpha zero."
+  },
+  {
+    "name": "fx-mordida",
+    "effect": true,
+    "source": "originais/fx-mordida.png",
+    "faceArea": null,
+    "faceRegion": null,
+    "prompt": "Create a HIGH DEFINITION TRANSPARENT 2D fighting-game effect animation. ONE IMAGE = ONE animation. EXACTLY SIX sequential frames in a 1536x1024 LANDSCAPE canvas, invisible uniform THREE COLUMNS by TWO ROWS, six 512x512 cells to export at 500x500. Order left-to-right top then bottom. Clean black comic ink outlines, three-tone cel shading, consistent scale/camera per frame. Every separate effect fully inside its own cell with clear empty margins. Real alpha transparency: every empty background pixel alpha ZERO. No white/black/grey backdrops or fog, no checkerboard, labels, grid, floor, ground shadow or text. Only the requested effect, no humans, no dogs. Ignore the reference's multi-action layout; copy its comic art style only. SINGLE ANIMATION: COMIC SUPER TEETH BITE EFFECT. Six sequential isolated white-teeth-and-gold-outline icon phases. F1 two separated curved rows of large white teeth, jaws wide open. F2 upper and lower teeth move toward each other. F3 nearly closed jaws, teeth prominent. F4 jaws clamp shut into a comic bite, gold outline and small star sparks. F5 compact white/gold impact star with a few tooth-like fragments. F6 dissipating small white and gold fragments leaving empty transparent gaps. No flesh, blood, real mouth, human figure or floor. Same icon center and style, clean transparent background."
+  }
+]

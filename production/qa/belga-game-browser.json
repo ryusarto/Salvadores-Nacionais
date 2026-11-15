@@ -1,0 +1,23 @@
+{
+  "game": {
+    "character": "belga",
+    "aliases": {},
+    "vinyls": 7
+  },
+  "offline": {
+    "report": {
+      "cases": 240,
+      "loaded": 48,
+      "frames": 6,
+      "cell": 500,
+      "transparentFrames": 288,
+      "touchingEdges": 0,
+      "failures": []
+    },
+    "playHidden": true
+  },
+  "standaloneRequests": [
+    "http://127.0.0.1:8427/production/qa/belga-previa-500px.html"
+  ],
+  "errors": []
+}

@@ -1,0 +1,7559 @@
+{
+  "character": "trunks",
+  "version": 3,
+  "frames": 6,
+  "cell": 500,
+  "foot": [
+    250,
+    456
+  ],
+  "grid": [
+    3,
+    2
+  ],
+  "sourceCell": 512,
+  "upscaled": false,
+  "calibration": "One uniform scale per animation, calibrated from the visible face in its first frame; no per-pose height stretching.",
+  "sequences": [
+    {
+      "name": "parado",
+      "source": "originais/parado.png",
+      "faceArea": 1108,
+      "scale": 0.8571428571428571,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8571428571428571,
+          "offset": [
+            31,
+            38
+          ],
+          "bounds": {
+            "x": 167,
+            "y": 53,
+            "w": 180,
+            "h": 403,
+            "bottom": 455,
+            "opaque": 43223
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "6d19ac09f01adc7d1112d693b6335b8a8caa649eb3d1a1d56559c4fa357aa743"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8571428571428571,
+          "offset": [
+            31,
+            38
+          ],
+          "bounds": {
+            "x": 167,
+            "y": 52,
+            "w": 180,
+            "h": 404,
+            "bottom": 455,
+            "opaque": 43808
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "8e858112bcf1f0d63228d6762e8332c125c12fde77cd651051daf01f1f94068b"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8571428571428571,
+          "offset": [
+            31,
+            38
+          ],
+          "bounds": {
+            "x": 167,
+            "y": 48,
+            "w": 182,
+            "h": 408,
+            "bottom": 455,
+            "opaque": 44790
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "9c86cea0012d2387a1786f3c743a7667085bfe27e2ae77c4261366b2db296d06"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8571428571428571,
+          "offset": [
+            31,
+            36
+          ],
+          "bounds": {
+            "x": 167,
+            "y": 52,
+            "w": 180,
+            "h": 404,
+            "bottom": 455,
+            "opaque": 44075
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e95f05f7b88722ec91d1d85daab40411e1083c10eb0185049f97d3704ffdfef4"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8571428571428571,
+          "offset": [
+            31,
+            36
+          ],
+          "bounds": {
+            "x": 167,
+            "y": 52,
+            "w": 181,
+            "h": 404,
+            "bottom": 455,
+            "opaque": 44231
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "18a0d14b5cecf6c276c722958514d51c126dcf17f9e3f59d1499bc0f8bc66195"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8571428571428571,
+          "offset": [
+            31,
+            36
+          ],
+          "bounds": {
+            "x": 168,
+            "y": 52,
+            "w": 181,
+            "h": 404,
+            "bottom": 455,
+            "opaque": 44202
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "1e0fab7ff42e64106a8b712a55334b4c75497e11cf4a542cb2ed2210ea8b721e"
+        }
+      ],
+      "file": "production/sprites/final/trunks/parado.webp",
+      "sha256": "24dce1f8b1038658d488a2a0fedb552681e8c5b73e7572ab997658651b7dbcfb",
+      "png": "production/sprites/source/trunks-v3/tiras/parado.png",
+      "pngSha256": "5ddc738544b2647a506d04fdbba7450512d872a664fbb6b78949cb37e0553f44"
+    },
+    {
+      "name": "andar",
+      "source": "originais/andar.png",
+      "faceArea": 1111,
+      "scale": 0.8559848162756434,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8559848162756434,
+          "offset": [
+            31,
+            39
+          ],
+          "bounds": {
+            "x": 133,
+            "y": 54,
+            "w": 243,
+            "h": 402,
+            "bottom": 455,
+            "opaque": 44387
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "c3577f0e4cdaeba4784f8c2cefad3c147ae5c1183912b03f046f4d3aeb4ab420"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8559848162756434,
+          "offset": [
+            31,
+            38
+          ],
+          "bounds": {
+            "x": 146,
+            "y": 53,
+            "w": 190,
+            "h": 403,
+            "bottom": 455,
+            "opaque": 40943
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "ba0fd5f9a88f831f903dd7a086c62f5ded3cd98ba162430e248f7a52312bf82d"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8559848162756434,
+          "offset": [
+            31,
+            38
+          ],
+          "bounds": {
+            "x": 156,
+            "y": 52,
+            "w": 172,
+            "h": 404,
+            "bottom": 455,
+            "opaque": 36742
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "7b0672e894a155d6aace4f5867c9a8bf452683a69b9cd56b6e97384c5f0a4f54"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8559848162756434,
+          "offset": [
+            31,
+            38
+          ],
+          "bounds": {
+            "x": 133,
+            "y": 54,
+            "w": 250,
+            "h": 402,
+            "bottom": 455,
+            "opaque": 45119
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "eff2c6e634d1cdfa209db3f3c03cbc1c7b2cd58a9d79bf699165870086742904"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8559848162756434,
+          "offset": [
+            31,
+            37
+          ],
+          "bounds": {
+            "x": 149,
+            "y": 53,
+            "w": 178,
+            "h": 403,
+            "bottom": 455,
+            "opaque": 39893
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "48ec589f773ff8ef38186a6df548872ba7fb6ff8e0be1f06ce9967a200ec7323"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8559848162756434,
+          "offset": [
+            31,
+            37
+          ],
+          "bounds": {
+            "x": 159,
+            "y": 53,
+            "w": 174,
+            "h": 403,
+            "bottom": 455,
+            "opaque": 38328
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "bb5a4da03f22782dd8f4da4f7482174e64555013393daae4b9bf6cd832a96107"
+        }
+      ],
+      "file": "production/sprites/final/trunks/andar.webp",
+      "sha256": "a2adbf8b3fcdb91c3b663288485fd66a609e431983c6c16787b6739ba81e0de3",
+      "png": "production/sprites/source/trunks-v3/tiras/andar.png",
+      "pngSha256": "a127ddded70c4efe465151d5dc6cbcdf67b0352bb3ccb9b870ab4c5c32f26f29"
+    },
+    {
+      "name": "andar-tras",
+      "source": "originais/andar-tras.png",
+      "faceArea": 1092,
+      "scale": 0.8633994573832227,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            36
+          ],
+          "bounds": {
+            "x": 100,
+            "y": 57,
+            "w": 255,
+            "h": 399,
+            "bottom": 455,
+            "opaque": 46573
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e25ab012061a7c0a1405cd36de443254201e5f7fde49c061ce1a4a21f0c89ec6"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            36
+          ],
+          "bounds": {
+            "x": 116,
+            "y": 56,
+            "w": 222,
+            "h": 400,
+            "bottom": 455,
+            "opaque": 46860
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "a83bb4be983848f9da99eea3da29f9c823cc1b452c2fd6af30c1829a7ce0dc4c"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            36
+          ],
+          "bounds": {
+            "x": 151,
+            "y": 56,
+            "w": 182,
+            "h": 401,
+            "bottom": 456,
+            "opaque": 45995
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "4e37b86481039ac8c546ad628fab11868f3265381520a7d8a829e471aab40ee5"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            35
+          ],
+          "bounds": {
+            "x": 100,
+            "y": 57,
+            "w": 245,
+            "h": 399,
+            "bottom": 455,
+            "opaque": 46883
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e9346fc0777758bedee695c6800dc4ee7af24407b43074e77a3b1d4682e8c974"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            35
+          ],
+          "bounds": {
+            "x": 113,
+            "y": 57,
+            "w": 222,
+            "h": 399,
+            "bottom": 455,
+            "opaque": 46323
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "a144f6710aa920417cbca9d950f2388ca406e2c2f009c1d40bf2526d418364d8"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            35
+          ],
+          "bounds": {
+            "x": 162,
+            "y": 57,
+            "w": 175,
+            "h": 400,
+            "bottom": 456,
+            "opaque": 44844
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "5b28dd00941a5ce8252e6276cd46c490861f8750772bcc2f384ed270f433bb80"
+        }
+      ],
+      "file": "production/sprites/final/trunks/andar-tras.webp",
+      "sha256": "bd9abef48c070d1193242b1e0ab79907c9f6bf2dd286e452aaab4b80bd2a7cbb",
+      "png": "production/sprites/source/trunks-v3/tiras/andar-tras.png",
+      "pngSha256": "85f059cc24db314bd6f69c56323e5abe7fc320da42f8ea7a3b47658797fd0f55"
+    },
+    {
+      "name": "correr",
+      "source": "originais/correr.png",
+      "faceArea": 1226,
+      "scale": 0.8148503482167836,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8148503482167836,
+          "offset": [
+            41,
+            68
+          ],
+          "bounds": {
+            "x": 87,
+            "y": 83,
+            "w": 334,
+            "h": 372,
+            "bottom": 454,
+            "opaque": 48181
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e6b90d3d2e7a73653abf2be563754846e8437eaedc24c44197c6742db02f815a"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8148503482167836,
+          "offset": [
+            41,
+            64
+          ],
+          "bounds": {
+            "x": 137,
+            "y": 87,
+            "w": 212,
+            "h": 369,
+            "bottom": 455,
+            "opaque": 39365
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "aecbacc90ce1593a68fec5d2f6fb705931a47bd2f8766a5cb71ace9eda9c29f2"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8148503482167836,
+          "offset": [
+            41,
+            66
+          ],
+          "bounds": {
+            "x": 101,
+            "y": 87,
+            "w": 267,
+            "h": 369,
+            "bottom": 455,
+            "opaque": 43101
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "40bc787b615e41b59c602807302aa22c72906a2fdd8a924c2a203d9528b1b5c2"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8148503482167836,
+          "offset": [
+            41,
+            67
+          ],
+          "bounds": {
+            "x": 85,
+            "y": 86,
+            "w": 341,
+            "h": 370,
+            "bottom": 455,
+            "opaque": 49001
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "34b8817d0eb8f58dcc79c1416cc9d8ffbd3ca85724c4dbb05228145ddfe7f297"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8148503482167836,
+          "offset": [
+            41,
+            64
+          ],
+          "bounds": {
+            "x": 137,
+            "y": 85,
+            "w": 180,
+            "h": 371,
+            "bottom": 455,
+            "opaque": 37644
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "b43d877d96f59b1709534b93ffd27da020c040d881df3df301d0c06be69bf72a"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8148503482167836,
+          "offset": [
+            41,
+            65
+          ],
+          "bounds": {
+            "x": 99,
+            "y": 81,
+            "w": 269,
+            "h": 375,
+            "bottom": 455,
+            "opaque": 43739
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "67b0802af21a16e485a4e0cb2e6bbf3e553d930d376a1240f2088ea991950d0e"
+        }
+      ],
+      "file": "production/sprites/final/trunks/correr.webp",
+      "sha256": "24024616d5a8d5a64a0e7dcd9a924ce84d9ec27331400bb04e21654a724d9b7e",
+      "png": "production/sprites/source/trunks-v3/tiras/correr.png",
+      "pngSha256": "09b6ce4258b6952ad6f4be829ef17d7a124347dea5e39a988270ee1dc17e725f"
+    },
+    {
+      "name": "agachar",
+      "source": "originais/agachar.png",
+      "faceArea": 1092,
+      "scale": 0.8633994573832227,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            33
+          ],
+          "bounds": {
+            "x": 161,
+            "y": 47,
+            "w": 187,
+            "h": 409,
+            "bottom": 455,
+            "opaque": 48073
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "5a05072371445b6a62feb1f2198e950d19fcde31d1024fccab99c657eb157570"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            33
+          ],
+          "bounds": {
+            "x": 160,
+            "y": 61,
+            "w": 188,
+            "h": 395,
+            "bottom": 455,
+            "opaque": 47446
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "77a7526b4bbd158e55827bba9019bf0ea313fafca00be30d87f14f6c9a818d15"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            33
+          ],
+          "bounds": {
+            "x": 157,
+            "y": 91,
+            "w": 191,
+            "h": 365,
+            "bottom": 455,
+            "opaque": 46462
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "de6a621f05093cb25fb09a8cbf6dbd7feccd1dda50e21036f4e0f17b3cfc7089"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            33
+          ],
+          "bounds": {
+            "x": 152,
+            "y": 122,
+            "w": 200,
+            "h": 334,
+            "bottom": 455,
+            "opaque": 45090
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "d492b8f9b5017e9970480fa5752d54b411a820e72c944c1641edaa1e2e47cdf5"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            33
+          ],
+          "bounds": {
+            "x": 154,
+            "y": 169,
+            "w": 193,
+            "h": 287,
+            "bottom": 455,
+            "opaque": 39687
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "2a975e187f53f300f2104be5419a886a91f7192bf90c318dfa5d6a54ac878cde"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            33
+          ],
+          "bounds": {
+            "x": 154,
+            "y": 169,
+            "w": 193,
+            "h": 287,
+            "bottom": 455,
+            "opaque": 39669
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "8b86d5be53aacd204ff8b7d0b644cf672dc631a97b13408b364467567cce65cb"
+        }
+      ],
+      "file": "production/sprites/final/trunks/agachar.webp",
+      "sha256": "975834120db60d9ad67b900e69b4ade0e56766b9b6107617bd7c113ae08ae3ff",
+      "png": "production/sprites/source/trunks-v3/tiras/agachar.png",
+      "pngSha256": "4e1830f84cd952b45bd47106bd3c2780ee4d77c12edcc0c9a3dd7e84da1a21b0"
+    },
+    {
+      "name": "pulo",
+      "source": "originais/pulo.png",
+      "faceArea": 1374,
+      "scale": 0.7697145997134464,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7697145997134464,
+          "offset": [
+            53,
+            74
+          ],
+          "bounds": {
+            "x": 137,
+            "y": 103,
+            "w": 232,
+            "h": 352,
+            "bottom": 454,
+            "opaque": 37755
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "bcc1335541dc302fd83e02c3091350dce3ea0db50528c1ef76add20de632d374"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7697145997134464,
+          "offset": [
+            53,
+            102
+          ],
+          "bounds": {
+            "x": 129,
+            "y": 111,
+            "w": 224,
+            "h": 345,
+            "bottom": 455,
+            "opaque": 35101
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "747f1f095ab5a670c645f2411dea7f36dbb4f512f077e20c7d559153ddf85523"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7697145997134464,
+          "offset": [
+            53,
+            193
+          ],
+          "bounds": {
+            "x": 130,
+            "y": 199,
+            "w": 227,
+            "h": 257,
+            "bottom": 455,
+            "opaque": 28593
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "3eacf8c69bdb289e21580cd0969e3cdf7c1fabeb63425b63ecaea890b104e770"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7697145997134464,
+          "offset": [
+            53,
+            148
+          ],
+          "bounds": {
+            "x": 144,
+            "y": 153,
+            "w": 236,
+            "h": 303,
+            "bottom": 455,
+            "opaque": 33804
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "903db23c8f7a99d90f1c425e0b5c1692c4ec596e41de347f9014978958e36694"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7697145997134464,
+          "offset": [
+            53,
+            103
+          ],
+          "bounds": {
+            "x": 124,
+            "y": 114,
+            "w": 243,
+            "h": 341,
+            "bottom": 454,
+            "opaque": 36714
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "03f196dc02c2c3a11b31dc21168123e5c2c8df0f63a74c13d3fd1e257257c4b7"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7697145997134464,
+          "offset": [
+            53,
+            107
+          ],
+          "bounds": {
+            "x": 122,
+            "y": 140,
+            "w": 241,
+            "h": 316,
+            "bottom": 455,
+            "opaque": 37635
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "dc2ce610e259fecf400d11ae5fd49a73cc7cf300975ba1ff9fa635e126c2a800"
+        }
+      ],
+      "file": "production/sprites/final/trunks/pulo.webp",
+      "sha256": "48bd7c17581ed9432610395df6d9a78ef673f19370a6d8f6566368f6c6a3db07",
+      "png": "production/sprites/source/trunks-v3/tiras/pulo.png",
+      "pngSha256": "a8108af15d8a7c7f86c4d707363b4bd8f46e94d57a70595fd59dbfe2a4d2b7e1"
+    },
+    {
+      "name": "recuo",
+      "source": "originais/recuo.png",
+      "faceArea": 1081,
+      "scale": 0.8677812128754271,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8677812128754271,
+          "offset": [
+            28,
+            33
+          ],
+          "bounds": {
+            "x": 167,
+            "y": 48,
+            "w": 180,
+            "h": 408,
+            "bottom": 455,
+            "opaque": 44581
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "45d9af4c5cb0b1a0c1f4b4d3dbce3726689d5c3714c3dc83c177ffdfc31f1def"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8677812128754271,
+          "offset": [
+            28,
+            32
+          ],
+          "bounds": {
+            "x": 125,
+            "y": 65,
+            "w": 222,
+            "h": 391,
+            "bottom": 455,
+            "opaque": 46888
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "b3536d49e4e25e65438e174759e01f5404ef30cb65360c53fbef7bda65836f33"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8677812128754271,
+          "offset": [
+            28,
+            33
+          ],
+          "bounds": {
+            "x": 93,
+            "y": 89,
+            "w": 329,
+            "h": 367,
+            "bottom": 455,
+            "opaque": 48211
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "227d7f88af9d36d9cc8c47232dfc7d092c0d80f8699fabe92f1c4db709fc89c8"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8677812128754271,
+          "offset": [
+            28,
+            32
+          ],
+          "bounds": {
+            "x": 111,
+            "y": 86,
+            "w": 239,
+            "h": 370,
+            "bottom": 455,
+            "opaque": 45407
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "3f8615ea3a1a9c7f1a6ccc08a3054c434a8e3b3f3e23fcb99cdc3addbf792844"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8677812128754271,
+          "offset": [
+            28,
+            32
+          ],
+          "bounds": {
+            "x": 124,
+            "y": 72,
+            "w": 202,
+            "h": 384,
+            "bottom": 455,
+            "opaque": 44899
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "47bca879f496085b1c2467b45ba35129a14f05a0745ef57c0ba4f72de23cea2a"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8677812128754271,
+          "offset": [
+            28,
+            32
+          ],
+          "bounds": {
+            "x": 127,
+            "y": 51,
+            "w": 193,
+            "h": 405,
+            "bottom": 455,
+            "opaque": 45404
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "2dcf984142cdb22aec7cf4b5d5f99a6166939786f4d7f4a82d4f39ed3ee6d1ce"
+        }
+      ],
+      "file": "production/sprites/final/trunks/recuo.webp",
+      "sha256": "f8b0ce166da5edee248b045ff558e20a4979a5875fd56f48497ba9e956e30daf",
+      "png": "production/sprites/source/trunks-v3/tiras/recuo.png",
+      "pngSha256": "9abef15614f49bf8dfa0a3004918855161334dd8120eff6746df95700bae1b98"
+    },
+    {
+      "name": "escape-agarrao",
+      "source": "originais/escape-agarrao.png",
+      "faceArea": 1083,
+      "scale": 0.8669795672420795,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8669795672420795,
+          "offset": [
+            28,
+            33
+          ],
+          "bounds": {
+            "x": 152,
+            "y": 48,
+            "w": 198,
+            "h": 408,
+            "bottom": 455,
+            "opaque": 48046
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "cd274a2bb26d1072f2fdfd51766773fae6d4096f78915588eb67947acadc7e39"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8669795672420795,
+          "offset": [
+            28,
+            33
+          ],
+          "bounds": {
+            "x": 152,
+            "y": 48,
+            "w": 199,
+            "h": 408,
+            "bottom": 455,
+            "opaque": 45991
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "14b3552bca5be0950dfe7acd2eb68d0c8c740e66b5f9eae287299c214ac64afe"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8669795672420795,
+          "offset": [
+            28,
+            33
+          ],
+          "bounds": {
+            "x": 140,
+            "y": 46,
+            "w": 211,
+            "h": 410,
+            "bottom": 455,
+            "opaque": 50641
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "bc144ba84beb4b324c6901d70d5e141221b58ae59d46ce76cccac69ef5507e34"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8669795672420795,
+          "offset": [
+            28,
+            32
+          ],
+          "bounds": {
+            "x": 91,
+            "y": 48,
+            "w": 303,
+            "h": 408,
+            "bottom": 455,
+            "opaque": 56021
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "9bcedb50dc32420ae9e717e8c36bfa9fd4629dbb00e4bbe4831b959d39ddf2c9"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8669795672420795,
+          "offset": [
+            28,
+            33
+          ],
+          "bounds": {
+            "x": 98,
+            "y": 55,
+            "w": 256,
+            "h": 401,
+            "bottom": 455,
+            "opaque": 50819
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "700a1aceb1c2ede775eaa9c40427bfa53a8faba9c0adf43a1231ee70cf105a9d"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8669795672420795,
+          "offset": [
+            28,
+            32
+          ],
+          "bounds": {
+            "x": 152,
+            "y": 46,
+            "w": 199,
+            "h": 410,
+            "bottom": 455,
+            "opaque": 48829
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "acc6558dbc7101aadc8e3057affae238362beae81baa336af4d6f613977d7331"
+        }
+      ],
+      "file": "production/sprites/final/trunks/escape-agarrao.webp",
+      "sha256": "c66240e5d060825849d3daf9a43980ce69d0ade477f1fc0a8a40393061704795",
+      "png": "production/sprites/source/trunks-v3/tiras/escape-agarrao.png",
+      "pngSha256": "1e15b6ff57d5a129c8b8282c1f3b09e0bb9eeb8d563882de3135f33f5b7687bd"
+    },
+    {
+      "name": "recuperacao-rolamento",
+      "source": "originais/recuperacao-rolamento.png",
+      "faceArea": 1626,
+      "scale": 0.707559261434617,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.707559261434617,
+          "offset": [
+            69,
+            120
+          ],
+          "bounds": {
+            "x": 146,
+            "y": 205,
+            "w": 224,
+            "h": 251,
+            "bottom": 455,
+            "opaque": 33582
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "8d3ae187da4401396fc1556bb2d19d1f1d4ab5d4058ed377f149959840693ac8"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.707559261434617,
+          "offset": [
+            69,
+            120
+          ],
+          "bounds": {
+            "x": 146,
+            "y": 235,
+            "w": 214,
+            "h": 221,
+            "bottom": 455,
+            "opaque": 32588
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "6b392c1516a4d450fb0c08bc3e6445490138ce51362e04ceacbd7c8eeb640326"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.707559261434617,
+          "offset": [
+            69,
+            122
+          ],
+          "bounds": {
+            "x": 103,
+            "y": 238,
+            "w": 252,
+            "h": 218,
+            "bottom": 455,
+            "opaque": 36014
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "d12323b69c0bc304cb295fafba0a223070530c180ed69398f5e06d0fed9e5c6a"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.707559261434617,
+          "offset": [
+            69,
+            131
+          ],
+          "bounds": {
+            "x": 136,
+            "y": 213,
+            "w": 206,
+            "h": 243,
+            "bottom": 455,
+            "opaque": 33426
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "5cd8a0f629ee34a636b70638f01dc5844b55506251f6e3cc670b374117817f45"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.707559261434617,
+          "offset": [
+            69,
+            124
+          ],
+          "bounds": {
+            "x": 114,
+            "y": 227,
+            "w": 277,
+            "h": 228,
+            "bottom": 454,
+            "opaque": 35460
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "72f546157da1d84487bec7d6f6ceac97084751f59d91750fb85f7082ef364393"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.707559261434617,
+          "offset": [
+            69,
+            126
+          ],
+          "bounds": {
+            "x": 131,
+            "y": 213,
+            "w": 239,
+            "h": 242,
+            "bottom": 454,
+            "opaque": 33241
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "f2793c276aad124429f190c3961dddffa70af1aee6d326499911c73d042b1ec9"
+        }
+      ],
+      "file": "production/sprites/final/trunks/recuperacao-rolamento.webp",
+      "sha256": "d321ed94ce0535c105b10740fb76d82ae7370026a8e8a6474401f757dc507f5e",
+      "png": "production/sprites/source/trunks-v3/tiras/recuperacao-rolamento.png",
+      "pngSha256": "93813519c03f424e70fee6cd6fb34a639913a9c986e21948de59400382e2b61d"
+    },
+    {
+      "name": "defesa-em-pe",
+      "source": "originais/defesa-em-pe.png",
+      "faceArea": 1223,
+      "scale": 0.8158491437069926,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8158491437069926,
+          "offset": [
+            41,
+            56
+          ],
+          "bounds": {
+            "x": 167,
+            "y": 70,
+            "w": 176,
+            "h": 386,
+            "bottom": 455,
+            "opaque": 41836
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "a14f37879c35775be94f34f9a92fd11613dc4a32a354aa113435fe73615aecf0"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8158491437069926,
+          "offset": [
+            41,
+            56
+          ],
+          "bounds": {
+            "x": 167,
+            "y": 70,
+            "w": 176,
+            "h": 386,
+            "bottom": 455,
+            "opaque": 41111
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "5a526efa2206630f90abd0af340a5aeb7d2fccb79ddd2fdd9d6bec8ecceb2f41"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8158491437069926,
+          "offset": [
+            41,
+            56
+          ],
+          "bounds": {
+            "x": 167,
+            "y": 71,
+            "w": 176,
+            "h": 385,
+            "bottom": 455,
+            "opaque": 39952
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e119cf982d4a3e010e3ebcf7c7eaa29966475de259c994f6adb0d90daa3fb25f"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8158491437069926,
+          "offset": [
+            41,
+            55
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 75,
+            "w": 177,
+            "h": 381,
+            "bottom": 455,
+            "opaque": 40927
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "a3b53d08a85b0666cd5b304b6b431dd524761695ff8e3f75bc7b42f6bd9c86b1"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8158491437069926,
+          "offset": [
+            41,
+            55
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 75,
+            "w": 177,
+            "h": 381,
+            "bottom": 455,
+            "opaque": 40992
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "4851c51c376780db798284049ea403909545a4a8bbd1e073d9c31e202381f745"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8158491437069926,
+          "offset": [
+            41,
+            55
+          ],
+          "bounds": {
+            "x": 165,
+            "y": 75,
+            "w": 178,
+            "h": 381,
+            "bottom": 455,
+            "opaque": 40928
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "75177ea4d7d73d612fa52414e625c44b2f25ed1e194e399cac90fcb13c8450b3"
+        }
+      ],
+      "file": "production/sprites/final/trunks/defesa-em-pe.webp",
+      "sha256": "4462231cb5176e18af65f8fe9b8f6718118fe90bd372eedf55c0085af621c9c7",
+      "png": "production/sprites/source/trunks-v3/tiras/defesa-em-pe.png",
+      "pngSha256": "2eccb60a105a2f1a2ace4277bc1d748ab6a8e556d6798996a578a15a77270b63"
+    },
+    {
+      "name": "defesa-agachado",
+      "source": "originais/defesa-agachado.png",
+      "faceArea": 2116,
+      "scale": 0.6202478376556485,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.6202478376556485,
+          "offset": [
+            91,
+            156
+          ],
+          "bounds": {
+            "x": 151,
+            "y": 213,
+            "w": 197,
+            "h": 243,
+            "bottom": 455,
+            "opaque": 32033
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "044325a70e31eec45160cb2d0c8992c8e1c8d4e129026599ddf7bdb617a405bf"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.6202478376556485,
+          "offset": [
+            91,
+            156
+          ],
+          "bounds": {
+            "x": 152,
+            "y": 213,
+            "w": 191,
+            "h": 244,
+            "bottom": 456,
+            "opaque": 31660
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "dc9ed715da4e73311901f0799bf1c5c084bc4a82e2ab27965861169acbd150e7"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.6202478376556485,
+          "offset": [
+            91,
+            156
+          ],
+          "bounds": {
+            "x": 150,
+            "y": 213,
+            "w": 188,
+            "h": 244,
+            "bottom": 456,
+            "opaque": 30735
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "157332546aa0fedd9547920e6c830ef7d2c74db7144465df548a2693bde53aa4"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.6202478376556485,
+          "offset": [
+            91,
+            156
+          ],
+          "bounds": {
+            "x": 151,
+            "y": 216,
+            "w": 187,
+            "h": 241,
+            "bottom": 456,
+            "opaque": 29867
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "72bc0909cbb63af9c940c103425f4f9d01e7d962408b8aa39d70eab82a8e3470"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.6202478376556485,
+          "offset": [
+            91,
+            156
+          ],
+          "bounds": {
+            "x": 155,
+            "y": 217,
+            "w": 184,
+            "h": 240,
+            "bottom": 456,
+            "opaque": 29116
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "cb01f99baaa5a2c0cbac6149fe13d552a1504158787097b01748533b349b8693"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.6202478376556485,
+          "offset": [
+            91,
+            156
+          ],
+          "bounds": {
+            "x": 158,
+            "y": 222,
+            "w": 184,
+            "h": 235,
+            "bottom": 456,
+            "opaque": 28805
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "4ecbed3798789fdc3c9b235197b91780f1d45965d5fe1ce35c3573226b48e7a7"
+        }
+      ],
+      "file": "production/sprites/final/trunks/defesa-agachado.webp",
+      "sha256": "7fe551d39871af774a19aec7cc6945272313c92e0d82ea3cf830686a77974bd7",
+      "png": "production/sprites/source/trunks-v3/tiras/defesa-agachado.png",
+      "pngSha256": "8e7c281701923fafabfc4ac7c3e4e4cbf9a7065a27c96b26f8f475f456227dc5"
+    },
+    {
+      "name": "defesa-no-ar",
+      "source": "originais/defesa-no-ar.png",
+      "faceArea": 1845,
+      "scale": 0.6642398170798899,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.6642398170798899,
+          "offset": [
+            80,
+            142
+          ],
+          "bounds": {
+            "x": 142,
+            "y": 163,
+            "w": 215,
+            "h": 293,
+            "bottom": 455,
+            "opaque": 31898
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "8faeecc9b6a3ab9b0d70dbbc6253b95bb3260c3e3cec4773a4d9743fe9f5b9a0"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.6642398170798899,
+          "offset": [
+            80,
+            142
+          ],
+          "bounds": {
+            "x": 154,
+            "y": 163,
+            "w": 176,
+            "h": 293,
+            "bottom": 455,
+            "opaque": 31433
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "bda0b1d20a7aa4847499d7f06ecea2e7f5d65a08609bc087c630f4edfce8d590"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.6642398170798899,
+          "offset": [
+            80,
+            145
+          ],
+          "bounds": {
+            "x": 179,
+            "y": 166,
+            "w": 151,
+            "h": 290,
+            "bottom": 455,
+            "opaque": 28939
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "9542aad9770a9e881428f764fb32807d006a8935c0087e278ce483ae657aa0e6"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.6642398170798899,
+          "offset": [
+            80,
+            170
+          ],
+          "bounds": {
+            "x": 180,
+            "y": 194,
+            "w": 139,
+            "h": 262,
+            "bottom": 455,
+            "opaque": 25275
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "27f80f2a73031faa0ffc87d80b07b88bf38e4a376c640c6b999c72c5e89673d8"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.6642398170798899,
+          "offset": [
+            80,
+            148
+          ],
+          "bounds": {
+            "x": 176,
+            "y": 171,
+            "w": 161,
+            "h": 284,
+            "bottom": 454,
+            "opaque": 28490
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "11cf50f95cffba75bb75136bb1a6548c4d450de49ae41d155f5b73cfcbda12a3"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.6642398170798899,
+          "offset": [
+            80,
+            139
+          ],
+          "bounds": {
+            "x": 178,
+            "y": 161,
+            "w": 156,
+            "h": 295,
+            "bottom": 455,
+            "opaque": 28877
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "1567b2015c1931bd17604bcadf80a6d9f72263a3026f2b628f7427c20479b2c1"
+        }
+      ],
+      "file": "production/sprites/final/trunks/defesa-no-ar.webp",
+      "sha256": "caf52e4eeafff26a2bfc96992d892b88e97b588f6bd9179825043596db33a163",
+      "png": "production/sprites/source/trunks-v3/tiras/defesa-no-ar.png",
+      "pngSha256": "c7df9224ee8cd2664a4124fe61d41cea531b057f73989d844699b5c4d424e949"
+    },
+    {
+      "name": "dano-alto",
+      "source": "originais/dano-alto.png",
+      "faceArea": 1098,
+      "scale": 0.8610372109390003,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8610372109390003,
+          "offset": [
+            30,
+            36
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 51,
+            "w": 181,
+            "h": 405,
+            "bottom": 455,
+            "opaque": 43835
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "4e5653805445c2e01b8ed8db56f1aa3f16f790928e777b308427a3e3b9401e49"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8610372109390003,
+          "offset": [
+            30,
+            36
+          ],
+          "bounds": {
+            "x": 167,
+            "y": 49,
+            "w": 180,
+            "h": 407,
+            "bottom": 455,
+            "opaque": 44432
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "414581fa759e0d730362f04001a9c7c0536e1072156ef0291815907d2439f02f"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8610372109390003,
+          "offset": [
+            30,
+            36
+          ],
+          "bounds": {
+            "x": 168,
+            "y": 47,
+            "w": 179,
+            "h": 409,
+            "bottom": 455,
+            "opaque": 45962
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "9418479b9a653bf8b072490a8f700bf2dc6dccff33c5e3ca3ccc4e4c38eea503"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8610372109390003,
+          "offset": [
+            30,
+            34
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 46,
+            "w": 200,
+            "h": 410,
+            "bottom": 455,
+            "opaque": 49152
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "768d277259c09f858fa8b5716db02c11ab11b6e2af35fd21b58b7bf25fe33df1"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8610372109390003,
+          "offset": [
+            30,
+            34
+          ],
+          "bounds": {
+            "x": 159,
+            "y": 61,
+            "w": 190,
+            "h": 395,
+            "bottom": 455,
+            "opaque": 46284
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "3177a54bef28f1116d558e52d6dfb903bf87e498211982d564be2e33da3e19c1"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8610372109390003,
+          "offset": [
+            30,
+            34
+          ],
+          "bounds": {
+            "x": 152,
+            "y": 62,
+            "w": 196,
+            "h": 394,
+            "bottom": 455,
+            "opaque": 45645
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e264457cd54f3e0a4dfd68391fa254c7ffc84bb012df45cb7a1cc50541f7abdd"
+        }
+      ],
+      "file": "production/sprites/final/trunks/dano-alto.webp",
+      "sha256": "14483e70178017798bd7a8e2305ada4223896149ee1dc26055cb3d44ceaee1e1",
+      "png": "production/sprites/source/trunks-v3/tiras/dano-alto.png",
+      "pngSha256": "8391d8112a3b1696eaa0e021dc5dacbf5c7693abbf4e55f1a73701d07d85f391"
+    },
+    {
+      "name": "dano-baixo",
+      "source": "originais/dano-baixo.png",
+      "faceArea": 1104,
+      "scale": 0.8586942481989578,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8586942481989578,
+          "offset": [
+            30,
+            37
+          ],
+          "bounds": {
+            "x": 165,
+            "y": 52,
+            "w": 182,
+            "h": 405,
+            "bottom": 456,
+            "opaque": 44066
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "6d75efe3a4390773d61304a61990de39de55c27b74e9202a248774e6754c60da"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8586942481989578,
+          "offset": [
+            30,
+            36
+          ],
+          "bounds": {
+            "x": 156,
+            "y": 54,
+            "w": 192,
+            "h": 402,
+            "bottom": 455,
+            "opaque": 46202
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "3e2752e21bd1128f8bd520d6620fdc86e79e9c374ce39bcbca87fc9201007020"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8586942481989578,
+          "offset": [
+            30,
+            36
+          ],
+          "bounds": {
+            "x": 148,
+            "y": 72,
+            "w": 200,
+            "h": 384,
+            "bottom": 455,
+            "opaque": 46910
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "0d3cf956a10318924faedb6a6f0f98e3a4d80712310143dbf3196d71b28a972b"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8586942481989578,
+          "offset": [
+            30,
+            35
+          ],
+          "bounds": {
+            "x": 161,
+            "y": 95,
+            "w": 187,
+            "h": 361,
+            "bottom": 455,
+            "opaque": 45782
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "761a5cea79174e5772888ae993152db1aaf8df92645cea1c7e2571539685ca59"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8586942481989578,
+          "offset": [
+            30,
+            35
+          ],
+          "bounds": {
+            "x": 156,
+            "y": 134,
+            "w": 192,
+            "h": 322,
+            "bottom": 455,
+            "opaque": 43412
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "92657de253a346feaeaebde6efaf48a125ac2ea69b845fa20b6801303fc2f1fb"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8586942481989578,
+          "offset": [
+            30,
+            35
+          ],
+          "bounds": {
+            "x": 156,
+            "y": 130,
+            "w": 192,
+            "h": 326,
+            "bottom": 455,
+            "opaque": 42875
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "da381889bab425545feaff902c2db1996cd48f7f601b4a81d550f65ee11c00c7"
+        }
+      ],
+      "file": "production/sprites/final/trunks/dano-baixo.webp",
+      "sha256": "7974df3bdf599f5669eb1f5961563ec2c270f9f06346d6ceebacb17fa148123f",
+      "png": "production/sprites/source/trunks-v3/tiras/dano-baixo.png",
+      "pngSha256": "da249b674355a5cfb0e128c2adf7e10fdd11fe5340fed759b93d0e7c0d4fd089"
+    },
+    {
+      "name": "dano-no-ar",
+      "source": "originais/dano-no-ar.png",
+      "faceArea": 1386,
+      "scale": 0.7663752581540116,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7663752581540116,
+          "offset": [
+            54,
+            100
+          ],
+          "bounds": {
+            "x": 129,
+            "y": 118,
+            "w": 214,
+            "h": 338,
+            "bottom": 455,
+            "opaque": 35738
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "1e30cd5139ba39451afa02c1fdefe8b68a12cecba3664f1fa68c66c5be378694"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7663752581540116,
+          "offset": [
+            54,
+            118
+          ],
+          "bounds": {
+            "x": 99,
+            "y": 143,
+            "w": 285,
+            "h": 313,
+            "bottom": 455,
+            "opaque": 36502
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "a8ed9f808584bb7574dbebc99259095cc033bc4abe402ddb68e395e88181d8a1"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7663752581540116,
+          "offset": [
+            54,
+            128
+          ],
+          "bounds": {
+            "x": 86,
+            "y": 157,
+            "w": 326,
+            "h": 299,
+            "bottom": 455,
+            "opaque": 37108
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "b85d6a497e314e667b4b82e20adb19c95bd603725ede0e9e500770232096dec2"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7663752581540116,
+          "offset": [
+            54,
+            130
+          ],
+          "bounds": {
+            "x": 87,
+            "y": 183,
+            "w": 359,
+            "h": 273,
+            "bottom": 455,
+            "opaque": 36058
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "4ffef9c0c9e8478635789ba62dad48b2c42c9ace1995c4739cf63829a590da95"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7663752581540116,
+          "offset": [
+            54,
+            130
+          ],
+          "bounds": {
+            "x": 54,
+            "y": 220,
+            "w": 392,
+            "h": 236,
+            "bottom": 455,
+            "opaque": 33494
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "a5e573e75bc789c8f48fe2fa30a3bb6ee8226ef1c00f0a3770e57e2535b2f694"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7663752581540116,
+          "offset": [
+            54,
+            118
+          ],
+          "bounds": {
+            "x": 54,
+            "y": 262,
+            "w": 377,
+            "h": 194,
+            "bottom": 455,
+            "opaque": 31491
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "d078aede100e6b996b711656baa6cc1761ca47d7ebd5620f5d7f5f40628225e2"
+        }
+      ],
+      "file": "production/sprites/final/trunks/dano-no-ar.webp",
+      "sha256": "948ed27a49fb8bc91090dfe2d0d16b8b59c4871b0879b2130dc95a484f41a98f",
+      "png": "production/sprites/source/trunks-v3/tiras/dano-no-ar.png",
+      "pngSha256": "1d23477260de4eafdd0260fb473d70b1e873b21b04f1afed6dca8c9dcbaab4ec"
+    },
+    {
+      "name": "caido",
+      "source": "originais/caido.png",
+      "faceArea": 1400,
+      "scale": 0.7625337539725844,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7625337539725844,
+          "offset": [
+            55,
+            87
+          ],
+          "bounds": {
+            "x": 114,
+            "y": 167,
+            "w": 222,
+            "h": 289,
+            "bottom": 455,
+            "opaque": 38479
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "c1d793bdbae757ee35bd3fcdae8d54b6352a5c5b0cf6f613f6d9e038ac696aa7"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7625337539725844,
+          "offset": [
+            55,
+            88
+          ],
+          "bounds": {
+            "x": 70,
+            "y": 188,
+            "w": 317,
+            "h": 267,
+            "bottom": 454,
+            "opaque": 41567
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "1a229e7153fab4ac6115f05eb8a4b44712f4d7922e35cce1a338104d5baba12b"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7625337539725844,
+          "offset": [
+            55,
+            98
+          ],
+          "bounds": {
+            "x": 96,
+            "y": 248,
+            "w": 325,
+            "h": 208,
+            "bottom": 455,
+            "opaque": 37649
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "a7e483be010af5b73b50a1d066ad7a632dfc59c307de4ca27804a2c34a49573d"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7625337539725844,
+          "offset": [
+            55,
+            110
+          ],
+          "bounds": {
+            "x": 73,
+            "y": 286,
+            "w": 336,
+            "h": 170,
+            "bottom": 455,
+            "opaque": 31027
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "be1c3486fae252efc472a6b93c0499f56579edc44b109eeb58443d97d82c415f"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7625337539725844,
+          "offset": [
+            55,
+            110
+          ],
+          "bounds": {
+            "x": 56,
+            "y": 334,
+            "w": 364,
+            "h": 121,
+            "bottom": 454,
+            "opaque": 27806
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "9832a4601f61cd8bf7b0a7dd3f711f4f584225c3213eeaf5efd622cb5ac683e5"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7625337539725844,
+          "offset": [
+            55,
+            109
+          ],
+          "bounds": {
+            "x": 60,
+            "y": 359,
+            "w": 372,
+            "h": 97,
+            "bottom": 455,
+            "opaque": 25268
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "3007d3ee203cb6efc3d0fac691544fb5e12b471ee938cf28390d8905b9bb724a"
+        }
+      ],
+      "file": "production/sprites/final/trunks/caido.webp",
+      "sha256": "3b00082b4948d5da119b375b2f2a4bdb94d40c53bf0e84242d0099680cc0d6a4",
+      "png": "production/sprites/source/trunks-v3/tiras/caido.png",
+      "pngSha256": "0622697a8ef76bc5e4e2d796d92d629b045810dee41148d0e9940be01e9aedfa"
+    },
+    {
+      "name": "levantar",
+      "source": "originais/levantar.png",
+      "faceArea": 1142,
+      "scale": 0.8442868763239565,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8442868763239565,
+          "offset": [
+            34,
+            54
+          ],
+          "bounds": {
+            "x": 42,
+            "y": 364,
+            "w": 408,
+            "h": 92,
+            "bottom": 455,
+            "opaque": 28267
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "54ab46e3ff52f15e3dcaacac05c7ac159aef84ae3f358d37a77f5a696ab39339"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8442868763239565,
+          "offset": [
+            34,
+            64
+          ],
+          "bounds": {
+            "x": 73,
+            "y": 272,
+            "w": 375,
+            "h": 183,
+            "bottom": 454,
+            "opaque": 38533
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "28a43f0bc1ada230a0126c39e1eb96a7ea40eee4bf81d7c9d5ef360bfcececab"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8442868763239565,
+          "offset": [
+            34,
+            63
+          ],
+          "bounds": {
+            "x": 105,
+            "y": 240,
+            "w": 313,
+            "h": 216,
+            "bottom": 455,
+            "opaque": 40654
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "d6ff4417f5ef70486a7557d5eb047a7943c6ae40c63132e299b18adce917c12a"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8442868763239565,
+          "offset": [
+            34,
+            52
+          ],
+          "bounds": {
+            "x": 157,
+            "y": 174,
+            "w": 234,
+            "h": 282,
+            "bottom": 455,
+            "opaque": 39509
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "d9bb33f5842446d31e2241b6f1c5c6ae40d5ef8214020ed30ae152439616a35c"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8442868763239565,
+          "offset": [
+            34,
+            54
+          ],
+          "bounds": {
+            "x": 140,
+            "y": 108,
+            "w": 225,
+            "h": 348,
+            "bottom": 455,
+            "opaque": 42568
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "c49b99109a0d57e8ff81b677deba85df6af4c5adf78d2a9b509f68a426e608ce"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8442868763239565,
+          "offset": [
+            34,
+            53
+          ],
+          "bounds": {
+            "x": 141,
+            "y": 62,
+            "w": 225,
+            "h": 394,
+            "bottom": 455,
+            "opaque": 45555
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "0b19d6c187c5a8b312f6a5cd421233fadce04eaf1fa253952040097a01c0d4e5"
+        }
+      ],
+      "file": "production/sprites/final/trunks/levantar.webp",
+      "sha256": "264e920896c8a078c4c99290e7b3447ff032111ce8181792ffa5cff28a9e189e",
+      "png": "production/sprites/source/trunks-v3/tiras/levantar.png",
+      "pngSha256": "aa541833b863d5f83044d4e92e41bf1eaf421062b8e833ee003c57d3253714bb"
+    },
+    {
+      "name": "tonto",
+      "source": "originais/tonto.png",
+      "faceArea": 1279,
+      "scale": 0.7977885855962632,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7977885855962632,
+          "offset": [
+            46,
+            67
+          ],
+          "bounds": {
+            "x": 168,
+            "y": 90,
+            "w": 166,
+            "h": 366,
+            "bottom": 455,
+            "opaque": 37992
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "ab46bcf19eeebd421f497743270427084f44f8c9fd9e21531e4b2d881967b149"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7977885855962632,
+          "offset": [
+            46,
+            67
+          ],
+          "bounds": {
+            "x": 165,
+            "y": 89,
+            "w": 169,
+            "h": 367,
+            "bottom": 455,
+            "opaque": 40045
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "5c097a766cac1b93ad2055bb776154bd2f2499dfabd2b51f689ba7de131d624b"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7977885855962632,
+          "offset": [
+            46,
+            67
+          ],
+          "bounds": {
+            "x": 147,
+            "y": 87,
+            "w": 187,
+            "h": 369,
+            "bottom": 455,
+            "opaque": 40368
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "c5dc92fb625b19fe707cae040c06ebae3d791f173b4787793b9f34132d407f6b"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7977885855962632,
+          "offset": [
+            46,
+            66
+          ],
+          "bounds": {
+            "x": 168,
+            "y": 90,
+            "w": 166,
+            "h": 366,
+            "bottom": 455,
+            "opaque": 40265
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "7efeec92ffe306580f4ccccdf8dfaff89f3f35c7098ce72085a4adf6bdf2bbf9"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7977885855962632,
+          "offset": [
+            46,
+            66
+          ],
+          "bounds": {
+            "x": 165,
+            "y": 108,
+            "w": 169,
+            "h": 347,
+            "bottom": 454,
+            "opaque": 38318
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e243ce7ae0279de6bd43171407567621f655d0a47a688d6e888a57ff42e01b39"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7977885855962632,
+          "offset": [
+            46,
+            66
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 92,
+            "w": 168,
+            "h": 364,
+            "bottom": 455,
+            "opaque": 38199
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "0de05fa576a8e8e8eca52610a2cfd3cd1fcbf5e98572558e77602b57fee5e8ba"
+        }
+      ],
+      "file": "production/sprites/final/trunks/tonto.webp",
+      "sha256": "13f82e89761691258eefb01e8474b7a62c5921a3627ebb342d6ef95f953381ed",
+      "png": "production/sprites/source/trunks-v3/tiras/tonto.png",
+      "pngSha256": "e97e872d1fc39409179db0a2d8e05482574856d976ff2dee7a68a8877fda190a"
+    },
+    {
+      "name": "vitoria",
+      "source": "originais/vitoria.png",
+      "faceArea": 1108,
+      "scale": 0.8571428571428571,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8571428571428571,
+          "offset": [
+            31,
+            17
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 32,
+            "w": 180,
+            "h": 424,
+            "bottom": 455,
+            "opaque": 44488
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "7e0d0daae0c9ff80abdb72cd80557c2acf098b9021bb1b7d7928c85c9406f1f8"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8571428571428571,
+          "offset": [
+            31,
+            37
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 51,
+            "w": 180,
+            "h": 405,
+            "bottom": 455,
+            "opaque": 44119
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "01cbc252df4c75ad8030407bbcefc831e0ead409f29f383b81b830d7341df495"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8571428571428571,
+          "offset": [
+            31,
+            37
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 51,
+            "w": 180,
+            "h": 405,
+            "bottom": 455,
+            "opaque": 46346
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "47456fd5412c0a9d848c14e1e35e873c1310e30d1fc5b220b2c931935fd880e6"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8571428571428571,
+          "offset": [
+            31,
+            36
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 36,
+            "w": 181,
+            "h": 420,
+            "bottom": 455,
+            "opaque": 47333
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "dd7b35890a8f3f8d06ae5d0cf69ead9d9a047df5f3eeb3e553aca3bc15020720"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8571428571428571,
+          "offset": [
+            31,
+            36
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 53,
+            "w": 181,
+            "h": 403,
+            "bottom": 455,
+            "opaque": 46313
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "aaf349b1ee7f1e53d8590d5d9b29043ec4b7f44cca23e6b03c50d862ec881886"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8571428571428571,
+          "offset": [
+            31,
+            36
+          ],
+          "bounds": {
+            "x": 167,
+            "y": 53,
+            "w": 180,
+            "h": 403,
+            "bottom": 455,
+            "opaque": 46154
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "76cd4f9f395b0faed2551233e85aa700f3dbcb345c164388c7e2a57e36b46777"
+        }
+      ],
+      "file": "production/sprites/final/trunks/vitoria.webp",
+      "sha256": "70ba4ccb6ecc396b5c488139c28f4abe445785755f60e39cb0d9f6907bad8fb7",
+      "png": "production/sprites/source/trunks-v3/tiras/vitoria.png",
+      "pngSha256": "63635df319945136dbd367db35352b42bc89401710edd1f54a9c50969369f636"
+    },
+    {
+      "name": "golpe-5L",
+      "source": "originais/golpe-5L.png",
+      "faceArea": 1116,
+      "scale": 0.8540651349709089,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8540651349709089,
+          "offset": [
+            31,
+            38
+          ],
+          "bounds": {
+            "x": 164,
+            "y": 54,
+            "w": 181,
+            "h": 401,
+            "bottom": 454,
+            "opaque": 42203
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "94355d0ac4984853770b1ed4f8a70035841997ef839e1fbdc56d40c1d8e1474c"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8540651349709089,
+          "offset": [
+            31,
+            38
+          ],
+          "bounds": {
+            "x": 158,
+            "y": 54,
+            "w": 187,
+            "h": 401,
+            "bottom": 454,
+            "opaque": 43329
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e4f97010df0ca77ab813f7f8f9ac7926b4525e1f4f15c9694c431383c3c3bce8"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8540651349709089,
+          "offset": [
+            31,
+            38
+          ],
+          "bounds": {
+            "x": 164,
+            "y": 54,
+            "w": 192,
+            "h": 401,
+            "bottom": 454,
+            "opaque": 43856
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "8cab4227ca139a9f7017005db438732c574419ed57def3f5d3ff85203596f500"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8540651349709089,
+          "offset": [
+            31,
+            38
+          ],
+          "bounds": {
+            "x": 164,
+            "y": 55,
+            "w": 235,
+            "h": 401,
+            "bottom": 455,
+            "opaque": 45263
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "c54dd5b8a40b7dcf514acf2a4fac92845a1415730d241dae0b066b2428bf7939"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8540651349709089,
+          "offset": [
+            31,
+            38
+          ],
+          "bounds": {
+            "x": 164,
+            "y": 55,
+            "w": 181,
+            "h": 401,
+            "bottom": 455,
+            "opaque": 43478
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "3f7958d2e687b177ddffbd4eedbb7727f5fec8e4ecf6c04121d271a706fbea9e"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8540651349709089,
+          "offset": [
+            31,
+            38
+          ],
+          "bounds": {
+            "x": 164,
+            "y": 54,
+            "w": 181,
+            "h": 402,
+            "bottom": 455,
+            "opaque": 42513
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e336bf2b42703f23903c4b4fa457b2801ad2bb8ef2eb296be63a9ac18803b92a"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-5L.webp",
+      "sha256": "26e359e8e1b45cb6ae5fbf9b94101b8835819db39008080b93bd8084c178fb16",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-5L.png",
+      "pngSha256": "648c5c0c70909ffc4b0f3f43a3d38c9caa91332a77bc85f6ce8c8f7574bf43e8"
+    },
+    {
+      "name": "golpe-5M",
+      "source": "originais/golpe-5M.png",
+      "faceArea": 1019,
+      "scale": 0.8937910438987471,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8937910438987471,
+          "offset": [
+            21,
+            19
+          ],
+          "bounds": {
+            "x": 146,
+            "y": 40,
+            "w": 206,
+            "h": 416,
+            "bottom": 455,
+            "opaque": 47793
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "f5cedf78e1a1027c0a429835dc323a5c374be63fe447e104c7d709f01aaaf821"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8937910438987471,
+          "offset": [
+            21,
+            19
+          ],
+          "bounds": {
+            "x": 133,
+            "y": 45,
+            "w": 198,
+            "h": 411,
+            "bottom": 455,
+            "opaque": 47510
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "406b71ec766901a88a9455d2dee0f6a2e029eec2187d0d4f27ca02c15ec9fa29"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8937910438987471,
+          "offset": [
+            21,
+            19
+          ],
+          "bounds": {
+            "x": 117,
+            "y": 44,
+            "w": 197,
+            "h": 412,
+            "bottom": 455,
+            "opaque": 41854
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e477aa4110eb3c7396931d432bbaee7ffa682eddcaa6db0d9b81096d98594761"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8937910438987471,
+          "offset": [
+            21,
+            18
+          ],
+          "bounds": {
+            "x": 106,
+            "y": 43,
+            "w": 343,
+            "h": 413,
+            "bottom": 455,
+            "opaque": 47052
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "8e5584a4b63ae81e542450bb9dfe9fa1b13d64979411136ebc7a838a3f2b8395"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8937910438987471,
+          "offset": [
+            21,
+            18
+          ],
+          "bounds": {
+            "x": 111,
+            "y": 41,
+            "w": 205,
+            "h": 415,
+            "bottom": 455,
+            "opaque": 43442
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "b7f55d86593dc4bcda46487ef5476200aa7faffab7c41b4f43acbaa9e79f53cf"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8937910438987471,
+          "offset": [
+            21,
+            18
+          ],
+          "bounds": {
+            "x": 116,
+            "y": 40,
+            "w": 208,
+            "h": 416,
+            "bottom": 455,
+            "opaque": 48501
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "ff6af2e08667975b255f694067a368885aa4af9f023b913f83779cff2294871e"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-5M.webp",
+      "sha256": "af544a6788a2e6b7c975581df2dbc8ebf25abbd260cf1a68d522f3ba10895bed",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-5M.png",
+      "pngSha256": "89e997cdf8aee37772139965d4a3c2e399af6b38afe731c768884d0776b959f1"
+    },
+    {
+      "name": "golpe-5H",
+      "source": "originais/golpe-5H.png",
+      "faceArea": 1335,
+      "scale": 0.7808766879237204,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7808766879237204,
+          "offset": [
+            50,
+            73
+          ],
+          "bounds": {
+            "x": 151,
+            "y": 91,
+            "w": 192,
+            "h": 365,
+            "bottom": 455,
+            "opaque": 38974
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "05884a40e2830a17336a096e27bb2298f772017ba6d425f6b19dddd762fb2f7a"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7808766879237204,
+          "offset": [
+            50,
+            73
+          ],
+          "bounds": {
+            "x": 151,
+            "y": 90,
+            "w": 193,
+            "h": 366,
+            "bottom": 455,
+            "opaque": 39712
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "4a60cf9cb5ad864cb223f0f5717fa6c72e2af04eab7569b37682df301ba8cc9f"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7808766879237204,
+          "offset": [
+            50,
+            73
+          ],
+          "bounds": {
+            "x": 151,
+            "y": 79,
+            "w": 193,
+            "h": 377,
+            "bottom": 455,
+            "opaque": 42705
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "b9d7f2613c948a53739ae476a079b6f589aacbe18eff2f8281088cbb7142d444"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7808766879237204,
+          "offset": [
+            50,
+            73
+          ],
+          "bounds": {
+            "x": 136,
+            "y": 101,
+            "w": 226,
+            "h": 356,
+            "bottom": 456,
+            "opaque": 43865
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "1b6689a26f019eeb572ae5df4ef6604cd3d491658ea5a1c431373b9c1d2680af"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7808766879237204,
+          "offset": [
+            50,
+            73
+          ],
+          "bounds": {
+            "x": 151,
+            "y": 87,
+            "w": 193,
+            "h": 370,
+            "bottom": 456,
+            "opaque": 41368
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "dbee45e528576be87152658b716f722b9e2bf3a21ecc9ca02b70635a8d47d384"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7808766879237204,
+          "offset": [
+            50,
+            73
+          ],
+          "bounds": {
+            "x": 151,
+            "y": 93,
+            "w": 193,
+            "h": 364,
+            "bottom": 456,
+            "opaque": 39628
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "7aefb9930eec92797b2e1963a63680c795c1c25c319813468b6b39ca999ef058"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-5H.webp",
+      "sha256": "5237d06ff858370f3b948dea23ae96b31fb7f60263184543c8bd67ad1fc66bad",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-5H.png",
+      "pngSha256": "55662a5c5de13fc01c896c7c164763e2b756f93795541ca952b2251577c7d7bd"
+    },
+    {
+      "name": "golpe-2L",
+      "source": "originais/golpe-2L.png",
+      "faceArea": 1191,
+      "scale": 0.826736686347547,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.826736686347547,
+          "offset": [
+            38,
+            67
+          ],
+          "bounds": {
+            "x": 161,
+            "y": 193,
+            "w": 178,
+            "h": 262,
+            "bottom": 454,
+            "opaque": 32413
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "fcbdbde7cb211ca453a784cad8233c45e6f9e514da5f08fdaef9c63af9260dd7"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.826736686347547,
+          "offset": [
+            38,
+            67
+          ],
+          "bounds": {
+            "x": 159,
+            "y": 185,
+            "w": 194,
+            "h": 270,
+            "bottom": 454,
+            "opaque": 32614
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "6cdbefac576f008d86376ddc54ed0496b65523b31b0d91d6f5582e32c6ccdea0"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.826736686347547,
+          "offset": [
+            38,
+            67
+          ],
+          "bounds": {
+            "x": 142,
+            "y": 185,
+            "w": 255,
+            "h": 270,
+            "bottom": 454,
+            "opaque": 33676
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "04139e2bab8843dc7799b74a52039e0c243246cc8f841db4e2f65cbfe3ec72c6"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.826736686347547,
+          "offset": [
+            38,
+            67
+          ],
+          "bounds": {
+            "x": 142,
+            "y": 186,
+            "w": 297,
+            "h": 269,
+            "bottom": 454,
+            "opaque": 35252
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "a2ba6c042f9a57902f02f9adfbebf673a7d261071b7bc7e1fc6209b26c0a905c"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.826736686347547,
+          "offset": [
+            38,
+            67
+          ],
+          "bounds": {
+            "x": 156,
+            "y": 189,
+            "w": 178,
+            "h": 266,
+            "bottom": 454,
+            "opaque": 32008
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "f0ef376f59ff0814ba875b97b7a55068b0bce475ab539b416ab3fb7c469c8d0c"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.826736686347547,
+          "offset": [
+            38,
+            67
+          ],
+          "bounds": {
+            "x": 161,
+            "y": 193,
+            "w": 178,
+            "h": 262,
+            "bottom": 454,
+            "opaque": 32700
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "a95d6f728104334a51643cd9b55219a777413a18d7753bc8b540050b6e055fa5"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-2L.webp",
+      "sha256": "1013d12cb66854e651135a52247d8b42cb48b684bd653306ab1f43ad19aed231",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-2L.png",
+      "pngSha256": "bb8cbe8d5cf582e1ccaaa36e56c0b4d310c941c51f4b8a149460454873dd882b"
+    },
+    {
+      "name": "golpe-2M",
+      "source": "originais/golpe-2M.png",
+      "faceArea": 1533,
+      "scale": 0.728705442459354,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.728705442459354,
+          "offset": [
+            63,
+            117
+          ],
+          "bounds": {
+            "x": 162,
+            "y": 216,
+            "w": 168,
+            "h": 240,
+            "bottom": 455,
+            "opaque": 29308
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "57953c46ed3f42bfa240379c05bb41795e910c63dabad1e448572957d8c54d6f"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.728705442459354,
+          "offset": [
+            63,
+            117
+          ],
+          "bounds": {
+            "x": 162,
+            "y": 217,
+            "w": 181,
+            "h": 239,
+            "bottom": 455,
+            "opaque": 30851
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "881e03014d5a7f3e098200e69a4288ec81395301e7c503d77daa529e84d01fa4"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.728705442459354,
+          "offset": [
+            63,
+            117
+          ],
+          "bounds": {
+            "x": 153,
+            "y": 223,
+            "w": 264,
+            "h": 233,
+            "bottom": 455,
+            "opaque": 32655
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "c2db6798d5ba61e7f00236cb7fc6a7ad9dbb1956ce1f841587096738cbeea1ce"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.728705442459354,
+          "offset": [
+            63,
+            117
+          ],
+          "bounds": {
+            "x": 139,
+            "y": 225,
+            "w": 297,
+            "h": 231,
+            "bottom": 455,
+            "opaque": 34978
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "8df3d1992fb7c26f13e7576e360e880ddd5a32d2df138d4bf992f0d09beefb96"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.728705442459354,
+          "offset": [
+            63,
+            117
+          ],
+          "bounds": {
+            "x": 63,
+            "y": 220,
+            "w": 306,
+            "h": 236,
+            "bottom": 455,
+            "opaque": 31052
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "d9e10e0eb4e408b727a05896b65e98e4be95c03000e7922e99f1d8286bc574b0"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.728705442459354,
+          "offset": [
+            63,
+            117
+          ],
+          "bounds": {
+            "x": 163,
+            "y": 218,
+            "w": 169,
+            "h": 238,
+            "bottom": 455,
+            "opaque": 29245
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e998cb7b127646553832df09ecf4f2f2a51d9f34b587d29dfebf388ca3b613f2"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-2M.webp",
+      "sha256": "e7ab11b55baf77ffffc04d4ce8e619b682146d830603f30e951d385c760ecc91",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-2M.png",
+      "pngSha256": "5baa025fdbc05e6ec91abf622fa38a947a20bdaf264480d310c665d8ea0f9514"
+    },
+    {
+      "name": "golpe-2H",
+      "source": "originais/golpe-2H.png",
+      "faceArea": 1435,
+      "scale": 0.7531771572430381,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7531771572430381,
+          "offset": [
+            57,
+            91
+          ],
+          "bounds": {
+            "x": 154,
+            "y": 196,
+            "w": 187,
+            "h": 260,
+            "bottom": 455,
+            "opaque": 31717
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "4660ca3e0496d3e041dcefa9e7cf6a693d233efa0dffe30a45c783c3566ff5d9"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7531771572430381,
+          "offset": [
+            57,
+            91
+          ],
+          "bounds": {
+            "x": 137,
+            "y": 173,
+            "w": 205,
+            "h": 283,
+            "bottom": 455,
+            "opaque": 37789
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "677865090398fe86653397d1609fdb1230dfc44ee9809d59f50f233d3a68b7f9"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7531771572430381,
+          "offset": [
+            57,
+            91
+          ],
+          "bounds": {
+            "x": 148,
+            "y": 156,
+            "w": 193,
+            "h": 300,
+            "bottom": 455,
+            "opaque": 36842
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "a0c256fa6bb600de38111594a3bda1a7ba9f359558b5f8e7f2b0cfd003441bc8"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7531771572430381,
+          "offset": [
+            57,
+            91
+          ],
+          "bounds": {
+            "x": 158,
+            "y": 104,
+            "w": 195,
+            "h": 353,
+            "bottom": 456,
+            "opaque": 35696
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "dcf9db143c821332fcf245ff5b121e249e7cb9dad76c0c1f70e491407f330093"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7531771572430381,
+          "offset": [
+            57,
+            91
+          ],
+          "bounds": {
+            "x": 153,
+            "y": 111,
+            "w": 178,
+            "h": 346,
+            "bottom": 456,
+            "opaque": 37461
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "3ef74ae417fc32f759328689bd17b1f70bcd3009bc8d7b4740a697e3a38dd14d"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7531771572430381,
+          "offset": [
+            57,
+            91
+          ],
+          "bounds": {
+            "x": 149,
+            "y": 171,
+            "w": 181,
+            "h": 286,
+            "bottom": 456,
+            "opaque": 34161
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "55b907f1bdebafc023aba14a5432ad22b5a6cbf0b87d72369c8dee33afb9fc3d"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-2H.webp",
+      "sha256": "69dc0b8a2de864932bf86dedb3bcc4655991f6fd48aba5df6a538a79219b8432",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-2H.png",
+      "pngSha256": "cf7377c579dfb1e6659147e79efdaebcdc685e4c4947b51be58254f737b0b61e"
+    },
+    {
+      "name": "golpe-3H",
+      "source": "originais/golpe-3H.png",
+      "faceArea": 1768,
+      "scale": 0.6785501646721076,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.6785501646721076,
+          "offset": [
+            76,
+            124
+          ],
+          "bounds": {
+            "x": 181,
+            "y": 225,
+            "w": 172,
+            "h": 231,
+            "bottom": 455,
+            "opaque": 28049
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e971109cf21355b42bf85722461276f1d3827487c2f85fd13e42afe67a67e5a5"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.6785501646721076,
+          "offset": [
+            76,
+            118
+          ],
+          "bounds": {
+            "x": 141,
+            "y": 220,
+            "w": 209,
+            "h": 235,
+            "bottom": 454,
+            "opaque": 29751
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "bfe4919988578a009c8cfb0866511e18a1d3b33ac6d6fcbb250d82657d79a556"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.6785501646721076,
+          "offset": [
+            76,
+            117
+          ],
+          "bounds": {
+            "x": 126,
+            "y": 218,
+            "w": 270,
+            "h": 237,
+            "bottom": 454,
+            "opaque": 30469
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "57e11b87b36e57d7ce69ed5ea804a3f6d1c9ba168ee425bcd94f4873ab801e22"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.6785501646721076,
+          "offset": [
+            76,
+            119
+          ],
+          "bounds": {
+            "x": 115,
+            "y": 216,
+            "w": 307,
+            "h": 239,
+            "bottom": 454,
+            "opaque": 30982
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "74fd715d35f4e7daaa857a3a3e67d3aaf611a73de8e5fc00aed1e073b42639e2"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.6785501646721076,
+          "offset": [
+            76,
+            121
+          ],
+          "bounds": {
+            "x": 136,
+            "y": 212,
+            "w": 240,
+            "h": 244,
+            "bottom": 455,
+            "opaque": 31635
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "0946fcd6a3af50284c9b695613f8ad880865c16bedf6b2b375eebe0edb2312fa"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.6785501646721076,
+          "offset": [
+            76,
+            123
+          ],
+          "bounds": {
+            "x": 158,
+            "y": 223,
+            "w": 174,
+            "h": 233,
+            "bottom": 455,
+            "opaque": 29402
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "65bbf442bc6b79e567c192493ec1d014174f30254d247cebd1b2d4cf5f328a62"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-3H.webp",
+      "sha256": "483d45800cacf74c8a1acafc656fa1e5da6f9aa1923278cc4dda146dbe0a41cc",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-3H.png",
+      "pngSha256": "802fed2b179611d933173ef13039705c16a8c9146ea03ebccd794626f329a8d9"
+    },
+    {
+      "name": "golpe-6M",
+      "source": "originais/golpe-6M.png",
+      "faceArea": 1135,
+      "scale": 0.846886402217712,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.846886402217712,
+          "offset": [
+            33,
+            44
+          ],
+          "bounds": {
+            "x": 159,
+            "y": 60,
+            "w": 186,
+            "h": 397,
+            "bottom": 456,
+            "opaque": 44420
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "4e264e0eabd3b4b6af44613f053f083d9b5e35d2246e20b949262b9aed04205b"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.846886402217712,
+          "offset": [
+            33,
+            44
+          ],
+          "bounds": {
+            "x": 141,
+            "y": 59,
+            "w": 204,
+            "h": 398,
+            "bottom": 456,
+            "opaque": 44906
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "cf2301469eb1c74fbe5ac690ed3e8b78657582e8c566cac40f56257ebae8d9e2"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.846886402217712,
+          "offset": [
+            33,
+            44
+          ],
+          "bounds": {
+            "x": 160,
+            "y": 46,
+            "w": 185,
+            "h": 411,
+            "bottom": 456,
+            "opaque": 44384
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "fc26ffbb96dfe0c9acb00cfb3f1840a76575be7891c0fea3b0b960eacce9570f"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.846886402217712,
+          "offset": [
+            33,
+            42
+          ],
+          "bounds": {
+            "x": 159,
+            "y": 76,
+            "w": 211,
+            "h": 381,
+            "bottom": 456,
+            "opaque": 44910
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "81ee885281487846b9797fa18553218408838541bab491e9d050c068c4ecd562"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.846886402217712,
+          "offset": [
+            33,
+            42
+          ],
+          "bounds": {
+            "x": 159,
+            "y": 76,
+            "w": 186,
+            "h": 380,
+            "bottom": 455,
+            "opaque": 44307
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "1dc7e7c9c5c31596f1cd4c398b7a6a044646584e7701f19d8becf9b016ea0de1"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.846886402217712,
+          "offset": [
+            33,
+            42
+          ],
+          "bounds": {
+            "x": 158,
+            "y": 58,
+            "w": 187,
+            "h": 398,
+            "bottom": 455,
+            "opaque": 44279
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "0e2da91cf648556bce188310e59f058f69d4169e2a61c795b6be11e179130a4f"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-6M.webp",
+      "sha256": "3a6f1887efd08c6841072771a693197b4c0f6cb4970f58ee2de9784b99b250f1",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-6M.png",
+      "pngSha256": "58acc316023422390266fd0b9670d4f84d20c431a95d1c78ca16da83e44ee226"
+    },
+    {
+      "name": "golpe-jL",
+      "source": "originais/golpe-jL.png",
+      "faceArea": 1250,
+      "scale": 0.8069898717215876,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8069898717215876,
+          "offset": [
+            43,
+            102
+          ],
+          "bounds": {
+            "x": 165,
+            "y": 120,
+            "w": 166,
+            "h": 336,
+            "bottom": 455,
+            "opaque": 33131
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "683a9b758fef9affd8c991a9e3058e9b49efaca0059789994e7346e20a11838e"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8069898717215876,
+          "offset": [
+            43,
+            102
+          ],
+          "bounds": {
+            "x": 164,
+            "y": 121,
+            "w": 167,
+            "h": 335,
+            "bottom": 455,
+            "opaque": 33409
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "6c2c3ea0ed4a441cd52cd216d1049b66b4484486047c536164da74ebab846ba0"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8069898717215876,
+          "offset": [
+            43,
+            102
+          ],
+          "bounds": {
+            "x": 182,
+            "y": 121,
+            "w": 157,
+            "h": 335,
+            "bottom": 455,
+            "opaque": 33458
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "eec061f1967980aafd18fc42178722873592c92e71395f95a7af13bddc611dd8"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8069898717215876,
+          "offset": [
+            43,
+            99
+          ],
+          "bounds": {
+            "x": 176,
+            "y": 117,
+            "w": 215,
+            "h": 339,
+            "bottom": 455,
+            "opaque": 35195
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e42465bc0733246233bbf49b10fcb1912859918870dfdee32d9c6e4d12195a41"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8069898717215876,
+          "offset": [
+            43,
+            103
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 121,
+            "w": 166,
+            "h": 334,
+            "bottom": 454,
+            "opaque": 32833
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "1ef51c9c311754ab8e8b5c8211c0d9571cd1fb835990fb4866cc77660e683d0f"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8069898717215876,
+          "offset": [
+            43,
+            102
+          ],
+          "bounds": {
+            "x": 165,
+            "y": 120,
+            "w": 167,
+            "h": 336,
+            "bottom": 455,
+            "opaque": 33146
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "06bafc02a8e7bd0566fc090ab8dd575e74b24fa6bda1a80c9b027909b24e7487"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-jL.webp",
+      "sha256": "7ec05dfb5bcbeb105b6230257c96f052330866d804c21bb55adb7f3a3e33972b",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-jL.png",
+      "pngSha256": "156baa8e8308bf60429c55f352b78083abffc4b1537950870a262721fd1d1275"
+    },
+    {
+      "name": "golpe-jM",
+      "source": "originais/golpe-jM.png",
+      "faceArea": 1357,
+      "scale": 0.7745209451131463,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7745209451131463,
+          "offset": [
+            52,
+            98
+          ],
+          "bounds": {
+            "x": 164,
+            "y": 127,
+            "w": 168,
+            "h": 329,
+            "bottom": 455,
+            "opaque": 33580
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "de674ef2f12b941673c6f31320b356880f53f78be872702d1972d420c804233a"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7745209451131463,
+          "offset": [
+            52,
+            87
+          ],
+          "bounds": {
+            "x": 145,
+            "y": 112,
+            "w": 206,
+            "h": 345,
+            "bottom": 456,
+            "opaque": 35700
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "212195325825323d17978cdc1af4f787426bf543271e04505272b3f04c8e35e1"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7745209451131463,
+          "offset": [
+            52,
+            105
+          ],
+          "bounds": {
+            "x": 125,
+            "y": 130,
+            "w": 225,
+            "h": 326,
+            "bottom": 455,
+            "opaque": 35884
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "0d106599ec19ff4bf117cd2b1921ef948ac89e244f4f4e6b5dcb4a8a043a5531"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7745209451131463,
+          "offset": [
+            52,
+            112
+          ],
+          "bounds": {
+            "x": 117,
+            "y": 135,
+            "w": 322,
+            "h": 321,
+            "bottom": 455,
+            "opaque": 40632
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e8a88ca677a74a17893287cd9706bdc0063bddaad11e69f6247d5847fccaeaf8"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7745209451131463,
+          "offset": [
+            52,
+            112
+          ],
+          "bounds": {
+            "x": 131,
+            "y": 136,
+            "w": 250,
+            "h": 320,
+            "bottom": 455,
+            "opaque": 36793
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "b87dd27155a33e1cbd04ebab2affd43907928426796ce8b8d6e9a971299ac9ad"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7745209451131463,
+          "offset": [
+            52,
+            109
+          ],
+          "bounds": {
+            "x": 144,
+            "y": 136,
+            "w": 171,
+            "h": 320,
+            "bottom": 455,
+            "opaque": 32676
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "78d6bf967c07eaeeef607b120ed45e12f9535345189b9f53b18fc5e901cae6c2"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-jM.webp",
+      "sha256": "4fe86b32d111674137659f582d9e1d5fcd1521b22ec3f560e5bfd9cce400067c",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-jM.png",
+      "pngSha256": "8b1b4ef1304c127e340516de8989cde63a99ed22e7cb0f5a887d563d4baf7ae7"
+    },
+    {
+      "name": "golpe-jH",
+      "source": "originais/golpe-jH.png",
+      "faceArea": 2232,
+      "scale": 0.6039152485129337,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.6039152485129337,
+          "offset": [
+            95,
+            173
+          ],
+          "bounds": {
+            "x": 173,
+            "y": 194,
+            "w": 161,
+            "h": 262,
+            "bottom": 455,
+            "opaque": 25569
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "a0b8abbe71a4d02f7c258d5821d9275981437b79b6f1197205a08038f3d1b539"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.6039152485129337,
+          "offset": [
+            95,
+            170
+          ],
+          "bounds": {
+            "x": 161,
+            "y": 188,
+            "w": 169,
+            "h": 268,
+            "bottom": 455,
+            "opaque": 26388
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "a243fd76e796a38fcf2e08747497446d7ce2c4c2c3e888a026e8e59c22fe8d17"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.6039152485129337,
+          "offset": [
+            95,
+            170
+          ],
+          "bounds": {
+            "x": 160,
+            "y": 180,
+            "w": 171,
+            "h": 276,
+            "bottom": 455,
+            "opaque": 28809
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "5a5497088c55776de4927d8080789c6c8ee88f39098941a9bc84e4a2b938e332"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.6039152485129337,
+          "offset": [
+            95,
+            186
+          ],
+          "bounds": {
+            "x": 168,
+            "y": 209,
+            "w": 187,
+            "h": 247,
+            "bottom": 455,
+            "opaque": 30122
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "86d98fc9cc233c9a9c417e280a100cf7a8bfe66c548db8ab3a8addec6d8450cb"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.6039152485129337,
+          "offset": [
+            95,
+            182
+          ],
+          "bounds": {
+            "x": 163,
+            "y": 203,
+            "w": 170,
+            "h": 253,
+            "bottom": 455,
+            "opaque": 27476
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "cb8cfd173ce7ea39df8a3565e9af5d5e48695bca3f2afc041b2a07975f574d7b"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.6039152485129337,
+          "offset": [
+            95,
+            176
+          ],
+          "bounds": {
+            "x": 172,
+            "y": 196,
+            "w": 162,
+            "h": 260,
+            "bottom": 455,
+            "opaque": 25529
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e768e662fe2588e96147fe9c272d9f15a167799295c765c8b93cd70b0e9575fd"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-jH.webp",
+      "sha256": "3154ab68b8a8024d79af2d5da90961ab6c909bebb2e94e3187511a2ffa878fea",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-jH.png",
+      "pngSha256": "efc60ad11b7d43b2bd16cf488b89de82c7b331c808e01c4aa25543390fa78bfa"
+    },
+    {
+      "name": "golpe-throw",
+      "source": "originais/golpe-throw.png",
+      "faceArea": 1259,
+      "scale": 0.804100302528382,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.804100302528382,
+          "offset": [
+            44,
+            64
+          ],
+          "bounds": {
+            "x": 160,
+            "y": 74,
+            "w": 180,
+            "h": 382,
+            "bottom": 455,
+            "opaque": 43410
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "9befa2e967891f72a398310bc727ff6aca05eccee42a2672cb6592f7428b9ca2"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.804100302528382,
+          "offset": [
+            44,
+            64
+          ],
+          "bounds": {
+            "x": 130,
+            "y": 76,
+            "w": 241,
+            "h": 380,
+            "bottom": 455,
+            "opaque": 42780
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "a8f47620e60a51df4258b2d218c662d67e8b0c204ea809b63a56e32771480e9f"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.804100302528382,
+          "offset": [
+            44,
+            64
+          ],
+          "bounds": {
+            "x": 127,
+            "y": 76,
+            "w": 204,
+            "h": 380,
+            "bottom": 455,
+            "opaque": 42463
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "019a3aefd5cccb0c9c174385a30b00c90ec0ffd326b3716544c7dcd9df316bcb"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.804100302528382,
+          "offset": [
+            44,
+            64
+          ],
+          "bounds": {
+            "x": 143,
+            "y": 84,
+            "w": 204,
+            "h": 373,
+            "bottom": 456,
+            "opaque": 45220
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "88e2410c287be8598a3c8ec9cbcd5b35337753ddc5fe3f74b94de3a6c9f7dedb"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.804100302528382,
+          "offset": [
+            44,
+            64
+          ],
+          "bounds": {
+            "x": 68,
+            "y": 81,
+            "w": 335,
+            "h": 376,
+            "bottom": 456,
+            "opaque": 48775
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "f68e55f1aeb0ca68469626c2692c228047fe526bd3de7c4a079985d4713f6a34"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.804100302528382,
+          "offset": [
+            44,
+            64
+          ],
+          "bounds": {
+            "x": 121,
+            "y": 82,
+            "w": 199,
+            "h": 375,
+            "bottom": 456,
+            "opaque": 43966
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "39ee8930c47c641629b305a3db37ab6bc227217bb57f35d56e412348edfdda5b"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-throw.webp",
+      "sha256": "ae497495bf3110b9beca2f2fbac84f3c342806432f0591447d17efb3b7b2eb78",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-throw.png",
+      "pngSha256": "c2c97456c2a34993d1b706e486bcd675e16c960bfc40dcfbcb898bfb7f7ddd79"
+    },
+    {
+      "name": "golpe-blindado",
+      "source": "originais/golpe-blindado.png",
+      "faceArea": 1234,
+      "scale": 0.8122047232195853,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8122047232195853,
+          "offset": [
+            42,
+            58
+          ],
+          "bounds": {
+            "x": 167,
+            "y": 73,
+            "w": 176,
+            "h": 383,
+            "bottom": 455,
+            "opaque": 40916
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "90f3188f58baedb43befa8a4401919167fde559fbcbb407d36d6a8692a40747f"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8122047232195853,
+          "offset": [
+            42,
+            58
+          ],
+          "bounds": {
+            "x": 134,
+            "y": 83,
+            "w": 230,
+            "h": 373,
+            "bottom": 455,
+            "opaque": 42750
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "83cea6cca537252c9d2cbb9e1232ce63b5c2309a6f6912d21de465e5939f1b29"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8122047232195853,
+          "offset": [
+            42,
+            58
+          ],
+          "bounds": {
+            "x": 132,
+            "y": 83,
+            "w": 234,
+            "h": 373,
+            "bottom": 455,
+            "opaque": 44136
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "d7f06891099ea47a91632336a78f71f20dd65b0a2ba6778ad4247c8e05c20ada"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8122047232195853,
+          "offset": [
+            42,
+            58
+          ],
+          "bounds": {
+            "x": 123,
+            "y": 87,
+            "w": 251,
+            "h": 369,
+            "bottom": 455,
+            "opaque": 43056
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "2edff22930c0b2a9de195b7c73309a36f5ce6c864c06b71f3d83bb357703d88c"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8122047232195853,
+          "offset": [
+            42,
+            57
+          ],
+          "bounds": {
+            "x": 119,
+            "y": 85,
+            "w": 246,
+            "h": 371,
+            "bottom": 455,
+            "opaque": 42343
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "bd5b0082f56372aab787e8209c3f2492df2c60e62cb05035b0f045953b043079"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8122047232195853,
+          "offset": [
+            42,
+            58
+          ],
+          "bounds": {
+            "x": 145,
+            "y": 73,
+            "w": 220,
+            "h": 384,
+            "bottom": 456,
+            "opaque": 43163
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "66ad8670aaf6a330ff4e183f0b74ac60c08c79bf5aa684f5bc694dea3aad7e11"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-blindado.webp",
+      "sha256": "23289a54c849cc031098daf66a301dec1744cadc569227082d1d4d7b374dbfb6",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-blindado.png",
+      "pngSha256": "f84fbc6508255c8683f70d3650bea45ff857b76c6498988b1de9a0dcbfbd4824"
+    },
+    {
+      "name": "golpe-2S",
+      "source": "originais/golpe-2S.png",
+      "faceArea": 1123,
+      "scale": 0.851399150341724,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.851399150341724,
+          "offset": [
+            32,
+            41
+          ],
+          "bounds": {
+            "x": 168,
+            "y": 56,
+            "w": 177,
+            "h": 401,
+            "bottom": 456,
+            "opaque": 43160
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "db6d7d7a3c903996f7521e2f4962c5ae2f8086a80766fb68273b7f59014febe7"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.851399150341724,
+          "offset": [
+            32,
+            41
+          ],
+          "bounds": {
+            "x": 156,
+            "y": 55,
+            "w": 189,
+            "h": 402,
+            "bottom": 456,
+            "opaque": 44248
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "5e7b9e1ec0e1e5c08aeca4402a86a15aa3a4100106796b8a82afb735643a3d76"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.851399150341724,
+          "offset": [
+            32,
+            41
+          ],
+          "bounds": {
+            "x": 160,
+            "y": 53,
+            "w": 186,
+            "h": 404,
+            "bottom": 456,
+            "opaque": 43982
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "05bbe8b429da0bb8b745c0959594b6836e617007c550e52cbd64ff7eda357447"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.851399150341724,
+          "offset": [
+            32,
+            39
+          ],
+          "bounds": {
+            "x": 168,
+            "y": 53,
+            "w": 214,
+            "h": 403,
+            "bottom": 455,
+            "opaque": 44703
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "da5c36d27282bb6418ba70bea3553bd8004db12f06fdaa252842e551933aaa2d"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.851399150341724,
+          "offset": [
+            32,
+            40
+          ],
+          "bounds": {
+            "x": 168,
+            "y": 54,
+            "w": 214,
+            "h": 403,
+            "bottom": 456,
+            "opaque": 44647
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "33261d0a685719f2c2b84cf27e5e8b939df04e6da43748d397bb2c4f0105480b"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.851399150341724,
+          "offset": [
+            32,
+            39
+          ],
+          "bounds": {
+            "x": 161,
+            "y": 53,
+            "w": 185,
+            "h": 403,
+            "bottom": 455,
+            "opaque": 43934
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "3bed9c0b3b7f6306d51dd606848fd55e83fb0811bd1d67289dee85164a5f30fb"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-2S.webp",
+      "sha256": "fe1620c8d333794d7c9f7b96e424dde372930e367ea294277ba7e1a6c7b4a229",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-2S.png",
+      "pngSha256": "6baaea80660228e06976ffb4faee64a456094e7a6f9b85669b38eb67f9448710"
+    },
+    {
+      "name": "golpe-5S",
+      "source": "originais/golpe-5S.png",
+      "faceArea": 1345,
+      "scale": 0.7779683847546235,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7779683847546235,
+          "offset": [
+            51,
+            76
+          ],
+          "bounds": {
+            "x": 164,
+            "y": 88,
+            "w": 173,
+            "h": 368,
+            "bottom": 455,
+            "opaque": 37891
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e5a69296ab7fea2a5480dfecf363074651115218a6838ccab8599fc914126e4f"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7779683847546235,
+          "offset": [
+            51,
+            76
+          ],
+          "bounds": {
+            "x": 160,
+            "y": 88,
+            "w": 231,
+            "h": 368,
+            "bottom": 455,
+            "opaque": 39838
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "2d45585711ee1f9f39972b43db723867b56c991cf955acbd3434a32fa788adef"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7779683847546235,
+          "offset": [
+            51,
+            76
+          ],
+          "bounds": {
+            "x": 161,
+            "y": 87,
+            "w": 191,
+            "h": 369,
+            "bottom": 455,
+            "opaque": 40819
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "9413e6c5dc941379dc6d0f380b25acc484ab3fd695b24a43ed4c61e06e2c9bfd"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7779683847546235,
+          "offset": [
+            51,
+            75
+          ],
+          "bounds": {
+            "x": 152,
+            "y": 109,
+            "w": 194,
+            "h": 347,
+            "bottom": 455,
+            "opaque": 41254
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "5845b165b297df1b74ea90ed59146916c2d1d397c6f6309c4c02a6c67994e332"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7779683847546235,
+          "offset": [
+            51,
+            75
+          ],
+          "bounds": {
+            "x": 161,
+            "y": 88,
+            "w": 178,
+            "h": 368,
+            "bottom": 455,
+            "opaque": 40040
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "39547972311ac450547f97a4b0e750479e4b367c27665d838edda3d3f06087b3"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7779683847546235,
+          "offset": [
+            51,
+            75
+          ],
+          "bounds": {
+            "x": 164,
+            "y": 88,
+            "w": 174,
+            "h": 368,
+            "bottom": 455,
+            "opaque": 38035
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e14b91f924d94273f6424ce3be3a7c0488e18d33bd7d7e243263f1bd89dab454"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-5S.webp",
+      "sha256": "28b108166d02828b22b43e4683c860746e6889610d61d0c7f9c4cc7af2e22c25",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-5S.png",
+      "pngSha256": "6d6d4df3b9bd3fac27da807013ae6de92c396826c10e4f032f4a397a8d213c79"
+    },
+    {
+      "name": "golpe-6S",
+      "source": "originais/golpe-6S.png",
+      "faceArea": 1054,
+      "scale": 0.8788257736023404,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8788257736023404,
+          "offset": [
+            25,
+            26
+          ],
+          "bounds": {
+            "x": 145,
+            "y": 42,
+            "w": 204,
+            "h": 414,
+            "bottom": 455,
+            "opaque": 46690
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "5340c0aa88bd7a6ba9c311433aeacffed49460e099595a1496b7c24259b89a5b"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8788257736023404,
+          "offset": [
+            25,
+            26
+          ],
+          "bounds": {
+            "x": 124,
+            "y": 57,
+            "w": 225,
+            "h": 399,
+            "bottom": 455,
+            "opaque": 50006
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "8595eff21d5312cd8d9e8b387cf773b4418a756c2f8ff2c29548ce17a88c12e6"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8788257736023404,
+          "offset": [
+            25,
+            27
+          ],
+          "bounds": {
+            "x": 110,
+            "y": 74,
+            "w": 259,
+            "h": 382,
+            "bottom": 455,
+            "opaque": 53155
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "c34df4aa911801d14f774be0560c5d4be7d15e6871d6b85eb5ed192c83cafe55"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8788257736023404,
+          "offset": [
+            25,
+            27
+          ],
+          "bounds": {
+            "x": 72,
+            "y": 91,
+            "w": 324,
+            "h": 365,
+            "bottom": 455,
+            "opaque": 52430
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "41199a4002471fdb8428d8dc1f72177ecde1b9adf40318698130fe6c9a5dd852"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8788257736023404,
+          "offset": [
+            25,
+            27
+          ],
+          "bounds": {
+            "x": 110,
+            "y": 70,
+            "w": 257,
+            "h": 386,
+            "bottom": 455,
+            "opaque": 51914
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "6d33ca54db74758f9218861b9b5a5a65fccae030f4b508cffe726face56fbcbe"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8788257736023404,
+          "offset": [
+            25,
+            25
+          ],
+          "bounds": {
+            "x": 148,
+            "y": 40,
+            "w": 203,
+            "h": 415,
+            "bottom": 454,
+            "opaque": 46707
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "08b493b18020a8b6654751a78dd632a804168fbb1821dd86136379392d7d41c1"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-6S.webp",
+      "sha256": "cb7a5a563ca769a76ad6b543f2f8ce93e8afe726967dc283c320d0688801176d",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-6S.png",
+      "pngSha256": "332bb7f3f6bee9fa842d2c4cdd739a2ee114682ea2a1c846fe20dbb88632b921"
+    },
+    {
+      "name": "golpe-4S",
+      "source": "originais/golpe-4S.png",
+      "faceArea": 1092,
+      "scale": 0.8633994573832227,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            14
+          ],
+          "bounds": {
+            "x": 169,
+            "y": 29,
+            "w": 177,
+            "h": 427,
+            "bottom": 455,
+            "opaque": 42779
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "0878eff43d6f8b2d51c4dbe0b301e7d2d5a219134728c7b26760198301d9f502"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            35
+          ],
+          "bounds": {
+            "x": 157,
+            "y": 69,
+            "w": 190,
+            "h": 387,
+            "bottom": 455,
+            "opaque": 46749
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "2191e652f6b168bf1fd9be8a32518ee1b7acfd7477f2a51acce3047f102aa26b"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            35
+          ],
+          "bounds": {
+            "x": 157,
+            "y": 59,
+            "w": 189,
+            "h": 397,
+            "bottom": 455,
+            "opaque": 46009
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "bdeb7de71435859bec2b7ced5b0add0e6aadea9a849d870c2c3540cdc2445662"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            34
+          ],
+          "bounds": {
+            "x": 169,
+            "y": 34,
+            "w": 177,
+            "h": 422,
+            "bottom": 455,
+            "opaque": 42776
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "52cd1131191f248565737f4a614e694547757569ed429b649051adbb6c35299a"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            34
+          ],
+          "bounds": {
+            "x": 167,
+            "y": 45,
+            "w": 180,
+            "h": 411,
+            "bottom": 455,
+            "opaque": 44369
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "34ce1a254e6acfb0ea91d53da01fc77d5277d5c389f90b0b37b3dfa1295be50f"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8633994573832227,
+          "offset": [
+            29,
+            34
+          ],
+          "bounds": {
+            "x": 170,
+            "y": 48,
+            "w": 177,
+            "h": 408,
+            "bottom": 455,
+            "opaque": 43117
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "bfbf0b6ed028cafd8126d41a8eaf53bbc47c40a9f811a5c4756d1a33093e5875"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-4S.webp",
+      "sha256": "301f6d96a89c5d1d74cee1397e8d7b7a19fe1518367dceac0349abdcd4e9da89",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-4S.png",
+      "pngSha256": "3a271fae31b41cd0674775db9e581baff37fb12eb2e990ef0ac904db8242a0e5"
+    },
+    {
+      "name": "golpe-c1",
+      "source": "originais/golpe-c1.png",
+      "faceArea": 1141,
+      "scale": 0.8446567720158862,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8446567720158862,
+          "offset": [
+            34,
+            42
+          ],
+          "bounds": {
+            "x": 157,
+            "y": 58,
+            "w": 191,
+            "h": 397,
+            "bottom": 454,
+            "opaque": 44261
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "354b3d46bef1f5606fd7268552b3eec899b25e3d0d857b3297110086f503c352"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8446567720158862,
+          "offset": [
+            34,
+            43
+          ],
+          "bounds": {
+            "x": 142,
+            "y": 61,
+            "w": 278,
+            "h": 395,
+            "bottom": 455,
+            "opaque": 48629
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "c5301d43cc934155601dbcffa67ca79bad85c6919d371779d1d6588d9742f404"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8446567720158862,
+          "offset": [
+            34,
+            43
+          ],
+          "bounds": {
+            "x": 142,
+            "y": 66,
+            "w": 256,
+            "h": 390,
+            "bottom": 455,
+            "opaque": 45735
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "96dc45f1fa42ede224c11e1468c5e755aa09b9b014fb8cdf545b6ef8a174778a"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8446567720158862,
+          "offset": [
+            34,
+            41
+          ],
+          "bounds": {
+            "x": 141,
+            "y": 74,
+            "w": 222,
+            "h": 381,
+            "bottom": 454,
+            "opaque": 47425
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "0be90fc6c6adda7a42663127c38dc8d8c839835df166e3f686dcdd8aab6a3285"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8446567720158862,
+          "offset": [
+            34,
+            41
+          ],
+          "bounds": {
+            "x": 141,
+            "y": 65,
+            "w": 206,
+            "h": 390,
+            "bottom": 454,
+            "opaque": 47007
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "532ff873a81d9fa9c4dffc65c0fbaf2a36ffdb1dc5aa5fe0d25a5b8c307f0bcf"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8446567720158862,
+          "offset": [
+            34,
+            41
+          ],
+          "bounds": {
+            "x": 159,
+            "y": 57,
+            "w": 189,
+            "h": 398,
+            "bottom": 454,
+            "opaque": 45211
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "3392ac2eecd376843047c85e008d1e41e5d1c0905837a80b288648df5ac0e98a"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-c1.webp",
+      "sha256": "229b345e726e76cb395e3c87fdab78974f90ec982692f845014be3693acc526c",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-c1.png",
+      "pngSha256": "4e8e8da7c245bfbdb297f8b5a659669ffb3485dddf4510cb301f1cdc1bd4b11d"
+    },
+    {
+      "name": "golpe-c2",
+      "source": "originais/golpe-c2.png",
+      "faceArea": 1320,
+      "scale": 0.7853009538553735,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7853009538553735,
+          "offset": [
+            49,
+            71
+          ],
+          "bounds": {
+            "x": 153,
+            "y": 97,
+            "w": 185,
+            "h": 359,
+            "bottom": 455,
+            "opaque": 38826
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "188376e9f6f5becd0c1fca27a544ef1f177f594f81b7cee9320c5c2e2539a341"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7853009538553735,
+          "offset": [
+            49,
+            71
+          ],
+          "bounds": {
+            "x": 136,
+            "y": 98,
+            "w": 201,
+            "h": 358,
+            "bottom": 455,
+            "opaque": 41935
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "39e594e498a02ceab3ed372a3a65dcba6445ab7e1b01106b27510c4cf6af56cb"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.7853009538553735,
+          "offset": [
+            49,
+            71
+          ],
+          "bounds": {
+            "x": 122,
+            "y": 86,
+            "w": 232,
+            "h": 370,
+            "bottom": 455,
+            "opaque": 44881
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "f9464eac702c5fcc09407d98a01322f762e824cea4e5e11f462bc36d636df627"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7853009538553735,
+          "offset": [
+            49,
+            70
+          ],
+          "bounds": {
+            "x": 105,
+            "y": 123,
+            "w": 295,
+            "h": 332,
+            "bottom": 454,
+            "opaque": 47534
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "2424eaf6a8f2410907ae859d8b6c3e68d78956413c1b033ecd6a584142ea0fe4"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7853009538553735,
+          "offset": [
+            49,
+            73
+          ],
+          "bounds": {
+            "x": 126,
+            "y": 103,
+            "w": 235,
+            "h": 353,
+            "bottom": 455,
+            "opaque": 42657
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "88d8b1c22fc4737b4dd9857b65fa08d0b25ddb21bff703ee9b887e143ee1811b"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.7853009538553735,
+          "offset": [
+            49,
+            70
+          ],
+          "bounds": {
+            "x": 133,
+            "y": 99,
+            "w": 221,
+            "h": 356,
+            "bottom": 454,
+            "opaque": 41429
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "addb8c1dae54513f9691a89865f273979eda6e66f2b283d089e8865da4dd4203"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-c2.webp",
+      "sha256": "1549b1f96d23db105ea6ce30707b516742e8796cfb060e297c79f6cdcdc01d39",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-c2.png",
+      "pngSha256": "c207bcb2a63394fbef528d4f1ea6cbe84533aa1495f61ce170de5236e6165862"
+    },
+    {
+      "name": "golpe-SA1",
+      "source": "originais/golpe-SA1.png",
+      "faceArea": 1139,
+      "scale": 0.8453980242621093,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8453980242621093,
+          "offset": [
+            34,
+            43
+          ],
+          "bounds": {
+            "x": 167,
+            "y": 57,
+            "w": 178,
+            "h": 399,
+            "bottom": 455,
+            "opaque": 42379
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "4a5df3e851bca1fe3ac1f3a521d301fdcfc779a4b258c5eb5f913015b3b82438"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8453980242621093,
+          "offset": [
+            34,
+            43
+          ],
+          "bounds": {
+            "x": 157,
+            "y": 57,
+            "w": 188,
+            "h": 399,
+            "bottom": 455,
+            "opaque": 44100
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "cffac5a48d7d330d8b0232f8c5e5cf61a93152efe6472820be0bb1895e59ebaa"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.8453980242621093,
+          "offset": [
+            34,
+            43
+          ],
+          "bounds": {
+            "x": 167,
+            "y": 57,
+            "w": 178,
+            "h": 399,
+            "bottom": 455,
+            "opaque": 42079
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "784bb6b481b163bd333c6dee0d586b54aa13c50a80d9a6e4017c945b575c31b5"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8453980242621093,
+          "offset": [
+            34,
+            42
+          ],
+          "bounds": {
+            "x": 167,
+            "y": 57,
+            "w": 194,
+            "h": 399,
+            "bottom": 455,
+            "opaque": 43371
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "cbada48ebe29f88664285b7d109052819ef42905ced235d5c03580faf4cedd88"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8453980242621093,
+          "offset": [
+            34,
+            43
+          ],
+          "bounds": {
+            "x": 167,
+            "y": 55,
+            "w": 186,
+            "h": 402,
+            "bottom": 456,
+            "opaque": 43710
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "90c5ccdbc7b228e57f134cc0df20f91d10b5bc6a434d44e14187ccae72b6ab01"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.8453980242621093,
+          "offset": [
+            34,
+            42
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 57,
+            "w": 179,
+            "h": 399,
+            "bottom": 455,
+            "opaque": 42746
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "2c45a19099f7356a9aa785b371508d1f752990aa2c267333e397c53c4ee47d75"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-SA1.webp",
+      "sha256": "f590e4c7a268e816831cf2f21ab8712017ead0dc3f41fe3b788cce8baa90182c",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-SA1.png",
+      "pngSha256": "4259c11bc907508394b5d41ee9c524c613fd3162acd428778ae92017a810bad7"
+    },
+    {
+      "name": "golpe-SA3",
+      "source": "originais/golpe-SA3.png",
+      "faceArea": 1099,
+      "scale": 0.860645385111685,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.860645385111685,
+          "offset": [
+            30,
+            35
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 49,
+            "w": 181,
+            "h": 407,
+            "bottom": 455,
+            "opaque": 44363
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "5f195a3c419950d8f55c80dc4e1ab96b15c30a8015d858c7c24519efaaa8c717"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.860645385111685,
+          "offset": [
+            30,
+            35
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 50,
+            "w": 181,
+            "h": 406,
+            "bottom": 455,
+            "opaque": 44606
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "bcf59255c5c027192b2636d77717d72f178e539a34e0ae9c77f0faca292fdbd4"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.860645385111685,
+          "offset": [
+            30,
+            35
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 50,
+            "w": 181,
+            "h": 406,
+            "bottom": 455,
+            "opaque": 44655
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "5d37485508c6cce62a6f56e2bb7802e83b9fe062754591e3c48e9f1bdcdb8a0e"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.860645385111685,
+          "offset": [
+            30,
+            34
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 49,
+            "w": 264,
+            "h": 407,
+            "bottom": 455,
+            "opaque": 48320
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "5e48c2cee894e7029e4e3ea66f37fe5503a061dd385c98277f385d77fdc1b53c"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.860645385111685,
+          "offset": [
+            30,
+            35
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 49,
+            "w": 267,
+            "h": 408,
+            "bottom": 456,
+            "opaque": 48687
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "f8704dcb3784ab00091f5c6c31b6e31fef44dafce6a0762bd8b4ec23bd8361bd"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.860645385111685,
+          "offset": [
+            30,
+            35
+          ],
+          "bounds": {
+            "x": 166,
+            "y": 50,
+            "w": 181,
+            "h": 407,
+            "bottom": 456,
+            "opaque": 45195
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "c569404eefd408c30a60c38c37f1c1f8c13128f8624acd1568a0194802f62cc1"
+        }
+      ],
+      "file": "production/sprites/final/trunks/golpe-SA3.webp",
+      "sha256": "329c2fc0c7a14f8bf2549ebcbc966ca5af56d6576f66329b2718f04c6289e0fd",
+      "png": "production/sprites/source/trunks-v3/tiras/golpe-SA3.png",
+      "pngSha256": "57e3ceb5b06c3d966ac7ea904f7d72551fb6e401e0d38e5bd8b9be37019ec187"
+    }
+  ],
+  "effects": [
+    {
+      "name": "caes-correr",
+      "source": "originais/caes-correr.png",
+      "faceArea": null,
+      "scale": 0.9,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            83
+          ],
+          "bounds": {
+            "x": 34,
+            "y": 211,
+            "w": 431,
+            "h": 246,
+            "bottom": 456,
+            "opaque": 45854
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "3b1334b17c8b6bca13559e0130c53ca9872e30238e76e6a53f898151a154a159"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            82
+          ],
+          "bounds": {
+            "x": 58,
+            "y": 207,
+            "w": 400,
+            "h": 250,
+            "bottom": 456,
+            "opaque": 48708
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "c22960047ce2863a70eecf88693e1f558f7e658d41ddaff6fde3793416ce41f6"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            83
+          ],
+          "bounds": {
+            "x": 79,
+            "y": 202,
+            "w": 373,
+            "h": 255,
+            "bottom": 456,
+            "opaque": 44419
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "dffd17056176b7233c7f2d376bc1b7227590afd789dd2ec6177570043e9337e3"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            82
+          ],
+          "bounds": {
+            "x": 33,
+            "y": 206,
+            "w": 434,
+            "h": 250,
+            "bottom": 455,
+            "opaque": 49128
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "8c5bac9801b47b90597ad192baf3a9c6bf4204b593e1179f51641682510eef20"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            136
+          ],
+          "bounds": {
+            "x": 36,
+            "y": 248,
+            "w": 426,
+            "h": 209,
+            "bottom": 456,
+            "opaque": 43124
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "9c19fa35110d5b1cdb85c812db58bb42886fad834f838a7d1d41797a792308de"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            81
+          ],
+          "bounds": {
+            "x": 64,
+            "y": 204,
+            "w": 389,
+            "h": 252,
+            "bottom": 455,
+            "opaque": 45979
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "a8b8372307c6bb128821354402990d4e78fd78cd1c19b3ebbbbed6402b0161ad"
+        }
+      ],
+      "file": "production/sprites/final/trunks-fx/caes-correr.webp",
+      "sha256": "4fd0e52e0349fb326c1dc1e833d54d642abf30d4b8fdbb7b75149dd4be73018a",
+      "png": "production/sprites/source/trunks-v3/tiras/caes-correr.png",
+      "pngSha256": "fd5820bfb3a7530b007b6da4b0b6d7134f322ef64dee4136f22134279b2d4461"
+    },
+    {
+      "name": "caes-mordida",
+      "source": "originais/caes-mordida.png",
+      "faceArea": null,
+      "scale": 0.9,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            84
+          ],
+          "bounds": {
+            "x": 48,
+            "y": 211,
+            "w": 402,
+            "h": 245,
+            "bottom": 455,
+            "opaque": 46556
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "930684170c0b7d9638c0db5fea10ebf9e8e87b154dd937a3e991f06ee4ef984f"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            92
+          ],
+          "bounds": {
+            "x": 84,
+            "y": 227,
+            "w": 370,
+            "h": 229,
+            "bottom": 455,
+            "opaque": 42049
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "8cc1960ae830402a0c1ec90ce4a2a0e30e1ea1ca0910106b86cf2e7ba87bb99e"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            92
+          ],
+          "bounds": {
+            "x": 75,
+            "y": 225,
+            "w": 370,
+            "h": 231,
+            "bottom": 455,
+            "opaque": 45388
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "a030ef8b9aa97adb8e36894d5e29a279861840b9cc08c26e03ae7aeaf5f0a6b3"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            96
+          ],
+          "bounds": {
+            "x": 41,
+            "y": 215,
+            "w": 420,
+            "h": 241,
+            "bottom": 455,
+            "opaque": 45320
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "1aa986f2e534b5b4d3d532799b0409d586379fc47bd5e488a9717db630f8f5e9"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            102
+          ],
+          "bounds": {
+            "x": 38,
+            "y": 223,
+            "w": 426,
+            "h": 233,
+            "bottom": 455,
+            "opaque": 43557
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "fb6836ddbd293ed3425d4ab01724d3bd96fb1a8b0f10a47fa3ce9826eea8488c"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            80
+          ],
+          "bounds": {
+            "x": 66,
+            "y": 205,
+            "w": 380,
+            "h": 251,
+            "bottom": 455,
+            "opaque": 50333
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "974494bf97bda0f9a2f05891c0f60e921790274414a27bf1bb735eb0a8bd9d1a"
+        }
+      ],
+      "file": "production/sprites/final/trunks-fx/caes-mordida.webp",
+      "sha256": "a47be38729e117ea157a103df0f70e325eb2432f46118d5c610aca7678e9fbbc",
+      "png": "production/sprites/source/trunks-v3/tiras/caes-mordida.png",
+      "pngSha256": "491698a7ae524cbcd055cfb6f8bb283b38735cf85a202f227e2d24f5de19725e"
+    },
+    {
+      "name": "caes-salto",
+      "source": "originais/caes-salto.png",
+      "faceArea": null,
+      "scale": 0.9,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            46
+          ],
+          "bounds": {
+            "x": 62,
+            "y": 191,
+            "w": 387,
+            "h": 266,
+            "bottom": 456,
+            "opaque": 54458
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "7712d43b638d4f4b1e02d42088cf1bff4753b4cc9266f32a0c20343888cf0dc8"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            52
+          ],
+          "bounds": {
+            "x": 66,
+            "y": 176,
+            "w": 383,
+            "h": 280,
+            "bottom": 455,
+            "opaque": 50679
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "fe53b470da4baf06c160515ff17b7c29bbab9d190f38cfb0cac7d7839675b32e"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            82
+          ],
+          "bounds": {
+            "x": 45,
+            "y": 161,
+            "w": 406,
+            "h": 296,
+            "bottom": 456,
+            "opaque": 49825
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "d5a8fd9555f7fa2c86b4f5a887ebc8fc4b1d169813bfdade19b39e7bb88958d2"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            110
+          ],
+          "bounds": {
+            "x": 40,
+            "y": 180,
+            "w": 418,
+            "h": 276,
+            "bottom": 455,
+            "opaque": 51395
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "bea5f191ea544def0cc264e39fc69a5b4e7a7b66258976ce0f113e91fcbe1b83"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            97
+          ],
+          "bounds": {
+            "x": 54,
+            "y": 199,
+            "w": 397,
+            "h": 258,
+            "bottom": 456,
+            "opaque": 55142
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "a177d9fd31b922db9c4fb7ed43a2fc7d33f9aa0cb9a0068fcd00c76ab487a0cf"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            31
+          ],
+          "bounds": {
+            "x": 42,
+            "y": 160,
+            "w": 409,
+            "h": 296,
+            "bottom": 455,
+            "opaque": 63790
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "7d1cda0ad76da1c15ec2b294dc20176f06d19c8bc72d927950d346d6432f0631"
+        }
+      ],
+      "file": "production/sprites/final/trunks-fx/caes-salto.webp",
+      "sha256": "c7cde7995ef2f0b935f2124e7cd6e9b9e207438503a4c2d54ef6bddf82a123b9",
+      "png": "production/sprites/source/trunks-v3/tiras/caes-salto.png",
+      "pngSha256": "e744aa3806d9695eeb764db0dad0bd0aae4491efdea496071c9073543098dd41"
+    },
+    {
+      "name": "caes-final",
+      "source": "originais/caes-final.png",
+      "faceArea": null,
+      "scale": 0.9,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            56
+          ],
+          "bounds": {
+            "x": 39,
+            "y": 169,
+            "w": 425,
+            "h": 287,
+            "bottom": 455,
+            "opaque": 59161
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "aa88d7662b4a4e513a43e442b9578ab81d789a7c4b3be35c144c35ecb030bb03"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            64
+          ],
+          "bounds": {
+            "x": 68,
+            "y": 180,
+            "w": 381,
+            "h": 277,
+            "bottom": 456,
+            "opaque": 53667
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "857d0feae5f880c50861ea96e94853369ba877640df79fc58b5382ef8155930c"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            55
+          ],
+          "bounds": {
+            "x": 55,
+            "y": 164,
+            "w": 392,
+            "h": 293,
+            "bottom": 456,
+            "opaque": 55392
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "7545a33cc95d6fe44d07fde2fa470ae1d11e6d6c5eb211cec3c931ec00577772"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            70
+          ],
+          "bounds": {
+            "x": 27,
+            "y": 163,
+            "w": 440,
+            "h": 293,
+            "bottom": 455,
+            "opaque": 56473
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "2b185349fd903a49e87cd177465a81bef51dd0b2356d339b6aceb8ad8e0db5a0"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            101
+          ],
+          "bounds": {
+            "x": 32,
+            "y": 203,
+            "w": 423,
+            "h": 254,
+            "bottom": 456,
+            "opaque": 57398
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "41f710deacc48ba07eb65ccbea8f0c9464ff362de4cf2eb83d42ac3a28f73df2"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            55
+          ],
+          "bounds": {
+            "x": 28,
+            "y": 179,
+            "w": 447,
+            "h": 277,
+            "bottom": 455,
+            "opaque": 67564
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "2faff45e3d7f87cc54cae6d4ea174ecbf9db55bc0d49258322c6452e53be26c2"
+        }
+      ],
+      "file": "production/sprites/final/trunks-fx/caes-final.webp",
+      "sha256": "032de1ffa89b7061dfc24385dcf1383ecb678d45f6792c3d2063ee02bcd2da55",
+      "png": "production/sprites/source/trunks-v3/tiras/caes-final.png",
+      "pngSha256": "d322df3fc5e9d1f016c3ffb6714a9eea82e2f4923ddbce724e1d1ab4a5147bc0"
+    },
+    {
+      "name": "ambulancia-queda",
+      "source": "originais/ambulancia-queda.png",
+      "faceArea": null,
+      "scale": 0.9,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            125
+          ],
+          "bounds": {
+            "x": 60,
+            "y": 227,
+            "w": 363,
+            "h": 229,
+            "bottom": 455,
+            "opaque": 59637
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "dad73e6ae41dfddd50553d66e0f7d0bc227c6a6ffbdfcfd74bfc545823d518a6"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            95
+          ],
+          "bounds": {
+            "x": 63,
+            "y": 171,
+            "w": 331,
+            "h": 285,
+            "bottom": 455,
+            "opaque": 57310
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "0f0212d3d2a5376970a8cb67bd0b8dc18c83fc8e7bdafee942ca3fe98af3b5af"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            72
+          ],
+          "bounds": {
+            "x": 71,
+            "y": 123,
+            "w": 284,
+            "h": 334,
+            "bottom": 456,
+            "opaque": 58702
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "c08861a4747e8a677288b64d74a76f991da0e1e51dd59c5131337177e6cede6b"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            44
+          ],
+          "bounds": {
+            "x": 95,
+            "y": 90,
+            "w": 268,
+            "h": 366,
+            "bottom": 455,
+            "opaque": 61036
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "9aec6e56b427ce625a41c3152797bd30cbee2015ac96506c59306a7c64beeeed"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            40
+          ],
+          "bounds": {
+            "x": 97,
+            "y": 79,
+            "w": 255,
+            "h": 377,
+            "bottom": 455,
+            "opaque": 62654
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "dafb9638a4f2e531f265a7045a581c3c7874965274e0dabbc876b1f97ef1d236"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            33
+          ],
+          "bounds": {
+            "x": 123,
+            "y": 71,
+            "w": 233,
+            "h": 385,
+            "bottom": 455,
+            "opaque": 68716
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "8fd54e052e4ed62c65911efadb18f9fd6f4d4100d351bfec5b68c9a0940523ae"
+        }
+      ],
+      "file": "production/sprites/final/trunks-fx/ambulancia-queda.webp",
+      "sha256": "f14d308c6bbf84496eeb0c48861c604bacac351236bb1b4b6287497346daa450",
+      "png": "production/sprites/source/trunks-v3/tiras/ambulancia-queda.png",
+      "pngSha256": "fdae3a3cd23b0385a707cb8a36bab6536e79a87a30adb7d14b6f26441558696a"
+    },
+    {
+      "name": "fx-explosao",
+      "source": "originais/fx-explosao.png",
+      "faceArea": null,
+      "scale": 0.9,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            172
+          ],
+          "bounds": {
+            "x": 201,
+            "y": 344,
+            "w": 109,
+            "h": 112,
+            "bottom": 455,
+            "opaque": 3901
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "4910fb5004f6cbf5b577562e5f7f3eeaef9af9fec1d493347d920c8d9c0f7b26"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            107
+          ],
+          "bounds": {
+            "x": 123,
+            "y": 221,
+            "w": 248,
+            "h": 234,
+            "bottom": 454,
+            "opaque": 23098
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "9b01cfc8f2d2c40d81c04c0c6953324a90af46bbc425841a0a64d669b2c77726"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            77
+          ],
+          "bounds": {
+            "x": 56,
+            "y": 132,
+            "w": 385,
+            "h": 324,
+            "bottom": 455,
+            "opaque": 66528
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "dcd95f2a48f964c43a35d340665c7e1ec7fef80450d1d02123e40be12d41dda4"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            33
+          ],
+          "bounds": {
+            "x": 61,
+            "y": 67,
+            "w": 393,
+            "h": 389,
+            "bottom": 455,
+            "opaque": 99105
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "775d8aefea764ee6dc300a4862be3b786f994e267afc712c1685ae42a9902087"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            74
+          ],
+          "bounds": {
+            "x": 72,
+            "y": 153,
+            "w": 359,
+            "h": 304,
+            "bottom": 456,
+            "opaque": 47174
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "db0b333a8d3217f34fef58420649c2a8789a1ada6c916bbb0a338e81322ca928"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            99
+          ],
+          "bounds": {
+            "x": 86,
+            "y": 188,
+            "w": 303,
+            "h": 268,
+            "bottom": 455,
+            "opaque": 11695
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "d6567c2b090c2a06f9d2412d748f42c6c13d0d483da3435c0ef94079016458ff"
+        }
+      ],
+      "file": "production/sprites/final/trunks-fx/fx-explosao.webp",
+      "sha256": "b65c56721b340260decb7855d38f045ffb5666b9fbd257e54f08e70f2e0fb6ad",
+      "png": "production/sprites/source/trunks-v3/tiras/fx-explosao.png",
+      "pngSha256": "6ab88510005b48c38b1a9e164633c76c9f732f0ad5388d0b64a6a979659cf268"
+    },
+    {
+      "name": "fx-marca",
+      "source": "originais/fx-marca.png",
+      "faceArea": null,
+      "scale": 0.9,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            179
+          ],
+          "bounds": {
+            "x": 163,
+            "y": 361,
+            "w": 175,
+            "h": 96,
+            "bottom": 456,
+            "opaque": 6369
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "4cc233241fe59e2fcbb56c286d3f7cc16f3249e322d8c2d2b8d29d82079115f6"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            155
+          ],
+          "bounds": {
+            "x": 103,
+            "y": 314,
+            "w": 294,
+            "h": 143,
+            "bottom": 456,
+            "opaque": 13429
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "1e5db1a81df97a3b64724144702f0d3a56503ba893070dd3c37a432757a83b76"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            146
+          ],
+          "bounds": {
+            "x": 83,
+            "y": 295,
+            "w": 334,
+            "h": 161,
+            "bottom": 455,
+            "opaque": 24878
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "b40daf4d8ddfcb8e0de5dec3d678ad8c91f3837fff1aaaa281ef0289e8432ff5"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            130
+          ],
+          "bounds": {
+            "x": 78,
+            "y": 260,
+            "w": 346,
+            "h": 196,
+            "bottom": 455,
+            "opaque": 29872
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "25b9c33348559003e8aa8ad6fb8aab86c6c4bc83c318db37e6838fe6eee40947"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            119
+          ],
+          "bounds": {
+            "x": 62,
+            "y": 240,
+            "w": 376,
+            "h": 216,
+            "bottom": 455,
+            "opaque": 41119
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "10023ae5b52a1d9db881e95b6514a1d2ebffe01988eac32f09dd03a090980efb"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            80
+          ],
+          "bounds": {
+            "x": 57,
+            "y": 170,
+            "w": 384,
+            "h": 287,
+            "bottom": 456,
+            "opaque": 49590
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "792ca92dc88b60cc8f3456cd8e522ff0fd6e60a99ddb15948650624c199c9849"
+        }
+      ],
+      "file": "production/sprites/final/trunks-fx/fx-marca.webp",
+      "sha256": "074c87220d447b1a5e753f647f0f413bfd2800cc7108c2f0b9f65b84b6ae2d56",
+      "png": "production/sprites/source/trunks-v3/tiras/fx-marca.png",
+      "pngSha256": "be88fe3e7f267e1333bcfd5959d6e6af10c98733a1949d5235cf41097d460164"
+    },
+    {
+      "name": "fx-mordida",
+      "source": "originais/fx-mordida.png",
+      "faceArea": null,
+      "scale": 0.9,
+      "frames": [
+        {
+          "source": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            19
+          ],
+          "bounds": {
+            "x": 58,
+            "y": 56,
+            "w": 374,
+            "h": 400,
+            "bottom": 455,
+            "opaque": 80474
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "123fb710336eaf4d859a34b79f1fd94ea667cd33700301678ce637f5ac5a68a8"
+        },
+        {
+          "source": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            49
+          ],
+          "bounds": {
+            "x": 63,
+            "y": 137,
+            "w": 364,
+            "h": 319,
+            "bottom": 455,
+            "opaque": 75070
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "bbe096aed2ce7a8de4e0cf92aa0c94497a5446dbb78922d12be31126fca96e3d"
+        },
+        {
+          "source": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            66
+          ],
+          "bounds": {
+            "x": 62,
+            "y": 186,
+            "w": 368,
+            "h": 270,
+            "bottom": 455,
+            "opaque": 72265
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "fe61a32976fb1219f64eda76c5be46422047d8ae3568cfbaf588188b31add0e8"
+        },
+        {
+          "source": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            31
+          ],
+          "bounds": {
+            "x": 61,
+            "y": 86,
+            "w": 376,
+            "h": 370,
+            "bottom": 455,
+            "opaque": 74028
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "fda9506a95bc334e9a4281f2108f3947588fa86dd4787ed11417069d5111205b"
+        },
+        {
+          "source": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            73
+          ],
+          "bounds": {
+            "x": 70,
+            "y": 153,
+            "w": 359,
+            "h": 303,
+            "bottom": 455,
+            "opaque": 39105
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "30731526d4dd62e4e94a795ff18a629466755e1e7cdd6393b33e3972b493a6db"
+        },
+        {
+          "source": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "scale": 0.9,
+          "offset": [
+            20,
+            97
+          ],
+          "bounds": {
+            "x": 77,
+            "y": 177,
+            "w": 329,
+            "h": 279,
+            "bottom": 455,
+            "opaque": 13439
+          },
+          "edgePixels": 0,
+          "alphaMin": 0,
+          "sha256": "e166f859a362dd3cda0a807dec72f44ad4ec7b712c60cf943041c1c54755fcdc"
+        }
+      ],
+      "file": "production/sprites/final/trunks-fx/fx-mordida.webp",
+      "sha256": "57d155e02679783c7c1cb1f9df629b0721ce7731649a1a52b90f669b8920829a",
+      "png": "production/sprites/source/trunks-v3/tiras/fx-mordida.png",
+      "pngSha256": "c6088c9439db1b42c0bc96e4a16ee8cb7a0dafd100f8bd7b2bf67121c79b8268"
+    }
+  ],
+  "crops": {
+    "caes-correr": [
+      46.08,
+      305.664,
+      675.84,
+      400.896
+    ],
+    "caes-mordida": [
+      53.76,
+      310.272,
+      663.552,
+      394.752
+    ],
+    "caes-salto": [
+      56.832,
+      241.152,
+      651.264,
+      465.408
+    ],
+    "caes-final": [
+      36.864,
+      245.76,
+      697.344,
+      460.8
+    ],
+    "ambulancia-queda": [
+      87.552,
+      104.448,
+      566.784,
+      602.112
+    ],
+    "fx-explosao": [
+      81.408,
+      98.304,
+      620.544,
+      608.256
+    ],
+    "fx-marca": [
+      82.944,
+      256.512,
+      599.04,
+      450.048
+    ],
+    "fx-mordida": [
+      84.48,
+      81.408,
+      591.36,
+      623.616
+    ]
+  }
+}

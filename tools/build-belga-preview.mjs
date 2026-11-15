@@ -1,0 +1,10 @@
+import { build } from 'esbuild';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { dirname } from 'node:path';
+const out=process.argv[2]||'production/qa/belga-previa-500px.html';
+const manifest=JSON.parse(readFileSync('production/sprites/source/belga-v2/manifest.json'));
+const images=Object.fromEntries([...manifest.sequences,...manifest.effects].map(s=>[s.name,'data:image/webp;base64,'+readFileSync(s.file).toString('base64')]));
+const js=await build({entryPoints:['production/qa/belga-preview.js'],bundle:true,format:'iife',write:false,minify:true,target:'es2020'});
+const script='window.__BELGA_MANIFEST='+JSON.stringify(manifest)+';window.__BELGA_IMAGES='+JSON.stringify(images)+';'+js.outputFiles[0].text;
+const html=readFileSync('production/qa/belga-sprites.html','utf8').replace('<script type="module" src="./belga-preview.js"></script>',()=>'<script>'+script.replace(/<\/script>/g,'<\\/script>')+'</script>');
+mkdirSync(dirname(out),{recursive:true});writeFileSync(out,html);console.log(out);

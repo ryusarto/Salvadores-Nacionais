@@ -1,0 +1,91 @@
+
+> salvadores-nacionais@1.0.0 test
+> node --test tests/unit/*.test.js
+
+✔ walk selects forward/backward art relative to facing on either side (1.189316ms)
+✔ backdash plays all four poses within its actual 21-frame duration (1.178463ms)
+✔ backdash timing is local, restarts on a new dash, and clamps at end (0.179068ms)
+✔ throw escape keeps its held pose instead of using backdash timing (0.329772ms)
+✔ Dney physical strikes display contact throughout their real hit windows (0.475556ms)
+✔ Dney recovery actions animate all frames; throw release uses the impact pose (0.519042ms)
+✔ Dney new actions have distinct image files and no obsolete aliases (34.730393ms)
+✔ Chapuh has 40 dedicated strips and 8 separate effects, without duplicate placeholders (186.072412ms)
+✔ every Chapuh move holds contact at the actual hit or spawn window (3.055241ms)
+✔ Chapuh guard and damage play four local phases and hold the final pose (1.990746ms)
+✔ paint effects follow both regular and turbo hit windows and do not affect other characters (0.485114ms)
+✔ all spawned Chapuh objects select their own helper/effect sprite, including landed paint (1.112627ms)
+✔ lista de combos: todo herói tem pelo menos 3 combos (0.817581ms)
+✔ lista de combos: cada combo da lista funciona de verdade no jogo (49.618682ms)
+✔ dados: todo golpe de todo personagem é válido (3.059159ms)
+✔ acerto: Leve de perto causa dano e atordoa; de longe erra (5.014595ms)
+✔ defesa: segurar para trás defende; baixo e de cima exigem a defesa certa (2.122031ms)
+✔ combo: Leve > Médio > Forte emenda e o dano escala (1.196386ms)
+✔ agarrão: vence a defesa e pode ser escapado (1.72314ms)
+✔ defesa no botão: em pé, agachado e no ar; no tempo exato é perfeita (3.904338ms)
+✔ Sem Fôlego: defender demais zera a Ginga e passa a tomar dano na defesa (1.812432ms)
+✔ Golpe Blindado: aguenta um golpe e derruba (0.896653ms)
+✔ Arrancada: →→ durante a defesa gasta Ginga e avança (0.524732ms)
+✔ super: só sai com barra, gasta a barra e congela a tela (0.541047ms)
+✔ movimento: pulo, corrida e recuo (2.97577ms)
+✔ nocaute e rounds: quem zera a vida perde o round; 2 rounds vencem a luta (4.367219ms)
+✔ paredes: ninguém sai do cenário nem atravessa o outro (4.003755ms)
+✔ determinismo: mesma semente, mesma luta (62.145293ms)
+✔ IA: todos os personagens terminam uma luta contra a chefe (365.233161ms)
+✔ sequências: → ← + Leve e ↓ → + Médio soltam os golpes de comando de todo herói (2.982195ms)
+✔ Franco turbo variants do not rename the other integrated characters' strips (3.264044ms)
+✔ Franco has dedicated art for every move, state and turbo (1.412828ms)
+✔ suction is triggered by a confirmed Obra-Prima hit, never a miss or block (1.003834ms)
+✔ Majis supplies 40 dedicated animations and eight distinct FX with 768px cells (559.495614ms)
+✔ every Majis move, including turbo versions, shows contact at real hit/spawn time (2.789311ms)
+✔ sonic projectiles and traps keep their art through normal/turbo lifetime (0.814671ms)
+✔ quake pulses respect gaps and final hit; tremor overlay is conditional (1.474709ms)
+✔ forward plus keyboard L uses the corrected Majis heavy strip (3.985715ms)
+✔ Majis heavy wind-up, overhead and victory keep the actual idle pixel height (790.053554ms)
+✔ corrected compact poses do not enlarge the Majis head to fill a cell (362.578116ms)
+✔ MDEP supplies the complete contract with ten distinct transparent 768px cells per strip (405.669404ms)
+✔ the real reader selects dedicated MDEP strips for every state, move and turbo (19.774654ms)
+✔ Franco — Compasso: 2 especiais diferentes liberam o FINAL turbinado e mais forte (11.543126ms)
+✔ Belga — BPM: acertos sobem o ritmo, encurtam a recuperação e levar golpe derruba (4.417774ms)
+✔ Majis — Frio: 3 acúmulos congelam o rival (6.527091ms)
+✔ Trunks — Chamada: uma marca por vez, e o ataque cai depois do tempo (2.84297ms)
+✔ Ryuchi — Postura: o Fio carrega com o tempo e o contra-ataque responde a um golpe (9.276686ms)
+✔ M'Dep — Rajada: Embalo emenda um especial em outro; pulo duplo (2.814347ms)
+✔ Chapuh — Tinta e Pinscher: poça faz escorregar; cachorro tem tempo de volta (17.156188ms)
+✔ Dney — Munição: tiros gastam balas, sem bala falha, recarga e Tiro Certeiro (33.416362ms)
+✔ Zanata — Fúria: com pouca vida o chicote recupera mais rápido (0.662078ms)
+✔ Ryuchi — Leve, Leve, Leve solta os Três Cortes, mesmo sem acertar (0.523546ms)
+✔ golpes temáticos: flash do Franco, pisada do Dep, mordida do Trunks e jato do Chapuh causam dano (4.104258ms)
+✔ Garra: com pouca vida o lutador recebe menos dano (5.763798ms)
+✔ Tontura: apanhar muito em sequência deixa tonto; a barra esvazia sozinha (9.951525ms)
+✔ Empurrão na defesa: Leve + Médio afasta o atacante e gasta Ginga (1.4873ms)
+✔ Rolamento: apertar um botão ao cair levanta rolando; queda forte não permite (7.639944ms)
+✔ Combo aéreo: Gancho + ↑ dá pulo alto e os golpes aéreos emendam (7.910899ms)
+✔ Defesa no ar: segura um golpe por pulo, o seguinte quebra a guarda (3.251365ms)
+✔ Agarrões seguidos: cada agarrão sofrido aumenta a imunidade ao levantar (2.534828ms)
+✔ Golpe de apertar repetido: apertar Especial várias vezes aumenta os acertos da Pressão Nacional (6.002199ms)
+✔ large transparent strips load on demand, deduplicate requests and evict safely (5.094593ms)
+✔ characters without lazy loading still await all their strips (0.991842ms)
+✔ both rifle supers keep the rifle aimed throughout every actual shot (1.48456ms)
+✔ ten-frame art follows hit windows without changing combat data (0.396576ms)
+✔ unprofiled characters keep their original animation progress (0.35942ms)
+✔ held crouch stays low and knockdown selects the settled pose (0.237836ms)
+✔ guard and reaction art advance while combat counters stay unchanged (0.242279ms)
+✔ jump drawings follow ascent, apex and descent continuously (0.210156ms)
+✔ Trunks has dedicated art for every state and move; old aliases cannot override it (17.144794ms)
+✔ all Trunks moves hold contact during the actual hit/spawn window, including turbo (2.617259ms)
+✔ every new Trunks image is one animation with six 500px cells and no enlargement (515.976049ms)
+✔ bite layer appears only during the bite hitbox, on ground and in air (0.763048ms)
+✔ the eight SA3 dogs, delayed marks and ambulance use their own art without changing behavior (1.707742ms)
+ℹ tests 74
+ℹ suites 0
+ℹ pass 74
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5493.832433
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

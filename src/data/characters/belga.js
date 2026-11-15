@@ -39,12 +39,16 @@ export default {
   style: 'Boxeador de curta distância',
   mechName: 'BPM',
   mechDesc: 'Cada golpe que acerta sobe o ritmo: socos mais rápidos e mais fortes. Levar golpe derruba o ritmo.',
-  colors: { skin: '#c68a5e', top: '#d99a2b', bottom: '#2a2a30', accent: '#ffa828', hair: '#17141a', hat: '#17141a', shoe: '#f0f0f0' },
-  look: { hair: 'beanie', weapon: 'knuckle', sleeves: 'none' },
+  colors: { skin: '#c68a5e', top: '#c7ae78', bottom: '#78664b', accent: '#ffa828', hair: '#17141a', hat: '#625d47', shoe: '#eee4cf' },
+  look: { hair: 'cap', weapon: 'knuckle', sleeves: 'short' },
   walkF: 6.8, walkB: 5.2, jumpScale: 1, hpScale: 1.05,
   moves,
   // Qual tira do kit de sprites cada animação usa (production/sprites/final/belga)
-  spriteAlias: { 'golpe-SA1': 'golpe-SA3', 'golpe-5S': 'golpe-SA3' },
+  spriteAlias: {},
+  spriteProfile: 'six-frame', spriteScale: 0.92, spriteRecovery: true,
+  spriteStatePhases: true, spritePhasedMoves: Object.keys(moves),
+  spriteHitFrames: { c1: [2, 4] },
+  spriteSpawnFrames: { SA1: [2, 3, 4], SA3: [2, 3, 4] },
   mech: {
     init(f) {
       f.res = { bpm: 0, t: 0 };

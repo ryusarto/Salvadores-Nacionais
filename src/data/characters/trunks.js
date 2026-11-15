@@ -49,7 +49,12 @@ export default {
   walkF: 6.2, walkB: 4.8, jumpScale: 0.98, hpScale: 1.18,
   moves,
   // Qual tira do kit de sprites cada animação usa (production/sprites/final/trunks)
-  spriteAlias: { 'golpe-SA1': 'golpe-SA3', 'golpe-SA3': 'golpe-6S', 'golpe-6S': 'golpe-5H', 'golpe-c2': 'golpe-5H' },
+  spriteAlias: {},
+  spriteProfile: 'six-frame',
+  spriteScale: 0.92,
+  spriteRecovery: true,
+  spriteStatePhases: true,
+  spritePhasedMoves: Object.keys(moves),
   mech: {
     init(f) {
       f.res = {};

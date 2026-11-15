@@ -1,0 +1,695 @@
+{
+  "character": "belga",
+  "reference": "User-provided photographs: fuller face, thin mustache, compact build, tattooed neck/arms, beige canvas vest, white tee and brown patterned trousers.",
+  "referenceScale": 0.8163265306122449,
+  "referenceFaceArea": 2513,
+  "referenceFaceRegion": {
+    "area": 2513,
+    "x": 229,
+    "y": 44,
+    "w": 65,
+    "h": 66,
+    "score": 1396.1551770678943
+  },
+  "animations": [
+    {
+      "name": "parado",
+      "effect": false,
+      "source": "originais/parado.png",
+      "faceArea": 2513,
+      "faceRegion": {
+        "area": 2513,
+        "x": 229,
+        "y": 44,
+        "w": 65,
+        "h": 66,
+        "score": 1396.1551770678943
+      },
+      "prompt": "Create HIGH DEFINITION production sprites for BELGA, the adult person in the THREE PHOTOGRAPHS. The photographs are authoritative for likeness, face, build and outfit. The earlier illustrated man is an obsolete draft and is not an identity reference. Match the photographed person's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. The photographic pose and handheld items are not part of the animation; draw only the described fighter action. ONE ANIMATION: IDLE BOXING BREATHING LOOP, six subtle successive poses. F1 relaxed upright loose guard, fists visible out of vest pockets. F2 gentle inhale, chest rises slightly. F3 full inhale, shoulders lift minimally, fingers relaxed. F4 starts exhaling with knees loose. F5 settles chest and shifts weight subtly without stepping. F6 returns close to frame1 for a seamless loop. Both shoes stay planted, head height changes at most four pixels. Ensure the photographed person's rounder face, thin mustache, tattooed neck, beige zip-front vest, wide white T-shirt and brown camouflage pants remain clear and identical in all six frames."
+    },
+    {
+      "name": "andar",
+      "effect": false,
+      "source": "originais/andar.png",
+      "faceArea": 2856,
+      "faceRegion": {
+        "area": 2856,
+        "x": 231,
+        "y": 46,
+        "w": 68,
+        "h": 68,
+        "score": 1555.2233515188227
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE animation only: FORWARD WALK, six-frame seamless gait cycle, always facing RIGHT. F1 right heel reaches forward, left toes push off. F2 weight transfers to right foot, left heel lifts. F3 left leg passes under hips with bent knee. F4 left heel reaches forward, right toes push off. F5 weight transfers left, right heel lifts. F6 right leg passes under hips ready to loop to F1. Natural alternating opposite arm swing, relaxed fists instead of hands in pockets, cap and loose shirt subtle follow-through. Same hips height within 10px, same anatomical lengths and head size in every frame. No run or jump. Both feet never stretched beyond own cell."
+    },
+    {
+      "name": "andar-tras",
+      "effect": false,
+      "source": "originais/andar-tras.png",
+      "faceArea": 2677,
+      "faceRegion": {
+        "area": 2677,
+        "x": 236,
+        "y": 48,
+        "w": 67,
+        "h": 66,
+        "score": 1476.4719763289088
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE animation only: BACKWARDS WALK in guarded fighting stance, always FACING RIGHT while stepping LEFT. Six distinct successive reverse gait frames: F1 rear left foot reaches backward, fists up. F2 weight shifts backward. F3 front right foot draws inward, knees soft. F4 front right foot reaches backward while left pushes. F5 transfer weight and keep head facing right. F6 return passing reverse step, loops into F1. Small guarded arm movements, shoulders face right, do not turn to face left. Entire body in each cell, fixed body scale."
+    },
+    {
+      "name": "correr",
+      "effect": false,
+      "source": "originais/correr.png",
+      "faceArea": 2694,
+      "faceRegion": {
+        "area": 2694,
+        "x": 280,
+        "y": 55,
+        "w": 68,
+        "h": 68,
+        "score": 1347.6824120293695
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE animation only: FORWARD SPRINT, six-frame running loop facing RIGHT. F1 long right-foot forward stride, opposite left arm forward. F2 right foot contacts, torso leans slightly forward. F3 right leg pushes and left knee drives high. F4 long left-foot forward stride, opposite right arm forward. F5 left foot contacts compressing knee. F6 left leg pushes with right knee driving high to loop. cap and loose shirt flow back naturally, fists pump, both legs alternate, full sneakers visible. Only the stride changes; same head and body scale throughout. No effects or speed lines."
+    },
+    {
+      "name": "agachar",
+      "effect": false,
+      "source": "originais/agachar.png",
+      "faceArea": 2578,
+      "faceRegion": {
+        "area": 2578,
+        "x": 228,
+        "y": 45,
+        "w": 66,
+        "h": 64,
+        "score": 1410.8079869963794
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE animation only: STANDING TO CROUCH transition, six consecutive progressively LOWER poses. F1 upright loose combat guard. F2 knees bend slightly. F3 half squat, hands raised. F4 deeper squat with hips close to heels. F5 full deep crouch, elbows protect ribs. F6 settles and HOLDS the deepest crouch, both shoes planted, looking right. The last frames must stay crouched, NOT rise again. Keep head size identical to the standing first frame; bent body gets naturally shorter and leaves more empty room above, NEVER enlarge it. Hands not in pockets."
+    },
+    {
+      "name": "pulo",
+      "effect": false,
+      "source": "originais/pulo.png",
+      "faceArea": 1853,
+      "faceRegion": {
+        "area": 1853,
+        "x": 262,
+        "y": 153,
+        "w": 55,
+        "h": 57,
+        "score": 948.0470750259684
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. Regenerate with complete figure inside local x/y40..472 in every512px cell, maximum pose extent410px, no cropped hands/cap/shoes. Uniform whole-figure scale.ONE animation only: JUMP, six phases facing RIGHT. F1 leaving the ground with rear foot extended and knees beginning to rise. F2 rising with one knee high and arms balanced. F3 rising with both knees tucked. F4 apex with legs opening slightly and body upright. F5 descending, lower legs start extending. F6 descending with knees flexed ready to land, arms braced. All SIX are airborne character poses, no floor and no dust. Keep anatomical/head scale identical in all frames. The game provides vertical movement; keep the pelvis centered within each equal cell and do not add a trajectory.",
+      "repairPrompt": "Regenerate with complete figure inside local x/y40..472 in every512px cell, maximum pose extent410px, no cropped hands/cap/shoes. Uniform whole-figure scale."
+    },
+    {
+      "name": "recuo",
+      "effect": false,
+      "source": "originais/recuo.png",
+      "faceArea": 2595,
+      "faceRegion": {
+        "area": 2595,
+        "x": 235,
+        "y": 49,
+        "w": 68,
+        "h": 62,
+        "score": 1391.852643766691
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE animation only: BACKDASH retreat, six phases, always facing RIGHT. F1 upright loose guard. F2 knees coil and upper body leans away from opponent to the left. F3 strong push from front foot launching body backward with back leg reaching left. F4 slide backward in compact guarded stance. F5 rear foot braces and front leg draws in. F6 settles back into combat guard. Same body/head scale and baseline; only poses change. No walking cycle, no effects, no shadow."
+    },
+    {
+      "name": "escape-agarrao",
+      "effect": false,
+      "source": "originais/escape-agarrao.png",
+      "faceArea": 2643,
+      "faceRegion": {
+        "area": 2643,
+        "x": 229,
+        "y": 45,
+        "w": 66,
+        "h": 64,
+        "score": 1448.1525192089093
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE animation only: ESCAPE AN OPPONENT'S GRAB, six phases, NO opponent in the picture. F1 alert guard facing right. F2 hands and forearms cross tightly before torso. F3 shoulders tense, palms begin forcefully separating imagined grabbing hands. F4 both arms burst apart outward, torso leans back. F5 one foot braces backward and hands regain protective position. F6 returns to ready guard. Strong readable six-part motion, same face/head proportions and planted sneakers, no extra floating arms, no other character, no effects."
+    },
+    {
+      "name": "recuperacao-rolamento",
+      "effect": false,
+      "source": "originais/recuperacao-rolamento.png",
+      "faceArea": 4298,
+      "faceRegion": {
+        "area": 4298,
+        "x": 273,
+        "y": 129,
+        "w": 85,
+        "h": 87,
+        "score": 1684.6611276076228
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE ANIMATION: SHOULDER RECOVERY ROLL from left to right. F1 low kneeling crouch, one hand braces near floor. F2 head tucks and shoulder lowers. F3 curled body rolling onto shoulder, knees folded near chest, soles face upward. F4 tightly tucked body rolling over upper back with legs overhead, head and cap and loose shirt naturally follow. F5 one knee plants under torso while a hand pushes up. F6 rises into low ready crouch. Whole figure visible including hair/hands/shoes, NO drawn floor. Keep fixed anatomical/head scale: curled frames must be compact, not enlarged to match standing height. Realistic readable anatomy, six separate snapshots of the SAME roll."
+    },
+    {
+      "name": "defesa-em-pe",
+      "effect": false,
+      "source": "originais/defesa-em-pe.png",
+      "faceArea": 2656,
+      "faceRegion": {
+        "area": 2656,
+        "x": 228,
+        "y": 44,
+        "w": 65,
+        "h": 66,
+        "score": 1475.6021290458923
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE ANIMATION: STANDING BLOCK. Six consecutive frames of raising guard and bracing a hit. F1 upright loose guard with fists before chest. F2 forearms rise toward face. F3 forearms cross tightly protecting face and chest. F4 IMPACT BRACE: compact shoulders, knees slightly bend, face determined behind raised arms. F5 absorbs force with slight backward lean, forearms remain high. F6 holds solid closed standing block, does NOT return to idle. No opponent or hit effects. Same fixed head/limb scale as reference."
+    },
+    {
+      "name": "defesa-agachado",
+      "effect": false,
+      "source": "originais/defesa-agachado.png",
+      "faceArea": 5883,
+      "faceRegion": {
+        "area": 5883,
+        "x": 234,
+        "y": 93,
+        "w": 99,
+        "h": 97,
+        "score": 2211.1794553031586
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE ANIMATION: CROUCHING BLOCK. All six poses remain in a LOW CROUCH with head and limbs SAME actual size as the standing reference, shorter silhouette naturally. F1 deep crouch fists ready. F2 front forearm raises before cheek. F3 rear forearm reinforces and elbow protects ribs. F4 compact low crossed-arm impact brace, knees compressed. F5 leaning back slightly absorbing pressure. F6 held crouching block with both arms protecting head/torso. Do not stand up or enlarge the crouching figure. Full sneakers visible and feet planted, no opponent/effects."
+    },
+    {
+      "name": "defesa-no-ar",
+      "effect": false,
+      "source": "originais/defesa-no-ar.png",
+      "faceArea": 2796,
+      "faceRegion": {
+        "area": 2796,
+        "x": 229,
+        "y": 48,
+        "w": 67,
+        "h": 66,
+        "score": 1476.2932158690628
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE ANIMATION: AERIAL BLOCK. Six sequential airborne guard frames. F1 knees tucked, arms open in ready position. F2 front forearm rises near face. F3 both forearms cross before head and torso. F4 knees tuck tightly and crossed forearms brace an aerial impact. F5 recoils slightly backwards retaining air guard. F6 settles into held aerial guard with knees still bent. No floor or trajectory, no opponent or effects. Same anatomical scale and head size as standing reference; folded silhouette is shorter, never enlarge it."
+    },
+    {
+      "name": "dano-alto",
+      "effect": false,
+      "source": "originais/dano-alto.png",
+      "faceArea": 2565,
+      "faceRegion": {
+        "area": 2565,
+        "x": 228,
+        "y": 45,
+        "w": 66,
+        "h": 65,
+        "score": 1403.6937496686244
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE ANIMATION: HIGH HIT REACTION, six progressive frames, no opponent/blood/effects. F1 upright loose guard facing right. F2 jaw jerks slightly backward, eyebrows react. F3 shoulders and upper chest recoil. F4 deepest backward recoil: chest open, chin lifted, pained face, knees braced. F5 bends forward slightly recovering breath with hands before chest. F6 held stagger ready to recover. Feet grounded, same head/limb sizes and anatomical scale in all six frames, natural body distortion only."
+    },
+    {
+      "name": "dano-baixo",
+      "effect": false,
+      "source": "originais/dano-baixo.png",
+      "faceArea": 2557,
+      "faceRegion": {
+        "area": 2557,
+        "x": 227,
+        "y": 45,
+        "w": 66,
+        "h": 64,
+        "score": 1401.0314005362015
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE ANIMATION: LOW BODY HIT REACTION, six progressive frames, no opponent/blood/effects. F1 upright loose combat guard. F2 abdomen contracts and face winces. F3 knees bend as one hand moves toward stomach. F4 folds forward sharply clutching belly with both hands, pained face. F5 deepest compact abdominal stagger with hips down. F6 remains hunched in low stagger, looking right. Fixed head size and limb lengths as standing reference: shorter bent figures must not be enlarged. Sneakers remain fully visible at the common baseline."
+    },
+    {
+      "name": "dano-no-ar",
+      "effect": false,
+      "source": "originais/dano-no-ar.png",
+      "faceArea": 1976,
+      "faceRegion": {
+        "area": 1976,
+        "x": 211,
+        "y": 136,
+        "w": 61,
+        "h": 56,
+        "score": 1078.2404224367622
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. Regenerate with complete figure inside local x/y40..472 in every512px cell, maximum pose extent410px, no cropped hands/cap/shoes. Uniform whole-figure scale.ONE SINGLE ANIMATION: AIRBORNE DAMAGE REACTION in SIX chronological poses. Frame1 airborne torso recoils backward, knees lifted, arms loose. Frame2 chest leans farther backward, lower legs swing forward. Frame3 back arches suspended with legs forward, cap and loose shirt trailing. Frame4 torso tilts diagonally back with head LEFT of feet and knees bent. Frame5 descending nearly horizontal on back, arms loose. Frame6 descending on back with legs extending, ready for knockdown. Same face/head size and actual limb lengths in all six frames, no growth or per-frame zoom. All six drawings isolated entirely inside their own 512px square cell. Draw ONLY character silhouettes. The reference demonstrates clean transparent alpha: preserve that. Empty canvas must be truly fully transparent ALPHA ZERO, especially all corners, margins and between drawings. No white or pale-gray fill, no haze, no shadows, no scenery, no target or impact effects.",
+      "repairPrompt": "Regenerate with complete figure inside local x/y40..472 in every512px cell, maximum pose extent410px, no cropped hands/cap/shoes. Uniform whole-figure scale."
+    },
+    {
+      "name": "caido",
+      "effect": false,
+      "source": "originais/caido.png",
+      "faceArea": 2279,
+      "faceRegion": {
+        "area": 2279,
+        "x": 305,
+        "y": 149,
+        "w": 63,
+        "h": 65,
+        "score": 1139.9670062435418
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. Regenerate with complete figure inside local x/y40..472 in every512px cell, maximum pose extent410px, no cropped hands/cap/shoes. Uniform whole-figure scale.ONE ANIMATION: KNOCKDOWN AND LYING FALL. F1 bends and drops onto one knee after a hit. F2 torso falls sideways/backward onto hip, hands open. F3 rolls onto lower back with knees lifted. F4 shoulders and back hit the implied ground, head LEFT and feet RIGHT. F5 legs stretch and settle along floor line. F6 lying flat on BACK, head left and shoes right, unconscious but no injury or blood. Six progressive snapshots of a single fall. Fixed anatomical scale from standing reference, head size remains unchanged even when body is horizontal. Entire horizontal figure inside every cell, legs can be bent to fit but never shrink only one limb. No floor/shadows/effects.",
+      "repairPrompt": "Regenerate with complete figure inside local x/y40..472 in every512px cell, maximum pose extent410px, no cropped hands/cap/shoes. Uniform whole-figure scale."
+    },
+    {
+      "name": "levantar",
+      "effect": false,
+      "source": "originais/levantar.png",
+      "faceArea": 2335,
+      "faceRegion": {
+        "area": 2335,
+        "x": 50,
+        "y": 298,
+        "w": 58,
+        "h": 64,
+        "score": 899.7570532019932
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE ANIMATION: GET UP FROM KNOCKDOWN. F1 lying flat on back, head LEFT feet RIGHT. F2 rolls to side and braces on elbow. F3 pushes torso upward using one palm, knees bent. F4 kneels on one knee under torso. F5 rises from knee with hands recovering guard. F6 fully upright loose combat guard facing RIGHT. Same anatomical/head scale through all six poses, do not enlarge lying/kneeling figures. Complete body, consistent costume, no floor or extra objects."
+    },
+    {
+      "name": "tonto",
+      "effect": false,
+      "source": "originais/tonto.png",
+      "faceArea": 2803,
+      "faceRegion": {
+        "area": 2803,
+        "x": 240,
+        "y": 50,
+        "w": 69,
+        "h": 72,
+        "score": 1547.86388109632
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE ANIMATION: DIZZY STAGGER LOOP. Six progressive poses, all facing roughly right. F1 slight hunch loose arms, unfocused eyes. F2 head sways left, knees soft. F3 torso sways backward, hands loose. F4 hand lifts toward forehead, face dazed. F5 head rolls down and body sways forward. F6 loose stagger close to starting pose for a loop. Feet remain in same area, no stars, symbols or external effects. Fixed head and body scale, same facial identity."
+    },
+    {
+      "name": "vitoria",
+      "effect": false,
+      "source": "originais/vitoria.png",
+      "faceArea": 1864,
+      "faceRegion": {
+        "area": 1864,
+        "x": 234,
+        "y": 120,
+        "w": 54,
+        "h": 57,
+        "score": 1020.7872860362071
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. Regenerate with complete figure inside local x/y40..472 in every512px cell, maximum pose extent410px, no cropped hands/cap/shoes. Uniform whole-figure scale.ONE ANIMATION: VICTORY CELEBRATION. F1 relaxed upright fighting stance. F2 chin lifts confidently and one fist rises to chest. F3 grin spreads showing large white teeth, fist rises beside face. F4 broad confident toothy smile, raised fist triumphantly overhead but inside cell. F5 lowers fist beside shoulder with proud smile. F6 settles into confident held victory pose, fist raised and gold cross clearly visible. Same body/head scale, all sneakers and hair visible. No lettering, confetti, effects or other figures.",
+      "repairPrompt": "Regenerate with complete figure inside local x/y40..472 in every512px cell, maximum pose extent410px, no cropped hands/cap/shoes. Uniform whole-figure scale."
+    },
+    {
+      "name": "golpe-5L",
+      "effect": false,
+      "source": "originais/golpe-5L.png",
+      "faceArea": 2611,
+      "faceRegion": {
+        "area": 2611,
+        "x": 227,
+        "y": 45,
+        "w": 65,
+        "h": 65,
+        "score": 1428.8672048283736
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE ANIMATION: LIGHT JAB. Six distinct progressive frames: F1 ready guard with fists up out of pockets. F2 front shoulder and fist cock slightly back. F3 elbow starts extending RIGHT. F4 CONTACT: front fist fully extended horizontally RIGHT at chest height, rear fist protects jaw. F5 front elbow flexes retracting punch. F6 return to ready guard. Fast readable straight punch, no kick, same anatomy and scale across all six frames, planted feet, crisp hands. No trails, sparks, opponent or effects."
+    },
+    {
+      "name": "golpe-5M",
+      "effect": false,
+      "source": "originais/golpe-5M.png",
+      "faceArea": 2605,
+      "faceRegion": {
+        "area": 2605,
+        "x": 227,
+        "y": 46,
+        "w": 65,
+        "h": 64,
+        "score": 1422.0730505981123
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. Animation MEDIUM STRAIGHT BOXING PUNCH. Exactly six distinct poses: 1 ready boxing guard, 2 rear shoulder and hip coiled for straight punch, 3 weight stepping forward with fist halfway extended, 4 FULL-CONTACT powerful straight rear-hand punch to the right at chest height, arm nearly straight with opposite hand guarding face, 5 elbow retracting and weight settling, 6 recovered balanced guard. This is a FIST punch with BOTH FEET on ground; no kick. Bare knuckle fist, readable natural anatomy. No drawn effects."
+    },
+    {
+      "name": "golpe-5H",
+      "effect": false,
+      "source": "originais/golpe-5H.png",
+      "faceArea": 2683,
+      "faceRegion": {
+        "area": 2683,
+        "x": 228,
+        "y": 45,
+        "w": 67,
+        "h": 65,
+        "score": 1446.359041317594
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. Animation HEAVY BOXING HOOK. Exactly six distinct full-body poses: 1 guard, 2 deep rearward hip/shoulder wind-up with bent punching elbow, 3 hip rotation brings fist forward, 4 FULL CONTACT heavy horizontal hook with bent elbow and clenched brass-knuckle fist sweeping right at head height, 5 follow-through then elbow retracts, 6 recovered guard. Both feet grounded with convincing boxing foot pivot. FIST attack, mouth closed. No kick, bite or effects."
+    },
+    {
+      "name": "golpe-2L",
+      "effect": false,
+      "source": "originais/golpe-2L.png",
+      "faceArea": 3661,
+      "faceRegion": {
+        "area": 3661,
+        "x": 252,
+        "y": 149,
+        "w": 81,
+        "h": 74,
+        "score": 1414.5789731931595
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE ANIMATION: CROUCHING LIGHT LOW KICK. Six phases: F1 deep low guard crouch. F2 weight shifts onto rear bent leg. F3 front knee uncoils beginning kick. F4 CONTACT: short front sneaker kick extending RIGHT at opponent shin/ankle height, torso remains low and compact. F5 retract kicking foot under body. F6 returns to held crouching guard. Keep fixed head size and full anatomical lengths from STANDING reference; crouched body is naturally much shorter, NEVER enlarge it to fill square cell. Full feet visible, no effects or opponents."
+    },
+    {
+      "name": "golpe-2M",
+      "effect": false,
+      "source": "originais/golpe-2M.png",
+      "faceArea": 2295,
+      "faceRegion": {
+        "area": 2295,
+        "x": 242,
+        "y": 175,
+        "w": 62,
+        "h": 63,
+        "score": 974.7870231527615
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. Regenerate with complete figure inside local x/y40..472 in every512px cell, maximum pose extent410px, no cropped hands/cap/shoes. Uniform whole-figure scale.ONE ANIMATION: CROUCHING MEDIUM SWEEP KICK. Six phases: F1 low guarded crouch. F2 hips rotate, rear knee supports weight. F3 lead leg begins extending right near floor. F4 CONTACT: long sneaker kick fully stretched RIGHT at ankle height, low torso and bent support knee, one fist guarding head. F5 retract long extended leg. F6 settle back into low guard. Same head size and actual anatomy as standing reference, crouched poses must stay naturally SHORT with empty space above. No stretching body to fill cell, no target/effects.",
+      "repairPrompt": "Regenerate with complete figure inside local x/y40..472 in every512px cell, maximum pose extent410px, no cropped hands/cap/shoes. Uniform whole-figure scale."
+    },
+    {
+      "name": "golpe-2H",
+      "effect": false,
+      "source": "originais/golpe-2H.png",
+      "faceArea": 3025,
+      "faceRegion": {
+        "area": 3025,
+        "x": 259,
+        "y": 147,
+        "w": 71,
+        "h": 66,
+        "score": 1211.6916904397312
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE ANIMATION: CROUCHING UPPERCUT LAUNCHER. Six phases: F1 deep crouch fists up. F2 fist drops back beside hip with torso coiling. F3 knees begin pushing up as fist travels forward/up. F4 CONTACT: upward fist extends diagonally RIGHT above head with body rising from crouch, other fist guards chest. F5 upward follow-through with elbow starting to bend and feet planted. F6 drops into guarded crouch recovery. Same head/limb size from first to last, full raised fist stays inside cell, no opponent, aura, trails or effects."
+    },
+    {
+      "name": "golpe-3H",
+      "effect": false,
+      "source": "originais/golpe-3H.png",
+      "faceArea": 2157,
+      "faceRegion": {
+        "area": 2157,
+        "x": 249,
+        "y": 183,
+        "w": 62,
+        "h": 59,
+        "score": 884.2624442091168
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. Regenerate with complete figure inside local x/y40..472 in every512px cell, maximum pose extent410px, no cropped hands/cap/shoes. Uniform whole-figure scale.ONE ANIMATION: FULL LOW SWEEP. Six phases: F1 deep crouch guard. F2 one hand braces downward and hip pivots. F3 kicking leg swings forward along implied floor. F4 CONTACT: long sweeping leg almost horizontal RIGHT at floor height, opposite knee deeply bent, supporting hand low, torso near ground. F5 sweeping leg folds back, hips rotate toward neutral. F6 returns to compact crouch guard. Full body and feet inside each cell; SAME head/limb sizes as standing reference, short bent figure is not enlarged. No floor, motion trails, targets or effects.",
+      "repairPrompt": "Regenerate with complete figure inside local x/y40..472 in every512px cell, maximum pose extent410px, no cropped hands/cap/shoes. Uniform whole-figure scale."
+    },
+    {
+      "name": "golpe-6M",
+      "effect": false,
+      "source": "originais/golpe-6M.png",
+      "faceArea": 1892,
+      "faceRegion": {
+        "area": 1892,
+        "x": 242,
+        "y": 100,
+        "w": 56,
+        "h": 54,
+        "score": 994.4339384699775
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. Regenerate with complete figure inside local x/y40..472 in every512px cell, maximum pose extent410px, no cropped hands/cap/shoes. Uniform whole-figure scale.ONE ANIMATION: OVERHEAD HAMMERFIST. Six phases: F1 loose guard hands out of pockets. F2 front fist rises beside head. F3 raise fist above forehead, body coils. F4 CONTACT: powerful downward forward hammerfist RIGHT at imagined opponent head/shoulder level, body leans into strike, knees flex. F5 follow through with fist low then retract elbow. F6 balanced guard restored. Entire fist and hair must stay inside own cell even overhead. Same head size and anatomical scale, no target or effects.",
+      "repairPrompt": "Regenerate with complete figure inside local x/y40..472 in every512px cell, maximum pose extent410px, no cropped hands/cap/shoes. Uniform whole-figure scale."
+    },
+    {
+      "name": "golpe-jL",
+      "effect": false,
+      "source": "originais/golpe-jL.png",
+      "faceArea": 3083,
+      "faceRegion": {
+        "area": 3083,
+        "x": 232,
+        "y": 55,
+        "w": 73,
+        "h": 69,
+        "score": 1499.338525767371
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE ANIMATION: AIR LIGHT PUNCH. Six successive airborne phases: F1 knees tucked, fists in ready guard. F2 front fist cocks back near jaw. F3 elbow begins extending RIGHT at chest level. F4 CONTACT: straight punch fully extended RIGHT while both feet remain off ground, rear fist guards cheek. F5 front arm retracts with knees held bent. F6 returns to airborne guard ready for landing. Same head and limb lengths as standing reference; do not enlarge compact airborne body. No floor, trajectory, opponent or effects."
+    },
+    {
+      "name": "golpe-jM",
+      "effect": false,
+      "source": "originais/golpe-jM.png",
+      "faceArea": 2638,
+      "faceRegion": {
+        "area": 2638,
+        "x": 235,
+        "y": 50,
+        "w": 66,
+        "h": 64,
+        "score": 1329.5437910064427
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE ANIMATION: AIR MEDIUM KICK. Six airborne phases: F1 knees tucked, guard. F2 torso turns slightly with one knee lifting. F3 kicking knee coils forward. F4 CONTACT: strong sneaker kick extends diagonally down RIGHT at opponent upper torso, opposite leg remains bent, arms balance. F5 retract kicking leg. F6 returns to compact airborne guard. Keep actual head/limb scale unchanged, complete shoe stays in each cell, no target, floor, trajectory or effects.",
+      "promptNote": "Action summary recovered after session interruption; approved identity reference retained."
+    },
+    {
+      "name": "golpe-jH",
+      "effect": false,
+      "source": "originais/golpe-jH.png",
+      "faceArea": 2723,
+      "faceRegion": {
+        "area": 2723,
+        "x": 231,
+        "y": 65,
+        "w": 68,
+        "h": 67,
+        "score": 1364.5505715125332
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. Heavy airborne punch: ready, wind-up, rotate, full-contact downward-forward fist punch, recoil, landing guard.",
+      "promptNote": "Action summary recovered after session interruption; approved identity reference retained."
+    },
+    {
+      "name": "golpe-throw",
+      "effect": false,
+      "source": "originais/golpe-throw.png",
+      "faceArea": 2609,
+      "faceRegion": {
+        "area": 2609,
+        "x": 229,
+        "y": 45,
+        "w": 65,
+        "h": 65,
+        "score": 1426.0171855559972
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. ONE ANIMATION: REGULAR GRAPPLE THROW. No opponent drawn. Six phases: F1 ready stance fists out of pockets. F2 both open hands reach RIGHT at chest height. F3 close both hands around imaginary opponent, shoulders tense. F4 strongly twist hips and torso pulling the grip inward/down toward chest. F5 throw and release both hands forcefully RIGHT while stepping through. F6 retract arms into balanced fighting guard. Fixed limb lengths and head size, entire body and hands within cell. No phantom opponent, no extra limbs, no effects."
+    },
+    {
+      "name": "golpe-blindado",
+      "effect": false,
+      "source": "originais/golpe-blindado.png",
+      "faceArea": 2404,
+      "faceRegion": {
+        "area": 2404,
+        "x": 230,
+        "y": 48,
+        "w": 65,
+        "h": 62,
+        "score": 1325.901617891183
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. Armored forward power punch: guard, brace, advance, full-contact straight punch, follow-through, recover.",
+      "promptNote": "Action summary recovered after session interruption; approved identity reference retained."
+    },
+    {
+      "name": "golpe-5S",
+      "effect": false,
+      "source": "originais/golpe-5S.png",
+      "faceArea": 2617,
+      "faceRegion": {
+        "area": 2617,
+        "x": 220,
+        "y": 46,
+        "w": 67,
+        "h": 65,
+        "score": 1470.9330632059748
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. Vinyl throw: guard, draw black record with gold label, wind sidearm, release with empty hand extended right, follow through, guard.",
+      "promptNote": "Action summary recovered after session interruption; approved identity reference retained."
+    },
+    {
+      "name": "golpe-6S",
+      "effect": false,
+      "source": "originais/golpe-6S.png",
+      "faceArea": 2465,
+      "faceRegion": {
+        "area": 2465,
+        "x": 228,
+        "y": 47,
+        "w": 64,
+        "h": 63,
+        "score": 1357.8716566407738
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. Left straight advancing boxing punch: guard, load left shoulder, step, full-contact left straight, retract, guard.",
+      "promptNote": "Action summary recovered after session interruption; approved identity reference retained."
+    },
+    {
+      "name": "golpe-2S",
+      "effect": false,
+      "source": "originais/golpe-2S.png",
+      "faceArea": 2631,
+      "faceRegion": {
+        "area": 2631,
+        "x": 229,
+        "y": 52,
+        "w": 69,
+        "h": 62,
+        "score": 1343.4391481418352
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. Pendulo bob-and-weave: high guard, bend knees, dip forward, lowest crouched slip, circle up, guard. No attack.",
+      "promptNote": "Action summary recovered after session interruption; approved identity reference retained."
+    },
+    {
+      "name": "golpe-4S",
+      "effect": false,
+      "source": "originais/golpe-4S.png",
+      "faceArea": 2413,
+      "faceRegion": {
+        "area": 2413,
+        "x": 229,
+        "y": 50,
+        "w": 63,
+        "h": 64,
+        "score": 1367.5503857563856
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. Rising uppercut: guard, deep knee bend, rise, full-contact upward punch and lifted knee, retract airborne, landing guard.",
+      "promptNote": "Action summary recovered after session interruption; approved identity reference retained."
+    },
+    {
+      "name": "golpe-c1",
+      "effect": false,
+      "source": "originais/golpe-c1.png",
+      "faceArea": 2770,
+      "faceRegion": {
+        "area": 2770,
+        "x": 227,
+        "y": 44,
+        "w": 68,
+        "h": 65,
+        "score": 1515.879799837072
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. CRITICAL complete figure including overhead fists inside EACH512cell with at least24px transparent padding. Same head/limb scale across all6. UM-DOIS TWO-PUNCH BOXING COMBO, EXACT SIX POSES in order: frame1 ready guard; frame2 winding up lead jab; frame3 FIRST FULL CONTACT straight lead jab RIGHT; frame4 jab retracted and REAR shoulder/hip coiled for cross; frame5 SECOND FULL CONTACT powerful rear-hand CROSS right, visibly different arm/torso from frame3; frame6 recovered guard. Bare knuckles, grounded feet, same face/build. No effects."
+    },
+    {
+      "name": "golpe-c2",
+      "effect": false,
+      "source": "originais/golpe-c2.png",
+      "faceArea": 2160,
+      "faceRegion": {
+        "area": 2160,
+        "x": 228,
+        "y": 79,
+        "w": 60,
+        "h": 60,
+        "score": 1137.3293424146257
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props.BATE-ESTACA DOWNWARD HEAVY BOXING PUNCH. Exactly six distinct full-body poses:1guard,2fist drawn back beside shoulder,3fist raises OVER cap but the ENTIRE fist must remain below local y=50 pixels,4FULL CONTACT fist punches DOWN and RIGHT at waist height, torso leans and knees bend,5arm recoils,6guard. All six figures must be drawn SMALLER than the reference: standing shoe-to-cap height about365px in each512cell. OVERHEAD pose total height no more420px. Reserve MINIMUM40px clear transparent padding above raised fist and below shoes. Every pose inside local x40..472 and y40..472. Fixed anatomical proportions across six; no part touching edges. Keep accurate reference face, tattoos and clothes, no effects.",
+      "repairPrompt": "Regenerated overhead pose with40px top padding and smaller whole figure."
+    },
+    {
+      "name": "golpe-SA1",
+      "effect": false,
+      "source": "originais/golpe-SA1.png",
+      "faceArea": 2556,
+      "faceRegion": {
+        "area": 2556,
+        "x": 228,
+        "y": 44,
+        "w": 65,
+        "h": 65,
+        "score": 1420.0448199703692
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. CRITICAL complete figure including overhead fists inside EACH512cell with at least24px transparent padding. Same head/limb scale across all6. DISCO DUPLO vinyl barrage. EXACT SIX full-body poses:1ready guard,2body twists to load a black vinyl record gold label beside rear hip,3FIRST throwing release arm extended RIGHT hand EMPTY,4SECOND release from slightly higher elbow with other arm guarding hand EMPTY,5THIRD stronger release leaning forward with fully extended arm RIGHT hand EMPTY,6recovered guard. Each release pose must be clearly different. Flying vinyls are separate game entities, draw NO detached discs. One held record only in frame2. No effects."
+    },
+    {
+      "name": "golpe-SA3",
+      "effect": false,
+      "source": "originais/golpe-SA3.png",
+      "faceArea": 2657,
+      "faceRegion": {
+        "area": 2657,
+        "x": 228,
+        "y": 44,
+        "w": 66,
+        "h": 65,
+        "score": 1477.92580544225
+      },
+      "prompt": "HIGH DEFINITION production sprites for the SAME APPROVED BELGA shown in the reference, based on the user's photographs. Preserve that exact likeness, face, build and outfit. Match the approved character's FULLER ROUNDED FACE, full cheeks, short broad chin, rounded nose, full lips and subtle THIN MUSTACHE; cheeks nearly clean-shaven, no pointed goatee or heavy beard. Warm light-to-medium olive/tan skin. COMPACT SOLID natural male build, broad forearms, regular soft torso, not a tall lean model or a bodybuilder. Low olive/dark-brown canvas cap facing forward with light taupe/beige brim and dark horizontal front band, short dark hair mostly covered. Strong black-and-gray TATTOOS around the FRONT/SIDES OF NECK, both forearms and hands, matching the photographs. BEIGE CANVAS ZIP-FRONT WORK VEST worn open with simple large pockets and tiny blank cream chest tab, over an OVERSIZED PLAIN WHITE T-SHIRT with loose sleeves near elbows. Loose brown/tan small-scale CAMOUFLAGE trousers matching the color photograph. Chunky off-white/beige sneakers with brown accents consistent with the game. Small gold watch on left wrist; bare hands, small brass-knuckle band on lead fist for combat. Maintain identical face, cap, neck/arm tattoos, costume and proportions in ALL drawings. Translate the photographed man into the game's crisp black-ink comic style, THREE-TONE cel shading and subtle halftone; clean sharp native detail, not photorealism. ONE IMAGE contains ONE animation only: exactly SIX consecutive FULL BODY frames on a LANDSCAPE 1536x1024 canvas, invisible THREE-COLUMN TWO-ROW grid, six square 512x512 cells to export at 500x500. Read top row left-to-right then bottom row. Same anatomical/head scale in every frame, body/stance center at 50% cell width and soles at 91.2% height. Standing head-to-sole height about 400 pixels per 500px cell. Bent or curled poses naturally shorter and never enlarged. Fixed 3/4 SIDE VIEW FACING RIGHT, entire cap/fists/sneakers visible inside each cell, generous empty margins. TRUE TRANSPARENT alpha: alpha ZERO everywhere outside actual figure silhouettes. No checkerboard, white/gray backdrop, haze, ground/floor, shadow, text, grid, border, glow, external effects or scenery. Draw only the described fighter action, without handheld phone, cigarette or photographic props. CRITICAL complete figure including overhead fists inside EACH512cell with at least24px transparent padding. Same head/limb scale across all6. VINIL FATAL rapid vinyl barrage with retreat. Six distinct full-body poses:1ready guard,2lean/hop BACK to LEFT drawing black gold-label record,3release sidearm RIGHT at low level hand empty,4release RIGHT at chest level with elbow higher hand empty,5release RIGHT at head level with dramatic body twist hand empty,6land and recover guard. Frames3/4/5 will repeat to match seven game projectiles. Only frame2 held record, NO detached discs or effects."
+    },
+    {
+      "name": "vinil-girar",
+      "effect": true,
+      "source": "originais/vinil-girar.png",
+      "faceArea": null,
+      "faceRegion": null,
+      "prompt": "HIGH DEFINITION crisp black-ink comic game FX, three-tone gold/orange/cream cel shading matching the reference character's game. ONE IMAGE ONE animation only, EXACTLY SIX frames on1536x1024 landscape in invisible3-column2-row grid, each512x512 to export500x500. Reading top left to right then bottom left to right. TRUE TRANSPARENT ALPHA ZERO outside drawn shapes. No backdrop, checkerboard, gray/white panel, grid, borders, letters, floor or shadows. All drawings completely contained in each cell with generous transparent padding. ONLY THE PROJECTILE, no character. A single BLACK VINYL RECORD with concentric groove rings, warm GOLD/ORANGE central label with small center hole, sharp SILVER SERRATED metallic outer rim. SIX distinct consecutive rotation frames, slight 3/4 view, circle remains same diameter and same center. Change highlight streak angle and serrated tooth rotation visibly across frames; no text. About340px diameter in each512cell. Complete rim with40px transparent margins."
+    },
+    {
+      "name": "vinil-impacto",
+      "effect": true,
+      "source": "originais/vinil-impacto.png",
+      "faceArea": null,
+      "faceRegion": null,
+      "prompt": "HIGH DEFINITION crisp black-ink comic game FX, three-tone gold/orange/cream cel shading matching the reference character's game. ONE IMAGE ONE animation only, EXACTLY SIX frames on1536x1024 landscape in invisible3-column2-row grid, each512x512 to export500x500. Reading top left to right then bottom left to right. TRUE TRANSPARENT ALPHA ZERO outside drawn shapes. No backdrop, checkerboard, gray/white panel, grid, borders, letters, floor or shadows. All drawings completely contained in each cell with generous transparent padding. ONLY THE EFFECT, no character, no fists. SIX successive phases of VINYL IMPACT: small golden central spark, expanding gold/orange serrated starburst with dark black arc fragments reminiscent of vinyl grooves, peak bright cream central contact star, outgoing angular gold shards and curved black slivers, fewer dissipating shards, tiny final flecks. Transparent between all rays. No opaque glow cloud. Every frame nonempty and distinct. Centered effect fits within400px extent each cell."
+    },
+    {
+      "name": "fx-jab",
+      "effect": true,
+      "source": "originais/fx-jab.png",
+      "faceArea": null,
+      "faceRegion": null,
+      "prompt": "HIGH DEFINITION crisp black-ink comic game FX, three-tone gold/orange/cream cel shading matching the reference character's game. ONE IMAGE ONE animation only, EXACTLY SIX frames on1536x1024 landscape in invisible3-column2-row grid, each512x512 to export500x500. Reading top left to right then bottom left to right. TRUE TRANSPARENT ALPHA ZERO outside drawn shapes. No backdrop, checkerboard, gray/white panel, grid, borders, letters, floor or shadows. All drawings completely contained in each cell with generous transparent padding. ONLY THE EFFECT, no character, no actual hand. SIX successive phases of a SHORT HORIZONTAL BOXING JAB SPEED STREAK heading RIGHT: tiny gold line, extending short tapered cream/gold streak, sharp narrow contact burst at right tip, wider gold star at contact with angular speed strokes, fading short separate flecks, final few tiny flecks. Crisp black ink and cream/gold shapes; true empty transparency between streaks, no haze. Entire effect within400px extent each cell."
+    },
+    {
+      "name": "fx-direto",
+      "effect": true,
+      "source": "originais/fx-direto.png",
+      "faceArea": null,
+      "faceRegion": null,
+      "prompt": "HIGH DEFINITION crisp black-ink comic game FX, three-tone gold/orange/cream cel shading matching the reference character's game. ONE IMAGE ONE animation only, EXACTLY SIX frames on1536x1024 landscape in invisible3-column2-row grid, each512x512 to export500x500. Reading top left to right then bottom left to right. TRUE TRANSPARENT ALPHA ZERO outside drawn shapes. No backdrop, checkerboard, gray/white panel, grid, borders, letters, floor or shadows. All drawings completely contained in each cell with generous transparent padding. ONLY THE EFFECT, no character, no actual fist. SIX successive phases of a POWERFUL STRAIGHT BOXING PUNCH heading RIGHT: short coiled gold stroke, long gold/cream wedge accelerating right, powerful sharp star contact at far right with three parallel speed strokes, expanded angular gold/orange impact, receding streak fragments, tiny final golden shards. Every frame distinct and nonempty. Crisp black outlines and cel shading, no haze, transparent gaps. Within400px extent each cell."
+    },
+    {
+      "name": "fx-gancho",
+      "effect": true,
+      "source": "originais/fx-gancho.png",
+      "faceArea": null,
+      "faceRegion": null,
+      "prompt": "HIGH DEFINITION production game effect matching approved Belga reference's crisp black-ink comic style and three-tone GOLD/ORANGE/CREAM cel shading. ONE IMAGE ONE animation only, EXACT SIX consecutive frames on LANDSCAPE1536x1024 canvas in invisible3-column2-row grid, cells512x512 to export500. Read top row left-to-right then bottomrow. TRUE TRANSPARENT alpha ZERO outside actual ink shapes including between rays. No white/gray backdrop, haze, checkerboard, scenery, floor, shadows, grid, borders or text. All drawn parts fully inside each512cell with40px transparent margins. UPWARD UPPERCUT arc, exactly six successive phases:1tiny low gold curl,2rising cream/gold crescent,3strong vertical angular swoosh rising from lower-left to upper-right with pointed tip,4bright star at top of upward arc,5broken outgoing gold arc fragments,6few small last gold flecks. No character, no hand. Direction always UP and RIGHT. Maximum400px extent percell, all6distinct and nonempty."
+    },
+    {
+      "name": "fx-bate-estaca",
+      "effect": true,
+      "source": "originais/fx-bate-estaca.png",
+      "faceArea": null,
+      "faceRegion": null,
+      "prompt": "HIGH DEFINITION production game effect matching approved Belga reference's crisp black-ink comic style and three-tone GOLD/ORANGE/CREAM cel shading. ONE IMAGE ONE animation only, EXACT SIX consecutive frames on LANDSCAPE1536x1024 canvas in invisible3-column2-row grid, cells512x512 to export500. Read top row left-to-right then bottomrow. TRUE TRANSPARENT alpha ZERO outside actual ink shapes including between rays. No white/gray backdrop, haze, checkerboard, scenery, floor, shadows, grid, borders or text. All drawn parts fully inside each512cell with40px transparent margins. DOWNWARD HEAVY PUNCH effect. Six successive phases:1small high gold wedge,2descending gold/orange crescent from upper-left to lower-right,3thick pointed downward cream/gold swoosh,4powerful angular contact burst at bottom-right with small gold shards,5short outgoing descending fragments,6few final gold flecks. No actual fighter/fist, no ground. Entire effect within400px extent eachcell. All6distinct nonempty."
+    },
+    {
+      "name": "fx-pendulo",
+      "effect": true,
+      "source": "originais/fx-pendulo.png",
+      "faceArea": null,
+      "faceRegion": null,
+      "prompt": "HIGH DEFINITION production game effect matching approved Belga reference's crisp black-ink comic style and three-tone GOLD/ORANGE/CREAM cel shading. ONE IMAGE ONE animation only, EXACT SIX consecutive frames on LANDSCAPE1536x1024 canvas in invisible3-column2-row grid, cells512x512 to export500. Read top row left-to-right then bottomrow. TRUE TRANSPARENT alpha ZERO outside actual ink shapes including between rays. No white/gray backdrop, haze, checkerboard, scenery, floor, shadows, grid, borders or text. All drawn parts fully inside each512cell with40px transparent margins. BOB-AND-WEAVE EVASION trail, six successive phases:1tiny gold curved stroke,2two gold/cream lines curving DOWN to right,3low U-shaped golden swoosh suggesting ducking under a punch,4curve continues UPWARD to right completing U sway,5two broken curved fragments,6few tiny last flecks. No silhouette or actual character. Transparent space INSIDE U, no glow fog. Samecenter, maximum400px extents eachcell. Sixdistinct nonempty."
+    },
+    {
+      "name": "fx-bpm",
+      "effect": true,
+      "source": "originais/fx-bpm.png",
+      "faceArea": null,
+      "faceRegion": null,
+      "prompt": "HIGH DEFINITION production game effect matching approved Belga reference's crisp black-ink comic style and three-tone GOLD/ORANGE/CREAM cel shading. ONE IMAGE ONE animation only, EXACT SIX consecutive frames on LANDSCAPE1536x1024 canvas in invisible3-column2-row grid, cells512x512 to export500. Read top row left-to-right then bottomrow. TRUE TRANSPARENT alpha ZERO outside actual ink shapes including between rays. No white/gray backdrop, haze, checkerboard, scenery, floor, shadows, grid, borders or text. All drawn parts fully inside each512cell with40px transparent margins. BPM RHYTHM PULSE, six successive phases:1small golden ring with one stylized music note,2ring expands and two notes emerge,3bold segmented gold/orange rhythm ring with three small notes,4largest broken gold pulse ring with musical-note sparks,5thin separating arcs and fading notes,6few tiny gold notes/flecks. Hollow ring center must be genuinely TRANSPARENT. No letters, numbers or text. No fighter. Samecenter, max400px extents eachcell. Sixdistinct nonempty."
+    }
+  ]
+}
