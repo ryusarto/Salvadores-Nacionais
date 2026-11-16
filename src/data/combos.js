@@ -58,4 +58,5 @@ export const COMBOS = {
   fujao: [],
   'pai-fujao': [],
   laranjao: [],
+  djabo: [],
 };

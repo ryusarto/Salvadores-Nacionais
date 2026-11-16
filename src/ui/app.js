@@ -6,7 +6,8 @@ import { EMPTY_INPUT } from '../core/input.js';
 import { buildStage, drawStage } from '../render/stage.js';
 import { drawEffect, prepareSprites, spritePacksFor } from '../render/sprites.js';
 import { drawFighter, drawBoxes } from '../render/mannequin.js';
-import { drawLivePhone, drawBanStamp, drawAnkleZone, drawHeadline, drawFired, drawGoldArmor } from '../render/boss-art.js';
+import { drawLivePhone, drawBanStamp, drawAnkleZone, drawHeadline, drawFired, drawGoldArmor, drawWings } from '../render/boss-art.js';
+import { drawInfernoStage } from '../render/inferno-stage.js';
 import { drawWashingtonStage } from '../render/washington-stage.js';
 import { drawMansionStage } from '../render/mansion-stage.js';
 import { PAI } from '../data/characters/pai-fujao.js';
@@ -515,6 +516,7 @@ export function createApp(canvas, devices, opts = {}) {
     if (stage === 'aeroporto') drawAirportStage(c, app.cam, app.frame);
     else if (stage === 'mansao') drawMansionStage(c, app.cam, app.frame);
     else if (stage === 'washington') drawWashingtonStage(c, app.cam, app.frame);
+    else if (stage === 'inferno') drawInfernoStage(c, app.cam, app.frame);
     else drawStage(c, app.layers, app.cam, app.frame);
     fxDrawScreen(c, fx, 'under');
     c.save();
@@ -535,6 +537,7 @@ export function createApp(canvas, devices, opts = {}) {
         continue;
       }
       if (f.ch.id === 'laranjao') drawGoldArmor(c, f, app.frame);
+      if (f.ch.id === 'djabo' && f.ch.form === 2) drawWings(c, f, app.frame);
       const absorb = fx.parts.find(p => p.k === 'absorb' && p.side === f.side);
       c.save();
       if (absorb) {

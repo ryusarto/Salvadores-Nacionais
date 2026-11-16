@@ -76,7 +76,7 @@ export const overlap = (a, b) => a.l < b.r && a.r > b.l && a.b < b.t && a.t > b.
 /** O lutador está imune a este tipo de ataque agora? kind: 'strike' | 'throw' | 'proj'. */
 export function invulnTo(f, kind, attackerAir = false, guard = 'mid') {
   const s = f.state;
-  if (f.status.banished > 0) return true; // fora da realidade (You're Fired!)
+  if (f.status.banished > 0 || f.status.invuln > 0) return true; // fora da realidade (You're Fired!) ou se transformando
   if (s === 'knockdown' || s === 'wakeup' || s === 'tech' || s === 'techroll' || s === 'thrown' || s === 'throwing' || s === 'ko' || s === 'win') return true;
   if (s === 'air_hit' && f.juggleLock) return true;
   if (kind === 'throw') {

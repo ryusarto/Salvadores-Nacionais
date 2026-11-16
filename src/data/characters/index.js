@@ -12,9 +12,10 @@ import pavanassi from './pavanassi.js';
 import fujao from './fujao.js';
 import paiFujao from './pai-fujao.js';
 import laranjao from './laranjao.js';
+import djabo from './djabo.js';
 
 /** Heróis jogáveis, na ordem do seletor. */
 export const HEROES = [franco, belga, majis, trunks, ryuchi, mdep, chapuh, dney];
 /** Chefes do Modo História, na ordem da turnê. */
-export const BOSSES = [zanata, chupetinha, pavanassi, fujao, paiFujao, laranjao];
+export const BOSSES = [zanata, chupetinha, pavanassi, fujao, paiFujao, laranjao, djabo];
 export const ALL = Object.fromEntries([...HEROES, ...BOSSES].map((c) => [c.id, c]));

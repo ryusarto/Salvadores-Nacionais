@@ -114,6 +114,7 @@ function meters(st) {
       }
     } else if (f.gingaPause > 0) f.gingaPause--;
     else if (f.state !== 'guard') f.ginga = Math.min(G.max, f.ginga + G.regen);
+    if (f.status.invuln > 0) f.status.invuln--;
     if (f.status.banished > 0 && --f.status.banished === 0) {
       // volta para a realidade caindo do céu
       f.hp = Math.max(f.hp > 1 ? 1 : 0, f.hp - (f.status.banishDmg || 1200));

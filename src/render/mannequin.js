@@ -237,6 +237,18 @@ function weapon(c, J, f, ch) {
     c.fill();
     c.stroke();
     blob(c, [8, -16], 9, '#9fd8ff');
+  } else if (w === 'tridente') {
+    // tridente: cabo longo e três pontas; em brasa na forma de demônio
+    const hot = f.ch.form === 2;
+    limb(c, [0, 60], [0, -150], 8, hot ? '#3a0e0e' : '#2a2430');
+    c.strokeStyle = hot ? '#ff6a1a' : '#c9c4cf';
+    c.lineWidth = 7;
+    c.beginPath();
+    c.moveTo(-26, -150); c.lineTo(-26, -196);
+    c.moveTo(0, -150); c.lineTo(0, -214);
+    c.moveTo(26, -150); c.lineTo(26, -196);
+    c.moveTo(-28, -150); c.lineTo(28, -150);
+    c.stroke();
   } else if (w === 'bengala') {
     // bengala de madeira com castão dourado
     limb(c, [0, 0], [10, 150], 9, '#5a3a1e');
