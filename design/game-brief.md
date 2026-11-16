@@ -18,7 +18,7 @@ se joga de um jeito diferente.
   Perfeita. Segurar para trás também defende. Agarrão vence a defesa.
 - **Golpes de sequência:** → ← + Leve e ↓ → + Médio, dois por herói.
 - **Dificuldade:** Fácil, Normal e Difícil mudam o nível da CPU e o dano de cada lado.
-- **Modos:** História (contra a Zanata), Versus CPU, **Versus 2 jogadores** (dois controles, ou controle e teclado) e Treino com lista de combos.
+- **Modos:** História (Capítulo 1 em Belém: duas batalhas de rima e a Zanata), Versus CPU, **Versus 2 jogadores** (dois controles, ou controle e teclado) e Treino com lista de combos.
 - **Combo aéreo:** Gancho (↓+Forte) acertou + segurar ↑ = pulo alto; Leve, Médio e Forte emendam no ar.
 - **Empurrão na defesa:** Leve + Médio defendendo afasta o atacante (1 gomo de Ginga).
 - **Rolamento:** botão de golpe ao cair levanta rolando (não vale em queda forte).

@@ -1,5 +1,5 @@
 import { SYS } from '../data/system.js';
-import { HEROES, BOSSES } from '../data/characters/index.js';
+import { HEROES, BOSSES, ALL } from '../data/characters/index.js';
 import { createMatch, step } from '../core/match.js';
 import { createBrain, aiInput } from '../core/ai.js';
 import { EMPTY_INPUT } from '../core/input.js';
@@ -15,6 +15,7 @@ import { createTracker, trackCombo, createRunner, runnerInput, runnerDone, stepL
 import { audioEvents, sfx, setStageAudioActive } from './audio.js';
 import {drawComicScreen,drawComicPause,FOES,FOE_COLS} from './comic-screens.js';
 import {comicBackground} from '../render/comic-ui.js';
+import { createRun, currentFight, fightLevel, winFight, continueFight, openingPages, closingPages, talkLines, loadProgress, saveCleared } from './story.js';
 
 const W = SYS.VIEW_W;
 const H = SYS.VIEW_H;
@@ -37,6 +38,7 @@ function toggleSound() {
 }
 const ACTIONS = [['L', 'Leve'], ['M', 'Médio'], ['H', 'Forte'], ['S', 'Especial'], ['G', 'Defesa (Ginga)'], ['T', 'Agarrão'], ['X', 'Super'], ['start', 'Pausa'], ['back', 'Voltar']];
 const RESULT = ['REVANCHE', 'TROCAR PERSONAGEM', 'MENU'];
+const STORY_LOSE = ['CONTINUAR', 'DESISTIR'];
 const DUMMY = ['PARADO', 'DEFENDE TUDO', 'CPU'];
 const KEY_LABEL = { c1: '→ ← + Leve', c2: '↓ → + Médio', '5S': 'Especial', '6S': '→ + Especial', '2S': '↓ + Especial', '4S': '← + Especial', jS: 'No ar: Especial', SA3: 'Super com 3 barras', SA1: '↓ + Super (1 barra)' };
 
@@ -56,7 +58,7 @@ export function createApp(canvas, devices, opts = {}) {
   function startFight() {
     const hero = HEROES[app.hero];
     const D = SYS.DIFFICULTY[app.diff];
-    app.level = D.level;
+    app.level = app.mode === 'story' && app.story ? fightLevel(app.story, D.level) : D.level;
     const fair = app.mode === 'training' || app.mode === 'vs2';
     if (app.mode === 'vs2') app.foe = HEROES[app.hero2];
     app.st = createMatch({ chars: [hero, app.foe], seed: (Date.now() & 0xffff) + 1, training: app.mode === 'training', dmgMul: fair ? [1, 1] : D.dmg });
@@ -87,7 +89,7 @@ export function createApp(canvas, devices, opts = {}) {
   }
 
   function pickFoe() {
-    if (app.mode === 'story') app.foe = BOSSES[0];
+    if (app.mode === 'story') app.foe = app.story ? ALL[currentFight(app.story).foe] : BOSSES[0];
     else if (app.mode === 'training') app.foe = BOSSES[0];
     else {
       const pool = [...HEROES, ...BOSSES];
@@ -239,6 +241,41 @@ export function createApp(canvas, devices, opts = {}) {
     return false;
   }
 
+  /** Modo História: começa a turnê com o herói escolhido. */
+  function startStory() {
+    app.story = createRun(HEROES[app.hero].id, loadProgress());
+    app.storyPages = openingPages(shortName(HEROES[app.hero]));
+    app.screen = 'storyIntro';
+  }
+
+  const shortName = (ch) => ch.name.split(',')[0];
+
+  /** Páginas de HQ (abertura e fechamento): Leve/Enter avança, Médio/Esc volta. */
+  function storyPagesTick(ok, back) {
+    const run = app.story;
+    if ((ok && run.page >= app.storyPages.length - 1)) {
+      run.page = 0;
+      app.screen = 'storyMap';
+    } else if (ok) run.page++;
+    else if (back && run.page > 0) run.page--;
+  }
+
+  /** Fim de uma luta da turnê: próxima luta, fechamento do capítulo ou "Continuar?". */
+  function storyAfterFight(won) {
+    const run = app.story;
+    if (!won) {
+      app.screen = 'storyLose';
+      return;
+    }
+    if (winFight(run) === 'next') {
+      app.screen = 'storyTalk';
+      return;
+    }
+    saveCleared(run);
+    app.storyPages = closingPages(run, shortName(HEROES[app.hero]));
+    app.screen = 'storyEnd';
+  }
+
   /** Um passo lógico (1/60 s). */
   function tick() {
     app.frame++;
@@ -296,10 +333,33 @@ export function createApp(canvas, devices, opts = {}) {
       app.hero = (app.hero + n + (pr.right ? 1 : 0) - (pr.left ? 1 : 0) + (pr.down ? 4 : 0) - (pr.up ? 4 : 0)) % n;
       if (back) app.screen = 'title';
       if (ok && app.mode === 'versus') app.screen = 'selectFoe';
+      else if (ok && app.mode === 'story') startStory();
       else if (ok) {
         pickFoe();
         enterVs();
       }
+    } else if (app.screen === 'storyIntro' || app.screen === 'storyEnd') {
+      storyPagesTick(ok, back);
+    } else if (app.screen === 'storyMap') {
+      if (back) app.screen = 'title';
+      else if (ok && app.story.cleared) app.screen = 'title';
+      else if (ok) {
+        app.story.page = 0;
+        app.screen = 'storyTalk';
+      }
+    } else if (app.screen === 'storyTalk') {
+      const n = talkLines(app.story).length;
+      if (ok && app.story.page >= n - 1) {
+        pickFoe();
+        enterVs();
+      } else if (ok) app.story.page++;
+      else if (back && app.story.page > 0) app.story.page--;
+    } else if (app.screen === 'storyLose') {
+      nav('cur', STORY_LOSE.length);
+      if (ok && app.cur === 0) {
+        continueFight(app.story);
+        startFight();
+      } else if (ok) app.screen = 'title';
     } else if (app.screen === 'selectFoe') {
       const n = FOES.length;
       app.foeCur = (app.foeCur + n + (pr.right ? 1 : 0) - (pr.left ? 1 : 0) + (pr.down ? FOE_COLS : 0) - (pr.up ? FOE_COLS : 0)) % n;
@@ -313,7 +373,7 @@ export function createApp(canvas, devices, opts = {}) {
       app.vsT++;
       if (back) {
         app.ready = [false, false];
-        app.screen = app.mode === 'vs2' ? 'select2' : app.mode === 'versus' ? 'selectFoe' : 'select';
+        app.screen = app.mode === 'vs2' ? 'select2' : app.mode === 'versus' ? 'selectFoe' : app.mode === 'story' ? 'storyMap' : 'select';
       }
       else if (app.vsReady && ((ok && app.vsT > 20) || app.vsT > 240)) startFight();
     } else if (app.screen === 'fight') {
@@ -396,8 +456,9 @@ export function createApp(canvas, devices, opts = {}) {
       }
       if (st.phase === 'fight') app.stats.frames++;
       if (st.phase === 'over' && ++app.overT > 100) {
-        app.screen = 'result';
         app.cur = 0;
+        if (app.mode === 'story' && app.story) storyAfterFight(st.winner === 0);
+        else app.screen = 'result';
       }
     } else if (app.screen === 'result') {
       nav('cur', RESULT.length);
@@ -668,6 +729,7 @@ export function createApp(canvas, devices, opts = {}) {
   app.render = render;
   app.startFight = startFight;
   app.pickFoe = pickFoe;
+  app.startStory = startStory;
   app.run = () => {
     last = performance.now();
     app.raf = requestAnimationFrame(loop);
