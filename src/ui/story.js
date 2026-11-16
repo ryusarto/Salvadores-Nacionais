@@ -1,4 +1,4 @@
-import { CHAPTERS, RIVALS, OPENING, BOSS_TALK, CLOSING, rhymeTalk } from '../data/story.js';
+import { CHAPTERS, RIVALS, OPENING, BOSS_TALK, CLOSING, HERO_ENDINGS, rhymeTalk } from '../data/story.js';
 
 /**
  * Estado de uma partida do Modo História, sem tela nem som.
@@ -63,7 +63,10 @@ export function continueFight(run) {
 const fill = (s, heroName) => s.replaceAll('{hero}', heroName);
 
 export const openingPages = (run, heroName) => (OPENING[currentChapter(run).id] || []).map((s) => fill(s, heroName));
-export const closingPages = (run, heroName) => (CLOSING[currentChapter(run).boss] || []).map((s) => fill(s, heroName));
+export const closingPages = (run, heroName) => (CLOSING[currentChapter(run).boss] || []).map((s) => fill(s.replace('{ending}', HERO_ENDINGS[run.hero] || ''), heroName));
+
+/** A turnê inteira terminou? (último capítulo vencido) */
+export const tourComplete = (run) => run.cleared && currentChapter(run).n === CHAPTERS.length;
 
 /** Falas antes da luta atual. '$hero' vira o herói da partida. */
 export function talkLines(run) {

@@ -21,7 +21,8 @@
     "pavanassi",
     "fujao",
     "pai-fujao",
-    "laranjao"
+    "laranjao",
+    "djabo"
   ],
   "assets": {
     "portrait-franco": {
@@ -276,6 +277,24 @@
       "alpha": true,
       "sha256": "cddd44d619de1805ec41fd6dc1d390621ad3be8cb0b73048ed2b1f61646443fa",
       "bytes": 4198,
+      "provisional": true
+    },
+    "portrait-djabo": {
+      "path": "portraits/djabo.webp",
+      "width": 768,
+      "height": 1024,
+      "alpha": true,
+      "sha256": "0c4e3c7ec43b240921111ffb55d00b713cf95c52ebe48f08d87b7812b5745340",
+      "bytes": 15900,
+      "provisional": true
+    },
+    "icon-djabo": {
+      "path": "icons/djabo.webp",
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "sha256": "6cf1b2ac1f84e130970ff1f1f4d8cc3c4f01d3a68a1215488d24cd8feb221686",
+      "bytes": 3856,
       "provisional": true
     }
   }

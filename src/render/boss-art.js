@@ -507,3 +507,112 @@ export function drawGoldArmor(c, f, frame) {
   c.stroke();
   c.restore();
 }
+
+/** Bola de fogo do Djabo. */
+export function drawFireball(c, x, y, frame) {
+  c.save();
+  c.translate(x, y);
+  for (const [r, col] of [[48, 'rgba(255,90,20,.45)'], [34, '#ff6a1a'], [20, '#ffd25a']]) {
+    c.fillStyle = col;
+    c.beginPath();
+    c.arc(Math.sin(frame * 0.7) * 3, 0, r + Math.sin(frame * 0.9) * 3, 0, Math.PI * 2);
+    c.fill();
+  }
+  c.restore();
+}
+
+/** Coluna do Inferno: aviso no chão e, no fim da espera, uma coluna de fogo subindo. */
+export function drawFireColumn(c, e, gy, frame) {
+  c.save();
+  if (e.delay > 0) {
+    const t = 1 - e.delay / (e.delay0 || 30);
+    c.strokeStyle = frame % 8 < 4 ? '#ff6a1a' : '#ffd25a';
+    c.lineWidth = 6;
+    c.beginPath();
+    c.ellipse(e.x, gy, (e.w / 2) * (0.4 + 0.6 * t), 20, 0, 0, Math.PI * 2);
+    c.stroke();
+  } else {
+    const h = Math.min(e.h, 120 + e.age * 60);
+    const g = c.createLinearGradient(0, gy, 0, gy - h);
+    g.addColorStop(0, '#ffd25a');
+    g.addColorStop(0.5, '#ff6a1a');
+    g.addColorStop(1, 'rgba(200,30,10,0)');
+    c.fillStyle = g;
+    c.beginPath();
+    c.moveTo(e.x - e.w / 2, gy);
+    for (let k = 0; k <= 8; k++) c.lineTo(e.x - e.w / 2 + (k * e.w) / 8 + Math.sin(frame + k) * 10, gy - h * (k % 2 ? 1 : 0.85));
+    c.lineTo(e.x + e.w / 2, gy);
+    c.closePath();
+    c.fill();
+  }
+  c.restore();
+}
+
+/** Tridente arremessado, em brasa. */
+export function drawThrownTrident(c, x, y, dir) {
+  c.save();
+  c.translate(x, y);
+  c.scale(dir, 1);
+  c.strokeStyle = '#3a0e0e';
+  c.lineWidth = 10;
+  c.beginPath();
+  c.moveTo(-80, 0);
+  c.lineTo(40, 0);
+  c.stroke();
+  c.strokeStyle = '#ff6a1a';
+  c.lineWidth = 7;
+  c.beginPath();
+  c.moveTo(40, -24); c.lineTo(40, 24);
+  c.moveTo(40, -24); c.lineTo(80, -24);
+  c.moveTo(40, 0); c.lineTo(90, 0);
+  c.moveTo(40, 24); c.lineTo(80, 24);
+  c.stroke();
+  c.restore();
+}
+
+/** Chão em chamas do Inferno Nacional (o trecho seguro fica sem fogo). */
+export function drawFloorFire(c, e, gy, frame) {
+  const l = e.x - e.w / 2;
+  c.save();
+  c.globalAlpha = e.delay > 0 ? 0.4 : 1;
+  for (let x = l; x < l + e.w; x += 28) {
+    const h = 50 + Math.sin(frame * 0.4 + x * 0.05) * 22 + ((x * 7) % 30);
+    const g = c.createLinearGradient(0, gy, 0, gy - h);
+    g.addColorStop(0, '#ffd25a');
+    g.addColorStop(1, 'rgba(255,90,20,0)');
+    c.fillStyle = g;
+    c.beginPath();
+    c.moveTo(x, gy + 6);
+    c.quadraticCurveTo(x + 14, gy - h, x + 28, gy + 6);
+    c.fill();
+  }
+  c.restore();
+}
+
+/** Asas de demônio atrás do Djabo na segunda fase. */
+export function drawWings(c, f, frame) {
+  const flap = Math.sin(frame / 8) * 0.18;
+  c.save();
+  c.translate(f.x, GY - f.y - 330);
+  for (const s of [-1, 1]) {
+    c.save();
+    c.scale(s, 1);
+    c.rotate(-0.2 + flap);
+    c.fillStyle = '#3a0e12';
+    c.strokeStyle = OUT;
+    c.lineWidth = 6;
+    c.beginPath();
+    c.moveTo(0, 0);
+    c.lineTo(170, -120);
+    c.lineTo(150, -20);
+    c.lineTo(200, 10);
+    c.lineTo(140, 40);
+    c.lineTo(160, 90);
+    c.lineTo(40, 60);
+    c.closePath();
+    c.fill();
+    c.stroke();
+    c.restore();
+  }
+  c.restore();
+}

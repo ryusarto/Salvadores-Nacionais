@@ -15,7 +15,7 @@ export const CHAPTERS = [
   { id: 'aeroporto', n: 4, boss: 'fujao', bossName: 'FUJÃO', place: 'AEROPORTO', ready: true },
   { id: 'mansao', n: 5, boss: 'pai-fujao', bossName: 'PAI DO FUJÃO', place: 'MANSÃO', ready: true },
   { id: 'washington', n: 6, boss: 'laranjao', bossName: 'LARANJÃO', place: 'WASHINGTON, D.C.', ready: true },
-  { id: 'inferno', n: 7, boss: 'djabo', bossName: 'DJABO', place: 'INFERNO', ready: false },
+  { id: 'inferno', n: 7, boss: 'djabo', bossName: 'DJABO', place: 'INFERNO', ready: true },
 ];
 
 /** As duas batalhas de rima de cada herói em cada capítulo, na ordem. */
@@ -80,6 +80,16 @@ export const RIVALS = {
   chapuh: ['mdep', 'majis'],
   dney: ['ryuchi', 'trunks'],
   },
+  inferno: {
+  franco: ['chapuh', 'ryuchi'],
+  belga: ['franco', 'mdep'],
+  majis: ['dney', 'trunks'],
+  trunks: ['mdep', 'franco'],
+  ryuchi: ['belga', 'dney'],
+  mdep: ['ryuchi', 'chapuh'],
+  chapuh: ['trunks', 'majis'],
+  dney: ['majis', 'belga'],
+  },
 };
 
 /** Páginas de chegada de cada capítulo. {hero} é trocado pelo nome do herói escolhido. */
@@ -120,6 +130,12 @@ export const OPENING = {
   'Mas o rap atravessa fronteira sem passaporte. Gente do mundo inteiro aparece no gramado com panela, tambor e microfone.',
   'A roda de rima começa em três línguas. {hero} pega o microfone.',
   ],
+  inferno: [
+  'O gramado se abre e os Salvadores descem. Lá embaixo, fogo, correntes e um trono vazio.',
+  'Todos os chefes vieram daqui: a Zanata, o Chupetinha, o Pavanassi, o Fujão, o pai dele e o Laranjão. Todos obedeciam ao mesmo dono.',
+  'No portão do inferno, as almas presas pela fome batem o pé no ritmo. A última roda de rima da turnê começa.',
+  'Quem vencer encara o Djabo. {hero} pega o microfone.',
+  ],
 };
 
 /** Frase do narrador antes de cada batalha de rima, por capítulo. */
@@ -130,6 +146,7 @@ export const RHYME_INTRO = {
   aeroporto: 'BATALHA DE RIMA — no saguão do aeroporto, quem vencer abre caminho até a pista.',
   mansao: 'BATALHA DE RIMA — na frente da mansão, quem vencer entra primeiro.',
   washington: 'BATALHA DE RIMA — no gramado do palácio, quem vencer encara o Laranjão.',
+  inferno: 'BATALHA DE RIMA — no portão do inferno, a última roda da turnê.',
 };
 
 /** Frase de cada herói quando entra numa batalha de rima. */
@@ -208,6 +225,13 @@ export const BOSS_TALK = {
     { who: 'laranjao', say: 'Tudo paga tarifa. Até você. E se reclamar: YOU’RE FIRED!' },
     { who: null, say: 'DICA: gastar Ginga e Super dá armadura para ele (Tarifa Suprema): use com cuidado. Nas Fake News, só o verdadeiro tem sombra. No You’re Fired!, pule ou defenda.' },
   ],
+  djabo: [
+    { who: null, say: 'No trono, de terno preto e tridente na mão, o Djabo sorri. Ele parece um político como outro qualquer.' },
+    { who: 'djabo', say: 'A fome é o meu melhor negócio. Povo com fome não canta, não pensa e não reclama.' },
+    { who: '$hero', say: 'Hoje o povo canta. E come. A turnê acaba aqui, com você fora do trono.' },
+    { who: 'djabo', say: 'Vocês derrubaram meus funcionários. Eu não sou funcionário. Venham.' },
+    { who: null, say: 'DICA: ele usa um golpe de cada chefe. Zerar a vida dele não basta: prepare-se para a segunda forma. No Inferno Nacional, corra para o trecho do chão sem fogo ou pule as chamas.' },
+  ],
 };
 
 /** Depois de vencer o chefe. `hero` é trocado pelo nome do herói. */
@@ -248,4 +272,24 @@ export const CLOSING = {
     'Derrotado, o Laranjão aponta para o chão e ri: "Vocês acham que mandam aqui? Quem manda está lá embaixo."',
     'O chão do gramado racha. Sobe um cheiro de enxofre. Última parada da turnê: o inferno do Djabo.',
   ],
+  djabo: [
+    'O Djabo cai do trono. O fogo do inferno se apaga, as correntes se partem e as almas presas pela fome sobem para a luz.',
+    'Lá em cima, todos os Salvadores Nacionais sobem no mesmo palco para o maior show contra a fome da história.',
+    'Em Belém, em Washington, em cada cidade do Brasil e do mundo, as mesas ficam cheias. Ninguém fica de fora.',
+    'A FOME ACABOU. Em nenhum canto do mundo alguém vai dormir com fome esta noite. Nem amanhã.',
+    '{ending}',
+    'SALVADORES NACIONAIS — fim da Turnê contra a Fome. Obrigado por jogar!',
+  ],
+};
+
+/** Página final de cada herói (página {ending} do fechamento do Djabo). */
+export const HERO_ENDINGS = {
+  franco: 'Franco fotografa a primeira mesa cheia do mundo inteiro. A foto vira quadro, e o quadro vai para a parede de todas as cozinhas comunitárias.',
+  belga: 'Belga solta o último disco da turnê. O BPM nunca mais baixa: em cada esquina tem um som e um prato de comida.',
+  majis: 'Majis toca o acorde final. O chão treme, mas desta vez é de festa: a guitarra vira sino de almoço.',
+  trunks: 'Trunks e a matilha distribuem marmitas de ambulância em ambulância. Nenhum cachorro, nenhuma pessoa, com fome.',
+  ryuchi: 'Ryuchi guarda a espada. O agudo final ecoa do inferno até o céu, e o mundo inteiro responde no refrão.',
+  mdep: "M'Dep pendura as botas por um dia. Na passarela, em vez de grife, desfila a fila de quem já comeu.",
+  chapuh: 'Chapuh picha o último muro da turnê: "A FOME ACABOU". O Pinscher assina com a pata.',
+  dney: 'Dney descarrega a última bala para o alto. Em vez de tiro, sai confete. O olhar laser acende a fogueira do churrasco do povo.',
 };

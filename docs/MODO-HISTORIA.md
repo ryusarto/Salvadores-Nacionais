@@ -236,6 +236,13 @@ Unidos.
 
 ### 7. Djabo — chefe final
 
+No jogo desde o Capítulo 7 (`src/data/characters/djabo.js`), com retrato
+provisório, boneco e o inferno desenhado em código (`src/render/inferno-stage.js`).
+A segunda forma usa o gancho `mech.beforeKo` do motor e troca a ficha inteira
+(golpes, cores, chifres e asas). Depois dele vem o final da turnê: o grande show,
+as mesas cheias pelo mundo, a manchete "A FOME ACABOU", uma página própria de
+cada herói (`HERO_ENDINGS` em `src/data/story.js`) e o FIM.
+
 Luta em duas fases.
 
 - **Fase 1, o Político:** de terno, usa o tridente como bengala e cetro (bom
@@ -296,11 +303,14 @@ sátira funcionar.
    Privilegiado, capangas e Vingança Paterna; o fechamento leva a Washington.
 6. ✓ **Capítulo 6 (Washington, D.C.):** Laranjão com Fake News, Tarifa
    Suprema, THE WALL e You're Fired!; o fechamento leva ao inferno.
-7. Retrato e sprites dos seis chefes; cenários da frente do palco, dos
-   banheiros químicos, do aeroporto, da mansão e de Washington pintados.
+7. ✓ **Capítulo 7 (inferno) e o final:** Djabo com as duas formas e o
+   Inferno Nacional; o final mostra que a fome acabou no mundo.
+8. Retrato e sprites dos sete chefes; cenários da frente do palco, dos
+   banheiros químicos, do aeroporto, da mansão, de Washington e do inferno pintados.
    Para chefes sem arte, `node tools/retrato-provisorio.mjs <id> <cor> <cor>`
    gera um retrato e um ícone provisórios.
-8. Um capítulo por vez, na ordem da turnê: ficha e mecânica do chefe,
+9. Ajuste fino da dificuldade com pessoas jogando.
+10. Um capítulo por vez, na ordem da turnê: ficha e mecânica do chefe,
    retrato, sprites, cenário e textos.
 
 ## Em aberto

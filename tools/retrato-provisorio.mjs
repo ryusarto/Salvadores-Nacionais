@@ -1,6 +1,6 @@
 // Gera retrato e ícone PROVISÓRIOS (silhueta) para um chefe que ainda não tem arte HQ,
 // e registra os dois no manifesto da interface.
-// Uso: node tools/retrato-provisorio.mjs <id> "<cor do terno>" "<cor do detalhe>" [chupeta|carimbo|mala|topete]
+// Uso: node tools/retrato-provisorio.mjs <id> "<cor do terno>" "<cor do detalhe>" [chupeta|carimbo|mala|topete|tridente]
 // Quando o retrato de verdade chegar, substitua os dois arquivos e rode de novo o
 // cálculo de sha256 (ou apague a entrada e gere outra vez).
 import sharp from 'sharp';
@@ -41,6 +41,7 @@ const portrait = `<svg xmlns="http://www.w3.org/2000/svg" width="768" height="10
   ${prop === 'chupeta' ? pacifier(330, 520, 1.15) : ''}
   ${prop === 'carimbo' ? stamp(560, 760, 1.6) : ''}
   ${prop === 'mala' ? bag(560, 820, 1.5) : ''}
+  ${prop === 'tridente' ? `<g stroke="${ink}" stroke-width="10" fill="none"><path d="M 600 1024 L 600 520" stroke="#2a2430" stroke-width="18"/><path d="M 540 520 L 660 520 M 540 520 L 540 420 M 600 520 L 600 390 M 660 520 L 660 420" stroke="${accent}" stroke-width="14"/></g><path d="M 270 250 C 230 170 250 110 300 90 C 290 160 310 200 330 230 Z M 498 250 C 538 170 518 110 468 90 C 478 160 458 200 438 230 Z" fill="${accent}" stroke="${ink}" stroke-width="8"/>` : ''}
   ${prop === 'topete' ? `<path d="M 214 300 C 260 150 520 150 560 260 C 470 220 330 230 214 300 Z" fill="#f3d26a" stroke="${ink}" stroke-width="10"/><path d="M 384 610 L 360 820 L 384 860 L 408 820 Z" fill="${accent}" stroke="${ink}" stroke-width="8"/>` : ''}
 </svg>`;
 
@@ -50,6 +51,7 @@ const icon = `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256">
   ${prop === 'chupeta' ? pacifier(104, 160, 0.42) : ''}
   ${prop === 'carimbo' ? stamp(196, 214, 0.6) : ''}
   ${prop === 'mala' ? bag(196, 220, 0.55) : ''}
+  ${prop === 'tridente' ? `<path d="M 84 50 C 70 20 78 0 96 -6 C 92 20 100 34 108 44 Z M 172 50 C 186 20 178 0 160 -6 C 164 20 156 34 148 44 Z" fill="${accent}" stroke="${ink}" stroke-width="5"/>` : ''}
   ${prop === 'topete' ? `<path d="M 72 70 C 90 20 180 20 192 60 C 160 48 110 52 72 70 Z" fill="#f3d26a" stroke="${ink}" stroke-width="6"/>` : ''}
 </svg>`;
 

@@ -5,11 +5,12 @@ import { drawBelemPresentation } from '../render/belem-stage.js';
 import { drawAirportStage } from '../render/airport-stage.js';
 import { drawMansionStage } from '../render/mansion-stage.js';
 import { drawWashingtonStage } from '../render/washington-stage.js';
+import { drawInfernoStage } from '../render/inferno-stage.js';
 
 /** Cenários próprios de chefes, desenhados em código: nome e função de desenho. */
-export const BOSS_STAGES = { aeroporto: ['AEROPORTO', drawAirportStage], mansao: ['MANSÃO', drawMansionStage], washington: ['WASHINGTON, D.C.', drawWashingtonStage] };
+export const BOSS_STAGES = { aeroporto: ['AEROPORTO', drawAirportStage], mansao: ['MANSÃO', drawMansionStage], washington: ['WASHINGTON, D.C.', drawWashingtonStage], inferno: ['INFERNO', drawInfernoStage] };
 import { portrait, footer } from './comic-screens.js';
-import { currentChapter, currentFight, talkLines, nextChapter } from './story.js';
+import { currentChapter, currentFight, talkLines, nextChapter, tourComplete } from './story.js';
 
 /** Telas do Modo História, no mesmo estilo HQ do menu. */
 
@@ -109,12 +110,95 @@ function drawPrideBunting(c, x, y, w, frame) {
   c.restore();
 }
 
+/** Quadros do final da turnê, desenhados sobre o quadro do cenário. */
+function drawFinale(c, page, x, y, w, h, frame, hero) {
+  c.save();
+  c.beginPath();
+  c.rect(x, y, w, h);
+  c.clip();
+  if (page === 1) {
+    // o grande show: todos os Salvadores no palco
+    const g = c.createLinearGradient(0, y, 0, y + h);
+    g.addColorStop(0, '#2b1a4e');
+    g.addColorStop(1, '#c8577a');
+    c.fillStyle = g;
+    c.fillRect(x, y, w, h);
+    for (let i = 0; i < 6; i++) {
+      c.fillStyle = `rgba(255,236,170,${0.25 + 0.15 * Math.sin(frame / 10 + i)})`;
+      c.beginPath();
+      c.moveTo(x + 100 + i * 180, y);
+      c.lineTo(x + 40 + i * 180, y + h);
+      c.lineTo(x + 180 + i * 180, y + h);
+      c.closePath();
+      c.fill();
+    }
+    c.fillStyle = P.ink;
+    c.fillRect(x, y + h - 90, w, 90);
+    HEROES.forEach((ch, i) => {
+      const bob = Math.sin(frame / 7 + i) * 6;
+      figure(c, ch, x + 10 + i * 130, y + 130 + bob, 150, 200, i % 2 ? -1 : 1);
+    });
+  } else if (page === 2 || page === 3) {
+    // mesas cheias pelo mundo
+    c.fillStyle = page === 3 ? '#f3c426' : '#f4e9c9';
+    c.fillRect(x, y, w, h);
+    const flags = [['#009c3b', '#ffdf00'], ['#2b3a6e', '#c8102e'], ['#ce1126', '#ffffff'], ['#000000', '#dd0000'], ['#ff9933', '#138808'], ['#de2910', '#ffde00']];
+    for (let r = 0; r < 2; r++) {
+      for (let i = 0; i < 4; i++) {
+        const tx = x + 60 + i * 255;
+        const ty = y + 120 + r * 170;
+        c.fillStyle = '#8a5a2a';
+        c.fillRect(tx, ty + 40, 200, 18);
+        c.fillRect(tx + 10, ty + 58, 12, 50);
+        c.fillRect(tx + 178, ty + 58, 12, 50);
+        for (let k = 0; k < 4; k++) {
+          c.fillStyle = '#ffffff';
+          c.beginPath();
+          c.ellipse(tx + 30 + k * 46, ty + 34, 20, 9, 0, 0, Math.PI * 2);
+          c.fill();
+          c.fillStyle = ['#e0662a', '#5aa05a', '#d8b25a', '#c8342a'][(k + i + r) % 4];
+          c.beginPath();
+          c.arc(tx + 30 + k * 46, ty + 28 + Math.sin(frame / 9 + k) * 2, 10, 0, Math.PI * 2);
+          c.fill();
+        }
+        const [f1, f2] = flags[(i + r * 4) % flags.length];
+        c.fillStyle = f1;
+        c.fillRect(tx + 70, ty - 50, 60, 20);
+        c.fillStyle = f2;
+        c.fillRect(tx + 70, ty - 30, 60, 20);
+        c.strokeStyle = P.ink;
+        c.lineWidth = 3;
+        c.strokeRect(tx + 70, ty - 50, 60, 40);
+      }
+    }
+    if (page === 3) {
+      c.save();
+      c.translate(x + w / 2, y + h / 2);
+      c.rotate(-0.06);
+      comicPanel(c, -470, -80, 940, 160, P.red, 24, 8);
+      comicText(c, 'A FOME ACABOU!', 0, 4, 110, P.paper, 'center', 880);
+      c.restore();
+    }
+  } else if (page === 4) {
+    c.fillStyle = P.yellow;
+    c.fillRect(x, y, w, h);
+    figure(c, hero, x + w / 2 - 170, y + 10, 340, 450, 1);
+  } else {
+    c.fillStyle = P.ink;
+    c.fillRect(x, y, w, h);
+    comicText(c, 'SALVADORES NACIONAIS', x + w / 2, y + 150, 80, P.yellow, 'center', w - 80);
+    comicText(c, 'A TURNÊ CONTRA A FOME', x + w / 2, y + 240, 46, P.paper, 'center', w - 80);
+    comicText(c, 'FIM', x + w / 2, y + 340, 90, P.red, 'center');
+  }
+  c.restore();
+}
+
 /** Abertura e fechamento: uma página de HQ por vez. */
 function pages(c, a, closing) {
   comicBackground(c, a.frame);
   const run = a.story;
   const ch = currentChapter(run);
-  banner(c, closing ? 'O EVENTO ACONTECE' : 'A TURNÊ CONTRA A FOME', `CAPÍTULO ${ch.n} • ${ch.place}`);
+  banner(c, closing ? (ch.boss === 'djabo' ? 'O FIM DA FOME' : 'O EVENTO ACONTECE') : 'A TURNÊ CONTRA A FOME', `CAPÍTULO ${ch.n} • ${ch.place}`);
   const hero = heroOf(a);
   const boss = ALL[ch.boss];
   const who = closing && run.page === 0 && boss ? boss : hero;
@@ -125,6 +209,7 @@ function pages(c, a, closing) {
     comicText(c, ch.place, 1290, 425, 60, P.paper, 'center', 1000);
   }
   if (closing && ch.boss === 'pavanassi' && run.page >= 1) drawPrideBunting(c, 760, 205, 1060, a.frame);
+  if (closing && ch.boss === 'djabo' && run.page >= 1) drawFinale(c, run.page, 760, 205, 1060, 440, a.frame, hero);
   // legenda
   const text = a.storyPages[run.page] || '';
   comicPanel(c, 700, 690, 1150, 290, P.yellow, 20, 6);
@@ -172,7 +257,9 @@ function map(c, a) {
   comicText(c, `CAPÍTULO ${ch.n} — ${ch.place}`, 170, 740, 44, P.yellow, 'left', 1580);
   if (run.cleared) {
     const next = nextChapter(run);
-    paragraph(c, next ? `Capítulo vencido! Próxima parada: ${next.place}, contra ${next.bossName}.` : 'Capítulo vencido! O próximo capítulo da turnê chega numa próxima versão do jogo.', 170, 810, 1580, 36, P.paper);
+    const msg = tourComplete(run) ? 'TURNÊ COMPLETA! A fome acabou no mundo. Jogue com outro Salvador para ver o final dele.'
+      : next ? `Capítulo vencido! Próxima parada: ${next.place}, contra ${next.bossName}.` : 'Capítulo vencido! O próximo capítulo da turnê chega numa próxima versão do jogo.';
+    paragraph(c, msg, 170, 810, 1580, 36, P.paper);
   } else {
     run.fights.forEach((f, i) => {
       const foe = ALL[f.foe];

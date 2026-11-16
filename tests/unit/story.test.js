@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { HEROES, ALL } from '../../src/data/characters/index.js';
 import { CHAPTERS, RIVALS } from '../../src/data/story.js';
-import { createRun, nextChapter, currentFight, fightLevel, winFight, continueFight, talkLines, openingPages, closingPages, loadProgress, saveCleared } from '../../src/ui/story.js';
+import { createRun, nextChapter, tourComplete, currentFight, fightLevel, winFight, continueFight, talkLines, openingPages, closingPages, loadProgress, saveCleared } from '../../src/ui/story.js';
 import { createMatch, step } from '../../src/core/match.js';
 import { createBrain, aiInput } from '../../src/core/ai.js';
 
@@ -12,7 +12,7 @@ const memory = () => {
 };
 
 test('cada herói tem duas batalhas de rima contra outros heróis, e depois o chefe', () => {
-  for (const [done, boss] of [[0, 'zanata'], [1, 'chupetinha'], [2, 'pavanassi'], [3, 'fujao'], [4, 'pai-fujao'], [5, 'laranjao']]) for (const h of HEROES) {
+  for (const [done, boss] of [[0, 'zanata'], [1, 'chupetinha'], [2, 'pavanassi'], [3, 'fujao'], [4, 'pai-fujao'], [5, 'laranjao'], [6, 'djabo']]) for (const h of HEROES) {
     const run = createRun(h.id, { [h.id]: done });
     assert.equal(run.fights.length, 3, h.id);
     const [r1, r2, last] = run.fights;
@@ -30,7 +30,7 @@ test('cada herói tem duas batalhas de rima contra outros heróis, e depois o ch
 });
 
 test('todas as falas têm texto e um personagem que existe', () => {
-  for (const done of [0, 1, 2, 3, 4, 5]) for (const h of HEROES) {
+  for (const done of [0, 1, 2, 3, 4, 5, 6]) for (const h of HEROES) {
     const run = createRun(h.id, { [h.id]: done });
     for (run.idx = 0; run.idx < run.fights.length; run.idx++) {
       for (const l of talkLines(run)) {
@@ -87,12 +87,26 @@ test('progresso estragado no armazenamento não quebra a turnê', () => {
   assert.ok(createRun('dney', loadProgress(store)));
 });
 
-test('as lutas dos capítulos 1 a 6 terminam com CPU contra CPU', () => {
-  for (const done of [0, 1, 2, 3, 4, 5]) for (const f of createRun('ryuchi', { ryuchi: done }).fights) {
+test('as lutas dos capítulos 1 a 7 terminam com CPU contra CPU', () => {
+  for (const done of [0, 1, 2, 3, 4, 5, 6]) for (const f of createRun('ryuchi', { ryuchi: done }).fights) {
     const st = createMatch({ chars: [ALL.ryuchi, ALL[f.foe]], seed: 7 });
     const b0 = createBrain(2);
     const b1 = createBrain(1);
     for (let i = 0; i < 60 * 60 * 6 && st.phase !== 'over'; i++) step(st, aiInput(st, 0, b0), aiInput(st, 1, b1));
     assert.equal(st.phase, 'over', `luta contra ${f.foe} terminou`);
+  }
+});
+
+test('o final: depois do Djabo, a fome acaba e cada herói tem a sua página', () => {
+  for (const h of HEROES) {
+    const run = createRun(h.id, { [h.id]: 6 });
+    assert.equal(currentFight({ ...run, idx: 2 }).foe, 'djabo');
+    winFight(run); winFight(run); winFight(run);
+    assert.ok(tourComplete(run));
+    assert.equal(nextChapter(run), null);
+    const pages = closingPages(run, h.name);
+    assert.ok(pages.some((p) => p.startsWith('A FOME ACABOU.')));
+    assert.ok(!pages.some((p) => p.includes('{ending}') || p.includes('{hero}')));
+    assert.ok(pages.some((p) => p.length > 40 && !p.includes('Djabo cai') && !p.includes('SALVADORES')), h.id);
   }
 });

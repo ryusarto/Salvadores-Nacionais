@@ -220,6 +220,8 @@ export function applyHit(st, att, def, h, src) {
 }
 
 function ko(st, att, def, dir) {
+  // beforeKo: um chefe pode se recusar a cair (ex.: a segunda fase do Djabo)
+  if (def.ch.mech?.beforeKo?.(st, def, att)) return;
   def.hp = 0;
   setState(def, 'ko');
   def.vx = dir * 9;
