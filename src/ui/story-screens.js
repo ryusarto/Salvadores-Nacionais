@@ -2,6 +2,7 @@ import { ALL, HEROES } from '../data/characters/index.js';
 import { CHAPTERS } from '../data/story.js';
 import { COMIC as P, comicBackground, comicPanel, comicText, comicMenuItem } from '../render/comic-ui.js';
 import { drawBelemPresentation } from '../render/belem-stage.js';
+import { drawAirportStage } from '../render/airport-stage.js';
 import { portrait, footer } from './comic-screens.js';
 import { currentChapter, currentFight, talkLines, nextChapter } from './story.js';
 
@@ -115,7 +116,7 @@ function pages(c, a, closing) {
   figure(c, who, 20, 190, 640, 853, who === hero ? 1 : -1);
   // quadro do cenário
   comicPanel(c, 735, 190, 1110, 470, P.ink, 18, 0);
-  if (!drawBelemPresentation(c, 'miniatura', 760, 205, 1060, 440)) {
+  if (!drawStageThumb(c, boss, 760, 205, 1060, 440) && !drawBelemPresentation(c, 'miniatura', 760, 205, 1060, 440)) {
     comicText(c, ch.place, 1290, 425, 60, P.paper, 'center', 1000);
   }
   if (closing && ch.boss === 'pavanassi' && run.page >= 1) drawPrideBunting(c, 760, 205, 1060, a.frame);
@@ -235,6 +236,20 @@ function lose(c, a) {
   comicText(c, `CONTINUES USADOS: ${run.continues}`, 860, 475, 32, P.paper, 'left', 920);
   ['CONTINUAR', 'DESISTIR'].forEach((label, i) => comicMenuItem(c, label, 880, 620 + i * 91, 850, a.cur === i, i));
   footer(c, 'CONTINUAR RECOMEÇA A MESMA LUTA    •    ENTER CONFIRMA');
+}
+
+/** Miniatura do cenário próprio de um chefe (aeroporto). Retorna false para usar a de Belém. */
+export function drawStageThumb(c, ch, x, y, w, h) {
+  if (ch?.stage !== 'aeroporto') return false;
+  c.save();
+  c.beginPath();
+  c.rect(x, y, w, h);
+  c.clip();
+  c.translate(x, y);
+  c.scale(w / 1920, h / 1080);
+  drawAirportStage(c, 680, 0);
+  c.restore();
+  return true;
 }
 
 /** Nome do lugar do capítulo atual, para a tela de versus. */

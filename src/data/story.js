@@ -12,7 +12,7 @@ export const CHAPTERS = [
   { id: 'ver-o-peso', n: 1, boss: 'zanata', bossName: 'CAPETA ZANATA', place: 'BELÉM — VER-O-PESO', ready: true },
   { id: 'palco', n: 2, boss: 'chupetinha', bossName: 'CHUPETINHA', place: 'BELÉM — FRENTE DO PALCO', ready: true },
   { id: 'banheiros', n: 3, boss: 'pavanassi', bossName: 'PAVANASSI', place: 'BELÉM — BANHEIROS QUÍMICOS', ready: true },
-  { id: 'aeroporto', n: 4, boss: 'fujao', bossName: 'FUJÃO', place: 'AEROPORTO', ready: false },
+  { id: 'aeroporto', n: 4, boss: 'fujao', bossName: 'FUJÃO', place: 'AEROPORTO', ready: true },
   { id: 'mansao', n: 5, boss: 'pai-fujao', bossName: 'PAI DO FUJÃO', place: 'MANSÃO', ready: false },
   { id: 'washington', n: 6, boss: 'laranjao', bossName: 'LARANJÃO', place: 'WASHINGTON, D.C.', ready: false },
   { id: 'inferno', n: 7, boss: 'djabo', bossName: 'DJABO', place: 'INFERNO', ready: false },
@@ -50,6 +50,16 @@ export const RIVALS = {
   chapuh: ['majis', 'belga'],
   dney: ['trunks', 'majis'],
   },
+  aeroporto: {
+  franco: ['ryuchi', 'belga'],
+  belga: ['mdep', 'majis'],
+  majis: ['trunks', 'ryuchi'],
+  trunks: ['majis', 'dney'],
+  ryuchi: ['dney', 'majis'],
+  mdep: ['chapuh', 'trunks'],
+  chapuh: ['ryuchi', 'franco'],
+  dney: ['franco', 'chapuh'],
+  },
 };
 
 /** Páginas de chegada de cada capítulo. {hero} é trocado pelo nome do herói escolhido. */
@@ -72,6 +82,12 @@ export const OPENING = {
   'Uma fila se forma. Um fiscal pede documento para quem quer usar o banheiro. Ninguém entende nada.',
   'Ninguém vai ser barrado no próprio evento. Mas antes, a roda de rima. {hero} chega no microfone.',
   ],
+  aeroporto: [
+  'A passagem dizia "FUJÃO — SÓ IDA". Os Salvadores correm para o aeroporto antes que o avião saia.',
+  'No saguão, a segurança barra todo mundo. Sem cartão de embarque, ninguém passa para a pista.',
+  'Então o rap abre caminho: uma roda de rima no meio do saguão junta passageiro, piloto e até o pessoal da limpeza.',
+  'Lá fora, um avião particular já está com a escada encostada. {hero} entra na roda para chegar à pista.',
+  ],
 };
 
 /** Frase do narrador antes de cada batalha de rima, por capítulo. */
@@ -79,6 +95,7 @@ export const RHYME_INTRO = {
   'ver-o-peso': 'BATALHA DE RIMA — quem vencer sobe no palco.',
   palco: 'BATALHA DE RIMA — quem vencer abre o show na frente do palco.',
   banheiros: 'BATALHA DE RIMA — quem vencer arranca a primeira placa.',
+  aeroporto: 'BATALHA DE RIMA — no saguão do aeroporto, quem vencer abre caminho até a pista.',
 };
 
 /** Frase de cada herói quando entra numa batalha de rima. */
@@ -136,6 +153,13 @@ export const BOSS_TALK = {
     { who: 'pavanassi', say: 'Desacato! Carimbem esse aí! Documento, por favor!' },
     { who: null, say: 'DICA: o carimbo proíbe golpes por alguns segundos. Cercas e cabine caem na porrada ou no pulo. Perto da cabine, GINGA + AGARRÃO faz A PERGUNTA.' },
   ],
+  fujao: [
+    { who: null, say: 'Na pista, de óculos escuros e mala na mão, o Fujão corre para a escada do avião.' },
+    { who: 'fujao', say: 'Vocês de novo? Eu só tô indo passar uns tempos fora. Uns anos. Pra sempre, talvez.' },
+    { who: '$hero', say: 'Você vai é ficar e explicar quem manda em tudo isso.' },
+    { who: 'fujao', say: 'Explicar? Eu não explico nada. Eu FUJO.' },
+    { who: null, say: 'DICA: longe do canto, ele foge no meio do combo. Encurrale perto da parede e não deixe ele sozinho perto da escada, ou ele embarca e recupera vida.' },
+  ],
 };
 
 /** Depois de vencer o chefe. `hero` é trocado pelo nome do herói. */
@@ -157,5 +181,11 @@ export const CLOSING = {
     'As placas são arrancadas uma por uma. No palco, as cores da bandeira trans sobem junto com o som, e a plateia inteira canta com {hero}.',
     'No chão, entre os papéis queimados, uma passagem de avião carimbada: "FUJÃO — SÓ IDA". Alguém quer fugir do país.',
     'A turnê continua. Próxima parada: o aeroporto.',
+  ],
+  fujao: [
+    'O Fujão cai na pista, a mala abre e voam papéis por todo lado. O avião vai embora vazio.',
+    'Os Salvadores acabam com ele ali mesmo. Fugir, ele não foge mais.',
+    'Entre os papéis, ordens assinadas, carimbos e fotos do Chupetinha, da Zanata e do Pavanassi. Todas vindas do mesmo endereço: uma mansão.',
+    'O dono da mansão está em prisão domiciliar. E continua mandando em tudo de dentro de casa. Próxima parada: a mansão do pai do Fujão.',
   ],
 };

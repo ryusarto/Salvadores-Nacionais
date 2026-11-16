@@ -247,3 +247,50 @@ export function drawBanStamp(c, f, labels) {
   c.fillText(`${Math.ceil(ban.t / 60)} s`, 0, 18);
   c.restore();
 }
+
+function suitcase(c, w, h) {
+  c.lineWidth = 5;
+  c.strokeStyle = OUT;
+  c.fillStyle = '#8a5a2a';
+  c.beginPath();
+  c.roundRect(-w / 2, -h / 2, w, h, 8);
+  c.fill();
+  c.stroke();
+  c.fillStyle = '#d8b25a';
+  c.fillRect(-w / 2, -5, w, 10);
+  c.strokeRect(-w / 2, -5, w, 10);
+  c.beginPath();
+  c.moveTo(-14, -h / 2);
+  c.lineTo(-14, -h / 2 - 12);
+  c.lineTo(14, -h / 2 - 12);
+  c.lineTo(14, -h / 2);
+  c.stroke();
+  // etiqueta de bagagem
+  c.fillStyle = '#f4e9c9';
+  c.fillRect(w / 2 - 26, -h / 2 + 6, 20, 14);
+}
+
+/** Malas do Fujão: esquecida no chão, voando ou despencando do céu. */
+export function drawBag(c, e, x, y, gy, frame) {
+  c.save();
+  if (e.kind === 'mala') {
+    c.translate(x, gy - 22);
+    suitcase(c, e.w, 44);
+  } else if (e.kind === 'mala-voando') {
+    c.translate(x, y);
+    c.rotate(frame * 0.3 * e.dir);
+    suitcase(c, e.w, e.h);
+  } else {
+    // aviso no chão e a mala caindo até o fim da espera
+    const t = e.delay > 0 ? 1 - e.delay / (e.delay0 || 20) : 1;
+    c.strokeStyle = 'rgba(200,16,46,.85)';
+    c.lineWidth = 6;
+    c.beginPath();
+    c.ellipse(x, gy, (e.w / 2) * (0.5 + t * 0.5), 18, 0, 0, Math.PI * 2);
+    c.stroke();
+    c.translate(x, -120 + (gy - 60 + 120) * t * t);
+    c.rotate(t * 2.4);
+    suitcase(c, 130, 90);
+  }
+  c.restore();
+}
