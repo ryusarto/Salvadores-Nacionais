@@ -22,8 +22,9 @@ export function belgaAttackArt(f) {
   if (f.moveKey === '2S') {
     const window = f.move.inv[0];
     if (!window || f.sf < window.from || f.sf > window.to) return null;
+    const scale=(f.ch.spriteScale??.92)/.92;
     return { name: 'fx-pendulo', index: phase(f.sf - window.from, window.to - window.from + 1),
-      box: { x: 20, y: -190, w: 300, h: 260, anchor: 'center' } };
+      box: { x: 20*scale, y: -190*scale, w: 300*scale, h: 260*scale, anchor: 'center' } };
   }
   const i = f.move.hits.findIndex(h => f.sf >= h.from && f.sf <= h.to);
   if (i < 0) return null;

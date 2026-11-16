@@ -3,6 +3,7 @@ import { RYUCHI_ART_CROPS } from '../data/ryuchi-art.js';
 import { RYUCHI_LEFT_ART_CROPS } from '../data/ryuchi-left-art.js';
 import { drawSpriteLayer } from './sprites.js';
 const phase=(t,n)=>Math.max(0,Math.min(5,Math.floor(t/Math.max(1,n)*6)));
+const bodyBox=(f,box)=>{const scale=(f.ch.spriteScale??.92)/.92;return{...box,x:box.x*scale,y:box.y*scale,w:box.w*scale,h:box.h*scale};};
 function draw(c,a,left=false,local=false){
  const crops=left?RYUCHI_LEFT_ART_CROPS:RYUCHI_ART_CROPS;
  return drawSpriteLayer(c,left?'ryuchi-esquerda-fx':'ryuchi-fx',a.name,a.index,{...a.box,face:left&&local?-1:1,crop:crops[a.name]});
@@ -15,8 +16,8 @@ export function drawRyuchiEntity(c,e,owner){const a=ryuchiEntityArt(e,owner);if(
 export function ryuchiAttackArt(f){
  if(f.ch.id!=='ryuchi'||f.state!=='attack'||!f.move)return null;
  const m=f.move,key=f.moveKey;
- if(key==='2S'&&f.sf>=m.hold.at)return{name:'fx-fio',index:Math.min(5,Math.floor((f.holdT||0)/15)),box:{x:-30,y:-230,w:130+Math.min(3,Math.floor((f.holdT||0)/25))*40,h:240,anchor:'center'}};
- if(key==='stM'){const w=m.flags.counter;if(f.sf<w.from||f.sf>w.to)return null;return{name:'fx-contra',index:phase(f.sf-w.from,w.to-w.from+1),box:{x:80,y:-300,w:190,h:190,anchor:'center'}};}
+ if(key==='2S'&&f.sf>=m.hold.at)return{name:'fx-fio',index:Math.min(5,Math.floor((f.holdT||0)/15)),box:bodyBox(f,{x:-30,y:-230,w:130+Math.min(3,Math.floor((f.holdT||0)/25))*40,h:240,anchor:'center'})};
+ if(key==='stM'){const w=m.flags.counter;if(f.sf<w.from||f.sf>w.to)return null;return{name:'fx-contra',index:phase(f.sf-w.from,w.to-w.from+1),box:bodyBox(f,{x:80,y:-300,w:190,h:190,anchor:'center'})};}
  const h=m.hits.find(h=>f.sf>=h.from&&f.sf<=h.to);if(!h)return null;
  if(['5L','5M','5H','2L','2M','2H','3H','6M','jL','jM','jH','5LL','5LLL','stL','c1','c2','throw','blindado'].includes(key))return null;
  const scream=key==='SA1'||key==='SA3';

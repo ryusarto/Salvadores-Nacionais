@@ -45,7 +45,7 @@ export default {
   moves,
   // Qual tira do kit de sprites cada animação usa (production/sprites/final/belga)
   spriteAlias: {},
-  spriteProfile: 'six-frame', spriteScale: 0.92, spriteRecovery: true,
+  spriteProfile: 'six-frame', spriteScale: 0.7631, spriteRecovery: true,
   spriteStatePhases: true, spritePhasedMoves: Object.keys(moves),
   spriteHitFrames: { c1: [2, 4] },
   spriteSpawnFrames: { SA1: [2, 3, 4], SA3: [2, 3, 4] },

@@ -51,7 +51,7 @@ export default {
   // Qual tira do kit de sprites cada animação usa (production/sprites/final/trunks)
   spriteAlias: {},
   spriteProfile: 'six-frame',
-  spriteScale: 0.92,
+  spriteScale: 0.7574,
   spriteRecovery: true,
   spriteStatePhases: true,
   spritePhasedMoves: Object.keys(moves),

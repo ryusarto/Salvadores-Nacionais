@@ -1,9 +1,9 @@
 /** Utilidades de desenho no estilo HQ: texto com contorno, faixas inclinadas e retícula. */
-export const FONT = "Impact, 'Arial Black', 'Anton', sans-serif";
+export const FONT = "SNComic, Impact, 'Arial Black', sans-serif";
 
 /** Texto itálico com contorno preto. */
 export function text(c, str, x, y, size, color = '#fff', align = 'center', stroke = '#12080c', lw = null) {
-  c.font = `italic 900 ${size}px ${FONT}`;
+  c.font = `${size}px ${FONT}`;
   c.textAlign = align;
   c.textBaseline = 'middle';
   c.lineJoin = 'round';

@@ -140,3 +140,19 @@ os dois supers de voz, sincronizados com o combate.
 de ambiente, trilha e sons originais sintetizados, miniatura e apresentação.
 [Prévia interativa com câmera e galeria](production/qa/belem-cenario.html).
 O jogo usa a arte nova; `?stage=off` permite comparar com o desenho provisório.
+
+### Elenco, retratos e interface em quadrinhos
+
+Trunks, Ryuchi e Belga agora têm cerca de **470px de altura em pé**, na escala
+dos demais heróis. Um material comum aproxima luz, sombra e contorno do elenco
+sem alterar os desenhos originais, hitboxes ou regras. O material pode ser
+comparado com `?material=off`.
+
+Menus de início, seleção, versus, pausa e resultado usam a linguagem do cartaz
+original, com amarelo, vermelho, creme, tinta preta e a fonte Bangers (SIL OFL).
+A tela inicial mostra **os oito heróis**; os retratos têm animação discreta na
+seleção e respeitam a preferência por movimento reduzido. O HUD usa os nove
+ícones próprios, vida com dano recente, Ginga, rounds, combo e super em três níveis.
+
+[Galeria e comparação de escala](production/qa/elenco-hud.html) ·
+[Arquivos e direção de arte](production/ui/comic-v1/README.md).

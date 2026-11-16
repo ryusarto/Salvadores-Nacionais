@@ -1,141 +1,58 @@
-import { SYS } from '../data/system.js';
-import { text, slab } from './draw.js';
-
-/** HUD da luta: vida, Ginga, super, tempo, rounds, combo e a mecânica própria. */
-const W = SYS.VIEW_W;
-
-export function createHud() {
-  return { lag: [1, 1], combo: [{ n: 0, t: 0, dmg: 0 }, { n: 0, t: 0, dmg: 0 }] };
+import{SYS}from'../data/system.js';
+import{COMIC as P,comicIcon,comicPanel,comicText}from'./comic-ui.js';
+const W=SYS.VIEW_W,clamp=v=>Math.max(0,Math.min(1,v));
+export function createHud(){return{lag:[1,1],lastFrame:null,combo:[{n:0,t:0,dmg:0},{n:0,t:0,dmg:0}]};}
+export function hudValues(f){const meter=Math.max(0,Math.min(SYS.SUPER.max,f.super));return{hp:clamp(f.hp/f.maxHp),super:meter/SYS.SUPER.max,stocks:Math.floor(meter/SYS.SUPER.stock),ginga:Array.from({length:6},(_,k)=>clamp((f.ginga-k*SYS.GINGA.pip)/SYS.GINGA.pip))};}
+export function updateHud(st,hud){
+ if(hud.lastFrame===st.frame)return;hud.lastFrame=st.frame;
+ for(let i=0;i<2;i++){const f=st.f[i],hp=hudValues(f).hp,combo=hud.combo[i],opponent=st.f[1-i];
+  if(hp>=hud.lag[i])hud.lag[i]=hp;else if(f.comboHits<=0)hud.lag[i]+=(hp-hud.lag[i])*.055;
+  if(opponent.comboHits>=2){combo.n=opponent.comboHits;combo.dmg=opponent.comboDmg;combo.t=65;}else if(combo.t>0)combo.t--;
+ }
 }
-
-function bar(c, x, y, w, h, frac, color, flip, back = '#2a1a22') {
-  slab(c, x, y, w, h, back, 10);
-  if (frac <= 0) return;
-  const fw = w * Math.max(0, Math.min(1, frac));
-  slab(c, flip ? x + w - fw : x, y, fw, h, color, 10, null);
+function star(c,x,y,r,fill){c.beginPath();for(let i=0;i<10;i++){const a=-Math.PI/2+i*Math.PI/5,rr=i%2?r*.43:r;i?c.lineTo(x+Math.cos(a)*rr,y+Math.sin(a)*rr):c.moveTo(x+Math.cos(a)*rr,y+Math.sin(a)*rr);}c.closePath();c.fillStyle=fill;c.fill();c.strokeStyle=P.ink;c.lineWidth=2;c.stroke();}
+function clippedBar(c,x,y,w,h,value,fill){c.save();c.beginPath();c.moveTo(x+8,y);c.lineTo(x+w,y);c.lineTo(x+w-8,y+h);c.lineTo(x,y+h);c.closePath();c.clip();c.fillStyle=fill;c.fillRect(x,y,w*clamp(value),h);c.restore();}
+function portrait(c,id){
+ comicPanel(c,30,27,122,122,P.paper,14,3);c.save();c.beginPath();c.moveTo(46,32);c.lineTo(147,32);c.lineTo(134,144);c.lineTo(34,144);c.closePath();c.clip();
+ if(!comicIcon(c,id,30,27,122,122))comicText(c,id.slice(0,2).toUpperCase(),91,87,44,P.ink,'center');c.restore();
 }
-
-function side(c, st, hud, i) {
-  const f = st.f[i];
-  const flip = i === 1; // o lado direito esvazia para a direita
-  const x0 = i === 0 ? 150 : W - 150 - 700;
-  const hp = Math.max(0, f.hp / f.maxHp);
-  hud.lag[i] += (hp - hud.lag[i]) * (hud.lag[i] > hp ? 0.04 : 1);
-  if (st.f[i].comboHits > 0) hud.lag[i] = Math.max(hud.lag[i], hp); // segura a barra vermelha durante o combo
-
-  // retrato
-  const px = i === 0 ? 40 : W - 140;
-  slab(c, px, 40, 100, 100, f.ch.colors.top, 8);
-  c.fillStyle = f.ch.colors.skin;
-  c.beginPath();
-  c.arc(px + 50, 98, 30, 0, Math.PI * 2);
-  c.fill();
-  c.fillStyle = f.ch.colors.hair;
-  c.beginPath();
-  c.arc(px + 50, 82, 32, Math.PI, 0);
-  c.fill();
-  c.strokeStyle = '#12080c';
-  c.lineWidth = 4;
-  c.beginPath();
-  c.arc(px + 50, 98, 30, 0, Math.PI * 2);
-  c.stroke();
-
-  // vida
-  bar(c, x0, 52, 700, 40, hud.lag[i], '#e23b2e', !flip);
-  bar(c, x0, 52, 700, 40, hp, hp > 0.25 ? '#6fdc3a' : '#ffb02e', !flip, 'rgba(0,0,0,0)');
-  text(c, f.ch.name, i === 0 ? x0 + 6 : x0 + 694, 28, 34, '#fff', i === 0 ? 'left' : 'right');
-
-  // Ginga: 6 gomos
-  const G = SYS.GINGA;
-  for (let k = 0; k < 6; k++) {
-    const gx = i === 0 ? x0 + 96 + k * 46 : x0 + 700 - 96 - 40 - k * 46;
-    const fill = Math.max(0, Math.min(1, (f.ginga - k * G.pip) / G.pip));
-    slab(c, gx, 100, 40, 18, '#2a1a22', 5);
-    if (fill > 0) slab(c, gx, 100, 40 * fill, 18, f.burnout ? '#8a8a92' : '#35d6c0', 5, null);
-  }
-  text(c, f.burnout ? 'SEM FÔLEGO' : 'GINGA', i === 0 ? x0 + 4 : x0 + 696, 110, 20, f.burnout ? '#b0b0b8' : '#9ff5e8', i === 0 ? 'left' : 'right', '#12080c', 4);
-
-  // tontura: aparece quando o lutador está apanhando muito
-  if (f.dizzyM > 0 || f.state === 'dizzy') {
-    const dz = f.state === 'dizzy' ? 1 : f.dizzyM / SYS.DIZZY_METER.max;
-    const dx = i === 0 ? x0 + 96 : x0 + 700 - 96 - 270;
-    slab(c, dx, 124, 270, 10, '#2a1a22', 3);
-    slab(c, i === 0 ? dx : dx + 270 * (1 - dz), 124, 270 * dz, 10, dz > 0.75 ? '#ff5a4a' : '#ffe14a', 3, null);
-  }
-
-  // rounds
-  for (let k = 0; k < SYS.ROUNDS_TO_WIN; k++) {
-    const rx = i === 0 ? x0 + 660 - k * 34 : x0 + 14 + k * 34;
-    slab(c, rx, 98, 24, 22, k < f.rounds ? '#ffcf2a' : '#2a1a22', 4);
-  }
-
-  // super (embaixo)
-  const sx = i === 0 ? 150 : W - 150 - 420;
-  const stocks = Math.floor(f.super / SYS.SUPER.stock);
-  const part = (f.super % SYS.SUPER.stock) / SYS.SUPER.stock;
-  for (let k = 0; k < 3; k++) {
-    const bx = i === 0 ? sx + k * 142 : sx + 420 - 136 - k * 142;
-    const fr = k < stocks ? 1 : k === stocks ? part : 0;
-    slab(c, bx, 1000, 136, 30, '#2a1a22', 10);
-    if (fr > 0) slab(c, i === 0 ? bx : bx + 136 * (1 - fr), 1000, 136 * fr, 30, fr >= 1 ? '#ffcf2a' : '#ff7a2e', 10, null);
-  }
-  const nx = i === 0 ? 86 : W - 86;
-  c.save();
-  c.translate(nx, 1006);
-  c.rotate(-0.1);
-  text(c, String(stocks), 0, 0, 92, stocks >= 3 ? '#ffcf2a' : '#fff');
-  if (stocks >= 3) text(c, 'MAX', 0, 46, 28, '#ffcf2a');
-  c.restore();
-
-  // mecânica própria
-  const m = f.ch.mech?.hud?.(f, st.f[1 - i], st);
-  if (m) {
-    const mx = i === 0 ? 150 : W - 150;
-    const al = i === 0 ? 'left' : 'right';
-    text(c, m.ready && m.readyText ? `${m.label}: ${m.readyText}` : m.label, mx, 972, 24, m.ready ? '#ffe14a' : '#d8d0dc', al, '#12080c', 5);
-    const tw = 26;
-    for (let k = 0; k < (m.pips || 0); k++) {
-      const px2 = i === 0 ? mx + 190 + k * (tw + 6) : mx - 190 - tw - k * (tw + 6);
-      slab(c, px2, 962, tw, 20, k < m.value ? m.color || '#ffe14a' : '#2a1a22', 4);
-    }
-    if (m.text) text(c, m.text, i === 0 ? mx + 190 : mx - 190, 972, 24, '#fff', al, '#12080c', 5);
-  }
-
-  // combo sofrido pelo adversário = combo deste jogador
-  const o = st.f[1 - i];
-  const cb = hud.combo[i];
-  if (o.comboHits >= 2) {
-    cb.n = o.comboHits;
-    cb.dmg = o.comboDmg;
-    cb.t = 50;
-  } else if (cb.t > 0) cb.t--;
-  if (cb.t > 0 && cb.n >= 2) {
-    c.globalAlpha = Math.min(1, cb.t / 12);
-    const cx = i === 0 ? 170 : W - 170;
-    c.save();
-    c.translate(cx, 250);
-    c.rotate(i === 0 ? -0.08 : 0.08);
-    text(c, `${cb.n} GOLPES!`, 0, 0, 70, '#ffe14a', i === 0 ? 'left' : 'right');
-    text(c, `${cb.dmg} de dano`, 0, 52, 30, '#fff', i === 0 ? 'left' : 'right');
-    c.restore();
-    c.globalAlpha = 1;
-  }
+function geometry(c,st,hud,i,v){
+ const f=st.f[i];c.save();if(i){c.translate(W,0);c.scale(-1,1);}
+ comicPanel(c,22,23,848,126,P.ink,22,0);comicPanel(c,151,60,711,43,P.cyan,12,0);comicPanel(c,160,66,690,31,'#302b32',9,0);
+ clippedBar(c,163,69,681,25,hud.lag[i],P.red);
+ const gradient=c.createLinearGradient(163,0,844,0);gradient.addColorStop(0,v.hp<.25?'#ff944b':'#b6e446');gradient.addColorStop(1,v.hp<.25?P.red:'#f6e74d');
+ clippedBar(c,163,69,681,25,v.hp,gradient);c.fillStyle='#fff8';c.fillRect(174,71,Math.max(0,663*v.hp-8),3);
+ c.fillStyle=P.red;c.fillRect(162,105,78,3);
+ for(let k=0;k<6;k++){comicPanel(c,260+k*66,112,58,12,'#39343b',3,0);clippedBar(c,260+k*66,112,58,12,v.ginga[k],f.burnout?'#8e8b91':P.cyan);}
+ if(f.dizzyM>0||f.state==='dizzy')clippedBar(c,260,130,390,4,f.state==='dizzy'?1:f.dizzyM/SYS.DIZZY_METER.max,P.yellow);
+ for(let k=0;k<SYS.ROUNDS_TO_WIN;k++)star(c,800-k*34,123,12,k<f.rounds?P.yellow:'#534953');
+ comicPanel(c,24,981,735,66,P.ink,22,0);comicPanel(c,118,1000,601,29,'#39343b',10,0);
+ const superGradient=c.createLinearGradient(118,0,719,0);superGradient.addColorStop(0,'#d7ee51');superGradient.addColorStop(1,v.stocks===3?P.yellow:'#7bd46b');
+ clippedBar(c,118,1000,601,29,v.super,superGradient);
+ for(let k=1;k<3;k++){c.fillStyle=P.ink;c.fillRect(118+k*601/3-2,1000,4,29);}
+ c.fillStyle=P.red;c.fillRect(128,1034,575,4);
+ if(v.stocks===3){c.globalAlpha=.55+.2*Math.sin((st.frame??0)*.12);c.strokeStyle=P.yellow;c.lineWidth=2;c.strokeRect(123,996,587,36);c.globalAlpha=1;}
+ c.restore();
 }
-
-/** Desenha a HUD inteira. */
-export function drawHud(c, st, hud) {
-  side(c, st, hud, 0);
-  side(c, st, hud, 1);
-  slab(c, W / 2 - 62, 38, 124, 84, '#e02b2b', 10);
-  text(c, st.training ? '∞' : String(Math.max(0, Math.ceil(st.timer / SYS.FPS))), W / 2, 84, 70, '#fff');
-  slab(c, W / 2 - 80, 10, 160, 34, '#12080c', 8, null);
-  text(c, st.training ? 'TREINO' : `ROUND ${st.round}`, W / 2, 28, 26, '#ffcf2a', 'center', null);
-  if (st.phase === 'intro' && st.pf < SYS.INTRO_FRAMES - 10) {
-    const t = st.pf / SYS.INTRO_FRAMES;
-    c.save();
-    c.translate(W / 2, 460);
-    c.rotate(-0.06);
-    text(c, st.training ? 'TREINO' : `ROUND ${st.round}`, 0, 0, 170 * (1 + t * 0.1), '#fff', 'center', '#12080c', 22);
-    c.restore();
-  }
+function side(c,st,hud,i){
+ const f=st.f[i],v=hudValues(f),right=i===1,x=right?W-171:171,align=right?'right':'left';geometry(c,st,hud,i,v);
+ c.save();if(right){c.translate(W,0);c.scale(-1,1);}portrait(c,f.ch.id);c.restore();
+ comicText(c,f.ch.name,x,42,36,P.paper,align,652);
+ comicText(c,f.burnout?'SEM FÔLEGO':'GINGA',x,120,18,f.burnout?P.muted:P.paper,align,84);
+ const levelX=right?W-67:67;comicText(c,String(v.stocks),levelX,1008,78,v.stocks===3?P.yellow:P.paper,'center');comicText(c,'LEVEL',levelX,1052,17,P.paper,'center');
+ if(v.stocks===3)comicText(c,'MAX!',right?W-745:745,1017,44,P.yellow,right?'left':'right');
+ const m=f.ch.mech?.hud?.(f,st.f[1-i],st);if(m){const mx=right?W-150:150;
+  comicPanel(c,right?W-710:118,943,592,38,P.ink,8,0);
+  const label=m.ready&&m.readyText?`${m.label}: ${m.readyText}`:m.label;comicText(c,label,mx,962,23,m.ready?P.yellow:P.paper,align,330);
+  for(let k=0;k<(m.pips||0);k++){const px=right?W-500-k*31:500+k*31;comicPanel(c,px,953,23,15,k<m.value?m.color||P.yellow:'#49404a',4,0);}
+  if(m.text)comicText(c,m.text,right?W-480:480,962,22,P.paper,align,185);
+ }
+ const cb=hud.combo[i];if(cb.t>0&&cb.n>=2){c.save();c.globalAlpha=Math.min(1,cb.t/12);const cx=right?W-160:160;
+  comicText(c,String(cb.n),cx,260,112,P.yellow,align);comicText(c,'ACERTOS!',right?cx-125:cx+125,273,40,P.paper,align);comicText(c,cb.dmg+' DE DANO',cx,332,28,P.paper,align);c.restore();}
+}
+export function drawHud(c,st,hud){
+ updateHud(st,hud);side(c,st,hud,0);side(c,st,hud,1);
+ c.beginPath();c.moveTo(915,22);c.lineTo(1006,22);c.lineTo(1033,73);c.lineTo(1007,136);c.lineTo(913,136);c.lineTo(887,73);c.closePath();c.fillStyle=P.red;c.fill();c.strokeStyle=P.ink;c.lineWidth=7;c.stroke();
+ comicText(c,st.training?'∞':String(Math.max(0,Math.ceil(st.timer/SYS.FPS))),960,77,76,P.paper,'center');comicText(c,st.training?'TREINO':'ROUND '+st.round,960,153,23,P.paper,'center');
+ if(st.phase==='intro'&&st.pf<SYS.INTRO_FRAMES-10){comicPanel(c,620,360,680,150,P.red,35,7);comicText(c,st.training?'TREINO':'ROUND '+st.round,960,440,113,P.paper,'center');}
 }

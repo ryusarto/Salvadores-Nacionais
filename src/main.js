@@ -6,10 +6,14 @@ import { loadBelemStage, belemStageStatus } from './render/belem-stage.js';
 import { configureStageAudio, stageAudioStatus, sfx } from './ui/audio.js';
 import { createTouch } from './ui/touch.js';
 import mdep from './data/characters/mdep.js';
+import {configureFighterMaterial,fighterMaterialStatus} from './render/fighter-material.js';
+import {loadComicUi,comicUiStatus} from './render/comic-ui.js';
 
 const canvas = document.getElementById('game');
 const devices = createDevices(window);
 const q = new URLSearchParams(location.search);
+configureFighterMaterial(q.get('material')!=='off');
+window.__fighterMaterialStatus=fighterMaterialStatus;
 const touch = createTouch(devices);
 if (q.has('touch')) touch.show();
 const app = createApp(canvas, devices, { boxes: q.has('boxes'), autoplay: q.has('auto') });
@@ -24,6 +28,8 @@ addEventListener('resize', fit);
 addEventListener('touchstart', () => setTimeout(fit, 50), { once: true, passive: true });
 fit();
 window.__app = app; // acesso para testes automáticos
+window.__comicUiStatus=comicUiStatus;
+const uiReady=window.__COMIC_UI?loadComicUi(window.__COMIC_UI):Promise.resolve();
 
 // Sprites embutidos pelo empacotador (production/sprites/final). ?sprites=off força o manequim.
 const packs = q.get('sprites') === 'off' ? {} : window.__SPRITES || {};
@@ -51,4 +57,4 @@ Promise.all(Object.entries(packs).map(([id, sheets]) => {
     trueAlpha: tenFrame || sixFrame, frames: tenFrame ? 10 : sixFrame ? 6 : 4, cellSize: sixFrame ? 500 : tenFrame ? 768 : undefined,
     preload: effects ? [] : ['parado', 'andar', 'golpe-5L'],
   });
-})).then(() => app.run());
+})).then(()=>uiReady).then(() => app.run());

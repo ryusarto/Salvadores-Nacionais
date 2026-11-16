@@ -1,11 +1,9 @@
 import { SYS } from '../data/system.js';
 import { HEROES, BOSSES } from '../data/characters/index.js';
 import { createMatch, step } from '../core/match.js';
-import { createFighter } from '../core/fighter.js';
 import { createBrain, aiInput } from '../core/ai.js';
 import { EMPTY_INPUT } from '../core/input.js';
 import { buildStage, drawStage } from '../render/stage.js';
-import { drawBelemPresentation } from '../render/belem-stage.js';
 import { drawEffect } from '../render/sprites.js';
 import { drawFighter, drawBoxes } from '../render/mannequin.js';
 import { createFx, fxEvents, fxUpdate, fxDrawBack, fxDrawFront, fxDrawScreen, drawEntities } from '../render/fx.js';
@@ -15,6 +13,8 @@ import { readInput, takePressed, pollPad, glyphs, rumble, remapPad, resetPad, PS
 import { COMBOS } from '../data/combos.js';
 import { createTracker, trackCombo, createRunner, runnerInput, runnerDone, stepLabel } from '../core/combos.js';
 import { audioEvents, sfx, setStageAudioActive } from './audio.js';
+import {drawComicScreen,drawComicPause} from './comic-screens.js';
+import {comicBackground} from '../render/comic-ui.js';
 
 const W = SYS.VIEW_W;
 const H = SYS.VIEW_H;
@@ -36,6 +36,7 @@ const KEY_LABEL = { c1: '→ ← + Leve', c2: '↓ → + Médio', '5S': 'Especia
 /** Cria o jogo sobre um canvas. Retorna o objeto do app (útil para testes). */
 export function createApp(canvas, devices, opts = {}) {
   const c = canvas.getContext('2d');
+  c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';
   const app = {
     screen: 'title', cur: 0, mode: 'story', hero: 0, foe: null,
     st: null, brain: null, fx: createFx(), hud: createHud(), layers: buildStage(),
@@ -385,162 +386,8 @@ export function createApp(canvas, devices, opts = {}) {
     }
   }
 
-  function backdrop(tone = '#1a0d14') {
-    c.fillStyle = tone;
-    c.fillRect(0, 0, W, H);
-    halftone(c, 0, 0, W, 420, 'rgba(224,43,43,.28)', 22, 8);
-    slab(c, -60, 820, W + 120, 300, '#12080c', 60, null);
-    c.strokeStyle = 'rgba(255,207,42,.12)';
-    c.lineWidth = 8;
-    for (let i = 0; i < 14; i++) {
-      c.beginPath();
-      c.moveTo(i * 170 - 200 + ((app.frame * 0.6) % 170), 0);
-      c.lineTo(i * 170 - 600 + ((app.frame * 0.6) % 170), H);
-      c.stroke();
-    }
-  }
-
-  function logo(x, y, s = 1) {
-    c.save();
-    c.translate(x, y);
-    c.rotate(-0.05);
-    const g = c.createLinearGradient(0, -80 * s, 0, 120 * s);
-    g.addColorStop(0, '#ffffff');
-    g.addColorStop(0.5, '#ffe14a');
-    g.addColorStop(1, '#2fbf4a');
-    text(c, 'SALVADORES', 0, -62 * s, 150 * s, g, 'center', '#12080c', 24 * s);
-    text(c, 'NACIONAIS', 20 * s, 74 * s, 170 * s, g, 'center', '#12080c', 24 * s);
-    c.restore();
-  }
-
-  function preview(ch, x, y, scale, face = 1) {
-    const f = createFighter(ch, 0, 0);
-    f.face = face;
-    c.save();
-    c.translate(x, y);
-    c.scale(scale, scale);
-    c.translate(0, -SYS.GROUND_Y);
-    drawFighter(c, f, app.frame);
-    c.restore();
-  }
-
-  function controls(y = 1040) {
-    if (app.touchUI) return text(c, 'Direcional move · LEVE confirma · MÉDIO volta · II pausa · LEVE+MÉDIO agarrão', W / 2, y - 6, 30, '#d8d0dc', 'center', '#12080c', 5);
-    text(c, 'WASD/SETAS mover   J leve · K médio · L forte · I especial   U ginga · O agarrão · P super   ENTER confirma · ESC volta', W / 2, y, 26, '#d8d0dc', 'center', '#12080c', 5);
-  }
-
-  function drawTitle() {
-    backdrop();
-    logo(W / 2, 300, 1.15);
-    text(c, 'TURNÊ PELO BRASIL — BUILD DE COMBATE', W / 2, 505, 34, '#ffcf2a');
-    MENU.forEach(([id, name], i) => {
-      const sel = i === app.cur;
-      const label = id === 'diff' ? `◀ ${name}: ${SYS.DIFFICULTY[app.diff].name} ▶` : name;
-      slab(c, W / 2 - 340, 560 + i * 80, 680, 66, sel ? '#e02b2b' : '#2a1a22', 26);
-      text(c, (sel && id !== 'diff' ? '▶ ' : '') + label, W / 2, 594 + i * 80, 44, sel ? '#fff' : '#b8a8b4');
-    });
-    controls();
-  }
-
-  function drawSelect() {
-    backdrop('#160b12');
-    const ch = HEROES[app.hero];
-    slab(c, 60, 50, 760, 90, '#e02b2b', 30);
-    text(c, 'SELECIONE SEU SALVADOR', 440, 96, 58, '#fff');
-    preview(ch, 440, 850, 1.2);
-    slab(c, 100, 880, 680, 90, '#12080c', 26);
-    text(c, ch.name, 440, 926, 60, '#ffe14a');
-    // grade
-    const cols = 4;
-    HEROES.forEach((h, i) => {
-      const x = 940 + (i % cols) * 228;
-      const y = 80 + Math.floor(i / cols) * 250;
-      const sel = i === app.hero;
-      slab(c, x, y, 200, 220, sel ? '#ffcf2a' : '#2a1a22', 10);
-      c.save();
-      c.beginPath();
-      c.rect(x - 6, y + 4, 212, 212);
-      c.clip();
-      preview(h, x + 100, y + 330, 0.62);
-      c.restore();
-      slab(c, x - 4, y + 176, 208, 44, sel ? '#e02b2b' : '#12080c', 8);
-      text(c, h.name.split(',')[0], x + 100, y + 199, 28, '#fff', 'center', '#12080c', 5);
-    });
-    // ficha
-    slab(c, 940, 596, 900, 320, '#12080c', 20);
-    text(c, `ESTILO: ${ch.style.toUpperCase()}`, 980, 646, 36, '#ffcf2a', 'left');
-    text(c, `MECÂNICA: ${ch.mechName}`, 980, 700, 40, '#35d6c0', 'left');
-    wrap(ch.mechDesc, 980, 748, 820, 28, '#fff');
-    text(c, `SUPER: ${ch.moves.SA3.name.toUpperCase()}`, 980, 880, 36, '#ff7a2e', 'left');
-    text(c, MENU.find((m) => m[0] === app.mode)[1], 440, 168, 34, '#ffcf2a');
-    controls();
-  }
-
-  const P_COL = ['#ffcf2a', '#35d6c0'];
-
-  function drawJoin() {
-    backdrop('#160b12');
-    slab(c, 60, 50, 900, 90, '#e02b2b', 30);
-    text(c, 'VERSUS 2 JOGADORES', 510, 96, 58, '#fff');
-    text(c, 'Cada jogador aperta ✕ no seu controle (ou Enter no teclado) para entrar.', W / 2, 220, 36, '#fff');
-    for (let i = 0; i < 2; i++) {
-      const x = i === 0 ? 260 : 1060;
-      const src = app.slots[i];
-      slab(c, x, 300, 600, 420, src !== null ? '#2a1a22' : '#1a1016', 30, P_COL[i]);
-      text(c, `JOGADOR ${i + 1}`, x + 300, 380, 64, P_COL[i]);
-      if (src !== null) {
-        text(c, srcName(src), x + 300, 500, 30, '#fff');
-        text(c, 'PRONTO!', x + 300, 600, 70, '#7dff8a');
-      } else {
-        const blink = Math.floor(app.frame / 30) % 2;
-        text(c, blink ? 'APERTE ✕' : 'AGUARDANDO…', x + 300, 540, 56, '#d8d0dc');
-      }
-    }
-    const n = Object.keys(devices.pads).length;
-    text(c, n ? `${n} controle(s) conectado(s)` : 'Nenhum controle conectado: ligue os controles por USB ou Bluetooth e aperte um botão em cada um.', W / 2, 820, 32, n >= 2 ? '#7dff8a' : '#ffcf2a');
-    text(c, '○ sai da vaga (com as duas vagas vazias, volta ao menu)   ·   ESC volta ao menu', W / 2, 1040, 30, '#d8d0dc');
-  }
-
-  function drawSelect2() {
-    backdrop('#160b12');
-    slab(c, W / 2 - 420, 30, 840, 80, '#e02b2b', 30);
-    text(c, 'ESCOLHAM SEUS SALVADORES', W / 2, 72, 50, '#fff');
-    const picks = [HEROES[app.hero], HEROES[app.hero2]];
-    for (let i = 0; i < 2; i++) {
-      const ch = picks[i];
-      const cx = i === 0 ? 300 : W - 300;
-      preview(ch, cx, 860, 1.05, i === 0 ? 1 : -1);
-      slab(c, cx - 270, 880, 540, 80, '#12080c', 24, P_COL[i]);
-      text(c, ch.name, cx, 920, 42, P_COL[i]);
-      text(c, `J${i + 1} · ${srcName(app.slots[i])}`, cx, 160, 26, P_COL[i]);
-      if (app.ready[i]) {
-        c.save();
-        c.translate(cx, 500);
-        c.rotate(-0.1);
-        text(c, 'PRONTO!', 0, 0, 90, '#7dff8a', 'center', '#12080c', 14);
-        c.restore();
-      }
-    }
-    // grade central, com os dois cursores
-    const cols = 4;
-    HEROES.forEach((h, i) => {
-      const x = 590 + (i % cols) * 190;
-      const y = 200 + Math.floor(i / cols) * 230;
-      const s1 = i === app.hero;
-      const s2 = i === app.hero2;
-      slab(c, x, y, 170, 200, s1 && s2 ? '#7dff8a' : s1 ? P_COL[0] : s2 ? P_COL[1] : '#2a1a22', 10);
-      c.save();
-      c.beginPath();
-      c.rect(x - 6, y + 4, 182, 192);
-      c.clip();
-      preview(h, x + 85, y + 300, 0.55);
-      c.restore();
-      slab(c, x - 4, y + 160, 178, 40, '#12080c', 8);
-      text(c, h.name.split(',')[0], x + 85, y + 180, 24, '#fff', 'center', '#12080c', 5);
-      if (s1) text(c, 'J1', x + 20, y + 24, 28, P_COL[0], 'center', '#12080c', 5);
-      if (s2) text(c, 'J2', x + 150, y + 24, 28, P_COL[1], 'center', '#12080c', 5);
-    });
-    text(c, 'Cada um move o seu cursor   ·   ✕ confirma   ·   ○ desfaz', W / 2, 1040, 30, '#d8d0dc');
+  function backdrop() {
+    comicBackground(c,app.frame,true);
   }
 
   function wrap(str, x, y, maxW, size, color) {
@@ -556,38 +403,6 @@ export function createApp(canvas, devices, opts = {}) {
       line += w + ' ';
     }
     text(c, line.trim(), x, yy, size, color, 'left', '#12080c', 5);
-  }
-
-  function drawVs() {
-    backdrop('#1c0c10');
-    const stageArtwork=drawBelemPresentation(c, 'carregamento', 0, 0, W, H);
-    if (stageArtwork) {
-      c.fillStyle='rgba(15,10,29,.55)';c.fillRect(0,0,W,H);
-    }
-    const a = HEROES[app.hero];
-    const b = app.foe;
-    const t = Math.min(1, app.vsT / 14);
-    preview(a, 430 - (1 - t) * 500, 940, 1.5, 1);
-    preview(b, W - 430 + (1 - t) * 500, 940, 1.5, -1);
-    c.save();
-    c.translate(W / 2, 470);
-    c.rotate(-0.08);
-    text(c, 'VS', 0, 0, 300, '#ffcf2a', 'center', '#12080c', 34);
-    c.restore();
-    slab(c, 80, 60, 700, 90, '#12080c', 26);
-    text(c, a.name, 430, 106, 56, '#fff');
-    slab(c, W - 780, 60, 700, 90, '#e02b2b', 26);
-    text(c, b.name, W - 430, 106, 56, '#fff');
-    if (app.mode === 'vs2') {
-      text(c, 'JOGADOR 1', 430, 170, 34, '#ffcf2a');
-      text(c, 'JOGADOR 2', W - 430, 170, 34, '#35d6c0');
-    }
-    if (stageArtwork) drawBelemPresentation(c, 'titulo', W/2-210, 790, 420, 105);
-    else if (app.mode === 'story' && b.place) {
-      slab(c, W / 2 - 330, 800, 660, 80, '#ffcf2a', 22);
-      text(c, `CAPÍTULO 1 — ${b.place}`, W / 2, 842, 46, '#12080c', 'center', null);
-    }
-    text(c, devices.kind === 'controle' ? '✕ para começar' : 'ENTER para começar', W / 2, 1010, 34, '#d8d0dc');
   }
 
   function drawFight() {
@@ -636,26 +451,20 @@ export function createApp(canvas, devices, opts = {}) {
     if (app.mode === 'training') {
       drawTrial();
       drawInputLog();
-      text(c, `F1 caixas: ${app.boxes ? 'SIM' : 'NÃO'}   F2 boneco: ${DUMMY[app.dummy]}   F3 nível CPU: ${app.level + 1}`, W / 2, 160, 26, '#fff', 'center', '#12080c', 5);
+      text(c, `F1 caixas: ${app.boxes ? 'SIM' : 'NÃO'}   F2 boneco: ${DUMMY[app.dummy]}   F3 nível CPU: ${app.level + 1}`, W / 2, 188, 24, '#fff', 'center', '#12080c', 4);
       const m = a.move;
-      if (m) text(c, `${m.name}  preparo ${m.startup} · ativo ${m.active} · recuperação ${m.recovery}`, W / 2, 196, 24, '#ffe14a', 'center', '#12080c', 5);
+      if (m) text(c, `${m.name}  preparo ${m.startup} · ativo ${m.active} · recuperação ${m.recovery}`, W / 2, 222, 22, '#ffe14a', 'center', '#12080c', 4);
     }
     if (app.paused) drawPause();
   }
 
   function drawPause() {
-    c.fillStyle = 'rgba(10,4,12,.78)';
-    c.fillRect(0, 0, W, H);
+    c.fillStyle = 'rgba(23,19,27,.9)';
+    c.fillRect(0,0,W,H);
     if (app.sub === 'moves') return drawMoveList();
     if (app.sub === 'combos') return drawComboList();
     if (app.sub === 'controls') return drawControls();
-    slab(c, W / 2 - 220, 190, 440, 100, '#e02b2b', 30);
-    text(c, 'PAUSE', W / 2, 242, 80, '#fff');
-    PAUSE.forEach((label, i) => {
-      const sel = i === app.pcur;
-      slab(c, W / 2 - 320, 330 + i * 92, 640, 72, sel ? '#ffcf2a' : '#2a1a22', 24);
-      text(c, label, W / 2, 367 + i * 92, 46, sel ? '#12080c' : '#d8d0dc', 'center', sel ? null : '#12080c');
-    });
+    drawComicPause(c,app,PAUSE);
   }
 
   function drawMoveList() {
@@ -801,44 +610,14 @@ export function createApp(canvas, devices, opts = {}) {
     c.globalAlpha = 1;
   }
 
-  function drawResult() {
-    backdrop('#1c0c10');
-    const st = app.st;
-    const win = st.winner === 0;
-    const me = st.f[0];
-    preview(win || st.winner === null ? me.ch : st.f[1].ch, 430, 940, 1.5, 1);
-    c.save();
-    c.translate(1180, 250);
-    c.rotate(-0.06);
-    if (app.mode === 'vs2') text(c, st.winner === null ? 'EMPATE' : `JOGADOR ${st.winner + 1} VENCE!`, 0, 0, 150, st.winner === 1 ? '#35d6c0' : '#ffcf2a', 'center', '#12080c', 22);
-    else text(c, win ? 'VITÓRIA!' : st.winner === null ? 'EMPATE' : 'DERROTA', 0, 0, 210, win ? '#ffcf2a' : '#e02b2b', 'center', '#12080c', 26);
-    c.restore();
-    const s = app.stats;
-    const rows = [['TEMPO DE LUTA', `${Math.round(s.frames / 60)} s`], ['COMBO MÁXIMO', `${s.maxCombo} golpes`], ['DANO CAUSADO', String(s.dmg)], ['ROUNDS', `${st.f[0].rounds} x ${st.f[1].rounds}`]];
-    rows.forEach(([k, v], i) => {
-      text(c, k, 860, 440 + i * 62, 42, '#d8d0dc', 'left');
-      text(c, v, 1560, 440 + i * 62, 46, '#fff', 'right');
-    });
-    RESULT.forEach((label, i) => {
-      const sel = i === app.cur;
-      slab(c, 900, 720 + i * 88, 620, 70, sel ? '#e02b2b' : '#2a1a22', 22);
-      text(c, label, 1210, 756 + i * 88, 44, sel ? '#fff' : '#b8a8b4');
-    });
-  }
-
   function render() {
+    if(document.body.dataset.screen!==app.screen)document.body.dataset.screen=app.screen;
     setStageAudioActive(app.screen === 'fight' && !app.paused && !document.hidden);
     c.setTransform(canvas.width / W, 0, 0, canvas.height / H, 0, 0);
-    if (app.screen === 'title') drawTitle();
-    else if (app.screen === 'select') drawSelect();
-    else if (app.screen === 'join') drawJoin();
-    else if (app.screen === 'select2') drawSelect2();
-    else if (app.screen === 'vs') drawVs();
-    else if (app.screen === 'fight') drawFight();
-    else if (app.screen === 'controls') {
-      backdrop();
-      drawControls();
-    } else drawResult();
+    if(drawComicScreen(c,app,{menu:MENU,srcName})){drawNotice();return;}
+    if (app.screen === 'fight') drawFight();
+    else if (app.screen === 'controls') {backdrop();drawControls();}
+    else backdrop();
     drawNotice();
   }
 

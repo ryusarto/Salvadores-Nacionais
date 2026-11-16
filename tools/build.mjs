@@ -31,6 +31,11 @@ if (existsSync(spritesDir)) {
 }
 // Cenários pintados: production/stages/<fase>.(jpg|webp|png)
 const stages = {};
+let uiPack=null;
+if(existsSync('production/ui/comic-v1/manifest.json')){
+  uiPack=JSON.parse(readFileSync('production/ui/comic-v1/manifest.json'));
+  for(const a of Object.values(uiPack.assets)){const p=join('production/ui/comic-v1',a.path);const mime=a.kind==='font'?'font/ttf':'image/webp';a.url=externalAssets?assetURL(p):`data:${mime};base64,${readFileSync(p).toString('base64')}`;}
+}
 const stagePacks = {};
 const packPath='production/stages/belem/manifest.json';
 if(existsSync(packPath)){
@@ -52,7 +57,7 @@ if (existsSync('production/stages')) {
   }
 }
 const out = await build({ entryPoints: ['src/main.js'], bundle: true, format: 'iife', minify: process.argv.includes('--min'), write: false, target: 'es2020' });
-const js = `window.__SPRITES=${JSON.stringify(sprites)};window.__STAGES=${JSON.stringify(stages)};window.__STAGEPACKS=${JSON.stringify(stagePacks)};\n${out.outputFiles[0].text}`.replace(/<\/script>/g, '<\\/script>');
+const js = `window.__SPRITES=${JSON.stringify(sprites)};window.__STAGES=${JSON.stringify(stages)};window.__STAGEPACKS=${JSON.stringify(stagePacks)};window.__COMIC_UI=${JSON.stringify(uiPack)};\n${out.outputFiles[0].text}`.replace(/<\/script>/g, '<\\/script>');
 const html = readFileSync('src/index.html', 'utf8').replace('/*__BUNDLE__*/', () => js);
 mkdirSync('dist', { recursive: true });
 writeFileSync(outFile, html);

@@ -29,8 +29,8 @@ deitadas ficam naturalmente mais baixas, mantendo as proporções anatômicas.
 
 O apoio fica em (250,456) na célula de 500px. Não há normalização individual
 pela altura de cada pose, nem deformação de membros. O jogo conserva seu
-sistema de coordenadas e usa `spriteScale: 0.92` para combinar o porte com o
-restante do elenco.
+sistema de coordenadas e usa `spriteScale: 0.7574`, calibrado para cerca de
+470px de altura em pé junto do restante do elenco.
 
 O fundo é alpha real, não uma grade pintada. A importação rejeita fontes com
 alpha de fundo nos cantos; ruído residual de exportação até 3/255 é zerado.

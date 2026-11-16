@@ -52,7 +52,7 @@ export default {
   moves,
   // Qual tira do kit de sprites cada animação usa (production/sprites/final/ryuchi)
   spriteAlias: {},
-  spriteProfile: 'six-frame', spriteScale: 0.92, spriteRecovery: true,
+  spriteProfile: 'six-frame', spriteScale: 0.7631, spriteRecovery: true,
   spriteFacingPacks: { right: 'ryuchi', left: 'ryuchi-esquerda' },
   spriteStatePhases: true, spritePhasedMoves: Object.keys(moves),
   spriteHitFrames: { SA1: [2, 4], SA3: [2, 3, 2, 3, 4] },

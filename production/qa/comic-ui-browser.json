@@ -1,0 +1,36 @@
+{
+  "ui": {
+    "loaded": true,
+    "images": 20,
+    "errors": [],
+    "portraits": 9,
+    "icons": 9
+  },
+  "material": {
+    "enabled": true,
+    "available": true,
+    "failed": false,
+    "processed": 27
+  },
+  "keyboardFlow": {
+    "screen": "fight",
+    "mode": "training",
+    "character": "chapuh",
+    "paused": false
+  },
+  "selectionAnimated": true,
+  "reducedMotionStatic": true,
+  "allNinePortraitsInGallery": 9,
+  "directions": [
+    "7645406d200beb85c86e522efd03bbff37bad0af66fd80a603aadea43402c37b",
+    "b07d47e1a50ca1dcb83255c683c2375a47aad085808062ac215acb798c873fed"
+  ],
+  "soundButtonBelowHud": true,
+  "performance": {
+    "medianMs": 8.799999999813735,
+    "p95Ms": 12.199999999254942
+  },
+  "mobileOverflow": false,
+  "galleryOverflow": false,
+  "errors": []
+}

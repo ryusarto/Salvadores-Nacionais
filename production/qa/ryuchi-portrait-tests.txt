@@ -1,0 +1,15 @@
+✔ The opening poster includes all eight heroes without duplicates (3.106449ms)
+✔ The whole roster has matching original portrait and HUD icon deliveries (33.494517ms)
+✔ Approved fighters share the same measured standing height and ground plane (622.642119ms)
+✔ HUD meters clamp safely and preserve partial stock and partial Ginga (3.105699ms)
+✔ Damage trail holds during a combo and animation advances once per game frame (0.856411ms)
+✔ Render material leaves original images available when disabled or outside a browser (0.339137ms)
+✔ Body-attached charge and evasion art follow the corrected character scale (2.078129ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 909.272136

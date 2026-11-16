@@ -1,5 +1,6 @@
 import { animFor, CELL, FOOT } from './anim.js';
 import { spriteProgress } from './sprite-timing.js';
+import { applyFighterMaterial } from './fighter-material.js';
 
 /**
  * Leitor de sprites. Cada personagem pode registrar tiras de imagem com os
@@ -27,7 +28,7 @@ function loadStrip(s) {
   s.loading = new Promise(resolve => {
     const img = new Image();
     img.onload = () => {
-      s.cv = s.trueAlpha ? img : keyOut(img);
+      s.cv = applyFighterMaterial(s.trueAlpha ? img : keyOut(img),s.id);
       s.n = Math.max(1, Math.round(img.naturalWidth / img.naturalHeight));
       s.size = img.naturalHeight;
       s.used = ++access;
