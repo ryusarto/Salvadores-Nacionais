@@ -6,7 +6,8 @@ import { hurtbox, worldBox, overlap, setState, emit } from './fighter.js';
  * Entidades: projéteis, marcas no chão, poças e ajudantes.
  * behavior: 'fly' (voa e acerta), 'strike' (espera `delay` e cai), 'puddle' (faz escorregar),
  * 'patch' (armadilha parada no chão), 'barrier' (parede no chão: o rival não passa a pé,
- * só pulando; golpes do rival a derrubam; com `trap`, quem encostar fica preso).
+ * só pulando; golpes do rival a derrubam; com `trap`, quem encostar fica preso), 'decoy'
+ * (cópia falsa: não segura ninguém, mas engole o golpe ou projétil do rival que a acertar).
  */
 export function spawnEntity(st, f, def) {
   const d = typeof def.make === 'function' ? def.make(st, f) : def;
@@ -38,6 +39,37 @@ function damageBarrier(st, e) {
   e.dead = true;
   emit(st, { t: 'pop', str: e.breakText || 'DERRUBOU!', x: e.x, y: e.h + 60, color: '#ffcf2a', size: 44 });
   emit(st, { t: 'barrierDown', kind: e.kind, x: e.x });
+}
+
+function popDecoy(st, e) {
+  e.dead = true;
+  emit(st, { t: 'pop', str: e.popText || 'FAKE!', x: e.x, y: 520, color: '#ff8a3a', size: 46 });
+  emit(st, { t: 'decoy', x: e.x });
+}
+
+/** Cópia falsa: engole o golpe do rival que a acertar (o golpe é gasto) e some. */
+function updateDecoy(st, e, target) {
+  const box = { l: e.x - e.w / 2, r: e.x + e.w / 2, b: 0, t: e.h };
+  if (target.state === 'attack') {
+    for (let i = 0; i < target.move.hits.length; i++) {
+      const h = target.move.hits[i];
+      if (target.hitDone[i] || target.sf < h.from || target.sf > h.to) continue;
+      if (overlap(worldBox(target, h.box), box)) {
+        target.hitDone = target.move.hits.map(() => true);
+        target.connected = 'block';
+        popDecoy(st, e);
+        return;
+      }
+    }
+  }
+  for (const p of st.ents) {
+    if (p.dead || p.owner === e.owner || p.behavior !== 'fly' || !p.hit || p.delay) continue;
+    if (overlap(entBox(p), box)) {
+      p.dead = true;
+      popDecoy(st, e);
+      return;
+    }
+  }
 }
 
 /** Parede no chão: segura o rival, apanha dos golpes dele e pode prender quem encostar. */
@@ -105,6 +137,10 @@ export function updateEntities(st) {
     const tb = worldBox(target, hurtbox(target));
     if (e.behavior === 'barrier') {
       updateBarrier(st, e, target);
+      continue;
+    }
+    if (e.behavior === 'decoy') {
+      updateDecoy(st, e, target);
       continue;
     }
     if (e.behavior === 'puddle') {

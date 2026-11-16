@@ -14,7 +14,7 @@ export const CHAPTERS = [
   { id: 'banheiros', n: 3, boss: 'pavanassi', bossName: 'PAVANASSI', place: 'BELÉM — BANHEIROS QUÍMICOS', ready: true },
   { id: 'aeroporto', n: 4, boss: 'fujao', bossName: 'FUJÃO', place: 'AEROPORTO', ready: true },
   { id: 'mansao', n: 5, boss: 'pai-fujao', bossName: 'PAI DO FUJÃO', place: 'MANSÃO', ready: true },
-  { id: 'washington', n: 6, boss: 'laranjao', bossName: 'LARANJÃO', place: 'WASHINGTON, D.C.', ready: false },
+  { id: 'washington', n: 6, boss: 'laranjao', bossName: 'LARANJÃO', place: 'WASHINGTON, D.C.', ready: true },
   { id: 'inferno', n: 7, boss: 'djabo', bossName: 'DJABO', place: 'INFERNO', ready: false },
 ];
 
@@ -70,6 +70,16 @@ export const RIVALS = {
   chapuh: ['belga', 'dney'],
   dney: ['mdep', 'franco'],
   },
+  washington: {
+  franco: ['dney', 'mdep'],
+  belga: ['trunks', 'chapuh'],
+  majis: ['belga', 'franco'],
+  trunks: ['ryuchi', 'majis'],
+  ryuchi: ['chapuh', 'dney'],
+  mdep: ['franco', 'belga'],
+  chapuh: ['mdep', 'majis'],
+  dney: ['ryuchi', 'trunks'],
+  },
 };
 
 /** Páginas de chegada de cada capítulo. {hero} é trocado pelo nome do herói escolhido. */
@@ -104,6 +114,12 @@ export const OPENING = {
   'Na frente do portão, os Salvadores montam o som. A roda de rima chama a cidade inteira para a calçada.',
   'Quem vencer a roda entra primeiro. {hero} pega o microfone.',
   ],
+  washington: [
+  'Os Salvadores atravessam o continente. A turnê contra a fome chega a Washington, D.C.',
+  'Na frente do palácio, as bandeiras estão rasgadas: o Laranjão taxou até o vento.',
+  'Mas o rap atravessa fronteira sem passaporte. Gente do mundo inteiro aparece no gramado com panela, tambor e microfone.',
+  'A roda de rima começa em três línguas. {hero} pega o microfone.',
+  ],
 };
 
 /** Frase do narrador antes de cada batalha de rima, por capítulo. */
@@ -113,6 +129,7 @@ export const RHYME_INTRO = {
   banheiros: 'BATALHA DE RIMA — quem vencer arranca a primeira placa.',
   aeroporto: 'BATALHA DE RIMA — no saguão do aeroporto, quem vencer abre caminho até a pista.',
   mansao: 'BATALHA DE RIMA — na frente da mansão, quem vencer entra primeiro.',
+  washington: 'BATALHA DE RIMA — no gramado do palácio, quem vencer encara o Laranjão.',
 };
 
 /** Frase de cada herói quando entra numa batalha de rima. */
@@ -184,6 +201,13 @@ export const BOSS_TALK = {
     { who: 'pai-fujao', say: 'Ninguém encosta em mim. Segurança! ALÔ? Manda todo mundo!' },
     { who: null, say: 'DICA: os 3 primeiros golpes de cada combo não fazem dano (Foro Privilegiado). Faça combos longos, agarre ou use o super. Empurre-o para fora da área da tornozeleira: ela dá choque.' },
   ],
+  laranjao: [
+    { who: null, say: 'As portas do palácio se abrem. De terno azul, gravata vermelha e topete dourado, sai o Laranjão.' },
+    { who: 'laranjao', say: 'Comida de graça para o mundo inteiro? Isso é a pior ideia da história. Talvez a pior de todas.' },
+    { who: '$hero', say: 'Acabou, Laranjão. A fome não paga tarifa.' },
+    { who: 'laranjao', say: 'Tudo paga tarifa. Até você. E se reclamar: YOU’RE FIRED!' },
+    { who: null, say: 'DICA: gastar Ginga e Super dá armadura para ele (Tarifa Suprema): use com cuidado. Nas Fake News, só o verdadeiro tem sombra. No You’re Fired!, pule ou defenda.' },
+  ],
 };
 
 /** Depois de vencer o chefe. `hero` é trocado pelo nome do herói. */
@@ -217,5 +241,11 @@ export const CLOSING = {
     'A cidade entra pelo portão aberto. A mansão vira cozinha comunitária, e o lustre ilumina o maior sarau que aquela sala já viu, com {hero} no centro.',
     'Encurralado, o velho entrega quem está acima de todos: "Eu só obedeço. As ordens vêm dos Estados Unidos. Do Laranjão."',
     'Para salvar o mundo, os Salvadores precisam atravessar o continente. Próxima parada: Washington, D.C.',
+  ],
+  laranjao: [
+    'A muralha dourada cai tijolo por tijolo. As manchetes falsas se apagam uma por uma. O Laranjão fica sem armadura e sem plateia.',
+    'No gramado, o povo do mundo inteiro come junto. {hero} rima em português, e todo mundo canta o refrão.',
+    'Derrotado, o Laranjão aponta para o chão e ri: "Vocês acham que mandam aqui? Quem manda está lá embaixo."',
+    'O chão do gramado racha. Sobe um cheiro de enxofre. Última parada da turnê: o inferno do Djabo.',
   ],
 };

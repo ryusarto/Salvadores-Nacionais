@@ -1,6 +1,6 @@
 // Gera retrato e ícone PROVISÓRIOS (silhueta) para um chefe que ainda não tem arte HQ,
 // e registra os dois no manifesto da interface.
-// Uso: node tools/retrato-provisorio.mjs <id> "<cor do terno>" "<cor do detalhe>" [chupeta|carimbo|mala]
+// Uso: node tools/retrato-provisorio.mjs <id> "<cor do terno>" "<cor do detalhe>" [chupeta|carimbo|mala|topete]
 // Quando o retrato de verdade chegar, substitua os dois arquivos e rode de novo o
 // cálculo de sha256 (ou apague a entrada e gere outra vez).
 import sharp from 'sharp';
@@ -41,6 +41,7 @@ const portrait = `<svg xmlns="http://www.w3.org/2000/svg" width="768" height="10
   ${prop === 'chupeta' ? pacifier(330, 520, 1.15) : ''}
   ${prop === 'carimbo' ? stamp(560, 760, 1.6) : ''}
   ${prop === 'mala' ? bag(560, 820, 1.5) : ''}
+  ${prop === 'topete' ? `<path d="M 214 300 C 260 150 520 150 560 260 C 470 220 330 230 214 300 Z" fill="#f3d26a" stroke="${ink}" stroke-width="10"/><path d="M 384 610 L 360 820 L 384 860 L 408 820 Z" fill="${accent}" stroke="${ink}" stroke-width="8"/>` : ''}
 </svg>`;
 
 const icon = `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256">
@@ -49,6 +50,7 @@ const icon = `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256">
   ${prop === 'chupeta' ? pacifier(104, 160, 0.42) : ''}
   ${prop === 'carimbo' ? stamp(196, 214, 0.6) : ''}
   ${prop === 'mala' ? bag(196, 220, 0.55) : ''}
+  ${prop === 'topete' ? `<path d="M 72 70 C 90 20 180 20 192 60 C 160 48 110 52 72 70 Z" fill="#f3d26a" stroke="${ink}" stroke-width="6"/>` : ''}
 </svg>`;
 
 const manifest = JSON.parse(readFileSync(`${dir}/manifest.json`, 'utf8'));

@@ -38,6 +38,16 @@ function applyEffects(st, att, def, effects, blocked) {
       const what = order[(def.status.banN = ((def.status.banN ?? -1) + 1)) % order.length];
       def.status.ban = { what, t: e.frames || 240 };
       emit(st, { t: 'ban', side: def.side, what, x: def.x });
+    } else if (e.t === 'banish') {
+      // You're Fired!: o rival some da realidade por um tempo e cai de volta tomando dano
+      if (def.hp > 0) {
+        setState(def, 'frozen');
+        def.stun = e.frames || 120;
+        def.status.banished = e.frames || 120;
+        def.status.banishDmg = e.dmg || 1200;
+        def.y = 0;
+        emit(st, { t: 'banish', side: def.side, x: def.x });
+      }
     } else if (e.t === 'trap') {
       // Cela: o rival fica preso, sem poder agir, até o fim do golpe
       if (def.y <= 0 && def.hp > 0) {

@@ -6,7 +6,7 @@ import { drawMajisEntity } from './majis-art.js';
 import { drawTrunksEntity, drawTrunksParticle } from './trunks-art.js';
 import { drawBelgaEntity, drawBelgaParticle } from './belga-art.js';
 import { drawRyuchiEntity, drawRyuchiParticle } from './ryuchi-art.js';
-import { drawPacifier, drawStamp, drawFence, drawCabin, drawBag, drawHenchman, drawCash } from './boss-art.js';
+import { drawPacifier, drawStamp, drawFence, drawCabin, drawBag, drawHenchman, drawCash, drawTweet, drawGoldWall } from './boss-art.js';
 
 /**
  * Efeitos visuais. Lê os eventos que a simulação emite a cada quadro e cria
@@ -178,6 +178,20 @@ export function drawEntities(c, st) {
     c.save();
     c.lineWidth = 5;
     c.strokeStyle = '#12080c';
+    if (e.kind === 'clone') {
+      c.restore();
+      continue; // as cópias são desenhadas junto com os lutadores (src/ui/app.js)
+    }
+    if (e.kind === 'tuite') {
+      drawTweet(c, x, y, e.dir, st.frame);
+      c.restore();
+      continue;
+    }
+    if (e.kind === 'muralha') {
+      drawGoldWall(c, e, GY);
+      c.restore();
+      continue;
+    }
     if (e.kind === 'capanga') {
       drawHenchman(c, e, GY, st.frame);
       c.restore();
