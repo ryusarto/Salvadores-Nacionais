@@ -1,4 +1,4 @@
-import{HEROES}from'../data/characters/index.js';import{SYS}from'../data/system.js';
+import{HEROES,BOSSES}from'../data/characters/index.js';import{SYS}from'../data/system.js';
 import{COMIC as P,comicBackground,comicLogo,comicPortrait,comicIcon,comicPanel,comicText,comicMenuItem}from'../render/comic-ui.js';
 import{drawBelemPresentation}from'../render/belem-stage.js';
 const W=1920,H=1080;
@@ -40,6 +40,27 @@ function select(c,a,menu){
  comicText(c,'SUPER: '+ch.moves.SA3.name,905,952,27,P.yellow,'left',880);
  footer(c,'SETAS ESCOLHEM    •    ENTER / LEVE CONFIRMA    •    ESC / MÉDIO VOLTA');
 }
+/** Rivais do Versus CPU: os heróis, os chefes e, por último, a opção aleatória (null). */
+export const FOES=[...HEROES,...BOSSES,null];
+export const FOE_COLS=5;
+function randomCard(c,x,y,w,h,selected){
+ comicPanel(c,x+5,y+7,w,h,P.ink,10,0);comicPanel(c,x,y,w,h,selected?P.red:P.paper,10,4);
+ c.save();c.font=`${Math.round(h*.55)}px SNComic, Impact, sans-serif`;c.textAlign='center';c.textBaseline='middle';c.lineWidth=10;c.strokeStyle=P.ink;c.strokeText('?',x+w/2,y+h*.42);c.fillStyle=selected?P.yellow:P.red;c.fillText('?',x+w/2,y+h*.42);c.restore();
+ comicPanel(c,x,y+h-42,w,42,selected?P.red:P.ink,6,0);comicText(c,'ALEATÓRIO',x+w/2,y+h-20,28,P.paper,'center',w-24);
+ if(selected){c.strokeStyle=P.yellow;c.lineWidth=5;c.strokeRect(x-4,y-4,w+8,h+8);}
+}
+function selectFoe(c,a){
+ comicBackground(c,a.frame);heading(c,'ESCOLHA O RIVAL','VERSUS CPU');
+ const ch=FOES[a.foeCur];
+ if(ch){portrait(c,ch,30,160,670,894,-1);}
+ else{c.save();c.font='520px SNComic, Impact, sans-serif';c.textAlign='center';c.textBaseline='middle';c.lineWidth=28;c.strokeStyle=P.ink;c.strokeText('?',365,560);c.fillStyle=P.red;c.fillText('?',365,560);c.restore();}
+ comicPanel(c,62,874,685,90,P.ink,20,5);comicText(c,ch?ch.name:'ALEATÓRIO',95,919,62,P.paper,'left',610);
+ FOES.forEach((f,i)=>{const x=860+i%FOE_COLS*200,y=196+Math.floor(i/FOE_COLS)*264,sel=i===a.foeCur;f?card(c,f,x,y,180,238,sel):randomCard(c,x,y,180,238,sel);});
+ comicPanel(c,866,746,980,240,P.ink,20,0);
+ if(ch){comicText(c,ch.style.toUpperCase(),905,785,42,P.yellow,'left',900);comicText(c,ch.mechName,905,836,31,P.cyan);lines(c,ch.mechDesc,905,883,880,27);comicText(c,'SUPER: '+ch.moves.SA3.name,905,952,27,P.yellow,'left',880);}
+ else{comicText(c,'SURPRESA',905,785,42,P.yellow,'left',900);lines(c,'O rival é sorteado entre os heróis e a chefona.',905,846,880,27);}
+ footer(c,'SETAS ESCOLHEM    •    ENTER / LEVE CONFIRMA    •    ESC / MÉDIO VOLTA');
+}
 function versus(c,a){
  comicBackground(c,a.frame);c.fillStyle=P.red;c.beginPath();c.moveTo(0,0);c.lineTo(1100,0);c.lineTo(800,H);c.lineTo(0,H);c.closePath();c.fill();
  const left=HEROES[a.hero],right=a.foe,t=Math.max(0,1-Math.min(1,a.vsT/18));
@@ -57,7 +78,7 @@ export function drawComicPause(c,a,items){
  const ch=a.st.f[0].ch;portrait(c,ch,65,185,570,760,1);
  comicPanel(c,682,122,800,834,P.yellow,35,7);comicText(c,'PAUSADO',765,238,96,P.ink);
  comicText(c,'RESPIRA. VOLTA PRA LUTA.',765,309,29,P.ink);
- items.forEach((label,i)=>comicMenuItem(c,label,750,363+i*85,650,a.pcur===i,i));
+ items.forEach((label,i)=>comicMenuItem(c,label,750,355+i*76,650,a.pcur===i,i));
  comicText(c,'ESC / PAUSA PARA CONTINUAR',1080,925,24,P.ink,'center');
 }
 function join(c,a,srcName){comicBackground(c,a.frame);heading(c,'DOIS SALVADORES. UMA ARENA.');
@@ -72,5 +93,5 @@ function result(c,a){comicBackground(c,a.frame);const winner=a.st.winner,win=win
  ['REVANCHE','TROCAR PERSONAGEM','MENU'].forEach((label,i)=>comicMenuItem(c,label,880,681+i*91,850,a.cur===i,i));footer(c,'A TURNÊ CONTINUA    •    ENTER CONFIRMA');}
 export function drawComicScreen(c,a,{menu,srcName}){
  artFrame=a.frame;
- switch(a.screen){case'title':title(c,a,menu);break;case'select':select(c,a,menu);break;case'vs':versus(c,a);break;case'join':join(c,a,srcName);break;case'select2':select2(c,a,srcName);break;case'result':result(c,a);break;default:return false;}return true;
+ switch(a.screen){case'title':title(c,a,menu);break;case'select':select(c,a,menu);break;case'selectFoe':selectFoe(c,a);break;case'vs':versus(c,a);break;case'join':join(c,a,srcName);break;case'select2':select2(c,a,srcName);break;case'result':result(c,a);break;default:return false;}return true;
 }

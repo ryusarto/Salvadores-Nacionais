@@ -79,6 +79,7 @@ function noise(dur, vol = 0.08, hp = 800) {
 export const sfx = {
   menu: () => tone(520, 0.05, 'triangle', 0.03, 0.9),
   ok: () => tone(700, 0.09, 'triangle', 0.04, 1.4),
+  isMuted: () => muted,
   toggleMute: () => { muted = !muted; stageGain();if(!muted)startStageAudio();return muted; },
 };
 
