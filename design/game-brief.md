@@ -18,7 +18,7 @@ se joga de um jeito diferente.
   Perfeita. Segurar para trás também defende. Agarrão vence a defesa.
 - **Golpes de sequência:** → ← + Leve e ↓ → + Médio, dois por herói.
 - **Dificuldade:** Fácil, Normal e Difícil mudam o nível da CPU e o dano de cada lado.
-- **Modos:** História (Capítulos 1 a 3 em Belém e o 4 no aeroporto: Zanata, Chupetinha, Pavanassi e Fujão), Versus CPU, **Versus 2 jogadores** (dois controles, ou controle e teclado) e Treino com lista de combos.
+- **Modos:** História (Capítulos 1 a 5: Belém, aeroporto e mansão; Zanata, Chupetinha, Pavanassi, Fujão e Pai do Fujão), Versus CPU, **Versus 2 jogadores** (dois controles, ou controle e teclado) e Treino com lista de combos.
 - **Combo aéreo:** Gancho (↓+Forte) acertou + segurar ↑ = pulo alto; Leve, Médio e Forte emendam no ar.
 - **Empurrão na defesa:** Leve + Médio defendendo afasta o atacante (1 gomo de Ginga).
 - **Rolamento:** botão de golpe ao cair levanta rolando (não vale em queda forte).
@@ -62,6 +62,11 @@ prende quem encosta na fila da documentação (apertar botões solta mais rápid
 **Chefe — Fujão:** mala na mão, Mala Arremessada, Mala Esquecida (quem corre por cima tropeça) e Carrinho
 de Bagagem. **Fuga:** longe do canto, foge no segundo golpe de um combo (recarrega em 5 s); encurralado,
 não foge. Sozinho perto da escada do avião, embarca e recupera 10% da vida.
+
+**Chefe — Pai do Fujão:** bengala, Comando à Distância (capanga), Peso da Família (blindado).
+**Foro Privilegiado:** os 3 primeiros golpes de cada combo fazem só 1 de dano; depois de segurar 6, o foro é
+cassado por 8 s. Agarrões e supers furam. **Tornozeleira:** andando não sai da área; empurrado para fora,
+leva choque (900) e fica tonto. Abaixo de 50% de vida, Vingança Paterna (+20% de dano).
 
 ## Fora desta build
 

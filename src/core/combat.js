@@ -146,7 +146,9 @@ export function applyHit(st, att, def, h, src) {
   if (super_) scale = Math.max(scale, SYS.SUPER_MIN_SCALE);
   const frac = def.hp / def.maxHp;
   const guts = (SYS.GUTS.find(([limit]) => frac <= limit) || [0, 1])[1];
-  const mul = guts * (ctr ? SYS.COUNTER.dmg : 1) * (att.ch.mech?.dmgMul?.(att, h, src) || 1) * (st.dmgMul ? st.dmgMul[att.side] : 1);
+  // dmgTakenMul: o defensor pode reduzir o dano que recebe (0 = só 1 de dano)
+  const taken = def.ch.mech?.dmgTakenMul ? def.ch.mech.dmgTakenMul(st, def, att, h, src) : 1;
+  const mul = guts * (ctr ? SYS.COUNTER.dmg : 1) * (att.ch.mech?.dmgMul?.(att, h, src) || 1) * (st.dmgMul ? st.dmgMul[att.side] : 1) * (taken ?? 1);
   const dmg = Math.max(1, Math.round(h.dmg * scale * mul));
   const wasAir = def.y > 0 || def.state === 'air_hit';
   if (wasAir && def.airBlocked && def.buf.cur.G) emit(st, { t: 'pop', str: 'GUARDA QUEBRADA!', x: def.x, y: def.y + 420, color: '#ff5a4a', size: 46 });

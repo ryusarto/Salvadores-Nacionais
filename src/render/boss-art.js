@@ -294,3 +294,89 @@ export function drawBag(c, e, x, y, gy, frame) {
   }
   c.restore();
 }
+
+/** Capanga do Pai do Fujão: terno preto, óculos escuros, correndo. */
+export function drawHenchman(c, e, gy, frame) {
+  c.save();
+  c.translate(e.x, gy);
+  c.scale(e.dir, 1);
+  const step = Math.sin(frame * 0.6) * 18;
+  c.lineWidth = 6;
+  c.strokeStyle = OUT;
+  c.lineCap = 'round';
+  // pernas
+  c.strokeStyle = '#1c1820';
+  c.lineWidth = 22;
+  c.beginPath();
+  c.moveTo(0, -120); c.lineTo(-20 + step, 0);
+  c.moveTo(0, -120); c.lineTo(20 - step, 0);
+  c.stroke();
+  // corpo
+  c.fillStyle = '#26222c';
+  c.strokeStyle = OUT;
+  c.lineWidth = 5;
+  c.beginPath();
+  c.roundRect(-38, -250, 76, 140, 14);
+  c.fill();
+  c.stroke();
+  c.fillStyle = '#f4f0ea';
+  c.beginPath();
+  c.moveTo(-10, -250); c.lineTo(0, -200); c.lineTo(10, -250);
+  c.fill();
+  // cabeça e óculos
+  c.fillStyle = '#c9946c';
+  c.beginPath();
+  c.arc(4, -282, 30, 0, Math.PI * 2);
+  c.fill();
+  c.stroke();
+  c.fillStyle = OUT;
+  c.fillRect(-6, -292, 40, 12);
+  c.restore();
+}
+
+/** Maço de dinheiro voando (Rachadinha). */
+export function drawCash(c, x, y, frame, dir) {
+  c.save();
+  c.translate(x, y);
+  c.rotate(Math.sin(frame * 0.5) * 0.25 * dir);
+  c.lineWidth = 4;
+  c.strokeStyle = OUT;
+  c.fillStyle = '#6fbf6a';
+  c.fillRect(-34, -20, 68, 40);
+  c.strokeRect(-34, -20, 68, 40);
+  c.fillStyle = '#d8b25a';
+  c.fillRect(-8, -20, 16, 40);
+  c.fillStyle = '#2f6a2c';
+  c.font = "bold 18px Impact, sans-serif";
+  c.textAlign = 'center';
+  c.textBaseline = 'middle';
+  c.fillText('$', -20, 0);
+  c.fillText('$', 20, 0);
+  c.restore();
+}
+
+/** Área da tornozeleira no chão, com o aviso; pisca quando ele está quase saindo. */
+export function drawAnkleZone(c, f, zoneX, zoneR, frame) {
+  if (f.state === 'ko') return;
+  const near = Math.abs(f.x - zoneX) > zoneR - 90;
+  c.save();
+  c.setLineDash([22, 14]);
+  c.lineWidth = 6;
+  c.strokeStyle = near && frame % 20 < 10 ? 'rgba(255,90,74,.95)' : 'rgba(159,245,232,.75)';
+  c.beginPath();
+  c.ellipse(zoneX, GY + 10, zoneR, 34, 0, 0, Math.PI * 2);
+  c.stroke();
+  c.setLineDash([]);
+  c.fillStyle = 'rgba(159,245,232,.9)';
+  c.font = "bold 22px Impact, 'Arial Black', sans-serif";
+  c.textAlign = 'center';
+  c.fillText('ÁREA DA TORNOZELEIRA', zoneX, GY + 72);
+  // a própria tornozeleira no pé dele
+  c.fillStyle = '#1c1820';
+  c.fillRect(f.x - 22, GY - f.y - 34, 44, 18);
+  c.fillStyle = frame % 40 < 20 ? '#7dff8a' : '#2a6a30';
+  c.beginPath();
+  c.arc(f.x + 12, GY - f.y - 25, 5, 0, Math.PI * 2);
+  c.fill();
+  c.restore();
+}

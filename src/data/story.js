@@ -13,7 +13,7 @@ export const CHAPTERS = [
   { id: 'palco', n: 2, boss: 'chupetinha', bossName: 'CHUPETINHA', place: 'BELÉM — FRENTE DO PALCO', ready: true },
   { id: 'banheiros', n: 3, boss: 'pavanassi', bossName: 'PAVANASSI', place: 'BELÉM — BANHEIROS QUÍMICOS', ready: true },
   { id: 'aeroporto', n: 4, boss: 'fujao', bossName: 'FUJÃO', place: 'AEROPORTO', ready: true },
-  { id: 'mansao', n: 5, boss: 'pai-fujao', bossName: 'PAI DO FUJÃO', place: 'MANSÃO', ready: false },
+  { id: 'mansao', n: 5, boss: 'pai-fujao', bossName: 'PAI DO FUJÃO', place: 'MANSÃO', ready: true },
   { id: 'washington', n: 6, boss: 'laranjao', bossName: 'LARANJÃO', place: 'WASHINGTON, D.C.', ready: false },
   { id: 'inferno', n: 7, boss: 'djabo', bossName: 'DJABO', place: 'INFERNO', ready: false },
 ];
@@ -60,6 +60,16 @@ export const RIVALS = {
   chapuh: ['ryuchi', 'franco'],
   dney: ['franco', 'chapuh'],
   },
+  mansao: {
+  franco: ['majis', 'trunks'],
+  belga: ['dney', 'ryuchi'],
+  majis: ['chapuh', 'mdep'],
+  trunks: ['belga', 'chapuh'],
+  ryuchi: ['franco', 'trunks'],
+  mdep: ['dney', 'majis'],
+  chapuh: ['belga', 'dney'],
+  dney: ['mdep', 'franco'],
+  },
 };
 
 /** Páginas de chegada de cada capítulo. {hero} é trocado pelo nome do herói escolhido. */
@@ -88,6 +98,12 @@ export const OPENING = {
   'Então o rap abre caminho: uma roda de rima no meio do saguão junta passageiro, piloto e até o pessoal da limpeza.',
   'Lá fora, um avião particular já está com a escada encostada. {hero} entra na roda para chegar à pista.',
   ],
+  mansao: [
+  'O endereço dos papéis leva a uma mansão com portão de ouro, câmeras em todo canto e seguranças de terno preto.',
+  'Lá dentro mora o Pai do Fujão. Em prisão domiciliar, de tornozeleira, ele nunca sai de casa. Nem precisa: manda em tudo pelo telefone.',
+  'Na frente do portão, os Salvadores montam o som. A roda de rima chama a cidade inteira para a calçada.',
+  'Quem vencer a roda entra primeiro. {hero} pega o microfone.',
+  ],
 };
 
 /** Frase do narrador antes de cada batalha de rima, por capítulo. */
@@ -96,6 +112,7 @@ export const RHYME_INTRO = {
   palco: 'BATALHA DE RIMA — quem vencer abre o show na frente do palco.',
   banheiros: 'BATALHA DE RIMA — quem vencer arranca a primeira placa.',
   aeroporto: 'BATALHA DE RIMA — no saguão do aeroporto, quem vencer abre caminho até a pista.',
+  mansao: 'BATALHA DE RIMA — na frente da mansão, quem vencer entra primeiro.',
 };
 
 /** Frase de cada herói quando entra numa batalha de rima. */
@@ -160,6 +177,13 @@ export const BOSS_TALK = {
     { who: 'fujao', say: 'Explicar? Eu não explico nada. Eu FUJO.' },
     { who: null, say: 'DICA: longe do canto, ele foge no meio do combo. Encurrale perto da parede e não deixe ele sozinho perto da escada, ou ele embarca e recupera vida.' },
   ],
+  'pai-fujao': [
+    { who: null, say: 'Na sala, debaixo do lustre, o Pai do Fujão desliga o telefone. Na parede, o retrato do filho.' },
+    { who: 'pai-fujao', say: 'Vocês invadiram a minha casa. Aqui eu tenho foro, tenho advogado e tenho capanga.' },
+    { who: '$hero', say: 'E a gente tem o povo do lado de fora. Acabou o mando por telefone.' },
+    { who: 'pai-fujao', say: 'Ninguém encosta em mim. Segurança! ALÔ? Manda todo mundo!' },
+    { who: null, say: 'DICA: os 3 primeiros golpes de cada combo não fazem dano (Foro Privilegiado). Faça combos longos, agarre ou use o super. Empurre-o para fora da área da tornozeleira: ela dá choque.' },
+  ],
 };
 
 /** Depois de vencer o chefe. `hero` é trocado pelo nome do herói. */
@@ -187,5 +211,11 @@ export const CLOSING = {
     'Os Salvadores acabam com ele ali mesmo. Fugir, ele não foge mais.',
     'Entre os papéis, ordens assinadas, carimbos e fotos do Chupetinha, da Zanata e do Pavanassi. Todas vindas do mesmo endereço: uma mansão.',
     'O dono da mansão está em prisão domiciliar. E continua mandando em tudo de dentro de casa. Próxima parada: a mansão do pai do Fujão.',
+  ],
+  'pai-fujao': [
+    'A tornozeleira apita uma última vez. O Pai do Fujão desaba no sofá, sem foro, sem capanga e sem sinal no telefone.',
+    'A cidade entra pelo portão aberto. A mansão vira cozinha comunitária, e o lustre ilumina o maior sarau que aquela sala já viu, com {hero} no centro.',
+    'Encurralado, o velho entrega quem está acima de todos: "Eu só obedeço. As ordens vêm dos Estados Unidos. Do Laranjão."',
+    'Para salvar o mundo, os Salvadores precisam atravessar o continente. Próxima parada: Washington, D.C.',
   ],
 };

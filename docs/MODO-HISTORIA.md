@@ -182,6 +182,13 @@ usa o gancho `mech.escape` do motor.
 
 ### 5. Pai do Fujão
 
+No jogo desde o Capítulo 5 (`src/data/characters/pai-fujao.js`), com retrato
+provisório, boneco e a sala da mansão desenhada em código
+(`src/render/mansion-stage.js`). Mudanças em relação ao desenho abaixo: o
+Fujão foi derrotado no aeroporto, então a ajuda vem de capangas pelo telefone;
+o Foro Privilegiado aguenta 6 golpes e é cassado por 8 s (sem isso, a luta
+ficava difícil demais); a Rachadinha é o super de 1 barra.
+
 Depois do Fujão, os Salvadores descobrem que o pai dele, em prisão
 domiciliar, comandava tudo de dentro de casa. A luta é na sala da mansão.
 
@@ -280,11 +287,13 @@ sátira funcionar.
    fechamento com as cores da bandeira trans no palco.
 4. ✓ **Capítulo 4 (aeroporto):** Fujão com Fuga, malas, embarque e o
    avião com a escada; o fechamento leva à mansão.
-5. Retrato e sprites de Zanata, Chupetinha, Pavanassi e Fujão; cenários da
-   frente do palco, dos banheiros químicos e do aeroporto pintado.
+5. ✓ **Capítulo 5 (mansão):** Pai do Fujão com Tornozeleira, Foro
+   Privilegiado, capangas e Vingança Paterna; o fechamento leva a Washington.
+6. Retrato e sprites dos cinco chefes; cenários da frente do palco, dos
+   banheiros químicos, do aeroporto e da mansão pintados.
    Para chefes sem arte, `node tools/retrato-provisorio.mjs <id> <cor> <cor>`
    gera um retrato e um ícone provisórios.
-6. Um capítulo por vez, na ordem da turnê: ficha e mecânica do chefe,
+7. Um capítulo por vez, na ordem da turnê: ficha e mecânica do chefe,
    retrato, sprites, cenário e textos.
 
 ## Em aberto

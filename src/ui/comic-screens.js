@@ -1,12 +1,12 @@
 import{HEROES,BOSSES}from'../data/characters/index.js';import{SYS}from'../data/system.js';
 import{COMIC as P,comicBackground,comicLogo,comicPortrait,comicIcon,comicPanel,comicText,comicMenuItem}from'../render/comic-ui.js';
 import{drawBelemPresentation}from'../render/belem-stage.js';
-import{drawStoryScreen,drawStoryVsTag,storyPlace,drawStageThumb}from'./story-screens.js';
+import{drawStoryScreen,drawStoryVsTag,storyPlace,drawStageThumb,BOSS_STAGES}from'./story-screens.js';
 const W=1920,H=1080;
 export const TITLE_CAST=[['ryuchi',1100,150,330,440],['mdep',1390,165,330,440],['majis',1665,130,330,440],['franco',900,420,360,480],['chapuh',1240,410,360,480],['dney',1580,410,360,480],['belga',1080,660,390,520],['trunks',1500,650,420,560]];
 let artFrame=0;
 const reducedMotion=()=>typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-const natural={franco:-1,belga:1,majis:-1,dney:-1,ryuchi:1,trunks:1,mdep:-1,chapuh:-1,zanata:1,chupetinha:1,pavanassi:1,fujao:1};
+const natural={franco:-1,belga:1,majis:-1,dney:-1,ryuchi:1,trunks:1,mdep:-1,chapuh:-1,zanata:1,chupetinha:1,pavanassi:1,fujao:1,'pai-fujao':1};
 export function portrait(c,ch,x,y,w,h,facing=1){
  const t=reducedMotion()?0:artFrame/60,phase=(HEROES.findIndex(h=>h.id===ch.id)+1)*.7;
  const breath=reducedMotion()?0:Math.sin(t*1.55+phase);
@@ -70,7 +70,7 @@ function versus(c,a){
  comicText(c,left.name,96,92,58,P.paper,'left',640);comicText(c,right.name,1824,92,58,P.paper,'right',640);
  comicText(c,left.style,100,175,30,P.ink,'left',610);comicText(c,right.style,1820,175,30,P.ink,'right',610);
  c.save();c.translate(960,460);c.rotate(-.08);c.font='235px SNComic, sans-serif';c.textAlign='center';c.textBaseline='middle';c.strokeStyle=P.ink;c.lineJoin='miter';c.lineWidth=24;c.strokeText('VS',0,0);c.fillStyle=P.paper;c.fillText('VS',0,0);c.restore();
- comicPanel(c,780,760,360,233,P.ink,14,0);(drawStageThumb(c,a.foe,800,775,320,180)||drawBelemPresentation(c,'miniatura',800,775,320,180));comicText(c,a.mode==='story'&&a.story?storyPlace(a):a.foe?.stage==='aeroporto'?'AEROPORTO':'VER-O-PESO / BELÉM',960,975,28,P.paper,'center',330);
+ comicPanel(c,780,760,360,233,P.ink,14,0);(drawStageThumb(c,a.foe,800,775,320,180)||drawBelemPresentation(c,'miniatura',800,775,320,180));comicText(c,a.mode==='story'&&a.story?storyPlace(a):BOSS_STAGES[a.foe?.stage]?.[0]||'VER-O-PESO / BELÉM',960,975,28,P.paper,'center',330);
  if(a.mode==='story'&&a.story)drawStoryVsTag(c,a);
  footer(c,a.vsReady===false?'CARREGANDO OS LUTADORES…':a.mode==='vs2'?'JOGADOR 1    •    FRENTE A FRENTE    •    JOGADOR 2':'ENTER / LEVE PARA COMEÇAR A LUTA');
 }

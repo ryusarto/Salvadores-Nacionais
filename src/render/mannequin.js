@@ -237,6 +237,10 @@ function weapon(c, J, f, ch) {
     c.fill();
     c.stroke();
     blob(c, [8, -16], 9, '#9fd8ff');
+  } else if (w === 'bengala') {
+    // bengala de madeira com castão dourado
+    limb(c, [0, 0], [10, 150], 9, '#5a3a1e');
+    blob(c, [0, -4], 12, '#d8b25a');
   } else if (w === 'mala') {
     // mala de viagem com alça
     c.fillStyle = '#8a5a2a';
