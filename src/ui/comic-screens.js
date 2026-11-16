@@ -49,7 +49,7 @@ function versus(c,a){
  comicText(c,left.style,100,175,30,P.ink,'left',610);comicText(c,right.style,1820,175,30,P.ink,'right',610);
  c.save();c.translate(960,460);c.rotate(-.08);c.font='235px SNComic, sans-serif';c.textAlign='center';c.textBaseline='middle';c.strokeStyle=P.ink;c.lineJoin='miter';c.lineWidth=24;c.strokeText('VS',0,0);c.fillStyle=P.paper;c.fillText('VS',0,0);c.restore();
  comicPanel(c,780,760,360,233,P.ink,14,0);drawBelemPresentation(c,'miniatura',800,775,320,180);comicText(c,'VER-O-PESO / BELÉM',960,975,28,P.paper,'center');
- footer(c,a.mode==='vs2'?'JOGADOR 1    •    FRENTE A FRENTE    •    JOGADOR 2':'ENTER / LEVE PARA COMEÇAR A LUTA');
+ footer(c,a.vsReady===false?'CARREGANDO OS LUTADORES…':a.mode==='vs2'?'JOGADOR 1    •    FRENTE A FRENTE    •    JOGADOR 2':'ENTER / LEVE PARA COMEÇAR A LUTA');
 }
 export function drawComicPause(c,a,items){
  artFrame=a.frame;

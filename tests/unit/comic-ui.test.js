@@ -15,7 +15,7 @@ test('The whole roster has matching original portrait and HUD icon deliveries',a
 });
 test('Approved fighters share the same measured standing height and ground plane',async()=>{
  const heights=[];
- for(const ch of HEROES){const file=readFileSync(new URL('production/sprites/final/'+ch.id+'/parado.'+(ch.id==='mdep'?'png':'webp'),root)),meta=await sharp(file).metadata();
+ for(const ch of HEROES){const file=readFileSync(new URL('production/sprites/final/'+ch.id+'/parado.webp',root)),meta=await sharp(file).metadata();
   const raw=await sharp(file).extract({left:0,top:0,width:meta.height,height:meta.height}).ensureAlpha().raw().toBuffer();let top=meta.height,bottom=-1;
   for(let y=0;y<meta.height;y++)for(let x=0;x<meta.height;x++)if(raw[(y*meta.height+x)*4+3]>127){top=Math.min(top,y);bottom=Math.max(bottom,y);}
   const scale=CELL*(ch.spriteScale||1)/meta.height,height=(bottom-top+1)*scale,foot=(bottom+1-meta.height*FOOT.y)*scale;heights.push(height);

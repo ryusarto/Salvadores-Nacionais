@@ -55,6 +55,10 @@ Promise.all(Object.entries(packs).map(([id, sheets]) => {
   return registerSprites(id, sheets, {
     lazy: true, maxDecoded: tenFrame ? 8 : effects ? 4 : 6,
     trueAlpha: tenFrame || sixFrame, frames: tenFrame ? 10 : sixFrame ? 6 : 4, cellSize: sixFrame ? 500 : tenFrame ? 768 : undefined,
-    preload: effects ? [] : ['parado', 'andar', 'golpe-5L'],
+    // Nada é baixado aqui: a tela de versus prepara só os dois lutadores (prepareSprites).
+    preload: [], prefetch: false,
   });
-})).then(()=>uiReady).then(() => app.run());
+})).then(()=>uiReady).then(() => {
+  document.getElementById('loading')?.remove();
+  app.run();
+});

@@ -4,7 +4,7 @@ import { createMatch, step } from '../core/match.js';
 import { createBrain, aiInput } from '../core/ai.js';
 import { EMPTY_INPUT } from '../core/input.js';
 import { buildStage, drawStage } from '../render/stage.js';
-import { drawEffect } from '../render/sprites.js';
+import { drawEffect, prepareSprites, spritePacksFor } from '../render/sprites.js';
 import { drawFighter, drawBoxes } from '../render/mannequin.js';
 import { createFx, fxEvents, fxUpdate, fxDrawBack, fxDrawFront, fxDrawScreen, drawEntities } from '../render/fx.js';
 import { createHud, drawHud } from '../render/hud.js';
@@ -65,6 +65,16 @@ export function createApp(canvas, devices, opts = {}) {
     app.inputLog = [];
     app.overT = 0;
     app.screen = 'fight';
+  }
+
+  // Entra na tela de versus e prepara os sprites só dos dois lutadores.
+  function enterVs() {
+    app.vsT = 0;
+    app.vsReady = false;
+    app.screen = 'vs';
+    const ids = [HEROES[app.hero], app.foe].flatMap(spritePacksFor);
+    const token = app.vsToken = (app.vsToken || 0) + 1;
+    prepareSprites(ids).then(() => { if (app.vsToken === token) app.vsReady = true; });
   }
 
   function pickFoe() {
@@ -268,8 +278,7 @@ export function createApp(canvas, devices, opts = {}) {
         app.screen = 'join';
       } else if (r === 'go') {
         app.foe = HEROES[app.hero2];
-        app.vsT = 0;
-        app.screen = 'vs';
+        enterVs();
       }
     } else if (app.screen === 'controls') {
       if (controlsTick(pr, ok, back)) app.screen = 'title';
@@ -279,8 +288,7 @@ export function createApp(canvas, devices, opts = {}) {
       if (back) app.screen = 'title';
       if (ok) {
         pickFoe();
-        app.vsT = 0;
-        app.screen = 'vs';
+        enterVs();
       }
     } else if (app.screen === 'vs') {
       app.vsT++;
@@ -288,7 +296,7 @@ export function createApp(canvas, devices, opts = {}) {
         app.ready = [false, false];
         app.screen = app.mode === 'vs2' ? 'select2' : 'select';
       }
-      else if ((ok && app.vsT > 20) || app.vsT > 240) startFight();
+      else if (app.vsReady && ((ok && app.vsT > 20) || app.vsT > 240)) startFight();
     } else if (app.screen === 'fight') {
       const st = app.st;
       if (pr.boxes) app.boxes = !app.boxes;
