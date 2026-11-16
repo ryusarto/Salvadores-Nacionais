@@ -5,7 +5,8 @@ import { hurtbox, worldBox, overlap, setState, emit } from './fighter.js';
 /**
  * Entidades: projéteis, marcas no chão, poças e ajudantes.
  * behavior: 'fly' (voa e acerta), 'strike' (espera `delay` e cai), 'puddle' (faz escorregar),
- * 'patch' (armadilha parada no chão).
+ * 'patch' (armadilha parada no chão), 'barrier' (parede no chão: o rival não passa a pé,
+ * só pulando; golpes do rival a derrubam; com `trap`, quem encostar fica preso).
  */
 export function spawnEntity(st, f, def) {
   const d = typeof def.make === 'function' ? def.make(st, f) : def;
@@ -31,6 +32,45 @@ export function spawnEntity(st, f, def) {
 }
 
 const entBox = (e) => ({ l: e.x - e.w / 2, r: e.x + e.w / 2, b: e.y, t: e.y + e.h });
+
+function damageBarrier(st, e) {
+  if (--e.hp > 0) return;
+  e.dead = true;
+  emit(st, { t: 'pop', str: e.breakText || 'DERRUBOU!', x: e.x, y: e.h + 60, color: '#ffcf2a', size: 44 });
+  emit(st, { t: 'barrierDown', kind: e.kind, x: e.x });
+}
+
+/** Parede no chão: segura o rival, apanha dos golpes dele e pode prender quem encostar. */
+function updateBarrier(st, e, target) {
+  // golpes do rival (cada golpe conta uma vez: a lista de acertos é nova a cada golpe)
+  if (target.state === 'attack' && e.lastHit !== target.hitDone) {
+    for (const h of target.move.hits) {
+      if (target.sf < h.from || target.sf > h.to) continue;
+      // hitH: altura que apanha (a placa da cerca fica acima da grade que segura)
+      if (overlap(worldBox(target, h.box), { ...entBox(e), t: e.y + (e.hitH || e.h) })) {
+        e.lastHit = target.hitDone;
+        damageBarrier(st, e);
+        if (e.dead) return;
+        break;
+      }
+    }
+  }
+  if (target.y >= e.h || target.state === 'ko' || target.state === 'thrown') return;
+  const half = -SYS.BODY.stand.x;
+  const left = target.x < e.x;
+  const edge = left ? e.x - e.w / 2 - half : e.x + e.w / 2 + half;
+  if (left ? target.x <= edge : target.x >= edge) return;
+  if (e.trap && target.y <= 0 && target.state !== 'frozen' && !e.trapped) {
+    e.trapped = true;
+    setState(target, 'frozen');
+    target.stun = e.trap;
+    target.status.queue = e.id;
+    emit(st, { t: 'pop', str: e.trapText || 'PRESO!', x: target.x, y: 560, color: '#9ff5e8', size: 44 });
+  }
+  target.x = edge;
+  // no chão, para; no ar, só não atravessa a grade (o pulo continua e pode passar por cima)
+  if (target.y <= 0 && Math.sign(target.vx) === (left ? 1 : -1)) target.vx = 0;
+}
 
 /** Avança todas as entidades um quadro. */
 export function updateEntities(st) {
@@ -63,6 +103,10 @@ export function updateEntities(st) {
       continue;
     }
     const tb = worldBox(target, hurtbox(target));
+    if (e.behavior === 'barrier') {
+      updateBarrier(st, e, target);
+      continue;
+    }
     if (e.behavior === 'puddle') {
       const moving = Math.abs(target.vx) > 2 && target.y <= 0 && ['walk', 'run', 'dash', 'rush', 'backdash'].includes(target.state);
       if (moving && overlap(entBox(e), tb)) {
@@ -81,6 +125,18 @@ export function updateEntities(st) {
         e.hitsLeft--;
         e.hitCD = 9;
         if (e.hitsLeft <= 0) e.dead = true;
+      }
+    }
+  }
+  // Barreiras seguram os projéteis do rival
+  for (const w of st.ents) {
+    if (w.dead || w.behavior !== 'barrier') continue;
+    for (const p of st.ents) {
+      if (p.dead || p.owner === w.owner || p.behavior !== 'fly' || !p.hit || p.delay) continue;
+      if (overlap(entBox(p), entBox(w))) {
+        p.dead = true;
+        damageBarrier(st, w);
+        emit(st, { t: 'clash', x: w.x, y: p.y + p.h / 2 });
       }
     }
   }

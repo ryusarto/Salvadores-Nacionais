@@ -17,7 +17,8 @@
     "chapuh",
     "dney",
     "zanata",
-    "chupetinha"
+    "chupetinha",
+    "pavanassi"
   ],
   "assets": {
     "portrait-franco": {
@@ -200,6 +201,24 @@
       "alpha": true,
       "sha256": "5ccc9c6382d4e1f912687dac3867af28a5100ab264d3e6656a23ae536072b273",
       "bytes": 4728,
+      "provisional": true
+    },
+    "portrait-pavanassi": {
+      "path": "portraits/pavanassi.webp",
+      "width": 768,
+      "height": 1024,
+      "alpha": true,
+      "sha256": "6d4bfe119ddbaf49df503577a9b248ea908b785b2607d0d68ce9e14e8a53f691",
+      "bytes": 14284,
+      "provisional": true
+    },
+    "icon-pavanassi": {
+      "path": "icons/pavanassi.webp",
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "sha256": "bfe993888e5cb6878699c77a251c4a72cdb16de529471a4f1486f85087ddf32d",
+      "bytes": 3466,
       "provisional": true
     }
   }

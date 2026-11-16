@@ -11,7 +11,7 @@
 export const CHAPTERS = [
   { id: 'ver-o-peso', n: 1, boss: 'zanata', bossName: 'CAPETA ZANATA', place: 'BELÉM — VER-O-PESO', ready: true },
   { id: 'palco', n: 2, boss: 'chupetinha', bossName: 'CHUPETINHA', place: 'BELÉM — FRENTE DO PALCO', ready: true },
-  { id: 'banheiros', n: 3, boss: 'pavanassi', bossName: 'PAVANASSI', place: 'BELÉM — BANHEIROS QUÍMICOS', ready: false },
+  { id: 'banheiros', n: 3, boss: 'pavanassi', bossName: 'PAVANASSI', place: 'BELÉM — BANHEIROS QUÍMICOS', ready: true },
   { id: 'aeroporto', n: 4, boss: 'fujao', bossName: 'FUJÃO', place: 'AEROPORTO', ready: false },
   { id: 'mansao', n: 5, boss: 'pai-fujao', bossName: 'PAI DO FUJÃO', place: 'MANSÃO', ready: false },
   { id: 'washington', n: 6, boss: 'laranjao', bossName: 'LARANJÃO', place: 'WASHINGTON, D.C.', ready: false },
@@ -40,6 +40,16 @@ export const RIVALS = {
   chapuh: ['dney', 'trunks'],
   dney: ['belga', 'mdep'],
   },
+  banheiros: {
+  franco: ['trunks', 'mdep'],
+  belga: ['chapuh', 'dney'],
+  majis: ['franco', 'dney'],
+  trunks: ['ryuchi', 'chapuh'],
+  ryuchi: ['mdep', 'belga'],
+  mdep: ['belga', 'franco'],
+  chapuh: ['majis', 'belga'],
+  dney: ['trunks', 'majis'],
+  },
 };
 
 /** Páginas de chegada de cada capítulo. {hero} é trocado pelo nome do herói escolhido. */
@@ -56,12 +66,19 @@ export const OPENING = {
   'Na frente do palco, um celular num pau de selfie já está filmando tudo. Alguém quer transformar o evento em conteúdo.',
   'Antes do show, mais uma roda de rima. {hero} pega o microfone.',
   ],
+  banheiros: [
+  'Belém, terceira noite. O evento virou a festa da cidade: tem gente de todo canto e de todo jeito comendo junto.',
+  'Mas, perto dos banheiros químicos, aparecem placas novas, todas carimbadas: "POR DECRETO: CADA UM NO SEU LUGAR".',
+  'Uma fila se forma. Um fiscal pede documento para quem quer usar o banheiro. Ninguém entende nada.',
+  'Ninguém vai ser barrado no próprio evento. Mas antes, a roda de rima. {hero} chega no microfone.',
+  ],
 };
 
 /** Frase do narrador antes de cada batalha de rima, por capítulo. */
 export const RHYME_INTRO = {
   'ver-o-peso': 'BATALHA DE RIMA — quem vencer sobe no palco.',
   palco: 'BATALHA DE RIMA — quem vencer abre o show na frente do palco.',
+  banheiros: 'BATALHA DE RIMA — quem vencer arranca a primeira placa.',
 };
 
 /** Frase de cada herói quando entra numa batalha de rima. */
@@ -112,6 +129,13 @@ export const BOSS_TALK = {
     { who: 'chupetinha', say: 'Me bateu? ESTÃO ME CENSURANDO! Isso dá engajamento, sabia?' },
     { who: null, say: 'DICA: acerte o celular sobre a cabeça dele (pulando ou com o Gancho) para derrubar a live e cortar a cura.' },
   ],
+  pavanassi: [
+    { who: null, say: 'Uma cabine gigante despenca no meio da feira. Na frente dela, de terno e carimbo na mão, o vereador Pavanassi.' },
+    { who: 'pavanassi', say: 'Por decreto meu, cada um no banheiro que EU mandar. Aqui quem decide quem é quem sou eu.' },
+    { who: '$hero', say: 'Aqui todo mundo come, todo mundo canta e todo mundo usa o banheiro. Ninguém fica de fora.' },
+    { who: 'pavanassi', say: 'Desacato! Carimbem esse aí! Documento, por favor!' },
+    { who: null, say: 'DICA: o carimbo proíbe golpes por alguns segundos. Cercas e cabine caem na porrada ou no pulo. Perto da cabine, GINGA + AGARRÃO faz A PERGUNTA.' },
+  ],
 };
 
 /** Depois de vencer o chefe. `hero` é trocado pelo nome do herói. */
@@ -127,5 +151,11 @@ export const CLOSING = {
     'O show recomeça. O Ver-o-Peso inteiro come, dança e canta o refrão junto com {hero}.',
     'Mas, nos banheiros químicos do evento, aparecem placas novas, carimbadas e assinadas: "POR DECRETO, VEREADOR PAVANASSI".',
     'A turnê continua.',
+  ],
+  pavanassi: [
+    'A cabine desaba. Os decretos do Pavanassi pegam fogo e viram cinza no meio da feira.',
+    'As placas são arrancadas uma por uma. No palco, as cores da bandeira trans sobem junto com o som, e a plateia inteira canta com {hero}.',
+    'No chão, entre os papéis queimados, uma passagem de avião carimbada: "FUJÃO — SÓ IDA". Alguém quer fugir do país.',
+    'A turnê continua. Próxima parada: o aeroporto.',
   ],
 };

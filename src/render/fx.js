@@ -6,7 +6,7 @@ import { drawMajisEntity } from './majis-art.js';
 import { drawTrunksEntity, drawTrunksParticle } from './trunks-art.js';
 import { drawBelgaEntity, drawBelgaParticle } from './belga-art.js';
 import { drawRyuchiEntity, drawRyuchiParticle } from './ryuchi-art.js';
-import { drawPacifier } from './boss-art.js';
+import { drawPacifier, drawStamp, drawFence, drawCabin } from './boss-art.js';
 
 /**
  * Efeitos visuais. Lê os eventos que a simulação emite a cada quadro e cria
@@ -243,6 +243,14 @@ export function drawEntities(c, st) {
       c.ellipse(x, GY + 4, e.w / 2, 16, 0, 0, Math.PI * 2);
       c.fill();
       c.stroke();
+    } else if (e.kind === 'carimbo') {
+      c.translate(x, y);
+      c.rotate(Math.sin(st.frame * 0.4) * 0.3);
+      drawStamp(c, 0, 0, 1.2);
+    } else if (e.kind === 'cerca') {
+      drawFence(c, e, GY);
+    } else if (e.kind === 'cabine') {
+      drawCabin(c, e, GY, st.frame);
     } else if (e.kind === 'chupeta') {
       c.translate(x, y);
       c.rotate(st.frame * 0.35 * e.dir);

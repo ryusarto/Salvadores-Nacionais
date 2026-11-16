@@ -6,7 +6,7 @@ const W=1920,H=1080;
 export const TITLE_CAST=[['ryuchi',1100,150,330,440],['mdep',1390,165,330,440],['majis',1665,130,330,440],['franco',900,420,360,480],['chapuh',1240,410,360,480],['dney',1580,410,360,480],['belga',1080,660,390,520],['trunks',1500,650,420,560]];
 let artFrame=0;
 const reducedMotion=()=>typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-const natural={franco:-1,belga:1,majis:-1,dney:-1,ryuchi:1,trunks:1,mdep:-1,chapuh:-1,zanata:1,chupetinha:1};
+const natural={franco:-1,belga:1,majis:-1,dney:-1,ryuchi:1,trunks:1,mdep:-1,chapuh:-1,zanata:1,chupetinha:1,pavanassi:1};
 export function portrait(c,ch,x,y,w,h,facing=1){
  const t=reducedMotion()?0:artFrame/60,phase=(HEROES.findIndex(h=>h.id===ch.id)+1)*.7;
  const breath=reducedMotion()?0:Math.sin(t*1.55+phase);

@@ -58,6 +58,15 @@ function resetRound(st) {
   st.roundWinner = null;
 }
 
+/** Golpes proibidos (Carimbo de Decreto): os botões e o pulo proibidos não chegam ao lutador. */
+export const BAN_LABEL = { S: 'ESPECIAIS', X: 'SUPER', jump: 'PULO' };
+function banInput(f, inp) {
+  const ban = f.status.ban;
+  if (!ban) return inp;
+  if (ban.what === 'jump') return inp.y > 0 ? { ...inp, y: 0 } : inp;
+  return inp[ban.what] ? { ...inp, [ban.what]: 0 } : inp;
+}
+
 function bodies(st) {
   const [a, b] = st.f;
   const P = SYS.BODY.push;
@@ -105,6 +114,10 @@ function meters(st) {
       }
     } else if (f.gingaPause > 0) f.gingaPause--;
     else if (f.state !== 'guard') f.ginga = Math.min(G.max, f.ginga + G.regen);
+    if (f.status.ban && --f.status.ban.t <= 0) {
+      f.status.ban = null;
+      emit(st, { t: 'pop', str: 'LIBERADO!', x: f.x, y: 560, color: '#7dff8a', size: 36 });
+    }
     f.ch.mech?.tick?.(st, f, st.f[1 - f.side]);
     if (st.training) {
       const o = st.f[1 - f.side];
@@ -134,7 +147,7 @@ export function step(st, in0 = EMPTY_INPUT, in1 = EMPTY_INPUT) {
     feed(b.buf, ins[1], b.face, true);
     return st;
   }
-  st.f.forEach((f, i) => feed(f.buf, ins[i], f.face, f.hitstop > 0));
+  st.f.forEach((f, i) => feed(f.buf, banInput(f, ins[i]), f.face, f.hitstop > 0));
   st.f.forEach((f, i) => {
     if (f.hitstop > 0) f.hitstop--;
     else updateFighter(st, f, st.f[1 - i]);

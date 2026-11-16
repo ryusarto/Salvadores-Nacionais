@@ -104,3 +104,146 @@ export function drawLivePhone(c, f, frame) {
   }
   c.restore();
 }
+
+/** Carimbo de decreto voando: base escura, tinta vermelha e a palavra DECRETO. */
+export function drawStamp(c, x, y, s) {
+  c.save();
+  c.translate(x, y);
+  c.scale(s, s);
+  c.lineWidth = 4;
+  c.strokeStyle = OUT;
+  c.fillStyle = '#6b4a2a';
+  c.fillRect(-7, -38, 14, 26);
+  c.strokeRect(-7, -38, 14, 26);
+  c.fillStyle = '#3a3036';
+  c.beginPath();
+  c.roundRect(-30, -14, 60, 26, 5);
+  c.fill();
+  c.stroke();
+  c.fillStyle = '#c8102e';
+  c.fillRect(-28, 10, 56, 10);
+  c.restore();
+}
+
+/** Cerca de Separação: grade de ferro com placa de decreto; racha conforme apanha. */
+export function drawFence(c, e, gy) {
+  const top = gy - e.h;
+  c.save();
+  c.lineWidth = 5;
+  c.strokeStyle = OUT;
+  c.fillStyle = '#7a7f86';
+  for (let i = -1; i <= 1; i++) {
+    c.fillRect(e.x + i * 16 - 4, top, 8, e.h);
+    c.strokeRect(e.x + i * 16 - 4, top, 8, e.h);
+  }
+  for (const yy of [top + 30, gy - 40]) {
+    c.fillRect(e.x - 30, yy, 60, 10);
+    c.strokeRect(e.x - 30, yy, 60, 10);
+  }
+  // poste com a placa do decreto, acima da grade
+  c.fillStyle = '#7a7f86';
+  c.fillRect(e.x - 4, top - 150, 8, 150);
+  c.strokeRect(e.x - 4, top - 150, 8, 150);
+  c.fillStyle = '#f4e9c9';
+  c.fillRect(e.x - 60, top - 190, 120, 56);
+  c.strokeRect(e.x - 60, top - 190, 120, 56);
+  c.fillStyle = '#c8102e';
+  c.font = "bold 18px Impact, 'Arial Black', sans-serif";
+  c.textAlign = 'center';
+  c.textBaseline = 'middle';
+  c.fillText('DECRETO', e.x, top - 172);
+  c.fillStyle = OUT;
+  c.font = "bold 13px Impact, 'Arial Black', sans-serif";
+  c.fillText('CADA UM NO SEU LUGAR', e.x, top - 150);
+  if (e.hp < 3) {
+    c.strokeStyle = '#f4e9c9';
+    c.lineWidth = 3;
+    c.beginPath();
+    c.moveTo(e.x - 20, top + 120); c.lineTo(e.x + 6, top + 150); c.lineTo(e.x - 8, top + 175);
+    c.stroke();
+  }
+  c.restore();
+}
+
+/** Cabine de banheiro químico gigante da Fiscalização, com a placa de exigência de documento. */
+export function drawCabin(c, e, gy, frame) {
+  const w = e.w;
+  const h = e.h;
+  const l = e.x - w / 2;
+  const top = gy - h;
+  const wob = e.age < 12 ? (12 - e.age) * 1.5 * Math.sin(e.age * 2) : 0;
+  c.save();
+  c.translate(wob, 0);
+  c.lineWidth = 6;
+  c.strokeStyle = OUT;
+  // corpo azul e telhado
+  c.fillStyle = '#2f7fd1';
+  c.fillRect(l, top + 24, w, h - 24);
+  c.strokeRect(l, top + 24, w, h - 24);
+  c.fillStyle = '#f4f2ee';
+  c.beginPath();
+  c.moveTo(l - 8, top + 28);
+  c.quadraticCurveTo(e.x, top - 10, l + w + 8, top + 28);
+  c.closePath();
+  c.fill();
+  c.stroke();
+  // porta
+  c.fillStyle = '#2768b0';
+  c.fillRect(l + 18, top + 52, w - 36, h - 62);
+  c.strokeRect(l + 18, top + 52, w - 36, h - 62);
+  c.fillStyle = frame % 50 < 25 ? '#e8243c' : '#9a1424';
+  c.fillRect(l + w - 40, top + 160, 14, 26);
+  // placa
+  c.fillStyle = '#f4e9c9';
+  c.fillRect(l + 10, top + 70, w - 20, 74);
+  c.strokeRect(l + 10, top + 70, w - 20, 74);
+  c.fillStyle = '#c8102e';
+  c.font = "bold 17px Impact, 'Arial Black', sans-serif";
+  c.textAlign = 'center';
+  c.textBaseline = 'middle';
+  c.fillText('FISCALIZAÇÃO', e.x, top + 88);
+  c.fillStyle = OUT;
+  c.font = "bold 14px Impact, 'Arial Black', sans-serif";
+  c.fillText('SÓ ENTRA COM', e.x, top + 110);
+  c.fillText('DOCUMENTO', e.x, top + 128);
+  // rachaduras conforme apanha
+  if (e.hp < 5) {
+    c.strokeStyle = '#d8eaff';
+    c.lineWidth = 3;
+    c.beginPath();
+    for (let k = 0; k < 5 - e.hp; k++) {
+      const cx = l + 30 + ((k * 47) % (w - 50));
+      c.moveTo(cx, top + 170 + k * 22);
+      c.lineTo(cx + 18, top + 196 + k * 22);
+      c.lineTo(cx + 4, top + 220 + k * 22);
+    }
+    c.stroke();
+  }
+  c.restore();
+}
+
+/** Selo PROIBIDO sobre a cabeça de quem levou o Carimbo de Decreto. */
+export function drawBanStamp(c, f, labels) {
+  const ban = f.status.ban;
+  if (!ban || f.state === 'ko') return;
+  const x = f.x;
+  const y = GY - f.y - 560;
+  c.save();
+  c.translate(x, y);
+  c.rotate(-0.12);
+  c.strokeStyle = '#c8102e';
+  c.lineWidth = 6;
+  c.fillStyle = 'rgba(244,233,201,.92)';
+  c.beginPath();
+  c.roundRect(-120, -34, 240, 68, 8);
+  c.fill();
+  c.stroke();
+  c.fillStyle = '#c8102e';
+  c.font = "bold 22px Impact, 'Arial Black', sans-serif";
+  c.textAlign = 'center';
+  c.textBaseline = 'middle';
+  c.fillText(`PROIBIDO: ${labels[ban.what] || ban.what}`, 0, -8);
+  c.font = "bold 18px Impact, 'Arial Black', sans-serif";
+  c.fillText(`${Math.ceil(ban.t / 60)} s`, 0, 18);
+  c.restore();
+}
