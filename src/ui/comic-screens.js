@@ -1,18 +1,19 @@
 import{HEROES,BOSSES}from'../data/characters/index.js';import{SYS}from'../data/system.js';
 import{COMIC as P,comicBackground,comicLogo,comicPortrait,comicIcon,comicPanel,comicText,comicMenuItem}from'../render/comic-ui.js';
 import{drawBelemPresentation}from'../render/belem-stage.js';
+import{drawStoryScreen,drawStoryVsTag}from'./story-screens.js';
 const W=1920,H=1080;
 export const TITLE_CAST=[['ryuchi',1100,150,330,440],['mdep',1390,165,330,440],['majis',1665,130,330,440],['franco',900,420,360,480],['chapuh',1240,410,360,480],['dney',1580,410,360,480],['belga',1080,660,390,520],['trunks',1500,650,420,560]];
 let artFrame=0;
 const reducedMotion=()=>typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 const natural={franco:-1,belga:1,majis:-1,dney:-1,ryuchi:1,trunks:1,mdep:-1,chapuh:-1,zanata:1};
-function portrait(c,ch,x,y,w,h,facing=1){
+export function portrait(c,ch,x,y,w,h,facing=1){
  const t=reducedMotion()?0:artFrame/60,phase=(HEROES.findIndex(h=>h.id===ch.id)+1)*.7;
  const breath=reducedMotion()?0:Math.sin(t*1.55+phase);
  c.save();c.translate(x+w/2,y+h);c.rotate(breath*.0025);c.scale(1+breath*.0015,1+breath*.003);c.translate(-w/2,-h);
  const result=comicPortrait(c,ch.id,0,0,w,h,(natural[ch.id]??1)!==facing);c.restore();return result;
 }
-function footer(c,message){c.fillStyle=P.ink;c.fillRect(0,1018,W,62);comicText(c,message,W/2,1049,25,P.paper,'center',1770);}
+export function footer(c,message){c.fillStyle=P.ink;c.fillRect(0,1018,W,62);comicText(c,message,W/2,1049,25,P.paper,'center',1770);}
 function heading(c,title,sub){comicPanel(c,55,40,1050,100,P.red,22,5);comicText(c,title,100,92,66,P.paper,'left',960);if(sub)comicText(c,sub,1840,90,28,P.paper,'right',640);}
 function lines(c,str,x,y,width,size,color=P.paper){c.font=`${size}px SNComic, sans-serif`;let line='',n=0;for(const word of str.split(' ')){if(c.measureText(line+word).width>width&&line){comicText(c,line.trim(),x,y+n*size*1.25,size,color);n++;line='';}line+=word+' ';}if(line)comicText(c,line.trim(),x,y+n*size*1.25,size,color);}
 function card(c,ch,x,y,w,h,selected=false,tag=''){
@@ -70,6 +71,7 @@ function versus(c,a){
  comicText(c,left.style,100,175,30,P.ink,'left',610);comicText(c,right.style,1820,175,30,P.ink,'right',610);
  c.save();c.translate(960,460);c.rotate(-.08);c.font='235px SNComic, sans-serif';c.textAlign='center';c.textBaseline='middle';c.strokeStyle=P.ink;c.lineJoin='miter';c.lineWidth=24;c.strokeText('VS',0,0);c.fillStyle=P.paper;c.fillText('VS',0,0);c.restore();
  comicPanel(c,780,760,360,233,P.ink,14,0);drawBelemPresentation(c,'miniatura',800,775,320,180);comicText(c,'VER-O-PESO / BELÉM',960,975,28,P.paper,'center');
+ if(a.mode==='story'&&a.story)drawStoryVsTag(c,a);
  footer(c,a.vsReady===false?'CARREGANDO OS LUTADORES…':a.mode==='vs2'?'JOGADOR 1    •    FRENTE A FRENTE    •    JOGADOR 2':'ENTER / LEVE PARA COMEÇAR A LUTA');
 }
 export function drawComicPause(c,a,items){
@@ -93,5 +95,5 @@ function result(c,a){comicBackground(c,a.frame);const winner=a.st.winner,win=win
  ['REVANCHE','TROCAR PERSONAGEM','MENU'].forEach((label,i)=>comicMenuItem(c,label,880,681+i*91,850,a.cur===i,i));footer(c,'A TURNÊ CONTINUA    •    ENTER CONFIRMA');}
 export function drawComicScreen(c,a,{menu,srcName}){
  artFrame=a.frame;
- switch(a.screen){case'title':title(c,a,menu);break;case'select':select(c,a,menu);break;case'selectFoe':selectFoe(c,a);break;case'vs':versus(c,a);break;case'join':join(c,a,srcName);break;case'select2':select2(c,a,srcName);break;case'result':result(c,a);break;default:return false;}return true;
+ switch(a.screen){case'title':title(c,a,menu);break;case'select':select(c,a,menu);break;case'selectFoe':selectFoe(c,a);break;case'vs':versus(c,a);break;case'join':join(c,a,srcName);break;case'select2':select2(c,a,srcName);break;case'result':result(c,a);break;default:if(!drawStoryScreen(c,a))return false;}return true;
 }
