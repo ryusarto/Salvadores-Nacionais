@@ -32,6 +32,19 @@ function applyEffects(st, att, def, effects, blocked) {
         emit(st, { t: 'freeze', side: def.side, x: def.x });
       }
       def.status.frost = Math.min(def.status.frost, 2 + (blocked ? 0 : 1));
+    } else if (e.t === 'ban') {
+      // Carimbo de Decreto: proíbe um tipo de golpe por um tempo (cada carimbo troca a proibição)
+      const order = e.cycle || ['S', 'jump', 'X'];
+      const what = order[(def.status.banN = ((def.status.banN ?? -1) + 1)) % order.length];
+      def.status.ban = { what, t: e.frames || 240 };
+      emit(st, { t: 'ban', side: def.side, what, x: def.x });
+    } else if (e.t === 'trap') {
+      // Cela: o rival fica preso, sem poder agir, até o fim do golpe
+      if (def.y <= 0 && def.hp > 0) {
+        setState(def, 'frozen');
+        def.stun = e.frames || 60;
+        emit(st, { t: 'trap', side: def.side, x: def.x });
+      }
     } else if (e.t === 'dazzle') {
       def.status.dazzle = e.n || 120;
       emit(st, { t: 'dazzle', side: def.side, x: def.x });

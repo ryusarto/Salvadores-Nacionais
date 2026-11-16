@@ -18,7 +18,7 @@ se joga de um jeito diferente.
   Perfeita. Segurar para trás também defende. Agarrão vence a defesa.
 - **Golpes de sequência:** → ← + Leve e ↓ → + Médio, dois por herói.
 - **Dificuldade:** Fácil, Normal e Difícil mudam o nível da CPU e o dano de cada lado.
-- **Modos:** História (Capítulos 1 e 2 em Belém: batalhas de rima, Zanata e Chupetinha), Versus CPU, **Versus 2 jogadores** (dois controles, ou controle e teclado) e Treino com lista de combos.
+- **Modos:** História (Capítulos 1 a 3 em Belém: batalhas de rima, Zanata, Chupetinha e Pavanassi), Versus CPU, **Versus 2 jogadores** (dois controles, ou controle e teclado) e Treino com lista de combos.
 - **Combo aéreo:** Gancho (↓+Forte) acertou + segurar ↑ = pulo alto; Leve, Médio e Forte emendam no ar.
 - **Empurrão na defesa:** Leve + Médio defendendo afasta o atacante (1 gomo de Ginga).
 - **Rolamento:** botão de golpe ao cair levanta rolando (não vale em queda forte).
@@ -53,6 +53,11 @@ se joga de um jeito diferente.
 **Chefe — Chupetinha:** mangual de chupeta, Cuspe de Chupeta e **Sugada** (rouba 1 gomo de Ginga).
 **ESTÃO ME CENSURANDO!**: ao apanhar, liga uma live; com ela no ar, 25% do dano volta como vida. O
 celular sobre a cabeça dele aguenta 3 golpes; sem sinal, a live cai por 6 s. O flash do Franco derruba de uma vez.
+
+**Chefe — Pavanassi:** **Carimbo de Decreto** proíbe por 4 s especiais, depois pulo, depois super.
+**Cerca de Separação** (pula-se ou derruba com 3 golpes) e **Fiscalização de Mijo Suprema**: cabine gigante que
+prende quem encosta na fila da documentação (apertar botões solta mais rápido). Perto da cabine,
+**Ginga + Agarrão** faz A PERGUNTA: dano emocional, tontura e a cabine desaba.
 
 ## Fora desta build
 

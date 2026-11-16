@@ -237,6 +237,18 @@ function weapon(c, J, f, ch) {
     c.fill();
     c.stroke();
     blob(c, [8, -16], 9, '#9fd8ff');
+  } else if (w === 'carimbo') {
+    // carimbo de decreto: cabo de madeira e base com tinta vermelha
+    limb(c, [0, 0], [0, -30], 12, '#6b4a2a');
+    c.fillStyle = '#3a3036';
+    c.strokeStyle = OUT;
+    c.lineWidth = 4;
+    c.beginPath();
+    c.roundRect(-26, -4, 52, 26, 4);
+    c.fill();
+    c.stroke();
+    c.fillStyle = '#c8102e';
+    c.fillRect(-24, 16, 48, 7);
   } else if (w === 'phone') {
     c.fillStyle = '#20202a';
     c.fillRect(-6, -22, 14, 26);

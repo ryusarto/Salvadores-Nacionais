@@ -54,4 +54,5 @@ export const COMBOS = {
   ],
   zanata: [],
   chupetinha: [],
+  pavanassi: [],
 };

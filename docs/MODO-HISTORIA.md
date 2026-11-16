@@ -134,6 +134,11 @@ Tudo nele gira em torno da chupeta.
 
 ### 3. Pavanassi
 
+No jogo desde o Capítulo 3 (`src/data/characters/pavanassi.js`), com
+retrato provisório e boneco no lugar dos sprites. Cercas e cabine são
+barreiras genéricas do motor (`behavior: 'barrier'` em `src/core/entities.js`),
+prontas para a muralha do Laranjão.
+
 Vereador com jeito de ditador, que quer separar héteros e trans. Governa por
 decreto e carimbo. O poder dele é **classificar e separar**, e é isso que os
 Salvadores derrubam.
@@ -265,10 +270,14 @@ sátira funcionar.
 2. ✓ **Capítulo 2 (Belém, frente do palco):** ficha e mecânica do
    Chupetinha, diálogos e fechamento. Vencer um capítulo abre o seguinte.
    Ainda usa o cenário do Ver-o-Peso, retrato provisório e boneco.
-3. Retrato e sprites da Zanata e do Chupetinha; cenário da frente do palco.
+3. ✓ **Capítulo 3 (Belém, banheiros químicos):** Pavanassi com Carimbo de
+   Decreto, Cerca de Separação, Fiscalização de Mijo Suprema e A PERGUNTA;
+   fechamento com as cores da bandeira trans no palco.
+4. Retrato e sprites de Zanata, Chupetinha e Pavanassi; cenários da frente do
+   palco e dos banheiros químicos.
    Para chefes sem arte, `node tools/retrato-provisorio.mjs <id> <cor> <cor>`
    gera um retrato e um ícone provisórios.
-4. Um capítulo por vez, na ordem da turnê: ficha e mecânica do chefe,
+5. Um capítulo por vez, na ordem da turnê: ficha e mecânica do chefe,
    retrato, sprites, cenário e textos.
 
 ## Em aberto

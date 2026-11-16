@@ -59,6 +59,50 @@ function figure(c, ch, x, y, w, h, face) {
 }
 const heroOf = (a) => HEROES[a.hero];
 
+/** Bandeirolas e bandeira com as cores da bandeira trans sobre o quadro do cenário. */
+const TRANS = ['#5bcefa', '#f5a9b8', '#ffffff', '#f5a9b8', '#5bcefa'];
+function drawPrideBunting(c, x, y, w, frame) {
+  c.save();
+  c.strokeStyle = P.ink;
+  c.lineWidth = 4;
+  for (const [row, sag] of [[40, 50], [110, 40]]) {
+    c.beginPath();
+    c.moveTo(x, y + row);
+    c.quadraticCurveTo(x + w / 2, y + row + sag * 2, x + w, y + row);
+    c.stroke();
+    for (let i = 0; i < 18; i++) {
+      const t = (i + 0.5) / 18;
+      const px = x + t * w;
+      const py = y + row + sag * 4 * t * (1 - t);
+      c.fillStyle = TRANS[i % TRANS.length];
+      c.beginPath();
+      c.moveTo(px - 22, py);
+      c.lineTo(px + 22, py);
+      c.lineTo(px, py + 48 + Math.sin(frame / 10 + i) * 4);
+      c.closePath();
+      c.fill();
+      c.stroke();
+    }
+  }
+  // bandeira grande no mastro, à direita
+  const fx = x + w - 230;
+  const fy = y + 170;
+  c.fillStyle = P.ink;
+  c.fillRect(fx - 8, fy - 10, 8, 270);
+  TRANS.forEach((col, i) => {
+    c.fillStyle = col;
+    c.beginPath();
+    const y0 = fy + i * 30;
+    c.moveTo(fx, y0);
+    for (let k = 0; k <= 10; k++) c.lineTo(fx + k * 20, y0 + Math.sin(frame / 9 + k * 0.6) * 6);
+    for (let k = 10; k >= 0; k--) c.lineTo(fx + k * 20, y0 + 30 + Math.sin(frame / 9 + k * 0.6) * 6);
+    c.closePath();
+    c.fill();
+  });
+  c.strokeRect(fx, fy, 200, 150);
+  c.restore();
+}
+
 /** Abertura e fechamento: uma página de HQ por vez. */
 function pages(c, a, closing) {
   comicBackground(c, a.frame);
@@ -74,6 +118,7 @@ function pages(c, a, closing) {
   if (!drawBelemPresentation(c, 'miniatura', 760, 205, 1060, 440)) {
     comicText(c, ch.place, 1290, 425, 60, P.paper, 'center', 1000);
   }
+  if (closing && ch.boss === 'pavanassi' && run.page >= 1) drawPrideBunting(c, 760, 205, 1060, a.frame);
   // legenda
   const text = a.storyPages[run.page] || '';
   comicPanel(c, 700, 690, 1150, 290, P.yellow, 20, 6);

@@ -1,12 +1,12 @@
 import { SYS } from '../data/system.js';
 import { HEROES, BOSSES, ALL } from '../data/characters/index.js';
-import { createMatch, step } from '../core/match.js';
+import { createMatch, step, BAN_LABEL } from '../core/match.js';
 import { createBrain, aiInput } from '../core/ai.js';
 import { EMPTY_INPUT } from '../core/input.js';
 import { buildStage, drawStage } from '../render/stage.js';
 import { drawEffect, prepareSprites, spritePacksFor } from '../render/sprites.js';
 import { drawFighter, drawBoxes } from '../render/mannequin.js';
-import { drawLivePhone } from '../render/boss-art.js';
+import { drawLivePhone, drawBanStamp } from '../render/boss-art.js';
 import { createFx, fxEvents, fxUpdate, fxDrawBack, fxDrawFront, fxDrawScreen, drawEntities } from '../render/fx.js';
 import { createHud, drawHud } from '../render/hud.js';
 import { text, slab, halftone } from '../render/draw.js';
@@ -523,6 +523,7 @@ export function createApp(canvas, devices, opts = {}) {
       }
       drawFighter(c, f, app.frame + f.side * 17);
       if (f.ch.id === 'chupetinha') drawLivePhone(c, f, app.frame);
+      drawBanStamp(c, f, BAN_LABEL);
       if (absorb && absorb.t / absorb.dur > .35) {
         c.translate(f.x, SYS.GROUND_Y - f.y);
         c.scale(absorb.face,1);
