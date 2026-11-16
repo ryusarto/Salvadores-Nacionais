@@ -114,6 +114,18 @@ function meters(st) {
       }
     } else if (f.gingaPause > 0) f.gingaPause--;
     else if (f.state !== 'guard') f.ginga = Math.min(G.max, f.ginga + G.regen);
+    if (f.status.banished > 0 && --f.status.banished === 0) {
+      // volta para a realidade caindo do céu
+      f.hp = Math.max(f.hp > 1 ? 1 : 0, f.hp - (f.status.banishDmg || 1200));
+      setState(f, 'air_hit');
+      f.y = 620;
+      f.vy = -4;
+      f.vx = 0;
+      f.kd = 'hard';
+      f.juggleLock = true;
+      emit(st, { t: 'pop', str: 'RECONTRATADO… NA MARRA!', x: f.x, y: 700, color: '#ffcf2a', size: 40 });
+      emit(st, { t: 'unbanish', side: f.side, x: f.x });
+    }
     if (f.status.ban && --f.status.ban.t <= 0) {
       f.status.ban = null;
       emit(st, { t: 'pop', str: 'LIBERADO!', x: f.x, y: 560, color: '#7dff8a', size: 36 });

@@ -210,6 +210,11 @@ domiciliar, comandava tudo de dentro de casa. A luta é na sala da mansão.
 
 ### 6. Laranjão
 
+No jogo desde o Capítulo 6 (`src/data/characters/laranjao.js`), com retrato
+provisório, boneco e Washington desenhado em código
+(`src/render/washington-stage.js`). As cópias são entidades `decoy` e a muralha
+reaproveita as barreiras do Pavanassi.
+
 Os Salvadores descobrem que, para salvar o mundo, precisam ir aos Estados
 Unidos.
 
@@ -289,11 +294,13 @@ sátira funcionar.
    avião com a escada; o fechamento leva à mansão.
 5. ✓ **Capítulo 5 (mansão):** Pai do Fujão com Tornozeleira, Foro
    Privilegiado, capangas e Vingança Paterna; o fechamento leva a Washington.
-6. Retrato e sprites dos cinco chefes; cenários da frente do palco, dos
-   banheiros químicos, do aeroporto e da mansão pintados.
+6. ✓ **Capítulo 6 (Washington, D.C.):** Laranjão com Fake News, Tarifa
+   Suprema, THE WALL e You're Fired!; o fechamento leva ao inferno.
+7. Retrato e sprites dos seis chefes; cenários da frente do palco, dos
+   banheiros químicos, do aeroporto, da mansão e de Washington pintados.
    Para chefes sem arte, `node tools/retrato-provisorio.mjs <id> <cor> <cor>`
    gera um retrato e um ícone provisórios.
-7. Um capítulo por vez, na ordem da turnê: ficha e mecânica do chefe,
+8. Um capítulo por vez, na ordem da turnê: ficha e mecânica do chefe,
    retrato, sprites, cenário e textos.
 
 ## Em aberto

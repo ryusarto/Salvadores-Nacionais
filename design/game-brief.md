@@ -18,7 +18,7 @@ se joga de um jeito diferente.
   Perfeita. Segurar para trás também defende. Agarrão vence a defesa.
 - **Golpes de sequência:** → ← + Leve e ↓ → + Médio, dois por herói.
 - **Dificuldade:** Fácil, Normal e Difícil mudam o nível da CPU e o dano de cada lado.
-- **Modos:** História (Capítulos 1 a 5: Belém, aeroporto e mansão; Zanata, Chupetinha, Pavanassi, Fujão e Pai do Fujão), Versus CPU, **Versus 2 jogadores** (dois controles, ou controle e teclado) e Treino com lista de combos.
+- **Modos:** História (Capítulos 1 a 6: Belém, aeroporto, mansão e Washington; Zanata, Chupetinha, Pavanassi, Fujão, Pai do Fujão e Laranjão), Versus CPU, **Versus 2 jogadores** (dois controles, ou controle e teclado) e Treino com lista de combos.
 - **Combo aéreo:** Gancho (↓+Forte) acertou + segurar ↑ = pulo alto; Leve, Médio e Forte emendam no ar.
 - **Empurrão na defesa:** Leve + Médio defendendo afasta o atacante (1 gomo de Ginga).
 - **Rolamento:** botão de golpe ao cair levanta rolando (não vale em queda forte).
@@ -67,6 +67,11 @@ não foge. Sozinho perto da escada do avião, embarca e recupera 10% da vida.
 **Foro Privilegiado:** os 3 primeiros golpes de cada combo fazem só 1 de dano; depois de segurar 6, o foro é
 cassado por 8 s. Agarrões e supers furam. **Tornozeleira:** andando não sai da área; empurrado para fora,
 leva choque (900) e fica tonto. Abaixo de 50% de vida, Vingança Paterna (+20% de dano).
+
+**Chefe — Laranjão:** **Fake News** (duas cópias; golpe na cópia é gasto; só o verdadeiro tem sombra),
+**Tarifa Suprema** (metade da Ginga e do Super gastos pelo herói vira armadura: cada carga anula um golpe,
+até 3), Tuitada, Tarifaço, **THE WALL** (muralha dourada que não dá para pular, 6 golpes) e **You're Fired!**
+(o herói some por 2 s e cai de volta tomando 1.500).
 
 ## Fora desta build
 

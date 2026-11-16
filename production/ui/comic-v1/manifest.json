@@ -20,7 +20,8 @@
     "chupetinha",
     "pavanassi",
     "fujao",
-    "pai-fujao"
+    "pai-fujao",
+    "laranjao"
   ],
   "assets": {
     "portrait-franco": {
@@ -257,6 +258,24 @@
       "alpha": true,
       "sha256": "c92a781028ad10ce21ef83d7c6b9762638dbca7ad82f7419504cf383a5a88425",
       "bytes": 3190,
+      "provisional": true
+    },
+    "portrait-laranjao": {
+      "path": "portraits/laranjao.webp",
+      "width": 768,
+      "height": 1024,
+      "alpha": true,
+      "sha256": "12755bd9def6d89d2304a392d7b69e716152d7e73d18b923e8527aae00471161",
+      "bytes": 18670,
+      "provisional": true
+    },
+    "icon-laranjao": {
+      "path": "icons/laranjao.webp",
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "sha256": "cddd44d619de1805ec41fd6dc1d390621ad3be8cb0b73048ed2b1f61646443fa",
+      "bytes": 4198,
       "provisional": true
     }
   }

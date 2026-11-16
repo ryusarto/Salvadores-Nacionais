@@ -328,11 +328,13 @@ export function drawFighter(c, f, frame) {
   const gy = SYS.GROUND_Y;
   const shake = f.hitstop > 0 && ['hitstun', 'air_hit', 'crumple', 'blockstun', 'ko'].includes(f.state) ? (frame % 2 ? 5 : -5) : 0;
 
-  // sombra
-  c.fillStyle = 'rgba(10,5,15,.38)';
-  c.beginPath();
-  c.ellipse(f.x, gy + 6, 105 - Math.min(50, f.y * 0.12), 16, 0, 0, Math.PI * 2);
-  c.fill();
+  // sombra (cópias falsas do Laranjão não têm sombra: é a pista para achar o verdadeiro)
+  if (!f.ghost) {
+    c.fillStyle = 'rgba(10,5,15,.38)';
+    c.beginPath();
+    c.ellipse(f.x, gy + 6, 105 - Math.min(50, f.y * 0.12), 16, 0, 0, Math.PI * 2);
+    c.fill();
+  }
 
   c.save();
   c.translate(f.x + shake, gy - f.y);

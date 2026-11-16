@@ -380,3 +380,130 @@ export function drawAnkleZone(c, f, zoneX, zoneR, frame) {
   c.fill();
   c.restore();
 }
+
+/** Manchete em balão sobre o Laranjão e as cópias dele. */
+export function drawHeadline(c, x, y, text) {
+  c.save();
+  c.font = "bold 22px Impact, 'Arial Black', sans-serif";
+  const w = Math.max(160, c.measureText(text).width + 30);
+  c.fillStyle = '#f4f0ea';
+  c.strokeStyle = OUT;
+  c.lineWidth = 4;
+  c.beginPath();
+  c.roundRect(x - w / 2, y - 26, w, 44, 6);
+  c.fill();
+  c.stroke();
+  c.fillStyle = '#c8102e';
+  c.fillRect(x - w / 2, y - 26, w, 8);
+  c.fillStyle = OUT;
+  c.textAlign = 'center';
+  c.textBaseline = 'middle';
+  c.fillText(text, x, y + 2);
+  c.restore();
+}
+
+/** Tuíte voando: balão azul com um passarinho e texto em caixa alta. */
+export function drawTweet(c, x, y, dir, frame) {
+  c.save();
+  c.translate(x, y + Math.sin(frame * 0.4) * 4);
+  c.lineWidth = 4;
+  c.strokeStyle = OUT;
+  c.fillStyle = '#5ab0f0';
+  c.beginPath();
+  c.roundRect(-58, -30, 116, 60, 14);
+  c.fill();
+  c.stroke();
+  c.fillStyle = '#fff';
+  c.font = "bold 18px Impact, sans-serif";
+  c.textAlign = 'center';
+  c.textBaseline = 'middle';
+  c.fillText('URGENTE!!!', 8 * dir, 0);
+  c.beginPath();
+  c.arc(-40 * dir, -12, 8, 0, Math.PI * 2);
+  c.fill();
+  c.restore();
+}
+
+/** Muralha dourada do THE WALL, com rachaduras conforme apanha. */
+export function drawGoldWall(c, e, gy) {
+  const l = e.x - e.w / 2;
+  const top = gy - e.h;
+  const rise = Math.min(1, e.age / 10);
+  c.save();
+  c.translate(0, (1 - rise) * e.h);
+  c.lineWidth = 6;
+  c.strokeStyle = OUT;
+  const g = c.createLinearGradient(l, 0, l + e.w, 0);
+  g.addColorStop(0, '#b8862a');
+  g.addColorStop(0.5, '#f3d26a');
+  g.addColorStop(1, '#b8862a');
+  c.fillStyle = g;
+  c.fillRect(l, top, e.w, e.h);
+  c.strokeRect(l, top, e.w, e.h);
+  c.strokeStyle = 'rgba(90,60,10,.6)';
+  c.lineWidth = 3;
+  for (let y = top + 50; y < gy; y += 50) {
+    c.beginPath();
+    c.moveTo(l, y);
+    c.lineTo(l + e.w, y);
+    c.stroke();
+  }
+  c.fillStyle = OUT;
+  c.font = "bold 30px Impact, 'Arial Black', sans-serif";
+  c.textAlign = 'center';
+  c.save();
+  c.translate(e.x, top + e.h / 2);
+  c.rotate(-Math.PI / 2);
+  c.fillText('THE WALL', 0, 10);
+  c.restore();
+  if (e.hp < 6) {
+    c.strokeStyle = '#fff6d0';
+    c.lineWidth = 4;
+    c.beginPath();
+    for (let k = 0; k < 6 - e.hp; k++) {
+      const y = top + 80 + k * 90;
+      c.moveTo(l + 10, y);
+      c.lineTo(e.x, y + 30);
+      c.lineTo(l + e.w - 10, y + 10);
+    }
+    c.stroke();
+  }
+  c.restore();
+}
+
+/** Carimbo DEMITIDO no lugar de quem foi banido da realidade. */
+export function drawFired(c, f, frame) {
+  const x = f.x;
+  const y = GY - 260;
+  c.save();
+  c.globalAlpha = 0.35 + 0.25 * Math.sin(frame / 5);
+  c.strokeStyle = '#f4f0ea';
+  c.setLineDash([12, 10]);
+  c.lineWidth = 4;
+  c.strokeRect(x - 80, GY - 480, 160, 480);
+  c.restore();
+  c.save();
+  c.translate(x, y);
+  c.rotate(-0.2);
+  c.strokeStyle = '#c8102e';
+  c.lineWidth = 8;
+  c.strokeRect(-150, -46, 300, 92);
+  c.fillStyle = '#c8102e';
+  c.font = "bold 58px Impact, 'Arial Black', sans-serif";
+  c.textAlign = 'center';
+  c.textBaseline = 'middle';
+  c.fillText('DEMITIDO', 0, 4);
+  c.restore();
+}
+
+/** Brilho dourado em volta do Laranjão enquanto tem armadura da Tarifa. */
+export function drawGoldArmor(c, f, frame) {
+  if (!f.res?.armor || f.state === 'ko') return;
+  c.save();
+  c.strokeStyle = `rgba(243,210,106,${0.5 + 0.3 * Math.sin(frame / 6)})`;
+  c.lineWidth = 8;
+  c.beginPath();
+  c.ellipse(f.x, GY - f.y - 240, 110, 270, 0, 0, Math.PI * 2);
+  c.stroke();
+  c.restore();
+}

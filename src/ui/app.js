@@ -6,7 +6,8 @@ import { EMPTY_INPUT } from '../core/input.js';
 import { buildStage, drawStage } from '../render/stage.js';
 import { drawEffect, prepareSprites, spritePacksFor } from '../render/sprites.js';
 import { drawFighter, drawBoxes } from '../render/mannequin.js';
-import { drawLivePhone, drawBanStamp, drawAnkleZone } from '../render/boss-art.js';
+import { drawLivePhone, drawBanStamp, drawAnkleZone, drawHeadline, drawFired, drawGoldArmor } from '../render/boss-art.js';
+import { drawWashingtonStage } from '../render/washington-stage.js';
 import { drawMansionStage } from '../render/mansion-stage.js';
 import { PAI } from '../data/characters/pai-fujao.js';
 import { drawAirportStage } from '../render/airport-stage.js';
@@ -513,6 +514,7 @@ export function createApp(canvas, devices, opts = {}) {
     const stage = stageOf(a.ch, b.ch);
     if (stage === 'aeroporto') drawAirportStage(c, app.cam, app.frame);
     else if (stage === 'mansao') drawMansionStage(c, app.cam, app.frame);
+    else if (stage === 'washington') drawWashingtonStage(c, app.cam, app.frame);
     else drawStage(c, app.layers, app.cam, app.frame);
     fxDrawScreen(c, fx, 'under');
     c.save();
@@ -520,7 +522,19 @@ export function createApp(canvas, devices, opts = {}) {
     fxDrawBack(c, fx);
     for (const f of st.f) if (f.ch.id === 'pai-fujao') drawAnkleZone(c, f, PAI.zoneX, PAI.zoneR, app.frame);
     const order = b.state === 'attack' || a.state === 'hitstun' || a.state === 'thrown' ? [a, b] : [b, a];
+    // cópias falsas do Laranjão: o mesmo boneco, sem sombra, com outra manchete
+    for (const e of st.ents) {
+      if (e.kind !== 'clone') continue;
+      const owner = st.f[e.owner];
+      drawFighter(c, { ...owner, x: e.x, ghost: true }, app.frame + 7);
+      drawHeadline(c, e.x, SYS.GROUND_Y - 560, e.headline);
+    }
     for (const f of order) {
+      if (f.status.banished > 0) {
+        drawFired(c, f, app.frame);
+        continue;
+      }
+      if (f.ch.id === 'laranjao') drawGoldArmor(c, f, app.frame);
       const absorb = fx.parts.find(p => p.k === 'absorb' && p.side === f.side);
       c.save();
       if (absorb) {
@@ -534,6 +548,7 @@ export function createApp(canvas, devices, opts = {}) {
       drawFighter(c, f, app.frame + f.side * 17);
       if (f.ch.id === 'chupetinha') drawLivePhone(c, f, app.frame);
       drawBanStamp(c, f, BAN_LABEL);
+      if (f.ch.id === 'laranjao' && f.res.headline && st.ents.some((e) => e.kind === 'clone' && e.owner === f.side)) drawHeadline(c, f.x, SYS.GROUND_Y - f.y - 560, f.res.headline);
       if (absorb && absorb.t / absorb.dur > .35) {
         c.translate(f.x, SYS.GROUND_Y - f.y);
         c.scale(absorb.face,1);

@@ -4,9 +4,10 @@ import { COMIC as P, comicBackground, comicPanel, comicText, comicMenuItem } fro
 import { drawBelemPresentation } from '../render/belem-stage.js';
 import { drawAirportStage } from '../render/airport-stage.js';
 import { drawMansionStage } from '../render/mansion-stage.js';
+import { drawWashingtonStage } from '../render/washington-stage.js';
 
 /** Cenários próprios de chefes, desenhados em código: nome e função de desenho. */
-export const BOSS_STAGES = { aeroporto: ['AEROPORTO', drawAirportStage], mansao: ['MANSÃO', drawMansionStage] };
+export const BOSS_STAGES = { aeroporto: ['AEROPORTO', drawAirportStage], mansao: ['MANSÃO', drawMansionStage], washington: ['WASHINGTON, D.C.', drawWashingtonStage] };
 import { portrait, footer } from './comic-screens.js';
 import { currentChapter, currentFight, talkLines, nextChapter } from './story.js';
 
