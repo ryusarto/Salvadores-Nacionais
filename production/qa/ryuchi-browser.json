@@ -1,0 +1,35 @@
+{
+  "cases": 588,
+  "loaded": 114,
+  "views": 2,
+  "frames": 6,
+  "cell": 500,
+  "transparentFrames": 684,
+  "touchingEdges": 0,
+  "failures": [],
+  "displayedCanvas": {
+    "width": 500,
+    "height": 500
+  },
+  "downloadedFrame": {
+    "width": 500,
+    "height": 500,
+    "hasAlpha": true
+  },
+  "mobileOverflow": false,
+  "leftSelection": "left/dano-no-ar",
+  "standalone": {
+    "cases": 588,
+    "loaded": 114,
+    "views": 2,
+    "frames": 6,
+    "cell": 500,
+    "transparentFrames": 684,
+    "touchingEdges": 0,
+    "failures": []
+  },
+  "standaloneRequests": [
+    "http://127.0.0.1:8439/production/qa/ryuchi-previa-500px.html"
+  ],
+  "errors": []
+}

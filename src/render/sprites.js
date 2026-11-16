@@ -230,8 +230,12 @@ function pickStrip(set, a, f) {
  * O contexto deve estar na origem do lutador (pés), já espelhado pelo lado.
  * @returns {boolean} true se desenhou
  */
+export function spriteSetId(f) {
+  return f.ch.spriteFacingPacks?.[f.face < 0 ? 'left' : 'right'] || f.ch.id;
+}
+
 export function drawSprite(c, f, frame) {
-  const set = REG[f.ch.id];
+  const set = REG[spriteSetId(f)];
   if (!set) return false;
   const a = animFor(f, frame);
   a.p = spriteProgress(f, a);
@@ -262,6 +266,8 @@ export function drawSprite(c, f, frame) {
     c.rotate(-0.9 - Math.max(-0.6, Math.min(0.6, -f.vy * 0.03)));
     c.translate(0, 220);
   }
+  // Cancel the caller's facing mirror for independently drawn left-facing art.
+  if (f.face < 0 && f.ch.spriteFacingPacks?.left) c.scale(-1, 1);
   c.drawImage(s.cv, i * s.size, 0, s.size, s.size, -size * FOOT.x, -size * FOOT.y, size, size);
   attackEffects(c, f);
   if (fx === 'guard') {

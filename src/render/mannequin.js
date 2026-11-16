@@ -7,6 +7,7 @@ import { drawMajisAttack, drawMajisStatus } from './majis-art.js';
 import { drawCharacterFx } from './character-fx.js';
 import { drawTrunksAttack } from './trunks-art.js';
 import { drawBelgaAttack } from './belga-art.js';
+import { drawRyuchiAttack } from './ryuchi-art.js';
 
 /**
  * Desenho provisório dos lutadores: um manequim articulado com as cores e a
@@ -349,7 +350,7 @@ export function drawFighter(c, f, frame) {
 
   // rastro do golpe; as novas tiras usam os efeitos separados de tinta.
   if (sprite) drawMajisStatus(c, f, frame);
-  const artEffect = sprite && (drawChapuhAttack(c, f) || drawMajisAttack(c, f) || drawTrunksAttack(c, f) || drawBelgaAttack(c, f) || drawCharacterFx(c, f));
+  const artEffect = sprite && (drawChapuhAttack(c, f) || drawMajisAttack(c, f) || drawTrunksAttack(c, f) || drawBelgaAttack(c, f) || drawRyuchiAttack(c, f) || drawCharacterFx(c, f));
   if (!artEffect && f.state === 'attack' && f.move.weapon !== 'whip') {
     const kind = f.move.fx;
     for (const h of f.move.hits) {

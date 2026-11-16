@@ -1,0 +1,37 @@
+{
+  "character": "ryuchi",
+  "views": {
+    "right": {
+      "pack": "ryuchi",
+      "nearestFlank": "right",
+      "reference": "originais/parado.png"
+    },
+    "left": {
+      "pack": "ryuchi-esquerda",
+      "nearestFlank": "left",
+      "reference": "esquerda/originais/parado.png",
+      "horizontalMirror": false
+    }
+  },
+  "beanie": "fitted to skull; no drooping rear fabric",
+  "scabbard": "anatomical right hip, belt-mounted, empty while sword drawn; far-side occlusion in left-facing view",
+  "swordGrip": {
+    "leadHand": "left, nearest guard",
+    "supportHand": "right, nearer pommel",
+    "thumbs": "both on upper side toward guard; no inverted/underhand grip",
+    "fingers": "closed around same single handle"
+  },
+  "continuity": [
+    "one sword and one scabbard",
+    "extract along actual mouth axis before swinging",
+    "align tip with same fixed sheath mouth for return",
+    "during roll sword stays sheathed and rigid sheath rotates with pelvis outside shoulder contact path"
+  ],
+  "frames": 6,
+  "cell": [
+    500,
+    500
+  ],
+  "images": 114,
+  "totalFrames": 684
+}

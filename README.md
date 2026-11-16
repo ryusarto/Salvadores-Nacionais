@@ -121,3 +121,20 @@ e sete lançamentos reais de vinil. As regras de combate e o BPM são preservado
 [Prévia em 500px](production/qa/belga-sprites.html),
 [prévia independente para baixar](production/qa/belga-previa-500px.html) e
 [fontes e instruções](LEIA-ME-BELGA.md).
+
+### Ryuchi — katana e voz em seis frames de 500px
+
+49 animações e oito efeitos **por sentido**, com arte própria para direita e
+esquerda: **114 imagens e 684 frames** com alpha real, sem espelhamento. Gorro
+justo, bainha no quadril direito e mão esquerda conduzindo a katana com apoio
+da direita, com os dois polegares na orientação superior da pegada. Inclui os Três Cortes, os quatro níveis do Fio, contra-ataque e
+os dois supers de voz, sincronizados com o combate.
+[Prévia](production/qa/ryuchi-sprites.html),
+[prévia independente](production/qa/ryuchi-previa-500px.html) e
+[instruções e fontes](LEIA-ME-RYUCHI.md).
+
+### Próxima fase — Belém / Ver-o-Peso
+
+[Inventário de assets e plano de produção](docs/CENARIO-01-VER-O-PESO.md)
+para substituir o cenário provisório por camadas de arte com profundidade.
+O plano cobre36 grupos de assets; a arte nova da fase ainda não foi produzida.

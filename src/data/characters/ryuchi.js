@@ -46,18 +46,23 @@ export default {
   style: 'Espadachim de longo alcance',
   mechName: 'POSTURA DA LÂMINA',
   mechDesc: 'Segure ↓+Especial para carregar o Fio. Soltar = corte carregado. Na postura: Leve = corte instantâneo, Médio = contra-ataque.',
-  colors: { skin: '#e0b08a', top: '#2c3140', bottom: '#3a3530', accent: '#d2edf8', hair: '#1a1418', hat: '#e8e4dc', shoe: '#f0f0f0' },
-  look: { hair: 'bucket', weapon: 'katana', sleeves: 'long', glasses: true },
+  colors: { skin: '#e0b08a', top: '#2c3140', bottom: '#3a3530', accent: '#d2edf8', hair: '#1a1418', hat: '#17141a', shoe: '#f0f0f0' },
+  look: { hair: 'beanie', weapon: 'katana', sleeves: 'long', glasses: false },
   walkF: 7.1, walkB: 5.4, jumpScale: 1.02, hpScale: 1,
   moves,
   // Qual tira do kit de sprites cada animação usa (production/sprites/final/ryuchi)
-  spriteAlias: { 'golpe-c2': 'golpe-c1', 'golpe-SA1': 'golpe-SA3', 'golpe-5LL': 'golpe-5L', 'golpe-5LLL': 'golpe-c1', 'golpe-stL': 'golpe-5L', 'golpe-stRel0': 'golpe-5H', 'golpe-stRel1': 'golpe-5H', 'golpe-stRel2': 'golpe-5H', 'golpe-stRel3': 'golpe-c1', 'golpe-stCtr': 'golpe-5H' },
+  spriteAlias: {},
+  spriteProfile: 'six-frame', spriteScale: 0.92, spriteRecovery: true,
+  spriteFacingPacks: { right: 'ryuchi', left: 'ryuchi-esquerda' },
+  spriteStatePhases: true, spritePhasedMoves: Object.keys(moves),
+  spriteHitFrames: { SA1: [2, 4], SA3: [2, 3, 2, 3, 4] },
+  spriteHitGapFrames: { SA1: [3], SA3: [3, 2, 3, 2] },
   mech: {
     init(f) {
       f.res = {};
     },
     onMoveFrame(st, f, o, m) {
-      if ((f.moveKey === 'SA3' || f.moveKey === 'SA1') && f.sf > m.startup && f.sf < (f.moveKey === 'SA3' ? 60 : 28) && f.sf % 5 === 0) st.events.push({ t: 'wave', x: f.x, y: 380, r: 160 + f.sf * 12, color: '#d2edf8' }, { t: 'shake', n: 10 });
+      if ((f.moveKey === 'SA3' || f.moveKey === 'SA1') && f.sf > m.startup && f.sf < (f.moveKey === 'SA3' ? 60 : 28) && f.sf % 5 === 0) st.events.push({ t: 'wave', side: f.side, art: 'ryuchi', x: f.x, y: 380, r: 160 + f.sf * 12, color: '#d2edf8' }, { t: 'shake', n: 10 });
     },
     remap(f, key) {
       return key === 'stRel' ? `stRel${fio(f.holdLevel)}` : key;

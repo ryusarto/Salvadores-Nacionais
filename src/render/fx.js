@@ -5,6 +5,7 @@ import { drawChapuhEntity } from './chapuh-art.js';
 import { drawMajisEntity } from './majis-art.js';
 import { drawTrunksEntity, drawTrunksParticle } from './trunks-art.js';
 import { drawBelgaEntity, drawBelgaParticle } from './belga-art.js';
+import { drawRyuchiEntity, drawRyuchiParticle } from './ryuchi-art.js';
 
 /**
  * Efeitos visuais. Lê os eventos que a simulação emite a cada quadro e cria
@@ -34,6 +35,11 @@ export function fxEvents(fx, st) {
       if (name && hasSpriteStrip(actor.ch.id, name)) fx.parts.push({ k: 'sprite', id: actor.ch.id, name, x: e.x, y: name === 'fx-poeira' ? GY - 35 : e.t === 'pop' ? GY - 350 : sy, r: name === 'fx-poeira' ? 320 : 240, t: 0, dur: 20 });
     }
     const layer = (id, name, x, y, w, h = w, dur = 16, face = 1) => fx.parts.push({ k: 'sprite', id, name, x, y, w, h, dur, face, t: 0 });
+    if (actor?.ch.id === 'ryuchi' && ['hit', 'block', 'parry', 'perfect', 'armor', 'clash', 'grab', 'jump', 'land'].includes(e.t)) {
+      const floor = e.t === 'jump' || e.t === 'land';
+      layer('ryuchi-fx', floor || e.t === 'armor' ? 'fx-fio' : e.key === '5S' ? 'fx-corte' : e.key === 'c2' ? 'fx-estocada' : 'fx-contra', e.x, floor ? GY - 35 : sy, floor ? 150 : 210, floor ? 90 : 210, 14, actor.face);
+    }
+    if (e.t === 'wave' && e.art === 'ryuchi') continue;
     if (e.t === 'hit' && actor?.ch.id === 'belga') {
       if (['5S', 'SA1', 'SA3'].includes(e.key)) layer('belga-fx', 'vinil-impacto', e.x, sy, 240, 240, 16, actor.face);
       else if (actor.res.bpm > 0) layer('belga-fx', 'fx-bpm', actor.x, GY - actor.y - 270, 260, 260, 18, actor.face);
@@ -63,19 +69,19 @@ export function fxEvents(fx, st) {
     switch (e.t) {
       case 'hit': {
         const r = POWER[e.power] || 50;
-        fx.parts.push({ k: 'spark', x: e.x, y: sy, r: e.super ? 130 : r, t: 0, dur: 14, color: e.super ? '#fff' : e.power === 'L' ? '#ffe98a' : '#ffb13d', rot: Math.random() * 3 });
+        if (actor?.ch.id !== 'ryuchi') fx.parts.push({ k: 'spark', x: e.x, y: sy, r: e.super ? 130 : r, t: 0, dur: 14, color: e.super ? '#fff' : e.power === 'L' ? '#ffe98a' : '#ffb13d', rot: Math.random() * 3 });
         fx.shake = Math.max(fx.shake, e.super ? 22 : r / 5);
         if (e.ctr) pop(fx, e.ctr === 'punish' ? 'PUNIÇÃO!' : 'CONTRA!', e.x, sy - 120, '#ff5a4a', 50);
         else if (e.power !== 'L' && e.power !== 'M' && !e.super) pop(fx, WORDS[fx.n++ % WORDS.length], e.x + 40, sy - 90, '#ffe14a', 58, 30);
-        for (let i = 0; i < 5; i++) fx.parts.push({ k: 'line', x: e.x, y: sy, a: Math.random() * 6.28, r: r, t: 0, dur: 12 });
+        if (actor?.ch.id !== 'ryuchi') for (let i = 0; i < 5; i++) fx.parts.push({ k: 'line', x: e.x, y: sy, a: Math.random() * 6.28, r: r, t: 0, dur: 12 });
         break;
       }
-      case 'block': fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 46, t: 0, dur: 12, color: '#bfe6ff' }); fx.shake = Math.max(fx.shake, 3); break;
-      case 'parry': fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 70, t: 0, dur: 16, color: '#58d6ff' }); pop(fx, 'APAROU!', e.x, sy - 110, '#58d6ff', 44); break;
-      case 'perfect': fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 150, t: 0, dur: 26, color: '#aef4ff' }); fx.flash = 0.6; pop(fx, 'DEFESA PERFEITA!', e.x, sy - 150, '#aef4ff', 62, 70); break;
-      case 'armor': fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 80, t: 0, dur: 14, color: '#ffb347' }); break;
-      case 'land': dust(fx, e.x, e.hard ? 12 : 5, e.hard ? 1.5 : 0.8); if (e.hard) fx.shake = Math.max(fx.shake, 9); break;
-      case 'jump': dust(fx, e.x, 5, 0.8); break;
+      case 'block': if (actor?.ch.id !== 'ryuchi') fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 46, t: 0, dur: 12, color: '#bfe6ff' }); fx.shake = Math.max(fx.shake, 3); break;
+      case 'parry': if (actor?.ch.id !== 'ryuchi') fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 70, t: 0, dur: 16, color: '#58d6ff' }); pop(fx, 'APAROU!', e.x, sy - 110, '#58d6ff', 44); break;
+      case 'perfect': if (actor?.ch.id !== 'ryuchi') fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 150, t: 0, dur: 26, color: '#aef4ff' }); fx.flash = 0.6; pop(fx, 'DEFESA PERFEITA!', e.x, sy - 150, '#aef4ff', 62, 70); break;
+      case 'armor': if (actor?.ch.id !== 'ryuchi') fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 80, t: 0, dur: 14, color: '#ffb347' }); break;
+      case 'land': if (actor?.ch.id !== 'ryuchi') dust(fx, e.x, e.hard ? 12 : 5, e.hard ? 1.5 : 0.8); if (e.hard) fx.shake = Math.max(fx.shake, 9); break;
+      case 'jump': if (actor?.ch.id !== 'ryuchi') dust(fx, e.x, 5, 0.8); break;
       case 'rush': pop(fx, 'ARRANCADA!', st.f[e.side].x, GY - 520, '#7dff8a', 44); break;
       case 'burnout': pop(fx, 'SEM FÔLEGO!', st.f[e.side].x, GY - 540, '#b0b0b8', 56, 80); break;
       case 'finale': pop(fx, 'FINAL!', e.x, GY - 540, '#ffe14a', 70, 60); break;
@@ -90,9 +96,9 @@ export function fxEvents(fx, st) {
       case 'pop': pop(fx, e.str, e.x, GY - (e.y || 520), e.color || '#fff', e.size || 50, 60); break;
       case 'dizzy': pop(fx, 'TONTO!', e.x, GY - 560, '#ffe14a', 70, 80); break;
       case 'pushblock': fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 120, t: 0, dur: 16, color: '#35d6c0' }); pop(fx, 'EMPURRÃO!', e.x, sy - 130, '#35d6c0', 44); break;
-      case 'grab': fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 50, t: 0, dur: 10, color: '#fff' }); break;
+      case 'grab': if (actor?.ch.id !== 'ryuchi') fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 50, t: 0, dur: 10, color: '#fff' }); break;
       case 'tech': pop(fx, 'ESCAPOU!', e.x, sy - 140, '#fff', 46); break;
-      case 'clash': fx.parts.push({ k: 'spark', x: e.x, y: sy, r: 60, t: 0, dur: 12, color: '#fff', rot: 0 }); break;
+      case 'clash': if (actor?.ch.id !== 'ryuchi') fx.parts.push({ k: 'spark', x: e.x, y: sy, r: 60, t: 0, dur: 12, color: '#fff', rot: 0 }); break;
       case 'strike':
         if (e.kind === 'ambulance') {
           // explosão da ambulância
@@ -171,7 +177,7 @@ export function drawEntities(c, st) {
     c.save();
     c.lineWidth = 5;
     c.strokeStyle = '#12080c';
-    if (drawChapuhEntity(c, e) || drawMajisEntity(c, e) || drawTrunksEntity(c, e, owner?.ch.id) || drawBelgaEntity(c, e, owner?.ch.id)) { c.restore(); continue; }
+    if (drawChapuhEntity(c, e) || drawMajisEntity(c, e) || drawTrunksEntity(c, e, owner?.ch.id) || drawBelgaEntity(c, e, owner?.ch.id) || drawRyuchiEntity(c, e, owner?.ch.id)) { c.restore(); continue; }
     if (e.kind === 'ambulance') {
       // ambulância despencando do céu até o chão, girando, com a sirene piscando
       const t = e.delay > 0 ? 1 - e.delay / (e.delay0 || 26) : 1;
@@ -334,6 +340,7 @@ export function fxDrawFront(c, fx) {
   for (const p of fx.parts) {
     const t = p.t / p.dur;
     if (p.k === 'absorb') continue;
+    if (p.k === 'sprite' && p.id === 'ryuchi-fx') { drawRyuchiParticle(c, p); continue; }
     if (p.k === 'sprite' && p.id === 'belga-fx') {
       drawBelgaParticle(c, p);
       continue;

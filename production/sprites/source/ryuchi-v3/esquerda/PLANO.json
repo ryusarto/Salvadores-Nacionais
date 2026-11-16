@@ -1,0 +1,818 @@
+{
+  "character": "ryuchi",
+  "view": "left",
+  "reference": "Existing Ryuchi katana art; fitted skull beanie without drooping rear fabric per user correction; black/cream gold-dragon jacket, charcoal cargo and katana.",
+  "referenceScale": 0.8247422680412371,
+  "referenceFaceArea": 1465,
+  "referenceFaceRegion": {
+    "area": 1465,
+    "x": 210,
+    "y": 44,
+    "w": 53,
+    "h": 46,
+    "score": 864.1751515021238
+  },
+  "animations": [
+    {
+      "name": "parado",
+      "effect": false,
+      "source": "originais/parado.png",
+      "faceArea": 1465,
+      "faceRegion": {
+        "area": 1465,
+        "x": 210,
+        "y": 44,
+        "w": 53,
+        "h": 46,
+        "score": 864.1751515021238
+      },
+      "prompt": "Create RYUCHI IDLE six-frame animation showing the OTHER SIDE of the SAME3D character. He must FACE LEFT in EVERY frame (nose, eyes, toes all LEFT). This is a true OPPOSITE 3/4 FLANK view, NOT a mirrored costume/anatomy: camera sees his anatomical LEFT side nearest, RIGHT side farther. RIGHT-HIP katana scabbard stays on HIS RIGHT hip, therefore mostly on FAR SIDE partially hidden behind waist/thigh; do NOT move it onto near left hip. Its tip may peek behind far leg toward screen-right. LEFT hand (near arm) crosses naturally toward hilt at far RIGHT hip; RIGHT hand near scabbard mouth on far side. Sword completely sheathed ALL6, ONE sword/scabbard only. Same slim young clean-shaven face, tight BLACK skull-fitting beanie with pale small dragon motif NO rear droop, black/cream gold-dragon bomber jacket (show more of back/left-shoulder gold dragon from this angle), red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. Six subtle consecutive breathing phases relaxed/inhale/rise/exhale/settle/ready, both feet planted, LEFT-facing continuously. Crisp ink three-tone cel shaded HD, same anatomical proportions/head size as original. ONE image ONE animation EXACT6 full-body frames in invisible3-column2-row grid1536x1024,512cells to export500. Whole head/shoes/scabbard inside eachcell32px margins. TRUE TRANSPARENT alpha ZERO background, no ground/shadows/checkerboard/grid/text. Do not simply horizontally mirror the source: retain right-hip scabbard and left-hand sword dominance."
+    },
+    {
+      "name": "andar",
+      "effect": false,
+      "source": "originais/andar.png",
+      "faceArea": 1497,
+      "faceRegion": {
+        "area": 1497,
+        "x": 201,
+        "y": 46,
+        "w": 57,
+        "h": 50,
+        "score": 867.6286833408598
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. forward walking cycle LEFT: heel strike, weight transfer, passing legs, opposite heel strike, transfer, return; face LEFT"
+    },
+    {
+      "name": "andar-tras",
+      "effect": false,
+      "source": "originais/andar-tras.png",
+      "faceArea": 1418,
+      "faceRegion": {
+        "area": 1418,
+        "x": 178,
+        "y": 49,
+        "w": 57,
+        "h": 43,
+        "score": 818.1148311195301
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. backward walking cycle toward SCREEN RIGHT while face stays LEFT,6 distinct weight/foot phases"
+    },
+    {
+      "name": "correr",
+      "effect": false,
+      "source": "originais/correr.png",
+      "faceArea": 1772,
+      "faceRegion": {
+        "area": 1772,
+        "x": 106,
+        "y": 93,
+        "w": 58,
+        "h": 49,
+        "score": 866.3316482442275
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. running LEFT cycle6phases: push-off, airborne stride, leading foot strike, pass, opposite stride, return"
+    },
+    {
+      "name": "agachar",
+      "effect": false,
+      "source": "originais/agachar.png",
+      "faceArea": 1430,
+      "faceRegion": {
+        "area": 1430,
+        "x": 210,
+        "y": 44,
+        "w": 55,
+        "h": 45,
+        "score": 846.2709323313674
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. crouch descent6phases: stand, bend knees, half-crouch, deep crouch, settle, held deep crouch; natural shorter body"
+    },
+    {
+      "name": "pulo",
+      "effect": false,
+      "source": "originais/pulo.png",
+      "faceArea": 1692,
+      "faceRegion": {
+        "area": 1692,
+        "x": 110,
+        "y": 152,
+        "w": 59,
+        "h": 46,
+        "score": 774.8456913891254
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. jump6phases: takeoff, rise, tucked apex, early descent, falling extension, landing-ready; katana fully sheathed"
+    },
+    {
+      "name": "recuo",
+      "effect": false,
+      "source": "originais/recuo.png",
+      "faceArea": 1518,
+      "faceRegion": {
+        "area": 1518,
+        "x": 245,
+        "y": 51,
+        "w": 58,
+        "h": 44,
+        "score": 837.7076119189358
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. backdash to SCREEN RIGHT while facing LEFT: coil, rear push, backward slide, longest rearward stride, brake, guard"
+    },
+    {
+      "name": "escape-agarrao",
+      "effect": false,
+      "source": "originais/escape-agarrao.png",
+      "faceArea": 1461,
+      "faceRegion": {
+        "area": 1461,
+        "x": 211,
+        "y": 45,
+        "w": 58,
+        "h": 44,
+        "score": 860.8762724182038
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. throw escape6phases: ready, startled torso twist, elbows push away unseen arms, breakfree arms apart, step backward, recover"
+    },
+    {
+      "name": "recuperacao-rolamento",
+      "effect": false,
+      "source": "originais/recuperacao-rolamento.png",
+      "faceArea": 1641,
+      "faceRegion": {
+        "area": 1641,
+        "x": 144,
+        "y": 164,
+        "w": 58,
+        "h": 43,
+        "score": 598.2759378660654
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. diagonal LEFT-SHOULDER forward roll toward SCREEN LEFT6phases: lowkneel, left hand/shoulder braces, tucked inverted, continue forward roll, unfold crouch, recover. RIGHT hand locks fully sheathed sword at FAR RIGHT hip; rigid sheath rotates WITH pelvis fixed belt attachment/angle, outer right flank stays outside left-shoulder floor-contact path. No blade exposed, intersections with legs/body/floor or independent scabbard swing"
+    },
+    {
+      "name": "defesa-em-pe",
+      "effect": false,
+      "source": "originais/defesa-em-pe.png",
+      "faceArea": 1268,
+      "faceRegion": {
+        "area": 1268,
+        "x": 223,
+        "y": 49,
+        "w": 53,
+        "h": 42,
+        "score": 766.6661818728119
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. standing block6phases: ready, raise arms, brace forearms, strongest contact guard, absorb recoil, held guard"
+    },
+    {
+      "name": "defesa-agachado",
+      "effect": false,
+      "source": "originais/defesa-agachado.png",
+      "faceArea": 2376,
+      "faceRegion": {
+        "area": 2376,
+        "x": 176,
+        "y": 85,
+        "w": 76,
+        "h": 52,
+        "score": 1073.2768172280607
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. crouched block6phases: lowready, lift forearms, tight lowguard, strongest contact, recoil absorbed, held lowguard"
+    },
+    {
+      "name": "defesa-no-ar",
+      "effect": false,
+      "source": "originais/defesa-no-ar.png",
+      "faceArea": 1721,
+      "faceRegion": {
+        "area": 1721,
+        "x": 167,
+        "y": 54,
+        "w": 61,
+        "h": 49,
+        "score": 940.9473729606735
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. airguard6phases: airborne ready, forearms lift, tight guard, recoil blocking midair, settle, compact guard"
+    },
+    {
+      "name": "dano-alto",
+      "effect": false,
+      "source": "originais/dano-alto.png",
+      "faceArea": 1580,
+      "faceRegion": {
+        "area": 1580,
+        "x": 197,
+        "y": 45,
+        "w": 58,
+        "h": 49,
+        "score": 930.9955581250939
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. high hit reaction6phases: ready, chest hit flinch, shoulders recoil, head/torso bend back, settle into pain, braced hurt; no enemy"
+    },
+    {
+      "name": "dano-baixo",
+      "effect": false,
+      "source": "originais/dano-baixo.png",
+      "faceArea": 1527,
+      "faceRegion": {
+        "area": 1527,
+        "x": 206,
+        "y": 46,
+        "w": 56,
+        "h": 43,
+        "score": 871.5171669678112
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. body hit reaction6phases: ready, abdomen tightens, elbows lower, torso folds, doubled-over pain, settle crouched pain"
+    },
+    {
+      "name": "dano-no-ar",
+      "effect": false,
+      "source": "originais/dano-no-ar.png",
+      "faceArea": 1573,
+      "faceRegion": {
+        "area": 1573,
+        "x": 191,
+        "y": 47,
+        "w": 62,
+        "h": 45,
+        "score": 901.8991297324965
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. air hit tumble6phases: upright recoil, chest bends back, diagonal backward tumble, semihorizontal tuck, horizontal legs extending, falling horizontal; RIGHT hand locks fully sheathed sword at FAR RIGHT hip, rigid sheath follows pelvis constant relative angle clear of limbs"
+    },
+    {
+      "name": "caido",
+      "effect": false,
+      "source": "originais/caido.png",
+      "faceArea": 1842,
+      "faceRegion": {
+        "area": 1842,
+        "x": 132,
+        "y": 71,
+        "w": 62,
+        "h": 48,
+        "score": 890.1005995516584
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. fall6phases: stagger lowkneel, seated fall, back near implied floor, lying bent knees, legs settle, fully lying. Sword fully sheathed FAR RIGHT hip secured by RIGHT hand, sheath follows pelvis no intersections"
+    },
+    {
+      "name": "levantar",
+      "effect": false,
+      "source": "originais/levantar.png",
+      "faceArea": 1106,
+      "faceRegion": {
+        "area": 1106,
+        "x": 405,
+        "y": 288,
+        "w": 47,
+        "h": 42,
+        "score": 103.93080153911586
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. getup6phases: lying back, roll torso side, prop forearm, kneeling brace, halfstand, upright guard; sword fully sheathed right hip throughout"
+    },
+    {
+      "name": "tonto",
+      "effect": false,
+      "source": "originais/tonto.png",
+      "faceArea": 1385,
+      "faceRegion": {
+        "area": 1385,
+        "x": 186,
+        "y": 55,
+        "w": 64,
+        "h": 47,
+        "score": 821.6792856366447
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. dizzy loop6phases: drooping head, sway forward, sway left, sway back, sway other direction, drooping return; feet planted, sword sheathed"
+    },
+    {
+      "name": "vitoria",
+      "effect": false,
+      "source": "originais/vitoria.png",
+      "faceArea": 1458,
+      "faceRegion": {
+        "area": 1458,
+        "x": 211,
+        "y": 45,
+        "w": 55,
+        "h": 45,
+        "score": 860.0459869556972
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. victory6phases: ready, confident chin lift, LEFT fist near chest, proud nod fist shoulder height, small respectful bow, relaxed victory. No overhead arm, no necklace/extra props; sword fully sheathed right hip"
+    },
+    {
+      "name": "golpe-5L",
+      "effect": false,
+      "source": "originais/golpe-5L.png",
+      "faceArea": 1325,
+      "faceRegion": {
+        "area": 1325,
+        "x": 224,
+        "y": 47,
+        "w": 55,
+        "h": 41,
+        "score": 791.2193391576217
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. Corte Um: short horizontal draw-cut LEFT. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-5M",
+      "effect": false,
+      "source": "originais/golpe-5M.png",
+      "faceArea": 1414,
+      "faceRegion": {
+        "area": 1414,
+        "x": 246,
+        "y": 45,
+        "w": 55,
+        "h": 45,
+        "score": 834.9976205976163
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. medium horizontal two-handed slash LEFT. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-5H",
+      "effect": false,
+      "source": "originais/golpe-5H.png",
+      "faceArea": 1361,
+      "faceRegion": {
+        "area": 1361,
+        "x": 207,
+        "y": 43,
+        "w": 54,
+        "h": 42,
+        "score": 805.4368803517419
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. heavy diagonal two-handed downward cut LEFT. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-2L",
+      "effect": false,
+      "source": "originais/golpe-2L.png",
+      "faceArea": 1589,
+      "faceRegion": {
+        "area": 1589,
+        "x": 202,
+        "y": 57,
+        "w": 61,
+        "h": 45,
+        "score": 855.4377315161024
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. low crouching sneaker kick LEFT with sword fully SHEATHED. Exactly6poses1ready,2wind-up,3approach,4FULL CONTACT described motion,5followthrough,6recover. Sword FULLY SHEATHED FAR RIGHT hip ALL6. "
+    },
+    {
+      "name": "golpe-2M",
+      "effect": false,
+      "source": "originais/golpe-2M.png",
+      "faceArea": 1495,
+      "faceRegion": {
+        "area": 1495,
+        "x": 201,
+        "y": 52,
+        "w": 59,
+        "h": 44,
+        "score": 807.9473297473685
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. crouching horizontal low katana sweep LEFT. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-2H",
+      "effect": false,
+      "source": "originais/golpe-2H.png",
+      "faceArea": 1632,
+      "faceRegion": {
+        "area": 1632,
+        "x": 182,
+        "y": 66,
+        "w": 66,
+        "h": 46,
+        "score": 835.5027492113376
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. crouched rising diagonal katana cut LEFT. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-3H",
+      "effect": false,
+      "source": "originais/golpe-3H.png",
+      "faceArea": 1537,
+      "faceRegion": {
+        "area": 1537,
+        "x": 245,
+        "y": 44,
+        "w": 62,
+        "h": 48,
+        "score": 904.6671080338684
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. deep full low katana sweep LEFT. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-6M",
+      "effect": false,
+      "source": "originais/golpe-6M.png",
+      "faceArea": 1328,
+      "faceRegion": {
+        "area": 1328,
+        "x": 205,
+        "y": 46,
+        "w": 55,
+        "h": 40,
+        "score": 782.5076589810916
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. overhead downward two-handed katana cut LEFT. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-jL",
+      "effect": false,
+      "source": "originais/golpe-jL.png",
+      "faceArea": 1381,
+      "faceRegion": {
+        "area": 1381,
+        "x": 230,
+        "y": 47,
+        "w": 54,
+        "h": 44,
+        "score": 814.6251769450054
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. airborne short katana slash LEFT. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-jM",
+      "effect": false,
+      "source": "originais/golpe-jM.png",
+      "faceArea": 1863,
+      "faceRegion": {
+        "area": 1863,
+        "x": 213,
+        "y": 60,
+        "w": 62,
+        "h": 49,
+        "score": 888.5021345928247
+      },
+      "prompt": "HIGH DEFINITION game sprites, ONE image ONE animation EXACT6frames on1536x1024 in invisible3-column2-row grid,512square cells to export500. GENUINE TRANSPARENT background alphaZERO, no checkerboard/backdrop/grid/text. RYUCHI SAME left-facing opposite-flank character as reference, gold dragon on back black/cream bomber, skull-fitting black beanie NO droop, loose dark cargo and sneakers. FACE SCREEN LEFT ALL6. AIR MEDIUM SNEAKER KICK LEFT,6consecutive poses:1airborne ready tuck,2knee coils,3leg starts extending,4full contact sneaker kick LEFT,5leg retracts,6tucked landing ready. Sword FULLY SHEATHED all6 on anatomical RIGHT hip FAR side partially hidden behind waist/leg; one scabbard secured atbelt, turns with pelvis, no sworddraw/no extra hilt. All parts complete withinlocal x32..480,y32..480 each512cell. Fixed head size, naturally shorter tucked poses. No effects/opponent/floor/shadow. No haze at any opacity, every pixel outside real silhouette alphaZERO.",
+      "repairPrompt": "Remove all translucent background haze; retain real alpha-zero exterior"
+    },
+    {
+      "name": "golpe-jH",
+      "effect": false,
+      "source": "originais/golpe-jH.png",
+      "faceArea": 1466,
+      "faceRegion": {
+        "area": 1466,
+        "x": 210,
+        "y": 41,
+        "w": 59,
+        "h": 45,
+        "score": 869.4352847064772
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. airborne heavy downward two-handed katana slash LEFT. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-throw",
+      "effect": false,
+      "source": "originais/golpe-throw.png",
+      "faceArea": 1538,
+      "faceRegion": {
+        "area": 1538,
+        "x": 236,
+        "y": 48,
+        "w": 58,
+        "h": 45,
+        "score": 876.7787490783437
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. empty-hand throw reach/grab/pull/release LEFT, no enemy drawn, sword fully SHEATHED. Exactly6poses1ready,2wind-up,3approach,4FULL CONTACT described motion,5followthrough,6recover. Sword FULLY SHEATHED FAR RIGHT hip ALL6. "
+    },
+    {
+      "name": "golpe-blindado",
+      "effect": false,
+      "source": "originais/golpe-blindado.png",
+      "faceArea": 1418,
+      "faceRegion": {
+        "area": 1418,
+        "x": 212,
+        "y": 48,
+        "w": 55,
+        "h": 44,
+        "score": 834.6245668132891
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. braced armored shoulder/forearm advancing strike LEFT with sword fully SHEATHED. Exactly6poses1ready,2wind-up,3approach,4FULL CONTACT described motion,5followthrough,6recover. Sword FULLY SHEATHED FAR RIGHT hip ALL6. "
+    },
+    {
+      "name": "golpe-5LL",
+      "effect": false,
+      "source": "originais/golpe-5LL.png",
+      "faceArea": 1442,
+      "faceRegion": {
+        "area": 1442,
+        "x": 229,
+        "y": 54,
+        "w": 56,
+        "h": 44,
+        "score": 827.1589226042246
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. Corte Dois linked advancing rising diagonal katana cut LEFT, ALREADY DRAWN all6. Exactly6poses1ready,2wind-up,3approach,4FULL CONTACT described motion,5followthrough,6recover. Sword ALREADY DRAWN and FAR RIGHT-HIP sheath EMPTY ALL6. "
+    },
+    {
+      "name": "golpe-5LLL",
+      "effect": false,
+      "source": "originais/golpe-5LLL.png",
+      "faceArea": 1373,
+      "faceRegion": {
+        "area": 1373,
+        "x": 255,
+        "y": 49,
+        "w": 55,
+        "h": 42,
+        "score": 793.0583949242601
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. Tr\u00eas Cortes linked finishing strong broad diagonal DOWNWARD cut LEFT, ALREADY DRAWN all6. Exactly6poses1ready,2wind-up,3approach,4FULL CONTACT described motion,5followthrough,6recover. Sword ALREADY DRAWN and FAR RIGHT-HIP sheath EMPTY ALL6. "
+    },
+    {
+      "name": "golpe-2S",
+      "effect": false,
+      "source": "originais/golpe-2S.png",
+      "faceArea": 1556,
+      "faceRegion": {
+        "area": 1556,
+        "x": 206,
+        "y": 45,
+        "w": 61,
+        "h": 44,
+        "score": 876.6459569161104
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. charging stance6poses1upright,2knees bend,3LEFT hand reaches hilt at FAR RIGHT hip,4stable low SHEATHED hold,5subtle inhale SAME HOLD,6focused SAME HOLD. No slash/unsheathing. RIGHT hand may guide fixed true sheath mouth. Last3 are holding poses"
+    },
+    {
+      "name": "golpe-stL",
+      "effect": false,
+      "source": "originais/golpe-stL.png",
+      "faceArea": 1425,
+      "faceRegion": {
+        "area": 1425,
+        "x": 224,
+        "y": 51,
+        "w": 58,
+        "h": 42,
+        "score": 811.4153713078437
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. Corte Relampago instantaneous LEFT-handed draw-slash LEFT from low stance. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-stM",
+      "effect": false,
+      "source": "originais/golpe-stM.png",
+      "faceArea": 1451,
+      "faceRegion": {
+        "area": 1451,
+        "x": 213,
+        "y": 47,
+        "w": 54,
+        "h": 44,
+        "score": 868.3116516932176
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. counter preparation6poses1sheathed guard,2knees lower,3defensive torso turn,4focused protective stance LEFT hand ready at hilt RIGHT forearm guards torso,5uncoil,6guard. Sheath remains belt-fixed FAR RIGHT hip all6; no lifting scabbard across torso or drawn blade"
+    },
+    {
+      "name": "golpe-stCtr",
+      "effect": false,
+      "source": "originais/golpe-stCtr.png",
+      "faceArea": 1458,
+      "faceRegion": {
+        "area": 1458,
+        "x": 246,
+        "y": 56,
+        "w": 56,
+        "h": 44,
+        "score": 810.6357498195281
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. counter-triggered powerful two-handed katana reverse slash LEFT from low stance. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-stRel0",
+      "effect": false,
+      "source": "originais/golpe-stRel0.png",
+      "faceArea": 1456,
+      "faceRegion": {
+        "area": 1456,
+        "x": 204,
+        "y": 45,
+        "w": 58,
+        "h": 43,
+        "score": 846.7062082441217
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. charged iaido release LEVEL0, small lunge and horizontal two-handed slash LEFT. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-stRel1",
+      "effect": false,
+      "source": "originais/golpe-stRel1.png",
+      "faceArea": 1468,
+      "faceRegion": {
+        "area": 1468,
+        "x": 253,
+        "y": 45,
+        "w": 56,
+        "h": 46,
+        "score": 878.4848412719804
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. charged iaido release LEVEL1, medium lunge and horizontal two-handed slash LEFT. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-stRel2",
+      "effect": false,
+      "source": "originais/golpe-stRel2.png",
+      "faceArea": 1475,
+      "faceRegion": {
+        "area": 1475,
+        "x": 246,
+        "y": 45,
+        "w": 57,
+        "h": 44,
+        "score": 838.9053741990108
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. charged iaido release LEVEL2, large lunge and horizontal two-handed slash LEFT. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-stRel3",
+      "effect": false,
+      "source": "originais/golpe-stRel3.png",
+      "faceArea": 1365,
+      "faceRegion": {
+        "area": 1365,
+        "x": 257,
+        "y": 47,
+        "w": 54,
+        "h": 43,
+        "score": 801.6604790446382
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. charged iaido release LEVEL3, widest dramatic lunge and horizontal two-handed slash LEFT. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-5S",
+      "effect": false,
+      "source": "originais/golpe-5S.png",
+      "faceArea": 1505,
+      "faceRegion": {
+        "area": 1505,
+        "x": 244,
+        "y": 47,
+        "w": 57,
+        "h": 44,
+        "score": 859.9527064969203
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. katana slash releasing a cutting wave LEFT; no detached projectile drawn. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-6S",
+      "effect": false,
+      "source": "originais/golpe-6S.png",
+      "faceArea": 1475,
+      "faceRegion": {
+        "area": 1475,
+        "x": 216,
+        "y": 45,
+        "w": 58,
+        "h": 43,
+        "score": 868.1743554651632
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. fast low advancing iaido dash-cut LEFT. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-4S",
+      "effect": false,
+      "source": "originais/golpe-4S.png",
+      "faceArea": 1602,
+      "faceRegion": {
+        "area": 1602,
+        "x": 215,
+        "y": 43,
+        "w": 57,
+        "h": 46,
+        "score": 947.039474919998
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. leaping upward two-handed katana crescent cut LEFT with entire raised blade inside cell. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-c1",
+      "effect": false,
+      "source": "originais/golpe-c1.png",
+      "faceArea": 1532,
+      "faceRegion": {
+        "area": 1532,
+        "x": 208,
+        "y": 45,
+        "w": 56,
+        "h": 45,
+        "score": 903.6971550179205
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. retreat BACK to SCREEN RIGHT while slashing katana forward LEFT. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-c2",
+      "effect": false,
+      "source": "originais/golpe-c2.png",
+      "faceArea": 1476,
+      "faceRegion": {
+        "area": 1476,
+        "x": 247,
+        "y": 44,
+        "w": 55,
+        "h": 43,
+        "score": 847.2441996251396
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. long straight two-handed katana THRUST LEFT at chest height, no punch. Exactly6poses1SHEATHED ready at FAR RIGHT hip,2LEFT hand extracts forward/up SCREEN LEFT along actual sheath axis while tip still hidden,3blade FULLY CLEAR with BOTH HANDS on handle,4FULL CONTACT described motion with empty FAR RIGHT hip sheath,5tip aligns same far right-hip mouth,6resheathed. "
+    },
+    {
+      "name": "golpe-SA1",
+      "effect": false,
+      "source": "originais/golpe-SA1.png",
+      "faceArea": 1407,
+      "faceRegion": {
+        "area": 1407,
+        "x": 224,
+        "y": 45,
+        "w": 54,
+        "h": 44,
+        "score": 855.1609919680992
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. AGUDO voice super6poses1sheathed ready,2inhale closedmouth chestlifts,3FIRST vocal PEAK mouthOPEN arms spread,4brief inhale arms partially lower,5SECOND vocal PEAK mouthOPEN arms wider,6recover. FacingLEFT all6, sword SHEATHED FAR RIGHT hip; no sword attack or external wave"
+    },
+    {
+      "name": "golpe-SA3",
+      "effect": false,
+      "source": "originais/golpe-SA3.png",
+      "faceArea": 1493,
+      "faceRegion": {
+        "area": 1493,
+        "x": 224,
+        "y": 47,
+        "w": 56,
+        "h": 44,
+        "score": 867.2548870942436
+      },
+      "prompt": "RYUCHI, SAME character and HD comic ink/cel shading as LEFT-FACING reference: slim young man, angular clean-shaven face, snug skull-shaped black beanie NO rear droop, black/cream gold-dragon bomber with red collar/white hem, charcoal loose cargo, black/cream/gold sneakers. TRUE OPPOSITE LEFT-FACING3/4 FLANK: anatomical LEFT side nearest camera, more jacket BACK/left-shoulder dragon visible, anatomical RIGHT hip on FAR side. He faces SCREEN LEFT, attacks travel LEFT; no simple mirror swapping handedness. ONE katana, ONE hollow scabbard permanently belt-mounted at FAR RIGHT HIP partially occluded behind waist/leg, NOT moved onto near LEFT hip. Sword LEFT-HANDED: LEFT primary nearest guard, RIGHT supports near pommel, BOTH HANDS on SAME hilt during drawn combat. BOTH THUMBS UP on upper hilt toward blade/guard, four fingers underneath, natural parallel grips, NEVER opposite/inverted palm or backward/down thumb. Scabbard EMPTY once blade clears; NO duplicate handle, blade, scabbard or floating ring. Left hand extracts toward SCREEN LEFT/up along actual far right-hip scabbard axis, no blade through wall, complete extraction before cut; return tip aligns same fixed far-side mouth. Roll with blade fully sheathed, sheath rigid attached pelvis. ONE image ONE animation EXACT6 FULL BODY consecutive poses3-column2-row invisible grid1536x1024,512cells to export500. Fixed head/anatomical scale, crouches naturally shorter. Whole body AND blade fit each square with32px transparent margin, maximum430px pose extent. TRUE TRANSPARENT alpha ZERO outside ink silhouettes, no backdrop/haze/floor/shadow/checkerboard/grid/text, no detached FX or opponents. AGUDO SUPREMO voice super6poses1sheathed ready,2deep inhale armswiden mouthclosed,3first scream mouthOPEN,4sustained scream mouthOPEN fists nearwaist,5FINAL strongest scream mouthWIDEOPEN headlift armswide,6recover. FacingLEFT all6, sword SHEATHED FAR RIGHT hip; no sword strike or detached FX"
+    },
+    {
+      "name": "onda-cortante",
+      "effect": true,
+      "source": "originais/onda-cortante.png",
+      "faceArea": null,
+      "faceRegion": null,
+      "prompt": "HD comic game effect black ink silver/ice-blue/cream cel shading. ONE IMAGE ONE animation SIX nonempty distinct frames3x2 grid1536x1024,512cells to export500. LEFTWARD direction, hollow alpha-zero centers where applicable. ALL actual shapes contained eachcell32px margin. REAL transparent alpha ZERO background, no haze/backdrop/grid/checkerboard/text/ground. No fighter or actual weapon. six spinning pale ICE-BLUE crescent slash projectile poses, samecenter and size with changing angular highlights, black ink outlines, complete crescent with transparent hollow Directional motion goes SCREEN LEFT; hollow rings stay transparent, show opposite-side highlights. Exactly6 phases of SAME effect."
+    },
+    {
+      "name": "fx-corte",
+      "effect": true,
+      "source": "originais/fx-corte.png",
+      "faceArea": null,
+      "faceRegion": null,
+      "prompt": "HD comic game effect black ink silver/ice-blue/cream cel shading. ONE IMAGE ONE animation SIX nonempty distinct frames3x2 grid1536x1024,512cells to export500. LEFTWARD direction, hollow alpha-zero centers where applicable. ALL actual shapes contained eachcell32px margin. REAL transparent alpha ZERO background, no haze/backdrop/grid/checkerboard/text/ground. No fighter or actual weapon. six phases of horizontal silver/ice-blue katana slash speed arc extending LEFT, peakcontact then fragmentfade Directional motion goes SCREEN LEFT; hollow rings stay transparent, show opposite-side highlights. Exactly6 phases of SAME effect."
+    },
+    {
+      "name": "fx-lua",
+      "effect": true,
+      "source": "originais/fx-lua.png",
+      "faceArea": null,
+      "faceRegion": null,
+      "prompt": "HD comic game effect black ink silver/ice-blue/cream cel shading. ONE IMAGE ONE animation SIX nonempty distinct frames3x2 grid1536x1024,512cells to export500. LEFTWARD direction, hollow alpha-zero centers where applicable. ALL actual shapes contained eachcell32px margin. REAL transparent alpha ZERO background, no haze/backdrop/grid/checkerboard/text/ground. No fighter or actual weapon. six phases of upward silver/ice-blue crescent slash arc rising LEFT, peak and dispersal Directional motion goes SCREEN LEFT; hollow rings stay transparent, show opposite-side highlights. Exactly6 phases of SAME effect."
+    },
+    {
+      "name": "fx-estocada",
+      "effect": true,
+      "source": "originais/fx-estocada.png",
+      "faceArea": null,
+      "faceRegion": null,
+      "prompt": "HD comic game effect black ink silver/ice-blue/cream cel shading. ONE IMAGE ONE animation SIX nonempty distinct frames3x2 grid1536x1024,512cells to export500. LEFTWARD direction, hollow alpha-zero centers where applicable. ALL actual shapes contained eachcell32px margin. REAL transparent alpha ZERO background, no haze/backdrop/grid/checkerboard/text/ground. No fighter or actual weapon. six phases of narrow silver/blue sharp thrust streak to LEFT, peak star and fragmentfade Directional motion goes SCREEN LEFT; hollow rings stay transparent, show opposite-side highlights. Exactly6 phases of SAME effect."
+    },
+    {
+      "name": "fx-fio",
+      "effect": true,
+      "source": "originais/fx-fio.png",
+      "faceArea": null,
+      "faceRegion": null,
+      "prompt": "HD comic game effect black ink silver/ice-blue/cream cel shading. ONE IMAGE ONE animation SIX nonempty distinct frames3x2 grid1536x1024,512cells to export500. LEFTWARD direction, hollow alpha-zero centers where applicable. ALL actual shapes contained eachcell32px margin. REAL transparent alpha ZERO background, no haze/backdrop/grid/checkerboard/text/ground. No fighter or actual weapon. six phases of blue/gold charge aura around an EMPTY centered sword-hilt-sized region, three increasing sharp segmented rings, then settle; no actual sword/character Directional motion goes SCREEN LEFT; hollow rings stay transparent, show opposite-side highlights. Exactly6 phases of SAME effect."
+    },
+    {
+      "name": "fx-contra",
+      "effect": true,
+      "source": "originais/fx-contra.png",
+      "faceArea": null,
+      "faceRegion": null,
+      "prompt": "HD comic game effect black ink silver/ice-blue/cream cel shading. ONE IMAGE ONE animation SIX nonempty distinct frames3x2 grid1536x1024,512cells to export500. LEFTWARD direction, hollow alpha-zero centers where applicable. ALL actual shapes contained eachcell32px margin. REAL transparent alpha ZERO background, no haze/backdrop/grid/checkerboard/text/ground. No fighter or actual weapon. six phases of small icy-blue diamond-shaped parry spark, expands sharp star then dissipates Directional motion goes SCREEN LEFT; hollow rings stay transparent, show opposite-side highlights. Exactly6 phases of SAME effect."
+    },
+    {
+      "name": "fx-agudo",
+      "effect": true,
+      "source": "originais/fx-agudo.png",
+      "faceArea": null,
+      "faceRegion": null,
+      "prompt": "HD comic game effect black ink silver/ice-blue/cream cel shading. ONE IMAGE ONE animation SIX nonempty distinct frames3x2 grid1536x1024,512cells to export500. LEFTWARD direction, hollow alpha-zero centers where applicable. ALL actual shapes contained eachcell32px margin. REAL transparent alpha ZERO background, no haze/backdrop/grid/checkerboard/text/ground. No fighter or actual weapon. six phases of expanding silver/blue sonic ring with jagged oscillating outline, hollow center genuinely transparent Directional motion goes SCREEN LEFT; hollow rings stay transparent, show opposite-side highlights. Exactly6 phases of SAME effect.",
+      "componentExtraction": true
+    },
+    {
+      "name": "fx-agudo-final",
+      "effect": true,
+      "source": "originais/fx-agudo-final.png",
+      "faceArea": null,
+      "faceRegion": null,
+      "prompt": "HD comic game effect black ink silver/ice-blue/cream cel shading. ONE IMAGE ONE animation SIX nonempty distinct frames3x2 grid1536x1024,512cells to export500. LEFTWARD direction, hollow alpha-zero centers where applicable. ALL actual shapes contained eachcell32px margin. REAL transparent alpha ZERO background, no haze/backdrop/grid/checkerboard/text/ground. No fighter or actual weapon. six phases of enormous bLEFT ice-blue/cream sonic burst in HOLLOW concentric jagged rings, peak and fragmentfade, center genuinely transparent Directional motion goes SCREEN LEFT; hollow rings stay transparent, show opposite-side highlights. Exactly6 phases of SAME effect."
+    }
+  ]
+}

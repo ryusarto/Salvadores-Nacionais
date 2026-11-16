@@ -34,7 +34,7 @@ if (belem && q.get('stage') !== 'off') {
 Promise.all(Object.entries(packs).map(([id, sheets]) => {
   const tenFrame = id === 'mdep' && mdep.spriteProfile === 'ten-frame';
   const effects = id.startsWith('fx-') || id.endsWith('-fx');
-  const sixFrame = ['trunks', 'trunks-fx', 'belga', 'belga-fx'].includes(id);
+  const sixFrame = ['trunks', 'trunks-fx', 'belga', 'belga-fx'].includes(id) || id.startsWith('ryuchi');
   return registerSprites(id, sheets, {
     lazy: true, maxDecoded: tenFrame ? 8 : effects ? 4 : 6,
     trueAlpha: tenFrame || sixFrame, frames: tenFrame ? 10 : sixFrame ? 6 : 4, cellSize: sixFrame ? 500 : tenFrame ? 768 : undefined,
