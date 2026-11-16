@@ -34,10 +34,18 @@
   #tpause { top: 2vh; left: max(1.5vw, env(safe-area-inset-left)); width: 11vh; height: 8vh; border-radius: 2vh; border: 2px solid rgba(255,255,255,.4); background: rgba(0,0,0,.35); color: #fff; font: 900 3vh Arial, sans-serif; }
   #rotate { display: none; inset: 0; background: #12080c; color: #ffcf2a; font-size: 7vw; align-items: center; justify-content: center; text-align: center; padding: 8vw; font-style: italic; }
   @media (orientation: portrait) { .touch #rotate { display: flex; } }
+  #loading {position:fixed;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3vh;background:#f3c426;color:#17131b;font:italic 900 7vmin Impact,'Arial Black',sans-serif;letter-spacing:.02em;text-align:center;}
+  #loading b {color:#f4e9c9;-webkit-text-stroke:.35vmin #17131b;paint-order:stroke;text-shadow:.6vmin .6vmin 0 #dc3029;line-height:1;}
+  #loading span {font-size:2.6vmin;letter-spacing:.12em;}
+  #loading i {display:block;width:36vmin;height:1.6vmin;border:.4vmin solid #17131b;background:#f4e9c9;overflow:hidden;position:relative;}
+  #loading i::after {content:"";position:absolute;inset:0;width:35%;background:#dc3029;animation:sn-load 1.1s ease-in-out infinite alternate;}
+  @keyframes sn-load {from{transform:translateX(0)}to{transform:translateX(186%)}}
+  @media (prefers-reduced-motion: reduce) { #loading i::after { animation:none; width:100%; } }
 </style>
 </head>
 <body>
 <canvas id="game" width="1920" height="1080"></canvas>
+<div id="loading" role="status" aria-live="polite"><b>SALVADORES<br>NACIONAIS</b><i></i><span>CARREGANDO…</span></div>
 <button id="sound" type="button" aria-label="Silenciar ou ativar som" aria-pressed="false">SOM: LIGADO</button>
 <script>/*__BUNDLE__*/</script>
 </body>

@@ -383,7 +383,7 @@
           "deliveryFrame": "frames/parado/10.png"
         }
       ],
-      "strip": "../../final/mdep/parado.png",
+      "strip": "strips/parado.png",
       "uniqueFrameImages": 10,
       "stripSha256": "45a7d5f5fd0b9f3ffa29403ff5df83711ceb410b5cc99bc4696c90ff4ce25420"
     },
@@ -713,7 +713,7 @@
           "deliveryFrame": "frames/andar/10.png"
         }
       ],
-      "strip": "../../final/mdep/andar.png",
+      "strip": "strips/andar.png",
       "uniqueFrameImages": 10,
       "stripSha256": "8c9fd773423786fa7deb491380a06ff70be4f625d435addd2d76cc95cff74f22"
     },
@@ -1043,7 +1043,7 @@
           "deliveryFrame": "frames/andar-tras/10.png"
         }
       ],
-      "strip": "../../final/mdep/andar-tras.png",
+      "strip": "strips/andar-tras.png",
       "uniqueFrameImages": 10,
       "stripSha256": "f1b86b1200bb470a9ae7e7e9f5b5e4f536adb39ef5051c3aa0c7d354dd26e744"
     },
@@ -1373,7 +1373,7 @@
           "deliveryFrame": "frames/correr/10.png"
         }
       ],
-      "strip": "../../final/mdep/correr.png",
+      "strip": "strips/correr.png",
       "uniqueFrameImages": 10,
       "stripSha256": "c081f3c0aa5775ca88c02bd0ffa2a9ba8f737ca8692586894ed59870449605b9"
     },
@@ -1726,7 +1726,7 @@
         10
       ],
       "frameOrderingReason": "Visual review: arrange the ten distinct whole drawings into preparation, contact and recovery without repeating the action.",
-      "strip": "../../final/mdep/agachar.png",
+      "strip": "strips/agachar.png",
       "uniqueFrameImages": 10,
       "stripSha256": "d3ea108c9db7be2f0bafabe0577e46b35ae9ab99315169fc01e4a9e973ce96c7"
     },
@@ -2079,7 +2079,7 @@
         10
       ],
       "frameOrderingReason": "Visual review: arrange the ten distinct whole drawings into preparation, contact and recovery without repeating the action.",
-      "strip": "../../final/mdep/pulo.png",
+      "strip": "strips/pulo.png",
       "uniqueFrameImages": 10,
       "stripSha256": "4514cfc0e503907e518192b85fb2ca663dcbde25868bf1ed3301755611af42df"
     },
@@ -2409,7 +2409,7 @@
           "deliveryFrame": "frames/recuo/10.png"
         }
       ],
-      "strip": "../../final/mdep/recuo.png",
+      "strip": "strips/recuo.png",
       "uniqueFrameImages": 10,
       "stripSha256": "9e8e9960f8bbb93b1a13072dcade4865ab6d070159fcc113f68c9d05e824f98e"
     },
@@ -2762,7 +2762,7 @@
         10
       ],
       "frameOrderingReason": "Visual review: arrange the ten distinct whole drawings into preparation, contact and recovery without repeating the action.",
-      "strip": "../../final/mdep/escape-agarrao.png",
+      "strip": "strips/escape-agarrao.png",
       "uniqueFrameImages": 10,
       "stripSha256": "c2ddbc26f4a409b8aee0a33d8f880e587e1e5acf1542a4d88a9c27e1f4d80538"
     },
@@ -3142,7 +3142,7 @@
         10
       ],
       "frameOrderingReason": "Keep the tucked rolling poses together before kneeling and rising; do not restart the roll between recovery poses.",
-      "strip": "../../final/mdep/recuperacao-rolamento.png",
+      "strip": "strips/recuperacao-rolamento.png",
       "uniqueFrameImages": 10,
       "stripSha256": "b0b83ed733692db72fe18b69930c42ed939746a64439d93795e5eeee9c6ae5ca"
     },
@@ -3472,7 +3472,7 @@
           "deliveryFrame": "frames/defesa-em-pe/10.png"
         }
       ],
-      "strip": "../../final/mdep/defesa-em-pe.png",
+      "strip": "strips/defesa-em-pe.png",
       "uniqueFrameImages": 10,
       "stripSha256": "e02d2993032d61bb22f02d2384b522118b7aeacf0d78682726471fbffcf36d7b"
     },
@@ -3802,7 +3802,7 @@
           "deliveryFrame": "frames/defesa-agachado/10.png"
         }
       ],
-      "strip": "../../final/mdep/defesa-agachado.png",
+      "strip": "strips/defesa-agachado.png",
       "uniqueFrameImages": 10,
       "stripSha256": "1039c275bdbf69d47fab3b127260f1aed36423c32065df44a35510141ef1be35"
     },
@@ -4132,7 +4132,7 @@
           "deliveryFrame": "frames/defesa-no-ar/10.png"
         }
       ],
-      "strip": "../../final/mdep/defesa-no-ar.png",
+      "strip": "strips/defesa-no-ar.png",
       "uniqueFrameImages": 10,
       "stripSha256": "83af0fe6e66d764adaedfef3da65ef2dae066a11a6d52186f8fdeee7777e6baf"
     },
@@ -4462,7 +4462,7 @@
           "deliveryFrame": "frames/dano-alto/10.png"
         }
       ],
-      "strip": "../../final/mdep/dano-alto.png",
+      "strip": "strips/dano-alto.png",
       "uniqueFrameImages": 10,
       "stripSha256": "635b993e591e2defa4e7a6ed5a75f2168e32eddbd6894f01dd6df29666ceb29d"
     },
@@ -4815,7 +4815,7 @@
         10
       ],
       "frameOrderingReason": "Group the torso contraction and deepest folding poses before the recovery so the body does not rise and fold a second time.",
-      "strip": "../../final/mdep/dano-baixo.png",
+      "strip": "strips/dano-baixo.png",
       "uniqueFrameImages": 10,
       "stripSha256": "30d5fc6211ad78c1e86419946d37e65051e65e52b093bfe3ac4a2803f2806d85"
     },
@@ -5168,7 +5168,7 @@
         10
       ],
       "frameOrderingReason": "Order backward airborne recoil before the compact descent and landing preparation.",
-      "strip": "../../final/mdep/dano-no-ar.png",
+      "strip": "strips/dano-no-ar.png",
       "uniqueFrameImages": 10,
       "stripSha256": "afcdaeba31a0ec4700abc25a340d60824f9f394c5f9ed2a5943ece1428e9d047"
     },
@@ -5521,7 +5521,7 @@
         10
       ],
       "frameOrderingReason": "One continuous fall: stagger, backwards lean, knees collapse, seated support, lying settlement. Each source drawing appears once.",
-      "strip": "../../final/mdep/caido.png",
+      "strip": "strips/caido.png",
       "uniqueFrameImages": 10,
       "stripSha256": "b865ebd944354ccbd51b7e55a2fe788e3e5f5eba4486d511f31d5d72804a0195"
     },
@@ -5874,7 +5874,7 @@
         10
       ],
       "frameOrderingReason": "Interleave the two compatible five-pose get-up sequences: lying, seated support, kneeling, crouching, standing. Each original drawing is used once, avoiding a second fall halfway through the recovery.",
-      "strip": "../../final/mdep/levantar.png",
+      "strip": "strips/levantar.png",
       "uniqueFrameImages": 10,
       "stripSha256": "cc2575a2f22c17848b18ab973ec84eefa4dbe71a856e9a639e6ec77572a4af10"
     },
@@ -6204,7 +6204,7 @@
           "deliveryFrame": "frames/tonto/10.png"
         }
       ],
-      "strip": "../../final/mdep/tonto.png",
+      "strip": "strips/tonto.png",
       "uniqueFrameImages": 10,
       "stripSha256": "6032fd4e974a0000202541b79534c1cf4504c56f6228b293fcbb38ece971c577"
     },
@@ -6534,7 +6534,7 @@
           "deliveryFrame": "frames/vitoria/10.png"
         }
       ],
-      "strip": "../../final/mdep/vitoria.png",
+      "strip": "strips/vitoria.png",
       "uniqueFrameImages": 10,
       "stripSha256": "a7d1515c4edbbf91795e9de96c3bae437b9d0da5be2254b5d6b3c54832fe09a0"
     },
@@ -6914,7 +6914,7 @@
         10
       ],
       "frameOrderingReason": "Order the ten distinct compatible drawings into one short boot kick: stance, guard, knee chamber, extension, retraction, lowering and recovery. Avoid repeating the kick.",
-      "strip": "../../final/mdep/golpe-5L.png",
+      "strip": "strips/golpe-5L.png",
       "uniqueFrameImages": 10,
       "stripSha256": "89c129f61b2d1f21d3c687c4203aca619936a67c35d3f7624786ac3b2c091520"
     },
@@ -7253,7 +7253,7 @@
           "deliveryFrame": "frames/golpe-5M/10.png"
         }
       ],
-      "strip": "../../final/mdep/golpe-5M.png",
+      "strip": "strips/golpe-5M.png",
       "uniqueFrameImages": 10,
       "stripSha256": "e8f9f22e0e484ce32a3e31cf3a920eb96dbfcd87b91d4f28436c68bc56009c3a"
     },
@@ -7583,7 +7583,7 @@
           "deliveryFrame": "frames/golpe-5H/10.png"
         }
       ],
-      "strip": "../../final/mdep/golpe-5H.png",
+      "strip": "strips/golpe-5H.png",
       "uniqueFrameImages": 10,
       "stripSha256": "c16b0056086d8fa83eed4283a703e06ab75c4b775a7aef5212fdc9996c7bbb75"
     },
@@ -7913,7 +7913,7 @@
           "deliveryFrame": "frames/golpe-2L/10.png"
         }
       ],
-      "strip": "../../final/mdep/golpe-2L.png",
+      "strip": "strips/golpe-2L.png",
       "uniqueFrameImages": 10,
       "stripSha256": "d9d1271ce16af7a8a3efbf82a002dc29e3158baf058f87027297fe3cddf87785"
     },
@@ -8243,7 +8243,7 @@
           "deliveryFrame": "frames/golpe-2M/10.png"
         }
       ],
-      "strip": "../../final/mdep/golpe-2M.png",
+      "strip": "strips/golpe-2M.png",
       "uniqueFrameImages": 10,
       "stripSha256": "db52b092564cc01660cda95ea18c8e4a1c333f304db8ab31d5c820b3a45b601a"
     },
@@ -8573,7 +8573,7 @@
           "deliveryFrame": "frames/golpe-2H/10.png"
         }
       ],
-      "strip": "../../final/mdep/golpe-2H.png",
+      "strip": "strips/golpe-2H.png",
       "uniqueFrameImages": 10,
       "stripSha256": "f5752666261183719ec6877d784f24034db762255e1311d26bbf7969056eef96"
     },
@@ -8953,7 +8953,7 @@
         10
       ],
       "frameOrderingReason": "Visual review: arrange the ten distinct whole drawings into preparation, contact and recovery without repeating the action.",
-      "strip": "../../final/mdep/golpe-3H.png",
+      "strip": "strips/golpe-3H.png",
       "uniqueFrameImages": 10,
       "stripSha256": "8e277d2089f9ab346fe8bbd3f381143961f206985a61709f76d55256ea3dfce9"
     },
@@ -9283,7 +9283,7 @@
           "deliveryFrame": "frames/golpe-6M/10.png"
         }
       ],
-      "strip": "../../final/mdep/golpe-6M.png",
+      "strip": "strips/golpe-6M.png",
       "uniqueFrameImages": 10,
       "stripSha256": "3497e5163b8828ff671e9da89754c1788c17578a27fe681b05f3ebb2c6c72d85"
     },
@@ -9613,7 +9613,7 @@
           "deliveryFrame": "frames/golpe-jL/10.png"
         }
       ],
-      "strip": "../../final/mdep/golpe-jL.png",
+      "strip": "strips/golpe-jL.png",
       "uniqueFrameImages": 10,
       "stripSha256": "e8e2bb5d4ca435d075f8a9cca4519153f4c82b3e94418fa3d4699bee544818e6"
     },
@@ -9993,7 +9993,7 @@
         10
       ],
       "frameOrderingReason": "Visual review: arrange the ten distinct whole drawings into preparation, contact and recovery without repeating the action.",
-      "strip": "../../final/mdep/golpe-jM.png",
+      "strip": "strips/golpe-jM.png",
       "uniqueFrameImages": 10,
       "stripSha256": "778efbe34695e732f20cf6d5771c0dc717c93e95710b856d61427ceec01c2e22"
     },
@@ -10346,7 +10346,7 @@
         10
       ],
       "frameOrderingReason": "Visual review: arrange the ten distinct whole drawings into preparation, contact and recovery without repeating the action.",
-      "strip": "../../final/mdep/golpe-jH.png",
+      "strip": "strips/golpe-jH.png",
       "uniqueFrameImages": 10,
       "stripSha256": "14f90bf6d3f951b28064616521e849fb8685b1fb9dbfb23ce541e5823da054c5"
     },
@@ -10676,7 +10676,7 @@
           "deliveryFrame": "frames/golpe-throw/10.png"
         }
       ],
-      "strip": "../../final/mdep/golpe-throw.png",
+      "strip": "strips/golpe-throw.png",
       "uniqueFrameImages": 10,
       "stripSha256": "968a1a36e801a609384c153a3510941af5e5e4d9257a682b51de7a6180c5c4f5"
     },
@@ -11006,7 +11006,7 @@
           "deliveryFrame": "frames/golpe-blindado/10.png"
         }
       ],
-      "strip": "../../final/mdep/golpe-blindado.png",
+      "strip": "strips/golpe-blindado.png",
       "uniqueFrameImages": 10,
       "stripSha256": "ee6f22fcba72fe6fd827a8d1a3cbd47b8b4118ca6d987da17d261e69fd56510b"
     },
@@ -11336,7 +11336,7 @@
           "deliveryFrame": "frames/golpe-5S/10.png"
         }
       ],
-      "strip": "../../final/mdep/golpe-5S.png",
+      "strip": "strips/golpe-5S.png",
       "uniqueFrameImages": 10,
       "stripSha256": "6adcd03ce05682fd69fb1d6eeca9dc4710f37bf4e744f6f84511307d5b2fdfa1"
     },
@@ -11666,7 +11666,7 @@
           "deliveryFrame": "frames/golpe-6S/10.png"
         }
       ],
-      "strip": "../../final/mdep/golpe-6S.png",
+      "strip": "strips/golpe-6S.png",
       "uniqueFrameImages": 10,
       "stripSha256": "7ef77b55fc51efe30d78f321bab519f14892c41e481775d3da6a49b55fadd16b"
     },
@@ -11996,7 +11996,7 @@
           "deliveryFrame": "frames/golpe-2S/10.png"
         }
       ],
-      "strip": "../../final/mdep/golpe-2S.png",
+      "strip": "strips/golpe-2S.png",
       "uniqueFrameImages": 10,
       "stripSha256": "56bcc6f605095d02da6868a306b757af01b688e68060f96af60bb258801ac876"
     },
@@ -12326,7 +12326,7 @@
           "deliveryFrame": "frames/golpe-4S/10.png"
         }
       ],
-      "strip": "../../final/mdep/golpe-4S.png",
+      "strip": "strips/golpe-4S.png",
       "uniqueFrameImages": 10,
       "stripSha256": "8563025f57c8d6fe61cd455eab1dac79ca03208cf5418bc9a3acdfc2d78ba337"
     },
@@ -12656,7 +12656,7 @@
           "deliveryFrame": "frames/golpe-jS/10.png"
         }
       ],
-      "strip": "../../final/mdep/golpe-jS.png",
+      "strip": "strips/golpe-jS.png",
       "uniqueFrameImages": 10,
       "stripSha256": "3108f150f5f3e9a7e47c9871576d564a059fa0d97e62e3bfae01e8e97c997a5e"
     },
@@ -12986,7 +12986,7 @@
           "deliveryFrame": "frames/golpe-c1/10.png"
         }
       ],
-      "strip": "../../final/mdep/golpe-c1.png",
+      "strip": "strips/golpe-c1.png",
       "uniqueFrameImages": 10,
       "stripSha256": "167e928f4e33265a773fb8b897e292a426cdc70384852c78b8b8f29b029d3a0f"
     },
@@ -13316,7 +13316,7 @@
           "deliveryFrame": "frames/golpe-c2/10.png"
         }
       ],
-      "strip": "../../final/mdep/golpe-c2.png",
+      "strip": "strips/golpe-c2.png",
       "uniqueFrameImages": 10,
       "stripSha256": "4ccd3923c9dd7b22cc8de500db4dc68c73bd8cb332a3d35f629838d7617c403b"
     },
@@ -13646,7 +13646,7 @@
           "deliveryFrame": "frames/golpe-SA1/10.png"
         }
       ],
-      "strip": "../../final/mdep/golpe-SA1.png",
+      "strip": "strips/golpe-SA1.png",
       "uniqueFrameImages": 10,
       "stripSha256": "f8d4cc5a67e3ffc08fde5832a2fb432cecf35c21a7fe69737c15d02f6dc74410"
     },
@@ -13978,7 +13978,7 @@
       ],
       "compatibleSharedArtWith": "golpe-SA1",
       "compatibleSharingReason": "Both supers use the same rifle-ready and recovery body motion. Actual shot counts, recoil pulses and duration remain driven by each move's existing spawn timeline (four versus ten shots).",
-      "strip": "../../final/mdep/golpe-SA3.png",
+      "strip": "strips/golpe-SA3.png",
       "uniqueFrameImages": 10,
       "stripSha256": "f8d4cc5a67e3ffc08fde5832a2fb432cecf35c21a7fe69737c15d02f6dc74410"
     },
@@ -14335,7 +14335,7 @@
           "deliveryFrame": "frames/fx-pisao/10.png"
         }
       ],
-      "strip": "../../final/mdep/fx-pisao.png",
+      "strip": "strips/fx-pisao.png",
       "uniqueFrameImages": 10,
       "stripSha256": "375f797d84799acb5d03c8c63b3e53b85c79a6fbcdf13d196099627edec31176"
     },
@@ -14692,7 +14692,7 @@
           "deliveryFrame": "frames/fx-chute/10.png"
         }
       ],
-      "strip": "../../final/mdep/fx-chute.png",
+      "strip": "strips/fx-chute.png",
       "uniqueFrameImages": 10,
       "stripSha256": "69a6525da6ae416243ff6dbf4868838e83bb233cb92f3f01fc0b60b1c18a3c0f"
     },
@@ -15049,7 +15049,7 @@
           "deliveryFrame": "frames/fx-impacto/10.png"
         }
       ],
-      "strip": "../../final/mdep/fx-impacto.png",
+      "strip": "strips/fx-impacto.png",
       "uniqueFrameImages": 10,
       "stripSha256": "7dc93747755aa00ab49d7a4f4a7253366cf86aa4e770fd4246bcd89c6a39dc43"
     },
@@ -15406,7 +15406,7 @@
           "deliveryFrame": "frames/fx-defesa/10.png"
         }
       ],
-      "strip": "../../final/mdep/fx-defesa.png",
+      "strip": "strips/fx-defesa.png",
       "uniqueFrameImages": 10,
       "stripSha256": "b22371cafb53a6190f480473b8482566c044e24e3d0255653afdaeeb23390211"
     },
@@ -15763,7 +15763,7 @@
           "deliveryFrame": "frames/fx-ak-disparo/10.png"
         }
       ],
-      "strip": "../../final/mdep/fx-ak-disparo.png",
+      "strip": "strips/fx-ak-disparo.png",
       "uniqueFrameImages": 10,
       "stripSha256": "d18bcb143dd834faa8cba02748f4d3da3270f068004aa74780f27b862b5219eb"
     },
@@ -16120,7 +16120,7 @@
           "deliveryFrame": "frames/fx-ak-projetil/10.png"
         }
       ],
-      "strip": "../../final/mdep/fx-ak-projetil.png",
+      "strip": "strips/fx-ak-projetil.png",
       "uniqueFrameImages": 10,
       "stripSha256": "7f4d9c5ad148bd74a28f9472a5c6944a1ba5c073528484b15e6615e1b61f9477"
     },
@@ -16477,7 +16477,7 @@
           "deliveryFrame": "frames/fx-poeira/10.png"
         }
       ],
-      "strip": "../../final/mdep/fx-poeira.png",
+      "strip": "strips/fx-poeira.png",
       "uniqueFrameImages": 10,
       "stripSha256": "fd27438d9a8d2c601b8ab7e74f787a1af1598ced79d970af28eabed6f52cf11d"
     },
@@ -16834,7 +16834,7 @@
           "deliveryFrame": "frames/fx-embalo/10.png"
         }
       ],
-      "strip": "../../final/mdep/fx-embalo.png",
+      "strip": "strips/fx-embalo.png",
       "uniqueFrameImages": 10,
       "stripSha256": "a2ae67a26d6f3dc973aeaea7afdbc979852ec41e515070f8d34c599a766a4d45"
     }

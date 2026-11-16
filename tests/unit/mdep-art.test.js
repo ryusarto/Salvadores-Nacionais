@@ -2,14 +2,16 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
+import sharp from 'sharp';
 import mdep from '../../src/data/characters/mdep.js';
 import { STATE_ANIMS } from '../../src/render/anim.js';
 import { spriteProgress } from '../../src/render/sprite-timing.js';
 import { drawSprite, drawSpriteEffect, registerSprites } from '../../src/render/sprites.js';
-const dir=new URL('../../production/sprites/final/mdep/',import.meta.url);
+const dir=new URL('../../production/sprites/source/mdep-v3/strips/',import.meta.url);
+const gameDir=new URL('../../production/sprites/final/mdep/',import.meta.url);
 const manifest=JSON.parse(readFileSync(new URL('../../production/sprites/source/mdep-v3/manifest.json',import.meta.url)));
 
-test('MDEP supplies the complete contract with ten distinct transparent 768px cells per strip',()=>{
+test('MDEP supplies the complete contract with ten distinct transparent 768px cells per strip',async()=>{
   const expected=[...Object.keys(STATE_ANIMS),...Object.keys(mdep.moves).map(k=>'golpe-'+k)];
   assert.equal(expected.length,41);
   assert.equal(manifest.inventory.length,49);
@@ -19,7 +21,9 @@ test('MDEP supplies the complete contract with ten distinct transparent 768px ce
   assert.equal(mdep.spriteAlias,undefined);
   const files=readdirSync(dir);
   assert.equal(files.filter(p=>p.endsWith('.png')).length,49);
-  assert.equal(files.filter(p=>p.endsWith('.webp')).length,0,'old WEBPs must not override new PNGs');
+  const gameFiles=readdirSync(gameDir);
+  assert.equal(gameFiles.filter(p=>p.endsWith('.webp')).length,49,'the game loads one WebP per master strip');
+  assert.equal(gameFiles.filter(p=>p.endsWith('.png')).length,0,'PNG masters stay out of the game folder');
   for(const name of expected)assert.ok(manifest.inventory.some(a=>a.name===name),name);
   for(const a of manifest.inventory){
     const data=readFileSync(new URL(a.name+'.png',dir));
@@ -27,6 +31,8 @@ test('MDEP supplies the complete contract with ten distinct transparent 768px ce
     assert.equal(data.readUInt32BE(20),768,a.name);
     assert.equal(data[25],6,'PNG must retain RGBA: '+a.name);
     assert.equal(createHash('sha256').update(data).digest('hex'),a.stripSha256,a.name);
+    const webp=await sharp(new URL(a.name+'.webp',gameDir).pathname).metadata();
+    assert.deepEqual([webp.format,webp.width,webp.height,webp.hasAlpha],['webp',7680,768,true],a.name);
     assert.equal(a.frames.length,10,a.name);
     assert.equal(new Set(a.frames.map(f=>f.sha256)).size,10,a.name);
     for(const frame of a.frames){

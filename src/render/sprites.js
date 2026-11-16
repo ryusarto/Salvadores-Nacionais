@@ -121,8 +121,37 @@ export function registerSprites(id, sheets, options = {}) {
   for (const [name, url] of Object.entries(sheets)) {
     REG[id][name] = { id, name, url, n: options.frames || 1, size: options.cellSize || CELL, cv: null, lazy: !!options.lazy, trueAlpha: !!options.trueAlpha, used: 0 };
   }
-  if (options.lazy) void cacheFiles(Object.values(sheets));
+  if (options.lazy && options.prefetch !== false) {
+    for (const s of Object.values(REG[id])) s.prefetched = true;
+    void cacheFiles(Object.values(sheets));
+  }
   return Promise.all(Object.values(REG[id]).filter(s => !options.lazy || preload.has(s.name)).map(loadStrip));
+}
+
+/**
+ * Prepara só os pacotes que a luta vai usar: decodifica as tiras básicas e
+ * baixa o resto em segundo plano. Pacotes não registrados são ignorados.
+ * @param {string[]} ids pacotes de sprite (personagem, efeitos, lado esquerdo)
+ * @param {string[]} names tiras que precisam estar prontas antes da luta
+ * @returns {Promise<void>}
+ */
+export function prepareSprites(ids, names = ['parado', 'andar', 'golpe-5L']) {
+  const jobs = [];
+  for (const id of ids) {
+    const set = REG[id];
+    if (!set) continue;
+    const pending = Object.values(set).filter(s => s.lazy && !s.prefetched);
+    for (const s of pending) s.prefetched = true;
+    cacheFiles(pending.map(s => s.url));
+    for (const name of names) if (set[name]) jobs.push(loadStrip(set[name]));
+  }
+  return Promise.all(jobs).then(() => {});
+}
+
+/** Pacotes de sprite de um personagem: arte, efeitos e arte própria de cada lado. */
+export function spritePacksFor(ch) {
+  const bases = [ch.id, ...Object.values(ch.spriteFacingPacks || {})];
+  return [...new Set(bases.flatMap(id => [id, id + '-fx', 'fx-' + id]))];
 }
 
 export const hasSprites = (id) => !!REG[id] && Object.keys(REG[id]).length > 0;

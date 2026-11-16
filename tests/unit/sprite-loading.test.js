@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { registerSprites, decodedSpriteNames, hasSpriteStrip } from '../../src/render/sprites.js';
+import { registerSprites, decodedSpriteNames, hasSpriteStrip, prepareSprites, spritePacksFor } from '../../src/render/sprites.js';
 
 test('large transparent strips load on demand, deduplicate requests and evict safely', async t => {
   const previous = { Image: globalThis.Image, fetch: globalThis.fetch };
@@ -51,4 +51,30 @@ test('characters without lazy loading still await all their strips', async t => 
   }) }) };
   await registerSprites('legacy-loading-test', { parado: 'old-idle', andar: 'old-walk' });
   assert.deepEqual(decodedSpriteNames('legacy-loading-test'), ['parado', 'andar']);
+});
+
+test('nothing downloads at startup; only the packs of the two fighters are prepared', async t => {
+  const previous = { Image: globalThis.Image, fetch: globalThis.fetch };
+  t.after(() => Object.assign(globalThis, previous));
+  const decoded = [], fetched = [];
+  globalThis.fetch = async url => { fetched.push(url); return { ok: true, arrayBuffer: async () => new ArrayBuffer(0) }; };
+  globalThis.Image = class {
+    naturalWidth = 3000; naturalHeight = 500;
+    set src(url) { decoded.push(url); queueMicrotask(() => this.onload()); }
+  };
+  const opts = { lazy: true, trueAlpha: true, frames: 6, preload: [], prefetch: false };
+  await registerSprites('lutador-a', { parado: 'a-parado', andar: 'a-andar', 'golpe-5L': 'a-5L', correr: 'a-correr' }, opts);
+  await registerSprites('lutador-a-fx', { faisca: 'a-faisca' }, opts);
+  await registerSprites('lutador-b', { parado: 'b-parado', correr: 'b-correr' }, opts);
+  await new Promise(r => setTimeout(r, 0));
+  assert.deepEqual(decoded, []);
+  assert.deepEqual(fetched, []);
+  assert.deepEqual(spritePacksFor({ id: 'lutador-a' }), ['lutador-a', 'lutador-a-fx', 'fx-lutador-a']);
+  await prepareSprites(spritePacksFor({ id: 'lutador-a' }));
+  await new Promise(r => setTimeout(r, 0));
+  assert.deepEqual(decoded.sort(), ['a-5L', 'a-andar', 'a-parado']);
+  assert.deepEqual(fetched.sort(), ['a-5L', 'a-andar', 'a-correr', 'a-faisca', 'a-parado']);
+  assert.ok(!fetched.some(url => url.startsWith('b-')), 'the other fighter is untouched');
+  await prepareSprites(spritePacksFor({ id: 'lutador-a' }));
+  assert.equal(fetched.length, 5, 'a second preparation does not download again');
 });
