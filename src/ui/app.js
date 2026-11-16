@@ -6,7 +6,9 @@ import { EMPTY_INPUT } from '../core/input.js';
 import { buildStage, drawStage } from '../render/stage.js';
 import { drawEffect, prepareSprites, spritePacksFor } from '../render/sprites.js';
 import { drawFighter, drawBoxes } from '../render/mannequin.js';
-import { drawLivePhone, drawBanStamp } from '../render/boss-art.js';
+import { drawLivePhone, drawBanStamp, drawAnkleZone } from '../render/boss-art.js';
+import { drawMansionStage } from '../render/mansion-stage.js';
+import { PAI } from '../data/characters/pai-fujao.js';
 import { drawAirportStage } from '../render/airport-stage.js';
 
 /** Cenário da luta: o do chefe, se ele tiver um próprio; senão, Belém. */
@@ -508,12 +510,15 @@ export function createApp(canvas, devices, opts = {}) {
     const fx = app.fx;
     const sx = fx.shake ? (Math.random() - 0.5) * fx.shake * 2 : 0;
     const sy = fx.shake ? (Math.random() - 0.5) * fx.shake * 2 : 0;
-    if (stageOf(a.ch, b.ch) === 'aeroporto') drawAirportStage(c, app.cam, app.frame);
+    const stage = stageOf(a.ch, b.ch);
+    if (stage === 'aeroporto') drawAirportStage(c, app.cam, app.frame);
+    else if (stage === 'mansao') drawMansionStage(c, app.cam, app.frame);
     else drawStage(c, app.layers, app.cam, app.frame);
     fxDrawScreen(c, fx, 'under');
     c.save();
     c.translate(-app.cam + sx, sy);
     fxDrawBack(c, fx);
+    for (const f of st.f) if (f.ch.id === 'pai-fujao') drawAnkleZone(c, f, PAI.zoneX, PAI.zoneR, app.frame);
     const order = b.state === 'attack' || a.state === 'hitstun' || a.state === 'thrown' ? [a, b] : [b, a];
     for (const f of order) {
       const absorb = fx.parts.find(p => p.k === 'absorb' && p.side === f.side);

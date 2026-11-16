@@ -3,6 +3,10 @@ import { CHAPTERS } from '../data/story.js';
 import { COMIC as P, comicBackground, comicPanel, comicText, comicMenuItem } from '../render/comic-ui.js';
 import { drawBelemPresentation } from '../render/belem-stage.js';
 import { drawAirportStage } from '../render/airport-stage.js';
+import { drawMansionStage } from '../render/mansion-stage.js';
+
+/** Cenários próprios de chefes, desenhados em código: nome e função de desenho. */
+export const BOSS_STAGES = { aeroporto: ['AEROPORTO', drawAirportStage], mansao: ['MANSÃO', drawMansionStage] };
 import { portrait, footer } from './comic-screens.js';
 import { currentChapter, currentFight, talkLines, nextChapter } from './story.js';
 
@@ -240,14 +244,15 @@ function lose(c, a) {
 
 /** Miniatura do cenário próprio de um chefe (aeroporto). Retorna false para usar a de Belém. */
 export function drawStageThumb(c, ch, x, y, w, h) {
-  if (ch?.stage !== 'aeroporto') return false;
+  const stage = BOSS_STAGES[ch?.stage];
+  if (!stage) return false;
   c.save();
   c.beginPath();
   c.rect(x, y, w, h);
   c.clip();
   c.translate(x, y);
   c.scale(w / 1920, h / 1080);
-  drawAirportStage(c, 680, 0);
+  stage[1](c, 680, 0);
   c.restore();
   return true;
 }

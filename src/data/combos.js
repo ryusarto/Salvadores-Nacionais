@@ -56,4 +56,5 @@ export const COMBOS = {
   chupetinha: [],
   pavanassi: [],
   fujao: [],
+  'pai-fujao': [],
 };
