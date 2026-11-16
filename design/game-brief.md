@@ -18,7 +18,7 @@ se joga de um jeito diferente.
   Perfeita. Segurar para trás também defende. Agarrão vence a defesa.
 - **Golpes de sequência:** → ← + Leve e ↓ → + Médio, dois por herói.
 - **Dificuldade:** Fácil, Normal e Difícil mudam o nível da CPU e o dano de cada lado.
-- **Modos:** História (Capítulos 1 a 3 em Belém: batalhas de rima, Zanata, Chupetinha e Pavanassi), Versus CPU, **Versus 2 jogadores** (dois controles, ou controle e teclado) e Treino com lista de combos.
+- **Modos:** História (Capítulos 1 a 3 em Belém e o 4 no aeroporto: Zanata, Chupetinha, Pavanassi e Fujão), Versus CPU, **Versus 2 jogadores** (dois controles, ou controle e teclado) e Treino com lista de combos.
 - **Combo aéreo:** Gancho (↓+Forte) acertou + segurar ↑ = pulo alto; Leve, Médio e Forte emendam no ar.
 - **Empurrão na defesa:** Leve + Médio defendendo afasta o atacante (1 gomo de Ginga).
 - **Rolamento:** botão de golpe ao cair levanta rolando (não vale em queda forte).
@@ -58,6 +58,10 @@ celular sobre a cabeça dele aguenta 3 golpes; sem sinal, a live cai por 6 s. O 
 **Cerca de Separação** (pula-se ou derruba com 3 golpes) e **Fiscalização de Mijo Suprema**: cabine gigante que
 prende quem encosta na fila da documentação (apertar botões solta mais rápido). Perto da cabine,
 **Ginga + Agarrão** faz A PERGUNTA: dano emocional, tontura e a cabine desaba.
+
+**Chefe — Fujão:** mala na mão, Mala Arremessada, Mala Esquecida (quem corre por cima tropeça) e Carrinho
+de Bagagem. **Fuga:** longe do canto, foge no segundo golpe de um combo (recarrega em 5 s); encurralado,
+não foge. Sozinho perto da escada do avião, embarca e recupera 10% da vida.
 
 ## Fora desta build
 

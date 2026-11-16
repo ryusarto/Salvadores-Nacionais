@@ -237,6 +237,23 @@ function weapon(c, J, f, ch) {
     c.fill();
     c.stroke();
     blob(c, [8, -16], 9, '#9fd8ff');
+  } else if (w === 'mala') {
+    // mala de viagem com alça
+    c.fillStyle = '#8a5a2a';
+    c.strokeStyle = OUT;
+    c.lineWidth = 4;
+    c.beginPath();
+    c.roundRect(-6, 4, 64, 46, 6);
+    c.fill();
+    c.stroke();
+    c.fillStyle = '#d8b25a';
+    c.fillRect(-6, 22, 64, 6);
+    c.beginPath();
+    c.moveTo(16, 4);
+    c.lineTo(16, -6);
+    c.lineTo(36, -6);
+    c.lineTo(36, 4);
+    c.stroke();
   } else if (w === 'carimbo') {
     // carimbo de decreto: cabo de madeira e base com tinta vermelha
     limb(c, [0, 0], [0, -30], 12, '#6b4a2a');

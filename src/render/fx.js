@@ -6,7 +6,7 @@ import { drawMajisEntity } from './majis-art.js';
 import { drawTrunksEntity, drawTrunksParticle } from './trunks-art.js';
 import { drawBelgaEntity, drawBelgaParticle } from './belga-art.js';
 import { drawRyuchiEntity, drawRyuchiParticle } from './ryuchi-art.js';
-import { drawPacifier, drawStamp, drawFence, drawCabin } from './boss-art.js';
+import { drawPacifier, drawStamp, drawFence, drawCabin, drawBag } from './boss-art.js';
 
 /**
  * Efeitos visuais. Lê os eventos que a simulação emite a cada quadro e cria
@@ -178,6 +178,11 @@ export function drawEntities(c, st) {
     c.save();
     c.lineWidth = 5;
     c.strokeStyle = '#12080c';
+    if (e.kind === 'mala' || e.kind === 'mala-voando' || e.kind === 'mala-caindo') {
+      drawBag(c, e, x, y, GY, st.frame);
+      c.restore();
+      continue;
+    }
     if (drawChapuhEntity(c, e) || drawMajisEntity(c, e) || drawTrunksEntity(c, e, owner?.ch.id) || drawBelgaEntity(c, e, owner?.ch.id) || drawRyuchiEntity(c, e, owner?.ch.id)) { c.restore(); continue; }
     if (e.kind === 'ambulance') {
       // ambulância despencando do céu até o chão, girando, com a sirene piscando

@@ -12,7 +12,7 @@ const memory = () => {
 };
 
 test('cada herói tem duas batalhas de rima contra outros heróis, e depois o chefe', () => {
-  for (const [done, boss] of [[0, 'zanata'], [1, 'chupetinha'], [2, 'pavanassi']]) for (const h of HEROES) {
+  for (const [done, boss] of [[0, 'zanata'], [1, 'chupetinha'], [2, 'pavanassi'], [3, 'fujao']]) for (const h of HEROES) {
     const run = createRun(h.id, { [h.id]: done });
     assert.equal(run.fights.length, 3, h.id);
     const [r1, r2, last] = run.fights;
@@ -30,7 +30,7 @@ test('cada herói tem duas batalhas de rima contra outros heróis, e depois o ch
 });
 
 test('todas as falas têm texto e um personagem que existe', () => {
-  for (const done of [0, 1, 2]) for (const h of HEROES) {
+  for (const done of [0, 1, 2, 3]) for (const h of HEROES) {
     const run = createRun(h.id, { [h.id]: done });
     for (run.idx = 0; run.idx < run.fights.length; run.idx++) {
       for (const l of talkLines(run)) {
@@ -87,8 +87,8 @@ test('progresso estragado no armazenamento não quebra a turnê', () => {
   assert.ok(createRun('dney', loadProgress(store)));
 });
 
-test('as lutas dos capítulos 1 a 3 terminam com CPU contra CPU', () => {
-  for (const done of [0, 1, 2]) for (const f of createRun('ryuchi', { ryuchi: done }).fights) {
+test('as lutas dos capítulos 1 a 4 terminam com CPU contra CPU', () => {
+  for (const done of [0, 1, 2, 3]) for (const f of createRun('ryuchi', { ryuchi: done }).fights) {
     const st = createMatch({ chars: [ALL.ryuchi, ALL[f.foe]], seed: 7 });
     const b0 = createBrain(2);
     const b1 = createBrain(1);

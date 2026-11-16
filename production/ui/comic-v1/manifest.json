@@ -18,7 +18,8 @@
     "dney",
     "zanata",
     "chupetinha",
-    "pavanassi"
+    "pavanassi",
+    "fujao"
   ],
   "assets": {
     "portrait-franco": {
@@ -219,6 +220,24 @@
       "alpha": true,
       "sha256": "bfe993888e5cb6878699c77a251c4a72cdb16de529471a4f1486f85087ddf32d",
       "bytes": 3466,
+      "provisional": true
+    },
+    "portrait-fujao": {
+      "path": "portraits/fujao.webp",
+      "width": 768,
+      "height": 1024,
+      "alpha": true,
+      "sha256": "5416e2884bcf9b4569b32e3a9b78902669c7a6405cf4339b1688c33ac9c24046",
+      "bytes": 15698,
+      "provisional": true
+    },
+    "icon-fujao": {
+      "path": "icons/fujao.webp",
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "sha256": "6fdc657ac45e800913cd95129c20054683039ea97bb72721b45fa1442500f596",
+      "bytes": 3954,
       "provisional": true
     }
   }

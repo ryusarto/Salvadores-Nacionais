@@ -18,7 +18,7 @@ export function spawnEntity(st, f, def) {
     id: st.nextId++,
     owner: f.side,
     dir: f.face,
-    x: d.at_opponent ? o.x : f.x + f.face * d.x,
+    x: d.at_opponent ? o.x + (d.ox || 0) : f.x + f.face * d.x,
     y: d.behavior === 'fly' ? f.y + d.y : d.y,
     vx: d.vx * f.face,
     age: 0,

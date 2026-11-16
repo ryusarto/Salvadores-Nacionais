@@ -165,6 +165,11 @@ Salvadores defendem, nunca como piada.
 
 ### 4. Fujão
 
+No jogo desde o Capítulo 4 (`src/data/characters/fujao.js`), com retrato
+provisório, boneco no lugar dos sprites e um cenário de aeroporto desenhado
+em código (`src/render/airport-stage.js`) até o pintado ficar pronto. A fuga
+usa o gancho `mech.escape` do motor.
+
 - **Fuga (mecânica):** atravessa a tela correndo e deixa armadilhas pelo
   caminho.
 - **Encurralado:** só luta de verdade quando fica preso no canto. A luta é
@@ -273,11 +278,13 @@ sátira funcionar.
 3. ✓ **Capítulo 3 (Belém, banheiros químicos):** Pavanassi com Carimbo de
    Decreto, Cerca de Separação, Fiscalização de Mijo Suprema e A PERGUNTA;
    fechamento com as cores da bandeira trans no palco.
-4. Retrato e sprites de Zanata, Chupetinha e Pavanassi; cenários da frente do
-   palco e dos banheiros químicos.
+4. ✓ **Capítulo 4 (aeroporto):** Fujão com Fuga, malas, embarque e o
+   avião com a escada; o fechamento leva à mansão.
+5. Retrato e sprites de Zanata, Chupetinha, Pavanassi e Fujão; cenários da
+   frente do palco, dos banheiros químicos e do aeroporto pintado.
    Para chefes sem arte, `node tools/retrato-provisorio.mjs <id> <cor> <cor>`
    gera um retrato e um ícone provisórios.
-5. Um capítulo por vez, na ordem da turnê: ficha e mecânica do chefe,
+6. Um capítulo por vez, na ordem da turnê: ficha e mecânica do chefe,
    retrato, sprites, cenário e textos.
 
 ## Em aberto

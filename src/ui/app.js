@@ -7,6 +7,10 @@ import { buildStage, drawStage } from '../render/stage.js';
 import { drawEffect, prepareSprites, spritePacksFor } from '../render/sprites.js';
 import { drawFighter, drawBoxes } from '../render/mannequin.js';
 import { drawLivePhone, drawBanStamp } from '../render/boss-art.js';
+import { drawAirportStage } from '../render/airport-stage.js';
+
+/** Cenário da luta: o do chefe, se ele tiver um próprio; senão, Belém. */
+const stageOf = (...chars) => chars.find((ch) => ch.stage)?.stage || 'belem';
 import { createFx, fxEvents, fxUpdate, fxDrawBack, fxDrawFront, fxDrawScreen, drawEntities } from '../render/fx.js';
 import { createHud, drawHud } from '../render/hud.js';
 import { text, slab, halftone } from '../render/draw.js';
@@ -504,7 +508,8 @@ export function createApp(canvas, devices, opts = {}) {
     const fx = app.fx;
     const sx = fx.shake ? (Math.random() - 0.5) * fx.shake * 2 : 0;
     const sy = fx.shake ? (Math.random() - 0.5) * fx.shake * 2 : 0;
-    drawStage(c, app.layers, app.cam, app.frame);
+    if (stageOf(a.ch, b.ch) === 'aeroporto') drawAirportStage(c, app.cam, app.frame);
+    else drawStage(c, app.layers, app.cam, app.frame);
     fxDrawScreen(c, fx, 'under');
     c.save();
     c.translate(-app.cam + sx, sy);

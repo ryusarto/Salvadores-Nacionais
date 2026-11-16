@@ -527,6 +527,15 @@ export function updateFighter(st, f, o) {
       }
       break;
     case 'hitstun': case 'frozen': case 'dizzy': case 'slip':
+      // Fuga: alguns chefes escapam de um combo no meio (mech.escape devolve o golpe de fuga)
+      if (f.state === 'hitstun' && f.hp > 0) {
+        const k = f.ch.mech?.escape?.(st, f, o);
+        if (k && startMove(st, f, k)) {
+          f.comboHits = 0;
+          f.comboDmg = 0;
+          break;
+        }
+      }
       f.vx = 0;
       if (--f.stun <= 0) toNeutral(f);
       break;
