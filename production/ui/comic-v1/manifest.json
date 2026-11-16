@@ -16,7 +16,8 @@
     "mdep",
     "chapuh",
     "dney",
-    "zanata"
+    "zanata",
+    "chupetinha"
   ],
   "assets": {
     "portrait-franco": {
@@ -182,6 +183,24 @@
     "font": {
       "path": "fonts/Bangers-Regular.ttf",
       "kind": "font"
+    },
+    "portrait-chupetinha": {
+      "path": "portraits/chupetinha.webp",
+      "width": 768,
+      "height": 1024,
+      "alpha": true,
+      "sha256": "2f49ac9fc40724e6742f0a5c37504e3fb72fb9ceec09500d35edd18cd94d699e",
+      "bytes": 18792,
+      "provisional": true
+    },
+    "icon-chupetinha": {
+      "path": "icons/chupetinha.webp",
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "sha256": "5ccc9c6382d4e1f912687dac3867af28a5100ab264d3e6656a23ae536072b273",
+      "bytes": 4728,
+      "provisional": true
     }
   }
 }

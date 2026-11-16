@@ -1,12 +1,12 @@
 import{HEROES,BOSSES}from'../data/characters/index.js';import{SYS}from'../data/system.js';
 import{COMIC as P,comicBackground,comicLogo,comicPortrait,comicIcon,comicPanel,comicText,comicMenuItem}from'../render/comic-ui.js';
 import{drawBelemPresentation}from'../render/belem-stage.js';
-import{drawStoryScreen,drawStoryVsTag}from'./story-screens.js';
+import{drawStoryScreen,drawStoryVsTag,storyPlace}from'./story-screens.js';
 const W=1920,H=1080;
 export const TITLE_CAST=[['ryuchi',1100,150,330,440],['mdep',1390,165,330,440],['majis',1665,130,330,440],['franco',900,420,360,480],['chapuh',1240,410,360,480],['dney',1580,410,360,480],['belga',1080,660,390,520],['trunks',1500,650,420,560]];
 let artFrame=0;
 const reducedMotion=()=>typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-const natural={franco:-1,belga:1,majis:-1,dney:-1,ryuchi:1,trunks:1,mdep:-1,chapuh:-1,zanata:1};
+const natural={franco:-1,belga:1,majis:-1,dney:-1,ryuchi:1,trunks:1,mdep:-1,chapuh:-1,zanata:1,chupetinha:1};
 export function portrait(c,ch,x,y,w,h,facing=1){
  const t=reducedMotion()?0:artFrame/60,phase=(HEROES.findIndex(h=>h.id===ch.id)+1)*.7;
  const breath=reducedMotion()?0:Math.sin(t*1.55+phase);
@@ -43,7 +43,7 @@ function select(c,a,menu){
 }
 /** Rivais do Versus CPU: os heróis, os chefes e, por último, a opção aleatória (null). */
 export const FOES=[...HEROES,...BOSSES,null];
-export const FOE_COLS=5;
+export const FOE_COLS=6;
 function randomCard(c,x,y,w,h,selected){
  comicPanel(c,x+5,y+7,w,h,P.ink,10,0);comicPanel(c,x,y,w,h,selected?P.red:P.paper,10,4);
  c.save();c.font=`${Math.round(h*.55)}px SNComic, Impact, sans-serif`;c.textAlign='center';c.textBaseline='middle';c.lineWidth=10;c.strokeStyle=P.ink;c.strokeText('?',x+w/2,y+h*.42);c.fillStyle=selected?P.yellow:P.red;c.fillText('?',x+w/2,y+h*.42);c.restore();
@@ -56,10 +56,10 @@ function selectFoe(c,a){
  if(ch){portrait(c,ch,30,160,670,894,-1);}
  else{c.save();c.font='520px SNComic, Impact, sans-serif';c.textAlign='center';c.textBaseline='middle';c.lineWidth=28;c.strokeStyle=P.ink;c.strokeText('?',365,560);c.fillStyle=P.red;c.fillText('?',365,560);c.restore();}
  comicPanel(c,62,874,685,90,P.ink,20,5);comicText(c,ch?ch.name:'ALEATÓRIO',95,919,62,P.paper,'left',610);
- FOES.forEach((f,i)=>{const x=860+i%FOE_COLS*200,y=196+Math.floor(i/FOE_COLS)*264,sel=i===a.foeCur;f?card(c,f,x,y,180,238,sel):randomCard(c,x,y,180,238,sel);});
+ FOES.forEach((f,i)=>{const x=860+i%FOE_COLS*168,y=196+Math.floor(i/FOE_COLS)*264,sel=i===a.foeCur;f?card(c,f,x,y,152,238,sel):randomCard(c,x,y,152,238,sel);});
  comicPanel(c,866,746,980,240,P.ink,20,0);
  if(ch){comicText(c,ch.style.toUpperCase(),905,785,42,P.yellow,'left',900);comicText(c,ch.mechName,905,836,31,P.cyan);lines(c,ch.mechDesc,905,883,880,27);comicText(c,'SUPER: '+ch.moves.SA3.name,905,952,27,P.yellow,'left',880);}
- else{comicText(c,'SURPRESA',905,785,42,P.yellow,'left',900);lines(c,'O rival é sorteado entre os heróis e a chefona.',905,846,880,27);}
+ else{comicText(c,'SURPRESA',905,785,42,P.yellow,'left',900);lines(c,'O rival é sorteado entre os heróis e os chefes.',905,846,880,27);}
  footer(c,'SETAS ESCOLHEM    •    ENTER / LEVE CONFIRMA    •    ESC / MÉDIO VOLTA');
 }
 function versus(c,a){
@@ -70,7 +70,7 @@ function versus(c,a){
  comicText(c,left.name,96,92,58,P.paper,'left',640);comicText(c,right.name,1824,92,58,P.paper,'right',640);
  comicText(c,left.style,100,175,30,P.ink,'left',610);comicText(c,right.style,1820,175,30,P.ink,'right',610);
  c.save();c.translate(960,460);c.rotate(-.08);c.font='235px SNComic, sans-serif';c.textAlign='center';c.textBaseline='middle';c.strokeStyle=P.ink;c.lineJoin='miter';c.lineWidth=24;c.strokeText('VS',0,0);c.fillStyle=P.paper;c.fillText('VS',0,0);c.restore();
- comicPanel(c,780,760,360,233,P.ink,14,0);drawBelemPresentation(c,'miniatura',800,775,320,180);comicText(c,'VER-O-PESO / BELÉM',960,975,28,P.paper,'center');
+ comicPanel(c,780,760,360,233,P.ink,14,0);drawBelemPresentation(c,'miniatura',800,775,320,180);comicText(c,a.mode==='story'&&a.story?storyPlace(a):'VER-O-PESO / BELÉM',960,975,28,P.paper,'center',330);
  if(a.mode==='story'&&a.story)drawStoryVsTag(c,a);
  footer(c,a.vsReady===false?'CARREGANDO OS LUTADORES…':a.mode==='vs2'?'JOGADOR 1    •    FRENTE A FRENTE    •    JOGADOR 2':'ENTER / LEVE PARA COMEÇAR A LUTA');
 }

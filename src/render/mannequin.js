@@ -1,4 +1,5 @@
 import { SYS } from '../data/system.js';
+import { drawPacifier } from './boss-art.js';
 import { hurtbox, worldBox } from '../core/fighter.js';
 import { poseFor } from './poses.js';
 import { drawSprite, hasSprites, hasSpriteStrip } from './sprites.js';
@@ -199,7 +200,7 @@ function hair(c, J, ch, front) {
 function weapon(c, J, f, ch) {
   let w = ch.look.weapon;
   if (f.state === 'attack' && f.move.weapon === 'ak') w = 'ak';
-  if (!w || w === 'whip') return;
+  if (!w || w === 'whip' || w === 'chupeta') return;
   const h = J.handF;
   c.save();
   c.translate(h[0], h[1]);
@@ -243,7 +244,7 @@ function weapon(c, J, f, ch) {
   c.restore();
 }
 
-function whip(c, J, f) {
+function whip(c, J, f, kind = 'whip') {
   const hand = J.handF;
   let tip = [hand[0] + 40, -4];
   let ctrl = [hand[0] + 70, hand[1] / 2];
@@ -265,15 +266,19 @@ function whip(c, J, f) {
       ctrl = [(hand[0] + tip[0]) / 2, hand[1] + 60 * t];
     }
   }
-  for (const [w, col] of [[9, OUT], [4, '#7a4a2a']]) {
+  const chain = kind === 'chupeta';
+  for (const [w, col] of chain ? [[11, OUT], [5, '#c9c4cf']] : [[9, OUT], [4, '#7a4a2a']]) {
     c.beginPath();
     c.moveTo(hand[0], hand[1]);
     c.quadraticCurveTo(ctrl[0], ctrl[1], tip[0], tip[1]);
     c.strokeStyle = col;
     c.lineWidth = w;
     c.lineCap = 'round';
+    if (chain) c.setLineDash([10, 6]);
     c.stroke();
+    c.setLineDash([]);
   }
+  if (chain) drawPacifier(c, tip[0], tip[1], 1);
 }
 
 /**
@@ -340,12 +345,12 @@ export function drawFighter(c, f, frame) {
   blob(c, J.head, LEN.head, col.skin);
   hair(c, J, ch, true);
   // braço da frente
-  if (look.weapon === 'whip') whip(c, J, f);
+  if (look.weapon === 'whip' || look.weapon === 'chupeta') whip(c, J, f, look.weapon);
   limb(c, J.sh, J.elbowF, 32, upper);
   limb(c, J.elbowF, J.handF, 28, sleeve || col.skin);
   blob(c, J.handF, 19, col.skin);
   weapon(c, J, f, ch);
-  } else if (look.weapon === 'whip') whip(c, J, f);
+  } else if (look.weapon === 'whip' || look.weapon === 'chupeta') whip(c, J, f, look.weapon);
   c.shadowBlur = 0;
 
   // rastro do golpe; as novas tiras usam os efeitos separados de tinta.

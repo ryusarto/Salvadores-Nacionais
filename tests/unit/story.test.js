@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { HEROES, ALL } from '../../src/data/characters/index.js';
 import { CHAPTERS, RIVALS } from '../../src/data/story.js';
-import { createRun, currentFight, fightLevel, winFight, continueFight, talkLines, openingPages, closingPages, loadProgress, saveCleared } from '../../src/ui/story.js';
+import { createRun, nextChapter, currentFight, fightLevel, winFight, continueFight, talkLines, openingPages, closingPages, loadProgress, saveCleared } from '../../src/ui/story.js';
 import { createMatch, step } from '../../src/core/match.js';
 import { createBrain, aiInput } from '../../src/core/ai.js';
 
@@ -11,25 +11,27 @@ const memory = () => {
   return { getItem: (k) => (m.has(k) ? m.get(k) : null), setItem: (k, v) => m.set(k, String(v)) };
 };
 
-test('cada herói tem duas batalhas de rima contra outros heróis, e depois a Zanata', () => {
-  for (const h of HEROES) {
-    const run = createRun(h.id);
+test('cada herói tem duas batalhas de rima contra outros heróis, e depois o chefe', () => {
+  for (const [done, boss] of [[0, 'zanata'], [1, 'chupetinha']]) for (const h of HEROES) {
+    const run = createRun(h.id, { [h.id]: done });
     assert.equal(run.fights.length, 3, h.id);
-    const [r1, r2, boss] = run.fights;
+    const [r1, r2, last] = run.fights;
     for (const r of [r1, r2]) {
       assert.equal(r.kind, 'rival');
       assert.notEqual(r.foe, h.id, `${h.id} não luta contra si mesmo`);
       assert.ok(HEROES.some((x) => x.id === r.foe), `${r.foe} é herói`);
     }
     assert.notEqual(r1.foe, r2.foe);
-    assert.deepEqual(boss, { foe: 'zanata', kind: 'boss' });
+    assert.deepEqual(last, { foe: boss, kind: 'boss' });
   }
-  assert.deepEqual(Object.keys(RIVALS).sort(), HEROES.map((h) => h.id).sort());
+  for (const table of Object.values(RIVALS)) assert.deepEqual(Object.keys(table).sort(), HEROES.map((h) => h.id).sort());
+  // nos dois capítulos de Belém, ninguém repete rival
+  for (const h of HEROES) assert.equal(new Set([...RIVALS['ver-o-peso'][h.id], ...RIVALS.palco[h.id]]).size, 4, h.id);
 });
 
 test('todas as falas têm texto e um personagem que existe', () => {
-  for (const h of HEROES) {
-    const run = createRun(h.id);
+  for (const done of [0, 1]) for (const h of HEROES) {
+    const run = createRun(h.id, { [h.id]: done });
     for (run.idx = 0; run.idx < run.fights.length; run.idx++) {
       for (const l of talkLines(run)) {
         assert.ok(l.say && l.say.length > 5, `${h.id}: fala vazia`);
@@ -37,8 +39,9 @@ test('todas as falas têm texto e um personagem que existe', () => {
       }
     }
   }
-  assert.ok(openingPages('Franco').some((p) => p.includes('Franco')));
-  assert.ok(!openingPages('Franco').some((p) => p.includes('{hero}')));
+  const run = createRun('franco');
+  assert.ok(openingPages(run, 'Franco').some((p) => p.includes('Franco')));
+  assert.ok(!openingPages(run, 'Franco').some((p) => p.includes('{hero}')));
 });
 
 test('a escada: vence, vence, vence o chefe e salva o capítulo', () => {
@@ -53,8 +56,11 @@ test('a escada: vence, vence, vence o chefe e salva o capítulo', () => {
   assert.ok(closingPages(run, 'Franco').length > 0);
   saveCleared(run, store);
   assert.deepEqual(loadProgress(store), { franco: 1 });
-  // sem outro capítulo pronto, a turnê recomeça pelo último pronto
-  assert.equal(CHAPTERS[createRun('franco', loadProgress(store)).chapter].id, 'ver-o-peso');
+  assert.equal(nextChapter(run).id, 'palco');
+  // com o capítulo 1 vencido, a turnê segue para a frente do palco
+  const run2 = createRun('franco', loadProgress(store));
+  assert.equal(CHAPTERS[run2.chapter].id, 'palco');
+  assert.equal(run2.fights[2].foe, 'chupetinha');
 });
 
 test('perder e continuar recomeça a mesma luta e conta o continue', () => {
@@ -81,9 +87,8 @@ test('progresso estragado no armazenamento não quebra a turnê', () => {
   assert.ok(createRun('dney', loadProgress(store)));
 });
 
-test('as três lutas do capítulo 1 terminam com CPU contra CPU', () => {
-  const run = createRun('ryuchi');
-  for (const f of run.fights) {
+test('as lutas dos capítulos 1 e 2 terminam com CPU contra CPU', () => {
+  for (const done of [0, 1]) for (const f of createRun('ryuchi', { ryuchi: done }).fights) {
     const st = createMatch({ chars: [ALL.ryuchi, ALL[f.foe]], seed: 7 });
     const b0 = createBrain(2);
     const b1 = createBrain(1);

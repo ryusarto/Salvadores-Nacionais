@@ -24,11 +24,14 @@ export function createRun(heroId, progress = {}) {
 }
 
 function buildFights(heroId, chapter) {
-  const rivals = (RIVALS[heroId] || []).map((id, i) => ({ foe: id, kind: 'rival', n: i + 1 }));
+  const rivals = ((RIVALS[chapter.id] || {})[heroId] || []).map((id, i) => ({ foe: id, kind: 'rival', n: i + 1 }));
   return [...rivals, { foe: chapter.boss, kind: 'boss' }];
 }
 
 export const currentChapter = (run) => CHAPTERS[run.chapter];
+
+/** Próximo capítulo pronto depois do atual, ou null se a turnê parou aqui por enquanto. */
+export const nextChapter = (run) => CHAPTERS.slice(run.chapter + 1).find((ch) => ch.ready && ch.n === CHAPTERS[run.chapter].n + 1) || null;
 export const currentFight = (run) => run.fights[run.idx];
 
 /**
@@ -59,13 +62,13 @@ export function continueFight(run) {
 /** Troca {hero} pelo nome curto do herói. */
 const fill = (s, heroName) => s.replaceAll('{hero}', heroName);
 
-export const openingPages = (heroName) => OPENING.map((s) => fill(s, heroName));
+export const openingPages = (run, heroName) => (OPENING[currentChapter(run).id] || []).map((s) => fill(s, heroName));
 export const closingPages = (run, heroName) => (CLOSING[currentChapter(run).boss] || []).map((s) => fill(s, heroName));
 
 /** Falas antes da luta atual. '$hero' vira o herói da partida. */
 export function talkLines(run) {
   const f = currentFight(run);
-  const lines = f.kind === 'rival' ? rhymeTalk(run.hero, f.foe) : BOSS_TALK[f.foe] || [];
+  const lines = f.kind === 'rival' ? rhymeTalk(run.hero, f.foe, currentChapter(run).id) : BOSS_TALK[f.foe] || [];
   return lines.map((l) => ({ ...l, who: l.who === '$hero' ? run.hero : l.who }));
 }
 
