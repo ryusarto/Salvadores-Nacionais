@@ -17,7 +17,9 @@ function trimDecoded(id, keep) {
   const limit = LIMITS[id] || Infinity;
   const oldest = loaded.filter(s => s !== keep && s.name !== 'parado').sort((a, b) => a.used - b.used);
   while (loaded.length > limit && oldest.length) {
-    oldest.shift().cv = null;
+    const old = oldest.shift();
+    old.cv = null;
+    old.cvAlt = null;
     loaded.pop();
   }
 }
@@ -105,6 +107,59 @@ function keyOut(img) {
     push(x + 1, y); push(x - 1, y); push(x, y + 1); push(x, y - 1);
   }
   c.putImageData(d, 0, 0);
+  return cv;
+}
+
+/**
+ * Paleta alternativa para a luta espelhada (mesmo personagem dos dois lados).
+ * Pele e tons bege ficam; cores saturadas mudam de matiz; branco e cinza
+ * ganham um tom azulado; contorno preto não muda. Feita uma vez por tira.
+ */
+export function recolorAlt(px) {
+  for (let i = 0; i < px.length; i += 4) {
+    if (px[i + 3] === 0) continue;
+    const r = px[i] / 255, g = px[i + 1] / 255, b = px[i + 2] / 255;
+    const max = Math.max(r, g, b), min = Math.min(r, g, b), l = (max + min) / 2, d = max - min;
+    if (l < 0.12) continue; // contorno e sombras profundas
+    let h = 0, s = 0;
+    if (d > 0) {
+      s = d / (1 - Math.abs(2 * l - 1));
+      h = max === r ? ((g - b) / d + 6) % 6 : max === g ? (b - r) / d + 2 : (r - g) / d + 4;
+      h *= 60;
+    }
+    if (s >= 0.15 && h >= 5 && h <= 50 && l >= 0.2 && l <= 0.88) continue; // pele, bege, marrom claro
+    let nh, ns;
+    if (s < 0.15) { nh = 205; ns = 0.42; } // branco, cinza e preto acinzentado: azulado
+    else { nh = (h + 150) % 360; ns = s; }
+    const c = (1 - Math.abs(2 * l - 1)) * ns, x = c * (1 - Math.abs((nh / 60) % 2 - 1)), m = l - c / 2;
+    const [r1, g1, b1] = nh < 60 ? [c, x, 0] : nh < 120 ? [x, c, 0] : nh < 180 ? [0, c, x] : nh < 240 ? [0, x, c] : nh < 300 ? [x, 0, c] : [c, 0, x];
+    px[i] = Math.round((r1 + m) * 255); px[i + 1] = Math.round((g1 + m) * 255); px[i + 2] = Math.round((b1 + m) * 255);
+  }
+  return px;
+}
+
+function altCanvas(s) {
+  if (s.cvAlt && s.cvAltOf === s.cv) return s.cvAlt;
+  if (typeof document === 'undefined') return s.cv;
+  const cv = document.createElement('canvas');
+  cv.width = s.cv.width;
+  cv.height = s.cv.height;
+  const c = cv.getContext('2d', { willReadFrequently: true });
+  c.drawImage(s.cv, 0, 0);
+  const d = c.getImageData(0, 0, cv.width, cv.height);
+  recolorAlt(d.data);
+  c.putImageData(d, 0, 0);
+  // Contorno luminoso: distingue o lado 2 mesmo em personagens de roupa bege ou marrom.
+  const out = document.createElement('canvas');
+  out.width = cv.width;
+  out.height = cv.height;
+  const o = out.getContext('2d');
+  o.shadowColor = 'rgba(70, 200, 255, 0.95)';
+  o.shadowBlur = Math.round(s.size / 36);
+  o.drawImage(cv, 0, 0);
+  o.drawImage(cv, 0, 0);
+  s.cvAlt = out;
+  s.cvAltOf = s.cv;
   return cv;
 }
 
@@ -298,7 +353,7 @@ export function drawSprite(c, f, frame) {
   }
   // Cancel the caller's facing mirror for independently drawn left-facing art.
   if (f.face < 0 && f.ch.spriteFacingPacks?.left) c.scale(-1, 1);
-  c.drawImage(s.cv, i * s.size, 0, s.size, s.size, -size * FOOT.x, -size * FOOT.y, size, size);
+  c.drawImage(f.alt ? altCanvas(s) : s.cv, i * s.size, 0, s.size, s.size, -size * FOOT.x, -size * FOOT.y, size, size);
   attackEffects(c, f);
   if (fx === 'guard') {
     // escudo de defesa desenhado pelo jogo

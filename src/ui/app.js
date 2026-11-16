@@ -13,7 +13,7 @@ import { readInput, takePressed, pollPad, glyphs, rumble, remapPad, resetPad, PS
 import { COMBOS } from '../data/combos.js';
 import { createTracker, trackCombo, createRunner, runnerInput, runnerDone, stepLabel } from '../core/combos.js';
 import { audioEvents, sfx, setStageAudioActive } from './audio.js';
-import {drawComicScreen,drawComicPause} from './comic-screens.js';
+import {drawComicScreen,drawComicPause,FOES,FOE_COLS} from './comic-screens.js';
 import {comicBackground} from '../render/comic-ui.js';
 
 const W = SYS.VIEW_W;
@@ -27,7 +27,14 @@ const loadDiff = () => {
     return 0;
   }
 };
-const PAUSE = ['CONTINUAR', 'LISTA DE COMBOS', 'LISTA DE GOLPES', 'CONTROLES', 'REINICIAR LUTA', 'SAIR'];
+const PAUSE = ['CONTINUAR', 'LISTA DE COMBOS', 'LISTA DE GOLPES', 'CONTROLES', 'SOM', 'REINICIAR LUTA', 'SAIR'];
+// Na pausa, o item SOM mostra o estado atual (o botão da página some na luta).
+const pauseLabels = () => PAUSE.map(item => item === 'SOM' ? (sfx.isMuted() ? 'SOM: DESLIGADO' : 'SOM: LIGADO') : item);
+function toggleSound() {
+  const muted = sfx.toggleMute();
+  const button = typeof document !== 'undefined' && document.getElementById('sound');
+  if (button) { button.textContent = muted ? 'SOM: DESLIGADO' : 'SOM: LIGADO'; button.setAttribute('aria-pressed', String(muted)); }
+}
 const ACTIONS = [['L', 'Leve'], ['M', 'Médio'], ['H', 'Forte'], ['S', 'Especial'], ['G', 'Defesa (Ginga)'], ['T', 'Agarrão'], ['X', 'Super'], ['start', 'Pausa'], ['back', 'Voltar']];
 const RESULT = ['REVANCHE', 'TROCAR PERSONAGEM', 'MENU'];
 const DUMMY = ['PARADO', 'DEFENDE TUDO', 'CPU'];
@@ -38,7 +45,7 @@ export function createApp(canvas, devices, opts = {}) {
   const c = canvas.getContext('2d');
   c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';
   const app = {
-    screen: 'title', cur: 0, mode: 'story', hero: 0, foe: null,
+    screen: 'title', cur: 0, mode: 'story', hero: 0, foe: null, foeCur: FOES.length - 1,
     st: null, brain: null, fx: createFx(), hud: createHud(), layers: buildStage(),
     cam: (SYS.STAGE_W - W) / 2, frame: 0, paused: false, pcur: 0, sub: null, ccur: 0, kcur: 0, remap: 0, trial: null, demo: null, demoT: 0, inputLog: [], lastIn: null,
     boxes: !!opts.boxes, dummy: 0, level: SYS.DIFFICULTY[loadDiff()].level, diff: loadDiff(), stats: null, overT: 0, vsT: 0,
@@ -53,6 +60,8 @@ export function createApp(canvas, devices, opts = {}) {
     const fair = app.mode === 'training' || app.mode === 'vs2';
     if (app.mode === 'vs2') app.foe = HEROES[app.hero2];
     app.st = createMatch({ chars: [hero, app.foe], seed: (Date.now() & 0xffff) + 1, training: app.mode === 'training', dmgMul: fair ? [1, 1] : D.dmg });
+    // Luta espelhada: o lado 2 usa a paleta alternativa para dar para distinguir.
+    if (app.st.f[0].ch.id === app.st.f[1].ch.id) app.st.f[1].alt = true;
     app.brain = createBrain(app.level);
     app.p1brain = app.autoplay ? createBrain(2) : null;
     app.fx = createFx();
@@ -286,15 +295,25 @@ export function createApp(canvas, devices, opts = {}) {
       const n = HEROES.length;
       app.hero = (app.hero + n + (pr.right ? 1 : 0) - (pr.left ? 1 : 0) + (pr.down ? 4 : 0) - (pr.up ? 4 : 0)) % n;
       if (back) app.screen = 'title';
-      if (ok) {
+      if (ok && app.mode === 'versus') app.screen = 'selectFoe';
+      else if (ok) {
         pickFoe();
+        enterVs();
+      }
+    } else if (app.screen === 'selectFoe') {
+      const n = FOES.length;
+      app.foeCur = (app.foeCur + n + (pr.right ? 1 : 0) - (pr.left ? 1 : 0) + (pr.down ? FOE_COLS : 0) - (pr.up ? FOE_COLS : 0)) % n;
+      if (back) app.screen = 'select';
+      else if (ok) {
+        const pool = FOES.filter(Boolean);
+        app.foe = FOES[app.foeCur] || pool[Math.floor(Math.random() * pool.length)];
         enterVs();
       }
     } else if (app.screen === 'vs') {
       app.vsT++;
       if (back) {
         app.ready = [false, false];
-        app.screen = app.mode === 'vs2' ? 'select2' : 'select';
+        app.screen = app.mode === 'vs2' ? 'select2' : app.mode === 'versus' ? 'selectFoe' : 'select';
       }
       else if (app.vsReady && ((ok && app.vsT > 20) || app.vsT > 240)) startFight();
     } else if (app.screen === 'fight') {
@@ -332,7 +351,8 @@ export function createApp(canvas, devices, opts = {}) {
               app.sub = 'controls';
               app.kcur = 0;
               app.remap = 0;
-            } else if (item === 'REINICIAR LUTA') startFight();
+            } else if (item === 'SOM') toggleSound();
+            else if (item === 'REINICIAR LUTA') startFight();
             else app.screen = 'title';
           }
         }
@@ -472,7 +492,7 @@ export function createApp(canvas, devices, opts = {}) {
     if (app.sub === 'moves') return drawMoveList();
     if (app.sub === 'combos') return drawComboList();
     if (app.sub === 'controls') return drawControls();
-    drawComicPause(c,app,PAUSE);
+    drawComicPause(c,app,pauseLabels());
   }
 
   function drawMoveList() {
