@@ -2,7 +2,7 @@
 
 **O que é:** jogo de luta 2D um contra um, em estilo HQ, numa turnê pelo Brasil.
 Oito heróis fazem eventos de rap contra a fome e enfrentam políticos vilões
-com poderes, um por cidade. Primeira luta: Capeta Zanata, em Belém
+com poderes, de Belém até o inferno. Primeira luta: Capeta Zanata, em Belém
 (Ver-o-Peso); chefe final: Djabo. Desenho completo em
 [docs/MODO-HISTORIA.md](../docs/MODO-HISTORIA.md).
 
