@@ -1,8 +1,10 @@
 # Salvadores Nacionais — resumo do jogo
 
 **O que é:** jogo de luta 2D um contra um, em estilo HQ, numa turnê pelo Brasil.
-Oito heróis enfrentam chefes caricatos, um por cidade. Primeira luta: Capeta
-Zanata, em Belém (Ver-o-Peso).
+Oito heróis fazem eventos de rap contra a fome e enfrentam políticos vilões
+com poderes, um por cidade. Primeira luta: Capeta Zanata, em Belém
+(Ver-o-Peso); chefe final: Djabo. Desenho completo em
+[docs/MODO-HISTORIA.md](../docs/MODO-HISTORIA.md).
 
 **O que o jogador deve sentir:** controle imediato e golpes com peso. Cada herói
 se joga de um jeito diferente.
