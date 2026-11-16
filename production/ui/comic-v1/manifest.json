@@ -24,128 +24,128 @@
       "width": 768,
       "height": 1024,
       "alpha": true,
-      "sha256": "49157e8bfa43a54d9d4a2346ae43393495a33517fe6f35ea8afecc913771d82e",
-      "bytes": 359908
+      "sha256": "35d58cb4f501381e99d4a11a933cb1bb21c14e1f14e375d5eee8a810e7e8704b",
+      "bytes": 187906
     },
     "icon-franco": {
       "path": "icons/franco.webp",
       "width": 256,
       "height": 256,
       "alpha": true,
-      "sha256": "d34821f471eed2702e8e27df143a80fcd9aaf40cf584e56293b95dd3f07e2653",
-      "bytes": 35042
+      "sha256": "ec866b6b9193293a8d0fd5bf54ab527459cb169797ffbd37bf3ccd1b9b6ff1fe",
+      "bytes": 27840
     },
     "portrait-belga": {
       "path": "portraits/belga.webp",
       "width": 768,
       "height": 1024,
       "alpha": true,
-      "sha256": "8c289c09f733bca5e8bee0edf923d84fcf2cdad3c4e7cc4a20edf0cd0b288266",
-      "bytes": 320224
+      "sha256": "5004a1ba6385d8c9a708fcf623b1d1703298282eeaabf13aef43ca65bfb72989",
+      "bytes": 172218
     },
     "icon-belga": {
       "path": "icons/belga.webp",
       "width": 256,
       "height": 256,
       "alpha": true,
-      "sha256": "3ea35b18e134c4ee6a2c9b04386b82fa316e2a847ad7286994cf2a5a825b9d94",
-      "bytes": 26764
+      "sha256": "2b333227d8abc7b48655f5d2b52e8fb049477b270852d765c4e485e7f1450c71",
+      "bytes": 26204
     },
     "portrait-majis": {
       "path": "portraits/majis.webp",
       "width": 768,
       "height": 1024,
       "alpha": true,
-      "sha256": "16f7946637e25a567e44013547a22492ef991cf07a1ee7b142f12ac30df0d7e2",
-      "bytes": 271750
+      "sha256": "e1d5cd280584c78f0018fdf7f72bb89ee00a42f37eecaeef20a0bb03701fb20d",
+      "bytes": 152190
     },
     "icon-majis": {
       "path": "icons/majis.webp",
       "width": 256,
       "height": 256,
       "alpha": true,
-      "sha256": "2531553031ba21f78ead5bdbbd776a560ef60d3887305210278d26f273da56c8",
-      "bytes": 27720
+      "sha256": "43524ffe41b8f9f5fbc7689ebe2b121497688ac2cb892bddc4235643f08f85ba",
+      "bytes": 23602
     },
     "portrait-trunks": {
       "path": "portraits/trunks.webp",
       "width": 768,
       "height": 1024,
       "alpha": true,
-      "sha256": "37a3ad3d694885ed36aa251d5dcbcfecb7f74b86bd04a64b3919765e1d67b0b9",
-      "bytes": 359788
+      "sha256": "0c18de1a7769e7be7b1bc10082cbb1983e7d2c423dd4250680c8067a7af61fa7",
+      "bytes": 191872
     },
     "icon-trunks": {
       "path": "icons/trunks.webp",
       "width": 256,
       "height": 256,
       "alpha": true,
-      "sha256": "c8181fd7b0888da475ed31dc4449229fa19f0300ac040cfc797f73e5d0d8ec79",
-      "bytes": 33992
+      "sha256": "fa899445b26825c81b6fdf16811a980831a10c68c55e9ca62faf96a69bb926d4",
+      "bytes": 31938
     },
     "portrait-ryuchi": {
       "path": "portraits/ryuchi.webp",
       "width": 768,
       "height": 1024,
       "alpha": true,
-      "sha256": "26527adda07ff19f03c46f85250a6809188141fcc110aae66f82a6606769b5d8",
-      "bytes": 222558
+      "sha256": "6e142108b072fc89ee47237d6a2733fdbec523c0e7e7a72ab6f2e45017a35799",
+      "bytes": 179754
     },
     "icon-ryuchi": {
       "path": "icons/ryuchi.webp",
       "width": 256,
       "height": 256,
       "alpha": true,
-      "sha256": "c4a9918b8a16f27c54c6d86bac2f479a4044f2466989715e53b3141223619fc3",
-      "bytes": 19662
+      "sha256": "4727715e340e8c59095b5a2e6749894afd36759f58d79130856075931b2691dd",
+      "bytes": 22360
     },
     "portrait-mdep": {
       "path": "portraits/mdep.webp",
       "width": 768,
       "height": 1024,
       "alpha": true,
-      "sha256": "eef6de85b70cb57f95708adf35c10e77114b551ea6a7522069f90224e1dc5b58",
-      "bytes": 364844
+      "sha256": "bb8e0c14d8655ff8a8fe2d8e279c4536bdb89573f4aedf9412713968ce890cb3",
+      "bytes": 185674
     },
     "icon-mdep": {
       "path": "icons/mdep.webp",
       "width": 256,
       "height": 256,
       "alpha": true,
-      "sha256": "40c985424ba1db480ba269d7bb4872bc36505daaf4788abc210d2ecd8d6da37f",
-      "bytes": 34800
+      "sha256": "8ab3b6ee941623c9b105f5409671a388dc0505afcfcc6bce4ba74c35bb415295",
+      "bytes": 31178
     },
     "portrait-chapuh": {
       "path": "portraits/chapuh.webp",
       "width": 768,
       "height": 1024,
       "alpha": true,
-      "sha256": "1906cae7ff2ceaf9e04cfa696ede005655ae3c4e902aba75c7545157cd16dbcd",
-      "bytes": 357074
+      "sha256": "0e9c5aa464dd6d239eb596e46a5062c11486362d855283b918b3f97b70119b8c",
+      "bytes": 183840
     },
     "icon-chapuh": {
       "path": "icons/chapuh.webp",
       "width": 256,
       "height": 256,
       "alpha": true,
-      "sha256": "00e18d0e7c91d1056c853d608be41014310b59b50e1c219a52566853803c244b",
-      "bytes": 33762
+      "sha256": "c19d942b9123129ab6c53c39ac9ad210f1348541781536628f6e8c18e647d505",
+      "bytes": 29582
     },
     "portrait-dney": {
       "path": "portraits/dney.webp",
       "width": 768,
       "height": 1024,
       "alpha": true,
-      "sha256": "48cb2c7b5ddb1978274e3fed48a0a0e8408bdbb044a5ad26c65adc737aa98447",
-      "bytes": 414552
+      "sha256": "fcae34839f1df14fcd3e8f00409ecbf37aa70fedcbb13944385c55b0e7c67615",
+      "bytes": 159648
     },
     "icon-dney": {
       "path": "icons/dney.webp",
       "width": 256,
       "height": 256,
       "alpha": true,
-      "sha256": "41348f5d8c193e52d2d33a624ad3dc4bbf95e5c06af9e3a8e8a3f28bd10d6e57",
-      "bytes": 33422
+      "sha256": "443728560e58b5fe8e5472199a87816342fb808b4d5500ebe8da98b9b1d73e30",
+      "bytes": 25232
     },
     "portrait-zanata": {
       "path": "portraits/zanata.webp",
