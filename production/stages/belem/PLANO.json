@@ -1,7 +1,7 @@
 {
   "stage": "belem-ver-o-peso",
-  "status": "planning-only",
-  "basis": "Current src/render/stage.js; no new scenario artwork has been generated yet.",
+  "status": "produced-and-integrated",
+  "basis": "Original game art inspired by the three user-provided Belém photographs: Ver-o-Peso market, fishing boats, Sé cathedral. Warm dusk palette; 2.5D side view.",
   "world": {
     "viewport": [
       1920,
@@ -46,7 +46,10 @@
       "variants": 1,
       "priority": "P0",
       "alpha": false,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "layers/ceu.webp"
+      ]
     },
     {
       "id": "nuvens",
@@ -60,7 +63,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "layers/nuvens.webp"
+      ]
     },
     {
       "id": "horizonte",
@@ -74,7 +80,10 @@
       "variants": 1,
       "priority": "P0",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "layers/horizonte.webp"
+      ]
     },
     {
       "id": "agua",
@@ -88,7 +97,10 @@
       "variants": 1,
       "priority": "P0",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "layers/agua.webp"
+      ]
     },
     {
       "id": "arquitetura",
@@ -102,7 +114,10 @@
       "variants": 1,
       "priority": "P0",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "layers/arquitetura.webp"
+      ]
     },
     {
       "id": "feira",
@@ -116,7 +131,10 @@
       "variants": 1,
       "priority": "P0",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "layers/feira.webp"
+      ]
     },
     {
       "id": "primeiro-plano",
@@ -130,7 +148,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "layers/primeiro-plano.webp"
+      ]
     },
     {
       "id": "calcamento",
@@ -144,7 +165,10 @@
       "variants": 1,
       "priority": "P0",
       "alpha": false,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "ground/calcamento.webp"
+      ]
     },
     {
       "id": "barraca",
@@ -158,7 +182,12 @@
       "variants": 3,
       "priority": "P1",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "props/barraca-1.webp",
+        "props/barraca-2.webp",
+        "props/barraca-3.webp"
+      ]
     },
     {
       "id": "banca-frutas",
@@ -172,7 +201,11 @@
       "variants": 2,
       "priority": "P1",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "props/banca-frutas-1.webp",
+        "props/banca-frutas-2.webp"
+      ]
     },
     {
       "id": "caixas",
@@ -186,7 +219,12 @@
       "variants": 3,
       "priority": "P1",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "props/caixas-1.webp",
+        "props/caixas-2.webp",
+        "props/caixas-3.webp"
+      ]
     },
     {
       "id": "cestos",
@@ -200,7 +238,11 @@
       "variants": 2,
       "priority": "P1",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "props/cestos-1.webp",
+        "props/cestos-2.webp"
+      ]
     },
     {
       "id": "poste",
@@ -214,7 +256,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "props/poste-1.webp"
+      ]
     },
     {
       "id": "barco",
@@ -228,7 +273,11 @@
       "variants": 2,
       "priority": "P1",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "props/barco-1.webp",
+        "props/barco-2.webp"
+      ]
     },
     {
       "id": "folhagem",
@@ -242,7 +291,11 @@
       "variants": 2,
       "priority": "P1",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "props/folhagem-1.webp",
+        "props/folhagem-2.webp"
+      ]
     },
     {
       "id": "bandeirolas",
@@ -256,7 +309,11 @@
       "variants": 2,
       "priority": "P1",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "props/bandeirolas-1.webp",
+        "props/bandeirolas-2.webp"
+      ]
     },
     {
       "id": "agua-ondulacao",
@@ -270,7 +327,10 @@
       "variants": 1,
       "priority": "P0",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "animations/agua-ondulacao.webp"
+      ]
     },
     {
       "id": "barco-balanco",
@@ -284,7 +344,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "animations/barco-balanco.webp"
+      ]
     },
     {
       "id": "toldo-vento",
@@ -298,7 +361,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "animations/toldo-vento.webp"
+      ]
     },
     {
       "id": "bandeirolas-vento",
@@ -312,7 +378,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "animations/bandeirolas-vento.webp"
+      ]
     },
     {
       "id": "folhagem-vento",
@@ -326,7 +395,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "animations/folhagem-vento.webp"
+      ]
     },
     {
       "id": "npc-feirante",
@@ -340,7 +412,10 @@
       "variants": 1,
       "priority": "P0",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "animations/npc-feirante.webp"
+      ]
     },
     {
       "id": "npc-cliente",
@@ -354,7 +429,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "animations/npc-cliente.webp"
+      ]
     },
     {
       "id": "npc-torcedor",
@@ -368,7 +446,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "animations/npc-torcedor.webp"
+      ]
     },
     {
       "id": "poeira-ambiente",
@@ -382,7 +463,10 @@
       "variants": 1,
       "priority": "P2",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "fx/poeira-ambiente.webp"
+      ]
     },
     {
       "id": "luz-poste",
@@ -396,7 +480,10 @@
       "variants": 1,
       "priority": "P2",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "fx/luz-poste.webp"
+      ]
     },
     {
       "id": "reflexos-agua",
@@ -410,7 +497,10 @@
       "variants": 1,
       "priority": "P2",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "fx/reflexos-agua.webp"
+      ]
     },
     {
       "id": "trilha-intro",
@@ -424,7 +514,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": false,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "audio/trilha-intro.ogg"
+      ]
     },
     {
       "id": "trilha-loop",
@@ -438,7 +531,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": false,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "audio/trilha-loop.ogg"
+      ]
     },
     {
       "id": "ambiente-feira",
@@ -452,7 +548,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": false,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "audio/ambiente-feira.ogg"
+      ]
     },
     {
       "id": "ambiente-agua",
@@ -466,7 +565,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": false,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "audio/ambiente-agua.ogg"
+      ]
     },
     {
       "id": "aves",
@@ -480,7 +582,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": false,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "audio/aves.ogg"
+      ]
     },
     {
       "id": "vento-tecido",
@@ -494,7 +599,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": false,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "audio/vento-tecido.ogg"
+      ]
     },
     {
       "id": "miniatura",
@@ -508,7 +616,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": false,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "ui/miniatura.webp"
+      ]
     },
     {
       "id": "titulo",
@@ -522,7 +633,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": true,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "ui/titulo.svg"
+      ]
     },
     {
       "id": "carregamento",
@@ -536,7 +650,10 @@
       "variants": 1,
       "priority": "P1",
       "alpha": false,
-      "status": "planned"
+      "status": "produced",
+      "files": [
+        "ui/carregamento.webp"
+      ]
     }
   ]
 }

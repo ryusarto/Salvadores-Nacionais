@@ -31,6 +31,17 @@ if (existsSync(spritesDir)) {
 }
 // Cenários pintados: production/stages/<fase>.(jpg|webp|png)
 const stages = {};
+const stagePacks = {};
+const packPath='production/stages/belem/manifest.json';
+if(existsSync(packPath)){
+  const pack=JSON.parse(readFileSync(packPath));
+  for(const a of Object.values(pack.assets)){
+    const path=join('production/stages/belem',a.path);
+    const mime=a.kind==='audio'?'audio/ogg':a.path.endsWith('.svg')?'image/svg+xml':'image/webp';
+    a.url=externalAssets?assetURL(path):`data:${mime};base64,${readFileSync(path).toString('base64')}`;
+  }
+  stagePacks.belem=pack;
+}
 if (existsSync('production/stages')) {
   for (const f of readdirSync('production/stages')) {
     const m = f.match(/^(.+)\.(jpg|jpeg|webp|png)$/);
@@ -41,7 +52,7 @@ if (existsSync('production/stages')) {
   }
 }
 const out = await build({ entryPoints: ['src/main.js'], bundle: true, format: 'iife', minify: process.argv.includes('--min'), write: false, target: 'es2020' });
-const js = `window.__SPRITES=${JSON.stringify(sprites)};window.__STAGES=${JSON.stringify(stages)};\n${out.outputFiles[0].text}`.replace(/<\/script>/g, '<\\/script>');
+const js = `window.__SPRITES=${JSON.stringify(sprites)};window.__STAGES=${JSON.stringify(stages)};window.__STAGEPACKS=${JSON.stringify(stagePacks)};\n${out.outputFiles[0].text}`.replace(/<\/script>/g, '<\\/script>');
 const html = readFileSync('src/index.html', 'utf8').replace('/*__BUNDLE__*/', () => js);
 mkdirSync('dist', { recursive: true });
 writeFileSync(outFile, html);

@@ -1,0 +1,103 @@
+{
+  "stage": {
+    "ready": true,
+    "loaded": 39,
+    "errors": [],
+    "groups": 36
+  },
+  "beforeGesture": {
+    "active": false,
+    "muted": false,
+    "started": false,
+    "decoded": 0,
+    "gain": 0,
+    "errors": []
+  },
+  "audioStarted": {
+    "active": true,
+    "muted": false,
+    "started": true,
+    "decoded": 6,
+    "gain": 0.3335629999637604,
+    "errors": []
+  },
+  "muted": {
+    "active": true,
+    "muted": true,
+    "started": true,
+    "decoded": 6,
+    "gain": 0,
+    "errors": []
+  },
+  "unmuted": {
+    "active": true,
+    "muted": false,
+    "started": true,
+    "decoded": 6,
+    "gain": 0.6000000238418579,
+    "errors": []
+  },
+  "paused": {
+    "active": false,
+    "muted": false,
+    "started": true,
+    "decoded": 6,
+    "gain": 0,
+    "errors": []
+  },
+  "menuAudio": {
+    "active": false,
+    "muted": false,
+    "started": true,
+    "decoded": 6,
+    "gain": 0,
+    "errors": []
+  },
+  "cameras": [
+    {
+      "cam": 0,
+      "sha256": "3a6131579257b7c4d0d27a40e948a2822d30d643dbe7510189da7857076b5a9e"
+    },
+    {
+      "cam": 340,
+      "sha256": "2c31e98c481f28ff33f11855b430897ddfa0c6844e0da550a5e27d873e6a2fcf"
+    },
+    {
+      "cam": 680,
+      "sha256": "0e78bf9f8804cf749238ba40168e85dca961a9fb868f73360ee2e6a64204f7a2"
+    }
+  ],
+  "performance": {
+    "medianMs": 9,
+    "p95Ms": 11.900000000139698
+  },
+  "mobileOverflow": false,
+  "previewStats": {
+    "groups": 36,
+    "animations": 11,
+    "audios": 6,
+    "status": {
+      "ready": true,
+      "loaded": 39,
+      "errors": [],
+      "groups": 36
+    }
+  },
+  "previewOverflow": false,
+  "animationChanges": true,
+  "off": {
+    "ready": false,
+    "loaded": 0,
+    "errors": [],
+    "groups": 0
+  },
+  "fallback": {
+    "ready": false,
+    "loaded": 3,
+    "errors": [
+      "arquitetura"
+    ],
+    "groups": 36
+  },
+  "errors": []
+}

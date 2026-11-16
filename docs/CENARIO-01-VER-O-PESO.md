@@ -1,9 +1,12 @@
 # Primeiro cenário — Belém / Ver-o-Peso
 
-Proposta baseada no cenário que o jogo já usa: feira do Ver-o-Peso e Baía do
-Guajará ao fim da tarde. Este documento é um inventário de produção; a arte
-nova do cenário ainda não foi criada. O [plano de arquivos](../production/stages/belem/PLANO.json)
-lista 36 grupos de assets, suas variantes, dimensões e prioridades.
+**Produzido e integrado:** os 36 grupos estão completos, com 45 arquivos de
+entrega e 66 frames de animação ambiental. As três fotos fornecidas pelo
+usuário orientam o Mercado de Ferro, casario, barcos, paneiros e Catedral da
+Sé, reinterpretados em vista lateral e luz de fim de tarde. O
+[manifesto](../production/stages/belem/manifest.json) registra cada entrega;
+a [prévia](../production/qa/belem-cenario.html) permite conferir a montagem.
+Este documento conserva a especificação e o roteiro de produção usados.
 
 ## Composição e limites reais do jogo
 
@@ -70,21 +73,24 @@ vegetação e primeiro plano não podem esconder mãos, pés ou projéteis.
 
 ## Integração necessária
 
-Hoje `buildStage()` produz quatro camadas por código. O caminho opcional
+O fallback `buildStage()` produz quatro camadas por código. O caminho opcional
 `setStageImage()` aceita uma pintura única e substitui todo o cenário,
-incluindo o chão. Para manter profundidade, precisamos de um **carregador de
-camadas independentes**, com manifesto, origens, parallax e animações.
+incluindo o chão. A implementação nova, em `src/render/belem-stage.js`, usa
+um **carregador de camadas independentes**, com manifesto, recortes, parallax
+e animações; `src/data/belem-stage.js` guarda os posicionamentos.
 
-Cada camada nova substituirá a correspondente provisória. Não desenhar a
+As bases novas substituem o cenário provisório quando carregadas. Não desenhar a
 feira antiga atrás da nova, nem um público estático sob os mesmos NPCs
 animados. Se a textura final já contiver juntas do piso, remover a grade
 provisória equivalente. Os efeitos ambientais ficam separados dos FX dos
 lutadores e nunca alteram colisão, câmera ou dano.
 
-O carregador deve manter fallback por camada enquanto os arquivos carregam,
-cache de texturas e limite de imagens animadas decodificadas. O áudio atual
-é sintetizado em `src/ui/audio.js`; música e ambiente exigirão carregamento,
-loop, mixagem e respeito ao botão de áudio existente.
+O carregador mantém fallback completo enquanto as bases essenciais carregam
+ou se alguma falhar, sem misturar versões com perspectivas diferentes.
+As texturas ficam em cache e as 11 tiras de ambiente são reutilizadas entre
+objetos. `src/ui/audio.js` agenda introdução/loop e mixa os ambientes, com
+desbloqueio por interação, botão SOM, silêncio em menus, pausa e aba oculta.
+Os seis áudios são síntese original, sem gravações de campo.
 
 ## Ordem de produção
 

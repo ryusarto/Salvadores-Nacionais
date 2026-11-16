@@ -1,6 +1,36 @@
-/** Sons provisórios gerados por síntese (sem arquivos de áudio). */
+/** Combat synthesis plus original stage music/ambience, unlocked by a gesture. */
 let AC = null;
 let muted = false;
+const stage={pack:null,buffers:new Map(),master:null,active:false,gesture:false,loading:null,started:false,errors:[]};
+
+function stageGain(){
+ const audible=stage.active&&!muted&&!(typeof document!=='undefined'&&document.hidden);
+ if(stage.master&&AC)stage.master.gain.setTargetAtTime(audible?.6:0,AC.currentTime,.025);
+}
+function startStageAudio(){
+ if(stage.started||!stage.gesture||!stage.active||muted||!stage.buffers.size)return;
+ const a=ctx();if(!a)return;
+ stage.master=a.createGain();stage.master.gain.value=0;stage.master.connect(a.destination);
+ const play=(id,when,loop,volume)=>{const buffer=stage.buffers.get(id);if(!buffer)return;const node=a.createBufferSource(),gain=a.createGain();node.buffer=buffer;node.loop=loop;gain.gain.value=volume;node.connect(gain).connect(stage.master);node.start(when);};
+ const at=a.currentTime+.05,intro=stage.buffers.get('trilha-intro');
+ play('trilha-intro',at,false,.65);play('trilha-loop',at+(intro?.duration??0),true,.65);
+ for(const id of['ambiente-feira','ambiente-agua','aves','vento-tecido'])play(id,at,true,.5);
+ stage.started=true;stageGain();
+}
+export function configureStageAudio(pack){
+ stage.pack=pack;
+ const unlock=()=>{
+  stage.gesture=true;const a=ctx();if(!a)return;
+  if(!stage.loading)stage.loading=Promise.all(Object.entries(pack.assets).filter(([,v])=>v.kind==='audio').map(async([id,v])=>{
+   try{const response=await fetch(v.url);if(!response.ok)throw Error(response.status);stage.buffers.set(id,await a.decodeAudioData(await response.arrayBuffer()));}catch{stage.errors.push(id);}
+  })).then(startStageAudio);
+  startStageAudio();
+ };
+ window.addEventListener('pointerdown',unlock,{passive:true});window.addEventListener('keydown',unlock);
+ document.addEventListener('visibilitychange',stageGain);
+}
+export function setStageAudioActive(active){if(stage.active===active)return;stage.active=active;startStageAudio();stageGain();}
+export function stageAudioStatus(){return{active:stage.active,muted,started:stage.started,decoded:stage.buffers.size,gain:stage.master?.gain.value??0,errors:[...stage.errors]};}
 
 function ctx() {
   if (muted || typeof window === 'undefined') return null;
@@ -49,7 +79,7 @@ function noise(dur, vol = 0.08, hp = 800) {
 export const sfx = {
   menu: () => tone(520, 0.05, 'triangle', 0.03, 0.9),
   ok: () => tone(700, 0.09, 'triangle', 0.04, 1.4),
-  toggleMute: () => { muted = !muted; return muted; },
+  toggleMute: () => { muted = !muted; stageGain();if(!muted)startStageAudio();return muted; },
 };
 
 /** Toca os sons dos eventos do quadro. */

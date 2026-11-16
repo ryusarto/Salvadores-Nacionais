@@ -133,8 +133,10 @@ os dois supers de voz, sincronizados com o combate.
 [prévia independente](production/qa/ryuchi-previa-500px.html) e
 [instruções e fontes](LEIA-ME-RYUCHI.md).
 
-### Próxima fase — Belém / Ver-o-Peso
+### Cenário — Belém / Ver-o-Peso
 
-[Inventário de assets e plano de produção](docs/CENARIO-01-VER-O-PESO.md)
-para substituir o cenário provisório por camadas de arte com profundidade.
-O plano cobre36 grupos de assets; a arte nova da fase ainda não foi produzida.
+[Cenário completo](production/stages/belem/README.md): 36 grupos de assets,
+45 arquivos finais, camadas com parallax, feira e barcos animados, 66 frames
+de ambiente, trilha e sons originais sintetizados, miniatura e apresentação.
+[Prévia interativa com câmera e galeria](production/qa/belem-cenario.html).
+O jogo usa a arte nova; `?stage=off` permite comparar com o desenho provisório.

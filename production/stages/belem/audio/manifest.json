@@ -1,0 +1,68 @@
+{
+  "trilha-intro": {
+    "file": "production/stages/belem/audio/trilha-intro.ogg",
+    "seconds": 4.363628117913832,
+    "sampleRate": 44100,
+    "channels": 2,
+    "peak": 0.33242210477240125,
+    "rms": 0.046312896072061224,
+    "loop": false,
+    "origin": "original deterministic synthesis",
+    "bpm": 110
+  },
+  "trilha-loop": {
+    "file": "production/stages/belem/audio/trilha-loop.ogg",
+    "seconds": 17.45453514739229,
+    "sampleRate": 44100,
+    "channels": 2,
+    "peak": 0.3754401977903099,
+    "rms": 0.05746328615314818,
+    "loop": true,
+    "origin": "original deterministic synthesis",
+    "bpm": 110
+  },
+  "ambiente-feira": {
+    "file": "production/stages/belem/audio/ambiente-feira.ogg",
+    "seconds": 16.0,
+    "sampleRate": 44100,
+    "channels": 2,
+    "peak": 0.04409430806343949,
+    "rms": 0.003949952733527829,
+    "loop": true,
+    "origin": "original deterministic synthesis",
+    "bpm": null
+  },
+  "ambiente-agua": {
+    "file": "production/stages/belem/audio/ambiente-agua.ogg",
+    "seconds": 16.0,
+    "sampleRate": 44100,
+    "channels": 2,
+    "peak": 0.20851815799691406,
+    "rms": 0.035932655695821464,
+    "loop": true,
+    "origin": "original deterministic synthesis",
+    "bpm": null
+  },
+  "aves": {
+    "file": "production/stages/belem/audio/aves.ogg",
+    "seconds": 16.0,
+    "sampleRate": 44100,
+    "channels": 2,
+    "peak": 0.02499076713931987,
+    "rms": 0.0026378035962709595,
+    "loop": true,
+    "origin": "original deterministic synthesis",
+    "bpm": null
+  },
+  "vento-tecido": {
+    "file": "production/stages/belem/audio/vento-tecido.ogg",
+    "seconds": 16.0,
+    "sampleRate": 44100,
+    "channels": 2,
+    "peak": 0.09246881342918216,
+    "rms": 0.018365268872091774,
+    "loop": true,
+    "origin": "original deterministic synthesis",
+    "bpm": null
+  }
+}

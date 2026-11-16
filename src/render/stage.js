@@ -1,5 +1,6 @@
 import { SYS } from '../data/system.js';
 import { halftone } from './draw.js';
+import { drawBelemStage } from './belem-stage.js';
 
 /**
  * Cenário de Belém (Ver-o-Peso), desenhado por código em camadas com
@@ -261,8 +262,9 @@ function drawPainted(c, cam) {
 }
 
 /** Desenha o cenário para a posição de câmera `cam` (0 até STAGE_W - VIEW_W). */
-export function drawStage(c, layers, cam) {
+export function drawStage(c, layers, cam, frame = 0) {
   if (PAINTED.img && PAINTED.img.complete !== false && PAINTED.img.width) return drawPainted(c, cam);
+  if (drawBelemStage(c, cam, frame)) return;
   for (const L of layers) c.drawImage(L.cv, Math.round(cam * L.factor), 0, VW, VH, 0, 0, VW, VH);
   // chão em perspectiva
   const top = 826;

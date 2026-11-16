@@ -2,6 +2,8 @@ import { createApp } from './ui/app.js';
 import { createDevices } from './ui/devices.js';
 import { registerSprites } from './render/sprites.js';
 import { setStageImage } from './render/stage.js';
+import { loadBelemStage, belemStageStatus } from './render/belem-stage.js';
+import { configureStageAudio, stageAudioStatus, sfx } from './ui/audio.js';
 import { createTouch } from './ui/touch.js';
 import mdep from './data/characters/mdep.js';
 
@@ -25,12 +27,21 @@ window.__app = app; // acesso para testes automáticos
 
 // Sprites embutidos pelo empacotador (production/sprites/final). ?sprites=off força o manequim.
 const packs = q.get('sprites') === 'off' ? {} : window.__SPRITES || {};
+const belemPack = (window.__STAGEPACKS || {}).belem;
+window.__stageStatus = belemStageStatus;
+window.__stageAudioStatus = stageAudioStatus;
+if (belemPack && q.get('stage') !== 'off') {
+  loadBelemStage(belemPack);
+  configureStageAudio(belemPack);
+}
 const belem = (window.__STAGES || {}).belem;
-if (belem && q.get('stage') !== 'off') {
+if (!belemPack && belem && q.get('stage') !== 'off') {
   const img = new Image();
   img.onload = () => setStageImage(img);
   img.src = belem;
 }
+const soundButton=document.getElementById('sound');
+soundButton?.addEventListener('click',()=>{const muted=sfx.toggleMute();soundButton.textContent=muted?'SOM: DESLIGADO':'SOM: LIGADO';soundButton.setAttribute('aria-pressed',String(muted));});
 Promise.all(Object.entries(packs).map(([id, sheets]) => {
   const tenFrame = id === 'mdep' && mdep.spriteProfile === 'ten-frame';
   const effects = id.startsWith('fx-') || id.endsWith('-fx');

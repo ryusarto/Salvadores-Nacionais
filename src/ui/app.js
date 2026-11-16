@@ -5,6 +5,7 @@ import { createFighter } from '../core/fighter.js';
 import { createBrain, aiInput } from '../core/ai.js';
 import { EMPTY_INPUT } from '../core/input.js';
 import { buildStage, drawStage } from '../render/stage.js';
+import { drawBelemPresentation } from '../render/belem-stage.js';
 import { drawEffect } from '../render/sprites.js';
 import { drawFighter, drawBoxes } from '../render/mannequin.js';
 import { createFx, fxEvents, fxUpdate, fxDrawBack, fxDrawFront, fxDrawScreen, drawEntities } from '../render/fx.js';
@@ -13,7 +14,7 @@ import { text, slab, halftone } from '../render/draw.js';
 import { readInput, takePressed, pollPad, glyphs, rumble, remapPad, resetPad, PS_NAMES, readInputFrom, takePressedFrom, clearPressed, rumbleOn, padLabel } from './devices.js';
 import { COMBOS } from '../data/combos.js';
 import { createTracker, trackCombo, createRunner, runnerInput, runnerDone, stepLabel } from '../core/combos.js';
-import { audioEvents, sfx } from './audio.js';
+import { audioEvents, sfx, setStageAudioActive } from './audio.js';
 
 const W = SYS.VIEW_W;
 const H = SYS.VIEW_H;
@@ -559,6 +560,10 @@ export function createApp(canvas, devices, opts = {}) {
 
   function drawVs() {
     backdrop('#1c0c10');
+    const stageArtwork=drawBelemPresentation(c, 'carregamento', 0, 0, W, H);
+    if (stageArtwork) {
+      c.fillStyle='rgba(15,10,29,.55)';c.fillRect(0,0,W,H);
+    }
     const a = HEROES[app.hero];
     const b = app.foe;
     const t = Math.min(1, app.vsT / 14);
@@ -577,7 +582,8 @@ export function createApp(canvas, devices, opts = {}) {
       text(c, 'JOGADOR 1', 430, 170, 34, '#ffcf2a');
       text(c, 'JOGADOR 2', W - 430, 170, 34, '#35d6c0');
     }
-    if (app.mode === 'story' && b.place) {
+    if (stageArtwork) drawBelemPresentation(c, 'titulo', W/2-210, 790, 420, 105);
+    else if (app.mode === 'story' && b.place) {
       slab(c, W / 2 - 330, 800, 660, 80, '#ffcf2a', 22);
       text(c, `CAPÍTULO 1 — ${b.place}`, W / 2, 842, 46, '#12080c', 'center', null);
     }
@@ -592,7 +598,7 @@ export function createApp(canvas, devices, opts = {}) {
     const fx = app.fx;
     const sx = fx.shake ? (Math.random() - 0.5) * fx.shake * 2 : 0;
     const sy = fx.shake ? (Math.random() - 0.5) * fx.shake * 2 : 0;
-    drawStage(c, app.layers, app.cam);
+    drawStage(c, app.layers, app.cam, app.frame);
     fxDrawScreen(c, fx, 'under');
     c.save();
     c.translate(-app.cam + sx, sy);
@@ -821,6 +827,7 @@ export function createApp(canvas, devices, opts = {}) {
   }
 
   function render() {
+    setStageAudioActive(app.screen === 'fight' && !app.paused && !document.hidden);
     c.setTransform(canvas.width / W, 0, 0, canvas.height / H, 0, 0);
     if (app.screen === 'title') drawTitle();
     else if (app.screen === 'select') drawSelect();
