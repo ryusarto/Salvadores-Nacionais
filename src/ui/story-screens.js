@@ -3,7 +3,7 @@ import { CHAPTERS } from '../data/story.js';
 import { COMIC as P, comicBackground, comicPanel, comicText, comicMenuItem } from '../render/comic-ui.js';
 import { drawBelemPresentation } from '../render/belem-stage.js';
 import { portrait, footer } from './comic-screens.js';
-import { currentChapter, currentFight, talkLines } from './story.js';
+import { currentChapter, currentFight, talkLines, nextChapter } from './story.js';
 
 /** Telas do Modo História, no mesmo estilo HQ do menu. */
 
@@ -38,6 +38,25 @@ function banner(c, title, sub) {
 }
 
 const shortName = (ch) => ch.name.split(',')[0];
+
+/** Retrato HQ; chefes ainda sem retrato aparecem como silhueta com o nome. */
+function figure(c, ch, x, y, w, h, face) {
+  if (portrait(c, ch, x, y, w, h, face)) return;
+  c.save();
+  c.fillStyle = P.ink;
+  c.beginPath();
+  c.ellipse(x + w / 2, y + h * 0.3, w * 0.2, h * 0.14, 0, 0, Math.PI * 2);
+  c.fill();
+  c.beginPath();
+  c.moveTo(x + w * 0.12, y + h);
+  c.quadraticCurveTo(x + w * 0.16, y + h * 0.48, x + w / 2, y + h * 0.46);
+  c.quadraticCurveTo(x + w * 0.84, y + h * 0.48, x + w * 0.88, y + h);
+  c.fill();
+  c.restore();
+  comicText(c, '?', x + w / 2, y + h * 0.3, h * 0.16, P.yellow, 'center');
+  comicPanel(c, x + w * 0.15, y + h * 0.66, w * 0.7, 64, P.red, 12, 4);
+  comicText(c, ch.name, x + w / 2, y + h * 0.66 + 32, 34, P.paper, 'center', w * 0.62);
+}
 const heroOf = (a) => HEROES[a.hero];
 
 /** Abertura e fechamento: uma página de HQ por vez. */
@@ -49,7 +68,7 @@ function pages(c, a, closing) {
   const hero = heroOf(a);
   const boss = ALL[ch.boss];
   const who = closing && run.page === 0 && boss ? boss : hero;
-  portrait(c, who, 20, 190, 640, 853, who === hero ? 1 : -1);
+  figure(c, who, 20, 190, 640, 853, who === hero ? 1 : -1);
   // quadro do cenário
   comicPanel(c, 735, 190, 1110, 470, P.ink, 18, 0);
   if (!drawBelemPresentation(c, 'miniatura', 760, 205, 1060, 440)) {
@@ -101,7 +120,8 @@ function map(c, a) {
   comicPanel(c, 120, 690, 1680, 300, P.ink, 20, 0);
   comicText(c, `CAPÍTULO ${ch.n} — ${ch.place}`, 170, 740, 44, P.yellow, 'left', 1580);
   if (run.cleared) {
-    paragraph(c, 'Capítulo vencido! O próximo capítulo da turnê chega numa próxima versão do jogo.', 170, 810, 1580, 36, P.paper);
+    const next = nextChapter(run);
+    paragraph(c, next ? `Capítulo vencido! Próxima parada: ${next.place}, contra ${next.bossName}.` : 'Capítulo vencido! O próximo capítulo da turnê chega numa próxima versão do jogo.', 170, 810, 1580, 36, P.paper);
   } else {
     run.fights.forEach((f, i) => {
       const foe = ALL[f.foe];
@@ -110,7 +130,7 @@ function map(c, a) {
       comicText(c, `${mark}  ${label}`, 190, 810 + i * 56, 36, i < run.idx ? P.muted : i === run.idx ? P.paper : P.muted, 'left', 1560);
     });
   }
-  footer(c, run.cleared ? 'LEVE / ENTER VOLTA AO MENU' : 'LEVE / ENTER SEGUE PARA A PRÓXIMA LUTA    •    ESC VOLTA AO MENU');
+  footer(c, run.cleared ? (nextChapter(run) ? 'LEVE / ENTER SEGUE A TURNÊ    •    ESC VOLTA AO MENU' : 'LEVE / ENTER VOLTA AO MENU') : 'LEVE / ENTER SEGUE PARA A PRÓXIMA LUTA    •    ESC VOLTA AO MENU');
 }
 
 /** Diálogo antes da luta: o herói à esquerda, o rival à direita, quem fala em destaque. */
@@ -129,7 +149,7 @@ function talk(c, a) {
   for (const [ch_, x, face] of [[hero, -20, 1], [foe, 1260, -1]]) {
     c.save();
     if (line.who && !speaking(ch_)) c.globalAlpha = 0.45;
-    portrait(c, ch_, x, 200, 680, 905, face);
+    figure(c, ch_, x, 200, 680, 905, face);
     c.restore();
   }
   // balão de fala ou legenda do narrador
@@ -163,7 +183,7 @@ function lose(c, a) {
   comicBackground(c, a.frame);
   const run = a.story;
   const foe = ALL[currentFight(run).foe];
-  portrait(c, foe, 20, 168, 680, 907, 1);
+  figure(c, foe, 20, 168, 680, 907, 1);
   comicText(c, 'DERROTA', 825, 235, 133, P.ink, 'left', 1010);
   comicPanel(c, 820, 339, 995, 200, P.ink, 20, 0);
   comicText(c, 'A TURNÊ NÃO PODE PARAR.', 860, 400, 42, P.yellow, 'left', 920);
@@ -171,6 +191,9 @@ function lose(c, a) {
   ['CONTINUAR', 'DESISTIR'].forEach((label, i) => comicMenuItem(c, label, 880, 620 + i * 91, 850, a.cur === i, i));
   footer(c, 'CONTINUAR RECOMEÇA A MESMA LUTA    •    ENTER CONFIRMA');
 }
+
+/** Nome do lugar do capítulo atual, para a tela de versus. */
+export const storyPlace = (a) => currentChapter(a.story).place;
 
 /** Selo na tela de versus mostrando em que ponto da turnê a luta está. */
 export function drawStoryVsTag(c, a) {

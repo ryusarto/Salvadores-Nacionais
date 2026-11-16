@@ -6,6 +6,7 @@ import { EMPTY_INPUT } from '../core/input.js';
 import { buildStage, drawStage } from '../render/stage.js';
 import { drawEffect, prepareSprites, spritePacksFor } from '../render/sprites.js';
 import { drawFighter, drawBoxes } from '../render/mannequin.js';
+import { drawLivePhone } from '../render/boss-art.js';
 import { createFx, fxEvents, fxUpdate, fxDrawBack, fxDrawFront, fxDrawScreen, drawEntities } from '../render/fx.js';
 import { createHud, drawHud } from '../render/hud.js';
 import { text, slab, halftone } from '../render/draw.js';
@@ -15,7 +16,7 @@ import { createTracker, trackCombo, createRunner, runnerInput, runnerDone, stepL
 import { audioEvents, sfx, setStageAudioActive } from './audio.js';
 import {drawComicScreen,drawComicPause,FOES,FOE_COLS} from './comic-screens.js';
 import {comicBackground} from '../render/comic-ui.js';
-import { createRun, currentFight, fightLevel, winFight, continueFight, openingPages, closingPages, talkLines, loadProgress, saveCleared } from './story.js';
+import { createRun, nextChapter, currentFight, fightLevel, winFight, continueFight, openingPages, closingPages, talkLines, loadProgress, saveCleared } from './story.js';
 
 const W = SYS.VIEW_W;
 const H = SYS.VIEW_H;
@@ -244,7 +245,7 @@ export function createApp(canvas, devices, opts = {}) {
   /** Modo História: começa a turnê com o herói escolhido. */
   function startStory() {
     app.story = createRun(HEROES[app.hero].id, loadProgress());
-    app.storyPages = openingPages(shortName(HEROES[app.hero]));
+    app.storyPages = openingPages(app.story, shortName(HEROES[app.hero]));
     app.screen = 'storyIntro';
   }
 
@@ -342,6 +343,7 @@ export function createApp(canvas, devices, opts = {}) {
       storyPagesTick(ok, back);
     } else if (app.screen === 'storyMap') {
       if (back) app.screen = 'title';
+      else if (ok && app.story.cleared && nextChapter(app.story)) startStory();
       else if (ok && app.story.cleared) app.screen = 'title';
       else if (ok) {
         app.story.page = 0;
@@ -520,6 +522,7 @@ export function createApp(canvas, devices, opts = {}) {
         c.globalAlpha = Math.max(.1, 1 - t);
       }
       drawFighter(c, f, app.frame + f.side * 17);
+      if (f.ch.id === 'chupetinha') drawLivePhone(c, f, app.frame);
       if (absorb && absorb.t / absorb.dur > .35) {
         c.translate(f.x, SYS.GROUND_Y - f.y);
         c.scale(absorb.face,1);

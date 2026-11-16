@@ -113,6 +113,9 @@ provisório no lugar dos sprites.
 
 ### 2. Chupetinha
 
+No jogo desde o Capítulo 2 (`src/data/characters/chupetinha.js`), com
+retrato provisório e boneco no lugar dos sprites.
+
 Tudo nele gira em torno da chupeta.
 
 - **Arma:** chupeta gigante presa numa corrente, usada como mangual. Cospe
@@ -124,7 +127,8 @@ Tudo nele gira em torno da chupeta.
   **AO VIVO**. Enquanto a live está ligada, todo ataque contra ele vira
   engajamento: 25% do dano recebido volta como vida.
 - **Ninguém filmando:** o celular é um alvo separado. Acertá-lo derruba a
-  live por alguns segundos e corta a cura. A luta é uma corrida para desligar
+  live por 6 segundos e corta a cura. O celular aguenta 3 golpes (barras de
+  sinal); cada golpe e cada projétil conta uma vez. A luta é uma corrida para desligar
   a câmera antes de bater de verdade.
 - **Detalhe:** o flash do Franco derruba a live com um golpe só.
 
@@ -256,12 +260,15 @@ sátira funcionar.
 
 ## Ordem de construção
 
-1. **Capítulo 1 completo (Belém):** abertura, mapa, duas batalhas de rima,
-   Zanata, fechamento e "Continuar?". Os outros capítulos aparecem
-   trancados no mapa.
-2. Retrato e sprites da Zanata (sem isso o capítulo não está pronto para
-   mostrar).
-3. Um capítulo por vez, na ordem da turnê: ficha e mecânica do chefe,
+1. ✓ **Capítulo 1 (Belém, Ver-o-Peso):** abertura, mapa, duas batalhas de
+   rima, Zanata, fechamento e "Continuar?".
+2. ✓ **Capítulo 2 (Belém, frente do palco):** ficha e mecânica do
+   Chupetinha, diálogos e fechamento. Vencer um capítulo abre o seguinte.
+   Ainda usa o cenário do Ver-o-Peso, retrato provisório e boneco.
+3. Retrato e sprites da Zanata e do Chupetinha; cenário da frente do palco.
+   Para chefes sem arte, `node tools/retrato-provisorio.mjs <id> <cor> <cor>`
+   gera um retrato e um ícone provisórios.
+4. Um capítulo por vez, na ordem da turnê: ficha e mecânica do chefe,
    retrato, sprites, cenário e textos.
 
 ## Em aberto

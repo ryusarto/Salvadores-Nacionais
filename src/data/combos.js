@@ -53,4 +53,5 @@ export const COMBOS = {
     { name: 'Olhar Laser', steps: ['5M', '5H', 'SA3'], tip: 'Com 3 barras, o laser sai dos olhos.' },
   ],
   zanata: [],
+  chupetinha: [],
 };
