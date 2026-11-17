@@ -44,6 +44,13 @@ export default {
   boss: true,
   place: 'BELÉM — PA',
   moves,
+  spriteAlias: {},
+  spriteProfile: 'six-frame', spriteScale: 0.697, spriteRecovery: true,
+  spriteFacingPacks: { right: 'zanata', left: 'zanata-esquerda' },
+  spriteStatePhases: true, spritePhasedMoves: Object.keys(moves),
+  spriteTurboMoves: ['5S', '6S', '2S'],
+  spriteHitFrames: { '5S': [3, 4], SA1: [2, 3, 2, 3, 4], SA3: [2, 4] },
+  spriteHitGapFrames: { '5S': [2], SA1: [3, 2, 3, 2], SA3: [3] },
   mech: {
     init(f) {
       f.res = { fury: false };

@@ -1,3 +1,4 @@
+import { drawZanataParticle } from './zanata-art.js';
 import { SYS } from '../data/system.js';
 import { text, burst, slab } from './draw.js';
 import { drawSpriteEffect, hasSpriteStrip, drawEffect } from './sprites.js';
@@ -40,6 +41,10 @@ export function fxEvents(fx, st) {
       const floor = e.t === 'jump' || e.t === 'land';
       layer('ryuchi-fx', floor || e.t === 'armor' ? 'fx-fio' : e.key === '5S' ? 'fx-corte' : e.key === 'c2' ? 'fx-estocada' : 'fx-contra', e.x, floor ? GY - 35 : sy, floor ? 150 : 210, floor ? 90 : 210, 14, actor.face);
     }
+    if (actor?.ch.id === 'zanata') {
+      const name=({hit:'fx-impacto',clash:'fx-impacto',block:'fx-defesa',parry:'fx-defesa',perfect:'fx-defesa',grab:'fx-laco',armor:'fx-armadura',land:'fx-poeira',jump:'fx-poeira',fury:'fx-furia'})[e.t];
+      if(name){const floor=e.t==='land'||e.t==='jump';layer(actor.face<0?'zanata-esquerda-fx':'zanata-fx',name,e.x??actor.x,floor?GY-25:e.t==='fury'?GY-actor.y-250:sy,floor?250:e.t==='fury'?660:220,floor?90:e.t==='fury'?640:220,24,actor.face);}
+    }
     if (e.t === 'wave' && e.art === 'ryuchi') continue;
     if (e.t === 'hit' && actor?.ch.id === 'belga') {
       if (['5S', 'SA1', 'SA3'].includes(e.key)) layer('belga-fx', 'vinil-impacto', e.x, sy, 240, 240, 16, actor.face);
@@ -70,19 +75,19 @@ export function fxEvents(fx, st) {
     switch (e.t) {
       case 'hit': {
         const r = POWER[e.power] || 50;
-        if (actor?.ch.id !== 'ryuchi') fx.parts.push({ k: 'spark', x: e.x, y: sy, r: e.super ? 130 : r, t: 0, dur: 14, color: e.super ? '#fff' : e.power === 'L' ? '#ffe98a' : '#ffb13d', rot: Math.random() * 3 });
+        if (!['ryuchi','zanata'].includes(actor?.ch.id)) fx.parts.push({ k: 'spark', x: e.x, y: sy, r: e.super ? 130 : r, t: 0, dur: 14, color: e.super ? '#fff' : e.power === 'L' ? '#ffe98a' : '#ffb13d', rot: Math.random() * 3 });
         fx.shake = Math.max(fx.shake, e.super ? 22 : r / 5);
         if (e.ctr) pop(fx, e.ctr === 'punish' ? 'PUNIÇÃO!' : 'CONTRA!', e.x, sy - 120, '#ff5a4a', 50);
         else if (e.power !== 'L' && e.power !== 'M' && !e.super) pop(fx, WORDS[fx.n++ % WORDS.length], e.x + 40, sy - 90, '#ffe14a', 58, 30);
-        if (actor?.ch.id !== 'ryuchi') for (let i = 0; i < 5; i++) fx.parts.push({ k: 'line', x: e.x, y: sy, a: Math.random() * 6.28, r: r, t: 0, dur: 12 });
+        if (!['ryuchi','zanata'].includes(actor?.ch.id)) for (let i = 0; i < 5; i++) fx.parts.push({ k: 'line', x: e.x, y: sy, a: Math.random() * 6.28, r: r, t: 0, dur: 12 });
         break;
       }
-      case 'block': if (actor?.ch.id !== 'ryuchi') fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 46, t: 0, dur: 12, color: '#bfe6ff' }); fx.shake = Math.max(fx.shake, 3); break;
-      case 'parry': if (actor?.ch.id !== 'ryuchi') fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 70, t: 0, dur: 16, color: '#58d6ff' }); pop(fx, 'APAROU!', e.x, sy - 110, '#58d6ff', 44); break;
-      case 'perfect': if (actor?.ch.id !== 'ryuchi') fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 150, t: 0, dur: 26, color: '#aef4ff' }); fx.flash = 0.6; pop(fx, 'DEFESA PERFEITA!', e.x, sy - 150, '#aef4ff', 62, 70); break;
-      case 'armor': if (actor?.ch.id !== 'ryuchi') fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 80, t: 0, dur: 14, color: '#ffb347' }); break;
-      case 'land': if (actor?.ch.id !== 'ryuchi') dust(fx, e.x, e.hard ? 12 : 5, e.hard ? 1.5 : 0.8); if (e.hard) fx.shake = Math.max(fx.shake, 9); break;
-      case 'jump': if (actor?.ch.id !== 'ryuchi') dust(fx, e.x, 5, 0.8); break;
+      case 'block': if (!['ryuchi','zanata'].includes(actor?.ch.id)) fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 46, t: 0, dur: 12, color: '#bfe6ff' }); fx.shake = Math.max(fx.shake, 3); break;
+      case 'parry': if (!['ryuchi','zanata'].includes(actor?.ch.id)) fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 70, t: 0, dur: 16, color: '#58d6ff' }); pop(fx, 'APAROU!', e.x, sy - 110, '#58d6ff', 44); break;
+      case 'perfect': if (!['ryuchi','zanata'].includes(actor?.ch.id)) fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 150, t: 0, dur: 26, color: '#aef4ff' }); fx.flash = 0.6; pop(fx, 'DEFESA PERFEITA!', e.x, sy - 150, '#aef4ff', 62, 70); break;
+      case 'armor': if (!['ryuchi','zanata'].includes(actor?.ch.id)) fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 80, t: 0, dur: 14, color: '#ffb347' }); break;
+      case 'land': if (!['ryuchi','zanata'].includes(actor?.ch.id)) dust(fx, e.x, e.hard ? 12 : 5, e.hard ? 1.5 : 0.8); if (e.hard) fx.shake = Math.max(fx.shake, 9); break;
+      case 'jump': if (!['ryuchi','zanata'].includes(actor?.ch.id)) dust(fx, e.x, 5, 0.8); break;
       case 'rush': pop(fx, 'ARRANCADA!', st.f[e.side].x, GY - 520, '#7dff8a', 44); break;
       case 'burnout': pop(fx, 'SEM FÔLEGO!', st.f[e.side].x, GY - 540, '#b0b0b8', 56, 80); break;
       case 'finale': pop(fx, 'FINAL!', e.x, GY - 540, '#ffe14a', 70, 60); break;
@@ -97,9 +102,9 @@ export function fxEvents(fx, st) {
       case 'pop': pop(fx, e.str, e.x, GY - (e.y || 520), e.color || '#fff', e.size || 50, e.dur || 60); break;
       case 'dizzy': pop(fx, 'TONTO!', e.x, GY - 560, '#ffe14a', 70, 80); break;
       case 'pushblock': fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 120, t: 0, dur: 16, color: '#35d6c0' }); pop(fx, 'EMPURRÃO!', e.x, sy - 130, '#35d6c0', 44); break;
-      case 'grab': if (actor?.ch.id !== 'ryuchi') fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 50, t: 0, dur: 10, color: '#fff' }); break;
+      case 'grab': if (!['ryuchi','zanata'].includes(actor?.ch.id)) fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 50, t: 0, dur: 10, color: '#fff' }); break;
       case 'tech': pop(fx, 'ESCAPOU!', e.x, sy - 140, '#fff', 46); break;
-      case 'clash': if (actor?.ch.id !== 'ryuchi') fx.parts.push({ k: 'spark', x: e.x, y: sy, r: 60, t: 0, dur: 12, color: '#fff', rot: 0 }); break;
+      case 'clash': if (!['ryuchi','zanata'].includes(actor?.ch.id)) fx.parts.push({ k: 'spark', x: e.x, y: sy, r: 60, t: 0, dur: 12, color: '#fff', rot: 0 }); break;
       case 'strike':
         if (e.kind === 'ambulance') {
           // explosão da ambulância
@@ -390,6 +395,7 @@ export function fxDrawFront(c, fx) {
   for (const p of fx.parts) {
     const t = p.t / p.dur;
     if (p.k === 'absorb') continue;
+    if (p.k === 'sprite' && ['zanata-fx','zanata-esquerda-fx'].includes(p.id)) { drawZanataParticle(c,p); continue; }
     if (p.k === 'sprite' && p.id === 'ryuchi-fx') { drawRyuchiParticle(c, p); continue; }
     if (p.k === 'sprite' && p.id === 'belga-fx') {
       drawBelgaParticle(c, p);

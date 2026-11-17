@@ -96,5 +96,14 @@ outro local. Os efeitos de combate continuam ativos.
 
 O registro de sprites agora consulta `spriteProfile` da ficha também para
 novos chefes, suas camadas FX e variantes laterais. Isso prepara a integração,
-mas não representa entrega dos pixels finais. ART-02 a ART-20 continuam
+mas não representa entrega dos pixels finais. ART-03 a ART-20 continuam
 pendentes de produção/aprovação conforme o estado do outro chat.
+
+## Zanata v1 entregue
+
+ART-02 agora tem kit completo: 41 animações de corpo e 12 FX por sentido,
+636 quadros, retrato e ícone. Fontes, contrato e manifestos ficam em
+`production/sprites/source/zanata-v1/`; galeria em
+`production/qa/zanata-sprites.html`. A primeira geração e sua validação não
+substituem uma futura rodada de direção de arte com jogadores no aparelho
+alvo. Não gerar um segundo kit da Zanata em paralelo sem conferir esta versão.

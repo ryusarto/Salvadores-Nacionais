@@ -158,16 +158,16 @@
       "width": 768,
       "height": 1024,
       "alpha": true,
-      "sha256": "ee1004223e72cafe5b68adb068e89cd7dd4887e108cbf93aaf1710796dcd0b50",
-      "bytes": 408750
+      "sha256": "537a84997f338698befbb7c7fa15d7c431c4955df2a0acad4840ff77bda28ee9",
+      "bytes": 286198
     },
     "icon-zanata": {
       "path": "icons/zanata.webp",
       "width": 256,
       "height": 256,
       "alpha": true,
-      "sha256": "108c3e02ed5d75d0f06cfc9948882ddcd2f6ba307ac70fea49a8618a3c1b044c",
-      "bytes": 33486
+      "sha256": "6dd2138854a525cb522a2782cee1417be242031a62281f62fe2395783a81d2e0",
+      "bytes": 33040
     },
     "logo": {
       "path": "brand/logo.webp",

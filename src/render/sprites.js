@@ -493,3 +493,6 @@ export function drawSprite(c, f, frame) {
   c.restore();
   return true;
 }
+
+/** Read-only diagnostics for art QA; never alters loading or simulation. */
+export function spriteLoadStatus(id) { return Object.fromEntries(Object.entries(REG[id] || {}).map(([name,s]) => [name, s.failed ? 'failed' : s.cv ? 'decoded' : s.loading ? 'loading' : 'registered'])); }

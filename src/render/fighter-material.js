@@ -2,7 +2,7 @@
 // Cached once per decoded atlas, then evicted with the sprite reader's LRU.
 // Normalmente o worker de sprites aplica este shader fora da thread do jogo;
 // applyFighterMaterial é a reserva para navegadores sem OffscreenCanvas/WebGL em worker.
-const strengths={franco:.65,dney:.65,mdep:.55,chapuh:.25,majis:.25,ryuchi:.25,'ryuchi-esquerda':.25,trunks:.25,belga:.25};
+const strengths={zanata:.25,'zanata-esquerda':.25,franco:.65,dney:.65,mdep:.55,chapuh:.25,majis:.25,ryuchi:.25,'ryuchi-esquerda':.25,trunks:.25,belga:.25};
 export const MATERIAL_VS='attribute vec2 position;varying vec2 uv;void main(){uv=(position+1.0)*.5;gl_Position=vec4(position.x,-position.y,0.,1.);}';
 export const MATERIAL_FS=`precision mediump float;uniform sampler2D atlas;uniform vec2 pixel;uniform float strength;varying vec2 uv;
  void main(){vec4 p=texture2D(atlas,uv);float edge=max(max(texture2D(atlas,uv+vec2(pixel.x,0.)).a,texture2D(atlas,uv-vec2(pixel.x,0.)).a),max(texture2D(atlas,uv+vec2(0.,pixel.y)).a,texture2D(atlas,uv-vec2(0.,pixel.y)).a));
