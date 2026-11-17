@@ -1,0 +1,62 @@
+{
+  "character": "Capeta Zanata",
+  "date": "2026-11-17",
+  "bodyAnimationsPerDirection": 41,
+  "effectsPerDirection": 12,
+  "directions": 2,
+  "framesPerStrip": 6,
+  "totalStrips": 106,
+  "totalFrames": 636,
+  "export": {
+    "source": "1536x1024 PNG RGBA",
+    "runtime": "3000x500 WebP RGBA",
+    "validationIssues": [],
+    "uniqueFrameHashesPerStrip": 6,
+    "clippedFrames": 0
+  },
+  "tests": {
+    "command": "npm test",
+    "passed": 161,
+    "failed": 0
+  },
+  "browser": {
+    "command": "npm run test:zanata",
+    "result": "passed",
+    "decodedGalleryAnimationsPerDirection": 53,
+    "reviewedInGame": [
+      "idle",
+      "5S",
+      "2S",
+      "SA1",
+      "SA3",
+      "fury"
+    ],
+    "pageErrors": 0,
+    "httpErrors": 0
+  },
+  "regressionBrowser": {
+    "command": "node tools/smoke-browser.mjs",
+    "result": "passed",
+    "covers": [
+      "story starts with Zanata",
+      "rival selector",
+      "stage audio",
+      "touch controls",
+      "orientation pause",
+      "persisted settings",
+      "tutorial progression"
+    ]
+  },
+  "visualReview": {
+    "result": "passed for representative captures",
+    "corrections": [
+      "leading-hand whip attachment",
+      "visible Fury effect"
+    ],
+    "evidence": "production/qa/zanata-demonstracao.webp"
+  },
+  "backup": {
+    "primary": "GitHub",
+    "secondaryUploadConfirmed": false
+  }
+}

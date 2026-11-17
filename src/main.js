@@ -1,6 +1,6 @@
 import { createApp } from './ui/app.js';
 import { createDevices } from './ui/devices.js';
-import { registerSprites } from './render/sprites.js';
+import { registerSprites, spriteLoadStatus } from './render/sprites.js';
 import { setStageImage } from './render/stage.js';
 import { loadBelemStage, belemStageStatus } from './render/belem-stage.js';
 import { configureStageAudio, stageAudioStatus, sfx } from './ui/audio.js';
@@ -36,6 +36,7 @@ window.__comicUiStatus=comicUiStatus;
 const uiReady=window.__COMIC_UI?loadComicUi(window.__COMIC_UI):Promise.resolve();
 
 // Sprites embutidos pelo empacotador (production/sprites/final). ?sprites=off força o manequim.
+window.__spriteLoadStatus = spriteLoadStatus;
 const packs = q.get('sprites') === 'off' ? {} : window.__SPRITES || {};
 const belemPack = (window.__STAGEPACKS || {}).belem;
 window.__stageStatus = belemStageStatus;

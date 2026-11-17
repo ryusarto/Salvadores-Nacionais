@@ -97,7 +97,7 @@ Não há batalhas contra aliados na campanha. Eles colaboram nos eventos e na
 mobilização; confrontos entre heróis permanecem no Versus. Há checkpoints
 por encontro, galeria de finais, tutorial e menus de toque.
 
-Os oito heróis têm sprites integrados. Chefes e quatro arenas posteriores
+Os oito heróis têm sprites integrados. A Zanata tem kit completo nos dois sentidos; os outros seis chefes e quatro arenas posteriores
 continuam com arte provisória; palco e banheiros têm variações funcionais.
 A fila para o designer está em `docs/PRODUCAO-ARTE.md`. Vozes, acabamento
 musical por arena e dois jogadores no mesmo teclado permanecem fora do escopo atual.
