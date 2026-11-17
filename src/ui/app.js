@@ -1,6 +1,7 @@
 import { encounterStage } from '../data/stages.js';
 import { drawEventStage } from '../render/event-stage.js';
-import { drawStageArt } from '../render/stage-packs.js';
+import { drawStageArt, requestStageArt } from '../render/stage-packs.js';
+import { warmBelemStage } from '../render/belem-stage.js';
 import { createMenuAccess } from './menu-access.js';
 import { loadPreferences, savePreferences } from './preferences.js';
 import { LESSONS, createLesson, advanceLesson, skipLesson } from './lessons.js';
@@ -106,6 +107,9 @@ export function createApp(canvas, devices, opts = {}) {
     app.screen = 'vs';
     const ids = [HEROES[app.hero], app.foe].flatMap(spritePacksFor);
     const token = app.vsToken = (app.vsToken || 0) + 1;
+    // A arena pintada baixa e é pré-montada durante a tela de versus, não no meio da luta.
+    void requestStageArt(encounterStage(app));
+    if (encounterStage(app) === 'belem') setTimeout(() => warmBelemStage(app.cam), 0);
     prepareSprites(ids).then(() => prepareSprites(ids.filter(id => id.startsWith('zanata') && id.endsWith('-fx')), ['fx-estalo','fx-impacto','fx-defesa'])).then(() => { if (app.vsToken === token) app.vsReady = true; });
   }
 

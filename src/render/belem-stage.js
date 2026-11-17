@@ -50,4 +50,6 @@ export function drawBelemStage(c,cam,frame=0){
  layer(c,'primeiro-plano',safeCam,1.05);
  return true;
 }
+/** Decodifica e prepara as camadas antes da luta (tela de versus), fora de um quadro de jogo. */
+export function warmBelemStage(cam){if(!state.ready)return false;const cv=canvas(1920,1080);return drawBelemStage(cv.getContext('2d'),cam,0);}
 export function drawBelemPresentation(c,id,x,y,w,h){const img=image(id);if(!img)return false;c.drawImage(img,x,y,w,h);return true;}
