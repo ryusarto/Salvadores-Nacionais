@@ -63,8 +63,12 @@ export default {
       const m = st ? st.ents.find((e) => e.owner === f.side && e.kind === 'mark') : null;
       return { label: 'CHAMADA', pips: 0, value: 0, text: m ? `CAINDO EM ${Math.ceil(m.delay / 60)}s` : 'PRONTA', ready: !m, color: '#ffdf50' };
     },
+    // CPU: marca o chão uma vez e depois puxa o rival para cima da marca
     aiPlan(st, f, o, dist, rnd) {
-      return !hasMark(st, f) && rnd() < 0.3 ? { key: '2S' } : null;
+      if (!hasMark(st, f)) return rnd() < 0.2 ? { key: '2S' } : null;
+      if (dist < 380 && dist > 150 && rnd() < 0.3) return { key: 'c1' };
+      if (dist < 200 && rnd() < 0.25) return { key: '5S' };
+      return null;
     },
   },
   ai: { aggression: 0.6, block: 0.5, antiAir: 0.55, range: 'close' },

@@ -73,8 +73,20 @@ export default {
       const n = f.state === 'attack' && f.moveKey === '2S' ? fio(f.holdT) : 0;
       return { label: 'FIO', pips: 3, value: n, ready: n >= 3, readyText: 'PLENO!', color: '#d2edf8' };
     },
+    // CPU: entra na Postura da Lâmina e decide lá dentro (aiHold)
     aiPlan(st, f, o, dist, rnd) {
-      return dist > 520 && rnd() < 0.25 ? { key: '5S' } : null;
+      if (o.state !== 'attack' && dist > 280 && dist < 650 && rnd() < 0.1) return { tag: '2S', seq: [{ y: -1, n: 1 }, { y: -1, S: 1, n: 2 }, { S: 1, n: 2 }] };
+      return dist > 520 && rnd() < 0.2 ? { key: '5S' } : null;
+    },
+    /** Na postura: contra-ataca golpe que vem, corta quem chega perto, solta o Fio na distância certa. */
+    aiHold(st, f, o, dist, rnd, level) {
+      const t = f.holdT;
+      const incoming = o.state === 'attack' && o.move.hits.length && o.sf <= o.move.startup && dist < o.move.range + 80;
+      if (incoming && rnd() < 0.35 + level * 0.25) return { S: 1, M: 1 };
+      if (dist < 300) return { S: 1, L: 1 };
+      const need = dist < 380 ? 1 : dist < 470 ? 2 : 3;
+      if ((fio(t) >= need && dist < 640) || t > 110) return {};
+      return { S: 1 };
     },
   },
   ai: { aggression: 0.6, block: 0.5, antiAir: 0.65, range: 'mid' },

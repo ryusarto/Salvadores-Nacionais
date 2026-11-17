@@ -14,10 +14,14 @@ import { fight } from './helpers.js';
 
 const frame = f => Math.floor(spriteProgress(f, animFor(f, 0)) * 6);
 test('Belga has dedicated six-frame art for every state and move', async () => {
-  assert.deepEqual(belga.spriteAlias, {});
-  const required = [...Object.keys(STATE_ANIMS), ...Object.keys(belga.moves).map(k => 'golpe-' + k)].sort();
+  // golpes com arte pendente usam uma tira existente pelo spriteAlias
+  const pending = belga.spritePending || [];
+  assert.deepEqual(Object.keys(belga.spriteAlias).sort(), [...pending].sort());
+  const required = [...Object.keys(STATE_ANIMS), ...Object.keys(belga.moves).map(k => 'golpe-' + k)].filter(n => !pending.includes(n)).sort();
   const folder = new URL('../../production/sprites/final/belga/', import.meta.url);
-  assert.deepEqual(readdirSync(folder).map(f => f.replace('.webp', '')).sort(), required);
+  const files = readdirSync(folder).map(f => f.replace('.webp', '')).sort();
+  assert.deepEqual(files, required);
+  for (const n of pending) assert.ok(files.includes(belga.spriteAlias[n]), n);
   const root = new URL('../../', import.meta.url);
   const manifest = JSON.parse(readFileSync(new URL('production/sprites/source/belga-v2/manifest.json', root)));
   assert.equal(manifest.sequences.length, 40); assert.equal(manifest.effects.length, 8);

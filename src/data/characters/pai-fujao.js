@@ -72,7 +72,7 @@ export default {
   mechDesc: 'Os 3 primeiros golpes de cada combo não fazem dano, até o foro ser cassado. Empurre-o para fora da área da tornozeleira: ela dá choque.',
   colors: { skin: '#e2b08a', top: '#3a2f2a', top2: '#f4f0ea', bottom: '#2a2420', accent: '#d8b25a', hair: '#d8d0c8', shoe: '#1c1418' },
   look: { hair: 'curly', weapon: 'bengala', sleeves: 'long' },
-  walkF: 4.6, walkB: 4.0, jumpScale: 0.85, hpScale: 1.3,
+  walkF: 4.6, walkB: 4.0, jumpScale: 0.85, hpScale: 1.25,
   boss: true,
   place: 'MANSÃO',
   stage: 'mansao', // cenário próprio (src/render/mansion-stage.js)

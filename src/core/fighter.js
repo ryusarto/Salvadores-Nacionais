@@ -172,6 +172,7 @@ export function tryActions(st, f, o, ctx) {
 
   if (mech.tryCustom?.(st, f, o, ctx)) return true;
 
+
   // Super
   if (!air && peek(b, 'X') && allow('super') && !(canc && cur.type === 'super')) {
     const dx = b.dirAt.X || b;
@@ -244,10 +245,14 @@ export function tryActions(st, f, o, ctx) {
     if (air && f.airUsed && !(canc && f.sj)) continue; // no pulo alto, os golpes aéreos emendam
     if (canc && !cur.flags.followNormals) {
       if (cur.air && !f.sj) continue;
-      if (cur.type !== 'normal' || !cur.cancel.includes('chain') || !f.connected) continue;
+      // Combo aéreo livre: no pulo alto, qualquer golpe aéreo que acertou emenda em
+      // qualquer outro, na ordem que o jogador quiser. O limite vem do motor: no
+      // máximo SYS.JUGGLE_MAX acertos no ar, gravidade maior e dano menor a cada acerto.
+      const airFree = f.sj && cur.air;
+      if (cur.type !== 'normal' || (!cur.cancel.includes('chain') && !airFree) || !f.connected) continue;
       const up = RANK[btn] > RANK[cur.btn];
-      const same = btn === 'L' && cur.btn === 'L' && f.chainL < 2;
-      if (!up && !same) continue;
+      const same = btn === 'L' && cur.btn === 'L' && f.chainL < 2 && !cur.air;
+      if (!up && !same && !airFree) continue;
       if (same) f.chainL++;
     }
     take(b, btn);
@@ -273,7 +278,7 @@ export function tryActions(st, f, o, ctx) {
     f.vx = 0;
     return true;
   }
-  if (canc && !air && cur.cancel.includes('jump') && f.connected === 'hit' && b.up) {
+  if (canc && !air && cur.cancel.includes('jump') && f.connected === 'hit' && b.up && o.state === 'air_hit' && !o.juggleLock) {
     startJump(f, 1);
     f.sjNext = true; // pulo alto atrás do adversário lançado
     return true;
@@ -366,6 +371,8 @@ function attackUpdate(st, f, o) {
     moved = true;
   }
   if (!moved && f.y <= 0) f.vx *= 0.5;
+  // Golpe que sobe e levanta o rival (Lua Crescente): acertou, desce rápido para perseguir
+  if (m.flags.chase && f.connected === 'hit' && f.y > 0 && m.hits.length && f.sf > m.hits[m.hits.length - 1].to) f.vy = Math.min(f.vy, -24);
   for (const s of m.spawn) if (s.at === f.sf) spawnEntity(st, f, s);
   mech.onMoveFrame?.(st, f, o, m);
   if (f.state !== 'attack' || f.move !== m) return;
@@ -373,6 +380,9 @@ function attackUpdate(st, f, o) {
   if (f.sf >= m.total) {
     mech.onMoveEnd?.(st, f, m);
     if (f.y > 0) {
+      f.chasePending = !!(m.flags.chase && f.connected === 'hit');
+      // acertou e o rival está no ar: desce rápido para pular atrás dele
+      if (f.chasePending) f.vy = Math.min(f.vy, -22);
       setState(f, 'air');
       f.airUsed = true;
     } else {
@@ -404,13 +414,20 @@ function land(st, f) {
   } else if (s === 'attack') {
     const m = f.move;
     if (m.air || m.flags.landEnds) {
-      f.landFrames = m.flags.landRecovery ?? SYS.JUMP.landAttack;
+      const o = st.f[1 - f.side];
+      // golpe que levantou o rival e caiu antes dele: pode pular atrás (segurar ↑)
+      const chase = m.flags.chase && f.connected === 'hit' && o.state === 'air_hit' && !o.juggleLock;
+      f.landFrames = chase ? Math.min(6, m.flags.landRecovery ?? SYS.JUMP.landAttack) : m.flags.landRecovery ?? SYS.JUMP.landAttack;
       setState(f, 'land');
+      f.chase = chase;
       f.vx = 0;
     }
   } else if (s === 'air') {
+    const o = st.f[1 - f.side];
     f.landFrames = SYS.JUMP.land;
     setState(f, 'land');
+    f.chase = f.chasePending && o.state === 'air_hit' && !o.juggleLock;
+    f.chasePending = false;
     f.vx = 0;
     emit(st, { t: 'land', side: f.side, x: f.x });
   }
@@ -448,7 +465,9 @@ export function updateFighter(st, f, o) {
         f.sjNext = false;
         if (f.sj) {
           f.vy *= SYS.SUPER_JUMP.vy;
-          f.vx = SYS.SUPER_JUMP.vx * f.face;
+          // persegue o rival: quanto mais longe ele foi jogado, mais longo o pulo
+          const gap = Math.abs(o.x - f.x) - 110;
+          f.vx = Math.max(SYS.SUPER_JUMP.vx, Math.min(14, gap / 18)) * (Math.sign(o.x - f.x) || f.face);
           if (o.state === 'air_hit' && !o.juggleLock) {
             o.vy = SYS.SUPER_JUMP.float;
             o.y = Math.max(o.y, SYS.SUPER_JUMP.minY);
@@ -457,7 +476,8 @@ export function updateFighter(st, f, o) {
         }
         f.airBlocked = false;
         f.airUsed = false;
-        f.airJumps = f.ch.airJumps || 0;
+        // no pulo alto do combo aéreo ninguém tem pulo extra (nem o pulo duplo do M'Dep)
+        f.airJumps = f.sj ? 0 : f.ch.airJumps || 0;
         emit(st, { t: 'jump', side: f.side, x: f.x, high: f.sj });
       }
       break;
@@ -475,7 +495,16 @@ export function updateFighter(st, f, o) {
       break;
     case 'land':
       f.vx = 0;
-      if (f.sf >= f.landFrames) toNeutral(f);
+      if (f.chase && b.up && o.state === 'air_hit' && !o.juggleLock) {
+        f.chase = false;
+        startJump(f, 1);
+        f.sjNext = true;
+        break;
+      }
+      if (f.sf >= f.landFrames) {
+        f.chase = false;
+        toNeutral(f);
+      }
       break;
     case 'dash': {
       const D = SYS.DASH;

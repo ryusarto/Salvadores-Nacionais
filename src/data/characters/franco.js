@@ -101,6 +101,12 @@ export default {
     dmgMul(f, h, src) {
       return f.res.finale && src.type === 'move' && src.m.type === 'special' ? FINALE_DMG : 1;
     },
+    // CPU: alterna os especiais para fechar o Compasso e aperta a Pressão Nacional
+    aiPlan(st, f, o, dist, rnd) {
+      if (dist < 230 && rnd() < 0.12) return { tag: '2S', seq: [{ y: -1, n: 1 }, { y: -1, S: 1, n: 2 }, { n: 10 }, { S: 1, n: 2 }, { n: 2 }, { S: 1, n: 2 }, { n: 2 }, { S: 1, n: 2 }] };
+      if (dist > 420 && dist < 700 && rnd() < 0.1) return { tag: 'dash', seq: [{ x: 1, n: 1 }, { n: 1 }, { x: 1, n: 8 }] };
+      return null;
+    },
     hud(f) {
       return { label: 'COMPASSO', pips: 2, value: f.res.notes.length, ready: f.res.notes.length >= 2, readyText: 'FINAL!' };
     },

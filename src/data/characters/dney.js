@@ -95,9 +95,12 @@ export default {
     hud(f) {
       return { label: 'MUNIÇÃO', pips: AMMO, value: f.res.ammo, ready: f.res.ammo === 1, readyText: 'TIRO CERTEIRO', color: '#f7dd83' };
     },
+    // CPU: recarrega com tempo, atira do chão e do ar, e não fica só no Tiro
     aiPlan(st, f, o, dist, rnd) {
       if (f.res.ammo === 0 && dist > 300) return { key: '2S', extra: {} };
-      if (f.res.ammo > 0 && dist > 420 && rnd() < 0.5) return { key: rnd() < 0.3 ? '6S' : '5S' };
+      if (f.res.ammo <= 2 && dist > 600 && rnd() < 0.3) return { key: '2S', extra: {} };
+      if (f.res.ammo > 0 && dist > 380 && dist < 800 && rnd() < 0.12) return { tag: 'jS', seq: [{ y: 1, n: 3 }, { n: 9 }, { S: 1, n: 2 }] };
+      if (f.res.ammo > 0 && dist > 420 && rnd() < 0.35) return { key: rnd() < 0.4 ? '6S' : '5S' };
       return null;
     },
   },

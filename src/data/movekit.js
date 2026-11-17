@@ -75,6 +75,12 @@ export function mv(def) {
     juggle: h.juggle ?? def.juggle ?? 1,
     pull: h.pull ?? def.pull ?? 0,
   }));
+  // Todo golpe que levanta o rival bem alto abre combo aéreo: no chão, segurar ↑
+  // no acerto cancela em pulo alto; golpe que termina caindo (Lua Crescente) deixa
+  // pular atrás ao tocar o chão (flag chase).
+  const lifts = m.type !== 'super' && m.hits.some((h) => h.launch && h.launch[1] >= 20);
+  if (lifts && !m.air && !def.flags?.landEnds && !m.cancel.includes('jump')) m.cancel = [...m.cancel, 'jump'];
+  if (lifts && (m.air || def.flags?.landEnds)) m.flags = { ...m.flags, chase: true };
   m.total = def.total ?? m.startup + m.active + m.recovery;
   for (const h of m.hits) m.total = Math.max(m.total, h.to + 1);
   m.range = def.range ?? (m.hits.length ? Math.max(...m.hits.map((h) => h.box.x + h.box.w)) : 0);
@@ -105,7 +111,7 @@ export function baseNormals(o = {}) {
     '5H': mv({ name: 'Forte', btn: 'H', startup: 11 + s, active: 5, recovery: 21, box: bx(30, 250, W(250), 130), dmg: D(900), anim: ['heavyWind', a.H], motion: [{ from: 5, to: 12, vx: 7 }], tags: ['poke', 'mid', 'heavy'] }),
     '2L': mv({ name: 'Leve Baixo', btn: 'L', startup: 5 + s, active: 3, recovery: 9, crouch: true, guard: 'low', box: bx(30, 30, W(170), 80), dmg: D(250), anim: ['crouch', a.lowL], tags: ['poke', 'close', 'low'] }),
     '2M': mv({ name: 'Médio Baixo', btn: 'M', startup: 8 + s, active: 4, recovery: 15, crouch: true, guard: 'low', box: bx(30, 20, W(240), 80), dmg: D(550), anim: ['crouch', a.lowM], tags: ['poke', 'mid', 'low'] }),
-    '2H': mv({ name: 'Gancho', btn: 'H', startup: 8 + s, active: 6, recovery: 24, crouch: true, box: bx(10, 240, 150, 330), dmg: D(850), launch: [3, 31], anim: ['crouch', a.up], inv: [{ from: 4, to: 13, type: 'air' }], cancel: ['special', 'super', 'jump'], tags: ['antiair', 'launcher'] }),
+    '2H': mv({ name: 'Gancho', btn: 'H', startup: 8 + s, active: 6, recovery: 24, crouch: true, box: bx(10, 220, 175, 360), dmg: D(850), launch: [3, 31], motion: [{ from: 2, to: 8, vx: 5 }], anim: ['crouch', a.up], inv: [{ from: 4, to: 13, type: 'air' }], cancel: ['special', 'super', 'jump'], tags: ['antiair', 'launcher'] }),
     '3H': mv({ name: 'Rasteira', btn: 'H', startup: 10 + s, active: 4, recovery: 26, crouch: true, guard: 'low', box: bx(30, 0, W(270), 70), dmg: D(800), kd: 'hard', launch: [6, 12], anim: ['crouch', a.sweep], cancel: ['super'], tags: ['low', 'knockdown', 'mid'] }),
     '6M': mv({ name: 'Golpe de Cima', btn: 'M', startup: 20, active: 3, recovery: 17, guard: 'high', box: bx(30, 230, W(190), 230), dmg: D(600), anim: ['overWind', a.over], cancel: ['super'], motion: [{ from: 8, to: 20, vx: 5 }], tags: ['overhead', 'close'] }),
     jL: mv({ name: 'Aéreo Leve', btn: 'L', air: true, startup: 4, active: 9, recovery: 4, guard: 'high', box: bx(10, 130, W(160), 130), dmg: D(300), anim: ['jumpUp', a.jL], cancel: ['chain'], tags: ['air'] }),
