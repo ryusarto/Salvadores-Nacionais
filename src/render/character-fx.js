@@ -1,8 +1,10 @@
 import { drawEffect } from './sprites.js';
+import { drawPavanassiAttack } from './pavanassi-art.js';
 
 // Pure presentation: hitboxes, damage and movement remain in the simulation.
 export function drawCharacterFx(c, f) {
   if (f.state !== 'attack') return false;
+  if (f.ch.id === 'pavanassi') return drawPavanassiAttack(c, f);
   const m = f.move, key = f.moveKey, t = f.sf;
   const first = m.hits[0]?.from ?? m.startup;
   const last = m.hits.at(-1)?.to ?? m.startup + m.active;

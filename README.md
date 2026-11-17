@@ -102,7 +102,7 @@ de tela. Essa opção não remove todos os efeitos embutidos nas artes.
 - `node tools/balance.mjs 4`: torneio entre heróis; `--bosses` inclui chefes assimétricos.
 - `npm run test:browser`: smoke em Chromium, com capturas em `artifacts/smoke/`.
   Requer Chromium instalado; use `CHROMIUM_PATH` para informar o executável.
-  O teste usa a porta 8767 e encerra somente seu próprio servidor.
+  O teste usa a porta 8767 (`SMOKE_PORT` permite trocar) e encerra somente seu próprio servidor.
 - `npm run dev -- --port=8766`: porta alternativa. Não há hot reload; recarregue após o rebuild.
 
 [História atual](docs/MODO-HISTORIA.md) · [Fila e contrato de arte](docs/PRODUCAO-ARTE.md) ·
@@ -223,3 +223,15 @@ mesmo modelo visual. Dano, alcance e IA permanecem iguais.
 - `node tools/smoke-zanata.mjs`: testa renderização no Chromium após a build.
 - `node tools/backup-zanata.mjs`: pacote local com fontes, tiras, retrato,
   código e SHA-256. GitHub é a cópia remota principal.
+
+## Pavanassi — sprites completos nos dois sentidos
+
+41 animações corporais por sentido e 16 efeitos separados: **98 tiras e 588
+quadros**, com alpha real e seis desenhos por tira. Inclui golpes, turbos,
+supers, carimbos, cerca, cabine, proibições e reação à Pergunta. Direita e
+esquerda têm desenhos próprios; retrato e ícone seguem o mesmo personagem.
+
+[Galeria e imagens originais](production/qa/pavanassi-v1.html) ·
+[Contrato e inventário](docs/PAVANASSI-ARTE-V1.md).
+`npm run test:pavanassi` verifica 20 cenas, ambos os sentidos e a decodificação
+das 98 tiras no Chromium. Informe o executável com `CHROMIUM_PATH`.

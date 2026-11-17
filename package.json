@@ -12,7 +12,8 @@
     "test:browser": "npm run build && node tools/smoke-browser.mjs",
     "check:campaign": "node tools/campaign-check.mjs",
     "art:zanata": "node tools/import-zanata.mjs && node tools/zanata-preview.mjs",
-    "test:zanata": "npm run build && node tools/smoke-zanata.mjs"
+    "test:zanata": "npm run build && node tools/smoke-zanata.mjs",
+    "test:pavanassi": "npm run build && node tools/smoke-pavanassi.mjs"
   },
   "repository": {
     "type": "git",

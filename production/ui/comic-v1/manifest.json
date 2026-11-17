@@ -212,18 +212,18 @@
       "width": 768,
       "height": 1024,
       "alpha": true,
-      "sha256": "6d4bfe119ddbaf49df503577a9b248ea908b785b2607d0d68ce9e14e8a53f691",
-      "bytes": 14284,
-      "provisional": true
+      "sha256": "950f33bce41b8030a97ee7c407d7af8f9f0e7fd87229c511ef256636a8c4dd94",
+      "bytes": 343408,
+      "provisional": false
     },
     "icon-pavanassi": {
       "path": "icons/pavanassi.webp",
       "width": 256,
       "height": 256,
       "alpha": true,
-      "sha256": "bfe993888e5cb6878699c77a251c4a72cdb16de529471a4f1486f85087ddf32d",
-      "bytes": 3466,
-      "provisional": true
+      "sha256": "fe3b2524b6395fbbe9428ab76a432ec6376e1db4f798b9f9d6b234b225fabd6f",
+      "bytes": 54748,
+      "provisional": false
     },
     "portrait-fujao": {
       "path": "portraits/fujao.webp",
