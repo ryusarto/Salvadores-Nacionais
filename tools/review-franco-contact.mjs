@@ -1,9 +1,11 @@
 import sharp from 'sharp';
 import {readFileSync,mkdirSync} from 'node:fs';
 import {resolve,join} from 'node:path';
+sharp.cache({memory:8,items:20,files:8});sharp.concurrency(1);
+const option=name=>process.argv.find(arg=>arg.startsWith('--'+name+'='))?.slice(name.length+3);
 const root=resolve(process.argv[2]||'.'),out=join(root,'previas');mkdirSync(out,{recursive:true});
 const m=JSON.parse(readFileSync(join(root,'manifest.json')));
-for(const item of m.inventory.filter(i=>i.status==='candidate-needs-visual-review')){
+for(const item of m.inventory.filter(i=>i.status==='candidate-needs-visual-review'&&(!option('action')||i.action===option('action'))&&(!option('direction')||i.direction===option('direction')))){
  const source=join(root,item.direction,item.action+'.png'),layers=[];
  for(let index=0;index<12;index++){
   const input=await sharp(source).extract({left:index*768,top:0,width:768,height:768}).png().toBuffer();
