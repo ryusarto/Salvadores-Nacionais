@@ -110,6 +110,27 @@ export function aiInput(st, side, brain) {
     if (h) return { ...EMPTY_INPUT, ...h, x: (h.x || 0) * toward };
   }
 
+  // Combo aéreo: o golpe levantou o rival — persegue com o pulo alto e bate no ar
+  const lifted = op.state === 'air_hit' && !op.juggleLock;
+  const chaseNow = lifted && ((me.state === 'attack' && me.connected === 'hit' && me.move.cancel.includes('jump') && me.sf > me.move.startup) || (me.state === 'land' && me.chase));
+  if (chaseNow) {
+    if (brain.airRoll == null) brain.airRoll = rnd();
+    if (brain.airRoll < L.combo * 0.8) {
+      brain.airRoll = null;
+      // segura ↑ durante a pausa do impacto, até o pulo sair
+      brain.queue.push(...Array(6 + (me.hitstop || 0)).fill({ ...EMPTY_INPUT, y: 1 }), ...Array(6).fill(EMPTY_INPUT));
+      // golpes aéreos em ordem variada, cada um com tempo para acertar e emendar
+      const air = ['jL', 'jM', 'jH'].filter((k) => moves[k]);
+      for (let n = 0; n < 2 + brain.level + Math.floor(rnd() * 2); n++) {
+        const k = air[Math.floor(rnd() * air.length)];
+        pressKey(brain, k, toward);
+        brain.queue.push(...Array(k === 'jH' ? 10 : 7).fill(EMPTY_INPUT));
+      }
+      return brain.queue.shift();
+    }
+  }
+  if (!chaseNow) brain.airRoll = null;
+
   // Combo: se o golpe conectou, emenda o próximo
   if (me.state === 'attack' && me.connected && me.move.type !== 'super') {
     if (brain.comboRoll == null) brain.comboRoll = rnd();
@@ -121,6 +142,8 @@ export function aiInput(st, side, brain) {
       if (str && moves[str.key] && rnd() < 0.85) return pressKey(brain, str.key, toward, { [str.btn]: 1 }), brain.queue.shift();
       if (me.move.type === 'normal') {
         if (b === 'L' && moves['5M']) return pressKey(brain, dist < moves['5M'].range ? '5M' : '2M', toward), brain.queue.shift();
+        const launcher = ['2H', '4H'].find((k) => moves[k] && moves[k].cancel.includes('jump') && moves[k].range + 20 > dist && rnd() < 0.5);
+        if (b === 'M' && hit && launcher && rnd() < 0.3 + 0.2 * brain.level) return pressKey(brain, launcher, toward), brain.queue.shift();
         if (b === 'M' && moves['5H'] && dist < moves['5H'].range + 20) return pressKey(brain, '5H', toward), brain.queue.shift();
         const sp = ['6S', '2S', '5S'].filter((k) => moves[k] && moves[k].range + 60 > dist);
         if (sp.length && (hit || rnd() < 0.4)) return pressKey(brain, sp[Math.floor(rnd() * sp.length)], toward), brain.queue.shift();

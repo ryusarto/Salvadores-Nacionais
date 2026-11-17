@@ -76,7 +76,10 @@ export function applyHit(st, att, def, h, src) {
   const hx = isProj ? src.x : (att.x + def.x) / 2 + att.face * 30;
   const hy = isProj ? src.ent.y + src.ent.h / 2 : def.y + (h.box ? Math.min(h.box.y + h.box.h / 2, 420) : 250);
   const stopA = (n) => { if (!isProj) att.hitstop = Math.max(att.hitstop, n); };
-  const super_ = src.m?.type === 'super';
+  // projéteis de super (discos, ambulância, cães) contam como super
+  const srcMove = isProj ? att.ch.moves[src.ent.moveKey] : src.m;
+  const super_ = srcMove?.type === 'super';
+  const bigSuper = super_ && (srcMove.cost?.super || 0) >= 3 * SYS.SUPER.stock;
 
   // Contra-ataque (golpes com janela de contragolpe)
   const ctrWin = def.state === 'attack' && def.move.flags.counter;
@@ -153,12 +156,12 @@ export function applyHit(st, att, def, h, src) {
     def.status.dazzle = 0;
   }
   let scale = SYS.SCALING[Math.min(def.comboHits, SYS.SCALING.length - 1)];
-  if (super_) scale = Math.max(scale, SYS.SUPER_MIN_SCALE);
+  if (super_) scale = Math.max(scale, bigSuper ? SYS.SUPER.bigMinScale : SYS.SUPER_MIN_SCALE);
   const frac = def.hp / def.maxHp;
   const guts = (SYS.GUTS.find(([limit]) => frac <= limit) || [0, 1])[1];
   // dmgTakenMul: o defensor pode reduzir o dano que recebe (0 = só 1 de dano)
   const taken = def.ch.mech?.dmgTakenMul ? def.ch.mech.dmgTakenMul(st, def, att, h, src) : 1;
-  const mul = guts * (ctr ? SYS.COUNTER.dmg : 1) * (att.ch.mech?.dmgMul?.(att, h, src) || 1) * (st.dmgMul ? st.dmgMul[att.side] : 1) * (taken ?? 1);
+  const mul = (bigSuper ? SYS.SUPER.bigDmg : 1) * guts * (ctr ? SYS.COUNTER.dmg : 1) * (att.ch.mech?.dmgMul?.(att, h, src) || 1) * (st.dmgMul ? st.dmgMul[att.side] : 1) * (taken ?? 1);
   const dmg = Math.max(1, Math.round(h.dmg * scale * mul));
   const wasAir = def.y > 0 || def.state === 'air_hit';
   if (wasAir && def.airBlocked && def.buf.cur.G) emit(st, { t: 'pop', str: 'GUARDA QUEBRADA!', x: def.x, y: def.y + 420, color: '#ff5a4a', size: 46 });

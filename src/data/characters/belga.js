@@ -14,7 +14,10 @@ const cache = new Map();
 const vinyl = (o = {}) => proj({ kind: 'vinyl', x: 100, y: 240, w: 96, h: 96, vx: 8, life: 220, dmg: 600, color: '#ffa828', ...o });
 
 const moves = {
-  ...baseNormals({ reach: 0.86, speed: -1 }),
+  ...baseNormals({ reach: 0.92, speed: -1 }),
+  // Chutes do boxeador de rua: → + Forte e ← + Forte
+  '6H': mv({ name: 'Chute Giratório', btn: 'H', startup: 14, active: 4, recovery: 20, box: bx(20, 230, 270, 150), dmg: 1050, hitstun: 24, push: [200, 120], anim: ['heavyWind', 'kickHigh'], motion: [{ from: 4, to: 12, vx: 8 }], cancel: ['special', 'super'], tags: ['mid', 'heavy', 'advance'] }),
+  '4H': mv({ name: 'Joelhada', btn: 'H', startup: 8, active: 5, recovery: 22, box: bx(10, 170, 175, 240), dmg: 850, launch: [3, 31], anim: ['riseWind', 'kickHigh'], motion: [{ from: 3, to: 8, vx: 6 }], cancel: ['special', 'super'], tags: ['close', 'launcher'] }),
   '5S': mv({ name: 'Vinil', startup: 14, active: 1, recovery: 26, anim: ['castWind', 'cast'], spawn: [{ at: 14, ...vinyl() }], tags: ['zone'],
     turbo: { spawn: [{ at: 12, ...vinyl({ vx: 11, hits: 2, dmg: 450 }) }], recovery: 22 } }),
   '6S': mv({ name: 'Direto de Esquerda', startup: 14, active: 4, recovery: 20, box: bx(30, 250, 210, 130), dmg: 900, push: [220, 120], anim: ['heavyWind', 'punchH'], motion: [{ from: 4, to: 17, vx: 16 }], tags: ['mid', 'advance'],
@@ -44,7 +47,10 @@ export default {
   walkF: 6.8, walkB: 5.2, jumpScale: 1, hpScale: 1.05,
   moves,
   // Qual tira do kit de sprites cada animação usa (production/sprites/final/belga)
-  spriteAlias: {},
+  // Golpes novos ainda sem tira própria: usam uma tira parecida até a arte chegar
+  // (pedido em golpes-novos-v1 no Dropbox).
+  spriteAlias: { 'golpe-6H': 'golpe-6S', 'golpe-4H': 'golpe-2H' },
+  spritePending: ['golpe-6H', 'golpe-4H'],
   spriteProfile: 'six-frame', spriteScale: 0.7631, spriteRecovery: true,
   spriteStatePhases: true, spritePhasedMoves: Object.keys(moves),
   spriteHitFrames: { c1: [2, 4] },

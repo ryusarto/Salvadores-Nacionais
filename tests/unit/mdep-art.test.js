@@ -12,13 +12,16 @@ const gameDir=new URL('../../production/sprites/final/mdep/',import.meta.url);
 const manifest=JSON.parse(readFileSync(new URL('../../production/sprites/source/mdep-v3/manifest.json',import.meta.url)));
 
 test('MDEP supplies the complete contract with ten distinct transparent 768px cells per strip',async()=>{
-  const expected=[...Object.keys(STATE_ANIMS),...Object.keys(mdep.moves).map(k=>'golpe-'+k)];
+  // golpes novos com arte pendente usam uma tira existente pelo spriteAlias
+  const pending=mdep.spritePending||[];
+  const expected=[...Object.keys(STATE_ANIMS),...Object.keys(mdep.moves).map(k=>'golpe-'+k)].filter(n=>!pending.includes(n));
   assert.equal(expected.length,41);
   assert.equal(manifest.inventory.length,49);
   assert.deepEqual(manifest.pending,[]);
   assert.deepEqual(manifest.missingMovements,[]);
   assert.deepEqual(manifest.contract.foot,[384,700]);
-  assert.equal(mdep.spriteAlias,undefined);
+  assert.deepEqual(Object.keys(mdep.spriteAlias||{}).sort(),[...pending].sort());
+  for(const n of pending)assert.ok(manifest.inventory.some(a=>a.name===mdep.spriteAlias[n]),n);
   const files=readdirSync(dir);
   assert.equal(files.filter(p=>p.endsWith('.png')).length,49);
   const gameFiles=readdirSync(gameDir);
@@ -74,7 +77,7 @@ test('the real reader selects dedicated MDEP strips for every state, move and tu
   for(const [key,base]of Object.entries(mdep.moves))for(const move of [base,base.turbo].filter(Boolean)){
     for(const sf of [0,move.startup,move.hits[0]?.from??move.spawn[0]?.at??move.startup+1,move.total-1]){
       const f={ch:mdep,state:'attack',moveKey:key,move,sf};
-      verify(f,'golpe-'+key);
+      verify(f,mdep.spriteAlias?.['golpe-'+key]||'golpe-'+key);
       assert.ok(Number.isFinite(spriteProgress(f,{p:0})));
     }
   }

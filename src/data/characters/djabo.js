@@ -100,7 +100,7 @@ const base = {
   boss: true,
   place: 'INFERNO',
   stage: 'inferno', // cenário próprio (src/render/inferno-stage.js)
-  walkF: 5.2, walkB: 4.6, jumpScale: 0.95, hpScale: 0.8, // cada forma tem uma barra; as duas somam 1,6×
+  walkF: 5.2, walkB: 4.6, jumpScale: 0.95, hpScale: 0.9, // cada forma tem uma barra; as duas somam 1,8×
   ai: { aggression: 0.62, block: 0.6, antiAir: 0.7, range: 'mid' },
 };
 

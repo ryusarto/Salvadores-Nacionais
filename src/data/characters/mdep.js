@@ -10,7 +10,12 @@ import { mv, bx, baseNormals, proj } from '../movekit.js';
 const EMBALO_MAX = 3;
 
 const moves = {
-  ...baseNormals({ reach: 1.06, anims: { L: 'kickM', M: 'kickM', H: 'kickHigh', jH: 'jKick', over: 'overhead' } }),
+  ...baseNormals({ reach: 1.06, dmg: 1.06, anims: { L: 'kickM', M: 'kickM', H: 'kickHigh', jH: 'jKick', over: 'overhead' } }),
+  // Socos para variar das botas: → + Forte, ← + Forte e ← + Médio
+  '6H': mv({ name: 'Cruzado', btn: 'H', startup: 12, active: 4, recovery: 19, box: bx(30, 260, 245, 110), dmg: 950, hitstun: 24, push: [200, 120], anim: ['heavyWind', 'punchH'], motion: [{ from: 3, to: 12, vx: 10 }], cancel: ['special', 'super'], tags: ['mid', 'heavy', 'advance'] }),
+  '4H': mv({ name: 'Upper de Esquerda', btn: 'H', startup: 8, active: 5, recovery: 23, box: bx(10, 220, 185, 330), dmg: 900, launch: [3, 31], anim: ['riseWind', 'upper'], motion: [{ from: 2, to: 7, vx: 5 }], cancel: ['special', 'super'], tags: ['close', 'launcher'] }),
+  '4M': mv({ name: 'Jab Duplo', btn: 'M', startup: 6, active: 8, recovery: 13, anim: ['punchWind', 'punchL'],
+    hits: [{ from: 7, to: 8, box: bx(30, 290, 190, 80), dmg: 280, hitstun: 16, push: [15, 15] }, { from: 12, to: 14, box: bx(30, 280, 210, 90), dmg: 360, hitstun: 20 }], cancel: ['chain', 'special', 'super'], tags: ['close', 'poke'] }),
   // O botão Forte é a pisada da bota: levanta a perna e esmaga.
   '5H': mv({ name: 'Pisada Bottega', btn: 'H', startup: 13, active: 5, recovery: 20, box: bx(10, 0, 260, 230), dmg: 1000, hitstun: 24, push: [120, 120], anim: ['kickHigh', 'overhead'], fx: 'stomp', motion: [{ from: 6, to: 13, vx: 7 }], tags: ['poke', 'mid', 'heavy'] }),
   jH: mv({ name: 'Pisada Aérea', btn: 'H', air: true, startup: 8, active: 8, recovery: 6, guard: 'high', box: bx(-10, -20, 200, 230), dmg: 850, hitstun: 24, anim: ['jumpUp', 'jHeavy'], fx: 'stomp', cancel: [], tags: ['air', 'jumpin'] }),
@@ -45,13 +50,16 @@ moves['5M'].name = 'Chute Alto';
 export default {
   id: 'mdep',
   name: "M'DEP",
-  style: 'Chutes e pressão aérea',
+  style: 'Chutes, socos e pressão aérea',
   mechName: 'RAJADA',
   mechDesc: 'Golpes normais que acertam dão Embalo. Gaste Embalo para emendar um especial em outro. Tem pulo duplo e mergulho.',
   colors: { skin: '#9a6245', top: '#db202b', bottom: '#222226', accent: '#ff6063', hair: '#201418', hat: '#f5eee6', shoe: '#141417' },
   look: { hair: 'bandana', weapon: null, sleeves: 'long', bigBoots: true },
-  walkF: 6.9, walkB: 5.2, jumpScale: 1.04, hpScale: 1.06, airJumps: 1,
+  walkF: 7.1, walkB: 5.3, jumpScale: 1.04, hpScale: 1.12, airJumps: 1,
   moves,
+  // Socos novos ainda sem tira própria: usam a tira mais parecida até a arte chegar
+  spriteAlias: { 'golpe-6H': 'golpe-blindado', 'golpe-4H': 'golpe-2H', 'golpe-4M': 'golpe-blindado' },
+  spritePending: ['golpe-6H', 'golpe-4H', 'golpe-4M'],
   spriteProfile: 'ten-frame',
   spriteRecovery: true,
   spriteScale: 0.85,

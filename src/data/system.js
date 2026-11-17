@@ -43,7 +43,7 @@ export const SYS = {
   SCALING: [1, 1, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1],
   SUPER_MIN_SCALE: 0.5,
   COUNTER: { dmg: 1.2, stun: 2, punishStun: 4 },
-  JUGGLE_MAX: 6,
+  JUGGLE_MAX: 6, // acertos no ar antes do rival ficar imune: o golpe que levanta + até 5 golpes aéreos, em qualquer ordem
   CHIP: 0.25,
 
   // Garra: com pouca vida, o lutador recebe menos dano. [fração de vida, multiplicador]
@@ -85,7 +85,6 @@ export const SYS = {
   },
   RUSH: { frames: 22, speed: 21, bonusStun: 4, bonusFrames: 30 },
 
-  // Dificuldade: nível da CPU e multiplicador de dano [jogador, CPU]
   // dmg: multiplicador de dano [jogador, CPU] contra heróis; bossDmg: contra os
   // chefes do Modo História (cada chefe já tem as próprias regras e vida).
   // A CPU fica mais forte pelo nível e, nos heróis, também pelo dano.
@@ -95,5 +94,6 @@ export const SYS = {
     { name: 'DIFÍCIL', level: 2, dmg: [1.12, 0.65], bossDmg: [1.15, 0.45] },
   ],
 
-  SUPER: { max: 3000, stock: 1000, perDmgDealt: 0.07, perDmgTaken: 0.04, whiffSpecial: 20 },
+  // Super de 3 barras: +25% de dano e, dentro de combo, nunca cai abaixo de 80% (o de 1 barra cai até 50%).
+  SUPER: { max: 3000, stock: 1000, perDmgDealt: 0.1, perDmgTaken: 0.06, whiffSpecial: 30, bigDmg: 1.25, bigMinScale: 0.8 },
 };

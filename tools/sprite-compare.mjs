@@ -5,7 +5,7 @@ const [id, out, ...names] = process.argv.slice(2);
 const dir = `production/sprites/final/${id}`;
 const tiles = [];
 for (const n of names) {
-  const img = sharp(`${dir}/${n}.webp`);
+  const img = sharp(`${dir}/${n.replace(/@\d/, "")}.webp`);
   const m = await img.metadata();
   const cell = m.height;
   const frame = Number((n.match(/@(\d)/) || [])[1] || 0);
