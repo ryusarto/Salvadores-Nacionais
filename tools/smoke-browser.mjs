@@ -2,7 +2,7 @@ import {chromium} from 'playwright-core';
 import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
 import {mkdirSync} from 'node:fs';
-const port=8767,base=`http://127.0.0.1:${port}`;
+const port=Number(process.env.SMOKE_PORT||8767),base=`http://127.0.0.1:${port}`;
 const server=spawn(process.execPath,['tools/dev-server.mjs',`--port=${port}`],{stdio:['ignore','pipe','pipe']});
 let output='',ready=false;server.stdout.on('data',s=>{output+=s;ready=output.includes('Servidor de desenvolvimento');});server.stderr.on('data',s=>{output+=s;});
 let browser;

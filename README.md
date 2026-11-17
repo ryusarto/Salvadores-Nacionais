@@ -102,7 +102,7 @@ de tela. Essa opção não remove todos os efeitos embutidos nas artes.
 - `node tools/balance.mjs 4`: torneio entre heróis; `--bosses` inclui chefes assimétricos.
 - `npm run test:browser`: smoke em Chromium, com capturas em `artifacts/smoke/`.
   Requer Chromium instalado; use `CHROMIUM_PATH` para informar o executável.
-  O teste usa a porta 8767 e encerra somente seu próprio servidor.
+  O teste usa a porta 8767 (`SMOKE_PORT` permite trocar) e encerra somente seu próprio servidor.
 - `npm run dev -- --port=8766`: porta alternativa. Não há hot reload; recarregue após o rebuild.
 
 [História atual](docs/MODO-HISTORIA.md) · [Fila e contrato de arte](docs/PRODUCAO-ARTE.md) ·
