@@ -1,7 +1,7 @@
 {
   "status": {
     "ready": true,
-    "loaded": 60,
+    "loaded": 61,
     "errors": []
   },
   "errors": [],
@@ -44,9 +44,9 @@
     }
   ],
   "stats": {
-    "assets": 69,
-    "images": 63,
-    "gallery": 63,
+    "assets": 70,
+    "images": 64,
+    "gallery": 64,
     "canvas": [
       1920,
       1080

@@ -34,7 +34,7 @@ function draw(){
   ctx.fillStyle='#28313b';ctx.fillRect(0,0,1920,1080);
   const a=pack.assets[solo],im=images.get(solo);if(im)picture(ctx,a,im,150,80,1620,900);
  }else{
-  pack.objects=original.filter(o=>controls.objects.checked||pack.assets[o.asset].kind==='layer').filter(o=>controls.fx.checked||pack.assets[o.asset].kind!=='fx');
+  pack.objects=original.filter(o=>controls.objects.checked||pack.assets[o.asset].kind==='layer').filter(o=>controls.fx.checked||!(pack.assets[o.asset].path?.startsWith('fx/')||['fx','environment-fx'].includes(pack.assets[o.asset].kind)));
   pack.foreground=controls.objects.checked?front:[];
   const savedGround=pack.ground;if(!controls.ground.checked)pack.ground=null;
   drawStageArt(ctx,'palco',cam,Math.floor(frame),{reducedEffects:controls.reduce.checked});
