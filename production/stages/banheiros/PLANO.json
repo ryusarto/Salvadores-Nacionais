@@ -1,0 +1,599 @@
+{
+  "project": "Salvadores Nacionais",
+  "stage": {
+    "id": "banheiros",
+    "chapter": 3,
+    "title": "Belém — Banheiros Químicos",
+    "boss": "pavanassi"
+  },
+  "audit": {
+    "date": "2026-11-17",
+    "treeCommit": "246f638c9d8673a335a26c130da6137b599d270b",
+    "finding": "Arena3 usa fallback de cinco retângulos sobre Belém; não existe pacote pintado. Apenas prompt de sprites Pavanassi encontrado no Dropbox, nenhum cenário3.",
+    "sources": [
+      "src/data/stages.js",
+      "src/data/story.js",
+      "src/data/characters/pavanassi.js",
+      "src/render/event-stage.js",
+      "src/render/boss-art.js"
+    ]
+  },
+  "technical": {
+    "viewport": [
+      1920,
+      1080
+    ],
+    "worldWidth": 2600,
+    "cameraRange": [
+      0,
+      680
+    ],
+    "feetY": 930,
+    "groundTopY": 826,
+    "framesPerAnimation": 6,
+    "animationCell": [
+      500,
+      500
+    ],
+    "animationLayout": "3x2 source, horizontal runtime strip",
+    "pivot": "positioned objects: x=center, y=bottom; common union crop across animation frames"
+  },
+  "rules": [
+    "Peças separadas, alpha real, originaisPNG e prompts preservados.",
+    "Sátira mira autoridade excludente; população acolhida nunca é a piada.",
+    "Cabines decorativas/cercas de gameplay diferentes; nada alvo da luta pintado no fundo.",
+    "Textos digitados em arquivos gráficos independentes; placas vivas de combate permanecem no código.",
+    "Nenhuma mudança de regra, colisão ou dano. Cabine, cerca e carimbo carregados por drawStageProp.",
+    "Cenário livre após vitória não implementado sem hook narrativo; bandeira inclusiva permanece decoração desde início.",
+    "Água/vento/arquitetura/parte do público reutilizados explicitamente de palco/Belém.",
+    "Testar pausa, efeitos reduzidos, galeria, câmera0/340/680, fala e mecânicas do chefe, áudio e fallback."
+  ],
+  "summary": {
+    "groups": 69,
+    "runtimeFiles": 69,
+    "newGenerations": 21,
+    "reusedImages": 34,
+    "animatedStrips": 14,
+    "animationFrames": 84
+  },
+  "groups": [
+    {
+      "slug": "banheiro-azul",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "generated",
+      "purpose": "One ordinary blue portable toilet, rectangular corrugated weathered plastic cabin, cream shallow rounded roof, CLOSED front door, small silver handle, neutral empty inset notice rectangle at upper door. Soft desaturated blue body. No symbols, no accessories, no people, no plumbing outside. This is background decoration, no red warnings."
+    },
+    {
+      "slug": "banheiro-verde",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "generated",
+      "purpose": "One ordinary teal-green portable toilet, rectangular corrugated weathered plastic cabin, cream shallow rounded roof, CLOSED front door, small silver handle, neutral empty inset notice rectangle at upper door. Soft desaturated turquoise green. No symbols, no accessories, no people. This is background decoration, no red warnings."
+    },
+    {
+      "slug": "banheiro-acessivel",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "generated",
+      "purpose": "One wheelchair-accessible portable toilet, visibly wider than a standard unit, low threshold flush entrance, cream roof, desaturated deep teal corrugated plastic body, CLOSED wide front door, low lever handle and BLANK cream rectangular notice plate. No text or accessibility icon (will be typeset separately). No ramp attached, no people. Entire standalone wide cabin."
+    },
+    {
+      "slug": "lavatorio",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "generated",
+      "purpose": "One portable freestanding handwashing station for an outdoor concert, two shallow oval sinks built into one cream molded plastic console, TWO silver gooseneck taps, teal sturdy base and foot-operated small pump pedals. No water jets, no people, no containers, no background toilet. Entire station only."
+    },
+    {
+      "slug": "reservatorio",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "generated",
+      "purpose": "One closed dark blue ribbed cylindrical portable water tank on its own integrated short molded pedestal, small capped top and a single low outlet nozzle. No hoses, no writing, no water, no other props. Entire tank only."
+    },
+    {
+      "slug": "lixeira",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "generated",
+      "purpose": "One cylindrical teal public trash bin with cream raised rim, open narrow top showing black liner edge, closed bottom, subtle wear. Clean public infrastructure, no visible rubbish or gross content. No symbols, text, people or ground."
+    },
+    {
+      "slug": "cone-servico",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "generated",
+      "purpose": "One small orange safety cone with two cream reflective bands and black square rubber foot, slightly weathered hand-painted plastic. No signs, no other props."
+    },
+    {
+      "slug": "mangueira",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "generated",
+      "purpose": "One dark muted teal rubber service hose loosely coiled horizontally with short brass coupling visible at each end. Low pile seen almost side-on, entire standalone hose only, no running water, no tap, no floor, no shadow."
+    },
+    {
+      "slug": "placa-pedestal",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "generated",
+      "purpose": "One blank cream rectangular notice board on a single dark wooden post with simple two-foot support. Front face horizontal aspect 2.4:1, slightly worn cream surface, slim dark frame. Height whole prop about two board widths. Keep face completely blank for Portuguese text composited later. No marks, icons or other objects."
+    },
+    {
+      "slug": "tenda-servico",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "generated",
+      "purpose": "One small outdoor community service pop-up tent STRUCTURE ONLY: amber beige canvas pyramidal canopy on four slender dark metal posts, open on all sides, no walls or curtains. Wide front view, entire roof and all four thin legs. No table, no equipment, no signs, no people, no ground."
+    },
+    {
+      "slug": "prancheta",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "generated",
+      "purpose": "One wooden clipboard with metal clip and a single blank cream paper sheet, nearly frontal, very slight tilt. No letters, stamps or hands, no other props. A standalone bureaucratic object."
+    },
+    {
+      "slug": "rolo-papel",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "generated",
+      "purpose": "One clean cream roll of toilet paper with cardboard core visible at a small angle and one short loose tail folded beside it. Tasteful ordinary supply, no humor marks, no other props."
+    },
+    {
+      "slug": "documentos",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "generated",
+      "purpose": "One short neat stack of cream bureaucratic blank paper sheets, two corner tabs, no text or stamped marks. Low side-front angle, whole pile, no clipboard, hands, table or other props."
+    },
+    {
+      "slug": "poca-agua",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "generated",
+      "purpose": "One very shallow clean water puddle as a thin wide flattened horizontal oval, irregular soft perimeter, subdued violet reflections with a few amber and teal highlights. Transparent outside water shape and partially translucent inside, no ground painted, no grass, no objects. Designed to place on stone ground in background, not a combat hazard."
+    },
+    {
+      "slug": "cabine-fiscal",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "generated",
+      "purpose": "One ominous SATIRICAL bureaucratic giant portable toilet cabin, SLIM width to height ratio 190:420, cobalt blue corrugated plastic, closed flat front door, red metal reinforcement around door, cream shallow roof, a blank cream horizontal notice rectangle on door upper quarter. Simple small handle on right. NO letters, symbols, lights or extra objects. Whole cabin exact front view, centered. Stronger ink contrast than decorative toilets, readable at 190x420. This is a targetable combat prop, not background."
+    },
+    {
+      "slug": "cerca-fiscal",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "generated",
+      "purpose": "One SLIM upright combat iron fence segment, exactly THREE vertical gray steel bars, two horizontal crossbars at 15 percent and 80 percent height. Whole segment aspect ratio width60 height200. Bars vertical, bottoms all on same baseline, no base feet or sign or separate post, no extra bars, no wire mesh. Cobalt and violet shadows, small red collars on two crossbars, very readable at60x200."
+    },
+    {
+      "slug": "carimbo-fiscal",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "generated",
+      "purpose": "One oversized rubber bureaucratic stamp, dark wood bulb handle above a wide dark rectangular base, lower rubber stamping pad bright crimson red. Front side view, width60 height60 approximate overall silhouette, no letters or paper, no hands, one object only."
+    },
+    {
+      "slug": "npc-acolhimento",
+      "folder": "animations",
+      "variants": 1,
+      "framesPerVariant": 6,
+      "origin": "generated",
+      "purpose": "A full-body Brazilian adult woman volunteer with dark brown skin, short natural curly black hair, cream T-shirt with plain small teal chest patch, dark purple loose trousers and sneakers. Kind confident grounded pose. She welcomes visitors with one open-palm gesture and a small smile. No toilet, flag, sign or other prop. SIX different consecutive poses of a subtle looping welcoming gesture, feet planted, fixed body scale/head/clothes identity; body remains in same cell location."
+    },
+    {
+      "slug": "npc-fila-comunidade",
+      "folder": "animations",
+      "variants": 1,
+      "framesPerVariant": 6,
+      "origin": "generated",
+      "purpose": "A full-body Brazilian adult young person, medium brown skin, short curly hair, light blue overshirt over plain cream top, ochre trousers, simple dark sneakers. Relaxed respectful confident person waiting in concert queue, casually looking toward the music and subtly swaying. No gender caricature or visual ridicule. No props. SIX different consecutive poses of a subtle idle loop, feet planted, fixed body scale/head/clothes identity; body remains in same cell location."
+    },
+    {
+      "slug": "bandeira-trans-vento",
+      "folder": "animations",
+      "variants": 1,
+      "framesPerVariant": 6,
+      "origin": "generated",
+      "purpose": "One rectangular textile transgender pride flag hanging from a short horizontal top cord, exactly FIVE horizontal stripes LIGHT BLUE, PINK, WHITE, PINK, LIGHT BLUE top to bottom, equal stripe widths. No pole, no people, no writing or other props. SIX different consecutive wave poses forming a smooth fabric breeze loop, fixed left attachment points and flag scale. Keep entire flag in each cell. Welcoming community decoration, dignified and brightly readable."
+    },
+    {
+      "slug": "papel-vento",
+      "folder": "fx",
+      "variants": 1,
+      "framesPerVariant": 6,
+      "origin": "generated",
+      "purpose": "ONE small blank cream sheet of paper caught in a gentle breeze, curling and tumbling in place. No text, no fire, no stamp, no objects or background. SIX different consecutive poses of a smooth tumbling loop, same sheet size and fixed center; slight rotating and bending only. Designed as subtle environmental animation."
+    },
+    {
+      "slug": "ceu-noite",
+      "folder": "layers",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "ceu-noite"
+    },
+    {
+      "slug": "nuvem-1",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "nuvem-1"
+    },
+    {
+      "slug": "nuvem-2",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "nuvem-2"
+    },
+    {
+      "slug": "nuvem-3",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "nuvem-3"
+    },
+    {
+      "slug": "horizonte",
+      "folder": "layers",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "horizonte"
+    },
+    {
+      "slug": "agua",
+      "folder": "layers",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "agua"
+    },
+    {
+      "slug": "mercado-ferro",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "mercado-ferro"
+    },
+    {
+      "slug": "casario-1",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "casario-1"
+    },
+    {
+      "slug": "casario-2",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "casario-2"
+    },
+    {
+      "slug": "casario-3",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "casario-3"
+    },
+    {
+      "slug": "catedral",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "catedral"
+    },
+    {
+      "slug": "barco-1",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "barco-1"
+    },
+    {
+      "slug": "barco-2",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "barco-2"
+    },
+    {
+      "slug": "calcamento",
+      "folder": "ground",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "calcamento"
+    },
+    {
+      "slug": "bancada-tecnica",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "bancada-tecnica"
+    },
+    {
+      "slug": "mesa-comida-1",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "mesa-comida-1"
+    },
+    {
+      "slug": "panela-1",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "panela-1"
+    },
+    {
+      "slug": "marmitas-1",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "marmitas-1"
+    },
+    {
+      "slug": "caixa-1",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "caixa-1"
+    },
+    {
+      "slug": "cesto-1",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "cesto-1"
+    },
+    {
+      "slug": "poste",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "poste"
+    },
+    {
+      "slug": "folhagem-1",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "folhagem-1"
+    },
+    {
+      "slug": "folhagem-2",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "folhagem-2"
+    },
+    {
+      "slug": "bandeirolas-1",
+      "folder": "props",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "reused-palco",
+      "sourceAsset": "bandeirolas-1"
+    },
+    {
+      "slug": "npc-fila-1",
+      "folder": "animations",
+      "variants": 1,
+      "framesPerVariant": 6,
+      "origin": "reused-palco",
+      "sourceAsset": "npc-fila-1"
+    },
+    {
+      "slug": "npc-fila-2",
+      "folder": "animations",
+      "variants": 1,
+      "framesPerVariant": 6,
+      "origin": "reused-palco",
+      "sourceAsset": "npc-fila-2"
+    },
+    {
+      "slug": "npc-voluntario",
+      "folder": "animations",
+      "variants": 1,
+      "framesPerVariant": 6,
+      "origin": "reused-palco",
+      "sourceAsset": "npc-voluntario"
+    },
+    {
+      "slug": "npc-torcedor-2",
+      "folder": "animations",
+      "variants": 1,
+      "framesPerVariant": 6,
+      "origin": "reused-palco",
+      "sourceAsset": "npc-torcedor-2"
+    },
+    {
+      "slug": "agua-ondulacao",
+      "folder": "animations",
+      "variants": 1,
+      "framesPerVariant": 6,
+      "origin": "reused-palco",
+      "sourceAsset": "agua-ondulacao"
+    },
+    {
+      "slug": "barco-balanco",
+      "folder": "animations",
+      "variants": 1,
+      "framesPerVariant": 6,
+      "origin": "reused-palco",
+      "sourceAsset": "barco-balanco"
+    },
+    {
+      "slug": "bandeirolas-vento",
+      "folder": "animations",
+      "variants": 1,
+      "framesPerVariant": 6,
+      "origin": "reused-palco",
+      "sourceAsset": "bandeirolas-vento"
+    },
+    {
+      "slug": "poeira",
+      "folder": "fx",
+      "variants": 1,
+      "framesPerVariant": 6,
+      "origin": "reused-palco",
+      "sourceAsset": "poeira"
+    },
+    {
+      "slug": "reflexos-agua",
+      "folder": "fx",
+      "variants": 1,
+      "framesPerVariant": 6,
+      "origin": "reused-palco",
+      "sourceAsset": "reflexos-agua"
+    },
+    {
+      "slug": "halo-poste",
+      "folder": "fx",
+      "variants": 1,
+      "framesPerVariant": 6,
+      "origin": "reused-palco",
+      "sourceAsset": "halo-poste"
+    },
+    {
+      "slug": "aviso-bem-vindos",
+      "folder": "graphics",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "typeset"
+    },
+    {
+      "slug": "aviso-banheiros",
+      "folder": "graphics",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "typeset"
+    },
+    {
+      "slug": "aviso-acessivel",
+      "folder": "graphics",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "typeset"
+    },
+    {
+      "slug": "aviso-decreto",
+      "folder": "graphics",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "typeset"
+    },
+    {
+      "slug": "aviso-agua",
+      "folder": "graphics",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "typeset"
+    },
+    {
+      "slug": "titulo",
+      "folder": "ui",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "typeset"
+    },
+    {
+      "slug": "trilha-intro",
+      "folder": "audio",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "original-synthesis-or-explicit-reuse"
+    },
+    {
+      "slug": "trilha-loop",
+      "folder": "audio",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "original-synthesis-or-explicit-reuse"
+    },
+    {
+      "slug": "ambiente-publico",
+      "folder": "audio",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "original-synthesis-or-explicit-reuse"
+    },
+    {
+      "slug": "ambiente-sanitario",
+      "folder": "audio",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "original-synthesis-or-explicit-reuse"
+    },
+    {
+      "slug": "ambiente-agua",
+      "folder": "audio",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "original-synthesis-or-explicit-reuse"
+    },
+    {
+      "slug": "vento-tecido",
+      "folder": "audio",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "original-synthesis-or-explicit-reuse"
+    },
+    {
+      "slug": "miniatura",
+      "folder": "ui",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "derived-composition"
+    },
+    {
+      "slug": "carregamento",
+      "folder": "ui",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "origin": "derived-composition"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "info": {
+    "stage": {
+      "ready": true,
+      "loaded": 60,
+      "errors": []
+    },
+    "audio": {
+      "stage": "banheiros",
+      "available": true,
+      "active": true,
+      "muted": false,
+      "started": true,
+      "decoded": 6,
+      "gain": 0.6000000238418579,
+      "errors": []
+    },
+    "foe": "pavanassi",
+    "hasPavanassiSprites": false
+  },
+  "errors": [],
+  "lazyTitle": "pass",
+  "lazySelection": "pass",
+  "pause": "pass",
+  "mechanics": {
+    "cabinHP": {
+      "initial": 5,
+      "damaged": 4
+    },
+    "queue": "pass",
+    "fence": "pass",
+    "ban": "pass",
+    "pergunta": {
+      "damage": 1300,
+      "state": "dizzy",
+      "cabinRemoved": true
+    }
+  },
+  "fixtures": "Real 2S/6S/5S core moves, deterministic step; hero positions adjusted for trap/question and a real projectile used for damage. Captures rendered by the built game after stopping its loop.",
+  "pavanassiArt": "Expected procedural mannequin fallback; no Pavanassi sprite pack delivered."
+}
