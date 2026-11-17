@@ -49,6 +49,7 @@ function resetRound(st) {
   st.f.forEach((f, i) => {
     f.rounds = old[i].rounds;
     f.super = old[i].super;
+    f.alt = old[i].alt;
   });
   st.ents = [];
   st.timer = SYS.ROUND_SECONDS * SYS.FPS;
@@ -181,7 +182,8 @@ export function step(st, in0 = EMPTY_INPUT, in1 = EMPTY_INPUT) {
     const dead = st.f.filter((f) => f.hp <= 0);
     if (st.training) {
       for (const f of dead) {
-        f.hp = f.maxHp;
+        const fresh = createFighter(f.ch, f.side, f.x);
+        Object.assign(f, fresh, { alt: f.alt, rounds: f.rounds, super: f.super });
       }
     } else if (dead.length || st.timer <= 0) {
       let w = null;

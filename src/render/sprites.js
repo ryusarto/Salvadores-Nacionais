@@ -1,3 +1,4 @@
+import { ALTERNATE_PALETTES } from '../data/alternate-palettes.js';
 import { animFor, CELL, FOOT } from './anim.js';
 import { spriteProgress } from './sprite-timing.js';
 import { applyFighterMaterial } from './fighter-material.js';
@@ -20,6 +21,7 @@ function trimDecoded(id, keep) {
     const old = oldest.shift();
     old.cv = null;
     old.cvAlt = null;
+    old.cvAltOf = null;
     loaded.pop();
   }
 }
@@ -30,13 +32,19 @@ function loadStrip(s) {
   s.loading = new Promise(resolve => {
     const img = new Image();
     img.onload = () => {
-      s.cv = applyFighterMaterial(s.trueAlpha ? img : keyOut(img),s.id);
-      s.n = Math.max(1, Math.round(img.naturalWidth / img.naturalHeight));
-      s.size = img.naturalHeight;
-      s.used = ++access;
-      trimDecoded(s.id, s);
-      s.loading = null;
-      resolve();
+      try {
+        s.cv = applyFighterMaterial(s.trueAlpha ? img : keyOut(img),s.id);
+        s.n = Math.max(1, Math.round(img.naturalWidth / img.naturalHeight));
+        s.size = img.naturalHeight;
+        s.used = ++access;
+        trimDecoded(s.id, s);
+      } catch {
+        s.cv = null;
+        s.failed = true;
+      } finally {
+        s.loading = null;
+        resolve();
+      }
     };
     img.onerror = () => { s.failed = true; s.loading = null; resolve(); };
     img.src = s.url;
@@ -115,7 +123,8 @@ function keyOut(img) {
  * Pele e tons bege ficam; cores saturadas mudam de matiz; branco e cinza
  * ganham um tom azulado; contorno preto não muda. Feita uma vez por tira.
  */
-export function recolorAlt(px) {
+export function recolorAlt(px, id) {
+  const palette = ALTERNATE_PALETTES[id] || { rotation: 150, neutralHue: 205, saturation: .42 };
   for (let i = 0; i < px.length; i += 4) {
     if (px[i + 3] === 0) continue;
     const r = px[i] / 255, g = px[i + 1] / 255, b = px[i + 2] / 255;
@@ -129,8 +138,8 @@ export function recolorAlt(px) {
     }
     if (s >= 0.15 && h >= 5 && h <= 50 && l >= 0.2 && l <= 0.88) continue; // pele, bege, marrom claro
     let nh, ns;
-    if (s < 0.15) { nh = 205; ns = 0.42; } // branco, cinza e preto acinzentado: azulado
-    else { nh = (h + 150) % 360; ns = s; }
+    if (s < 0.15) { nh = palette.neutralHue; ns = palette.saturation; } // branco, cinza e preto acinzentado: azulado
+    else { nh = (h + palette.rotation) % 360; ns = s; }
     const c = (1 - Math.abs(2 * l - 1)) * ns, x = c * (1 - Math.abs((nh / 60) % 2 - 1)), m = l - c / 2;
     const [r1, g1, b1] = nh < 60 ? [c, x, 0] : nh < 120 ? [x, c, 0] : nh < 180 ? [0, c, x] : nh < 240 ? [0, x, c] : nh < 300 ? [x, 0, c] : [c, 0, x];
     px[i] = Math.round((r1 + m) * 255); px[i + 1] = Math.round((g1 + m) * 255); px[i + 2] = Math.round((b1 + m) * 255);
@@ -147,7 +156,7 @@ function altCanvas(s) {
   const c = cv.getContext('2d', { willReadFrequently: true });
   c.drawImage(s.cv, 0, 0);
   const d = c.getImageData(0, 0, cv.width, cv.height);
-  recolorAlt(d.data);
+  recolorAlt(d.data, s.id);
   c.putImageData(d, 0, 0);
   // Contorno luminoso: distingue o lado 2 mesmo em personagens de roupa bege ou marrom.
   const out = document.createElement('canvas');
@@ -160,7 +169,7 @@ function altCanvas(s) {
   o.drawImage(cv, 0, 0);
   s.cvAlt = out;
   s.cvAltOf = s.cv;
-  return cv;
+  return out;
 }
 
 /**
@@ -198,6 +207,8 @@ export function prepareSprites(ids, names = ['parado', 'andar', 'golpe-5L']) {
     const pending = Object.values(set).filter(s => s.lazy && !s.prefetched);
     for (const s of pending) s.prefetched = true;
     cacheFiles(pending.map(s => s.url));
+    // Uma nova preparação permite recuperar falhas temporárias, sem repetir a cada render.
+    for (const s of Object.values(set)) if (s.failed) s.failed = false;
     for (const name of names) if (set[name]) jobs.push(loadStrip(set[name]));
   }
   return Promise.all(jobs).then(() => {});
