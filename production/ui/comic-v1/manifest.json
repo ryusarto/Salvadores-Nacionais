@@ -194,18 +194,18 @@
       "width": 768,
       "height": 1024,
       "alpha": true,
-      "sha256": "2f49ac9fc40724e6742f0a5c37504e3fb72fb9ceec09500d35edd18cd94d699e",
-      "bytes": 18792,
-      "provisional": true
+      "sha256": "248a93a74bfae4ccf47ffa27daac821cbe6675afe55c37f212b3cd82449b0f5c",
+      "bytes": 810934,
+      "provisional": false
     },
     "icon-chupetinha": {
       "path": "icons/chupetinha.webp",
       "width": 256,
       "height": 256,
       "alpha": true,
-      "sha256": "5ccc9c6382d4e1f912687dac3867af28a5100ab264d3e6656a23ae536072b273",
-      "bytes": 4728,
-      "provisional": true
+      "sha256": "161b6762762e261d5fd8ba29465e9fa6b52c39195f26d0db0d541fe089ac8b79",
+      "bytes": 63014,
+      "provisional": false
     },
     "portrait-pavanassi": {
       "path": "portraits/pavanassi.webp",

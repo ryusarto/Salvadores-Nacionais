@@ -1,4 +1,5 @@
 import { mv, bx, baseNormals, proj } from '../movekit.js';
+import { CHUPETINHA_SPRITES } from '../chupetinha-art.js';
 import { SYS } from '../system.js';
 
 /**
@@ -105,6 +106,7 @@ function phoneStruck(st, f, o) {
 
 export default {
   id: 'chupetinha',
+  ...CHUPETINHA_SPRITES,
   name: 'CHUPETINHA',
   style: 'Chefe — média distância',
   mechName: 'ESTÃO ME CENSURANDO!',

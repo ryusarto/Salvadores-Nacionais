@@ -1,0 +1,26 @@
+name: Chupetinha art validation
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'tools/import-chupetinha.mjs'
+      - 'production/sprites/**'
+      - 'production/ui/comic-v1/**/chupetinha.webp'
+      - '.github/workflows/chupetinha-art.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build

@@ -1,0 +1,22 @@
+{
+  "spriteProfile": "six-frame",
+  "spriteScale": 0.76,
+  "spriteRecovery": true,
+  "spriteTurboMoves": [
+    "5S",
+    "6S",
+    "2S"
+  ],
+  "spriteStripScale": {
+    "chupetinha": {
+      "golpe-5M": 1.037273883105276,
+      "golpe-5H": 1.05112098591372,
+      "golpe-2M": 1.0486033308576392,
+      "golpe-6S": 1.169450773549516,
+      "golpe-6S-turbo": 1.1681919460214756,
+      "golpe-2S": 1.1065093971474969,
+      "golpe-2S-turbo": 1.120356499955941,
+      "golpe-SA3": 1.0989564319792549
+    }
+  }
+}
