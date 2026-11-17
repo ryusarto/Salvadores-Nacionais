@@ -1,0 +1,105 @@
+{
+  "verdict": "approved-for-tested-runtime-scope",
+  "environment": {
+    "browser": "158.0.8127.37",
+    "desktop": [
+      1280,
+      720
+    ],
+    "mobile": [
+      844,
+      390
+    ],
+    "logicalCanvas": [
+      1920,
+      1080
+    ],
+    "build": "Local build on port55107. Missing original character atlases served through immutable SHA-checked published asset proxy; stage artwork local. Not deployed."
+  },
+  "inventory": {
+    "stage": {
+      "ready": true,
+      "loaded": 32,
+      "errors": []
+    },
+    "audio": {
+      "stage": "aeroporto",
+      "available": true,
+      "active": true,
+      "muted": false,
+      "started": true,
+      "decoded": 6,
+      "gain": 0.6000000238418579,
+      "errors": []
+    },
+    "foe": "fujao",
+    "packs": 26,
+    "strips": 722,
+    "heroSprites": {
+      "agachar": "registered",
+      "andar-tras": "registered",
+      "andar": "decoded",
+      "caido": "registered",
+      "correr": "registered",
+      "dano-alto": "decoded",
+      "dano-baixo": "registered",
+      "dano-no-ar": "registered",
+      "defesa-agachado": "registered",
+      "defesa-em-pe": "decoded",
+      "defesa-no-ar": "registered",
+      "escape-agarrao": "registered",
+      "golpe-2H": "registered",
+      "golpe-2L": "registered",
+      "golpe-2M": "registered",
+      "golpe-2S": "registered",
+      "golpe-3H": "registered",
+      "golpe-4S": "registered",
+      "golpe-5H": "registered",
+      "golpe-5L": "decoded",
+      "golpe-5M": "registered",
+      "golpe-5S": "registered",
+      "golpe-6M": "registered",
+      "golpe-6S": "registered",
+      "golpe-SA1": "registered",
+      "golpe-SA3": "registered",
+      "golpe-blindado": "registered",
+      "golpe-c1": "registered",
+      "golpe-c2": "registered",
+      "golpe-jH": "registered",
+      "golpe-jL": "registered",
+      "golpe-jM": "registered",
+      "golpe-throw": "registered",
+      "levantar": "registered",
+      "parado": "decoded",
+      "pulo": "registered",
+      "recuo": "registered",
+      "recuperacao-rolamento": "registered",
+      "tonto": "registered",
+      "vitoria": "registered"
+    },
+    "hasFujaoSprites": false
+  },
+  "lazyTitle": "pass",
+  "lazySelection": "pass",
+  "pause": "pass",
+  "mechanics": {
+    "stairsX": 2300,
+    "stairsRange": 280,
+    "boardProgress": 40,
+    "denial": "pass",
+    "heal": {
+      "actual": 1400,
+      "expected": 1400
+    },
+    "fixtures": "Real createMatch/step with explicit positions, damage fixture and neutral input; no gameplay rule or function patched."
+  },
+  "errors": [],
+  "failed": [],
+  "httpErrors": [],
+  "limits": [
+    "No physical device test",
+    "No human playtest",
+    "CPU balance not reviewed",
+    "Fujao character uses existing implementation/art fallback; this delivery is scenery only"
+  ]
+}

@@ -1,0 +1,574 @@
+{
+  "assets": 41,
+  "errors": [],
+  "strips": {
+    "npc-equipe-pista": [
+      {
+        "bounds": [
+          163,
+          24,
+          354,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          81,
+          26,
+          399,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          11,
+          25,
+          445,
+          480
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          39,
+          26,
+          490,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          10,
+          26,
+          428,
+          480
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          101,
+          25,
+          344,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      }
+    ],
+    "npc-seguranca": [
+      {
+        "bounds": [
+          163,
+          18,
+          348,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          154,
+          19,
+          340,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          147,
+          20,
+          333,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          178,
+          21,
+          357,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          151,
+          19,
+          342,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          146,
+          19,
+          334,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      }
+    ],
+    "biruta-vento": [
+      {
+        "bounds": [
+          57,
+          52,
+          462,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          56,
+          52,
+          464,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          54,
+          52,
+          468,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          58,
+          52,
+          466,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          56,
+          53,
+          464,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          54,
+          52,
+          463,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      }
+    ],
+    "baliza-pista": [
+      {
+        "bounds": [
+          108,
+          44,
+          417,
+          480
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          97,
+          44,
+          406,
+          480
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          87,
+          45,
+          396,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          107,
+          44,
+          417,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          97,
+          44,
+          406,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          88,
+          44,
+          398,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 480
+      }
+    ],
+    "npc-fila-1": [
+      {
+        "bounds": [
+          176,
+          18,
+          352,
+          474
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 474
+      },
+      {
+        "bounds": [
+          174,
+          19,
+          352,
+          474
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 474
+      },
+      {
+        "bounds": [
+          119,
+          19,
+          352,
+          474
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 474
+      },
+      {
+        "bounds": [
+          107,
+          19,
+          353,
+          474
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 474
+      },
+      {
+        "bounds": [
+          133,
+          19,
+          353,
+          474
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 474
+      },
+      {
+        "bounds": [
+          176,
+          18,
+          352,
+          474
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 474
+      }
+    ],
+    "npc-fila-2": [
+      {
+        "bounds": [
+          190,
+          10,
+          319,
+          487
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 486
+      },
+      {
+        "bounds": [
+          176,
+          11,
+          329,
+          487
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 486
+      },
+      {
+        "bounds": [
+          156,
+          10,
+          339,
+          487
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 486
+      },
+      {
+        "bounds": [
+          154,
+          13,
+          344,
+          489
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 488
+      },
+      {
+        "bounds": [
+          162,
+          11,
+          339,
+          489
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 488
+      },
+      {
+        "bounds": [
+          195,
+          10,
+          327,
+          489
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 488
+      }
+    ],
+    "npc-torcedor-2": [
+      {
+        "bounds": [
+          130,
+          12,
+          360,
+          491
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 490
+      },
+      {
+        "bounds": [
+          131,
+          12,
+          421,
+          491
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 490
+      },
+      {
+        "bounds": [
+          131,
+          11,
+          423,
+          491
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 490
+      },
+      {
+        "bounds": [
+          131,
+          10,
+          411,
+          491
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 490
+      },
+      {
+        "bounds": [
+          130,
+          11,
+          411,
+          491
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 490
+      },
+      {
+        "bounds": [
+          131,
+          13,
+          382,
+          491
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 490
+      }
+    ],
+    "poeira": [
+      {
+        "bounds": [
+          72,
+          159,
+          423,
+          359
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 311
+      },
+      {
+        "bounds": [
+          74,
+          156,
+          443,
+          354
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 310
+      },
+      {
+        "bounds": [
+          76,
+          151,
+          435,
+          356
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 314
+      },
+      {
+        "bounds": [
+          77,
+          158,
+          432,
+          354
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 310
+      },
+      {
+        "bounds": [
+          65,
+          170,
+          411,
+          350
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 307
+      },
+      {
+        "bounds": [
+          71,
+          164,
+          421,
+          352
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 306
+      }
+    ],
+    "papel-vento": [
+      {
+        "bounds": [
+          101,
+          91,
+          397,
+          410
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 409
+      },
+      {
+        "bounds": [
+          80,
+          82,
+          397,
+          406
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 405
+      },
+      {
+        "bounds": [
+          61,
+          101,
+          404,
+          390
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 389
+      },
+      {
+        "bounds": [
+          91,
+          98,
+          410,
+          403
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 403
+      },
+      {
+        "bounds": [
+          86,
+          84,
+          406,
+          405
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 405
+      },
+      {
+        "bounds": [
+          99,
+          83,
+          405,
+          413
+        ],
+        "edgePixels": 0,
+        "opaqueFootY": 412
+      }
+    ]
+  },
+  "sourcePNGs": 17,
+  "verdict": "approved-for-static-assets-scope",
+  "runtimeBytes": 7101537,
+  "stripsCount": 9,
+  "framesCount": 54,
+  "manifestSHA256": "7c9bd8fdd1e32686657a4349f2cc733cffe06ce5d844199c7260d3aa2ca51124",
+  "coreRulesUnchanged": true,
+  "limitations": [
+    "Source PNGs inspected through crop/hash/alpha registration and selected rendered views; not exhaustive artistic inspection of all original pixels."
+  ]
+}

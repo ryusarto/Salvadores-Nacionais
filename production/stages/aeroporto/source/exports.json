@@ -1,0 +1,995 @@
+{
+  "assets": {
+    "ceu-entardecer": {
+      "path": "layers/ceu-entardecer.webp",
+      "kind": "layer",
+      "frames": 1,
+      "bytes": 286514,
+      "sha256": "b120ea191a8c82e671bf8f8895bbfb66257ccec988e63b3a45f9d5fa2d945a12",
+      "origin": "generated",
+      "source": "source/generated/ceu-entardecer.png",
+      "sourceCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "sourceWidth": 1536,
+      "sourceHeight": 1024,
+      "width": 1920,
+      "height": 1080,
+      "alpha": false
+    },
+    "asfalto": {
+      "path": "ground/asfalto.webp",
+      "kind": "ground",
+      "frames": 1,
+      "bytes": 382448,
+      "sha256": "8025cc429881df63cf8df47e239a698844de803557988537bf65ba8e5f5363ef",
+      "origin": "generated",
+      "source": "source/generated/asfalto.png",
+      "sourceCrop": [
+        0,
+        360,
+        1536,
+        720
+      ],
+      "sourceWidth": 1536,
+      "sourceHeight": 1024,
+      "width": 2600,
+      "height": 610,
+      "alpha": false
+    },
+    "aviao-executivo": {
+      "path": "props/aviao-executivo.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 365830,
+      "sha256": "2b826a11189e4d74acedec15800d98214e5d9be580553be10876675a03a42bea",
+      "origin": "generated",
+      "source": "source/generated/aviao-executivo.png",
+      "sourceCrop": [
+        17,
+        33,
+        1975,
+        760
+      ],
+      "sourceWidth": 1983,
+      "sourceHeight": 793,
+      "width": 1958,
+      "height": 727,
+      "alpha": true
+    },
+    "escada-embarque": {
+      "path": "props/escada-embarque.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 229790,
+      "sha256": "cd503978b6bb4857021fb9896c1596e6fbfcd51ff01fdea10eec999f292ba239",
+      "origin": "generated",
+      "source": "source/generated/escada-embarque.png",
+      "sourceCrop": [
+        71,
+        38,
+        1455,
+        1012
+      ],
+      "sourceWidth": 1536,
+      "sourceHeight": 1024,
+      "width": 1024,
+      "height": 721,
+      "alpha": true
+    },
+    "terminal": {
+      "path": "props/terminal.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 425426,
+      "sha256": "b475f44f44c2e521482f5985967a2b6eb50b077c8e13b1507c43048b5dd98faf",
+      "origin": "generated",
+      "source": "source/generated/terminal.png",
+      "sourceCrop": [
+        33,
+        75,
+        2149,
+        656
+      ],
+      "sourceWidth": 2172,
+      "sourceHeight": 724,
+      "width": 2048,
+      "height": 562,
+      "alpha": true
+    },
+    "torre-controle": {
+      "path": "props/torre-controle.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 145058,
+      "sha256": "a50a3632b32ece083f384cbae03fb0528f746a0a810ed6f228fd064a72485b2a",
+      "origin": "generated",
+      "source": "source/generated/torre-controle.png",
+      "sourceCrop": [
+        546,
+        9,
+        975,
+        1015
+      ],
+      "sourceWidth": 1536,
+      "sourceHeight": 1024,
+      "width": 429,
+      "height": 1006,
+      "alpha": true
+    },
+    "hangar": {
+      "path": "props/hangar.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 223580,
+      "sha256": "96116712cf79fd329fd557eeabee98b6820cccfc9eaeafe367488a5af16c637e",
+      "origin": "generated",
+      "source": "source/generated/hangar.png",
+      "sourceCrop": [
+        23,
+        68,
+        2069,
+        701
+      ],
+      "sourceWidth": 2095,
+      "sourceHeight": 751,
+      "width": 1200,
+      "height": 371,
+      "alpha": true
+    },
+    "trator-bagagem": {
+      "path": "props/trator-bagagem.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 112710,
+      "sha256": "e45fc74601ffcd50275d3d2a55c19d6463e2fadfa6b74fbad11f2315dc9ddf3a",
+      "origin": "generated",
+      "source": "source/generated/trator-bagagem.png",
+      "sourceCrop": [
+        32,
+        104,
+        1739,
+        859
+      ],
+      "sourceWidth": 1774,
+      "sourceHeight": 887,
+      "width": 768,
+      "height": 340,
+      "alpha": true
+    },
+    "carreta-bagagem": {
+      "path": "props/carreta-bagagem.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 73014,
+      "sha256": "303d445c6c214a236bb80f31a71e22dd883324c7208e6009773e39aae6473977",
+      "origin": "generated",
+      "source": "source/generated/carreta-bagagem.png",
+      "sourceCrop": [
+        53,
+        154,
+        1949,
+        727
+      ],
+      "sourceWidth": 1983,
+      "sourceHeight": 793,
+      "width": 768,
+      "height": 232,
+      "alpha": true
+    },
+    "pilha-malas": {
+      "path": "props/pilha-malas.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 113496,
+      "sha256": "e789675b5b58dbefbd25ef663f58a8e55885f25b94dbcf0548730f652c4c921d",
+      "origin": "generated",
+      "source": "source/generated/pilha-malas.png",
+      "sourceCrop": [
+        37,
+        38,
+        1502,
+        989
+      ],
+      "sourceWidth": 1536,
+      "sourceHeight": 1024,
+      "width": 600,
+      "height": 389,
+      "alpha": true
+    },
+    "cerca-aeroporto": {
+      "path": "props/cerca-aeroporto.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 212604,
+      "sha256": "8fe3bba083c83b45209b851ed3aae69d0b3e796979303bf70d2a5698670a24a4",
+      "origin": "generated",
+      "source": "source/generated/cerca-aeroporto.png",
+      "sourceCrop": [
+        15,
+        12,
+        2006,
+        767
+      ],
+      "sourceWidth": 2019,
+      "sourceHeight": 779,
+      "width": 1024,
+      "height": 388,
+      "alpha": true
+    },
+    "poste-refletores": {
+      "path": "props/poste-refletores.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 91010,
+      "sha256": "649447129061e86c5a97652ec5b8261479afaed8833edbd993e99e4fcd75d6e8",
+      "origin": "generated",
+      "source": "source/generated/poste-refletores.png",
+      "sourceCrop": [
+        170,
+        46,
+        853,
+        1507
+      ],
+      "sourceWidth": 1024,
+      "sourceHeight": 1536,
+      "width": 479,
+      "height": 1024,
+      "alpha": true
+    },
+    "placa-embarque": {
+      "path": "props/placa-embarque.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 142198,
+      "sha256": "65f0bd7d49ce7460ad6644d29148b22ef6ab1fbb0fcd8e9ecb110cc3900d7803",
+      "origin": "generated",
+      "source": "source/generated/placa-embarque.png",
+      "sourceCrop": [
+        153,
+        80,
+        1382,
+        974
+      ],
+      "sourceWidth": 1536,
+      "sourceHeight": 1024,
+      "width": 768,
+      "height": 559,
+      "alpha": true
+    },
+    "npc-equipe-pista": {
+      "path": "animations/npc-equipe-pista.webp",
+      "kind": "animation",
+      "frames": 6,
+      "bytes": 346738,
+      "sha256": "79e90b7c84751f89d228c00bd149cbf211df7b0584e2b7f7869503fde9f4d1da",
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "crop": [
+        10,
+        24,
+        480,
+        457
+      ],
+      "frameBounds": [
+        [
+          163,
+          24,
+          354,
+          481
+        ],
+        [
+          81,
+          26,
+          399,
+          481
+        ],
+        [
+          11,
+          25,
+          445,
+          480
+        ],
+        [
+          39,
+          26,
+          490,
+          481
+        ],
+        [
+          10,
+          26,
+          428,
+          480
+        ],
+        [
+          101,
+          25,
+          344,
+          481
+        ]
+      ],
+      "frameHashes": [
+        "ad1b86c74814314e0e6b5a94f290569e2061c611bdce7d20c58f0d09de077771",
+        "deb039793cd1fb4c9222fd0d52a2fb830fb27095715030231628666c8de141ad",
+        "2173241b0f9373427e49e084338a4fd51767d4e2bd9573e41e2127eb8d669fd8",
+        "e81b335567b710845f95f92626a481075925d842e844634a4b7d9d0033ac574f",
+        "0beffe534cd124c8400092d174475fef7f4e03c1009495863ee53a5645f0dc35",
+        "08ee95dd573ee02c19065ad09af9258a806fc5d77b5a978acf87a630cd8fb3d8"
+      ],
+      "registrations": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "pivot": [
+        250,
+        480
+      ],
+      "fps": 4,
+      "origin": "generated",
+      "source": "source/generated/npc-equipe-pista.png",
+      "width": 3000,
+      "height": 500,
+      "alpha": true
+    },
+    "npc-seguranca": {
+      "path": "animations/npc-seguranca.webp",
+      "kind": "animation",
+      "frames": 6,
+      "bytes": 260986,
+      "sha256": "ad4421d5e389116bad23e17c8d764697eb7cb10175a429befbf1adc4a0bfdda1",
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "crop": [
+        146,
+        18,
+        211,
+        463
+      ],
+      "frameBounds": [
+        [
+          163,
+          18,
+          348,
+          481
+        ],
+        [
+          154,
+          19,
+          340,
+          481
+        ],
+        [
+          147,
+          20,
+          333,
+          481
+        ],
+        [
+          178,
+          21,
+          357,
+          481
+        ],
+        [
+          151,
+          19,
+          342,
+          481
+        ],
+        [
+          146,
+          19,
+          334,
+          481
+        ]
+      ],
+      "frameHashes": [
+        "b945a1acff4413d08d9e9371a6f30af89d13574978c0dbda15d4aeda435a4674",
+        "04589b70e83b159a9a1f528d8f92cc76252c3bb471f2b2da18604631e5fcf9a2",
+        "b075ab188f531e9881896ec4454677135f5077eda7dd255c9eb790d8911de65a",
+        "8696ad19cb1944e9d07940b6bbb4c3c224276ffe86f1bc6abb058843d94e7cd4",
+        "0e3ba5df7e69e302bbb4739923fae60def4d7d225e14db64d8c788f45e3df2ae",
+        "b896b47d81dc9bf57f6e45b5111631ea1ffc02b6dfd802acca0c71764011a805"
+      ],
+      "registrations": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "pivot": [
+        250,
+        480
+      ],
+      "fps": 4,
+      "origin": "generated",
+      "source": "source/generated/npc-seguranca.png",
+      "width": 3000,
+      "height": 500,
+      "alpha": true
+    },
+    "biruta-vento": {
+      "path": "animations/biruta-vento.webp",
+      "kind": "animation",
+      "frames": 6,
+      "bytes": 262838,
+      "sha256": "f73fc7983d89a903a6bd766578aeb9d300f2d118b0a6e1746aba513b9bff4083",
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "crop": [
+        54,
+        52,
+        414,
+        429
+      ],
+      "frameBounds": [
+        [
+          57,
+          52,
+          462,
+          481
+        ],
+        [
+          56,
+          52,
+          464,
+          481
+        ],
+        [
+          54,
+          52,
+          468,
+          481
+        ],
+        [
+          58,
+          52,
+          466,
+          481
+        ],
+        [
+          56,
+          53,
+          464,
+          481
+        ],
+        [
+          54,
+          52,
+          463,
+          481
+        ]
+      ],
+      "frameHashes": [
+        "a9eb2385ceb20e82eb583722b3b94d217f701821daf14a48083178f838f02c1c",
+        "0a894d98e4d49267bf451a809e815c8d27f521431785085f2834a222be50395f",
+        "58ce2ad42d76b11dcc367c7d8ace272fbeb3701c7b796a0e16dcb7563d5f4ee3",
+        "121132fd94cd14cbf6a8a59d96ba5958a06a1d0d2fee0cb6b7341e31cae0fed2",
+        "15ada671e1c398d7c0c7d95e7ef23d9b682b455e52381bafc5f31c26df4634cb",
+        "fe40ce82aa9b37f83fae760c40789b1380a6a0b74f16a0fffcdd0356a018744c"
+      ],
+      "registrations": [
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          10
+        ]
+      ],
+      "pivot": [
+        250,
+        480
+      ],
+      "fps": 4,
+      "origin": "generated",
+      "source": "source/generated/biruta-vento.png",
+      "width": 3000,
+      "height": 500,
+      "alpha": true
+    },
+    "baliza-pista": {
+      "path": "fx/baliza-pista.webp",
+      "kind": "fx",
+      "frames": 6,
+      "bytes": 365606,
+      "sha256": "93f83af2a0bc7c6221b28cba1554fd059fc41b67dc11fa2cc44a6bbc5625eec7",
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "crop": [
+        87,
+        44,
+        330,
+        437
+      ],
+      "frameBounds": [
+        [
+          108,
+          44,
+          417,
+          480
+        ],
+        [
+          97,
+          44,
+          406,
+          480
+        ],
+        [
+          87,
+          45,
+          396,
+          481
+        ],
+        [
+          107,
+          44,
+          417,
+          481
+        ],
+        [
+          97,
+          44,
+          406,
+          481
+        ],
+        [
+          88,
+          44,
+          398,
+          481
+        ]
+      ],
+      "frameHashes": [
+        "15173a3c920d5287d73c7f8f788be1838368149b8fc300841917e016d69d25a8",
+        "f9a1cd9e54cf2e0e4c76045dd21d157607f9428f7cf1206d6800194322342304",
+        "6796bb358e1650350bd9e7478d6e3111124013498992cf5dd18b3e4f95955523",
+        "78525fa05a044d9342e0a2df82ecf85826849634d209087418d812cfa2f937bf",
+        "07d8785a36da6b19456a9b2cbee5e4b845afeb576c0d65dbb8dfb35b15380f00",
+        "67e7d9f86c13a1d72ce1c5a764dbf7662116af923461aa60bb7be18e69583f59"
+      ],
+      "registrations": [
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          11
+        ]
+      ],
+      "pivot": [
+        250,
+        480
+      ],
+      "fps": 4,
+      "origin": "generated",
+      "source": "source/generated/baliza-pista.png",
+      "width": 3000,
+      "height": 500,
+      "alpha": true
+    },
+    "nuvem-1": {
+      "path": "props/nuvem-1.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 29886,
+      "sha256": "8e9afea0978685bc37aa9349e5fe397fd0d8e2f7caf1b4c5354aaf40ce8da81f",
+      "origin": "reused-banheiros",
+      "sourceManifest": "../banheiros/manifest.json",
+      "sourceAsset": "nuvem-1",
+      "sourceSha256": "8e9afea0978685bc37aa9349e5fe397fd0d8e2f7caf1b4c5354aaf40ce8da81f",
+      "width": 512,
+      "height": 127,
+      "alpha": true
+    },
+    "nuvem-2": {
+      "path": "props/nuvem-2.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 31550,
+      "sha256": "80ac3cb38a2cded085772c9f2d3a04e7a0b6b4481b9951f0ea986ea252977314",
+      "origin": "reused-banheiros",
+      "sourceManifest": "../banheiros/manifest.json",
+      "sourceAsset": "nuvem-2",
+      "sourceSha256": "80ac3cb38a2cded085772c9f2d3a04e7a0b6b4481b9951f0ea986ea252977314",
+      "width": 512,
+      "height": 132,
+      "alpha": true
+    },
+    "npc-fila-1": {
+      "path": "animations/npc-fila-1.webp",
+      "kind": "animation",
+      "frames": 6,
+      "bytes": 245820,
+      "sha256": "59a2915a379ad0b6d7fa4d39e131d4c1a90880a497d352a0eca14208101adcc7",
+      "origin": "reused-banheiros",
+      "sourceManifest": "../banheiros/manifest.json",
+      "sourceAsset": "npc-fila-1",
+      "sourceSha256": "59a2915a379ad0b6d7fa4d39e131d4c1a90880a497d352a0eca14208101adcc7",
+      "crop": [
+        107,
+        18,
+        246,
+        456
+      ],
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "width": 3000,
+      "height": 500,
+      "alpha": true
+    },
+    "npc-fila-2": {
+      "path": "animations/npc-fila-2.webp",
+      "kind": "animation",
+      "frames": 6,
+      "bytes": 300174,
+      "sha256": "db9509810978521b38e5042c6f242b8396858bbc14032724186e7b9cd802fd52",
+      "origin": "reused-banheiros",
+      "sourceManifest": "../banheiros/manifest.json",
+      "sourceAsset": "npc-fila-2",
+      "sourceSha256": "db9509810978521b38e5042c6f242b8396858bbc14032724186e7b9cd802fd52",
+      "crop": [
+        154,
+        10,
+        190,
+        479
+      ],
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "width": 3000,
+      "height": 500,
+      "alpha": true
+    },
+    "npc-torcedor-2": {
+      "path": "animations/npc-torcedor-2.webp",
+      "kind": "animation",
+      "frames": 6,
+      "bytes": 417326,
+      "sha256": "bfbfc5ad65d4498b9f9261055d78845813b16b9ab0481b8f89d3084875e935fa",
+      "origin": "reused-banheiros",
+      "sourceManifest": "../banheiros/manifest.json",
+      "sourceAsset": "npc-torcedor-2",
+      "sourceSha256": "bfbfc5ad65d4498b9f9261055d78845813b16b9ab0481b8f89d3084875e935fa",
+      "crop": [
+        130,
+        10,
+        293,
+        481
+      ],
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "width": 3000,
+      "height": 500,
+      "alpha": true
+    },
+    "poeira": {
+      "path": "fx/poeira.webp",
+      "kind": "environment-fx",
+      "frames": 6,
+      "bytes": 167436,
+      "sha256": "1b08083f7dcef6728954bab4ae6b1356a4aea77261126ab750a380d59505da22",
+      "origin": "reused-banheiros",
+      "sourceManifest": "../banheiros/manifest.json",
+      "sourceAsset": "poeira",
+      "sourceSha256": "1b08083f7dcef6728954bab4ae6b1356a4aea77261126ab750a380d59505da22",
+      "crop": [
+        65,
+        151,
+        378,
+        208
+      ],
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "width": 3000,
+      "height": 500,
+      "alpha": true
+    },
+    "papel-vento": {
+      "path": "fx/papel-vento.webp",
+      "kind": "fx",
+      "frames": 6,
+      "bytes": 246290,
+      "sha256": "5e4809428bba9d4036138f5dc0e17509e40e88be35e0bf8b2424bfb8d5373d81",
+      "origin": "reused-banheiros",
+      "sourceManifest": "../banheiros/manifest.json",
+      "sourceAsset": "papel-vento",
+      "sourceSha256": "5e4809428bba9d4036138f5dc0e17509e40e88be35e0bf8b2424bfb8d5373d81",
+      "crop": [
+        61,
+        82,
+        349,
+        331
+      ],
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "fps": 5,
+      "width": 3000,
+      "height": 500,
+      "alpha": true
+    },
+    "cone-servico": {
+      "path": "props/cone-servico.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 63790,
+      "sha256": "3d398276d1af40b206f40c100eba1c4ef1ff84000d81a11969425570b76c07d3",
+      "origin": "reused-banheiros",
+      "sourceManifest": "../banheiros/manifest.json",
+      "sourceAsset": "cone-servico",
+      "sourceSha256": "3d398276d1af40b206f40c100eba1c4ef1ff84000d81a11969425570b76c07d3",
+      "width": 350,
+      "height": 512,
+      "alpha": true
+    },
+    "lixeira": {
+      "path": "props/lixeira.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 63690,
+      "sha256": "be67abaa214ac5af7794d443e526b8d1d0afbc69fb03cba0eb8bb5ac303ec836",
+      "origin": "reused-banheiros",
+      "sourceManifest": "../banheiros/manifest.json",
+      "sourceAsset": "lixeira",
+      "sourceSha256": "be67abaa214ac5af7794d443e526b8d1d0afbc69fb03cba0eb8bb5ac303ec836",
+      "width": 329,
+      "height": 512,
+      "alpha": true
+    },
+    "nome-terminal": {
+      "path": "graphics/nome-terminal.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "bytes": 4508,
+      "sha256": "dba6db36dad16f60a6bf7801727b2b032c78b4df6e2d865a672aa68de6a01743",
+      "origin": "typeset",
+      "text": [
+        "AEROPORTO"
+      ],
+      "font": "ui/Bangers-Regular.ttf",
+      "width": 1100,
+      "height": 140,
+      "alpha": true
+    },
+    "texto-embarque": {
+      "path": "graphics/texto-embarque.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "bytes": 6894,
+      "sha256": "fa6c64f2b30b04f3ab4dba30bc0bf460486475ace3d5bfabeb494c60e619fa72",
+      "origin": "typeset",
+      "text": [
+        "EMBARQUE  >"
+      ],
+      "font": "ui/Bangers-Regular.ttf",
+      "width": 640,
+      "height": 160,
+      "alpha": true
+    },
+    "texto-restrito": {
+      "path": "graphics/texto-restrito.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "bytes": 5388,
+      "sha256": "ac15ac2438cbd1326a6c5c0cbeeab4301b2f4f0be980a5fb45c3e114acd174dc",
+      "origin": "typeset",
+      "text": [
+        "ÁREA RESTRITA"
+      ],
+      "font": "ui/Bangers-Regular.ttf",
+      "width": 640,
+      "height": 160,
+      "alpha": true
+    },
+    "portao-04": {
+      "path": "graphics/portao-04.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "bytes": 1568,
+      "sha256": "155f88401350eafc75d3906179f1f4208a8b29d3dec47ffa064a42404119eef2",
+      "origin": "typeset",
+      "text": [
+        "04"
+      ],
+      "font": "ui/Bangers-Regular.ttf",
+      "width": 140,
+      "height": 160,
+      "alpha": false
+    },
+    "titulo": {
+      "path": "ui/titulo.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "bytes": 7458,
+      "sha256": "264797e0e407acc6fb4c3d82191f37769b333587e9a11ee511192755bd213147",
+      "origin": "typeset",
+      "text": [
+        "AEROPORTO — A FUGA"
+      ],
+      "font": "ui/Bangers-Regular.ttf",
+      "width": 1200,
+      "height": 150,
+      "alpha": false
+    },
+    "faixa-pista": {
+      "path": "graphics/faixa-pista.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "bytes": 54,
+      "sha256": "3321eee36d18e5ba2cb088cc8a5f20c57027887ef71f8a104fd0682b05df0e84",
+      "origin": "code-native",
+      "source": "source/faixa-pista.svg",
+      "width": 400,
+      "height": 28,
+      "alpha": true
+    },
+    "seta-pista": {
+      "path": "graphics/seta-pista.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "bytes": 250,
+      "sha256": "ed20ab79fed577ce8058a1354a1ff84d48b77356b55dd8bcba24fc2879b9c31d",
+      "origin": "code-native",
+      "source": "source/seta-pista.svg",
+      "width": 400,
+      "height": 120,
+      "alpha": true
+    },
+    "ambiente-pista": {
+      "path": "audio/ambiente-pista.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 152525,
+      "sha256": "b82bb97766f61d448acc8602e52b986d1c3c5597c3d4f434fd693c2a4f95f39f",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "sinal-embarque": {
+      "path": "audio/sinal-embarque.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 16359,
+      "sha256": "8ad78b11e18438349e95618ac2231360188ed0326bf6d077f8083d61b937acff",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "trilha-intro": {
+      "path": "audio/trilha-intro.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 35248,
+      "sha256": "c25f2e13c8e2a62ae360811e975085730d39866d625b8e8596ba8d86ca26503d",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "trilha-loop": {
+      "path": "audio/trilha-loop.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 287373,
+      "sha256": "956a14300182180d0ec9d2a38340d998098fd1f1b97b3a6072aaea9d1b84dd17",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "turbina-distante": {
+      "path": "audio/turbina-distante.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 151754,
+      "sha256": "bd3b531f59c7e301ea6c418bbfbde6ddef1d40e96c342a1ec6164dd0e8f5c678",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "vento": {
+      "path": "audio/vento.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 153442,
+      "sha256": "beb146caf187209b0dad133630fd62673e2dea4ec3220325431ea9b2f001c68b",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "miniatura": {
+      "path": "ui/miniatura.webp",
+      "kind": "image",
+      "frames": 1,
+      "bytes": 144368,
+      "sha256": "35ab9dfafcdc9083ffa829280e5322c8635ca98c4a443fac6063f487bfedeedf",
+      "origin": "derived-composition",
+      "width": 960,
+      "height": 540,
+      "alpha": false
+    },
+    "carregamento": {
+      "path": "ui/carregamento.webp",
+      "kind": "image",
+      "frames": 1,
+      "bytes": 528540,
+      "sha256": "f6a86ded02b41bed319b00d6e92177afece921eb74553e9293bcf340ac423d1d",
+      "origin": "derived-composition",
+      "width": 1920,
+      "height": 1080,
+      "alpha": false
+    }
+  },
+  "missing": []
+}

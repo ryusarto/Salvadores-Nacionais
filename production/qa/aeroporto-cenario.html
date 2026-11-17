@@ -1,0 +1,683 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Aeroporto — Pista de embarque | Assets separados</title><style>
+*{box-sizing:border-box}body{margin:0;background:#101a23;color:#eee5d2;font:15px system-ui,sans-serif}main{max-width:1440px;margin:auto;padding:24px}h1{font:42px Georgia,serif;margin:4px 0 8px}.eyebrow{color:#e7b767;letter-spacing:2px;font-size:12px}p{color:#abb6bf}canvas#stage{width:100%;height:auto;display:block;background:#1d2232;border-radius:8px}.bar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:15px 0}button,a{font:inherit}button{background:#e8c583;border:0;border-radius:5px;padding:9px 13px;color:#18202a;cursor:pointer}a{color:#e8c583}label{display:inline-flex;gap:6px;align-items:center}#camera{width:200px}#gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}article{background:#1e2a34;padding:12px;border-radius:7px;min-width:0}article canvas{width:100%;height:180px;background:repeating-conic-gradient(#293742 0% 25%,#31404b 0% 50%) 50%/18px 18px}article h3{font-size:15px;overflow-wrap:anywhere}article p{font-size:12px}article a{display:inline-block;margin:12px}#audio{display:grid;grid-template-columns:200px 1fr;gap:15px}#audio audio{width:100%;max-width:500px}h2{font:28px Georgia,serif;margin-top:35px}#status{font-size:13px}@media(max-width:600px){main{padding:12px}h1{font-size:29px}#audio{grid-template-columns:1fr}#camera{width:160px}}
+</style><main><div class="eyebrow">SALVADORES NACIONAIS · CENÁRIO 04</div><h1>Aeroporto — Pista de embarque</h1><p>Pista, terminal, avião, escada e equipamentos de apoio em peças independentes. Cada arquivo pode ser inspecionado e baixado na galeria.</p><p id="status">Carregando os assets…</p><canvas id="stage" width="1920" height="1080"></canvas>
+<div class="bar"><button id="pause">Pausar</button><button id="step">+15 quadros</button><label>Câmera <input id="camera" type="range" min="0" max="680" value="340"><span id="cameraValue">340</span></label><span>Quadro <span id="frame">0</span></span><button id="scene">Ver cenário</button><button id="download">Baixar composição</button></div>
+<div class="bar"><label><input id="heroes" type="checkbox" checked>Lutadores em escala</label><label><input id="feet" type="checkbox">Linha dos pés</label><label><input id="objects" type="checkbox" checked>Objetos e público</label><label><input id="effects" type="checkbox" checked>Efeitos</label><label><input id="ground" type="checkbox" checked>Piso</label><label><input id="reduce" type="checkbox">Efeitos reduzidos</label></div><div class="bar"><label><input id="boarding" type="checkbox">Marcar embarque e alinhamento porta/escada</label><span>A marcação acompanha a posição e o alcance reais da mecânica FUGA.</span></div><p id="selected">Composição completa</p>
+<h2>Assets separados</h2><div id="gallery"></div><h2>Trilha e ambientes</h2><p>Tema original de perseguição a 112 BPM e ambientes discretos de pista, vento, turbina distante e sinal de embarque. Sem gravações externas ou vozes. Use os controles abaixo para ouvir cada arquivo.</p><div id="audio"></div></main><script>(() => {
+  // src/render/belem-stage.js
+  function drawBelemGround(c, texture, cam) {
+    const top = 826;
+    for (let y = top; y < 1080; y += 2) {
+      const q = (y - top) / (1080 - top), scale = 1 + (y - 930) / 260, tile = 1024 * scale;
+      const row = Math.floor(1024 * (1 - 1 / (1 + q * 2))) % 1024;
+      const offset = ((cam * scale + 960 * (scale - 1)) % tile + tile) % tile;
+      for (let x = -offset; x < 1920; x += tile) c.drawImage(texture, 0, row, 1024, 2, x, y, tile, 2);
+    }
+    const shade = c.createLinearGradient(0, top, 0, 1080);
+    shade.addColorStop(0, "rgba(27,17,43,.25)");
+    shade.addColorStop(1, "rgba(27,17,43,.12)");
+    c.fillStyle = shade;
+    c.fillRect(0, top, 1920, 254);
+    c.fillStyle = "#353139";
+    c.fillRect(0, top - 2, 1920, 3);
+  }
+
+  // src/render/stage-packs.js
+  var packs = /* @__PURE__ */ new Map();
+  var catalog = /* @__PURE__ */ new Map();
+  var requests = /* @__PURE__ */ new Map();
+  function requestStageArt(id) {
+    if (packs.has(id) || !catalog.has(id)) return requests.get(id);
+    if (!requests.has(id)) requests.set(id, loadStageArt({ [id]: catalog.get(id) }));
+    return requests.get(id);
+  }
+  var finite = (v, fallback) => Number.isFinite(v) ? v : fallback;
+  var clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+  async function loadStageArt(all) {
+    await Promise.all(Object.entries(all).filter(([id]) => id !== "belem").map(async ([id, pack]) => {
+      packs.delete(id);
+      if (!Array.isArray(pack.layers) || !pack.layers.length || !pack.assets) return;
+      const used = [...pack.layers, ...pack.objects || [], ...pack.foreground || []].map((o) => o.asset);
+      if (pack.ground) used.push(pack.ground.asset);
+      used.push(...pack.interactive || []);
+      const essential = pack.essential || used;
+      const images = /* @__PURE__ */ new Map(), errors = [];
+      await Promise.all([...new Set(used)].map(async (key) => {
+        const a = pack.assets[key];
+        if (!a || a.kind === "audio") {
+          errors.push(key);
+          return;
+        }
+        try {
+          const img = new Image();
+          img.decoding = "async";
+          img.src = a.url;
+          await img.decode();
+          if (!(img.width > 0 && img.height > 0)) throw Error("empty image");
+          images.set(key, img);
+        } catch {
+          errors.push(key);
+        }
+      }));
+      if (essential.length && essential.every((key) => images.has(key))) packs.set(id, { pack, images, errors });
+    }));
+  }
+  function stageArtStatus(id) {
+    const item = packs.get(id);
+    return { ready: !!item, loaded: item?.images.size || 0, errors: [...item?.errors || []] };
+  }
+  function stageAnimationFrame(frame, fps = 5, count = 6, phase = 0) {
+    const n = Math.max(1, Math.floor(finite(count, 1)));
+    return ((Math.floor(Math.max(0, finite(frame, 0)) * Math.max(0, finite(fps, 5)) / 60) + Math.floor(finite(phase, 0))) % n + n) % n;
+  }
+  function object(c, item, o, cam, frame, reducedEffects, cull = true) {
+    const a = item.pack.assets[o.asset], img = item.images.get(o.asset);
+    if (!a || !img) return false;
+    const frames = a.frames || 1, cellW = a.cellWidth || img.width / frames;
+    const [sx, sy, sw, sh] = a.crop || [0, 0, cellW, img.height];
+    const h = o.h ?? (o.w ? o.w * sh / sw : sh), w = o.w ?? h * sw / sh;
+    const x = o.x - cam * finite(o.factor, 1) - w / 2, y = o.y - h;
+    if (cull && (x + w < 0 || x > 1920)) return true;
+    const f = frames > 1 ? stageAnimationFrame(reducedEffects ? 0 : frame, o.fps, frames, o.phase) : 0;
+    c.save();
+    c.globalAlpha = clamp(finite(o.opacity, 1), 0, 1);
+    c.drawImage(img, sx + f * cellW, sy, sw, sh, x, y, w, h);
+    c.restore();
+    return true;
+  }
+  function drawStageArt(c, id, cam, frame = 0, options = {}) {
+    const item = packs.get(id);
+    if (!item) {
+      void requestStageArt(id);
+      return false;
+    }
+    const camera = clamp(finite(cam, 0), 0, 680), { pack } = item;
+    for (const layer of pack.layers) {
+      const img = item.images.get(layer.asset);
+      if (!img) continue;
+      const height = layer.height ?? 1080, width = layer.width ?? img.width * height / img.height;
+      c.save();
+      c.globalAlpha = clamp(finite(layer.opacity, 1), 0, 1);
+      c.drawImage(img, (layer.x || 0) - camera * finite(layer.factor, 1), layer.y || 0, width, height);
+      c.restore();
+    }
+    for (const o of pack.objects || []) object(c, item, o, camera, frame, options.reducedEffects);
+    if (pack.ground && item.images.has(pack.ground.asset)) {
+      const ground = pack.ground, image = item.images.get(ground.asset);
+      const flat = ground.projection === "flat";
+      const y = flat ? finite(ground.y, finite(pack.world?.groundTopY, 826)) : 826;
+      const height = flat ? finite(ground.height, finite(pack.world?.height, 1080) - y) : 254;
+      if (flat) {
+        const width = finite(ground.width, finite(pack.world?.width, 2600));
+        c.drawImage(image, finite(ground.x, 0) - camera * finite(ground.factor, 1), y, width, height);
+      } else drawBelemGround(c, image, camera);
+      if (pack.ground.shade) {
+        c.save();
+        c.fillStyle = pack.ground.shade;
+        c.fillRect(0, y, 1920, height);
+        c.restore();
+      }
+    }
+    for (const o of pack.foreground || []) object(c, item, o, camera, frame, options.reducedEffects);
+    return true;
+  }
+
+  // src/data/system.js
+  var SYS = {
+    FPS: 60,
+    VIEW_W: 1920,
+    VIEW_H: 1080,
+    STAGE_W: 2600,
+    GROUND_Y: 930,
+    // y de tela onde ficam os pés
+    WALL_PAD: 110,
+    // distância mínima do centro do lutador até a parede
+    MAX_DIST: 1500,
+    // separação máxima entre lutadores (câmera)
+    START_GAP: 520,
+    HP: 1e4,
+    ROUNDS_TO_WIN: 2,
+    ROUND_SECONDS: 99,
+    INTRO_FRAMES: 110,
+    KO_FRAMES: 150,
+    GRAVITY: 1.9,
+    JUMP: { pre: 4, vy: 36, vxF: 9.5, vxB: -8.5, land: 3, landAttack: 5 },
+    DASH: { frames: 17, speed: 17, runSpeed: 12.5, runStop: 7, tapWindow: 12 },
+    BACKDASH: { frames: 21, speed: 13, throwInv: 9 },
+    BODY: {
+      stand: { x: -70, y: 0, w: 140, h: 480 },
+      crouch: { x: -75, y: 0, w: 150, h: 300 },
+      air: { x: -70, y: 70, w: 140, h: 380 },
+      down: { x: -160, y: 0, w: 320, h: 90 },
+      push: 150
+      // largura da caixa de empurrão
+    },
+    MOTION: { first: 30, last: 12 },
+    // janelas (quadros) das sequências → ← e ↓ →
+    CMD_BTN: { c1: "L", c2: "M" },
+    // botão que fecha cada sequência
+    BUFFER: 7,
+    // quadros que um botão apertado cedo continua valendo
+    SIMUL: 3,
+    // janela para dois botões contarem como "juntos"
+    HITSTOP: { L: 8, M: 10, H: 13, S: 12, X: 18, block: -2, proj: 7 },
+    PUSH_DECAY: 0.8,
+    // Escala de dano por número do golpe no combo (1º, 2º, 3º...)
+    SCALING: [1, 1, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1],
+    SUPER_MIN_SCALE: 0.5,
+    COUNTER: { dmg: 1.2, stun: 2, punishStun: 4 },
+    JUGGLE_MAX: 6,
+    // acertos no ar antes do rival ficar imune: o golpe que levanta + até 5 golpes aéreos, em qualquer ordem
+    CHIP: 0.25,
+    // Garra: com pouca vida, o lutador recebe menos dano. [fração de vida, multiplicador]
+    GUTS: [[0.15, 0.76], [0.3, 0.88]],
+    // Tontura: apanhar muito em pouco tempo deixa tonto. Esvazia sozinha quando o lutador para de apanhar.
+    DIZZY_METER: { max: 3400, decayDelay: 100, decay: 34, immune: 540 },
+    // Empurrão na defesa: Leve + Médio enquanto defende afasta o atacante.
+    PUSHBLOCK: { cost: 1e3, push: 44 },
+    // Rolamento: apertar um botão de golpe ao cair evita ficar deitado.
+    TECH_ROLL: { frames: 24, speed: 11, window: 10 },
+    // Pulo alto depois do Gancho, para combo aéreo.
+    // `float` é a velocidade de subida dada ao adversário lançado, para os dois subirem juntos.
+    SUPER_JUMP: { vy: 1.2, vx: 5, float: 27, minY: 120 },
+    // Proteção contra agarrões seguidos: cada agarrão sofrido aumenta a imunidade ao levantar.
+    THROW_PROTECT: { extra: 14, window: 420 },
+    KNOCKDOWN: { soft: 28, hard: 52, wakeup: 14, wakeThrowInv: 7 },
+    CRUMPLE: 62,
+    DIZZY: 110,
+    THROW: { tech: 9, hold: 14, dmg: 1200, range: 150 },
+    GINGA: {
+      max: 6e3,
+      pip: 1e3,
+      regen: 10,
+      // por quadro
+      regenPause: 50,
+      // quadros sem recarga depois de gastar
+      blockPause: 30,
+      airGuard: 1.5,
+      // defender no ar gasta mais Ginga
+      perfectWindow: 3,
+      perfectFreeze: 16,
+      rushRaw: 1e3,
+      rushCancel: 3e3,
+      blindado: 1e3,
+      turbo: 2e3,
+      onHitGain: 120,
+      burnoutRegen: 8.5,
+      // recarga quando Sem Fôlego (~12s)
+      burnoutBlockstun: 4
+    },
+    RUSH: { frames: 22, speed: 21, bonusStun: 4, bonusFrames: 30 },
+    // dmg: multiplicador de dano [jogador, CPU] contra heróis; bossDmg: contra os
+    // chefes do Modo História (cada chefe já tem as próprias regras e vida).
+    // A CPU fica mais forte pelo nível e, nos heróis, também pelo dano.
+    DIFFICULTY: [
+      { name: "F\xC1CIL", level: 0, dmg: [1.1, 0.6], bossDmg: [1, 1] },
+      { name: "NORMAL", level: 1, dmg: [1, 0.85], bossDmg: [1.12, 0.6] },
+      { name: "DIF\xCDCIL", level: 2, dmg: [1.12, 0.65], bossDmg: [1.15, 0.45] }
+    ],
+    // Super de 3 barras: +25% de dano e, dentro de combo, nunca cai abaixo de 80% (o de 1 barra cai até 50%).
+    SUPER: { max: 3e3, stock: 1e3, perDmgDealt: 0.1, perDmgTaken: 0.06, whiffSpecial: 30, bigDmg: 1.25, bigMinScale: 0.8 }
+  };
+
+  // src/data/movekit.js
+  var STRENGTH = {
+    L: { hitstun: 14, blockstun: 11, push: [70, 60], ginga: 200, stop: SYS.HITSTOP.L },
+    M: { hitstun: 18, blockstun: 14, push: [105, 95], ginga: 350, stop: SYS.HITSTOP.M },
+    H: { hitstun: 22, blockstun: 17, push: [150, 135], ginga: 550, stop: SYS.HITSTOP.H },
+    S: { hitstun: 22, blockstun: 17, push: [140, 130], ginga: 600, stop: SYS.HITSTOP.S },
+    X: { hitstun: 30, blockstun: 22, push: [200, 180], ginga: 0, stop: SYS.HITSTOP.X }
+  };
+  var DEFAULT_CANCEL = {
+    L: ["chain", "special", "super", "rush"],
+    M: ["chain", "special", "super", "rush"],
+    H: ["special", "super", "rush"],
+    S: ["super"],
+    X: []
+  };
+  function mv(def) {
+    const btn = def.btn || "S";
+    const base = STRENGTH[btn] || STRENGTH.S;
+    const m = {
+      name: def.name || "?",
+      type: def.type || (btn === "X" ? "super" : btn === "S" ? "special" : "normal"),
+      btn,
+      startup: def.startup ?? 6,
+      active: def.active ?? 3,
+      recovery: def.recovery ?? 12,
+      anim: def.anim || ["punchWind", "punchM"],
+      air: !!def.air,
+      crouch: !!def.crouch,
+      cancel: def.cancel || DEFAULT_CANCEL[btn] || [],
+      motion: def.motion || [],
+      inv: def.inv || [],
+      armor: def.armor || null,
+      spawn: def.spawn || [],
+      hold: def.hold || null,
+      cost: def.cost || {},
+      tags: def.tags || [],
+      fx: def.fx || null,
+      weapon: def.weapon || null,
+      landCancel: def.landCancel ?? true,
+      flags: def.flags || {}
+    };
+    const raw = def.hits || (def.box ? [{}] : []);
+    m.hits = raw.map((h, idx) => ({
+      from: h.from ?? m.startup + 1,
+      to: h.to ?? m.startup + m.active,
+      box: h.box || def.box,
+      dmg: h.dmg ?? def.dmg ?? 0,
+      hitstun: h.hitstun ?? def.hitstun ?? base.hitstun,
+      blockstun: h.blockstun ?? def.blockstun ?? base.blockstun,
+      push: h.push || def.push || base.push,
+      guard: h.guard || def.guard || "mid",
+      launch: h.launch || def.launch || null,
+      kd: h.kd || def.kd || null,
+      crumple: h.crumple ?? def.crumple ?? false,
+      ginga: h.ginga ?? def.ginga ?? base.ginga,
+      chip: h.chip ?? def.chip ?? (m.type === "normal" ? 0 : SYS.CHIP),
+      // em golpes de vários acertos, só o último tem a pausa de impacto cheia
+      stop: h.stop ?? def.stop ?? (idx < raw.length - 1 ? Math.min(base.stop, 5) : base.stop),
+      effects: h.effects || def.effects || [],
+      juggle: h.juggle ?? def.juggle ?? 1,
+      pull: h.pull ?? def.pull ?? 0
+    }));
+    const lifts = m.type !== "super" && m.hits.some((h) => h.launch && h.launch[1] >= 20);
+    if (lifts && !m.air && !def.flags?.landEnds && !m.cancel.includes("jump")) m.cancel = [...m.cancel, "jump"];
+    if (lifts && (m.air || def.flags?.landEnds)) m.flags = { ...m.flags, chase: true };
+    m.total = def.total ?? m.startup + m.active + m.recovery;
+    for (const h of m.hits) m.total = Math.max(m.total, h.to + 1);
+    m.range = def.range ?? (m.hits.length ? Math.max(...m.hits.map((h) => h.box.x + h.box.w)) : 0);
+    if (def.turbo) m.turbo = mv({ ...def, ...def.turbo, turbo: null, isTurbo: true });
+    m.isTurbo = !!def.isTurbo;
+    return m;
+  }
+  var bx = (x, y, w, h) => ({ x, y, w, h });
+  function baseNormals(o = {}) {
+    const r = o.reach ?? 1;
+    const d = o.dmg ?? 1;
+    const s = o.speed ?? 0;
+    const a = { L: "punchL", M: "punchM", H: "punchH", lowL: "kickLow", lowM: "sweepM", up: "upper", sweep: "sweep", over: "overhead", jL: "jPunch", jM: "jKick", jH: "jHeavy", ...o.anims || {} };
+    const W = (n) => Math.round(n * r);
+    const D = (n) => Math.round(n * d);
+    return {
+      "5L": mv({ name: "Leve", btn: "L", startup: 4 + s, active: 3, recovery: 8, box: bx(30, 290, W(160), 80), dmg: D(300), anim: ["punchWind", a.L], tags: ["poke", "close"] }),
+      "5M": mv({ name: "M\xE9dio", btn: "M", startup: 7 + s, active: 4, recovery: 14, box: bx(30, 270, W(215), 100), dmg: D(600), anim: ["punchWind", a.M], motion: [{ from: 3, to: 8, vx: 5 }], tags: ["poke", "mid"] }),
+      "5H": mv({ name: "Forte", btn: "H", startup: 11 + s, active: 5, recovery: 21, box: bx(30, 250, W(250), 130), dmg: D(900), anim: ["heavyWind", a.H], motion: [{ from: 5, to: 12, vx: 7 }], tags: ["poke", "mid", "heavy"] }),
+      "2L": mv({ name: "Leve Baixo", btn: "L", startup: 5 + s, active: 3, recovery: 9, crouch: true, guard: "low", box: bx(30, 30, W(170), 80), dmg: D(250), anim: ["crouch", a.lowL], tags: ["poke", "close", "low"] }),
+      "2M": mv({ name: "M\xE9dio Baixo", btn: "M", startup: 8 + s, active: 4, recovery: 15, crouch: true, guard: "low", box: bx(30, 20, W(240), 80), dmg: D(550), anim: ["crouch", a.lowM], tags: ["poke", "mid", "low"] }),
+      "2H": mv({ name: "Gancho", btn: "H", startup: 8 + s, active: 6, recovery: 24, crouch: true, box: bx(10, 220, 175, 360), dmg: D(850), launch: [3, 31], motion: [{ from: 2, to: 8, vx: 5 }], anim: ["crouch", a.up], inv: [{ from: 4, to: 13, type: "air" }], cancel: ["special", "super", "jump"], tags: ["antiair", "launcher"] }),
+      "3H": mv({ name: "Rasteira", btn: "H", startup: 10 + s, active: 4, recovery: 26, crouch: true, guard: "low", box: bx(30, 0, W(270), 70), dmg: D(800), kd: "hard", launch: [6, 12], anim: ["crouch", a.sweep], cancel: ["super"], tags: ["low", "knockdown", "mid"] }),
+      "6M": mv({ name: "Golpe de Cima", btn: "M", startup: 20, active: 3, recovery: 17, guard: "high", box: bx(30, 230, W(190), 230), dmg: D(600), anim: ["overWind", a.over], cancel: ["super"], motion: [{ from: 8, to: 20, vx: 5 }], tags: ["overhead", "close"] }),
+      jL: mv({ name: "A\xE9reo Leve", btn: "L", air: true, startup: 4, active: 9, recovery: 4, guard: "high", box: bx(10, 130, W(160), 130), dmg: D(300), anim: ["jumpUp", a.jL], cancel: ["chain"], tags: ["air"] }),
+      jM: mv({ name: "A\xE9reo M\xE9dio", btn: "M", air: true, startup: 6, active: 7, recovery: 5, guard: "high", box: bx(0, 80, W(200), 150), dmg: D(500), anim: ["jumpUp", a.jM], cancel: ["chain"], tags: ["air", "crossup"] }),
+      jH: mv({ name: "A\xE9reo Forte", btn: "H", air: true, startup: 8, active: 6, recovery: 6, guard: "high", box: bx(10, 20, W(190), 220), dmg: D(800), hitstun: 24, anim: ["jumpUp", a.jH], cancel: [], tags: ["air", "jumpin"] }),
+      throw: mv({ name: "Agarr\xE3o", btn: "L", type: "throw", startup: 5, active: 3, recovery: 23, guard: "throw", box: bx(20, 140, SYS.THROW.range, 260), dmg: SYS.THROW.dmg, anim: ["throwReach", "throwReach"], cancel: [], tags: ["throw"] }),
+      blindado: mv({ name: "Golpe Blindado", btn: "H", type: "utility", startup: 26, active: 4, recovery: 32, box: bx(20, 220, W(250), 170), dmg: D(800), crumple: true, ginga: 1e3, push: [60, 260], hitstun: 30, blockstun: 22, anim: ["blindWind", "blindHit"], armor: { from: 1, to: 26, hits: 2 }, motion: [{ from: 18, to: 28, vx: 9 }], cancel: [], cost: { ginga: SYS.GINGA.blindado }, tags: ["armor"] })
+    };
+  }
+  function proj(def) {
+    return {
+      kind: def.kind || "shot",
+      x: def.x ?? 110,
+      y: def.y ?? 300,
+      vx: def.vx ?? 14,
+      vy: def.vy ?? 0,
+      g: def.g ?? 0,
+      w: def.w ?? 70,
+      h: def.h ?? 60,
+      life: def.life ?? 120,
+      delay: def.delay ?? 0,
+      hitsLeft: def.hits ?? 1,
+      behavior: def.behavior || "fly",
+      color: def.color || "#ffe27a",
+      hit: {
+        dmg: def.dmg ?? 600,
+        hitstun: def.hitstun ?? 20,
+        blockstun: def.blockstun ?? 15,
+        push: def.push || [90, 80],
+        guard: def.guard || "mid",
+        launch: def.launch || null,
+        kd: def.kd || null,
+        crumple: false,
+        ginga: def.ginga ?? 500,
+        chip: def.chip ?? SYS.CHIP,
+        stop: def.stop ?? SYS.HITSTOP.proj,
+        effects: def.effects || [],
+        juggle: def.juggle ?? 1,
+        pull: 0
+      },
+      ...def.extra || {}
+    };
+  }
+
+  // src/data/characters/fujao.js
+  var FUGA = {
+    corner: 300,
+    // distância da parede que conta como encurralado
+    cooldown: 300,
+    // quadros entre duas fugas
+    comboHits: 2,
+    // foge no segundo golpe do combo
+    stairsX: SYS.STAGE_W - 300,
+    // escada do avião
+    stairsRange: 280,
+    calm: 480,
+    // distância do herói para conseguir embarcar
+    boardFrames: 90,
+    boardHeal: 0.1,
+    // fração da vida máxima
+    boardCD: 600
+  };
+  var MALA = { kind: "mala", behavior: "puddle", y: 0, w: 120, h: 60, vx: 0, life: 480, hitsLeft: 0, hit: null, color: "#8a5a2a", slip: 46, delay: 0 };
+  var dropBag = (x) => ({
+    make: (st, f) => {
+      const mine = st.ents.filter((e) => e.owner === f.side && e.kind === "mala" && e.behavior === "puddle");
+      if (mine.length >= 2) mine[0].dead = true;
+      return { ...MALA, x };
+    }
+  });
+  var thrownBag = (o = {}) => proj({ kind: "mala-voando", x: 80, y: 300, w: 80, h: 60, vx: 14, vy: 12, g: 0.9, life: 110, dmg: 780, color: "#8a5a2a", ...o });
+  var fallingBag = (delay, dx) => ({
+    make: (st, f) => {
+      const o = st.f[1 - f.side];
+      return proj({
+        kind: "mala-caindo",
+        behavior: "strike",
+        x: 0,
+        y: 0,
+        w: 170,
+        h: 700,
+        vx: 0,
+        delay,
+        life: 8,
+        dmg: 520,
+        hitstun: 26,
+        blockstun: 18,
+        push: [0, 40],
+        launch: dx === 0 ? [2, 22] : null,
+        kd: dx === 0 ? "hard" : null,
+        color: "#8a5a2a",
+        extra: { at_opponent: true, delay0: delay, ox: dx * Math.sign(o.x - f.x || 1) }
+      });
+    }
+  });
+  var moves = {
+    ...baseNormals({ reach: 1, dmg: 1.2, speed: -1, anims: { H: "kickHigh" } }),
+    "5H": mv({ name: "Malada", btn: "H", startup: 11, active: 5, recovery: 22, box: bx(30, 220, 260, 150), dmg: 900, anim: ["swingWind", "swing"], motion: [{ from: 4, to: 11, vx: 8 }], weapon: "mala", tags: ["poke", "mid", "heavy"] }),
+    "5S": mv({
+      name: "Mala Arremessada",
+      startup: 12,
+      active: 1,
+      recovery: 22,
+      anim: ["castWind", "cast"],
+      spawn: [{ at: 12, ...thrownBag() }],
+      range: 900,
+      tags: ["zone", "far"],
+      turbo: { startup: 9, spawn: [{ at: 9, ...thrownBag({ vx: 17, dmg: 800 }) }] }
+    }),
+    "2S": mv({ name: "Mala Esquecida", startup: 8, active: 1, recovery: 16, crouch: true, anim: ["crouch", "crouch"], spawn: [{ at: 8, ...dropBag(60) }], range: 300, tags: ["zone", "trap"] }),
+    // Fuga: corre para trás sem levar golpe e larga uma mala no caminho.
+    "4S": mv({
+      name: "Fuga",
+      type: "special",
+      startup: 1,
+      active: 22,
+      recovery: 8,
+      anim: ["backdash", "backdash"],
+      motion: [{ from: 1, to: 22, vx: -26 }],
+      inv: [{ from: 1, to: 24, type: "all" }],
+      spawn: [{ at: 2, ...dropBag(-20) }],
+      flags: { phase: true },
+      cancel: [],
+      tags: ["evade"]
+    }),
+    // Carrinho de bagagem: avança empurrando o carrinho.
+    "6S": mv({
+      name: "Carrinho de Bagagem",
+      startup: 13,
+      active: 14,
+      recovery: 22,
+      box: bx(30, 0, 220, 260),
+      dmg: 850,
+      launch: [8, 14],
+      kd: "hard",
+      anim: ["runA", "punchH"],
+      motion: [{ from: 8, to: 26, vx: 17 }],
+      tags: ["far", "rush"],
+      turbo: { startup: 10, dmg: 1050 }
+    }),
+    SA1: mv({
+      name: "Pista Livre",
+      btn: "X",
+      startup: 8,
+      active: 20,
+      recovery: 34,
+      anim: ["runA", "punchH"],
+      cost: { super: 1e3 },
+      inv: [{ from: 1, to: 10, type: "all" }],
+      motion: [{ from: 8, to: 26, vx: 22 }],
+      hits: [0, 1, 2, 3].map((i) => ({ from: 9 + i * 5, to: 11 + i * 5, box: bx(20, 60, 240, 360), dmg: i === 3 ? 900 : 340, hitstun: 26, push: [8, 24], launch: i === 3 ? [10, 22] : null, kd: "hard" })),
+      tags: ["super"]
+    }),
+    // Esteira Despencando: malas caem do céu em cima do herói.
+    SA3: mv({
+      name: "Esteira Despencando",
+      btn: "X",
+      startup: 10,
+      active: 1,
+      recovery: 50,
+      anim: ["castWind", "cast"],
+      cost: { super: 3e3 },
+      inv: [{ from: 1, to: 20, type: "all" }],
+      spawn: [{ at: 10, ...fallingBag(18, -170) }, { at: 12, ...fallingBag(24, 170) }, { at: 14, ...fallingBag(30, -90) }, { at: 16, ...fallingBag(36, 90) }, { at: 18, ...fallingBag(46, 0) }],
+      range: 1500,
+      tags: ["super", "big"]
+    })
+  };
+
+  // aeroporto-preview-entry.js
+  (async () => {
+    const pack = { "id": "aeroporto", "version": 1, "status": "delivered-v1", "groups": 41, "world": { "width": 2600, "height": 1080, "viewWidth": 1920, "cameraMax": 680, "feetY": 930, "groundTopY": 826 }, "essential": ["ceu-entardecer", "asfalto", "aviao-executivo", "escada-embarque", "terminal", "torre-controle"], "interactive": [], "layers": [{ "asset": "ceu-entardecer", "factor": 0, "width": 1920, "height": 1080 }, { "asset": "asfalto", "x": -100, "y": 760, "width": 2900, "height": 66, "factor": 0.2, "opacity": 0.9 }], "objects": [{ "id": "nuvem-1-0", "asset": "nuvem-1", "x": 350, "y": 325, "w": 580, "factor": 0.06, "opacity": 0.24 }, { "id": "nuvem-2-1", "asset": "nuvem-2", "x": 1550, "y": 370, "w": 700, "factor": 0.08, "opacity": 0.2 }, { "id": "torre-controle-2", "asset": "torre-controle", "x": 230, "y": 720, "h": 540, "factor": 0.24 }, { "id": "hangar-3", "asset": "hangar", "x": 2090, "y": 805, "w": 1100, "factor": 0.24 }, { "id": "terminal-4", "asset": "terminal", "x": 900, "y": 818, "w": 1800, "factor": 0.3 }, { "id": "nome-terminal-5", "asset": "nome-terminal", "x": 690, "y": 525, "w": 230, "h": 45, "factor": 0.3 }, { "id": "portao-04-6", "asset": "portao-04", "x": 706, "y": 762, "w": 35, "h": 40, "factor": 0.3 }, { "id": "cerca-aeroporto-7", "asset": "cerca-aeroporto", "x": 250, "y": 826, "w": 570, "factor": 0.48, "opacity": 0.68 }, { "id": "cerca-aeroporto-8", "asset": "cerca-aeroporto", "x": 800, "y": 826, "w": 570, "factor": 0.48, "opacity": 0.68 }, { "id": "cerca-aeroporto-9", "asset": "cerca-aeroporto", "x": 1350, "y": 826, "w": 570, "factor": 0.48, "opacity": 0.68 }, { "id": "cerca-aeroporto-10", "asset": "cerca-aeroporto", "x": 1900, "y": 826, "w": 570, "factor": 0.48, "opacity": 0.68 }, { "id": "cerca-aeroporto-11", "asset": "cerca-aeroporto", "x": 2450, "y": 826, "w": 570, "factor": 0.48, "opacity": 0.68 }, { "id": "poste-refletores-12", "asset": "poste-refletores", "x": 45, "y": 826, "h": 560, "factor": 0.78 }, { "id": "poste-refletores-13", "asset": "poste-refletores", "x": 2580, "y": 826, "h": 560, "factor": 0.78 }, { "id": "biruta-vento-14", "asset": "biruta-vento", "x": 740, "y": 826, "h": 370, "factor": 0.78, "fps": 4 }, { "id": "carreta-bagagem-15", "asset": "carreta-bagagem", "x": 170, "y": 825, "w": 330, "factor": 0.78 }, { "id": "trator-bagagem-16", "asset": "trator-bagagem", "x": 505, "y": 825, "w": 340, "factor": 0.78 }, { "id": "pilha-malas-17", "asset": "pilha-malas", "x": 155, "y": 752, "w": 230, "factor": 0.78 }, { "id": "npc-seguranca-21", "asset": "npc-seguranca", "x": 580, "y": 825, "h": 245, "factor": 0.78, "fps": 4 }, { "id": "placa-embarque-24", "asset": "placa-embarque", "x": 300, "y": 825, "h": 150, "factor": 0.78 }, { "id": "texto-restrito-25", "asset": "texto-restrito", "x": 300, "y": 730, "w": 178, "h": 44, "factor": 0.78 }, { "id": "baliza-pista-26", "asset": "baliza-pista", "x": 80, "y": 826, "h": 32, "factor": 0.78, "fps": 4, "phase": 0 }, { "id": "baliza-pista-27", "asset": "baliza-pista", "x": 550, "y": 826, "h": 32, "factor": 0.78, "fps": 4, "phase": 1 }, { "id": "baliza-pista-28", "asset": "baliza-pista", "x": 1040, "y": 826, "h": 32, "factor": 0.78, "fps": 4, "phase": 2 }, { "id": "baliza-pista-29", "asset": "baliza-pista", "x": 1580, "y": 826, "h": 32, "factor": 0.78, "fps": 4, "phase": 3 }, { "id": "baliza-pista-30", "asset": "baliza-pista", "x": 2090, "y": 826, "h": 32, "factor": 0.78, "fps": 4, "phase": 4 }, { "id": "baliza-pista-31", "asset": "baliza-pista", "x": 2520, "y": 826, "h": 32, "factor": 0.78, "fps": 4, "phase": 5 }, { "id": "cone-servico-32", "asset": "cone-servico", "x": 50, "y": 826, "h": 67, "factor": 0.78 }, { "id": "cone-servico-33", "asset": "cone-servico", "x": 650, "y": 826, "h": 67, "factor": 0.78 }, { "id": "cone-servico-34", "asset": "cone-servico", "x": 1880, "y": 826, "h": 67, "factor": 0.78 }, { "id": "cone-servico-35", "asset": "cone-servico", "x": 2550, "y": 826, "h": 67, "factor": 0.78 }, { "id": "lixeira-36", "asset": "lixeira", "x": -10, "y": 826, "h": 104, "factor": 0.78 }], "ground": { "asset": "asfalto", "projection": "flat" }, "foreground": [{ "id": "faixa-pista-0", "asset": "faixa-pista", "x": 100, "y": 1018, "w": 230, "h": 11, "factor": 1, "opacity": 0.6 }, { "id": "faixa-pista-1", "asset": "faixa-pista", "x": 480, "y": 1018, "w": 230, "h": 11, "factor": 1, "opacity": 0.6 }, { "id": "faixa-pista-2", "asset": "faixa-pista", "x": 860, "y": 1018, "w": 230, "h": 11, "factor": 1, "opacity": 0.6 }, { "id": "faixa-pista-3", "asset": "faixa-pista", "x": 1240, "y": 1018, "w": 230, "h": 11, "factor": 1, "opacity": 0.6 }, { "id": "faixa-pista-4", "asset": "faixa-pista", "x": 1620, "y": 1018, "w": 230, "h": 11, "factor": 1, "opacity": 0.6 }, { "id": "faixa-pista-5", "asset": "faixa-pista", "x": 2e3, "y": 1018, "w": 230, "h": 11, "factor": 1, "opacity": 0.6 }, { "id": "faixa-pista-6", "asset": "faixa-pista", "x": 2380, "y": 1018, "w": 230, "h": 11, "factor": 1, "opacity": 0.6 }, { "id": "seta-pista-7", "asset": "seta-pista", "x": 1750, "y": 1055, "w": 250, "h": 40, "factor": 1, "opacity": 0.45 }, { "id": "aviao-executivo-8", "asset": "aviao-executivo", "x": 1989.3564862104188, "y": 885, "w": 1700, "h": 631.2053115423902, "factor": 1 }, { "id": "placa-embarque-22", "asset": "placa-embarque", "x": 1600, "y": 825, "h": 190, "factor": 1 }, { "id": "texto-embarque-23", "asset": "texto-embarque", "x": 1600, "y": 705, "w": 220, "h": 54, "factor": 1 }, { "id": "npc-fila-1-18", "asset": "npc-fila-1", "x": 700, "y": 825, "h": 218, "factor": 0.78, "fps": 4, "phase": 0 }, { "id": "npc-fila-2-19", "asset": "npc-fila-2", "x": 875, "y": 825, "h": 220, "factor": 0.78, "fps": 4, "phase": 1 }, { "id": "npc-torcedor-2-20", "asset": "npc-torcedor-2", "x": 1060, "y": 825, "h": 215, "factor": 0.78, "fps": 4, "phase": 3 }, { "id": "escada-embarque-14", "asset": "escada-embarque", "x": 2241.7735042735044, "y": 930, "w": 393.40585340585335, "h": 276.86221186221184, "factor": 1 }, { "id": "npc-equipe-pista-15", "asset": "npc-equipe-pista", "x": 1910, "y": 884, "h": 245, "factor": 1, "fps": 4 }, { "id": "papel-vento-16", "asset": "papel-vento", "x": 890, "y": 860, "w": 75, "h": 70, "factor": 1, "fps": 4, "opacity": 0.55 }, { "id": "poeira-17", "asset": "poeira", "x": 1400, "y": 881, "w": 420, "h": 36, "factor": 1, "fps": 4, "opacity": 0.1 }], "anchors": { "boarding": { "x": 2300, "y": 930, "range": 280 }, "door": { "x": 2420, "y": 730.4545454545455 }, "stairsTop": { "x": 2420, "y": 730.4545454545455 }, "stairsBase": { "x": 2147.117327117327, "y": 930 }, "planeWheels": { "y": 885 }, "attachments": [{ "asset": "biruta-vento", "support": "integral-mast", "frames": 6 }, { "asset": "poste-refletores", "support": "integral-pole" }, { "asset": "placa-embarque", "support": "integral-two-post-base" }] }, "assets": { "ceu-entardecer": { "path": "layers/ceu-entardecer.webp", "kind": "layer", "frames": 1, "bytes": 286514, "sha256": "b120ea191a8c82e671bf8f8895bbfb66257ccec988e63b3a45f9d5fa2d945a12", "origin": "generated", "source": "source/generated/ceu-entardecer.png", "sourceCrop": [0, 0, 1536, 1024], "sourceWidth": 1536, "sourceHeight": 1024, "width": 1920, "height": 1080, "alpha": false }, "asfalto": { "path": "ground/asfalto.webp", "kind": "ground", "frames": 1, "bytes": 382448, "sha256": "8025cc429881df63cf8df47e239a698844de803557988537bf65ba8e5f5363ef", "origin": "generated", "source": "source/generated/asfalto.png", "sourceCrop": [0, 360, 1536, 720], "sourceWidth": 1536, "sourceHeight": 1024, "width": 2600, "height": 610, "alpha": false }, "aviao-executivo": { "path": "props/aviao-executivo.webp", "kind": "prop", "frames": 1, "bytes": 365830, "sha256": "2b826a11189e4d74acedec15800d98214e5d9be580553be10876675a03a42bea", "origin": "generated", "source": "source/generated/aviao-executivo.png", "sourceCrop": [17, 33, 1975, 760], "sourceWidth": 1983, "sourceHeight": 793, "width": 1958, "height": 727, "alpha": true }, "escada-embarque": { "path": "props/escada-embarque.webp", "kind": "prop", "frames": 1, "bytes": 229790, "sha256": "cd503978b6bb4857021fb9896c1596e6fbfcd51ff01fdea10eec999f292ba239", "origin": "generated", "source": "source/generated/escada-embarque.png", "sourceCrop": [71, 38, 1455, 1012], "sourceWidth": 1536, "sourceHeight": 1024, "width": 1024, "height": 721, "alpha": true }, "terminal": { "path": "props/terminal.webp", "kind": "prop", "frames": 1, "bytes": 425426, "sha256": "b475f44f44c2e521482f5985967a2b6eb50b077c8e13b1507c43048b5dd98faf", "origin": "generated", "source": "source/generated/terminal.png", "sourceCrop": [33, 75, 2149, 656], "sourceWidth": 2172, "sourceHeight": 724, "width": 2048, "height": 562, "alpha": true }, "torre-controle": { "path": "props/torre-controle.webp", "kind": "prop", "frames": 1, "bytes": 145058, "sha256": "a50a3632b32ece083f384cbae03fb0528f746a0a810ed6f228fd064a72485b2a", "origin": "generated", "source": "source/generated/torre-controle.png", "sourceCrop": [546, 9, 975, 1015], "sourceWidth": 1536, "sourceHeight": 1024, "width": 429, "height": 1006, "alpha": true }, "hangar": { "path": "props/hangar.webp", "kind": "prop", "frames": 1, "bytes": 223580, "sha256": "96116712cf79fd329fd557eeabee98b6820cccfc9eaeafe367488a5af16c637e", "origin": "generated", "source": "source/generated/hangar.png", "sourceCrop": [23, 68, 2069, 701], "sourceWidth": 2095, "sourceHeight": 751, "width": 1200, "height": 371, "alpha": true }, "trator-bagagem": { "path": "props/trator-bagagem.webp", "kind": "prop", "frames": 1, "bytes": 112710, "sha256": "e45fc74601ffcd50275d3d2a55c19d6463e2fadfa6b74fbad11f2315dc9ddf3a", "origin": "generated", "source": "source/generated/trator-bagagem.png", "sourceCrop": [32, 104, 1739, 859], "sourceWidth": 1774, "sourceHeight": 887, "width": 768, "height": 340, "alpha": true }, "carreta-bagagem": { "path": "props/carreta-bagagem.webp", "kind": "prop", "frames": 1, "bytes": 73014, "sha256": "303d445c6c214a236bb80f31a71e22dd883324c7208e6009773e39aae6473977", "origin": "generated", "source": "source/generated/carreta-bagagem.png", "sourceCrop": [53, 154, 1949, 727], "sourceWidth": 1983, "sourceHeight": 793, "width": 768, "height": 232, "alpha": true }, "pilha-malas": { "path": "props/pilha-malas.webp", "kind": "prop", "frames": 1, "bytes": 113496, "sha256": "e789675b5b58dbefbd25ef663f58a8e55885f25b94dbcf0548730f652c4c921d", "origin": "generated", "source": "source/generated/pilha-malas.png", "sourceCrop": [37, 38, 1502, 989], "sourceWidth": 1536, "sourceHeight": 1024, "width": 600, "height": 389, "alpha": true }, "cerca-aeroporto": { "path": "props/cerca-aeroporto.webp", "kind": "prop", "frames": 1, "bytes": 212604, "sha256": "8fe3bba083c83b45209b851ed3aae69d0b3e796979303bf70d2a5698670a24a4", "origin": "generated", "source": "source/generated/cerca-aeroporto.png", "sourceCrop": [15, 12, 2006, 767], "sourceWidth": 2019, "sourceHeight": 779, "width": 1024, "height": 388, "alpha": true }, "poste-refletores": { "path": "props/poste-refletores.webp", "kind": "prop", "frames": 1, "bytes": 91010, "sha256": "649447129061e86c5a97652ec5b8261479afaed8833edbd993e99e4fcd75d6e8", "origin": "generated", "source": "source/generated/poste-refletores.png", "sourceCrop": [170, 46, 853, 1507], "sourceWidth": 1024, "sourceHeight": 1536, "width": 479, "height": 1024, "alpha": true }, "placa-embarque": { "path": "props/placa-embarque.webp", "kind": "prop", "frames": 1, "bytes": 142198, "sha256": "65f0bd7d49ce7460ad6644d29148b22ef6ab1fbb0fcd8e9ecb110cc3900d7803", "origin": "generated", "source": "source/generated/placa-embarque.png", "sourceCrop": [153, 80, 1382, 974], "sourceWidth": 1536, "sourceHeight": 1024, "width": 768, "height": 559, "alpha": true }, "npc-equipe-pista": { "path": "animations/npc-equipe-pista.webp", "kind": "animation", "frames": 6, "bytes": 346738, "sha256": "79e90b7c84751f89d228c00bd149cbf211df7b0584e2b7f7869503fde9f4d1da", "cellWidth": 500, "cellHeight": 500, "crop": [10, 24, 480, 457], "frameBounds": [[163, 24, 354, 481], [81, 26, 399, 481], [11, 25, 445, 480], [39, 26, 490, 481], [10, 26, 428, 480], [101, 25, 344, 481]], "frameHashes": ["ad1b86c74814314e0e6b5a94f290569e2061c611bdce7d20c58f0d09de077771", "deb039793cd1fb4c9222fd0d52a2fb830fb27095715030231628666c8de141ad", "2173241b0f9373427e49e084338a4fd51767d4e2bd9573e41e2127eb8d669fd8", "e81b335567b710845f95f92626a481075925d842e844634a4b7d9d0033ac574f", "0beffe534cd124c8400092d174475fef7f4e03c1009495863ee53a5645f0dc35", "08ee95dd573ee02c19065ad09af9258a806fc5d77b5a978acf87a630cd8fb3d8"], "registrations": [[0, 3], [0, 3], [0, 3], [0, 3], [0, 3], [0, 3]], "pivot": [250, 480], "fps": 4, "origin": "generated", "source": "source/generated/npc-equipe-pista.png", "width": 3e3, "height": 500, "alpha": true }, "npc-seguranca": { "path": "animations/npc-seguranca.webp", "kind": "animation", "frames": 6, "bytes": 260986, "sha256": "ad4421d5e389116bad23e17c8d764697eb7cb10175a429befbf1adc4a0bfdda1", "cellWidth": 500, "cellHeight": 500, "crop": [146, 18, 211, 463], "frameBounds": [[163, 18, 348, 481], [154, 19, 340, 481], [147, 20, 333, 481], [178, 21, 357, 481], [151, 19, 342, 481], [146, 19, 334, 481]], "frameHashes": ["b945a1acff4413d08d9e9371a6f30af89d13574978c0dbda15d4aeda435a4674", "04589b70e83b159a9a1f528d8f92cc76252c3bb471f2b2da18604631e5fcf9a2", "b075ab188f531e9881896ec4454677135f5077eda7dd255c9eb790d8911de65a", "8696ad19cb1944e9d07940b6bbb4c3c224276ffe86f1bc6abb058843d94e7cd4", "0e3ba5df7e69e302bbb4739923fae60def4d7d225e14db64d8c788f45e3df2ae", "b896b47d81dc9bf57f6e45b5111631ea1ffc02b6dfd802acca0c71764011a805"], "registrations": [[0, 1], [0, 2], [0, 2], [0, 2], [0, 2], [0, 2]], "pivot": [250, 480], "fps": 4, "origin": "generated", "source": "source/generated/npc-seguranca.png", "width": 3e3, "height": 500, "alpha": true }, "biruta-vento": { "path": "animations/biruta-vento.webp", "kind": "animation", "frames": 6, "bytes": 262838, "sha256": "f73fc7983d89a903a6bd766578aeb9d300f2d118b0a6e1746aba513b9bff4083", "cellWidth": 500, "cellHeight": 500, "crop": [54, 52, 414, 429], "frameBounds": [[57, 52, 462, 481], [56, 52, 464, 481], [54, 52, 468, 481], [58, 52, 466, 481], [56, 53, 464, 481], [54, 52, 463, 481]], "frameHashes": ["a9eb2385ceb20e82eb583722b3b94d217f701821daf14a48083178f838f02c1c", "0a894d98e4d49267bf451a809e815c8d27f521431785085f2834a222be50395f", "58ce2ad42d76b11dcc367c7d8ace272fbeb3701c7b796a0e16dcb7563d5f4ee3", "121132fd94cd14cbf6a8a59d96ba5958a06a1d0d2fee0cb6b7341e31cae0fed2", "15ada671e1c398d7c0c7d95e7ef23d9b682b455e52381bafc5f31c26df4634cb", "fe40ce82aa9b37f83fae760c40789b1380a6a0b74f16a0fffcdd0356a018744c"], "registrations": [[0, 11], [0, 11], [0, 11], [0, 11], [0, 11], [0, 10]], "pivot": [250, 480], "fps": 4, "origin": "generated", "source": "source/generated/biruta-vento.png", "width": 3e3, "height": 500, "alpha": true }, "baliza-pista": { "path": "fx/baliza-pista.webp", "kind": "fx", "frames": 6, "bytes": 365606, "sha256": "93f83af2a0bc7c6221b28cba1554fd059fc41b67dc11fa2cc44a6bbc5625eec7", "cellWidth": 500, "cellHeight": 500, "crop": [87, 44, 330, 437], "frameBounds": [[108, 44, 417, 480], [97, 44, 406, 480], [87, 45, 396, 481], [107, 44, 417, 481], [97, 44, 406, 481], [88, 44, 398, 481]], "frameHashes": ["15173a3c920d5287d73c7f8f788be1838368149b8fc300841917e016d69d25a8", "f9a1cd9e54cf2e0e4c76045dd21d157607f9428f7cf1206d6800194322342304", "6796bb358e1650350bd9e7478d6e3111124013498992cf5dd18b3e4f95955523", "78525fa05a044d9342e0a2df82ecf85826849634d209087418d812cfa2f937bf", "07d8785a36da6b19456a9b2cbee5e4b845afeb576c0d65dbb8dfb35b15380f00", "67e7d9f86c13a1d72ce1c5a764dbf7662116af923461aa60bb7be18e69583f59"], "registrations": [[0, 11], [0, 11], [0, 12], [0, 11], [0, 11], [0, 11]], "pivot": [250, 480], "fps": 4, "origin": "generated", "source": "source/generated/baliza-pista.png", "width": 3e3, "height": 500, "alpha": true }, "nuvem-1": { "path": "props/nuvem-1.webp", "kind": "prop", "frames": 1, "bytes": 29886, "sha256": "8e9afea0978685bc37aa9349e5fe397fd0d8e2f7caf1b4c5354aaf40ce8da81f", "origin": "reused-banheiros", "sourceManifest": "../banheiros/manifest.json", "sourceAsset": "nuvem-1", "sourceSha256": "8e9afea0978685bc37aa9349e5fe397fd0d8e2f7caf1b4c5354aaf40ce8da81f", "width": 512, "height": 127, "alpha": true }, "nuvem-2": { "path": "props/nuvem-2.webp", "kind": "prop", "frames": 1, "bytes": 31550, "sha256": "80ac3cb38a2cded085772c9f2d3a04e7a0b6b4481b9951f0ea986ea252977314", "origin": "reused-banheiros", "sourceManifest": "../banheiros/manifest.json", "sourceAsset": "nuvem-2", "sourceSha256": "80ac3cb38a2cded085772c9f2d3a04e7a0b6b4481b9951f0ea986ea252977314", "width": 512, "height": 132, "alpha": true }, "npc-fila-1": { "path": "animations/npc-fila-1.webp", "kind": "animation", "frames": 6, "bytes": 245820, "sha256": "59a2915a379ad0b6d7fa4d39e131d4c1a90880a497d352a0eca14208101adcc7", "origin": "reused-banheiros", "sourceManifest": "../banheiros/manifest.json", "sourceAsset": "npc-fila-1", "sourceSha256": "59a2915a379ad0b6d7fa4d39e131d4c1a90880a497d352a0eca14208101adcc7", "crop": [107, 18, 246, 456], "cellWidth": 500, "cellHeight": 500, "width": 3e3, "height": 500, "alpha": true }, "npc-fila-2": { "path": "animations/npc-fila-2.webp", "kind": "animation", "frames": 6, "bytes": 300174, "sha256": "db9509810978521b38e5042c6f242b8396858bbc14032724186e7b9cd802fd52", "origin": "reused-banheiros", "sourceManifest": "../banheiros/manifest.json", "sourceAsset": "npc-fila-2", "sourceSha256": "db9509810978521b38e5042c6f242b8396858bbc14032724186e7b9cd802fd52", "crop": [154, 10, 190, 479], "cellWidth": 500, "cellHeight": 500, "width": 3e3, "height": 500, "alpha": true }, "npc-torcedor-2": { "path": "animations/npc-torcedor-2.webp", "kind": "animation", "frames": 6, "bytes": 417326, "sha256": "bfbfc5ad65d4498b9f9261055d78845813b16b9ab0481b8f89d3084875e935fa", "origin": "reused-banheiros", "sourceManifest": "../banheiros/manifest.json", "sourceAsset": "npc-torcedor-2", "sourceSha256": "bfbfc5ad65d4498b9f9261055d78845813b16b9ab0481b8f89d3084875e935fa", "crop": [130, 10, 293, 481], "cellWidth": 500, "cellHeight": 500, "width": 3e3, "height": 500, "alpha": true }, "poeira": { "path": "fx/poeira.webp", "kind": "environment-fx", "frames": 6, "bytes": 167436, "sha256": "1b08083f7dcef6728954bab4ae6b1356a4aea77261126ab750a380d59505da22", "origin": "reused-banheiros", "sourceManifest": "../banheiros/manifest.json", "sourceAsset": "poeira", "sourceSha256": "1b08083f7dcef6728954bab4ae6b1356a4aea77261126ab750a380d59505da22", "crop": [65, 151, 378, 208], "cellWidth": 500, "cellHeight": 500, "width": 3e3, "height": 500, "alpha": true }, "papel-vento": { "path": "fx/papel-vento.webp", "kind": "fx", "frames": 6, "bytes": 246290, "sha256": "5e4809428bba9d4036138f5dc0e17509e40e88be35e0bf8b2424bfb8d5373d81", "origin": "reused-banheiros", "sourceManifest": "../banheiros/manifest.json", "sourceAsset": "papel-vento", "sourceSha256": "5e4809428bba9d4036138f5dc0e17509e40e88be35e0bf8b2424bfb8d5373d81", "crop": [61, 82, 349, 331], "cellWidth": 500, "cellHeight": 500, "fps": 5, "width": 3e3, "height": 500, "alpha": true }, "cone-servico": { "path": "props/cone-servico.webp", "kind": "prop", "frames": 1, "bytes": 63790, "sha256": "3d398276d1af40b206f40c100eba1c4ef1ff84000d81a11969425570b76c07d3", "origin": "reused-banheiros", "sourceManifest": "../banheiros/manifest.json", "sourceAsset": "cone-servico", "sourceSha256": "3d398276d1af40b206f40c100eba1c4ef1ff84000d81a11969425570b76c07d3", "width": 350, "height": 512, "alpha": true }, "lixeira": { "path": "props/lixeira.webp", "kind": "prop", "frames": 1, "bytes": 63690, "sha256": "be67abaa214ac5af7794d443e526b8d1d0afbc69fb03cba0eb8bb5ac303ec836", "origin": "reused-banheiros", "sourceManifest": "../banheiros/manifest.json", "sourceAsset": "lixeira", "sourceSha256": "be67abaa214ac5af7794d443e526b8d1d0afbc69fb03cba0eb8bb5ac303ec836", "width": 329, "height": 512, "alpha": true }, "nome-terminal": { "path": "graphics/nome-terminal.webp", "kind": "graphic", "frames": 1, "bytes": 4508, "sha256": "dba6db36dad16f60a6bf7801727b2b032c78b4df6e2d865a672aa68de6a01743", "origin": "typeset", "text": ["AEROPORTO"], "font": "ui/Bangers-Regular.ttf", "width": 1100, "height": 140, "alpha": true }, "texto-embarque": { "path": "graphics/texto-embarque.webp", "kind": "graphic", "frames": 1, "bytes": 6894, "sha256": "fa6c64f2b30b04f3ab4dba30bc0bf460486475ace3d5bfabeb494c60e619fa72", "origin": "typeset", "text": ["EMBARQUE  >"], "font": "ui/Bangers-Regular.ttf", "width": 640, "height": 160, "alpha": true }, "texto-restrito": { "path": "graphics/texto-restrito.webp", "kind": "graphic", "frames": 1, "bytes": 5388, "sha256": "ac15ac2438cbd1326a6c5c0cbeeab4301b2f4f0be980a5fb45c3e114acd174dc", "origin": "typeset", "text": ["\xC1REA RESTRITA"], "font": "ui/Bangers-Regular.ttf", "width": 640, "height": 160, "alpha": true }, "portao-04": { "path": "graphics/portao-04.webp", "kind": "graphic", "frames": 1, "bytes": 1568, "sha256": "155f88401350eafc75d3906179f1f4208a8b29d3dec47ffa064a42404119eef2", "origin": "typeset", "text": ["04"], "font": "ui/Bangers-Regular.ttf", "width": 140, "height": 160, "alpha": false }, "titulo": { "path": "ui/titulo.webp", "kind": "graphic", "frames": 1, "bytes": 7458, "sha256": "264797e0e407acc6fb4c3d82191f37769b333587e9a11ee511192755bd213147", "origin": "typeset", "text": ["AEROPORTO \u2014 A FUGA"], "font": "ui/Bangers-Regular.ttf", "width": 1200, "height": 150, "alpha": false }, "faixa-pista": { "path": "graphics/faixa-pista.webp", "kind": "graphic", "frames": 1, "bytes": 54, "sha256": "3321eee36d18e5ba2cb088cc8a5f20c57027887ef71f8a104fd0682b05df0e84", "origin": "code-native", "source": "source/faixa-pista.svg", "width": 400, "height": 28, "alpha": true }, "seta-pista": { "path": "graphics/seta-pista.webp", "kind": "graphic", "frames": 1, "bytes": 250, "sha256": "ed20ab79fed577ce8058a1354a1ff84d48b77356b55dd8bcba24fc2879b9c31d", "origin": "code-native", "source": "source/seta-pista.svg", "width": 400, "height": 120, "alpha": true }, "ambiente-pista": { "path": "audio/ambiente-pista.ogg", "kind": "audio", "frames": 1, "bytes": 152525, "sha256": "b82bb97766f61d448acc8602e52b986d1c3c5597c3d4f434fd693c2a4f95f39f", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "sinal-embarque": { "path": "audio/sinal-embarque.ogg", "kind": "audio", "frames": 1, "bytes": 16359, "sha256": "8ad78b11e18438349e95618ac2231360188ed0326bf6d077f8083d61b937acff", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "trilha-intro": { "path": "audio/trilha-intro.ogg", "kind": "audio", "frames": 1, "bytes": 35248, "sha256": "c25f2e13c8e2a62ae360811e975085730d39866d625b8e8596ba8d86ca26503d", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "trilha-loop": { "path": "audio/trilha-loop.ogg", "kind": "audio", "frames": 1, "bytes": 287373, "sha256": "956a14300182180d0ec9d2a38340d998098fd1f1b97b3a6072aaea9d1b84dd17", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "turbina-distante": { "path": "audio/turbina-distante.ogg", "kind": "audio", "frames": 1, "bytes": 151754, "sha256": "bd3b531f59c7e301ea6c418bbfbde6ddef1d40e96c342a1ec6164dd0e8f5c678", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "vento": { "path": "audio/vento.ogg", "kind": "audio", "frames": 1, "bytes": 153442, "sha256": "beb146caf187209b0dad133630fd62673e2dea4ec3220325431ea9b2f001c68b", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "miniatura": { "path": "ui/miniatura.webp", "kind": "image", "frames": 1, "bytes": 144368, "sha256": "35ab9dfafcdc9083ffa829280e5322c8635ca98c4a443fac6063f487bfedeedf", "origin": "derived-composition", "width": 960, "height": 540, "alpha": false }, "carregamento": { "path": "ui/carregamento.webp", "kind": "image", "frames": 1, "bytes": 528540, "sha256": "f6a86ded02b41bed319b00d6e92177afece921eb74553e9293bcf340ac423d1d", "origin": "derived-composition", "width": 1920, "height": 1080, "alpha": false } }, "missing": [], "notes": ["Cen\xE1rio do cap\xEDtulo 04: luta na pista ao entardecer, avi\xE3o atr\xE1s e escada no embarque.", "PNG masters and prompts retained, with one ImageGen call per distinct asset/six-frame sheet.", "Ground marks and lettering are editable code-native graphics, distinct from painted masters.", "FUGA rules, damage, stairsX and stairsRange are unchanged. Decorative props have no new collisions.", "Plane and stairs share factor1; source anchor registration is explicit in this exporter. Nose intentionally extends beyond right world boundary as in the existing airport staging.", "Staff, windsock and beacon use six independently drawn poses; reusable community NPCs follow the tour.", "No automatic airplane takeoff or arrest animation is claimed; victory narration remains in story.", "Original audio synthesis and measurements: audio/manifest.json."] };
+    for (const a of Object.values(pack.assets)) a.url ??= "../stages/aeroporto/" + a.path;
+    const original = [...pack.objects], front = [...pack.foreground];
+    const cv = document.querySelector("#stage"), ctx = cv.getContext("2d"), images = /* @__PURE__ */ new Map(), cards = [], errors = [];
+    let frame = 0, paused = false, cam = 340, last = performance.now(), solo = null;
+    const hero = new Image();
+    const heroURL = "../sprites/final/belga/parado.webp";
+    const hero2 = new Image();
+    const hero2URL = "../sprites/final/ryuchi/parado.webp";
+    if (heroURL) hero.src = heroURL;
+    if (hero2URL) hero2.src = hero2URL;
+    const controls = { camera: document.querySelector("#camera"), pause: document.querySelector("#pause"), feet: document.querySelector("#feet"), heroes: document.querySelector("#heroes"), reduce: document.querySelector("#reduce"), objects: document.querySelector("#objects"), fx: document.querySelector("#effects"), ground: document.querySelector("#ground"), boarding: document.querySelector("#boarding") };
+    function picture(c, a, img, x, y, w, h, at = controls.reduce.checked ? 0 : frame) {
+      const n = a.frames || 1, cw = a.cellWidth || img.width / n;
+      const [sx, sy, sw, sh] = a.crop || [0, 0, cw, img.height];
+      const scale = Math.min(w / sw, h / sh), f = n > 1 ? stageAnimationFrame(at, 5, n) : 0;
+      c.drawImage(img, sx + f * cw, sy, sw, sh, x + (w - sw * scale) / 2, y + (h - sh * scale) / 2, sw * scale, sh * scale);
+    }
+    function fighter(img, x, flip = false) {
+      if (!img.complete || !img.width) return;
+      ctx.save();
+      ctx.translate(x - cam, 930);
+      if (flip) ctx.scale(-1, 1);
+      ctx.fillStyle = "rgba(10,5,15,.30)";
+      ctx.beginPath();
+      ctx.ellipse(0, 4, 86, 16, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.drawImage(img, 0, 0, 500, 500, -250, -456, 500, 500);
+      ctx.restore();
+    }
+    function draw() {
+      ctx.clearRect(0, 0, 1920, 1080);
+      if (solo) {
+        ctx.fillStyle = "#28313b";
+        ctx.fillRect(0, 0, 1920, 1080);
+        const a = pack.assets[solo], im = images.get(solo);
+        if (im) picture(ctx, a, im, 150, 80, 1620, 900);
+      } else {
+        pack.objects = original.filter((o) => controls.objects.checked || pack.assets[o.asset].kind === "layer").filter((o) => controls.fx.checked || !(pack.assets[o.asset].path?.startsWith("fx/") || ["fx", "environment-fx"].includes(pack.assets[o.asset].kind)));
+        pack.foreground = controls.objects.checked ? front.filter((o) => controls.fx.checked || !(pack.assets[o.asset].path?.startsWith("fx/") || ["fx", "environment-fx"].includes(pack.assets[o.asset].kind))) : [];
+        const savedGround = pack.ground;
+        if (!controls.ground.checked) pack.ground = null;
+        drawStageArt(ctx, "aeroporto", cam, Math.floor(frame), { reducedEffects: controls.reduce.checked });
+        pack.ground = savedGround;
+        if (controls.heroes.checked) {
+          fighter(hero2, 950);
+          fighter(hero, 1650, true);
+        }
+        if (controls.boarding.checked) {
+          ctx.save();
+          ctx.translate(-cam, 0);
+          const anchors = pack.anchors || {}, range = FUGA.stairsRange, x = FUGA.stairsX;
+          ctx.fillStyle = "rgba(87,228,208,.14)";
+          ctx.fillRect(x - range, 902, range * 2, 54);
+          ctx.strokeStyle = "#57e4d0";
+          ctx.lineWidth = 3;
+          ctx.setLineDash([12, 8]);
+          ctx.strokeRect(x - range, 902, range * 2, 54);
+          ctx.setLineDash([]);
+          ctx.beginPath();
+          ctx.moveTo(x, 826);
+          ctx.lineTo(x, 950);
+          ctx.stroke();
+          ctx.font = "23px sans-serif";
+          ctx.fillStyle = "#57e4d0";
+          ctx.fillText("EMBARQUE \xB7 X=" + x + " \xB7 ALCANCE " + range, x - range, 890);
+          const point = (a) => Array.isArray(a) ? { x: a[0], y: a[1] } : a;
+          const door = point(anchors.door || anchors.porta), top = point(anchors.stairsTop || anchors["stairs-top"] || anchors.topoEscada), base = point(anchors.stairsBase || anchors["stairs-base"] || anchors.baseEscada);
+          if (door && top) {
+            ctx.strokeStyle = "#ffd76e";
+            ctx.beginPath();
+            ctx.moveTo(door.x, door.y);
+            ctx.lineTo(top.x, top.y);
+            if (base) ctx.lineTo(base.x, base.y);
+            ctx.stroke();
+          }
+          for (const [label, p] of [["PORTA", door], ["TOPO ESCADA", top], ["BASE ESCADA", base]]) if (p && Number.isFinite(p.x) && Number.isFinite(p.y)) {
+            ctx.strokeStyle = "#ffd76e";
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 8, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.fillStyle = "#ffd76e";
+            ctx.fillText(label, p.x - 140, p.y - 15);
+          }
+          ctx.restore();
+        }
+        if (controls.feet.checked) {
+          ctx.strokeStyle = "#57e4d0";
+          ctx.lineWidth = 3;
+          ctx.beginPath();
+          ctx.moveTo(0, 930);
+          ctx.lineTo(1920, 930);
+          ctx.stroke();
+          ctx.font = "24px sans-serif";
+          ctx.fillStyle = "#57e4d0";
+          ctx.fillText("P\xC9S Y=930", 25, 920);
+        }
+      }
+      document.querySelector("#frame").textContent = Math.floor(frame);
+      document.querySelector("#cameraValue").textContent = cam;
+      document.querySelector("#selected").textContent = solo || "Composi\xE7\xE3o completa";
+    }
+    controls.camera.oninput = () => {
+      cam = +controls.camera.value;
+      draw();
+    };
+    controls.pause.onclick = () => {
+      paused = !paused;
+      controls.pause.textContent = paused ? "Continuar" : "Pausar";
+    };
+    document.querySelector("#step").onclick = () => {
+      paused = true;
+      frame += 15;
+      controls.pause.textContent = "Continuar";
+      draw();
+    };
+    document.querySelector("#scene").onclick = () => {
+      solo = null;
+      draw();
+    };
+    document.querySelector("#download").onclick = () => {
+      draw();
+      const a = document.createElement("a");
+      a.download = "aeroporto-camera-" + cam + ".png";
+      a.href = cv.toDataURL();
+      a.click();
+    };
+    for (const el of Object.values(controls)) if (el.tagName === "INPUT" && el.type === "checkbox" || el.tagName === "SELECT") el.onchange = draw;
+    await Promise.all(Object.entries(pack.assets).filter(([, a]) => a.kind !== "audio").map(async ([id, a]) => {
+      const im = new Image();
+      im.src = a.url;
+      try {
+        await im.decode();
+        images.set(id, im);
+      } catch {
+        errors.push(id);
+        return;
+      }
+      const card = document.createElement("article"), label = document.createElement("h3"), canvas = document.createElement("canvas"), button = document.createElement("button"), link = document.createElement("a"), small = document.createElement("p");
+      canvas.width = 240;
+      canvas.height = 180;
+      label.textContent = id;
+      small.textContent = (a.frames || 1) + " quadro(s) \xB7 " + (a.origin || a.kind);
+      button.textContent = "Ver isolado";
+      button.onclick = () => {
+        solo = id;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        draw();
+      };
+      link.textContent = "Baixar arquivo";
+      link.href = a.url;
+      link.download = id + "." + a.path.split(".").pop();
+      card.append(canvas, label, small, button, link);
+      document.querySelector("#gallery").append(card);
+      cards.push({ canvas, a, im });
+    }));
+    await loadStageArt({ aeroporto: pack });
+    await Promise.allSettled([...heroURL ? [hero.decode()] : [], ...hero2URL ? [hero2.decode()] : []]);
+    document.querySelector("#status").textContent = Object.keys(pack.assets).length + " assets \xB7 " + images.size + " imagens carregadas \xB7 " + (stageArtStatus("aeroporto").ready ? "cen\xE1rio pronto" : "falha de carga") + (errors.length ? " \xB7 falhas: " + errors.join(", ") : "");
+    for (const [id, a] of Object.entries(pack.assets).filter(([, a2]) => a2.kind === "audio")) {
+      const label = document.createElement("label"), audio = document.createElement("audio");
+      label.textContent = id;
+      audio.controls = true;
+      audio.src = a.url;
+      audio.loop = id !== "trilha-intro";
+      document.querySelector("#audio").append(label, audio);
+    }
+    let galleryTick = 0;
+    function loop(now) {
+      if (!paused) frame += Math.min(100, now - last) * 0.06;
+      last = now;
+      draw();
+      if (now - galleryTick > 180) {
+        galleryTick = now;
+        for (const { canvas, a, im } of cards) {
+          const c = canvas.getContext("2d");
+          c.clearRect(0, 0, 240, 180);
+          picture(c, a, im, 5, 5, 230, 170);
+        }
+      }
+      requestAnimationFrame(loop);
+    }
+    window.aeroportoPreview = { pack, status: () => stageArtStatus("aeroporto"), setFrame: (n) => {
+      paused = true;
+      frame = Math.max(0, n);
+      draw();
+    }, setCamera: (n) => {
+      cam = Math.max(0, Math.min(680, n));
+      controls.camera.value = cam;
+      draw();
+    }, showScene: () => {
+      solo = null;
+      draw();
+    }, setBoarding: (active) => {
+      controls.boarding.checked = !!active;
+      solo = null;
+      draw();
+    }, errors };
+    document.body.dataset.ready = "true";
+    requestAnimationFrame(loop);
+  })();
+})();
+</script></html>
