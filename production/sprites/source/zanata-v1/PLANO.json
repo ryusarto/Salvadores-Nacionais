@@ -1,0 +1,532 @@
+{
+  "character": "zanata",
+  "version": 1,
+  "frames": 6,
+  "sourceSize": [
+    1536,
+    1024
+  ],
+  "cell": 500,
+  "foot": [
+    250,
+    456
+  ],
+  "views": [
+    "direita",
+    "esquerda"
+  ],
+  "animations": [
+    {
+      "name": "parado",
+      "action": "guarded idle breathing: ready; inhale chest lifts; shoulders rise; exhale bent front knee; settle hair; recover ready",
+      "effect": false
+    },
+    {
+      "name": "andar",
+      "action": "forward WALK cycle: front heel contacts; transfer weight; rear leg passes; opposite heel contacts; transfer weight; feet pass back to start. Face fixed toward opponent, never change body scale",
+      "effect": false
+    },
+    {
+      "name": "andar-tras",
+      "action": "backward WALK with guard maintained: rear toe reaches back; load rear leg; front foot slides; other rear step; transfer weight; finish a cautious backward step. Never turn away",
+      "effect": false
+    },
+    {
+      "name": "correr",
+      "action": "forward RUN cycle: rear-leg push; long airborne stride; front-foot landing; knee compresses; opposite-leg drive; opposite airborne stride. Lean forward and hold whip handle safely",
+      "effect": false
+    },
+    {
+      "name": "agachar",
+      "action": "crouch transition: knees unlock; hips lower; deep fighting crouch; guarded deep crouch with front hand raised; slight protective torso turn; hold low balanced crouch. Do not stand back up",
+      "effect": false
+    },
+    {
+      "name": "pulo",
+      "action": "JUMP arc poses with no painted vertical travel: deep takeoff; rising knees tucked; ascent; apex open guarded pose; descent with front knee forward; feet extend for landing. Engine positions her in the air",
+      "effect": false
+    },
+    {
+      "name": "recuo",
+      "action": "BACKDASH evasion: lean away; rear foot drives; body pulls backward; knees tuck in a small backward hop; rear toe lands; guard recovers",
+      "effect": false
+    },
+    {
+      "name": "escape-agarrao",
+      "action": "throw escape: open guarded hands; opponent imaginary wrist parry; twist shoulders away; wrench hand free; push opponent away with palm; restore guard. Draw only Zanata, no second body",
+      "effect": false
+    },
+    {
+      "name": "recuperacao-rolamento",
+      "action": "ground recovery roll: curl from side lying; tuck knees and head; shoulders contact ground; hips roll over shoulder; plant one boot and palm; rise into crouch. Actual different body rotations, no silhouette spinning trick",
+      "effect": false
+    },
+    {
+      "name": "defesa-em-pe",
+      "action": "standing block: front forearm lifts; both forearms brace; absorb impact at face height; torso compresses behind arms; release tension; maintain defended stance",
+      "effect": false
+    },
+    {
+      "name": "defesa-agachado",
+      "action": "crouching block: lower guarded knees; front forearm covers ribs; both arms protect low torso; absorb low impact; shift balance; hold compact low guard",
+      "effect": false
+    },
+    {
+      "name": "defesa-no-ar",
+      "action": "air block: knees lift; both arms brace forehead; airborne torso curls defensively; absorb impact; recoil slightly; open for landing. No ground",
+      "effect": false
+    },
+    {
+      "name": "dano-alto",
+      "action": "standing high hit reaction: flinch cheek; shoulders snap back; strong torso recoil with hair following; knees buckle; recover balance; regain wounded guard. No blood or injury",
+      "effect": false
+    },
+    {
+      "name": "dano-baixo",
+      "action": "low/body hit reaction: flinch abdomen; double slightly at waist; knees bend and arms close; one foot braces; shoulders lift; regain guarded crouch. No blood",
+      "effect": false
+    },
+    {
+      "name": "dano-no-ar",
+      "action": "air hit reaction: torso recoils upward; back arches; floating backward body; hips turn during fall; legs extend downward; sideways falling pose. Draw six actual anatomical phases, no blood",
+      "effect": false
+    },
+    {
+      "name": "caido",
+      "action": "knockdown landing: hand and hip approach ground; hip impacts; body rolls onto side; legs settle; hair settles; lie fully knocked down on side. Draw a recognizable body lying horizontally, not standing rotated by software",
+      "effect": false
+    },
+    {
+      "name": "levantar",
+      "action": "get-up: lying side start; elbow supports torso; palm plants; knee comes under hip; rise from one knee; stand in guard. Keep character proportions, do not enlarge the low poses",
+      "effect": false
+    },
+    {
+      "name": "tonto",
+      "action": "dizzy/crumple: wavering guard; head and shoulders sway left; knees buckle; shoulders sway right; hand near temple; drooping unsteady guard. Crown remains attached, no baked stars",
+      "effect": false
+    },
+    {
+      "name": "vitoria",
+      "action": "victory: guarded start; confident half-smile; lower whip handle; plant boot and straighten; raise free palm triumphantly; confident final champion pose",
+      "effect": false
+    },
+    {
+      "name": "golpe-5L",
+      "action": "quick close-range front palm jab at upper chest height: ready; wind up elbow; thrust palm; FULL CONTACT extended palm; follow through; retract to guard",
+      "effect": false,
+      "key": "5L",
+      "timing": {
+        "total": 15,
+        "hits": [
+          {
+            "from": 5,
+            "to": 7
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-5M",
+      "action": "Estalo medium whip strike at chest height: guarded handle; right elbow winds back; shoulder rotates; CONTACT right hand points sharply forward holding handle, no extended cord; follow-through wrist rotates; recoil and ready",
+      "effect": false,
+      "key": "5M",
+      "timing": {
+        "total": 33,
+        "hits": [
+          {
+            "from": 11,
+            "to": 14
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-5H",
+      "action": "Chibatada strong horizontal whip: weight shifts to rear leg; shoulder and right hand wind far back; torso turns; CONTACT strong forward right-arm whip-handle extension; broad torso follow-through; recover. Cord rendered separately",
+      "effect": false,
+      "key": "5H",
+      "timing": {
+        "total": 46,
+        "hits": [
+          {
+            "from": 16,
+            "to": 19
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-2L",
+      "action": "low jab/kick from crouch: compact crouch; front knee chambers; front boot extends LOW; CONTACT low toe kick; knee retracts; recover crouch",
+      "effect": false,
+      "key": "2L",
+      "timing": {
+        "total": 17,
+        "hits": [
+          {
+            "from": 6,
+            "to": 8
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-2M",
+      "action": "Estalo Baixo crouching whip snap: low ready; right arm winds behind hip; lower shoulder rotates; CONTACT handle thrust low forward at shin height; wrist follows through; guarded crouch. Cord separate",
+      "effect": false,
+      "key": "2M",
+      "timing": {
+        "total": 35,
+        "hits": [
+          {
+            "from": 12,
+            "to": 15
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-2H",
+      "action": "Gancho crouching uppercut launcher: crouch; rear fist chambers by waist; hips drive up; CONTACT rising fist above face; full rising torso follow-through; recover standing guard. Whip handle stays secured",
+      "effect": false,
+      "key": "2H",
+      "timing": {
+        "total": 38,
+        "hits": [
+          {
+            "from": 9,
+            "to": 14
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-3H",
+      "action": "sweeping low kick: crouch; pivot on rear foot; front leg unfolds near ground; CONTACT long low sweeping front leg; leg completes arc; crouched recovery",
+      "effect": false,
+      "key": "3H",
+      "timing": {
+        "total": 40,
+        "hits": [
+          {
+            "from": 11,
+            "to": 14
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-6M",
+      "action": "overhead close strike: guard; free arm raised above head; step forward; CONTACT descending palm across upper face height; torso follows downward; guard recovery",
+      "effect": false,
+      "key": "6M",
+      "timing": {
+        "total": 40,
+        "hits": [
+          {
+            "from": 21,
+            "to": 23
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-jL",
+      "action": "air light palm jab: airborne tucked legs; elbow chambers; palm begins thrust; CONTACT short aerial jab; arm retracts; airborne guard",
+      "effect": false,
+      "key": "jL",
+      "timing": {
+        "total": 17,
+        "hits": [
+          {
+            "from": 5,
+            "to": 13
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-jM",
+      "action": "air medium side kick: airborne guard; front knee chambers; hip opens; CONTACT front boot extends horizontally at waist height; kick follows; knee retracts",
+      "effect": false,
+      "key": "jM",
+      "timing": {
+        "total": 18,
+        "hits": [
+          {
+            "from": 7,
+            "to": 13
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-jH",
+      "action": "air heavy descending heel: airborne tucked pose; lead knee raises high; hip turns; CONTACT heel drives downward diagonally; full leg follow-through; airborne recovery",
+      "effect": false,
+      "key": "jH",
+      "timing": {
+        "total": 20,
+        "hits": [
+          {
+            "from": 9,
+            "to": 14
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-throw",
+      "action": "close throw: reach with free palm; grapple imaginary opponent with both arms; grip and pivot hips; CONTACT throw release across shoulder; arms follow release; regain guard. Only Zanata, no victim drawn",
+      "effect": false,
+      "key": "throw",
+      "timing": {
+        "total": 31,
+        "hits": [
+          {
+            "from": 6,
+            "to": 8
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-blindado",
+      "action": "armored forward palm/shoulder strike: firm planted guard; low braced shoulder; drive front boot forward; CONTACT shoulder and palm forward; powerful torso follow-through; guarded recovery. No baked armor glow",
+      "effect": false,
+      "key": "blindado",
+      "timing": {
+        "total": 62,
+        "hits": [
+          {
+            "from": 27,
+            "to": 30
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-5S",
+      "action": "Chicotada very long whip: stance; exaggerated right-arm backswing; wrist prepares snap; CONTACT handle fully projected toward opponent at chest height; wrist rolls down and shoulder follows; collect arm back. Do not paint the long whip cord or sparks in the body sheet",
+      "effect": false,
+      "key": "5S",
+      "timing": {
+        "total": 53,
+        "hits": [
+          {
+            "from": 19,
+            "to": 23
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-6S",
+      "action": "Laço whip capture and pull: ready; right hand circles overhead with handle; aim outward; CONTACT right hand extends to catch opponent; second contact PULL elbow sharply back toward chest; finish leaning back in guard. Long whip loop drawn separately",
+      "effect": false,
+      "key": "6S",
+      "timing": {
+        "total": 50,
+        "hits": [
+          {
+            "from": 21,
+            "to": 24
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-2S",
+      "action": "Chicote Rasteiro: lower stance; right hand coils behind hip; handle descends near ground; CONTACT strong horizontal low sweep directed forward; sweep follows across body; crouch recovery. Long cord separate",
+      "effect": false,
+      "key": "2S",
+      "timing": {
+        "total": 51,
+        "hits": [
+          {
+            "from": 17,
+            "to": 21
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-4S",
+      "action": "Salto Agulha anti-air heel: compressed takeoff; bent knee rising; hip rotates; CONTACT pointed front heel kicks steeply upward above head; leg sweeps through; knee retracts for landing. Full body visible",
+      "effect": false,
+      "key": "4S",
+      "timing": {
+        "total": 44,
+        "hits": [
+          {
+            "from": 6,
+            "to": 14
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-SA1",
+      "action": "Tempestade de Chicote FIVE successive snap directions compressed into six art phases: preparatory shoulder coil; high whip-handle snap; LOW snap contact with bent knees; HIGH snap contact and torso turn; final LOW-to-HIGH powerful snap; recovering arm. Every frame visibly different. Cords and impact bursts separate",
+      "effect": false,
+      "key": "SA1",
+      "timing": {
+        "total": 69,
+        "hits": [
+          {
+            "from": 10,
+            "to": 12
+          },
+          {
+            "from": 15,
+            "to": 17
+          },
+          {
+            "from": 20,
+            "to": 22
+          },
+          {
+            "from": 25,
+            "to": 27
+          },
+          {
+            "from": 30,
+            "to": 32
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-SA3",
+      "action": "Intimação TWO-STAGE super: threatening guard and raised palm; right-hand whip-handle wind-up; long CATCH CONTACT reaching toward opponent; REEL opponent toward body with bent right elbow; FINAL CONTACT powerful rising free-palm strike at close range; commanding recovery pose. Cord, decree imagery and sparks separate",
+      "effect": false,
+      "key": "SA3",
+      "timing": {
+        "total": 66,
+        "hits": [
+          {
+            "from": 13,
+            "to": 16
+          },
+          {
+            "from": 40,
+            "to": 44
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-5S-turbo",
+      "action": "Chicotada very long whip: stance; exaggerated right-arm backswing; wrist prepares snap; CONTACT handle fully projected toward opponent at chest height; wrist rolls down and shoulder follows; collect arm back. Do not paint the long whip cord or sparks in the body sheet TURBO VERSION: larger windup and faster forceful secondary arm snap; use strong two-contact pose in frames 4 and 5, still preserve anatomy and outfit. No baked glow.",
+      "effect": false,
+      "key": "5S",
+      "turbo": true,
+      "timing": {
+        "total": 53,
+        "hits": [
+          {
+            "from": 15,
+            "to": 18
+          },
+          {
+            "from": 27,
+            "to": 30
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-6S-turbo",
+      "action": "Laço whip capture and pull: ready; right hand circles overhead with handle; aim outward; CONTACT right hand extends to catch opponent; second contact PULL elbow sharply back toward chest; finish leaning back in guard. Long whip loop drawn separately TURBO VERSION: larger windup and faster forceful secondary arm snap; use strong two-contact pose in frames 4 and 5, still preserve anatomy and outfit. No baked glow.",
+      "effect": false,
+      "key": "6S",
+      "turbo": true,
+      "timing": {
+        "total": 45,
+        "hits": [
+          {
+            "from": 16,
+            "to": 19
+          }
+        ]
+      }
+    },
+    {
+      "name": "golpe-2S-turbo",
+      "action": "Chicote Rasteiro: lower stance; right hand coils behind hip; handle descends near ground; CONTACT strong horizontal low sweep directed forward; sweep follows across body; crouch recovery. Long cord separate TURBO VERSION: larger windup and faster forceful secondary arm snap; use strong two-contact pose in frames 4 and 5, still preserve anatomy and outfit. No baked glow.",
+      "effect": false,
+      "key": "2S",
+      "turbo": true,
+      "timing": {
+        "total": 47,
+        "hits": [
+          {
+            "from": 13,
+            "to": 17
+          }
+        ]
+      }
+    },
+    {
+      "name": "fx-estalo",
+      "action": "isolated whip tip CRACK spark animation: tiny amber contact streak; sharp ivory star opens; long fine golden crack; hot white center; fragments drift outward; sparse fading embers. No body, no hand",
+      "effect": true
+    },
+    {
+      "name": "fx-laco",
+      "action": "isolated braided dark-brown leather WHIP LOOP opening toward screen direction: tight open loop; expanding oval; wide catching loop; loop cinches; braided cord pulls taut backward; tail recoils. Keep actual leather strand readable, not energy weapon",
+      "effect": true
+    },
+    {
+      "name": "fx-varredura",
+      "action": "isolated ground-height whip sweep with small gold dust: narrow start; flat sweeping crescent; long very low braided-leather streak; ground contact golden scrape; trailing dust; sparse settling fragments. No floor plane",
+      "effect": true
+    },
+    {
+      "name": "fx-agulha",
+      "action": "isolated steep upward diagonal ivory-gold attack trail for a rising heel: small lower spark; vertical taper; long ascending hooked slash; bright sharp tip; short falling particles; fading narrow streak. No leg or body",
+      "effect": true
+    },
+    {
+      "name": "fx-tempestade",
+      "action": "isolated whip-storm slash cluster: one amber arc; alternating high and low arcs; crossing braided-leather streaks and ivory sparks; dense but see-through multi-snap crescents; final rising crack; dwindling sparks. No body",
+      "effect": true
+    },
+    {
+      "name": "fx-intimacao",
+      "action": "isolated satirical magical decree seal for super: small golden circular seal; amber ring opens; angular parchment-like light frame; bright ring collapses inward; sharp ivory impact and broken gold ring; scattering fragments. No letters, no text, no readable words",
+      "effect": true
+    },
+    {
+      "name": "fx-furia",
+      "action": "isolated open oval burgundy-red and gold FURY aura: sparse rising embers; slim licking energy edges; pronounced two-side flare; brightest open halo with transparent center; flame tips settle; sparse loop-closing embers. No body, no filled silhouette, keep center fully transparent",
+      "effect": true
+    },
+    {
+      "name": "fx-impacto",
+      "action": "isolated strike impact: tiny white point; compact ivory star; broad pointed golden burst; irregular gold fragments; scattered small warm shards; last sparse particles. No body",
+      "effect": true
+    },
+    {
+      "name": "fx-defesa",
+      "action": "isolated defensive shield impact: small pale blue ring; wider blue-white arc; broad transparent blue semicircle facing opponent; compressed bright edge; broken blue sparks; sparse blue dust. Center transparent",
+      "effect": true
+    },
+    {
+      "name": "fx-poeira",
+      "action": "isolated boot landing dust: compact warm gray puff; two low side curls; expanding thin beige ground dust; lower wider broken cloud; sparse separated flecks; almost dissipated flecks. No body, no painted floor or shadow",
+      "effect": true
+    },
+    {
+      "name": "fx-armadura",
+      "action": "isolated armored-hit effect: compact amber hexagonal ring; thicker golden edge; bright shield crack at front; scattering angular gold chips; thin broken ring; last gold particles. Transparent center, no body",
+      "effect": true
+    },
+    {
+      "name": "fx-puxao",
+      "action": "isolated horizontal pull wind trail toward character: three fine ivory streaks; longer inward-curving gold lines; compressed inward swirl; strongest converging whip-energy lines; thin stretched tail; sparse fading motes. No body or opponent",
+      "effect": true
+    }
+  ]
+}
