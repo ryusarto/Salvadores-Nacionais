@@ -1,8 +1,8 @@
 {
   "id": "banheiros",
-  "version": 1,
-  "status": "delivered-v1",
-  "groups": 69,
+  "version": 2,
+  "status": "delivered-v2",
+  "groups": 70,
   "world": {
     "width": 2600,
     "height": 1080,
@@ -175,7 +175,31 @@
       "opacity": 0.12
     },
     {
-      "id": "banheiro-azul-15",
+      "id": "mastro-banheiros-0",
+      "asset": "mastro-bandeirolas",
+      "x": 250,
+      "y": 826,
+      "h": 720,
+      "factor": 0.68
+    },
+    {
+      "id": "mastro-banheiros-1",
+      "asset": "mastro-bandeirolas",
+      "x": 1050,
+      "y": 826,
+      "h": 720,
+      "factor": 0.68
+    },
+    {
+      "id": "mastro-banheiros-2",
+      "asset": "mastro-bandeirolas",
+      "x": 1850,
+      "y": 826,
+      "h": 720,
+      "factor": 0.68
+    },
+    {
+      "id": "banheiro-azul-18",
       "asset": "banheiro-azul",
       "x": 710,
       "y": 823,
@@ -184,7 +208,7 @@
       "factor": 0.68
     },
     {
-      "id": "banheiro-verde-16",
+      "id": "banheiro-verde-19",
       "asset": "banheiro-verde",
       "x": 970,
       "y": 823,
@@ -193,7 +217,7 @@
       "factor": 0.68
     },
     {
-      "id": "banheiro-azul-17",
+      "id": "banheiro-azul-20",
       "asset": "banheiro-azul",
       "x": 1230,
       "y": 823,
@@ -202,7 +226,7 @@
       "factor": 0.68
     },
     {
-      "id": "banheiro-verde-18",
+      "id": "banheiro-verde-21",
       "asset": "banheiro-verde",
       "x": 1490,
       "y": 823,
@@ -211,7 +235,7 @@
       "factor": 0.68
     },
     {
-      "id": "banheiro-acessivel-19",
+      "id": "banheiro-acessivel-22",
       "asset": "banheiro-acessivel",
       "x": 1810,
       "y": 823,
@@ -220,7 +244,7 @@
       "factor": 0.68
     },
     {
-      "id": "aviso-banheiros-20",
+      "id": "aviso-banheiros-23",
       "asset": "aviso-banheiros",
       "x": 690,
       "y": 548,
@@ -229,7 +253,7 @@
       "factor": 0.68
     },
     {
-      "id": "aviso-banheiros-21",
+      "id": "aviso-banheiros-24",
       "asset": "aviso-banheiros",
       "x": 950,
       "y": 551,
@@ -238,7 +262,7 @@
       "factor": 0.68
     },
     {
-      "id": "aviso-banheiros-22",
+      "id": "aviso-banheiros-25",
       "asset": "aviso-banheiros",
       "x": 1210,
       "y": 548,
@@ -247,7 +271,7 @@
       "factor": 0.68
     },
     {
-      "id": "aviso-banheiros-23",
+      "id": "aviso-banheiros-26",
       "asset": "aviso-banheiros",
       "x": 1470,
       "y": 551,
@@ -256,7 +280,7 @@
       "factor": 0.68
     },
     {
-      "id": "aviso-acessivel-24",
+      "id": "aviso-acessivel-27",
       "asset": "aviso-acessivel",
       "x": 1790,
       "y": 556,
@@ -265,7 +289,7 @@
       "factor": 0.68
     },
     {
-      "id": "tenda-servico-25",
+      "id": "tenda-servico-28",
       "asset": "tenda-servico",
       "x": 2200,
       "y": 824,
@@ -274,7 +298,7 @@
       "factor": 0.68
     },
     {
-      "id": "bancada-tecnica-26",
+      "id": "bancada-tecnica-29",
       "asset": "bancada-tecnica",
       "x": 2200,
       "y": 823,
@@ -282,7 +306,7 @@
       "factor": 0.68
     },
     {
-      "id": "documentos-27",
+      "id": "documentos-30",
       "asset": "documentos",
       "x": 2135,
       "y": 688,
@@ -290,7 +314,7 @@
       "factor": 0.68
     },
     {
-      "id": "prancheta-28",
+      "id": "prancheta-31",
       "asset": "prancheta",
       "x": 2260,
       "y": 689,
@@ -298,7 +322,7 @@
       "factor": 0.68
     },
     {
-      "id": "carimbo-fiscal-29",
+      "id": "carimbo-fiscal-32",
       "asset": "carimbo-fiscal",
       "x": 2310,
       "y": 690,
@@ -307,7 +331,7 @@
       "factor": 0.68
     },
     {
-      "id": "placa-pedestal-30",
+      "id": "placa-pedestal-33",
       "asset": "placa-pedestal",
       "x": 2150,
       "y": 824,
@@ -315,7 +339,7 @@
       "factor": 0.68
     },
     {
-      "id": "aviso-decreto-31",
+      "id": "aviso-decreto-34",
       "asset": "aviso-decreto",
       "x": 2150,
       "y": 681,
@@ -324,7 +348,7 @@
       "factor": 0.68
     },
     {
-      "id": "reservatorio-32",
+      "id": "reservatorio-35",
       "asset": "reservatorio",
       "x": 135,
       "y": 824,
@@ -332,7 +356,7 @@
       "factor": 0.68
     },
     {
-      "id": "mangueira-33",
+      "id": "mangueira-36",
       "asset": "mangueira",
       "x": 220,
       "y": 825,
@@ -340,7 +364,7 @@
       "factor": 0.68
     },
     {
-      "id": "lavatorio-34",
+      "id": "lavatorio-37",
       "asset": "lavatorio",
       "x": 300,
       "y": 824,
@@ -348,7 +372,7 @@
       "factor": 0.68
     },
     {
-      "id": "rolo-papel-35",
+      "id": "rolo-papel-38",
       "asset": "rolo-papel",
       "x": 490,
       "y": 824,
@@ -356,7 +380,7 @@
       "factor": 0.68
     },
     {
-      "id": "placa-pedestal-36",
+      "id": "placa-pedestal-39",
       "asset": "placa-pedestal",
       "x": 520,
       "y": 824,
@@ -364,7 +388,7 @@
       "factor": 0.68
     },
     {
-      "id": "aviso-bem-vindos-37",
+      "id": "aviso-bem-vindos-40",
       "asset": "aviso-bem-vindos",
       "x": 520,
       "y": 681,
@@ -373,7 +397,7 @@
       "factor": 0.68
     },
     {
-      "id": "aviso-agua-38",
+      "id": "aviso-agua-41",
       "asset": "aviso-agua",
       "x": 295,
       "y": 676,
@@ -382,7 +406,7 @@
       "factor": 0.68
     },
     {
-      "id": "lixeira-39",
+      "id": "lixeira-42",
       "asset": "lixeira",
       "x": 605,
       "y": 825,
@@ -390,7 +414,7 @@
       "factor": 0.68
     },
     {
-      "id": "lixeira-40",
+      "id": "lixeira-43",
       "asset": "lixeira",
       "x": 2020,
       "y": 825,
@@ -398,34 +422,117 @@
       "factor": 0.68
     },
     {
-      "id": "bandeirolas-1-41",
+      "id": "bandeirolas-1-suspended-44",
       "asset": "bandeirolas-1",
-      "x": 340,
-      "y": 395,
-      "w": 490,
-      "factor": 0.78
-    },
-    {
-      "id": "bandeirolas-vento-42",
-      "asset": "bandeirolas-vento",
-      "x": 1320,
-      "y": 355,
-      "w": 780,
-      "factor": 0.78,
-      "fps": 4
-    },
-    {
-      "id": "bandeira-trans-vento-43",
-      "asset": "bandeira-trans-vento",
-      "x": 560,
-      "y": 522,
-      "w": 190,
-      "h": 120,
+      "x": 651.3917224257743,
+      "y": 349.7598999104546,
+      "w": 641.0831145421059,
+      "h": 188.31816489674364,
       "factor": 0.68,
-      "fps": 4
+      "suspension": {
+        "anchors": [
+          {
+            "objectId": "mastro-banheiros-0",
+            "uv": [
+              0.9013806706114399,
+              0.09926224010731052
+            ],
+            "sprite": [
+              29,
+              198
+            ]
+          },
+          {
+            "objectId": "mastro-banheiros-1",
+            "uv": [
+              0.10453648915187377,
+              0.09926224010731052
+            ],
+            "sprite": [
+              482,
+              198
+            ]
+          }
+        ],
+        "tolerance": 8
+      }
     },
     {
-      "id": "poste-44",
+      "id": "bandeirolas-vento-suspended-45",
+      "asset": "bandeirolas-vento",
+      "x": 1450.7239275147929,
+      "y": 376.7189088888704,
+      "w": 634.1097946062814,
+      "h": 212.33951837733278,
+      "factor": 0.68,
+      "fps": 4,
+      "suspension": {
+        "anchors": [
+          {
+            "objectId": "mastro-banheiros-1",
+            "uv": [
+              0.9013806706114399,
+              0.09926224010731052
+            ],
+            "sprite": [
+              42,
+              343
+            ]
+          },
+          {
+            "objectId": "mastro-banheiros-2",
+            "uv": [
+              0.10453648915187377,
+              0.09926224010731052
+            ],
+            "sprite": [
+              458,
+              343
+            ]
+          }
+        ],
+        "tolerance": 8
+      }
+    },
+    {
+      "id": "bandeira-trans-vento-suspended-46",
+      "asset": "bandeira-trans-vento",
+      "x": 1051.9334672830987,
+      "y": 317.77542600073104,
+      "w": 210.94373559252344,
+      "h": 152.88582671384725,
+      "factor": 0.68,
+      "fps": 4,
+      "suspension": {
+        "anchors": [
+          {
+            "objectId": "mastro-banheiros-1",
+            "uv": [
+              0.10453648915187377,
+              0.09926224010731052
+            ],
+            "sprite": [
+              45,
+              120
+            ]
+          },
+          {
+            "objectId": "mastro-banheiros-1",
+            "uv": [
+              0.9013806706114399,
+              0.09926224010731052
+            ],
+            "sprite": [
+              448,
+              120
+            ]
+          }
+        ],
+        "tolerance": 8
+      }
+    },
+    {
+      "id": "poste-47",
       "asset": "poste",
       "x": 65,
       "y": 826,
@@ -433,7 +540,7 @@
       "factor": 0.78
     },
     {
-      "id": "halo-poste-45",
+      "id": "halo-poste-48",
       "asset": "halo-poste",
       "x": 65,
       "y": 480,
@@ -443,7 +550,7 @@
       "opacity": 0.25
     },
     {
-      "id": "poste-46",
+      "id": "poste-49",
       "asset": "poste",
       "x": 2500,
       "y": 826,
@@ -451,7 +558,7 @@
       "factor": 0.78
     },
     {
-      "id": "halo-poste-47",
+      "id": "halo-poste-50",
       "asset": "halo-poste",
       "x": 2500,
       "y": 480,
@@ -461,7 +568,7 @@
       "opacity": 0.25
     },
     {
-      "id": "npc-acolhimento-48",
+      "id": "npc-acolhimento-51",
       "asset": "npc-acolhimento",
       "x": 770,
       "y": 824,
@@ -471,7 +578,7 @@
       "phase": 0
     },
     {
-      "id": "npc-fila-comunidade-49",
+      "id": "npc-fila-comunidade-52",
       "asset": "npc-fila-comunidade",
       "x": 1120,
       "y": 824,
@@ -481,7 +588,7 @@
       "phase": 1
     },
     {
-      "id": "npc-fila-1-50",
+      "id": "npc-fila-1-53",
       "asset": "npc-fila-1",
       "x": 1360,
       "y": 824,
@@ -491,7 +598,7 @@
       "phase": 2
     },
     {
-      "id": "npc-fila-2-51",
+      "id": "npc-fila-2-54",
       "asset": "npc-fila-2",
       "x": 1590,
       "y": 824,
@@ -501,7 +608,7 @@
       "phase": 3
     },
     {
-      "id": "npc-torcedor-2-52",
+      "id": "npc-torcedor-2-55",
       "asset": "npc-torcedor-2",
       "x": 1950,
       "y": 824,
@@ -511,7 +618,7 @@
       "phase": 4
     },
     {
-      "id": "npc-voluntario-53",
+      "id": "npc-voluntario-56",
       "asset": "npc-voluntario",
       "x": 80,
       "y": 824,
@@ -521,7 +628,7 @@
       "phase": 2
     },
     {
-      "id": "mesa-comida-1-54",
+      "id": "mesa-comida-1-57",
       "asset": "mesa-comida-1",
       "x": 100,
       "y": 824,
@@ -529,7 +636,7 @@
       "factor": 0.78
     },
     {
-      "id": "panela-1-55",
+      "id": "panela-1-58",
       "asset": "panela-1",
       "x": 45,
       "y": 734,
@@ -537,7 +644,7 @@
       "factor": 0.78
     },
     {
-      "id": "marmitas-1-56",
+      "id": "marmitas-1-59",
       "asset": "marmitas-1",
       "x": 145,
       "y": 734,
@@ -545,7 +652,7 @@
       "factor": 0.78
     },
     {
-      "id": "caixa-1-57",
+      "id": "caixa-1-60",
       "asset": "caixa-1",
       "x": 2480,
       "y": 824,
@@ -553,7 +660,7 @@
       "factor": 0.78
     },
     {
-      "id": "cesto-1-58",
+      "id": "cesto-1-61",
       "asset": "cesto-1",
       "x": 2600,
       "y": 824,
@@ -561,7 +668,7 @@
       "factor": 0.78
     },
     {
-      "id": "poca-agua-59",
+      "id": "poca-agua-62",
       "asset": "poca-agua",
       "x": 380,
       "y": 826,
@@ -571,7 +678,7 @@
       "opacity": 0.4
     },
     {
-      "id": "cone-servico-60",
+      "id": "cone-servico-63",
       "asset": "cone-servico",
       "x": 50,
       "y": 825,
@@ -579,7 +686,7 @@
       "factor": 0.78
     },
     {
-      "id": "cone-servico-61",
+      "id": "cone-servico-64",
       "asset": "cone-servico",
       "x": 2600,
       "y": 825,
@@ -587,7 +694,7 @@
       "factor": 0.78
     },
     {
-      "id": "poeira-62",
+      "id": "poeira-65",
       "asset": "poeira",
       "x": 1300,
       "y": 827,
@@ -598,7 +705,7 @@
       "opacity": 0.1
     },
     {
-      "id": "papel-vento-63",
+      "id": "papel-vento-66",
       "asset": "papel-vento",
       "x": 2340,
       "y": 740,
@@ -1831,8 +1938,8 @@
       "path": "ui/miniatura.webp",
       "kind": "image",
       "frames": 1,
-      "bytes": 123398,
-      "sha256": "0813901c7d7da6f9da5f68112c18a1446b1f2dd6ded553b397dae1774cf4bdbf",
+      "bytes": 129368,
+      "sha256": "880e48fc5418f3d9edf2b865fd9470ca0ba37c06f03b8ccd74a648f548f5159b",
       "origin": "derived-composition",
       "width": 960,
       "height": 540,
@@ -1842,12 +1949,30 @@
       "path": "ui/carregamento.webp",
       "kind": "image",
       "frames": 1,
-      "bytes": 422476,
-      "sha256": "65ba26688fb1dd5003f1a6e516178d7052a81548bbca05207328ca87e46a91a4",
+      "bytes": 437852,
+      "sha256": "f7c487b15ba2e7347754ff3720062112cabc0a972842ba4a52d4191cd3902876",
       "origin": "derived-composition",
       "width": 1920,
       "height": 1080,
       "alpha": false
+    },
+    "mastro-bandeirolas": {
+      "path": "props/mastro-bandeirolas.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 14644,
+      "sha256": "39f5749c3e4bc5835c7eabc575d3913ca3dbea62353af6befd8c972fd64105c5",
+      "origin": "generated",
+      "source": "source/generated/mastro-bandeirolas.png",
+      "sourceCrop": [
+        259,
+        27,
+        766,
+        1518
+      ],
+      "width": 174,
+      "height": 512,
+      "alpha": true
     },
     "aviso-bem-vindos": {
       "path": "graphics/aviso-bem-vindos.webp",

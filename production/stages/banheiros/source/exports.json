@@ -1196,8 +1196,8 @@
       "path": "ui/miniatura.webp",
       "kind": "image",
       "frames": 1,
-      "bytes": 123398,
-      "sha256": "0813901c7d7da6f9da5f68112c18a1446b1f2dd6ded553b397dae1774cf4bdbf",
+      "bytes": 129368,
+      "sha256": "880e48fc5418f3d9edf2b865fd9470ca0ba37c06f03b8ccd74a648f548f5159b",
       "origin": "derived-composition",
       "width": 960,
       "height": 540,
@@ -1207,12 +1207,30 @@
       "path": "ui/carregamento.webp",
       "kind": "image",
       "frames": 1,
-      "bytes": 422476,
-      "sha256": "65ba26688fb1dd5003f1a6e516178d7052a81548bbca05207328ca87e46a91a4",
+      "bytes": 437852,
+      "sha256": "f7c487b15ba2e7347754ff3720062112cabc0a972842ba4a52d4191cd3902876",
       "origin": "derived-composition",
       "width": 1920,
       "height": 1080,
       "alpha": false
+    },
+    "mastro-bandeirolas": {
+      "path": "props/mastro-bandeirolas.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 14644,
+      "sha256": "39f5749c3e4bc5835c7eabc575d3913ca3dbea62353af6befd8c972fd64105c5",
+      "origin": "generated",
+      "source": "source/generated/mastro-bandeirolas.png",
+      "sourceCrop": [
+        259,
+        27,
+        766,
+        1518
+      ],
+      "width": 174,
+      "height": 512,
+      "alpha": true
     },
     "aviso-bem-vindos": {
       "path": "graphics/aviso-bem-vindos.webp",

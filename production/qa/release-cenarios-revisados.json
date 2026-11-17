@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "spriteIndexSource": "c6fc6c8f7035872fc78975a792a7ac490c8f0644",
+  "spritePacks": 23,
+  "spriteReferences": 624,
+  "trackedRuntimeSprites": 624,
+  "completeSpriteInventory": "exact match to Git tree; original published URLs retained",
+  "stageAssets": {
+    "palco": 88,
+    "banheiros": 70
+  },
+  "assetCacheHashes": "pass",
+  "htmlSHA256": "f42e02b00d40507f9ef62309232d84df01e80f4f38d43c5636d6d7b539711580",
+  "build": "Current source and stage manifests built normally; complete unchanged character index retained from official committed build to support partial checkout."
+}

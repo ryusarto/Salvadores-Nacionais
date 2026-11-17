@@ -1,45 +1,52 @@
 {
   "status": {
     "ready": true,
-    "loaded": 77,
+    "loaded": 78,
     "errors": []
   },
   "errors": [],
   "audio": [
     {
       "name": "trilha-intro",
-      "ready": 4,
+      "ready": 1,
+      "duration": 4.366531,
       "error": null
     },
     {
       "name": "trilha-loop",
-      "ready": 4,
+      "ready": 1,
+      "duration": 34.911973,
       "error": null
     },
     {
       "name": "ambiente-publico",
-      "ready": 4,
+      "ready": 1,
+      "duration": 16.002902,
       "error": null
     },
     {
       "name": "ambiente-cozinha",
-      "ready": 4,
+      "ready": 1,
+      "duration": 16.002902,
       "error": null
     },
     {
       "name": "ambiente-agua",
-      "ready": 4,
+      "ready": 1,
+      "duration": 16.002902,
       "error": null
     },
     {
       "name": "vento-tecido",
-      "ready": 4,
+      "ready": 1,
+      "duration": 16.002902,
       "error": null
     }
   ],
   "stats": {
-    "assets": 87,
-    "gallery": 81,
+    "assets": 88,
+    "images": 82,
+    "gallery": 82,
     "canvas": [
       1920,
       1080

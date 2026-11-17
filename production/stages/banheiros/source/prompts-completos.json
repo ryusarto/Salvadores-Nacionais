@@ -178,7 +178,7 @@
     "sha256": "cb3b826cede2e6d8483bb952927d33aae0ef9ee42b86eed2fd6669b0e3be2f13",
     "selected": true
   },
-  "_method": "Built-in ImageGen: 21 assets plus 2 non-destructive alpha edits, all 23 PNG originals retained.",
+  "_method": "Built-in ImageGen:22 generated assets (one mast shared with palco) plus2 alpha edits; all24 original PNGs retained.",
   "papel-vento-v2": {
     "prompt": "Use case: background-extraction. Edit this six-frame game sprite sheet. Preserve exactly the six cream paper shapes, their outlines, shading, poses, positions, size, strict3x2 grid and canvas1536x1024. Remove ALL of the light background between and around the paper sheets. Every pixel outside the SIX physical ink-outlined paper silhouettes must be alpha0, completely transparent; retain the actual cream paper interiors as opaque. No white backdrop, no gray backdrop, no checkerboard pattern painted, no glow or shadow. Return a PNG with genuine alpha. Do not redraw or change paper or layout.",
     "transparent_background": true,
@@ -187,5 +187,18 @@
     "generatedFile": "exec-0d68ce46-21e4-4df1-a1a7-c0821d53b04a.png",
     "sha256": "7201b8f1beef4fe9a4c784ccd135eb58dfe258c999d76dc2da03fbb7a7a3b2b7",
     "selected": true
+  },
+  "mastro-bandeirolas": {
+    "prompt": "Use case: illustration-story. One isolated modular environment prop for Salvadores Nacionais, hand-painted Brazilian street-comic game at a Belém night festival. Create a tall slender rustic WOODEN FESTIVAL MAST, one short horizontal wooden crossarm near its top, a simple T shape. Crossarm width is one third of total mast height. Clean rounded timber ends with visible rope-tie grooves. Vertical pole continues five percent of total height above the crossarm. Natural dark brown wood grain and subtle rope wrapping at the central joint. Pole is thin, straight, visibly reaches ground, small simple square footing. Exact front view. Entire mast including crossarm and footing uncropped with transparent padding. Dark ink outlines, brushed material and sparse halftone, amber upper-left light, violet shadows and subtle teal rim. TRUE transparent alpha outside the physical mast. No floor, no cast shadow, glow, backdrop, flags, hanging fabric, long cords, extra objects, text or people. Three attachment sites (left crossarm end, center joint and right crossarm end) clearly visible. It will support separately animated bunting and a rectangular flag.",
+    "transparent_background": true,
+    "generatedFile": "exec-803155a9-a1e7-4cd9-88a9-beff299a59f0.png",
+    "source": "source/generated/mastro-bandeirolas.png",
+    "sha256": "f2038272c20d553c4936e335de2820c94651de2da933ace84813472e4ca63923",
+    "status": "generated",
+    "sharedWith": [
+      "palco",
+      "banheiros"
+    ],
+    "method": "built-in ImageGen, one shared generation for both arenas"
   }
 }

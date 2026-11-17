@@ -4,9 +4,9 @@ Arena de Pavanassi, montada com o mesmo contrato modular do cenário 02. Cada ca
 
 ## Entrega
 
-- 69 arquivos de runtime: 21 imagens novas, 34 imagens reutilizadas, seis gráficos digitados, seis áudios e duas imagens de apresentação.
+- 70 arquivos de runtime: 22 imagens novas, 34 imagens reutilizadas, seis gráficos digitados, seis áudios e duas imagens de apresentação.
 - 14 tiras ambientais com 84 quadros: quatro novas e dez reutilizadas. Cada tira tem seis células de 500×500, layout horizontal de 3000×500 e recorte comum aos seis quadros.
-- 23 PNGs originais preservados em `source/generated/`: 21 gerações iniciais e duas revisões de recorte, sem sobrescrever fontes. As revisões selecionadas de cabine acessível e papel são `*-v2.png`.
+- 24 PNGs originais preservados em `source/generated/`: 22 gerações iniciais e duas revisões de recorte, sem sobrescrever fontes. As revisões selecionadas de cabine acessível e papel são `*-v2.png`.
 - Quatro pranchas normalizadas em `source/pranchas/`, prompts completos e hashes em `source/prompts-completos.json`, dimensões/crops/proveniência em `source/exports.json` e manifesto final.
 - Trilha instrumental original a 104 BPM, intro/loop e ambiente sanitário sintetizados. Público/água/vento têm reutilização explícita; `audio/manifest.json` registra arquivos de origem, hashes, duração, pico/RMS e loops. Não há voz inteligível ou gravações externas.
 - Tipografia Bangers digitada separadamente, fonte preservada e licença SIL OFL em `ui/FONTE-OFL.txt`.
@@ -42,8 +42,13 @@ A primeira exportação sem UI pode usar `--partial`. Depois gere a prévia offl
 
 ## Validação e limites
 
-Revisão independente: 49 testes de renderer, núcleo, história, regressões e mecânicas do Pavanassi passaram. Integridade dos 69 assets/14 tiras/84 quadros, hashes, alpha real, crops, fontes/reutilizações e decodificação dos seis OGGs confirmada. Relatórios em `production/qa/banheiros-validation.json`, `banheiros-browser.json` e `banheiros-game-browser.json`.
+Revisão independente: 49 testes de renderer, núcleo, história, regressões e mecânicas do Pavanassi passaram. Integridade dos 70 assets/14 tiras/84 quadros, hashes, alpha real, crops, fontes/reutilizações e decodificação dos seis OGGs confirmada. Relatórios em `production/qa/banheiros-validation.json`, `banheiros-browser.json` e `banheiros-game-browser.json`.
 
 Chrome executou a arena pelo Versus, com carregamento sob demanda, seis áudios, pausa e estados reais do core: cabine5→4 HP, fila, cerca, proibição e A PERGUNTA(1300 de dano, tontura e remoção da cabine). A prévia passou por três câmeras, galeria, isolamento, efeitos e danos. Capturas em `production/qa/evidence/banheiros-*`.
 
-O viewport mobile emulado foi 844×390; desempenho em aparelho físico e playtest humano não foram medidos. Runtime em torno de 9,16MB e estimativa de imagens decodificadas em torno de135MiB, sem contar áudio/GPU. Pavanassi ainda usa o corpo/retrato provisórios existentes; esta entrega cobre cenário e objetos de gameplay. Não há troca narrativa automática de cenário após a vitória. Merge e publicação do jogo são etapas separadas do envio da branch/PR.
+O viewport mobile emulado foi 844×390; desempenho em aparelho físico e playtest humano não foram medidos. Runtime em torno de 9,20MB e estimativa de imagens decodificadas em torno de135,5MiB, sem contar áudio/GPU. Pavanassi ainda usa o corpo/retrato provisórios existentes; esta entrega cobre cenário e objetos de gameplay. Não há troca narrativa automática de cenário após a vitória. Merge e publicação do jogo são etapas separadas do envio da branch/PR.
+
+
+## Revisão das bandeirolas
+
+As duas fileiras e a bandeira retangular estão amarradas aos três mastros de madeira. Os mastros, os varais e a bandeira compartilham o parallax; os pontos de fixação são explícitos em `objects[].suspension`. `tools/check-stage-hangings.mjs` verifica geometria nas câmeras0/340/680 e alpha real nos apoios e nos seis quadros dos tecidos. O PNG do mastro e seu prompt são compartilhados com o segundo cenário.

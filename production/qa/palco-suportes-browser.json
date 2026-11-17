@@ -1,0 +1,21 @@
+{
+  "frames": [
+    0,
+    15,
+    30,
+    45,
+    60,
+    75
+  ],
+  "camera": 340,
+  "ready": {
+    "ready": true,
+    "loaded": 78,
+    "errors": []
+  },
+  "errors": [],
+  "sheets": [
+    "evidence/palco-suportes-6-quadros.png",
+    "evidence/palco-npc-danca1-6-quadros.png"
+  ]
+}

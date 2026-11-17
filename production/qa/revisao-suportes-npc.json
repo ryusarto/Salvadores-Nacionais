@@ -1,0 +1,202 @@
+{
+  "verdict": "approved for preview scope",
+  "stages": {
+    "palco": {
+      "assets": 88,
+      "imagesInGallery": 82,
+      "loadedImages": 78
+    },
+    "banheiros": {
+      "assets": 70,
+      "imagesInGallery": 64,
+      "loadedImages": 61
+    }
+  },
+  "browserChecks": [
+    "tools/check-palco-browser.mjs",
+    "tools/check-banheiros-browser.mjs"
+  ],
+  "errors": [],
+  "camerasVisuallyInspected": [
+    0,
+    340,
+    680
+  ],
+  "framesVisuallyInspected": [
+    0,
+    15,
+    30,
+    45,
+    60,
+    75
+  ],
+  "hangingReview": "Ropes visibly attached to stage trusses/wooden posts in palco and three wooden posts in banheiros; anchors remain attached through the six sampled animation frames. Partial screen-edge cropping at camera extremes is consistent with world placement.",
+  "npcReview": {
+    "asset": "npc-danca-1",
+    "runtimeSHA256": "07dfc29475f2363377e8dc685799d3b959ee84ee8ed40ae5c9a9a41af565bb96",
+    "halo": "absent in all six sampled poses",
+    "identityAndClothing": "preserved",
+    "feet": "stable; no clipping",
+    "previousPixelAudit": [
+      {
+        "pose": 1,
+        "old": {
+          "alphaGt12Bbox": [
+            163,
+            0,
+            403,
+            499
+          ],
+          "opaqueFootY": 479,
+          "haloPixels": 34844,
+          "visibleCellEdgePixels": 280
+        },
+        "current": {
+          "alphaGt12Bbox": [
+            165,
+            14,
+            369,
+            481
+          ],
+          "opaqueFootY": 479,
+          "haloPixels": 0,
+          "visibleCellEdgePixels": 0
+        }
+      },
+      {
+        "pose": 2,
+        "old": {
+          "alphaGt12Bbox": [
+            114,
+            0,
+            425,
+            499
+          ],
+          "opaqueFootY": 479,
+          "haloPixels": 59548,
+          "visibleCellEdgePixels": 359
+        },
+        "current": {
+          "alphaGt12Bbox": [
+            123,
+            17,
+            382,
+            480
+          ],
+          "opaqueFootY": 479,
+          "haloPixels": 0,
+          "visibleCellEdgePixels": 0
+        }
+      },
+      {
+        "pose": 3,
+        "old": {
+          "alphaGt12Bbox": [
+            92,
+            0,
+            388,
+            499
+          ],
+          "opaqueFootY": 478,
+          "haloPixels": 46503,
+          "visibleCellEdgePixels": 288
+        },
+        "current": {
+          "alphaGt12Bbox": [
+            105,
+            17,
+            372,
+            481
+          ],
+          "opaqueFootY": 479,
+          "haloPixels": 0,
+          "visibleCellEdgePixels": 0
+        }
+      },
+      {
+        "pose": 4,
+        "old": {
+          "alphaGt12Bbox": [
+            115,
+            0,
+            439,
+            499
+          ],
+          "opaqueFootY": 479,
+          "haloPixels": 58222,
+          "visibleCellEdgePixels": 377
+        },
+        "current": {
+          "alphaGt12Bbox": [
+            120,
+            19,
+            380,
+            481
+          ],
+          "opaqueFootY": 480,
+          "haloPixels": 0,
+          "visibleCellEdgePixels": 0
+        }
+      },
+      {
+        "pose": 5,
+        "old": {
+          "alphaGt12Bbox": [
+            127,
+            0,
+            420,
+            499
+          ],
+          "opaqueFootY": 480,
+          "haloPixels": 58426,
+          "visibleCellEdgePixels": 388
+        },
+        "current": {
+          "alphaGt12Bbox": [
+            142,
+            18,
+            385,
+            482
+          ],
+          "opaqueFootY": 480,
+          "haloPixels": 0,
+          "visibleCellEdgePixels": 0
+        }
+      },
+      {
+        "pose": 6,
+        "old": {
+          "alphaGt12Bbox": [
+            139,
+            0,
+            376,
+            499
+          ],
+          "opaqueFootY": 479,
+          "haloPixels": 31024,
+          "visibleCellEdgePixels": 313
+        },
+        "current": {
+          "alphaGt12Bbox": [
+            146,
+            18,
+            366,
+            482
+          ],
+          "opaqueFootY": 480,
+          "haloPixels": 0,
+          "visibleCellEdgePixels": 0
+        }
+      }
+    ]
+  },
+  "evidence": [
+    "evidence/palco-suportes-6-quadros.png",
+    "evidence/banheiros-suportes-6-quadros.png",
+    "evidence/palco-npc-danca1-6-quadros.png"
+  ],
+  "limitations": [
+    "Preview browser checks only in this pass; integrated full-release game smoke awaits the coordinator.",
+    "Mobile viewport emulation, not a physical-device performance playtest."
+  ]
+}

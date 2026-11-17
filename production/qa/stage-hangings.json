@@ -1,0 +1,1140 @@
+{
+  "status": "pass",
+  "cameras": [
+    0,
+    340,
+    680
+  ],
+  "worldToleranceMax": 8,
+  "alphaRadius": 5,
+  "alphaThreshold": 12,
+  "stages": [
+    {
+      "stage": "palco",
+      "hangings": [
+        {
+          "id": "bandeirolas-1-suspended-51",
+          "asset": "bandeirolas-1",
+          "anchors": [
+            {
+              "objectId": "mastro-palco-esquerdo",
+              "supportAsset": "mastro-bandeirolas",
+              "uv": [
+                0.9013806706114399,
+                0.09926224010731052
+              ],
+              "sprite": [
+                29,
+                198
+              ],
+              "supportSource": [
+                156.84023668639054,
+                50.82226693494299
+              ],
+              "distances": [
+                {
+                  "camera": 0,
+                  "distance": 0,
+                  "bannerPoint": [
+                    385.71440277868044,
+                    259.99999999999994
+                  ],
+                  "supportPoint": [
+                    385.71440277868044,
+                    259.99999999999994
+                  ]
+                },
+                {
+                  "camera": 340,
+                  "distance": 1.1368683772161603e-13,
+                  "bannerPoint": [
+                    164.7144027786805,
+                    259.99999999999994
+                  ],
+                  "supportPoint": [
+                    164.71440277868038,
+                    259.99999999999994
+                  ]
+                },
+                {
+                  "camera": 680,
+                  "distance": 7.105427357601002e-14,
+                  "bannerPoint": [
+                    -56.28559722131952,
+                    259.99999999999994
+                  ],
+                  "supportPoint": [
+                    -56.28559722131959,
+                    259.99999999999994
+                  ]
+                }
+              ],
+              "spriteAlpha": [
+                {
+                  "frame": 0,
+                  "x": 29,
+                  "y": 198,
+                  "alpha": 249,
+                  "distance": 0
+                }
+              ],
+              "supportAlpha": [
+                {
+                  "frame": 0,
+                  "x": 157,
+                  "y": 51,
+                  "alpha": 252,
+                  "distance": 0.2389840136704436
+                }
+              ]
+            },
+            {
+              "objectId": "trelica-vertical-1-19",
+              "supportAsset": "trelica-vertical-1",
+              "uv": [
+                0.5,
+                0.06534653465346535
+              ],
+              "sprite": [
+                482,
+                198
+              ],
+              "supportSource": [
+                48,
+                33.45742574257426
+              ],
+              "distances": [
+                {
+                  "camera": 0,
+                  "distance": 5.684341886080802e-14,
+                  "bannerPoint": [
+                    625,
+                    259.99999999999994
+                  ],
+                  "supportPoint": [
+                    625,
+                    260
+                  ]
+                },
+                {
+                  "camera": 340,
+                  "distance": 5.684341886080802e-14,
+                  "bannerPoint": [
+                    404,
+                    259.99999999999994
+                  ],
+                  "supportPoint": [
+                    404,
+                    260
+                  ]
+                },
+                {
+                  "camera": 680,
+                  "distance": 6.355287432313019e-14,
+                  "bannerPoint": [
+                    183.00000000000003,
+                    259.99999999999994
+                  ],
+                  "supportPoint": [
+                    183,
+                    260
+                  ]
+                }
+              ],
+              "spriteAlpha": [
+                {
+                  "frame": 0,
+                  "x": 482,
+                  "y": 198,
+                  "alpha": 248,
+                  "distance": 0
+                }
+              ],
+              "supportAlpha": [
+                {
+                  "frame": 0,
+                  "x": 48,
+                  "y": 33,
+                  "alpha": 253,
+                  "distance": 0.4574257425742587
+                }
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "bandeirolas-vento-suspended-52",
+          "asset": "bandeirolas-vento",
+          "anchors": [
+            {
+              "objectId": "trelica-vertical-2-20",
+              "supportAsset": "trelica-vertical-2",
+              "uv": [
+                0.5,
+                0.06534653465346535
+              ],
+              "sprite": [
+                42,
+                343
+              ],
+              "supportSource": [
+                62,
+                33.45742574257426
+              ],
+              "distances": [
+                {
+                  "camera": 0,
+                  "distance": 0,
+                  "bannerPoint": [
+                    1935,
+                    260
+                  ],
+                  "supportPoint": [
+                    1935,
+                    260
+                  ]
+                },
+                {
+                  "camera": 340,
+                  "distance": 0,
+                  "bannerPoint": [
+                    1714,
+                    260
+                  ],
+                  "supportPoint": [
+                    1714,
+                    260
+                  ]
+                },
+                {
+                  "camera": 680,
+                  "distance": 0,
+                  "bannerPoint": [
+                    1493,
+                    260
+                  ],
+                  "supportPoint": [
+                    1493,
+                    260
+                  ]
+                }
+              ],
+              "spriteAlpha": [
+                {
+                  "frame": 0,
+                  "x": 42,
+                  "y": 343,
+                  "alpha": 252,
+                  "distance": 0
+                },
+                {
+                  "frame": 1,
+                  "x": 42,
+                  "y": 343,
+                  "alpha": 251,
+                  "distance": 0
+                },
+                {
+                  "frame": 2,
+                  "x": 42,
+                  "y": 343,
+                  "alpha": 251,
+                  "distance": 0
+                },
+                {
+                  "frame": 3,
+                  "x": 42,
+                  "y": 343,
+                  "alpha": 252,
+                  "distance": 0
+                },
+                {
+                  "frame": 4,
+                  "x": 42,
+                  "y": 343,
+                  "alpha": 250,
+                  "distance": 0
+                },
+                {
+                  "frame": 5,
+                  "x": 42,
+                  "y": 343,
+                  "alpha": 250,
+                  "distance": 0
+                }
+              ],
+              "supportAlpha": [
+                {
+                  "frame": 0,
+                  "x": 62,
+                  "y": 35,
+                  "alpha": 131,
+                  "distance": 1.5425742574257413
+                }
+              ]
+            },
+            {
+              "objectId": "mastro-palco-direito",
+              "supportAsset": "mastro-bandeirolas",
+              "uv": [
+                0.10453648915187377,
+                0.09926224010731052
+              ],
+              "sprite": [
+                458,
+                343
+              ],
+              "supportSource": [
+                18.189349112426036,
+                50.82226693494299
+              ],
+              "distances": [
+                {
+                  "camera": 0,
+                  "distance": 5.684341886080802e-14,
+                  "bannerPoint": [
+                    2215.5492002106857,
+                    260
+                  ],
+                  "supportPoint": [
+                    2215.5492002106857,
+                    259.99999999999994
+                  ]
+                },
+                {
+                  "camera": 340,
+                  "distance": 2.3437142008433856e-13,
+                  "bannerPoint": [
+                    1994.5492002106857,
+                    260
+                  ],
+                  "supportPoint": [
+                    1994.549200210686,
+                    259.99999999999994
+                  ]
+                },
+                {
+                  "camera": 680,
+                  "distance": 2.3437142008433856e-13,
+                  "bannerPoint": [
+                    1773.5492002106857,
+                    260
+                  ],
+                  "supportPoint": [
+                    1773.549200210686,
+                    259.99999999999994
+                  ]
+                }
+              ],
+              "spriteAlpha": [
+                {
+                  "frame": 0,
+                  "x": 458,
+                  "y": 343,
+                  "alpha": 252,
+                  "distance": 0
+                },
+                {
+                  "frame": 1,
+                  "x": 458,
+                  "y": 343,
+                  "alpha": 252,
+                  "distance": 0
+                },
+                {
+                  "frame": 2,
+                  "x": 458,
+                  "y": 343,
+                  "alpha": 251,
+                  "distance": 0
+                },
+                {
+                  "frame": 3,
+                  "x": 458,
+                  "y": 343,
+                  "alpha": 251,
+                  "distance": 0
+                },
+                {
+                  "frame": 4,
+                  "x": 458,
+                  "y": 343,
+                  "alpha": 249,
+                  "distance": 0
+                },
+                {
+                  "frame": 5,
+                  "x": 458,
+                  "y": 343,
+                  "alpha": 251,
+                  "distance": 0
+                }
+              ],
+              "supportAlpha": [
+                {
+                  "frame": 0,
+                  "x": 18,
+                  "y": 51,
+                  "alpha": 253,
+                  "distance": 0.25969622406012743
+                }
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "bandeirolas-2-suspended-53",
+          "asset": "bandeirolas-2",
+          "anchors": [
+            {
+              "objectId": "trelica-vertical-2-20",
+              "supportAsset": "trelica-vertical-2",
+              "uv": [
+                0.5,
+                0.3425742574257426
+              ],
+              "sprite": [
+                26,
+                204
+              ],
+              "supportSource": [
+                62,
+                175.3980198019802
+              ],
+              "distances": [
+                {
+                  "camera": 0,
+                  "distance": 5.684341886080802e-14,
+                  "bannerPoint": [
+                    1935,
+                    399.99999999999994
+                  ],
+                  "supportPoint": [
+                    1935,
+                    400
+                  ]
+                },
+                {
+                  "camera": 340,
+                  "distance": 5.684341886080802e-14,
+                  "bannerPoint": [
+                    1714,
+                    399.99999999999994
+                  ],
+                  "supportPoint": [
+                    1714,
+                    400
+                  ]
+                },
+                {
+                  "camera": 680,
+                  "distance": 5.684341886080802e-14,
+                  "bannerPoint": [
+                    1493,
+                    399.99999999999994
+                  ],
+                  "supportPoint": [
+                    1493,
+                    400
+                  ]
+                }
+              ],
+              "spriteAlpha": [
+                {
+                  "frame": 0,
+                  "x": 26,
+                  "y": 204,
+                  "alpha": 240,
+                  "distance": 0
+                }
+              ],
+              "supportAlpha": [
+                {
+                  "frame": 0,
+                  "x": 60,
+                  "y": 174,
+                  "alpha": 49,
+                  "distance": 2.4401760933852277
+                }
+              ]
+            },
+            {
+              "objectId": "mastro-palco-direito",
+              "supportAsset": "mastro-bandeirolas",
+              "uv": [
+                0.5,
+                0.32205956587582035
+              ],
+              "sprite": [
+                486,
+                204
+              ],
+              "supportSource": [
+                87,
+                164.89449772842002
+              ],
+              "distances": [
+                {
+                  "camera": 0,
+                  "distance": 5.684341886080802e-14,
+                  "bannerPoint": [
+                    2300,
+                    399.99999999999994
+                  ],
+                  "supportPoint": [
+                    2300,
+                    400
+                  ]
+                },
+                {
+                  "camera": 340,
+                  "distance": 5.684341886080802e-14,
+                  "bannerPoint": [
+                    2079,
+                    399.99999999999994
+                  ],
+                  "supportPoint": [
+                    2079,
+                    400
+                  ]
+                },
+                {
+                  "camera": 680,
+                  "distance": 5.684341886080802e-14,
+                  "bannerPoint": [
+                    1858,
+                    399.99999999999994
+                  ],
+                  "supportPoint": [
+                    1858,
+                    400
+                  ]
+                }
+              ],
+              "spriteAlpha": [
+                {
+                  "frame": 0,
+                  "x": 486,
+                  "y": 204,
+                  "alpha": 239,
+                  "distance": 0
+                }
+              ],
+              "supportAlpha": [
+                {
+                  "frame": 0,
+                  "x": 87,
+                  "y": 165,
+                  "alpha": 253,
+                  "distance": 0.10550227157997938
+                }
+              ]
+            }
+          ],
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "stage": "banheiros",
+      "hangings": [
+        {
+          "id": "bandeirolas-1-suspended-44",
+          "asset": "bandeirolas-1",
+          "anchors": [
+            {
+              "objectId": "mastro-banheiros-0",
+              "supportAsset": "mastro-bandeirolas",
+              "uv": [
+                0.9013806706114399,
+                0.09926224010731052
+              ],
+              "sprite": [
+                29,
+                198
+              ],
+              "supportSource": [
+                156.84023668639054,
+                50.82226693494299
+              ],
+              "distances": [
+                {
+                  "camera": 0,
+                  "distance": 5.684341886080802e-14,
+                  "bannerPoint": [
+                    348.21283284023673,
+                    177.4688128772636
+                  ],
+                  "supportPoint": [
+                    348.2128328402367,
+                    177.4688128772636
+                  ]
+                },
+                {
+                  "camera": 340,
+                  "distance": 2.842170943040401e-14,
+                  "bannerPoint": [
+                    117.01283284023668,
+                    177.4688128772636
+                  ],
+                  "supportPoint": [
+                    117.01283284023665,
+                    177.4688128772636
+                  ]
+                },
+                {
+                  "camera": 680,
+                  "distance": 5.684341886080802e-14,
+                  "bannerPoint": [
+                    -114.1871671597633,
+                    177.4688128772636
+                  ],
+                  "supportPoint": [
+                    -114.18716715976336,
+                    177.4688128772636
+                  ]
+                }
+              ],
+              "spriteAlpha": [
+                {
+                  "frame": 0,
+                  "x": 29,
+                  "y": 198,
+                  "alpha": 249,
+                  "distance": 0
+                }
+              ],
+              "supportAlpha": [
+                {
+                  "frame": 0,
+                  "x": 157,
+                  "y": 51,
+                  "alpha": 252,
+                  "distance": 0.2389840136704436
+                }
+              ]
+            },
+            {
+              "objectId": "mastro-banheiros-1",
+              "supportAsset": "mastro-bandeirolas",
+              "uv": [
+                0.10453648915187377,
+                0.09926224010731052
+              ],
+              "sprite": [
+                482,
+                198
+              ],
+              "supportSource": [
+                18.189349112426036,
+                50.82226693494299
+              ],
+              "distances": [
+                {
+                  "camera": 0,
+                  "distance": 0,
+                  "bannerPoint": [
+                    953.2350221893491,
+                    177.4688128772636
+                  ],
+                  "supportPoint": [
+                    953.2350221893491,
+                    177.4688128772636
+                  ]
+                },
+                {
+                  "camera": 340,
+                  "distance": 0,
+                  "bannerPoint": [
+                    722.0350221893491,
+                    177.4688128772636
+                  ],
+                  "supportPoint": [
+                    722.0350221893491,
+                    177.4688128772636
+                  ]
+                },
+                {
+                  "camera": 680,
+                  "distance": 5.684341886080802e-14,
+                  "bannerPoint": [
+                    490.8350221893491,
+                    177.4688128772636
+                  ],
+                  "supportPoint": [
+                    490.83502218934905,
+                    177.4688128772636
+                  ]
+                }
+              ],
+              "spriteAlpha": [
+                {
+                  "frame": 0,
+                  "x": 482,
+                  "y": 198,
+                  "alpha": 248,
+                  "distance": 0
+                }
+              ],
+              "supportAlpha": [
+                {
+                  "frame": 0,
+                  "x": 18,
+                  "y": 51,
+                  "alpha": 253,
+                  "distance": 0.25969622406012743
+                }
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "bandeirolas-vento-suspended-45",
+          "asset": "bandeirolas-vento",
+          "anchors": [
+            {
+              "objectId": "mastro-banheiros-1",
+              "supportAsset": "mastro-bandeirolas",
+              "uv": [
+                0.9013806706114399,
+                0.09926224010731052
+              ],
+              "sprite": [
+                42,
+                343
+              ],
+              "supportSource": [
+                156.84023668639054,
+                50.82226693494299
+              ],
+              "distances": [
+                {
+                  "camera": 0,
+                  "distance": 0,
+                  "bannerPoint": [
+                    1148.2128328402366,
+                    177.4688128772636
+                  ],
+                  "supportPoint": [
+                    1148.2128328402366,
+                    177.4688128772636
+                  ]
+                },
+                {
+                  "camera": 340,
+                  "distance": 0,
+                  "bannerPoint": [
+                    917.0128328402366,
+                    177.4688128772636
+                  ],
+                  "supportPoint": [
+                    917.0128328402366,
+                    177.4688128772636
+                  ]
+                },
+                {
+                  "camera": 680,
+                  "distance": 0,
+                  "bannerPoint": [
+                    685.8128328402365,
+                    177.4688128772636
+                  ],
+                  "supportPoint": [
+                    685.8128328402365,
+                    177.4688128772636
+                  ]
+                }
+              ],
+              "spriteAlpha": [
+                {
+                  "frame": 0,
+                  "x": 42,
+                  "y": 343,
+                  "alpha": 252,
+                  "distance": 0
+                },
+                {
+                  "frame": 1,
+                  "x": 42,
+                  "y": 343,
+                  "alpha": 251,
+                  "distance": 0
+                },
+                {
+                  "frame": 2,
+                  "x": 42,
+                  "y": 343,
+                  "alpha": 251,
+                  "distance": 0
+                },
+                {
+                  "frame": 3,
+                  "x": 42,
+                  "y": 343,
+                  "alpha": 252,
+                  "distance": 0
+                },
+                {
+                  "frame": 4,
+                  "x": 42,
+                  "y": 343,
+                  "alpha": 250,
+                  "distance": 0
+                },
+                {
+                  "frame": 5,
+                  "x": 42,
+                  "y": 343,
+                  "alpha": 250,
+                  "distance": 0
+                }
+              ],
+              "supportAlpha": [
+                {
+                  "frame": 0,
+                  "x": 157,
+                  "y": 51,
+                  "alpha": 252,
+                  "distance": 0.2389840136704436
+                }
+              ]
+            },
+            {
+              "objectId": "mastro-banheiros-2",
+              "supportAsset": "mastro-bandeirolas",
+              "uv": [
+                0.10453648915187377,
+                0.09926224010731052
+              ],
+              "sprite": [
+                458,
+                343
+              ],
+              "supportSource": [
+                18.189349112426036,
+                50.82226693494299
+              ],
+              "distances": [
+                {
+                  "camera": 0,
+                  "distance": 0,
+                  "bannerPoint": [
+                    1753.2350221893491,
+                    177.4688128772636
+                  ],
+                  "supportPoint": [
+                    1753.2350221893491,
+                    177.4688128772636
+                  ]
+                },
+                {
+                  "camera": 340,
+                  "distance": 0,
+                  "bannerPoint": [
+                    1522.035022189349,
+                    177.4688128772636
+                  ],
+                  "supportPoint": [
+                    1522.035022189349,
+                    177.4688128772636
+                  ]
+                },
+                {
+                  "camera": 680,
+                  "distance": 0,
+                  "bannerPoint": [
+                    1290.835022189349,
+                    177.4688128772636
+                  ],
+                  "supportPoint": [
+                    1290.835022189349,
+                    177.4688128772636
+                  ]
+                }
+              ],
+              "spriteAlpha": [
+                {
+                  "frame": 0,
+                  "x": 458,
+                  "y": 343,
+                  "alpha": 252,
+                  "distance": 0
+                },
+                {
+                  "frame": 1,
+                  "x": 458,
+                  "y": 343,
+                  "alpha": 252,
+                  "distance": 0
+                },
+                {
+                  "frame": 2,
+                  "x": 458,
+                  "y": 343,
+                  "alpha": 251,
+                  "distance": 0
+                },
+                {
+                  "frame": 3,
+                  "x": 458,
+                  "y": 343,
+                  "alpha": 251,
+                  "distance": 0
+                },
+                {
+                  "frame": 4,
+                  "x": 458,
+                  "y": 343,
+                  "alpha": 249,
+                  "distance": 0
+                },
+                {
+                  "frame": 5,
+                  "x": 458,
+                  "y": 343,
+                  "alpha": 251,
+                  "distance": 0
+                }
+              ],
+              "supportAlpha": [
+                {
+                  "frame": 0,
+                  "x": 18,
+                  "y": 51,
+                  "alpha": 253,
+                  "distance": 0.25969622406012743
+                }
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "bandeira-trans-vento-suspended-46",
+          "asset": "bandeira-trans-vento",
+          "anchors": [
+            {
+              "objectId": "mastro-banheiros-1",
+              "supportAsset": "mastro-bandeirolas",
+              "uv": [
+                0.10453648915187377,
+                0.09926224010731052
+              ],
+              "sprite": [
+                45,
+                120
+              ],
+              "supportSource": [
+                18.189349112426036,
+                50.82226693494299
+              ],
+              "distances": [
+                {
+                  "camera": 0,
+                  "distance": 1.2710574864626038e-13,
+                  "bannerPoint": [
+                    953.2350221893493,
+                    177.46881287726364
+                  ],
+                  "supportPoint": [
+                    953.2350221893491,
+                    177.4688128772636
+                  ]
+                },
+                {
+                  "camera": 340,
+                  "distance": 1.2710574864626038e-13,
+                  "bannerPoint": [
+                    722.0350221893492,
+                    177.46881287726364
+                  ],
+                  "supportPoint": [
+                    722.0350221893491,
+                    177.4688128772636
+                  ]
+                },
+                {
+                  "camera": 680,
+                  "distance": 8.038873388460929e-14,
+                  "bannerPoint": [
+                    490.8350221893491,
+                    177.46881287726364
+                  ],
+                  "supportPoint": [
+                    490.83502218934905,
+                    177.4688128772636
+                  ]
+                }
+              ],
+              "spriteAlpha": [
+                {
+                  "frame": 0,
+                  "x": 45,
+                  "y": 120,
+                  "alpha": 249,
+                  "distance": 0
+                },
+                {
+                  "frame": 1,
+                  "x": 45,
+                  "y": 120,
+                  "alpha": 249,
+                  "distance": 0
+                },
+                {
+                  "frame": 2,
+                  "x": 45,
+                  "y": 120,
+                  "alpha": 249,
+                  "distance": 0
+                },
+                {
+                  "frame": 3,
+                  "x": 45,
+                  "y": 120,
+                  "alpha": 247,
+                  "distance": 0
+                },
+                {
+                  "frame": 4,
+                  "x": 45,
+                  "y": 120,
+                  "alpha": 246,
+                  "distance": 0
+                },
+                {
+                  "frame": 5,
+                  "x": 45,
+                  "y": 120,
+                  "alpha": 248,
+                  "distance": 0
+                }
+              ],
+              "supportAlpha": [
+                {
+                  "frame": 0,
+                  "x": 18,
+                  "y": 51,
+                  "alpha": 253,
+                  "distance": 0.25969622406012743
+                }
+              ]
+            },
+            {
+              "objectId": "mastro-banheiros-1",
+              "supportAsset": "mastro-bandeirolas",
+              "uv": [
+                0.9013806706114399,
+                0.09926224010731052
+              ],
+              "sprite": [
+                448,
+                120
+              ],
+              "supportSource": [
+                156.84023668639054,
+                50.82226693494299
+              ],
+              "distances": [
+                {
+                  "camera": 0,
+                  "distance": 2.3437142008433856e-13,
+                  "bannerPoint": [
+                    1148.2128328402368,
+                    177.46881287726364
+                  ],
+                  "supportPoint": [
+                    1148.2128328402366,
+                    177.4688128772636
+                  ]
+                },
+                {
+                  "camera": 340,
+                  "distance": 1.2710574864626038e-13,
+                  "bannerPoint": [
+                    917.0128328402367,
+                    177.46881287726364
+                  ],
+                  "supportPoint": [
+                    917.0128328402366,
+                    177.4688128772636
+                  ]
+                },
+                {
+                  "camera": 680,
+                  "distance": 1.2710574864626038e-13,
+                  "bannerPoint": [
+                    685.8128328402366,
+                    177.46881287726364
+                  ],
+                  "supportPoint": [
+                    685.8128328402365,
+                    177.4688128772636
+                  ]
+                }
+              ],
+              "spriteAlpha": [
+                {
+                  "frame": 0,
+                  "x": 448,
+                  "y": 120,
+                  "alpha": 251,
+                  "distance": 0
+                },
+                {
+                  "frame": 1,
+                  "x": 448,
+                  "y": 120,
+                  "alpha": 252,
+                  "distance": 0
+                },
+                {
+                  "frame": 2,
+                  "x": 448,
+                  "y": 120,
+                  "alpha": 251,
+                  "distance": 0
+                },
+                {
+                  "frame": 3,
+                  "x": 448,
+                  "y": 120,
+                  "alpha": 249,
+                  "distance": 0
+                },
+                {
+                  "frame": 4,
+                  "x": 448,
+                  "y": 120,
+                  "alpha": 251,
+                  "distance": 0
+                },
+                {
+                  "frame": 5,
+                  "x": 448,
+                  "y": 120,
+                  "alpha": 250,
+                  "distance": 0
+                }
+              ],
+              "supportAlpha": [
+                {
+                  "frame": 0,
+                  "x": 157,
+                  "y": 51,
+                  "alpha": 252,
+                  "distance": 0.2389840136704436
+                }
+              ]
+            }
+          ],
+          "status": "pass"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

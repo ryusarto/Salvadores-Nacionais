@@ -778,29 +778,55 @@
       "path": "animations/npc-danca-1.webp",
       "kind": "animation",
       "frames": 6,
-      "bytes": 858714,
-      "sha256": "18eeaa6c9e0949cb3931c75aaaa27e25361fb78a934d9ba8c377811d540f5113",
+      "bytes": 364200,
+      "sha256": "07dfc29475f2363377e8dc685799d3b959ee84ee8ed40ae5c9a9a41af565bb96",
       "cellWidth": 500,
       "cellHeight": 500,
       "crop": [
-        92,
-        0,
-        348,
-        500
+        105,
+        14,
+        281,
+        469
       ],
       "origin": "generated",
       "frameHashes": [
-        "2ab293bba6cefb50d55a1d43d2fece5cb0b72a53011caab3722ce7ee270febf2",
-        "a3ffa0aaa3db8107c85dae5f4db7faae641af392ad25d70394fadeb3b5454dcb",
-        "87318b493a3f2123904095dba65f261d77dc1c653abadd21d389840fe76c9bdf",
-        "2547a661add1fdaacacbb4e6a22e5c9866036b88232907d26dad7e502896a8cc",
-        "5a0899b93e539c85566ca77cb780ee23ac5ba6201ca7572f0eab57b1f3c8dc93",
-        "30b7af14cb64576e20350c1782e9f1b077396050e84b7ebfbae97f9b7d2bf1e2"
+        "a89dda206f2e83cedd4917a565f2c773d5a6ab85f6f1aaee4e4f3ce6bf68fdb2",
+        "be584d5f2b8b3af3ca361d3e168029069edfaef451f349a17d21d69037a86e2e",
+        "6fa7cb2a7b7f51c993d64387ff914c239df6e487c713fbbd5212ba1dd771f58e",
+        "00378ef1aadf44c35dcce978e2ed8c184c3e1a137bebfb74baf4b65652eaa6b9",
+        "377225e91484b41ce1575488ea7b1d77ea6a4488655dc50891b8c619c9b7b735",
+        "c0e72afa55d85353e69b59e128011477f52bcb83cefd48b11b94d28d051cf962"
       ],
-      "source": "source/generated/npc-danca-1.png",
+      "source": "source/generated/npc-danca-1-v2.png",
       "width": 3000,
       "height": 500,
-      "alpha": true
+      "alpha": true,
+      "frameOffsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
     },
     "npc-danca-2": {
       "path": "animations/npc-danca-2.webp",
@@ -1212,6 +1238,18 @@
       "cellHeight": 500,
       "width": 3000,
       "height": 500,
+      "alpha": true
+    },
+    "mastro-bandeirolas": {
+      "path": "props/mastro-bandeirolas.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 14644,
+      "sha256": "39f5749c3e4bc5835c7eabc575d3913ca3dbea62353af6befd8c972fd64105c5",
+      "origin": "generated",
+      "source": "source/generated/mastro-bandeirolas.png",
+      "width": 174,
+      "height": 512,
       "alpha": true
     },
     "faixa-texto": {

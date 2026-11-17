@@ -1,9 +1,9 @@
-# Belém — Frente do Palco · v1
+# Belém — Frente do Palco · v2
 
 Pacote modular do segundo cenário de Salvadores Nacionais, na luta contra o Chupetinha.
 
-**60 grupos, 87 arquivos finais, 18 tiras e 108 quadros ambientais.**
-São 56 imagens novas selecionadas, 21 imagens reaproveitadas explicitamente de Belém,
+**61 grupos, 88 arquivos finais, 18 tiras e 108 quadros ambientais.**
+São 57 imagens novas selecionadas (incluindo o mastro compartilhado), 21 imagens reaproveitadas explicitamente de Belém,
 uma arte de texto da faixa, três peças de interface e seis áudios.
 
 O palco, as torres, os refletores, os feixes, os cabos, as mesas, a comida, os NPCs,
@@ -18,7 +18,7 @@ A composição final é somente uma apresentação derivada desses arquivos.
 - `manifest.json`: assets, hashes, dimensões, recortes, posições, parallax e ordem.
 - `PLANO.json`: inventário que orientou a produção.
 - `source/prompts-completos.json`: prompts usados no ImageGen integrado.
-- `source/generated/`: 57 PNGs originais preservados. A água usa a versão `agua-v2.png`.
+- `source/generated/`: 59 PNGs originais preservados. A água usa `agua-v2.png`; a NPC de amarelo usa `npc-danca-1-v2.png`, com alpha corrigido.
 - `source/pranchas/`: pranchas das dez animações novas.
 - `audio/manifest.json`: origem, duração e níveis dos áudios.
 
@@ -57,3 +57,12 @@ O catálogo de arenas é registrado sem baixar as imagens. A primeira apresenta�
 da arena solicita o seu pacote e mantém o fallback completo durante o carregamento.
 
 A fonte Bangers segue SIL OFL; a licença acompanha `ui/FONTE-OFL.txt`.
+
+
+## Revisão dos apoios e da transparência
+
+As três fileiras de bandeirolas estão presas aos dois mastros de madeira e às treliças do palco. Todos os pares usam o mesmo parallax. Os pontos de suspensão ficam em `objects[].suspension`; `tools/stage-hangings.mjs` posiciona as peças e `tools/check-stage-hangings.mjs` verifica os dois apoios, a geometria das câmeras e alpha real em cada quadro. O mastro é o mesmo PNG gerado para o cenário dos banheiros, com fonte e prompt preservados nos dois pacotes.
+
+A nuvem clara ao redor de `npc-danca-1` foi removida por edição de extração de fundo no ImageGen integrado, preservando identidade, roupa e seis gestos. A versão original permanece em `source/generated/npc-danca-1.png`. A extração deslocou duas células, corrigidas na normalização em +30px; `frameOffsets` registra o alinhamento. O crop é comum aos seis quadros. A auditoria `production/qa/palco-npc-alpha.json` verifica que o halo sumiu e que o apoio vertical varia no máximo2px de célula.
+
+Para derivar novamente as imagens de interface a partir da composição, gere a prévia offline e execute `node tools/capture-banheiros-ui.mjs palco`, depois repita exportação/finalização/prévias. O script aceita ambos os cenários. Runtime e dimensões atuais estão em `production/qa/palco-validation.json`.
