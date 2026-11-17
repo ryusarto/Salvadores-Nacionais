@@ -197,3 +197,20 @@ seleção e respeitam a preferência por movimento reduzido. O HUD usa os nove
 
 [Galeria e comparação de escala](production/qa/elenco-hud.html) ·
 [Arquivos e direção de arte](production/ui/comic-v1/README.md).
+
+## Capeta Zanata — sprites completos
+
+A Zanata tem 41 animações de corpo e 12 efeitos **por sentido**, com seis
+quadros próprios por animação: **106 tiras e 636 quadros**. Inclui todos os
+estados do motor, os 19 golpes, três turbos, supers, Fúria e recuperação.
+Direita e esquerda foram geradas separadamente; retrato e ícone seguem o
+mesmo modelo visual. Dano, alcance e IA permanecem iguais.
+
+[Galeria dos dois sentidos](production/qa/zanata-sprites.html) ·
+[Fontes e contrato](production/sprites/source/zanata-v1/README.md).
+
+- `node tools/import-zanata.mjs`: exporta os PNGs/WebP e os manifestos.
+- `node tools/zanata-preview.mjs`: gera a galeria.
+- `node tools/smoke-zanata.mjs`: testa renderização no Chromium após a build.
+- `node tools/backup-zanata.mjs`: pacote local com fontes, tiras, retrato,
+  código e SHA-256. GitHub é a cópia remota principal.

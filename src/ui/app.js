@@ -106,7 +106,7 @@ export function createApp(canvas, devices, opts = {}) {
     app.screen = 'vs';
     const ids = [HEROES[app.hero], app.foe].flatMap(spritePacksFor);
     const token = app.vsToken = (app.vsToken || 0) + 1;
-    prepareSprites(ids).then(() => { if (app.vsToken === token) app.vsReady = true; });
+    prepareSprites(ids).then(() => prepareSprites(ids.filter(id => id.startsWith('zanata') && id.endsWith('-fx')), ['fx-estalo','fx-impacto','fx-defesa'])).then(() => { if (app.vsToken === token) app.vsReady = true; });
   }
 
   function pickFoe() {

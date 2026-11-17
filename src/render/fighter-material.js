@@ -1,6 +1,6 @@
 // A shared render material; approved source pixels and animation poses stay intact.
 // Cached once per decoded atlas, then evicted with the sprite reader's LRU.
-const strengths={franco:.65,dney:.65,mdep:.55,chapuh:.25,majis:.25,ryuchi:.25,'ryuchi-esquerda':.25,trunks:.25,belga:.25};
+const strengths={zanata:.25,'zanata-esquerda':.25,franco:.65,dney:.65,mdep:.55,chapuh:.25,majis:.25,ryuchi:.25,'ryuchi-esquerda':.25,trunks:.25,belga:.25};
 let enabled=true,renderer=null,failed=false,processed=0;
 export function configureFighterMaterial(value){enabled=value;}
 export function fighterMaterialStatus(){return{enabled,available:!!renderer,failed,processed};}
