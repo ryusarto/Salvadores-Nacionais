@@ -262,16 +262,19 @@ export function registerSprites(id, sheets, options = {}) {
  * baixa o resto em segundo plano. Pacotes não registrados são ignorados.
  * @param {string[]} ids pacotes de sprite (personagem, efeitos, lado esquerdo)
  * @param {string[]} names tiras que precisam estar prontas antes da luta
+ * @param {{activate?:boolean}} options false for supplemental preloads in the current selection
  * @returns {Promise<void>}
  */
-export function prepareSprites(ids, names = ['parado', 'andar', 'golpe-5L', 'defesa-em-pe', 'dano-alto']) {
+export function prepareSprites(ids, names = ['parado', 'andar', 'golpe-5L', 'defesa-em-pe', 'dano-alto'], { activate = true } = {}) {
   const jobs = [];
-  const active = new Set(ids);
-  for (const [id,set] of Object.entries(REG)) for (const s of Object.values(set)) {
-    s.inactive = !active.has(id);
-    if (s.inactive) {
-      releaseDecoded(s);
-      s.posterCv = s.posterState = null;
+  if (activate) {
+    const active = new Set(ids);
+    for (const [id,set] of Object.entries(REG)) for (const s of Object.values(set)) {
+      s.inactive = !active.has(id);
+      if (s.inactive) {
+        releaseDecoded(s);
+        s.posterCv = s.posterState = null;
+      }
     }
   }
   // Baixa primeiro as tiras que toda luta usa, dos dois lados, e só depois o resto.

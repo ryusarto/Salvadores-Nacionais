@@ -1,0 +1,239 @@
+{
+  "url": "http://127.0.0.1:8770",
+  "date": "2026-11-17T19:59:39.212Z",
+  "inventory": {
+    "pavanassi": 41,
+    "pavanassi-esquerda": 41,
+    "pavanassi-fx": 16
+  },
+  "decoded": 98,
+  "snapshots": [
+    {
+      "key": "idle",
+      "pack": "pavanassi",
+      "action": "parado",
+      "state": "idle",
+      "sf": 0,
+      "face": 1,
+      "entities": []
+    },
+    {
+      "key": "5L",
+      "pack": "pavanassi",
+      "action": "golpe-5L",
+      "state": "attack",
+      "sf": 4,
+      "face": 1,
+      "entities": []
+    },
+    {
+      "key": "5H",
+      "pack": "pavanassi",
+      "action": "golpe-5H",
+      "state": "attack",
+      "sf": 13,
+      "face": 1,
+      "entities": []
+    },
+    {
+      "key": "5S",
+      "pack": "pavanassi",
+      "action": "golpe-5S",
+      "state": "attack",
+      "sf": 14,
+      "face": 1,
+      "entities": [
+        {
+          "kind": "carimbo"
+        }
+      ]
+    },
+    {
+      "key": "6S",
+      "pack": "pavanassi",
+      "action": "golpe-6S",
+      "state": "attack",
+      "sf": 28,
+      "face": 1,
+      "entities": [
+        {
+          "kind": "cerca",
+          "hp": 3
+        }
+      ]
+    },
+    {
+      "key": "6S-turbo",
+      "pack": "pavanassi",
+      "action": "golpe-6S-turbo",
+      "state": "attack",
+      "sf": 24,
+      "face": 1,
+      "entities": [
+        {
+          "kind": "cerca",
+          "hp": 3
+        },
+        {
+          "kind": "cerca",
+          "hp": 3
+        }
+      ]
+    },
+    {
+      "key": "2S",
+      "pack": "pavanassi",
+      "action": "golpe-2S",
+      "state": "attack",
+      "sf": 34,
+      "face": 1,
+      "entities": [
+        {
+          "kind": "cabine",
+          "hp": 5
+        }
+      ]
+    },
+    {
+      "key": "4S",
+      "pack": "pavanassi",
+      "action": "golpe-4S",
+      "state": "attack",
+      "sf": 8,
+      "face": 1,
+      "entities": []
+    },
+    {
+      "key": "SA1",
+      "pack": "pavanassi",
+      "action": "golpe-SA1",
+      "state": "attack",
+      "sf": 10,
+      "face": 1,
+      "entities": []
+    },
+    {
+      "key": "SA3",
+      "pack": "pavanassi",
+      "action": "golpe-SA3",
+      "state": "attack",
+      "sf": 48,
+      "face": 1,
+      "entities": []
+    },
+    {
+      "key": "idle",
+      "pack": "pavanassi-esquerda",
+      "action": "parado",
+      "state": "idle",
+      "sf": 0,
+      "face": -1,
+      "entities": []
+    },
+    {
+      "key": "5L",
+      "pack": "pavanassi-esquerda",
+      "action": "golpe-5L",
+      "state": "attack",
+      "sf": 4,
+      "face": -1,
+      "entities": []
+    },
+    {
+      "key": "5H",
+      "pack": "pavanassi-esquerda",
+      "action": "golpe-5H",
+      "state": "attack",
+      "sf": 13,
+      "face": -1,
+      "entities": []
+    },
+    {
+      "key": "5S",
+      "pack": "pavanassi-esquerda",
+      "action": "golpe-5S",
+      "state": "attack",
+      "sf": 14,
+      "face": -1,
+      "entities": [
+        {
+          "kind": "carimbo"
+        }
+      ]
+    },
+    {
+      "key": "6S",
+      "pack": "pavanassi-esquerda",
+      "action": "golpe-6S",
+      "state": "attack",
+      "sf": 28,
+      "face": -1,
+      "entities": [
+        {
+          "kind": "cerca",
+          "hp": 3
+        }
+      ]
+    },
+    {
+      "key": "6S-turbo",
+      "pack": "pavanassi-esquerda",
+      "action": "golpe-6S-turbo",
+      "state": "attack",
+      "sf": 24,
+      "face": -1,
+      "entities": [
+        {
+          "kind": "cerca",
+          "hp": 3
+        },
+        {
+          "kind": "cerca",
+          "hp": 3
+        }
+      ]
+    },
+    {
+      "key": "2S",
+      "pack": "pavanassi-esquerda",
+      "action": "golpe-2S",
+      "state": "attack",
+      "sf": 34,
+      "face": -1,
+      "entities": [
+        {
+          "kind": "cabine",
+          "hp": 5
+        }
+      ]
+    },
+    {
+      "key": "4S",
+      "pack": "pavanassi-esquerda",
+      "action": "golpe-4S",
+      "state": "attack",
+      "sf": 8,
+      "face": -1,
+      "entities": []
+    },
+    {
+      "key": "SA1",
+      "pack": "pavanassi-esquerda",
+      "action": "golpe-SA1",
+      "state": "attack",
+      "sf": 10,
+      "face": -1,
+      "entities": []
+    },
+    {
+      "key": "SA3",
+      "pack": "pavanassi-esquerda",
+      "action": "golpe-SA3",
+      "state": "attack",
+      "sf": 48,
+      "face": -1,
+      "entities": []
+    }
+  ],
+  "errors": []
+}

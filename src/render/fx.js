@@ -1,3 +1,4 @@
+import { chupetinhaEventArt, drawChupetinhaEntity, drawChupetinhaParticle } from './chupetinha-art.js';
 import { drawZanataParticle } from './zanata-art.js';
 import { SYS } from '../data/system.js';
 import { text, burst, slab } from './draw.js';
@@ -7,6 +8,7 @@ import { drawMajisEntity } from './majis-art.js';
 import { drawTrunksEntity, drawTrunksParticle } from './trunks-art.js';
 import { drawBelgaEntity, drawBelgaParticle } from './belga-art.js';
 import { drawRyuchiEntity, drawRyuchiParticle } from './ryuchi-art.js';
+import { drawPavanassiEntity, drawPavanassiParticle } from './pavanassi-art.js';
 import { drawPacifier, drawStamp, drawFence, drawCabin, drawBag, drawHenchman, drawCash, drawTweet, drawGoldWall, drawFireball, drawFireColumn, drawThrownTrident, drawFloorFire } from './boss-art.js';
 
 /**
@@ -31,12 +33,20 @@ export function fxEvents(fx, st) {
   for (const e of st.events) {
     const sy = GY - (e.y || 0);
     const actor = st.f[e.side];
+    const chupetinhaArt = chupetinhaEventArt(e, st);
+    if (chupetinhaArt) fx.parts.push({ k: 'chupetinha', ...chupetinhaArt, t: 0 });
     if (actor?.ch?.spriteProfile === 'ten-frame') {
       const name = ({ hit: 'fx-impacto', block: 'fx-defesa', land: 'fx-poeira', jump: 'fx-poeira' })[e.t]
         || (e.t === 'pop' && e.str === 'RAJADA!' ? 'fx-embalo' : null);
       if (name && hasSpriteStrip(actor.ch.id, name)) fx.parts.push({ k: 'sprite', id: actor.ch.id, name, x: e.x, y: name === 'fx-poeira' ? GY - 35 : e.t === 'pop' ? GY - 350 : sy, r: name === 'fx-poeira' ? 320 : 240, t: 0, dur: 20 });
     }
     const layer = (id, name, x, y, w, h = w, dur = 16, face = 1) => fx.parts.push({ k: 'sprite', id, name, x, y, w, h, dur, face, t: 0 });
+    if (e.t === 'hit' && actor?.ch.id === 'pavanassi' && ['5H','5S','4S','SA1','SA3'].includes(e.key)) layer('pavanassi-fx',e.key==='SA3'?'lei-seca-impacto':'carimbo-impacto',e.x,sy,240,220,18,actor.face);
+    if (e.t === 'barrierDown' && ['cerca','cabine'].includes(e.kind) && st.f.some(f=>f.ch.id==='pavanassi')) {
+      layer('pavanassi-fx',e.kind+'-quebrar',e.x,GY,e.kind==='cabine'?290:220,e.kind==='cabine'?440:390,24);
+      fx.parts.at(-1).anchor='bottom';
+    }
+    if (e.t === 'emotional' && actor?.ch.id === 'pavanassi') layer('pavanassi-fx','decreto-dissolver',e.x,GY-520,180,180,24);
     if (actor?.ch.id === 'ryuchi' && ['hit', 'block', 'parry', 'perfect', 'armor', 'clash', 'grab', 'jump', 'land'].includes(e.t)) {
       const floor = e.t === 'jump' || e.t === 'land';
       layer('ryuchi-fx', floor || e.t === 'armor' ? 'fx-fio' : e.key === '5S' ? 'fx-corte' : e.key === 'c2' ? 'fx-estocada' : 'fx-contra', e.x, floor ? GY - 35 : sy, floor ? 150 : 210, floor ? 90 : 210, 14, actor.face);
@@ -220,7 +230,7 @@ export function drawEntities(c, st) {
       c.restore();
       continue;
     }
-    if (drawChapuhEntity(c, e) || drawMajisEntity(c, e) || drawTrunksEntity(c, e, owner?.ch.id) || drawBelgaEntity(c, e, owner?.ch.id) || drawRyuchiEntity(c, e, owner?.ch.id)) { c.restore(); continue; }
+    if (drawPavanassiEntity(c, e, owner?.ch.id) || drawChupetinhaEntity(c, e, owner?.ch.id) || drawChapuhEntity(c, e) || drawMajisEntity(c, e) || drawTrunksEntity(c, e, owner?.ch.id) || drawBelgaEntity(c, e, owner?.ch.id) || drawRyuchiEntity(c, e, owner?.ch.id)) { c.restore(); continue; }
     if (e.kind === 'ambulance') {
       // ambulância despencando do céu até o chão, girando, com a sirene piscando
       const t = e.delay > 0 ? 1 - e.delay / (e.delay0 || 26) : 1;
@@ -395,6 +405,8 @@ export function fxDrawFront(c, fx) {
   for (const p of fx.parts) {
     const t = p.t / p.dur;
     if (p.k === 'absorb') continue;
+    if (p.k === 'sprite' && p.id === 'pavanassi-fx') { drawPavanassiParticle(c,p); continue; }
+    if (p.k === 'chupetinha') { drawChupetinhaParticle(c, p); continue; }
     if (p.k === 'sprite' && ['zanata-fx','zanata-esquerda-fx'].includes(p.id)) { drawZanataParticle(c,p); continue; }
     if (p.k === 'sprite' && p.id === 'ryuchi-fx') { drawRyuchiParticle(c, p); continue; }
     if (p.k === 'sprite' && p.id === 'belga-fx') {

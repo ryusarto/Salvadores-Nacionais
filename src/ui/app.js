@@ -15,6 +15,7 @@ import { buildStage, drawStage } from '../render/stage.js';
 import { drawEffect, prepareSprites, spritePacksFor } from '../render/sprites.js';
 import { drawFighter, drawBoxes } from '../render/mannequin.js';
 import { drawLivePhone, drawBanStamp, drawAnkleZone, drawHeadline, drawFired, drawGoldArmor, drawWings } from '../render/boss-art.js';
+import { drawPavanassiStatus } from '../render/pavanassi-art.js';
 import { drawInfernoStage } from '../render/inferno-stage.js';
 import { drawWashingtonStage } from '../render/washington-stage.js';
 import { drawMansionStage } from '../render/mansion-stage.js';
@@ -110,7 +111,7 @@ export function createApp(canvas, devices, opts = {}) {
     // A arena pintada baixa e é pré-montada durante a tela de versus, não no meio da luta.
     void requestStageArt(encounterStage(app));
     if (encounterStage(app) === 'belem') setTimeout(() => warmBelemStage(app.cam), 0);
-    prepareSprites(ids).then(() => prepareSprites(ids.filter(id => id.startsWith('zanata') && id.endsWith('-fx')), ['fx-estalo','fx-impacto','fx-defesa'])).then(() => { if (app.vsToken === token) app.vsReady = true; });
+    prepareSprites(ids).then(() => prepareSprites(ids.filter(id => id.startsWith('zanata') && id.endsWith('-fx')), ['fx-estalo','fx-impacto','fx-defesa'], { activate: false })).then(() => { if (app.vsToken === token) app.vsReady = true; });
   }
 
   function pickFoe() {
@@ -605,6 +606,7 @@ export function createApp(canvas, devices, opts = {}) {
       drawFighter(c, f, app.frame + f.side * 17);
       if (f.ch.id === 'chupetinha') drawLivePhone(c, f, app.frame);
       drawBanStamp(c, f, BAN_LABEL);
+      drawPavanassiStatus(c, f, app.frame);
       if (f.ch.id === 'laranjao' && f.res.headline && st.ents.some((e) => e.kind === 'clone' && e.owner === f.side)) drawHeadline(c, f.x, SYS.GROUND_Y - f.y - 560, f.res.headline);
       if (absorb && absorb.t / absorb.dur > .35) {
         c.translate(f.x, SYS.GROUND_Y - f.y);

@@ -1,0 +1,204 @@
+{
+  "banheiro-azul": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One ordinary blue portable toilet, rectangular corrugated weathered plastic cabin, cream shallow rounded roof, CLOSED front door, small silver handle, neutral empty inset notice rectangle at upper door. Soft desaturated blue body. No symbols, no accessories, no people, no plumbing outside. This is background decoration, no red warnings.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/banheiro-azul.png",
+    "generatedFile": "exec-7d0a8b47-d6e9-4062-bed1-5115d5a31af8.png",
+    "sha256": "424248d6a056f60da86fcb4aacc4001b7d6162c8f915e64ba109fdc7d88cca24"
+  },
+  "banheiro-verde": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One ordinary teal-green portable toilet, rectangular corrugated weathered plastic cabin, cream shallow rounded roof, CLOSED front door, small silver handle, neutral empty inset notice rectangle at upper door. Soft desaturated turquoise green. No symbols, no accessories, no people. This is background decoration, no red warnings.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/banheiro-verde.png",
+    "generatedFile": "exec-82f7cb3b-75f7-4383-be62-6e150f3aae86.png",
+    "sha256": "5794acb3504431a9d5882dfd76fb2eb2bf0bdc997b6e63811bcb7a47b0847f1d"
+  },
+  "banheiro-acessivel": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One wheelchair-accessible portable toilet, visibly wider than a standard unit, low threshold flush entrance, cream roof, desaturated deep teal corrugated plastic body, CLOSED wide front door, low lever handle and BLANK cream rectangular notice plate. No text or accessibility icon (will be typeset separately). No ramp attached, no people. Entire standalone wide cabin.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/banheiro-acessivel.png",
+    "generatedFile": "exec-e306c35d-efb9-457c-935f-3169b789692f.png",
+    "sha256": "4d697cfddf80db6daced3d83219f775001357dc88a9a529c0c873e796406254d",
+    "selected": false
+  },
+  "lavatorio": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One portable freestanding handwashing station for an outdoor concert, two shallow oval sinks built into one cream molded plastic console, TWO silver gooseneck taps, teal sturdy base and foot-operated small pump pedals. No water jets, no people, no containers, no background toilet. Entire station only.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/lavatorio.png",
+    "generatedFile": "exec-b3f6b721-a44d-4f10-b7b7-8d12cbac6280.png",
+    "sha256": "bfc6c0de905b5d6c4d87638c40536a9d3eef7152ba52d4f19e4b2a4e618863ed"
+  },
+  "reservatorio": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One closed dark blue ribbed cylindrical portable water tank on its own integrated short molded pedestal, small capped top and a single low outlet nozzle. No hoses, no writing, no water, no other props. Entire tank only.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/reservatorio.png",
+    "generatedFile": "exec-6bea8629-b477-4da3-b708-48288f766696.png",
+    "sha256": "10eea0664997a6d47e68a7d2c9e3998be99e1e49cff00d2e0704ac5ff1182425"
+  },
+  "lixeira": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One cylindrical teal public trash bin with cream raised rim, open narrow top showing black liner edge, closed bottom, subtle wear. Clean public infrastructure, no visible rubbish or gross content. No symbols, text, people or ground.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/lixeira.png",
+    "generatedFile": "exec-c0d960c9-40cd-4461-8f85-f6191d2fabaf.png",
+    "sha256": "dd607500a7662c774888d4a95ffd3ddb7093c01975fc43080495cec3771ece59"
+  },
+  "cone-servico": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One small orange safety cone with two cream reflective bands and black square rubber foot, slightly weathered hand-painted plastic. No signs, no other props.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/cone-servico.png",
+    "generatedFile": "exec-ebffe6ee-95a7-42a2-9ec6-17a3264ada1e.png",
+    "sha256": "d58eeb9477177ae628916a7b5b528d610469635dab6947bfb34113f0e4232394"
+  },
+  "mangueira": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One dark muted teal rubber service hose loosely coiled horizontally with short brass coupling visible at each end. Low pile seen almost side-on, entire standalone hose only, no running water, no tap, no floor, no shadow.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/mangueira.png",
+    "generatedFile": "exec-22cc7b6e-1b97-4dd2-a096-f575e78cb2a0.png",
+    "sha256": "ca022610c40b32f92da5ff5cfc73a73c606ffc40985282308c43197be49edffc"
+  },
+  "placa-pedestal": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One blank cream rectangular notice board on a single dark wooden post with simple two-foot support. Front face horizontal aspect 2.4:1, slightly worn cream surface, slim dark frame. Height whole prop about two board widths. Keep face completely blank for Portuguese text composited later. No marks, icons or other objects.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/placa-pedestal.png",
+    "generatedFile": "exec-d4a1bc39-cf7a-4b23-a7e4-6bc5dbca7b3d.png",
+    "sha256": "4a93bb87e7cc0892b10c2a24501d1dc25e02623d43e2ac6e31d548a5ac967cbb"
+  },
+  "tenda-servico": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One small outdoor community service pop-up tent STRUCTURE ONLY: amber beige canvas pyramidal canopy on four slender dark metal posts, open on all sides, no walls or curtains. Wide front view, entire roof and all four thin legs. No table, no equipment, no signs, no people, no ground.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/tenda-servico.png",
+    "generatedFile": "exec-1a8fbcf8-cb1b-4eaa-855d-2c2d5dde3d24.png",
+    "sha256": "84bf837072b85b851e5ecfe2071bb5a4d3c17797353d6310734b79f01b8b9833"
+  },
+  "prancheta": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One wooden clipboard with metal clip and a single blank cream paper sheet, nearly frontal, very slight tilt. No letters, stamps or hands, no other props. A standalone bureaucratic object.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/prancheta.png",
+    "generatedFile": "exec-3c26a409-72b3-426e-be19-196d53bcca1b.png",
+    "sha256": "5a3b6f550487c33b4db4c53324d14536f8900799b700022debdc6dc20c8ae8cb"
+  },
+  "rolo-papel": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One clean cream roll of toilet paper with cardboard core visible at a small angle and one short loose tail folded beside it. Tasteful ordinary supply, no humor marks, no other props.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/rolo-papel.png",
+    "generatedFile": "exec-ef39ab63-2c11-46af-9d34-ee95a7a76054.png",
+    "sha256": "39f329d4ad55b2c3c05f0c360422186514ea79e0b74975e6d2d2eabf295131dc"
+  },
+  "documentos": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One short neat stack of cream bureaucratic blank paper sheets, two corner tabs, no text or stamped marks. Low side-front angle, whole pile, no clipboard, hands, table or other props.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/documentos.png",
+    "generatedFile": "exec-4da8b160-2ba9-43a6-983b-725354741b76.png",
+    "sha256": "6d5c70d622538b6892cb2002cdb925e7575e9b18bb2795ee70a5d127fff74b49"
+  },
+  "poca-agua": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One very shallow clean water puddle as a thin wide flattened horizontal oval, irregular soft perimeter, subdued violet reflections with a few amber and teal highlights. Transparent outside water shape and partially translucent inside, no ground painted, no grass, no objects. Designed to place on stone ground in background, not a combat hazard.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/poca-agua.png",
+    "generatedFile": "exec-ec5f3bcd-32da-49a7-91bd-ba2b8c27359f.png",
+    "sha256": "008dc9e4ec52e461a5c10a76fed9a35206d5b39c158253c9ca4d7478df4fbf00"
+  },
+  "cabine-fiscal": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One ominous SATIRICAL bureaucratic giant portable toilet cabin, SLIM width to height ratio 190:420, cobalt blue corrugated plastic, closed flat front door, red metal reinforcement around door, cream shallow roof, a blank cream horizontal notice rectangle on door upper quarter. Simple small handle on right. NO letters, symbols, lights or extra objects. Whole cabin exact front view, centered. Stronger ink contrast than decorative toilets, readable at 190x420. This is a targetable combat prop, not background.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/cabine-fiscal.png",
+    "generatedFile": "exec-b1ec8db0-877c-44de-b9aa-6d94f95fa770.png",
+    "sha256": "fd86fb7b2865e3d3c7c39f3bd738dd9e6941d56d7ee628a4c4880bec4e31b7ad"
+  },
+  "cerca-fiscal": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One SLIM upright combat iron fence segment, exactly THREE vertical gray steel bars, two horizontal crossbars at 15 percent and 80 percent height. Whole segment aspect ratio width60 height200. Bars vertical, bottoms all on same baseline, no base feet or sign or separate post, no extra bars, no wire mesh. Cobalt and violet shadows, small red collars on two crossbars, very readable at60x200.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/cerca-fiscal.png",
+    "generatedFile": "exec-62f42809-f2c7-49cd-bb2a-c2875e777b97.png",
+    "sha256": "fea13d9553c88ee3b70402d2f1de3cf04b322c4af15a01d857d5760745c5c44d"
+  },
+  "carimbo-fiscal": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One oversized rubber bureaucratic stamp, dark wood bulb handle above a wide dark rectangular base, lower rubber stamping pad bright crimson red. Front side view, width60 height60 approximate overall silhouette, no letters or paper, no hands, one object only.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/carimbo-fiscal.png",
+    "generatedFile": "exec-9defb985-e4b0-4177-8812-0ae6a1512f24.png",
+    "sha256": "3df4698d86933eafa94a747465e59b2948242bc79a39cb3beff306a68fcea8a9"
+  },
+  "npc-acolhimento": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. A full-body Brazilian adult woman volunteer with dark brown skin, short natural curly black hair, cream T-shirt with plain small teal chest patch, dark purple loose trousers and sneakers. Kind confident grounded pose. She welcomes visitors with one open-palm gesture and a small smile. No toilet, flag, sign or other prop. SIX different consecutive poses of a subtle looping welcoming gesture, feet planted, fixed body scale/head/clothes identity; body remains in same cell location. SPRITE SHEET: EXACTLY SIX equal square cells arranged in a strict 3-column by 2-row grid on a 3:2 canvas. Reading order left-to-right top-to-bottom. Each cell has the same fixed camera, padding, anchor and subject scale. Transparent gaps only, no visible grid, frame labels, shadows outside cells or drawings crossing cell boundaries. All six poses genuinely different but animation consistent.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/npc-acolhimento.png",
+    "generatedFile": "exec-8da7dc17-e166-4f85-94f0-90da5b4ceefd.png",
+    "sha256": "d506df66fa57b9515416b148b1504573f371f66ba06e7fc6f4ffd02b6260d6a8"
+  },
+  "npc-fila-comunidade": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. A full-body Brazilian adult young person, medium brown skin, short curly hair, light blue overshirt over plain cream top, ochre trousers, simple dark sneakers. Relaxed respectful confident person waiting in concert queue, casually looking toward the music and subtly swaying. No gender caricature or visual ridicule. No props. SIX different consecutive poses of a subtle idle loop, feet planted, fixed body scale/head/clothes identity; body remains in same cell location. SPRITE SHEET: EXACTLY SIX equal square cells arranged in a strict 3-column by 2-row grid on a 3:2 canvas. Reading order left-to-right top-to-bottom. Each cell has the same fixed camera, padding, anchor and subject scale. Transparent gaps only, no visible grid, frame labels, shadows outside cells or drawings crossing cell boundaries. All six poses genuinely different but animation consistent.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/npc-fila-comunidade.png",
+    "generatedFile": "exec-3bad0688-a49b-4ab5-af9d-27631cd5602c.png",
+    "sha256": "3fb9d7840dbb8270c4b9bef4af2766df733f9b63cc29944502b27342c728a269"
+  },
+  "bandeira-trans-vento": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. One rectangular textile transgender pride flag hanging from a short horizontal top cord, exactly FIVE horizontal stripes LIGHT BLUE, PINK, WHITE, PINK, LIGHT BLUE top to bottom, equal stripe widths. No pole, no people, no writing or other props. SIX different consecutive wave poses forming a smooth fabric breeze loop, fixed left attachment points and flag scale. Keep entire flag in each cell. Welcoming community decoration, dignified and brightly readable. SPRITE SHEET: EXACTLY SIX equal square cells arranged in a strict 3-column by 2-row grid on a 3:2 canvas. Reading order left-to-right top-to-bottom. Each cell has the same fixed camera, padding, anchor and subject scale. Transparent gaps only, no visible grid, frame labels, shadows outside cells or drawings crossing cell boundaries. All six poses genuinely different but animation consistent.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/bandeira-trans-vento.png",
+    "generatedFile": "exec-19aa292a-164f-46dc-943c-e1104d61ca0c.png",
+    "sha256": "7280419c651d0fcf5029483a2e5b0000883925b24f1255f333367bf59c46e208"
+  },
+  "papel-vento": {
+    "prompt": "Use case: illustration-story. Project: Salvadores Nacionais, arena 3, Belém portable-toilet area beside a community rap concert. Asset style MUST match arena 2: sophisticated hand-painted Brazilian street comic illustration, dark ink outlines, visibly brushed material texture and small halftone accents, warm amber upper-left lighting, violet night shadows, very subtle teal right rim. Ground-level side view for a 2D fighting game, almost frontal with only a slim right side visible, NOT isometric, no top-down perspective. Clean readable silhouette, whole object uncropped, centered with 8 percent transparent padding. True transparent alpha background. No floor plane, no cast floor shadow, no scenery, no text, no lettering, no watermark, no extra objects. Render exactly the requested standalone asset. ONE small blank cream sheet of paper caught in a gentle breeze, curling and tumbling in place. No text, no fire, no stamp, no objects or background. SIX different consecutive poses of a smooth tumbling loop, same sheet size and fixed center; slight rotating and bending only. Designed as subtle environmental animation. SPRITE SHEET: EXACTLY SIX equal square cells arranged in a strict 3-column by 2-row grid on a 3:2 canvas. Reading order left-to-right top-to-bottom. Each cell has the same fixed camera, padding, anchor and subject scale. Transparent gaps only, no visible grid, frame labels, shadows outside cells or drawings crossing cell boundaries. All six poses genuinely different but animation consistent.",
+    "transparent_background": true,
+    "status": "generated",
+    "source": "source/generated/papel-vento.png",
+    "generatedFile": "exec-758bfcec-22a5-4435-a663-8f1f44201bb3.png",
+    "sha256": "ecb359d8c9662b16269fa9608af9a8ed816bf081b252af0b4cbb0c44dceb3a6d",
+    "selected": false
+  },
+  "banheiro-acessivel-v2": {
+    "prompt": "Edit this standalone accessible portable toilet game asset. Preserve the exact cabin design, shape, front camera, colors, paint texture and blank sign. Remove ALL surrounding light glow, shadow, floor, haze and backdrop. Entire exterior outside precise physical cabin silhouette must be true alpha0, interior plastic opaque alpha255. No ambient light painted beyond its silhouette. Do not add anything. Keep entire cabin uncropped with transparent padding.",
+    "transparent_background": true,
+    "source": "source/generated/banheiro-acessivel-v2.png",
+    "status": "generated",
+    "generatedFile": "exec-392285bd-b7d0-437c-91d1-04ff01c31b93.png",
+    "sha256": "cb3b826cede2e6d8483bb952927d33aae0ef9ee42b86eed2fd6669b0e3be2f13",
+    "selected": true
+  },
+  "_method": "Built-in ImageGen:22 generated assets (one mast shared with palco) plus2 alpha edits; all24 original PNGs retained.",
+  "papel-vento-v2": {
+    "prompt": "Use case: background-extraction. Edit this six-frame game sprite sheet. Preserve exactly the six cream paper shapes, their outlines, shading, poses, positions, size, strict3x2 grid and canvas1536x1024. Remove ALL of the light background between and around the paper sheets. Every pixel outside the SIX physical ink-outlined paper silhouettes must be alpha0, completely transparent; retain the actual cream paper interiors as opaque. No white backdrop, no gray backdrop, no checkerboard pattern painted, no glow or shadow. Return a PNG with genuine alpha. Do not redraw or change paper or layout.",
+    "transparent_background": true,
+    "source": "source/generated/papel-vento-v2.png",
+    "status": "generated",
+    "generatedFile": "exec-0d68ce46-21e4-4df1-a1a7-c0821d53b04a.png",
+    "sha256": "7201b8f1beef4fe9a4c784ccd135eb58dfe258c999d76dc2da03fbb7a7a3b2b7",
+    "selected": true
+  },
+  "mastro-bandeirolas": {
+    "prompt": "Use case: illustration-story. One isolated modular environment prop for Salvadores Nacionais, hand-painted Brazilian street-comic game at a Belém night festival. Create a tall slender rustic WOODEN FESTIVAL MAST, one short horizontal wooden crossarm near its top, a simple T shape. Crossarm width is one third of total mast height. Clean rounded timber ends with visible rope-tie grooves. Vertical pole continues five percent of total height above the crossarm. Natural dark brown wood grain and subtle rope wrapping at the central joint. Pole is thin, straight, visibly reaches ground, small simple square footing. Exact front view. Entire mast including crossarm and footing uncropped with transparent padding. Dark ink outlines, brushed material and sparse halftone, amber upper-left light, violet shadows and subtle teal rim. TRUE transparent alpha outside the physical mast. No floor, no cast shadow, glow, backdrop, flags, hanging fabric, long cords, extra objects, text or people. Three attachment sites (left crossarm end, center joint and right crossarm end) clearly visible. It will support separately animated bunting and a rectangular flag.",
+    "transparent_background": true,
+    "generatedFile": "exec-803155a9-a1e7-4cd9-88a9-beff299a59f0.png",
+    "source": "source/generated/mastro-bandeirolas.png",
+    "sha256": "f2038272c20d553c4936e335de2820c94651de2da933ace84813472e4ca63923",
+    "status": "generated",
+    "sharedWith": [
+      "palco",
+      "banheiros"
+    ],
+    "method": "built-in ImageGen, one shared generation for both arenas"
+  }
+}

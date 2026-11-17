@@ -1,0 +1,231 @@
+{
+  "frames": 6,
+  "sourceSheets": 2,
+  "cell": 500,
+  "effects": [
+    {
+      "action": "carimbo-voador",
+      "name": "Carimbo voador",
+      "subject": "The same wooden round-handled rectangular black rubber stamp with crimson-red ink pad as the character reference; isolated prop, gently tumbling during flight, no person.",
+      "loop": true,
+      "poses": [
+        "stamp tilts 10 degrees clockwise",
+        "stamp rotates to 25 degrees clockwise",
+        "stamp rotates to 40 degrees clockwise",
+        "stamp tilts back to 25 degrees",
+        "stamp tilts 10 degrees counterclockwise",
+        "stamp returns near original angle"
+      ]
+    },
+    {
+      "action": "carimbo-impacto",
+      "name": "Impacto do carimbo",
+      "subject": "Crimson rubber-stamp ink impact, small sharp comic ink star and red droplets; no stamp, no person, transparent gaps between ink marks.",
+      "loop": false,
+      "poses": [
+        "small dense ink spark",
+        "ink star opens",
+        "maximum red ink splash",
+        "splash extends with thinner droplets",
+        "sparse scattered ink drops",
+        "last few tiny fading ink flecks"
+      ]
+    },
+    {
+      "action": "cerca-erguer",
+      "name": "Cerca surgindo",
+      "subject": "Narrow dark gray wrought-iron barrier with three vertical bars, two crossbars and a taller thin central signpost carrying a cream rectangular BLANK placard. Same fence across all drawings, anchored at ground baseline.",
+      "loop": false,
+      "poses": [
+        "barrier begins rising from ground, upper bar visible",
+        "half-height bars emerge",
+        "three-quarter height, sign emerges",
+        "full height, signpost finishing rise",
+        "full barrier slight landing vibration",
+        "barrier upright and settled"
+      ]
+    },
+    {
+      "action": "cerca-integridade",
+      "name": "Cerca — três níveis de resistência",
+      "subject": "Same narrow dark gray iron fence: three vertical bars, two horizontal crossbars and tall signpost with cream BLANK placard. Shape and size fixed; show progressive damage.",
+      "loop": false,
+      "poses": [
+        "completely intact fence, three upright bars",
+        "intact fence slightly vibrating",
+        "one cracked and bent bar, light damage",
+        "one cracked bar, small fleck falling",
+        "two badly bent cracked bars, heavy damage",
+        "two broken bent bars and signpost tilted, about to collapse"
+      ]
+    },
+    {
+      "action": "cerca-quebrar",
+      "name": "Cerca quebrando",
+      "subject": "Same narrow gray iron barrier with tall signpost and cream BLANK sign breaking apart, separate object FX, no people.",
+      "loop": false,
+      "poses": [
+        "fence first snaps at crossbar",
+        "three bars bend outward",
+        "signpost breaks and tilts",
+        "bars and sign fall downward",
+        "broken iron fragments pile near baseline",
+        "small settled pile of iron and cream sign fragments"
+      ]
+    },
+    {
+      "action": "cabine-queda",
+      "name": "Cabine — queda e aterrissagem",
+      "subject": "Blue portable chemical toilet cabin with white curved roof, darker blue corrugated door, silver hinges, small red latch and large cream BLANK rectangular notice plate in upper third of door. Front/three-quarter fixed view; width about half height; the SAME single cabin in each cell.",
+      "loop": false,
+      "poses": [
+        "upright cabin tilted slightly backward, descending",
+        "upright cabin almost landing",
+        "cabin compresses slightly on landing, roof vibrates",
+        "cabin rebounds tiny tilt forward",
+        "cabin settles with tiny opposite wobble",
+        "fully upright settled cabin"
+      ]
+    },
+    {
+      "action": "cabine-integridade",
+      "name": "Cabine — cinco pontos de resistência",
+      "subject": "Same blue portable toilet with white roof, darker blue corrugated door, red latch, cream BLANK notice in upper third. Fixed camera and external size. Six successive durability states.",
+      "loop": false,
+      "poses": [
+        "HP5 intact clean cabin",
+        "HP4 first small crack on door",
+        "HP3 two visible door cracks and a dent",
+        "HP2 long fractures and one bent hinge",
+        "HP1 heavily cracked door and loose roof, still upright",
+        "HP0 broken door partly detached and roof slumping"
+      ]
+    },
+    {
+      "action": "cabine-quebrar",
+      "name": "Cabine desabando",
+      "subject": "Same blue portable toilet cabin with white roof and BLANK cream notice breaking down, no person inside or outside. Keep all flying debris inside each cell.",
+      "loop": false,
+      "poses": [
+        "roof separates and door cracks open",
+        "door detaches while side wall buckles",
+        "blue walls collapse outward and white roof drops",
+        "walls fall into a heap",
+        "debris bounces close to ground",
+        "settled heap of blue panels, white roof pieces and cream placard"
+      ]
+    },
+    {
+      "action": "fila-documentacao",
+      "name": "Fila da documentação",
+      "subject": "Isolated bureaucratic queue effect: cream paper forms with dark ink ruled lines, numbered-ticket SHAPE without digits, a tiny hourglass and dark gray paper-chain loop; no text, people or hands.",
+      "loop": true,
+      "poses": [
+        "three forms hover around hourglass",
+        "one form rises as hourglass tilts",
+        "paper-chain loop closes around empty center",
+        "forms circle clockwise around empty center",
+        "top form drops and hourglass straightens",
+        "forms return near initial arrangement"
+      ]
+    },
+    {
+      "action": "proibido-especial",
+      "name": "Proibição de especial",
+      "subject": "Readable small status icon on a cream paper placard: bold dark lightning bolt covered by a strong crimson prohibition circle and diagonal slash. Dark ink outlines, no letters or words.",
+      "loop": true,
+      "poses": [
+        "placard first appears slightly compressed",
+        "placard expands slightly",
+        "placard upright normal scale",
+        "small firm stamp-like tilt clockwise",
+        "small tilt counterclockwise",
+        "placard settled normal scale"
+      ]
+    },
+    {
+      "action": "proibido-pulo",
+      "name": "Proibição de pulo",
+      "subject": "Readable cream paper status placard: bold dark upward arrow and bent-leg jump pictogram covered by crimson prohibition circle and diagonal slash. Dark outlines; no letters or words.",
+      "loop": true,
+      "poses": [
+        "placard slightly compressed",
+        "placard expands slightly",
+        "upright normal placard",
+        "small tilt clockwise",
+        "small tilt counterclockwise",
+        "placard settles normal"
+      ]
+    },
+    {
+      "action": "proibido-super",
+      "name": "Proibição de super",
+      "subject": "Readable cream paper status placard: three bold dark vertical energy-meter bars covered by a crimson prohibition circle and diagonal slash. Exactly three bars, dark outlines, no text.",
+      "loop": true,
+      "poses": [
+        "placard compressed",
+        "placard expands slightly",
+        "upright normal placard",
+        "small tilt clockwise",
+        "small tilt counterclockwise",
+        "placard settles"
+      ]
+    },
+    {
+      "action": "decreto-dissolver",
+      "name": "Decreto dissolvendo",
+      "subject": "Crimson rectangular rubber-stamp seal made of red ink lines on a small torn cream paper rectangle, blank center with NO lettering. Seal cracks and dissolves into ink flecks and paper scraps; no people.",
+      "loop": false,
+      "poses": [
+        "solid red seal on cream paper",
+        "first diagonal crack through seal",
+        "paper tears into three pieces",
+        "pieces separate and ink disintegrates",
+        "small scattered paper scraps and red ink flecks",
+        "few final tiny scraps and flecks"
+      ]
+    },
+    {
+      "action": "cela-carimbo",
+      "name": "Cela da Lei Seca",
+      "subject": "Bureaucratic stamp-prison cage, isolated prop with dark iron bars, a rectangular black-and-red stamp base as bottom and a wooden stamp handle at top. Empty inside, NO captive, no person, no words. Transparent gaps between iron bars.",
+      "loop": false,
+      "poses": [
+        "low stamp base appears",
+        "iron bars rise halfway",
+        "bars extend to full cage height",
+        "top stamp handle locks onto cage",
+        "cage firmly closed, slight red ink tension at corners",
+        "closed cage held stable"
+      ]
+    },
+    {
+      "action": "lei-seca-impacto",
+      "name": "Impacto da Lei Seca",
+      "subject": "Isolated powerful crimson stamp impact effect: large angular red ink shock ring, dark comic speed strokes and a few cream paper fragments. Empty center, no character, stamp, cage or scene.",
+      "loop": false,
+      "poses": [
+        "small compact red ink burst",
+        "impact ring expands",
+        "largest strong angular shock ring",
+        "ring cracks into separated ink arcs",
+        "thin arcs disperse and paper scraps fall",
+        "last sparse red ink flecks"
+      ]
+    },
+    {
+      "action": "veto-arco",
+      "name": "Arco do Veto",
+      "subject": "Isolated short rising uppercut arc made of crimson stamp ink with dark brush outline, sweeping from lower-left to upper-right. No person, body, hands or stamp; transparent negative space.",
+      "loop": false,
+      "poses": [
+        "short rising red slash",
+        "slash rises and lengthens",
+        "full upward curved ink arc",
+        "arc separates into brush streaks",
+        "streaks thin into red droplets",
+        "last few droplets near upper end"
+      ]
+    }
+  ]
+}

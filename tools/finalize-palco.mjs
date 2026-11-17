@@ -1,3 +1,4 @@
+import{makeMast,tie,hang,MAST_TIES}from'./stage-hangings.mjs';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 const dir='production/stages/palco';
@@ -23,6 +24,9 @@ wide('barco-2',2250,798,240,{factor:.30,opacity:.8});
 wide('barco-balanco',1950,787,210,{factor:.30,fps:4,opacity:.8});
 add('agua-ondulacao',390,804,{w:420,h:48},{factor:.18,fps:5,opacity:.25});
 add('reflexos-agua',2020,810,{w:400,h:90},{factor:.18,fps:5,opacity:.15});
+const supportHeight=(826-260)/(1-MAST_TIES.right[1]);
+const mastLeft=makeMast(assets,objects,{id:'mastro-palco-esquerdo',x:300,h:supportHeight,factor:.65});
+const mastRight=makeMast(assets,objects,{id:'mastro-palco-direito',x:2300,h:supportHeight,factor:.65});
 add('tablado',1280,822,{w:1370,h:180});
 add('saia-palco',1280,822,{w:1320,h:100});
 tall('trelica-vertical-1',625,732,505);
@@ -55,9 +59,10 @@ add('feixe-palco-1',1000,730,{w:470,h:440},{fps:4,opacity:.12});
 add('feixe-palco-2',1570,730,{w:470,h:440},{fps:4,opacity:.12});
 wide('gradil-1',740,824,220,{factor:.78});
 wide('gradil-2',1790,824,220,{factor:.78});
-wide('bandeirolas-1',300,467,390,{factor:.78});
-wide('bandeirolas-2',2290,430,390,{factor:.78});
-wide('bandeirolas-vento',2320,470,390,{factor:.78,fps:4});
+const trussLeft=objects.find(o=>o.asset==='trelica-vertical-1'),trussRight=objects.find(o=>o.asset==='trelica-vertical-2');
+hang(assets,objects,'bandeirolas-1',tie(mastLeft,MAST_TIES.right),tie(trussLeft,[.5,33/505]));
+hang(assets,objects,'bandeirolas-vento',tie(trussRight,[.5,33/505]),tie(mastRight,MAST_TIES.left),{fps:4});
+hang(assets,objects,'bandeirolas-2',tie(trussRight,[.5,173/505]),tie(mastRight,[.5,(400-(826-supportHeight))/supportHeight]));
 tall('poste',2430,827,470,{factor:.78});
 tall('halo-poste',2430,490,150,{factor:.78,fps:4,opacity:.2});
 for(const [asset,x,h,phase] of [
@@ -94,8 +99,8 @@ for(const key of ['miniatura','carregamento']){
  }
 }
 const manifest={
- id:'palco',version:1,status:report.missing.length?'in-production':'delivered-v1',
- groups:60,world:{width:2600,height:1080,viewWidth:1920,cameraMax:680,feetY:930,groundTopY:826},
+ id:'palco',version:2,status:report.missing.length?'in-production':'delivered-v2',
+ groups:JSON.parse(readFileSync(dir+'/PLANO.json')).groups.length,world:{width:2600,height:1080,viewWidth:1920,cameraMax:680,feetY:930,groundTopY:826},
  essential:['ceu-noite','agua','tablado','trelica-horizontal','trelica-vertical-1','trelica-vertical-2','torre-som-1','torre-som-2','calcamento'],
  layers:[{asset:'ceu-noite',factor:0,width:1920,height:1080}],
  objects:objects.filter(o=>!o.hidden),alternatives:objects.filter(o=>o.hidden),

@@ -1,4 +1,5 @@
 import { twelveFrameProgress } from './twelve-frame-timing.js';
+import { chupetinhaProgress } from './chupetinha-timing.js';
 import { SYS } from '../data/system.js';
 
 const progress = value => Math.max(0, Math.min(0.999, value));
@@ -6,6 +7,7 @@ const progress = value => Math.max(0, Math.min(0.999, value));
 /** Art-only timeline. Combat windows and simulation state remain authoritative. */
 export function spriteProgress(f, animation) {
   if (f.ch?.spriteProfile === 'twelve-frame') return twelveFrameProgress(f, animation);
+  if (f.ch?.id === 'chupetinha' && f.ch.spriteProfile === 'six-frame') return chupetinhaProgress(f, animation);
   if (f.ch?.spriteProfile === 'six-frame') return sixFrameProgress(f, animation);
   if (f.ch?.spriteProfile !== 'ten-frame') return animation.p;
   if (f.state === 'attack' && f.move) {
@@ -45,24 +47,27 @@ export function spriteProgress(f, animation) {
 
 /** Six drawings: ready, wind-up, approach, contact, follow-through, recovery. */
 function sixFrameProgress(f, animation) {
+  if (f.state === 'dizzy' && f.ch?.spriteEmotionalReaction === animation.name && f.res?.emotionalArt) return progress(f.sf / 36);
   if (f.state === 'attack' && f.move) {
     const m = f.move;
     if (m.hold && f.sf >= m.hold.at) return (3 + Math.floor((f.holdT || 0) / 12) % 3) / 6;
     const contacts = f.ch.spriteHitFrames?.[f.moveKey];
     if (contacts && m.hits.length === contacts.length) {
       const first = m.hits[0].from;
-      if (f.sf < first) return Math.min(1.999, f.sf / Math.max(1, first) * 2) / 6;
+      const preparationFrames = Math.max(1, Math.min(...contacts));
+      if (f.sf < first) return Math.min(preparationFrames - .001, f.sf / Math.max(1, first) * preparationFrames) / 6;
       for (let i = 0; i < m.hits.length; i++) {
         if (f.sf <= m.hits[i].to) return contacts[i] / 6;
         if (i + 1 < m.hits.length && f.sf < m.hits[i + 1].from) return (f.ch.spriteHitGapFrames?.[f.moveKey]?.[i] ?? contacts[i] + 1) / 6;
       }
       return 5 / 6;
     }
-    const releases = f.ch.spriteSpawnFrames?.[f.moveKey];
+    const releases = f.ch.spriteSpawnFrames?.[f.moveKey + (m.isTurbo ? '-turbo' : '')] ?? f.ch.spriteSpawnFrames?.[f.moveKey];
     if (releases && m.spawn.length) {
       const shots = [...m.spawn].sort((a, b) => a.at - b.at);
       if (f.sf < shots[0].at) return Math.min(1.999, f.sf / Math.max(1, shots[0].at) * 2) / 6;
-      if (f.sf > shots.at(-1).at + 3) return 5 / 6;
+      const lastRelease = shots.at(-1).at;
+      if (f.sf > lastRelease + 3) return Math.min(.999, 4 / 6 + (f.sf - lastRelease - 4) / Math.max(1, m.total - lastRelease - 5) / 3);
       const index = shots.findLastIndex(s => s.at <= f.sf);
       return releases[index % releases.length] / 6;
     }

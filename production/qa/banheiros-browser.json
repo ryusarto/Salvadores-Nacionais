@@ -1,0 +1,70 @@
+{
+  "status": {
+    "ready": true,
+    "loaded": 61,
+    "errors": []
+  },
+  "errors": [],
+  "audio": [
+    {
+      "name": "trilha-intro",
+      "ready": 1,
+      "duration": 4.618277,
+      "error": null
+    },
+    {
+      "name": "trilha-loop",
+      "ready": 1,
+      "duration": 36.925986,
+      "error": null
+    },
+    {
+      "name": "ambiente-publico",
+      "ready": 1,
+      "duration": 16.002902,
+      "error": null
+    },
+    {
+      "name": "ambiente-sanitario",
+      "ready": 1,
+      "duration": 16.002902,
+      "error": null
+    },
+    {
+      "name": "ambiente-agua",
+      "ready": 1,
+      "duration": 16.002902,
+      "error": null
+    },
+    {
+      "name": "vento-tecido",
+      "ready": 1,
+      "duration": 16.002902,
+      "error": null
+    }
+  ],
+  "stats": {
+    "assets": 70,
+    "images": 64,
+    "gallery": 64,
+    "canvas": [
+      1920,
+      1080
+    ]
+  },
+  "pause": "pass",
+  "isolation": "pass",
+  "reducedEffects": "pass",
+  "effectsToggle": "pass",
+  "interactiveDamageOverlay": "pass",
+  "camera": [
+    0,
+    340,
+    680
+  ],
+  "mobileViewport": [
+    844,
+    390
+  ],
+  "limitation": "Viewport emulation only; physical-device performance and human playtest not assessed."
+}

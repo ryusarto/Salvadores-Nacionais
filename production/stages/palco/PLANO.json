@@ -21,8 +21,8 @@
     ]
   },
   "summary": {
-    "groups": 60,
-    "proposedRuntimeFiles": 87,
+    "groups": 61,
+    "proposedRuntimeFiles": 88,
     "animatedStrips": 18,
     "animationFrames": 108,
     "countExcludes": [
@@ -35,7 +35,8 @@
       "HQ",
       "assets do chefe"
     ],
-    "countMeaning": "87 arquivos finais propostos incluem assets a criar, adaptar, reutilizar e derivar. Não são 87 gerações novas. A quantidade poderá cair após o bloqueio; catedral e detalhes de borda dependem de visibilidade."
+    "countMeaning": "88 arquivos finais, incluindo mastro compartilhado e reusos explícitos. Quantidade derivada dos grupos, sem contar os mestres PNG.",
+    "runtimeFiles": 88
   },
   "rules": [
     "Um arquivo por elemento/variante/ação; alpha verdadeiro para os recortes. Céu e piso podem ser opacos.",
@@ -1040,6 +1041,17 @@
       "framesPerVariant": 1,
       "status": "entregue-v1",
       "separateFiles": true
+    },
+    {
+      "id": "suporte-bandeirolas",
+      "category": "cenografia",
+      "name": "Mastro de madeira para bandeirolas",
+      "slug": "mastro-bandeirolas",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "folder": "props",
+      "origin": "generated",
+      "purpose": "Suporte físico compartilhado para amarrar bandeirolas, com travessa e pontos de fixação."
     }
   ],
   "integrationRequired": [
@@ -1225,5 +1237,12 @@
     "animationFrames": 108,
     "tool": "built-in ImageGen",
     "audio": "original synthesis with explicit Belem ambience reuse"
-  }
+  },
+  "revisions": [
+    {
+      "date": "2026-11-17",
+      "reason": "Revisão do autor: bandeirolas devem ter suportes físicos visíveis.",
+      "change": "Mastros e pontos de fixação no mesmo parallax; preservadas as animações."
+    }
+  ]
 }

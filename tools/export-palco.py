@@ -45,6 +45,9 @@ def animation(key,folder,src):
  for n in range(6):
   x=n%3;y=n//3
   cell=im.crop((round(x*im.width/3),round(y*im.height/2),round((x+1)*im.width/3),round((y+1)*im.height/2))).resize((500,500),Image.Resampling.LANCZOS)
+  # Restore original foot registration after the extraction model re-centered cells3/6.
+  if key=='npc-danca-1' and src.stem.endswith('-v2') and n in [2,5]:
+   registered=Image.new('RGBA',(500,500));registered.alpha_composite(cell,(30,0));cell=registered
   box=cell.getchannel('A').point(lambda a:255 if a>12 else 0).getbbox()
   if not box:raise ValueError('Empty frame '+key+' '+str(n))
   union=box if union is None else (min(union[0],box[0]),min(union[1],box[1]),max(union[2],box[2]),max(union[3],box[3]))
@@ -56,6 +59,7 @@ def animation(key,folder,src):
  path=folder+'/'+key+'.webp';strip.save(PACK/path,'WEBP',quality=92,method=0,exact=True)
  l,t,r,b=union
  record(key,path,'fx' if folder=='fx' else 'animation',6,cellWidth=500,cellHeight=500,crop=[l,t,r-l,b-t],origin='generated',frameHashes=hashes,source=str(src.relative_to(PACK)))
+ if key=='npc-danca-1' and src.stem.endswith('-v2'):ASSETS[key]['frameOffsets']=[[0,0],[0,0],[30,0],[0,0],[0,0],[30,0]]
 def main():
  plan=json.loads(PLAN.read_text());missing=[]
  for g in plan['groups']:
@@ -70,6 +74,7 @@ def main():
     record(key,path,a['kind'],a['frames'],origin='reused-belem',sourceAsset=srcid,**extra)
    else:
     selected='agua-v2' if key=='agua' and (PACK/'source/generated/agua-v2.png').exists() else key
+    if key=='npc-danca-1' and (PACK/'source/generated/npc-danca-1-v2.png').exists():selected='npc-danca-1-v2'
     src=PACK/'source/generated'/f'{selected}.png'
     if not src.exists():missing.append(key);continue
     if g['framesPerVariant']==6:animation(key,g['folder'],src)

@@ -76,6 +76,14 @@ const myCabin = (st, f) => st.ents.find((e) => e.owner === f.side && e.kind === 
 
 export default {
   id: 'pavanassi',
+  spriteProfile: 'six-frame', spriteScale: 0.7631, spriteRecovery: true,
+  spriteFacingPacks: { right: 'pavanassi', left: 'pavanassi-esquerda' },
+  spriteStatePhases: true, spritePhasedMoves: Object.keys(moves),
+  spriteTurboMoves: ['5S', '6S'],
+  spriteHitFrames: { SA1: [1, 2, 3, 4], SA3: [2, 3, 4] },
+  spriteHitGapFrames: { SA1: [1, 2, 3], SA3: [2, 3] },
+  spriteSpawnFrames: { '6S-turbo': [2, 3] },
+  spriteEmotionalReaction: 'dano-emocional',
   name: 'PAVANASSI',
   style: 'Chefe — controle e armadilhas',
   mechName: 'DECRETO',
@@ -92,6 +100,7 @@ export default {
     },
     tick(st, f, o) {
       const r = f.res;
+      if (f.state !== 'dizzy') r.emotionalArt = false;
       // Fila da documentação: cada botão apertado adianta a saída
       if (o.status.queue) {
         if (o.state !== 'frozen') o.status.queue = null;
@@ -110,6 +119,7 @@ export default {
         st.events.push({ t: 'pop', str: 'POR QUE UM VEREADOR FISCALIZA PRIVADA?', x: o.x, y: 640, color: '#fff', size: 34 });
         st.events.push({ t: 'pop', str: 'DANO EMOCIONAL!', x: f.x, y: 540, color: '#ff4fa0', size: 52 });
         st.events.push({ t: 'emotional', side: f.side, x: f.x });
+        r.emotionalArt = true;
         st.events.push({ t: 'barrierDown', kind: 'cabine', x: cab.x });
         if (f.y <= 0 && f.state !== 'ko') {
           f.state = 'dizzy';

@@ -1,0 +1,2433 @@
+{
+  "character": "chupetinha",
+  "version": 3,
+  "bodyAnimations": 41,
+  "bodyFrames": 246,
+  "effectAnimations": 11,
+  "effectFrames": 66,
+  "alpha": "true",
+  "compression": "lossless WebP",
+  "cell": 500,
+  "bodyFoot": [
+    250,
+    456
+  ],
+  "runtimeProfile": {
+    "spriteProfile": "six-frame",
+    "spriteScale": 0.76,
+    "spriteRecovery": true,
+    "spriteTurboMoves": [
+      "5S",
+      "6S",
+      "2S"
+    ],
+    "spriteStripScale": {
+      "chupetinha": {
+        "golpe-5M": 1.037273883105276,
+        "golpe-5H": 1.05112098591372,
+        "golpe-2M": 1.0486033308576392,
+        "golpe-6S": 1.169450773549516,
+        "golpe-6S-turbo": 1.1681919460214756,
+        "golpe-2S": 1.1065093971474969,
+        "golpe-2S-turbo": 1.120356499955941,
+        "golpe-SA3": 1.0989564319792549
+      }
+    }
+  },
+  "sequences": [
+    {
+      "name": "parado",
+      "file": "production/sprites/final/chupetinha/parado.webp",
+      "source": "tiras/parado.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 46713,
+          "edgePixels": 0,
+          "sha256": "61d4647b515c9570762f8f753300eb1b85d2002aa42d9ef6975b27adb210d767"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 47424,
+          "edgePixels": 0,
+          "sha256": "d2b6a881a27ed5202ec6362e6ab537ff8970ae5440ffdddf8b2417c9de32b1f6"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 47758,
+          "edgePixels": 0,
+          "sha256": "c58e6c83f938bfd6179e0e857ccaced465b37b512318a0643f15ff521c28d970"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 49021,
+          "edgePixels": 0,
+          "sha256": "f30ad2029e20bec88c46fcb5c167e2652c94419454334d71f71ba7739cc1a0c7"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 48483,
+          "edgePixels": 0,
+          "sha256": "7a9f531189115cec7404ae7e36a8a05c29f5d3466a442d0a3249e9def3eeaa41"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 47465,
+          "edgePixels": 0,
+          "sha256": "ffed13a041ff8116868041d00165fdb15a8023a0d4d6c8a8784266af0f356c88"
+        }
+      ],
+      "sha256": "6b15939a8fcaae3468394d37d6d517c69dcb7cf98ffb2d1169907314b4411e73",
+      "bytes": 569112
+    },
+    {
+      "name": "andar",
+      "file": "production/sprites/final/chupetinha/andar.webp",
+      "source": "tiras/andar.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 43982,
+          "edgePixels": 0,
+          "sha256": "3749abc35632b3cc35e2ba2d4fb9b515c50ab2d3b62f1f676578a28aff4b6ebf"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 42920,
+          "edgePixels": 0,
+          "sha256": "00d3c0cdf69e48126de3809435b159521138281e1b22eb40eae81c412af8d040"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 39125,
+          "edgePixels": 0,
+          "sha256": "afcc1c567e0c6743a2f93011cec48959fbf5a3b2763f3381c1a077c301139903"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 43967,
+          "edgePixels": 0,
+          "sha256": "28b6dcfe81dedb584e01916f9b4d4ba0ee88ca5832661f1cfaeceb3acf765477"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 42806,
+          "edgePixels": 0,
+          "sha256": "f9874b237f6dae3488d6e4aa6960594f91a62f5e3d19825e883c42b41587a56b"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 39578,
+          "edgePixels": 0,
+          "sha256": "475da2638354f12447e5c6f7ac478af94bec75075bfd744372f88a98cb8c5537"
+        }
+      ],
+      "sha256": "e4a4bfc10a3c021ef95aa95c9fca79d1c202dc7fd62f862a12291199f3c0a245",
+      "bytes": 506960
+    },
+    {
+      "name": "andar-tras",
+      "file": "production/sprites/final/chupetinha/andar-tras.webp",
+      "source": "tiras/andar-tras.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 42903,
+          "edgePixels": 0,
+          "sha256": "5b5a537c898e3508ecf74cdf39d6c2d3d33de396557f8a7290c272e36746688c"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 42479,
+          "edgePixels": 0,
+          "sha256": "c340708d7928298678aaaf39fcf8ce395691e958b7dacf19401d3b2fc026c308"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 36660,
+          "edgePixels": 0,
+          "sha256": "c8d93c9a5b15bc598bf090bff0626b353c2f4dd44207d6b6ac7d1cfdb81153c6"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 43965,
+          "edgePixels": 0,
+          "sha256": "0c4b3d7fb1041429f3446a6ccebdfb5e43d45d5b032634817dc0962ad98928ca"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 38416,
+          "edgePixels": 0,
+          "sha256": "d9846487688e5793a67c0d78559c047a5dba7e86e0436635a5b599228b1160f2"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 41266,
+          "edgePixels": 0,
+          "sha256": "5df9ecf51d3aa8d3d660748002890d8333264abfa484baef4a78522e110c2cf6"
+        }
+      ],
+      "sha256": "85ad5e66156fdb2b9384980e324f30a05385aff6cd92ae732f6ed059548f0018",
+      "bytes": 484186
+    },
+    {
+      "name": "correr",
+      "file": "production/sprites/final/chupetinha/correr.webp",
+      "source": "tiras/correr.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 46452,
+          "edgePixels": 0,
+          "sha256": "9559afb994c7e2dc9906b5a459179af80eb9a97b60c676d47e745b2064409a57"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 50596,
+          "edgePixels": 0,
+          "sha256": "2ad0714cf9e571088ae254a67dfc1c389314dff4c59168ceeba46a2fe8254ded"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 49913,
+          "edgePixels": 0,
+          "sha256": "a18c0fe456343d7b94f124ba4758b8832868fe0e71127bf8aaa6d98950bd22ad"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 48582,
+          "edgePixels": 0,
+          "sha256": "4a57ce3766ce49bd6aa28ee85733bc53e12b5838f1069c3b37a79c4f7fee903c"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 47182,
+          "edgePixels": 0,
+          "sha256": "f87c8cafbf6883eba43733689557700689818f70c4c7dba7a6ed1e139f15e586"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 51456,
+          "edgePixels": 0,
+          "sha256": "7f0976cdce170cb94aeb8267f3fe917846e5c8432ed77367bfff1221f6b5b6eb"
+        }
+      ],
+      "sha256": "4ac8f8d842d4897925f1d9ee235259f90b95b7fb47ae089adcba076c4e9f7389",
+      "bytes": 583504
+    },
+    {
+      "name": "agachar",
+      "file": "production/sprites/final/chupetinha/agachar.webp",
+      "source": "tiras/agachar.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 45663,
+          "edgePixels": 0,
+          "sha256": "fb0af8552ebb4640637ff2793ae568222f6b22adc20da1afb6dc9e33ed620650"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 45039,
+          "edgePixels": 0,
+          "sha256": "1d506914929ccd27e61f83eff37322858934efe8cfe0192028003bfac9133323"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 42524,
+          "edgePixels": 0,
+          "sha256": "c8d686e852c40679d490dfa6a9eee16f556f0075099c015a389d3f828754024d"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 52026,
+          "edgePixels": 0,
+          "sha256": "5f0eb94a9440abaccf9332cda8972efe99bfad271a8d85ad9ed5398d2610be16"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 50675,
+          "edgePixels": 0,
+          "sha256": "3a8b80cee9d5d433e5a7b76c9617b49ddcbc985f28092d332c86e97390cfed95"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 49872,
+          "edgePixels": 0,
+          "sha256": "e42c3bffa9624935e249f7f9a68ed1768173f04a673a523179efa0879333136d"
+        }
+      ],
+      "sha256": "4b440504396f9549ea7b60fdbe8ae4a3731ce511a16216b504877ee1ba3c939e",
+      "bytes": 553536
+    },
+    {
+      "name": "pulo",
+      "file": "production/sprites/final/chupetinha/pulo.webp",
+      "source": "tiras/pulo.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 42946,
+          "edgePixels": 0,
+          "sha256": "b2f964b5ce6459d60963fabdd6e723e1a42f410816a3b4b4a703106b6fed52a3"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 42061,
+          "edgePixels": 0,
+          "sha256": "37256b803014ef457a296749109f91a741d908db04528b110094b56c00fc53d0"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 35005,
+          "edgePixels": 0,
+          "sha256": "4e2f0fd8d42279996668655d95a7a64a6db6ddc525f4f4e48a0a5345c675b4c2"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 34787,
+          "edgePixels": 0,
+          "sha256": "24e780f690da3e8d0887e68b6052fbbb9715f71c24579da583c1acfe2d997edf"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 41255,
+          "edgePixels": 0,
+          "sha256": "db181bdad2416864d9e8c191b45869ff791385b604dbc7508316d03f2f0b85e6"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 45987,
+          "edgePixels": 0,
+          "sha256": "0d7cf6cf261b0be41d0d8f72f640193132a62aa2c4a9cb42ec0a9380f1a54fbe"
+        }
+      ],
+      "sha256": "1bc6165a599979f6027d81de66b75b4be85bc80b8dc19114f47bcd82b6e2b57b",
+      "bytes": 488892
+    },
+    {
+      "name": "recuo",
+      "file": "production/sprites/final/chupetinha/recuo.webp",
+      "source": "tiras/recuo.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 46682,
+          "edgePixels": 0,
+          "sha256": "729356bdf1fbaaefb0e5052cbabcf8859188093d2e176d6c815b16d6bfe83cd0"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 46022,
+          "edgePixels": 0,
+          "sha256": "bc48e6a306eec2caafafbcb4bea740432b6d54064ab03bff1224b312f57585f8"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 40632,
+          "edgePixels": 0,
+          "sha256": "a36698f929e41efe7ec06d5c20fb51f53366378f56703eaa810c354aad260fd7"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 46146,
+          "edgePixels": 0,
+          "sha256": "3bf7ea74c64f540377b5bc1715ce433118dd7fc6bd3107970c2ca7d813d99870"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 47934,
+          "edgePixels": 0,
+          "sha256": "6a5e149b2b56a4996a3eca722db20e2f59cecc084dbc897807e6989cdf7b1936"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 47444,
+          "edgePixels": 0,
+          "sha256": "3ded2d264c3e038d6eb40dd128e338ae844a0881b26e9fd68ecd6603b58daf76"
+        }
+      ],
+      "sha256": "712218a77f5445c2670b688f4ed3c71f96080962225e51d9fd9843e1eacfb6cb",
+      "bytes": 551446
+    },
+    {
+      "name": "escape-agarrao",
+      "file": "production/sprites/final/chupetinha/escape-agarrao.webp",
+      "source": "tiras/escape-agarrao.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 46463,
+          "edgePixels": 0,
+          "sha256": "07ca6211c32b82bd3be33d7f8ad95a0343d7fe285821eb5c31599b467cfc563b"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 48794,
+          "edgePixels": 0,
+          "sha256": "590490309b0b0957647ffd3527553293f59006ceb84609203a2d0d96b581f3e6"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 51295,
+          "edgePixels": 0,
+          "sha256": "6cf4e91e7e60278b3902fc676a3c37a7718ce546bca5e7604bbb81d1f322849e"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 52722,
+          "edgePixels": 0,
+          "sha256": "3927abb8159f44b07f5f51c62541b4365b8469ee713bb868e7f6ce02c6e4bbb1"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 50589,
+          "edgePixels": 0,
+          "sha256": "4b31756a407d9391e931989b28cecace82715793717882efcacdceb85f86c870"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 49141,
+          "edgePixels": 0,
+          "sha256": "05fe832892c47f7519a09d7916fec931bba2dc3c24c06152b95cce562de3c6d2"
+        }
+      ],
+      "sha256": "6f2f4bab24c0a6f05d62d28162ae0da6910b58c1f51241abf905b33bc704223e",
+      "bytes": 571000
+    },
+    {
+      "name": "recuperacao-rolamento",
+      "file": "production/sprites/final/chupetinha/recuperacao-rolamento.webp",
+      "source": "tiras/recuperacao-rolamento.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 51125,
+          "edgePixels": 0,
+          "sha256": "3729a327f03e9c7a2baa7c1a2a43775d39f66a1315c1411b6f627422e99e57fd"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 50885,
+          "edgePixels": 0,
+          "sha256": "3a978847c35c9154844c1029faf0dbe9cca962f986663839c84cc92bbc9e6e63"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 50666,
+          "edgePixels": 0,
+          "sha256": "9cee7dba1d598e858fc0ecd1377edc80e3404910db82cd4a917c451430fca0c2"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 47917,
+          "edgePixels": 0,
+          "sha256": "52869e26736bc5a9e4dff5d3c24c879996b3a98e7593c343183acca251270290"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 50749,
+          "edgePixels": 0,
+          "sha256": "1701264ce1080f6a919a3b257440ec75d07f17bf8f01ae44fad2419f83028ee5"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 51693,
+          "edgePixels": 0,
+          "sha256": "56c3bafc6ca96d0cdcf90f2b3754656c5028e66b67fc37234b9d6842623af185"
+        }
+      ],
+      "sha256": "9a43309f001d14833c6a25f9645814876120f51eb24660bb22be39823805efec",
+      "bytes": 562038
+    },
+    {
+      "name": "defesa-em-pe",
+      "file": "production/sprites/final/chupetinha/defesa-em-pe.webp",
+      "source": "tiras/defesa-em-pe.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 39855,
+          "edgePixels": 0,
+          "sha256": "40cd0343a788b88c28aa1a6ee506dd0bb6fe908082c43066435640cf7ef9d872"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 38891,
+          "edgePixels": 0,
+          "sha256": "41478a90263f49165de19109e40e528e744f8bca9baef3eaec0c57349b80a22e"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 38076,
+          "edgePixels": 0,
+          "sha256": "52ef8deef8ab303e7ecb7d93646b39a7a1f9d1fbe3c94607a3ad5fbb5a384cd5"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 39858,
+          "edgePixels": 0,
+          "sha256": "ef79c87a010af54b34fb020254b6afdf3870550fdde9b49863926abd3e43e8be"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 40223,
+          "edgePixels": 0,
+          "sha256": "98750571fe01bd447a9515f3aba30d31bb9762a86df84dcbd858ece38b9c84fa"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 40284,
+          "edgePixels": 0,
+          "sha256": "adc18c1b3de663846cbae8fd0deb6f824b866488ab85bdf9194ac5ee30e93e8b"
+        }
+      ],
+      "sha256": "96a087d3076b110ed65cef85fc0187be72507e19ed3053d8a5017075c95005aa",
+      "bytes": 454070
+    },
+    {
+      "name": "defesa-agachado",
+      "file": "production/sprites/final/chupetinha/defesa-agachado.webp",
+      "source": "tiras/defesa-agachado.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 68035,
+          "edgePixels": 0,
+          "sha256": "c80a80bffb3051bbc6a0682671b57f9a3768e14827232b5e71b3e35c44ef137f"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 63972,
+          "edgePixels": 0,
+          "sha256": "4807a58094f798f68ddaa65a327699ac6ed46d9e13e5f79d5af36e7b0f722b9b"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 64612,
+          "edgePixels": 0,
+          "sha256": "f8e531188d1930757d78b04cb1470b70a3f96813ce3e58cda1c5e4764c18a9f7"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 65372,
+          "edgePixels": 0,
+          "sha256": "0fddcc12adf69a6edeca78a837c460d68c6f7f3d2acd695a2cb31009d31e902a"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 67222,
+          "edgePixels": 0,
+          "sha256": "3d80756fb2b9de3394628b7326cd3f14bfe7234dc15be48d3d4af26e6ec1c83b"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 67472,
+          "edgePixels": 0,
+          "sha256": "70e1c5243662c1dcb565740b7e2f4de1fda5b828984cff35d61c3f0b92c1820f"
+        }
+      ],
+      "sha256": "fa5f94f35158363337eee876f0d2b688c429dfa0513cd613db501803db7d684b",
+      "bytes": 715880
+    },
+    {
+      "name": "defesa-no-ar",
+      "file": "production/sprites/final/chupetinha/defesa-no-ar.webp",
+      "source": "tiras/defesa-no-ar.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 46514,
+          "edgePixels": 0,
+          "sha256": "5777455c2fa2c9ed56be7f3bd32798c4109e6fe2ab24ab51585edcabea414f56"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 38433,
+          "edgePixels": 0,
+          "sha256": "ce1526a1e24df1b134d29b4684ed69310f3675898afd85a3ff61a01a38a64ddf"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 45622,
+          "edgePixels": 0,
+          "sha256": "b89adaad89a3160876a2c79a8581f96e2ec6c3a4ef2b47a65cc7d76c0f52b340"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 44704,
+          "edgePixels": 0,
+          "sha256": "546f6531eeb0510f15afe668108777e30004b3301e71bd9e3d919a49b70d7596"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 46896,
+          "edgePixels": 0,
+          "sha256": "b41cde2c028f1c9fa9c41d239a5c2b2b53a7088961dd8c01301784809610c7a5"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 49263,
+          "edgePixels": 0,
+          "sha256": "a9b33d2f9f3ec1e2c86d952f484f04ffff86db23f9793559632bec5eee78d4ed"
+        }
+      ],
+      "sha256": "03ea3c477c728908776fc0940c71f5a27b84eab4eded066e0f000ab4617b4732",
+      "bytes": 532976
+    },
+    {
+      "name": "dano-alto",
+      "file": "production/sprites/final/chupetinha/dano-alto.webp",
+      "source": "tiras/dano-alto.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 43533,
+          "edgePixels": 0,
+          "sha256": "dd2b90f717ae7b06316fd27aae022fd7dc06453defb1d3ad89d38f8457c8f45e"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 48153,
+          "edgePixels": 0,
+          "sha256": "44df15b5c3e0a0c790f50dba5b1e3dd9afbf01e8612bc315df32b8065dcf9fff"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 51048,
+          "edgePixels": 0,
+          "sha256": "28f38471f42e58a2870ef49587fffd2ab52444cf48c0c39b14e2c4e2f013708b"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 58063,
+          "edgePixels": 0,
+          "sha256": "bd3a92729f9950a16cdfed503fd2908ff8cef143cbbb5e8744058cd82b282260"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 55220,
+          "edgePixels": 0,
+          "sha256": "65cef49c2228db7747a5d28dea84348f21cc9ebcfce31175f70468d24cd59730"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 53678,
+          "edgePixels": 0,
+          "sha256": "32a5080385d2feba5660f53da312875e85e82d47cc503ec8127f00bf93607b60"
+        }
+      ],
+      "sha256": "912ee904459685f4644bf2e031e3572fde9c7f751966a45b9ae2986ba322b25c",
+      "bytes": 608836
+    },
+    {
+      "name": "dano-baixo",
+      "file": "production/sprites/final/chupetinha/dano-baixo.webp",
+      "source": "tiras/dano-baixo.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 66108,
+          "edgePixels": 0,
+          "sha256": "4c7c74853641e71f8d30038e589800aaac146a17d1ca06d2e4adfb844f693360"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 68458,
+          "edgePixels": 0,
+          "sha256": "f90ef3e2cc9db89ce5f102b62faac55ebc107ebf5513db0624e1d516efd796af"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 69967,
+          "edgePixels": 0,
+          "sha256": "edfde96f4c115fa9708d063cf330a8bb7d93a2fd886cc014a9a1931c09f3006f"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 73643,
+          "edgePixels": 0,
+          "sha256": "46bf16a0def1bfa06f63c119fb72fa2d64e50d42875faf77b128afb770143f8c"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 73723,
+          "edgePixels": 0,
+          "sha256": "2c7aad30b70ce79f4fbea295099d243aa4b5991283a2cdc95e8caed45066bb6e"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 69701,
+          "edgePixels": 0,
+          "sha256": "99681d6e1e0f550813c57030eb43b67227594bbc48a35c8b333470ec0dbd77c9"
+        }
+      ],
+      "sha256": "1cd0abfd59e7e2fc2053614664910db7e8ff137d9c171d7f65a4c1ae82e78914",
+      "bytes": 772474
+    },
+    {
+      "name": "dano-no-ar",
+      "file": "production/sprites/final/chupetinha/dano-no-ar.webp",
+      "source": "tiras/dano-no-ar.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 61925,
+          "edgePixels": 0,
+          "sha256": "aa7b61cb64ca79d5d78b54c82220bd86f93696ee5e47767673be08ea25d39715"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 57351,
+          "edgePixels": 0,
+          "sha256": "a2b13bdb4fe33905c038053f0628b8e3ff53a297edf0aa0db8184c9feeb8938a"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 54591,
+          "edgePixels": 0,
+          "sha256": "abd37d96a60ac76188da22ebfa4fd967fee8ce775b3cc11add4dcb81dd34d21f"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 52699,
+          "edgePixels": 0,
+          "sha256": "be95f1d082475a82783d029dc982f86a02d3cb8748bb1c7e0224f1e400a3fd1f"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 62285,
+          "edgePixels": 0,
+          "sha256": "856b7cb7cef3230326b22ea70107736563390f6d346e2b82e57ee65f3c112eb5"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 64276,
+          "edgePixels": 0,
+          "sha256": "537b671be193f8de81b99e48c651417a29ee8b88ccd7ed1de8c4a4d124f64a16"
+        }
+      ],
+      "sha256": "690920902c1de7b3ac98d84b715e3896c8c93b05da8a1b47a46fd139817a9a64",
+      "bytes": 679304
+    },
+    {
+      "name": "caido",
+      "file": "production/sprites/final/chupetinha/caido.webp",
+      "source": "tiras/caido.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 46700,
+          "edgePixels": 0,
+          "sha256": "7d7285a256785fc3f493f3ff839314328a55c53b3c8e6a7057a6e5cd5ba00943"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 45072,
+          "edgePixels": 0,
+          "sha256": "6ec2cfb2d64d3b2d3a3d5974ba4e37764d15a1fe828e334b848d5cc9b428db27"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 42608,
+          "edgePixels": 0,
+          "sha256": "c8932d0724868221262e7d4b585b81c6ad4dc1aaead6f672eeddd45b88d76870"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 40324,
+          "edgePixels": 0,
+          "sha256": "5dad53789efe5bc22c0282d1e17c52f5baf17994c9a89eed67b04c946fae8c83"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 34468,
+          "edgePixels": 0,
+          "sha256": "670e0d243c6df459bf72730603d31bbe489b6993b65178923a9d6331937ae942"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 30473,
+          "edgePixels": 0,
+          "sha256": "1fa2565249ea9706ef0fd13d750727ab65b8ca37368d546de9fd8c3986c7757a"
+        }
+      ],
+      "sha256": "872d8fbf31bc700dabeaebe7b833cc8abfe09b4e74309557433262603f547837",
+      "bytes": 472626
+    },
+    {
+      "name": "levantar",
+      "file": "production/sprites/final/chupetinha/levantar.webp",
+      "source": "tiras/levantar.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 29580,
+          "edgePixels": 0,
+          "sha256": "43d1d3e7b3e57916e4a3fac2077d88497262131736a3a2ddf257566d98eeae8b"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 41042,
+          "edgePixels": 0,
+          "sha256": "bc9a7d5ecf4074d89bc319c19ae50f7d8e386a97bc75346bf79f5c81e622fb7c"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 40840,
+          "edgePixels": 0,
+          "sha256": "f352194f805eaad93bf8104a1b95c45cb46afec32bd72f9ee6075765c5106ee0"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 40951,
+          "edgePixels": 0,
+          "sha256": "1cebb0b4ed6e7bceb2cbeb0333899376e7f64d654d77680aa55c1f36a4b23e33"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 46533,
+          "edgePixels": 0,
+          "sha256": "5b31d9ec4ad8b78b17c04b5733f9fb80e8362acf496d996a9e5a8daf69802590"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 44581,
+          "edgePixels": 0,
+          "sha256": "c78baebe1bce3cb489c84fbbc7ec7d9f8fecb4bb277b52ab8dfc7924495c2b0b"
+        }
+      ],
+      "sha256": "35409f835a61e59f695380f17d61c600f9ec949f91ec0f1a95680e2e771cd6c2",
+      "bytes": 476348
+    },
+    {
+      "name": "tonto",
+      "file": "production/sprites/final/chupetinha/tonto.webp",
+      "source": "tiras/tonto.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 43582,
+          "edgePixels": 0,
+          "sha256": "ac5bf384025ea57ea6e6758647da967ab2cf5d253e6e7061a56ddac0a55ad015"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 44844,
+          "edgePixels": 0,
+          "sha256": "57a82547d3248fb638b7434ea2ff8db99e191b77bbfcad17d0bc510921b88b5f"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 47318,
+          "edgePixels": 0,
+          "sha256": "9cadd53c63e4bc3012ed41c4d73aac4c5afaefc4a364328622891b5a8e9e94cd"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 49638,
+          "edgePixels": 0,
+          "sha256": "3fea323c85d0e39226646be2caee993e79f3b3b8104301aa5c6b7f5d000b2a23"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 49181,
+          "edgePixels": 0,
+          "sha256": "b4ea0f78128bd41a4bd6e4ff2958df7c308faf9fcd3e09dd35fa7d4f7fbfae32"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 49294,
+          "edgePixels": 0,
+          "sha256": "022147c51e556250f3e6478f70281338ac5c11d4a353a5b6ba1978d9ef583067"
+        }
+      ],
+      "sha256": "ff41347579c08de1daa5ad52b6cce81065de762385befcd74324742dafc69417",
+      "bytes": 555930
+    },
+    {
+      "name": "vitoria",
+      "file": "production/sprites/final/chupetinha/vitoria.webp",
+      "source": "tiras/vitoria.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 41663,
+          "edgePixels": 0,
+          "sha256": "143ca4af195b82acd0a295dc5ebc68a78a8fbc3ec4e4d94d7041286b664529a9"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 43418,
+          "edgePixels": 0,
+          "sha256": "a66fdb452e1e1ef9929e79df19d06d4f156e90d1dedfc2934bc50bf33f542665"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 43369,
+          "edgePixels": 0,
+          "sha256": "097a6a84eeec263f8e911a167fa431a792f3e4e8f2a6749547033a1fe24aba4f"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 43387,
+          "edgePixels": 0,
+          "sha256": "6f60d18a324750f9239ee131e14d3a8d7146edc53ff6d0cd22d0755992b6aaa9"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 44200,
+          "edgePixels": 0,
+          "sha256": "1f09ab9e96b3c19d137c19f15f248bb2a4aeb9f891e0925bed1626b0c6a3e110"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 44001,
+          "edgePixels": 0,
+          "sha256": "45dfa473faa3db11bfa79517972aad401b3c184be8bc84495a8b3c213bbf5dfa"
+        }
+      ],
+      "sha256": "72508ff642764f60cbfdffebbc2b1a02bb0387093f4a6c00d4edf7c79b3126f1",
+      "bytes": 517726
+    },
+    {
+      "name": "golpe-5L",
+      "file": "production/sprites/final/chupetinha/golpe-5L.webp",
+      "source": "tiras/golpe-5L.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 44603,
+          "edgePixels": 0,
+          "sha256": "86b91d03b463e4ab10f2fb4455a9476571d2ecc8427d78ac2ed532fae0d2098b"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 45954,
+          "edgePixels": 0,
+          "sha256": "9bfe937159647efed782e8d76bee92b95b7dc9ce59a89d81ff3c62dde6e01960"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 49790,
+          "edgePixels": 0,
+          "sha256": "8fb5af17abfc55414a1c46cdf3aa26737590102b76ec36653e98f8e43cd58bee"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 49647,
+          "edgePixels": 0,
+          "sha256": "1119feb2e6f7fc77518e979b8c936218add47c27029d449fb44784dc24abf39d"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 48267,
+          "edgePixels": 0,
+          "sha256": "1638e42b4e430d1594869179394724fd766a2687de91df221b0cc3502f52ec59"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 47282,
+          "edgePixels": 0,
+          "sha256": "d00eaabe4a6af10635e82c29b01c65cd957b63825f1bc51fc06bdcee5cfc54be"
+        }
+      ],
+      "sha256": "87c05f1760ced64847e8eef951235c4cf43dd5a26642a36212b68554c2fd451a",
+      "bytes": 559134
+    },
+    {
+      "name": "golpe-5M",
+      "file": "production/sprites/final/chupetinha/golpe-5M.webp",
+      "source": "tiras/golpe-5M.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 42241,
+          "edgePixels": 0,
+          "sha256": "c181ec422a11198e5b4849a5914bc91cb11a4fd81ccd686ebac17c46b62ba8a3"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 42525,
+          "edgePixels": 0,
+          "sha256": "e78f3256e68adabc6a845efbe4c8a16d10dbd32aea3a3a77271a97d03ae8ab90"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 42648,
+          "edgePixels": 0,
+          "sha256": "a4843638a2029cb9de2d421f4507ab95ae00b70bdc56bea1e45a9661c70bfa06"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 43429,
+          "edgePixels": 0,
+          "sha256": "2a23501a8aafa994103d4ec31d04ac6439fe1176aa4cec6a07c1e0390d5a0986"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 43195,
+          "edgePixels": 0,
+          "sha256": "808fe26b7f035625c104bff83ad49dfe75fd16dd6fcb7a1ee4f9a0229bfa3bec"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 43325,
+          "edgePixels": 0,
+          "sha256": "2e69a45e7b729b6210fb79e2999dfaa4e425c770ec9e210010945eb022b1b222"
+        }
+      ],
+      "sha256": "4493cf25c05cb5e375b34ff2639f9567ab308ac395e79fe4c09290e4de5d7e73",
+      "bytes": 509190
+    },
+    {
+      "name": "golpe-5H",
+      "file": "production/sprites/final/chupetinha/golpe-5H.webp",
+      "source": "tiras/golpe-5H.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 39745,
+          "edgePixels": 0,
+          "sha256": "268df4dbb0605f9cd0b48bd8dd1dbd8cfb91b01a1063602328c897ad5ae66ebe"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 45917,
+          "edgePixels": 0,
+          "sha256": "4b7b8ff02289a1c958a22903903b6f205525f8f5bcded589c90d5e6e32159ed9"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 45125,
+          "edgePixels": 0,
+          "sha256": "b42cd6f52ebccd6bfd49f26db39ab23c7b0648b05fb3d553e9da693d272c409d"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 43548,
+          "edgePixels": 0,
+          "sha256": "7de66138473c5d48d78c5b57d41f4d645a0adee11be0b02ea79d80036b15bfe3"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 39354,
+          "edgePixels": 0,
+          "sha256": "1c4136a6cbe8f4be15a03c42dcf35e455ecc7f04b9ca0ce743835e85a29196e1"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 40683,
+          "edgePixels": 0,
+          "sha256": "82efeb1546ba81954bb348c200d7b5619980186415242cb0f3687a01b1d0d7c8"
+        }
+      ],
+      "sha256": "bc7ddaf239bcfe5170d3e40fbc49f88466c1bbd11cceed4b5161f35f48908ac8",
+      "bytes": 516548
+    },
+    {
+      "name": "golpe-2L",
+      "file": "production/sprites/final/chupetinha/golpe-2L.webp",
+      "source": "tiras/golpe-2L.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 47398,
+          "edgePixels": 0,
+          "sha256": "b8dc574fcb55066a62ce83e5b2b596ccdb05eabfa4ff770d6898c7f8831aef32"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 42779,
+          "edgePixels": 0,
+          "sha256": "d07c0b47431c5529603f3288236a61eaffe2237317bc6fd0b12b445795b59a33"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 42954,
+          "edgePixels": 0,
+          "sha256": "74341467e472f3959a638077ab55b9adf29e24e34f99d199e87a6cd107046bda"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 42866,
+          "edgePixels": 0,
+          "sha256": "21970dbc9462cb4687f9ca8ea4d8198d5c0032af6f1957c872968167153c4cf1"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 45207,
+          "edgePixels": 0,
+          "sha256": "4294e4eb864b970cdb1d12341f16813bc51c3db08bc9cef31a3db7a22a1c3058"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 43587,
+          "edgePixels": 0,
+          "sha256": "21c6475726534b583c242105681987e409c2ec428ff7ad089521d8801034bcdd"
+        }
+      ],
+      "sha256": "e22ab44d73ea6acae1aeb188ab148a0d85b39a665f25492d5e22a366f561b05c",
+      "bytes": 517938
+    },
+    {
+      "name": "golpe-2M",
+      "file": "production/sprites/final/chupetinha/golpe-2M.webp",
+      "source": "tiras/golpe-2M.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 47834,
+          "edgePixels": 0,
+          "sha256": "65dfbd933172ffb65ca1ec8d3a9f5d0157e4bd70da0141430694ca44be7be68a"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 55892,
+          "edgePixels": 0,
+          "sha256": "4a1280c63e25556e7ef8d2741662b2f9e55b6386d7d45d11e0bd9d936e8ffda6"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 47699,
+          "edgePixels": 0,
+          "sha256": "266088ec545f805e4af33c09364059664dca261213c4ed43fd9614a5e9ce9695"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 46919,
+          "edgePixels": 0,
+          "sha256": "62ddcf78d98e7f24cad238fd117800fa910c1778abdf431768fd23ae387a8650"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 48923,
+          "edgePixels": 0,
+          "sha256": "bd780feeb84c6a00ed74e0163e6630e319d2e032505708fe827f4f1a4552b74f"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 49021,
+          "edgePixels": 0,
+          "sha256": "3f0090f5d23d875528a7f9206f3a0b3ed4ea64a95e3e60473762a889c9de97fe"
+        }
+      ],
+      "sha256": "6bd1d239252e0d3d29847a25c4b4b57e0a7ab76efd11cc976533fc340c180bde",
+      "bytes": 563838
+    },
+    {
+      "name": "golpe-2H",
+      "file": "production/sprites/final/chupetinha/golpe-2H.webp",
+      "source": "tiras/golpe-2H.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 48286,
+          "edgePixels": 0,
+          "sha256": "6aae2bfc8b3f703ba4af971a602ccea44377416c908536d4dd9accf34d1adc5d"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 48475,
+          "edgePixels": 0,
+          "sha256": "421c4fa073623c3e40bd88ac95553f6386e213f2463d738a343458e43cb2ca5c"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 51364,
+          "edgePixels": 0,
+          "sha256": "65d882d9c372d00ce841e94a37437cbbf3409744b4a78995d42fbe88d2b4620d"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 52092,
+          "edgePixels": 0,
+          "sha256": "b737e970cef5dfb99d1c3aac9753fe3fc12a975f395be18b10654e31de8802c7"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 50615,
+          "edgePixels": 0,
+          "sha256": "d5ce76a5c0fd42366995a34a9ba229e0971d69c75f9f85de86979291310d719f"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 47886,
+          "edgePixels": 0,
+          "sha256": "245b90e8ac767b376bb31db46f711d66bac6ce031fedf6a5e796d043636789a2"
+        }
+      ],
+      "sha256": "a4d23aaf416f1f12e90783eeaaab3a8f8ea17c31d80f771e9f0cb63cda147377",
+      "bytes": 582762
+    },
+    {
+      "name": "golpe-3H",
+      "file": "production/sprites/final/chupetinha/golpe-3H.webp",
+      "source": "tiras/golpe-3H.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 47031,
+          "edgePixels": 0,
+          "sha256": "fbb327b9325372ccccb38f60165b189ad01b47a323da9c37c85593cd2df82f04"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 45457,
+          "edgePixels": 0,
+          "sha256": "055bc0004f855bc55eb16364dbbaba52ca9ca7e179a591ee184a3914d38dbde8"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 46718,
+          "edgePixels": 0,
+          "sha256": "37732b49c05aceaff5f0675bf63e5041912906d9e3ccb9377898e70f80479c28"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 45308,
+          "edgePixels": 0,
+          "sha256": "459dae0e4f4dca7fbbcf86c05cb59e5c280d402499c7cbcba4f09d66e82f718f"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 48859,
+          "edgePixels": 0,
+          "sha256": "f0ce4dba14d01f416d5b5188b7dce07593c3225a9be2bd8f38386414624d814f"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 48237,
+          "edgePixels": 0,
+          "sha256": "660330b88442a97f5aed35ab1350cffb440c6adf4dec499073a3c52196c2295e"
+        }
+      ],
+      "sha256": "e5617fe1a424ca368d703cbff5cd20e251e0987eb935ea9b461502c06734dcec",
+      "bytes": 549236
+    },
+    {
+      "name": "golpe-6M",
+      "file": "production/sprites/final/chupetinha/golpe-6M.webp",
+      "source": "tiras/golpe-6M.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 49815,
+          "edgePixels": 0,
+          "sha256": "c0343fe4247261e2ccfc8a60a525d4e17614ce70da57a2333ce11d730a0d7185"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 51004,
+          "edgePixels": 0,
+          "sha256": "d939dc56e59372ba46c886321208d8dbd8f0a7697d79a2c993e1a2be30ca669f"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 53490,
+          "edgePixels": 0,
+          "sha256": "2fd69dd2e570a6e7c7e077ce038c693e1c5c6b64e40fcc414a14ebae823f8a8b"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 56387,
+          "edgePixels": 0,
+          "sha256": "c9b199fde7f9953438fa8c2e0559d34ee4316c24146a310df9b81897c21a0bf5"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 57565,
+          "edgePixels": 0,
+          "sha256": "c535ce44dadae97a119642f61f4d5f817c1369d03c854f71e49a82cfc3f65909"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 54790,
+          "edgePixels": 0,
+          "sha256": "29e387d1a24b6cf91891094cc4a95301ac2d6695ca3741c6afc44d91c294e1c6"
+        }
+      ],
+      "sha256": "a3cde8c42873019dc4ed3045afb3d9bf55dd8bff53e4e492dba85561bfca5863",
+      "bytes": 613230
+    },
+    {
+      "name": "golpe-jL",
+      "file": "production/sprites/final/chupetinha/golpe-jL.webp",
+      "source": "tiras/golpe-jL.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 47310,
+          "edgePixels": 0,
+          "sha256": "7d37560a25ec542d087754c28213f6043226fb42f8aeadb058da6fd8b5b1bb73"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 46655,
+          "edgePixels": 0,
+          "sha256": "a62d4aad17c0b797c1ea2916ee1cfad305810c13aee6a135a9a33603376a00d2"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 51301,
+          "edgePixels": 0,
+          "sha256": "f59d8c45b1261a180e1b56450345933ba681b15d7b2cb83530e2503f4eb068e7"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 56326,
+          "edgePixels": 0,
+          "sha256": "48bafcde099467b31a9bc3f1a34c9707a59a2f1a4eba0923eb9c0faaa5f85ff5"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 53644,
+          "edgePixels": 0,
+          "sha256": "2706e35da8415d4507738c6bdc415ad5218fe07a861b5c2b329e3a6978edd018"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 51959,
+          "edgePixels": 0,
+          "sha256": "de67328143ed40be57b0b66b027fce9ad6938cdacd0a44f60307e4e32b36ef83"
+        }
+      ],
+      "sha256": "28527c21a9db232ea4dad1a20507aba43f1ab4e569b4d18d28b61c2aed790360",
+      "bytes": 601774
+    },
+    {
+      "name": "golpe-jM",
+      "file": "production/sprites/final/chupetinha/golpe-jM.webp",
+      "source": "tiras/golpe-jM.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 40908,
+          "edgePixels": 0,
+          "sha256": "09619cd1fe91b4b46c5e78dc06d831b8518066546535536b111b531b16866bf6"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 38949,
+          "edgePixels": 0,
+          "sha256": "cb1ff379d54a664136ada91d8d5de26bd28ebc8b91a09ba69c6686aac7ecf0cf"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 41152,
+          "edgePixels": 0,
+          "sha256": "952b2ca7dc1a5476af9d324fc83864185f80165672160ee979fd96060e9fa57e"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 43205,
+          "edgePixels": 0,
+          "sha256": "cafb5c6465e6fed145ef8123b8c9f08a2cc5742c10b49fe02edc4a72a9a7e16b"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 40377,
+          "edgePixels": 0,
+          "sha256": "aba51449f5e6f435b8227f49a71112eebf5438d4603f569b3c6960a1b222df94"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 40951,
+          "edgePixels": 0,
+          "sha256": "0a64084492fd92483e9f54200acf21f1e18218b1f224d93bcae782d656197690"
+        }
+      ],
+      "sha256": "d99d4e5f0d028c039d397def8d720bb3a0e97c6dbb6184c9d549d331a26bd921",
+      "bytes": 503734
+    },
+    {
+      "name": "golpe-jH",
+      "file": "production/sprites/final/chupetinha/golpe-jH.webp",
+      "source": "tiras/golpe-jH.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 41703,
+          "edgePixels": 0,
+          "sha256": "22109b105ea464fe987c7a02fca8968ad36a3bbc10ed388e265a6c46358ff4e5"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 40843,
+          "edgePixels": 0,
+          "sha256": "1dd0d44bd8f2a1bb74bd26c8b2d30be7c57a19b5bade875e37f4c4eeeeb4f029"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 41529,
+          "edgePixels": 0,
+          "sha256": "8a84e3b8699dff5c2e911df713385c1b270e4be2a003847721eb03fcfb17c838"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 49076,
+          "edgePixels": 0,
+          "sha256": "dfbe0adfc17b99b566580b7214bc42bc472cfc0f1def2b61d087b75538c40b1d"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 43865,
+          "edgePixels": 0,
+          "sha256": "c97526b4ba87f120fa07633f971c923197d5e9b3ff99cad5f35aa368cdefa1ae"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 48672,
+          "edgePixels": 0,
+          "sha256": "fadcbaa0fc12fc392c482b4fe259fe02653c09aa5613bac66d8f18fdaf5ec414"
+        }
+      ],
+      "sha256": "faa95d0f34d4d786c094cae9b3836c17c1a23376463bfe3e5330c983755e3146",
+      "bytes": 537056
+    },
+    {
+      "name": "golpe-throw",
+      "file": "production/sprites/final/chupetinha/golpe-throw.webp",
+      "source": "tiras/golpe-throw.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 44824,
+          "edgePixels": 0,
+          "sha256": "125b0f40475d0cca42d47b8e7dad27b1c38ff77b00cb52e8cdbfcb3320b3cbb4"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 49148,
+          "edgePixels": 0,
+          "sha256": "98a4d401a8b22c0877a640f59c20dd79e727e2db13eace941b3148bfd6b23615"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 52197,
+          "edgePixels": 0,
+          "sha256": "0553a6eb7fe44dd999f42082a6b5544dba707552415dedd3ecac082040651915"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 55559,
+          "edgePixels": 0,
+          "sha256": "66349215d6f6c8c5696cc0761558302ec98aeb33fc694dcc533c72097d77d7aa"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 51249,
+          "edgePixels": 0,
+          "sha256": "4b7d65b644e2c8e8c8c8e83c7415d0b3c67f45d25a620aebfdda41a501b67cd8"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 47687,
+          "edgePixels": 0,
+          "sha256": "1a73fff6cfe224c30d9fdc0bf1e3a704b5d966e1ebb623d32eb4a7d75ac6f64b"
+        }
+      ],
+      "sha256": "5c1e153c114c2c575b56772527d6f152ca602b3ff33f99d3e880b849330f9dd4",
+      "bytes": 588896
+    },
+    {
+      "name": "golpe-blindado",
+      "file": "production/sprites/final/chupetinha/golpe-blindado.webp",
+      "source": "tiras/golpe-blindado.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 51851,
+          "edgePixels": 0,
+          "sha256": "30de5b323501bebe67064ae9c3b60e3376f58b46ab8c1374de55d5bbbb2e87fc"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 54696,
+          "edgePixels": 0,
+          "sha256": "9e2392e6ae93cde83f9b48ed7f171f510d5c6ba7efdee64b09ff0b4cbea5df97"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 57859,
+          "edgePixels": 0,
+          "sha256": "cc391811ed2ffa152886a5e11506e865206d3f671e87a7ec962b63e91b6b4537"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 60874,
+          "edgePixels": 0,
+          "sha256": "347bccad90e346580f2286a41ec328a2ae7da7fa2ad0f6ddefa02a44a9b7b584"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 60626,
+          "edgePixels": 0,
+          "sha256": "f0c5756aa25002556b1fbc34d752fa29c811123e86b2de3cd8f58c4940a38e6c"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 55346,
+          "edgePixels": 0,
+          "sha256": "e8051816530b94c275b6d332e4d552c2c54ed726ef95de4ef634245ada2ac016"
+        }
+      ],
+      "sha256": "b6bed6387d5aa22b4a8e4de22ca5467e962d680466322aadd0425f59f6ea54cf",
+      "bytes": 635728
+    },
+    {
+      "name": "golpe-5S",
+      "file": "production/sprites/final/chupetinha/golpe-5S.webp",
+      "source": "tiras/golpe-5S.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 47568,
+          "edgePixels": 0,
+          "sha256": "cf22cce73e93f093afad3c8f93cc809d11f27f8a94bc5629866173983faec48a"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 47761,
+          "edgePixels": 0,
+          "sha256": "fadcef6d7d0883256c71503f34755e41fbc4814636c03ae03e9477e5e72ca689"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 47226,
+          "edgePixels": 0,
+          "sha256": "a7cc26dc1e3b800321a1e0b4e7dce158fa4fc7217d9ceba3243749b5aecc1c67"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 47858,
+          "edgePixels": 0,
+          "sha256": "2e670eab83d76eab94544128d46690b18950819561b1d8d1773ae66a6b8fc682"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 48316,
+          "edgePixels": 0,
+          "sha256": "097477675f133227a6b0a4ab197d8a329fd0caff923596d22bdd9458555d6c47"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 47102,
+          "edgePixels": 0,
+          "sha256": "7b3aa321ede844db10e403e609b22964a4ed39871cc0f208985a5857ccb156a3"
+        }
+      ],
+      "sha256": "8a9f43ea51793e64414f44b127a427159a83eb83b980e62ecdfc71e91a79d46a",
+      "bytes": 552216
+    },
+    {
+      "name": "golpe-5S-turbo",
+      "file": "production/sprites/final/chupetinha/golpe-5S-turbo.webp",
+      "source": "tiras/golpe-5S-turbo.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 47290,
+          "edgePixels": 0,
+          "sha256": "6cf3bb34e052f6d7dbe8a6a544da639fa4211dd761f4cfa912de835c05c943a0"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 47338,
+          "edgePixels": 0,
+          "sha256": "6533b62b490879908913f364745606436eeb5fa2123b73c4b0ce5c99d0a92c4f"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 48104,
+          "edgePixels": 0,
+          "sha256": "2974ab2232ba87e96a2f25bcf414c03dac1531167162c9808c50d1aedd7d73e7"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 49769,
+          "edgePixels": 0,
+          "sha256": "c09d455c7f064ae85690ab93b0aa0b12ddb469b3f102bc52c0d6ec589ce6a85e"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 49018,
+          "edgePixels": 0,
+          "sha256": "34f6c384dac92c7fc15129c2ba36b19975b6d333d365242c150fa3894b5ee529"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 48875,
+          "edgePixels": 0,
+          "sha256": "b0ba1fe2f7d51118a40a8b32f70754368af46554af10fe5f82f6ba7e7bec33bc"
+        }
+      ],
+      "sha256": "8f94b67fe4737ef4c708172ef3f7ec0a009b3ce44db8330dbd73341f865927ad",
+      "bytes": 576474
+    },
+    {
+      "name": "golpe-6S",
+      "file": "production/sprites/final/chupetinha/golpe-6S.webp",
+      "source": "tiras/golpe-6S.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 33576,
+          "edgePixels": 0,
+          "sha256": "009ceb6287d55c26d4aa106596d85e7b2f56d20b39039626de56a3828233d50d"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 33952,
+          "edgePixels": 0,
+          "sha256": "dd4d0a51afef9dd825c394144acfb5af0b6e04cb03f2ef7b2e29bbb9df17cdc7"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 33855,
+          "edgePixels": 0,
+          "sha256": "504b47d81aa4d409698664dd68764cf2ce83468e6505b5505bf432e5bd53f063"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 33736,
+          "edgePixels": 0,
+          "sha256": "304ce53c8ac1281d71c4a60944c807752b257f4e2f9d16568495f0dfecd3cb25"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 31947,
+          "edgePixels": 0,
+          "sha256": "5e6e31799323949ab6edf1ad101939e95ee7aba8e29223b487f66b8550ee6264"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 32019,
+          "edgePixels": 0,
+          "sha256": "7e42500338c9c81141a7f6b3199fa6a22a1e25673b4d3546bfa6dff1faec9dfc"
+        }
+      ],
+      "sha256": "a39f929d98217df538112ff87360a6625248e0461da73c65cd3553a8326e4c49",
+      "bytes": 408674
+    },
+    {
+      "name": "golpe-6S-turbo",
+      "file": "production/sprites/final/chupetinha/golpe-6S-turbo.webp",
+      "source": "tiras/golpe-6S-turbo.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 34143,
+          "edgePixels": 0,
+          "sha256": "e75af21d09507dd60324a1d50b35a72367e4f338dae185fd7ee2bba57879d63b"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 37850,
+          "edgePixels": 0,
+          "sha256": "19ab0d663135e1005d164446efb79ba4678d8c13825ec5f116ca88beca5e4ca4"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 36946,
+          "edgePixels": 0,
+          "sha256": "8ed3c968d0cae494a682c8603472af2b2ad3ea16cac87f1a82c8bf4b0af99fbf"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 37780,
+          "edgePixels": 0,
+          "sha256": "b4989268e5d63e0708a1268bdbc089fb2b1dc7d5bf3801d6c7a02e48f134a20f"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 34734,
+          "edgePixels": 0,
+          "sha256": "286c5a426e67246d3acc6b6fc923a02df9590d58190b817c319019508a563555"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 34989,
+          "edgePixels": 0,
+          "sha256": "5d24838551894f5896a4171f6c4bde2ce080eeb318b0795f2800685c925ccfc3"
+        }
+      ],
+      "sha256": "9eed2bf838027ce588f95d88eca50fa478b46809a353237e27e8a34f5d551128",
+      "bytes": 440968
+    },
+    {
+      "name": "golpe-2S",
+      "file": "production/sprites/final/chupetinha/golpe-2S.webp",
+      "source": "tiras/golpe-2S.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 38264,
+          "edgePixels": 0,
+          "sha256": "e157244343ca14cfbf0de7a032b1e7e2929ddf58c18aa19fcc19028bf3d7222a"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 43932,
+          "edgePixels": 0,
+          "sha256": "0efd5da157b127163ddd9cc0f149fd5a40d4c440decffe2af35c2ecee5102940"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 41909,
+          "edgePixels": 0,
+          "sha256": "ca21d4a2b5fff7eba72d7900570a9e3b8e67dfc446948d208d5989088661dc7c"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 46424,
+          "edgePixels": 0,
+          "sha256": "363610f7d18d288c23e85e8d74502ca499b81547181dd5eac931c95b05bbf5a5"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 43318,
+          "edgePixels": 0,
+          "sha256": "f9c266839737a70554e540543735259a41c9b026d697f86b68dec863095a219f"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 41796,
+          "edgePixels": 0,
+          "sha256": "a9bf5cf0d404807e8534d87ee06efa4c0f3687b6a05cfa6c4068ca60d4b4eaa8"
+        }
+      ],
+      "sha256": "ca2526654c34ec3cac6dc9437f0eecbd84c9d83ffaec5cd1c49b3baffbc84d17",
+      "bytes": 496000
+    },
+    {
+      "name": "golpe-2S-turbo",
+      "file": "production/sprites/final/chupetinha/golpe-2S-turbo.webp",
+      "source": "tiras/golpe-2S-turbo.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 40136,
+          "edgePixels": 0,
+          "sha256": "2ef3ebc3f9df605f8dbecd2c45589fef17f6ec1810f60614960ccf575323408e"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 38114,
+          "edgePixels": 0,
+          "sha256": "0f5d991c11cc4b29d5f46c40893e1e20fb9d6a67b4c2eaa2ecc3dc3280e11158"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 41566,
+          "edgePixels": 0,
+          "sha256": "543c93ab0909507b6e5c0ddbd35a83b26ec90df58da08b76c8c50f317255cfcd"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 42638,
+          "edgePixels": 0,
+          "sha256": "727e1001d8154ba05c3e8e2725c4ac98bb9d8d5d9638f839ab0f7851685cd638"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 40711,
+          "edgePixels": 0,
+          "sha256": "61bffff86418c37879259938ec78e7091425b26b3b35e4e269d0b9603bc039ba"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 39259,
+          "edgePixels": 0,
+          "sha256": "d096ce43c5e61eb4944f3c1d7b6b418abe439a546beacab44d83247f7c3938cc"
+        }
+      ],
+      "sha256": "e9cf5963f6b8a9fb70995baced6571e1552ade8b09faf119ed9b146cbcfd259b",
+      "bytes": 479764
+    },
+    {
+      "name": "golpe-4S",
+      "file": "production/sprites/final/chupetinha/golpe-4S.webp",
+      "source": "tiras/golpe-4S.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 38727,
+          "edgePixels": 0,
+          "sha256": "09db3b7f0ae738150b680a1c692034909735ce3836dab3aa1307687d1c8a8df6"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 38450,
+          "edgePixels": 0,
+          "sha256": "f4d802450daf03183fa70af316fda00ce32cd9019ed47917ce3d09e18055511e"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 36852,
+          "edgePixels": 0,
+          "sha256": "3551bac36c320d60238eae449a14a6cc645d28cedd1de1b2ba48cf013823511d"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 38036,
+          "edgePixels": 0,
+          "sha256": "fcd42155957219743d1f3fad0988befc64287e7725e70aadb0acedb291c35187"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 42380,
+          "edgePixels": 0,
+          "sha256": "3e5f544109ba8cd4a0008b34f4f56fc2e52fb8a64aee7997c059d6ab4c118257"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 39835,
+          "edgePixels": 0,
+          "sha256": "0c07e73ad50fc68010021d9b40dd880fafa0c3195e3ab64c90d1737ce0570ee4"
+        }
+      ],
+      "sha256": "f67512ca44b194577fe7b7cf63317c60a49ea34b04875d315be5300be13197a1",
+      "bytes": 481240
+    },
+    {
+      "name": "golpe-SA1",
+      "file": "production/sprites/final/chupetinha/golpe-SA1.webp",
+      "source": "tiras/golpe-SA1.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 47706,
+          "edgePixels": 0,
+          "sha256": "a4e64c6dd2b8ffdfebfe86ede1e5fbe4e7e5376d82807391acbbe57f2c98caf5"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 51999,
+          "edgePixels": 0,
+          "sha256": "6a3d26075b3f1f1f131c4deb212f3b8b61eb80a5afe9d8370ac51ed5890fbe38"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 50757,
+          "edgePixels": 0,
+          "sha256": "c9ef2ce0ec3f072cbf53bb7a096a7f1bec994f0fbd27413c7f09ea07580e6de3"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 55432,
+          "edgePixels": 0,
+          "sha256": "d6b5ace4562bb9e22503b32997a9fad2ff02a908009f84c94d9f481715e727b1"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 52199,
+          "edgePixels": 0,
+          "sha256": "d6e463b4ea6650e18bb712b8f02c660cba918d717c341b056dfc34f036daf6fa"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 49440,
+          "edgePixels": 0,
+          "sha256": "f840a645659b879da06b0bdc535281d1f46faf90558887dbada417a33c916aaf"
+        }
+      ],
+      "sha256": "179093a4a2011b17a57d8021498a6ea08ad5fae9d25e813b2398343074f50138",
+      "bytes": 613048
+    },
+    {
+      "name": "golpe-SA3",
+      "file": "production/sprites/final/chupetinha/golpe-SA3.webp",
+      "source": "tiras/golpe-SA3.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 36426,
+          "edgePixels": 0,
+          "sha256": "0db1468adfcddb163d9535363348c6b3d343e294ef27d5ebf27a95b66210f11c"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 41631,
+          "edgePixels": 0,
+          "sha256": "4dac559f9d0db048deac45c3648d7b1e14ece1d5e066e6505e2fb539d36d4aa8"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 40115,
+          "edgePixels": 0,
+          "sha256": "a2433d36a80dfc3b88b193a528ed41295b7ba6798f87388f5c953d8d2a40e1d0"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 41447,
+          "edgePixels": 0,
+          "sha256": "e1e27c7ddd0b452321adc8187ff07667f7ac81efd132702540b5bfc84548e925"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 38607,
+          "edgePixels": 0,
+          "sha256": "756151686ac3c093d07ba1d62e61f85abcf8681cfce66d76088542650accc520"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 38626,
+          "edgePixels": 0,
+          "sha256": "5a34499c52995c28851289488179714c7e8147374e9f2f6d9741b43b0413ba94"
+        }
+      ],
+      "sha256": "5e8da443214799e547ce204a262a41b5a04286c21271c21d354a6945799dae1a",
+      "bytes": 481824
+    }
+  ],
+  "effects": [
+    {
+      "name": "celular-live",
+      "file": "production/sprites/final/chupetinha-fx/celular-live.webp",
+      "source": "fx/tiras/celular-live.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 54645,
+          "edgePixels": 0,
+          "sha256": "81fb55ab12c296f1f945c746acab06b11d4d54b1151aaec21252999fb1e43982"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 54860,
+          "edgePixels": 0,
+          "sha256": "5e4f35284b60c171f60ec21793590a7366d157780328a61cc42bbe39c5018655"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 55089,
+          "edgePixels": 0,
+          "sha256": "992e0532cd35846bd884cdb7957f37f8e3229aa8f1f9716ed2ee1b2f6ee14537"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 55550,
+          "edgePixels": 0,
+          "sha256": "f295b979be95b89369ad9c8633b2e1da2d18e7da612c1bd529cdbb4d47e7f23b"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 58480,
+          "edgePixels": 0,
+          "sha256": "d68fa50224c860c8f3f645e413649533c6baa554b4a704f5504fbd6f451a7492"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 58481,
+          "edgePixels": 0,
+          "sha256": "a562a5fc689b465d910901376a9516be4f9a562a1855b69a10a721ee57ba563e"
+        }
+      ],
+      "sha256": "6d3216ead002fcb0a849ea642dc5e0204da9f5b0e656616aa317a28cf7fcbd1e",
+      "bytes": 511474
+    },
+    {
+      "name": "celular-sem-sinal",
+      "file": "production/sprites/final/chupetinha-fx/celular-sem-sinal.webp",
+      "source": "fx/tiras/celular-sem-sinal.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 56134,
+          "edgePixels": 0,
+          "sha256": "21842a06ced43a2c5e00e7c80e656ebd7ede70c85878ad68f8b274aa203d0500"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 56170,
+          "edgePixels": 0,
+          "sha256": "5a4343af6f39e6affb4ac0953f3bf605ca13458077ad4a4b50d1d0c36346d036"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 57294,
+          "edgePixels": 0,
+          "sha256": "15a02f6d084a744a0e807d03583e5386c886d7388b4099749c2f23ddda530423"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 57535,
+          "edgePixels": 0,
+          "sha256": "5574b2d74c4b4570a1fc73b9d51a16b5f6fea16af0c8c27764f1ec34745a97c2"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 58438,
+          "edgePixels": 0,
+          "sha256": "4afea2c3a3d73ca1e2c236c5221927d9cccfd8833ed5f5ad95add166ef5d25b4"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 58434,
+          "edgePixels": 0,
+          "sha256": "c70656308977a1a885883416d072d1c6eecd3fc0f3e7404af57220b668d6223e"
+        }
+      ],
+      "sha256": "e5823fe7f47860a579f905da7a8f0db615ec3efd6e47c45fc067ce96626930bd",
+      "bytes": 353666
+    },
+    {
+      "name": "celular-ativacao",
+      "file": "production/sprites/final/chupetinha-fx/celular-ativacao.webp",
+      "source": "fx/tiras/celular-ativacao.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 59792,
+          "edgePixels": 0,
+          "sha256": "dfa84c692133a2b8704f2606618aa0f273bc21f1a1239c2c41f1f19e63417db8"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 60391,
+          "edgePixels": 0,
+          "sha256": "27891ba2cbb1c1f2fa3fc58b3539d90e1a81bd835d5700e373c6e11c9aa44ade"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 63362,
+          "edgePixels": 0,
+          "sha256": "93893e984d2fafe16c45a9ad66405099debe4d44e60ef25fa4e9c974c7eccf56"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 63387,
+          "edgePixels": 0,
+          "sha256": "58cd869acf6f7b9c3fb0afd59a5b6775af749e6d65b88a35fad840006e4e1585"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 66981,
+          "edgePixels": 0,
+          "sha256": "c30590809d0eb0653711f3c07d8832f804b02227579f888d0d9d4cf418db5fdb"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 67152,
+          "edgePixels": 0,
+          "sha256": "737661279d4c6397e2b68cb130b11462013ca2e3bf49b5b8584c504910024b9d"
+        }
+      ],
+      "sha256": "f91a5e92b75e4079f5c70c7d97f9554d5c7a437abf936fdcdac7c103b42dcb5c",
+      "bytes": 477650
+    },
+    {
+      "name": "celular-dano",
+      "file": "production/sprites/final/chupetinha-fx/celular-dano.webp",
+      "source": "fx/tiras/celular-dano.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 57051,
+          "edgePixels": 0,
+          "sha256": "ffc53ac924bb94a29ad824bb470fc8b0d87da2a025fe853a281f90004c7ed27a"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 58291,
+          "edgePixels": 0,
+          "sha256": "5c3e51bb26fb60c96f4b28a9ba4b55cb0d4b7d666cadc20d7166afcd24ca0a40"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 56479,
+          "edgePixels": 0,
+          "sha256": "7296859196b241991b089e5ec3c9d32b95228791b8d6dc79a4ab9da2ed7ac25a"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 53674,
+          "edgePixels": 0,
+          "sha256": "c055d5e3c013d733cc7efd77a44c9037b50b4a997fe56157739ccdeb06243cc4"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 60618,
+          "edgePixels": 0,
+          "sha256": "90dd3e6592705a830272a293820e95a11bc983c1f598cd1e388e8c2791810dfb"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 63547,
+          "edgePixels": 0,
+          "sha256": "646f18b1f1407d67b22785d4cec2f1cf31dd30473cae768f9d6a91d308be2ad7"
+        }
+      ],
+      "sha256": "664263b5bb713da6eb863b00d9a2d4231d30d97ad53d612c410e0099d44c9b81",
+      "bytes": 450286
+    },
+    {
+      "name": "projetil-chupeta",
+      "file": "production/sprites/final/chupetinha-fx/projetil-chupeta.webp",
+      "source": "fx/tiras/projetil-chupeta.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 48992,
+          "edgePixels": 0,
+          "sha256": "2f6c04e8e099147153e16a9a5603dedc66c449f0cd1fab633461f33f3324c203"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 45595,
+          "edgePixels": 0,
+          "sha256": "45a90a624158eb38899a29825c0f5390055445c1cd48f72e1f7fefa973474571"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 36022,
+          "edgePixels": 0,
+          "sha256": "f1e200837e21becfaa49f3bd5df0de190563d2a1e43c5e7b2301cba1089e8cbc"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 43874,
+          "edgePixels": 0,
+          "sha256": "cb4d6d6c69c103a354dafb13f42ef03c9b04dc9b905d1dfef11928db8538052f"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 45360,
+          "edgePixels": 0,
+          "sha256": "aa7b4b01f64a45db2c56ee75de4ba934f54e83d359071b1d21528b9506f551dc"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 50205,
+          "edgePixels": 0,
+          "sha256": "b2c9ce7863729a011d722c5fa3b787646b42c911d87c5c6f2465d97b3ea999e5"
+        }
+      ],
+      "sha256": "32bccd9f1751a9a90a2c8c0b3a086e409de935aa7d35e3806e2e3d7714443ab2",
+      "bytes": 516908
+    },
+    {
+      "name": "impacto-chupeta",
+      "file": "production/sprites/final/chupetinha-fx/impacto-chupeta.webp",
+      "source": "fx/tiras/impacto-chupeta.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 5862,
+          "edgePixels": 0,
+          "sha256": "9f8b9c437e19b1ff59b2ac9c21304b366d4d9bd677aad4dc12bdc5fd92489844"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 37332,
+          "edgePixels": 0,
+          "sha256": "6f28f6aaf2ace7bab8c904881b8a73a3333f0dc6e2b4d40a202b4b216aecf6be"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 16099,
+          "edgePixels": 0,
+          "sha256": "06d240f5e9ba38d87a38087db6a996eed5ad122a43b2dbfa570920d0ea862453"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 2420,
+          "edgePixels": 0,
+          "sha256": "2ed79ff40cf72bc3bafc52060f63cf4f4bfc92237c3f48c810de7a4e0a2cdaaa"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 1435,
+          "edgePixels": 0,
+          "sha256": "a98592e476f73b2fd669cb9631ca324a9c4d3fef50a8ceba2e2242950728332c"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 282,
+          "edgePixels": 0,
+          "sha256": "4107ab73acb68b11044ff4bcaa93f510f4775a8f1899d7f192d8e96dae61f87d"
+        }
+      ],
+      "sha256": "ce0febdb910b39d6602c3372120714cfdefdaf7c382599c6ec4c37b9ba47da68",
+      "bytes": 221450
+    },
+    {
+      "name": "sugada",
+      "file": "production/sprites/final/chupetinha-fx/sugada.webp",
+      "source": "fx/tiras/sugada.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 7289,
+          "edgePixels": 0,
+          "sha256": "81d59c54fe7ef70445e657fcf4736fc252e78b597a450de99d74226cbe4645b7"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 19571,
+          "edgePixels": 0,
+          "sha256": "475f5c5ec7c3b2615d5b7b493b428b25c2eec48335e989f6a4e5117cd2efd410"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 32237,
+          "edgePixels": 0,
+          "sha256": "4ed13addd49cedd20720533d6ff3762d82d8b4a3a2939754e0e69ca531c389ef"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 7201,
+          "edgePixels": 0,
+          "sha256": "77e7830ef8a382f9972b37b69c4f97cbc5214059601da4702870620b2e7aa040"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 5379,
+          "edgePixels": 0,
+          "sha256": "6d8c597a0f902ea6689aa064b71e0376ba137785cf27ccf9d87d123692ec19d0"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 1775,
+          "edgePixels": 0,
+          "sha256": "c134c5431b7cf6160632ebbb11f84c9dfc9bf83613b29b3551be50747690369b"
+        }
+      ],
+      "sha256": "674a32d4900e81ddb44aa958b397414377842e2f4b90c2d478e7235b74126977",
+      "bytes": 307834
+    },
+    {
+      "name": "arco-mangual",
+      "file": "production/sprites/final/chupetinha-fx/arco-mangual.webp",
+      "source": "fx/tiras/arco-mangual.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 2166,
+          "edgePixels": 0,
+          "sha256": "7a14024612a3649032c62bf5331928fa70dc925c368ba390d390adff673faf5e"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 14709,
+          "edgePixels": 0,
+          "sha256": "95e78f7144b217676faf75b351cc11c59e90f095e87bd13a93297280fef30318"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 35477,
+          "edgePixels": 0,
+          "sha256": "881c8fd3f1872fe2c847fe0b65d03b7a0b525c5fa7333391cbebc1c2db9d8016"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 7818,
+          "edgePixels": 0,
+          "sha256": "a4da8d81b2a04cf7a8f841b89df1ff22a24a81253ccf3f252db0cf2701d7ccff"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 3195,
+          "edgePixels": 0,
+          "sha256": "bfbd85412e5241b6662e732f70538336e3e0290d08d63917aad185be74e437bb"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 418,
+          "edgePixels": 0,
+          "sha256": "4babca8dfd53cd1b085c5941fd5f6cdb08be5f6e0618fd8bd0e15fd3a34220a3"
+        }
+      ],
+      "sha256": "b2e7a23741d0dc21a228e42ab0cf34835d6caed8552a08e35f886c8dbe958cf1",
+      "bytes": 185870
+    },
+    {
+      "name": "celular-live-1",
+      "file": "production/sprites/final/chupetinha-fx/celular-live-1.webp",
+      "source": "fx/tiras/celular-live-1.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 55783,
+          "edgePixels": 0,
+          "sha256": "05a78912d80c285ec1424902dffd7de8419fa505931ed9a5cc39419bde813af4"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 56065,
+          "edgePixels": 0,
+          "sha256": "a4a5ed2f716b648ed267ac8173938f917da453d43090a17eb4c23e5aaada95b9"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 56364,
+          "edgePixels": 0,
+          "sha256": "a8b97190f86f7a321359f84e82f285757de2f6162f27c9a18494c9f208a49ae1"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 56815,
+          "edgePixels": 0,
+          "sha256": "6d4c5190f0596be62887dc2a451daedc8843e38c4643f610d8ce2b7808f09780"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 61545,
+          "edgePixels": 0,
+          "sha256": "d95a343f5b336cd36e787b4a25303f7224cfc1b2ffad222710c0c8f24fa499f6"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 61518,
+          "edgePixels": 0,
+          "sha256": "5baf4b1bb365cc5dc945230bf8960e9a9edf57746c133d3006382403409b246f"
+        }
+      ],
+      "sha256": "96a68a53422a52009d88ad024ebdc90cfff899aeb654132a8023f37d87918c93",
+      "bytes": 507302
+    },
+    {
+      "name": "celular-live-2",
+      "file": "production/sprites/final/chupetinha-fx/celular-live-2.webp",
+      "source": "fx/tiras/celular-live-2.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 55457,
+          "edgePixels": 0,
+          "sha256": "b92cdb2d22b91d03209ddff1eb934e8af5ca15c66232cc8beeb2da09040c0fab"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 55741,
+          "edgePixels": 0,
+          "sha256": "5121ef8852f62d7fc318df7472554100b49f9f5862fd8dd138821d97e380da01"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 55827,
+          "edgePixels": 0,
+          "sha256": "deb4d9113fffedef157928ff0d464761e55dc6140edb29b7f4f2144ce65458a3"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 56412,
+          "edgePixels": 0,
+          "sha256": "6fad78b59037dcdf04555900afa2f42b48749549f7a6e9d542b1af17eba0c8fe"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 57024,
+          "edgePixels": 0,
+          "sha256": "53680f5ec2f48ef75b75d2686faddfe793b4840b14f76b7c8b9d16e7a0b11275"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 58054,
+          "edgePixels": 0,
+          "sha256": "08b25185a1f87a9ce05cfbddd92d82864c26843f15fc7531736c7eeb6741bfa8"
+        }
+      ],
+      "sha256": "8dc2878096e8744f1a9da6d4c737763ebdf80b1ee85e699d393fd974ad51f9f7",
+      "bytes": 499184
+    },
+    {
+      "name": "engajamento",
+      "file": "production/sprites/final/chupetinha-fx/engajamento.webp",
+      "source": "fx/tiras/engajamento.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 3960,
+          "edgePixels": 0,
+          "sha256": "276be02dd42b1051b652b880236e70bd8166530b12a6cf37fabbbd8988747080"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 18361,
+          "edgePixels": 0,
+          "sha256": "b91962248c73dd4ef66f45c3f3b35d372df4fc18fd48b9962446b38fa06ff3f7"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 15161,
+          "edgePixels": 0,
+          "sha256": "d08342155aee1c0542eae63511826dde1d18e97e1449500bcb0b0a24c9edaacc"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 3998,
+          "edgePixels": 0,
+          "sha256": "f6606dd4ad1242967ef0c955b04ded63845887cfe23cea404ee2dd6031662c83"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 3187,
+          "edgePixels": 0,
+          "sha256": "50ec1f1055e396c223f42af8f5df3c2e4b07a63162938c10c15ca2ac2cec8280"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 792,
+          "edgePixels": 0,
+          "sha256": "4be3327ad9c849d921ff3c5e8ab17e35ced8ad19986e04e1ffc033179541de11"
+        }
+      ],
+      "sha256": "a5b6015f5188a9ad54249f967c0dfe9599d9f0468742efefb72161fd228a7523",
+      "bytes": 164784
+    }
+  ]
+}

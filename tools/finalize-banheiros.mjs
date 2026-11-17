@@ -1,0 +1,28 @@
+import{makeMast,tie,hang,MAST_TIES}from'./stage-hangings.mjs';
+import{readFileSync,writeFileSync}from'node:fs';
+const dir='production/stages/banheiros',report=JSON.parse(readFileSync(dir+'/source/exports.json')),assets=report.assets,objects=[],foreground=[];
+const add=(asset,x,y,w,h,opts={})=>{if(assets[asset])objects.push({id:asset+'-'+objects.length,asset,x,y,...(w?{w}:{}),...(h?{h}:{}),factor:.68,...opts});};
+add('nuvem-1',300,300,660,null,{factor:.08,opacity:.33});add('nuvem-2',1220,250,630,null,{factor:.08,opacity:.30});add('nuvem-3',2140,330,660,null,{factor:.08,opacity:.30});
+add('horizonte',1022,650,2044,150,{factor:.18,opacity:.75});add('agua',1022,826,2044,210,{factor:.18});
+add('catedral',160,750,null,420,{factor:.32,opacity:.65});add('mercado-ferro',450,780,780,null,{factor:.32,opacity:.65});
+for(const[n,x]of[[1,1550],[2,2010],[3,2310]])add('casario-'+n,x,785,null,350,{factor:.32,opacity:.7});
+add('barco-1',310,800,200,null,{factor:.25,opacity:.7});add('barco-2',2080,805,200,null,{factor:.25,opacity:.7});add('barco-balanco',1730,801,170,null,{factor:.25,fps:4,opacity:.7});
+add('agua-ondulacao',290,819,410,40,{factor:.18,fps:5,opacity:.18});add('reflexos-agua',2160,818,330,60,{factor:.18,fps:5,opacity:.12});
+const mastros=[250,1050,1850].map((x,i)=>makeMast(assets,objects,{id:'mastro-banheiros-'+i,x,h:720,factor:.68}));
+// Community facilities are entirely behind the combat ground, without collision.
+for(const[asset,x]of[['banheiro-azul',710],['banheiro-verde',970],['banheiro-azul',1230],['banheiro-verde',1490]])add(asset,x,823,250,402);
+add('banheiro-acessivel',1810,823,350,402);
+add('aviso-banheiros',690,548,105,34);add('aviso-banheiros',950,551,110,35);add('aviso-banheiros',1210,548,105,34);add('aviso-banheiros',1470,551,110,35);add('aviso-acessivel',1790,556,112,32);
+add('tenda-servico',2200,824,680,465);add('bancada-tecnica',2200,823,320,null);add('documentos',2135,688,90,null);add('prancheta',2260,689,null,80);add('carimbo-fiscal',2310,690,39,39);
+add('placa-pedestal',2150,824,null,250);add('aviso-decreto',2150,681,255,76);
+add('reservatorio',135,824,null,235);add('mangueira',220,825,165,null);add('lavatorio',300,824,null,206);add('rolo-papel',490,824,40,null);
+add('placa-pedestal',520,824,null,235);add('aviso-bem-vindos',520,681,250,72);add('aviso-agua',295,676,115,40);
+add('lixeira',605,825,null,118);add('lixeira',2020,825,null,118);
+hang(assets,objects,'bandeirolas-1',tie(mastros[0],MAST_TIES.right),tie(mastros[1],MAST_TIES.left));hang(assets,objects,'bandeirolas-vento',tie(mastros[1],MAST_TIES.right),tie(mastros[2],MAST_TIES.left),{fps:4});hang(assets,objects,'bandeira-trans-vento',tie(mastros[1],MAST_TIES.left),tie(mastros[1],MAST_TIES.right),{fps:4});
+add('poste',65,826,null,480,{factor:.78});add('halo-poste',65,480,null,160,{factor:.78,fps:4,opacity:.25});add('poste',2500,826,null,480,{factor:.78});add('halo-poste',2500,480,null,160,{factor:.78,fps:4,opacity:.25});
+for(const[k,x,h,phase]of[['npc-acolhimento',770,245,0],['npc-fila-comunidade',1120,228,1],['npc-fila-1',1360,224,2],['npc-fila-2',1590,222,3],['npc-torcedor-2',1950,225,4]])add(k,x,824,null,h,{factor:.78,fps:4,phase});
+add('npc-voluntario',80,824,null,225,{factor:.78,fps:4,phase:2});add('mesa-comida-1',100,824,240,null,{factor:.78});add('panela-1',45,734,null,60,{factor:.78});add('marmitas-1',145,734,90,null,{factor:.78});add('caixa-1',2480,824,100,null,{factor:.78});add('cesto-1',2600,824,80,null,{factor:.78});
+add('poca-agua',380,826,160,18,{factor:.78,opacity:.4});add('cone-servico',50,825,null,72,{factor:.78});add('cone-servico',2600,825,null,72,{factor:.78});add('poeira',1300,827,430,55,{factor:.78,fps:4,opacity:.10});add('papel-vento',2340,740,60,70,{factor:.78,fps:4,opacity:.75});
+for(const[k,x]of[['folhagem-1',-120],['folhagem-2',2720]])if(assets[k])foreground.push({id:k,asset:k,x,y:1090,w:280,factor:1.05,opacity:.65});
+const manifest={id:'banheiros',version:2,status:report.missing.length?'in-production':'delivered-v2',groups:JSON.parse(readFileSync(dir+'/PLANO.json')).groups.length,world:{width:2600,height:1080,viewWidth:1920,cameraMax:680,feetY:930,groundTopY:826},essential:['ceu-noite','calcamento','banheiro-azul','banheiro-verde','banheiro-acessivel','lavatorio'],interactive:['cabine-fiscal','cerca-fiscal','carimbo-fiscal'],layers:[{asset:'ceu-noite',factor:0,width:1920,height:1080}],objects,foreground,alternatives:[],ground:{asset:'calcamento',shade:'rgba(19,16,46,.23)'},assets,missing:report.missing,notes:['Generated masters, prompts and six-frame sheets retained in source/.','Interactive booth, fence and stamp are painted only by gameplay renderer; decoration has no collision.','Dynamic document/status labels, pulses and damage cracks remain live code, with original rules.','Community welcomes everyone; satire targets exclusionary bureaucracy.','Same Belém location: explicit reuse is recorded per asset.','Audio sources and measurements are in audio/manifest.json.']};
+writeFileSync(dir+'/manifest.json',JSON.stringify(manifest,null,2));console.log(JSON.stringify({assets:Object.keys(assets).length,objects:objects.length,missing:report.missing}));
