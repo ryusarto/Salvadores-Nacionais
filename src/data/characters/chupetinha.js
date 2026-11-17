@@ -111,7 +111,7 @@ export default {
   mechDesc: 'Ao apanhar, liga a live: 25% do dano volta como vida. Acerte o celular sobre a cabeça dele para derrubar o sinal.',
   colors: { skin: '#e8b894', top: '#2f5d9e', top2: '#f4f0ea', bottom: '#24304a', accent: '#ff8fc0', hair: '#3a2a1a', shoe: '#141016' },
   look: { hair: 'curly', weapon: 'chupeta', sleeves: 'long' },
-  walkF: 5.6, walkB: 4.6, jumpScale: 0.95, hpScale: 1.05,
+  walkF: 5.6, walkB: 4.6, jumpScale: 0.95, hpScale: 1.15,
   boss: true,
   place: 'BELÉM — FRENTE DO PALCO',
   moves,

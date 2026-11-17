@@ -86,10 +86,13 @@ export const SYS = {
   RUSH: { frames: 22, speed: 21, bonusStun: 4, bonusFrames: 30 },
 
   // Dificuldade: nível da CPU e multiplicador de dano [jogador, CPU]
+  // dmg: multiplicador de dano [jogador, CPU] contra heróis; bossDmg: contra os
+  // chefes do Modo História (cada chefe já tem as próprias regras e vida).
+  // A CPU fica mais forte pelo nível e, nos heróis, também pelo dano.
   DIFFICULTY: [
-    { name: 'FÁCIL', level: 0, dmg: [1, 1] },
-    { name: 'NORMAL', level: 1, dmg: [1.12, 0.6] },
-    { name: 'DIFÍCIL', level: 2, dmg: [1.15, 0.45] },
+    { name: 'FÁCIL', level: 0, dmg: [1.1, 0.6], bossDmg: [1, 1] },
+    { name: 'NORMAL', level: 1, dmg: [1, 0.85], bossDmg: [1.12, 0.6] },
+    { name: 'DIFÍCIL', level: 2, dmg: [1.12, 0.65], bossDmg: [1.15, 0.45] },
   ],
 
   SUPER: { max: 3000, stock: 1000, perDmgDealt: 0.07, perDmgTaken: 0.04, whiffSpecial: 20 },

@@ -71,7 +71,7 @@ export function createApp(canvas, devices, opts = {}) {
     app.level = app.mode === 'story' && app.story ? fightLevel(app.story, D.level) : D.level;
     const fair = app.mode === 'training' || app.mode === 'vs2';
     if (app.mode === 'vs2') app.foe = HEROES[app.hero2];
-    app.st = createMatch({ chars: [hero, app.foe], seed: (Date.now() & 0xffff) + 1, training: app.mode === 'training', dmgMul: fair ? [1, 1] : D.dmg });
+    app.st = createMatch({ chars: [hero, app.foe], seed: (Date.now() & 0xffff) + 1, training: app.mode === 'training', dmgMul: fair ? [1, 1] : app.foe?.boss ? D.bossDmg : D.dmg });
     // Luta espelhada: o lado 2 usa a paleta alternativa para dar para distinguir.
     if (app.st.f[0].ch.id === app.st.f[1].ch.id) app.st.f[1].alt = true;
     app.brain = createBrain(app.level);

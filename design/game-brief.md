@@ -17,7 +17,12 @@ se joga de um jeito diferente.
   defesa agachada, golpe de cima pede defesa em pé. Defender nos 3 quadros antes do golpe é Defesa
   Perfeita. Segurar para trás também defende. Agarrão vence a defesa.
 - **Golpes de sequência:** → ← + Leve e ↓ → + Médio, dois por herói.
-- **Dificuldade:** Fácil, Normal e Difícil mudam o nível da CPU e o dano de cada lado.
+- **Dificuldade:** Fácil, Normal e Difícil mudam o nível da CPU e o dano de cada lado. Contra heróis a CPU
+  bate mais a cada nível (dano da CPU 0,6 · 0,85 · 0,65 com IA bem mais forte no Difícil); contra os chefes vale
+  a tabela própria de cada capítulo (`bossDmg` em `src/data/system.js`).
+- **CPU:** usa o kit inteiro: golpes no ar, Golpe Blindado contra pressão, defesa na altura certa (mais no Difícil),
+  guarda Super para o de 3 barras e evita repetir o mesmo golpe. Cada herói tem um plano próprio (`mech.aiPlan`);
+  o Ryuchi decide dentro da Postura quadro a quadro (`mech.aiHold`).
 - **Modos:** História (a turnê completa em 7 capítulos, de Belém ao inferno, com o final em que a fome acaba no mundo), Versus CPU, **Versus 2 jogadores** (dois controles, ou controle e teclado) e Treino com lista de combos.
 - **Combo aéreo:** Gancho (↓+Forte) acertou + segurar ↑ = pulo alto; Leve, Médio e Forte emendam no ar.
 - **Empurrão na defesa:** Leve + Médio defendendo afasta o atacante (1 gomo de Ginga).

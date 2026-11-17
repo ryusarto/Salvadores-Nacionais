@@ -71,6 +71,12 @@ export default {
       st.events.push({ t: 'pop', str: 'RAJADA!', x: f.x, color: '#ff6063' });
       return true;
     },
+    // CPU: pressão aérea com pulo duplo e Voadora Mergulho
+    aiPlan(st, f, o, dist, rnd) {
+      if (dist > 300 && dist < 650 && rnd() < 0.12) return { tag: 'jS', seq: [{ x: 1, y: 1, n: 3 }, { x: 1, n: 9 }, { x: 1, y: 1, n: 3 }, { n: 7 }, { S: 1, n: 2 }] };
+      if (dist < 280 && rnd() < 0.06) return { key: 'c1' };
+      return null;
+    },
     hud(f) {
       return { label: 'EMBALO', pips: EMBALO_MAX, value: f.res.embalo, ready: f.res.embalo >= EMBALO_MAX, readyText: 'CHEIO!', color: '#ff6063' };
     },

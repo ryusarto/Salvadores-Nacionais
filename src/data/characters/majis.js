@@ -57,6 +57,13 @@ export default {
     onMoveFrame(st, f, o, m) {
       if (f.moveKey === 'SA3' && f.sf > m.startup && f.sf % 4 === 0) st.events.push({ t: 'shake', n: 16, x: f.x });
     },
+    // CPU: segura a média distância, acumula tremor e foge da pressão com a Palhetada
+    aiPlan(st, f, o, dist, rnd) {
+      if (dist < 200 && rnd() < 0.15) return { key: 'c1' };
+      if ((o.status?.frost || 0) >= 2 && dist < 380 && rnd() < 0.35) return { key: '6S' };
+      if (dist > 320 && dist < 560 && rnd() < 0.12) return { key: '2S' };
+      return null;
+    },
     hud(f, o) {
       const n = o ? o.status.frost : 0;
       return { label: 'TREMOR', pips: 3, value: n, ready: o?.state === 'frozen', readyText: 'ATORDOADO!', color: '#9df0ff' };

@@ -73,7 +73,7 @@ export default {
   mechDesc: 'Longe do canto, foge no meio do combo e larga malas. Encurrale perto da parede e não deixe ele embarcar.',
   colors: { skin: '#e6b892', top: '#e8e2d4', top2: '#2f5d9e', bottom: '#3a3f4a', accent: '#8a5a2a', hair: '#5a3a1e', shoe: '#2a1c14' },
   look: { hair: 'curly', weapon: 'mala', sleeves: 'long' },
-  walkF: 7.0, walkB: 7.4, jumpScale: 1.0, hpScale: 1.3,
+  walkF: 7.0, walkB: 7.4, jumpScale: 1.0, hpScale: 1.4,
   boss: true,
   place: 'AEROPORTO',
   stage: 'aeroporto', // cenário próprio (src/render/airport-stage.js)

@@ -85,7 +85,7 @@ export default {
   mechDesc: 'Metade da Ginga e do Super que você gasta vira armadura para ele. Nas Fake News, só o verdadeiro tem sombra.',
   colors: { skin: '#f0a050', top: '#1f2a4a', top2: '#f4f0ea', bottom: '#1f2a4a', accent: '#c8102e', hair: '#f3d26a', shoe: '#141016' },
   look: { hair: 'long', weapon: null, sleeves: 'long' },
-  walkF: 4.8, walkB: 4.2, jumpScale: 0.85, hpScale: 1.2,
+  walkF: 4.8, walkB: 4.2, jumpScale: 0.85, hpScale: 1.3,
   boss: true,
   place: 'WASHINGTON, D.C.',
   stage: 'washington', // cenário próprio (src/render/washington-stage.js)

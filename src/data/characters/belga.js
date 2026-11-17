@@ -77,6 +77,11 @@ export default {
     dmgMul(f) {
       return 1 + BPM_DMG * f.res.bpm;
     },
+    // CPU: boxeador; esquiva por baixo com o Pêndulo quando o rival ataca de perto
+    aiPlan(st, f, o, dist, rnd) {
+      if (dist < 260 && o.state === 'attack' && rnd() < 0.2) return { key: '2S' };
+      return null;
+    },
     hud(f) {
       return { label: 'BPM', pips: BPM_MAX, value: f.res.bpm, ready: f.res.bpm >= BPM_MAX, readyText: 'NO RITMO!', color: '#ffa828' };
     },
