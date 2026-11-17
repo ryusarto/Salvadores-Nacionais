@@ -7,6 +7,8 @@
  * { who: id do personagem, say: 'texto' }; who: null é o narrador.
  */
 
+import { BROTHER_RHYME } from './banter.js';
+
 /** Paradas da turnê, na ordem. `ready: false` aparece trancada no mapa. */
 export const CHAPTERS = [
   { id: 'ver-o-peso', n: 1, boss: 'zanata', bossName: 'CAPETA ZANATA', place: 'BELÉM — VER-O-PESO', ready: true },
@@ -175,6 +177,9 @@ const RIVAL_LINE = {
 
 /** Diálogo antes de cada batalha de rima. */
 export function rhymeTalk(hero, rival, chapterId = 'ver-o-peso') {
+  if (BROTHER_RHYME[hero] && BROTHER_RHYME[rival]) {
+    return [{ who: null, say: (RHYME_INTRO[chapterId] || RHYME_INTRO['ver-o-peso']) + ' Briga de irmão!' }, ...BROTHER_RHYME[hero]];
+  }
   return [
     { who: null, say: RHYME_INTRO[chapterId] || RHYME_INTRO['ver-o-peso'] },
     { who: hero, say: HERO_LINE[hero] },

@@ -1,4 +1,5 @@
 import { mv, bx, baseNormals, proj } from '../movekit.js';
+import { DOG_CALLS, DOG_AWAY } from '../banter.js';
 
 /**
  * CHAPUH — truques. Bate com a lata de spray de pixo; o especial é um rajadão de pichação de longo alcance.
@@ -21,10 +22,12 @@ const puddle = (x) => ({
 const dog = (o = {}) => ({
   make: (st, f) => {
     if (f.res.dog > 0 && !o.force) {
-      st.events.push({ t: 'pop', str: 'CADÊ O CACHORRO?', x: f.x, color: '#d8d0dc', size: 40 });
+      st.events.push({ t: 'pop', str: DOG_AWAY, x: f.x, color: '#d8d0dc', size: 40 });
       return null;
     }
     if (!o.force) f.res.dog = DOG_CD;
+    // às vezes o Chapuh chama o pinscher pelo nome: Antônio
+    if (st.rng() < 0.5) st.events.push({ t: 'pop', str: DOG_CALLS[Math.floor(st.rng() * DOG_CALLS.length)], x: f.x, y: 600, color: '#ffb62a', size: 36 });
     return proj({ kind: 'dog', behavior: 'fly', x: 90, y: 0, w: 120, h: 90, vx: 19, life: 80, dmg: 700, hitstun: 24, guard: 'low', color: '#a86f46', ...o,
       extra: { art: o.art || 'pinscher-correr', ...o.extra } });
   },
@@ -85,7 +88,7 @@ export default {
       if (src.type === 'proj' && src.ent.kind === 'dog') st.events.push({ t: 'pop', str: h.launch ? 'NHAC!' : 'AU!', x: d.x, y: 430, color: '#ffb62a', size: 44 });
     },
     hud(f) {
-      return { label: 'PINSCHER', pips: 0, value: 0, text: f.res.dog > 0 ? `VOLTA EM ${Math.ceil(f.res.dog / 60)}s` : 'PRONTO', ready: f.res.dog <= 0, color: '#ffb62a' };
+      return { label: 'ANTÔNIO', pips: 0, value: 0, text: f.res.dog > 0 ? `VOLTA EM ${Math.ceil(f.res.dog / 60)}s` : 'PRONTO', ready: f.res.dog <= 0, color: '#ffb62a' };
     },
     aiPlan(st, f, o, dist, rnd) {
       if (f.res.dog <= 0 && dist > 320 && rnd() < 0.35) return { key: '6S' };

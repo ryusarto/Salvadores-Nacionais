@@ -62,7 +62,8 @@ test('the real reader selects dedicated MDEP strips for every state, move and tu
     drawn=[];assert.equal(drawSprite(c,f,clock),true,name);
     assert.equal(drawn[0][0].url,name,name);
     assert.equal(drawn[0][3],768);assert.equal(drawn[0][4],768);
-    assert.equal(drawn[0][7],768*.85);assert.equal(drawn[0][8],768*.85);
+    const size=768*.85*(mdep.spriteStripScale?.mdep?.[name]||1);
+    assert.equal(drawn[0][7],size);assert.equal(drawn[0][8],size);
   }
   for(const [name,a]of Object.entries(STATE_ANIMS)){
     const f={ch:mdep,state:a.state,sf:8,stun:12,vx:name==='andar-tras'?-5:5,face:1,vy:0,y:0,comboHits:1};
