@@ -55,7 +55,7 @@ if (existsSync('production/stages')) for (const id of readdirSync('production/st
   const pack = JSON.parse(readFileSync(file));
   for (const a of Object.values(pack.assets || {})) {
     const path = join('production/stages', id, a.path);
-    const mime = a.kind === 'audio' ? 'audio/ogg' : a.path.endsWith('.png') ? 'image/png' : 'image/webp';
+    const mime = a.kind === 'audio' ? 'audio/ogg' : a.path.endsWith('.svg') ? 'image/svg+xml' : a.path.endsWith('.png') ? 'image/png' : 'image/webp';
     a.url = externalAssets ? assetURL(path) : `data:${mime};base64,${readFileSync(path).toString('base64')}`;
   }
   stagePacks[id] = pack;

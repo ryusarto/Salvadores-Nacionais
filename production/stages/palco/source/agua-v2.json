@@ -1,0 +1,6 @@
+{
+  "id": "agua",
+  "prompt": "Use case: lighting-weather / precise-object-edit. Edit the supplied river-water asset for a 2D hand-painted Brazilian comic-book fighting game. Keep the existing dark teal-violet water palette, thin horizontal ripples, warm amber reflections on left, subtle teal reflected light on right. Remove the entire white/grey checkerboard border by extending the painted WATER TEXTURE all the way to every image edge. The finished image must be a completely OPAQUE full-bleed rectangular water texture, filled with water in every pixel, no border, no transparency, NO CHECKERBOARD anywhere, no sky or horizon, no boats, buildings, people, text, watermarks or extra objects. Landscape 3:1. It will be scaled to a shallow river strip behind the concert stage.",
+  "sourceGeneratedPath": "generated_images/exec-ce5cdab9-e53a-4976-ad25-3dd3ed11425b.png",
+  "selectedVersion": 2
+}

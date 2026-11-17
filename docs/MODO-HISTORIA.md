@@ -71,7 +71,9 @@ devem mostrar a ação coletiva e a transformação, além da manchete final.
 ## Arenas e som
 
 A arena segue o capítulo, com variantes próprias para palco e banheiros.
-Essas duas variantes são provisórias. Aeroporto, mansão, Washington e inferno
+O palco tem um pacote pintado modular v1 em `production/stages/palco/`,
+com prévia e inventário próprios; os banheiros continuam provisórios.
+Aeroporto, mansão, Washington e inferno
 ainda têm cenários desenhados em código. A arte final segue a fila em
 [PRODUCAO-ARTE.md](PRODUCAO-ARTE.md).
 
