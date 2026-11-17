@@ -8,9 +8,14 @@ const arg=(name)=>process.argv.find(a=>a.startsWith('--'+name+'='))?.slice(name.
 if(!arg('source')||!arg('out'))throw Error('Required: --source=production-folder --out=candidate-folder');
 const source=resolve(arg('source')),out=resolve(arg('out')),scale=.86;
 const inventory=JSON.parse(readFileSync(join(source,'inventory.json')));
+const reviews=existsSync(join(source,'review.json'))?JSON.parse(readFileSync(join(source,'review.json'))):{};
+const previous=existsSync(join(out,'manifest.json'))?JSON.parse(readFileSync(join(out,'manifest.json'))).inventory:[];
 const results=[];
 for(const item of inventory.inventory){
  const {action,direction}=item;
+ if((arg('action')&&arg('action')!==action)||(arg('direction')&&arg('direction')!==direction)){
+  results.push(previous.find(p=>p.action===action&&p.direction===direction)||item);continue;
+ }
  const paths=[1,2,3].map(i=>join(source,'matrizes',direction,action,'grupo-'+i+'.png'));
  if(action==='parado'&&direction==='left'&&!existsSync(paths[0]))paths[0]=join(source,'left-master.png');
  if(!paths.every(existsSync)){results.push({...item,status:'pending'});continue;}
@@ -18,12 +23,15 @@ for(const item of inventory.inventory){
   const frames=[],metadata=[];let index=0;
   for(const path of paths){
    const {data,info}=await sharp(path).ensureAlpha().raw().toBuffer({resolveWithObject:true});
+   let transparent=0;for(let i=3;i<data.length;i+=4)if(data[i]===0)transparent++;
+   if(transparent<info.width*info.height*.05)throw Error('source background is opaque; regenerate group '+(index/4+1)+' with true alpha');
    const split=splitPosesGrid(data,info.width,info.height,4,1);
    const baseline=info.height-6,cell=info.width/4;
    for(let k=0;k<4;k++){
     const box=split.boxes[k];if(box.clipped)throw Error('source-boundary clipping in group '+(index/4+1));
     const pixels=extractPose(data,info.width,info.height,split,k);
     const width=Math.round(box.width*scale),height=Math.round(box.height*scale);
+    if(action==='parado'&&height<500)throw Error('standing drawing below minimum native resolution');
     const left=Math.round(384+(box.left-(k+.5)*cell)*scale),top=Math.round(700+(box.top-baseline)*scale);
     if(left<0||top<0||left+width>768||top+height>768)throw Error('pose does not fit fixed-scale cell: frame '+index);
     const cut=await sharp(pixels,{raw:{width:box.width,height:box.height,channels:4}}).resize(width,height,{kernel:'lanczos3'}).png().toBuffer();
@@ -33,12 +41,18 @@ for(const item of inventory.inventory){
    }
   }
   if(new Set(metadata.map(f=>f.sha256)).size!==12)throw Error('duplicate visible drawings');
+  const order=reviews[direction+'/'+action]?.frameOrder;
+  if(order){
+   if(order.length!==12||new Set(order).size!==12||order.some(i=>!Number.isInteger(i)||i<0||i>=12))throw Error('invalid reviewed frame order');
+   const orderedFrames=order.map(i=>frames[i]),orderedMetadata=order.map((i,index)=>({...metadata[i],sourceFrame:i,index}));
+   frames.splice(0,12,...orderedFrames);metadata.splice(0,12,...orderedMetadata);
+  }
   const dir=join(out,direction);mkdirSync(dir,{recursive:true});
   const strip=await sharp({create:{width:9216,height:768,channels:4,background:{r:0,g:0,b:0,alpha:0}}}).composite(frames.map((input,i)=>({input,left:i*768,top:0}))).png().toBuffer();
   writeFileSync(join(dir,action+'.png'),strip);
   await sharp(frames[0]).webp({lossless:true,effort:5}).toFile(join(dir,'__first-'+action+'.webp'));
   await sharp(strip).webp({lossless:true,effort:5}).toFile(join(dir,action+'.webp'));
-  results.push({...item,status:'candidate-needs-visual-review',frames:metadata});
+  results.push({...item,status:'candidate-needs-visual-review',pngSha256:createHash('sha256').update(strip).digest('hex'),frames:metadata});
  }catch(error){results.push({...item,status:'rejected',reason:error.message});}
  mkdirSync(out,{recursive:true});writeFileSync(join(out,'manifest.json'),JSON.stringify({...inventory,inventory:results},null,2));
 }

@@ -61,3 +61,22 @@ test('independently drawn directions use the same alternate costume colors',asyn
   const colors=new Uint8ClampedArray([180,180,180,255,150,90,60,255,80,65,90,255]);
   assert.deepEqual(recolorAlt(colors.slice(),'franco-esquerda'),recolorAlt(colors.slice(),'franco'));
 });
+
+test('alternate dense sprites recolor only the visible 768px cell and reuse it',async t=>{
+ imageFixture(t);
+ const previous=globalThis.document;t.after(()=>{globalThis.document=previous;});
+ const canvases=[],cuts=[];
+ globalThis.document={createElement(){const cv={width:0,height:0,getContext(){return {drawImage(...a){if(a.length===9)cuts.push(a);},getImageData(){return {data:new Uint8ClampedArray(cv.width*cv.height*4)};},putImageData(){}};}};canvases.push(cv);return cv;}};
+ const id='dense-palette-test';
+ await registerSprites(id,{parado:'dense-idle'},{...options,preload:['parado']});
+ const f={ch:{...franco,id,spriteProfile:'twelve-frame'},state:'idle',sf:35,face:1,alt:true};
+ const c=context();
+ drawSprite(c,f,0);
+ assert.equal(cuts.length,1);
+ assert.equal(cuts[0][1],5*768,'the displayed fifth index is cropped from the native strip');
+ assert.ok(canvases.every(cv=>cv.width===768&&cv.height===768));
+ assert.equal(c.drawn.at(-1)[1],0,'the recolored cell is drawn from its own origin');
+ const count=canvases.length;
+ drawSprite(c,f,0);
+ assert.equal(canvases.length,count,'repeated renders reuse the same recolored cell');
+});

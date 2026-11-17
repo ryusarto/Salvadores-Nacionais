@@ -22,6 +22,7 @@ function trimDecoded(id, keep) {
     old.cv = null;
     old.cvAlt = null;
     old.cvAltOf = null;
+    old.framePalettes = null;
     loaded.pop();
   }
 }
@@ -165,7 +166,7 @@ function keyOut(img) {
  * Pele e tons bege ficam; cores saturadas mudam de matiz; branco e cinza
  * ganham um tom azulado; contorno preto não muda. Feita uma vez por tira.
  */
-export function recolorAlt(px, id) {
+export function recolorAlt(px, id = '') {
   const palette = ALTERNATE_PALETTES[id] || ALTERNATE_PALETTES[id.replace(/-esquerda$/, '')] || { rotation: 150, neutralHue: 205, saturation: .42 };
   for (let i = 0; i < px.length; i += 4) {
     if (px[i + 3] === 0) continue;
@@ -214,6 +215,25 @@ function altCanvas(s) {
   return out;
 }
 
+// Dense strips stay as compressed images. Recolor only a visible cell, avoiding
+// a 9216-pixel canvas and a second full atlas for a mirrored costume.
+function denseAltFrame(s, index) {
+  s.framePalettes ??= new Map();
+  const cached = s.framePalettes.get(index);
+  if (cached) { cached.used = ++access; return cached.cv; }
+  if (typeof document === 'undefined') return null;
+  const cv = document.createElement('canvas');
+  cv.width = cv.height = s.size;
+  cv.getContext('2d').drawImage(s.cv, index * s.size, 0, s.size, s.size, 0, 0, s.size, s.size);
+  const colored = altCanvas({ cv, id: s.id, size: s.size });
+  s.framePalettes.set(index, { cv: colored, used: ++access });
+  while (s.framePalettes.size > 4) {
+    const oldest = [...s.framePalettes].sort((a,b) => a[1].used - b[1].used)[0][0];
+    s.framePalettes.delete(oldest);
+  }
+  return colored;
+}
+
 /**
  * Registra as tiras de um personagem.
  * @param {string} id id do personagem
@@ -248,6 +268,7 @@ export function prepareSprites(ids, names = ['parado', 'andar', 'golpe-5L']) {
     s.inactive = !active.has(id);
     if (s.inactive) {
       s.cv = s.cvAlt = s.cvAltOf = null;
+      s.framePalettes = null;
       s.posterCv = s.posterState = null;
     }
   }
@@ -402,7 +423,8 @@ export function drawSprite(c, f, frame) {
   if (!pick?.s) return false;
   const { s, p, fx } = pick;
   const i = pick.i ?? Math.min(s.n - 1, Math.max(0, Math.floor(p * s.n)));
-  const source = pick.poster ? posterSource(s, f.alt) : f.alt ? altCanvas(s) : s.cv;
+  const denseAlt = !pick.poster && f.alt && s.n >= 12 && s.material === false && typeof document !== 'undefined';
+  const source = pick.poster ? posterSource(s, f.alt) : denseAlt ? denseAltFrame(s, i) : f.alt ? altCanvas(s) : s.cv;
   if (!source) return false;
   if (!pick.waiting) LAST.set(f, { set, s, i, p, fx, poster: pick.poster });
   // correção por tira: algumas pranchas vieram desenhadas maiores ou menores
@@ -431,7 +453,7 @@ export function drawSprite(c, f, frame) {
   }
   // Cancel the caller's facing mirror for independently drawn left-facing art.
   if (f.face < 0 && f.ch.spriteFacingPacks?.left) c.scale(-1, 1);
-  c.drawImage(source, i * s.size, 0, s.size, s.size, -size * FOOT.x, -size * FOOT.y, size, size);
+  c.drawImage(source, denseAlt ? 0 : i * s.size, 0, s.size, s.size, -size * FOOT.x, -size * FOOT.y, size, size);
   attackEffects(c, f);
   if (fx === 'guard') {
     // escudo de defesa desenhado pelo jogo
