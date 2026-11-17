@@ -10,6 +10,7 @@ import {spriteOptions} from './render/sprite-profiles.js';
 import {loadStageArt} from './render/stage-packs.js';
 import {configureFighterMaterial,fighterMaterialStatus} from './render/fighter-material.js';
 import {loadComicUi,comicUiStatus} from './render/comic-ui.js';
+import {spriteWorkerStatus} from './render/sprite-worker.js';
 
 const canvas = document.getElementById('game');
 const devices = createDevices(window);
@@ -33,6 +34,7 @@ touch.bind(app);
 app.onRender = () => touch.sync();
 window.__app = app; // acesso para testes automáticos
 window.__comicUiStatus=comicUiStatus;
+window.__spriteWorkerStatus=spriteWorkerStatus;
 const uiReady=window.__COMIC_UI?loadComicUi(window.__COMIC_UI):Promise.resolve();
 
 // Sprites embutidos pelo empacotador (production/sprites/final). ?sprites=off força o manequim.
@@ -40,12 +42,13 @@ const packs = q.get('sprites') === 'off' ? {} : window.__SPRITES || {};
 const belemPack = (window.__STAGEPACKS || {}).belem;
 window.__stageStatus = belemStageStatus;
 window.__stageAudioStatus = stageAudioStatus;
+// Cenários só começam a baixar depois do essencial do título, para não atrasar a abertura.
 if (belemPack && q.get('stage') !== 'off') {
-  loadBelemStage(belemPack);
+  void uiReady.then(() => loadBelemStage(belemPack));
   // Each arena selects its own registered audio pack.
 }
 for (const [id, pack] of Object.entries(window.__STAGEPACKS || {})) configureStageAudio(pack, id);
-void loadStageArt(window.__STAGEPACKS || {});
+void uiReady.then(() => loadStageArt(window.__STAGEPACKS || {}));
 const belem = (window.__STAGES || {}).belem;
 if (!belemPack && belem && q.get('stage') !== 'off') {
   const img = new Image();
