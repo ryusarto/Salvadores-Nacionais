@@ -80,9 +80,17 @@ export function drawStageArt(c, id, cam, frame = 0, options = {}) {
   }
   for (const o of pack.objects || []) object(c, item, o, camera, frame, options.reducedEffects);
   if (pack.ground && item.images.has(pack.ground.asset)) {
-    drawBelemGround(c, item.images.get(pack.ground.asset), camera);
+    const ground = pack.ground, image = item.images.get(ground.asset);
+    const flat = ground.projection === 'flat';
+    const y = flat ? finite(ground.y, finite(pack.world?.groundTopY, 826)) : 826;
+    const height = flat ? finite(ground.height, finite(pack.world?.height, 1080) - y) : 254;
+    // Painted tarmac already contains its perspective; older packs retain tiled projection.
+    if (flat) {
+      const width = finite(ground.width, finite(pack.world?.width, 2600));
+      c.drawImage(image, finite(ground.x, 0) - camera * finite(ground.factor, 1), y, width, height);
+    } else drawBelemGround(c, image, camera);
     if (pack.ground.shade) {
-      c.save(); c.fillStyle = pack.ground.shade; c.fillRect(0, 826, 1920, 254); c.restore();
+      c.save(); c.fillStyle = pack.ground.shade; c.fillRect(0, y, 1920, height); c.restore();
     }
   }
   for (const o of pack.foreground || []) object(c, item, o, camera, frame, options.reducedEffects);
