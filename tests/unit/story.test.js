@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { HEROES, ALL } from '../../src/data/characters/index.js';
 import { CHAPTERS, RIVALS } from '../../src/data/story.js';
-import { createRun, nextChapter, tourComplete, currentFight, fightLevel, winFight, continueFight, talkLines, openingPages, closingPages, loadProgress, saveCleared } from '../../src/ui/story.js';
+import { createRun, nextChapter, tourComplete, selectableChapters, moveChapter, currentFight, fightLevel, winFight, continueFight, talkLines, openingPages, closingPages, loadProgress, saveCleared } from '../../src/ui/story.js';
 import { createMatch, step } from '../../src/core/match.js';
 import { createBrain, aiInput } from '../../src/core/ai.js';
 
@@ -109,4 +109,29 @@ test('o final: depois do Djabo, a fome acaba e cada herói tem a sua página', (
     assert.ok(!pages.some((p) => p.includes('{ending}') || p.includes('{hero}')));
     assert.ok(pages.some((p) => p.length > 40 && !p.includes('Djabo cai') && !p.includes('SALVADORES')), h.id);
   }
+});
+
+test('mapa: dá para escolher entre os capítulos vencidos e o próximo, nunca além', () => {
+  const run = createRun('franco', { franco: 2 });
+  assert.equal(CHAPTERS[run.chapter].id, 'banheiros');
+  assert.deepEqual(selectableChapters(run), [0, 1, 2]);
+  assert.ok(!moveChapter(run, 1), 'o capítulo 4 ainda está trancado');
+  assert.ok(moveChapter(run, -1));
+  assert.equal(CHAPTERS[run.chapter].id, 'palco');
+  assert.equal(run.fights[2].foe, 'chupetinha');
+  moveChapter(run, -1);
+  assert.ok(!moveChapter(run, -1), 'não passa do primeiro');
+  assert.equal(run.fights[2].foe, 'zanata');
+  // vencer um capítulo antigo não diminui o progresso
+  winFight(run); winFight(run); winFight(run);
+  const store = memory();
+  store.setItem('sn-historia', JSON.stringify({ franco: 2 }));
+  saveCleared(run, store);
+  assert.deepEqual(loadProgress(store), { franco: 2 });
+  // no meio do capítulo não troca
+  const r2 = createRun('franco', { franco: 2 });
+  winFight(r2);
+  assert.ok(!moveChapter(r2, -1));
+  // novo herói: só o capítulo 1
+  assert.deepEqual(selectableChapters(createRun('belga', {})), [0]);
 });

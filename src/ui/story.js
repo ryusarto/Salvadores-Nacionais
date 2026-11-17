@@ -11,16 +11,40 @@ const KEY = 'sn-historia';
 export function createRun(heroId, progress = {}) {
   const done = progress[heroId] || 0;
   const ready = CHAPTERS.filter((ch) => ch.ready);
-  const chapter = ready[Math.min(done, ready.length - 1)];
+  return createRunAt(heroId, CHAPTERS.indexOf(ready[Math.min(done, ready.length - 1)]), done);
+}
+
+/** Começa a turnê num capítulo escolhido (um já vencido ou o próximo). */
+export function createRunAt(heroId, chapterIndex, done = 0) {
+  const chapter = CHAPTERS[chapterIndex];
   return {
     hero: heroId,
-    chapter: CHAPTERS.indexOf(chapter),
+    chapter: chapterIndex,
+    done, // capítulos que este herói já venceu
+    intro: chapterIndex, // capítulo cuja abertura já foi mostrada
     fights: buildFights(heroId, chapter),
     idx: 0,
     continues: 0,
     cleared: false,
     page: 0,
   };
+}
+
+/** Capítulos que dá para escolher no mapa: os vencidos e o próximo pronto. */
+export function selectableChapters(run) {
+  return CHAPTERS.map((ch, i) => i).filter((i) => CHAPTERS[i].ready && i <= run.done);
+}
+
+/** No mapa, troca o capítulo escolhido (dir = -1 ou 1). Só antes da primeira luta. */
+export function moveChapter(run, dir) {
+  if (run.cleared || run.idx > 0) return false;
+  const list = selectableChapters(run);
+  const at = list.indexOf(run.chapter);
+  const next = list[at + dir];
+  if (next === undefined) return false;
+  const intro = run.intro;
+  Object.assign(run, createRunAt(run.hero, next, run.done), { intro });
+  return true;
 }
 
 function buildFights(heroId, chapter) {
@@ -88,6 +112,7 @@ export function loadProgress(storage = globalThis.localStorage) {
 export function saveCleared(run, storage = globalThis.localStorage) {
   const p = loadProgress(storage);
   p[run.hero] = Math.max(p[run.hero] || 0, run.chapter + 1);
+  run.done = p[run.hero];
   try {
     storage.setItem(KEY, JSON.stringify(p));
   } catch { /* sem armazenamento: o progresso vale só nesta sessão */ }

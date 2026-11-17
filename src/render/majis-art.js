@@ -34,12 +34,16 @@ export function drawMajisAttack(c,f){
   return loaded;
 }
 
+const ART_SIZE={'fx-nota-sonica':{w:320,h:243}};
+
 /** Only projectiles explicitly tagged by Majis receive these sprites. */
 export function majisEntityArt(e){
   if(!MAJIS_ART_CROPS[e.art])return null;
   const trap=e.behavior==='trap';
   const index=trap?(e.delay>0?0:e.age<e.artDelay+8?1:e.life<=12?3:2):Math.floor(e.age/4)%4;
-  return {name:e.art,index,box:{x:e.x,y:SYS.GROUND_Y-e.y-(trap?0:e.h/2),w:e.w,h:e.h,face:e.dir||1,anchor:trap?'bottom':'center'}};
+  // A nota tem caixa de acerto pequena; o desenho é maior para dar para ler (só visual).
+  const big=e.art==='fx-nota-sonica'?ART_SIZE[e.art]:null;
+  return {name:e.art,index,box:{x:e.x,y:SYS.GROUND_Y-e.y-(trap?0:e.h/2),w:big?big.w:e.w,h:big?big.h:e.h,face:e.dir||1,anchor:trap?'bottom':'center'}};
 }
 export const drawMajisEntity=(c,e)=>{const a=majisEntityArt(e);return a?draw(c,a):false;};
 

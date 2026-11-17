@@ -236,20 +236,21 @@ function map(c, a) {
   CHAPTERS.forEach((ch, i) => {
     const [x, y] = pos[i];
     const current = i === run.chapter;
-    const won = i < run.chapter || (current && run.cleared);
-    const fill = won ? P.yellow : current ? P.red : ch.ready ? P.paper : P.muted;
+    const won = i < run.done || (current && run.cleared);
+    const picked = current && !run.cleared; // capítulo escolhido no mapa
+    const fill = picked ? P.red : won ? P.yellow : ch.ready && i <= run.done ? P.paper : P.muted;
     if (current && !run.cleared) {
       c.strokeStyle = P.yellow;
       c.lineWidth = 8 + pulse * 6;
       c.strokeRect(x - 10, y - 10, 230, 190);
     }
-    const ink = current && !won ? P.paper : P.ink;
+    const ink = picked ? P.paper : P.ink;
     comicPanel(c, x, y, 210, 170, fill, 12, 5);
     comicText(c, String(ch.n), x + 30, y + 32, 38, ink);
     comicText(c, ch.bossName, x + 105, y + 74, 28, ink, 'center', 180);
     comicText(c, ch.place, x + 105, y + 110, 18, ink, 'center', 180);
-    const tag = won ? 'VENCIDO ✓' : ch.ready ? (current ? 'AGORA' : 'PRONTO') : 'EM BREVE';
-    comicText(c, tag, x + 105, y + 146, 22, current && !won ? P.yellow : P.ink, 'center', 180);
+    const tag = current && !run.cleared ? (won ? 'JOGAR DE NOVO' : 'AGORA') : won ? 'VENCIDO ✓' : ch.ready && i <= run.done ? 'PRONTO' : ch.ready ? 'TRANCADO' : 'EM BREVE';
+    comicText(c, tag, x + 105, y + 146, 22, picked ? P.yellow : P.ink, 'center', 180);
   });
   // painel do capítulo atual
   const ch = currentChapter(run);
@@ -268,7 +269,7 @@ function map(c, a) {
       comicText(c, `${mark}  ${label}`, 190, 810 + i * 56, 36, i < run.idx ? P.muted : i === run.idx ? P.paper : P.muted, 'left', 1560);
     });
   }
-  footer(c, run.cleared ? (nextChapter(run) ? 'LEVE / ENTER SEGUE A TURNÊ    •    ESC VOLTA AO MENU' : 'LEVE / ENTER VOLTA AO MENU') : 'LEVE / ENTER SEGUE PARA A PRÓXIMA LUTA    •    ESC VOLTA AO MENU');
+  footer(c, run.cleared ? (nextChapter(run) ? 'LEVE / ENTER SEGUE A TURNÊ    •    ESC VOLTA AO MENU' : 'LEVE / ENTER VOLTA AO MENU') : run.idx === 0 && run.done > 0 ? '← → ESCOLHE O CAPÍTULO    •    LEVE / ENTER COMEÇA    •    ESC VOLTA AO MENU' : 'LEVE / ENTER SEGUE PARA A PRÓXIMA LUTA    •    ESC VOLTA AO MENU');
 }
 
 /** Diálogo antes da luta: o herói à esquerda, o rival à direita, quem fala em destaque. */

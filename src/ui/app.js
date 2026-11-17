@@ -22,9 +22,10 @@ import { readInput, takePressed, pollPad, glyphs, rumble, remapPad, resetPad, PS
 import { COMBOS } from '../data/combos.js';
 import { createTracker, trackCombo, createRunner, runnerInput, runnerDone, stepLabel } from '../core/combos.js';
 import { audioEvents, sfx, setStageAudioActive } from './audio.js';
+import { banterEvents } from './banter.js';
 import {drawComicScreen,drawComicPause,FOES,FOE_COLS} from './comic-screens.js';
 import {comicBackground} from '../render/comic-ui.js';
-import { createRun, nextChapter, currentFight, fightLevel, winFight, continueFight, openingPages, closingPages, talkLines, loadProgress, saveCleared } from './story.js';
+import { createRun, createRunAt, moveChapter, nextChapter, currentFight, fightLevel, winFight, continueFight, openingPages, closingPages, talkLines, loadProgress, saveCleared } from './story.js';
 
 const W = SYS.VIEW_W;
 const H = SYS.VIEW_H;
@@ -78,6 +79,7 @@ export function createApp(canvas, devices, opts = {}) {
     app.fx = createFx();
     app.hud = createHud();
     app.stats = { maxCombo: 0, dmg: 0, frames: 0 };
+    app.banter = {};
     app.paused = false;
     app.sub = null;
     app.trial = null;
@@ -350,11 +352,22 @@ export function createApp(canvas, devices, opts = {}) {
     } else if (app.screen === 'storyIntro' || app.screen === 'storyEnd') {
       storyPagesTick(ok, back);
     } else if (app.screen === 'storyMap') {
+      const run = app.story;
+      if (pr.left || pr.right) moveChapter(run, pr.right ? 1 : -1);
       if (back) app.screen = 'title';
-      else if (ok && app.story.cleared && nextChapter(app.story)) startStory();
-      else if (ok && app.story.cleared) app.screen = 'title';
-      else if (ok) {
-        app.story.page = 0;
+      else if (ok && run.cleared && nextChapter(run)) {
+        app.story = createRunAt(run.hero, run.chapter + 1, run.done);
+        app.storyPages = openingPages(app.story, shortName(HEROES[app.hero]));
+        app.screen = 'storyIntro';
+      } else if (ok && run.cleared) app.screen = 'title';
+      else if (ok && run.intro !== run.chapter) {
+        // capítulo trocado no mapa: mostra a abertura dele antes da primeira luta
+        run.intro = run.chapter;
+        run.page = 0;
+        app.storyPages = openingPages(run, shortName(HEROES[app.hero]));
+        app.screen = 'storyIntro';
+      } else if (ok) {
+        run.page = 0;
         app.screen = 'storyTalk';
       }
     } else if (app.screen === 'storyTalk') {
@@ -442,6 +455,7 @@ export function createApp(canvas, devices, opts = {}) {
       }
       logInput(in0);
       step(st, in0, p2Input());
+      st.events.push(...banterEvents(st, app.banter));
       trackCombo(app.trial, st);
       for (const e of st.events) {
         if (app.mode === 'vs2') {

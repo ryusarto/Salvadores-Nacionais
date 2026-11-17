@@ -55,6 +55,8 @@ export default {
   spriteProfile: 'ten-frame',
   spriteRecovery: true,
   spriteScale: 0.85,
+  // tiras desenhadas menores que a pose parada (medido no primeiro quadro, em pé)
+  spriteStripScale: { mdep: { 'golpe-4S': 1.19, 'golpe-2M': 1.12, 'golpe-c1': 1.11, 'golpe-2L': 1.09, 'golpe-5S': 1.07, 'golpe-5H': 1.06, 'golpe-5L': 1.05, 'golpe-5M': 1.05, 'golpe-blindado': 1.05 } },
   mech: {
     init(f) {
       f.res = { embalo: 0 };

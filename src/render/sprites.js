@@ -288,7 +288,7 @@ function pickStrip(set, a, f) {
   if (baseStrip) return { s: baseStrip, p: a.p, fx: null };
   if (set[a.name]?.lazy) {
     const idle = readyStrip(set, 'parado');
-    return idle ? { s: idle, p: 0, fx: null } : null;
+    return idle ? { s: idle, p: 0, fx: null, waiting: true } : { waiting: true };
   }
   // Elenco ainda sem caminhada reversa: reproduzir o ciclo comum ao contrário.
   const walking = a.name === 'andar-tras' && readyStrip(set, 'andar');
@@ -319,16 +319,24 @@ export function spriteSetId(f) {
   return f.ch.spriteFacingPacks?.[f.face < 0 ? 'left' : 'right'] || f.ch.id;
 }
 
+const LAST = new WeakMap(); // lutador → último quadro desenhado (só visual)
+
 export function drawSprite(c, f, frame) {
   const set = REG[spriteSetId(f)];
   if (!set) return false;
   const a = animFor(f, frame);
   a.p = spriteProgress(f, a);
-  const pick = pickStrip(set, a, f);
-  if (!pick) return false;
+  let pick = pickStrip(set, a, f);
+  // Enquanto uma tira ainda decodifica, repete o último quadro desenhado em vez
+  // de pular para a pose parada ou para o boneco desenhado em código.
+  const last = LAST.get(f);
+  if ((!pick || pick.waiting) && last?.set === set && last.s.cv) pick = last;
+  if (!pick?.s) return false;
   const { s, p, fx } = pick;
-  const i = Math.min(s.n - 1, Math.max(0, Math.floor(p * s.n)));
-  const size = CELL * (f.ch.spriteScale || 1);
+  const i = pick.i ?? Math.min(s.n - 1, Math.max(0, Math.floor(p * s.n)));
+  if (!pick.waiting) LAST.set(f, { set, s, i, p, fx });
+  // correção por tira: algumas pranchas vieram desenhadas maiores ou menores
+  const size = CELL * (f.ch.spriteScale || 1) * (f.ch.spriteStripScale?.[s.id]?.[s.name] || 1);
   c.save();
   if (f.ch.spriteProfile === 'ten-frame' && f.state === 'attack' && f.move?.weapon === 'ak') {
     const at = f.move.spawn.filter(shot => shot.at <= f.sf).at(-1)?.at;

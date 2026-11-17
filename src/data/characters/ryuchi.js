@@ -54,6 +54,8 @@ export default {
   spriteAlias: {},
   spriteProfile: 'six-frame', spriteScale: 0.7631, spriteRecovery: true,
   spriteFacingPacks: { right: 'ryuchi', left: 'ryuchi-esquerda' },
+  // Parte das tiras do lado direito foi desenhada uns 12% menor que a pose parada.
+  spriteStripScale: { ryuchi: Object.fromEntries(['andar', 'dano-baixo', 'defesa-agachado', 'escape-agarrao', 'golpe-2H', 'golpe-2L', 'golpe-2M', 'golpe-3H', 'golpe-4S', 'golpe-5H', 'golpe-5L', 'golpe-5LL', 'golpe-5LLL', 'golpe-5M', 'golpe-5S', 'golpe-blindado', 'golpe-c1', 'golpe-c2', 'golpe-jH', 'golpe-jL', 'golpe-jM', 'golpe-SA1', 'golpe-SA3', 'golpe-stL', 'golpe-stM', 'golpe-stRel0', 'golpe-stRel1'].map((n) => [n, 1.12])) },
   spriteStatePhases: true, spritePhasedMoves: Object.keys(moves),
   spriteHitFrames: { SA1: [2, 4], SA3: [2, 3, 2, 3, 4] },
   spriteHitGapFrames: { SA1: [3], SA3: [3, 2, 3, 2] },
