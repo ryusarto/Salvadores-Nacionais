@@ -182,6 +182,15 @@ de ambiente, trilha e sons originais sintetizados, miniatura e apresentação.
 [Prévia interativa com câmera e galeria](production/qa/belem-cenario.html).
 O jogo usa a arte nova; `?stage=off` permite comparar com o desenho provisório.
 
+### Cenário 02 — Belém / Frente do Palco
+
+[Pacote modular v1](production/stages/palco/README.md): 60 grupos, 87 arquivos finais,
+18 tiras e 108 quadros ambientais. Palco, som, cozinha, público, luzes e arquitetura
+são peças separadas, com originais e prompts preservados. A arena do Chupetinha
+carrega o pacote quando é exibida e mantém fallback completo durante a carga.
+[Prévia e galeria](production/qa/palco-cenario.html).
+`node tools/build-palco-preview.mjs --offline` gera uma prévia independente.
+
 ### Elenco, retratos e interface em quadrinhos
 
 Trunks, Ryuchi e Belga agora têm cerca de **470px de altura em pé**, na escala
