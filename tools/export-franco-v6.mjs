@@ -1,16 +1,29 @@
 // Build candidates from generated matrices. Never writes production assets automatically.
 import sharp from 'sharp';
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, renameSync, rmSync, statfsSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { splitPosesGrid, extractPose } from './lib/sprite-components.mjs';
+sharp.cache({memory:8,items:20,files:8});sharp.concurrency(1);
+function atomic(path,bytes){const temp=path+'.incoming-'+process.pid;try{writeFileSync(temp,bytes);renameSync(temp,path);}finally{rmSync(temp,{force:true});}}
+const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
+function requireSpace(path,minimum){
+ const stats=statfsSync(path),available=stats.bavail*stats.bsize;
+ if(available<minimum){const error=new Error('Export paused: '+Math.floor(available/1024/1024)+' MiB free; keep at least '+minimum/1024/1024+' MiB available. Existing assets are preserved.');error.code='ENOSPC';throw error;}
+}
+function cachedFilesValid(dir,action,item){
+ try{return [[action+'.png',item.pngSha256],[action+'.webp',item.webpSha256],['__first-'+action+'.webp',item.firstSha256]].every(([file,hash])=>hash&&sha(readFileSync(join(dir,file)))===hash);}catch{return false;}
+}
 const arg=(name)=>process.argv.find(a=>a.startsWith('--'+name+'='))?.slice(name.length+3);
 if(!arg('source')||!arg('out'))throw Error('Required: --source=production-folder --out=candidate-folder');
 const source=resolve(arg('source')),out=resolve(arg('out')),scale=.86;
+requireSpace(source,2*1024**3);
 const inventory=JSON.parse(readFileSync(join(source,'inventory.json')));
 const reviews=existsSync(join(source,'review.json'))?JSON.parse(readFileSync(join(source,'review.json'))):{};
 const previous=existsSync(join(out,'manifest.json'))?JSON.parse(readFileSync(join(out,'manifest.json'))).inventory:[];
 const results=[];
+const same=(a,b)=>a.action===b.action&&a.direction===b.direction;
+const checkpoint=()=>{mkdirSync(out,{recursive:true});atomic(join(out,'manifest.json'),JSON.stringify({...inventory,inventory:inventory.inventory.map(item=>results.find(r=>same(r,item))||previous.find(r=>same(r,item))||{...item,status:'pending'})},null,2));};
 for(const item of inventory.inventory){
  const {action,direction}=item;
  if((arg('action')&&arg('action')!==action)||(arg('direction')&&arg('direction')!==direction)){
@@ -25,7 +38,8 @@ for(const item of inventory.inventory){
   const sourceHash=createHash('sha256').update('franco-export-v4').update(JSON.stringify({order:review.frameOrder||[],offsets:review.offsets||{}}));
   for(const input of inputs)sourceHash.update(input);
   const sourceSha256=sourceHash.digest('hex'),old=previous.find(p=>p.action===action&&p.direction===direction);
-  if(old?.sourceSha256===sourceSha256&&old.status==='candidate-needs-visual-review'&&['.png','.webp'].every(ext=>existsSync(join(out,direction,action+ext)))&&existsSync(join(out,direction,'__first-'+action+'.webp'))){results.push(old);continue;}
+  if(old?.sourceSha256===sourceSha256&&old.status==='candidate-needs-visual-review'&&cachedFilesValid(join(out,direction),action,old)){results.push(old);continue;}
+  requireSpace(source,1024**3);
   const frames=[],metadata=[];let index=0;
   for(const input of inputs){
    const {data,info}=await sharp(input).ensureAlpha().raw().toBuffer({resolveWithObject:true});
@@ -56,12 +70,13 @@ for(const item of inventory.inventory){
   }
   const dir=join(out,direction);mkdirSync(dir,{recursive:true});
   const strip=await sharp({create:{width:9216,height:768,channels:4,background:{r:0,g:0,b:0,alpha:0}}}).composite(frames.map((input,i)=>({input,left:i*768,top:0}))).png().toBuffer();
-  writeFileSync(join(dir,action+'.png'),strip);
-  await sharp(frames[0]).webp({lossless:true,effort:5}).toFile(join(dir,'__first-'+action+'.webp'));
-  await sharp(strip).webp({lossless:true,effort:5}).toFile(join(dir,action+'.webp'));
-  results.push({...item,status:'candidate-needs-visual-review',sourceSha256,pngSha256:createHash('sha256').update(strip).digest('hex'),frames:metadata});
- }catch(error){results.push({...item,status:'rejected',reason:error.message});}
- mkdirSync(out,{recursive:true});writeFileSync(join(out,'manifest.json'),JSON.stringify({...inventory,inventory:results},null,2));
+  const first=await sharp(frames[0]).webp({lossless:true,effort:5}).toBuffer();
+  const encoded=await sharp(strip).webp({lossless:true,effort:5}).toBuffer();
+  requireSpace(source,1024**3);
+  atomic(join(dir,action+'.png'),strip);atomic(join(dir,'__first-'+action+'.webp'),first);atomic(join(dir,action+'.webp'),encoded);
+  results.push({...item,status:'candidate-needs-visual-review',sourceSha256,pngSha256:sha(strip),webpSha256:sha(encoded),firstSha256:sha(first),frames:metadata});
+ }catch(error){if(['ENOSPC','EDQUOT','EIO'].includes(error.code))throw error;results.push({...item,status:'rejected',reason:error.message});}
+ checkpoint();
 }
-mkdirSync(out,{recursive:true});writeFileSync(join(out,'manifest.json'),JSON.stringify({...inventory,inventory:results},null,2));
+checkpoint();
 console.log(JSON.stringify(results.reduce((a,x)=>(a[x.status]=(a[x.status]||0)+1,a),{})));
