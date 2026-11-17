@@ -1,9 +1,11 @@
+import { twelveFrameProgress } from './twelve-frame-timing.js';
 import { SYS } from '../data/system.js';
 
 const progress = value => Math.max(0, Math.min(0.999, value));
 
 /** Art-only timeline. Combat windows and simulation state remain authoritative. */
 export function spriteProgress(f, animation) {
+  if (f.ch?.spriteProfile === 'twelve-frame') return twelveFrameProgress(f, animation);
   if (f.ch?.spriteProfile === 'six-frame') return sixFrameProgress(f, animation);
   if (f.ch?.spriteProfile !== 'ten-frame') return animation.p;
   if (f.state === 'attack' && f.move) {

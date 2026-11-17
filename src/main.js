@@ -5,7 +5,7 @@ import { setStageImage } from './render/stage.js';
 import { loadBelemStage, belemStageStatus } from './render/belem-stage.js';
 import { configureStageAudio, stageAudioStatus, sfx } from './ui/audio.js';
 import { createTouch } from './ui/touch.js';
-import mdep from './data/characters/mdep.js';
+import { spriteLoadOptions } from './render/sprite-profile.js';
 import {configureFighterMaterial,fighterMaterialStatus} from './render/fighter-material.js';
 import {loadComicUi,comicUiStatus} from './render/comic-ui.js';
 
@@ -49,15 +49,7 @@ if (!belemPack && belem && q.get('stage') !== 'off') {
 const soundButton=document.getElementById('sound');
 soundButton?.addEventListener('click',()=>{const muted=sfx.toggleMute();soundButton.textContent=muted?'SOM: DESLIGADO':'SOM: LIGADO';soundButton.setAttribute('aria-pressed',String(muted));});
 Promise.all(Object.entries(packs).map(([id, sheets]) => {
-  const tenFrame = id === 'mdep' && mdep.spriteProfile === 'ten-frame';
-  const effects = id.startsWith('fx-') || id.endsWith('-fx');
-  const sixFrame = ['trunks', 'trunks-fx', 'belga', 'belga-fx'].includes(id) || id.startsWith('ryuchi');
-  return registerSprites(id, sheets, {
-    lazy: true, maxDecoded: tenFrame ? 8 : effects ? 4 : 6,
-    trueAlpha: tenFrame || sixFrame, frames: tenFrame ? 10 : sixFrame ? 6 : 4, cellSize: sixFrame ? 500 : tenFrame ? 768 : undefined,
-    // Nada é baixado aqui: a tela de versus prepara só os dois lutadores (prepareSprites).
-    preload: [], prefetch: false,
-  });
+  return registerSprites(id, sheets, spriteLoadOptions(id));
 })).then(()=>uiReady).then(() => {
   document.getElementById('loading')?.remove();
   app.run();
