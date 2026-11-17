@@ -1,0 +1,172 @@
+[
+  {
+    "id": "nuvem-1",
+    "subject": "One horizontally stretched tropical cloud bank with soft violet-blue shadows and faint warm amber underside, painted and inked subtly, no sky or sun.",
+    "alpha": true
+  },
+  {
+    "id": "nuvem-2",
+    "subject": "One airy broken cluster of small tropical night clouds, cool indigo shadow and soft mauve highlights, horizontal silhouette, no sky or sun.",
+    "alpha": true
+  },
+  {
+    "id": "nuvem-3",
+    "subject": "One thin wispy long night cloud, cool lilac-grey with subdued warm underside, light texture, no sky or sun.",
+    "alpha": true
+  },
+  {
+    "id": "horizonte",
+    "subject": "A very distant thin panoramic silhouette of tropical riverbank and small port cranes in Belem, low indigo shapes and a few tiny amber lights, shallow horizontal 3:1 strip, ONLY skyline with transparent empty space above and below. No foreground buildings or water.",
+    "alpha": true
+  },
+  {
+    "id": "agua",
+    "subject": "A wide horizontal painted strip of calm dark teal-violet river water at night, subtle gentle horizontal ripples and a few subdued amber light streaks, straight level distant edge, side-view water background, landscape 3:1. Water ONLY, no banks, boats, buildings, sky, moon or foreground.",
+    "alpha": false
+  },
+  {
+    "id": "mercado-ferro",
+    "subject": "A single isolated recognizable Belem Ver-o-Peso Mercado de Ferro fish-market building, ornate blue-grey iron facade with four pointed blue turret roofs and red terracotta roof, warm windows at night, long frontal facade, detailed painterly Brazilian comic environment. Complete silhouette, no adjacent houses, river, ground, people, clouds or flags. Landscape 3:1.",
+    "alpha": true
+  },
+  {
+    "id": "casario-1",
+    "subject": "One isolated narrow two-storey historic colonial Belem facade, faded warm ochre plaster, arched doors below and wooden shutter windows above, simple terracotta roof, warm window light, indigo night shadows. Whole building silhouette, front view. No neighboring buildings, street, people or greenery.",
+    "alpha": true
+  },
+  {
+    "id": "casario-2",
+    "subject": "One isolated narrow two-storey historic colonial Belem facade, muted rose plaster, decorative white cornice, shuttered windows with soft warm interior light, terracotta roof. Whole silhouette front view. No neighboring buildings or street.",
+    "alpha": true
+  },
+  {
+    "id": "casario-3",
+    "subject": "One isolated two-storey colonial Belem facade, faded mint-teal plaster, cream trim, shuttered windows, warm interior light, terracotta roof. Whole silhouette front view. No neighboring buildings, street or people.",
+    "alpha": true
+  },
+  {
+    "id": "catedral",
+    "subject": "One isolated Belem Cathedral of Se inspired Portuguese colonial church facade, cream stone, two bell towers and central pediment, ornate but readable architecture, warm amber facade lighting and violet night shadows. Entire building visible from front, no street, sky, other buildings, people or landscaping.",
+    "alpha": true
+  },
+  {
+    "id": "subwoofer-1",
+    "subject": "One black rectangular large concert subwoofer cabinet, front view slightly toward right, reinforced corners, rugged cloth grille, inset handle, subtle warm amber rim. No text, cables, feet separate from cabinet or ground.",
+    "alpha": true
+  },
+  {
+    "id": "subwoofer-2",
+    "subject": "One rugged black concert subwoofer cabinet, companion right side view slightly toward left, broad rectangular front grille with subtle circular speaker silhouette and reinforced corners. No logos or extra objects.",
+    "alpha": true
+  },
+  {
+    "id": "retorno-1",
+    "subject": "One low wedge-shaped black stage monitor speaker facing up toward the right, dark grille and metal corner protectors, side/front three-quarter view. No wires or ground.",
+    "alpha": true
+  },
+  {
+    "id": "retorno-2",
+    "subject": "One low wedge-shaped black stage monitor speaker facing up toward the left, companion piece with dark grille and corner protectors. No wires or ground.",
+    "alpha": true
+  },
+  {
+    "id": "mesa-mixagem",
+    "subject": "One professional small analog audio mixing console, broad flat angled charcoal control panel with rows of sliders and knobs, tiny amber and teal status LEDs, no readable brand or lettering. Entire console alone, no table or technician.",
+    "alpha": true
+  },
+  {
+    "id": "bancada-tecnica",
+    "subject": "One plain sturdy narrow portable folding table used by sound engineers, dark weathered wood top and black tubular folding steel legs, front view. Empty table, no mixing console, cables or people.",
+    "alpha": true
+  },
+  {
+    "id": "cabos-1",
+    "subject": "One loose coil of thick dark black stage audio cable, single cable coil with one small metal connector visible, shallow wide view. No labels, ground or equipment.",
+    "alpha": true
+  },
+  {
+    "id": "cabos-2",
+    "subject": "One long gently curved black stage audio cable lying in an S shape across a narrow horizontal space with a small silver XLR plug at each end, isolated. No ground or other object.",
+    "alpha": true
+  },
+  {
+    "id": "cabos-3",
+    "subject": "One short thick black power cable routed across a low black rubber cable protector ramp, narrow horizontal silhouette, isolated. No ground or equipment.",
+    "alpha": true
+  },
+  {
+    "id": "pedestal-1",
+    "subject": "One slender black tripod microphone stand with vertical pole and a short angled empty boom, full stand visible. Microphone clip empty, no microphone, cable, person or ground.",
+    "alpha": true
+  },
+  {
+    "id": "pedestal-2",
+    "subject": "One slender black round-base microphone stand, upright with an empty clip angled left, whole object visible. No microphone, cable, person or ground.",
+    "alpha": true
+  },
+  {
+    "id": "microfone-palco",
+    "subject": "One handheld black and silver dynamic stage microphone, mesh round grille and dark handle, slightly diagonal pointing upward left. Isolated microphone only, no cable, stand, hand, letters or logo.",
+    "alpha": true
+  },
+  {
+    "id": "refletor-1",
+    "subject": "One compact black theatrical PAR stage light with metal mounting yoke, lens facing down-right and softly amber glass. Whole fixture only, no light beam, cable, truss or stand.",
+    "alpha": true
+  },
+  {
+    "id": "refletor-2",
+    "subject": "One compact black theatrical PAR stage light with metal mounting yoke, lens facing down-left and muted teal glass. Whole fixture only, no light beam, cable, truss or stand.",
+    "alpha": true
+  },
+  {
+    "id": "refletor-3",
+    "subject": "One compact black theatrical PAR stage light with metal mounting yoke, front-facing lens angled slightly downward with soft violet glass. Whole fixture only, no beam, cable, truss or stand.",
+    "alpha": true
+  },
+  {
+    "id": "faixa-base",
+    "subject": "One broad rectangular cream canvas benefit-concert banner, lightly worn fabric with subtle folds, two small eyelets at each corner, straight horizontal frontal view, clean EMPTY central face suitable for separate typography. No text, drawing, logos, strings, supporting frame or scenery. Wide 3:1.",
+    "alpha": true
+  },
+  {
+    "id": "gradil-1",
+    "subject": "One portable low silver metal concert crowd-control barrier, tubular steel frame and vertical bars, two short sturdy feet, front view slight right. Entire barrier alone. No crowd, ground, signs, police, red tape or other fences.",
+    "alpha": true
+  },
+  {
+    "id": "gradil-2",
+    "subject": "One portable low silver metal concert crowd-control barrier with tubular frame and vertical bars, companion orientation slight left, entire barrier isolated. No crowd, ground, signs or other fences.",
+    "alpha": true
+  },
+  {
+    "id": "mesa-comida-1",
+    "subject": "One empty rustic broad community-kitchen serving table, worn honey-brown wood planks on simple sturdy wooden legs, frontal view with tiny visible top. No pots, food, cloth, people or surroundings.",
+    "alpha": true
+  },
+  {
+    "id": "mesa-comida-2",
+    "subject": "One empty folding community-kitchen serving table, cream laminate top with worn edge on dark tubular metal legs, frontal view. No food, pots, plates, cloth, people or surroundings.",
+    "alpha": true
+  },
+  {
+    "id": "panela-1",
+    "subject": "One large brushed aluminium Brazilian community-kitchen stockpot, two black side handles, lid removed, dark gently lit opening with stew just below rim. Pot alone, no lid, table, stove, steam, ladle, food outside pot or people.",
+    "alpha": true
+  },
+  {
+    "id": "panela-2",
+    "subject": "One broad blackened steel cooking pot with two metal side handles and a fitted domed silver lid, worn but clean, warm amber light and violet shadows. Pot alone, no table, stove, steam or people.",
+    "alpha": true
+  },
+  {
+    "id": "marmitas-1",
+    "subject": "One small group of three separate open white takeaway food trays filled with rice, beans and vegetables, grouped as a single modular food asset. Isolated, no table, hands, lettering, people or utensils outside group.",
+    "alpha": true
+  },
+  {
+    "id": "marmitas-2",
+    "subject": "One small stack of clean white takeaway food containers with two prepared rice-and-bean plates beside it, a compact food-service asset. Isolated, no table, hands, lettering, people or extra props.",
+    "alpha": true
+  }
+]

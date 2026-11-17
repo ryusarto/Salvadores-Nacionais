@@ -1,0 +1,69 @@
+{
+  "trilha-intro": {
+    "seconds": 4.363628117913832,
+    "sampleRate": 44100,
+    "channels": 2,
+    "sourceRate": 22050,
+    "peak": 0.303188681602478,
+    "rms": 0.047849311943761866,
+    "loop": false,
+    "origin": "original deterministic synthesis; no recordings or intelligible speech",
+    "bpm": 110
+  },
+  "trilha-loop": {
+    "seconds": 34.90907029478458,
+    "sampleRate": 44100,
+    "channels": 2,
+    "sourceRate": 22050,
+    "peak": 0.32161328196525574,
+    "rms": 0.0489806915422089,
+    "loop": true,
+    "origin": "original deterministic synthesis; no recordings or intelligible speech",
+    "bpm": 110
+  },
+  "ambiente-publico": {
+    "seconds": 16.0,
+    "sampleRate": 44100,
+    "channels": 2,
+    "sourceRate": 22050,
+    "peak": 0.0285947322845459,
+    "rms": 0.004691046069766133,
+    "loop": true,
+    "origin": "original deterministic synthesis; no recordings or intelligible speech",
+    "bpm": null
+  },
+  "ambiente-cozinha": {
+    "seconds": 16.0,
+    "sampleRate": 44100,
+    "channels": 2,
+    "sourceRate": 22050,
+    "peak": 0.03444409742951393,
+    "rms": 0.0018125146129461067,
+    "loop": true,
+    "origin": "original deterministic synthesis; no recordings or intelligible speech",
+    "bpm": null
+  },
+  "ambiente-agua": {
+    "file": "production/stages/belem/audio/ambiente-agua.ogg",
+    "seconds": 16.0,
+    "sampleRate": 44100,
+    "channels": 2,
+    "peak": 0.20851815799691406,
+    "rms": 0.035932655695821464,
+    "loop": true,
+    "origin": "explicit reuse of original Belem synthetic ambience",
+    "bpm": null
+  },
+  "vento-tecido": {
+    "file": "production/stages/belem/audio/vento-tecido.ogg",
+    "seconds": 16.0,
+    "sampleRate": 44100,
+    "channels": 2,
+    "peak": 0.09246881342918216,
+    "rms": 0.018365268872091774,
+    "loop": true,
+    "origin": "explicit reuse of original Belem synthetic ambience",
+    "bpm": null
+  },
+  "_generation_note": "ElevenLabs generation did not start; new score and ambience were synthesized locally."
+}

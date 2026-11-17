@@ -7,7 +7,7 @@ import { configureStageAudio, stageAudioStatus, sfx } from './ui/audio.js';
 import { createTouch } from './ui/touch.js';
 import {HEROES, BOSSES} from './data/characters/index.js';
 import {spriteOptions} from './render/sprite-profiles.js';
-import {loadStageArt} from './render/stage-packs.js';
+import {registerStageArt,stageArtStatus} from './render/stage-packs.js';
 import {configureFighterMaterial,fighterMaterialStatus} from './render/fighter-material.js';
 import {loadComicUi,comicUiStatus} from './render/comic-ui.js';
 
@@ -40,13 +40,14 @@ window.__spriteLoadStatus = spriteLoadStatus;
 const packs = q.get('sprites') === 'off' ? {} : window.__SPRITES || {};
 const belemPack = (window.__STAGEPACKS || {}).belem;
 window.__stageStatus = belemStageStatus;
+window.__stageArtStatus = stageArtStatus;
 window.__stageAudioStatus = stageAudioStatus;
 if (belemPack && q.get('stage') !== 'off') {
   loadBelemStage(belemPack);
   // Each arena selects its own registered audio pack.
 }
 for (const [id, pack] of Object.entries(window.__STAGEPACKS || {})) configureStageAudio(pack, id);
-void loadStageArt(window.__STAGEPACKS || {});
+registerStageArt(window.__STAGEPACKS || {});
 const belem = (window.__STAGES || {}).belem;
 if (!belemPack && belem && q.get('stage') !== 'off') {
   const img = new Image();

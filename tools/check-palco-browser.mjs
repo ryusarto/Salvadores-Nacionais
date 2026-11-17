@@ -1,0 +1,38 @@
+import {chromium} from 'playwright-core';
+import {writeFileSync,mkdirSync} from 'node:fs';
+import {pathToFileURL} from 'node:url';
+import {resolve} from 'node:path';
+const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
+const page=await browser.newPage({viewport:{width:1440,height:1050}});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto(pathToFileURL(resolve('production/qa/palco-cenario-offline.html')).href);
+await page.waitForFunction(()=>document.body.dataset.ready==='true',{timeout:90000});
+await page.evaluate(()=>window.palcoPreview.setFrame(0));
+const status=await page.evaluate(()=>window.palcoPreview.status());
+if(!status.ready)throw Error('stage not ready');
+mkdirSync('production/qa/evidence',{recursive:true});
+for(const camera of [0,340,680]){
+ await page.evaluate(n=>window.palcoPreview.setCamera(n),camera);
+ const image=await page.locator('#stage').evaluate(c=>c.toDataURL('image/png'));
+ writeFileSync('production/qa/evidence/palco-camera-'+camera+'.png',Buffer.from(image.split(',')[1],'base64'));
+}
+await page.locator('#heroes').uncheck();
+await page.evaluate(()=>window.palcoPreview.setCamera(340));
+const clean=await page.locator('#stage').evaluate(c=>c.toDataURL('image/png'));
+writeFileSync('production/qa/evidence/palco-composicao.png',Buffer.from(clean.split(',')[1],'base64'));
+await page.screenshot({path:'production/qa/evidence/palco-preview.png',fullPage:false});
+const before=await page.locator('#stage').evaluate(c=>c.toDataURL());
+await page.waitForTimeout(100);
+const after=await page.locator('#stage').evaluate(c=>c.toDataURL());
+if(before!==after)throw Error('preview did not freeze after setFrame');
+await page.locator('#gallery button').first().click();
+await page.waitForTimeout(100);
+if(await page.locator('#selected').textContent()==='Composição completa')throw Error('isolation failed');
+await page.locator('#scene').click();
+await page.setViewportSize({width:844,height:390});
+await page.locator('#heroes').check();
+await page.locator('#stage').screenshot({path:'production/qa/evidence/palco-mobile.png'});
+const audio=await page.locator('audio').evaluateAll(nodes=>nodes.map(n=>({name:n.previousSibling?.textContent,ready:n.readyState,error:n.error?.message||null})));
+const stats=await page.evaluate(()=>({assets:Object.keys(window.palcoPreview.pack.assets).length,gallery:document.querySelectorAll('#gallery article').length,canvas:[document.querySelector('#stage').width,document.querySelector('#stage').height]}));
+writeFileSync('production/qa/palco-browser.json',JSON.stringify({status,errors,audio,stats,pause:'pass',isolation:'pass',camera:[0,340,680]},null,2));
+await browser.close();if(errors.length)throw Error(errors.join('; '));console.log(JSON.stringify({status,stats,errors}));

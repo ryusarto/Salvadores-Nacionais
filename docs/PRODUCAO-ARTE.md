@@ -41,7 +41,7 @@ Fazer as pistas funcionarem em tamanho pequeno, sem depender só de vermelho/ver
 
 | ID | Entrega | Condição de direção |
 |---|---|---|
-| ART-14 | Belém — frente do palco | Variação real do evento: caixas, palco, luz e público; compartilhar elementos de Belém quando fizer sentido |
+| ART-14 | Belém — frente do palco | Pacote modular v1 entregue: 87 assets, 108 quadros ambientais e seis áudios; fontes, inventário e prévia em `production/stages/palco/README.md` |
 | ART-15 | Belém — banheiros químicos | Local reconhecível; cercas/cabine de gameplay não confundidas com cenário; vitória mostra inclusão e retirada das proibições |
 | ART-16 | Aeroporto | Pista, avião, escada e referência de embarque; contraste compatível com Belém; chão de luta plano e legível |
 | ART-17 | Mansão, interior | Sala, telefone, retrato do filho, lustre e sofá; zona da tornozeleira destaca sem parecer decoração |
