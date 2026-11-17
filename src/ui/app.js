@@ -1,6 +1,13 @@
+import { encounterStage } from '../data/stages.js';
+import { drawEventStage } from '../render/event-stage.js';
+import { drawStageArt } from '../render/stage-packs.js';
+import { createMenuAccess } from './menu-access.js';
+import { loadPreferences, savePreferences } from './preferences.js';
+import { LESSONS, createLesson, advanceLesson, skipLesson } from './lessons.js';
+import { HERO_ENDINGS, CHAPTERS, BOSS_TALK } from '../data/story.js';
 import { SYS } from '../data/system.js';
 import { HEROES, BOSSES, ALL } from '../data/characters/index.js';
-import { createMatch, step, BAN_LABEL } from '../core/match.js';
+import { createMatch, step, resetTraining, BAN_LABEL } from '../core/match.js';
 import { createBrain, aiInput } from '../core/ai.js';
 import { EMPTY_INPUT } from '../core/input.js';
 import { buildStage, drawStage } from '../render/stage.js';
@@ -13,27 +20,25 @@ import { drawMansionStage } from '../render/mansion-stage.js';
 import { PAI } from '../data/characters/pai-fujao.js';
 import { drawAirportStage } from '../render/airport-stage.js';
 
-/** Cenário da luta: o do chefe, se ele tiver um próprio; senão, Belém. */
-const stageOf = (...chars) => chars.find((ch) => ch.stage)?.stage || 'belem';
 import { createFx, fxEvents, fxUpdate, fxDrawBack, fxDrawFront, fxDrawScreen, drawEntities } from '../render/fx.js';
 import { createHud, drawHud } from '../render/hud.js';
 import { text, slab, halftone } from '../render/draw.js';
 import { readInput, takePressed, pollPad, glyphs, rumble, remapPad, resetPad, PS_NAMES, readInputFrom, takePressedFrom, clearPressed, rumbleOn, padLabel } from './devices.js';
 import { COMBOS } from '../data/combos.js';
 import { createTracker, trackCombo, createRunner, runnerInput, runnerDone, stepLabel } from '../core/combos.js';
-import { audioEvents, sfx, setStageAudioActive } from './audio.js';
+import { audioEvents, sfx, setStageAudioActive, selectStageAudio } from './audio.js';
 import { banterEvents } from './banter.js';
 import {drawComicScreen,drawComicPause,FOES,FOE_COLS} from './comic-screens.js';
 import {comicBackground} from '../render/comic-ui.js';
-import { createRun, createRunAt, moveChapter, nextChapter, currentFight, fightLevel, winFight, continueFight, openingPages, closingPages, talkLines, loadProgress, saveCleared } from './story.js';
+import { createRun, createRunAt, moveChapter, nextChapter, currentFight, fightLevel, winFight, continueFight, openingPages, closingPages, talkLines, loadProgress, saveCleared, saveCheckpoint, resumeRun } from './story.js';
 
 const W = SYS.VIEW_W;
 const H = SYS.VIEW_H;
-const MENU = [['story', 'MODO HISTÓRIA'], ['versus', 'VERSUS CPU'], ['vs2', 'VERSUS 2 JOGADORES'], ['training', 'TREINO'], ['controls', 'CONTROLES'], ['diff', 'DIFICULDADE']];
+const MENU = [['story', 'MODO HISTÓRIA'], ['versus', 'VERSUS CPU'], ['vs2', 'VERSUS 2 JOGADORES'], ['training', 'TREINO'], ['controls', 'CONTROLES'], ['tutorial', 'APRENDER A LUTAR'], ['gallery', 'FINAIS'], ['settings', 'OPÇÕES'], ['diff', 'DIFICULDADE']];
 const loadDiff = () => {
   try {
     const n = +localStorage.getItem('sn-dificuldade');
-    return n >= 0 && n < SYS.DIFFICULTY.length ? n : 0;
+    return Number.isInteger(n) && n >= 0 && n < SYS.DIFFICULTY.length ? n : 0;
   } catch {
     return 0;
   }
@@ -56,8 +61,11 @@ const KEY_LABEL = { c1: '→ ← + Leve', c2: '↓ → + Médio', '5S': 'Especia
 export function createApp(canvas, devices, opts = {}) {
   const c = canvas.getContext('2d');
   c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';
+  const syncMenu = createMenuAccess(canvas);
+  const preferences = loadPreferences();
+  if (globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches) preferences.reducedEffects = true;
   const app = {
-    screen: 'title', cur: 0, mode: 'story', hero: 0, foe: null, foeCur: FOES.length - 1,
+    preferences, lesson: null, systemPaused: false, screen: 'title', cur: 0, mode: 'story', hero: 0, foe: null, foeCur: FOES.length - 1,
     st: null, brain: null, fx: createFx(), hud: createHud(), layers: buildStage(),
     cam: (SYS.STAGE_W - W) / 2, frame: 0, paused: false, pcur: 0, sub: null, ccur: 0, kcur: 0, remap: 0, trial: null, demo: null, demoT: 0, inputLog: [], lastIn: null,
     boxes: !!opts.boxes, dummy: 0, level: SYS.DIFFICULTY[loadDiff()].level, diff: loadDiff(), stats: null, overT: 0, vsT: 0,
@@ -69,9 +77,9 @@ export function createApp(canvas, devices, opts = {}) {
     const hero = HEROES[app.hero];
     const D = SYS.DIFFICULTY[app.diff];
     app.level = app.mode === 'story' && app.story ? fightLevel(app.story, D.level) : D.level;
-    const fair = app.mode === 'training' || app.mode === 'vs2';
+    const fair = ['training', 'tutorial', 'vs2'].includes(app.mode);
     if (app.mode === 'vs2') app.foe = HEROES[app.hero2];
-    app.st = createMatch({ chars: [hero, app.foe], seed: (Date.now() & 0xffff) + 1, training: app.mode === 'training', dmgMul: fair ? [1, 1] : app.foe?.boss ? D.bossDmg : D.dmg });
+    app.st = createMatch({ chars: [hero, app.foe], seed: (Date.now() & 0xffff) + 1, training: ['training', 'tutorial'].includes(app.mode), dmgMul: fair ? [1, 1] : app.foe?.boss ? D.bossDmg : D.dmg });
     // Luta espelhada: o lado 2 usa a paleta alternativa para dar para distinguir.
     if (app.st.f[0].ch.id === app.st.f[1].ch.id) app.st.f[1].alt = true;
     app.brain = createBrain(app.level);
@@ -87,6 +95,8 @@ export function createApp(canvas, devices, opts = {}) {
     app.inputLog = [];
     app.overT = 0;
     app.screen = 'fight';
+    app.lesson = app.mode === 'tutorial' ? createLesson(app.st.f[0].x) : null;
+    if (app.mode === 'story') saveCheckpoint(app.story);
   }
 
   // Entra na tela de versus e prepara os sprites só dos dois lutadores.
@@ -101,7 +111,7 @@ export function createApp(canvas, devices, opts = {}) {
 
   function pickFoe() {
     if (app.mode === 'story') app.foe = app.story ? ALL[currentFight(app.story).foe] : BOSSES[0];
-    else if (app.mode === 'training') app.foe = BOSSES[0];
+    else if (['training', 'tutorial'].includes(app.mode)) app.foe = app.mode === 'tutorial' ? HEROES[1] : BOSSES[0];
     else {
       const pool = [...HEROES, ...BOSSES];
       app.foe = pool[Math.floor(Math.random() * pool.length)];
@@ -111,6 +121,11 @@ export function createApp(canvas, devices, opts = {}) {
   function p2Input() {
     const st = app.st;
     if (app.mode === 'vs2') return readInputFrom(devices, app.slots[1]);
+    if (app.mode === 'tutorial') {
+      const me = st.f[0], partner = st.f[1];
+      if (app.lesson?.index === 1 && Math.abs(me.x - partner.x) > 190) partner.x = Math.min(SYS.STAGE_W - SYS.WALL_PAD, me.x + 180);
+      return app.lesson?.index === 1 && st.frame % 90 === 0 ? { ...EMPTY_INPUT, L: 1 } : EMPTY_INPUT;
+    }
     if (app.mode !== 'training' || app.dummy === 2) return aiInput(st, 1, app.brain);
     if (app.dummy === 1) {
       const a = st.f[0];
@@ -254,7 +269,7 @@ export function createApp(canvas, devices, opts = {}) {
 
   /** Modo História: começa a turnê com o herói escolhido. */
   function startStory() {
-    app.story = createRun(HEROES[app.hero].id, loadProgress());
+    app.story = resumeRun(HEROES[app.hero].id, loadProgress());
     app.storyPages = openingPages(app.story, shortName(HEROES[app.hero]));
     app.screen = 'storyIntro';
   }
@@ -279,6 +294,7 @@ export function createApp(canvas, devices, opts = {}) {
       return;
     }
     if (winFight(run) === 'next') {
+      saveCheckpoint(run);
       app.screen = 'storyTalk';
       return;
     }
@@ -295,6 +311,7 @@ export function createApp(canvas, devices, opts = {}) {
     const nav = (n, len) => (app[n] = (app[n] + len + (pr.down || (horiz && pr.right) ? 1 : 0) - (pr.up || (horiz && pr.left) ? 1 : 0)) % len);
     const ok = pr.start || pr.L || pr.S || pr.ok;
     const back = pr.back || pr.M || pr.cancel;
+    if (app.systemPaused) return;
     if (pr.up || pr.down || pr.left || pr.right) sfx.menu();
     if (ok) sfx.ok();
 
@@ -306,6 +323,8 @@ export function createApp(canvas, devices, opts = {}) {
         try {
           localStorage.setItem('sn-dificuldade', String(app.diff));
         } catch { /* sem armazenamento: vale só nesta sessão */ }
+      } else if (ok && ['settings', 'gallery'].includes(MENU[app.cur][0])) {
+        app.screen = MENU[app.cur][0]; app.kcur = 0;
       } else if (ok && MENU[app.cur][0] === 'controls') {
         app.screen = 'controls';
         app.kcur = 0;
@@ -320,6 +339,14 @@ export function createApp(canvas, devices, opts = {}) {
         app.mode = MENU[app.cur][0];
         app.screen = 'select';
       }
+    } else if (app.screen === 'settings') {
+      if (pr.up) app.kcur = (app.kcur + 2) % 3;
+      if (pr.down) app.kcur = (app.kcur + 1) % 3;
+      if (back) app.screen = 'title';
+      else if (ok) { const key = ['reducedEffects', 'leftHanded', 'largeButtons'][app.kcur]; preferences[key] = !preferences[key]; savePreferences(preferences); }
+    } else if (app.screen === 'gallery') {
+      app.hero = (app.hero + HEROES.length + (pr.right ? 1 : 0) - (pr.left ? 1 : 0)) % HEROES.length;
+      if (back || ok) app.screen = 'title';
     } else if (app.screen === 'join') {
       const r = joinTick(back);
       if (r === 'exit') app.screen = 'title';
@@ -357,6 +384,7 @@ export function createApp(canvas, devices, opts = {}) {
       if (back) app.screen = 'title';
       else if (ok && run.cleared && nextChapter(run)) {
         app.story = createRunAt(run.hero, run.chapter + 1, run.done);
+        saveCheckpoint(app.story);
         app.storyPages = openingPages(app.story, shortName(HEROES[app.hero]));
         app.screen = 'storyIntro';
       } else if (ok && run.cleared) app.screen = 'title';
@@ -381,6 +409,7 @@ export function createApp(canvas, devices, opts = {}) {
       nav('cur', STORY_LOSE.length);
       if (ok && app.cur === 0) {
         continueFight(app.story);
+        saveCheckpoint(app.story);
         startFight();
       } else if (ok) app.screen = 'title';
     } else if (app.screen === 'selectFoe') {
@@ -408,6 +437,7 @@ export function createApp(canvas, devices, opts = {}) {
         app.brain.level = app.level;
       }
       if (app.paused) {
+        if (pr.start) { app.paused = false; app.sub = null; return; }
         if (app.sub === 'moves') {
           if (ok || back) app.sub = null;
         } else if (app.sub === 'controls') {
@@ -446,6 +476,8 @@ export function createApp(canvas, devices, opts = {}) {
         app.pcur = 0;
         return;
       }
+      if (app.mode === 'tutorial' && pr.skip) skipLesson(app.lesson);
+      if (pr.reset && st.training) { resetTraining(st); app.demo = null; app.trial = null; app.brain = createBrain(app.level); }
       // câmera lenta no nocaute
       if (st.phase === 'ko' && st.pf < 60 && app.frame % 2) return;
       let in0 = app.p1brain ? aiInput(st, 0, app.p1brain) : app.mode === 'vs2' ? readInputFrom(devices, app.slots[0]) : readInput(devices);
@@ -455,6 +487,7 @@ export function createApp(canvas, devices, opts = {}) {
       }
       logInput(in0);
       step(st, in0, p2Input());
+      advanceLesson(app.lesson, st);
       st.events.push(...banterEvents(st, app.banter));
       trackCombo(app.trial, st);
       for (const e of st.events) {
@@ -524,10 +557,13 @@ export function createApp(canvas, devices, opts = {}) {
     const target = Math.max(0, Math.min(SYS.STAGE_W - W, (a.x + b.x) / 2 - W / 2));
     app.cam += (target - app.cam) * 0.16;
     const fx = app.fx;
+    if (preferences.reducedEffects) { fx.shake = 0; fx.flash = 0; }
     const sx = fx.shake ? (Math.random() - 0.5) * fx.shake * 2 : 0;
     const sy = fx.shake ? (Math.random() - 0.5) * fx.shake * 2 : 0;
-    const stage = stageOf(a.ch, b.ch);
-    if (stage === 'aeroporto') drawAirportStage(c, app.cam, app.frame);
+    const stage = encounterStage(app);
+    if (drawStageArt(c, stage, app.cam)) { /* painted pack overrides temporary scenery */ }
+    else if (stage === 'palco' || stage === 'banheiros') drawEventStage(c, app.layers, app.cam, app.frame, stage);
+    else if (stage === 'aeroporto') drawAirportStage(c, app.cam, app.frame);
     else if (stage === 'mansao') drawMansionStage(c, app.cam, app.frame);
     else if (stage === 'washington') drawWashingtonStage(c, app.cam, app.frame);
     else if (stage === 'inferno') drawInfernoStage(c, app.cam, app.frame);
@@ -583,12 +619,22 @@ export function createApp(canvas, devices, opts = {}) {
       text(c, 'J2', W - 90, 168, 34, '#35d6c0');
     }
     fxDrawScreen(c, fx, 'over');
+    if (app.mode === 'tutorial') {
+      const lesson = LESSONS[app.lesson.index];
+      slab(c, 350, 160, 1220, 130, '#17131b', 10);
+      text(c, lesson?.title || 'PRÁTICA CONCLUÍDA', W / 2, 190, 32, '#ffcf2a');
+      text(c, lesson?.text || `Etapas cumpridas: ${app.lesson.passed.length}/4 · puladas: ${app.lesson.skipped.length}. Continue praticando ou volte ao menu.`, W / 2, 240, 25, '#fff');
+    }
     if (app.mode === 'training') {
       drawTrial();
       drawInputLog();
-      text(c, `F1 caixas: ${app.boxes ? 'SIM' : 'NÃO'}   F2 boneco: ${DUMMY[app.dummy]}   F3 nível CPU: ${app.level + 1}`, W / 2, 188, 24, '#fff', 'center', '#12080c', 4);
+      if (!app.touchUI) text(c, `F1 caixas: ${app.boxes ? 'SIM' : 'NÃO'}   F2 boneco: ${DUMMY[app.dummy]}   F3 nível CPU: ${app.level + 1}`, W / 2, 188, 24, '#fff', 'center', '#12080c', 4);
       const m = a.move;
       if (m) text(c, `${m.name}  preparo ${m.startup} · ativo ${m.active} · recuperação ${m.recovery}`, W / 2, 222, 22, '#ffe14a', 'center', '#12080c', 4);
+    }
+    if (app.foe?.boss && !app.st.training && st.pf < 240 && !app.paused) {
+      slab(c, 330, 160, 1260, 115, '#17131b', 8);
+      wrap(bossHint().replace('DICA: ', ''), 370, 194, 1180, 27, '#fff');
     }
     if (app.paused) drawPause();
   }
@@ -745,10 +791,72 @@ export function createApp(canvas, devices, opts = {}) {
     c.globalAlpha = 1;
   }
 
+  const bossHint = () => BOSS_TALK[app.foe?.id]?.find(line => line.say.startsWith('DICA:'))?.say || app.foe?.mechDesc || '';
+
+  function syncAccessibleMenus() {
+    const items = [], add = (id, label, x, y, w, h, activate, selected = false, focus) => items.push({ id, label, x, y, w, h, activate, selected, focus });
+    const press = k => { devices.pressed[k] = true; };
+    const choose = (field, i) => { app[field] = i; press('ok'); };
+    let title = 'Salvadores Nacionais', description = '';
+    if (app.screen === 'title') MENU.forEach(([id, label], i) => add(id, id === 'diff' ? `${label}: ${SYS.DIFFICULTY[app.diff].name}` : label, 100, 444 + i * 63, 725, 60, () => choose('cur', i), app.cur === i, () => { app.cur = i; }));
+    else if (app.screen === 'select' || app.screen === 'selectFoe') {
+      const rival = app.screen === 'selectFoe', list = rival ? FOES : HEROES, field = rival ? 'foeCur' : 'hero';
+      title = rival ? 'Escolha o rival' : 'Escolha seu Salvador';
+      const ch = list[app[field]]; description = ch ? `${ch.name} · ${ch.style}. ${ch.mechDesc}` : 'Surpresa: um rival será sorteado.';
+      list.forEach((ch, i) => { add(`pick-${i}`, ch?.name || 'Aleatório', rival ? 860 + i % 4 * 240 : 880 + i % 4 * 240, 196 + Math.floor(i / 4) * (rival ? 132 : 264), 210, rival ? 118 : 238, () => { app[field] = i; }, app[field] === i, () => { app[field] = i; }); items.at(-1).icon = globalThis.__COMIC_UI?.assets['icon-' + ch?.id]?.url; });
+      add('confirm-selection', 'Confirmar escolha', 866, 985, 980, 33, () => press('ok'));
+    } else if (['storyIntro', 'storyEnd', 'storyTalk', 'storyMap', 'storyLose'].includes(app.screen)) {
+      const run = app.story; title = `Capítulo ${run.chapter + 1} · ${CHAPTERS[run.chapter].place}`;
+      if (app.screen === 'storyIntro' || app.screen === 'storyEnd') description = app.storyPages[run.page] || '';
+      if (app.screen === 'storyTalk') { const line = talkLines(run)[run.page]; description = `${line?.who ? ALL[line.who].name + ': ' : ''}${line?.say || ''}`; }
+      if (app.screen === 'storyLose') { title = 'A turnê não pode parar'; ['Continuar', 'Menu'].forEach((label, i) => add(`continue-${i}`, label, 880, 620 + i * 91, 850, 64, () => choose('cur', i))); }
+      else {
+        if (app.screen === 'storyMap') {
+          description = run.cleared ? 'Capítulo concluído. Os aliados seguem juntos para a próxima parada.' : `Próximo confronto: ${CHAPTERS[run.chapter].bossName}. Sem duelos entre aliados.`;
+          if (!run.cleared && run.idx === 0) CHAPTERS.forEach((ch, i) => { if (i <= run.done) add(`chapter-${i}`, `${ch.n} · ${ch.bossName}`, 120 + i * 245, i % 2 ? 440 : 210, 210, 170, () => { Object.assign(run, createRunAt(run.hero, i, run.done), { intro: -1 }); saveCheckpoint(run); }); });
+        }
+        add('next', app.screen === 'storyMap' ? (run.cleared && !nextChapter(run) ? 'Voltar ao menu' : 'Seguir para o confronto') : 'Continuar', 1400, 1018, 480, 62, () => press('ok'));
+        add('previous', app.screen === 'storyMap' ? 'Menu' : 'Página anterior', 30, 1018, 650, 62, () => press('back'));
+      }
+    } else if (app.screen === 'vs') {
+      title = `${HEROES[app.hero].name} × ${app.foe.name}`; description = app.mode === 'story' ? 'Os Salvadores lutam juntos contra os chefes da turnê.' : app.foe.mechDesc;
+      add('fight', app.vsReady ? 'Começar luta' : 'Carregando lutadores…', 650, 800, 620, 200, () => press('ok'));
+    } else if (app.screen === 'result') {
+      title = app.st.winner === null ? 'Empate' : app.st.winner === 0 ? 'Vitória!' : 'Derrota';
+      RESULT.forEach((label, i) => add(`result-${i}`, label, 880, 681 + i * 91, 850, 64, () => choose('cur', i), app.cur === i));
+    } else if (app.screen === 'settings') {
+      title = 'Opções';
+      [['reducedEffects', 'Reduzir tremor e clarões'], ['leftHanded', 'Controles para canhotos'], ['largeButtons', 'Botões maiores']].forEach(([key, label], i) => add(key, `${label}: ${preferences[key] ? 'SIM' : 'NÃO'}`, 300, 350 + i * 120, 1300, 90, () => { preferences[key] = !preferences[key]; savePreferences(preferences); }, preferences[key], () => { app.kcur = i; }));
+    } else if (app.screen === 'gallery') {
+      title = `Finais · ${HEROES[app.hero].name}`; description = (loadProgress()[HEROES[app.hero].id] || 0) >= CHAPTERS.length ? HERO_ENDINGS[HEROES[app.hero].id] : 'Complete a História com este Salvador para liberar seu final.';
+      add('hero-previous', 'Salvador anterior', 80, 800, 700, 100, () => press('left')); add('hero-next', 'Próximo Salvador', 1100, 800, 700, 100, () => press('right'));
+    } else if (app.screen === 'controls' || (app.screen === 'fight' && app.paused && app.sub === 'controls')) {
+      title = 'Controles'; description = 'Toque: direcional e botões na luta. Teclado: WASD/setas, J/K/L, I especial, U defesa, O agarrão, P super. Conecte um controle para remapear.';
+      ACTIONS.forEach(([key, label], i) => add(`control-${key}`, label, 950, 250 + i * 65, 800, 56, () => choose('kcur', i), app.kcur === i));
+    } else if (app.screen === 'fight' && app.paused) {
+      title = 'Pausado'; description = bossHint();
+      if (app.sub === 'moves') { title = 'Lista de golpes'; description = Object.entries(app.st.f[0].ch.moves).filter(([key]) => key !== 'click').map(([key, m]) => `${KEY_LABEL[key] || key}: ${m.name}`).join(' · '); }
+      else if (app.sub === 'combos') {
+        title = 'Lista de combos'; description = 'Escolha um combo para praticar ou peça uma demonstração.';
+        (COMBOS[app.st.f[0].ch.id] || []).forEach((combo, i) => { add(`combo-${i}`, `${combo.name}: ${combo.steps.join(' → ')}`, 150, 240 + i * 110, 1500, 90, () => { app.ccur = i; startCombo(combo, false); }); if (app.st.training) add(`demo-${i}`, `Demonstrar ${combo.name}`, 150, 720 + i * 65, 1500, 58, () => startCombo(combo, true)); });
+      } else pauseLabels().forEach((label, i) => add(`pause-${i}`, label, 750, 355 + i * 76, 650, 64, () => choose('pcur', i), app.pcur === i));
+    } else if (app.screen === 'join' || app.screen === 'select2') {
+      title = 'Versus 2 jogadores'; description = 'Cada jogador entra e escolhe com seu próprio controle. O teclado pode ser um dos jogadores.';
+    }
+    if (app.screen !== 'title' && items.length && !['storyIntro', 'storyEnd', 'storyTalk', 'storyMap'].includes(app.screen)) add('back', 'Voltar', 20, 1018, 500, 62, () => press('back'));
+    // A connected gamepad remains responsible for its own player slot; no synthetic joins.
+    if (!items.length && ['join', 'select2'].includes(app.screen)) add('back', 'Voltar', 20, 1018, 500, 62, () => press('back'));
+    syncMenu(title, description, items);
+  }
+
   function render() {
     if(document.body.dataset.screen!==app.screen)document.body.dataset.screen=app.screen;
+    selectStageAudio(encounterStage(app));
     setStageAudioActive(app.screen === 'fight' && !app.paused && !document.hidden);
     c.setTransform(canvas.width / W, 0, 0, canvas.height / H, 0, 0);
+    app.onRender?.();
+    syncAccessibleMenus();
+    document.body.dataset.paused = String(app.paused || app.systemPaused);
     if(drawComicScreen(c,app,{menu:MENU,srcName})){drawNotice();return;}
     if (app.screen === 'fight') drawFight();
     else if (app.screen === 'controls') {backdrop();drawControls();}
@@ -771,6 +879,12 @@ export function createApp(canvas, devices, opts = {}) {
     app.raf = requestAnimationFrame(loop);
   }
 
+  app.interrupt = reason => {
+    clearPressed(devices); devices.held = {}; devices.touch = {};
+    if (app.screen === 'fight') { app.paused = true; app.sub = null; app.pcur = 0; }
+    app.systemPaused = reason === 'portrait' || reason === 'hidden';
+  };
+  app.releaseInterruption = () => { app.systemPaused = false; };
   app.tick = tick;
   app.render = render;
   app.startFight = startFight;

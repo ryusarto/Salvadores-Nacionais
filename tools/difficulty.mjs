@@ -10,7 +10,7 @@ for (const D of SYS.DIFFICULTY) {
   let wins = 0;
   let rounds = 0;
   for (let s = 0; s < N; s++) {
-    const st = createMatch({ chars: [HEROES[0], BOSSES[0]], seed: 500 + s, dmgMul: D.dmg });
+    const st = createMatch({ chars: [HEROES[0], BOSSES[0]], seed: 500 + s, dmgMul: D.bossDmg });
     const br = [createBrain(1), createBrain(D.level)];
     for (let i = 0; i < 60 * 500 && st.phase !== 'over'; i++) step(st, aiInput(st, 0, br[0]), aiInput(st, 1, br[1]));
     if (st.winner === 0) wins++;

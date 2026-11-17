@@ -1,36 +1,54 @@
-/** Combat synthesis plus original stage music/ambience, unlocked by a gesture. */
+/** Combat synthesis and stage-scoped music/ambience, unlocked by a gesture. */
 let AC = null;
 let muted = false;
-const stage={pack:null,buffers:new Map(),master:null,active:false,gesture:false,loading:null,started:false,errors:[]};
-
-function stageGain(){
- const audible=stage.active&&!muted&&!(typeof document!=='undefined'&&document.hidden);
- if(stage.master&&AC)stage.master.gain.setTargetAtTime(audible?.6:0,AC.currentTime,.025);
+const packs = new Map(), cache = new Map();
+const stage = { id: 'belem', buffers: new Map(), master: null, active: false, gesture: false, started: false, errors: [], nodes: [], token: 0, loading: null };
+let listening = false;
+function stageGain() {
+  const audible = stage.active && !muted && !(typeof document !== 'undefined' && document.hidden);
+  if (stage.master && AC) stage.master.gain.setTargetAtTime(audible ? .6 : 0, AC.currentTime, .025);
 }
-function startStageAudio(){
- if(stage.started||!stage.gesture||!stage.active||muted||!stage.buffers.size)return;
- const a=ctx();if(!a)return;
- stage.master=a.createGain();stage.master.gain.value=0;stage.master.connect(a.destination);
- const play=(id,when,loop,volume)=>{const buffer=stage.buffers.get(id);if(!buffer)return;const node=a.createBufferSource(),gain=a.createGain();node.buffer=buffer;node.loop=loop;gain.gain.value=volume;node.connect(gain).connect(stage.master);node.start(when);};
- const at=a.currentTime+.05,intro=stage.buffers.get('trilha-intro');
- play('trilha-intro',at,false,.65);play('trilha-loop',at+(intro?.duration??0),true,.65);
- for(const id of['ambiente-feira','ambiente-agua','aves','vento-tecido'])play(id,at,true,.5);
- stage.started=true;stageGain();
+function startStageAudio() {
+  if (stage.started || !stage.gesture || !stage.active || muted || !stage.buffers.size) return;
+  const a = ctx(); if (!a) return;
+  stage.master = a.createGain(); stage.master.gain.value = 0; stage.master.connect(a.destination);
+  const play = (id, when, loop, volume) => {
+    const buffer = stage.buffers.get(id); if (!buffer) return;
+    const node = a.createBufferSource(), gain = a.createGain(); node.buffer = buffer; node.loop = loop; gain.gain.value = volume; node.connect(gain).connect(stage.master); node.start(when); stage.nodes.push(node);
+  };
+  const at = a.currentTime + .05, intro = stage.buffers.get('trilha-intro');
+  play('trilha-intro', at, false, .65); play('trilha-loop', at + (intro?.duration ?? 0), true, .65);
+  for (const id of [...stage.buffers.keys()].filter(id => !id.startsWith('trilha-'))) play(id, at, true, .5);
+  stage.started = true; stageGain();
 }
-export function configureStageAudio(pack){
- stage.pack=pack;
- const unlock=()=>{
-  stage.gesture=true;const a=ctx();if(!a)return;
-  if(!stage.loading)stage.loading=Promise.all(Object.entries(pack.assets).filter(([,v])=>v.kind==='audio').map(async([id,v])=>{
-   try{const response=await fetch(v.url);if(!response.ok)throw Error(response.status);stage.buffers.set(id,await a.decodeAudioData(await response.arrayBuffer()));}catch{stage.errors.push(id);}
-  })).then(startStageAudio);
-  startStageAudio();
- };
- window.addEventListener('pointerdown',unlock,{passive:true});window.addEventListener('keydown',unlock);
- document.addEventListener('visibilitychange',stageGain);
+async function loadCurrentAudio() {
+  if (!stage.gesture || stage.loading) return;
+  const pack = packs.get(stage.id), a = ctx(); if (!pack || !a) return;
+  if (cache.has(stage.id)) { stage.buffers = cache.get(stage.id); startStageAudio(); return; }
+  const token = stage.token, id = stage.id, buffers = new Map(), errors = [];
+  stage.loading = Promise.all(Object.entries(pack.assets).filter(([, v]) => v.kind === 'audio').map(async ([key, v]) => {
+    try { const response = await fetch(v.url); if (!response.ok) throw Error(response.status); buffers.set(key, await a.decodeAudioData(await response.arrayBuffer())); } catch { errors.push(key); }
+  }));
+  await stage.loading;
+  cache.set(id, buffers);
+  if (token !== stage.token) return;
+  stage.loading = null; stage.buffers = buffers; stage.errors = errors; startStageAudio();
 }
-export function setStageAudioActive(active){if(stage.active===active)return;stage.active=active;startStageAudio();stageGain();}
-export function stageAudioStatus(){return{active:stage.active,muted,started:stage.started,decoded:stage.buffers.size,gain:stage.master?.gain.value??0,errors:[...stage.errors]};}
+export function configureStageAudio(pack, id = 'belem') {
+  packs.set(id, pack);
+  if (listening) return; listening = true;
+  const unlock = () => { stage.gesture = true; void loadCurrentAudio(); startStageAudio(); };
+  window.addEventListener('pointerdown', unlock, { passive: true }); window.addEventListener('keydown', unlock);
+  document.addEventListener('visibilitychange', stageGain);
+}
+export function selectStageAudio(id) {
+  if (stage.id === id) return;
+  for (const node of stage.nodes) { try { node.stop(); } catch { /* ended intro */ } node.disconnect(); }
+  stage.master?.disconnect(); stage.master = null; stage.nodes = []; stage.id = id; stage.token++; stage.loading = null; stage.started = false; stage.errors = []; stage.buffers = new Map();
+  void loadCurrentAudio();
+}
+export function setStageAudioActive(active) { if (stage.active === active) return; stage.active = active; if (active) void loadCurrentAudio(); startStageAudio(); stageGain(); }
+export function stageAudioStatus() { return { stage: stage.id, available: packs.has(stage.id), active: stage.active, muted, started: stage.started, decoded: stage.buffers.size, gain: stage.master?.gain.value ?? 0, errors: [...stage.errors] }; }
 
 function ctx() {
   if (muted || typeof window === 'undefined') return null;

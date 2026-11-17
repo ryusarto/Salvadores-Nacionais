@@ -36,6 +36,7 @@ export function createMatch(o) {
     winner: null,
     roundWinner: null,
     training: !!o.training,
+    initialChars: [...o.chars],
     dmgMul: o.dmgMul || [1, 1], // multiplicador do dano causado por cada lado (dificuldade)
     rng: makeRng(o.seed ?? 1),
   };
@@ -45,7 +46,7 @@ export function createMatch(o) {
 function resetRound(st) {
   const mid = SYS.STAGE_W / 2;
   const old = st.f;
-  st.f = [createFighter(old[0].ch, 0, mid - SYS.START_GAP / 2), createFighter(old[1].ch, 1, mid + SYS.START_GAP / 2)];
+  st.f = st.initialChars.map((ch, i) => createFighter(ch, i, mid + (i ? 1 : -1) * SYS.START_GAP / 2));
   st.f.forEach((f, i) => {
     f.rounds = old[i].rounds;
     f.super = old[i].super;
@@ -57,6 +58,18 @@ function resetRound(st) {
   st.pf = 0;
   st.round++;
   st.roundWinner = null;
+}
+
+/** A lethal hit starts a fresh practice attempt, including character forms and input buffers. */
+export function resetTraining(st) {
+  if (!st.training) return false;
+  resetRound(st);
+  st.round = 1;
+  st.phase = 'fight';
+  st.freeze = 0;
+  for (const f of st.f) { f.rounds = 0; f.super = SYS.SUPER.max; }
+  emit(st, { t: 'trainingReset' });
+  return true;
 }
 
 /** Golpes proibidos (Carimbo de Decreto): os botões e o pulo proibidos não chegam ao lutador. */
@@ -181,10 +194,7 @@ export function step(st, in0 = EMPTY_INPUT, in1 = EMPTY_INPUT) {
     if (!st.training) st.timer--;
     const dead = st.f.filter((f) => f.hp <= 0);
     if (st.training) {
-      for (const f of dead) {
-        const fresh = createFighter(f.ch, f.side, f.x);
-        Object.assign(f, fresh, { alt: f.alt, rounds: f.rounds, super: f.super });
-      }
+      if (dead.length) resetTraining(st);
     } else if (dead.length || st.timer <= 0) {
       let w = null;
       if (dead.length === 1) w = 1 - dead[0].side;

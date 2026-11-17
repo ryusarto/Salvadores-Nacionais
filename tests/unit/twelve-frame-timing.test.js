@@ -15,3 +15,11 @@ test('jump drawings follow takeoff, airborne motion and forward landing recovery
  assert.equal(index({state:'land',sf:0}),9);
  assert.equal(index({state:'land',sf:20}),11);
 });
+
+test('the shared registration route supports dense art and arbitrary independent pack names',async()=>{
+ const {spriteOptions}=await import('../../src/render/sprite-profiles.js');
+ const character={id:'artist',spriteProfile:'twelve-frame',spriteFacingPacks:{right:'artist',left:'artist-other-view'}};
+ const options=spriteOptions('artist-other-view',[character]);
+ assert.equal(options.frames,12);assert.equal(options.cellSize,768);assert.equal(options.maxDecoded,1);assert.equal(options.material,false);assert.equal(options.pinIdle,false);
+ assert.equal(spriteOptions('fx-artist',[character]).frames,4,'existing FX keep their own legacy format');
+});

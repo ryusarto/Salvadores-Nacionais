@@ -9,7 +9,7 @@ import { createHash } from 'node:crypto';
 const arg = (k, d) => (process.argv.find((a) => a.startsWith(`--${k}=`)) || '').split('=')[1] || d;
 const spritesDir = arg('sprites', 'production/sprites/final');
 const outFile = arg('out', 'dist/salvadores-nacionais.html');
-const externalAssets = process.argv.includes('--external-assets');
+const externalAssets = process.argv.includes('--external-assets') || process.argv.includes('--serve');
 const assetURL = p => relative(dirname(outFile), p).split(sep).map(encodeURIComponent).join('/')
   + '?v=' + createHash('sha256').update(readFileSync(p)).digest('hex').slice(0, 12);
 
@@ -49,6 +49,19 @@ if(existsSync(packPath)){
   }
   stagePacks.belem=pack;
 }
+// Additional arena packs keep their own artwork and music; Belem retains its renderer.
+if (existsSync('production/stages')) for (const id of readdirSync('production/stages')) {
+  if (id === 'belem') continue;
+  const file = join('production/stages', id, 'manifest.json');
+  if (!existsSync(file)) continue;
+  const pack = JSON.parse(readFileSync(file));
+  for (const a of Object.values(pack.assets || {})) {
+    const path = join('production/stages', id, a.path);
+    const mime = a.kind === 'audio' ? 'audio/ogg' : a.path.endsWith('.png') ? 'image/png' : 'image/webp';
+    a.url = externalAssets ? assetURL(path) : `data:${mime};base64,${readFileSync(path).toString('base64')}`;
+  }
+  stagePacks[id] = pack;
+}
 if (existsSync('production/stages')) {
   for (const f of readdirSync('production/stages')) {
     const m = f.match(/^(.+)\.(jpg|jpeg|webp|png)$/);
@@ -61,7 +74,9 @@ if (existsSync('production/stages')) {
 const out = await build({ entryPoints: ['src/main.js'], bundle: true, format: 'iife', minify: process.argv.includes('--min'), write: false, target: 'es2020' });
 const js = `window.__SPRITES=${JSON.stringify(sprites)};window.__SPRITEPOSTERS=${JSON.stringify(spritePosters)};window.__STAGES=${JSON.stringify(stages)};window.__STAGEPACKS=${JSON.stringify(stagePacks)};window.__COMIC_UI=${JSON.stringify(uiPack)};\n${out.outputFiles[0].text}`.replace(/<\/script>/g, '<\\/script>');
 const html = readFileSync('src/index.html', 'utf8').replace('/*__BUNDLE__*/', () => js);
-mkdirSync('dist', { recursive: true });
+mkdirSync(dirname(outFile), { recursive: true });
 writeFileSync(outFile, html);
 const n = Object.entries(sprites).map(([id, s]) => `${id}: ${Object.keys(s).length} tiras`).join(', ');
 console.log(`${outFile} — ${(html.length / 1024).toFixed(0)} KB${n ? ` — sprites: ${n}` : ' — sem sprites (manequim)'}${Object.keys(stages).length ? ` — cenários: ${Object.keys(stages).join(', ')}` : ''}`);
+
+if (process.argv.includes('--serve')) await import('./dev-server.mjs');

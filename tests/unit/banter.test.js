@@ -4,7 +4,7 @@ import { ALL } from '../../src/data/characters/index.js';
 import { createMatch, step, makeRng } from '../../src/core/match.js';
 import { banterEvents, brothersFight } from '../../src/ui/banter.js';
 import { DOG_CALLS, DOG_BITES_FRANCO, BROTHER_INTRO } from '../../src/data/banter.js';
-import { rhymeTalk } from '../../src/data/story.js';
+import {createRun,talkLines} from '../../src/ui/story.js';
 import { fight, run, tap, I } from './helpers.js';
 
 const pops = (ev) => ev.filter((e) => e.t === 'pop').map((e) => e.str);
@@ -49,9 +49,11 @@ test('o Chapuh às vezes chama o pinscher de Antônio, em qualquer luta', () => 
   assert.ok(called > 0 && called < 10, `chamou ${called} de 10`);
 });
 
-test('irmãos: a batalha de rima entre os dois tem diálogo próprio', () => {
-  const talk = rhymeTalk('franco', 'chapuh');
-  assert.ok(talk[0].say.includes('Briga de irmão'));
-  assert.ok(talk.some((l) => l.say.includes('Antônio')));
-  assert.ok(!rhymeTalk('franco', 'belga')[0].say.includes('irmão'));
+test('a campanha dos irmãos começa contra Zanata, sem diálogo de duelo entre aliados', () => {
+  for (const hero of ['franco','chapuh']) {
+    const run=createRun(hero);
+    assert.equal(run.fights.length,1);
+    assert.equal(run.fights[0].foe,'zanata');
+    assert.ok(talkLines(run).every(line=>line.who===null||line.who===hero||line.who==='zanata'));
+  }
 });

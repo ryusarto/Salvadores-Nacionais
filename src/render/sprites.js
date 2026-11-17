@@ -261,7 +261,7 @@ export function registerSprites(id, sheets, options = {}) {
  * @param {string[]} names tiras que precisam estar prontas antes da luta
  * @returns {Promise<void>}
  */
-export function prepareSprites(ids, names = ['parado', 'andar', 'golpe-5L']) {
+export function prepareSprites(ids, names = ['parado', 'andar', 'golpe-5L', 'defesa-em-pe', 'dano-alto']) {
   const jobs = [];
   const active = new Set(ids);
   for (const [id,set] of Object.entries(REG)) for (const s of Object.values(set)) {
