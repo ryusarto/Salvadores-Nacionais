@@ -1,0 +1,17 @@
+{
+  "groups": 69,
+  "assets": 69,
+  "animatedStrips": 14,
+  "animationFrames": 84,
+  "audios": 6,
+  "generatedPNGMasters": 21,
+  "reusedImages": 34,
+  "runtimeBytes": 9163870,
+  "decodedRGBABytesEstimate": 141710912,
+  "hashes": "pass",
+  "dimensions": "pass",
+  "alphaAndFrames": "pass",
+  "provenance": "pass",
+  "oggMetadataAndPCMDecode": "pass",
+  "missing": []
+}

@@ -1,5 +1,6 @@
 import { SYS } from '../data/system.js';
 import { phoneBox, LIVE } from '../data/characters/chupetinha.js';
+import { drawStageProp } from './stage-packs.js';
 
 const OUT = '#12080c';
 const GY = SYS.GROUND_Y;
@@ -110,18 +111,20 @@ export function drawStamp(c, x, y, s) {
   c.save();
   c.translate(x, y);
   c.scale(s, s);
-  c.lineWidth = 4;
-  c.strokeStyle = OUT;
-  c.fillStyle = '#6b4a2a';
-  c.fillRect(-7, -38, 14, 26);
-  c.strokeRect(-7, -38, 14, 26);
-  c.fillStyle = '#3a3036';
-  c.beginPath();
-  c.roundRect(-30, -14, 60, 26, 5);
-  c.fill();
-  c.stroke();
-  c.fillStyle = '#c8102e';
-  c.fillRect(-28, 10, 56, 10);
+  if (!drawStageProp(c, 'banheiros', 'carimbo-fiscal', { x: 0, y: 20, w: 60, h: 60 })) {
+    c.lineWidth = 4;
+    c.strokeStyle = OUT;
+    c.fillStyle = '#6b4a2a';
+    c.fillRect(-7, -38, 14, 26);
+    c.strokeRect(-7, -38, 14, 26);
+    c.fillStyle = '#3a3036';
+    c.beginPath();
+    c.roundRect(-30, -14, 60, 26, 5);
+    c.fill();
+    c.stroke();
+    c.fillStyle = '#c8102e';
+    c.fillRect(-28, 10, 56, 10);
+  }
   c.restore();
 }
 
@@ -131,14 +134,16 @@ export function drawFence(c, e, gy) {
   c.save();
   c.lineWidth = 5;
   c.strokeStyle = OUT;
-  c.fillStyle = '#7a7f86';
-  for (let i = -1; i <= 1; i++) {
-    c.fillRect(e.x + i * 16 - 4, top, 8, e.h);
-    c.strokeRect(e.x + i * 16 - 4, top, 8, e.h);
-  }
-  for (const yy of [top + 30, gy - 40]) {
-    c.fillRect(e.x - 30, yy, 60, 10);
-    c.strokeRect(e.x - 30, yy, 60, 10);
+  if (!drawStageProp(c, 'banheiros', 'cerca-fiscal', { x: e.x, y: gy, w: 60, h: e.h })) {
+    c.fillStyle = '#7a7f86';
+    for (let i = -1; i <= 1; i++) {
+      c.fillRect(e.x + i * 16 - 4, top, 8, e.h);
+      c.strokeRect(e.x + i * 16 - 4, top, 8, e.h);
+    }
+    for (const yy of [top + 30, gy - 40]) {
+      c.fillRect(e.x - 30, yy, 60, 10);
+      c.strokeRect(e.x - 30, yy, 60, 10);
+    }
   }
   // poste com a placa do decreto, acima da grade
   c.fillStyle = '#7a7f86';
@@ -176,21 +181,23 @@ export function drawCabin(c, e, gy, frame) {
   c.translate(wob, 0);
   c.lineWidth = 6;
   c.strokeStyle = OUT;
-  // corpo azul e telhado
-  c.fillStyle = '#2f7fd1';
-  c.fillRect(l, top + 24, w, h - 24);
-  c.strokeRect(l, top + 24, w, h - 24);
-  c.fillStyle = '#f4f2ee';
-  c.beginPath();
-  c.moveTo(l - 8, top + 28);
-  c.quadraticCurveTo(e.x, top - 10, l + w + 8, top + 28);
-  c.closePath();
-  c.fill();
-  c.stroke();
-  // porta
-  c.fillStyle = '#2768b0';
-  c.fillRect(l + 18, top + 52, w - 36, h - 62);
-  c.strokeRect(l + 18, top + 52, w - 36, h - 62);
+  if (!drawStageProp(c, 'banheiros', 'cabine-fiscal', { x: e.x, y: gy, w, h, frame })) {
+    // corpo azul e telhado
+    c.fillStyle = '#2f7fd1';
+    c.fillRect(l, top + 24, w, h - 24);
+    c.strokeRect(l, top + 24, w, h - 24);
+    c.fillStyle = '#f4f2ee';
+    c.beginPath();
+    c.moveTo(l - 8, top + 28);
+    c.quadraticCurveTo(e.x, top - 10, l + w + 8, top + 28);
+    c.closePath();
+    c.fill();
+    c.stroke();
+    // porta
+    c.fillStyle = '#2768b0';
+    c.fillRect(l + 18, top + 52, w - 36, h - 62);
+    c.strokeRect(l + 18, top + 52, w - 36, h - 62);
+  }
   c.fillStyle = frame % 50 < 25 ? '#e8243c' : '#9a1424';
   c.fillRect(l + w - 40, top + 160, 14, 26);
   // placa
