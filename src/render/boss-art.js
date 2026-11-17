@@ -1,3 +1,4 @@
+import { drawChupetinhaPhone } from './chupetinha-art.js';
 import { SYS } from '../data/system.js';
 import { phoneBox, LIVE } from '../data/characters/chupetinha.js';
 
@@ -38,6 +39,7 @@ export function drawPacifier(c, x, y, s) {
 export function drawLivePhone(c, f, frame) {
   const r = f.res;
   if (!r || f.state === 'ko') return;
+  if (drawChupetinhaPhone(c, f, frame)) return;
   const b = phoneBox(f);
   const cx = (b.l + b.r) / 2;
   const cy = GY - (b.b + b.t) / 2 + Math.sin(frame / 14) * 6;

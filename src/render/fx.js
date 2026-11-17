@@ -1,3 +1,4 @@
+import { chupetinhaEventArt, drawChupetinhaEntity, drawChupetinhaParticle } from './chupetinha-art.js';
 import { drawZanataParticle } from './zanata-art.js';
 import { SYS } from '../data/system.js';
 import { text, burst, slab } from './draw.js';
@@ -31,6 +32,8 @@ export function fxEvents(fx, st) {
   for (const e of st.events) {
     const sy = GY - (e.y || 0);
     const actor = st.f[e.side];
+    const chupetinhaArt = chupetinhaEventArt(e, st);
+    if (chupetinhaArt) fx.parts.push({ k: 'chupetinha', ...chupetinhaArt, t: 0 });
     if (actor?.ch?.spriteProfile === 'ten-frame') {
       const name = ({ hit: 'fx-impacto', block: 'fx-defesa', land: 'fx-poeira', jump: 'fx-poeira' })[e.t]
         || (e.t === 'pop' && e.str === 'RAJADA!' ? 'fx-embalo' : null);
@@ -220,7 +223,7 @@ export function drawEntities(c, st) {
       c.restore();
       continue;
     }
-    if (drawChapuhEntity(c, e) || drawMajisEntity(c, e) || drawTrunksEntity(c, e, owner?.ch.id) || drawBelgaEntity(c, e, owner?.ch.id) || drawRyuchiEntity(c, e, owner?.ch.id)) { c.restore(); continue; }
+    if (drawChupetinhaEntity(c, e, owner?.ch.id) || drawChapuhEntity(c, e) || drawMajisEntity(c, e) || drawTrunksEntity(c, e, owner?.ch.id) || drawBelgaEntity(c, e, owner?.ch.id) || drawRyuchiEntity(c, e, owner?.ch.id)) { c.restore(); continue; }
     if (e.kind === 'ambulance') {
       // ambulância despencando do céu até o chão, girando, com a sirene piscando
       const t = e.delay > 0 ? 1 - e.delay / (e.delay0 || 26) : 1;
@@ -395,6 +398,7 @@ export function fxDrawFront(c, fx) {
   for (const p of fx.parts) {
     const t = p.t / p.dur;
     if (p.k === 'absorb') continue;
+    if (p.k === 'chupetinha') { drawChupetinhaParticle(c, p); continue; }
     if (p.k === 'sprite' && ['zanata-fx','zanata-esquerda-fx'].includes(p.id)) { drawZanataParticle(c,p); continue; }
     if (p.k === 'sprite' && p.id === 'ryuchi-fx') { drawRyuchiParticle(c, p); continue; }
     if (p.k === 'sprite' && p.id === 'belga-fx') {

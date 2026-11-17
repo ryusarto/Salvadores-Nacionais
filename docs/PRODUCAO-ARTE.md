@@ -107,3 +107,7 @@ ART-02 agora tem kit completo: 41 animações de corpo e 12 FX por sentido,
 `production/qa/zanata-sprites.html`. A primeira geração e sua validação não
 substituem uma futura rodada de direção de arte com jogadores no aparelho
 alvo. Não gerar um segundo kit da Zanata em paralelo sem conferir esta versão.
+
+## Chupetinha v3 entregue
+
+ART-08 agora tem 41 animações corporais de seis quadros, incluindo os três especiais turbo, e 11 animações de FX separados: celular com três níveis de sinal, ativação, dano e queda; projétil; impacto; arco do mangual; Sugada e engajamento. O retrato e o ícone acompanham o novo figurino. A ficha usa perfil six-frame e timing específico sem alterar as regras. O inventário, os limites de validação e os caminhos estão em [CHUPETINHA-ARTE-V3.md](CHUPETINHA-ARTE-V3.md). A revisão de movimento em aparelho e o playtest humano continuam necessários.
