@@ -350,7 +350,7 @@ export function drawFighter(c, f, frame) {
 
   c.save();
   c.translate(f.x + shake, gy - f.y);
-  c.scale(f.face * (flip && !((ch.spriteStatePhases || ch.spriteProfile === 'ten-frame') && hasSprites(ch.id)) ? -1 : 1), 1);
+  c.scale(f.face * (flip && !((ch.spriteStatePhases || ch.spriteProfile === 'ten-frame' || ch.spriteProfile === 'twelve-frame') && hasSprites(ch.id)) ? -1 : 1), 1);
   if (tint) {
     c.shadowColor = tint;
     c.shadowBlur = 34;
