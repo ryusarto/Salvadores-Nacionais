@@ -97,6 +97,7 @@ export function animFor(f, frame) {
     }
     if (f.state === 'knockdown' || (f.state === 'ko' && f.y <= 0)) return timed('caido', 16);
   }
+  if (f.state === 'dizzy' && f.ch?.spriteEmotionalReaction && f.res?.emotionalArt) return timed(f.ch.spriteEmotionalReaction, 36);
   switch (f.state) {
     case 'idle': return cyc('parado');
     case 'walk': return cyc(f.vx * f.face < 0 ? 'andar-tras' : 'andar');

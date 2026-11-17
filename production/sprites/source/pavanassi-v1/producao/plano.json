@@ -1,0 +1,555 @@
+{
+  "character": "pavanassi",
+  "version": "1-six-frames-two-directions",
+  "created": "2026-11-17",
+  "sourceRepository": "https://github.com/ryusarto/Salvadores-Nacionais",
+  "sourceCommit": "99a7701b620cdd12a359217c1491b4155e413df2",
+  "frames": 6,
+  "sourceSheetsPerAnimation": 2,
+  "sourceFramesPerSheet": 3,
+  "sides": [
+    "right",
+    "left"
+  ],
+  "cell": 500,
+  "foot": [
+    250,
+    455.7291666667
+  ],
+  "actions": [
+    {
+      "action": "parado",
+      "name": "Guarda / respiração",
+      "loop": true,
+      "poses": [
+        "balanced guard, stamp at right hip",
+        "inhale, shoulders rise slightly",
+        "knees bend and weight settles back",
+        "exhale and start rising",
+        "weight returns forward to neutral",
+        "settle to initial guard, tie slightly shifted"
+      ]
+    },
+    {
+      "action": "andar",
+      "name": "Andar para frente",
+      "loop": true,
+      "poses": [
+        "front foot heel steps forward, stamp near hip",
+        "weight passes onto front foot",
+        "rear foot lifts, knee passing",
+        "rear foot plants ahead, arms counterbalance",
+        "weight passes over newly planted foot",
+        "other foot starts next step, closing loop"
+      ]
+    },
+    {
+      "action": "andar-tras",
+      "name": "Andar para trás",
+      "loop": true,
+      "poses": [
+        "rear foot reaches backward while guarding",
+        "weight shifts to rear foot",
+        "front foot begins to withdraw",
+        "front foot passes toward rear foot",
+        "front foot plants into guard width",
+        "settled guard beginning next backward step"
+      ]
+    },
+    {
+      "action": "correr",
+      "name": "Corrida",
+      "loop": true,
+      "poses": [
+        "lean forward, front knee high, rear leg pushing",
+        "long running stride, stamp securely held",
+        "front foot landing and body compressing",
+        "opposite knee lifts strongly",
+        "opposite running stride extended",
+        "opposite foot landing and compressing"
+      ]
+    },
+    {
+      "action": "agachar",
+      "name": "Agachar",
+      "loop": false,
+      "poses": [
+        "standing with knees beginning to bend",
+        "knees bend, torso lowers",
+        "half crouch stamp tucked close",
+        "deep crouch balanced",
+        "settle onto bent legs with guard",
+        "held deep crouching guard"
+      ]
+    },
+    {
+      "action": "pulo",
+      "name": "Pulo",
+      "loop": false,
+      "poses": [
+        "upward jump with bent legs and upright torso",
+        "ascending with thighs tucked",
+        "apex with knees tucked, stamp secure",
+        "begin descent, legs extend slightly",
+        "descending with knees ready for landing",
+        "knees bent in compact landing preparation"
+      ]
+    },
+    {
+      "action": "recuo",
+      "name": "Recuo evasivo",
+      "loop": false,
+      "poses": [
+        "guard and shift weight to front foot",
+        "push backward, torso leans away",
+        "backward hop, both feet clear, stamp held tight",
+        "rear foot reaches landing",
+        "land onto rear foot knees bent",
+        "regain original guard"
+      ]
+    },
+    {
+      "action": "escape-agarrao",
+      "name": "Escape de agarrão",
+      "loop": false,
+      "poses": [
+        "arms tightly braced in front, stamp tucked",
+        "left forearm wedges outward",
+        "shoulders twist to break opponent grip, no opponent drawn",
+        "left hand pushes outward to create distance",
+        "take a small step backward",
+        "guard restored"
+      ]
+    },
+    {
+      "action": "recuperacao-rolamento",
+      "name": "Recuperação por rolamento",
+      "loop": false,
+      "poses": [
+        "low seated curled posture",
+        "tuck head and roll over back",
+        "side-on compact roll shoulders near ground",
+        "feet rotate down under body",
+        "crouched recovery one hand assisting, stamp still in right",
+        "rise into guard"
+      ]
+    },
+    {
+      "action": "defesa-em-pe",
+      "name": "Defesa em pé",
+      "loop": false,
+      "poses": [
+        "ready guard",
+        "left forearm rises before face",
+        "brace standing guard, stamp tight at chest",
+        "recoil slightly from blocked hit",
+        "recover stance, forearm still up",
+        "steady blocking guard"
+      ]
+    },
+    {
+      "action": "defesa-agachado",
+      "name": "Defesa agachada",
+      "loop": false,
+      "poses": [
+        "low crouch guard",
+        "left forearm protects face, right stamp near ribs",
+        "tight compact blocking crouch",
+        "crouched blocked-hit recoil",
+        "readjust crouched balance",
+        "held crouch guard"
+      ]
+    },
+    {
+      "action": "defesa-no-ar",
+      "name": "Defesa no ar",
+      "loop": false,
+      "poses": [
+        "airborne knees bent",
+        "forearms close before upper body",
+        "compact aerial block, stamp secured",
+        "airborne blocked-hit recoil",
+        "legs prepare to descend",
+        "airborne guard maintained"
+      ]
+    },
+    {
+      "action": "dano-alto",
+      "name": "Dano alto",
+      "loop": false,
+      "poses": [
+        "head just reacting to a hit",
+        "chin and shoulders jerk backward",
+        "torso arches back, left hand opens",
+        "strongest upper-body recoil, feet still under him",
+        "regain balance with bent knees",
+        "recover toward guard with pained expression"
+      ]
+    },
+    {
+      "action": "dano-baixo",
+      "name": "Dano baixo",
+      "loop": false,
+      "poses": [
+        "abdomen reacts to a low body hit",
+        "torso folds forward",
+        "left hand goes toward abdomen, stamp secure",
+        "deep crouched painful recoil",
+        "rises slightly while hunched",
+        "regain guarded crouch"
+      ]
+    },
+    {
+      "action": "dano-no-ar",
+      "name": "Dano no ar",
+      "loop": false,
+      "poses": [
+        "airborne hit recoil head back",
+        "torso thrown backward legs loose",
+        "body rotates backward slightly",
+        "airborne on back diagonal, knees bent",
+        "falling with head back and feet forward",
+        "falling side-on, arms instinctively bracing"
+      ]
+    },
+    {
+      "action": "caido",
+      "name": "Queda / nocaute",
+      "loop": false,
+      "poses": [
+        "knees buckle and upper body tips back",
+        "hip approaches ground",
+        "back and shoulders nearing ground",
+        "lying on back diagonally, head toward rear, feet toward front",
+        "settle fully on ground, stamp in relaxed right hand",
+        "rest lying defeated, no standing pose"
+      ]
+    },
+    {
+      "action": "levantar",
+      "name": "Levantar",
+      "loop": false,
+      "poses": [
+        "lying on side after knockdown",
+        "left hand braces against ground",
+        "seated, knees draw in",
+        "one knee beneath body",
+        "crouched standing recovery",
+        "return to fighting guard"
+      ]
+    },
+    {
+      "action": "tonto",
+      "name": "Tonto",
+      "loop": true,
+      "poses": [
+        "slumped shoulders, dazed expression, stamp lowered",
+        "sway forward, knees weak",
+        "sway left and eyes unfocused",
+        "sway backward, left hand touches brow",
+        "sway to opposite side",
+        "slump toward starting dazed posture"
+      ]
+    },
+    {
+      "action": "vitoria",
+      "name": "Vitória",
+      "loop": false,
+      "poses": [
+        "lower guard and straighten proudly",
+        "lift wooden decree stamp to chest",
+        "hold stamp proudly aloft",
+        "left hand points arrogantly ahead",
+        "chin lifted smug bureaucratic expression",
+        "hold triumphant raised-stamp pose"
+      ]
+    },
+    {
+      "action": "golpe-5L",
+      "name": "Leve",
+      "loop": false,
+      "poses": [
+        "neutral guard",
+        "draw left fist slightly back",
+        "quick left straight jab fully extended at upper chest height",
+        "jab reaches longest contact extension",
+        "left arm retracts",
+        "return to guard"
+      ]
+    },
+    {
+      "action": "golpe-5M",
+      "name": "Médio",
+      "loop": false,
+      "poses": [
+        "shift weight forward",
+        "pull left fist and rotate torso slightly",
+        "step into strong left straight punch at torso height",
+        "longest punch extension",
+        "retract fist and uncoil torso",
+        "return to guard"
+      ]
+    },
+    {
+      "action": "golpe-5H",
+      "name": "Carimbada",
+      "loop": false,
+      "poses": [
+        "right hand raises stamp from hip",
+        "stamp pulled over shoulder, bent elbow",
+        "drive stamp down and forward toward opponent chest",
+        "stamp at strongest forward downward contact",
+        "stamp withdraws and torso untwists",
+        "return to guard"
+      ]
+    },
+    {
+      "action": "golpe-2L",
+      "name": "Leve baixo",
+      "loop": false,
+      "poses": [
+        "crouch preparation",
+        "weight settles on bent support leg",
+        "front foot snaps low forward near shin height",
+        "low kick fully extended",
+        "kicking foot withdraws",
+        "return to crouch guard"
+      ]
+    },
+    {
+      "action": "golpe-2M",
+      "name": "Médio baixo",
+      "loop": false,
+      "poses": [
+        "low guard preparation",
+        "torso tilts as support leg bends",
+        "rear leg swings long low kick forward",
+        "long low sweeping kick at shin height",
+        "leg retracts",
+        "return to crouching guard"
+      ]
+    },
+    {
+      "action": "golpe-2H",
+      "name": "Gancho",
+      "loop": false,
+      "poses": [
+        "deep crouch, left fist low",
+        "twist torso and load legs",
+        "left uppercut rises from crouch",
+        "left fist reaches high uppercut contact, body rises",
+        "elbow folds downward",
+        "settle into guard"
+      ]
+    },
+    {
+      "action": "golpe-3H",
+      "name": "Rasteira",
+      "loop": false,
+      "poses": [
+        "deep crouch",
+        "drop body low, left hand balancing",
+        "extend one leg straight forward along ground",
+        "maximum low sweep extension, support knee bent",
+        "sweeping leg retracts",
+        "return to crouch"
+      ]
+    },
+    {
+      "action": "golpe-6M",
+      "name": "Golpe de cima",
+      "loop": false,
+      "poses": [
+        "standing guard",
+        "raise left fist above shoulder",
+        "left arm arcs downward from overhead",
+        "downward fist contact at opponent shoulder height",
+        "arm retracts and body rises",
+        "guard restored"
+      ]
+    },
+    {
+      "action": "golpe-jL",
+      "name": "Aéreo leve",
+      "loop": false,
+      "poses": [
+        "airborne compact knees",
+        "left fist prepares",
+        "left jab in air at chest height",
+        "airborne jab extension",
+        "left arm retracts",
+        "compact aerial guard"
+      ]
+    },
+    {
+      "action": "golpe-jM",
+      "name": "Aéreo médio",
+      "loop": false,
+      "poses": [
+        "airborne knees bent",
+        "hip rotates toward opponent",
+        "one boot extends into airborne horizontal kick",
+        "full airborne side kick extension",
+        "knee folds back",
+        "airborne landing preparation"
+      ]
+    },
+    {
+      "action": "golpe-jH",
+      "name": "Aéreo forte",
+      "loop": false,
+      "poses": [
+        "airborne stamp held close",
+        "right stamp lifts high, knees bent",
+        "stamp driven diagonally downward ahead",
+        "heavy downward airborne stamp contact",
+        "stamp retracts",
+        "compact landing preparation"
+      ]
+    },
+    {
+      "action": "golpe-throw",
+      "name": "Agarrão",
+      "loop": false,
+      "poses": [
+        "left hand reaches forward, stamp secured in right",
+        "left hand grips an imagined lapel, no opponent",
+        "pull imaginary opponent close while body twists",
+        "pivot hips and drive left arm forward to throw",
+        "complete release with hand open",
+        "recover fighting guard"
+      ]
+    },
+    {
+      "action": "golpe-blindado",
+      "name": "Golpe blindado",
+      "loop": false,
+      "poses": [
+        "brace body low with crossed arms",
+        "load shoulder back, left elbow bent, stamp tucked",
+        "step and drive left shoulder and forearm forward",
+        "full armored shoulder strike extension",
+        "follow through then decelerate",
+        "return to guard"
+      ]
+    },
+    {
+      "action": "golpe-5S",
+      "name": "Carimbo de Decreto",
+      "loop": false,
+      "poses": [
+        "right stamp held near hip",
+        "raise stamp before chest, wrist cocked",
+        "right hand casts stamp forward releasing it",
+        "right arm fully outstretched and EMPTY after release",
+        "right arm retracts as stamp rematerializes in grip",
+        "return to stamp-holding guard"
+      ]
+    },
+    {
+      "action": "golpe-6S",
+      "name": "Cerca de Separação",
+      "loop": false,
+      "poses": [
+        "stamp raised at chest, left palm poised",
+        "right hand stamp turns downward",
+        "left hand points forcefully at ground ahead, right stamps downward in air",
+        "commanding stance pointing at ground, no fence baked into sprite",
+        "withdraw left arm and raise stamp",
+        "guard restored"
+      ]
+    },
+    {
+      "action": "golpe-2S",
+      "name": "Fiscalização de Mijo Suprema",
+      "loop": false,
+      "poses": [
+        "low stance, stamp close",
+        "right arm lifts stamp overhead",
+        "slam stamp downward while left hand commands ahead",
+        "forceful downward stamp posture, no cabin baked in",
+        "straighten while pulling stamp upward",
+        "return to guard"
+      ]
+    },
+    {
+      "action": "golpe-4S",
+      "name": "Veto",
+      "loop": false,
+      "poses": [
+        "deep crouch right stamp near waist. Free hand holds ONE small rectangular placard on a short wooden pole, the face shows six horizontal rainbow stripes RED ORANGE YELLOW GREEN BLUE VIOLET from top to bottom, with a bold RED prohibition circle and diagonal slash over the flag. Keep the sign face readable to camera, entirely inside the cell; placard at shoulder level. No lettering.",
+        "load legs with stamp under chest. Free hand holds ONE small rectangular placard on a short wooden pole, the face shows six horizontal rainbow stripes RED ORANGE YELLOW GREEN BLUE VIOLET from top to bottom, with a bold RED prohibition circle and diagonal slash over the flag. Keep the sign face readable to camera, entirely inside the cell; placard at shoulder level. No lettering.",
+        "rise upward with right stamp leading. Free hand holds ONE small rectangular placard on a short wooden pole, the face shows six horizontal rainbow stripes RED ORANGE YELLOW GREEN BLUE VIOLET from top to bottom, with a bold RED prohibition circle and diagonal slash over the flag. Keep the sign face readable to camera, entirely inside the cell; raise the placard beside the head while the stamp performs the rising strike. No lettering.",
+        "fully extended rising stamp uppercut overhead, legs lifting. Free hand holds ONE small rectangular placard on a short wooden pole, the face shows six horizontal rainbow stripes RED ORANGE YELLOW GREEN BLUE VIOLET from top to bottom, with a bold RED prohibition circle and diagonal slash over the flag. Keep the sign face readable to camera, entirely inside the cell; raise the placard beside the head while the stamp performs the rising strike. No lettering.",
+        "apex, right elbow bends as momentum slows. Free hand holds ONE small rectangular placard on a short wooden pole, the face shows six horizontal rainbow stripes RED ORANGE YELLOW GREEN BLUE VIOLET from top to bottom, with a bold RED prohibition circle and diagonal slash over the flag. Keep the sign face readable to camera, entirely inside the cell; bring the placard back beside the shoulder. No lettering.",
+        "descending compact recovery. Free hand holds ONE small rectangular placard on a short wooden pole, the face shows six horizontal rainbow stripes RED ORANGE YELLOW GREEN BLUE VIOLET from top to bottom, with a bold RED prohibition circle and diagonal slash over the flag. Keep the sign face readable to camera, entirely inside the cell; bring the placard back beside the shoulder. No lettering."
+      ],
+      "userRainbowPlacard": true
+    },
+    {
+      "action": "golpe-SA1",
+      "name": "Carimbaço — quatro contatos",
+      "loop": false,
+      "poses": [
+        "strong windup, right stamp lifted behind head",
+        "FIRST downward stamp strike at chest height",
+        "SECOND contact: strong horizontal stamp strike at chest height, elbow still slightly BENT, stamp and every fingertip end at most 80 percent across this cell, with a wide clear right border. Do not extend the stamp to or beyond the square cell boundary.",
+        "THIRD downward stamp strike, knees driven forward",
+        "FOURTH and final powerful low-forward stamp slam, wide planted stance",
+        "pull stamp back and recover guard"
+      ]
+    },
+    {
+      "action": "golpe-SA3",
+      "name": "Lei Seca de Gente — três contatos",
+      "loop": false,
+      "poses": [
+        "gather authority, stamp at chest and left palm open",
+        "cast left hand forward issuing command, right stamp poised",
+        "FIRST contact: forceful stamp command downward in front",
+        "SECOND contact: right stamp chops horizontally at chest height",
+        "THIRD FINAL IMPACT: body in a deep wide planted stance, torso bent strongly forward, stamp-holding arm drives DOWN and FORWARD, stamp base contacting an imaginary surface at knee height ahead of the body. Stamp MUST be BELOW the waist at the moment of impact, NOT raised overhead. Free hand counterbalances behind.",
+        "recover slowly, stamp lowered, smug stern expression"
+      ]
+    },
+    {
+      "action": "golpe-5S-turbo",
+      "name": "Carimbo de Decreto turbinado",
+      "loop": false,
+      "poses": [
+        "low dynamic stance, stamp drawn back",
+        "torso twists, stamp loaded behind shoulder",
+        "rapid powerful right-hand stamp release forward",
+        "stamp GONE from fully extended hand, energetic body followthrough",
+        "retract empty hand, stamp returns to grip",
+        "recover low guard"
+      ]
+    },
+    {
+      "action": "golpe-6S-turbo",
+      "name": "Cerca dupla turbinada",
+      "loop": false,
+      "poses": [
+        "stamp raised, left hand ready",
+        "right stamp commands near ground",
+        "FIRST command: left hand points down nearby",
+        "SECOND command: left hand points farther forward with strong lean",
+        "withdraw pointing arm and lift stamp",
+        "return to guard"
+      ]
+    },
+    {
+      "action": "dano-emocional",
+      "name": "A Pergunta — dano emocional",
+      "loop": false,
+      "poses": [
+        "arrogance collapses into startled expression",
+        "eyes widen, mouth opens, shoulders recoil",
+        "left hand clutches chest and stamp droops",
+        "knees buckle, head lowers in humiliation",
+        "left hand to forehead, stamp held limply",
+        "dazed defeated posture, ready to loop into tonto"
+      ]
+    }
+  ]
+}

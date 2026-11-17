@@ -223,3 +223,15 @@ mesmo modelo visual. Dano, alcance e IA permanecem iguais.
 - `node tools/smoke-zanata.mjs`: testa renderização no Chromium após a build.
 - `node tools/backup-zanata.mjs`: pacote local com fontes, tiras, retrato,
   código e SHA-256. GitHub é a cópia remota principal.
+
+## Pavanassi — sprites completos nos dois sentidos
+
+41 animações corporais por sentido e 16 efeitos separados: **98 tiras e 588
+quadros**, com alpha real e seis desenhos por tira. Inclui golpes, turbos,
+supers, carimbos, cerca, cabine, proibições e reação à Pergunta. Direita e
+esquerda têm desenhos próprios; retrato e ícone seguem o mesmo personagem.
+
+[Galeria e imagens originais](production/qa/pavanassi-v1.html) ·
+[Contrato e inventário](docs/PAVANASSI-ARTE-V1.md).
+`npm run test:pavanassi` verifica 20 cenas, ambos os sentidos e a decodificação
+das 98 tiras no Chromium. Informe o executável com `CHROMIUM_PATH`.

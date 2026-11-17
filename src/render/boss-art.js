@@ -2,6 +2,7 @@ import { drawChupetinhaPhone } from './chupetinha-art.js';
 import { SYS } from '../data/system.js';
 import { phoneBox, LIVE } from '../data/characters/chupetinha.js';
 import { drawStageProp } from './stage-packs.js';
+import { drawPavanassiLayer } from './pavanassi-art.js';
 
 const OUT = '#12080c';
 const GY = SYS.GROUND_Y;
@@ -240,6 +241,8 @@ export function drawBanStamp(c, f, labels) {
   c.save();
   c.translate(x, y);
   c.rotate(-0.12);
+  const icon = ({S:'proibido-especial',jump:'proibido-pulo',X:'proibido-super'})[ban.what];
+  if (icon) drawPavanassiLayer(c,icon,Math.floor((240-ban.t)/5)%6,{x:-165,y:0,w:84,h:84});
   c.strokeStyle = '#c8102e';
   c.lineWidth = 6;
   c.fillStyle = 'rgba(244,233,201,.92)';
