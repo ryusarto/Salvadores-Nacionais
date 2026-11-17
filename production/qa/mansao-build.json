@@ -1,0 +1,17 @@
+{
+  "baseMain": "91c877226e3502beb44d0f42374ab3101e92d916",
+  "spritePacks": 26,
+  "spriteReferences": 722,
+  "characterArt": "index preserved byte-for-byte from main; no sprite art changed",
+  "airportAssets": 41,
+  "mansionAssets": 30,
+  "mansionGround": {
+    "asset": "marmore",
+    "projection": "flat"
+  },
+  "airportGround": {
+    "asset": "asfalto",
+    "projection": "flat"
+  },
+  "htmlSHA256": "31b7294847986ee5b6b4f79b41d68ffca565f75883131d341452271e7da7bdca"
+}

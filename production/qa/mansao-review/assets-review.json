@@ -1,0 +1,305 @@
+{
+  "assets": 30,
+  "errors": [],
+  "strips": {
+    "lustre-balanco": [
+      {
+        "bounds": [
+          88,
+          20,
+          415,
+          468
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 20,
+        "opaqueFootY": 467
+      },
+      {
+        "bounds": [
+          109,
+          19,
+          436,
+          462
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 20,
+        "opaqueFootY": 461
+      },
+      {
+        "bounds": [
+          136,
+          19,
+          460,
+          446
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 20,
+        "opaqueFootY": 445
+      },
+      {
+        "bounds": [
+          118,
+          19,
+          444,
+          456
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 20,
+        "opaqueFootY": 455
+      },
+      {
+        "bounds": [
+          95,
+          20,
+          423,
+          460
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 20,
+        "opaqueFootY": 459
+      },
+      {
+        "bounds": [
+          87,
+          20,
+          415,
+          461
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 20,
+        "opaqueFootY": 459
+      }
+    ],
+    "cortinas-vento": [
+      {
+        "bounds": [
+          26,
+          19,
+          468,
+          451
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 20,
+        "opaqueFootY": 450
+      },
+      {
+        "bounds": [
+          26,
+          19,
+          469,
+          451
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 20,
+        "opaqueFootY": 450
+      },
+      {
+        "bounds": [
+          22,
+          19,
+          472,
+          451
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 20,
+        "opaqueFootY": 450
+      },
+      {
+        "bounds": [
+          26,
+          19,
+          468,
+          450
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 20,
+        "opaqueFootY": 449
+      },
+      {
+        "bounds": [
+          31,
+          19,
+          469,
+          451
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 20,
+        "opaqueFootY": 450
+      },
+      {
+        "bounds": [
+          31,
+          19,
+          469,
+          451
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 20,
+        "opaqueFootY": 450
+      }
+    ],
+    "fogo-lareira": [
+      {
+        "bounds": [
+          58,
+          223,
+          440,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 229,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          57,
+          164,
+          439,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 172,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          55,
+          120,
+          437,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 122,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          57,
+          141,
+          440,
+          480
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 146,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          57,
+          208,
+          439,
+          480
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 213,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          56,
+          244,
+          438,
+          480
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 250,
+        "opaqueFootY": 480
+      }
+    ],
+    "relogio-pendulo": [
+      {
+        "bounds": [
+          165,
+          31,
+          334,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 32,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          165,
+          32,
+          335,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 32,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          166,
+          32,
+          335,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 32,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          165,
+          31,
+          334,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 32,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          165,
+          31,
+          335,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 32,
+        "opaqueFootY": 480
+      },
+      {
+        "bounds": [
+          165,
+          31,
+          335,
+          481
+        ],
+        "edgePixels": 0,
+        "opaqueTopY": 32,
+        "opaqueFootY": 480
+      }
+    ]
+  },
+  "sourcePNGs": 19,
+  "curtainCenterAlpha": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "portraitReferenceSHA256": "b87d40547705466165f00218a741beeaf80307a80b5b8d9bf191bab592b0d939",
+  "verdict": "approved-for-static-assets-scope",
+  "runtimeBytes": 6222506,
+  "stripsCount": 4,
+  "framesCount": 24,
+  "manifestSHA256": "7abf76f363de5184ed44fb3cbcc5df1646ae9db2ac87f7f3bfa74895071756d1",
+  "coreRulesUnchanged": true,
+  "limitations": [
+    "Source PNGs inspected through crop/hash/alpha registration and selected rendered views; not exhaustive artistic inspection of all original pixels."
+  ],
+  "clockBaseCenters": [
+    250.0,
+    250.0,
+    250.0,
+    250.0,
+    250.0,
+    250.0
+  ]
+}

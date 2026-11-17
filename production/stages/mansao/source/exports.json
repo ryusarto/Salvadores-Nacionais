@@ -1,0 +1,779 @@
+{
+  "assets": {
+    "parede-bordo": {
+      "path": "layers/parede-bordo.webp",
+      "kind": "layer",
+      "frames": 1,
+      "bytes": 285740,
+      "sha256": "0c9293117ab3990c0e104d9604722945b5efddeb12667be1556c388f81c86e04",
+      "origin": "generated",
+      "source": "source/generated/parede-bordo.png",
+      "sourceCrop": [
+        0,
+        0,
+        1536,
+        488
+      ],
+      "width": 2600,
+      "height": 826,
+      "alpha": false
+    },
+    "marmore": {
+      "path": "ground/marmore.webp",
+      "kind": "ground",
+      "frames": 1,
+      "bytes": 304036,
+      "sha256": "bfcae6e65210c7d6fb92806bd581b7b51576f85e9106ab46664e343e484b3834",
+      "origin": "generated",
+      "source": "source/generated/marmore.png",
+      "sourceCrop": [
+        0,
+        240,
+        1536,
+        900
+      ],
+      "width": 2600,
+      "height": 610,
+      "alpha": false
+    },
+    "lambri": {
+      "path": "props/lambri.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 244978,
+      "sha256": "c8737f360759da118d34471673c26842b8b9489c519d319f6b2000fd16392d1c",
+      "origin": "generated",
+      "source": "source/generated/lambri.png",
+      "sourceCrop": [
+        19,
+        133,
+        2153,
+        595
+      ],
+      "width": 1600,
+      "height": 346,
+      "alpha": true
+    },
+    "porta-capangas": {
+      "path": "props/porta-capangas.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 295780,
+      "sha256": "0812e2c293eae67339bd865d488577371a25f846a2988c2296ab40f110d62847",
+      "origin": "generated",
+      "source": "source/generated/porta-capangas.png",
+      "sourceCrop": [
+        35,
+        68,
+        989,
+        1484
+      ],
+      "width": 690,
+      "height": 1024,
+      "alpha": true
+    },
+    "moldura-janela": {
+      "path": "props/moldura-janela.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 312438,
+      "sha256": "09baf06adb2dc6ab6514e30455ae15183b9b1dd157464a13c0ef94875bade8bc",
+      "origin": "generated",
+      "source": "source/generated/moldura-janela.png",
+      "sourceCrop": [
+        8,
+        5,
+        1527,
+        1008
+      ],
+      "width": 1200,
+      "height": 792,
+      "alpha": true
+    },
+    "vista-jardim": {
+      "path": "props/vista-jardim.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 459662,
+      "sha256": "7b3a33dfbc955d9b65cacd027f208c99dfdb4e68a3c9db8c75c73dae183eb3d1",
+      "origin": "generated",
+      "source": "source/generated/vista-jardim.png",
+      "sourceCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "width": 1200,
+      "height": 800,
+      "alpha": false
+    },
+    "sofa-bordo": {
+      "path": "props/sofa-bordo.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 179436,
+      "sha256": "2b17e8c9e15f9ec96af4f84cfa0131c9b240906d9fa5cd1a97da17a2e6ebabfc",
+      "origin": "generated",
+      "source": "source/generated/sofa-bordo.png",
+      "sourceCrop": [
+        0,
+        1,
+        1854,
+        835
+      ],
+      "width": 1024,
+      "height": 461,
+      "alpha": true
+    },
+    "mesa-telefone": {
+      "path": "props/mesa-telefone.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 141878,
+      "sha256": "e37dc7f20d05baa936d501e0d16091b45529765199d0ad56d1dba93ef53cb022",
+      "origin": "generated",
+      "source": "source/generated/mesa-telefone.png",
+      "sourceCrop": [
+        75,
+        103,
+        1176,
+        1174
+      ],
+      "width": 700,
+      "height": 681,
+      "alpha": true
+    },
+    "telefone-preto": {
+      "path": "props/telefone-preto.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 74576,
+      "sha256": "946ddaf7d9f0633bdd97e22a16fbc558cc7db39335f51e990edbda1cd8eacaff",
+      "origin": "generated",
+      "source": "source/generated/telefone-preto.png",
+      "sourceCrop": [
+        43,
+        28,
+        1494,
+        1000
+      ],
+      "width": 512,
+      "height": 343,
+      "alpha": true
+    },
+    "retrato-fujao": {
+      "path": "props/retrato-fujao.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 200044,
+      "sha256": "e29f46ada6ac199af4632a4ec5a8b04a182ae7b2c06752031710fc99b862c71a",
+      "origin": "generated",
+      "source": "source/generated/retrato-fujao.png",
+      "sourceCrop": [
+        57,
+        6,
+        1042,
+        1423
+      ],
+      "width": 534,
+      "height": 768,
+      "alpha": true
+    },
+    "sanca-dourada": {
+      "path": "props/sanca-dourada.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 139422,
+      "sha256": "7b1f2b2136b6780068c4fc193311687c6af47f287ac60bafe8fe99038d9406cf",
+      "origin": "generated",
+      "source": "source/generated/sanca-dourada.png",
+      "sourceCrop": [
+        14,
+        238,
+        2158,
+        483
+      ],
+      "width": 1600,
+      "height": 183,
+      "alpha": true
+    },
+    "palmeira-vaso": {
+      "path": "props/palmeira-vaso.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 216742,
+      "sha256": "e48fa9fbc2c7cf1b11968dcced5f4456d29fdc7d0ec6a94fbf64a0c9344ab976",
+      "origin": "generated",
+      "source": "source/generated/palmeira-vaso.png",
+      "sourceCrop": [
+        314,
+        18,
+        1192,
+        1005
+      ],
+      "width": 683,
+      "height": 768,
+      "alpha": true
+    },
+    "lareira-marmore": {
+      "path": "props/lareira-marmore.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 206674,
+      "sha256": "8792ea3f9c1d40a0423f8fd07391380ced8421ca0bda903b509a4401ed7e40fc",
+      "origin": "generated",
+      "source": "source/generated/lareira-marmore.png",
+      "sourceCrop": [
+        13,
+        139,
+        1360,
+        1032
+      ],
+      "width": 900,
+      "height": 597,
+      "alpha": true
+    },
+    "arandela": {
+      "path": "props/arandela.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 75656,
+      "sha256": "9172d5995e634f1026ff76b63904c3bf8204e8e5798d89181f720ea5720419f3",
+      "origin": "generated",
+      "source": "source/generated/arandela.png",
+      "sourceCrop": [
+        180,
+        18,
+        1360,
+        1003
+      ],
+      "width": 512,
+      "height": 427,
+      "alpha": true
+    },
+    "lustre-balanco": {
+      "path": "animations/lustre-balanco.webp",
+      "kind": "animation",
+      "frames": 6,
+      "bytes": 618316,
+      "sha256": "549e29729e5696cb3b590037d7bf5078f360abe292e8c1fd1d19e0d186aebb23",
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "crop": [
+        87,
+        19,
+        373,
+        449
+      ],
+      "frameBounds": [
+        [
+          88,
+          20,
+          415,
+          468
+        ],
+        [
+          109,
+          19,
+          436,
+          462
+        ],
+        [
+          136,
+          19,
+          460,
+          446
+        ],
+        [
+          118,
+          19,
+          444,
+          456
+        ],
+        [
+          95,
+          20,
+          423,
+          460
+        ],
+        [
+          87,
+          20,
+          415,
+          461
+        ]
+      ],
+      "frameHashes": [
+        "177c16dd2a3d0fcd2c5fdd94de686f0323c9e31974cb73da0b29261d0227e609",
+        "bb76281e1b4719009f067beb0c610977ae17ee0c446ab343f77cf8f65397c2a4",
+        "db07503ae0a091c6f47153dd4f23bec0f15d10c8f2397a99d68888b85f50a77e",
+        "4fbe1a1a04ca66b3e4fb7a7a62069364427eb256eb7e7332dcbef4eacd56d56a",
+        "00d6572488467a9edc8c3e5276ce76e9a9d2af5903e459f9744cb502ad0dd621",
+        "c921acc7447740f51826debc83aeaa2e26972f4968e003f86df3bca695ea35d9"
+      ],
+      "registrations": [
+        [
+          2,
+          -2
+        ],
+        [
+          0,
+          -3
+        ],
+        [
+          0,
+          -3
+        ],
+        [
+          1,
+          -5
+        ],
+        [
+          0,
+          -5
+        ],
+        [
+          0,
+          -5
+        ]
+      ],
+      "pivot": [
+        250,
+        20
+      ],
+      "registration": "fixed-upper-mount",
+      "fps": 4,
+      "origin": "generated",
+      "source": "source/generated/lustre-balanco.png",
+      "width": 3000,
+      "height": 500,
+      "alpha": true
+    },
+    "cortinas-vento": {
+      "path": "animations/cortinas-vento.webp",
+      "kind": "animation",
+      "frames": 6,
+      "bytes": 426494,
+      "sha256": "063156780c5592527419e811bc92af5978e0775e31281f28d4eb78f12dbe6950",
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "crop": [
+        22,
+        19,
+        450,
+        432
+      ],
+      "frameBounds": [
+        [
+          26,
+          19,
+          468,
+          451
+        ],
+        [
+          26,
+          19,
+          469,
+          451
+        ],
+        [
+          22,
+          19,
+          472,
+          451
+        ],
+        [
+          26,
+          19,
+          468,
+          450
+        ],
+        [
+          31,
+          19,
+          469,
+          451
+        ],
+        [
+          31,
+          19,
+          469,
+          451
+        ]
+      ],
+      "frameHashes": [
+        "44deb9a3c246f196a707a8944b3ca34da8f87dfe8b852abf70c28d0e82f8e775",
+        "1b66426a555dd33576fc1dd7764a4c13cf89eeabf750a39790b438355febd64d",
+        "03570e8b631a6167d84cff266421b8bfb9ae25b429d985ef59ec905e5b7b3868",
+        "c2f2bc9a86b55aa1cad52c56a19fe5b8ff887098e1449d3a65ccdb076c11e384",
+        "994b99c310f45346da9bcb9cec36dc7826c68de0ceffcf5578496d726b82ffcc",
+        "9d16dce0c8faa0030f891cacb7fc866b1d111a03937b584cdec4523de6c8a495"
+      ],
+      "registrations": [
+        [
+          -1,
+          -12
+        ],
+        [
+          0,
+          -12
+        ],
+        [
+          0,
+          -12
+        ],
+        [
+          -1,
+          -13
+        ],
+        [
+          0,
+          -13
+        ],
+        [
+          0,
+          -13
+        ]
+      ],
+      "pivot": [
+        250,
+        20
+      ],
+      "registration": "fixed-upper-mount",
+      "fps": 4,
+      "origin": "generated",
+      "source": "source/generated/cortinas-vento-v2.png",
+      "width": 3000,
+      "height": 500,
+      "alpha": true
+    },
+    "fogo-lareira": {
+      "path": "fx/fogo-lareira.webp",
+      "kind": "fx",
+      "frames": 6,
+      "bytes": 350976,
+      "sha256": "6e96d466a50e5bf53b35e74364ae479fc0b4286c55ea5be0d2cca81b997ecb56",
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "crop": [
+        55,
+        120,
+        385,
+        361
+      ],
+      "frameBounds": [
+        [
+          58,
+          223,
+          440,
+          481
+        ],
+        [
+          57,
+          164,
+          439,
+          481
+        ],
+        [
+          55,
+          120,
+          437,
+          481
+        ],
+        [
+          57,
+          141,
+          440,
+          480
+        ],
+        [
+          57,
+          208,
+          439,
+          480
+        ],
+        [
+          56,
+          244,
+          438,
+          480
+        ]
+      ],
+      "frameHashes": [
+        "b72a4f1f95ceb1596dda026fdb17271f298f3822191fa6177b6503fa5f6df603",
+        "c3d9522630dd66e9c790ed89965edd39fcfcbee24d689a9cad2dba6b8748d848",
+        "87956f97a6e7b20f724b54f3b24417f7cd855fa28541b09d0d7fd1fa0b03b707",
+        "8be80c1de96717337eeea59ccf3d36f57776ce030e55b3793674bd67d4b4b29c",
+        "e444ddfb2ef0b7995227060d946eb19c9c55805f778e7cc28c08a369ecd6bd0f",
+        "59c385d71a28696a3389561f3df2edb34b08b967c4eb38c0737144d721a3c25e"
+      ],
+      "registrations": [
+        [
+          0,
+          34
+        ],
+        [
+          0,
+          34
+        ],
+        [
+          0,
+          34
+        ],
+        [
+          0,
+          33
+        ],
+        [
+          0,
+          33
+        ],
+        [
+          0,
+          33
+        ]
+      ],
+      "pivot": [
+        250,
+        480
+      ],
+      "registration": "planted-base",
+      "fps": 4,
+      "origin": "generated",
+      "source": "source/generated/fogo-lareira.png",
+      "width": 3000,
+      "height": 500,
+      "alpha": true
+    },
+    "relogio-pendulo": {
+      "path": "animations/relogio-pendulo.webp",
+      "kind": "animation",
+      "frames": 6,
+      "bytes": 264500,
+      "sha256": "894831dab17f606d95828d313b12ec8d4c3d5ff2222b0cccd6d1540a851bb599",
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "crop": [
+        165,
+        31,
+        170,
+        450
+      ],
+      "frameBounds": [
+        [
+          165,
+          31,
+          334,
+          481
+        ],
+        [
+          165,
+          32,
+          335,
+          481
+        ],
+        [
+          166,
+          32,
+          335,
+          481
+        ],
+        [
+          165,
+          31,
+          334,
+          481
+        ],
+        [
+          165,
+          31,
+          335,
+          481
+        ],
+        [
+          165,
+          31,
+          335,
+          481
+        ]
+      ],
+      "frameHashes": [
+        "dee1ac5ecea8d08d86275387e4cec6353975560134d9034dd7dc95d228884cce",
+        "441f40c1c2e405b6dbc97dc209f135567ad4ef7a376bd4606e5d83da66fcc68b",
+        "34bc8b6cbde61e1b6ee926833554fad67f903965f97d5c99223f01e989cc11bb",
+        "e9a35cfd94d1efafd098b8ab20ac858b145ab35dc611ccc659b1b5416df44652",
+        "29f697ee7f33980572c8c131a6f28461482d19f3a2c874abbafa3cb813b7097c",
+        "fef034c29d0f2fc5d9cc947666e63f0534d21ec744fc1100968aa1fba03fc593"
+      ],
+      "registrations": [
+        [
+          -6,
+          9
+        ],
+        [
+          -3,
+          9
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          -6,
+          9
+        ],
+        [
+          -3,
+          9
+        ],
+        [
+          0,
+          9
+        ]
+      ],
+      "pivot": [
+        250,
+        480
+      ],
+      "registration": "planted-base",
+      "fps": 4,
+      "origin": "generated",
+      "source": "source/generated/relogio-pendulo.png",
+      "width": 3000,
+      "height": 500,
+      "alpha": true
+    },
+    "documentos": {
+      "path": "props/documentos.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 58750,
+      "sha256": "27f876ad9a78572786638205ea794f700a515b14d0cea84f5a1fd327cc629ab3",
+      "origin": "reused-banheiros",
+      "sourceManifest": "../banheiros/manifest.json",
+      "sourceAsset": "documentos",
+      "sourceSha256": "27f876ad9a78572786638205ea794f700a515b14d0cea84f5a1fd327cc629ab3",
+      "width": 512,
+      "height": 237,
+      "alpha": true
+    },
+    "prancheta": {
+      "path": "props/prancheta.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 69206,
+      "sha256": "ab616b3ddca301c0a6e06c49ffca7cccf249a2297100dbbc8cf18ddae4b95b6d",
+      "origin": "reused-banheiros",
+      "sourceManifest": "../banheiros/manifest.json",
+      "sourceAsset": "prancheta",
+      "sourceSha256": "ab616b3ddca301c0a6e06c49ffca7cccf249a2297100dbbc8cf18ddae4b95b6d",
+      "width": 340,
+      "height": 512,
+      "alpha": true
+    },
+    "legenda-retrato": {
+      "path": "graphics/legenda-retrato.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "bytes": 2758,
+      "sha256": "4a77a9039583bd89eca240e7d040bda9f81d12732007440155fc1bbf5172b349",
+      "origin": "typeset",
+      "text": "MEU FILHO",
+      "font": "ui/Bangers-Regular.ttf",
+      "width": 400,
+      "height": 85,
+      "alpha": false
+    },
+    "titulo": {
+      "path": "ui/titulo.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "bytes": 9736,
+      "sha256": "fee4439ab8846bd7bff33f37bb784aa0f4686e64a4224eca8ba8379b5f6bd6ab",
+      "origin": "typeset",
+      "text": "MANSÃO — PRISÃO DOMICILIAR",
+      "font": "ui/Bangers-Regular.ttf",
+      "width": 1200,
+      "height": 150,
+      "alpha": false
+    },
+    "ambiente-sala": {
+      "path": "audio/ambiente-sala.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 151339,
+      "sha256": "cf2443f882c9ab8ce5c213ea92a93f39b4a6bbb1dcdab3cccefb6f7cd722d6c0",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "cristais": {
+      "path": "audio/cristais.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 16146,
+      "sha256": "4c00de93c51287eb8eb5e7c2fe198b75c3b6fa0c9a54c5da42f37112f38acaa1",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "relogio": {
+      "path": "audio/relogio.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 15204,
+      "sha256": "2cbe10c0eb2807db966fa45c70d5de68fbaaebfd7d7e2aad564c990eccc3f6a7",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "trilha-intro": {
+      "path": "audio/trilha-intro.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 31730,
+      "sha256": "631123f73b8b3f6384436011eb58cf7b4d521ca0d180ef316a027b373e0ed7c5",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "trilha-loop": {
+      "path": "audio/trilha-loop.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 231729,
+      "sha256": "b3a0fa71f9fffebd5ea173be48db9cc5c1e2d49ed3d0977df660d52f682becb8",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "vento-jardim": {
+      "path": "audio/vento-jardim.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 152468,
+      "sha256": "c5d9153daa38464b1ee61ae1e859229839307a297f3f0d0f7a360643f48b5594",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "miniatura": {
+      "path": "ui/miniatura.webp",
+      "kind": "image",
+      "frames": 1,
+      "bytes": 152694,
+      "sha256": "c0a381ca899097b0ee14e9c271c8f6f582c1f07a1d9fb76276313da39d609318",
+      "origin": "derived-composition",
+      "width": 960,
+      "height": 540,
+      "alpha": false
+    },
+    "carregamento": {
+      "path": "ui/carregamento.webp",
+      "kind": "image",
+      "frames": 1,
+      "bytes": 533398,
+      "sha256": "001690bed3406b9e54b6d65d202137cbe448017de6f50544edf40598d381910b",
+      "origin": "derived-composition",
+      "width": 1920,
+      "height": 1080,
+      "alpha": false
+    }
+  },
+  "missing": []
+}

@@ -1,0 +1,223 @@
+{
+  "stage": "mansao",
+  "chapter": 5,
+  "boss": "pai-fujao",
+  "basis": [
+    "docs/MODO-HISTORIA.md",
+    "docs/PRODUCAO-ARTE.md",
+    "src/data/characters/pai-fujao.js"
+  ],
+  "groups": [
+    {
+      "slug": "parede-bordo",
+      "path": "layers/parede-bordo.webp",
+      "kind": "layer",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "marmore",
+      "path": "ground/marmore.webp",
+      "kind": "ground",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "lambri",
+      "path": "props/lambri.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "porta-capangas",
+      "path": "props/porta-capangas.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "moldura-janela",
+      "path": "props/moldura-janela.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "vista-jardim",
+      "path": "props/vista-jardim.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "sofa-bordo",
+      "path": "props/sofa-bordo.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "mesa-telefone",
+      "path": "props/mesa-telefone.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "telefone-preto",
+      "path": "props/telefone-preto.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "retrato-fujao",
+      "path": "props/retrato-fujao.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "sanca-dourada",
+      "path": "props/sanca-dourada.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "palmeira-vaso",
+      "path": "props/palmeira-vaso.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "lareira-marmore",
+      "path": "props/lareira-marmore.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "arandela",
+      "path": "props/arandela.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "lustre-balanco",
+      "path": "animations/lustre-balanco.webp",
+      "kind": "animation",
+      "frames": 6,
+      "origin": "generated"
+    },
+    {
+      "slug": "cortinas-vento",
+      "path": "animations/cortinas-vento.webp",
+      "kind": "animation",
+      "frames": 6,
+      "origin": "generated"
+    },
+    {
+      "slug": "fogo-lareira",
+      "path": "fx/fogo-lareira.webp",
+      "kind": "fx",
+      "frames": 6,
+      "origin": "generated"
+    },
+    {
+      "slug": "relogio-pendulo",
+      "path": "animations/relogio-pendulo.webp",
+      "kind": "animation",
+      "frames": 6,
+      "origin": "generated"
+    },
+    {
+      "slug": "documentos",
+      "path": "props/documentos.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "reused-banheiros"
+    },
+    {
+      "slug": "prancheta",
+      "path": "props/prancheta.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "reused-banheiros"
+    },
+    {
+      "slug": "legenda-retrato",
+      "path": "graphics/legenda-retrato.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "origin": "typeset"
+    },
+    {
+      "slug": "titulo",
+      "path": "ui/titulo.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "origin": "typeset"
+    },
+    {
+      "slug": "ambiente-sala",
+      "path": "audio/ambiente-sala.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "cristais",
+      "path": "audio/cristais.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "relogio",
+      "path": "audio/relogio.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "trilha-intro",
+      "path": "audio/trilha-intro.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "trilha-loop",
+      "path": "audio/trilha-loop.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "vento-jardim",
+      "path": "audio/vento-jardim.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "miniatura",
+      "path": "ui/miniatura.webp",
+      "kind": "image",
+      "frames": 1,
+      "origin": "derived-composition"
+    },
+    {
+      "slug": "carregamento",
+      "path": "ui/carregamento.webp",
+      "kind": "image",
+      "frames": 1,
+      "origin": "derived-composition"
+    }
+  ],
+  "pending": []
+}
