@@ -23,3 +23,18 @@ test('the shared registration route supports dense art and arbitrary independent
  assert.equal(options.frames,12);assert.equal(options.cellSize,768);assert.equal(options.maxDecoded,1);assert.equal(options.material,false);assert.equal(options.pinIdle,false);
  assert.equal(spriteOptions('fx-artist',[character]).frames,4,'existing FX keep their own legacy format');
 });
+
+test('standing reactions never switch to a crouching drawing just because the combo count changes',async()=>{
+ const {animFor}=await import('../../src/render/anim.js');
+ for(let comboHits=1;comboHits<=8;comboHits++){
+  assert.equal(animFor({ch,state:'hitstun',sf:4,comboHits,crouchBlock:false},0).name,'dano-alto');
+  assert.equal(animFor({ch,state:'hitstun',sf:4,comboHits,crouchBlock:true},0).name,'dano-baixo');
+ }
+});
+
+test('every current Franco move displays at least ten real drawings without extending combat duration',()=>{
+ for(const m of Object.values(ch.moves).flatMap(base=>[base,base.turbo].filter(Boolean))){
+  const seen=new Set(Array.from({length:m.total},(_,sf)=>Math.floor(spriteProgress({ch,state:'attack',move:m,sf},{p:0})*12)));
+  assert.ok(seen.size>=10,m.name+': '+seen.size+' drawings');
+ }
+});

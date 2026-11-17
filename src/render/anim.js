@@ -85,12 +85,13 @@ export function animFor(f, frame) {
   };
   if (f.ch?.spriteProfile === 'twelve-frame' && (f.state === 'prejump' || f.state === 'land')) return one('pulo');
   // Tiras de quatro fases ativadas pela ficha do personagem.
-  if (f.ch?.spriteStatePhases) {
+  if (f.ch?.spriteStatePhases || f.ch?.spriteProfile === 'twelve-frame') {
     const guard = f.y > 0 ? 'defesa-no-ar' : f.crouchBlock ? 'defesa-agachado' : 'defesa-em-pe';
     if (f.state === 'guard' || f.state === 'blockstun') return timed(guard, 12);
     if (f.state === 'air' && f.airGuard) return timed('defesa-no-ar', 12);
     if (['hitstun', 'frozen', 'thrown', 'slip'].includes(f.state)) {
-      return timed(f.crouchBlock ? 'dano-baixo' : f.comboHits % 2 ? 'dano-alto' : 'dano-baixo', 18);
+      const low = f.crouchBlock || (f.ch.spriteProfile !== 'twelve-frame' && !(f.comboHits % 2));
+      return timed(low ? 'dano-baixo' : 'dano-alto', 18);
     }
     if (f.state === 'air_hit' || (f.state === 'ko' && f.y > 0)) {
       const index = byVy([24, 6, -8, -24], f.vy);
