@@ -561,7 +561,7 @@ export function createApp(canvas, devices, opts = {}) {
     const sx = fx.shake ? (Math.random() - 0.5) * fx.shake * 2 : 0;
     const sy = fx.shake ? (Math.random() - 0.5) * fx.shake * 2 : 0;
     const stage = encounterStage(app);
-    if (drawStageArt(c, stage, app.cam)) { /* painted pack overrides temporary scenery */ }
+    if (drawStageArt(c, stage, app.cam, st.frame, { reducedEffects: preferences.reducedEffects })) { /* complete pack replaces temporary scenery */ }
     else if (stage === 'palco' || stage === 'banheiros') drawEventStage(c, app.layers, app.cam, app.frame, stage);
     else if (stage === 'aeroporto') drawAirportStage(c, app.cam, app.frame);
     else if (stage === 'mansao') drawMansionStage(c, app.cam, app.frame);

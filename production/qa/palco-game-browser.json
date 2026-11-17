@@ -1,0 +1,24 @@
+{
+  "info": {
+    "stage": {
+      "ready": true,
+      "loaded": 77,
+      "errors": []
+    },
+    "audio": {
+      "stage": "palco",
+      "available": true,
+      "active": false,
+      "muted": false,
+      "started": true,
+      "decoded": 6,
+      "gain": 0,
+      "errors": []
+    },
+    "foe": "chupetinha"
+  },
+  "errors": [],
+  "lazyTitle": "pass",
+  "pause": "pass",
+  "phone": "captured active with three signal bars"
+}

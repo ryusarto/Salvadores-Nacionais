@@ -1,0 +1,7 @@
+{
+  "id": "npc-torcedor-2",
+  "path": "production/stages/palco/source/generated/npc-torcedor-2.png",
+  "prompt": "Use case: illustration-story. Production sprite sheet for 2D side-view Brazilian fighting game Salvadores Nacionais, night benefit rap show at Belem waterfront. Rich hand-painted comic-book style, dark ink outlines, stable proportions, violet shadows, warm amber light from upper left and faint teal rim. TRUE transparent background. Exactly SIX distinct sequential animation frames in a precise THREE COLUMNS by TWO ROWS grid, equal 500x500 square logical cells; whole sheet 1500x1000 aspect 3:2. One action cycle of the SAME subject, one copy per cell, read left-to-right then next row. Each subject completely inside its own cell with ample clear gutters. Stable size, identical camera and foot/base anchor within each cell, feet/base at x250,y456 of each logical cell. No cell lines, numbers, letters, logos, scenery, floor, ground shadows, light beams or extra objects. Six genuinely different poses, clean seamless loop, do not overlap adjacent cells. Same happy middle-aged Brazilian woman with tan skin, dark hair tied up, teal sleeveless top, rust trousers and sneakers, cheering gently: six sequential poses raising an open hand, swaying and lowering it. Full body, no signs or props. Faces toward right.",
+  "sourceGeneratedPath": "generated_images/exec-273962c3-c8a4-4d65-996a-d435218c7528.png",
+  "frames": 6
+}

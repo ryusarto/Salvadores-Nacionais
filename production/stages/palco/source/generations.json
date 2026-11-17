@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ceu-noite",
+    "path": "production/stages/palco/source/generated/ceu-noite.png",
+    "prompt": "Use case: illustration-story. Asset type: game background layer, Salvadores Nacionais, stage 2 Belem waterfront concert at night. Generate ONLY a clean dark indigo-violet tropical night SKY, soft twilight amber band along bottom, subtle painted grain and understated Brazilian comic-book ink texture matching richly hand-painted 2D fighting-game backgrounds. Landscape 16:9. Entire frame sky, empty clear readable middle, very sparse tiny stars, smooth tonal gradients. No clouds, buildings, ground, water, moon, people, lettering, border, interface, watermark. This is an opaque sky background to compose behind separately generated objects. Rich professional painterly game environment quality."
+  },
+  {
+    "id": "tablado",
+    "path": "production/stages/palco/source/generated/tablado.png",
+    "prompt": "Use case: illustration-story. Production asset for Salvadores Nacionais, a 2D side-view fighting game, Belém waterfront rap concert at night. Rich hand-painted Brazilian comic-book environment, precise dark ink outlines, textured painted surfaces, restrained violet shadows, warm amber light from upper left and subtle cool teal rim on right. Orthographic near-frontal side-view scenery with tiny visible top surfaces, consistent eye-level horizon. Isolated ONE specified object, entirely inside frame with 8% padding, genuine transparent background. No ground plane, scenery, people, cast ground shadow, text, logo, watermark, labels or extra equipment. Professional detailed game sprite, not 3D rendering. A broad low raised rectangular concert stage deck, dark stained wood planks on black steel support framework, front view, landscape 3:1. Deck ONLY, no skirt, roof, stairs, truss, cables, instruments, lights or speakers."
+  },
+  {
+    "id": "trelica-vertical-1",
+    "path": "production/stages/palco/source/generated/trelica-vertical-1.png",
+    "prompt": "Use case: illustration-story. Production asset for Salvadores Nacionais, a 2D side-view fighting game, Belém waterfront rap concert at night. Rich hand-painted Brazilian comic-book environment, precise dark ink outlines, textured painted surfaces, restrained violet shadows, warm amber light from upper left and subtle cool teal rim on right. Orthographic near-frontal side-view scenery with tiny visible top surfaces, consistent eye-level horizon. Isolated ONE specified object, entirely inside frame with 8% padding, genuine transparent background. No ground plane, scenery, people, cast ground shadow, text, logo, watermark, labels or extra equipment. Professional detailed game sprite, not 3D rendering. One tall silver square-section vertical stage truss tower with triangular cross-bracing and a small solid steel footplate, entire tower visible, vertical 1:3 composition. No horizontal beam, lighting fixtures or background."
+  },
+  {
+    "id": "trelica-horizontal",
+    "path": "production/stages/palco/source/generated/trelica-horizontal.png",
+    "prompt": "Use case: illustration-story. Production asset for Salvadores Nacionais, a 2D side-view fighting game, Belém waterfront rap concert at night. Rich hand-painted Brazilian comic-book environment, precise dark ink outlines, textured painted surfaces, restrained violet shadows, warm amber light from upper left and subtle cool teal rim on right. Orthographic near-frontal side-view scenery with tiny visible top surfaces, consistent eye-level horizon. Isolated ONE specified object, entirely inside frame with 8% padding, genuine transparent background. No ground plane, scenery, people, cast ground shadow, text, logo, watermark, labels or extra equipment. Professional detailed game sprite, not 3D rendering. One long silver square-section horizontal stage truss beam with triangular cross-braces, front view, entire beam visible, landscape 3:1. Beam only; no towers or fixtures."
+  },
+  {
+    "id": "torre-som-1",
+    "path": "production/stages/palco/source/generated/torre-som-1.png",
+    "prompt": "Use case: illustration-story. Production asset for Salvadores Nacionais, a 2D side-view fighting game, Belém waterfront rap concert at night. Rich hand-painted Brazilian comic-book environment, precise dark ink outlines, textured painted surfaces, restrained violet shadows, warm amber light from upper left and subtle cool teal rim on right. Orthographic near-frontal side-view scenery with tiny visible top surfaces, consistent eye-level horizon. Isolated ONE specified object, entirely inside frame with 8% padding, genuine transparent background. No ground plane, scenery, people, cast ground shadow, text, logo, watermark, labels or extra equipment. Professional detailed game sprite, not 3D rendering. One tall black PA speaker tower consisting of three stacked rugged professional concert speaker cabinets, worn black grille cloth, subtle bolts, two circular woofer outlines and horn, isolated front three-quarter view facing slightly toward the right. Dark charcoal with amber highlights. No logos, cables, stand, separate subwoofer or ground."
+  }
+]
