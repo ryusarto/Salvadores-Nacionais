@@ -1,3 +1,4 @@
+import { drawChupetinhaAttack } from './chupetinha-art.js';
 import {drawZanataAttack,drawZanataStatus} from './zanata-art.js';
 import { SYS } from '../data/system.js';
 import { drawPacifier } from './boss-art.js';
@@ -399,12 +400,12 @@ export function drawFighter(c, f, frame) {
   limb(c, J.elbowF, J.handF, 28, sleeve || col.skin);
   blob(c, J.handF, 19, col.skin);
   weapon(c, J, f, ch);
-  } else if (ch.id !== 'zanata' && (look.weapon === 'whip' || look.weapon === 'chupeta')) whip(c, J, f, look.weapon);
+  } else if (!['zanata', 'chupetinha'].includes(ch.id) && (look.weapon === 'whip' || look.weapon === 'chupeta')) whip(c, J, f, look.weapon);
   c.shadowBlur = 0;
 
   // rastro do golpe; as novas tiras usam os efeitos separados de tinta.
   if (sprite) drawMajisStatus(c, f, frame);
-  const artEffect = sprite && (drawZanataAttack(c, f) || drawChapuhAttack(c, f) || drawMajisAttack(c, f) || drawTrunksAttack(c, f) || drawBelgaAttack(c, f) || drawRyuchiAttack(c, f) || drawCharacterFx(c, f));
+  const artEffect = sprite && (drawChupetinhaAttack(c, f) || drawZanataAttack(c, f) || drawChapuhAttack(c, f) || drawMajisAttack(c, f) || drawTrunksAttack(c, f) || drawBelgaAttack(c, f) || drawRyuchiAttack(c, f) || drawCharacterFx(c, f));
   if (!artEffect && f.state === 'attack' && f.move.weapon !== 'whip') {
     const kind = f.move.fx;
     for (const h of f.move.hits) {
