@@ -1,7 +1,9 @@
 import { ALTERNATE_PALETTES } from '../data/alternate-palettes.js';
 import { animFor, CELL, FOOT } from './anim.js';
 import { spriteProgress } from './sprite-timing.js';
-import { applyFighterMaterial } from './fighter-material.js';
+import { applyFighterMaterial, materialStrength, noteMaterialOffThread } from './fighter-material.js';
+import { keyOutPixels, recolorPixels } from './sprite-pixels.js';
+import { decodeStripOffThread, recolorStripOffThread, spriteWorkerAvailable } from './sprite-worker.js';
 
 /**
  * Leitor de sprites. Cada personagem pode registrar tiras de imagem com os
@@ -18,29 +20,55 @@ function trimDecoded(id, keep) {
   const limit = LIMITS[id] || Infinity;
   const oldest = loaded.filter(s => s.pinIdle === false || (s !== keep && s.name !== 'parado')).sort((a, b) => a.used - b.used);
   while (loaded.length > limit && oldest.length) {
-    const old = oldest.shift();
-    old.cv = null;
-    old.cvAlt = null;
-    old.cvAltOf = null;
-    old.framePalettes = null;
+    releaseDecoded(oldest.shift());
     loaded.pop();
   }
+}
+
+// ImageBitmaps vindos do worker liberam a memória na hora, sem esperar o coletor.
+const closeBitmap = cv => { if (typeof ImageBitmap !== 'undefined' && cv instanceof ImageBitmap) cv.close(); };
+function releaseDecoded(s) {
+  closeBitmap(s.cv);
+  if (s.cvAlt !== s.cv) closeBitmap(s.cvAlt);
+  s.cv = null;
+  s.cvAlt = null;
+  s.cvAltOf = null;
+  s.framePalettes = null;
+}
+
+function setDecoded(s, cv, w, h) {
+  s.cv = cv;
+  s.n = Math.max(1, Math.round(w / h));
+  s.size = h;
+  trimDecoded(s.id, s);
 }
 
 function loadStrip(s) {
   if (s.inactive || s.cv || s.failed) return Promise.resolve();
   if (s.loading) return s.loading;
   s.used = ++access;
-  s.loading = new Promise(resolve => {
+  s.loading = spriteWorkerAvailable() ? loadStripOffThread(s) : loadStripOnMainThread(s);
+  return s.loading;
+}
+
+// Caminho normal: decodificação, recorte e material no worker; a luta segue desenhando.
+function loadStripOffThread(s) {
+  const strength = s.material === false ? 0 : materialStrength(s.id);
+  return decodeStripOffThread(s.url, { strength, keyOut: !s.trueAlpha }).then(r => {
+    if (s.inactive) { closeBitmap(r.bitmap); return; }
+    if (r.material) noteMaterialOffThread();
+    setDecoded(s, r.bitmap, r.w, r.h);
+  }, () => loadStripOnMainThread(s)).finally(() => { s.loading = null; });
+}
+
+function loadStripOnMainThread(s) {
+  return new Promise(resolve => {
     const img = new Image();
     img.onload = () => {
       try {
         if (s.inactive) return;
         const pixels = s.trueAlpha ? img : keyOut(img);
-        s.cv = s.material === false ? pixels : applyFighterMaterial(pixels,s.id);
-        s.n = Math.max(1, Math.round(img.naturalWidth / img.naturalHeight));
-        s.size = img.naturalHeight;
-        trimDecoded(s.id, s);
+        setDecoded(s, s.material === false ? pixels : applyFighterMaterial(pixels,s.id), img.naturalWidth, img.naturalHeight);
       } catch {
         s.cv = null;
         s.failed = true;
@@ -52,7 +80,6 @@ function loadStrip(s) {
     img.onerror = () => { s.failed = true; s.loading = null; resolve(); };
     img.src = s.url;
   });
-  return s.loading;
 }
 
 function readyStrip(set, name) {
@@ -132,34 +159,12 @@ function keyOut(img) {
   const W = cv.width;
   const H = cv.height;
   const d = c.getImageData(0, 0, W, H);
-  const p = d.data;
-  const k = (H - 3) * W * 4 + 3 * 4; // canto de baixo à esquerda
-  if (p[k + 3] < 250) return cv; // já é transparente
-  const [r0, g0, b0] = [p[k], p[k + 1], p[k + 2]];
-  const TOL = 46;
-  const near = (i) => Math.abs(p[i] - r0) + Math.abs(p[i + 1] - g0) + Math.abs(p[i + 2] - b0) < TOL;
-  const seen = new Uint8Array(W * H);
-  const stack = [];
-  const push = (x, y) => {
-    const n = y * W + x;
-    if (x < 0 || y < 0 || x >= W || y >= H || seen[n]) return;
-    seen[n] = 1;
-    if (near(n * 4)) stack.push(n);
-  };
-  for (let x = 0; x < W; x++) { push(x, 0); push(x, H - 1); }
-  for (let y = 0; y < H; y++) { push(0, y); push(W - 1, y); }
-  const cell = H;
-  for (let x = cell; x < W; x += cell) for (let y = 0; y < H; y++) { push(x - 1, y); push(x, y); }
-  while (stack.length) {
-    const n = stack.pop();
-    p[n * 4 + 3] = 0;
-    const x = n % W;
-    const y = (n / W) | 0;
-    push(x + 1, y); push(x - 1, y); push(x, y + 1); push(x, y - 1);
-  }
-  c.putImageData(d, 0, 0);
+  if (keyOutPixels(d.data, W, H)) c.putImageData(d, 0, 0);
   return cv;
 }
+
+const DEFAULT_ALT = { rotation: 150, neutralHue: 205, saturation: .42 };
+const paletteFor = (id = '') => ALTERNATE_PALETTES[id] || ALTERNATE_PALETTES[id.replace(/-esquerda$/, '')] || DEFAULT_ALT;
 
 /**
  * Paleta alternativa para a luta espelhada (mesmo personagem dos dois lados).
@@ -167,27 +172,25 @@ function keyOut(img) {
  * ganham um tom azulado; contorno preto não muda. Feita uma vez por tira.
  */
 export function recolorAlt(px, id = '') {
-  const palette = ALTERNATE_PALETTES[id] || ALTERNATE_PALETTES[id.replace(/-esquerda$/, '')] || { rotation: 150, neutralHue: 205, saturation: .42 };
-  for (let i = 0; i < px.length; i += 4) {
-    if (px[i + 3] === 0) continue;
-    const r = px[i] / 255, g = px[i + 1] / 255, b = px[i + 2] / 255;
-    const max = Math.max(r, g, b), min = Math.min(r, g, b), l = (max + min) / 2, d = max - min;
-    if (l < 0.12) continue; // contorno e sombras profundas
-    let h = 0, s = 0;
-    if (d > 0) {
-      s = d / (1 - Math.abs(2 * l - 1));
-      h = max === r ? ((g - b) / d + 6) % 6 : max === g ? (b - r) / d + 2 : (r - g) / d + 4;
-      h *= 60;
-    }
-    if (s >= 0.15 && h >= 5 && h <= 50 && l >= 0.2 && l <= 0.88) continue; // pele, bege, marrom claro
-    let nh, ns;
-    if (s < 0.15) { nh = palette.neutralHue; ns = palette.saturation; } // branco, cinza e preto acinzentado: azulado
-    else { nh = (h + palette.rotation) % 360; ns = s; }
-    const c = (1 - Math.abs(2 * l - 1)) * ns, x = c * (1 - Math.abs((nh / 60) % 2 - 1)), m = l - c / 2;
-    const [r1, g1, b1] = nh < 60 ? [c, x, 0] : nh < 120 ? [x, c, 0] : nh < 180 ? [0, c, x] : nh < 240 ? [0, x, c] : nh < 300 ? [x, 0, c] : [c, 0, x];
-    px[i] = Math.round((r1 + m) * 255); px[i + 1] = Math.round((g1 + m) * 255); px[i + 2] = Math.round((b1 + m) * 255);
+  return recolorPixels(px, paletteFor(id));
+}
+
+/**
+ * Tira com a paleta do espelho. Bitmaps do worker são recoloridos no worker:
+ * até ficar pronta, devolve null e quem desenha repete o último quadro.
+ */
+function altSource(s) {
+  if (s.cvAlt && s.cvAltOf === s.cv) return s.cvAlt;
+  const offThread = !s.altOnMainThread && typeof ImageBitmap !== 'undefined' && s.cv instanceof ImageBitmap && spriteWorkerAvailable();
+  if (!offThread) return altCanvas(s);
+  if (s.altFor !== s.cv) {
+    const of = s.altFor = s.cv;
+    recolorStripOffThread(of, paletteFor(s.id), Math.round(s.size / 36)).then(r => {
+      if (s.cv === of) { if (s.cvAlt !== s.cv) closeBitmap(s.cvAlt); s.cvAlt = r.bitmap; s.cvAltOf = of; }
+      else closeBitmap(r.bitmap);
+    }, () => { s.altOnMainThread = true; }).finally(() => { if (s.altFor === of) s.altFor = null; });
   }
-  return px;
+  return null;
 }
 
 function altCanvas(s) {
@@ -267,28 +270,45 @@ export function prepareSprites(ids, names = ['parado', 'andar', 'golpe-5L', 'def
   for (const [id,set] of Object.entries(REG)) for (const s of Object.values(set)) {
     s.inactive = !active.has(id);
     if (s.inactive) {
-      s.cv = s.cvAlt = s.cvAltOf = null;
-      s.framePalettes = null;
+      releaseDecoded(s);
       s.posterCv = s.posterState = null;
     }
   }
+  // Baixa primeiro as tiras que toda luta usa, dos dois lados, e só depois o resto.
+  const later = [];
   for (const id of ids) {
     const set = REG[id];
     if (!set) continue;
-    const pending = Object.values(set).filter(s => s.lazy && !s.prefetched);
-    for (const s of pending) s.prefetched = true;
+    const pending = Object.values(set).filter(s => s.lazy && !s.prefetched).sort((a, b) => warmRank(a.name) - warmRank(b.name));
+    const warmAll = Object.values(set).some(s => s.warmAll);
+    const first = warmAll ? pending : pending.filter(s => warmRank(s.name) < WARM_FIRST.length);
+    const rest = warmAll ? [] : pending.filter(s => !first.includes(s));
+    for (const s of first) s.prefetched = true;
     for (const s of Object.values(set)) {
       s.posterFailed = false;
       if (s.posterUrl) jobs.push(loadPoster(s));
     }
-    const warming = cacheFiles(pending.map(s => s.url), id);
-    if (Object.values(set).some(s => s.warmAll)) jobs.push(warming);
+    const warming = cacheFiles(first.map(s => s.url), id);
+    if (warmAll) jobs.push(warming);
+    if (rest.length && !saveData()) later.push([id, rest]);
     // Uma nova preparação permite recuperar falhas temporárias, sem repetir a cada render.
     for (const s of Object.values(set)) if (s.failed) s.failed = false;
     for (const name of names) if (set[name]) jobs.push(loadStrip(set[name]));
   }
+  for (const [id, rest] of later) {
+    for (const s of rest) s.prefetched = true;
+    void cacheFiles(rest.map(s => s.url), id);
+  }
   return Promise.all(jobs).then(() => {});
 }
+
+// Ordem de aquecimento do cache: movimentação, defesa, dano e golpes normais.
+const WARM_FIRST = ['parado', 'andar', 'golpe-5L', 'defesa-em-pe', 'dano-alto', 'andar-tras', 'pulo', 'agachar',
+  'golpe-5M', 'golpe-5H', 'golpe-2L', 'golpe-2M', 'golpe-2H', 'golpe-jL', 'golpe-jM', 'golpe-jH',
+  'defesa-agachado', 'dano-baixo', 'dano-no-ar', 'caido', 'levantar', 'recuo'];
+const warmRank = name => { const i = WARM_FIRST.indexOf(name); return i < 0 ? WARM_FIRST.length : i; };
+// Modo de economia de dados: o restante é baixado só quando o golpe aparece.
+const saveData = () => !!globalThis.navigator?.connection?.saveData;
 
 /** Pacotes de sprite de um personagem: arte, efeitos e arte própria de cada lado. */
 export function spritePacksFor(ch) {
@@ -421,12 +441,17 @@ export function drawSprite(c, f, frame) {
   const last = LAST.get(f);
   if ((!pick || pick.waiting) && last?.set === set && last.s.cv) pick = last;
   if (!pick?.s) return false;
-  const { s, p, fx } = pick;
-  const i = pick.i ?? Math.min(s.n - 1, Math.max(0, Math.floor(p * s.n)));
-  const denseAlt = !pick.poster && f.alt && s.n >= 12 && s.material === false && typeof document !== 'undefined';
-  const source = pick.poster ? posterSource(s, f.alt) : denseAlt ? denseAltFrame(s, i) : f.alt ? altCanvas(s) : s.cv;
+  let i = pick.i ?? Math.min(pick.s.n - 1, Math.max(0, Math.floor(pick.p * pick.s.n)));
+  let denseAlt = !pick.poster && f.alt && pick.s.n >= 12 && pick.s.material === false && typeof document !== 'undefined';
+  let source = pick.poster ? posterSource(pick.s, f.alt) : denseAlt ? denseAltFrame(pick.s, i) : f.alt ? altSource(pick.s) : pick.s.cv;
+  // Paleta do espelho ainda no worker: mantém o último quadro já colorido.
+  // (Um ImageBitmap liberado fica com largura 0 e não pode mais ser desenhado.)
+  if (!source && last?.set === set && last.source?.width > 0) {
+    pick = last; i = last.i; denseAlt = last.denseAlt; source = last.source;
+  }
   if (!source) return false;
-  if (!pick.waiting) LAST.set(f, { set, s, i, p, fx, poster: pick.poster });
+  const { s, fx } = pick;
+  if (!pick.waiting && pick !== last) LAST.set(f, { set, s, i, p: pick.p, fx, poster: pick.poster, source, denseAlt });
   // correção por tira: algumas pranchas vieram desenhadas maiores ou menores
   const size = CELL * (f.ch.spriteScale || 1) * (f.ch.spriteStripScale?.[s.id]?.[s.name] || 1);
   c.save();
