@@ -7,8 +7,6 @@
  * { who: id do personagem, say: 'texto' }; who: null é o narrador.
  */
 
-import { BROTHER_RHYME } from './banter.js';
-
 /** Paradas da turnê, na ordem. `ready: false` aparece trancada no mapa. */
 export const CHAPTERS = [
   { id: 'ver-o-peso', n: 1, boss: 'zanata', bossName: 'CAPETA ZANATA', place: 'BELÉM — VER-O-PESO', ready: true },
@@ -20,172 +18,51 @@ export const CHAPTERS = [
   { id: 'inferno', n: 7, boss: 'djabo', bossName: 'DJABO', place: 'INFERNO', ready: true },
 ];
 
-/** As duas batalhas de rima de cada herói em cada capítulo, na ordem. */
-export const RIVALS = {
-  'ver-o-peso': {
-  franco: ['belga', 'chapuh'],
-  belga: ['majis', 'trunks'],
-  majis: ['ryuchi', 'belga'],
-  trunks: ['dney', 'mdep'],
-  ryuchi: ['majis', 'franco'],
-  mdep: ['trunks', 'dney'],
-  chapuh: ['franco', 'mdep'],
-  dney: ['chapuh', 'ryuchi'],
-  },
-  palco: {
-  franco: ['majis', 'dney'],
-  belga: ['ryuchi', 'franco'],
-  majis: ['mdep', 'chapuh'],
-  trunks: ['franco', 'belga'],
-  ryuchi: ['trunks', 'chapuh'],
-  mdep: ['majis', 'ryuchi'],
-  chapuh: ['dney', 'trunks'],
-  dney: ['belga', 'mdep'],
-  },
-  banheiros: {
-  franco: ['trunks', 'mdep'],
-  belga: ['chapuh', 'dney'],
-  majis: ['franco', 'dney'],
-  trunks: ['ryuchi', 'chapuh'],
-  ryuchi: ['mdep', 'belga'],
-  mdep: ['belga', 'franco'],
-  chapuh: ['majis', 'belga'],
-  dney: ['trunks', 'majis'],
-  },
-  aeroporto: {
-  franco: ['ryuchi', 'belga'],
-  belga: ['mdep', 'majis'],
-  majis: ['trunks', 'ryuchi'],
-  trunks: ['majis', 'dney'],
-  ryuchi: ['dney', 'majis'],
-  mdep: ['chapuh', 'trunks'],
-  chapuh: ['ryuchi', 'franco'],
-  dney: ['franco', 'chapuh'],
-  },
-  mansao: {
-  franco: ['majis', 'trunks'],
-  belga: ['dney', 'ryuchi'],
-  majis: ['chapuh', 'mdep'],
-  trunks: ['belga', 'chapuh'],
-  ryuchi: ['franco', 'trunks'],
-  mdep: ['dney', 'majis'],
-  chapuh: ['belga', 'dney'],
-  dney: ['mdep', 'franco'],
-  },
-  washington: {
-  franco: ['dney', 'mdep'],
-  belga: ['trunks', 'chapuh'],
-  majis: ['belga', 'franco'],
-  trunks: ['ryuchi', 'majis'],
-  ryuchi: ['chapuh', 'dney'],
-  mdep: ['franco', 'belga'],
-  chapuh: ['mdep', 'majis'],
-  dney: ['ryuchi', 'trunks'],
-  },
-  inferno: {
-  franco: ['chapuh', 'ryuchi'],
-  belga: ['franco', 'mdep'],
-  majis: ['dney', 'trunks'],
-  trunks: ['mdep', 'franco'],
-  ryuchi: ['belga', 'dney'],
-  mdep: ['ryuchi', 'chapuh'],
-  chapuh: ['trunks', 'majis'],
-  dney: ['majis', 'belga'],
-  },
-};
-
 /** Páginas de chegada de cada capítulo. {hero} é trocado pelo nome do herói escolhido. */
 export const OPENING = {
   'ver-o-peso': [
   'Num Brasil de outra realidade, os políticos são vilões com poderes. E usam esses poderes para oprimir o povo.',
   'Os Salvadores Nacionais têm poderes também. E um plano: acabar com a fome com o rap.',
   'Primeira parada da Turnê contra a Fome: Belém do Pará. Palco montado no Ver-o-Peso, comida para quem chegar.',
-  'Mas só um sobe primeiro no palco. A batalha de rima decide. {hero} entra na roda.',
+  'Os aliados cuidam do palco e das panelas. {hero} protege o primeiro evento quando a Capeta Zanata invade o Ver-o-Peso.',
   ],
   palco: [
   'Belém, segunda noite. A Zanata caiu, e o evento cresceu: agora o palco está montado de frente para o rio.',
   'As panelas não param. A fila da comida dobra a esquina. O som está no talo.',
   'Na frente do palco, um celular num pau de selfie já está filmando tudo. Alguém quer transformar o evento em conteúdo.',
-  'Antes do show, mais uma roda de rima. {hero} pega o microfone.',
+  'Os aliados mantêm a comida e o som funcionando. {hero} segue para enfrentar o Chupetinha na frente do palco.',
   ],
   banheiros: [
   'Belém, terceira noite. O evento virou a festa da cidade: tem gente de todo canto e de todo jeito comendo junto.',
   'Mas, perto dos banheiros químicos, aparecem placas novas, todas carimbadas: "POR DECRETO: CADA UM NO SEU LUGAR".',
   'Uma fila se forma. Um fiscal pede documento para quem quer usar o banheiro. Ninguém entende nada.',
-  'Ninguém vai ser barrado no próprio evento. Mas antes, a roda de rima. {hero} chega no microfone.',
+  'Ninguém vai ser barrado no próprio evento. {hero} vai direto até a cabine enquanto os aliados acolhem a população.',
   ],
   aeroporto: [
   'A passagem dizia "FUJÃO — SÓ IDA". Os Salvadores correm para o aeroporto antes que o avião saia.',
-  'No saguão, a segurança barra todo mundo. Sem cartão de embarque, ninguém passa para a pista.',
-  'Então o rap abre caminho: uma roda de rima no meio do saguão junta passageiro, piloto e até o pessoal da limpeza.',
-  'Lá fora, um avião particular já está com a escada encostada. {hero} entra na roda para chegar à pista.',
+  'No saguão, os aliados reúnem passageiros, pilotos e o pessoal da limpeza. O som mobiliza a população para abrir passagem.',
+  'Enquanto o grupo mantém o caminho aberto no saguão, {hero} avança para impedir a fuga.',
+  'Lá fora, um avião particular já está com a escada encostada. {hero} segue direto para a pista.',
   ],
   mansao: [
   'O endereço dos papéis leva a uma mansão com portão de ouro, câmeras em todo canto e seguranças de terno preto.',
   'Lá dentro mora o Pai do Fujão. Em prisão domiciliar, de tornozeleira, ele nunca sai de casa. Nem precisa: manda em tudo pelo telefone.',
   'Na frente do portão, os Salvadores montam o som. A roda de rima chama a cidade inteira para a calçada.',
-  'Quem vencer a roda entra primeiro. {hero} pega o microfone.',
+  'Os aliados organizam a comunidade diante do portão. {hero} entra na mansão para interromper as ordens do Pai do Fujão.',
   ],
   washington: [
   'Os Salvadores atravessam o continente. A turnê contra a fome chega a Washington, D.C.',
   'Na frente do palácio, as bandeiras estão rasgadas: o Laranjão taxou até o vento.',
   'Mas o rap atravessa fronteira sem passaporte. Gente do mundo inteiro aparece no gramado com panela, tambor e microfone.',
-  'A roda de rima começa em três línguas. {hero} pega o microfone.',
+  'Os aliados recebem a população e organizam as mesas no gramado. {hero} avança para enfrentar o Laranjão.',
   ],
   inferno: [
   'O gramado se abre e os Salvadores descem. Lá embaixo, fogo, correntes e um trono vazio.',
   'Todos os chefes vieram daqui: a Zanata, o Chupetinha, o Pavanassi, o Fujão, o pai dele e o Laranjão. Todos obedeciam ao mesmo dono.',
-  'No portão do inferno, as almas presas pela fome batem o pé no ritmo. A última roda de rima da turnê começa.',
-  'Quem vencer encara o Djabo. {hero} pega o microfone.',
+  'No portão do inferno, as almas presas pela fome batem o pé no ritmo. O último refrão da turnê começa.',
+  'Todos sustentam o refrão e abrem caminho até o trono. {hero} vai enfrentar o Djabo.',
   ],
 };
-
-/** Frase do narrador antes de cada batalha de rima, por capítulo. */
-export const RHYME_INTRO = {
-  'ver-o-peso': 'BATALHA DE RIMA — quem vencer sobe no palco.',
-  palco: 'BATALHA DE RIMA — quem vencer abre o show na frente do palco.',
-  banheiros: 'BATALHA DE RIMA — quem vencer arranca a primeira placa.',
-  aeroporto: 'BATALHA DE RIMA — no saguão do aeroporto, quem vencer abre caminho até a pista.',
-  mansao: 'BATALHA DE RIMA — na frente da mansão, quem vencer entra primeiro.',
-  washington: 'BATALHA DE RIMA — no gramado do palácio, quem vencer encara o Laranjão.',
-  inferno: 'BATALHA DE RIMA — no portão do inferno, a última roda da turnê.',
-};
-
-/** Frase de cada herói quando entra numa batalha de rima. */
-const HERO_LINE = {
-  franco: 'Sorri pra foto, que depois dessa rima você vira quadro.',
-  belga: 'Sobe o BPM. Quem não acompanha o ritmo, sai da roda.',
-  majis: 'Afinei a guitarra pra isso. Vai tremer o Ver-o-Peso.',
-  trunks: 'Tô com fome de vitória. E eu mordo.',
-  ryuchi: 'Um verso, um corte. Silêncio, por favor.',
-  mdep: 'Bota de grife, rima de rua. Pisa no chão comigo.',
-  chapuh: 'Já pichei teu nome no muro. Riscado.',
-  dney: 'Seis balas de rima no pente. Conta comigo.',
-};
-
-/** Resposta de cada um quando é o rival da batalha de rima. */
-const RIVAL_LINE = {
-  franco: 'Bonita pose. Pena que vai sair tremida.',
-  belga: 'Rima boa, mas o disco é meu. Vira o lado.',
-  majis: 'Fala alto, que a distorção tá ligada.',
-  trunks: 'Late mais alto. Meus cachorros não ouviram.',
-  ryuchi: 'Palavras demais. Minha lâmina responde.',
-  mdep: 'Essa rima não passa nem no meu Embalo.',
-  chapuh: 'Meu Pinscher rima melhor que você.',
-  dney: 'Tiro certeiro, rima certeira. Bora.',
-};
-
-/** Diálogo antes de cada batalha de rima. */
-export function rhymeTalk(hero, rival, chapterId = 'ver-o-peso') {
-  if (BROTHER_RHYME[hero] && BROTHER_RHYME[rival]) {
-    return [{ who: null, say: (RHYME_INTRO[chapterId] || RHYME_INTRO['ver-o-peso']) + ' Briga de irmão!' }, ...BROTHER_RHYME[hero]];
-  }
-  return [
-    { who: null, say: RHYME_INTRO[chapterId] || RHYME_INTRO['ver-o-peso'] },
-    { who: hero, say: HERO_LINE[hero] },
-    { who: rival, say: RIVAL_LINE[rival] },
-  ];
-}
 
 /** A Zanata invade o evento. */
 export const BOSS_TALK = {
@@ -261,7 +138,7 @@ export const CLOSING = {
   ],
   fujao: [
     'O Fujão cai na pista, a mala abre e voam papéis por todo lado. O avião vai embora vazio.',
-    'Os Salvadores acabam com ele ali mesmo. Fugir, ele não foge mais.',
+    'Os Salvadores entregam o Fujão à segurança do aeroporto. A fuga terminou; agora ele vai responder pelo que fez.',
     'Entre os papéis, ordens assinadas, carimbos e fotos do Chupetinha, da Zanata e do Pavanassi. Todas vindas do mesmo endereço: uma mansão.',
     'O dono da mansão está em prisão domiciliar. E continua mandando em tudo de dentro de casa. Próxima parada: a mansão do pai do Fujão.',
   ],

@@ -1,11 +1,11 @@
 // Mede o equilíbrio com CPU contra CPU: todos contra todos, dos dois lados.
-// Uso: node tools/balance.mjs [lutas por par]   (padrão 4)
+// Uso: node tools/balance.mjs [lutas por par] [--bosses] (padrão: só heróis, 4 seeds)
 import { HEROES, BOSSES } from '../src/data/characters/index.js';
 import { createMatch, step } from '../src/core/match.js';
 import { createBrain, aiInput } from '../src/core/ai.js';
 
 const N = +process.argv[2] || 4;
-const all = [...HEROES, ...BOSSES];
+const all = process.argv.includes('--bosses') ? [...HEROES, ...BOSSES] : [...HEROES];
 const wins = Object.fromEntries(all.map((c) => [c.id, 0]));
 const games = Object.fromEntries(all.map((c) => [c.id, 0]));
 for (const a of all) for (const b of all) {

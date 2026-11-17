@@ -1,6 +1,6 @@
 # Salvadores Nacionais
 
-Jogo de luta 2D para navegador, com 8 heróis e a chefona Capeta Zanata.
+Jogo de luta 2D para navegador, com 8 heróis e uma campanha de 7 chefes, da Capeta Zanata ao Djabo.
 
 **Jogue online:** https://ryusarto.github.io/Salvadores-Nacionais/
 
@@ -54,9 +54,11 @@ boneco, F3 muda o nível da CPU.
 ## Desenvolver
 
 ```bash
-npm install
+npm ci
 npm test        # testes das regras e das mecânicas
 npm run build   # gera dist/salvadores-nacionais.html
+npm run dev     # servidor HTTP e rebuild de src/; recarregue a página
+npm run check:campaign # 56 partidas: todos os heróis contra todos os chefes
 ```
 
 - `src/data/system.js` — todos os números globais (tempos, barras, dano).
@@ -69,6 +71,44 @@ npm run build   # gera dist/salvadores-nacionais.html
 - `docs/APRENDIZADOS.md` — mecânicas trazidas do estudo de um jogo de luta clássico.
 - `src/data/combos.js` — lista de combos; `node tools/combos-check.mjs` executa todos.
 - `tools/slice-sheet.py` — recorta uma prancheta de sprites em tiras do jogo.
+
+## História e aprendizado
+
+A campanha começa **diretamente contra a Capeta Zanata**, sem enfrentar aliados.
+Cada Salvador percorre os sete capítulos: Zanata → Chupetinha → Pavanassi →
+Fujão → Pai do Fujão → Laranjão → Djabo. Os outros Salvadores ajudam nos
+shows, nas cozinhas e na mobilização da população. Os duelos entre heróis
+continuam disponíveis no Versus.
+
+Há checkpoint por confronto, progresso por herói e galeria de finais. Saves
+antigos mantêm os capítulos concluídos; checkpoints antigos de duelos entre
+aliados são descartados. O Djabo começa cada round na forma política e se
+transforma ao perder a primeira barra.
+
+**Aprender a lutar** ensina movimento, defesa, combo básico e combo aéreo.
+Etapas puladas são registradas separadamente das cumpridas. No celular, os
+menus aceitam toque direto; a luta pausa ao girar para retrato ou interromper
+a janela. Depois, escolha Continuar. O Treino oferece botões para mudar
+boneco, CPU, caixas e reiniciar; há botão próprio de agarrão e Questionar
+quando a cabine do Pavanassi está ativa.
+
+Em **Opções**, ajuste posição/tamanho dos botões e reduza tremor e clarões
+de tela. Essa opção não remove todos os efeitos embutidos nas artes.
+
+## Validação e produção
+
+- `npm test`: regras, campanha, saves, resets e contratos de arte.
+- `npm run check:campaign`: verifica os 56 encontros possíveis no motor; não substitui playtest humano.
+- `node tools/balance.mjs 4`: torneio entre heróis; `--bosses` inclui chefes assimétricos.
+- `npm run test:browser`: smoke em Chromium, com capturas em `artifacts/smoke/`.
+  Requer Chromium instalado; use `CHROMIUM_PATH` para informar o executável.
+  O teste usa a porta 8767 e encerra somente seu próprio servidor.
+- `npm run dev -- --port=8766`: porta alternativa. Não há hot reload; recarregue após o rebuild.
+
+[História atual](docs/MODO-HISTORIA.md) · [Fila e contrato de arte](docs/PRODUCAO-ARTE.md) ·
+[Atualizações de direção](docs/ATUALIZACOES-DIRECAO.md).
+As artes finais de chefes e das arenas posteriores continuam em produção.
+Palco e banheiros têm variações funcionais provisórias; não são cenários finais pintados.
 
 ## Contribuir
 

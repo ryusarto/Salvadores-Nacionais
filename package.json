@@ -8,7 +8,9 @@
   "scripts": {
     "test": "node --test tests/unit/*.test.js",
     "build": "node tools/build.mjs --external-assets --min",
-    "dev": "node tools/build.mjs --serve"
+    "dev": "node tools/build.mjs --serve",
+    "test:browser": "npm run build && node tools/smoke-browser.mjs",
+    "check:campaign": "node tools/campaign-check.mjs"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,7 @@
   "homepage": "https://github.com/ryusarto/salvadores-nacionais#readme",
   "devDependencies": {
     "esbuild": "^0.28.2",
+    "playwright-core": "1.56.1",
     "sharp": "^0.35.5"
   },
   "type": "module",

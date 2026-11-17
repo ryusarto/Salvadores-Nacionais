@@ -90,14 +90,21 @@ Mala e Muralha). Zerou a vida, ele vira **o Demônio** com a vida cheia: Trident
 Coluna do Inferno (com aviso no chão) e Mergulho. **Inferno Nacional** (3 barras): fogo no chão inteiro,
 menos um trecho seguro.
 
-## Fora desta build
+## Escopo integrado e produção pendente
 
-Sprites finais, cenários pintados, música e vozes, os outros 6 chefes, dois
-jogadores no mesmo teclado.
+A História enfrenta apenas os sete chefes, começando diretamente na Zanata.
+Não há batalhas contra aliados na campanha. Eles colaboram nos eventos e na
+mobilização; confrontos entre heróis permanecem no Versus. Há checkpoints
+por encontro, galeria de finais, tutorial e menus de toque.
+
+Os oito heróis têm sprites integrados. Chefes e quatro arenas posteriores
+continuam com arte provisória; palco e banheiros têm variações funcionais.
+A fila para o designer está em `docs/PRODUCAO-ARTE.md`. Vozes, acabamento
+musical por arena e dois jogadores no mesmo teclado permanecem fora do escopo atual.
 
 ## Pendências conhecidas
 
-- O equilíbrio entre personagens só foi medido com CPU contra CPU: Dney vence
-  demais nessa medida. Precisa de teste com pessoas.
+- O equilíbrio entre personagens só foi medido com CPU contra CPU: Chapuh e Dney tiveram os melhores resultados no torneio inicial dessa medida;
+  o resultado também depende da IA. Precisa de teste com pessoas.
 - A sensação no controle (tempo de resposta, peso dos golpes) ainda não foi
   avaliada por um jogador.

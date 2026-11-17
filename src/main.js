@@ -5,7 +5,9 @@ import { setStageImage } from './render/stage.js';
 import { loadBelemStage, belemStageStatus } from './render/belem-stage.js';
 import { configureStageAudio, stageAudioStatus, sfx } from './ui/audio.js';
 import { createTouch } from './ui/touch.js';
-import mdep from './data/characters/mdep.js';
+import {HEROES, BOSSES} from './data/characters/index.js';
+import {spriteOptions} from './render/sprite-profiles.js';
+import {loadStageArt} from './render/stage-packs.js';
 import {configureFighterMaterial,fighterMaterialStatus} from './render/fighter-material.js';
 import {loadComicUi,comicUiStatus} from './render/comic-ui.js';
 
@@ -27,6 +29,8 @@ function fit() {
 addEventListener('resize', fit);
 addEventListener('touchstart', () => setTimeout(fit, 50), { once: true, passive: true });
 fit();
+touch.bind(app);
+app.onRender = () => touch.sync();
 window.__app = app; // acesso para testes automáticos
 window.__comicUiStatus=comicUiStatus;
 const uiReady=window.__COMIC_UI?loadComicUi(window.__COMIC_UI):Promise.resolve();
@@ -38,8 +42,10 @@ window.__stageStatus = belemStageStatus;
 window.__stageAudioStatus = stageAudioStatus;
 if (belemPack && q.get('stage') !== 'off') {
   loadBelemStage(belemPack);
-  configureStageAudio(belemPack);
+  // Each arena selects its own registered audio pack.
 }
+for (const [id, pack] of Object.entries(window.__STAGEPACKS || {})) configureStageAudio(pack, id);
+void loadStageArt(window.__STAGEPACKS || {});
 const belem = (window.__STAGES || {}).belem;
 if (!belemPack && belem && q.get('stage') !== 'off') {
   const img = new Image();
@@ -49,15 +55,7 @@ if (!belemPack && belem && q.get('stage') !== 'off') {
 const soundButton=document.getElementById('sound');
 soundButton?.addEventListener('click',()=>{const muted=sfx.toggleMute();soundButton.textContent=muted?'SOM: DESLIGADO':'SOM: LIGADO';soundButton.setAttribute('aria-pressed',String(muted));});
 Promise.all(Object.entries(packs).map(([id, sheets]) => {
-  const tenFrame = id === 'mdep' && mdep.spriteProfile === 'ten-frame';
-  const effects = id.startsWith('fx-') || id.endsWith('-fx');
-  const sixFrame = ['trunks', 'trunks-fx', 'belga', 'belga-fx'].includes(id) || id.startsWith('ryuchi');
-  return registerSprites(id, sheets, {
-    lazy: true, maxDecoded: tenFrame ? 8 : effects ? 4 : 6,
-    trueAlpha: tenFrame || sixFrame, frames: tenFrame ? 10 : sixFrame ? 6 : 4, cellSize: sixFrame ? 500 : tenFrame ? 768 : undefined,
-    // Nada é baixado aqui: a tela de versus prepara só os dois lutadores (prepareSprites).
-    preload: [], prefetch: false,
-  });
+  return registerSprites(id, sheets, spriteOptions(id, [...HEROES, ...BOSSES]));
 })).then(()=>uiReady).then(() => {
   document.getElementById('loading')?.remove();
   app.run();

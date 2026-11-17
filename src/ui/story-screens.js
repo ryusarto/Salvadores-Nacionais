@@ -1,3 +1,7 @@
+import {drawEventStage} from '../render/event-stage.js';
+import {buildStage} from '../render/stage.js';
+import {drawStageArt} from '../render/stage-packs.js';
+import {encounterStage} from '../data/stages.js';
 import { ALL, HEROES } from '../data/characters/index.js';
 import { CHAPTERS } from '../data/story.js';
 import { COMIC as P, comicBackground, comicPanel, comicText, comicMenuItem } from '../render/comic-ui.js';
@@ -8,7 +12,8 @@ import { drawWashingtonStage } from '../render/washington-stage.js';
 import { drawInfernoStage } from '../render/inferno-stage.js';
 
 /** Cenários próprios de chefes, desenhados em código: nome e função de desenho. */
-export const BOSS_STAGES = { aeroporto: ['AEROPORTO', drawAirportStage], mansao: ['MANSÃO', drawMansionStage], washington: ['WASHINGTON, D.C.', drawWashingtonStage], inferno: ['INFERNO', drawInfernoStage] };
+let eventLayers;
+export const BOSS_STAGES = { palco: ['BELÉM — FRENTE DO PALCO', (c, cam, f) => drawEventStage(c, eventLayers ??= buildStage(), cam, f, 'palco')], banheiros: ['BELÉM — BANHEIROS QUÍMICOS', (c, cam, f) => drawEventStage(c, eventLayers ??= buildStage(), cam, f, 'banheiros')], aeroporto: ['AEROPORTO', drawAirportStage], mansao: ['MANSÃO', drawMansionStage], washington: ['WASHINGTON, D.C.', drawWashingtonStage], inferno: ['INFERNO', drawInfernoStage] };
 import { portrait, footer } from './comic-screens.js';
 import { currentChapter, currentFight, talkLines, nextChapter, tourComplete } from './story.js';
 
@@ -205,7 +210,7 @@ function pages(c, a, closing) {
   figure(c, who, 20, 190, 640, 853, who === hero ? 1 : -1);
   // quadro do cenário
   comicPanel(c, 735, 190, 1110, 470, P.ink, 18, 0);
-  if (!drawStageThumb(c, boss, 760, 205, 1060, 440) && !drawBelemPresentation(c, 'miniatura', 760, 205, 1060, 440)) {
+  if (!drawStageThumb(c, {stage:encounterStage(a)}, 760, 205, 1060, 440) && !drawBelemPresentation(c, 'miniatura', 760, 205, 1060, 440)) {
     comicText(c, ch.place, 1290, 425, 60, P.paper, 'center', 1000);
   }
   if (closing && ch.boss === 'pavanassi' && run.page >= 1) drawPrideBunting(c, 760, 205, 1060, a.frame);
@@ -264,7 +269,7 @@ function map(c, a) {
   } else {
     run.fights.forEach((f, i) => {
       const foe = ALL[f.foe];
-      const label = f.kind === 'boss' ? `CHEFE: ${foe.name}` : `BATALHA DE RIMA ${f.n}: ${shortName(foe).toUpperCase()}`;
+      const label = `CHEFE: ${foe.name}`;
       const mark = i < run.idx ? '✓' : i === run.idx ? '▶' : '·';
       comicText(c, `${mark}  ${label}`, 190, 810 + i * 56, 36, i < run.idx ? P.muted : i === run.idx ? P.paper : P.muted, 'left', 1560);
     });
@@ -282,8 +287,7 @@ function talk(c, a) {
   const hero = heroOf(a);
   const foe = ALL[f.foe];
   const ch = currentChapter(run);
-  if (f.kind === 'boss') banner(c, `CHEFE — ${foe.name}`, ch.place);
-  else banner(c, `BATALHA DE RIMA ${f.n} / ${run.fights.length - 1}`, ch.place);
+  banner(c, `CHEFE — ${foe.name}`, ch.place);
   const speaking = (ch_) => line.who === ch_.id;
   for (const [ch_, x, face] of [[hero, -20, 1], [foe, 1260, -1]]) {
     c.save();
@@ -341,7 +345,7 @@ export function drawStageThumb(c, ch, x, y, w, h) {
   c.clip();
   c.translate(x, y);
   c.scale(w / 1920, h / 1080);
-  stage[1](c, 680, 0);
+  if (!drawStageArt(c, ch.stage, 680)) stage[1](c, 680, 0);
   c.restore();
   return true;
 }
@@ -352,7 +356,7 @@ export const storyPlace = (a) => currentChapter(a.story).place;
 /** Selo na tela de versus mostrando em que ponto da turnê a luta está. */
 export function drawStoryVsTag(c, a) {
   const f = currentFight(a.story);
-  const label = f.kind === 'boss' ? 'CHEFE DA TURNÊ' : `BATALHA DE RIMA ${f.n}`;
+  const label = 'CHEFE DA TURNÊ';
   c.save();
   c.translate(W / 2, 640);
   c.rotate(-0.05);
