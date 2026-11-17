@@ -83,6 +83,7 @@ export function animFor(f, frame) {
     const p = Math.max(0, Math.min(0.999, f.sf / duration));
     return { name, p, index: Math.floor(p * 4) };
   };
+  if (f.ch?.spriteProfile === 'twelve-frame' && (f.state === 'prejump' || f.state === 'land')) return one('pulo');
   // Tiras de quatro fases ativadas pela ficha do personagem.
   if (f.ch?.spriteStatePhases) {
     const guard = f.y > 0 ? 'defesa-no-ar' : f.crouchBlock ? 'defesa-agachado' : 'defesa-em-pe';

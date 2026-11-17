@@ -16,7 +16,7 @@ function trimDecoded(id, keep) {
   const set = REG[id];
   const loaded = Object.values(set).filter(s => s.lazy && s.cv);
   const limit = LIMITS[id] || Infinity;
-  const oldest = loaded.filter(s => s !== keep && s.name !== 'parado').sort((a, b) => a.used - b.used);
+  const oldest = loaded.filter(s => s.pinIdle === false || (s !== keep && s.name !== 'parado')).sort((a, b) => a.used - b.used);
   while (loaded.length > limit && oldest.length) {
     const old = oldest.shift();
     old.cv = null;
@@ -27,16 +27,18 @@ function trimDecoded(id, keep) {
 }
 
 function loadStrip(s) {
-  if (s.cv || s.failed) return Promise.resolve();
+  if (s.inactive || s.cv || s.failed) return Promise.resolve();
   if (s.loading) return s.loading;
+  s.used = ++access;
   s.loading = new Promise(resolve => {
     const img = new Image();
     img.onload = () => {
       try {
-        s.cv = applyFighterMaterial(s.trueAlpha ? img : keyOut(img),s.id);
+        if (s.inactive) return;
+        const pixels = s.trueAlpha ? img : keyOut(img);
+        s.cv = s.material === false ? pixels : applyFighterMaterial(pixels,s.id);
         s.n = Math.max(1, Math.round(img.naturalWidth / img.naturalHeight));
         s.size = img.naturalHeight;
-        s.used = ++access;
         trimDecoded(s.id, s);
       } catch {
         s.cv = null;
@@ -60,23 +62,63 @@ function readyStrip(set, name) {
   return s;
 }
 
-// Warm the browser's compressed-file cache without retaining decoded atlases.
+// Compressed cache warming is bounded and can be awaited by dense animation packs.
 const cacheQueue = [];
 let cacheWorkers = 0;
-function cacheFiles(urls) {
-  if (typeof fetch !== 'function') return;
-  cacheQueue.push(...urls);
+function cacheFiles(urls, id) {
+  if (typeof fetch !== 'function') return Promise.resolve();
+  const jobs = urls.map(url => new Promise(resolve => cacheQueue.push({ url, id, resolve })));
   while (cacheWorkers < 3 && cacheQueue.length) {
     cacheWorkers++;
     void (async () => {
       try {
         while (cacheQueue.length) {
-          const url = cacheQueue.shift();
-          try { const response = await fetch(url, { cache: 'force-cache' }); if (response.ok) await response.arrayBuffer(); } catch { /* Drawing retains the existing fallback on load errors. */ }
+          const job = cacheQueue.shift();
+          try {
+            const strips = Object.values(REG[job.id] || {});
+            if (strips.length && strips.every(s => s.inactive)) {
+              for (const s of strips) if (s.url === job.url) s.prefetched = false;
+              continue;
+            }
+            const response = await fetch(job.url, { cache: 'force-cache' });
+            if (response.ok) await response.arrayBuffer();
+          } catch { /* The image loader can retry independently. */ }
+          finally { job.resolve(); }
         }
       } finally { cacheWorkers--; }
     })();
   }
+  return Promise.all(jobs).then(() => {});
+}
+
+function loadPoster(s) {
+  if (s.inactive || !s.posterUrl || s.posterCv || s.posterFailed) return Promise.resolve();
+  if (s.posterLoading) return s.posterLoading;
+  s.posterLoading = new Promise(resolve => {
+    const img = new Image();
+    img.onload = () => {
+      try {
+        if (s.inactive) return;
+        s.posterCv = s.material === false ? img : applyFighterMaterial(img,s.id);
+        s.posterState = null;
+      } catch { s.posterFailed = true; }
+      finally { s.posterLoading = null; resolve(); }
+    };
+    img.onerror = () => { s.posterFailed = true; s.posterLoading = null; resolve(); };
+    img.src = s.posterUrl;
+  });
+  return s.posterLoading;
+}
+
+function posterSource(s, alt) {
+  if (!alt) return s.posterCv;
+  s.posterState ??= { cv: s.posterCv, id: s.id, size: s.size };
+  s.posterState.used = ++access;
+  const output = altCanvas(s.posterState);
+  const older = Object.values(REG[s.id]).filter(p => p !== s && p.posterState?.cvAlt)
+    .sort((a,b) => a.posterState.used - b.posterState.used);
+  while (older.length > 3) older.shift().posterState = null;
+  return output;
 }
 
 /** Remove o fundo liso de uma tira: apaga, a partir das bordas, a cor do canto. */
@@ -124,7 +166,7 @@ function keyOut(img) {
  * ganham um tom azulado; contorno preto não muda. Feita uma vez por tira.
  */
 export function recolorAlt(px, id) {
-  const palette = ALTERNATE_PALETTES[id] || { rotation: 150, neutralHue: 205, saturation: .42 };
+  const palette = ALTERNATE_PALETTES[id] || ALTERNATE_PALETTES[id.replace(/-esquerda$/, '')] || { rotation: 150, neutralHue: 205, saturation: .42 };
   for (let i = 0; i < px.length; i += 4) {
     if (px[i + 3] === 0) continue;
     const r = px[i] / 255, g = px[i + 1] / 255, b = px[i + 2] / 255;
@@ -183,11 +225,11 @@ export function registerSprites(id, sheets, options = {}) {
   LIMITS[id] = options.maxDecoded || Infinity;
   const preload = new Set(options.preload || ['parado']);
   for (const [name, url] of Object.entries(sheets)) {
-    REG[id][name] = { id, name, url, n: options.frames || 1, size: options.cellSize || CELL, cv: null, lazy: !!options.lazy, trueAlpha: !!options.trueAlpha, used: 0 };
+    REG[id][name] = { id, name, url, n: options.frames || 1, size: options.cellSize || CELL, cv: null, lazy: !!options.lazy, trueAlpha: !!options.trueAlpha, used: 0, inactive: false, pinIdle: options.pinIdle !== false, material: options.material !== false, warmAll: !!options.warmAll, posterUrl: options.posters?.[name] };
   }
   if (options.lazy && options.prefetch !== false) {
     for (const s of Object.values(REG[id])) s.prefetched = true;
-    void cacheFiles(Object.values(sheets));
+    void cacheFiles(Object.values(sheets), id);
   }
   return Promise.all(Object.values(REG[id]).filter(s => !options.lazy || preload.has(s.name)).map(loadStrip));
 }
@@ -201,12 +243,25 @@ export function registerSprites(id, sheets, options = {}) {
  */
 export function prepareSprites(ids, names = ['parado', 'andar', 'golpe-5L']) {
   const jobs = [];
+  const active = new Set(ids);
+  for (const [id,set] of Object.entries(REG)) for (const s of Object.values(set)) {
+    s.inactive = !active.has(id);
+    if (s.inactive) {
+      s.cv = s.cvAlt = s.cvAltOf = null;
+      s.posterCv = s.posterState = null;
+    }
+  }
   for (const id of ids) {
     const set = REG[id];
     if (!set) continue;
     const pending = Object.values(set).filter(s => s.lazy && !s.prefetched);
     for (const s of pending) s.prefetched = true;
-    cacheFiles(pending.map(s => s.url));
+    for (const s of Object.values(set)) {
+      s.posterFailed = false;
+      if (s.posterUrl) jobs.push(loadPoster(s));
+    }
+    const warming = cacheFiles(pending.map(s => s.url), id);
+    if (Object.values(set).some(s => s.warmAll)) jobs.push(warming);
     // Uma nova preparação permite recuperar falhas temporárias, sem repetir a cada render.
     for (const s of Object.values(set)) if (s.failed) s.failed = false;
     for (const name of names) if (set[name]) jobs.push(loadStrip(set[name]));
@@ -297,6 +352,8 @@ function pickStrip(set, a, f) {
   const base = a.name.replace(/-turbo$/, '');
   const baseStrip = base !== a.name && readyStrip(set, base);
   if (baseStrip) return { s: baseStrip, p: a.p, fx: null };
+  const requested = set[f.ch.spriteAlias?.[a.name]] || set[a.name] || (base !== a.name && set[base]);
+  if (requested?.posterCv) return { s: requested, p: 0, i: 0, fx: null, poster: true };
   if (set[a.name]?.lazy) {
     const idle = readyStrip(set, 'parado');
     return idle ? { s: idle, p: 0, fx: null, waiting: true } : { waiting: true };
@@ -345,7 +402,9 @@ export function drawSprite(c, f, frame) {
   if (!pick?.s) return false;
   const { s, p, fx } = pick;
   const i = pick.i ?? Math.min(s.n - 1, Math.max(0, Math.floor(p * s.n)));
-  if (!pick.waiting) LAST.set(f, { set, s, i, p, fx });
+  const source = pick.poster ? posterSource(s, f.alt) : f.alt ? altCanvas(s) : s.cv;
+  if (!source) return false;
+  if (!pick.waiting) LAST.set(f, { set, s, i, p, fx, poster: pick.poster });
   // correção por tira: algumas pranchas vieram desenhadas maiores ou menores
   const size = CELL * (f.ch.spriteScale || 1) * (f.ch.spriteStripScale?.[s.id]?.[s.name] || 1);
   c.save();
@@ -372,7 +431,7 @@ export function drawSprite(c, f, frame) {
   }
   // Cancel the caller's facing mirror for independently drawn left-facing art.
   if (f.face < 0 && f.ch.spriteFacingPacks?.left) c.scale(-1, 1);
-  c.drawImage(f.alt ? altCanvas(s) : s.cv, i * s.size, 0, s.size, s.size, -size * FOOT.x, -size * FOOT.y, size, size);
+  c.drawImage(source, i * s.size, 0, s.size, s.size, -size * FOOT.x, -size * FOOT.y, size, size);
   attackEffects(c, f);
   if (fx === 'guard') {
     // escudo de defesa desenhado pelo jogo

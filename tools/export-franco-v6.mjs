@@ -36,6 +36,7 @@ for(const item of inventory.inventory){
   const dir=join(out,direction);mkdirSync(dir,{recursive:true});
   const strip=await sharp({create:{width:9216,height:768,channels:4,background:{r:0,g:0,b:0,alpha:0}}}).composite(frames.map((input,i)=>({input,left:i*768,top:0}))).png().toBuffer();
   writeFileSync(join(dir,action+'.png'),strip);
+  await sharp(frames[0]).webp({lossless:true,effort:5}).toFile(join(dir,'__first-'+action+'.webp'));
   await sharp(strip).webp({lossless:true,effort:5}).toFile(join(dir,action+'.webp'));
   results.push({...item,status:'candidate-needs-visual-review',frames:metadata});
  }catch(error){results.push({...item,status:'rejected',reason:error.message});}

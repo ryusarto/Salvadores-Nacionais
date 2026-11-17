@@ -49,7 +49,7 @@ if (!belemPack && belem && q.get('stage') !== 'off') {
 const soundButton=document.getElementById('sound');
 soundButton?.addEventListener('click',()=>{const muted=sfx.toggleMute();soundButton.textContent=muted?'SOM: DESLIGADO':'SOM: LIGADO';soundButton.setAttribute('aria-pressed',String(muted));});
 Promise.all(Object.entries(packs).map(([id, sheets]) => {
-  return registerSprites(id, sheets, spriteLoadOptions(id));
+  return registerSprites(id, sheets, { ...spriteLoadOptions(id), posters: (window.__SPRITEPOSTERS || {})[id] });
 })).then(()=>uiReady).then(() => {
   document.getElementById('loading')?.remove();
   app.run();

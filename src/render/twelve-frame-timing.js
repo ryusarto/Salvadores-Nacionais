@@ -14,12 +14,12 @@ export function twelveFrameProgress(f, animation) {
   const cycle = { parado: 80, andar: 28, 'andar-tras': 28, correr: 16 }[animation.name];
   if (animation.loop && cycle) return (sf % cycle) / cycle;
   if (f.state === 'prejump') return clamp(sf / SYS.JUMP.pre / 3);
-  if (f.state === 'land') return clamp(1 - sf / Math.max(1, f.landFrames || SYS.JUMP.land));
+  if (f.state === 'land') return clamp(.75 + sf / Math.max(1, f.landFrames || SYS.JUMP.land) * .25);
   if (['crouch', 'guard', 'blockstun'].includes(f.state) || (f.state === 'air' && f.airGuard)) return clamp(sf / 12);
   if (['hitstun', 'frozen', 'slip', 'thrown'].includes(f.state)) return clamp(sf / Math.max(1, sf + (f.stun || 0)));
   if (f.state === 'air') {
     const vy = SYS.JUMP.vy * (f.ch.jumpScale || 1) * (f.sj ? SYS.SUPER_JUMP.vy : 1);
-    return clamp((vy - f.vy) / (vy * 2));
+    return clamp(1 / 3 + Math.max(0, Math.min(1, (vy - f.vy) / (vy * 2))) * (5 / 12 - .001));
   }
   if (f.state === 'air_hit' || (f.state === 'ko' && f.y > 0)) return clamp((24 - f.vy) / 48);
   const duration = { knockdown: 18, ko: 18, wakeup: SYS.KNOCKDOWN.wakeup, crumple: SYS.CRUMPLE, win: 36, backdash: SYS.BACKDASH.frames, tech: 20, techroll: SYS.TECH_ROLL.frames }[f.state];
