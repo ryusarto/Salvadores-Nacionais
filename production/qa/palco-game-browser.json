@@ -2,7 +2,7 @@
   "info": {
     "stage": {
       "ready": true,
-      "loaded": 77,
+      "loaded": 78,
       "errors": []
     },
     "audio": {
@@ -12,7 +12,7 @@
       "muted": false,
       "started": true,
       "decoded": 6,
-      "gain": 0,
+      "gain": 0.001137063722126186,
       "errors": []
     },
     "foe": "chupetinha"

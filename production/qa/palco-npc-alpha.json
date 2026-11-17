@@ -1,0 +1,76 @@
+{
+  "asset": "npc-danca-1",
+  "originalSource": "source/generated/npc-danca-1.png",
+  "selectedSource": "source/generated/npc-danca-1-v2.png",
+  "runtimeSHA256": "07dfc29475f2363377e8dc685799d3b959ee84ee8ed40ae5c9a9a41af565bb96",
+  "before": {
+    "brightVisiblePixelsBeyondCore": [
+      38343,
+      63196,
+      50657,
+      65006,
+      59194,
+      34246
+    ],
+    "opaqueFeetBottoms": [
+      479,
+      479,
+      478,
+      479,
+      480,
+      479
+    ]
+  },
+  "after": {
+    "brightVisiblePixelsBeyondCore": [
+      0,
+      0,
+      0,
+      0,
+      2,
+      4
+    ],
+    "opaqueFeetBottoms": [
+      479,
+      479,
+      479,
+      480,
+      480,
+      480
+    ]
+  },
+  "method": "Visible alpha>12 and mean RGB>90 more than4px beyond alpha>=240 core (9x9 dilation), 500x500 cells.",
+  "frameOffsets": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      30,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      30,
+      0
+    ]
+  ],
+  "commonCrop": [
+    105,
+    14,
+    281,
+    469
+  ],
+  "status": "pass"
+}

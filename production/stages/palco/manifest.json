@@ -1,8 +1,8 @@
 {
   "id": "palco",
-  "version": 1,
-  "status": "delivered-v1",
-  "groups": 60,
+  "version": 2,
+  "status": "delivered-v2",
+  "groups": 61,
   "world": {
     "width": 2600,
     "height": 1080,
@@ -173,7 +173,23 @@
       "opacity": 0.15
     },
     {
-      "id": "tablado-15",
+      "id": "mastro-palco-esquerdo",
+      "asset": "mastro-bandeirolas",
+      "x": 300,
+      "y": 826,
+      "h": 628.3737900223381,
+      "factor": 0.65
+    },
+    {
+      "id": "mastro-palco-direito",
+      "asset": "mastro-bandeirolas",
+      "x": 2300,
+      "y": 826,
+      "h": 628.3737900223381,
+      "factor": 0.65
+    },
+    {
+      "id": "tablado-17",
       "asset": "tablado",
       "x": 1280,
       "y": 822,
@@ -182,7 +198,7 @@
       "h": 180
     },
     {
-      "id": "saia-palco-16",
+      "id": "saia-palco-18",
       "asset": "saia-palco",
       "x": 1280,
       "y": 822,
@@ -191,7 +207,7 @@
       "h": 100
     },
     {
-      "id": "trelica-vertical-1-17",
+      "id": "trelica-vertical-1-19",
       "asset": "trelica-vertical-1",
       "x": 625,
       "y": 732,
@@ -199,7 +215,7 @@
       "h": 505
     },
     {
-      "id": "trelica-vertical-2-18",
+      "id": "trelica-vertical-2-20",
       "asset": "trelica-vertical-2",
       "x": 1935,
       "y": 732,
@@ -207,7 +223,7 @@
       "h": 505
     },
     {
-      "id": "trelica-horizontal-19",
+      "id": "trelica-horizontal-21",
       "asset": "trelica-horizontal",
       "x": 1280,
       "y": 268,
@@ -216,7 +232,7 @@
       "h": 62
     },
     {
-      "id": "cobertura-palco-20",
+      "id": "cobertura-palco-22",
       "asset": "cobertura-palco",
       "x": 1280,
       "y": 255,
@@ -225,7 +241,7 @@
       "h": 155
     },
     {
-      "id": "cortina-2-22",
+      "id": "cortina-2-24",
       "asset": "cortina-2",
       "x": 1795,
       "y": 723,
@@ -233,7 +249,7 @@
       "h": 405
     },
     {
-      "id": "cortina-vento-23",
+      "id": "cortina-vento-25",
       "asset": "cortina-vento",
       "x": 775,
       "y": 723,
@@ -243,7 +259,7 @@
       "opacity": 1
     },
     {
-      "id": "faixa-base-24",
+      "id": "faixa-base-26",
       "asset": "faixa-base",
       "x": 1280,
       "y": 405,
@@ -252,7 +268,7 @@
       "h": 125
     },
     {
-      "id": "faixa-texto-25",
+      "id": "faixa-texto-27",
       "asset": "faixa-texto",
       "x": 1280,
       "y": 383,
@@ -261,7 +277,7 @@
       "h": 109
     },
     {
-      "id": "torre-som-1-26",
+      "id": "torre-som-1-28",
       "asset": "torre-som-1",
       "x": 590,
       "y": 820,
@@ -269,7 +285,7 @@
       "h": 340
     },
     {
-      "id": "torre-som-2-27",
+      "id": "torre-som-2-29",
       "asset": "torre-som-2",
       "x": 1985,
       "y": 820,
@@ -277,7 +293,7 @@
       "h": 340
     },
     {
-      "id": "subwoofer-1-28",
+      "id": "subwoofer-1-30",
       "asset": "subwoofer-1",
       "x": 730,
       "y": 818,
@@ -285,7 +301,7 @@
       "w": 165
     },
     {
-      "id": "subwoofer-2-29",
+      "id": "subwoofer-2-31",
       "asset": "subwoofer-2",
       "x": 1820,
       "y": 818,
@@ -293,7 +309,7 @@
       "w": 165
     },
     {
-      "id": "retorno-1-30",
+      "id": "retorno-1-32",
       "asset": "retorno-1",
       "x": 1020,
       "y": 715,
@@ -301,7 +317,7 @@
       "w": 115
     },
     {
-      "id": "retorno-2-31",
+      "id": "retorno-2-33",
       "asset": "retorno-2",
       "x": 1560,
       "y": 715,
@@ -309,7 +325,7 @@
       "w": 115
     },
     {
-      "id": "escada-palco-32",
+      "id": "escada-palco-34",
       "asset": "escada-palco",
       "x": 2070,
       "y": 825,
@@ -317,7 +333,7 @@
       "w": 185
     },
     {
-      "id": "pedestal-1-33",
+      "id": "pedestal-1-35",
       "asset": "pedestal-1",
       "x": 1190,
       "y": 714,
@@ -325,7 +341,7 @@
       "h": 210
     },
     {
-      "id": "pedestal-2-34",
+      "id": "pedestal-2-36",
       "asset": "pedestal-2",
       "x": 1450,
       "y": 713,
@@ -333,7 +349,7 @@
       "h": 205
     },
     {
-      "id": "microfone-palco-35",
+      "id": "microfone-palco-37",
       "asset": "microfone-palco",
       "x": 1220,
       "y": 535,
@@ -341,7 +357,7 @@
       "h": 33
     },
     {
-      "id": "bancada-tecnica-36",
+      "id": "bancada-tecnica-38",
       "asset": "bancada-tecnica",
       "x": 1685,
       "y": 713,
@@ -349,7 +365,7 @@
       "w": 230
     },
     {
-      "id": "mesa-mixagem-37",
+      "id": "mesa-mixagem-39",
       "asset": "mesa-mixagem",
       "x": 1685,
       "y": 612,
@@ -357,7 +373,7 @@
       "w": 205
     },
     {
-      "id": "npc-tecnico-38",
+      "id": "npc-tecnico-40",
       "asset": "npc-tecnico",
       "x": 1700,
       "y": 710,
@@ -367,7 +383,7 @@
       "phase": 2
     },
     {
-      "id": "cabos-1-39",
+      "id": "cabos-1-41",
       "asset": "cabos-1",
       "x": 1630,
       "y": 727,
@@ -375,7 +391,7 @@
       "w": 82
     },
     {
-      "id": "cabos-2-40",
+      "id": "cabos-2-42",
       "asset": "cabos-2",
       "x": 1310,
       "y": 727,
@@ -384,7 +400,7 @@
       "h": 25
     },
     {
-      "id": "cabos-3-41",
+      "id": "cabos-3-43",
       "asset": "cabos-3",
       "x": 2040,
       "y": 826,
@@ -392,7 +408,7 @@
       "w": 170
     },
     {
-      "id": "refletor-1-42",
+      "id": "refletor-1-44",
       "asset": "refletor-1",
       "x": 820,
       "y": 300,
@@ -400,7 +416,7 @@
       "h": 75
     },
     {
-      "id": "refletor-2-43",
+      "id": "refletor-2-45",
       "asset": "refletor-2",
       "x": 1740,
       "y": 300,
@@ -408,7 +424,7 @@
       "h": 75
     },
     {
-      "id": "refletor-3-44",
+      "id": "refletor-3-46",
       "asset": "refletor-3",
       "x": 1280,
       "y": 300,
@@ -416,7 +432,7 @@
       "h": 75
     },
     {
-      "id": "feixe-palco-1-45",
+      "id": "feixe-palco-1-47",
       "asset": "feixe-palco-1",
       "x": 1000,
       "y": 730,
@@ -427,7 +443,7 @@
       "opacity": 0.12
     },
     {
-      "id": "feixe-palco-2-46",
+      "id": "feixe-palco-2-48",
       "asset": "feixe-palco-2",
       "x": 1570,
       "y": 730,
@@ -438,7 +454,7 @@
       "opacity": 0.12
     },
     {
-      "id": "gradil-1-47",
+      "id": "gradil-1-49",
       "asset": "gradil-1",
       "x": 740,
       "y": 824,
@@ -446,7 +462,7 @@
       "w": 220
     },
     {
-      "id": "gradil-2-48",
+      "id": "gradil-2-50",
       "asset": "gradil-2",
       "x": 1790,
       "y": 824,
@@ -454,32 +470,116 @@
       "w": 220
     },
     {
-      "id": "bandeirolas-1-49",
+      "id": "bandeirolas-1-suspended-51",
       "asset": "bandeirolas-1",
-      "x": 300,
-      "y": 467,
-      "factor": 0.78,
-      "w": 390
+      "x": 505.62131352755364,
+      "y": 328.1409316590512,
+      "w": 253.54765268484192,
+      "h": 74.47962297617231,
+      "factor": 0.65,
+      "suspension": {
+        "anchors": [
+          {
+            "objectId": "mastro-palco-esquerdo",
+            "uv": [
+              0.9013806706114399,
+              0.09926224010731052
+            ],
+            "sprite": [
+              29,
+              198
+            ]
+          },
+          {
+            "objectId": "trelica-vertical-1-19",
+            "uv": [
+              0.5,
+              0.06534653465346535
+            ],
+            "sprite": [
+              482,
+              198
+            ]
+          }
+        ],
+        "tolerance": 8
+      }
     },
     {
-      "id": "bandeirolas-2-50",
-      "asset": "bandeirolas-2",
-      "x": 2290,
-      "y": 430,
-      "factor": 0.78,
-      "w": 390
-    },
-    {
-      "id": "bandeirolas-vento-51",
+      "id": "bandeirolas-vento-suspended-52",
       "asset": "bandeirolas-vento",
-      "x": 2320,
-      "y": 470,
-      "factor": 0.78,
-      "w": 390,
-      "fps": 4
+      "x": 2075.274600105343,
+      "y": 352.3924048770768,
+      "w": 294.03714252850716,
+      "h": 98.46197892009644,
+      "factor": 0.65,
+      "fps": 4,
+      "suspension": {
+        "anchors": [
+          {
+            "objectId": "trelica-vertical-2-20",
+            "uv": [
+              0.5,
+              0.06534653465346535
+            ],
+            "sprite": [
+              42,
+              343
+            ]
+          },
+          {
+            "objectId": "mastro-palco-direito",
+            "uv": [
+              0.10453648915187377,
+              0.09926224010731052
+            ],
+            "sprite": [
+              458,
+              343
+            ]
+          }
+        ],
+        "tolerance": 8
+      }
     },
     {
-      "id": "poste-52",
+      "id": "bandeirolas-2-suspended-53",
+      "asset": "bandeirolas-2",
+      "x": 2117.5,
+      "y": 489.6630434782609,
+      "w": 380.8695652173913,
+      "h": 96.80434782608697,
+      "factor": 0.65,
+      "suspension": {
+        "anchors": [
+          {
+            "objectId": "trelica-vertical-2-20",
+            "uv": [
+              0.5,
+              0.3425742574257426
+            ],
+            "sprite": [
+              26,
+              204
+            ]
+          },
+          {
+            "objectId": "mastro-palco-direito",
+            "uv": [
+              0.5,
+              0.32205956587582035
+            ],
+            "sprite": [
+              486,
+              204
+            ]
+          }
+        ],
+        "tolerance": 8
+      }
+    },
+    {
+      "id": "poste-54",
       "asset": "poste",
       "x": 2430,
       "y": 827,
@@ -487,7 +587,7 @@
       "h": 470
     },
     {
-      "id": "halo-poste-53",
+      "id": "halo-poste-55",
       "asset": "halo-poste",
       "x": 2430,
       "y": 490,
@@ -497,7 +597,7 @@
       "opacity": 0.2
     },
     {
-      "id": "npc-danca-1-54",
+      "id": "npc-danca-1-56",
       "asset": "npc-danca-1",
       "x": 920,
       "y": 823,
@@ -507,7 +607,7 @@
       "phase": 0
     },
     {
-      "id": "npc-danca-2-55",
+      "id": "npc-danca-2-57",
       "asset": "npc-danca-2",
       "x": 1510,
       "y": 823,
@@ -517,7 +617,7 @@
       "phase": 2
     },
     {
-      "id": "npc-torcedor-1-56",
+      "id": "npc-torcedor-1-58",
       "asset": "npc-torcedor-1",
       "x": 730,
       "y": 823,
@@ -527,7 +627,7 @@
       "phase": 1
     },
     {
-      "id": "npc-torcedor-2-57",
+      "id": "npc-torcedor-2-59",
       "asset": "npc-torcedor-2",
       "x": 1825,
       "y": 823,
@@ -537,7 +637,7 @@
       "phase": 4
     },
     {
-      "id": "npc-fila-1-58",
+      "id": "npc-fila-1-60",
       "asset": "npc-fila-1",
       "x": 700,
       "y": 823,
@@ -547,7 +647,7 @@
       "phase": 0
     },
     {
-      "id": "npc-fila-2-59",
+      "id": "npc-fila-2-61",
       "asset": "npc-fila-2",
       "x": 2260,
       "y": 823,
@@ -557,7 +657,7 @@
       "phase": 3
     },
     {
-      "id": "npc-voluntario-60",
+      "id": "npc-voluntario-62",
       "asset": "npc-voluntario",
       "x": 430,
       "y": 823,
@@ -567,7 +667,7 @@
       "phase": 2
     },
     {
-      "id": "mesa-comida-1-61",
+      "id": "mesa-comida-1-63",
       "asset": "mesa-comida-1",
       "x": 500,
       "y": 824,
@@ -575,7 +675,7 @@
       "w": 320
     },
     {
-      "id": "mesa-comida-2-62",
+      "id": "mesa-comida-2-64",
       "asset": "mesa-comida-2",
       "x": 2140,
       "y": 824,
@@ -583,7 +683,7 @@
       "w": 350
     },
     {
-      "id": "panela-1-63",
+      "id": "panela-1-65",
       "asset": "panela-1",
       "x": 420,
       "y": 701,
@@ -591,7 +691,7 @@
       "h": 85
     },
     {
-      "id": "panela-2-64",
+      "id": "panela-2-66",
       "asset": "panela-2",
       "x": 2200,
       "y": 713,
@@ -599,7 +699,7 @@
       "h": 80
     },
     {
-      "id": "marmitas-1-65",
+      "id": "marmitas-1-67",
       "asset": "marmitas-1",
       "x": 560,
       "y": 708,
@@ -607,7 +707,7 @@
       "w": 115
     },
     {
-      "id": "marmitas-2-66",
+      "id": "marmitas-2-68",
       "asset": "marmitas-2",
       "x": 2340,
       "y": 711,
@@ -615,7 +715,7 @@
       "w": 120
     },
     {
-      "id": "vapor-panelas-67",
+      "id": "vapor-panelas-69",
       "asset": "vapor-panelas",
       "x": 420,
       "y": 635,
@@ -625,7 +725,7 @@
       "opacity": 0.4
     },
     {
-      "id": "caixa-1-68",
+      "id": "caixa-1-70",
       "asset": "caixa-1",
       "x": 52,
       "y": 826,
@@ -633,7 +733,7 @@
       "w": 100
     },
     {
-      "id": "caixa-2-69",
+      "id": "caixa-2-71",
       "asset": "caixa-2",
       "x": 2540,
       "y": 826,
@@ -641,7 +741,7 @@
       "w": 105
     },
     {
-      "id": "cesto-1-70",
+      "id": "cesto-1-72",
       "asset": "cesto-1",
       "x": 430,
       "y": 826,
@@ -649,7 +749,7 @@
       "w": 80
     },
     {
-      "id": "cesto-2-71",
+      "id": "cesto-2-73",
       "asset": "cesto-2",
       "x": 2430,
       "y": 827,
@@ -657,7 +757,7 @@
       "w": 80
     },
     {
-      "id": "poeira-72",
+      "id": "poeira-74",
       "asset": "poeira",
       "x": 1320,
       "y": 827,
@@ -670,7 +770,7 @@
   ],
   "alternatives": [
     {
-      "id": "cortina-1-21",
+      "id": "cortina-1-23",
       "asset": "cortina-1",
       "x": 770,
       "y": 723,
@@ -1491,29 +1591,55 @@
       "path": "animations/npc-danca-1.webp",
       "kind": "animation",
       "frames": 6,
-      "bytes": 858714,
-      "sha256": "18eeaa6c9e0949cb3931c75aaaa27e25361fb78a934d9ba8c377811d540f5113",
+      "bytes": 364200,
+      "sha256": "07dfc29475f2363377e8dc685799d3b959ee84ee8ed40ae5c9a9a41af565bb96",
       "cellWidth": 500,
       "cellHeight": 500,
       "crop": [
-        92,
-        0,
-        348,
-        500
+        105,
+        14,
+        281,
+        469
       ],
       "origin": "generated",
       "frameHashes": [
-        "2ab293bba6cefb50d55a1d43d2fece5cb0b72a53011caab3722ce7ee270febf2",
-        "a3ffa0aaa3db8107c85dae5f4db7faae641af392ad25d70394fadeb3b5454dcb",
-        "87318b493a3f2123904095dba65f261d77dc1c653abadd21d389840fe76c9bdf",
-        "2547a661add1fdaacacbb4e6a22e5c9866036b88232907d26dad7e502896a8cc",
-        "5a0899b93e539c85566ca77cb780ee23ac5ba6201ca7572f0eab57b1f3c8dc93",
-        "30b7af14cb64576e20350c1782e9f1b077396050e84b7ebfbae97f9b7d2bf1e2"
+        "a89dda206f2e83cedd4917a565f2c773d5a6ab85f6f1aaee4e4f3ce6bf68fdb2",
+        "be584d5f2b8b3af3ca361d3e168029069edfaef451f349a17d21d69037a86e2e",
+        "6fa7cb2a7b7f51c993d64387ff914c239df6e487c713fbbd5212ba1dd771f58e",
+        "00378ef1aadf44c35dcce978e2ed8c184c3e1a137bebfb74baf4b65652eaa6b9",
+        "377225e91484b41ce1575488ea7b1d77ea6a4488655dc50891b8c619c9b7b735",
+        "c0e72afa55d85353e69b59e128011477f52bcb83cefd48b11b94d28d051cf962"
       ],
-      "source": "source/generated/npc-danca-1.png",
+      "source": "source/generated/npc-danca-1-v2.png",
       "width": 3000,
       "height": 500,
-      "alpha": true
+      "alpha": true,
+      "frameOffsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
     },
     "npc-danca-2": {
       "path": "animations/npc-danca-2.webp",
@@ -1927,6 +2053,18 @@
       "height": 500,
       "alpha": true
     },
+    "mastro-bandeirolas": {
+      "path": "props/mastro-bandeirolas.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 14644,
+      "sha256": "39f5749c3e4bc5835c7eabc575d3913ca3dbea62353af6befd8c972fd64105c5",
+      "origin": "generated",
+      "source": "source/generated/mastro-bandeirolas.png",
+      "width": 174,
+      "height": 512,
+      "alpha": true
+    },
     "faixa-texto": {
       "path": "graphics/faixa-texto.webp",
       "kind": "graphic",
@@ -1996,8 +2134,8 @@
       "frames": 1,
       "width": 960,
       "height": 540,
-      "bytes": 163052,
-      "sha256": "063aee30fd15135b538f759385d2e5797de90db3b36745e68f870251387942c5",
+      "bytes": 138582,
+      "sha256": "40edaa7136df68fff0f1978be12a0f0302ac9a1c9652d08ffd450bf5882b2fdd",
       "origin": "derived-composition"
     },
     "carregamento": {
@@ -2006,8 +2144,8 @@
       "frames": 1,
       "width": 1920,
       "height": 1080,
-      "bytes": 583404,
-      "sha256": "f0155e94722fefe8e1958ba6e0d9a537bc3f12e0a253b1ce9b6f96c7c82a6235",
+      "bytes": 470066,
+      "sha256": "2d820ad745ed17615cf48574b372359355a6653784d26904d3587ffd4bf758ea",
       "origin": "derived-composition"
     }
   },

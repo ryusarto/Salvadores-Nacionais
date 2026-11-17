@@ -460,5 +460,29 @@
     "prompt": "Use case: lighting-weather / precise-object-edit. Edit the supplied river-water asset for a 2D hand-painted Brazilian comic-book fighting game. Keep the existing dark teal-violet water palette, thin horizontal ripples, warm amber reflections on left, subtle teal reflected light on right. Remove the entire white/grey checkerboard border by extending the painted WATER TEXTURE all the way to every image edge. The finished image must be a completely OPAQUE full-bleed rectangular water texture, filled with water in every pixel, no border, no transparency, NO CHECKERBOARD anywhere, no sky or horizon, no boats, buildings, people, text, watermarks or extra objects. Landscape 3:1. It will be scaled to a shallow river strip behind the concert stage.",
     "original": "generated_images/exec-ce5cdab9-e53a-4976-ad25-3dd3ed11425b.png",
     "selected": true
+  },
+  {
+    "asset": "mastro-bandeirolas",
+    "prompt": "Use case: illustration-story. One isolated modular environment prop for Salvadores Nacionais, hand-painted Brazilian street-comic game at a Belém night festival. Create a tall slender rustic WOODEN FESTIVAL MAST, one short horizontal wooden crossarm near its top, a simple T shape. Crossarm width is one third of total mast height. Clean rounded timber ends with visible rope-tie grooves. Vertical pole continues five percent of total height above the crossarm. Natural dark brown wood grain and subtle rope wrapping at the central joint. Pole is thin, straight, visibly reaches ground, small simple square footing. Exact front view. Entire mast including crossarm and footing uncropped with transparent padding. Dark ink outlines, brushed material and sparse halftone, amber upper-left light, violet shadows and subtle teal rim. TRUE transparent alpha outside the physical mast. No floor, no cast shadow, glow, backdrop, flags, hanging fabric, long cords, extra objects, text or people. Three attachment sites (left crossarm end, center joint and right crossarm end) clearly visible. It will support separately animated bunting and a rectangular flag.",
+    "transparent_background": true,
+    "generatedFile": "exec-803155a9-a1e7-4cd9-88a9-beff299a59f0.png",
+    "source": "source/generated/mastro-bandeirolas.png",
+    "sha256": "f2038272c20d553c4936e335de2820c94651de2da933ace84813472e4ca63923",
+    "status": "generated",
+    "sharedWith": [
+      "palco",
+      "banheiros"
+    ],
+    "method": "built-in ImageGen, one shared generation for both arenas"
+  },
+  {
+    "asset": "npc-danca-1",
+    "revision": "v2-alpha",
+    "source": "source/generated/npc-danca-1-v2.png",
+    "sha256": "20d4e7796ce40df9765248c81e55cad79d2e9ebbfd6c2e3846b8ac0350b46214",
+    "prompt": "Use case: background-extraction. EDIT TARGET: this exact six-pose dance sprite sheet from Salvadores Nacionais. Remove ONLY the broad surrounding pale glow/halo/background around the woman. Preserve all six body poses, her identity, face, expression, hair curls, yellow cropped T-shirt, teal green trousers, sneakers, colors, original brush texture and ink edges EXACTLY. Preserve the 1536x1024 canvas, strict 3 columns x2 rows, pose order, original body size and exact placement in each cell, and feet positions. Do not redraw, reinterpret, relight, rescale, recenter or rearrange the character. Outside the physical ink-outlined body and hair silhouette must be real alpha0: no surrounding white glow, atmospheric haze, backdrop, ground shadow, light cone or feathered oval. Keep the actual amber edge lighting ON the hair/skin/clothes; remove light spilling into empty transparent space. Interior character pixels must stay opaque. Produce a true transparent PNG sprite sheet.",
+    "transparent_background": true,
+    "generatedFile": "exec-97fc73de-2c64-4ee2-a30d-3fdc5f3363ad.png",
+    "notes": "Removed broad halo. Frame3 and6 output was re-centered by ImageGen; export registers those two cells 30px right to their original foot positions, using one shared crop."
   }
 ]

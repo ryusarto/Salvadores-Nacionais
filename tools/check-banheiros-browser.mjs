@@ -1,10 +1,14 @@
 import {chromium} from 'playwright-core';
-import {writeFileSync,mkdirSync,existsSync} from 'node:fs';
+import {readFileSync,writeFileSync,mkdirSync,existsSync} from 'node:fs';
 import {pathToFileURL} from 'node:url';
 import {resolve} from 'node:path';
 import assert from 'node:assert/strict';
 const executablePath=process.env.BROWSER_EXECUTABLE || ['/Applications/Google Chrome.app/Contents/MacOS/Google Chrome','/usr/bin/chromium','/usr/bin/chromium-browser'].find(existsSync);
 assert.ok(executablePath,'Set BROWSER_EXECUTABLE to an installed Chromium browser');
+const plan=JSON.parse(readFileSync('production/stages/banheiros/PLANO.json','utf8'));
+const expectedAssets=plan.groups.reduce((n,g)=>n+g.variants,0);
+const expectedAudio=plan.groups.filter(g=>g.folder==='audio').reduce((n,g)=>n+g.variants,0);
+assert.equal(expectedAssets,plan.summary.runtimeFiles,'planned inventory');
 let browser;
 try{
  browser=await chromium.launch({executablePath,headless:true});
@@ -25,7 +29,7 @@ try{
  await page.screenshot({path:'production/qa/evidence/banheiros-preview.png',fullPage:false});
  const before=await canvas();await page.waitForTimeout(150);assert.ok((await canvas())===before,'fixed preview frame must freeze');
  const stats=await page.evaluate(()=>({assets:Object.keys(window.banheirosPreview.pack.assets).length,images:Object.values(window.banheirosPreview.pack.assets).filter(a=>a.kind!=='audio').length,gallery:document.querySelectorAll('#gallery article').length,canvas:[document.querySelector('#stage').width,document.querySelector('#stage').height]}));
- assert.equal(stats.assets,69);assert.equal(stats.gallery,stats.images);assert.deepEqual(stats.canvas,[1920,1080]);
+ assert.equal(stats.assets,expectedAssets);assert.equal(stats.gallery,stats.images);assert.deepEqual(stats.canvas,[1920,1080]);
  // Isolate one animated item, rather than a static thumbnail only.
  const article=page.locator('#gallery article').filter({has:page.getByRole('heading',{name:'npc-acolhimento',exact:true})});
  await article.getByRole('button',{name:'Ver isolado'}).click();
@@ -50,7 +54,7 @@ try{
   if(!n.readyState)await new Promise((yes,no)=>{const timer=setTimeout(()=>no(Error('audio metadata timeout')),20000);n.addEventListener('loadedmetadata',()=>{clearTimeout(timer);yes();},{once:true});n.addEventListener('error',()=>{clearTimeout(timer);no(Error(n.error?.message||'audio error'));},{once:true});});
   return {name:n.previousSibling?.textContent,ready:n.readyState,duration:n.duration,error:n.error?.message||null};
  })));
- assert.equal(audio.length,6);assert.ok(audio.every(a=>!a.error&&a.duration>0));assert.deepEqual(errors,[]);
+ assert.equal(audio.length,expectedAudio);assert.ok(audio.every(a=>!a.error&&a.duration>0));assert.deepEqual(errors,[]);
  const report={status,errors,audio,stats,pause:'pass',isolation:'pass',reducedEffects:'pass',effectsToggle:'pass',interactiveDamageOverlay:'pass',camera:[0,340,680],mobileViewport:[844,390],limitation:'Viewport emulation only; physical-device performance and human playtest not assessed.'};
  writeFileSync('production/qa/banheiros-browser.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 }finally{await browser?.close();}

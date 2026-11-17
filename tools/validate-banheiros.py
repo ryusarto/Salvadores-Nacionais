@@ -98,9 +98,16 @@ def main():
     m = json.loads((PACK / 'manifest.json').read_text())
     prompts = json.loads((PACK / 'source/prompts-completos.json').read_text())
     old = json.loads((PACK.parent / 'palco/manifest.json').read_text())
-    groups = {g['slug']: g for g in plan['groups']}
-    expected = {g['slug'] + (f'-{n}' if g['variants'] > 1 else '')
-                for g in plan['groups'] for n in range(1, g['variants'] + 1)}
+    groups = {g['slug'] + (f'-{n}' if g['variants'] > 1 else ''): g
+              for g in plan['groups'] for n in range(1, g['variants'] + 1)}
+    expected = set(groups)
+    planned_files = sum(g['variants'] for g in plan['groups'])
+    planned_strips = sum(g['variants'] for g in plan['groups'] if g['framesPerVariant'] > 1)
+    planned_frames = sum(g['variants']*g['framesPerVariant'] for g in plan['groups'] if g['framesPerVariant'] > 1)
+    require(len(expected) == planned_files, 'duplicate asset IDs in plan')
+    require(len(plan['groups']) == plan['summary']['groups'] == m['groups'], 'group inventory differs')
+    require(planned_files == plan['summary']['runtimeFiles'], 'runtime inventory differs')
+    require((planned_strips,planned_frames) == (plan['summary']['animatedStrips'],plan['summary']['animationFrames']), 'planned animation inventory differs')
     require(set(m['assets']) == expected, f'asset mismatch: missing={expected-set(m["assets"])} extra={set(m["assets"])-expected}')
     require(not m['missing'], f'undelivered assets: {m["missing"]}')
     strips = frames = decoded = masters = reused = 0
@@ -174,11 +181,11 @@ def main():
             png(source,name)
             require(entry.get('sha256') == digest(source), f'{name}: retained master hash mismatch')
     require(m['world'] == dict(width=2600,height=1080,viewWidth=1920,cameraMax=680,feetY=930,groundTopY=826), 'world coordinates differ')
-    require((strips,frames) == (plan['summary']['animatedStrips'],plan['summary']['animationFrames']), 'animation inventory differs')
-    require(len(expected) == plan['summary']['runtimeFiles'] == 69, 'runtime inventory differs')
+    require((strips,frames) == (planned_strips,planned_frames), 'animation inventory differs')
     audio = json.loads((PACK / 'audio/manifest.json').read_text())
     audio_keys = {k for k,a in m['assets'].items() if a['kind']=='audio'}
-    require(len(audio_keys)==6 and audio_keys == {k for k in audio if not k.startswith('_')}, 'audio inventory differs')
+    planned_audio = {key for key,g in groups.items() if g['folder'] == 'audio'}
+    require(audio_keys == planned_audio == {k for k in audio if not k.startswith('_')}, 'audio inventory differs')
     for key in audio_keys:
         a = audio[key]
         p = PACK / a['file']
@@ -190,7 +197,7 @@ def main():
         require(0 < a['rms'] <= a['peak'] < 1 and a.get('origin'), f'{key}: audio measurements/provenance')
         if a.get('sourceFile'):
             require(digest(ROOT / a['sourceFile']) == digest(p), f'{key}: reused audio differs')
-    report = dict(groups=len(groups),assets=len(expected),animatedStrips=strips,animationFrames=frames,audios=len(audio_keys),generatedPNGMasters=masters,reusedImages=reused,runtimeBytes=sum(a['bytes'] for a in m['assets'].values()),decodedRGBABytesEstimate=decoded,hashes='pass',dimensions='pass',alphaAndFrames='pass',provenance='pass',oggMetadataAndPCMDecode='pass',missing=m['missing'])
+    report = dict(groups=len(plan['groups']),assets=len(expected),animatedStrips=strips,animationFrames=frames,audios=len(audio_keys),generatedPNGMasters=masters,reusedImages=reused,runtimeBytes=sum(a['bytes'] for a in m['assets'].values()),decodedRGBABytesEstimate=decoded,hashes='pass',dimensions='pass',alphaAndFrames='pass',provenance='pass',oggMetadataAndPCMDecode='pass',missing=m['missing'])
     (ROOT/'production/qa/banheiros-validation.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps(report))
 

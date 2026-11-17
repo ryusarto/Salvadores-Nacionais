@@ -49,9 +49,9 @@
     "Testar pausa, efeitos reduzidos, galeria, câmera0/340/680, fala e mecânicas do chefe, áudio e fallback."
   ],
   "summary": {
-    "groups": 69,
-    "runtimeFiles": 69,
-    "newGenerations": 21,
+    "groups": 70,
+    "runtimeFiles": 70,
+    "newGenerations": 22,
     "reusedImages": 34,
     "animatedStrips": 14,
     "animationFrames": 84
@@ -594,6 +594,24 @@
       "variants": 1,
       "framesPerVariant": 1,
       "origin": "derived-composition"
+    },
+    {
+      "id": "suporte-bandeirolas",
+      "category": "cenografia",
+      "name": "Mastro de madeira para bandeirolas",
+      "slug": "mastro-bandeirolas",
+      "variants": 1,
+      "framesPerVariant": 1,
+      "folder": "props",
+      "origin": "generated",
+      "purpose": "Suporte físico compartilhado para amarrar bandeirolas, com travessa e pontos de fixação."
+    }
+  ],
+  "revisions": [
+    {
+      "date": "2026-11-17",
+      "reason": "Revisão do autor: bandeirolas devem ter suportes físicos visíveis.",
+      "change": "Mastros e pontos de fixação no mesmo parallax; preservadas as animações."
     }
   ]
 }
