@@ -68,6 +68,10 @@ const byVy = (list, vy) => {
  * @returns {{name: string, index: number}}
  */
 export function animFor(f, frame) {
+  if (f.ch?.id === 'fujao' && f.ch.spriteProfile === 'six-frame' && f.state === 'idle') {
+    const name = f.res?.board > 0 ? 'embarcar' : f.res?.cornered ? 'encurralado' : null;
+    if (name) return { name, p: (frame % 48) / 48, index: Math.floor((frame % 48) / 8), loop: true };
+  }
   const A = STATE_ANIMS;
   // p: progresso de 0 a 1 dentro da tira, para tiras com outro número de quadros
   const cyc = (name) => {
