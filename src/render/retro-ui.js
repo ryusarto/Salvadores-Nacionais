@@ -60,7 +60,11 @@ const G = {
   '←': '..#....|.#.....|#######|.#.....|..#....|.......|.......', '→': '....#..|.....#.|#######|.....#.|....#..|.......|.......',
   '↑': '..#..|.###.|#.#.#|..#..|..#..|..#..|..#..', '↓': '..#..|..#..|..#..|..#..|#.#.#|.###.|..#..',
   '%': '##..#|##.#.|...#.|..#..|.#...|.#.##|#..##', '&': '.##..|#..#.|.##..|.#...|#.#.#|#..#.|.##.#',
+  '"': '#.#|#.#|...|...|...|...|...', ';': '..|.#|..|..|..|.#|#.', '$': '..#..|.####|#.#..|.###.|..#.#|####.|..#..',
+  '…': '.....|.....|.....|.....|.....|.....|#.#.#', '*': '.....|#.#.#|.###.|#####|.###.|#.#.#|.....',
 };
+/** Sinais tipográficos que viram o equivalente simples da fonte. */
+const ALIAS = { '“': '"', '”': '"', '’': "'", '‘': "'", '–': '-' };
 const ACCENT = {
   acute: ['...#.', '..#..'], grave: ['.#...', '..#..'], circ: ['..#..', '.#.#.'], tilde: ['.##.#', '#..#.'], uml: ['.#.#.', '.....'],
 };
@@ -72,7 +76,7 @@ const glyphCache = new Map();
 /** Pixels de um caractere: lista de [x, y] (y de -2 a 8) e largura. */
 function glyph(ch) {
   if (glyphCache.has(ch)) return glyphCache.get(ch);
-  const up = ch.toLocaleUpperCase('pt-BR');
+  const up = ALIAS[ch] ?? ch.toLocaleUpperCase('pt-BR');
   let base = up, mark = null;
   if (ACCENTED[up]) [base, mark] = ACCENTED[up];
   const src = G[base] ?? G['?'];

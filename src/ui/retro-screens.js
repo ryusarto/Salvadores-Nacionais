@@ -18,6 +18,8 @@ const blink = (a, on = 40, period = 60) => a.frame % period < on;
 const touch = () => typeof document !== 'undefined' && document.documentElement.classList.contains('touch');
 /** Para onde cada retrato olha por natureza (-1 = esquerda); o grande da História vira para o centro. */
 const NATURAL = { franco: -1, belga: 1, majis: -1, dney: -1, ryuchi: 1, trunks: 1, mdep: -1, chapuh: -1 };
+/** Espelhar o retrato para ele olhar para `face` (1 = direita)? Chefes olham para a direita por natureza. */
+export const faceFlip = (id, face = 1) => (NATURAL[id] ?? 1) !== face;
 const MODE_LABEL = { versus: 'VERSUS CPU', training: 'TREINO', tutorial: 'APRENDER A LUTAR', story: 'MODO HISTÓRIA', vs2: '2 JOGADORES' };
 
 // ───────────────────────────── layouts ─────────────────────────────
@@ -36,10 +38,10 @@ export const chapterBox = (i) => ({ x: 22 + i * 265, y: 682, w: 255, h: 188 });
 
 // ───────────────────────────── peças ─────────────────────────────
 /** Dica de controles do rodapé: setas, confirmar e voltar (A/B no controle, ENTER/ESC no teclado). */
-function controlsHint(c, y, keys, okLabel = 'CONFIRMAR', backLabel = 'VOLTAR') {
+export function controlsHint(c, y, keys, okLabel = 'CONFIRMAR', backLabel = 'VOLTAR') {
   if (touch()) { ptext(c, 'TOQUE PARA ESCOLHER  •  VOLTAR PARA RETORNAR', W / 2, y, 4, 'silver'); return; }
   const pad = keys?.pad;
-  const parts = [['arrows'], ['sep'], ['key', pad ? 'A' : 'ENTER', okLabel], ['sep'], ['key', pad ? 'B' : 'ESC', backLabel]];
+  const parts = [['arrows'], ['sep'], ['key', pad ? 'A' : 'ENTER', okLabel], ...(backLabel ? [['sep'], ['key', pad ? 'B' : 'ESC', backLabel]] : [])];
   const u = 5;
   const widthOf = (p) => p[0] === 'arrows' ? ptextWidth('←→↑↓', u) + 18 : p[0] === 'sep' ? 60 : (pad ? 56 : ptextWidth(p[1], 3) + 26) + 18 + ptextWidth(p[2], u);
   let x = W / 2 - parts.reduce((s, p) => s + widthOf(p), 0) / 2;

@@ -58,5 +58,5 @@ function gallery(c,a){
 export function drawComicScreen(c,a,{menu,options,srcName,keys}){
  artFrame=a.frame;
  if(drawRetroScreen(c,a,{menu,options,srcName,keys,foes:FOES}))return true;
- switch(a.screen){case'gallery':gallery(c,a);break;case'vs':versus(c,a);break;case'result':result(c,a);break;default:if(!drawStoryScreen(c,a))return false;}return true;
+ switch(a.screen){case'gallery':gallery(c,a);break;case'vs':versus(c,a);break;case'result':result(c,a);break;default:if(!drawStoryScreen(c,a,keys))return false;}return true;
 }
