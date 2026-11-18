@@ -34,6 +34,7 @@ import { banterEvents } from './banter.js';
 import {drawComicScreen,drawComicPause,FOES,FOE_COLS} from './comic-screens.js';
 import {comicBackground} from '../render/comic-ui.js';
 import { titleItem, optionItem, heroCards, foeCards, chapterBox } from './retro-screens.js';
+import { RETRO as R, ptext, ptextWidth, pwrap, pixelBox, navyBackground, headerBar } from '../render/retro-ui.js';
 import { createRun, createRunAt, moveChapter, nextChapter, currentFight, fightLevel, winFight, continueFight, openingPages, closingPages, talkLines, loadProgress, saveCleared, saveCheckpoint, resumeRun } from './story.js';
 
 const W = SYS.VIEW_W;
@@ -63,6 +64,8 @@ const ACTIONS = [['L', 'Leve'], ['M', 'Médio'], ['H', 'Forte'], ['S', 'Especial
 const RESULT = ['REVANCHE', 'TROCAR PERSONAGEM', 'MENU'];
 const STORY_LOSE = ['CONTINUAR', 'DESISTIR'];
 const DUMMY = ['PARADO', 'DEFENDE TUDO', 'CPU'];
+/** Linha i da tela de controles (as 9 ações e, por último, RESTAURAR PADRÃO). */
+const controlRow = (i) => ({ x: 160, y: 220 + i * 68, w: 1000, h: 58 });
 const KEY_LABEL = { c1: '→ ← + Leve', c2: '↓ → + Médio', '5S': 'Especial', '6S': '→ + Especial', '2S': '↓ + Especial', '4S': '← + Especial', jS: 'No ar: Especial', SA3: 'Super com 3 barras', SA1: '↓ + Super (1 barra)' };
 
 /** Cria o jogo sobre um canvas. Retorna o objeto do app (útil para testes). */
@@ -661,111 +664,116 @@ export function createApp(canvas, devices, opts = {}) {
     drawComicPause(c,app,pauseLabels());
   }
 
+  /** Lista de golpes: especiais e supers à esquerda, comandos básicos à direita. */
   function drawMoveList() {
     const ch = app.st.f[0].ch;
-    slab(c, 120, 50, 900, 84, '#e02b2b', 26);
-    text(c, `LISTA DE GOLPES — ${ch.name}`, 570, 94, 46, '#fff');
-    let y = 190;
-    const row = (k, v, col = '#fff') => {
-      text(c, k, 160, y, 32, '#ffcf2a', 'left', '#12080c', 5);
-      text(c, v, 620, y, 32, col, 'left', '#12080c', 5);
-      y += 46;
-    };
+    navyBackground(c);
+    headerBar(c, 'LISTA DE GOLPES', ch.name);
+    pixelBox(c, 60, 160, 880, 540, '#000428', '#5878ff', 6);
+    ptext(c, 'ESPECIAIS E SUPERS', 90, 200, 4, 'yellow', 'left');
+    let y = 252;
+    let turbo = false;
     for (const [key, label] of Object.entries(KEY_LABEL)) {
       const m = ch.moves[key];
-      if (m) row(label, m.name + (m.turbo ? '  (Ginga + Especial = turbinado)' : ''));
+      if (!m) continue;
+      turbo ||= !!m.turbo;
+      ptext(c, label, 90, y, 3, 'cyan', 'left', 330);
+      ptext(c, m.name + (m.turbo ? ' *' : ''), 440, y, 3, 'creamOut', 'left', 480);
+      y += 46;
     }
-    y += 16;
-    row(`MECÂNICA: ${ch.mechName}`, '', '#35d6c0');
-    wrap(ch.mechDesc, 160, y, 1500, 30, '#fff');
-    y += 90;
-    row('Leve → Médio → Forte', 'Combo básico; termine com Especial e Super');
-    row('↓ + Forte / ↘ + Forte', 'Gancho anti-aéreo / Rasteira');
-    row('→ + Médio', 'Golpe de cima (acerta quem defende agachado)');
-    row('Leve + Médio (ou O)', 'Agarrão — aperte de novo para escapar');
-    row('Ginga (segurar)', 'Defesa em pé, agachado (com ↓) e no ar; no tempo exato, Defesa Perfeita');
-    row('→ + Ginga num golpe que acertou', 'Arrancada: corre e continua o combo (→→ na defesa: Arrancada livre)');
-    row('Ginga + Forte', 'Golpe Blindado: aguenta 2 golpes e derruba');
-    row('Leve + Médio defendendo', 'Empurrão: afasta o atacante (1 gomo de Ginga)');
-    row('Gancho acertou + segurar ↑', 'Pulo alto: emende Leve, Médio e Forte no ar');
-    row('Botão de golpe ao cair', 'Rolamento: levanta rolando (← ou → escolhe o lado)');
-    row('→→ / ←←', 'Correr / Recuo rápido');
+    if (turbo) ptext(c, '* GINGA + ESPECIAL = TURBINADO', 90, 672, 3, 'dim', 'left');
+    pixelBox(c, 60, 720, 880, 270, '#000', R.yellow, 6);
+    ptext(c, `MECÂNICA: ${ch.mechName}`, 90, 762, 4, 'gold', 'left', 820);
+    pwrap(ch.mechDesc, 820, 3).slice(0, 6).forEach((l, i) => ptext(c, l, 90, 812 + i * 32, 3, 'cream', 'left'));
+    pixelBox(c, 980, 160, 880, 830, '#000428', '#5878ff', 6);
+    ptext(c, 'COMANDOS BÁSICOS', 1010, 200, 4, 'yellow', 'left');
+    [['LEVE → MÉDIO → FORTE', 'Combo básico; termine com Especial e Super'],
+      ['↓ + FORTE / ↘ + FORTE', 'Gancho anti-aéreo / Rasteira'],
+      ['→ + MÉDIO', 'Golpe de cima (acerta quem defende agachado)'],
+      ['LEVE + MÉDIO (OU O)', 'Agarrão: aperte de novo para escapar'],
+      ['GINGA (SEGURAR)', 'Defesa em pé, agachado e no ar; no tempo exato, Defesa Perfeita'],
+      ['→ + GINGA NUM GOLPE QUE ACERTOU', 'Arrancada: corre e continua o combo'],
+      ['GINGA + FORTE', 'Golpe Blindado: aguenta 2 golpes e derruba'],
+      ['LEVE + MÉDIO DEFENDENDO', 'Empurrão: afasta o atacante (1 gomo de Ginga)'],
+      ['GANCHO ACERTOU + SEGURAR ↑', 'Pulo alto: emende golpes no ar'],
+      ['BOTÃO DE GOLPE AO CAIR', 'Rolamento: levanta rolando (← ou → escolhe o lado)'],
+      ['→→ / ←←', 'Correr / Recuo rápido']].forEach(([cmd, what], i) => {
+      const yy = 252 + i * 68;
+      ptext(c, cmd, 1010, yy, 3, 'cyan', 'left', 820);
+      ptext(c, what, 1010, yy + 28, 3, 'cream', 'left', 820);
+    });
     const gg = glyphs(devices);
-    text(c, `${devices.kind === 'controle' ? '○' : 'ESC'} para voltar   ·   Leve ${gg.L} · Médio ${gg.M} · Forte ${gg.H} · Especial ${gg.S} · Defesa ${gg.G} · Agarrão ${gg.T} · Super ${gg.X}`, W / 2, 1030, 28, '#d8d0dc');
+    ptext(c, `${devices.kind === 'controle' ? '○' : 'ESC'} VOLTA   •   LEVE ${gg.L} • MÉDIO ${gg.M} • FORTE ${gg.H} • ESPECIAL ${gg.S} • DEFESA ${gg.G} • AGARRÃO ${gg.T} • SUPER ${gg.X}`, W / 2, 1040, 3, 'silver', 'center', 1840);
   }
 
+  /** Lista de combos do lutador; no Treino, cada um pode ser praticado ou demonstrado. */
   function drawComboList() {
     const ch = app.st.f[0].ch;
     const list = COMBOS[ch.id] || [];
     const g = glyphs(devices);
-    slab(c, 120, 50, 980, 84, '#e02b2b', 26);
-    text(c, `LISTA DE COMBOS — ${ch.name}`, 610, 94, 46, '#fff');
-    if (!list.length) text(c, 'Este personagem ainda não tem combos na lista.', W / 2, 400, 40, '#fff');
+    navyBackground(c);
+    headerBar(c, 'LISTA DE COMBOS', ch.name);
+    if (!list.length) ptext(c, 'ESTE PERSONAGEM AINDA NÃO TEM COMBOS NA LISTA.', W / 2, 500, 5, 'cream');
     list.forEach((cb, i) => {
-      const y = 170 + i * 200;
+      const y = 160 + i * 205;
       const sel = i === app.ccur;
-      slab(c, 120, y, 1680, 180, sel ? '#3a2430' : '#1e1218', 24, sel ? '#ffcf2a' : '#12080c');
-      text(c, `${i + 1}. ${cb.name}`, 170, y + 38, 40, sel ? '#ffcf2a' : '#fff', 'left');
+      pixelBox(c, 100, y, 1720, 185, sel ? '#14082c' : '#000428', sel ? R.yellow : '#5878ff', 6);
+      if (sel && app.frame % 30 < 20) ptext(c, '▶', 70, y + 42, 5, 'gold');
+      ptext(c, `${i + 1}. ${cb.name}`, 140, y + 42, 5, sel ? 'gold' : 'creamOut', 'left', 1300);
       const t = app.trial && app.trial.combo === cb ? app.trial : null;
-      if (t && t.done) text(c, '✔ COMPLETO', 1760, y + 38, 34, '#7dff8a', 'right');
-      let x = 170;
-      cb.steps.forEach((s, k) => {
-        const lab = stepLabel(s, g);
-        c.font = "italic 900 34px Impact, 'Arial Black', sans-serif";
-        const w = c.measureText(lab).width + 40;
-        slab(c, x, y + 72, w, 54, '#12080c', 12, '#5a4a52');
-        text(c, lab, x + w / 2, y + 99, 34, '#fff', 'center', null);
-        x += w + 18;
-        if (k < cb.steps.length - 1) {
-          text(c, '›', x - 4, y + 99, 40, '#ffcf2a', 'center', null);
-          x += 22;
-        }
+      if (t && t.done) ptext(c, '✓ COMPLETO', 1780, y + 42, 4, 'green', 'right');
+      let x = 140;
+      cb.steps.forEach((st, k) => {
+        const lab = stepLabel(st, g).toUpperCase();
+        const w = ptextWidth(lab, 4) + 36;
+        pixelBox(c, x, y + 78, w, 54, '#000', sel ? R.cream : '#8088b0', 4);
+        ptext(c, lab, x + w / 2, y + 105, 4, 'creamOut');
+        x += w + 14;
+        if (k < cb.steps.length - 1) { ptext(c, '→', x + 14, y + 105, 3, 'yellow'); x += 42; }
       });
-      text(c, cb.tip, 170, y + 155, 26, '#d8d0dc', 'left', '#12080c', 4);
+      ptext(c, cb.tip, 140, y + 160, 3, 'dim', 'left', 1640);
     });
     const back = devices.kind === 'controle' ? '○' : 'ESC';
     const hint = app.mode === 'training'
-      ? `${g.S} treinar este combo   ·   ${g.L} ver demonstração   ·   ${back} voltar`
-      : `No Treino dá para treinar cada combo e ver a demonstração   ·   ${back} voltar`;
-    text(c, hint, W / 2, 1040, 30, '#ffe14a');
+      ? `${g.S} TREINAR ESTE COMBO   •   ${g.L} VER DEMONSTRAÇÃO   •   ${back} VOLTAR`
+      : `NO TREINO DÁ PARA TREINAR CADA COMBO E VER A DEMONSTRAÇÃO   •   ${back} VOLTAR`;
+    ptext(c, hint, W / 2, 1040, 4, 'blue', 'center', 1840);
   }
 
+  /** Controles: mapeamento do controle à esquerda, teste de botões à direita. */
   function drawControls() {
     const g = devices.padName;
-    c.fillStyle = 'rgba(10,4,12,.9)';
-    c.fillRect(0, 0, W, H);
-    slab(c, 120, 50, 900, 84, '#e02b2b', 26);
-    text(c, 'CONTROLES', 570, 94, 50, '#fff');
-    text(c, g ? `Conectado: ${g.slice(0, 70)}` : 'Nenhum controle: conecte o controle (USB ou Bluetooth) e aperte qualquer botão nele.', 160, 180, 30, g ? '#7dff8a' : '#ffcf2a', 'left');
+    navyBackground(c);
+    headerBar(c, 'CONTROLES', g ? 'CONTROLE CONECTADO' : 'TECLADO');
+    ptext(c, g ? `CONECTADO: ${g.slice(0, 70)}` : 'NENHUM CONTROLE: CONECTE (USB OU BLUETOOTH) E APERTE QUALQUER BOTÃO NELE.', 160, 172, 3, g ? 'green' : 'yellow', 'left', 1700);
     const held = { ...(devices.pad || {}) };
     for (const [k, v] of Object.entries(devices.held || {})) if (v) held[k] = true;
+    const row = (i, label, value, waiting) => {
+      const r = controlRow(i), sel = i === app.kcur;
+      pixelBox(c, r.x, r.y, r.w, r.h, sel ? '#14082c' : '#000428', sel ? R.yellow : '#5878ff', 4);
+      ptext(c, label, r.x + 30, r.y + r.h / 2, 4, sel ? 'gold' : 'creamOut', value == null ? 'left' : 'left', 520);
+      if (value != null) ptext(c, value, r.x + r.w - 30, r.y + r.h / 2, 4, waiting ? 'gold' : 'cyan', 'right', 420);
+    };
     ACTIONS.forEach(([a, label], i) => {
-      const y = 230 + i * 72;
-      const sel = i === app.kcur;
       const btn = Object.entries(devices.padMap).filter(([, v]) => v === a).map(([b]) => PS_NAMES[b] || `B${b}`).join(' / ') || '—';
-      slab(c, 160, y, 900, 60, sel ? '#3a2430' : '#1e1218', 16, sel ? '#ffcf2a' : '#12080c');
-      text(c, label, 200, y + 30, 34, '#fff', 'left', null);
-      const waiting = sel && app.remap;
-      text(c, waiting ? 'APERTE O BOTÃO NOVO…' : btn, 1020, y + 30, 34, waiting ? '#ffcf2a' : '#9ff5e8', 'right', null);
+      const waiting = i === app.kcur && app.remap;
+      row(i, label.toUpperCase(), waiting ? 'APERTE O BOTÃO NOVO…' : btn.toUpperCase(), waiting);
     });
-    const yr = 230 + ACTIONS.length * 72;
-    const selR = app.kcur === ACTIONS.length;
-    slab(c, 160, yr, 900, 60, selR ? '#3a2430' : '#1e1218', 16, selR ? '#ffcf2a' : '#12080c');
-    text(c, 'RESTAURAR PADRÃO', 610, yr + 30, 34, '#fff', 'center', null);
+    row(ACTIONS.length, 'RESTAURAR PADRÃO', null, false);
     // teste de botões: tudo que está apertado acende
-    slab(c, 1240, 230, 560, 600, '#1e1218', 20);
-    text(c, 'TESTE DE BOTÕES', 1520, 280, 36, '#ffcf2a');
-    for (const [k, s, x, yy] of [['up', '↑', 1520, 390], ['down', '↓', 1520, 510], ['left', '←', 1440, 450], ['right', '→', 1600, 450]]) {
-      slab(c, x - 40, yy - 34, 80, 68, held[k] ? '#7dff8a' : '#2a1a22', 10);
-      text(c, s, x, yy, 44, held[k] ? '#12080c' : '#fff', 'center', null);
+    pixelBox(c, 1220, 220, 600, 660, '#000', R.yellow, 6);
+    ptext(c, 'TESTE DE BOTÕES', 1520, 270, 5, 'gold');
+    for (const [k, sym, x, yy] of [['up', '↑', 1520, 390], ['down', '↓', 1520, 530], ['left', '←', 1440, 460], ['right', '→', 1600, 460]]) {
+      pixelBox(c, x - 40, yy - 34, 80, 68, held[k] ? '#7dff8a' : '#1c1c66', held[k] ? '#ffffff' : '#5878ff', 4);
+      ptext(c, sym, x, yy, 5, held[k] ? 'ink' : 'creamOut');
     }
     ACTIONS.slice(0, 7).forEach(([a, label], i) => {
-      const x = 1290 + (i % 4) * 122;
-      const yy = 640 + Math.floor(i / 4) * 84;
-      slab(c, x, yy - 32, 110, 64, held[a] ? '#7dff8a' : '#2a1a22', 10);
-      text(c, label.split(' ')[0], x + 55, yy, 22, held[a] ? '#12080c' : '#fff', 'center', null);
+      const x = 1270 + (i % 4) * 128;
+      const yy = 680 + Math.floor(i / 4) * 92;
+      pixelBox(c, x, yy - 34, 114, 68, held[a] ? '#7dff8a' : '#1c1c66', held[a] ? '#ffffff' : '#5878ff', 4);
+      ptext(c, label.split(' ')[0].toUpperCase(), x + 57, yy, 3, held[a] ? 'ink' : 'creamOut', 'center', 100);
     });
-    text(c, g ? '✕ trocar o botão da ação escolhida   ·   ○ voltar' : 'Teclado: J K L I golpes · U defesa · O agarrão · P super · Enter pausa · ESC volta', W / 2, 1040, 30, '#ffe14a');
+    ptext(c, g ? '✕ TROCA O BOTÃO DA AÇÃO ESCOLHIDA   •   ○ VOLTA' : 'TECLADO: J K L I GOLPES • U DEFESA • O AGARRÃO • P SUPER • ENTER PAUSA • ESC VOLTA', W / 2, 1040, 4, 'blue', 'center', 1840);
   }
 
   /** Painel do desafio de combo (Treino). */
@@ -846,13 +854,13 @@ export function createApp(canvas, devices, opts = {}) {
       add('hero-previous', 'Salvador anterior', 80, 800, 700, 100, () => press('left')); add('hero-next', 'Próximo Salvador', 1100, 800, 700, 100, () => press('right'));
     } else if (app.screen === 'controls' || (app.screen === 'fight' && app.paused && app.sub === 'controls')) {
       title = 'Controles'; description = 'Toque: direcional e botões na luta. Teclado: WASD/setas, J/K/L, I especial, U defesa, O agarrão, P super. Conecte um controle para remapear.';
-      ACTIONS.forEach(([key, label], i) => add(`control-${key}`, label, 950, 250 + i * 65, 800, 56, () => choose('kcur', i), app.kcur === i));
+      ACTIONS.forEach(([key, label], i) => { const r = controlRow(i); add(`control-${key}`, label, r.x, r.y, r.w, r.h, () => choose('kcur', i), app.kcur === i); });
     } else if (app.screen === 'fight' && app.paused) {
       title = 'Pausado'; description = bossHint();
       if (app.sub === 'moves') { title = 'Lista de golpes'; description = Object.entries(app.st.f[0].ch.moves).filter(([key]) => key !== 'click').map(([key, m]) => `${KEY_LABEL[key] || key}: ${m.name}`).join(' · '); }
       else if (app.sub === 'combos') {
         title = 'Lista de combos'; description = 'Escolha um combo para praticar ou peça uma demonstração.';
-        (COMBOS[app.st.f[0].ch.id] || []).forEach((combo, i) => { add(`combo-${i}`, `${combo.name}: ${combo.steps.join(' → ')}`, 150, 240 + i * 110, 1500, 90, () => { app.ccur = i; startCombo(combo, false); }); if (app.st.training) add(`demo-${i}`, `Demonstrar ${combo.name}`, 150, 720 + i * 65, 1500, 58, () => startCombo(combo, true)); });
+        (COMBOS[app.st.f[0].ch.id] || []).forEach((combo, i) => { add(`combo-${i}`, `${combo.name}: ${combo.steps.join(' → ')}`, 100, 160 + i * 205, 1400, 185, () => { app.ccur = i; startCombo(combo, false); }); if (app.st.training) add(`demo-${i}`, `Demonstrar ${combo.name}`, 1520, 160 + i * 205, 300, 185, () => startCombo(combo, true)); });
       } else pauseLabels().forEach((label, i) => add(`pause-${i}`, label, 750, 355 + i * 76, 650, 64, () => choose('pcur', i), app.pcur === i));
     } else if (app.screen === 'select2') {
       title = 'Versus 2 jogadores'; description = 'Cada jogador entra e escolhe com seu próprio controle. O teclado pode ser um dos jogadores.';
@@ -873,7 +881,7 @@ export function createApp(canvas, devices, opts = {}) {
     document.body.dataset.paused = String(app.paused || app.systemPaused);
     if(drawComicScreen(c,app,{menu:MENU,options:OPTIONS.map(([id,label])=>[id,optionLabel(id,label)]),srcName,keys:{pad:devices.kind==='controle'}})){drawNotice();return;}
     if (app.screen === 'fight') drawFight();
-    else if (app.screen === 'controls') {backdrop();drawControls();}
+    else if (app.screen === 'controls') drawControls();
     else backdrop();
     drawNotice();
   }

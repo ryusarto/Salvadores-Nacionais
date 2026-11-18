@@ -62,9 +62,15 @@ const G = {
   '%': '##..#|##.#.|...#.|..#..|.#...|.#.##|#..##', '&': '.##..|#..#.|.##..|.#...|#.#.#|#..#.|.##.#',
   '"': '#.#|#.#|...|...|...|...|...', ';': '..|.#|..|..|..|.#|#.', '$': '..#..|.####|#.#..|.###.|..#.#|####.|..#..',
   '…': '.....|.....|.....|.....|.....|.....|#.#.#', '*': '.....|#.#.#|.###.|#####|.###.|#.#.#|.....',
+  '=': '.....|.....|#####|.....|#####|.....|.....',
+  // botões do controle PlayStation e diagonais do direcional
+  '✕': '.....|#...#|.#.#.|..#..|.#.#.|#...#|.....', '○': '.....|.###.|#...#|#...#|#...#|.###.|.....',
+  '□': '.....|#####|#...#|#...#|#...#|#####|.....', '△': '.....|..#..|.#.#.|.#.#.|#...#|#####|.....',
+  '↘': '.....|#....|.#...|..#.#|...##|..###|.....', '↙': '.....|....#|...#.|#.#..|##...|###..|.....',
+  '↗': '.....|..###|...##|..#.#|.#...|#....|.....', '↖': '.....|###..|##...|#.#..|...#.|....#|.....',
 };
 /** Sinais tipográficos que viram o equivalente simples da fonte. */
-const ALIAS = { '“': '"', '”': '"', '’': "'", '‘': "'", '–': '-' };
+const ALIAS = { '“': '"', '”': '"', '’': "'", '‘': "'", '–': '-', '✔': '✓', '·': '•' };
 const ACCENT = {
   acute: ['...#.', '..#..'], grave: ['.#...', '..#..'], circ: ['..#..', '.#.#.'], tilde: ['.##.#', '#..#.'], uml: ['.#.#.', '.....'],
 };
@@ -105,6 +111,7 @@ const STYLES = {
   yellow: { rows: ['#fff6a0', '#ffe860', '#ffd830', '#f8c820', '#f0b818', '#e8a810', '#e09c08'], outline: '#1a0e00', shadow: null },
   white: { rows: ['#ffffff'], outline: '#000000', shadow: null },
   dim: { rows: ['#8088b0'], outline: null, shadow: null },
+  green: { rows: ['#e8ffe8', '#b0ffb8', '#7dff8a', '#50e868', '#38d050', '#28b840', '#20a030'], outline: '#001a04', shadow: null },
   red: { rows: ['#ffd0c0', '#ff8070', '#ff4838', '#f02818', '#d81c10', '#c01408', '#a81000'], outline: '#1a0000', shadow: null },
   ink: { rows: ['#0a0710'], outline: null, shadow: null },
 };
@@ -172,6 +179,14 @@ export function pwrap(str, width, u) {
   }
   if (line) out.push(line);
   return out;
+}
+
+/** Faixa de título das telas internas: título dourado à esquerda, detalhe à direita, filete embaixo. */
+export function headerBar(c, title, sub) {
+  ptext(c, title, 60, 72, 7, 'gold', 'left', sub ? 1150 : 1800);
+  if (sub) ptext(c, sub, 1860, 72, 4, 'cyan', 'right', 620);
+  c.fillStyle = RETRO.yellow; c.fillRect(40, 118, 1840, 4);
+  c.fillStyle = '#d84010'; c.fillRect(40, 122, 1840, 4);
 }
 
 // ───────────────────── retratos e ícones pixelados ─────────────────────

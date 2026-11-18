@@ -4,7 +4,7 @@ import {drawStageArt} from '../render/stage-packs.js';
 import {encounterStage} from '../data/stages.js';
 import { ALL, HEROES } from '../data/characters/index.js';
 import { COMIC as P } from '../render/comic-ui.js';
-import { RETRO as R, ptext, pwrap, pixelPortrait, navyBackground, pixelBox, playerTag } from '../render/retro-ui.js';
+import { RETRO as R, ptext, pwrap, pixelPortrait, navyBackground, pixelBox, playerTag, headerBar } from '../render/retro-ui.js';
 import { controlsHint, faceFlip } from './retro-screens.js';
 import { drawBelemPresentation } from '../render/belem-stage.js';
 import { drawAirportStage } from '../render/airport-stage.js';
@@ -21,13 +21,7 @@ import { currentChapter, currentFight, talkLines } from './story.js';
 
 const W = 1920;
 
-/** Título da tela à esquerda e local/capítulo à direita, sobre um filete dourado. */
-function banner(c, title, sub) {
-  ptext(c, title, 60, 72, 7, 'gold', 'left', sub ? 1150 : 1800);
-  if (sub) ptext(c, sub, 1860, 72, 4, 'cyan', 'right', 620);
-  c.fillStyle = R.yellow; c.fillRect(40, 118, 1840, 4);
-  c.fillStyle = '#d84010'; c.fillRect(40, 122, 1840, 4);
-}
+const banner = headerBar;
 
 /** Texto corrido dentro de uma caixa; reduz a letra quando a fala é longa. */
 function caption(c, text, x, y, width, height, style = 'cream') {
