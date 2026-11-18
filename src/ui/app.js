@@ -1,7 +1,7 @@
 import { encounterStage } from '../data/stages.js';
 import { drawEventStage } from '../render/event-stage.js';
 import { drawStageArt, requestStageArt } from '../render/stage-packs.js';
-import { warmBelemStage } from '../render/belem-stage.js';
+import { belemStageLoading, drawBelemStage } from '../render/belem-stage.js';
 import { createMenuAccess } from './menu-access.js';
 import { loadPreferences, savePreferences } from './preferences.js';
 import { LESSONS, createLesson, advanceLesson, skipLesson } from './lessons.js';
@@ -12,7 +12,7 @@ import { createMatch, step, resetTraining, BAN_LABEL } from '../core/match.js';
 import { createBrain, aiInput } from '../core/ai.js';
 import { EMPTY_INPUT } from '../core/input.js';
 import { buildStage, drawStage } from '../render/stage.js';
-import { drawEffect, prepareSprites, spritePacksFor } from '../render/sprites.js';
+import { drawEffect, prepareSprites, spritePacksFor, warmSprites } from '../render/sprites.js';
 import { drawFighter, drawBoxes } from '../render/mannequin.js';
 import { drawLivePhone, drawBanStamp, drawAnkleZone, drawHeadline, drawFired, drawGoldArmor, drawWings } from '../render/boss-art.js';
 import { drawPavanassiStatus } from '../render/pavanassi-art.js';
@@ -29,7 +29,7 @@ import { text, slab, halftone } from '../render/draw.js';
 import { readInput, takePressed, pollPad, glyphs, rumble, remapPad, resetPad, PS_NAMES, readInputFrom, takePressedFrom, clearPressed, rumbleOn, padLabel } from './devices.js';
 import { COMBOS } from '../data/combos.js';
 import { createTracker, trackCombo, createRunner, runnerInput, runnerDone, stepLabel } from '../core/combos.js';
-import { audioEvents, sfx, setStageAudioActive, selectStageAudio } from './audio.js';
+import { audioEvents, sfx, setStageAudioActive, selectStageAudio, warmAudio } from './audio.js';
 import { banterEvents } from './banter.js';
 import {drawComicScreen,drawComicPause,FOES,FOE_COLS} from './comic-screens.js';
 import {comicBackground} from '../render/comic-ui.js';
@@ -125,9 +125,12 @@ export function createApp(canvas, devices, opts = {}) {
     const ids = [HEROES[app.hero], app.foe].flatMap(spritePacksFor);
     const token = app.vsToken = (app.vsToken || 0) + 1;
     // A arena pintada baixa e é pré-montada durante a tela de versus, não no meio da luta.
-    void requestStageArt(encounterStage(app));
-    if (encounterStage(app) === 'belem') setTimeout(() => warmBelemStage(app.cam), 0);
-    prepareSprites(ids).then(() => prepareSprites(ids.filter(id => id.startsWith('zanata') && id.endsWith('-fx')), ['fx-estalo','fx-impacto','fx-defesa'], { activate: false })).then(() => { if (app.vsToken === token) app.vsReady = true; });
+    setTimeout(warmAudio, 0);
+    app.vsPacks = ids;
+    app.arenaWarm = false;
+    const stageId = encounterStage(app), loadingArena = stageId === 'belem' ? belemStageLoading() : requestStageArt(stageId);
+    const arena = Promise.race([Promise.resolve(loadingArena), new Promise(resolve => setTimeout(resolve, 5000))]);
+    Promise.all([arena, prepareSprites(ids).then(() => prepareSprites(ids.filter(id => id.startsWith('zanata') && id.endsWith('-fx')), ['fx-estalo','fx-impacto','fx-defesa'], { activate: false }))]).then(() => { if (app.vsToken === token) app.vsReady = true; });
   }
 
   function pickFoe() {
@@ -565,6 +568,32 @@ export function createApp(canvas, devices, opts = {}) {
     text(c, line.trim(), x, yy, size, color, 'left', '#12080c', 5);
   }
 
+  // Cenário da luta: a arte pintada quando pronta, senão o cenário desenhado em código.
+  function drawArena(stage, frame) {
+    if (drawStageArt(c, stage, app.cam, frame, { reducedEffects: preferences.reducedEffects })) return true;
+    if (stage === 'palco' || stage === 'banheiros') drawEventStage(c, app.layers, app.cam, app.frame, stage);
+    else if (stage === 'aeroporto') drawAirportStage(c, app.cam, app.frame);
+    else if (stage === 'mansao') drawMansionStage(c, app.cam, app.frame);
+    else if (stage === 'washington') drawWashingtonStage(c, app.cam, app.frame);
+    else if (stage === 'inferno') drawInfernoStage(c, app.cam, app.frame);
+    else drawStage(c, app.layers, app.cam, app.frame);
+    return false;
+  }
+
+  // Primeiro desenho de cada imagem sobe a textura para a GPU (60-250 ms). Faz isso
+  // na tela de versus, por baixo dela, para o primeiro quadro da luta sair liso.
+  function warmArena() {
+    if (app.arenaWarm || !app.vsReady) return;
+    c.save();
+    const stage = encounterStage(app);
+    // Sem descartar o que está fora da câmera: tudo sobe para a GPU agora.
+    if (stage === 'belem') drawBelemStage(c, app.cam, 0, true);
+    else if (!drawStageArt(c, stage, app.cam, 0, { warm: true })) drawArena(stage, 0);
+    warmSprites(c, app.vsPacks || []);
+    c.restore();
+    app.arenaWarm = true;
+  }
+
   function drawFight() {
     const st = app.st;
     const [a, b] = st.f;
@@ -574,14 +603,7 @@ export function createApp(canvas, devices, opts = {}) {
     if (preferences.reducedEffects) { fx.shake = 0; fx.flash = 0; }
     const sx = fx.shake ? (Math.random() - 0.5) * fx.shake * 2 : 0;
     const sy = fx.shake ? (Math.random() - 0.5) * fx.shake * 2 : 0;
-    const stage = encounterStage(app);
-    if (drawStageArt(c, stage, app.cam, st.frame, { reducedEffects: preferences.reducedEffects })) { /* complete pack replaces temporary scenery */ }
-    else if (stage === 'palco' || stage === 'banheiros') drawEventStage(c, app.layers, app.cam, app.frame, stage);
-    else if (stage === 'aeroporto') drawAirportStage(c, app.cam, app.frame);
-    else if (stage === 'mansao') drawMansionStage(c, app.cam, app.frame);
-    else if (stage === 'washington') drawWashingtonStage(c, app.cam, app.frame);
-    else if (stage === 'inferno') drawInfernoStage(c, app.cam, app.frame);
-    else drawStage(c, app.layers, app.cam, app.frame);
+    drawArena(encounterStage(app), st.frame);
     fxDrawScreen(c, fx, 'under');
     c.save();
     c.translate(-app.cam + sx, sy);
@@ -880,6 +902,7 @@ export function createApp(canvas, devices, opts = {}) {
     app.onRender?.();
     syncAccessibleMenus();
     document.body.dataset.paused = String(app.paused || app.systemPaused);
+    if (app.screen === 'vs') warmArena();
     if(drawComicScreen(c,app,{menu:MENU,options:OPTIONS.map(([id,label])=>[id,optionLabel(id,label)]),srcName,keys:{pad:devices.kind==='controle'}})){drawNotice();return;}
     if (app.screen === 'fight') drawFight();
     else if (app.screen === 'controls') drawControls();
@@ -911,6 +934,7 @@ export function createApp(canvas, devices, opts = {}) {
   app.tick = tick;
   app.render = render;
   app.startFight = startFight;
+  app.enterVs = enterVs; // testes automáticos de desempenho
   app.pickFoe = pickFoe;
   app.startStory = startStory;
   app.run = () => {

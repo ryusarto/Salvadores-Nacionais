@@ -13,6 +13,22 @@ export function requestStageArt(id) {
   if (!requests.has(id)) requests.set(id, loadStageArt({ [id]: catalog.get(id) }, { prepare: true }));
   return requests.get(id);
 }
+/**
+ * Imagem decodificada fora da thread do jogo e que o navegador não descarta:
+ * um <img> pode ser decodificado de novo no meio da luta (50-100 ms), e
+ * createImageBitmap(<img>) decodifica na thread principal. Um Blob, não.
+ */
+export async function loadPersistentImage(url, options) {
+  if (typeof createImageBitmap === 'function' && typeof fetch === 'function' && typeof document !== 'undefined') {
+    try {
+      const response = await fetch(url);
+      if (response.ok) return await createImageBitmap(await response.blob(), options);
+    } catch { /* cai no <img> abaixo */ }
+  }
+  const img = new Image(); img.decoding = 'async'; img.src = url;
+  await img.decode();
+  return img;
+}
 const finite = (v, fallback) => Number.isFinite(v) ? v : fallback;
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 /** Explicit loaders keep editable layers for art previews; runtime requests opt into baking. */
@@ -29,8 +45,7 @@ export async function loadStageArt(all, { prepare = false } = {}) {
       const a = pack.assets[key];
       if (!a || a.kind === 'audio') { errors.push(key); return; }
       try {
-        const img = new Image(); img.decoding = 'async'; img.src = a.url;
-        await img.decode();
+        const img = await loadPersistentImage(a.url);
         if (!(img.width > 0 && img.height > 0)) throw Error('empty image');
         images.set(key, img);
       } catch { errors.push(key); }
@@ -59,7 +74,7 @@ export function stageArtStatus(id) {
 // 14-45 fps. Objetos parados e seguidos na mesma profundidade viram uma camada
 // (a operação "over" é associativa, o resultado é o mesmo); tiras animadas são
 // reduzidas ao tamanho em que aparecem; o chão fica em cache por pixel de câmera.
-const canPrepare = () => typeof OffscreenCanvas === 'function' || typeof document !== 'undefined';
+export const canPrepare = () => typeof OffscreenCanvas === 'function' || typeof document !== 'undefined';
 const makeCanvas = (w, h) => typeof OffscreenCanvas === 'function' ? new OffscreenCanvas(w, h) : Object.assign(document.createElement('canvas'), { width: w, height: h });
 const yieldTask = () => new Promise(resolve => setTimeout(resolve, 0));
 
@@ -97,43 +112,45 @@ export function planStageObjects(list, assets, sizes) {
   return ops;
 }
 
+/** Pré-monta uma lista de objetos: camadas paradas juntas e tiras animadas no tamanho da tela. */
+export async function prepareStageObjects(list, assets, images) {
+  const ops = planStageObjects(list, assets, images);
+  for (const op of ops) {
+    if (op.type === 'bake') {
+      const cv = makeCanvas(op.box.w, op.box.h), g = cv.getContext('2d');
+      g.imageSmoothingEnabled = true; g.imageSmoothingQuality = 'high';
+      for (const i of op.items) { g.globalAlpha = i.alpha; g.drawImage(images.get(i.key), i.sx, i.sy, i.sw, i.sh, i.x - op.box.x, i.y - op.box.y, i.w, i.h); }
+      op.cv = cv;
+    } else {
+      const cw = Math.max(1, Math.ceil(op.w)), ch = Math.max(1, Math.ceil(op.h));
+      const cv = makeCanvas(cw * op.frames, ch), g = cv.getContext('2d');
+      g.imageSmoothingEnabled = true; g.imageSmoothingQuality = 'high';
+      for (let f = 0; f < op.frames; f++) g.drawImage(images.get(op.key), op.sx + f * op.cellW, op.sy, op.sw, op.sh, f * cw, 0, op.w, op.h);
+      op.cv = cv; op.cw = cw;
+    }
+    op.items = null;
+    await yieldTask();
+  }
+  return ops;
+}
 async function prepareStage(pack, images) {
   const prepared = [];
-  for (const list of [pack.objects, pack.foreground]) {
-    const ops = planStageObjects(list, pack.assets, images);
-    for (const op of ops) {
-      if (op.type === 'bake') {
-        const cv = makeCanvas(op.box.w, op.box.h), g = cv.getContext('2d');
-        g.imageSmoothingEnabled = true; g.imageSmoothingQuality = 'high';
-        for (const i of op.items) { g.globalAlpha = i.alpha; g.drawImage(images.get(i.key), i.sx, i.sy, i.sw, i.sh, i.x - op.box.x, i.y - op.box.y, i.w, i.h); }
-        op.cv = cv;
-      } else {
-        const cw = Math.max(1, Math.ceil(op.w)), ch = Math.max(1, Math.ceil(op.h));
-        const cv = makeCanvas(cw * op.frames, ch), g = cv.getContext('2d');
-        g.imageSmoothingEnabled = true; g.imageSmoothingQuality = 'high';
-        for (let f = 0; f < op.frames; f++) g.drawImage(images.get(op.key), op.sx + f * op.cellW, op.sy, op.sw, op.sh, f * cw, 0, op.w, op.h);
-        op.cv = cv; op.cw = cw;
-      }
-      op.items = null;
-      await yieldTask();
-    }
-    prepared.push(ops);
-  }
+  for (const list of [pack.objects, pack.foreground]) prepared.push(await prepareStageObjects(list, pack.assets, images));
   const layers = pack.layers.map(layer => ({ layer, img: images.get(layer.asset) })).filter(l => l.img);
   const ground = pack.ground && images.get(pack.ground.asset);
   return { layers, objects: prepared[0], foreground: prepared[1], ground, groundCache: null, groundCam: null };
 }
 
-function drawPrepared(c, ops, camera, frame, reducedEffects) {
+export function drawPrepared(c, ops, camera, frame, reducedEffects, warm = false) {
   for (const op of ops) {
     if (op.type === 'bake') {
       const x = Math.round(op.box.x - camera * op.factor);
-      if (x + op.box.w < 0 || x > 1920) continue;
+      if (!warm && (x + op.box.w < 0 || x > 1920)) continue;
       c.globalAlpha = 1;
       c.drawImage(op.cv, x, op.box.y);
     } else {
       const x = Math.round(op.x - camera * op.factor);
-      if (x + op.w < 0 || x > 1920) continue;
+      if (!warm && (x + op.w < 0 || x > 1920)) continue;
       const f = stageAnimationFrame(reducedEffects ? 0 : frame, op.fps, op.frames, op.phase);
       c.globalAlpha = op.alpha;
       c.drawImage(op.cv, f * op.cw, 0, op.w, op.h, x, Math.round(op.y), op.w, op.h);
@@ -184,9 +201,9 @@ function drawFast(c, item, camera, frame, options) {
     c.globalAlpha = clamp(finite(layer.opacity, 1), 0, 1);
     c.drawImage(img, (layer.x || 0) - camera * finite(layer.factor, 1), layer.y || 0, width, height);
   }
-  drawPrepared(c, fast.objects, camera, frame, options.reducedEffects);
+  drawPrepared(c, fast.objects, camera, frame, options.reducedEffects, options.warm);
   if (fast.ground) drawPreparedGround(c, pack, fast, camera);
-  drawPrepared(c, fast.foreground, camera, frame, options.reducedEffects);
+  drawPrepared(c, fast.foreground, camera, frame, options.reducedEffects, options.warm);
   c.restore();
   return true;
 }

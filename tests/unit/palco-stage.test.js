@@ -64,3 +64,15 @@ test('prepared stage keeps draw order: consecutive still props share a layer, an
  assert.equal(ops[0].items[1].alpha, .5);
  assert.deepEqual([ops[1].sx, ops[1].w, ops[1].h, ops[1].x, ops[1].y], [100, 125, 225, 737.5, 595]);
 });
+test('warm-up draws every prepared piece, including those off camera; gameplay still culls', async () => {
+ const {drawPrepared} = await import('../../src/render/stage-packs.js');
+ const cv = {width: 10, height: 10};
+ const ops = [
+  {type:'bake', factor:1, box:{x:100, y:0, w:50, h:50}, cv},
+  {type:'bake', factor:1, box:{x:5000, y:0, w:50, h:50}, cv},
+  {type:'anim', factor:1, x:-4000, y:0, w:40, h:40, frames:6, cw:40, alpha:1, cv},
+ ];
+ const draws = warm => { const c = {n:0, globalAlpha:1, drawImage(){ this.n++; }}; drawPrepared(c, ops, 0, 0, false, warm); return c.n; };
+ assert.equal(draws(false), 1);
+ assert.equal(draws(true), 3);
+});

@@ -4,7 +4,7 @@ import { spriteProgress } from './sprite-timing.js';
 import { paiAnimation } from './pai-fujao-timing.js';
 import { applyFighterMaterial, materialStrength, noteMaterialOffThread } from './fighter-material.js';
 import { keyOutPixels, recolorPixels } from './sprite-pixels.js';
-import { decodeStripOffThread, recolorStripOffThread, spriteWorkerAvailable } from './sprite-worker.js';
+import { decodeStripOffThread, decodeAltStripOffThread, spriteWorkerAvailable } from './sprite-worker.js';
 
 /**
  * Leitor de sprites. Cada personagem pode registrar tiras de imagem com os
@@ -182,17 +182,18 @@ export function recolorAlt(px, id = '') {
  */
 function altSource(s) {
   if (s.cvAlt && s.cvAltOf === s.cv) return s.cvAlt;
-  const offThread = !s.altOnMainThread && typeof ImageBitmap !== 'undefined' && s.cv instanceof ImageBitmap && spriteWorkerAvailable();
-  if (!offThread) return altCanvas(s);
+  if (!altOffThread(s)) return altCanvas(s);
   if (s.altFor !== s.cv) {
     const of = s.altFor = s.cv;
-    recolorStripOffThread(of, paletteFor(s.id), Math.round(s.size / 36)).then(r => {
+    const strength = s.material === false ? 0 : materialStrength(s.id);
+    decodeAltStripOffThread(s.url, { strength, keyOut: !s.trueAlpha, palette: paletteFor(s.id), blur: Math.round(s.size / 36) }).then(r => {
       if (s.cv === of) { if (s.cvAlt !== s.cv) closeBitmap(s.cvAlt); s.cvAlt = r.bitmap; s.cvAltOf = of; }
       else closeBitmap(r.bitmap);
     }, () => { s.altOnMainThread = true; }).finally(() => { if (s.altFor === of) s.altFor = null; });
   }
   return null;
 }
+const altOffThread = s => !s.altOnMainThread && typeof ImageBitmap !== 'undefined' && s.cv instanceof ImageBitmap && spriteWorkerAvailable();
 
 function altCanvas(s) {
   if (s.cvAlt && s.cvAltOf === s.cv) return s.cvAlt;
@@ -318,6 +319,19 @@ const saveData = () => !!globalThis.navigator?.connection?.saveData;
 export function spritePacksFor(ch) {
   const bases = [ch.id, ...Object.values(ch.spriteFacingPacks || {})];
   return [...new Set(bases.flatMap(id => [id, id + '-fx', 'fx-' + id]))];
+}
+
+/**
+ * Desenha uma vez, em 1 pixel, cada tira já decodificada dos pacotes: o navegador
+ * sobe a textura para a GPU agora (tela de versus) e não no primeiro golpe.
+ */
+export function warmSprites(c, ids) {
+  c.save();
+  c.globalAlpha = 1;
+  for (const id of ids) for (const s of Object.values(REG[id] || {})) {
+    for (const cv of [s.cv, s.cvAlt]) if (cv && cv.width > 0) c.drawImage(cv, 0, 0, 1, 1, 0, 0, 1, 1);
+  }
+  c.restore();
 }
 
 export const hasSprites = (id) => !!REG[id] && Object.keys(REG[id]).length > 0;
@@ -446,7 +460,7 @@ export function drawSprite(c, f, frame) {
   if ((!pick || pick.waiting) && last?.set === set && last.s.cv) pick = last;
   if (!pick?.s) return false;
   let i = pick.i ?? Math.min(pick.s.n - 1, Math.max(0, Math.floor(pick.p * pick.s.n)));
-  let denseAlt = !pick.poster && f.alt && pick.s.n >= 12 && pick.s.material === false && typeof document !== 'undefined';
+  let denseAlt = !pick.poster && f.alt && pick.s.n >= 12 && pick.s.material === false && typeof document !== 'undefined' && !altOffThread(pick.s);
   let source = pick.poster ? posterSource(pick.s, f.alt) : denseAlt ? denseAltFrame(pick.s, i) : f.alt ? altSource(pick.s) : pick.s.cv;
   // Paleta do espelho ainda no worker: mantém o último quadro já colorido.
   // (Um ImageBitmap liberado fica com largura 0 e não pode mais ser desenhado.)
