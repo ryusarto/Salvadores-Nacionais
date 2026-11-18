@@ -328,6 +328,45 @@ function whip(c, J, f, kind = 'whip') {
   if (chain) drawPacifier(c, tip[0], tip[1], 1);
 }
 
+let glowLayer = null;
+/** Desenha `draw` numa camada do tamanho do lutador e aplica o brilho uma vez só. */
+function withGlow(c, f, tint, draw) {
+  // O contexto já está na origem do lutador (pé no chão): a área é local.
+  const m = c.getTransform();
+  const left = -560, top = -980, right = 560, bottom = 120;
+  const pts = [[left, top], [right, top], [left, bottom], [right, bottom]].map(([x, y]) => [m.a * x + m.c * y + m.e, m.b * x + m.d * y + m.f]);
+  const W = c.canvas?.width || 1920, H = c.canvas?.height || 1080;
+  const x0 = Math.max(0, Math.floor(Math.min(...pts.map(p => p[0])) - 40)), x1 = Math.min(W, Math.ceil(Math.max(...pts.map(p => p[0])) + 40));
+  const y0 = Math.max(0, Math.floor(Math.min(...pts.map(p => p[1])) - 40)), y1 = Math.min(H, Math.ceil(Math.max(...pts.map(p => p[1])) + 40));
+  const w = x1 - x0, h = y1 - y0;
+  if (w <= 0 || h <= 0 || typeof document === 'undefined') {
+    c.shadowColor = tint; c.shadowBlur = 34;
+    const out = draw(c);
+    c.shadowBlur = 0;
+    return out;
+  }
+  if (!glowLayer || glowLayer.width < w || glowLayer.height < h) {
+    glowLayer = typeof OffscreenCanvas !== 'undefined' ? new OffscreenCanvas(Math.max(w, glowLayer?.width || 0), Math.max(h, glowLayer?.height || 0)) : Object.assign(document.createElement('canvas'), { width: Math.max(w, glowLayer?.width || 0), height: Math.max(h, glowLayer?.height || 0) });
+  }
+  const g = glowLayer.getContext('2d');
+  g.save();
+  g.setTransform(1, 0, 0, 1, 0, 0);
+  g.clearRect(0, 0, w, h);
+  g.setTransform(m.a, m.b, m.c, m.d, m.e - x0, m.f - y0);
+  g.globalAlpha = 1;
+  const out = draw(g);
+  // Os efeitos depois do corpo herdavam o estado de traço do boneco.
+  for (const k of ['lineCap', 'lineJoin', 'lineWidth', 'strokeStyle', 'fillStyle']) c[k] = g[k];
+  g.restore();
+  c.save();
+  c.setTransform(1, 0, 0, 1, 0, 0);
+  c.shadowColor = tint;
+  c.shadowBlur = 34;
+  c.drawImage(glowLayer, 0, 0, w, h, x0, y0, w, h);
+  c.restore();
+  return out;
+}
+
 /**
  * Desenha um lutador.
  * @param {CanvasRenderingContext2D} c contexto já transladado pela câmera
@@ -353,55 +392,56 @@ export function drawFighter(c, f, frame) {
   c.save();
   c.translate(f.x + shake, gy - f.y);
   c.scale(f.face * (flip && !((ch.spriteStatePhases || ch.spriteProfile === 'ten-frame' || ch.spriteProfile === 'twelve-frame') && hasSprites(ch.id)) ? -1 : 1), 1);
-  if (tint) {
-    c.shadowColor = tint;
-    c.shadowBlur = 34;
-  }
   const look = ch.look;
   const sleeve = look.sleeves === 'long' ? col.top : null;
   const upper = look.sleeves === 'none' ? col.skin : col.top;
   const shin = look.pants === 'shorts' ? col.skin : col.bottom;
   const dark = 0.72;
 
-  drawZanataStatus(c, f, frame);
-  const sprite = drawSprite(c, f, frame);
-  if (!sprite) {
-  hair(c, J, ch, false);
-  // braço e perna de trás
-  limb(c, J.sh, J.elbowB, 30, shade(upper, dark));
-  limb(c, J.elbowB, J.handB, 26, shade(sleeve || col.skin, dark));
-  blob(c, J.handB, 17, shade(col.skin, dark));
-  limb(c, J.hip, J.kneeB, 44, shade(col.bottom, dark));
-  limb(c, J.kneeB, J.footB, 36, shade(shin, dark));
-  shoe(c, J.footB, J.shinB, shade(col.shoe, dark), look.bigBoots);
-  // tronco
-  blob(c, J.hip, 40, col.bottom);
-  limb(c, J.hip, J.neck, 84, col.top);
-  for (const [a, b, sc] of look.stripes || []) {
-    const p = (t) => [J.hip[0] + (J.neck[0] - J.hip[0]) * t, J.hip[1] + (J.neck[1] - J.hip[1]) * t];
-    c.lineCap = 'butt';
-    c.beginPath();
-    c.moveTo(...p(a));
-    c.lineTo(...p(b));
-    c.strokeStyle = sc;
-    c.lineWidth = 84;
-    c.stroke();
-  }
-  // perna da frente
-  limb(c, J.hip, J.kneeF, 46, col.bottom);
-  limb(c, J.kneeF, J.footF, 38, shin);
-  shoe(c, J.footF, J.shinF, col.shoe, look.bigBoots);
-  // cabeça
-  blob(c, J.head, LEN.head, col.skin);
-  hair(c, J, ch, true);
-  // braço da frente
-  if (look.weapon === 'whip' || look.weapon === 'chupeta') whip(c, J, f, look.weapon);
-  limb(c, J.sh, J.elbowF, 32, upper);
-  limb(c, J.elbowF, J.handF, 28, sleeve || col.skin);
-  blob(c, J.handF, 19, col.skin);
-  weapon(c, J, f, ch);
-  } else if (!['zanata', 'chupetinha'].includes(ch.id) && (look.weapon === 'whip' || look.weapon === 'chupeta')) whip(c, J, f, look.weapon);
-  c.shadowBlur = 0;
+  const drawBody = (c) => {
+    drawZanataStatus(c, f, frame);
+    const sprite = drawSprite(c, f, frame);
+    if (!sprite) {
+    hair(c, J, ch, false);
+    // braço e perna de trás
+    limb(c, J.sh, J.elbowB, 30, shade(upper, dark));
+    limb(c, J.elbowB, J.handB, 26, shade(sleeve || col.skin, dark));
+    blob(c, J.handB, 17, shade(col.skin, dark));
+    limb(c, J.hip, J.kneeB, 44, shade(col.bottom, dark));
+    limb(c, J.kneeB, J.footB, 36, shade(shin, dark));
+    shoe(c, J.footB, J.shinB, shade(col.shoe, dark), look.bigBoots);
+    // tronco
+    blob(c, J.hip, 40, col.bottom);
+    limb(c, J.hip, J.neck, 84, col.top);
+    for (const [a, b, sc] of look.stripes || []) {
+      const p = (t) => [J.hip[0] + (J.neck[0] - J.hip[0]) * t, J.hip[1] + (J.neck[1] - J.hip[1]) * t];
+      c.lineCap = 'butt';
+      c.beginPath();
+      c.moveTo(...p(a));
+      c.lineTo(...p(b));
+      c.strokeStyle = sc;
+      c.lineWidth = 84;
+      c.stroke();
+    }
+    // perna da frente
+    limb(c, J.hip, J.kneeF, 46, col.bottom);
+    limb(c, J.kneeF, J.footF, 38, shin);
+    shoe(c, J.footF, J.shinF, col.shoe, look.bigBoots);
+    // cabeça
+    blob(c, J.head, LEN.head, col.skin);
+    hair(c, J, ch, true);
+    // braço da frente
+    if (look.weapon === 'whip' || look.weapon === 'chupeta') whip(c, J, f, look.weapon);
+    limb(c, J.sh, J.elbowF, 32, upper);
+    limb(c, J.elbowF, J.handF, 28, sleeve || col.skin);
+    blob(c, J.handF, 19, col.skin);
+    weapon(c, J, f, ch);
+    } else if (!['zanata', 'chupetinha'].includes(ch.id) && (look.weapon === 'whip' || look.weapon === 'chupeta')) whip(c, J, f, look.weapon);
+    return sprite;
+  };
+  // Brilho de armadura/atordoamento: um único desfoque sobre o corpo inteiro. Com
+  // shadowBlur direto, cada membro do boneco ganhava o próprio desfoque (~30 por quadro).
+  const sprite = tint ? withGlow(c, f, tint, drawBody) : drawBody(c);
 
   // rastro do golpe; as novas tiras usam os efeitos separados de tinta.
   if (sprite) drawMajisStatus(c, f, frame);

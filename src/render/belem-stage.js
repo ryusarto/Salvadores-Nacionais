@@ -1,16 +1,35 @@
 import {BELEM_LAYERS,BELEM_OBJECTS,BELEM_BANDS,stageFrame} from '../data/belem-stage.js';
-const state={pack:null,images:new Map(),errors:[],ready:false};
+import {prepareStageObjects,drawPrepared,canPrepare,loadPersistentImage} from './stage-packs.js';
+const state={pack:null,images:new Map(),errors:[],ready:false,fast:null};
 const cache={background:null,backgroundCam:null,ground:null,groundCam:null};
 const canvas=(w,h)=>typeof OffscreenCanvas!=='undefined'?new OffscreenCanvas(w,h):Object.assign(document.createElement('canvas'),{width:w,height:h});
-export function belemStageStatus(){return{ready:state.ready,loaded:state.images.size,errors:[...state.errors],groups:state.pack?.groups??0};}
-export async function loadBelemStage(pack){
- state.pack=pack;state.images.clear();state.errors=[];state.ready=false;
+export function belemStageStatus(){return{ready:state.ready,loaded:state.images.size,errors:[...state.errors],groups:state.pack?.groups??0,prepared:!!state.fast};}
+let loading=null;
+/** Promessa do carregamento atual de Belém (resolvida se não houver). */
+export function belemStageLoading(){return loading||Promise.resolve();}
+/** Registra um carregamento que ainda vai começar (depois da interface essencial). */
+export function expectBelemStage(promise){loading=promise;}
+export function loadBelemStage(pack){loading=loadBelem(pack);return loading;}
+async function loadBelem(pack){
+ state.pack=pack;state.images.clear();state.errors=[];state.ready=false;state.fast=null;
  cache.backgroundCam=cache.groundCam=null;
  await Promise.all(Object.entries(pack.assets).filter(([,a])=>a.kind!=='audio').map(async([id,a])=>{
-  try{const img=new Image();img.decoding='async';img.src=a.url;await img.decode();state.images.set(id,img);}
+  try{state.images.set(id,await loadPersistentImage(a.url));}
   catch{state.errors.push(id);}
  }));
- state.ready=['ceu','horizonte','agua','arquitetura','feira','calcamento'].every(id=>state.images.has(id));
+ const complete=['ceu','horizonte','agua','arquitetura','feira','calcamento'].every(id=>state.images.has(id));
+ // Pré-monta os objetos (mesma ordem de desenho) para a luta não redesenhar 31 objetos por quadro.
+ if(complete&&canPrepare()){
+  try{
+   const assets=Object.fromEntries(Object.entries(pack.assets).map(([k,a])=>[k,a.frames===6?{...a,cellWidth:a.cellWidth??500,crop:a.crop??[0,0,500,500]}:a]));
+   const list=bands=>bands.flatMap(b=>BELEM_OBJECTS.filter(o=>o.band===b)).map(o=>({...o,fps:o.fps??4}));
+   const back=await prepareStageObjects(list(['water','boats']),assets,state.images);
+   const front=await prepareStageObjects(list(BELEM_BANDS.slice(2)),assets,state.images);
+   if(state.pack===pack)state.fast={back,front};
+  }catch{state.fast=null;}
+ }
+ // Só fica pronto depois de pré-montado: a luta nunca desenha o caminho lento no meio.
+ if(state.pack===pack)state.ready=complete;
  return belemStageStatus();
 }
 function image(id){return state.images.get(id);}
@@ -34,16 +53,19 @@ export function drawBelemGround(c,texture,cam){
  const shade=c.createLinearGradient(0,top,0,1080);shade.addColorStop(0,'rgba(27,17,43,.25)');shade.addColorStop(1,'rgba(27,17,43,.12)');c.fillStyle=shade;c.fillRect(0,top,1920,254);
  c.fillStyle='#353139';c.fillRect(0,top-2,1920,3);
 }
-export function drawBelemStage(c,cam,frame=0){
+export function drawBelemStage(c,cam,frame=0,warm=false){
  if(!state.ready)return false;
  const safeCam=Math.max(0,Math.min(680,cam));
  const pixelCam=Math.round(safeCam);
  cache.background??=canvas(1920,1080);
  if(cache.backgroundCam!==pixelCam){const bg=cache.background.getContext('2d');bg.clearRect(0,0,1920,1080);for(const L of BELEM_LAYERS.slice(0,5))layer(bg,L.id,pixelCam,L.factor);cache.backgroundCam=pixelCam;}
  c.drawImage(cache.background,0,0);
+ if(state.fast){drawPrepared(c,state.fast.back,safeCam,frame,false,warm);layer(c,'feira',safeCam,.78);drawPrepared(c,state.fast.front,safeCam,frame,false,warm);}
+ else{
  for(const band of['water','boats'])for(const o of BELEM_OBJECTS)if(o.band===band)object(c,o,safeCam,frame);
  layer(c,'feira',safeCam,.78);
  for(const band of BELEM_BANDS.slice(2))for(const o of BELEM_OBJECTS)if(o.band===band)object(c,o,safeCam,frame);
+ }
  cache.ground??=canvas(1920,254);
  if(cache.groundCam!==pixelCam){const floor=cache.ground.getContext('2d');floor.setTransform(1,0,0,1,0,-826);drawBelemGround(floor,image('calcamento'),pixelCam);cache.groundCam=pixelCam;}
  c.drawImage(cache.ground,0,826);

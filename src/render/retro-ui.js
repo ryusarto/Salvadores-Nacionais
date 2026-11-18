@@ -200,14 +200,19 @@ function pixelated(id, cols) {
   if (pixCache.has(key)) return pixCache.get(key);
   const img = comicImageEl(id);
   if (!img) return null; // ainda carregando: não guarda, tenta de novo no próximo quadro
-  const rows = Math.round(cols * img.height / img.width);
+  const cv = pixelateFrom(img, cols, Math.round(cols * img.height / img.width), true);
+  pixCache.set(key, cv);
+  return cv;
+}
+
+// Reduz para `cols` colunas, posteriza (5 níveis por canal) e corta o alfa: borda dura de sprite.
+function pixelateFrom(src, cols, rows, resize) {
   const cv = makeCanvas(cols, rows);
-  const g = cv.getContext('2d');
+  const g = cv.getContext('2d', { willReadFrequently: true });
   g.imageSmoothingEnabled = true;
   g.imageSmoothingQuality = 'high';
-  g.drawImage(img, 0, 0, cols, rows);
+  if (resize) g.drawImage(src, 0, 0, cols, rows); else g.drawImage(src, 0, 0);
   try {
-    // Posteriza (5 níveis por canal) e corta o alfa: borda dura de sprite.
     const d = g.getImageData(0, 0, cols, rows);
     const q = (v) => Math.round(v / 51) * 51;
     for (let i = 0; i < d.data.length; i += 4) {
@@ -216,8 +221,31 @@ function pixelated(id, cols) {
     }
     g.putImageData(d, 0, 0);
   } catch { /* canvas contaminado: fica só reduzido */ }
-  pixCache.set(key, cv);
   return cv;
+}
+
+/**
+ * Prepara em segundo plano, um por vez, os retratos e ícones pixelados: cada um
+ * decodifica uma arte grande, e fazer isso na tela de versus travava a animação.
+ */
+export function prewarmPixelArt(ids) {
+  const jobs = ids.flatMap(id => [['portrait-' + id, 112], ['icon-' + id, 64], ['portrait-' + id, 96]]);
+  const next = async () => {
+    const job = jobs.shift();
+    if (!job) return;
+    const [id, cols] = job, key = `${id}|${cols}`, img = comicImageEl(id);
+    if (img && !pixCache.has(key)) {
+      const rows = Math.round(cols * img.height / img.width);
+      try {
+        // Decodifica e reduz fora da thread do jogo; aqui só sobra posterizar 112 px.
+        const small = typeof createImageBitmap === 'function' ? await createImageBitmap(await (await fetch(img.currentSrc || img.src)).blob(), { resizeWidth: cols, resizeHeight: rows, resizeQuality: 'high' }) : null;
+        if (!pixCache.has(key)) pixCache.set(key, small ? pixelateFrom(small, cols, rows, false) : pixelateFrom(img, cols, rows, true));
+        small?.close();
+      } catch { /* fica para o desenho sob demanda */ }
+    }
+    setTimeout(next, 30);
+  };
+  setTimeout(next, 0);
 }
 
 /** Ícone pixelado (rosto) recortado para caber em w×h, ancorado embaixo. */
@@ -548,7 +576,7 @@ export function goldLogo() {
   if (!img) return null;
   const w = 330, h = Math.round((w * img.height) / img.width);
   const cv = makeCanvas(w, h);
-  const g = cv.getContext('2d');
+  const g = cv.getContext('2d', { willReadFrequently: true });
   g.imageSmoothingEnabled = true;
   g.drawImage(img, 0, 0, w, h);
   g.globalCompositeOperation = 'multiply';
@@ -572,7 +600,7 @@ let swooshCache = null;
 export function fireSwoosh() {
   if (swooshCache) return swooshCache;
   const cv = makeCanvas(300, 60);
-  const g = cv.getContext('2d');
+  const g = cv.getContext('2d', { willReadFrequently: true });
   const arc = (y0, y1, wdt, col) => { g.strokeStyle = col; g.lineWidth = wdt; g.beginPath(); g.moveTo(10, y0); g.quadraticCurveTo(150, y1, 292, y0 - 14); g.stroke(); };
   arc(40, 64, 9, '#e04010'); arc(38, 60, 6, '#ff9020'); arc(36, 56, 3, '#ffe060');
   arc(22, 0, 5, '#e04010'); arc(21, 2, 3, '#ffb030');

@@ -2,7 +2,7 @@ import { createApp } from './ui/app.js';
 import { createDevices } from './ui/devices.js';
 import { registerSprites, spriteLoadStatus } from './render/sprites.js';
 import { setStageImage } from './render/stage.js';
-import { loadBelemStage, belemStageStatus } from './render/belem-stage.js';
+import { loadBelemStage, belemStageStatus, expectBelemStage } from './render/belem-stage.js';
 import { configureStageAudio, stageAudioStatus, sfx } from './ui/audio.js';
 import { createTouch } from './ui/touch.js';
 import {HEROES, BOSSES} from './data/characters/index.js';
@@ -10,6 +10,7 @@ import {spriteOptions} from './render/sprite-profiles.js';
 import {registerStageArt,stageArtStatus} from './render/stage-packs.js';
 import {configureFighterMaterial,fighterMaterialStatus} from './render/fighter-material.js';
 import {loadComicUi,comicUiStatus} from './render/comic-ui.js';
+import {prewarmPixelArt} from './render/retro-ui.js';
 import {spriteWorkerStatus} from './render/sprite-worker.js';
 
 const canvas = document.getElementById('game');
@@ -33,6 +34,10 @@ fit();
 touch.bind(app);
 app.onRender = () => touch.sync();
 window.__app = app; // acesso para testes automáticos
+window.__roster = { HEROES, BOSSES };
+// Retratos pixelados prontos antes da escolha de personagens (sem travar a tela de versus).
+const pixelArt = () => comicUiStatus().loaded ? prewarmPixelArt([...HEROES, ...BOSSES].map(ch => ch.id)) : setTimeout(pixelArt, 500);
+if (window.__COMIC_UI) setTimeout(pixelArt, 500);
 window.__comicUiStatus=comicUiStatus;
 window.__spriteWorkerStatus=spriteWorkerStatus;
 const uiReady=window.__COMIC_UI?loadComicUi(window.__COMIC_UI):Promise.resolve();
@@ -46,7 +51,7 @@ window.__stageArtStatus = stageArtStatus;
 window.__stageAudioStatus = stageAudioStatus;
 // Cenários só começam a baixar depois do essencial do título, para não atrasar a abertura.
 if (belemPack && q.get('stage') !== 'off') {
-  void uiReady.then(() => loadBelemStage(belemPack));
+  expectBelemStage(uiReady.then(() => loadBelemStage(belemPack)));
   // Each arena selects its own registered audio pack.
 }
 for (const [id, pack] of Object.entries(window.__STAGEPACKS || {})) configureStageAudio(pack, id);

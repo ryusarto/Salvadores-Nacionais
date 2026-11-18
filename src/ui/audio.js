@@ -50,11 +50,14 @@ export function selectStageAudio(id) {
 export function setStageAudioActive(active) { if (stage.active === active) return; stage.active = active; if (active) void loadCurrentAudio(); startStageAudio(); stageGain(); }
 export function stageAudioStatus() { return { stage: stage.id, available: packs.has(stage.id), active: stage.active, muted, started: stage.started, decoded: stage.buffers.size, gain: stage.master?.gain.value ?? 0, errors: [...stage.errors] }; }
 
+let resuming = null;
 function ctx() {
   if (muted || typeof window === 'undefined') return null;
   try {
     AC ??= new (window.AudioContext || window.webkitAudioContext)();
-    if (AC.state === 'suspended') AC.resume();
+    // Sem gesto do jogador o contexto fica suspenso: tentar retomar a cada som
+    // custava até 160 ms por quadro. Uma tentativa por vez basta.
+    if (AC.state === 'suspended' && !resuming) resuming = AC.resume().catch(() => {}).finally(() => { resuming = null; });
     return AC;
   } catch {
     return null;
@@ -102,6 +105,9 @@ export const sfx = {
 };
 
 /** Toca os sons dos eventos do quadro. */
+/** Cria o contexto de áudio antes da luta (tela de versus): criá-lo no primeiro golpe custava ~150 ms. */
+export function warmAudio() { ctx(); }
+
 export function audioEvents(events) {
   for (const e of events) {
     switch (e.t) {
