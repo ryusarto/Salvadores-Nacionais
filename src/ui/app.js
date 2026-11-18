@@ -450,7 +450,9 @@ export function createApp(canvas, devices, opts = {}) {
         app.brain.level = app.level;
       }
       if (app.paused) {
-        if (pr.start) { app.paused = false; app.sub = null; return; }
+        // START nas telas internas da pausa volta direto para a luta; na lista da pausa ele
+        // confirma a opção marcada (como em todos os menus), e a pausa abre em CONTINUAR.
+        if (pr.start && app.sub) { app.paused = false; app.sub = null; return; }
         if (app.sub === 'moves') {
           if (ok || back) app.sub = null;
         } else if (app.sub === 'controls') {
@@ -479,7 +481,7 @@ export function createApp(canvas, devices, opts = {}) {
               app.remap = 0;
             } else if (item === 'SOM') toggleSound();
             else if (item === 'REINICIAR LUTA') startFight();
-            else app.screen = 'title';
+            else { app.screen = 'title'; app.paused = false; app.sub = null; }
           }
         }
         return;

@@ -47,7 +47,7 @@ export function drawComicPause(c,a,items){
  ptext(c,'PAUSADO',1082,215,12,'gold');
  ptext(c,'RESPIRA. VOLTA PRA LUTA.',1082,295,4,'cream');
  items.forEach((label,i)=>{const sel=a.pcur===i,y=387+i*76;const w=ptext(c,label,1082,y,sel?6:5,sel?'gold':'silver','center',600);if(sel&&a.frame%30<20)ptext(c,'▶',1082-w/2-44,y,6,'gold');});
- ptext(c,touchScreen()?'TOQUE EM CONTINUAR':'START / ESC PARA CONTINUAR',1082,920,3,'blue');
+ ptext(c,touchScreen()?'TOQUE EM CONTINUAR':'START / ENTER CONFIRMA   •   ESC CONTINUA',1082,920,3,'blue');
 }
 /** Fim da luta: vencedor, números da luta e o que fazer agora. */
 function result(c,a,keys){
