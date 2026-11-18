@@ -1,0 +1,88 @@
+{
+  "character": "pai-fujao",
+  "spriteProfile": "six-frame",
+  "spriteScale": 0.76,
+  "spriteRecovery": true,
+  "spriteTurboMoves": [
+    "6S"
+  ],
+  "spriteStripScale": {
+    "pai-fujao": {
+      "golpe-5H": 1.091318824616709,
+      "golpe-2M": 1.060232480456843,
+      "golpe-3H": 1.1217035714737869,
+      "golpe-throw": 1.0292832997835086
+    }
+  },
+  "integrationStatus": "integrado ao jogo; ver docs/PAI-FUJAO-ARTE-V1.md",
+  "mechanicAnimations": {
+    "shock": "reacao-tornozeleira",
+    "fury": "furia-paterna"
+  },
+  "cues": {
+    "5S": {
+      "spawnAt": 16,
+      "poseIndex": 2,
+      "effect": "capanga-correr"
+    },
+    "6S": {
+      "hitWindows": [
+        [
+          15,
+          20
+        ]
+      ],
+      "poseIndex": 2
+    },
+    "4S": {
+      "hitWindows": [
+        [
+          7,
+          15
+        ]
+      ],
+      "poseIndex": 2
+    },
+    "SA1": {
+      "shots": [
+        10,
+        14,
+        18,
+        22,
+        26
+      ],
+      "repeatPoseIndices": [
+        2,
+        3
+      ],
+      "projectile": "dinheiro-girar",
+      "heal": "dinheiro-cura"
+    },
+    "SA3": {
+      "hitWindows": [
+        [
+          13,
+          16
+        ],
+        [
+          30,
+          32
+        ],
+        [
+          48,
+          51
+        ]
+      ],
+      "poseIndices": [
+        2,
+        3,
+        4
+      ],
+      "effects": [
+        "prisao-trava",
+        "prisao-choque",
+        "prisao-impacto-final"
+      ]
+    }
+  }
+}

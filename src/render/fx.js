@@ -1,4 +1,5 @@
 import { chupetinhaEventArt, drawChupetinhaEntity, drawChupetinhaParticle } from './chupetinha-art.js';
+import { paiEventArt, drawPaiEntity, drawPaiParticle } from './pai-fujao-art.js';
 import { drawZanataParticle } from './zanata-art.js';
 import { SYS } from '../data/system.js';
 import { text, burst, slab } from './draw.js';
@@ -33,6 +34,7 @@ export function fxEvents(fx, st) {
   for (const e of st.events) {
     const sy = GY - (e.y || 0);
     const actor = st.f[e.side];
+    for (const art of paiEventArt(e, st)) fx.parts.push({ k: 'pai-fujao', ...art, t: 0 });
     const chupetinhaArt = chupetinhaEventArt(e, st);
     if (chupetinhaArt) fx.parts.push({ k: 'chupetinha', ...chupetinhaArt, t: 0 });
     if (actor?.ch?.spriteProfile === 'ten-frame') {
@@ -193,6 +195,7 @@ export function drawEntities(c, st) {
     c.save();
     c.lineWidth = 5;
     c.strokeStyle = '#12080c';
+    if (drawPaiEntity(c, e, owner?.ch.id, st.f[1 - e.owner])) { c.restore(); continue; }
     if (e.kind === 'fogo' || e.kind === 'coluna' || e.kind === 'tridente' || e.kind === 'chao-fogo') {
       if (e.kind === 'fogo') drawFireball(c, x, y, st.frame);
       else if (e.kind === 'coluna') drawFireColumn(c, e, GY, st.frame);
@@ -401,10 +404,11 @@ export function drawEntities(c, st) {
 }
 
 /** Efeitos na frente dos lutadores (mundo). */
-export function fxDrawFront(c, fx) {
+export function fxDrawFront(c, fx, st) {
   for (const p of fx.parts) {
     const t = p.t / p.dur;
     if (p.k === 'absorb') continue;
+    if (p.k === 'pai-fujao') { drawPaiParticle(c, p, st); continue; }
     if (p.k === 'sprite' && p.id === 'pavanassi-fx') { drawPavanassiParticle(c,p); continue; }
     if (p.k === 'chupetinha') { drawChupetinhaParticle(c, p); continue; }
     if (p.k === 'sprite' && ['zanata-fx','zanata-esquerda-fx'].includes(p.id)) { drawZanataParticle(c,p); continue; }

@@ -1,6 +1,7 @@
 import { ALTERNATE_PALETTES } from '../data/alternate-palettes.js';
 import { animFor, CELL, FOOT } from './anim.js';
 import { spriteProgress } from './sprite-timing.js';
+import { paiAnimation } from './pai-fujao-timing.js';
 import { applyFighterMaterial, materialStrength, noteMaterialOffThread } from './fighter-material.js';
 import { keyOutPixels, recolorPixels } from './sprite-pixels.js';
 import { decodeStripOffThread, recolorStripOffThread, spriteWorkerAvailable } from './sprite-worker.js';
@@ -436,7 +437,7 @@ const LAST = new WeakMap(); // lutador → último quadro desenhado (só visual)
 export function drawSprite(c, f, frame) {
   const set = REG[spriteSetId(f)];
   if (!set) return false;
-  const a = animFor(f, frame);
+  const a = paiAnimation(f, frame, animFor(f, frame));
   a.p = spriteProgress(f, a);
   let pick = pickStrip(set, a, f);
   // Enquanto uma tira ainda decodifica, repete o último quadro desenhado em vez
