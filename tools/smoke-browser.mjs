@@ -47,7 +47,7 @@ try{
  await tap(m,'settings');await m.waitForFunction(()=>window.__app.screen==='settings');await tap(m,'leftHanded');await tap(m,'largeButtons');await tap(m,'reducedEffects');await tap(m,'back');await m.waitForFunction(()=>window.__app.screen==='title');
  await m.reload();await m.waitForFunction(()=>window.__app?.frame>10&&!document.getElementById('loading'));
  assert.deepEqual(await m.evaluate(()=>window.__app.preferences),{reducedEffects:true,leftHanded:true,largeButtons:true});
- await tap(m,'tutorial');await m.waitForFunction(()=>window.__app.screen==='select');await tap(m,'pick-0');await tap(m,'confirm-selection');await m.waitForFunction(()=>window.__app.screen==='fight'&&window.__app.st.phase==='fight');
+ await tap(m,'settings');await m.waitForFunction(()=>window.__app.screen==='settings');await tap(m,'tutorial');await m.waitForFunction(()=>window.__app.screen==='select');await tap(m,'pick-0');await tap(m,'confirm-selection');await m.waitForFunction(()=>window.__app.screen==='fight'&&window.__app.st.phase==='fight');
  assert.equal(await m.evaluate(()=>window.__app.lesson.index),0);
  // Tutorial completion cannot be manufactured by skipping: skipped steps remain separate.
  await m.locator('[data-k="skip"]').tap();await m.waitForFunction(()=>window.__app.lesson.index===1);

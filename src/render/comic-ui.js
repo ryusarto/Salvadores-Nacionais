@@ -16,6 +16,8 @@ export function loadComicUi(pack){
  critical.then(()=>Promise.all(entries.filter(e=>!first.includes(e)).map(([id,a])=>loadAsset(id,a)))).then(()=>{loaded=true;paperCache=null;});
  return critical.then(()=>comicUiStatus());
 }
+/** A imagem já carregada (ou undefined), para quem precisa redesenhá-la em outra escala. */
+export const comicImageEl=id=>images.get(id);
 export function comicImage(c,id,x,y,w,h,flip=false){const img=images.get(id);if(!img)return false;c.save();if(flip){c.translate(x+w,y);c.scale(-1,1);c.drawImage(img,0,0,w,h);}else c.drawImage(img,x,y,w,h);c.restore();return true;}
 export function comicPortrait(c,id,x,y,w,h,flip=false){return comicImage(c,'portrait-'+id,x,y,w,h,flip);}
 export function comicIcon(c,id,x,y,w,h){return comicImage(c,'icon-'+id,x,y,w,h);}
