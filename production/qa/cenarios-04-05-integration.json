@@ -27,7 +27,10 @@
   "renderer": "both editable and runtime-prepared paths honor projection=flat; projected floors retain their cache",
   "localTests": {
     "pureTests": 154,
-    "focusedRendererAndBossTests": 30
+    "focusedRendererAndBossTests": 30,
+    "combos": 32,
+    "campaignMatches": 56,
+    "unfinishedCampaignMatches": 0
   },
   "htmlSHA256": "c580510be497a7704fad5e8f2ea996cb66f94328ec56d2390fec11560deaa1a8",
   "browserReview": "cenarios-04-05-integration/browser-review.json",

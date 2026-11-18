@@ -8,7 +8,7 @@ A build conserva integralmente o índice oficial de 26 pacotes e 722 strips da m
 
 ## Verificação desta integração
 
-- 154 testes locais de regras/renderers/carregamento aprovados, incluindo a regressão do renderer preparado para os dois pisos.
+- 154 testes locais de regras/renderers/carregamento aprovados, incluindo a regressão do renderer preparado para os dois pisos; 32 combos aprovados e 56 partidas de campanha concluídas.
 - Chrome percorreu título → Versus → Belga → Fujão e Pai do Fujão. Ambas as arenas chegaram a `prepared: true`, com 32 e 21 imagens carregadas, respectivamente, e seis buffers de áudio cada.
 - Pausa congelou o core. Câmeras 0/340/680 e viewport emulado de 844×390 foram exercitados sem erros de JavaScript ou HTTP.
 - A revisão artística e de mecânicas anterior de cada entrega continua registrada em `production/qa/aeroporto-review/` e `production/qa/mansao-review/`, com suas bases e limites históricos.
