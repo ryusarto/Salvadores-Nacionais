@@ -1,0 +1,12 @@
+{
+  "baseMain": "91c877226e3502beb44d0f42374ab3101e92d916",
+  "spritePacks": 26,
+  "spriteReferences": 722,
+  "characterArt": "index preserved byte-for-byte from main; no sprite art changed",
+  "airportAssets": 41,
+  "airportGround": {
+    "asset": "asfalto",
+    "projection": "flat"
+  },
+  "htmlSHA256": "48aae82e44bdebefe730da2cdced88396f1f4728ce29dc933d8deac80bfb780e"
+}

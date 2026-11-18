@@ -1,0 +1,78 @@
+{
+  "buildSHA256": "48aae82e44bdebefe730da2cdced88396f1f4728ce29dc933d8deac80bfb780e",
+  "manifestSHA256": "7c9bd8fdd1e32686657a4349f2cc733cffe06ce5d844199c7260d3aa2ca51124",
+  "cameras": {
+    "0": "d3ea94b49b6cda1ed8abae2ff7531852bdf0cde54112f6f1532a6d3b25ee50ed",
+    "340": "e5ae4815833b8f51b9b523da34e344fcdf57b80dde65db79122651b10be31e12",
+    "680": "df683cf405c3734049e7e2504abc9fde5eb4afdf6711720703954840708268d3"
+  },
+  "placements": {
+    "name": {
+      "id": "nome-terminal-5",
+      "asset": "nome-terminal",
+      "x": 690,
+      "y": 525,
+      "w": 230,
+      "h": 45,
+      "factor": 0.3
+    },
+    "boardingSign": [
+      {
+        "id": "placa-embarque-22",
+        "asset": "placa-embarque",
+        "x": 1600,
+        "y": 825,
+        "h": 190,
+        "factor": 1
+      },
+      {
+        "id": "texto-embarque-23",
+        "asset": "texto-embarque",
+        "x": 1600,
+        "y": 705,
+        "w": 220,
+        "h": 54,
+        "factor": 1
+      }
+    ],
+    "anchors": {
+      "boarding": {
+        "x": 2300,
+        "y": 930,
+        "range": 280
+      },
+      "door": {
+        "x": 2420,
+        "y": 730.4545454545455
+      },
+      "stairsTop": {
+        "x": 2420,
+        "y": 730.4545454545455
+      },
+      "stairsBase": {
+        "x": 2147.117327117327,
+        "y": 930
+      },
+      "planeWheels": {
+        "y": 885
+      },
+      "attachments": [
+        {
+          "asset": "biruta-vento",
+          "support": "integral-mast",
+          "frames": 6
+        },
+        {
+          "asset": "poste-refletores",
+          "support": "integral-pole"
+        },
+        {
+          "asset": "placa-embarque",
+          "support": "integral-two-post-base"
+        }
+      ]
+    }
+  },
+  "errors": [],
+  "note": "Narrow retest after final sign placements: camera0/340/680, final anchors and runtime capture. Prior full preview controls/audio/mechanics remain applicable because these were placement-only changes."
+}

@@ -1,0 +1,94 @@
+{
+  "conclusao": "aprovado para o escopo testado",
+  "jogo": "Salvadores Nacionais",
+  "cenario": "04 — Aeroporto / Fujão",
+  "branch": "art/cenario-04-aeroporto-fujao-20261117",
+  "baseMain": "91c877226e3502beb44d0f42374ab3101e92d916",
+  "buildSHA256": "48aae82e44bdebefe730da2cdced88396f1f4728ce29dc933d8deac80bfb780e",
+  "manifestSHA256": "7c9bd8fdd1e32686657a4349f2cc733cffe06ce5d844199c7260d3aa2ca51124",
+  "revisor": "th_revisor_jogos — revisão independente, sem alterações em produção",
+  "achadosPendentes": [],
+  "evidencias": {
+    "estatica": "ground flat opt-in mantém projeção anterior e fallback; gameplay e parâmetros FUGA preservados",
+    "testes": {
+      "comando": "node --test tests/unit/aeroporto-stage.test.js tests/unit/fujao.test.js tests/unit/palco-stage.test.js tests/unit/banheiros-stage.test.js",
+      "aprovados": 18,
+      "falhas": 0
+    },
+    "assets": {
+      "arquivosRuntime": 41,
+      "bytesRuntime": 7101537,
+      "fontesPNG": 17,
+      "tiras": 9,
+      "quadros": 54,
+      "hashes": "41/41 conferidos",
+      "alphaCrops": "54/54 quadros com conteúdo dentro dos crops e sem pixels visíveis na borda",
+      "basesNovas": "quatro tiras novas com base opaca y480 em todos os quadros"
+    },
+    "previa": {
+      "imagensDecodificadas": 35,
+      "galeriaCards": 35,
+      "audioDecodificado": 6,
+      "cameras": [
+        0,
+        340,
+        680
+      ],
+      "poses": [
+        0,
+        15,
+        30,
+        45,
+        60,
+        75
+      ],
+      "controles": [
+        "pausa",
+        "avanço de pose",
+        "objetos",
+        "FX",
+        "piso",
+        "efeitos reduzidos",
+        "galeria isolada",
+        "marcação do embarque"
+      ],
+      "mobile": [
+        844,
+        390
+      ],
+      "errosJSHTTPRede": 0
+    },
+    "jogo": {
+      "fluxo": "título → Versus → Belga → Fujão → luta no aeroporto",
+      "carregamentoSobDemanda": "aprovado; 32 imagens em cena e seis áudios",
+      "pausa": "congelamento do core confirmado",
+      "indice": "26 pacotes / 722 strips preservados",
+      "embarque": {
+        "stairsX": 2300,
+        "stairsRange": 280,
+        "boardProgress": 40,
+        "denial": "pass",
+        "heal": {
+          "actual": 1400,
+          "expected": 1400
+        },
+        "fixtures": "Real createMatch/step with explicit positions, damage fixture and neutral input; no gameplay rule or function patched."
+      },
+      "renderFinal": "game-final-boarding.png"
+    },
+    "retesteFinal": "Ajustes de posição do nome do terminal e placa de embarque recapturados nas câmeras0/340/680 e no jogo real. Porta e topo da escada continuam coincidentes em(2420,730.4545), factor1, base da escada y930. Captura final680 inspecionada: textos legíveis, apoios físicos visíveis, sem oclusão das pessoas pela asa."
+  },
+  "relatorios": [
+    "assets-review.json",
+    "preview-review.json",
+    "game-review.json",
+    "final-placement-review.json"
+  ],
+  "limites": [
+    "Build local, sem publicação ou merge. Proxy de QA para atlases oficiais ausentes, com verificação por prefixo SHA; arte da arena local.",
+    "Fujão ainda usa o personagem/fallback procedural já existente na main; não foi entregue arte corporal nova nesta tarefa de cenário.",
+    "Não houve playtest humano, medição de desempenho ou execução em aparelho físico.",
+    "A inspeção artística cobriu capturas selecionadas, seis poses da cena e uma vista isolada do NPC; não certifica cada pixel de cada fonte.",
+    "Ao integrar o PR #25 futuramente, respeitar ground.projection=flat também no renderer preparado; compatibilidade futura documentada pelo responsável."
+  ]
+}

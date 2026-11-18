@@ -1,0 +1,143 @@
+{
+  "verdict": "approved-for-tested-preview-scope",
+  "environment": {
+    "browser": "158.0.8127.37",
+    "desktop": [
+      1440,
+      1000
+    ],
+    "mobile": [
+      844,
+      390
+    ],
+    "logicalCanvas": [
+      1920,
+      1080
+    ],
+    "build": "local generated offline preview"
+  },
+  "inventory": {
+    "status": {
+      "ready": true,
+      "loaded": 21,
+      "errors": []
+    },
+    "errors": [],
+    "assets": 30,
+    "images": 24,
+    "cards": 24,
+    "anchors": {
+      "ankleZone": {
+        "x": 1560,
+        "y": 940,
+        "rx": 420,
+        "ry": 34
+      },
+      "chandelier": {
+        "x": 1300,
+        "y": 35
+      },
+      "curtainRod": {
+        "x": 900,
+        "y": 96
+      },
+      "portrait": {
+        "x": 1860,
+        "y": 92
+      },
+      "telephone": {
+        "x": 2002,
+        "y": 653.2082166199813
+      },
+      "tabletop": {
+        "x": 1980,
+        "y": 653.2082166199813
+      },
+      "fireplace": {
+        "x": 2240,
+        "y": 801
+      }
+    },
+    "world": {
+      "width": 2600,
+      "height": 1080,
+      "viewWidth": 1920,
+      "cameraMax": 680,
+      "feetY": 930,
+      "groundTopY": 826
+    }
+  },
+  "cameras": {
+    "0": "6c948f4205ae1355c0d8821faab6a5f83f5093ec5b3a8f0124edabea9a314be2",
+    "340": "d90b26417a420cc56d90e72a868fb820be165adf4194ed8fd4dd599d9b6fe922",
+    "680": "2e6239828d330bcf9058745a9f980b0091f3e044812bcef89911749c693256d7"
+  },
+  "poseFrames": [
+    0,
+    15,
+    30,
+    45,
+    60,
+    75
+  ],
+  "filters": {
+    "objects": true,
+    "effects": true,
+    "ground": true
+  },
+  "pause": "pass",
+  "step": "pass",
+  "reducedEffects": "pass",
+  "gallery": "pass",
+  "audio": [
+    {
+      "id": "ambiente-sala",
+      "duration": 16,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "cristais",
+      "duration": 16,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "relogio",
+      "duration": 16,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "trilha-intro",
+      "duration": 5,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "trilha-loop",
+      "duration": 40,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "vento-jardim",
+      "duration": 16,
+      "channels": 2,
+      "sampleRate": 44100
+    }
+  ],
+  "mobile": {
+    "width": 844,
+    "scrollWidth": 844,
+    "canvas": 796
+  },
+  "errors": [],
+  "failed": [],
+  "httpErrors": [],
+  "limits": [
+    "No physical device test",
+    "No human playtest",
+    "This preview is not a deployed game build"
+  ]
+}

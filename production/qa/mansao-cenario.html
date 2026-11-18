@@ -1,0 +1,931 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mansão — Sala do Pai do Fujão | Assets separados</title><style>
+*{box-sizing:border-box}body{margin:0;background:#101a23;color:#eee5d2;font:15px system-ui,sans-serif}main{max-width:1440px;margin:auto;padding:24px}h1{font:42px Georgia,serif;margin:4px 0 8px}.eyebrow{color:#e7b767;letter-spacing:2px;font-size:12px}p{color:#abb6bf}canvas#stage{width:100%;height:auto;display:block;background:#1d2232;border-radius:8px}.bar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:15px 0}button,a{font:inherit}button{background:#e8c583;border:0;border-radius:5px;padding:9px 13px;color:#18202a;cursor:pointer}a{color:#e8c583}label{display:inline-flex;gap:6px;align-items:center}#camera{width:200px}#gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}article{background:#1e2a34;padding:12px;border-radius:7px;min-width:0}article canvas{width:100%;height:180px;background:repeating-conic-gradient(#293742 0% 25%,#31404b 0% 50%) 50%/18px 18px}article h3{font-size:15px;overflow-wrap:anywhere}article p{font-size:12px}article a{display:inline-block;margin:12px}#audio{display:grid;grid-template-columns:200px 1fr;gap:15px}#audio audio{width:100%;max-width:500px}h2{font:28px Georgia,serif;margin-top:35px}#status{font-size:13px}@media(max-width:600px){main{padding:12px}h1{font-size:29px}#audio{grid-template-columns:1fr}#camera{width:160px}}
+</style><main><div class="eyebrow">SALVADORES NACIONAIS · CENÁRIO 05</div><h1>Mansão — Sala do Pai do Fujão</h1><p>Sala, lustre, retrato, telefone e mobiliário em peças independentes. Cada arquivo pode ser inspecionado e baixado na galeria.</p><p id="status">Carregando os assets…</p><canvas id="stage" width="1920" height="1080"></canvas>
+<div class="bar"><button id="pause">Pausar</button><button id="step">+15 quadros</button><label>Câmera <input id="camera" type="range" min="0" max="680" value="340"><span id="cameraValue">340</span></label><span>Quadro <span id="frame">0</span></span><button id="scene">Ver cenário</button><button id="download">Baixar composição</button></div>
+<div class="bar"><label><input id="heroes" type="checkbox" checked>Lutadores em escala</label><label><input id="feet" type="checkbox">Linha dos pés</label><label><input id="objects" type="checkbox" checked>Mobiliário e objetos</label><label><input id="effects" type="checkbox" checked>Efeitos</label><label><input id="ground" type="checkbox" checked>Piso</label><label><input id="reduce" type="checkbox">Efeitos reduzidos</label></div><div class="bar"><label><input id="zone" type="checkbox">Zona da tornozeleira</label><label>Posição de demonstração <select id="zone-state"><option value="neutro">Neutra</option><option value="borda">Perto da borda</option><option value="fora">Fora da zona</option></select></label><label><input id="anchors" type="checkbox">Pontos de apoio</label></div><p>Zona dinâmica do jogo: centro x1560, raio420. A posição de demonstração não simula dano, choque ou imunidade. Belga e Ryuchi servem apenas como referência de escala.</p><p id="selected">Composição completa</p>
+<h2>Assets separados</h2><div id="gallery"></div><h2>Trilha e ambientes</h2><p>Tema original a 96 BPM com tensão, piano, cordas e baixo discretos; ambientes de sala, jardim, relógio e cristais. Sem gravações externas ou vozes. Use os controles abaixo para ouvir cada arquivo.</p><div id="audio"></div></main><script>(() => {
+  // src/render/belem-stage.js
+  function drawBelemGround(c, texture, cam) {
+    const top = 826;
+    for (let y = top; y < 1080; y += 2) {
+      const q = (y - top) / (1080 - top), scale = 1 + (y - 930) / 260, tile = 1024 * scale;
+      const row = Math.floor(1024 * (1 - 1 / (1 + q * 2))) % 1024;
+      const offset = ((cam * scale + 960 * (scale - 1)) % tile + tile) % tile;
+      for (let x = -offset; x < 1920; x += tile) c.drawImage(texture, 0, row, 1024, 2, x, y, tile, 2);
+    }
+    const shade = c.createLinearGradient(0, top, 0, 1080);
+    shade.addColorStop(0, "rgba(27,17,43,.25)");
+    shade.addColorStop(1, "rgba(27,17,43,.12)");
+    c.fillStyle = shade;
+    c.fillRect(0, top, 1920, 254);
+    c.fillStyle = "#353139";
+    c.fillRect(0, top - 2, 1920, 3);
+  }
+
+  // src/render/stage-packs.js
+  var packs = /* @__PURE__ */ new Map();
+  var catalog = /* @__PURE__ */ new Map();
+  var requests = /* @__PURE__ */ new Map();
+  function requestStageArt(id) {
+    if (packs.has(id) || !catalog.has(id)) return requests.get(id);
+    if (!requests.has(id)) requests.set(id, loadStageArt({ [id]: catalog.get(id) }));
+    return requests.get(id);
+  }
+  var finite = (v, fallback) => Number.isFinite(v) ? v : fallback;
+  var clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+  async function loadStageArt(all) {
+    await Promise.all(Object.entries(all).filter(([id]) => id !== "belem").map(async ([id, pack]) => {
+      packs.delete(id);
+      if (!Array.isArray(pack.layers) || !pack.layers.length || !pack.assets) return;
+      const used = [...pack.layers, ...pack.objects || [], ...pack.foreground || []].map((o) => o.asset);
+      if (pack.ground) used.push(pack.ground.asset);
+      used.push(...pack.interactive || []);
+      const essential = pack.essential || used;
+      const images = /* @__PURE__ */ new Map(), errors = [];
+      await Promise.all([...new Set(used)].map(async (key) => {
+        const a = pack.assets[key];
+        if (!a || a.kind === "audio") {
+          errors.push(key);
+          return;
+        }
+        try {
+          const img = new Image();
+          img.decoding = "async";
+          img.src = a.url;
+          await img.decode();
+          if (!(img.width > 0 && img.height > 0)) throw Error("empty image");
+          images.set(key, img);
+        } catch {
+          errors.push(key);
+        }
+      }));
+      if (essential.length && essential.every((key) => images.has(key))) packs.set(id, { pack, images, errors });
+    }));
+  }
+  function stageArtStatus(id) {
+    const item = packs.get(id);
+    return { ready: !!item, loaded: item?.images.size || 0, errors: [...item?.errors || []] };
+  }
+  function stageAnimationFrame(frame, fps = 5, count = 6, phase = 0) {
+    const n = Math.max(1, Math.floor(finite(count, 1)));
+    return ((Math.floor(Math.max(0, finite(frame, 0)) * Math.max(0, finite(fps, 5)) / 60) + Math.floor(finite(phase, 0))) % n + n) % n;
+  }
+  function object(c, item, o, cam, frame, reducedEffects, cull = true) {
+    const a = item.pack.assets[o.asset], img = item.images.get(o.asset);
+    if (!a || !img) return false;
+    const frames = a.frames || 1, cellW = a.cellWidth || img.width / frames;
+    const [sx, sy, sw, sh] = a.crop || [0, 0, cellW, img.height];
+    const h = o.h ?? (o.w ? o.w * sh / sw : sh), w = o.w ?? h * sw / sh;
+    const x = o.x - cam * finite(o.factor, 1) - w / 2, y = o.y - h;
+    if (cull && (x + w < 0 || x > 1920)) return true;
+    const f = frames > 1 ? stageAnimationFrame(reducedEffects ? 0 : frame, o.fps, frames, o.phase) : 0;
+    c.save();
+    c.globalAlpha = clamp(finite(o.opacity, 1), 0, 1);
+    c.drawImage(img, sx + f * cellW, sy, sw, sh, x, y, w, h);
+    c.restore();
+    return true;
+  }
+  function drawStageArt(c, id, cam, frame = 0, options = {}) {
+    const item = packs.get(id);
+    if (!item) {
+      void requestStageArt(id);
+      return false;
+    }
+    const camera = clamp(finite(cam, 0), 0, 680), { pack } = item;
+    for (const layer of pack.layers) {
+      const img = item.images.get(layer.asset);
+      if (!img) continue;
+      const height = layer.height ?? 1080, width = layer.width ?? img.width * height / img.height;
+      c.save();
+      c.globalAlpha = clamp(finite(layer.opacity, 1), 0, 1);
+      c.drawImage(img, (layer.x || 0) - camera * finite(layer.factor, 1), layer.y || 0, width, height);
+      c.restore();
+    }
+    for (const o of pack.objects || []) object(c, item, o, camera, frame, options.reducedEffects);
+    if (pack.ground && item.images.has(pack.ground.asset)) {
+      const ground = pack.ground, image = item.images.get(ground.asset);
+      const flat = ground.projection === "flat";
+      const y = flat ? finite(ground.y, finite(pack.world?.groundTopY, 826)) : 826;
+      const height = flat ? finite(ground.height, finite(pack.world?.height, 1080) - y) : 254;
+      if (flat) {
+        const width = finite(ground.width, finite(pack.world?.width, 2600));
+        c.drawImage(image, finite(ground.x, 0) - camera * finite(ground.factor, 1), y, width, height);
+      } else drawBelemGround(c, image, camera);
+      if (pack.ground.shade) {
+        c.save();
+        c.fillStyle = pack.ground.shade;
+        c.fillRect(0, y, 1920, height);
+        c.restore();
+      }
+    }
+    for (const o of pack.foreground || []) object(c, item, o, camera, frame, options.reducedEffects);
+    return true;
+  }
+
+  // src/data/system.js
+  var SYS = {
+    FPS: 60,
+    VIEW_W: 1920,
+    VIEW_H: 1080,
+    STAGE_W: 2600,
+    GROUND_Y: 930,
+    // y de tela onde ficam os pés
+    WALL_PAD: 110,
+    // distância mínima do centro do lutador até a parede
+    MAX_DIST: 1500,
+    // separação máxima entre lutadores (câmera)
+    START_GAP: 520,
+    HP: 1e4,
+    ROUNDS_TO_WIN: 2,
+    ROUND_SECONDS: 99,
+    INTRO_FRAMES: 110,
+    KO_FRAMES: 150,
+    GRAVITY: 1.9,
+    JUMP: { pre: 4, vy: 36, vxF: 9.5, vxB: -8.5, land: 3, landAttack: 5 },
+    DASH: { frames: 17, speed: 17, runSpeed: 12.5, runStop: 7, tapWindow: 12 },
+    BACKDASH: { frames: 21, speed: 13, throwInv: 9 },
+    BODY: {
+      stand: { x: -70, y: 0, w: 140, h: 480 },
+      crouch: { x: -75, y: 0, w: 150, h: 300 },
+      air: { x: -70, y: 70, w: 140, h: 380 },
+      down: { x: -160, y: 0, w: 320, h: 90 },
+      push: 150
+      // largura da caixa de empurrão
+    },
+    MOTION: { first: 30, last: 12 },
+    // janelas (quadros) das sequências → ← e ↓ →
+    CMD_BTN: { c1: "L", c2: "M" },
+    // botão que fecha cada sequência
+    BUFFER: 7,
+    // quadros que um botão apertado cedo continua valendo
+    SIMUL: 3,
+    // janela para dois botões contarem como "juntos"
+    HITSTOP: { L: 8, M: 10, H: 13, S: 12, X: 18, block: -2, proj: 7 },
+    PUSH_DECAY: 0.8,
+    // Escala de dano por número do golpe no combo (1º, 2º, 3º...)
+    SCALING: [1, 1, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1],
+    SUPER_MIN_SCALE: 0.5,
+    COUNTER: { dmg: 1.2, stun: 2, punishStun: 4 },
+    JUGGLE_MAX: 6,
+    // acertos no ar antes do rival ficar imune: o golpe que levanta + até 5 golpes aéreos, em qualquer ordem
+    CHIP: 0.25,
+    // Garra: com pouca vida, o lutador recebe menos dano. [fração de vida, multiplicador]
+    GUTS: [[0.15, 0.76], [0.3, 0.88]],
+    // Tontura: apanhar muito em pouco tempo deixa tonto. Esvazia sozinha quando o lutador para de apanhar.
+    DIZZY_METER: { max: 3400, decayDelay: 100, decay: 34, immune: 540 },
+    // Empurrão na defesa: Leve + Médio enquanto defende afasta o atacante.
+    PUSHBLOCK: { cost: 1e3, push: 44 },
+    // Rolamento: apertar um botão de golpe ao cair evita ficar deitado.
+    TECH_ROLL: { frames: 24, speed: 11, window: 10 },
+    // Pulo alto depois do Gancho, para combo aéreo.
+    // `float` é a velocidade de subida dada ao adversário lançado, para os dois subirem juntos.
+    SUPER_JUMP: { vy: 1.2, vx: 5, float: 27, minY: 120 },
+    // Proteção contra agarrões seguidos: cada agarrão sofrido aumenta a imunidade ao levantar.
+    THROW_PROTECT: { extra: 14, window: 420 },
+    KNOCKDOWN: { soft: 28, hard: 52, wakeup: 14, wakeThrowInv: 7 },
+    CRUMPLE: 62,
+    DIZZY: 110,
+    THROW: { tech: 9, hold: 14, dmg: 1200, range: 150 },
+    GINGA: {
+      max: 6e3,
+      pip: 1e3,
+      regen: 10,
+      // por quadro
+      regenPause: 50,
+      // quadros sem recarga depois de gastar
+      blockPause: 30,
+      airGuard: 1.5,
+      // defender no ar gasta mais Ginga
+      perfectWindow: 3,
+      perfectFreeze: 16,
+      rushRaw: 1e3,
+      rushCancel: 3e3,
+      blindado: 1e3,
+      turbo: 2e3,
+      onHitGain: 120,
+      burnoutRegen: 8.5,
+      // recarga quando Sem Fôlego (~12s)
+      burnoutBlockstun: 4
+    },
+    RUSH: { frames: 22, speed: 21, bonusStun: 4, bonusFrames: 30 },
+    // dmg: multiplicador de dano [jogador, CPU] contra heróis; bossDmg: contra os
+    // chefes do Modo História (cada chefe já tem as próprias regras e vida).
+    // A CPU fica mais forte pelo nível e, nos heróis, também pelo dano.
+    DIFFICULTY: [
+      { name: "F\xC1CIL", level: 0, dmg: [1.1, 0.6], bossDmg: [1, 1] },
+      { name: "NORMAL", level: 1, dmg: [1, 0.85], bossDmg: [1.12, 0.6] },
+      { name: "DIF\xCDCIL", level: 2, dmg: [1.12, 0.65], bossDmg: [1.15, 0.45] }
+    ],
+    // Super de 3 barras: +25% de dano e, dentro de combo, nunca cai abaixo de 80% (o de 1 barra cai até 50%).
+    SUPER: { max: 3e3, stock: 1e3, perDmgDealt: 0.1, perDmgTaken: 0.06, whiffSpecial: 30, bigDmg: 1.25, bigMinScale: 0.8 }
+  };
+
+  // src/data/movekit.js
+  var STRENGTH = {
+    L: { hitstun: 14, blockstun: 11, push: [70, 60], ginga: 200, stop: SYS.HITSTOP.L },
+    M: { hitstun: 18, blockstun: 14, push: [105, 95], ginga: 350, stop: SYS.HITSTOP.M },
+    H: { hitstun: 22, blockstun: 17, push: [150, 135], ginga: 550, stop: SYS.HITSTOP.H },
+    S: { hitstun: 22, blockstun: 17, push: [140, 130], ginga: 600, stop: SYS.HITSTOP.S },
+    X: { hitstun: 30, blockstun: 22, push: [200, 180], ginga: 0, stop: SYS.HITSTOP.X }
+  };
+  var DEFAULT_CANCEL = {
+    L: ["chain", "special", "super", "rush"],
+    M: ["chain", "special", "super", "rush"],
+    H: ["special", "super", "rush"],
+    S: ["super"],
+    X: []
+  };
+  function mv(def) {
+    const btn = def.btn || "S";
+    const base = STRENGTH[btn] || STRENGTH.S;
+    const m = {
+      name: def.name || "?",
+      type: def.type || (btn === "X" ? "super" : btn === "S" ? "special" : "normal"),
+      btn,
+      startup: def.startup ?? 6,
+      active: def.active ?? 3,
+      recovery: def.recovery ?? 12,
+      anim: def.anim || ["punchWind", "punchM"],
+      air: !!def.air,
+      crouch: !!def.crouch,
+      cancel: def.cancel || DEFAULT_CANCEL[btn] || [],
+      motion: def.motion || [],
+      inv: def.inv || [],
+      armor: def.armor || null,
+      spawn: def.spawn || [],
+      hold: def.hold || null,
+      cost: def.cost || {},
+      tags: def.tags || [],
+      fx: def.fx || null,
+      weapon: def.weapon || null,
+      landCancel: def.landCancel ?? true,
+      flags: def.flags || {}
+    };
+    const raw = def.hits || (def.box ? [{}] : []);
+    m.hits = raw.map((h, idx) => ({
+      from: h.from ?? m.startup + 1,
+      to: h.to ?? m.startup + m.active,
+      box: h.box || def.box,
+      dmg: h.dmg ?? def.dmg ?? 0,
+      hitstun: h.hitstun ?? def.hitstun ?? base.hitstun,
+      blockstun: h.blockstun ?? def.blockstun ?? base.blockstun,
+      push: h.push || def.push || base.push,
+      guard: h.guard || def.guard || "mid",
+      launch: h.launch || def.launch || null,
+      kd: h.kd || def.kd || null,
+      crumple: h.crumple ?? def.crumple ?? false,
+      ginga: h.ginga ?? def.ginga ?? base.ginga,
+      chip: h.chip ?? def.chip ?? (m.type === "normal" ? 0 : SYS.CHIP),
+      // em golpes de vários acertos, só o último tem a pausa de impacto cheia
+      stop: h.stop ?? def.stop ?? (idx < raw.length - 1 ? Math.min(base.stop, 5) : base.stop),
+      effects: h.effects || def.effects || [],
+      juggle: h.juggle ?? def.juggle ?? 1,
+      pull: h.pull ?? def.pull ?? 0
+    }));
+    const lifts = m.type !== "super" && m.hits.some((h) => h.launch && h.launch[1] >= 20);
+    if (lifts && !m.air && !def.flags?.landEnds && !m.cancel.includes("jump")) m.cancel = [...m.cancel, "jump"];
+    if (lifts && (m.air || def.flags?.landEnds)) m.flags = { ...m.flags, chase: true };
+    m.total = def.total ?? m.startup + m.active + m.recovery;
+    for (const h of m.hits) m.total = Math.max(m.total, h.to + 1);
+    m.range = def.range ?? (m.hits.length ? Math.max(...m.hits.map((h) => h.box.x + h.box.w)) : 0);
+    if (def.turbo) m.turbo = mv({ ...def, ...def.turbo, turbo: null, isTurbo: true });
+    m.isTurbo = !!def.isTurbo;
+    return m;
+  }
+  var bx = (x, y, w, h) => ({ x, y, w, h });
+  function baseNormals(o = {}) {
+    const r = o.reach ?? 1;
+    const d = o.dmg ?? 1;
+    const s = o.speed ?? 0;
+    const a = { L: "punchL", M: "punchM", H: "punchH", lowL: "kickLow", lowM: "sweepM", up: "upper", sweep: "sweep", over: "overhead", jL: "jPunch", jM: "jKick", jH: "jHeavy", ...o.anims || {} };
+    const W = (n) => Math.round(n * r);
+    const D = (n) => Math.round(n * d);
+    return {
+      "5L": mv({ name: "Leve", btn: "L", startup: 4 + s, active: 3, recovery: 8, box: bx(30, 290, W(160), 80), dmg: D(300), anim: ["punchWind", a.L], tags: ["poke", "close"] }),
+      "5M": mv({ name: "M\xE9dio", btn: "M", startup: 7 + s, active: 4, recovery: 14, box: bx(30, 270, W(215), 100), dmg: D(600), anim: ["punchWind", a.M], motion: [{ from: 3, to: 8, vx: 5 }], tags: ["poke", "mid"] }),
+      "5H": mv({ name: "Forte", btn: "H", startup: 11 + s, active: 5, recovery: 21, box: bx(30, 250, W(250), 130), dmg: D(900), anim: ["heavyWind", a.H], motion: [{ from: 5, to: 12, vx: 7 }], tags: ["poke", "mid", "heavy"] }),
+      "2L": mv({ name: "Leve Baixo", btn: "L", startup: 5 + s, active: 3, recovery: 9, crouch: true, guard: "low", box: bx(30, 30, W(170), 80), dmg: D(250), anim: ["crouch", a.lowL], tags: ["poke", "close", "low"] }),
+      "2M": mv({ name: "M\xE9dio Baixo", btn: "M", startup: 8 + s, active: 4, recovery: 15, crouch: true, guard: "low", box: bx(30, 20, W(240), 80), dmg: D(550), anim: ["crouch", a.lowM], tags: ["poke", "mid", "low"] }),
+      "2H": mv({ name: "Gancho", btn: "H", startup: 8 + s, active: 6, recovery: 24, crouch: true, box: bx(10, 220, 175, 360), dmg: D(850), launch: [3, 31], motion: [{ from: 2, to: 8, vx: 5 }], anim: ["crouch", a.up], inv: [{ from: 4, to: 13, type: "air" }], cancel: ["special", "super", "jump"], tags: ["antiair", "launcher"] }),
+      "3H": mv({ name: "Rasteira", btn: "H", startup: 10 + s, active: 4, recovery: 26, crouch: true, guard: "low", box: bx(30, 0, W(270), 70), dmg: D(800), kd: "hard", launch: [6, 12], anim: ["crouch", a.sweep], cancel: ["super"], tags: ["low", "knockdown", "mid"] }),
+      "6M": mv({ name: "Golpe de Cima", btn: "M", startup: 20, active: 3, recovery: 17, guard: "high", box: bx(30, 230, W(190), 230), dmg: D(600), anim: ["overWind", a.over], cancel: ["super"], motion: [{ from: 8, to: 20, vx: 5 }], tags: ["overhead", "close"] }),
+      jL: mv({ name: "A\xE9reo Leve", btn: "L", air: true, startup: 4, active: 9, recovery: 4, guard: "high", box: bx(10, 130, W(160), 130), dmg: D(300), anim: ["jumpUp", a.jL], cancel: ["chain"], tags: ["air"] }),
+      jM: mv({ name: "A\xE9reo M\xE9dio", btn: "M", air: true, startup: 6, active: 7, recovery: 5, guard: "high", box: bx(0, 80, W(200), 150), dmg: D(500), anim: ["jumpUp", a.jM], cancel: ["chain"], tags: ["air", "crossup"] }),
+      jH: mv({ name: "A\xE9reo Forte", btn: "H", air: true, startup: 8, active: 6, recovery: 6, guard: "high", box: bx(10, 20, W(190), 220), dmg: D(800), hitstun: 24, anim: ["jumpUp", a.jH], cancel: [], tags: ["air", "jumpin"] }),
+      throw: mv({ name: "Agarr\xE3o", btn: "L", type: "throw", startup: 5, active: 3, recovery: 23, guard: "throw", box: bx(20, 140, SYS.THROW.range, 260), dmg: SYS.THROW.dmg, anim: ["throwReach", "throwReach"], cancel: [], tags: ["throw"] }),
+      blindado: mv({ name: "Golpe Blindado", btn: "H", type: "utility", startup: 26, active: 4, recovery: 32, box: bx(20, 220, W(250), 170), dmg: D(800), crumple: true, ginga: 1e3, push: [60, 260], hitstun: 30, blockstun: 22, anim: ["blindWind", "blindHit"], armor: { from: 1, to: 26, hits: 2 }, motion: [{ from: 18, to: 28, vx: 9 }], cancel: [], cost: { ginga: SYS.GINGA.blindado }, tags: ["armor"] })
+    };
+  }
+  function proj(def) {
+    return {
+      kind: def.kind || "shot",
+      x: def.x ?? 110,
+      y: def.y ?? 300,
+      vx: def.vx ?? 14,
+      vy: def.vy ?? 0,
+      g: def.g ?? 0,
+      w: def.w ?? 70,
+      h: def.h ?? 60,
+      life: def.life ?? 120,
+      delay: def.delay ?? 0,
+      hitsLeft: def.hits ?? 1,
+      behavior: def.behavior || "fly",
+      color: def.color || "#ffe27a",
+      hit: {
+        dmg: def.dmg ?? 600,
+        hitstun: def.hitstun ?? 20,
+        blockstun: def.blockstun ?? 15,
+        push: def.push || [90, 80],
+        guard: def.guard || "mid",
+        launch: def.launch || null,
+        kd: def.kd || null,
+        crumple: false,
+        ginga: def.ginga ?? 500,
+        chip: def.chip ?? SYS.CHIP,
+        stop: def.stop ?? SYS.HITSTOP.proj,
+        effects: def.effects || [],
+        juggle: def.juggle ?? 1,
+        pull: 0
+      },
+      ...def.extra || {}
+    };
+  }
+
+  // src/data/characters/pai-fujao.js
+  var PAI = {
+    zoneX: SYS.STAGE_W / 2 + 260,
+    // centro da área da tornozeleira
+    zoneR: 420,
+    shockDmg: 900,
+    shockStun: 80,
+    shockCD: 240,
+    immuneHits: 3,
+    foroCharges: 6,
+    // golpes imunes antes de o foro cair
+    foroDown: 480,
+    // tempo com o foro cassado
+    callCD: 360,
+    furyHp: 0.5,
+    furyDmg: 1.2
+  };
+  var henchman = (o = {}) => ({
+    make: (st, f) => {
+      if (f.res.callT > 0 && !o.force) {
+        st.events.push({ t: "pop", str: "LINHA OCUPADA", x: f.x, y: 560, color: "#d8d0dc", size: 36 });
+        return null;
+      }
+      if (!o.force) f.res.callT = PAI.callCD;
+      st.events.push({ t: "pop", str: "AL\xD4? MANDA ALGU\xC9M!", x: f.x, y: 600, color: "#ffcf2a", size: 36 });
+      return proj({ kind: "capanga", x: -60, y: 0, w: 120, h: 300, vx: 16, life: 110, dmg: 750, hitstun: 26, guard: "mid", color: "#2a2a32", ...o });
+    }
+  });
+  var cash = (o = {}) => proj({ kind: "dinheiro", x: 80, y: 280, w: 70, h: 44, vx: 16, life: 90, dmg: 300, hitstun: 24, color: "#5aa05a", ...o });
+  var moves = {
+    ...baseNormals({ reach: 1.05, dmg: 1.15, speed: 1, anims: { L: "punchM", H: "punchH" } }),
+    "5H": mv({ name: "Bengalada", btn: "H", startup: 13, active: 5, recovery: 24, box: bx(30, 230, 290, 140), dmg: 1050, anim: ["heavyWind", "punchH"], weapon: "bengala", tags: ["poke", "mid", "heavy"] }),
+    "5S": mv({ name: "Comando \xE0 Dist\xE2ncia", startup: 16, active: 1, recovery: 22, anim: ["call", "call"], spawn: [{ at: 16, ...henchman() }], range: 1300, tags: ["zone", "far"] }),
+    "6S": mv({
+      name: "Peso da Fam\xEDlia",
+      startup: 14,
+      active: 6,
+      recovery: 26,
+      box: bx(20, 80, 240, 340),
+      dmg: 1100,
+      crumple: true,
+      anim: ["blindWind", "blindHit"],
+      motion: [{ from: 6, to: 16, vx: 12 }],
+      armor: { from: 1, to: 14, hits: 1 },
+      tags: ["close", "armor"],
+      turbo: { armor: { from: 1, to: 14, hits: 2 }, dmg: 1300 }
+    }),
+    "4S": mv({
+      name: "Recurso Negado",
+      startup: 6,
+      active: 9,
+      recovery: 28,
+      box: bx(0, 200, 200, 340),
+      dmg: 1e3,
+      launch: [5, 28],
+      anim: ["riseWind", "upper"],
+      fx: "rise",
+      inv: [{ from: 1, to: 9, type: "strike" }],
+      motion: [{ from: 6, to: 11, vx: 3, vy: 22 }],
+      flags: { landEnds: true, landRecovery: 16 },
+      cancel: [],
+      tags: ["antiair", "reversal"]
+    }),
+    // Rachadinha: maços de dinheiro voando; parte do dano volta como vida.
+    SA1: mv({
+      name: "Rachadinha",
+      btn: "X",
+      startup: 10,
+      active: 1,
+      recovery: 34,
+      anim: ["castWind", "cast"],
+      cost: { super: 1e3 },
+      inv: [{ from: 1, to: 10, type: "all" }],
+      spawn: [0, 1, 2, 3, 4].map((i) => ({ at: 10 + i * 4, ...cash({ y: 180 + i % 3 * 90, vx: 15 + i, launch: i === 4 ? [8, 20] : null }) })),
+      range: 1300,
+      tags: ["super"]
+    }),
+    // Prisão Domiciliar Pra Você: prende o herói com uma tornozeleira e dá choque.
+    SA3: mv({
+      name: "Pris\xE3o Domiciliar Pra Voc\xEA",
+      btn: "X",
+      startup: 12,
+      active: 40,
+      recovery: 44,
+      anim: ["throwReach", "throwHold"],
+      cost: { super: 3e3 },
+      inv: [{ from: 1, to: 14, type: "all" }],
+      hits: [
+        { from: 13, to: 16, box: bx(30, 0, 360, 480), dmg: 600, hitstun: 70, effects: [{ t: "trap", frames: 70 }] },
+        { from: 30, to: 32, box: bx(0, 0, 420, 480), dmg: 500, hitstun: 40 },
+        { from: 48, to: 51, box: bx(0, 0, 440, 480), dmg: 1700, launch: [12, 26], kd: "hard" }
+      ],
+      range: 380,
+      tags: ["super", "big"]
+    })
+  };
+
+  // src/data/chupetinha-art.js
+  var CHUPETINHA_SPRITES = {
+    "spriteProfile": "six-frame",
+    "spriteScale": 0.76,
+    "spriteRecovery": true,
+    "spriteTurboMoves": [
+      "5S",
+      "6S",
+      "2S"
+    ],
+    "spriteStripScale": {
+      "chupetinha": {
+        "golpe-5M": 1.037273883105276,
+        "golpe-5H": 1.05112098591372,
+        "golpe-2M": 1.0486033308576392,
+        "golpe-6S": 1.169450773549516,
+        "golpe-6S-turbo": 1.1681919460214756,
+        "golpe-2S": 1.1065093971474969,
+        "golpe-2S-turbo": 1.120356499955941,
+        "golpe-SA3": 1.0989564319792549
+      }
+    }
+  };
+
+  // src/data/characters/chupetinha.js
+  var LIVE = {
+    heal: 0.25,
+    // fração do dano que volta como vida
+    signal: 3,
+    // golpes no celular para derrubar a live
+    offFrames: 360,
+    // tempo sem sinal
+    suck: SYS.GINGA.pip
+    // Ginga roubada pela Sugada
+  };
+  function worldBox(f, box) {
+    const l = f.face > 0 ? f.x + box.x : f.x - box.x - box.w;
+    return { l, r: l + box.w, b: f.y + box.y, t: f.y + box.y + box.h };
+  }
+  var overlap = (a, b) => a.l < b.r && a.r > b.l && a.b < b.t && a.t > b.b;
+  function phoneBox(f) {
+    return worldBox(f, { x: -50, y: 440, w: 120, h: 110 });
+  }
+  var flail = (o) => mv({ weapon: "whip", ...o });
+  var spit = (o = {}) => proj({ kind: "chupeta", x: 90, y: 330, w: 60, h: 50, vx: 15, life: 90, dmg: 550, color: "#ff8fc0", ...o, extra: { art: "chupeta", ...o.extra } });
+  var moves2 = {
+    ...baseNormals({ reach: 1, dmg: 0.95, anims: { H: "kickHigh" } }),
+    "5M": flail({ name: "Chupetada", btn: "M", startup: 9, active: 4, recovery: 18, box: bx(60, 250, 330, 90), dmg: 560, anim: ["whipWind", "whipHi"], tags: ["poke", "mid", "far"] }),
+    "5H": flail({ name: "Mangual de Chupeta", btn: "H", startup: 14, active: 5, recovery: 25, box: bx(60, 220, 450, 120), dmg: 880, anim: ["whipWind", "whipHi"], tags: ["poke", "far", "heavy"] }),
+    "2M": flail({ name: "Chupetada Baixa", btn: "M", startup: 10, active: 4, recovery: 19, crouch: true, guard: "low", box: bx(60, 10, 360, 80), dmg: 500, anim: ["crouch", "whipLow"], tags: ["poke", "mid", "low"] }),
+    "5S": mv({
+      name: "Cuspe de Chupeta",
+      startup: 13,
+      active: 1,
+      recovery: 24,
+      anim: ["castWind", "cast"],
+      spawn: [{ at: 13, ...spit() }],
+      range: 1400,
+      tags: ["zone", "far"],
+      turbo: { startup: 10, spawn: [{ at: 10, ...spit({ dmg: 450, vx: 17 }) }, { at: 16, ...spit({ dmg: 450, vx: 17, y: 230 }) }] }
+    }),
+    // Sugada: avança e morde com a chupeta. No acerto, rouba um gomo de Ginga.
+    "6S": flail({
+      name: "Sugada",
+      startup: 12,
+      active: 5,
+      recovery: 24,
+      box: bx(40, 220, 230, 140),
+      dmg: 700,
+      hitstun: 26,
+      anim: ["whipWind", "whipHi"],
+      motion: [{ from: 4, to: 14, vx: 11 }],
+      tags: ["close", "suck"],
+      turbo: { startup: 9, dmg: 900 }
+    }),
+    "2S": flail({
+      name: "Chupeta Rasteira",
+      startup: 15,
+      active: 5,
+      recovery: 28,
+      crouch: true,
+      guard: "low",
+      box: bx(70, 0, 520, 70),
+      dmg: 780,
+      launch: [6, 12],
+      kd: "hard",
+      anim: ["crouch", "whipLow"],
+      cancel: [],
+      tags: ["far", "low", "knockdown"],
+      turbo: { startup: 11, dmg: 980 }
+    }),
+    // Birra: pula batendo pé e chupeta para cima. Vence pulos.
+    "4S": mv({
+      name: "Birra",
+      startup: 5,
+      active: 10,
+      recovery: 28,
+      box: bx(0, 180, 200, 360),
+      dmg: 950,
+      launch: [5, 28],
+      anim: ["riseWind", "kickHigh"],
+      fx: "rise",
+      inv: [{ from: 1, to: 9, type: "strike" }],
+      motion: [{ from: 5, to: 10, vx: 3, vy: 24 }],
+      flags: { landEnds: true, landRecovery: 15 },
+      cancel: [],
+      tags: ["antiair", "reversal"]
+    }),
+    SA1: mv({
+      name: "Chuva de Chupetas",
+      btn: "X",
+      startup: 10,
+      active: 1,
+      recovery: 36,
+      anim: ["castWind", "cast"],
+      cost: { super: 1e3 },
+      inv: [{ from: 1, to: 10, type: "all" }],
+      spawn: [0, 1, 2, 3, 4].map((i) => ({ at: 10 + i * 4, ...spit({ dmg: 380, vx: 15 + i, vy: 14 + i * 3, g: 0.9, y: 380, hits: 1, launch: i === 4 ? [8, 20] : null }) })),
+      range: 1300,
+      tags: ["super"]
+    }),
+    // Live Patrocinada: a live volta com sinal cheio e a corrente varre a tela.
+    SA3: flail({
+      name: "Live Patrocinada",
+      btn: "X",
+      startup: 12,
+      active: 30,
+      recovery: 44,
+      anim: ["whipWind", "whipHi"],
+      fx: "crack",
+      cost: { super: 3e3 },
+      hits: [0, 1, 2, 3, 4, 5].map((i) => ({ from: 13 + i * 5, to: 15 + i * 5, box: bx(40, 80 + i % 2 * 140, 640, 220), dmg: i === 5 ? 1300 : 420, hitstun: 30, push: [10, 30], launch: i === 5 ? [13, 26] : null, kd: "hard" })),
+      inv: [{ from: 1, to: 13, type: "all" }],
+      tags: ["super", "big"]
+    })
+  };
+  function goLive(st, f) {
+    if (f.res.live || f.res.offT > 0) return;
+    f.res.live = true;
+    f.res.signal = LIVE.signal;
+    st.events.push({ t: "pop", str: "EST\xC3O ME CENSURANDO!", x: f.x, y: 600, color: "#ff4fa0", size: 46 });
+    st.events.push({ t: "live", side: f.side, on: true, x: f.x });
+  }
+  function dropLive(st, f, why) {
+    f.res.live = false;
+    f.res.signal = 0;
+    f.res.offT = LIVE.offFrames;
+    st.events.push({ t: "pop", str: why === "flash" ? "FLASH! SEM SINAL!" : "SEM SINAL!", x: f.x, y: 620, color: "#9ff5e8", size: 48 });
+    st.events.push({ t: "live", side: f.side, on: false, x: f.x });
+  }
+  function phoneStruck(st, f, o) {
+    const box = phoneBox(f);
+    const seen = f.res.phoneSeen;
+    if (o.state === "attack") {
+      const m = o.move;
+      const id = o.hitDone;
+      for (const h of m.hits) {
+        if (seen.has(id)) break;
+        if (o.sf < h.from || o.sf > h.to) continue;
+        if (m.fx === "flash") {
+          const wb = worldBox(o, h.box);
+          if (overlap({ ...wb, b: 0, t: 9999 }, box)) return seen.add(id), "flash";
+        }
+        if (overlap(worldBox(o, h.box), box)) return seen.add(id), "hit";
+      }
+    }
+    for (const e of st.ents) {
+      if (e.owner === f.side || !e.hit || e.delay > 0 || seen.has(`e${e.id}`)) continue;
+      if (overlap({ l: e.x - e.w / 2, r: e.x + e.w / 2, b: e.y, t: e.y + e.h }, box)) return seen.add(`e${e.id}`), "hit";
+    }
+    return null;
+  }
+  var chupetinha_default = {
+    id: "chupetinha",
+    ...CHUPETINHA_SPRITES,
+    name: "CHUPETINHA",
+    style: "Chefe \u2014 m\xE9dia dist\xE2ncia",
+    mechName: "EST\xC3O ME CENSURANDO!",
+    mechDesc: "Ao apanhar, liga a live: 25% do dano volta como vida. Acerte o celular sobre a cabe\xE7a dele para derrubar o sinal.",
+    colors: { skin: "#e8b894", top: "#2f5d9e", top2: "#f4f0ea", bottom: "#24304a", accent: "#ff8fc0", hair: "#3a2a1a", shoe: "#141016" },
+    look: { hair: "curly", weapon: "chupeta", sleeves: "long" },
+    walkF: 5.6,
+    walkB: 4.6,
+    jumpScale: 0.95,
+    hpScale: 1.15,
+    boss: true,
+    place: "BEL\xC9M \u2014 FRENTE DO PALCO",
+    moves: moves2,
+    mech: {
+      init(f) {
+        f.res = { live: false, signal: 0, offT: 0, lastHp: f.hp, healShown: 0, phoneSeen: /* @__PURE__ */ new Set() };
+      },
+      tick(st, f, o) {
+        const r = f.res;
+        if (r.phoneSeen.size > 40) r.phoneSeen = /* @__PURE__ */ new Set();
+        if (r.healShown > 0) r.healShown--;
+        if (r.offT > 0 && --r.offT === 0) st.events.push({ t: "pop", str: "SINAL VOLTOU", x: f.x, y: 600, color: "#d8d0dc", size: 34 });
+        const lost = r.lastHp - f.hp;
+        if (lost > 0 && f.hp > 0) {
+          if (r.live) {
+            const heal = Math.max(1, Math.round(lost * LIVE.heal));
+            f.hp = Math.min(f.maxHp, f.hp + heal);
+            if (!r.healShown) {
+              st.events.push({ t: "pop", str: "+ENGAJAMENTO", x: f.x, y: 560, color: "#ff4fa0", size: 36 });
+              r.healShown = 45;
+            }
+          } else goLive(st, f);
+        }
+        r.lastHp = f.hp;
+        if (r.live && f.hp > 0) {
+          const hit = phoneStruck(st, f, o);
+          if (hit === "flash") dropLive(st, f, "flash");
+          else if (hit) {
+            r.signal--;
+            st.events.push({ t: "pop", str: `SINAL ${r.signal}/${LIVE.signal}`, x: f.x, y: 640, color: "#9ff5e8", size: 34 });
+            if (r.signal <= 0) dropLive(st, f, "hit");
+          }
+        }
+      },
+      onHit(st, f, d, h, src) {
+        if (src.type !== "move" || !src.m.tags.includes("suck") || d.hp <= 0) return;
+        const stolen = Math.min(LIVE.suck, Math.max(0, d.ginga));
+        d.ginga -= LIVE.suck;
+        d.gingaPause = SYS.GINGA.regenPause;
+        if (d.ginga <= 0) {
+          d.ginga = 0;
+          if (!d.burnout) {
+            d.burnout = true;
+            st.events.push({ t: "burnout", side: d.side });
+          }
+        }
+        if (!f.burnout) f.ginga = Math.min(SYS.GINGA.max, f.ginga + stolen);
+        st.events.push({ t: "pop", str: "SUGOU A GINGA!", x: d.x, y: 480, color: "#ff8fc0", size: 40 });
+      },
+      onMoveStart(st, f, m) {
+        if (m.name === "Live Patrocinada") {
+          f.res.offT = 0;
+          f.res.live = false;
+          goLive(st, f);
+        }
+      },
+      hud(f) {
+        const r = f.res;
+        if (r.live) return { label: "AO VIVO", pips: LIVE.signal, value: r.signal, ready: true, readyText: "AO VIVO", color: "#ff4fa0" };
+        if (r.offT > 0) return { label: "AO VIVO", pips: 0, value: 0, text: `SEM SINAL ${Math.ceil(r.offT / 60)}s`, ready: false, color: "#9ff5e8" };
+        return { label: "AO VIVO", pips: 0, value: 0, text: "DESLIGADO", ready: false, color: "#ff4fa0" };
+      },
+      aiPlan(st, f, o, dist, rnd) {
+        if (dist < 240 && rnd() < 0.22) return { key: "6S" };
+        if (dist > 460 && rnd() < 0.18) return { key: "5S" };
+        return null;
+      }
+    },
+    ai: { aggression: 0.55, block: 0.5, antiAir: 0.6, range: "mid" }
+  };
+
+  // src/render/anim.js
+  var FOOT = { x: 0.5, y: 700 / 768 };
+
+  // src/render/chupetinha-art.js
+  var GY = SYS.GROUND_Y;
+
+  // src/render/boss-art.js
+  var GY2 = SYS.GROUND_Y;
+  function drawAnkleZone(c, f, zoneX, zoneR, frame) {
+    if (f.state === "ko") return;
+    const near = Math.abs(f.x - zoneX) > zoneR - 90;
+    c.save();
+    c.setLineDash([22, 14]);
+    c.lineWidth = 6;
+    c.strokeStyle = near && frame % 20 < 10 ? "rgba(255,90,74,.95)" : "rgba(159,245,232,.75)";
+    c.beginPath();
+    c.ellipse(zoneX, GY2 + 10, zoneR, 34, 0, 0, Math.PI * 2);
+    c.stroke();
+    c.setLineDash([]);
+    c.fillStyle = "rgba(159,245,232,.9)";
+    c.font = "bold 22px Impact, 'Arial Black', sans-serif";
+    c.textAlign = "center";
+    c.fillText("\xC1REA DA TORNOZELEIRA", zoneX, GY2 + 72);
+    c.fillStyle = "#1c1820";
+    c.fillRect(f.x - 22, GY2 - f.y - 34, 44, 18);
+    c.fillStyle = frame % 40 < 20 ? "#7dff8a" : "#2a6a30";
+    c.beginPath();
+    c.arc(f.x + 12, GY2 - f.y - 25, 5, 0, Math.PI * 2);
+    c.fill();
+    c.restore();
+  }
+
+  // mansao-preview-entry.js
+  (async () => {
+    const pack = { "id": "mansao", "version": 1, "status": "delivered-v1", "groups": 30, "world": { "width": 2600, "height": 1080, "viewWidth": 1920, "cameraMax": 680, "feetY": 930, "groundTopY": 826 }, "essential": ["parede-bordo", "marmore", "porta-capangas", "sofa-bordo", "telefone-preto", "retrato-fujao", "lustre-balanco"], "interactive": [], "layers": [{ "asset": "parede-bordo", "factor": 1, "width": 2600, "height": 826 }], "objects": [{ "id": "lambri-0", "asset": "lambri", "x": 650, "y": 826, "w": 1320, "factor": 1 }, { "id": "lambri-1", "asset": "lambri", "x": 1950, "y": 826, "w": 1320, "factor": 1 }, { "id": "sanca-dourada-2", "asset": "sanca-dourada", "x": 325, "y": 74, "w": 680, "h": 74, "factor": 1 }, { "id": "sanca-dourada-3", "asset": "sanca-dourada", "x": 975, "y": 74, "w": 680, "h": 74, "factor": 1 }, { "id": "sanca-dourada-4", "asset": "sanca-dourada", "x": 1625, "y": 74, "w": 680, "h": 74, "factor": 1 }, { "id": "sanca-dourada-5", "asset": "sanca-dourada", "x": 2275, "y": 74, "w": 680, "h": 74, "factor": 1 }, { "id": "porta-capangas-6", "asset": "porta-capangas", "x": 250, "y": 826, "h": 620, "factor": 1 }, { "id": "vista-jardim-7", "asset": "vista-jardim", "x": 900, "y": 586, "w": 570, "h": 330, "factor": 1 }, { "id": "moldura-janela-8", "asset": "moldura-janela", "x": 900, "y": 650, "w": 680, "factor": 1 }, { "id": "cortinas-vento-9", "asset": "cortinas-vento", "x": 895.1388888888889, "y": 794.3796296296297, "w": 729.1666666666667, "h": 700, "factor": 1, "fps": 4, "support": { "type": "wall-or-ceiling-mount", "point": { "x": 900, "y": 96 }, "pivot": [250, 20] } }, { "id": "lareira-marmore-10", "asset": "lareira-marmore", "x": 2240, "y": 826, "w": 340, "factor": 1 }, { "id": "fogo-lareira-11", "asset": "fogo-lareira", "x": 2240, "y": 801, "w": 124, "factor": 1, "fps": 4 }, { "id": "relogio-pendulo-12", "asset": "relogio-pendulo", "x": 2480, "y": 826, "h": 640, "factor": 1, "fps": 4 }, { "id": "retrato-fujao-13", "asset": "retrato-fujao", "x": 1860, "y": 512, "h": 420, "factor": 1 }, { "id": "legenda-retrato-14", "asset": "legenda-retrato", "x": 1860, "y": 553, "w": 170, "h": 36, "factor": 1 }, { "id": "arandela-15", "asset": "arandela", "x": 510, "y": 367, "h": 125, "factor": 1 }, { "id": "arandela-16", "asset": "arandela", "x": 1410, "y": 367, "h": 125, "factor": 1 }, { "id": "arandela-17", "asset": "arandela", "x": 2150, "y": 367, "h": 125, "factor": 1 }, { "id": "sofa-bordo-18", "asset": "sofa-bordo", "x": 1570, "y": 826, "w": 630, "factor": 1 }, { "id": "mesa-telefone-19", "asset": "mesa-telefone", "x": 1980, "y": 826, "h": 190, "factor": 1 }, { "id": "telefone-preto-20", "asset": "telefone-preto", "x": 2002, "y": 653.2082166199813, "w": 100, "factor": 1 }, { "id": "documentos-21", "asset": "documentos", "x": 1925, "y": 653.2082166199813, "w": 72, "factor": 1 }, { "id": "prancheta-22", "asset": "prancheta", "x": 1926, "y": 650.2082166199813, "h": 53, "factor": 1 }, { "id": "palmeira-vaso-23", "asset": "palmeira-vaso", "x": -10, "y": 826, "h": 405, "factor": 1 }, { "id": "palmeira-vaso-24", "asset": "palmeira-vaso", "x": 2670, "y": 826, "h": 430, "factor": 1 }, { "id": "lustre-balanco-25", "asset": "lustre-balanco", "x": 1318.0567928730513, "y": 379.23162583518933, "w": 286.60356347438756, "h": 345, "factor": 1, "fps": 4, "support": { "type": "wall-or-ceiling-mount", "point": { "x": 1300, "y": 35 }, "pivot": [250, 20] } }], "ground": { "asset": "marmore", "projection": "flat" }, "foreground": [], "anchors": { "ankleZone": { "x": 1560, "y": 940, "rx": 420, "ry": 34 }, "chandelier": { "x": 1300, "y": 35 }, "curtainRod": { "x": 900, "y": 96 }, "portrait": { "x": 1860, "y": 92 }, "telephone": { "x": 2002, "y": 653.2082166199813 }, "tabletop": { "x": 1980, "y": 653.2082166199813 }, "fireplace": { "x": 2240, "y": 801 } }, "assets": { "parede-bordo": { "path": "layers/parede-bordo.webp", "kind": "layer", "frames": 1, "bytes": 285740, "sha256": "0c9293117ab3990c0e104d9604722945b5efddeb12667be1556c388f81c86e04", "origin": "generated", "source": "source/generated/parede-bordo.png", "sourceCrop": [0, 0, 1536, 488], "width": 2600, "height": 826, "alpha": false }, "marmore": { "path": "ground/marmore.webp", "kind": "ground", "frames": 1, "bytes": 304036, "sha256": "bfcae6e65210c7d6fb92806bd581b7b51576f85e9106ab46664e343e484b3834", "origin": "generated", "source": "source/generated/marmore.png", "sourceCrop": [0, 240, 1536, 900], "width": 2600, "height": 610, "alpha": false }, "lambri": { "path": "props/lambri.webp", "kind": "prop", "frames": 1, "bytes": 244978, "sha256": "c8737f360759da118d34471673c26842b8b9489c519d319f6b2000fd16392d1c", "origin": "generated", "source": "source/generated/lambri.png", "sourceCrop": [19, 133, 2153, 595], "width": 1600, "height": 346, "alpha": true }, "porta-capangas": { "path": "props/porta-capangas.webp", "kind": "prop", "frames": 1, "bytes": 295780, "sha256": "0812e2c293eae67339bd865d488577371a25f846a2988c2296ab40f110d62847", "origin": "generated", "source": "source/generated/porta-capangas.png", "sourceCrop": [35, 68, 989, 1484], "width": 690, "height": 1024, "alpha": true }, "moldura-janela": { "path": "props/moldura-janela.webp", "kind": "prop", "frames": 1, "bytes": 312438, "sha256": "09baf06adb2dc6ab6514e30455ae15183b9b1dd157464a13c0ef94875bade8bc", "origin": "generated", "source": "source/generated/moldura-janela.png", "sourceCrop": [8, 5, 1527, 1008], "width": 1200, "height": 792, "alpha": true }, "vista-jardim": { "path": "props/vista-jardim.webp", "kind": "prop", "frames": 1, "bytes": 459662, "sha256": "7b3a33dfbc955d9b65cacd027f208c99dfdb4e68a3c9db8c75c73dae183eb3d1", "origin": "generated", "source": "source/generated/vista-jardim.png", "sourceCrop": [0, 0, 1536, 1024], "width": 1200, "height": 800, "alpha": false }, "sofa-bordo": { "path": "props/sofa-bordo.webp", "kind": "prop", "frames": 1, "bytes": 179436, "sha256": "2b17e8c9e15f9ec96af4f84cfa0131c9b240906d9fa5cd1a97da17a2e6ebabfc", "origin": "generated", "source": "source/generated/sofa-bordo.png", "sourceCrop": [0, 1, 1854, 835], "width": 1024, "height": 461, "alpha": true }, "mesa-telefone": { "path": "props/mesa-telefone.webp", "kind": "prop", "frames": 1, "bytes": 141878, "sha256": "e37dc7f20d05baa936d501e0d16091b45529765199d0ad56d1dba93ef53cb022", "origin": "generated", "source": "source/generated/mesa-telefone.png", "sourceCrop": [75, 103, 1176, 1174], "width": 700, "height": 681, "alpha": true }, "telefone-preto": { "path": "props/telefone-preto.webp", "kind": "prop", "frames": 1, "bytes": 74576, "sha256": "946ddaf7d9f0633bdd97e22a16fbc558cc7db39335f51e990edbda1cd8eacaff", "origin": "generated", "source": "source/generated/telefone-preto.png", "sourceCrop": [43, 28, 1494, 1e3], "width": 512, "height": 343, "alpha": true }, "retrato-fujao": { "path": "props/retrato-fujao.webp", "kind": "prop", "frames": 1, "bytes": 200044, "sha256": "e29f46ada6ac199af4632a4ec5a8b04a182ae7b2c06752031710fc99b862c71a", "origin": "generated", "source": "source/generated/retrato-fujao.png", "sourceCrop": [57, 6, 1042, 1423], "width": 534, "height": 768, "alpha": true }, "sanca-dourada": { "path": "props/sanca-dourada.webp", "kind": "prop", "frames": 1, "bytes": 139422, "sha256": "7b1f2b2136b6780068c4fc193311687c6af47f287ac60bafe8fe99038d9406cf", "origin": "generated", "source": "source/generated/sanca-dourada.png", "sourceCrop": [14, 238, 2158, 483], "width": 1600, "height": 183, "alpha": true }, "palmeira-vaso": { "path": "props/palmeira-vaso.webp", "kind": "prop", "frames": 1, "bytes": 216742, "sha256": "e48fa9fbc2c7cf1b11968dcced5f4456d29fdc7d0ec6a94fbf64a0c9344ab976", "origin": "generated", "source": "source/generated/palmeira-vaso.png", "sourceCrop": [314, 18, 1192, 1005], "width": 683, "height": 768, "alpha": true }, "lareira-marmore": { "path": "props/lareira-marmore.webp", "kind": "prop", "frames": 1, "bytes": 206674, "sha256": "8792ea3f9c1d40a0423f8fd07391380ced8421ca0bda903b509a4401ed7e40fc", "origin": "generated", "source": "source/generated/lareira-marmore.png", "sourceCrop": [13, 139, 1360, 1032], "width": 900, "height": 597, "alpha": true }, "arandela": { "path": "props/arandela.webp", "kind": "prop", "frames": 1, "bytes": 75656, "sha256": "9172d5995e634f1026ff76b63904c3bf8204e8e5798d89181f720ea5720419f3", "origin": "generated", "source": "source/generated/arandela.png", "sourceCrop": [180, 18, 1360, 1003], "width": 512, "height": 427, "alpha": true }, "lustre-balanco": { "path": "animations/lustre-balanco.webp", "kind": "animation", "frames": 6, "bytes": 618316, "sha256": "549e29729e5696cb3b590037d7bf5078f360abe292e8c1fd1d19e0d186aebb23", "cellWidth": 500, "cellHeight": 500, "crop": [87, 19, 373, 449], "frameBounds": [[88, 20, 415, 468], [109, 19, 436, 462], [136, 19, 460, 446], [118, 19, 444, 456], [95, 20, 423, 460], [87, 20, 415, 461]], "frameHashes": ["177c16dd2a3d0fcd2c5fdd94de686f0323c9e31974cb73da0b29261d0227e609", "bb76281e1b4719009f067beb0c610977ae17ee0c446ab343f77cf8f65397c2a4", "db07503ae0a091c6f47153dd4f23bec0f15d10c8f2397a99d68888b85f50a77e", "4fbe1a1a04ca66b3e4fb7a7a62069364427eb256eb7e7332dcbef4eacd56d56a", "00d6572488467a9edc8c3e5276ce76e9a9d2af5903e459f9744cb502ad0dd621", "c921acc7447740f51826debc83aeaa2e26972f4968e003f86df3bca695ea35d9"], "registrations": [[2, -2], [0, -3], [0, -3], [1, -5], [0, -5], [0, -5]], "pivot": [250, 20], "registration": "fixed-upper-mount", "fps": 4, "origin": "generated", "source": "source/generated/lustre-balanco.png", "width": 3e3, "height": 500, "alpha": true }, "cortinas-vento": { "path": "animations/cortinas-vento.webp", "kind": "animation", "frames": 6, "bytes": 426494, "sha256": "063156780c5592527419e811bc92af5978e0775e31281f28d4eb78f12dbe6950", "cellWidth": 500, "cellHeight": 500, "crop": [22, 19, 450, 432], "frameBounds": [[26, 19, 468, 451], [26, 19, 469, 451], [22, 19, 472, 451], [26, 19, 468, 450], [31, 19, 469, 451], [31, 19, 469, 451]], "frameHashes": ["44deb9a3c246f196a707a8944b3ca34da8f87dfe8b852abf70c28d0e82f8e775", "1b66426a555dd33576fc1dd7764a4c13cf89eeabf750a39790b438355febd64d", "03570e8b631a6167d84cff266421b8bfb9ae25b429d985ef59ec905e5b7b3868", "c2f2bc9a86b55aa1cad52c56a19fe5b8ff887098e1449d3a65ccdb076c11e384", "994b99c310f45346da9bcb9cec36dc7826c68de0ceffcf5578496d726b82ffcc", "9d16dce0c8faa0030f891cacb7fc866b1d111a03937b584cdec4523de6c8a495"], "registrations": [[-1, -12], [0, -12], [0, -12], [-1, -13], [0, -13], [0, -13]], "pivot": [250, 20], "registration": "fixed-upper-mount", "fps": 4, "origin": "generated", "source": "source/generated/cortinas-vento-v2.png", "width": 3e3, "height": 500, "alpha": true }, "fogo-lareira": { "path": "fx/fogo-lareira.webp", "kind": "fx", "frames": 6, "bytes": 350976, "sha256": "6e96d466a50e5bf53b35e74364ae479fc0b4286c55ea5be0d2cca81b997ecb56", "cellWidth": 500, "cellHeight": 500, "crop": [55, 120, 385, 361], "frameBounds": [[58, 223, 440, 481], [57, 164, 439, 481], [55, 120, 437, 481], [57, 141, 440, 480], [57, 208, 439, 480], [56, 244, 438, 480]], "frameHashes": ["b72a4f1f95ceb1596dda026fdb17271f298f3822191fa6177b6503fa5f6df603", "c3d9522630dd66e9c790ed89965edd39fcfcbee24d689a9cad2dba6b8748d848", "87956f97a6e7b20f724b54f3b24417f7cd855fa28541b09d0d7fd1fa0b03b707", "8be80c1de96717337eeea59ccf3d36f57776ce030e55b3793674bd67d4b4b29c", "e444ddfb2ef0b7995227060d946eb19c9c55805f778e7cc28c08a369ecd6bd0f", "59c385d71a28696a3389561f3df2edb34b08b967c4eb38c0737144d721a3c25e"], "registrations": [[0, 34], [0, 34], [0, 34], [0, 33], [0, 33], [0, 33]], "pivot": [250, 480], "registration": "planted-base", "fps": 4, "origin": "generated", "source": "source/generated/fogo-lareira.png", "width": 3e3, "height": 500, "alpha": true }, "relogio-pendulo": { "path": "animations/relogio-pendulo.webp", "kind": "animation", "frames": 6, "bytes": 264500, "sha256": "894831dab17f606d95828d313b12ec8d4c3d5ff2222b0cccd6d1540a851bb599", "cellWidth": 500, "cellHeight": 500, "crop": [165, 31, 170, 450], "frameBounds": [[165, 31, 334, 481], [165, 32, 335, 481], [166, 32, 335, 481], [165, 31, 334, 481], [165, 31, 335, 481], [165, 31, 335, 481]], "frameHashes": ["dee1ac5ecea8d08d86275387e4cec6353975560134d9034dd7dc95d228884cce", "441f40c1c2e405b6dbc97dc209f135567ad4ef7a376bd4606e5d83da66fcc68b", "34bc8b6cbde61e1b6ee926833554fad67f903965f97d5c99223f01e989cc11bb", "e9a35cfd94d1efafd098b8ab20ac858b145ab35dc611ccc659b1b5416df44652", "29f697ee7f33980572c8c131a6f28461482d19f3a2c874abbafa3cb813b7097c", "fef034c29d0f2fc5d9cc947666e63f0534d21ec744fc1100968aa1fba03fc593"], "registrations": [[-6, 9], [-3, 9], [0, 9], [-6, 9], [-3, 9], [0, 9]], "pivot": [250, 480], "registration": "planted-base", "fps": 4, "origin": "generated", "source": "source/generated/relogio-pendulo.png", "width": 3e3, "height": 500, "alpha": true }, "documentos": { "path": "props/documentos.webp", "kind": "prop", "frames": 1, "bytes": 58750, "sha256": "27f876ad9a78572786638205ea794f700a515b14d0cea84f5a1fd327cc629ab3", "origin": "reused-banheiros", "sourceManifest": "../banheiros/manifest.json", "sourceAsset": "documentos", "sourceSha256": "27f876ad9a78572786638205ea794f700a515b14d0cea84f5a1fd327cc629ab3", "width": 512, "height": 237, "alpha": true }, "prancheta": { "path": "props/prancheta.webp", "kind": "prop", "frames": 1, "bytes": 69206, "sha256": "ab616b3ddca301c0a6e06c49ffca7cccf249a2297100dbbc8cf18ddae4b95b6d", "origin": "reused-banheiros", "sourceManifest": "../banheiros/manifest.json", "sourceAsset": "prancheta", "sourceSha256": "ab616b3ddca301c0a6e06c49ffca7cccf249a2297100dbbc8cf18ddae4b95b6d", "width": 340, "height": 512, "alpha": true }, "legenda-retrato": { "path": "graphics/legenda-retrato.webp", "kind": "graphic", "frames": 1, "bytes": 2758, "sha256": "4a77a9039583bd89eca240e7d040bda9f81d12732007440155fc1bbf5172b349", "origin": "typeset", "text": "MEU FILHO", "font": "ui/Bangers-Regular.ttf", "width": 400, "height": 85, "alpha": false }, "titulo": { "path": "ui/titulo.webp", "kind": "graphic", "frames": 1, "bytes": 9736, "sha256": "fee4439ab8846bd7bff33f37bb784aa0f4686e64a4224eca8ba8379b5f6bd6ab", "origin": "typeset", "text": "MANS\xC3O \u2014 PRIS\xC3O DOMICILIAR", "font": "ui/Bangers-Regular.ttf", "width": 1200, "height": 150, "alpha": false }, "ambiente-sala": { "path": "audio/ambiente-sala.ogg", "kind": "audio", "frames": 1, "bytes": 151339, "sha256": "cf2443f882c9ab8ce5c213ea92a93f39b4a6bbb1dcdab3cccefb6f7cd722d6c0", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "cristais": { "path": "audio/cristais.ogg", "kind": "audio", "frames": 1, "bytes": 16146, "sha256": "4c00de93c51287eb8eb5e7c2fe198b75c3b6fa0c9a54c5da42f37112f38acaa1", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "relogio": { "path": "audio/relogio.ogg", "kind": "audio", "frames": 1, "bytes": 15204, "sha256": "2cbe10c0eb2807db966fa45c70d5de68fbaaebfd7d7e2aad564c990eccc3f6a7", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "trilha-intro": { "path": "audio/trilha-intro.ogg", "kind": "audio", "frames": 1, "bytes": 31730, "sha256": "631123f73b8b3f6384436011eb58cf7b4d521ca0d180ef316a027b373e0ed7c5", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "trilha-loop": { "path": "audio/trilha-loop.ogg", "kind": "audio", "frames": 1, "bytes": 231729, "sha256": "b3a0fa71f9fffebd5ea173be48db9cc5c1e2d49ed3d0977df660d52f682becb8", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "vento-jardim": { "path": "audio/vento-jardim.ogg", "kind": "audio", "frames": 1, "bytes": 152468, "sha256": "c5d9153daa38464b1ee61ae1e859229839307a297f3f0d0f7a360643f48b5594", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "miniatura": { "path": "ui/miniatura.webp", "kind": "image", "frames": 1, "bytes": 152694, "sha256": "c0a381ca899097b0ee14e9c271c8f6f582c1f07a1d9fb76276313da39d609318", "origin": "derived-composition", "width": 960, "height": 540, "alpha": false }, "carregamento": { "path": "ui/carregamento.webp", "kind": "image", "frames": 1, "bytes": 533398, "sha256": "001690bed3406b9e54b6d65d202137cbe448017de6f50544edf40598d381910b", "origin": "derived-composition", "width": 1920, "height": 1080, "alpha": false } }, "missing": [], "notes": ["Chapter05 takes place inside the mansion; allies mobilize outside in the existing story.", "The ankle zone is never baked into the floor; drawAnkleZone uses the real PAI.zoneX/zoneR after the scene.", "All physical room pieces share parallax1, including window/garden, curtain rod and ceiling fixtures.", "Each generated PNG master and full prompt is retained. The first curtains output had an opaque matte; selected ImageGen alpha correction is cortinas-vento-v2.png.", "Hanging sheets register the fixed upper mounting point, standing clock/fire grate register the base. No per-frame rescaling.", "Portrait uses the approved local Fuj\xE3o character reference; no changes to his fighter art are included.", "Telephone and paperwork sit on the painted tabletop source anchor. Gameplay phone/capanga/Foro/fury/shock logic and timings are unchanged.", "Decoration has no new collisions. Curtain, fire, clock and chandelier animation freezes with match clock/reduced effects.", "Original synthesized audio and measurements: audio/manifest.json."] };
+    for (const a of Object.values(pack.assets)) a.url ??= "../stages/mansao/" + a.path;
+    const original = [...pack.objects], front = [...pack.foreground];
+    const cv = document.querySelector("#stage"), ctx = cv.getContext("2d"), images = /* @__PURE__ */ new Map(), cards = [], errors = [];
+    let frame = 0, paused = false, cam = 340, last = performance.now(), solo = null;
+    const hero = new Image();
+    const heroURL = "../sprites/final/belga/parado.webp";
+    const hero2 = new Image();
+    const hero2URL = "../sprites/final/ryuchi/parado.webp";
+    if (heroURL) hero.src = heroURL;
+    if (hero2URL) hero2.src = hero2URL;
+    const controls = { camera: document.querySelector("#camera"), pause: document.querySelector("#pause"), feet: document.querySelector("#feet"), heroes: document.querySelector("#heroes"), reduce: document.querySelector("#reduce"), objects: document.querySelector("#objects"), fx: document.querySelector("#effects"), ground: document.querySelector("#ground"), zone: document.querySelector("#zone"), zoneState: document.querySelector("#zone-state"), anchors: document.querySelector("#anchors") };
+    function picture(c, a, img, x, y, w, h, at = controls.reduce.checked ? 0 : frame) {
+      const n = a.frames || 1, cw = a.cellWidth || img.width / n;
+      const [sx, sy, sw, sh] = a.crop || [0, 0, cw, img.height];
+      const scale = Math.min(w / sw, h / sh), f = n > 1 ? stageAnimationFrame(at, 4, n) : 0;
+      c.drawImage(img, sx + f * cw, sy, sw, sh, x + (w - sw * scale) / 2, y + (h - sh * scale) / 2, sw * scale, sh * scale);
+    }
+    function fighter(img, x, flip = false) {
+      if (!img.complete || !img.width) return;
+      ctx.save();
+      ctx.translate(x - cam, 930);
+      if (flip) ctx.scale(-1, 1);
+      ctx.fillStyle = "rgba(10,5,15,.30)";
+      ctx.beginPath();
+      ctx.ellipse(0, 4, 86, 16, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.drawImage(img, 0, 0, 500, 500, -250, -456, 500, 500);
+      ctx.restore();
+    }
+    function draw() {
+      ctx.clearRect(0, 0, 1920, 1080);
+      if (solo) {
+        ctx.fillStyle = "#28313b";
+        ctx.fillRect(0, 0, 1920, 1080);
+        const a = pack.assets[solo], im = images.get(solo);
+        if (im) picture(ctx, a, im, 150, 80, 1620, 900);
+      } else {
+        pack.objects = original.filter((o) => controls.objects.checked || pack.assets[o.asset].kind === "layer").filter((o) => controls.fx.checked || !(pack.assets[o.asset].path?.startsWith("fx/") || ["fx", "environment-fx"].includes(pack.assets[o.asset].kind)));
+        pack.foreground = controls.objects.checked ? front.filter((o) => controls.fx.checked || !(pack.assets[o.asset].path?.startsWith("fx/") || ["fx", "environment-fx"].includes(pack.assets[o.asset].kind))) : [];
+        const savedGround = pack.ground;
+        if (!controls.ground.checked) pack.ground = null;
+        drawStageArt(ctx, "mansao", cam, Math.floor(frame), { reducedEffects: controls.reduce.checked });
+        pack.ground = savedGround;
+        const demoState = controls.zoneState.value;
+        const demoX = PAI.zoneX + (demoState === "borda" ? PAI.zoneR - 45 : demoState === "fora" ? PAI.zoneR + 60 : 0);
+        if (controls.zone.checked) {
+          ctx.save();
+          ctx.translate(-cam, 0);
+          drawAnkleZone(ctx, { x: demoX, y: 0, state: "idle" }, PAI.zoneX, PAI.zoneR, Math.floor(controls.reduce.checked ? 0 : frame));
+          ctx.restore();
+        }
+        if (controls.heroes.checked) {
+          fighter(hero2, 950);
+          fighter(hero, controls.zone.checked ? demoX : 1650, true);
+        }
+        if (controls.anchors.checked) {
+          ctx.save();
+          ctx.translate(-cam, 0);
+          ctx.strokeStyle = "#ffd76e";
+          ctx.fillStyle = "#ffd76e";
+          ctx.lineWidth = 3;
+          ctx.font = "20px sans-serif";
+          for (const [label, a] of Object.entries(pack.anchors || {})) {
+            const p = Array.isArray(a) ? { x: a[0], y: a[1] } : a;
+            if (!p || !Number.isFinite(p.x) || !Number.isFinite(p.y)) continue;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 8, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.fillText(label, p.x + 12, p.y - 12);
+          }
+          ctx.restore();
+        }
+        if (controls.feet.checked) {
+          ctx.strokeStyle = "#57e4d0";
+          ctx.lineWidth = 3;
+          ctx.beginPath();
+          ctx.moveTo(0, 930);
+          ctx.lineTo(1920, 930);
+          ctx.stroke();
+          ctx.font = "24px sans-serif";
+          ctx.fillStyle = "#57e4d0";
+          ctx.fillText("P\xC9S Y=930", 25, 920);
+        }
+      }
+      document.querySelector("#frame").textContent = Math.floor(frame);
+      document.querySelector("#cameraValue").textContent = cam;
+      document.querySelector("#selected").textContent = solo || "Composi\xE7\xE3o completa";
+    }
+    controls.camera.oninput = () => {
+      cam = +controls.camera.value;
+      draw();
+    };
+    controls.pause.onclick = () => {
+      paused = !paused;
+      controls.pause.textContent = paused ? "Continuar" : "Pausar";
+    };
+    document.querySelector("#step").onclick = () => {
+      paused = true;
+      frame += 15;
+      controls.pause.textContent = "Continuar";
+      draw();
+    };
+    document.querySelector("#scene").onclick = () => {
+      solo = null;
+      draw();
+    };
+    document.querySelector("#download").onclick = () => {
+      draw();
+      const a = document.createElement("a");
+      a.download = "mansao-camera-" + cam + ".png";
+      a.href = cv.toDataURL();
+      a.click();
+    };
+    for (const el of Object.values(controls)) if (el.tagName === "INPUT" && el.type === "checkbox" || el.tagName === "SELECT") el.onchange = draw;
+    await Promise.all(Object.entries(pack.assets).filter(([, a]) => a.kind !== "audio").map(async ([id, a]) => {
+      const im = new Image();
+      im.src = a.url;
+      try {
+        await im.decode();
+        images.set(id, im);
+      } catch {
+        errors.push(id);
+        return;
+      }
+      const card = document.createElement("article"), label = document.createElement("h3"), canvas = document.createElement("canvas"), button = document.createElement("button"), link = document.createElement("a"), small = document.createElement("p");
+      canvas.width = 240;
+      canvas.height = 180;
+      label.textContent = id;
+      small.textContent = (a.frames || 1) + " quadro(s) \xB7 " + (a.origin || a.kind);
+      button.textContent = "Ver isolado";
+      button.onclick = () => {
+        solo = id;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        draw();
+      };
+      link.textContent = "Baixar arquivo";
+      link.href = a.url;
+      link.download = id + "." + a.path.split(".").pop();
+      card.append(canvas, label, small, button, link);
+      document.querySelector("#gallery").append(card);
+      cards.push({ canvas, a, im });
+    }));
+    await loadStageArt({ mansao: pack });
+    await Promise.allSettled([...heroURL ? [hero.decode()] : [], ...hero2URL ? [hero2.decode()] : []]);
+    document.querySelector("#status").textContent = Object.keys(pack.assets).length + " assets \xB7 " + images.size + " imagens carregadas \xB7 " + (stageArtStatus("mansao").ready ? "cen\xE1rio pronto" : "falha de carga") + (errors.length ? " \xB7 falhas: " + errors.join(", ") : "");
+    for (const [id, a] of Object.entries(pack.assets).filter(([, a2]) => a2.kind === "audio")) {
+      const label = document.createElement("label"), audio = document.createElement("audio");
+      label.textContent = id;
+      audio.controls = true;
+      audio.src = a.url;
+      audio.loop = id !== "trilha-intro";
+      document.querySelector("#audio").append(label, audio);
+    }
+    let galleryTick = 0;
+    function loop(now) {
+      if (!paused) frame += Math.min(100, now - last) * 0.06;
+      last = now;
+      draw();
+      if (now - galleryTick > 180) {
+        galleryTick = now;
+        for (const { canvas, a, im } of cards) {
+          const c = canvas.getContext("2d");
+          c.clearRect(0, 0, 240, 180);
+          picture(c, a, im, 5, 5, 230, 170);
+        }
+      }
+      requestAnimationFrame(loop);
+    }
+    window.mansaoPreview = { pack, status: () => stageArtStatus("mansao"), setFrame: (n) => {
+      paused = true;
+      frame = Math.max(0, n);
+      draw();
+    }, setCamera: (n) => {
+      cam = Math.max(0, Math.min(680, n));
+      controls.camera.value = cam;
+      draw();
+    }, showScene: () => {
+      solo = null;
+      draw();
+    }, setZone: (active, state = "neutro") => {
+      controls.zone.checked = !!active;
+      controls.zoneState.value = ["neutro", "borda", "fora"].includes(state) ? state : "neutro";
+      solo = null;
+      draw();
+    }, errors };
+    document.body.dataset.ready = "true";
+    requestAnimationFrame(loop);
+  })();
+})();
+</script></html>

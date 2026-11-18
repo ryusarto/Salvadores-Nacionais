@@ -1,0 +1,159 @@
+{
+  "conclusao": "aprovado para o escopo testado",
+  "jogo": "Salvadores Nacionais",
+  "cenario": "05 — Mansão / Pai do Fujão",
+  "branch": "art/cenario-05-mansao-pai-fujao-20261117",
+  "baseLocal": "2338e51 — entrega local do aeroporto",
+  "buildSHA256": "31b7294847986ee5b6b4f79b41d68ffca565f75883131d341452271e7da7bdca",
+  "manifestSHA256": "7abf76f363de5184ed44fb3cbcc5df1646ae9db2ac87f7f3bfa74895071756d1",
+  "revisor": "th_revisor_jogos — revisão independente, sem edição de produção ou Git",
+  "achadosPendentes": [],
+  "achadosResolvidos": [
+    {
+      "id": "QA-MAN-01",
+      "gravidade": "baixa",
+      "problema": "A base/caixa do relógio deslizava6px horizontalmente entre células, cerca8,6px no mundo àaltura640.",
+      "esperado": "Base e caixa apoiadas na mesma posição, com movimento apenas do pêndulo.",
+      "correcao": "Responsável pela produção passou a registrar o centro alpha>128 dos40px inferiores da base emx250, preservando fontes.",
+      "retesteIndependente": {
+        "centrosBase": [
+          250.0,
+          250.0,
+          250.0,
+          250.0,
+          250.0,
+          250.0
+        ],
+        "baseY": [
+          480,
+          480,
+          480,
+          480,
+          480,
+          480
+        ],
+        "resultado": "resolvido nos seis quadros"
+      }
+    }
+  ],
+  "evidencias": {
+    "testes": {
+      "comando": "node --test tests/unit/aeroporto-stage.test.js tests/unit/pai-fujao.test.js tests/unit/palco-stage.test.js tests/unit/banheiros-stage.test.js",
+      "aprovados": 20,
+      "falhas": 0
+    },
+    "assets": {
+      "runtime": 30,
+      "bytesRuntime": 6222506,
+      "fontesPNG": 19,
+      "selecionadosGerados": 18,
+      "tiras": 4,
+      "quadros": 24,
+      "hashes": "30/30 conferidos",
+      "alphaECrops": "24/24 quadros sem pixels visíveis nas bordas e contidos no crop comum; cortina-v2 centroalpha0 em todos os seis quadros.",
+      "apoios": "Lustre/cortina topo opaco y20; relógio/fogo base opaca y480.",
+      "retrato": "Inspecionado contra o modelo local aprovado: rosto/figurino/óculos/mala coerentes. Hash da referência confere com prompts-completos.json.",
+      "referenciaSHA256": "b87d40547705466165f00218a741beeaf80307a80b5b8d9bf191bab592b0d939"
+    },
+    "previa": {
+      "imagensDecodificadas": 24,
+      "galeriaCards": 24,
+      "audioDecodificado": 6,
+      "cameras": [
+        0,
+        340,
+        680
+      ],
+      "poses": [
+        0,
+        15,
+        30,
+        45,
+        60,
+        75
+      ],
+      "controles": [
+        "pausa",
+        "avanço",
+        "mobiliário",
+        "FX",
+        "piso",
+        "efeitos reduzidos",
+        "galeria isolada",
+        "zona da tornozeleira"
+      ],
+      "mobile": [
+        844,
+        390
+      ],
+      "errosJSHTTPRede": 0
+    },
+    "visual": "Capturas camera-340.png, zone-camera-680.png, game-camera-0.png e cortina-isolada.png foram inspecionadas. Lustre conectado ao teto por corrente, cortinas fixadas ao varão com suportes, telefone sobre mesa, retrato legível e zona ciano com contraste sobre o mármore.",
+    "jogo": {
+      "fluxo": "título → Versus → Belga → Pai do Fujão → luta na mansão",
+      "carregamentoSobDemanda": "Nenhum asset da mansão antes da escolha do adversário;21imagens em cena e seis áudios preparados durante a luta.",
+      "pausa": "core congelado",
+      "indiceOficial": "26 pacotes /722strips",
+      "mecanicas": {
+        "zone": {
+          "center": 1560,
+          "radius": 420,
+          "walkLimitX": 1980
+        },
+        "shock": {
+          "damage": 900,
+          "state": "dizzy",
+          "stun": 80
+        },
+        "immuneDamage": [
+          1,
+          1,
+          1,
+          458
+        ],
+        "cassationDamage": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          672
+        ],
+        "restoredCharges": 6,
+        "foroDown": 480,
+        "fury": {
+          "threshold": 0.5,
+          "active": true,
+          "multiplier": 1.2
+        },
+        "henchman": {
+          "present": true,
+          "cooldown": 355
+        },
+        "fixtures": "Real createMatch/step/applyHit with explicit positions, health/hitstun/Foro timer fixtures; no gameplay functions or rules patched. Immune hits retain existing minimum1damage."
+      },
+      "errosJSHTTPRede": 0
+    }
+  },
+  "geometriaZona": {
+    "centro": 1560,
+    "raio": 420,
+    "ellipseY": 940,
+    "raioVertical": 34,
+    "observacao": "Geometria dinâmica original preservada. Na câmera0, o extremo direito x1980 ultrapassa o viewport1920 em60px e é recortado naturalmente; contraste conferido na parte visível. HUD pode cobrir a legenda inferior como já ocorre no renderer existente. Não se deslocou nem reduziu a zona para caber na tela."
+  },
+  "relatorios": [
+    "assets-review.json",
+    "preview-review.json",
+    "game-review.json"
+  ],
+  "limites": [
+    "Build local não publicada; sprites oficiais ausentes servidos por proxy com verificação SHA. Arte da mansão é local.",
+    "Pai do Fujão mantém o fallback corporal já existente na base; retrato novo é um prop, não sprite de luta.",
+    "Não houve playtest humano, teste em aparelho físico ou certificação de desempenho.",
+    "Não foi repetida a campanha completa/vitória/persistência porque o incremento não altera essas regras.",
+    "Inspeção artística baseada em vistas e poses selecionadas; não certifica cada pixel original.",
+    "Integração futura com o renderer preparado do PR#25 deve preservar projection=flat; esta revisão cobre a branch e build locais indicadas."
+  ]
+}

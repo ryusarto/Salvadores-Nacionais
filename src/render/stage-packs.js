@@ -142,16 +142,35 @@ function drawPrepared(c, ops, camera, frame, reducedEffects) {
   c.globalAlpha = 1;
 }
 
+// Painted floors already include their perspective; older arenas keep the tiled projection.
+function drawPackGround(c, pack, image, camera) {
+  const ground = pack.ground, flat = ground.projection === 'flat';
+  const y = flat ? finite(ground.y, finite(pack.world?.groundTopY, 826)) : 826;
+  const height = flat ? finite(ground.height, finite(pack.world?.height, 1080) - y) : 254;
+  if (flat) {
+    const width = finite(ground.width, finite(pack.world?.width, 2600));
+    c.drawImage(image, finite(ground.x, 0) - camera * finite(ground.factor, 1), y, width, height);
+  } else drawBelemGround(c, image, camera);
+  if (ground.shade) {
+    c.save(); c.fillStyle = ground.shade; c.fillRect(0, y, 1920, height); c.restore();
+  }
+}
+
 // O chão projetado custa ~130 drawImage; só é refeito quando a câmera muda de pixel.
 const GROUND_TOP = 820;
-function drawPreparedGround(c, fast, camera) {
+function drawPreparedGround(c, pack, fast, camera) {
+  // A flat floor is already one drawImage; caching would resample its camera position.
+  if (pack.ground.projection === 'flat') {
+    drawPackGround(c, pack, fast.ground, camera);
+    return;
+  }
   const pixel = Math.round(camera);
   fast.groundCache ??= makeCanvas(1920, 1080 - GROUND_TOP);
   if (fast.groundCam !== pixel) {
     const g = fast.groundCache.getContext('2d');
     g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, 1920, 1080 - GROUND_TOP);
     g.setTransform(1, 0, 0, 1, 0, -GROUND_TOP);
-    drawBelemGround(g, fast.ground, pixel);
+    drawPackGround(g, pack, fast.ground, pixel);
     fast.groundCam = pixel;
   }
   c.drawImage(fast.groundCache, 0, GROUND_TOP);
@@ -166,10 +185,7 @@ function drawFast(c, item, camera, frame, options) {
     c.drawImage(img, (layer.x || 0) - camera * finite(layer.factor, 1), layer.y || 0, width, height);
   }
   drawPrepared(c, fast.objects, camera, frame, options.reducedEffects);
-  if (fast.ground) {
-    drawPreparedGround(c, fast, camera);
-    if (pack.ground.shade) { c.fillStyle = pack.ground.shade; c.fillRect(0, 826, 1920, 254); }
-  }
+  if (fast.ground) drawPreparedGround(c, pack, fast, camera);
   drawPrepared(c, fast.foreground, camera, frame, options.reducedEffects);
   c.restore();
   return true;
@@ -213,10 +229,7 @@ export function drawStageArt(c, id, cam, frame = 0, options = {}) {
   }
   for (const o of pack.objects || []) object(c, item, o, camera, frame, options.reducedEffects);
   if (pack.ground && item.images.has(pack.ground.asset)) {
-    drawBelemGround(c, item.images.get(pack.ground.asset), camera);
-    if (pack.ground.shade) {
-      c.save(); c.fillStyle = pack.ground.shade; c.fillRect(0, 826, 1920, 254); c.restore();
-    }
+    drawPackGround(c, pack, item.images.get(pack.ground.asset), camera);
   }
   for (const o of pack.foreground || []) object(c, item, o, camera, frame, options.reducedEffects);
   return true;
