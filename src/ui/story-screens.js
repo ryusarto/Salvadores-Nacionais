@@ -15,7 +15,7 @@ import { drawInfernoStage } from '../render/inferno-stage.js';
 let eventLayers;
 export const BOSS_STAGES = { palco: ['BELÉM — FRENTE DO PALCO', (c, cam, f) => drawEventStage(c, eventLayers ??= buildStage(), cam, f, 'palco')], banheiros: ['BELÉM — BANHEIROS QUÍMICOS', (c, cam, f) => drawEventStage(c, eventLayers ??= buildStage(), cam, f, 'banheiros')], aeroporto: ['AEROPORTO', drawAirportStage], mansao: ['MANSÃO', drawMansionStage], washington: ['WASHINGTON, D.C.', drawWashingtonStage], inferno: ['INFERNO', drawInfernoStage] };
 import { portrait, footer } from './comic-screens.js';
-import { currentChapter, currentFight, talkLines, nextChapter, tourComplete } from './story.js';
+import { currentChapter, currentFight, talkLines } from './story.js';
 
 /** Telas do Modo História, no mesmo estilo HQ do menu. */
 
@@ -223,60 +223,6 @@ function pages(c, a, closing) {
   footer(c, 'LEVE / ENTER AVANÇA    •    MÉDIO / ESC VOLTA UMA PÁGINA');
 }
 
-/** Mapa da turnê: as sete paradas, com a atual em destaque. */
-function map(c, a) {
-  comicBackground(c, a.frame);
-  const run = a.story;
-  banner(c, 'MAPA DA TURNÊ', shortName(heroOf(a)).toUpperCase());
-  const pulse = 0.5 + 0.5 * Math.sin(a.frame / 12);
-  const pos = CHAPTERS.map((_, i) => [120 + i * 245, i % 2 ? 440 : 210]);
-  // trilha
-  c.strokeStyle = P.ink;
-  c.lineWidth = 10;
-  c.setLineDash([24, 18]);
-  c.beginPath();
-  pos.forEach(([x, y], i) => (i ? c.lineTo(x + 105, y + 85) : c.moveTo(x + 105, y + 85)));
-  c.stroke();
-  c.setLineDash([]);
-  CHAPTERS.forEach((ch, i) => {
-    const [x, y] = pos[i];
-    const current = i === run.chapter;
-    const won = i < run.done || (current && run.cleared);
-    const picked = current && !run.cleared; // capítulo escolhido no mapa
-    const fill = picked ? P.red : won ? P.yellow : ch.ready && i <= run.done ? P.paper : P.muted;
-    if (current && !run.cleared) {
-      c.strokeStyle = P.yellow;
-      c.lineWidth = 8 + pulse * 6;
-      c.strokeRect(x - 10, y - 10, 230, 190);
-    }
-    const ink = picked ? P.paper : P.ink;
-    comicPanel(c, x, y, 210, 170, fill, 12, 5);
-    comicText(c, String(ch.n), x + 30, y + 32, 38, ink);
-    comicText(c, ch.bossName, x + 105, y + 74, 28, ink, 'center', 180);
-    comicText(c, ch.place, x + 105, y + 110, 18, ink, 'center', 180);
-    const tag = current && !run.cleared ? (won ? 'JOGAR DE NOVO' : 'AGORA') : won ? 'VENCIDO ✓' : ch.ready && i <= run.done ? 'PRONTO' : ch.ready ? 'TRANCADO' : 'EM BREVE';
-    comicText(c, tag, x + 105, y + 146, 22, picked ? P.yellow : P.ink, 'center', 180);
-  });
-  // painel do capítulo atual
-  const ch = currentChapter(run);
-  comicPanel(c, 120, 690, 1680, 300, P.ink, 20, 0);
-  comicText(c, `CAPÍTULO ${ch.n} — ${ch.place}`, 170, 740, 44, P.yellow, 'left', 1580);
-  if (run.cleared) {
-    const next = nextChapter(run);
-    const msg = tourComplete(run) ? 'TURNÊ COMPLETA! A fome acabou no mundo. Jogue com outro Salvador para ver o final dele.'
-      : next ? `Capítulo vencido! Próxima parada: ${next.place}, contra ${next.bossName}.` : 'Capítulo vencido! O próximo capítulo da turnê chega numa próxima versão do jogo.';
-    paragraph(c, msg, 170, 810, 1580, 36, P.paper);
-  } else {
-    run.fights.forEach((f, i) => {
-      const foe = ALL[f.foe];
-      const label = `CHEFE: ${foe.name}`;
-      const mark = i < run.idx ? '✓' : i === run.idx ? '▶' : '·';
-      comicText(c, `${mark}  ${label}`, 190, 810 + i * 56, 36, i < run.idx ? P.muted : i === run.idx ? P.paper : P.muted, 'left', 1560);
-    });
-  }
-  footer(c, run.cleared ? (nextChapter(run) ? 'LEVE / ENTER SEGUE A TURNÊ    •    ESC VOLTA AO MENU' : 'LEVE / ENTER VOLTA AO MENU') : run.idx === 0 && run.done > 0 ? '← → ESCOLHE O CAPÍTULO    •    LEVE / ENTER COMEÇA    •    ESC VOLTA AO MENU' : 'LEVE / ENTER SEGUE PARA A PRÓXIMA LUTA    •    ESC VOLTA AO MENU');
-}
-
 /** Diálogo antes da luta: o herói à esquerda, o rival à direita, quem fala em destaque. */
 function talk(c, a) {
   comicBackground(c, a.frame);
@@ -371,7 +317,6 @@ export function drawStoryScreen(c, a) {
   switch (a.screen) {
     case 'storyIntro': pages(c, a, false); return true;
     case 'storyEnd': pages(c, a, true); return true;
-    case 'storyMap': map(c, a); return true;
     case 'storyTalk': talk(c, a); return true;
     case 'storyLose': lose(c, a); return true;
     default: return false;
