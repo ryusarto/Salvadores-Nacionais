@@ -1,0 +1,40 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import franco from '../../src/data/characters/franco.js';import{spriteProgress}from'../../src/render/sprite-timing.js';import{spriteLoadOptions}from'../../src/render/sprite-profile.js';
+const ch={...franco,spriteProfile:'twelve-frame'};
+test('dense timelines remain monotonic and put real attack contacts in the contact drawings',()=>{for(const m of Object.values(ch.moves).flatMap(m=>[m,m.turbo].filter(Boolean))){let prev=-1;for(let sf=0;sf<m.total;sf++){const p=spriteProgress({ch,state:'attack',move:m,sf},{p:0});assert.ok(Number.isFinite(p)&&p>=prev&&p>=0&&p<1);prev=p;}const first=m.hits[0]?.from??m.startup+1,last=m.hits.at(-1)?.to??m.startup+m.active;assert.ok(spriteProgress({ch,state:'attack',move:m,sf:first},{p:0})>=1/3);assert.ok(spriteProgress({ch,state:'attack',move:m,sf:last},{p:0})<.75);}});
+test('held crouch finishes its twelve drawings and stays low',()=>assert.equal(Math.floor(spriteProgress({ch,state:'crouch',sf:100},{p:0})*12),11));
+test('walking enters the first drawing and plays all twelve using local state time',()=>{assert.equal(spriteProgress({ch,state:'walk',sf:0},{name:'andar',loop:true,p:.8}),0);const seen=new Set(Array.from({length:28},(_,sf)=>Math.floor(spriteProgress({ch,state:'walk',sf},{name:'andar',loop:true,p:0})*12)));assert.equal(seen.size,12);});
+test('profile-driven reader preserves legacy, ten-frame and independent six-frame packs',()=>{assert.equal(spriteLoadOptions('franco').frames,4);assert.equal(spriteLoadOptions('fx-franco').frames,4);assert.equal(spriteLoadOptions('mdep').frames,10);assert.equal(spriteLoadOptions('ryuchi-esquerda-fx').frames,6);assert.equal(spriteLoadOptions('ryuchi-esquerda').cellSize,500);});
+
+test('jump drawings follow takeoff, airborne motion and forward landing recovery',async()=>{
+ const {animFor}=await import('../../src/render/anim.js');
+ const index=f=>{const a=animFor({...f,ch},0);assert.equal(a.name,'pulo');return Math.floor(spriteProgress({...f,ch},a)*12);};
+ assert.equal(index({state:'prejump',sf:0}),0);
+ const ascent=index({state:'air',sf:0,vy:30}),apex=index({state:'air',sf:20,vy:0}),descent=index({state:'air',sf:40,vy:-30});
+ assert.ok(ascent>=4&&ascent<apex&&apex<descent&&descent<=8);
+ assert.equal(index({state:'land',sf:0}),9);
+ assert.equal(index({state:'land',sf:20}),11);
+});
+
+test('the shared registration route supports dense art and arbitrary independent pack names',async()=>{
+ const {spriteOptions}=await import('../../src/render/sprite-profiles.js');
+ const character={id:'artist',spriteProfile:'twelve-frame',spriteFacingPacks:{right:'artist',left:'artist-other-view'}};
+ const options=spriteOptions('artist-other-view',[character]);
+ assert.equal(options.frames,12);assert.equal(options.cellSize,768);assert.equal(options.maxDecoded,1);assert.equal(options.material,false);assert.equal(options.pinIdle,false);
+ assert.equal(spriteOptions('fx-artist',[character]).frames,4,'existing FX keep their own legacy format');
+});
+
+test('standing reactions never switch to a crouching drawing just because the combo count changes',async()=>{
+ const {animFor}=await import('../../src/render/anim.js');
+ for(let comboHits=1;comboHits<=8;comboHits++){
+  assert.equal(animFor({ch,state:'hitstun',sf:4,comboHits,crouchBlock:false},0).name,'dano-alto');
+  assert.equal(animFor({ch,state:'hitstun',sf:4,comboHits,crouchBlock:true},0).name,'dano-baixo');
+ }
+});
+
+test('every current Franco move displays at least ten real drawings without extending combat duration',()=>{
+ for(const m of Object.values(ch.moves).flatMap(base=>[base,base.turbo].filter(Boolean))){
+  const seen=new Set(Array.from({length:m.total},(_,sf)=>Math.floor(spriteProgress({ch,state:'attack',move:m,sf},{p:0})*12)));
+  assert.ok(seen.size>=10,m.name+': '+seen.size+' drawings');
+ }
+});

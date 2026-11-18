@@ -50,3 +50,17 @@ test('sprite crop, world parallax and reduced-effects pose are applied independe
  const clamped=ctx();drawStageArt(clamped,'motion',1000,0);
  assert.equal(clamped.calls[1][5],397.5);
 });
+test('prepared stage keeps draw order: consecutive still props share a layer, animations stay separate', async () => {
+ const {planStageObjects} = await import('../../src/render/stage-packs.js');
+ const assets = {box:{}, strip:{frames:6, cellWidth:500, crop:[100,20,250,450]}};
+ const sizes = new Map([['box',{width:200,height:100}],['strip',{width:3000,height:500}]]);
+ const ops = planStageObjects([
+  {asset:'box', x:100, y:500, factor:.5}, {asset:'box', x:400, y:520, factor:.5, opacity:.5},
+  {asset:'strip', x:800, y:820, h:225, factor:.5, fps:5},
+  {asset:'box', x:900, y:500, factor:.5}, {asset:'box', x:950, y:500, factor:.8},
+ ], assets, sizes);
+ assert.deepEqual(ops.map(o => o.type + ':' + (o.items?.length ?? o.key)), ['bake:2', 'anim:strip', 'bake:1', 'bake:1']);
+ assert.deepEqual(ops[0].box, {x:0, y:400, w:500, h:120});
+ assert.equal(ops[0].items[1].alpha, .5);
+ assert.deepEqual([ops[1].sx, ops[1].w, ops[1].h, ops[1].x, ops[1].y], [100, 125, 225, 737.5, 595]);
+});

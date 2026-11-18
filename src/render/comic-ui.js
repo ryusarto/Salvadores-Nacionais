@@ -2,11 +2,19 @@ import{halftone}from'./draw.js';
 export const COMIC={ink:'#17131b',paper:'#f4e9c9',yellow:'#f3c426',red:'#dc3029',cyan:'#63d6d3',muted:'#a59c92'};
 const images=new Map(),errors=[];let loaded=false,paperCache=null;
 export function comicUiStatus(){return{loaded,images:images.size,errors:[...errors],portraits:[...images.keys()].filter(k=>k.startsWith('portrait-')).length,icons:[...images.keys()].filter(k=>k.startsWith('icon-')).length};}
-export async function loadComicUi(pack){
- await Promise.all(Object.entries(pack.assets).map(async([id,a])=>{
-  try{if(a.kind==='font'){const face=new FontFace('SNComic',`url(${a.url})`);await face.load();document.fonts.add(face);}else{const img=new Image();img.src=a.url;await img.decode();images.set(id,img);}}
-  catch{errors.push(id);}
- }));loaded=true;paperCache=null;return comicUiStatus();
+// O título só precisa da fonte, do logo e do papel; retratos e ícones chegam depois,
+// sem disputar banda com o que aparece primeiro (cada tela já tem um desenho reserva).
+const CRITICAL=new Set(['logo','paper']);
+async function loadAsset(id,a){
+ try{if(a.kind==='font'){const face=new FontFace('SNComic',`url(${a.url})`);await face.load();document.fonts.add(face);}else{const img=new Image();img.src=a.url;await img.decode();images.set(id,img);if(id==='paper')paperCache=null;}}
+ catch{errors.push(id);}
+}
+/** Resolve quando o essencial do título está pronto; o restante segue em segundo plano. */
+export function loadComicUi(pack){
+ const entries=Object.entries(pack.assets),first=entries.filter(([id,a])=>a.kind==='font'||CRITICAL.has(id));
+ const critical=Promise.all(first.map(([id,a])=>loadAsset(id,a)));
+ critical.then(()=>Promise.all(entries.filter(e=>!first.includes(e)).map(([id,a])=>loadAsset(id,a)))).then(()=>{loaded=true;paperCache=null;});
+ return critical.then(()=>comicUiStatus());
 }
 export function comicImage(c,id,x,y,w,h,flip=false){const img=images.get(id);if(!img)return false;c.save();if(flip){c.translate(x+w,y);c.scale(-1,1);c.drawImage(img,0,0,w,h);}else c.drawImage(img,x,y,w,h);c.restore();return true;}
 export function comicPortrait(c,id,x,y,w,h,flip=false){return comicImage(c,'portrait-'+id,x,y,w,h,flip);}

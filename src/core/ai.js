@@ -101,8 +101,11 @@ export function aiInput(st, side, brain) {
     brain.blockT = Math.max(0, brain.blockT - 1);
     const g = op.state === 'attack' ? op.move.hits[0]?.guard : 'mid';
     const low = op.y > 0 || g === 'high' ? false : g === 'low' ? true : brain.blockLow;
-    if (threat || projNear || me.state === 'blockstun') return { ...EMPTY_INPUT, x: -toward, y: low ? -1 : 0 };
+    if (threat || projNear || me.state === 'blockstun') return { ...EMPTY_INPUT, x: -toward, y: low ? -1 : 0, G: me.y > 0 && !me.burnout && !me.airBlocked ? 1 : 0 };
   }
+
+  // No ar, recuar sozinho não defende: a guarda exige Ginga.
+  if (me.state === 'air' && (threat || projNear) && !me.burnout && !me.airBlocked && rnd() < L.block) return { ...EMPTY_INPUT, G: 1 };
 
   // Golpe segurado (postura, recarga): o personagem decide quadro a quadro
   if (me.state === 'attack' && me.move.hold && me.ch.mech?.aiHold && me.sf >= me.move.hold.at) {
@@ -226,6 +229,8 @@ export function aiInput(st, side, brain) {
   // Ataques por distância
   const opts = [];
   for (const [key, m] of Object.entries(moves)) {
+    // Ações internas só saem pelos planos e sequências do personagem.
+    if (!/^[23456][LMHS]$/.test(key) && !['throw', 'c1', 'c2'].includes(key)) continue;
     if (m.air || m.type === 'super' || m.type === 'utility' || !m.hits.length && !m.spawn.length) continue;
     if (m.tags.includes('antiair') || m.tags.includes('reversal')) continue;
     const reach = m.spawn.length ? 1500 : m.range;

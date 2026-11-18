@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import{splitPosesGrid,extractPose}from'../../tools/lib/sprite-components.mjs';
+function source(clipped=false){const width=400,height=110,data=Buffer.alloc(width*height*4);for(let k=0;k<4;k++)for(let y=15;y<95;y++)for(let x=k*100+(clipped&&k===0?0:20);x<k*100+70;x++){const n=(y*width+x)*4;data[n]=50+k*40;data[n+3]=255;}return{data,width,height};}
+test('four-pose export keeps each drawing and excludes neighbouring pixels',()=>{const{data,width,height}=source(),split=splitPosesGrid(data,width,height,4,1);assert.equal(split.boxes.length,4);for(let k=0;k<4;k++){assert.equal(split.boxes[k].clipped,false);assert.equal(split.boxes[k].foreignPixels,0);const pixels=extractPose(data,width,height,split,k);for(let n=0;n<pixels.length;n+=4)if(pixels[n+3])assert.equal(pixels[n],50+k*40);}});
+test('clipping at the original atlas edge remains visible to the delivery gate',()=>{const{data,width,height}=source(true);assert.equal(splitPosesGrid(data,width,height,4,1).boxes[0].clipped,true);});
