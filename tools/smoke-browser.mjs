@@ -47,11 +47,9 @@ try{
  await tap(m,'settings');await m.waitForFunction(()=>window.__app.screen==='settings');await tap(m,'leftHanded');await tap(m,'largeButtons');await tap(m,'reducedEffects');await tap(m,'back');await m.waitForFunction(()=>window.__app.screen==='title');
  await m.reload();await m.waitForFunction(()=>window.__app?.frame>10&&!document.getElementById('loading'));
  assert.deepEqual(await m.evaluate(()=>window.__app.preferences),{reducedEffects:true,leftHanded:true,largeButtons:true});
- await tap(m,'settings');await m.waitForFunction(()=>window.__app.screen==='settings');await tap(m,'tutorial');await m.waitForFunction(()=>window.__app.screen==='select');await tap(m,'pick-0');await tap(m,'confirm-selection');await m.waitForFunction(()=>window.__app.screen==='fight'&&window.__app.st.phase==='fight');
- assert.equal(await m.evaluate(()=>window.__app.lesson.index),0);
- // Tutorial completion cannot be manufactured by skipping: skipped steps remain separate.
- await m.locator('[data-k="skip"]').tap();await m.waitForFunction(()=>window.__app.lesson.index===1);
- assert.deepEqual(await m.evaluate(()=>window.__app.lesson.skipped),[0]);assert.equal(await m.evaluate(()=>window.__app.lesson.passed.length),0);
+ await tap(m,'settings');await m.waitForFunction(()=>window.__app.screen==='settings');
+ // "Aprender a lutar" saiu do menu: OPÇÕES tem só ajustes, controles e finais.
+ assert.equal(await m.locator('[data-action="tutorial"]').count(),0);assert.equal(await m.locator('[data-action="diff"]').count(),1);
  assert.deepEqual(errors,[]);
- console.log('PASS: campanha começa na Zanata; seletor completo; áudio por arena; menus e ferramentas touch; pausa por orientação; opções persistidas; tutorial distingue etapas puladas.');
+ console.log('PASS: campanha começa na Zanata; seletor completo; áudio por arena; menus e ferramentas touch; pausa por orientação; opções persistidas; Aprender a lutar fora do menu.');
 }finally{await browser?.close();server.kill('SIGTERM');}
