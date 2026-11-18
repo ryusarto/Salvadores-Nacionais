@@ -41,7 +41,7 @@ const W = SYS.VIEW_W;
 const H = SYS.VIEW_H;
 const MENU = [['story', 'MODO HISTÓRIA'], ['versus', 'VS'], ['training', 'TREINO'], ['settings', 'OPÇÕES']];
 // Dentro de OPÇÕES: dificuldade, acessibilidade e o que saiu do menu principal.
-const OPTIONS = [['diff', 'DIFICULDADE'], ['reducedEffects', 'REDUZIR TREMOR E CLARÕES'], ['leftHanded', 'CONTROLES PARA CANHOTOS'], ['largeButtons', 'BOTÕES MAIORES'], ['controls', 'CONTROLES'], ['tutorial', 'APRENDER A LUTAR'], ['gallery', 'FINAIS']];
+const OPTIONS = [['diff', 'DIFICULDADE'], ['reducedEffects', 'REDUZIR TREMOR E CLARÕES'], ['leftHanded', 'CONTROLES PARA CANHOTOS'], ['largeButtons', 'BOTÕES MAIORES'], ['controls', 'CONTROLES'], ['gallery', 'FINAIS']];
 const DEFAULT_DIFF = 1; // MÉDIO
 const loadDiff = () => {
   try {
@@ -361,7 +361,6 @@ export function createApp(canvas, devices, opts = {}) {
       else if (id === 'diff' && (ok || pr.left || pr.right)) setDiff(app.diff + (pr.left ? -1 : 1));
       else if (ok && id === 'controls') { app.screen = 'controls'; app.kcur = 0; app.remap = 0; }
       else if (ok && id === 'gallery') app.screen = 'gallery';
-      else if (ok && id === 'tutorial') { app.mode = 'tutorial'; app.screen = 'select'; }
       else if (ok) { preferences[id] = !preferences[id]; savePreferences(preferences); }
     } else if (app.screen === 'gallery') {
       app.hero = (app.hero + HEROES.length + (pr.right ? 1 : 0) - (pr.left ? 1 : 0)) % HEROES.length;
