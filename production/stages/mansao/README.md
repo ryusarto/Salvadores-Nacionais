@@ -53,7 +53,7 @@ Na primeira exportação, somente miniatura/carregamento podem faltar; a captura
 
 ## Base e revisão
 
-Base local: main `91c8772` mais a entrega do aeroporto em `2338e51`, branch `art/cenario-05-mansao-pai-fujao-20261117`. O PR #25 é independente: quando reunir suas mudanças, a projeção flat precisa ser respeitada também no caminho preparado daquele PR (`drawPreparedGround`/`drawFast`), além do caminho normal presente aqui.
+Base da produção artística: main `91c8772` mais a entrega do aeroporto em `2338e51`, branch `art/cenario-05-mansao-pai-fujao-20261117`. A integração conjunta dos cenários 04/05 foi atualizada para a main `a5ba261`, que já contém o PR #25. O helper compartilhado de piso respeita `projection: "flat"` na prévia editável e no renderer preparado da luta, preservando as melhorias de carregamento, worker e paleta. Evidências atuais em `production/qa/cenarios-04-05-integration.json` e `production/qa/cenarios-04-05-integration/browser-review.json`; os relatórios anteriores conservam suas bases históricas.
 
 Inventário e integridade: `production/qa/mansao-validation.json`. Build/índice de personagens: `production/qa/mansao-build.json`. Revisão independente e capturas: `production/qa/mansao-review/`. Os níveis de evidência e limites são registrados nesses relatórios; mobile emulado não equivale a teste em aparelho físico nem a playtest humano. A produção e execução são locais; não constituem publicação do jogo.
 

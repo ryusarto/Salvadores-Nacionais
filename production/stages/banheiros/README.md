@@ -46,9 +46,14 @@ Revisão independente: 49 testes de renderer, núcleo, história, regressões e 
 
 Chrome executou a arena pelo Versus, com carregamento sob demanda, seis áudios, pausa e estados reais do core: cabine5→4 HP, fila, cerca, proibição e A PERGUNTA(1300 de dano, tontura e remoção da cabine). A prévia passou por três câmeras, galeria, isolamento, efeitos e danos. Capturas em `production/qa/evidence/banheiros-*`.
 
-O viewport mobile emulado foi 844×390; desempenho em aparelho físico e playtest humano não foram medidos. Runtime em torno de 9,20MB e estimativa de imagens decodificadas em torno de135,5MiB, sem contar áudio/GPU. Pavanassi ainda usa o corpo/retrato provisórios existentes; esta entrega cobre cenário e objetos de gameplay. Não há troca narrativa automática de cenário após a vitória. Merge e publicação do jogo são etapas separadas do envio da branch/PR.
+O viewport mobile emulado foi 844×390; desempenho em aparelho físico e playtest humano não foram medidos. Runtime em torno de 9,20MB e estimativa de imagens decodificadas em torno de135,5MiB, sem contar áudio/GPU. Pavanassi usa a arte completa integrada pelo PR #31: 41 animações em cada sentido e 16 camadas de efeitos. O renderer do chefe aplica esses efeitos aos objetos de gameplay; as peças do cenário continuam disponíveis como fallback. O contrato está em `docs/PAVANASSI-ARTE-V1.md` na raiz do repositório. Não há troca narrativa automática de cenário após a vitória. Merge e publicação do jogo são etapas separadas do envio da branch/PR.
 
 
 ## Revisão das bandeirolas
 
 As duas fileiras e a bandeira retangular estão amarradas aos três mastros de madeira. Os mastros, os varais e a bandeira compartilham o parallax; os pontos de fixação são explícitos em `objects[].suspension`. `tools/check-stage-hangings.mjs` verifica geometria nas câmeras0/340/680 e alpha real nos apoios e nos seis quadros dos tecidos. O PNG do mastro e seu prompt são compartilhados com o segundo cenário.
+
+
+## Compatibilidade com o PR #25
+
+A sincronização com a main mantém a preparação de sprites, o worker, a recuperação de falhas e as paletas do PR #25 junto dos perfis de Chupetinha e Pavanassi. O aquecimento complementar de FX conserva os corpos ativos. No jogo, a arena pode ser pré-montada e mantém as imagens dos props interativos; o carregador explícito usado pelas prévias mantém as camadas editáveis. A build preserva o índice completo de 26 pacotes/722 tiras da main.

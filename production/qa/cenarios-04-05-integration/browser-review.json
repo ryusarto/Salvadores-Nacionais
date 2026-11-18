@@ -1,0 +1,123 @@
+{
+  "baseMain": "a5ba2613d2bcf66ebed5cdc40ac22e701d973c55",
+  "htmlSHA256": "c580510be497a7704fad5e8f2ea996cb66f94328ec56d2390fec11560deaa1a8",
+  "reports": [
+    {
+      "stage": {
+        "ready": true,
+        "loaded": 32,
+        "errors": [],
+        "prepared": true
+      },
+      "audio": {
+        "stage": "aeroporto",
+        "available": true,
+        "active": true,
+        "muted": false,
+        "started": true,
+        "decoded": 6,
+        "gain": 0.6000000238418579,
+        "errors": []
+      },
+      "foe": "fujao",
+      "hero": "belga",
+      "index": 722,
+      "pause": "core frozen",
+      "cameras": [
+        0,
+        340,
+        680
+      ],
+      "mobile": [
+        844,
+        390
+      ],
+      "errors": [],
+      "stageId": "aeroporto"
+    },
+    {
+      "stage": {
+        "ready": true,
+        "loaded": 21,
+        "errors": [],
+        "prepared": true
+      },
+      "audio": {
+        "stage": "mansao",
+        "available": true,
+        "active": true,
+        "muted": false,
+        "started": true,
+        "decoded": 6,
+        "gain": 0.6000000238418579,
+        "errors": []
+      },
+      "foe": "pai-fujao",
+      "hero": "belga",
+      "index": 722,
+      "pause": "core frozen",
+      "cameras": [
+        0,
+        340,
+        680
+      ],
+      "mobile": [
+        844,
+        390
+      ],
+      "errors": [],
+      "stageId": "mansao"
+    }
+  ],
+  "remoteImmutableSprites": [
+    "/production/sprites/final/belga/defesa-em-pe.webp",
+    "/production/sprites/final/belga/dano-alto.webp",
+    "/production/sprites/final/belga/andar-tras.webp",
+    "/production/sprites/final/belga/pulo.webp",
+    "/production/sprites/final/belga/golpe-5M.webp",
+    "/production/sprites/final/belga/agachar.webp",
+    "/production/sprites/final/belga/golpe-5H.webp",
+    "/production/sprites/final/belga/golpe-2M.webp",
+    "/production/sprites/final/belga/golpe-2L.webp",
+    "/production/sprites/final/belga/golpe-2H.webp",
+    "/production/sprites/final/belga/golpe-jL.webp",
+    "/production/sprites/final/belga/golpe-jM.webp",
+    "/production/sprites/final/belga/golpe-jH.webp",
+    "/production/sprites/final/belga/defesa-agachado.webp",
+    "/production/sprites/final/belga/dano-baixo.webp",
+    "/production/sprites/final/belga/dano-no-ar.webp",
+    "/production/sprites/final/belga/caido.webp",
+    "/production/sprites/final/belga/levantar.webp",
+    "/production/sprites/final/belga/recuo.webp",
+    "/production/sprites/final/belga/correr.webp",
+    "/production/sprites/final/belga/defesa-no-ar.webp",
+    "/production/sprites/final/belga/escape-agarrao.webp",
+    "/production/sprites/final/belga/golpe-2S.webp",
+    "/production/sprites/final/belga/golpe-3H.webp",
+    "/production/sprites/final/belga/golpe-4S.webp",
+    "/production/sprites/final/belga/golpe-5S.webp",
+    "/production/sprites/final/belga/golpe-6M.webp",
+    "/production/sprites/final/belga/golpe-6S.webp",
+    "/production/sprites/final/belga/golpe-SA1.webp",
+    "/production/sprites/final/belga/golpe-SA3.webp",
+    "/production/sprites/final/belga/golpe-blindado.webp",
+    "/production/sprites/final/belga/golpe-c1.webp",
+    "/production/sprites/final/belga/golpe-c2.webp",
+    "/production/sprites/final/belga/recuperacao-rolamento.webp",
+    "/production/sprites/final/belga/golpe-throw.webp",
+    "/production/sprites/final/belga/tonto.webp",
+    "/production/sprites/final/belga/vitoria.webp",
+    "/production/sprites/final/belga-fx/fx-bate-estaca.webp",
+    "/production/sprites/final/belga-fx/fx-bpm.webp",
+    "/production/sprites/final/belga-fx/fx-direto.webp",
+    "/production/sprites/final/belga-fx/fx-gancho.webp",
+    "/production/sprites/final/belga-fx/fx-jab.webp",
+    "/production/sprites/final/belga-fx/fx-pendulo.webp",
+    "/production/sprites/final/belga-fx/vinil-girar.webp",
+    "/production/sprites/final/belga-fx/vinil-impacto.webp"
+  ],
+  "limits": [
+    "local build; immutable official sprites are proxied only if absent in sparse checkout",
+    "no physical-device performance measurement or human playtest"
+  ]
+}

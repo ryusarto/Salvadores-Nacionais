@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { loadStageArt, drawStageArt, stageArtStatus } from '../../src/render/stage-packs.js';
+import { loadStageArt, drawStageArt, stageArtStatus, registerStageArt, requestStageArt } from '../../src/render/stage-packs.js';
 
 class FakeImage {
   set src(url) { this.url = url; this.width = 1200; this.height = 400; }
@@ -59,4 +59,38 @@ test('existing arenas keep the tiled perspective while flat ground honors option
   const custom = context(); drawStageArt(custom, 'customFlat', 340);
   assert.deepEqual(custom.calls.find(([type, img]) => type === 'image' && img.url === 'asfalto').slice(2), [-220, 800, 2800, 280]);
   assert.deepEqual(custom.calls.find(([type]) => type === 'fill').slice(1), [0, 800, 1920, 280]);
+});
+
+
+test('runtime baking preserves flat airport and marble floors, shade and world registration', async t => {
+  const previous = globalThis.OffscreenCanvas;
+  t.after(() => { globalThis.OffscreenCanvas = previous; });
+  globalThis.OffscreenCanvas = class {
+    constructor(width, height) { this.width = width; this.height = height; this.ctx = context(); }
+    getContext() { return this.ctx; }
+  };
+  for (const id of ['airportPrepared', 'mansionPrepared']) {
+    const pack = airport();
+    pack.foreground[0].x = 1000;
+    pack.ground.shade = 'rgba(0,0,0,.1)';
+    if (id === 'mansionPrepared') {
+      pack.ground = { asset: 'marmore', projection: 'flat', x: -50, y: 800, width: 2800, height: 280, factor: .5, shade: 'rgba(0,0,0,.1)' };
+      pack.assets.marmore = { url: 'marmore' };
+      pack.essential = ['sky', 'marmore'];
+    }
+    registerStageArt({ [id]: pack });
+    await requestStageArt(id);
+    assert.equal(stageArtStatus(id).prepared, true, 'exercise the runtime path with decorative atlases released');
+    for (const cam of [0, 340, 680]) {
+      const c = context(); drawStageArt(c, id, cam);
+      const calls = c.calls.filter(([type, image]) => type === 'image' && image.url === pack.ground.asset);
+      assert.equal(calls.length, 1, 'flat floor must not use the tiled pavement projection');
+      const expected = id === 'mansionPrepared' ? [-50 - cam * .5, 800, 2800, 280] : [0 - cam, 826, 2600, 254];
+      assert.deepEqual(calls[0].slice(2), expected);
+      const shade = c.calls.filter(([type]) => type === 'fill');
+      assert.equal(shade.length, 1, 'shade is not applied twice in the prepared path');
+      assert.deepEqual(shade[0].slice(1), [0, expected[1], 1920, expected[3]]);
+      assert.equal(c.calls.at(-1)[0], 'image', 'foreground is still painted above the floor and its shade');
+    }
+  }
 });

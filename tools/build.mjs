@@ -14,6 +14,7 @@ const assetURL = p => relative(dirname(outFile), p).split(sep).map(encodeURIComp
   + '?v=' + createHash('sha256').update(readFileSync(p)).digest('hex').slice(0, 12);
 
 const sprites = {};
+const spritePosters = {};
 if (existsSync(spritesDir)) {
   for (const id of readdirSync(spritesDir)) {
     const dir = join(spritesDir, id);
@@ -23,7 +24,8 @@ if (existsSync(spritesDir)) {
     sprites[id] = {};
     for (const f of files) {
       const mime = f.endsWith('.webp') ? 'image/webp' : 'image/png';
-      sprites[id][f.replace(/\.(png|webp)$/, '')] = externalAssets
+      const target = f.startsWith('__first-') ? (spritePosters[id] ??= {}) : sprites[id];
+      target[f.replace(/^__first-/, '').replace(/\.(png|webp)$/, '')] = externalAssets
         ? assetURL(join(dir, f))
         : `data:${mime};base64,${readFileSync(join(dir, f)).toString('base64')}`;
     }
@@ -70,7 +72,7 @@ if (existsSync('production/stages')) {
   }
 }
 const out = await build({ entryPoints: ['src/main.js'], bundle: true, format: 'iife', minify: process.argv.includes('--min'), write: false, target: 'es2020' });
-const js = `window.__SPRITES=${JSON.stringify(sprites)};window.__STAGES=${JSON.stringify(stages)};window.__STAGEPACKS=${JSON.stringify(stagePacks)};window.__COMIC_UI=${JSON.stringify(uiPack)};\n${out.outputFiles[0].text}`.replace(/<\/script>/g, '<\\/script>');
+const js = `window.__SPRITES=${JSON.stringify(sprites)};window.__SPRITEPOSTERS=${JSON.stringify(spritePosters)};window.__STAGES=${JSON.stringify(stages)};window.__STAGEPACKS=${JSON.stringify(stagePacks)};window.__COMIC_UI=${JSON.stringify(uiPack)};\n${out.outputFiles[0].text}`.replace(/<\/script>/g, '<\\/script>');
 const html = readFileSync('src/index.html', 'utf8').replace('/*__BUNDLE__*/', () => js);
 mkdirSync(dirname(outFile), { recursive: true });
 writeFileSync(outFile, html);
