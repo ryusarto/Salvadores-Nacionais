@@ -1,0 +1,53 @@
+{
+  "baseMain": "a5ba2613d2bcf66ebed5cdc40ac22e701d973c55",
+  "spritePacks": 26,
+  "spriteReferences": 722,
+  "spritePosters": 0,
+  "characterArt": "official main sprite index and posters preserved without changes; partial checkout never replaces the release inventory",
+  "runtime": {
+    "aeroporto": {
+      "assets": 41,
+      "bytes": 7101537,
+      "ground": {
+        "asset": "asfalto",
+        "projection": "flat"
+      },
+      "manifestSHA256": "7c9bd8fdd1e32686657a4349f2cc733cffe06ce5d844199c7260d3aa2ca51124"
+    },
+    "mansao": {
+      "assets": 30,
+      "bytes": 6222506,
+      "ground": {
+        "asset": "marmore",
+        "projection": "flat"
+      },
+      "manifestSHA256": "7abf76f363de5184ed44fb3cbcc5df1646ae9db2ac87f7f3bfa74895071756d1"
+    }
+  },
+  "renderer": "both editable and runtime-prepared paths honor projection=flat; projected floors retain their cache",
+  "localTests": {
+    "pureTests": 154,
+    "focusedRendererAndBossTests": 30,
+    "combos": 32,
+    "campaignMatches": 56,
+    "unfinishedCampaignMatches": 0
+  },
+  "htmlSHA256": "c580510be497a7704fad5e8f2ea996cb66f94328ec56d2390fec11560deaa1a8",
+  "browserReview": "cenarios-04-05-integration/browser-review.json",
+  "browserChecks": {
+    "prepared": true,
+    "airportImages": 32,
+    "mansionImages": 21,
+    "audioBuffersPerArena": 6,
+    "cameras": [
+      0,
+      340,
+      680
+    ],
+    "mobile": [
+      844,
+      390
+    ],
+    "errors": 0
+  }
+}

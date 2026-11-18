@@ -1,0 +1,148 @@
+{
+  "verdict": "approved-for-tested-preview-scope",
+  "environment": {
+    "browser": "158.0.8127.37",
+    "desktop": [
+      1440,
+      1000
+    ],
+    "mobile": [
+      844,
+      390
+    ],
+    "logicalCanvas": [
+      1920,
+      1080
+    ],
+    "build": "local generated offline preview"
+  },
+  "inventory": {
+    "status": {
+      "ready": true,
+      "loaded": 32,
+      "errors": []
+    },
+    "errors": [],
+    "assets": 41,
+    "images": 35,
+    "cards": 35,
+    "anchors": {
+      "boarding": {
+        "x": 2300,
+        "y": 930,
+        "range": 280
+      },
+      "door": {
+        "x": 2420,
+        "y": 730.4545454545455
+      },
+      "stairsTop": {
+        "x": 2420,
+        "y": 730.4545454545455
+      },
+      "stairsBase": {
+        "x": 2147.117327117327,
+        "y": 930
+      },
+      "planeWheels": {
+        "y": 885
+      },
+      "attachments": [
+        {
+          "asset": "biruta-vento",
+          "support": "integral-mast",
+          "frames": 6
+        },
+        {
+          "asset": "poste-refletores",
+          "support": "integral-pole"
+        },
+        {
+          "asset": "placa-embarque",
+          "support": "integral-two-post-base"
+        }
+      ]
+    },
+    "world": {
+      "width": 2600,
+      "height": 1080,
+      "viewWidth": 1920,
+      "cameraMax": 680,
+      "feetY": 930,
+      "groundTopY": 826
+    }
+  },
+  "cameras": {
+    "0": "35a17f3e04ad675f988eb64b0e1b551c03184e05f80a20016f68bc65aa7cbd0b",
+    "340": "526cf99a0bd5350051a4162d78ff8996bb4d342b1283093c2c7a324aa6c25fae",
+    "680": "99b90cdeb079d1862cac516ac296b6316c8dcdd2448ad0c722dc67c65fab87ae"
+  },
+  "poseFrames": [
+    0,
+    15,
+    30,
+    45,
+    60,
+    75
+  ],
+  "filters": {
+    "objects": true,
+    "effects": true,
+    "ground": true
+  },
+  "pause": "pass",
+  "step": "pass",
+  "reducedEffects": "pass",
+  "gallery": "pass",
+  "audio": [
+    {
+      "id": "ambiente-pista",
+      "duration": 16,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "sinal-embarque",
+      "duration": 16,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "trilha-intro",
+      "duration": 4.285714285714286,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "trilha-loop",
+      "duration": 34.285714285714285,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "turbina-distante",
+      "duration": 16,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "vento",
+      "duration": 16,
+      "channels": 2,
+      "sampleRate": 44100
+    }
+  ],
+  "mobile": {
+    "width": 844,
+    "scrollWidth": 844,
+    "canvas": 796
+  },
+  "errors": [],
+  "failed": [],
+  "httpErrors": [],
+  "limits": [
+    "No physical device test",
+    "No human playtest",
+    "This preview is not a deployed game build"
+  ]
+}

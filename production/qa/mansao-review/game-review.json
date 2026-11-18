@@ -1,0 +1,92 @@
+{
+  "verdict": "approved-for-tested-runtime-scope",
+  "environment": {
+    "browser": "158.0.8127.37",
+    "desktop": [
+      1280,
+      720
+    ],
+    "mobile": [
+      844,
+      390
+    ],
+    "logicalCanvas": [
+      1920,
+      1080
+    ],
+    "build": "Local build; official missing character atlases served through SHA-checked immutable published asset proxy, scenery local. Not deployed."
+  },
+  "buildSHA256": "31b7294847986ee5b6b4f79b41d68ffca565f75883131d341452271e7da7bdca",
+  "inventory": {
+    "stage": {
+      "ready": true,
+      "loaded": 21,
+      "errors": []
+    },
+    "audio": {
+      "stage": "mansao",
+      "available": true,
+      "active": true,
+      "muted": false,
+      "started": true,
+      "decoded": 6,
+      "gain": 0.6000000238418579,
+      "errors": []
+    },
+    "foe": "pai-fujao",
+    "packs": 26,
+    "strips": 722,
+    "hasPaiSprites": false
+  },
+  "lazyTitle": "pass",
+  "lazySelection": "pass",
+  "pause": "pass",
+  "mechanics": {
+    "zone": {
+      "center": 1560,
+      "radius": 420,
+      "walkLimitX": 1980
+    },
+    "shock": {
+      "damage": 900,
+      "state": "dizzy",
+      "stun": 80
+    },
+    "immuneDamage": [
+      1,
+      1,
+      1,
+      458
+    ],
+    "cassationDamage": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      672
+    ],
+    "restoredCharges": 6,
+    "foroDown": 480,
+    "fury": {
+      "threshold": 0.5,
+      "active": true,
+      "multiplier": 1.2
+    },
+    "henchman": {
+      "present": true,
+      "cooldown": 355
+    },
+    "fixtures": "Real createMatch/step/applyHit with explicit positions, health/hitstun/Foro timer fixtures; no gameplay functions or rules patched. Immune hits retain existing minimum1damage."
+  },
+  "errors": [],
+  "failed": [],
+  "httpErrors": [],
+  "limits": [
+    "No human playtest",
+    "No physical device test",
+    "No performance certification",
+    "Pai do Fujao uses existing character artwork/fallback; this task produces scenery."
+  ]
+}

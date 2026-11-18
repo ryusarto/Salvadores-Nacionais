@@ -1,3 +1,4 @@
+import { twelveFrameProgress } from './twelve-frame-timing.js';
 import { chupetinhaProgress } from './chupetinha-timing.js';
 import { SYS } from '../data/system.js';
 import { fujaoProgress } from './fujao-timing.js';
@@ -10,6 +11,7 @@ export function spriteProgress(f, animation) {
     const p = fujaoProgress(f);
     if (p !== null) return p;
   }
+  if (f.ch?.spriteProfile === 'twelve-frame') return twelveFrameProgress(f, animation);
   if (f.ch?.id === 'chupetinha' && f.ch.spriteProfile === 'six-frame') return chupetinhaProgress(f, animation);
   if (f.ch?.spriteProfile === 'six-frame') return sixFrameProgress(f, animation);
   if (f.ch?.spriteProfile !== 'ten-frame') return animation.p;

@@ -1,0 +1,296 @@
+{
+  "stage": "aeroporto",
+  "chapter": 4,
+  "boss": "fujao",
+  "basis": "docs/MODO-HISTORIA.md and src/data/characters/fujao.js",
+  "groups": [
+    {
+      "slug": "ceu-entardecer",
+      "path": "layers/ceu-entardecer.webp",
+      "kind": "layer",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "asfalto",
+      "path": "ground/asfalto.webp",
+      "kind": "ground",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "aviao-executivo",
+      "path": "props/aviao-executivo.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "escada-embarque",
+      "path": "props/escada-embarque.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "terminal",
+      "path": "props/terminal.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "torre-controle",
+      "path": "props/torre-controle.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "hangar",
+      "path": "props/hangar.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "trator-bagagem",
+      "path": "props/trator-bagagem.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "carreta-bagagem",
+      "path": "props/carreta-bagagem.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "pilha-malas",
+      "path": "props/pilha-malas.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "cerca-aeroporto",
+      "path": "props/cerca-aeroporto.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "poste-refletores",
+      "path": "props/poste-refletores.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "placa-embarque",
+      "path": "props/placa-embarque.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "npc-equipe-pista",
+      "path": "animations/npc-equipe-pista.webp",
+      "kind": "animation",
+      "frames": 6,
+      "origin": "generated"
+    },
+    {
+      "slug": "npc-seguranca",
+      "path": "animations/npc-seguranca.webp",
+      "kind": "animation",
+      "frames": 6,
+      "origin": "generated"
+    },
+    {
+      "slug": "biruta-vento",
+      "path": "animations/biruta-vento.webp",
+      "kind": "animation",
+      "frames": 6,
+      "origin": "generated"
+    },
+    {
+      "slug": "baliza-pista",
+      "path": "fx/baliza-pista.webp",
+      "kind": "fx",
+      "frames": 6,
+      "origin": "generated"
+    },
+    {
+      "slug": "nuvem-1",
+      "path": "props/nuvem-1.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "reused-banheiros"
+    },
+    {
+      "slug": "nuvem-2",
+      "path": "props/nuvem-2.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "reused-banheiros"
+    },
+    {
+      "slug": "npc-fila-1",
+      "path": "animations/npc-fila-1.webp",
+      "kind": "animation",
+      "frames": 6,
+      "origin": "reused-banheiros"
+    },
+    {
+      "slug": "npc-fila-2",
+      "path": "animations/npc-fila-2.webp",
+      "kind": "animation",
+      "frames": 6,
+      "origin": "reused-banheiros"
+    },
+    {
+      "slug": "npc-torcedor-2",
+      "path": "animations/npc-torcedor-2.webp",
+      "kind": "animation",
+      "frames": 6,
+      "origin": "reused-banheiros"
+    },
+    {
+      "slug": "poeira",
+      "path": "fx/poeira.webp",
+      "kind": "environment-fx",
+      "frames": 6,
+      "origin": "reused-banheiros"
+    },
+    {
+      "slug": "papel-vento",
+      "path": "fx/papel-vento.webp",
+      "kind": "fx",
+      "frames": 6,
+      "origin": "reused-banheiros"
+    },
+    {
+      "slug": "cone-servico",
+      "path": "props/cone-servico.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "reused-banheiros"
+    },
+    {
+      "slug": "lixeira",
+      "path": "props/lixeira.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "reused-banheiros"
+    },
+    {
+      "slug": "nome-terminal",
+      "path": "graphics/nome-terminal.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "origin": "typeset"
+    },
+    {
+      "slug": "texto-embarque",
+      "path": "graphics/texto-embarque.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "origin": "typeset"
+    },
+    {
+      "slug": "texto-restrito",
+      "path": "graphics/texto-restrito.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "origin": "typeset"
+    },
+    {
+      "slug": "portao-04",
+      "path": "graphics/portao-04.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "origin": "typeset"
+    },
+    {
+      "slug": "titulo",
+      "path": "ui/titulo.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "origin": "typeset"
+    },
+    {
+      "slug": "faixa-pista",
+      "path": "graphics/faixa-pista.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "origin": "code-native"
+    },
+    {
+      "slug": "seta-pista",
+      "path": "graphics/seta-pista.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "origin": "code-native"
+    },
+    {
+      "slug": "ambiente-pista",
+      "path": "audio/ambiente-pista.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "sinal-embarque",
+      "path": "audio/sinal-embarque.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "trilha-intro",
+      "path": "audio/trilha-intro.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "trilha-loop",
+      "path": "audio/trilha-loop.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "turbina-distante",
+      "path": "audio/turbina-distante.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "vento",
+      "path": "audio/vento.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "miniatura",
+      "path": "ui/miniatura.webp",
+      "kind": "image",
+      "frames": 1,
+      "origin": "derived-composition"
+    },
+    {
+      "slug": "carregamento",
+      "path": "ui/carregamento.webp",
+      "kind": "image",
+      "frames": 1,
+      "origin": "derived-composition"
+    }
+  ],
+  "pending": []
+}

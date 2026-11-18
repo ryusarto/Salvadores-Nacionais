@@ -1,6 +1,7 @@
 // Recover whole poses that extend across nominal grid gutters, without taking
 // pixels from a neighbouring pose. Atlas outer-edge contact is real clipping.
-export function splitPoses(rgba,width,height){
+export function splitPosesGrid(rgba,width,height,columns=3,rows=2){
+ const count=columns*rows;
  const labels=new Int32Array(width*height),queue=new Int32Array(width*height),regions=[];
  for(let seed=0;seed<labels.length;seed++){
   if(labels[seed]||rgba[seed*4+3]<=127)continue;
@@ -10,9 +11,9 @@ export function splitPoses(rgba,width,height){
   }
   regions.push({id,area:tail,l,t,r,b,cx:sx/tail,cy:sy/tail});
  }
- const major=[...regions].sort((a,b)=>b.area-a.area).slice(0,6);
- if(major.length!==6||major.some(r=>r.area<3000))throw Error('Expected six isolated full-body poses');
- const cells=new Array(6);for(const r of major){const k=Math.floor(r.cx/512)+3*Math.floor(r.cy/512);if(k<0||k>5||cells[k])throw Error('Poses overlap nominal grid; review source');cells[k]={...r,componentIds:[r.id]};}
+ const major=[...regions].sort((a,b)=>b.area-a.area).slice(0,count);
+ if(major.length!==count||major.some(r=>r.area<3000))throw Error('Expected '+count+' isolated full-body poses');
+ const cells=new Array(count);for(const r of major){const k=Math.floor(r.cx/(width/columns))+columns*Math.floor(r.cy/(height/rows));if(k<0||k>=count||cells[k])throw Error('Poses overlap nominal grid; review source');cells[k]={...r,componentIds:[r.id]};}
  const distance=(a,b)=>Math.hypot(Math.max(b.l-a.r,a.l-b.r,0),Math.max(b.t-a.b,a.t-b.b,0));
  for(const r of regions){if(r.area<3||major.some(m=>m.id===r.id))continue;const nearest=major.reduce((a,b)=>distance(r,a)<=distance(r,b)?a:b);const owner=cells.find(c=>c.id===nearest.id);owner.l=Math.min(owner.l,r.l);owner.t=Math.min(owner.t,r.t);owner.r=Math.max(owner.r,r.r);owner.b=Math.max(owner.b,r.b);owner.componentIds.push(r.id);}
  const owners=new Int8Array(regions.length+1);owners.fill(-1);cells.forEach((r,i)=>r.componentIds.forEach(id=>owners[id]=i));
@@ -20,10 +21,12 @@ export function splitPoses(rgba,width,height){
   const left=Math.max(0,r.l-4),top=Math.max(0,r.t-4),right=Math.min(width,r.r+5),bottom=Math.min(height,r.b+5);
   let foreignPixels=0;const own=new Set(r.componentIds);for(let y=top;y<bottom;y++)for(let x=left;x<right;x++){const id=labels[y*width+x];if(id&&!own.has(id)&&regions[id-1].area>=3)foreignPixels++;}
 
-  return{left,top,width:right-left,height:bottom-top,clipped,area:r.area,foreignPixels,nominal:[k%3*512,Math.floor(k/3)*512,512,512]};
+  return{left,top,width:right-left,height:bottom-top,clipped,area:r.area,foreignPixels,nominal:[k%columns*width/columns,Math.floor(k/columns)*height/rows,width/columns,height/rows]};
  });
  return{boxes,labels,owners};
 }
+
+export function splitPoses(rgba,width,height){return splitPosesGrid(rgba,width,height,3,2);}
 
 export function poseBoxes(rgba,width,height){return splitPoses(rgba,width,height).boxes;}
 export function extractPose(rgba,width,height,split,index){

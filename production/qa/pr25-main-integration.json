@@ -1,0 +1,19 @@
+{
+  "main": "91c877226e3502beb44d0f42374ab3101e92d916",
+  "pr25Base": "bdc55462358791c037eaa016a953c5971d85d035",
+  "spritePacks": 26,
+  "spriteReferences": 722,
+  "pavanassi": {
+    "pavanassi": 41,
+    "pavanassi-esquerda": 41,
+    "pavanassi-fx": 16
+  },
+  "stages": {
+    "palco": 88,
+    "banheiros": 70
+  },
+  "npcAlphaRevision": "07dfc29475f2363377e8dc685799d3b959ee84ee8ed40ae5c9a9a41af565bb96",
+  "suspensions": "three groups per stage, retained from main",
+  "completeSpriteIndex": "matches main Git tree; character art unchanged",
+  "htmlSHA256": "99fd91ec124d2716aff0377a8d08fdb4d54e223be2065bb0a27127deb208a731"
+}

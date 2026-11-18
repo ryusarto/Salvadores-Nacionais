@@ -1,0 +1,79 @@
+{
+  "conclusao": "aprovado para o escopo técnico testado e as capturas inspecionadas",
+  "escopo": "Integração dos cenários04 e05 com main a5ba261, incluindo renderer preparado do PR#25",
+  "branch": "art/cenarios-04-05-aeroporto-mansao-20261117",
+  "baseMain": "a5ba2613d2bcf66ebed5cdc40ac22e701d973c55",
+  "revisor": "th_revisor_jogos — somente leitura de produção e relatório próprio",
+  "achadosDeProducao": [],
+  "rendererSHA256": "c7d47e72191f4e34c91fec188e21c6137e8e54d82b69016443a157260655c154",
+  "regressaoSHA256": "1331dd5b24c8744b08bab010fe724762237b9363c71251bbb4efd45819904df2",
+  "buildSHA256": "c580510be497a7704fad5e8f2ea996cb66f94328ec56d2390fec11560deaa1a8",
+  "revisaoEstatica": [
+    "drawPackGround é compartilhado pelo fluxo editável e pelo preparado.",
+    "ground.projection=flat usa uma imagem única com origem/tamanho/parallax e câmera fracionária preservados.",
+    "O piso legado continua em drawBelemGround com cache por pixel arredondado da câmera.",
+    "A sombra do pack é aplicada uma vez; no legado fica dentro do cache, no flat é desenhada diretamente.",
+    "Ordem mantida: layers, objetos, piso e sombra, foreground. Props interativos seguem retidos separadamente.",
+    "Documentação atual distingue a produção histórica da integração sobre main a5ba261 e registra a pendência preparada como resolvida."
+  ],
+  "testesExecutadosPeloRevisor": {
+    "comando": "node --test tests/unit/aeroporto-stage.test.js tests/unit/belem-stage.test.js tests/unit/palco-stage.test.js tests/unit/banheiros-stage.test.js tests/unit/merge-loading-regression.test.js",
+    "total": 24,
+    "aprovados": 24,
+    "falhas": 0,
+    "probeAdicional": {
+      "preparedLegacyCache": "pass",
+      "sameRoundedCameraReusesCache": "pass",
+      "roundedCameraChangeRebuildsOnce": "pass",
+      "legacyProjection": "pass",
+      "legacyPackShadeOnce": "pass",
+      "flatFractionalCamera": "pass",
+      "flatShadeOnce": "pass",
+      "foregroundAfterFloor": "pass",
+      "ambiente": "Node com fixtures Image/OffscreenCanvas e rastreamento de chamadas; sem produção alterada"
+    }
+  },
+  "evidenciasDoProgramadorConferidas": {
+    "report": "production/qa/cenarios-04-05-integration/browser-review.json",
+    "prepared": {
+      "aeroporto": true,
+      "mansao": true
+    },
+    "imagensEmCena": {
+      "aeroporto": 32,
+      "mansao": 21
+    },
+    "audioPorArena": 6,
+    "referenciasSprites": 722,
+    "pausa": "core congelado",
+    "cameras": [
+      0,
+      340,
+      680
+    ],
+    "mobileEmulado": [
+      844,
+      390
+    ],
+    "errosReportados": [],
+    "testesPurosReportados": 154,
+    "distincao": "Execução do navegador e154 testes reportados pelo programador; os24 testes e probe adicional acima foram executados independentemente pelo revisor.",
+    "reportSHA256": "32bd499a8144b6b73dd66e35c2381e7eb01f914d4dca709dd3c0e85acc495b83",
+    "capturasSemFXTransitório": true
+  },
+  "capturas": {
+    "resultado": "aprovadas nas vistas inspecionadas",
+    "arquivosInspecionados": [
+      "production/qa/cenarios-04-05-integration/airport-camera-680.png",
+      "production/qa/cenarios-04-05-integration/mansion-camera-340.png"
+    ],
+    "observado": "Pisos de asfalto e mármore preservados no renderer preparado; porta/escada, placa de embarque e mobiliário seguem alinhados. Zona ciano continua sobre o piso. Capturas limpas após a fixture do programador reiniciar apenas os efeitos transitórios com createFx().",
+    "limite": "Inspeção visual das capturas do programador, sem nova execução independente do navegador."
+  },
+  "limites": [
+    "Não houve nova execução independente do browser nesta revisão de integração; foram conferidos relatório e capturas do programador.",
+    "Revisões anteriores de arte e mecânicas estão em aeroporto-review e mansao-review, com bases históricas próprias.",
+    "Não certifica playtest humano, aparelho físico ou desempenho.",
+    "Não abrange cenário06 nem mudanças externas ao renderer de pisos/testes/documentação desta integração."
+  ]
+}
