@@ -3,7 +3,7 @@ import {buildStage} from '../render/stage.js';
 import {drawStageArt} from '../render/stage-packs.js';
 import {encounterStage} from '../data/stages.js';
 import { ALL, HEROES } from '../data/characters/index.js';
-import { COMIC as P, comicPanel, comicText } from '../render/comic-ui.js';
+import { COMIC as P } from '../render/comic-ui.js';
 import { RETRO as R, ptext, pwrap, pixelPortrait, navyBackground, pixelBox, playerTag } from '../render/retro-ui.js';
 import { controlsHint, faceFlip } from './retro-screens.js';
 import { drawBelemPresentation } from '../render/belem-stage.js';
@@ -294,10 +294,9 @@ export function drawStoryVsTag(c, a) {
   const f = currentFight(a.story);
   const label = 'CHEFE DA TURNÊ';
   c.save();
-  c.translate(W / 2, 640);
-  c.rotate(-0.05);
-  comicPanel(c, -260, -42, 520, 84, f.kind === 'boss' ? P.red : P.yellow, 14, 5);
-  comicText(c, label, 0, 0, 40, f.kind === 'boss' ? P.paper : P.ink, 'center', 470);
+  c.translate(W / 2, 660);
+  pixelBox(c, -260, -42, 520, 84, f.kind === 'boss' ? R.red : R.yellow, R.yellow, 6);
+  ptext(c, label, 0, 0, 5, 'creamOut', 'center', 470);
   c.restore();
 }
 
