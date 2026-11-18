@@ -1,4 +1,5 @@
 import { mv, bx, baseNormals, proj } from '../movekit.js';
+import { PAI_FUJAO_SPRITES } from '../pai-fujao-art.js';
 import { SYS } from '../system.js';
 
 /**
@@ -66,6 +67,7 @@ const moves = {
 
 export default {
   id: 'pai-fujao',
+  ...PAI_FUJAO_SPRITES,
   name: 'PAI DO FUJÃO',
   style: 'Chefe — pesado, comanda de casa',
   mechName: 'FORO PRIVILEGIADO',
