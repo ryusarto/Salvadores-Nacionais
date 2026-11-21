@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "technicalPassed": true,
+  "scope": "Revisão estática e visual de assets; não certifica gameplay",
+  "counts": {
+    "runtimeAssets": 330,
+    "strips": 66,
+    "frames": 396,
+    "uniqueNPCStripsVisuallyReviewed": 14,
+    "NPCFramesVisuallyReviewed": 84,
+    "hangingObjectsVerified": 8,
+    "hangingAnchorsVerified": 16
+  },
+  "findings": [
+    {
+      "id": "ART-BEL-01",
+      "severity": "medium",
+      "stage": "belem",
+      "status": "closed",
+      "criterion": "Bandeirolas precisam de apoio físico aparente e profundidade solidária ao suporte",
+      "evidence": "belem-right-banner-anchor.png",
+      "paths": [
+        "src/data/belem-stage.js:25",
+        "production/stages/belem/ui/carregamento.webp"
+      ],
+      "observation": "O nó esquerdo da fileira direita aparece acima do telhado sem poste ou conexão aparente; objetos não registram suspensão. Bandeiras usam fator0,78 e arquitetura0,42. Pedido enviado ao coordenador e ao revisor runtime para confirmar o comportamento durante a câmera.",
+      "resolution": "Quatro mastros pintados reutilizados do palco, mesmo parallax0,78 dos varais, suspensão explícita de4nós. Cinco testes deBelém e o verificador físico passaram; root aprovou a nova composição antes da liberação da build.",
+      "before": "belem-right-banner-anchor.png",
+      "after": "belem-after.png",
+      "proof": "belem-hangings-fixed.json"
+    }
+  ],
+  "nonBlockingNotes": [
+    {
+      "stage": "palco",
+      "asset": "parapeito",
+      "kind": "legacy-provenance",
+      "message": "Reuse confirmed byte-exact against legacy file omitted from source pack manifest",
+      "path": "production/stages/belem/props/parapeito.webp"
+    },
+    {
+      "stage": "palco",
+      "asset": "titulo",
+      "kind": "typography-portability",
+      "message": "SVG references Bangers without embedding font or outlines; rendering depends on font resolution. Raster graphics are separate."
+    }
+  ],
+  "visualChecks": {
+    "NPCAlpha": "14tiras únicas/84quadros vistos sobre fundo escuro, incluindo npc-danca-1 corrigida e3esqueletos; sem halo perceptível nas imagens examinadas",
+    "stages": "Contato das7miniaturas inspecionado; trono/escada, braseiros/cubas, lustre/correntes, avião/escada, mesa/microfone e fontes aparentes coerentes nas vistas",
+    "palcoBanheirosHangings": "16âncoras em8objetos doscenários1/2/3, com geometria nas câmeras0/340/680 e alpha real nas poses disponíveis; hangings.json",
+    "dangerReadability": "Piso do Inferno escuro e livre, fogo ambiental atrás e acima de y826; zona da mansão não pintada. Aparência dos objetos interativos depende também do renderer e fica para revisão runtime",
+    "UI": "Miniaturas dos7packs comparadas à composição preservada e contato seven-scenes.png atualizado após correção deBelém. Inferno usa esqueletos/fogo v2."
+  },
+  "limits": [
+    "Inspeção de imagens e arquivos não constitui teste de gameplay",
+    "Não foram reexecutados exportadores nem validadores que alteram relatórios originais",
+    "Sem alterações de arte, manifestos, fontes, src, dist, áudio ou Git",
+    "Relatórios históricos foram consultados como evidência anterior, sem revalidar seus resultados funcionais",
+    "Aceite estático/visual do coordenador; o relatório runtime independente fecha o comportamento no jogo e não é substituído por este resultado."
+  ],
+  "openFindings": []
+}

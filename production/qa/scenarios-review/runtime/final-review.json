@@ -1,0 +1,885 @@
+{
+  "passed": true,
+  "conclusion": "Aprovado para o escopo de runtime, inspeção visual e revisão técnica especificado. Integração final continua dependente do CI completo.",
+  "date": "2026-11-20",
+  "reviewer": "/root/aeroporto_revisao",
+  "scope": "Sete cenários na integração da main982197f com entregas locais; somente QA, sem editar produção ou Git.",
+  "buildSHA256": "6226dd27b0f3ff292989645ad2b9da798656bd8917505ccfb8f5c41454952638",
+  "officialBase": "982197f",
+  "workingHeadAtRun": "f64e81a86aa89dad5310657b5c7b675a420d79a4",
+  "environment": {
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.0.0 Safari/537.36",
+    "canvas": [
+      1920,
+      1080
+    ],
+    "viewport": [
+      1280,
+      720
+    ],
+    "ui": {
+      "loaded": false,
+      "images": 31,
+      "errors": [],
+      "portraits": 15,
+      "icons": 14
+    },
+    "sprites": {
+      "packs": 31,
+      "strips": 881
+    },
+    "stagePacks": [
+      "belem",
+      "aeroporto",
+      "banheiros",
+      "inferno",
+      "mansao",
+      "palco",
+      "washington"
+    ]
+  },
+  "counts": {
+    "stages": 7,
+    "runtimeAssets": 330,
+    "stageAssetCounts": {
+      "belem": 46,
+      "palco": 88,
+      "banheiros": 70,
+      "aeroporto": 41,
+      "mansao": 30,
+      "washington": 33,
+      "inferno": 22
+    },
+    "sceneImagesLoaded": 269,
+    "audioBuffersDecoded": 42,
+    "spritePacks": 31,
+    "spriteStrips": 881,
+    "posters": 0,
+    "coreChecks": 16,
+    "cameraViews": 21,
+    "mobileViewportViews": 7,
+    "independentIndexGuardChecks": 10,
+    "belemUnitTestsPassed": 5
+  },
+  "stageManifests": {
+    "belem": "3a4381c693225bb37848ee77bda9c2d004f9411b54bd3959bcd4683489bdb90c",
+    "palco": "678bf3d74c266ecc5d2e2c0fda4d82aeefe4ee185497aa8bd36e2ab36fe2e1f7",
+    "banheiros": "9ab54baf4efca6e09b9fd1257d2c57cf3cc5af610590ea1a2398238162f47a05",
+    "aeroporto": "7c9bd8fdd1e32686657a4349f2cc733cffe06ce5d844199c7260d3aa2ca51124",
+    "mansao": "7abf76f363de5184ed44fb3cbcc5df1646ae9db2ac87f7f3bfa74895071756d1",
+    "washington": "8baaef39b75eeabf8e34ad2e866e262cdb3c7f1673de7a306000f4dd21bfb486",
+    "inferno": "f8c58d7e09d1a893cdfe65a779e8785f6265ce0fdd5aeb866cadb49f026fd579"
+  },
+  "executed": {
+    "menus": {
+      "titleItems": [
+        "story",
+        "versus",
+        "training",
+        "settings"
+      ],
+      "defaultDifficulty": "MÉDIO",
+      "reducedEffectsPersisted": true,
+      "controls": true,
+      "versusRivals": 16,
+      "trainingEntry": true,
+      "storyContinue": true,
+      "restart": true
+    },
+    "campaign": [
+      {
+        "chapter": 0,
+        "foe": "zanata",
+        "stage": "belem",
+        "closed": true,
+        "progress": {
+          "trunks": 1
+        }
+      },
+      {
+        "chapter": 1,
+        "foe": "chupetinha",
+        "stage": "palco",
+        "closed": true,
+        "progress": {
+          "trunks": 2
+        }
+      },
+      {
+        "chapter": 2,
+        "foe": "pavanassi",
+        "stage": "banheiros",
+        "closed": true,
+        "progress": {
+          "trunks": 3
+        }
+      },
+      {
+        "chapter": 3,
+        "foe": "fujao",
+        "stage": "aeroporto",
+        "closed": true,
+        "progress": {
+          "trunks": 4
+        }
+      },
+      {
+        "chapter": 4,
+        "foe": "pai-fujao",
+        "stage": "mansao",
+        "closed": true,
+        "progress": {
+          "trunks": 5
+        }
+      },
+      {
+        "chapter": 5,
+        "foe": "laranjao",
+        "stage": "washington",
+        "closed": true,
+        "progress": {
+          "trunks": 6
+        }
+      },
+      {
+        "chapter": 6,
+        "foe": "djabo",
+        "stage": "inferno",
+        "closed": true,
+        "progress": {
+          "trunks": 7
+        }
+      }
+    ],
+    "persistence": {
+      "progress": {
+        "trunks": 7
+      },
+      "checkpoint": {}
+    },
+    "campaignMethod": "Entrada e navegação reais; derrota/vitória final injetadas explicitamente para validar transições, continue, desbloqueio e saves sem alegar vitória humana.",
+    "runtime": [
+      {
+        "stage": "belem",
+        "foe": "zanata",
+        "images": 40,
+        "prepared": "Belém usa renderer próprio com cache",
+        "audioDecoded": 6,
+        "audioStage": "belem",
+        "move": {
+          "from": 1040,
+          "to": 1089.6000000000004
+        },
+        "pause": true,
+        "cameras": [
+          0,
+          340,
+          680
+        ],
+        "reducedEffects": {
+          "enabled": true,
+          "shake": 0,
+          "flash": 0
+        },
+        "mobile": {
+          "viewport": [
+            844,
+            390
+          ],
+          "scrollWidth": 844,
+          "canvasCSS": {
+            "x": 75.5,
+            "y": 0,
+            "w": 693,
+            "h": 390
+          },
+          "touch": true
+        },
+        "mechanics": [
+          {
+            "label": "Fúria abaixo de40%",
+            "passed": true
+          }
+        ],
+        "spriteErrors": []
+      },
+      {
+        "stage": "palco",
+        "foe": "chupetinha",
+        "images": 78,
+        "prepared": true,
+        "audioDecoded": 6,
+        "audioStage": "palco",
+        "move": {
+          "from": 1040,
+          "to": 1089.6000000000004
+        },
+        "pause": true,
+        "cameras": [
+          0,
+          340,
+          680
+        ],
+        "reducedEffects": {
+          "enabled": true,
+          "shake": 0,
+          "flash": 0
+        },
+        "mobile": {
+          "viewport": [
+            844,
+            390
+          ],
+          "scrollWidth": 844,
+          "canvasCSS": {
+            "x": 75.5,
+            "y": 0,
+            "w": 693,
+            "h": 390
+          },
+          "touch": true
+        },
+        "mechanics": [
+          {
+            "label": "Dano liga live",
+            "passed": true
+          },
+          {
+            "label": "Live cura25% do dano",
+            "passed": true,
+            "damage": 366,
+            "netLoss": 274
+          },
+          {
+            "label": "Flash derruba celular",
+            "passed": true
+          }
+        ],
+        "spriteErrors": []
+      },
+      {
+        "stage": "banheiros",
+        "foe": "pavanassi",
+        "images": 61,
+        "prepared": true,
+        "audioDecoded": 6,
+        "audioStage": "banheiros",
+        "move": {
+          "from": 1040,
+          "to": 1089.6000000000004
+        },
+        "pause": true,
+        "cameras": [
+          0,
+          340,
+          680
+        ],
+        "reducedEffects": {
+          "enabled": true,
+          "shake": 0,
+          "flash": 0
+        },
+        "mobile": {
+          "viewport": [
+            844,
+            390
+          ],
+          "scrollWidth": 844,
+          "canvasCSS": {
+            "x": 75.5,
+            "y": 0,
+            "w": 693,
+            "h": 390
+          },
+          "touch": true
+        },
+        "mechanics": [
+          {
+            "label": "Cerca impede caminhada",
+            "passed": true
+          },
+          {
+            "label": "Cerca cai após golpes",
+            "passed": true
+          },
+          {
+            "label": "Questionar cabine causa dano e derruba cabine",
+            "passed": true,
+            "damage": 1300
+          }
+        ],
+        "spriteErrors": []
+      },
+      {
+        "stage": "aeroporto",
+        "foe": "fujao",
+        "images": 32,
+        "prepared": true,
+        "audioDecoded": 6,
+        "audioStage": "aeroporto",
+        "move": {
+          "from": 1040,
+          "to": 1089.6000000000004
+        },
+        "pause": true,
+        "cameras": [
+          0,
+          340,
+          680
+        ],
+        "reducedEffects": {
+          "enabled": true,
+          "shake": 0,
+          "flash": 0
+        },
+        "mobile": {
+          "viewport": [
+            844,
+            390
+          ],
+          "scrollWidth": 844,
+          "canvasCSS": {
+            "x": 75.5,
+            "y": 0,
+            "w": 693,
+            "h": 390
+          },
+          "touch": true
+        },
+        "mechanics": [
+          {
+            "label": "Embarque sozinho recupera vida",
+            "passed": true,
+            "stairsX": 2300,
+            "heal": 1400
+          },
+          {
+            "label": "Aproximação nega embarque",
+            "passed": true
+          }
+        ],
+        "spriteErrors": []
+      },
+      {
+        "stage": "mansao",
+        "foe": "pai-fujao",
+        "images": 21,
+        "prepared": true,
+        "audioDecoded": 6,
+        "audioStage": "mansao",
+        "move": {
+          "from": 1040,
+          "to": 1089.6000000000004
+        },
+        "pause": true,
+        "cameras": [
+          0,
+          340,
+          680
+        ],
+        "reducedEffects": {
+          "enabled": true,
+          "shake": 0,
+          "flash": 0
+        },
+        "mobile": {
+          "viewport": [
+            844,
+            390
+          ],
+          "scrollWidth": 844,
+          "canvasCSS": {
+            "x": 75.5,
+            "y": 0,
+            "w": 693,
+            "h": 390
+          },
+          "touch": true
+        },
+        "mechanics": [
+          {
+            "label": "Empurrão fora da zona aciona choque",
+            "passed": true,
+            "zoneX": 1560,
+            "zoneR": 420,
+            "damage": 900
+          },
+          {
+            "label": "Foro absorve três primeiros golpes",
+            "passed": true,
+            "damage": [
+              1,
+              1,
+              1,
+              512
+            ]
+          }
+        ],
+        "spriteErrors": []
+      },
+      {
+        "stage": "washington",
+        "foe": "laranjao",
+        "images": 24,
+        "prepared": true,
+        "audioDecoded": 6,
+        "audioStage": "washington",
+        "move": {
+          "from": 1040,
+          "to": 1089.6000000000004
+        },
+        "pause": true,
+        "cameras": [
+          0,
+          340,
+          680
+        ],
+        "reducedEffects": {
+          "enabled": true,
+          "shake": 0,
+          "flash": 0
+        },
+        "mobile": {
+          "viewport": [
+            844,
+            390
+          ],
+          "scrollWidth": 844,
+          "canvasCSS": {
+            "x": 75.5,
+            "y": 0,
+            "w": 693,
+            "h": 390
+          },
+          "touch": true
+        },
+        "mechanics": [
+          {
+            "label": "Fake News cria duas cópias",
+            "passed": true
+          },
+          {
+            "label": "The Wall materializa muralha",
+            "passed": true
+          },
+          {
+            "label": "Muralha impede travessia por salto",
+            "passed": true,
+            "hp": 6
+          },
+          {
+            "label": "Armadura absorve golpe e consome carga",
+            "passed": true
+          }
+        ],
+        "spriteErrors": []
+      },
+      {
+        "stage": "inferno",
+        "foe": "djabo",
+        "images": 13,
+        "prepared": true,
+        "audioDecoded": 6,
+        "audioStage": "inferno",
+        "move": {
+          "from": 1040,
+          "to": 1089.6000000000004
+        },
+        "pause": true,
+        "cameras": [
+          0,
+          340,
+          680
+        ],
+        "reducedEffects": {
+          "enabled": true,
+          "shake": 0,
+          "flash": 0
+        },
+        "mobile": {
+          "viewport": [
+            844,
+            390
+          ],
+          "scrollWidth": 844,
+          "canvasCSS": {
+            "x": 75.5,
+            "y": 0,
+            "w": 693,
+            "h": 390
+          },
+          "touch": true
+        },
+        "mechanics": [
+          {
+            "label": "Inferno Nacional preserva faixa segura360",
+            "passed": true,
+            "safe": [
+              1376.689359988086,
+              1736.689359988086
+            ],
+            "segments": [
+              [
+                110,
+                350
+              ],
+              [
+                350,
+                590
+              ],
+              [
+                590,
+                830
+              ],
+              [
+                830,
+                1070
+              ],
+              [
+                1070,
+                1310
+              ],
+              [
+                1310,
+                1376.689359988086
+              ],
+              [
+                1736.689359988086,
+                1790
+              ],
+              [
+                1790,
+                2030
+              ],
+              [
+                2030,
+                2270
+              ],
+              [
+                2270,
+                2490
+              ]
+            ]
+          }
+        ],
+        "spriteErrors": []
+      }
+    ],
+    "audio": "Seis buffers por cenário decodificados, seleção correta entre capítulos e ausência de erros; não houve avaliação auditiva humana.",
+    "accessibility": "Opção reducedEffects persistiu após reload; em cada luta o render suprimiu shake/flash. Não se afirma que toda animação ambiental de Belém congele.",
+    "additionalAirportCapture": {
+      "passed": true,
+      "buildSHA256": "6226dd27b0f3ff292989645ad2b9da798656bd8917505ccfb8f5c41454952638",
+      "method": "Entrada real Versus seguida de fixture core de embarque; somente recaptura visual no canto natural.",
+      "checks": [
+        {
+          "label": "Embarque sozinho recupera vida",
+          "passed": true,
+          "stairsX": 2300,
+          "heal": 1400
+        },
+        {
+          "label": "Aproximação nega embarque",
+          "passed": true
+        }
+      ],
+      "camera": 680,
+      "bossX": 2300,
+      "heroX": 1400,
+      "board": 40,
+      "errors": [],
+      "http": []
+    },
+    "independentBelemUnitRun": {
+      "command": "node --test tests/unit/belem-stage.test.js",
+      "passed": 5,
+      "failed": 0
+    },
+    "errors": {
+      "javascript": [],
+      "network": [],
+      "http": []
+    }
+  },
+  "visualInspection": {
+    "inspected": [
+      "cameras-01-04.jpg",
+      "cameras-05-07.jpg",
+      "mechanics-01.jpg",
+      "mechanics-02.jpg",
+      "mobile-01-04.jpg",
+      "mobile-05-07.jpg",
+      "belem-camera-0.png",
+      "washington-mechanic-clones-shadow.png",
+      "inferno-mechanic-active.png",
+      "aeroporto-mechanic-boarding-camera-680.png"
+    ],
+    "result": "Nenhuma falha visual aberta encontrada nas vistas inspecionadas. Bandeirolas em apoios físicos nos três primeiros cenários; nenhum haloNPC perceptível em palco/banheiros. Escada ligada à porta e apoiada na pista; lustre/cortinas apoiados e zona verde legível; bandeiras e chafariz apoiados, sombra do Laranjão verdadeiro distinguível das cópias; Inferno mantém fogo ambiental atrás do piso e faixa360 sem fogo do ataque na captura ativa.",
+    "alphaScope": "Inspeção de runtime; varredura completa de alpha/crops/todos os quadros pertence à revisão independente de assets referenciada em ../assets/."
+  },
+  "technicalIntegration": {
+    "report": "integration-static.json",
+    "completeOfficialIndexesPreserved": true,
+    "audit": {
+      "__SPRITES": {
+        "packs": 31,
+        "references": 881,
+        "gitFiles": 881,
+        "missing": 0,
+        "extra": 0,
+        "duplicates": 0
+      },
+      "__SPRITEPOSTERS": {
+        "packs": 0,
+        "references": 0,
+        "gitFiles": 0,
+        "missing": 0,
+        "extra": 0,
+        "duplicates": 0
+      }
+    },
+    "guardChecks": [
+      {
+        "case": "índice válido com strip e poster",
+        "passed": true
+      },
+      {
+        "case": "omissão reversa",
+        "passed": true
+      },
+      {
+        "case": "pack incorreto",
+        "passed": true
+      },
+      {
+        "case": "chave incorreta",
+        "passed": true
+      },
+      {
+        "case": "poster no índice corporal",
+        "passed": true
+      },
+      {
+        "case": "referência duplicada",
+        "passed": true
+      },
+      {
+        "case": "arquivo ausente na árvore",
+        "passed": true
+      },
+      {
+        "case": "cache hash ausente",
+        "passed": true
+      },
+      {
+        "case": "cache hash inválido",
+        "passed": true
+      },
+      {
+        "case": "release parcial real ac8ee4c rejeitada",
+        "passed": true
+      }
+    ],
+    "bossArtFunctions": [
+      {
+        "name": "drawFloorFire",
+        "unchangedFrom": "f64e81a",
+        "sha256": "cf45850cbc9b852a2ff8cbba3139528917d43b8247d55b33e96417f5240d5466"
+      },
+      {
+        "name": "drawGoldWall",
+        "unchangedFrom": "f64e81a",
+        "sha256": "bd54fd42135a4e4a27838e2cea3649690839193a56c0f21a0704272ec6028d47"
+      },
+      {
+        "name": "drawAnkleZone",
+        "unchangedFrom": "982197f",
+        "sha256": "bc24eeabf0d9dde580a500368c68d31b36de8858d05b612a53853c96c7e3a915"
+      }
+    ],
+    "reusedCore": [
+      {
+        "path": "src/core/match.js",
+        "previous": "a45c7c31021604861b0a7d4d8e34a7f75862d85c73c98f313caf20880377a837",
+        "current": "a45c7c31021604861b0a7d4d8e34a7f75862d85c73c98f313caf20880377a837",
+        "unchanged": true
+      },
+      {
+        "path": "src/core/combat.js",
+        "previous": "133ad2875e7b297c282ac463579d8297a68af260add6780451b927adfb9fddfd",
+        "current": "133ad2875e7b297c282ac463579d8297a68af260add6780451b927adfb9fddfd",
+        "unchanged": true
+      },
+      {
+        "path": "src/core/entities.js",
+        "previous": "14110994d86b91942fb030ef6856c903d02589d679849f54703154ae161ab51f",
+        "current": "14110994d86b91942fb030ef6856c903d02589d679849f54703154ae161ab51f",
+        "unchanged": true
+      },
+      {
+        "path": "src/data/characters/djabo.js",
+        "previous": "9f5a5cb45f76d56a66b310e3874fe3d748d3c446b86bbc7571744e9762e5211e",
+        "current": "9f5a5cb45f76d56a66b310e3874fe3d748d3c446b86bbc7571744e9762e5211e",
+        "unchanged": true
+      }
+    ],
+    "mergeHooks": [
+      "Pai zone e entidade",
+      "Fujão eventos/entidade",
+      "Floor fire clip e globalAlpha multiplicativo",
+      "Muralha pintada/fallback preservados"
+    ],
+    "limits": [
+      "Gate verifica cobertura bidirecional, slots, tipos, duplicação e formato SHA12; o conteúdo de todos os sprites remotos não foi baixado por esta revisão.",
+      "Proxy e execução integrada verificam arquivos efetivamente solicitados; preservação byte exata do índice oficial será conferida na build final.",
+      "Nenhum resultado de PR37 foi incorporado ou assumido como merge."
+    ]
+  },
+  "resolvedFindings": [
+    {
+      "id": "ART-BEL-01",
+      "severity": "média",
+      "environment": "Belém antes da correção; referência preservada pela revisão de assets",
+      "steps": [
+        "Abrir Belém",
+        "Observar nós das duas fileiras de bandeirolas e percorrer a câmera0/340/680"
+      ],
+      "expected": "Nós presos a suportes na mesma profundidade, sem se soltarem com o parallax.",
+      "observedBefore": "Varais sem mastros explícitos; nó da fileira direita acima do telhado.",
+      "fixBy": "Artista, com aprovação do coordenador; revisor não editou produção.",
+      "fix": "Quatro mastros reutilizados, suspensão explícita e fator0.78 compartilhado.",
+      "retest": "Nesta build, inspeção das três câmeras confirmou nó/mastro acompanhando juntos;5unitários Belém passaram.",
+      "status": "resolvido",
+      "evidence": [
+        "../assets/belem-right-banner-anchor.png",
+        "../assets/belem-hangings-fixed.json",
+        "belem-camera-0.png",
+        "belem-camera-340.png",
+        "belem-camera-680.png"
+      ]
+    }
+  ],
+  "openFindings": [],
+  "reusedEvidence": [
+    {
+      "from": "../../inferno-review/final-review.json",
+      "reason": "Core match/combat/entities/Djabo e corpo da função drawFloorFire mantêm hashes/texto idênticos; prova em integration-static.json.",
+      "scope": "216 casos prévios do renderer, duas formas/transformação/reset e timing de aviso/vida/stun.",
+      "notRepeated": true
+    },
+    {
+      "from": "../../inferno-review-v2/final-review.json",
+      "reason": "Mesmos assets/placements do Inferno v2; nova integração foi exercitada novamente em campanha, câmera e SA3 básico.",
+      "scope": "Inspeção das seis poses dos esqueletos e comparações de faixa segura sobre o fundo novo.",
+      "notRepeated": true
+    }
+  ],
+  "fixtureNotes": [
+    "Resultados finais de derrota/vitória foram injetados para validar menus, continue, avanço e saves; não representam chefes vencidos por jogador.",
+    "Probes das mecânicas usam entradas/step/applyHit/spawnEntity reais com posições e recursos explícitos. Estados foram renderizados pelo app compilado em training congelado, sem alterar fonte.",
+    "A captura inicial do embarque na câmera340 cortava naturalmente o Fujão emx2300; a recaptura680 mostra corpo, escada e porta. Não era falha de câmera do jogo.",
+    "Primeira tentativa do runner verificou clique antes do próximo tick e falhou na asserção de preferência; sincronização do runner corrigida. Evidência preservada em attempt-1-before-tick.json.",
+    "safe[] garante360 px sem fogo; o core pode omitir fragmentos menores que30 e deixar lacunas adicionais."
+  ],
+  "externalValidation": {
+    "campaignBots": "../campaign-check.json — execução do coordenador, não desta revisão.",
+    "fullUnitSuite": "../unit-partial-checkout.json — coordenador registrou209passes/17falhas por mestres/atlases ausentes no checkout parcial. Não foi contabilizada como suíte verde nem como bug de gameplay. CI com checkout completo ainda deve passar antes do merge.",
+    "assetReview": "../assets/assets-audit.json e ../assets/visual-review.json — autoria do revisor de assets."
+  },
+  "limits": [
+    "Navegador headless com inspeção visual de capturas; sem playtest humano, controle físico ou telefone real.",
+    "Viewport emulado844×390 com touch visível; não certifica ergonomia, multitouch, latência ou desempenho em dispositivo.",
+    "Build local e proxy para sprites oficiais ausentes com SHA verificado pelo servidor; nem todos881strips foram baixados/exercitados.",
+    "Não houve repetição de todos os ataques, todos os heróis nem da bateria ampla prévia do Inferno.",
+    "Progressão gravada foi inspecionada no localStorage ao fim; reload foi exercitado para opções, não para retomar todos os capítulos.",
+    "Sem certificação de desempenho; PR37 aberto fora do escopo e não presumido integrado.",
+    "Revisão não publicou, fez commit ou merge no GitHub."
+  ],
+  "evidence": {
+    "scripts": [
+      "run-integrated-review.mjs",
+      "core-probes.mjs",
+      "run-core-preflight.mjs",
+      "review-integration.mjs",
+      "capture-airport-boarding.mjs",
+      "make-contacts.mjs",
+      "finalize-review.mjs"
+    ],
+    "reports": [
+      "browser-review.json",
+      "integration-static.json",
+      "core-preflight.json",
+      "airport-boarding-review.json"
+    ],
+    "captures": [
+      "aeroporto-boarding-viewport.png",
+      "aeroporto-camera-0.png",
+      "aeroporto-camera-340.png",
+      "aeroporto-camera-680.png",
+      "aeroporto-campaign-close.png",
+      "aeroporto-mechanic-boarding-camera-680.png",
+      "aeroporto-mechanic-boarding.png",
+      "aeroporto-mobile.png",
+      "aeroporto-paused.png",
+      "banheiros-camera-0.png",
+      "banheiros-camera-340.png",
+      "banheiros-camera-680.png",
+      "banheiros-campaign-close.png",
+      "banheiros-mechanic-cabin.png",
+      "banheiros-mechanic-fence.png",
+      "banheiros-mobile.png",
+      "banheiros-paused.png",
+      "belem-camera-0.png",
+      "belem-camera-340.png",
+      "belem-camera-680.png",
+      "belem-campaign-close.png",
+      "belem-mechanic-fury.png",
+      "belem-mobile.png",
+      "belem-paused.png",
+      "cameras-01-04.jpg",
+      "cameras-05-07.jpg",
+      "campaign-defeat.png",
+      "campaign-finale-gallery.png",
+      "inferno-camera-0.png",
+      "inferno-camera-340.png",
+      "inferno-camera-680.png",
+      "inferno-campaign-close.png",
+      "inferno-mechanic-active.png",
+      "inferno-mechanic-warning.png",
+      "inferno-mobile.png",
+      "inferno-paused.png",
+      "mansao-camera-0.png",
+      "mansao-camera-340.png",
+      "mansao-camera-680.png",
+      "mansao-campaign-close.png",
+      "mansao-mechanic-ankle-zone.png",
+      "mansao-mobile.png",
+      "mansao-paused.png",
+      "mechanics-01.jpg",
+      "mechanics-02.jpg",
+      "menu-controls.png",
+      "menu-options.png",
+      "menu-rivals.png",
+      "menu-select.png",
+      "menu-title.png",
+      "mobile-01-04.jpg",
+      "mobile-05-07.jpg",
+      "palco-camera-0.png",
+      "palco-camera-340.png",
+      "palco-camera-680.png",
+      "palco-campaign-close.png",
+      "palco-mechanic-live-phone.png",
+      "palco-mobile.png",
+      "palco-paused.png",
+      "washington-camera-0.png",
+      "washington-camera-340.png",
+      "washington-camera-680.png",
+      "washington-campaign-close.png",
+      "washington-mechanic-clones-shadow.png",
+      "washington-mechanic-wall.png",
+      "washington-mobile.png",
+      "washington-paused.png"
+    ]
+  },
+  "processes": "Os dois runners de navegador terminaram com browser.close() em finally; servidor é do programador e será encerrado por ele após aviso."
+}

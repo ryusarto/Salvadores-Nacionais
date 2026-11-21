@@ -1,0 +1,3392 @@
+{
+  "character": "fujao",
+  "version": 1,
+  "tool": "built-in image_gen",
+  "frames": 6,
+  "cell": [
+    500,
+    500
+  ],
+  "foot": [
+    250,
+    456
+  ],
+  "standingHeight": 400,
+  "bodyDirections": "native left and right",
+  "totalDrawings": 594,
+  "animations": [
+    {
+      "side": "right",
+      "name": "Guarda / respiração",
+      "action": "parado",
+      "file": "production/sprites/final/fujao/parado.webp",
+      "sha256": "388ad6abb5dfed720e2f263b5311995e88a4c3559970f44757f6dab28f2e8889",
+      "bytes": 535264,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "8caf6e65c384985b9b372133e32d0f02bd6763de9c2c3c1f3c941f7fe081d157",
+        "ee20f7ae26c9b19f744be347e5c21849431d60560a7a329db130a6fdf62f1d3a",
+        "4866202684d3e0f33632492a9e8e5f68cc76ffbc03b5287ab4d322b3942570a7",
+        "2b40a6d956b14d9988f4f7278f0880c89223e0cc4656b1259f1ad97cdf07d2ac",
+        "2ec0968ae227537e5eec6743495562919d1b11d02f9920988fb3d9758fb726e6",
+        "d1169d61f838463006883eb18cd2903006fa9b6d40f50ceeaa4b1f5e048f51c3"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/parado/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/parado/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Andar para frente",
+      "action": "andar",
+      "file": "production/sprites/final/fujao/andar.webp",
+      "sha256": "8dbfffcf786234a41d74c8cf087fc067baf22b31c64393c2b1ee5a1c07bd77e6",
+      "bytes": 465758,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "58bad80ee013613296fc6996c5e1e0ecea9a78eeb6a5354db7ec27d6685479e0",
+        "e7ce1665f6b11b493cbb0455a6de6d947dbc52cfe3722843136fcb4e0e5170df",
+        "dd65a504356aef479837882aeb19f91477a31d910ce5f3651b66c1d20a709491",
+        "25d3acbbdd32570c2f6145135cc04b4186e02b4030362195aa3c6132fa0c2b33",
+        "64682631a285f5487c4c9e280c81d67a6d3f46028c4754f8c66b5d1a6f3e98da",
+        "bdc7a5f53df3505b9c431d75e2b996c84601262be8983a96b1e36eecb8f3ef0e"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/andar/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/andar/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Andar para trás",
+      "action": "andar-tras",
+      "file": "production/sprites/final/fujao/andar-tras.webp",
+      "sha256": "f877c847fe21278de964ea3754159b367b5c1f922043b781074eca990d2d8357",
+      "bytes": 554152,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "7c6aa550618daa1ce7a8e766c72b3f3f1809edde56189c2722369a81fe011c51",
+        "96a313d0b6e967514f5e979eb9d74dbcd5ae0a39665a2b924d822dacf9533bc4",
+        "0711f1bb41d2385d27e40cb09c0bbf6967438b7ab6285b5fe8317382b7fdd3cb",
+        "fc2a867e437f54248001393467079303e6e9467d3ed3d20eabea89fbf6dcb1e7",
+        "777d3e6b7b47422da0d9b50862d30ebc2635ac7131ae39b56ec75b19893d3e28",
+        "b55f14b16e57bf3719426c0d6cb6d1b39476dc827ef42252e4a7c353b19de52b"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/andar-tras/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/andar-tras/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Corrida",
+      "action": "correr",
+      "file": "production/sprites/final/fujao/correr.webp",
+      "sha256": "5d3069e514247cd2754f9ab11fa9eeff2be3f34aea030e62f671d638bd6bc713",
+      "bytes": 501422,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "6153fb9922266871feedfb07dde6e7b9c3b86079ee8c0a2deb6d97be749a271b",
+        "6ab08bf2a6a1a10544aa5f70abb9316b98161304dc7e5dd44293ea7cafe75ac7",
+        "15523173e313850cf6578634b925f82becd55f854dbf9423e94e01fd05635c27",
+        "96671b0b5909463c07d66bdb513b05f98fd929303220dd5131c5d7187eea77ec",
+        "ecca942400943291da55cc568003fc313c765ba53722204b857e009aa7dc1b67",
+        "b51de9452138eae6d68897164aada2e51f395cafbd09e66d2b13fdcd8f81d3fc"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/correr/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/correr/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Agachar",
+      "action": "agachar",
+      "file": "production/sprites/final/fujao/agachar.webp",
+      "sha256": "6992904f7727c799c728584f743d81eee07753ff82b6ed3ccc2e2fc216641285",
+      "bytes": 472766,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "b529096aacacc1849cbb84dcbeff39a8aad0ca4455550cfc9d159959ff3f4652",
+        "6e89ba0f93ac595df295eaa52867b49935bcdd197f4bfd4210942fa443f7a292",
+        "2bb55a13a24e4aba7fd83c0dbbb46e32079a08cb5d43c4f2fec702b5dbe9087a",
+        "c5eca1501f5a5dfa5a103ddad50efe5bfbdfc6a81abaea26b73e7436b61bf80d",
+        "d3932b47f2470133a27af8b4ab5d1220954db6fbfe9d67f5859921277561f57b",
+        "e6e81e1a3335a6207e9b58987e390d3cfdd2eda58b94ae9383ffd945c200c5af"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/agachar/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/agachar/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Pulo",
+      "action": "pulo",
+      "file": "production/sprites/final/fujao/pulo.webp",
+      "sha256": "cb45af8a82e59a9f66f482b4918e84eb4e1f2bddf0f719a3bb1644f9c3bfe274",
+      "bytes": 426508,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "d67c657bcc9d2d5590ae258a73b7559ab461143eb05a2b54680c9dc11a32092f",
+        "e1f9a5c2e435a9261a08df919425a29265f0746dc5212018baed1092a9631870",
+        "4959cabb973faff3efa39c288e1751affb15f4f8c597938d2989d1ce53cce41e",
+        "e782fb95ded9b6134874ef56f80c0913b9b536cc0072fa5dad0f713e49924174",
+        "4735a3f4b22d832e3c30cdb9c226310844660b6d2899d242d68b0d070ed04ba8",
+        "9a687f52c3061d44df133891f398d55b854afda48ee6087433d060386c527ae9"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/pulo/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/pulo/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Recuo evasivo",
+      "action": "recuo",
+      "file": "production/sprites/final/fujao/recuo.webp",
+      "sha256": "6b0472c0759868a6055d739064878645c1a9776f4ccaaba69ca0cd2c45a51818",
+      "bytes": 511878,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "8290352b8b43fcfd499cc9c32d4a05ef1e050f9d93a01c4a2826d778729cc07f",
+        "84babd3f0d92e6d181cb90beee27be33b3d7690b962a43b96664394310a69ec6",
+        "fa6841d3fcbdfc6ebadbcb2cb7b0b1cee71a326e18ed01ea6bf446c681db9e15",
+        "7f0cb340d3996273bafee07ff0b828d2c78f273f9454aef3157f9372d1b811ea",
+        "5a77a9ff66a8dde55591f2a9d4fc44dd9f737e768a5c09a1b377d199ebb1952c",
+        "3ae796557c39a82b6de8eab6700cd757343434806f61263db78039ec8b6eeb73"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/recuo/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/recuo/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Escape de agarrão",
+      "action": "escape-agarrao",
+      "file": "production/sprites/final/fujao/escape-agarrao.webp",
+      "sha256": "f528ea76ba55b1365d274bbbdf8c8f319c17f1bb6d5229ae4bd78f4ccb6697e6",
+      "bytes": 471830,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "e081ab164968949e349e42031d66cc8049dd60a9c46fa1f16e9502371a3a78f4",
+        "5ef849ab3e44b4f1208bdbd01a57a939d02d647508098c6badff063e7dc622b4",
+        "3ed0a164298ad86498dd3f5b9c29c1a87505b799bca1bba8c3cf5a4ff3522e12",
+        "dc8b9c1187743c2d505daa51146f163c2db1b62da9f612f5001d664813d47560",
+        "c59648c41b70d15ad8e6499ff174c2e2de2db2c72515a73fefc17ee2107dde91",
+        "a2928005065e6ca21bb21ce0c40708b85ffca2f17235842c2d8d1f89646013b5"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/escape-agarrao/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/escape-agarrao/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Recuperação por rolamento",
+      "action": "recuperacao-rolamento",
+      "file": "production/sprites/final/fujao/recuperacao-rolamento.webp",
+      "sha256": "03302c5b8e8763a32c8b842f34f6c68bcdd3abd5dee3f37b85dcb016ad873647",
+      "bytes": 419846,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "e74614882d5da58d0c1f596457924adf9a871ff6f705cbbe08175b62ea9c02a3",
+        "37623fe8df8541e75633976391284e36f3ecd4141c7dd2ee0e4fb01735c24347",
+        "274566014b45c0261fa53ecd84140141aa39147a78e7e7e8274ab8cd2f661c26",
+        "4b1d3d37685c15fd3eac65ab2a569a0f02df3ae2d543a60bdd1189dfcaee7975",
+        "d35804dc885d09be3e3b5f949cae1d012f58c50d4e48b284f6439eca95784448",
+        "47c143afc602410fcca4f25974237b2bf4f64dd7725cfba49f88718a4df7fda9"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/recuperacao-rolamento/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/recuperacao-rolamento/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Defesa em pé",
+      "action": "defesa-em-pe",
+      "file": "production/sprites/final/fujao/defesa-em-pe.webp",
+      "sha256": "7cebe0ab7a45b94946c298b5667df772a08da547446b14f5343e345452d62738",
+      "bytes": 487900,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "b93e9c7023d6e8403dfd959dbae408402f5ea5134d7e3dfe128b7ba44208340a",
+        "f85e4e2ad1ffa319c364ac7a1164099fbc0f214d126190eed36b0f22ca0335e0",
+        "87bbeba9757261ee21b41fcdc814ad34c518167fe03443d296b36e77448dc058",
+        "ded7199cd0fb9136dbde7c687db28807420ab4dc83e9d010b0038de85ea31cea",
+        "12cba6d7049ef08daeb1ae34a307cd8db790c6f8b41b88ee0ee1975ed2227296",
+        "c3e6fe7453ceefa5223a305025eb19f85040755436b1eaf0c39af8eff5a1ad98"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/defesa-em-pe/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/defesa-em-pe/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Defesa agachada",
+      "action": "defesa-agachado",
+      "file": "production/sprites/final/fujao/defesa-agachado.webp",
+      "sha256": "aba6e4bbd3b3ec479ba72c1e48b75d14519aeb7edd23c83c5a7e1c5c65cb5184",
+      "bytes": 480264,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "f2b0ac5d150213b3a138747758d42e161d834e0d67169edf2b1afc28a7b12762",
+        "449e2708451fea5d8d439a3cba04cb154610f1a55dc8abc395a2d6ce31012493",
+        "a8251886cba2b812edf856c31f0072278feb609c61d642ce8c2d1ef03c3b45c3",
+        "3731d5ee7ebdfc284dbbd6806794deea347244a521487e9e47c3eca04ffd11b0",
+        "f75c65b1c2176c4163571165fc2e10394fb25e2d8de8593afadebbc6f40f08bd",
+        "02b429ab2175ebf95de94c707232ffeeb8ada4c25b080ac53fddd8a5cc593c58"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/defesa-agachado/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/defesa-agachado/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Defesa no ar",
+      "action": "defesa-no-ar",
+      "file": "production/sprites/final/fujao/defesa-no-ar.webp",
+      "sha256": "7b3ab4bbac3183b70e8742a5009a497063b734d97687192030ab531876d709c5",
+      "bytes": 478538,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "0d21a83dbdd8d13219ecb22c0314b988d85061c6dba94e774daf15cf30e3e3c1",
+        "ba6b2b615a2a05c4e9dc6e997bd19f8e80afc24bf8ca7513c8da3593320e9cc5",
+        "a5a325a0450dbcbeac645a5739b4d4a85cfe1e2c37b71748f4815432ba39a690",
+        "999f7c26d98d35a6e4d67c0303d2b420a939fc1052f79bb1ba42f30e158e0c20",
+        "735bf09f2ae2db4ed8a62876579e915c38b05d895e0639033d37a93954903b39",
+        "5b222eb6055f3d92c03587d88225d12de1c381115621794390bfa26e6e23b2f8"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/defesa-no-ar/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/defesa-no-ar/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Dano alto",
+      "action": "dano-alto",
+      "file": "production/sprites/final/fujao/dano-alto.webp",
+      "sha256": "8022ee0d35c75dcd1dd94d04978f4ec9c3ba10ce063a32c7e3a3f544d3fef3aa",
+      "bytes": 547782,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "4c7f60e51f21d3c3eb076518971e7ec6f70e6a223e0386510218517fc220bdd7",
+        "30f4889be6eb71963affea6365d3b7c00a57c6897b3a69c43f9bcac4e8894364",
+        "e72e36ce2ddef4e282aca167ff283f30ca2c2723b9b4e36c09ca4394c427b508",
+        "fcd85da4e378df87244aa95bd90719b8e139b4432d6b636530c8b545b05ab868",
+        "4d43921a748df97b142ed8c2ecc63c1bf30fad14a49f4efbf402a483146c7e64",
+        "a2d74c558c7cc03b31b3fe4c81b56190425c98ca0a0581976787737623d0bbc5"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/dano-alto/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/dano-alto/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Dano baixo",
+      "action": "dano-baixo",
+      "file": "production/sprites/final/fujao/dano-baixo.webp",
+      "sha256": "05824526437b133388142b72f2335d1de8bc904487d1df0129b4e8ac55c81f29",
+      "bytes": 537070,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "0abae62a263480b18983ada787d75a3c97a478a44e95d19d13233f91e858dfff",
+        "437c6764bbb2fedd07d559dda1d0744c7bef16569297ad55e93c38d3d4cf941f",
+        "acbf7a9b32b25eb550960b1755047dba6dd6f1edf818e0c47972b5ffb64b9e45",
+        "ae00310ab975ed04d9c7ff885e0b6a698f7df0f120ce3977d730dcdc22feee0f",
+        "1fa8e298f2e94b75407318676b1f039e88599131dce0c90a8e9e522abae3f0c8",
+        "e8cb385be1485379261cbe33dcf5536fafa6554ce45c692440183fa173726849"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/dano-baixo/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/dano-baixo/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Dano no ar",
+      "action": "dano-no-ar",
+      "file": "production/sprites/final/fujao/dano-no-ar.webp",
+      "sha256": "32a443d4c6b7bd65b4a712ee91ef2b4d8d1acb27fff1f88ea636cf166f30de8d",
+      "bytes": 545926,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "2c0efb2b887d1e5043403ba7b59d14b2f427761980101f5a8b41bba3703ba33b",
+        "7ae023f74a1bce05bfc16f74a4e748d5ccf875e505e0a8a10536f4f070c7d0bd",
+        "31cdafffb8e6971d76c5e6527265eae755937e743fbad16b101c1565553d8d19",
+        "f72149b664b88bd2db4cdccd94d4265c9d141fe02c991518c76e98246a273129",
+        "bf63ee606100a2fc4648eb7338fe907a40e249c2a55302bc764a5d892bc1e99a",
+        "3efd3a84357c36ec95d757c32bf550ca49d364edf2453cbbdd6d907fe0258283"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/dano-no-ar/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/dano-no-ar/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Queda / nocaute",
+      "action": "caido",
+      "file": "production/sprites/final/fujao/caido.webp",
+      "sha256": "62a5a52fb493e00bc2994732ce7063c54892f8d2785a1dac6f2d9be9de967245",
+      "bytes": 436116,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "51f727245b7edad862981504348d9b1ecee354532e46ddb95afa969781eee691",
+        "89ba0ee8b68434306d0436d0d6a9d500e5cb70bc57ddaf885853e63e57652c99",
+        "63d00b2768d466e34677ee14c2b0cc1a42b5a250dab6dc8b2b34e305ccdbeb6b",
+        "0e2fc958a70c2f647191daa466d419c947588ff7b2d894a18d01aa7f06b82f8c",
+        "4b09dcedb09c3ae14c714e115b7fa5272448596497e923b29e8838d0a19b7a8c",
+        "021f11a0ce29f4d88d088d6d4df440c333429af5f57e4cd2c7b9592e3b583982"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/caido/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/caido/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Levantar",
+      "action": "levantar",
+      "file": "production/sprites/final/fujao/levantar.webp",
+      "sha256": "49338640846bbd3946d5f808bd0bc0b7b4c8567bdf578c2d304328ac7baddc56",
+      "bytes": 446486,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "329e346f72161770d9a1e2e168656ebe4444b880faaa66ab36ad07a27d960b4f",
+        "5524ed09b38dd596ef1ee07b1349a90d8844a47b43d5bd6a36fd9d941ed9d0c8",
+        "3898bad6308e9ff9e11e6cd575aa090ab0fdfb1da1e0b670445d3cd7e35bc15a",
+        "ae40645b909843a6bb67deefb41b2249f56b81f65bc6c6a5236d4fde058c5b9e",
+        "b6bf799cf2be4df658ca1f4c561071247bb49b5a61ecc40682fde712433881fe",
+        "2a67d1208ec9df090513896dfac2b6a5df2761920c7ca94a66ba2070fb6c7132"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/levantar/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/levantar/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Tonto",
+      "action": "tonto",
+      "file": "production/sprites/final/fujao/tonto.webp",
+      "sha256": "dcdcce5d418919b1b31f6d4d4cea3fa544ca3ace1897f9e725bd8eb3b25629e5",
+      "bytes": 511088,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "764eef5d8ffd79f7d297f98b5c79f91589eb26b335f57b0503ef43e8a88dd6ba",
+        "0f169f3640b8f8e60760effd5959d0043574b2e018c9bcd84b598b9ecdba555c",
+        "417919b75ae717e85010be709cbed5048a9efccdca18b0291fb0b0b8b31fc30a",
+        "38895bdadef36376bc0ea1295503464d3418e9b875927261202b501e383b7810",
+        "47e1b89683c21a7f5b292c0a7de857526361d3fb95a84aea707b6efbcb6503b4",
+        "b59604709fdeff3ede0b154eca2fa6458658601027973464ed45da574689d516"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/tonto/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/tonto/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Vitória",
+      "action": "vitoria",
+      "file": "production/sprites/final/fujao/vitoria.webp",
+      "sha256": "d54f0745d39ce6e2dcde8d6b5ec40efdb2be11acc5aa9b4e750190f0b3e13930",
+      "bytes": 496678,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "9816f0d64605dad1f31035da8030761a0fca818b2cbf9ae7dab54cc85ed1d3aa",
+        "1154b1cdd7471a9ced8aa379d09e78d6819f15ebd1bfada7592d1ce350ef907f",
+        "fd54b0288563fe630c28ceeed45fe28b6da34f3d59224b5f0d51832c6a9a7f42",
+        "e5f89f3d0ed29d8583ca7f0f57aab283efc7e9c69afcaac4e0b5e9f6726a5782",
+        "19ffca73985932c03dacaea1a836d36f64573000d6de35ed3c7f7c13f77178ec",
+        "d7de4ba7a3934758a7a45a3a20eed95c85f97978190d22ba67fc83b2f0af851f"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/vitoria/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/vitoria/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Leve",
+      "action": "golpe-5L",
+      "file": "production/sprites/final/fujao/golpe-5L.webp",
+      "sha256": "8e072d3fe527d79977d60ba8e4fc032c0c9f05640216eb2c3a98654d82a266a3",
+      "bytes": 520324,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "baa77fc07fde195b4b44b4b187ba72093986593bd93eaaa5e74f0d2ef7b6271f",
+        "34d27f1e12417b0c1698aa65afee90f061995ac415c3c4339b070f00629cee57",
+        "b37d950fdfbfd421d8ea9ab843620dbba3a6c2aebbb9726eb9d8a0cf391cd237",
+        "012f171c0f08d65f2cc26d0c927c1497c18aba1ced672811905971d9cc30a6a6",
+        "88316adda97f21dfa5fe006e8d1c28748cc61b052521dcf014d255a3c198739d",
+        "f10443c5b14581ac800c00a83c51e8340d0fc5b22dc55b41c2fab17a38c053b4"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-5L/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-5L/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Médio",
+      "action": "golpe-5M",
+      "file": "production/sprites/final/fujao/golpe-5M.webp",
+      "sha256": "f11b92aa82477f565e9693cec906f677b6a43274c848312445bcec26797c27ba",
+      "bytes": 532700,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "4994007adb06f228a921728d7dc0c5f295d36090d251d44883f0a2a1068224a4",
+        "b9a8e3fd736b954893948dcf8bf5937a513d6bafbf4b266739563ae3d7801038",
+        "70bc156b63f6d10e92cf6b14ae22f9e93a19247be10ebe6da3d00a263f23f861",
+        "d76bd44693d6f7b98c2634a3763b09d7c94b5333600cf7fd163787cca70e01a7",
+        "2ccca972ceae23eb79b02aaa59070b1bde690c4d5a5bee42ed913172ad5fc664",
+        "e5ea8bdb17102985500e18c0eaa2a5335c447c6a05d480d3eb7c075d45e4a891"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-5M/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-5M/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Malada",
+      "action": "golpe-5H",
+      "file": "production/sprites/final/fujao/golpe-5H.webp",
+      "sha256": "e8d9b1e086ab57ec09848838aaeab193d6a22979e382efcd933406a48ebc009c",
+      "bytes": 534298,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "3566757dda605d48eec69e24e44f8f6e691f68286e7a50ae60565099843526cb",
+        "906263dee8a251080f0132e4c047abb1fbd8241e7fcde55f2415d95e3e69d98e",
+        "10c2a9cb7fa819192e08e5b44aacc57c749f6eeb6532797a7379152d87e247ca",
+        "e14189699c950c79da341489407027d6e94946798184a1875549bde1e6d04ab6",
+        "e88f85bb1778b9ea685c32788fe4c6e2a5d78abe936c2f0f6d2323d41760c983",
+        "4540472975eda943ff845ebf4d4a21aa240b866ac4b80f7fe88101e641b84417"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-5H/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-5H/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Leve baixo",
+      "action": "golpe-2L",
+      "file": "production/sprites/final/fujao/golpe-2L.webp",
+      "sha256": "15a14d98f5f2fd4e312ef84c5bd5b7ee7183b9f96936d9b8a4ae9761e271a968",
+      "bytes": 500642,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "7f2bf3a627b5de26ede41f98cab932cf23b4460dfdaab1c58f0d30dfbaa5fd37",
+        "461dd5aa9ccb697f6c0f3719a92801629276bd2417fed50a3e4d27e7b72112f4",
+        "cf21b28018c635c4ae78559762f260e3f7d029b0965c1e4cbc39591c23c3bcc1",
+        "1abb4fb13680d9e00980e6dd2effcc44b02a679bf54c0231c990615d61814a79",
+        "e6a30358582b718030011effd40589652adbf346f216cfc1295380474554b562",
+        "40673fd8e5a81471ebb574406a63bf718f9a3220c9623f347b1a0759ae9830be"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-2L/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-2L/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Médio baixo",
+      "action": "golpe-2M",
+      "file": "production/sprites/final/fujao/golpe-2M.webp",
+      "sha256": "8a5af7d1af9a3722f77b15aef760ec77dcd82fd52ca7a6cb7f222db5d170eba7",
+      "bytes": 511848,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "70ae4f05ae0725c3cebf76c2f84e1619adc3bcb981454006c8d534af6432c9d2",
+        "ff862303c6c9e74f3064277172b90d4cc45eec132c14a90a743d7c0e8c4d889e",
+        "84eb6a146040d8cd91e7906aba9b0bf2b9874ac4f55d3fd707bc23d1b88c7b8a",
+        "3cc1af6d4641a76695530580207851fb305ebb546a2db95b233db40189c22a38",
+        "f46b78aab82d4af60f8f9b63d5475edea8cc18a051135e0f3a9f24b2a4ca820d",
+        "4c0cf49e22a3cc41be2fbee75df33777056c50a1d6284a03a82559d974625fdd"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-2M/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-2M/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Gancho",
+      "action": "golpe-2H",
+      "file": "production/sprites/final/fujao/golpe-2H.webp",
+      "sha256": "2c9ee48827adc208bfe787042bef4f8ea3e36c47a92dbe34593efdc71116a50f",
+      "bytes": 518566,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "09b3f9dd1075435088056f261245a5e56ebd70f8f036106e67cf61df96bf5c36",
+        "0f330e46634025cd47fb4a50601f53fcf9ba62823fe0e54302ddddef349c5e74",
+        "aef6b5c5562370a2203d56135efc75032f67dcc2a02fe6c002222350da89e7e7",
+        "48cb7f012fb9602901e9e862aaa5d85fab10a0c371712695c32067c302dc86ca",
+        "ffad94d5d0b3f28b28bcea4e2822786eff91544707fe8e34dbe33a8aea517c2f",
+        "b8b370148fd0eff0c116a2a3b8b5b8e5f777ab415e2400fc2caa6aad1350d06d"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-2H/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-2H/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Rasteira",
+      "action": "golpe-3H",
+      "file": "production/sprites/final/fujao/golpe-3H.webp",
+      "sha256": "ce2d4ff82de59e48388d366a0cdf3556e4708142bf0e5387766e1ff5c9f78ad5",
+      "bytes": 488632,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "54da9ffd8c7e860fb826ca0e4d60e9a8798146f685fd8c7c026a8136d6fbb3d8",
+        "1ad55c4a2c57c37290dc038f7263114eae6336f8c70eca6ffdcb9422a65965b0",
+        "86ddd11faf65e43f545e44e03895d17920ac967becf7a12a15dca489970e87b1",
+        "ad4853b95f347021ce2661b4efb3261e23f768d21b920e4306be8ae127e491f1",
+        "cd609d5ea0340e8e52672c157a4295686752843929ca8f370bfd2d4608eab3a6",
+        "a3daa0e53dec4994c6ed3777e872bdc85fa910c9f34b87ca0956621c26b29157"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-3H/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-3H/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Golpe de cima",
+      "action": "golpe-6M",
+      "file": "production/sprites/final/fujao/golpe-6M.webp",
+      "sha256": "65cdb086d510b82ee9708985ae8909ae97d3521cfa25c59d7df8a630cc09fc1e",
+      "bytes": 521262,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "92c8b47fa76d5205d41cfe7fe7c9a6d9bf1f140866e5436995d1d46c22e16c8a",
+        "2dfec6a5b320dbfcbf93e38f534c00c3b5c2339118d7f975293d07e264aa7321",
+        "2a6c3afaa46f67e101e4569ddfffdc803403ad170a1a805a878f12f8ae5a557d",
+        "8de82c117ac7fb04da23521e540b12ddf5d8f31e00a03a7557b1ccbb9c193716",
+        "26ac3873421905f17004437fd5d44783110002d9edad5c96165dfcb1eaf02c70",
+        "60eb5c560514ff9de05d51317a4deeb177fedcd292f2bd09e551900d91f8f4f1"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-6M/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-6M/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Aéreo leve",
+      "action": "golpe-jL",
+      "file": "production/sprites/final/fujao/golpe-jL.webp",
+      "sha256": "a7eefd525ee9686278ce918342df7d2299ffb722d208ea929f1f01b12ac49eb9",
+      "bytes": 455318,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "701f7ee424dcec777c2d46899265591242713f184e66a054a2e4eb6b557c510a",
+        "64d8d1747d3dc2511c3f7068b4b06cebf870afd0023cf869507142b4908dcc5b",
+        "1d57942b629b309bd7d252f67e68ec7c5b933ff18c8f713cf88691442e5dbc73",
+        "f621d39f7ed7b24dcaec873aed09728b2b17db23903717857121b05da7a2ce21",
+        "cebed9f367a8df2cde42151211f83c079590be2aa4f27bdf3d150d4fab68a13f",
+        "147f1fb5ae3bff038c7b3b761c2dc8049ad0a633e1c431d44478cca6c85dfa62"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-jL/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-jL/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Aéreo médio",
+      "action": "golpe-jM",
+      "file": "production/sprites/final/fujao/golpe-jM.webp",
+      "sha256": "8dfe027e8f2b27e8edd867665fcee186ad53b7a6487f7ab166f9baa4e4c15f63",
+      "bytes": 476218,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "727fe22bf60792b07392f76a998a6fa6578be149ec7ec23dc5756c4abd580975",
+        "7f13c05b756df625948baf4b2affbe3c5db93a20a079b3c25345063c9787ed15",
+        "602aad3614fb7a2c910b2b95ddff434d39f54c2ec00da3f5736b50e567a76a0d",
+        "19c2529158f9ba8d4a92eb7468cf8778a50a9f5c219799466463ba29fb44e2af",
+        "ea05f7be64145ada2816b4bca44c10df7e66556cc20a4eea21862c3fdc7bf8b8",
+        "d3d3bba4b8614fc68ffce3e9a91059246159e9a493be20d3d1f07a8d0927a049"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-jM/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-jM/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Aéreo forte",
+      "action": "golpe-jH",
+      "file": "production/sprites/final/fujao/golpe-jH.webp",
+      "sha256": "c0117a20a59446535241e343be8abf3fefa9f1747f563ccb094740e31d3a4b27",
+      "bytes": 462242,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "d3058f56451730d5bbb5c553c7708cd2dd6ebd629a7c957fdcba84c082bb615c",
+        "3c0f7b6c53720ea23638da723a8308f5e1bcc6a2271f2c0aeae5cbf2a46a56e0",
+        "14265a9a519f7f205baa8d8c845f8b592a99281d81cdc28a3dd98556473d2bd0",
+        "260f57b91faea9b8e1b4076cf3e9a5b0742a8e2ca4354609ee879072630beaa8",
+        "3a54c0a7942247e8cf164d3ba4b543f8080a069b19ad05aed59b6098e17ce235",
+        "41e28d3c77ac3b5ceace9bd12db87a3479015360e7667b61cf858bc4f9cfdc40"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-jH/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-jH/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Agarrão",
+      "action": "golpe-throw",
+      "file": "production/sprites/final/fujao/golpe-throw.webp",
+      "sha256": "1f3d903b66afab3b608c5656b1345e06bd51449d7d986d64d27dfa67595ca520",
+      "bytes": 559216,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "ec0231ad3537103b6a44fc1c36469200952612031ae6e6e0e9be223f8cfdf733",
+        "6a8ea4233a7da87bce3a779ffab93fffa0241dc5f278fe0d9d5fe993a3ac6940",
+        "e94e5a02d4b7808b52c7f6bb88ec3ce9b616460cef95d03cc7bbc31f59250b5a",
+        "722a2399ca5b8fc0e6c5e39e25dbcb3a1a71a126eaf9336cff47615cba5d5bf1",
+        "161ce259540a399b7fc307874019906fea42a49ae6c295379323d5b7683a75b7",
+        "1d74ddcab72f56cb2d368ff670cab9f6e9775d4f1b4d7465ecada935f894f266"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-throw/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-throw/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Golpe blindado",
+      "action": "golpe-blindado",
+      "file": "production/sprites/final/fujao/golpe-blindado.webp",
+      "sha256": "8a285f4addc1acfbc13602bcd3ac699753e9b376d1711f0a366a02d83202f793",
+      "bytes": 496788,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "8857ea93ab63902d6a294dea8b26ed061f1872b70157446825d360697c0e36c1",
+        "ca57fc6abf9b6a19dfbeb41f95a491b518b8bedebc22a8fd8de5fbbf4202bc7e",
+        "eb4f0489cbf32dfc7d7bdfcccdfc130f21a40dd7821235b7be5898f12ae653a9",
+        "71bd39bcb3d7d34b5b1dea6ec88bcdcf9a8fc2c6dbb0ba0f6ace57951e176a1b",
+        "26be863a94f2038587ec6fdfe24b2d262897b5099876f7b9a3154bf2ceac4cc4",
+        "c9fbcc324376cc0142fb8d875be2585779dc79febc88dafe4a229ce7ed490650"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-blindado/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-blindado/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Mala Arremessada",
+      "action": "golpe-5S",
+      "file": "production/sprites/final/fujao/golpe-5S.webp",
+      "sha256": "950135616b3219f7db2b0c111768a7b7c37d342deebabf66148de373dc95e00b",
+      "bytes": 492318,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "1d540682201476ba505c98c31c457e7dba22c8aa4e18d98fde41cda1ee7d53d1",
+        "ac07f2b090191c795df15cf4ee8a704eca4c98722cb664742081140c49ee2b3f",
+        "86fbfac112397c1596aa0c29940829be8b3a1876fe5087f0def7cb28d3f4ca27",
+        "320e002169485bd92abe0ee187c47a46f33195876804f5e16fd321e18ce41c24",
+        "a326941ed264d0d249b7f556d99092d66a7a2f82b4e70b86c7b9ac22bf3533c0",
+        "a8d783768439a2897a651985ce5dd9b6624aafe84f509825aa58ff709eb24b7b"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-5S/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-5S/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Mala Arremessada turbo",
+      "action": "golpe-5S-turbo",
+      "file": "production/sprites/final/fujao/golpe-5S-turbo.webp",
+      "sha256": "0e5e806fb3a8d7afe32512be2da95c33c909fe2c7fe5ec645c1eb1ae104444c9",
+      "bytes": 504868,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "3a795ac4447c28f74712166c38371300326bfb2e2c0063a0bc3533cfc28ccd7b",
+        "ece6ffacdfd9dac48ee03e938b61085f283691634c646f1cd3ba0006b02161eb",
+        "b74369f64f275bc544d0cfbf5b5b1875d20ea342bae9ce268c4eaa0806f2bb75",
+        "14e4ccc4fe314ac78c3dd9006b8e5cfca1ea82bd69c9da842ee28a8096decfb6",
+        "66d6ea642e92bd15aa780e19295cf60a93dcce64f35815f7d763f2d7cb3734d0",
+        "d6cc02b4a0d3d7466aba54509f6fafbacbed0676d8437f28483e83047eded44e"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-5S-turbo/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-5S-turbo/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Mala Esquecida",
+      "action": "golpe-2S",
+      "file": "production/sprites/final/fujao/golpe-2S.webp",
+      "sha256": "ef5a79182b7e5e26476afe04ddcaeefdc04b023d2201831eb7236238caf3d3c9",
+      "bytes": 436520,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "b0ee2f12603e8d2bc69d3e61819d1306bad73182106b54fb7a1480740189e3e3",
+        "976a2b5acfaf3d3443ba4c7fe29dd649d04dac0dc88faa9fe8437e93a26971b0",
+        "84b8b62619bf5385e93b35715976d7b228b461e18bf8767a57d19a4cfe7c96d6",
+        "88295a644a64473abbd7b95f9e452d9291445b2810a4557f615e06c551d1cba4",
+        "0c5170acc835b8a314039fa4d0691c86e2a9d46dc01a1c9c2acb601f3aa73a2f",
+        "fbbef60b9dee0fd992b25b53cc95517d52fe3dd968eee76e9e45241157282829"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-2S/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-2S/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Fuga",
+      "action": "golpe-4S",
+      "file": "production/sprites/final/fujao/golpe-4S.webp",
+      "sha256": "078834e866460b28c1331897127b4207c19feb253380fef199bdeaf3c814c4a7",
+      "bytes": 447036,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "9458aabecd2bc8da6f4bb20f8c05eac35b2a1533b250b6c227bb41672c028969",
+        "956a830234c8bc23357a1c7f8c4e1d99e74d670267993e6eb2c0523b3558d347",
+        "c4d592a2498ae52073652c4c71cf50b24d418789d9e0cd197fefeb3e9437a97b",
+        "1f8b6b574a61267409c8540f4c0945cb8f0c97a0ab5f1b6cdeca41b7e68299b2",
+        "37027c651eb741124cc19ad9c564eea065faf11422a8bd6eda8211ff251d3a43",
+        "720b9e40c340937d6057afadca57fa846be994ac1d86c08c88ad90834567d6d7"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-4S/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-4S/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Carrinho de Bagagem",
+      "action": "golpe-6S",
+      "file": "production/sprites/final/fujao/golpe-6S.webp",
+      "sha256": "2355ea7f8d950300c968d2d612eedcf2b7122659a1d2451711b1a4b1223a773c",
+      "bytes": 424190,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "1ec9babd1f8ade32bf2e9a9d25ee0d551fbec1fe3a6cae4c2b690dc82905ebbc",
+        "d55695a2b77dfcbc476b3394685f9bd67c109fe4ad50a1128feaf55087f81ff8",
+        "6b8060d3dd71cbc7c641dcaf3bcab11085241020ef84ee8646dc99a80ee5b744",
+        "dbadcace80285aed7df3ccc417e7dccae6710328a22de10025b6326f9eb04a0b",
+        "0025cddfa932ed3ca5205f353b19e9db7c4f1932b5ec593e5c51d58fe43be080",
+        "1badddb10c9e809c8f1de061b6c37b850d44717b46ee4cdcd2e526b29f87d77c"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-6S/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-6S/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Carrinho de Bagagem turbo",
+      "action": "golpe-6S-turbo",
+      "file": "production/sprites/final/fujao/golpe-6S-turbo.webp",
+      "sha256": "c16852b0514175be95931c7bbc4dcbb23006f169075a09082130da0f14d23a5b",
+      "bytes": 428228,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "35128e5ec73c9b1629dafc6bb71976674ffb19225baa6c6f4847f367e29fae05",
+        "64f5e58ef5afde21574529eb2d690d9e25d224e8bc262f0c0775e4811a128920",
+        "a0b05cd1072481839335dc318be8f10c37c64a91d99474ed446ec146e05b92a7",
+        "9dfade2866985e9a5ebb0a9ebcac41f100615da558ebfb57b5fa6d9efedc04ff",
+        "88a3737d122c59ed7055b6657e256b709adac98cc3d14c2472d65be9d565b997",
+        "6574ec8153818bc35322fb113ea2a03d6a96d24847921e01d2783ebd2e5bac38"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-6S-turbo/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-6S-turbo/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Pista Livre — quatro contatos",
+      "action": "golpe-SA1",
+      "file": "production/sprites/final/fujao/golpe-SA1.webp",
+      "sha256": "307966b94ee40e3b7f4dac882968ce2729453641a122a68ffb06126f9a989fbd",
+      "bytes": 503766,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "9a34be0c672a3921a06fd06ee8c0170f55f6f1fedd85579e280678fee6764a89",
+        "ca082df29376f3f403a7039adafd5189b82d75e11470a9e8b37248935d34fd4e",
+        "6aa86b9dad5b40eb5a943aec53f692373b6016a3f56c64b94fbeed454ff7ab38",
+        "2d6eabd34358df523b97b6938d2476cae78e67bb23537e5e34ca303723415481",
+        "430460876e9c38df5a527ca0ada13eac99ad79449947201b538eb25362aedd28",
+        "544b4b9ccf4d821557d4f2b09dfaf8cd0f9480318c5dc6663d49b43cce66000f"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-SA1/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-SA1/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Esteira Despencando",
+      "action": "golpe-SA3",
+      "file": "production/sprites/final/fujao/golpe-SA3.webp",
+      "sha256": "98ed552d6369aea5e984999cbb5808ff562926ac4d5de0e0897fb6722c96ee97",
+      "bytes": 519320,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "6cbe975723cff259e056bc8cb4e770aee9e65ed920fc48ccbbb03d6f95c851bb",
+        "ea2db507eba34308e633c7faa5ed7ec2fbe615028e0f2d96814b5b95bf5d582d",
+        "281452f9f27daf01cb31fce22671610e06a36fa4661b5f4187c7b047c460b4cc",
+        "bc29ffda1e8665f96e4b5fca0bf69df8b1acf799823bb0b01a52643329aa0f73",
+        "dab66ecee7da7ebb76f5e2737be67fea5caebe6d433f1901a6dedd7615b1edaa",
+        "ca14a11f17556ca88699656527748bc63027d403e596d505b27b8edd961b0b8f"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/golpe-SA3/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/golpe-SA3/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Tentativa de embarque",
+      "action": "embarcar",
+      "file": "production/sprites/final/fujao/embarcar.webp",
+      "sha256": "2257e528adfe4ab4c67c301b1eff2764fd67993efb2b4a79b68541320e5e9321",
+      "bytes": 498796,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "67c4a96138569660c27fe9f70a10a3d23e83b5ac960de628ee849f8867cff3ce",
+        "15c13b1cfa34fc710d368498738e94e75bfe77da85e4faa2728b3da0a3389972",
+        "ff0d3b7453f5b5371499aa398ca9b546154d189b23e1652d6e6b13c3a9cf354a",
+        "2ac1899664bb37a31f5c5a69de55eadaf9d624543c04738f55c2b62b97531b8b",
+        "a88688a7582b725ae326cc00f2bcfdc3528354edf72c17ce18ac79149ac87f60",
+        "68a01b6a891cc0366c16f3ff711f6dea7bff564451a8ec3a3cb772d3920083ef"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/embarcar/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/embarcar/grupo-2.png"
+      ]
+    },
+    {
+      "side": "right",
+      "name": "Encurralado",
+      "action": "encurralado",
+      "file": "production/sprites/final/fujao/encurralado.webp",
+      "sha256": "4474172ffe952548ce1e22b3f28378a68d4d5fda79dd8c59470a46b9d33558ac",
+      "bytes": 517158,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "af15c28cf902e453a5375d301205563ad46b97e68fa065cd726199f9d0be8257",
+        "16f97fb32fffa9ca20ab3ce05aa4c4279d8f7dfe82e485ce5bdc4ea319ae6ef4",
+        "74572569e518924bb4be4d838fdb1508ed36329ee8003666c808ccc776774a90",
+        "735330191e87bceb553de76975214407f1109974737756ac5e105b73b4e43a46",
+        "55459acc00b7ec09b9233124ffe4a65bd9113cb0534e873a5bd9eb19da26d419",
+        "db15e6b53fa06cba6e18e45267718ff735109f2f2383ca72566611a3097536c5"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/right/encurralado/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/right/encurralado/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Guarda / respiração",
+      "action": "parado",
+      "file": "production/sprites/final/fujao-esquerda/parado.webp",
+      "sha256": "d8a85ffa208a14c90c4653865d8e10eb6c91054e187ec6acf947483656a4c315",
+      "bytes": 516658,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "0eb72034b48f064a064fd9ae82e32b646bc454ffa0ae41fe1b6a2dafab9d45c9",
+        "08cabfb13a8e87211890d0fc30154c02e4eecb7d703e954697e6ce9fabcea069",
+        "04a18c09cbb43d0d1d02c67ddfe519d173a7d0b4252e8b3da872186eef0c42c3",
+        "24e87b204b54e07b63e5b196767dfb722d9c82dbe5475951c3587b8dd2bf52f5",
+        "8dbf24e8467717aa6bbbc10ef0d997f9d277474a69e4adc49e0984ad2d96b5da",
+        "8ef2ed1a8e1aabb851a85f99c5f7f0f52f848867c5b3e0073a3d2de77915664c"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/parado/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/parado/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Andar para frente",
+      "action": "andar",
+      "file": "production/sprites/final/fujao-esquerda/andar.webp",
+      "sha256": "1432b6579d9d2d39d3feb3773132c5f96b4a28be81cd13cd97f57d65383d708a",
+      "bytes": 486264,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "c8d8a189dd862e9ffda67c6a23da85f99e6d01c12cfe6e936b0ce0f449208231",
+        "26afb3f1781dd63bf9cf5c815966f14dbb416459bf90a25b122ed2e81f2d893d",
+        "3b6f3b760ecac053ed84c82dd36eaeeedd36c8e1d2fc83456741fd144febfe81",
+        "f25b7efc6658c7f673cdd20629b962363cc3e654a2116cfa5cc80f4a4e993e25",
+        "d6159d8cd3b9bca7a7c8ae5c1d0304a0d3ed99aa3798e78aa24e925aaff8eb21",
+        "6866b9f6a95130a4ab65a71071248a10a7e7e486f48166927b3ddcb7f0a8a23a"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/andar/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/andar/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Andar para trás",
+      "action": "andar-tras",
+      "file": "production/sprites/final/fujao-esquerda/andar-tras.webp",
+      "sha256": "1b65118f1c490bb869a443af5448fbc21edf93f9418c3c9e844af52899877153",
+      "bytes": 536274,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "b434feb57254c5c5224d8aec1db49f01175d78bbee6d2cb89057ea7e22f4c18f",
+        "1d33c196c8ae464305769ca42dc3bda30e3e02faac5dc060b6cdabd18a88a526",
+        "010a9bb1bc231f523f7ce619abbe201763a39d06cf84bd435e84dc3f653b81b4",
+        "a7cd6e0a7c69c81970f1f398362920f3f45c1972636a03af747c324ff21ad213",
+        "aeafb0a03df6544cf8ca86a601e1665f7a793b2e4b164e3069e101fcbb5e7d77",
+        "82de7c6b3eba4fd03a478ccc571db92a8e0951487e2c4f079fa600b9ba312750"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/andar-tras/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/andar-tras/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Corrida",
+      "action": "correr",
+      "file": "production/sprites/final/fujao-esquerda/correr.webp",
+      "sha256": "58a9ef8f591cc5e32b2f20a2a56eee0af8f1d99e31139a2dc37e382f010c13f5",
+      "bytes": 548676,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "bfcabd1dc8a7304c6a530d8d58e1c28955e72cb4fe7aabc7a99fa57aafdb085d",
+        "7ececd6ad30362cb23e592f5bc0d64bebab81d5ffa47d9c961cf705b28e175f9",
+        "63c85209481f66dd99a9f1930b9a932a8d0074bf6a46f93371e254e617c28b69",
+        "6bf04ac26bdf593eac8667bd725cca07b99b9fd49535501b34686ce30cafb988",
+        "047e464d66c0f32e92fa9651da7e65a504c279bfd01e98dc92c68541e9049f41",
+        "bf6236393493915804cb1a6796607e5a327d466c747ee25cee7523725d89b68b"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/correr/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/correr/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Agachar",
+      "action": "agachar",
+      "file": "production/sprites/final/fujao-esquerda/agachar.webp",
+      "sha256": "b713775eebc7883025b5adca31cf873a6e8f46e975eedd69dcddcec0683548e3",
+      "bytes": 446572,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "c55c102cb42b184ccee7e56d32399f7dfd70cbb5988710962ea9b72884c9f226",
+        "f6720e53fadff1fbf698edc92b7b30405c7a1751fb05ef62a3306e2ebafb3684",
+        "b1443900c9ce8a768c9e6873659b3a47f56ddacccf9fd51a49912530a5ee8fc5",
+        "22bfeeded526c8338f034e1983ec1ec4d6a5797204cf899f1cb7155b10951e3d",
+        "3592222cc8c694e38ceadebc0fd26fae851d43b32f945cffa0df967a0af83a7e",
+        "5c18ab9b263b970274914e650e63ac8e814e62675120472ebb6abc337140717f"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/agachar/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/agachar/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Pulo",
+      "action": "pulo",
+      "file": "production/sprites/final/fujao-esquerda/pulo.webp",
+      "sha256": "9d7111f98e9bec3b2289eec84589a750cfa78bc599c1d69c0f9463dfe8352c96",
+      "bytes": 435798,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "8be488390194ddc259c734fda8997e8c4b12f47023e8ac70822a79be4de93264",
+        "e6a9a499642839ad58ccd7572d122bf7c580104dd6de4603f639b0827a876f1c",
+        "30da3cd1b73bdf9812e63bbf828a7a8c218f5155a8605316c5a1a41864ecd267",
+        "f01d9105e50256e975601e9775b6b29faab53ffc70f2ffea9f415b70d7d2269b",
+        "3c3175951fa124082000afee261e8b257527a0c078eafedda4b68d8ac7f2b3ec",
+        "32f1d3faa2766276287e79ac7a59f9489a9797f15cf2f94def0a94c9bf3c48c7"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/pulo/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/pulo/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Recuo evasivo",
+      "action": "recuo",
+      "file": "production/sprites/final/fujao-esquerda/recuo.webp",
+      "sha256": "c3a9ec5f5552606e84ccd14f52864a88c5148fa2924f1e99a1c76f51c6d7635b",
+      "bytes": 483586,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "ffbe3e3cd24fb46648c0fc431ca6f8e0f9d3c04ff053aa688d6efba951ddf30f",
+        "dde88da74e4c3473a5c66ffabf25752828f9c0a55ca155d0c073d6fc6e11c512",
+        "cb72792dfbc3356de25837aeaeef8b96bd9f3be640f99ac4c40a9ddc31fd643a",
+        "fcfc9f3287b4ef8b100288988080ac38f0c6edf0b2842d690fe18f967a0b167a",
+        "db7f3de24b8eba63b0d6996ab02b476a5cfca94d792a890abde1dab17dfbbe07",
+        "ce740e94a1717e767df01f2af9f84f988a12222dd6b932e37f427aadc8b1b90a"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/recuo/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/recuo/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Escape de agarrão",
+      "action": "escape-agarrao",
+      "file": "production/sprites/final/fujao-esquerda/escape-agarrao.webp",
+      "sha256": "816c1165611044bc5c61b663b0184eb0a8c825bfc6f112ed701cb00d46ce33ed",
+      "bytes": 480962,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "b23745ddcd3dfb702d14c06e01ab89a5a4c9fb812c8fbc21d332b36f9d0fef09",
+        "bafd2ee9b361fb88687f54dc8f481592d76bfd3c439f4c8b4045dc2497f3f4d5",
+        "49cac01b124355f827c285bf809783e3d9e8ed18fa570b8e8dafc8c0f9219d64",
+        "7a538c11347e73e9172e49529d2fce6d003de47a289e58712c6d99d23c0c8740",
+        "ed5573e9d6dc2275f99199de3bbf74c5589b354be0052be463586e1429f59384",
+        "ee916cdddf575d69d595031ed8f89818419379ac8254ad8dbb10bd479aafcdd2"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/escape-agarrao/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/escape-agarrao/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Recuperação por rolamento",
+      "action": "recuperacao-rolamento",
+      "file": "production/sprites/final/fujao-esquerda/recuperacao-rolamento.webp",
+      "sha256": "7942f26118c85bc689bd4b200ba63a2d9cc373fe10fb3a6bb84aa212aa393911",
+      "bytes": 448278,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "55899ab94e444837327508e9e101e87104af40fcd8f94940a1d6eb6d6157fddf",
+        "017d84a11cc03f5b62b529d2f7e956ba7c2e5afd3b0d3766b25de5aefe6bfba8",
+        "51ae1c19694d5591a3a05ff99be2e6763dacee7f8d54270dd8dcd318cae18d5f",
+        "ab290fa8db12a77526a0c0426b371f907d7f8c7601f6b0ac3e77ff37ec1f4235",
+        "c3d3362510d4c0b1f86c75b62f910bd460ef05591135ae573a167dc5c5b4f166",
+        "5dba6cb846925fd2195a86b78ab7f36d8ea1d6eba5366b391cb7b48ac9d1f887"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/recuperacao-rolamento/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/recuperacao-rolamento/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Defesa em pé",
+      "action": "defesa-em-pe",
+      "file": "production/sprites/final/fujao-esquerda/defesa-em-pe.webp",
+      "sha256": "ff84f2865908032c008decb5d3cbba4d1934f7c74cfef42e4090787e68f06f4a",
+      "bytes": 474000,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "e0d4d30c6e5ad7ebed1c8977daaa3e601c3a62c962a7cf3533bf297a1bb16ccb",
+        "ecd853a877357d1f0bd9af6087ba0a3e10037883075d49e0a17a238160edd56d",
+        "884b027f73b0983d2c35379398aa3b936f67535146df74f793da841f7c6ca919",
+        "bf3512d2aaf0deba061398bf299c7b7a5013ab7c00c1bf30ad7bf45215ca453f",
+        "e655f3dbd4045164c0de2d80c9e15d415cd56f23a766b1746b44344a4d8e17eb",
+        "7a2f77a5c45f412d8d6ec73559134d2708bd859f988ba791432d1206e0e6e2ab"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/defesa-em-pe/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/defesa-em-pe/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Defesa agachada",
+      "action": "defesa-agachado",
+      "file": "production/sprites/final/fujao-esquerda/defesa-agachado.webp",
+      "sha256": "375f2615f848a8b24c1c404a2677d1761c75af59122be44cadcf9186930d95fb",
+      "bytes": 433790,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "ce6e185859d0ff8acdccaacfdd5733fe304e224921e8991b0a932980c70dcad8",
+        "651e0ef205a93f3e3476a68b5c67bbafeea67f14577b073dac8b2ed073304141",
+        "ee3dae1a594f1bdc2a7f9cecfebeeb9039ce67e13f1c6b8c4a2a3ea417d13d32",
+        "e33953b0fb777f78c8cd0b9c2c0200f235cc26aea9d23ae0f29131459ef017fc",
+        "c6c397b18c8e258b2a97c3d386fd67ad0e2f2aefc6d769a06c12b50092136adf",
+        "812989b1e9466935f6ee5b3d105e8e57111094a41d0f7fdcb74d72ae3cd210e5"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/defesa-agachado/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/defesa-agachado/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Defesa no ar",
+      "action": "defesa-no-ar",
+      "file": "production/sprites/final/fujao-esquerda/defesa-no-ar.webp",
+      "sha256": "0a93960cf9a051c7ab5b6fd8a5acb4568f6a475d2ceb3144db0804ec197c1e98",
+      "bytes": 459102,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "5c2630919c2cf13b3f000c19c42858a383a92f847aaf0e9ba545a31c11fc5eae",
+        "dd51261659aa3149813b1ed0271afdcabfd70ad3bd8309f77e30ebfb376c5bca",
+        "6aeed6aa0a9c6ecfa8afce59c3653ae5c17cdcad35c2c0f096785e548e265c32",
+        "b9f2429db226e88e9f6630499bb9eb5ad4a2fe7f01e3266e92c3b9ae09caff4d",
+        "ccecd60ddc00da0167f0248311c5cbfe4eb6b212c56a616de50cd8e78cc2b0f3",
+        "7f2a46a55ee9a86aab46f82c8ee9fdb13319af7e709c8d22c828f64deef49db8"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/defesa-no-ar/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/defesa-no-ar/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Dano alto",
+      "action": "dano-alto",
+      "file": "production/sprites/final/fujao-esquerda/dano-alto.webp",
+      "sha256": "dcde90d82b1b30cbb1cb52d6de4f14f62a05c12a3184720e835dc26c350c8dea",
+      "bytes": 529442,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "c87938dd3e5caef7f26723259d9572e479ae266a249731e4b5152427920bd6f4",
+        "3b373c671484e4ac296f6f4f2a4cbe885c0bfc5646f2016497848481bed28a85",
+        "a87cd68db26017657f049b698ac7329a786c5bc5805e83cba399d0549d2b0679",
+        "5a7c475d074762f82cf4d5608f485b48c6224ba8abe24ff64a89255ec05bec3d",
+        "15c2da1a3560dabe62e4ba7270a0f0675562f9a2a11896db174817c1b1487688",
+        "039329b5d479727bea240924dee2e52a48c008a85cbacc157b0b36c2237caa5e"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/dano-alto/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/dano-alto/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Dano baixo",
+      "action": "dano-baixo",
+      "file": "production/sprites/final/fujao-esquerda/dano-baixo.webp",
+      "sha256": "44a1dd7819c6462b402a82ce6017a2144d59f33f879a7da074cc85b3b57488fb",
+      "bytes": 485228,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "7ff8b9c41f60d28e0efe9b216ffccf496df068058768ab526b5ae93860a3b7a2",
+        "37442cc67b06e68a4a297a150c64c627ef606f0055409dc21b592380dc1a2cb4",
+        "3864d28f55fb2670948aabdb1a34e704aa89e722ecfb6ed9fe20c9cbf606f1c4",
+        "a292100a248a24832693a06b65a03ae27752dd664b9ea241f07359024f85e3eb",
+        "bcac19e7b7faf2d5d29a564752a78d65b3c2cc33a7a65f0894c06276baf7cef7",
+        "984481561dcc89931b58a6a32c4dc48eaa5bc0055dd669524215186a5aa68602"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/dano-baixo/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/dano-baixo/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Dano no ar",
+      "action": "dano-no-ar",
+      "file": "production/sprites/final/fujao-esquerda/dano-no-ar.webp",
+      "sha256": "db34e088ff330909829dc949cc6213898d639932b1b994fe8ce9faf6d28d1191",
+      "bytes": 504310,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "13aa7235d5a862e5f33aceb5536b7a4bbed678c1db7b1329d9f37fe508d40833",
+        "069715235aad4b8bd491f2dca5a9fbd8d174539e9c86a6d5ae3a5c12d5e3ae38",
+        "f4bb982e06a63345cf8abd17181ebbb8b11bd5bff8d544a001ec8af7e604d74e",
+        "2821b134417fe351519cf7252ada9b66558f58cb9a1b8626a417b2e6044fc1b9",
+        "966645a9234ed6b11fd4d91e2f0b3f6cd22145df69e1bca3409df1a7486d6b67",
+        "b82e82715c59586812505548290f6655ecf8675e49483f576d0cca7861cac86d"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/dano-no-ar/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/dano-no-ar/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Queda / nocaute",
+      "action": "caido",
+      "file": "production/sprites/final/fujao-esquerda/caido.webp",
+      "sha256": "2b1818cbccfcfa25c02d5bdd838cc0c1b5bed1731aebd643f7ac8ce72e6757ea",
+      "bytes": 438872,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "a80ffe6b2bc8f5c3d6b3f17fa01585d2c4983efe74aaf3c9dc3a543ff6969bfb",
+        "fc662947f156764676d59ab9ecf41fe91e4ae12e658535e3557d8ad78e89afed",
+        "342195587cf37bbe11090f5a25e721ab6e5b7e4377a37200dc6bac04a9c03a25",
+        "6d9013bcb498083ac809463f780592adfee3f0b473d38c1e30fa8cb1ef1bebe1",
+        "e3ed810c4dc1b55fab38270bb8abfcc19df115e5084f3099b40efc14b5eb488a",
+        "4e82fca2bd3a4653102b94fb063d913f735b2becb0648cf793683901979348f1"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/caido/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/caido/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Levantar",
+      "action": "levantar",
+      "file": "production/sprites/final/fujao-esquerda/levantar.webp",
+      "sha256": "ed1fac917deb54798b6c1c39c0a0958e01802508de0f4ca2f71ae3bb7b7c5604",
+      "bytes": 464612,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "13861ddbf60863181199b6721d48d8b11bc92a0f00471fa155a0544495bb77f0",
+        "dcc4cf76279d38f4df7dfd2464ea7b62df6a777ffe588f7f9882e81b8ad6860e",
+        "304ffb69a377a8a9475efe3a833e9e90515f6ab2e3fccf647951d4b1e531c518",
+        "314c1faeb8c50a934e17f8fa073dec1db76c8ecca7dfe456ffab01067df1b04f",
+        "66b7acb679ddf529f678afc6e38ddd41a5b834fb7778a0be0fae0cae8cdfeaef",
+        "a2cf279db64f9671cddce84ab7b1d0985ee81e703ec749f58b13943e8e13bee4"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/levantar/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/levantar/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Tonto",
+      "action": "tonto",
+      "file": "production/sprites/final/fujao-esquerda/tonto.webp",
+      "sha256": "91e3d582eba1f7acd22dc58e1431ab8721ed636196a7d8191cad640aeb590251",
+      "bytes": 517388,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "074821d87625523bff0a1f09648a3b315dff1dc2d26bc9618ecefe99a545c815",
+        "6381b40e49f4f24fc461e001fcb2ef322db97969a0225404d9b3c7d34a7d9fac",
+        "c7c3e439de35e78cdf212f01a1b8655a22269daf66e0119f6b6bd579b28ec3ae",
+        "6d536edd315c886d536c8abb788cd909551fc40d012d2d6ce4eca79b45fc26dd",
+        "3aaedf2883392ada57fefd033ce9bb74e3acb8201ef6917b8391d6b1b7e90525",
+        "8f99e5499cb97197c21cf69a401bbe9d4a06ef9a7a4304f200a5015fcaa79e0e"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/tonto/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/tonto/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Vitória",
+      "action": "vitoria",
+      "file": "production/sprites/final/fujao-esquerda/vitoria.webp",
+      "sha256": "71cddab3a01f479d9d4ad8583c11868c7e6ef5fb67c156d2dc858fc7b21c40d9",
+      "bytes": 435076,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "e350e9512816ca0e45d0f995feceb8b54a9cdb7e3e7c0e155665e0333461cace",
+        "3d5bc6787e292dee4412dacf2679e64b15e94edc2c91e861b85a7ef4153c8780",
+        "e53eb4f6eb0bd546a1c706a640dab69c7e99dd47ee77dd52882cf9df7d7326dd",
+        "b3d56a2bedbdafb6f95392731da777e77bcaaa90b555d1285f38e09f3b7b3d2d",
+        "bac04debcac6fb7307788cd0f2be0ce050385d74b41c86ff7de4c200376246a3",
+        "008d47d18682879277cb243a211b2f86e6c0f3b62bd489ca7f369e74efbea44f"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/vitoria/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/vitoria/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Leve",
+      "action": "golpe-5L",
+      "file": "production/sprites/final/fujao-esquerda/golpe-5L.webp",
+      "sha256": "faffd52c4f2eddd37407dc609f04b118e8be0f187df342e9b2a5e5818dfb46c6",
+      "bytes": 514836,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "1c13d797ae3a0f26521eb8edc3d7b33cec8a2a6365aa0c34e8a24210b0f36eda",
+        "61a671150705ddcb2c37bdf6941bbc597c8ef45c90b281fdc243b371369166b4",
+        "911500bda3bd25e3e0c384d600321f46842f4e8ba4faaeffd209dfeb6d1a4ac8",
+        "0ef52673c58f974ed9008c4db8662c7416f085025f9b3ce1bed07b54edf53317",
+        "3443a6c844a97c27d345e42d39270895707716697a21bd863efc64f6da4df8b3",
+        "89b9f75d6714253adcf03483a7d1741e9bc169ebcc1d47583aadf17ff740b24d"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-5L/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-5L/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Médio",
+      "action": "golpe-5M",
+      "file": "production/sprites/final/fujao-esquerda/golpe-5M.webp",
+      "sha256": "72f57bec060ab97fd3908216f7b5f62f1c49d982633f0cc215f491ccc654b408",
+      "bytes": 509196,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "dc0c18bdc8bb192a845f8befcbd75cb0e1c3f5de2efd1b52caa2e05c3081788e",
+        "44c6ded6bab2e79e3edc31f0220075ade0aab6dc9969d870425a92715ab34c5d",
+        "95ae2880c6f2c75a6ec92630e27c0019807db5897041d31f490eb97336896656",
+        "6feae7dbc59a6812aa6f54000476c0af325d755f5727af90914c972c56cf04ac",
+        "4d07b707a40c5eb73d348532da539fc52e1af5d51ec3f7bf15db23fc962433d5",
+        "139d2b79a34bd997eb9e0f6f7bf6b77e2891d7a7cd5ac90d4c5f585f47d69199"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-5M/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-5M/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Malada",
+      "action": "golpe-5H",
+      "file": "production/sprites/final/fujao-esquerda/golpe-5H.webp",
+      "sha256": "58987b7dba7abeab209befa0f3563e060f8e67d014d84e5242382e2fe007f511",
+      "bytes": 547576,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "c208cd11ecbd37782d1437640b0c18f96186bbd71899ab7d101424a01b0de18b",
+        "a6fd321a0ed5d0ad880ac9a7c2bd4ca75ab0354b637f902ccf72e8009858f829",
+        "54cf1fee0b69941863d7097751e4f4206d5ae446edb0dc11e9836d8b81c66c8c",
+        "f1cdc4400a95e806d968201129f790767df594436646ce8ed64466c75e37120f",
+        "bbe83b4ff43e95b845828da1b3dc7c9ebca3c33f38d23ea9ff6df87d2302da29",
+        "4a9d67e18c0066bf9c3bb5f4dd1e896140b9549d5d684f6738ff4f0d1db61b2e"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-5H/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-5H/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Leve baixo",
+      "action": "golpe-2L",
+      "file": "production/sprites/final/fujao-esquerda/golpe-2L.webp",
+      "sha256": "a4d35879536c699ee90b11ccf9d551f3276bc830912b20926ccde7c14260b930",
+      "bytes": 512026,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "17b4392d7fb3fb32b2e050fca399dc6f74f57750f5711c08fc531fdcadbc2bfa",
+        "12790c5d115a3cccb43e450b57d4361706c1d9915c7cb0913046a9ebbfb82b5a",
+        "26d24fe83a3083324733e479a26b82f77ada9197a511bda83be60c739aff147b",
+        "344fa40c1f58f74077e3ca27f7918d4c1ee4d0821bd6b0092c64e2e1acdec6ff",
+        "f4c70fa5a808e61f14157d225ad8198d2458053cda26411ae9d5675e3de41365",
+        "02cc90e3784d91dd9597f0e15b66e4b8e86fc342c6f88e4276e8ec87c713c86c"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-2L/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-2L/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Médio baixo",
+      "action": "golpe-2M",
+      "file": "production/sprites/final/fujao-esquerda/golpe-2M.webp",
+      "sha256": "8e9719794b8e79504afb9fee50b2603f6eb959b85898af09fa5e116627804e4f",
+      "bytes": 499140,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "1e0f6dbc1c42e8e18c4ed73c901728a3a70e84e6143e2948ca391cd42bc89469",
+        "99aa8a16639d207f783da95070d80112c41ae9e1aa7774f7e0a258cbe8d76fcb",
+        "900a48ef7ea03b8ba546f39fab31f72561f51323e75e2cb498de6fabb78349ce",
+        "7907540085305f944ac9eb1052c4b169df0998c427f2255738ede26cca15b9e7",
+        "acbf1912c9b2ad7d39f43c8f5aedcd334e8085b46e2f448d8ed9707ff50defe5",
+        "c422b375e921aa5e4db1459a1ab8bc0fdd8006a948e443f8cf644e2b767d1520"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-2M/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-2M/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Gancho",
+      "action": "golpe-2H",
+      "file": "production/sprites/final/fujao-esquerda/golpe-2H.webp",
+      "sha256": "e23eee3351bcd017762ca61cec87e9a7d38ee6d44341b23bf4bb93632ad37fee",
+      "bytes": 496758,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "02c8f298272b1278b4cc04e7c75279d668941361ea8ecf79f10711ce20eb25eb",
+        "f6382a363148d2d42010a2573dc0ae9ea3d07d00038cb4f16840d12a5be6b070",
+        "dc7dba1749649053fd9390ac9055adfb1e4cb4b6e01929ae6dd7cdc85f992d91",
+        "4c18739dfd29ff0032acef7a9dc360f222bb427aaa5540a6c7a2e4f29ef646f2",
+        "046e32b445644d986be6e923c5c7ee92bd707aa027e32326bb8216fb40fc2001",
+        "5ba3b5340e7325a2c8ed459be6236ac3e4b9e9cf00ba371657930e91abf97d93"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-2H/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-2H/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Rasteira",
+      "action": "golpe-3H",
+      "file": "production/sprites/final/fujao-esquerda/golpe-3H.webp",
+      "sha256": "6f1f423232405f17be9e985ca9eeec42ca514b530777ffc0f4c1796a3d4a8707",
+      "bytes": 511368,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "3d88635073526108a6fd584966065ed88718b28684f35a542376a0ff2b710d3f",
+        "8efdb7ad7180635a7f62fd9be090443696df21964a377c9dbdaf813e03eb1b08",
+        "23a49ca9c5be1ea6d5086d213f729742428acb13d1034ebd699c58a63da741ea",
+        "87cc9934c421cf99a3f161d7f6395c3a91aca8801919341ce54f1d677eba670f",
+        "f9d7f1495cc22cef3aa963bc168a9a58a6c66dd239744497134be5bf219ca0cb",
+        "1eb90084b2ee473a363d0cd1b124798e7e50b6dc84e2dab5c648755fb8fc9352"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-3H/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-3H/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Golpe de cima",
+      "action": "golpe-6M",
+      "file": "production/sprites/final/fujao-esquerda/golpe-6M.webp",
+      "sha256": "1b36dcb85d2bc300c5c8787caa8e8112ebef1dd88e29cd1c4b68df4e188bbae1",
+      "bytes": 512844,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "850608092ff0fa8e9047e61b0a5923d58bd97f172a54672f8a7f38bf5b2258bc",
+        "12f2481bc5d81926da1e9dbd46e44eefcf733e3f19db4d14967b43cbc996771f",
+        "b40875074a1e2f3e7da7025fd3cda2d1ab5b1d7c934ceefea3e7f07444e60da0",
+        "5f74765fd8e9e6cee4e2a34d8f10d28e8aa95efbd69f6f12c6d4d52ff9d7eaad",
+        "ffc3f7b97e1c3836aea2ae9e5a4ef34e032588f636927da72f24310cf0f42719",
+        "252fab4ab22f513a4586602d93418844e7e68d185388a4130e0a8a5b0bd2a687"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-6M/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-6M/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Aéreo leve",
+      "action": "golpe-jL",
+      "file": "production/sprites/final/fujao-esquerda/golpe-jL.webp",
+      "sha256": "c82e5201968e04cadc438cbe4715696efcd9d51dfc00221b93f5a8b2e9fd68dc",
+      "bytes": 416968,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "89650ee736b6c5788dc7ad54b89ea6f7c7109201f42154516013e7f11c9eab26",
+        "f71902a5dee0906d271b0746a2e4ffae88f7c8eb1af4fa0eb127b143dd42996f",
+        "fb115fe4748bc4c99f8dfa0bab51f8dccb29749e31f58cfc95f9f3237d38c2a1",
+        "d48aff8facde1759ff6224c2b06b4dd47d585425314b2f20a51b9a50b482263c",
+        "638dc61820bdb6eddee677ca4be80b5ff4f365058e69a0e4bfd5a0e70db24e8a",
+        "e6ce4597af2079fdb85637373a1027511b7247f9b25ecbfc37037fda8ff948b8"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-jL/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-jL/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Aéreo médio",
+      "action": "golpe-jM",
+      "file": "production/sprites/final/fujao-esquerda/golpe-jM.webp",
+      "sha256": "ec87fd9a8fc76c14a31f5eacd496ffa24cc0d8c4b97bddd53a2a85d45243d3a0",
+      "bytes": 483198,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "706b91fb68cdf34c8bcc4e01605cfa69e9c71ea50dc9e19bdf98098989828437",
+        "4c54e0bf0054ca4ebacf0df6fd7c2d929eff974b41d3e692f5a0945f5e972897",
+        "ece04fcf23f140e976a236819a060ffb02bd42ab573ef2a860e54408f61e02b1",
+        "90310858f4f8201174a3698654d7822e40b2a81875af022f1ef7aa2899aa0e46",
+        "c18054bce06c75c9fc0956b258ea8c087c703a504f7192232160f7f4b60d895d",
+        "0ace74b2ee9286edbd8814f9796c0480f24758a12d9ea9c587c1aa7cad985d14"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-jM/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-jM/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Aéreo forte",
+      "action": "golpe-jH",
+      "file": "production/sprites/final/fujao-esquerda/golpe-jH.webp",
+      "sha256": "b382652c43001e4d87f84c506777cc974e11f643fcd00322826183a536a38490",
+      "bytes": 501266,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "60f48de22327638115d420c9dc48d887aa62bdf3eaa3b99c0df4c16e808d8374",
+        "b70b952eba0ed141668104b30b4a7447a0d76de9adfaca777ccec66c2f2333b7",
+        "e842c3c08ee1ac1b5239741faf270854e7396be544df9ae7a3f231ccc51189e8",
+        "90672ee561986fbe6a8cf20f117512f31894857f429eb4ab3f50dd5d054492e3",
+        "75501a2bb69791593542eb798534177e97d3bf7c894f24e9c6a5241b96dadde0",
+        "072c510bd1edde20d71ea04a77bbb75b8f2c149c4603f234c668792994781603"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-jH/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-jH/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Agarrão",
+      "action": "golpe-throw",
+      "file": "production/sprites/final/fujao-esquerda/golpe-throw.webp",
+      "sha256": "fba5625dcd8fc346f54511d80e39b85f0ad8b78db342a9624dac1aabdbcf5874",
+      "bytes": 561878,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "8c46e4d21c55efeb5807f2ced6c9d048e1e6f4f34978279e2f0dc0e50fb44410",
+        "0e5eb0feac2b5574d3d9e7eafa38a4f984825da29da40af390e9c51e4bfcbe3c",
+        "214774ca87abe8d66b723b7b16801047280dbb535283f9956437b28cc71f8e13",
+        "8f70d91d325dda42515b6f67a60bb5cbe170f69ecab8f9768096e6b2f7817719",
+        "e95a878485519134a41f009832c177f9591fe4bbb717696b10aca008a3cd75d4",
+        "a89229c3147c4febcba08e78f5cbff2b9231d8f7a8b2747fd31c602deb037c3c"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-throw/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-throw/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Golpe blindado",
+      "action": "golpe-blindado",
+      "file": "production/sprites/final/fujao-esquerda/golpe-blindado.webp",
+      "sha256": "1e8d0d1be7fc986c6b4f74a35ba2f101bcb276b4f11afcc90c1bd1cbb524186b",
+      "bytes": 477216,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "7c33baa820b6b75d43e442f24406f834f57602e5de2728ed1cafaf56bc3885a7",
+        "a98f12184580299e3d57c1a8cab4825c5700d81d0da57014b34486a0b23bfa01",
+        "b93ee3b359dc819a87481bf4120804b1ff8c7f100d68b7abba6847678cf0fba4",
+        "217eace0b461970cfa98fa088850be1a6ea5955c870d8673722ea14d49df3ddd",
+        "df30d7e4e9efa6da53b75203d129571d0378fc93502250edc11709b6da8fb72b",
+        "4eda97a179febd6a521b28cc91131681eb12c586b8cbdc0a8940c2033d53bba5"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-blindado/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-blindado/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Mala Arremessada",
+      "action": "golpe-5S",
+      "file": "production/sprites/final/fujao-esquerda/golpe-5S.webp",
+      "sha256": "b53ff162dbad2d8ca321e7e3796264674db49729511f2a4226f750983d5dc282",
+      "bytes": 524618,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "e11fee308c933cbf93db447058bf069b50bc6b175a63e55ae55eafb5977c6fef",
+        "246b59cb545ddb67b5fca6edc5e3cfc3a00dbb681804502f561d11c93acbd542",
+        "4ccd7a152710f35e6a0be2c4a1b3dfd3642ebc271ee0ed3eb6346c6c04f865c3",
+        "ee3e16a40506b657540fab744f654efbdab6bde034770931f491eaf0789b1e42",
+        "3ed72577905b77e70d8f83d108703e0834565fcf3e8c11cab82fb9dcbcd7ea7b",
+        "8e087b720675774ec56fd61b07ed50c91e81e24c42613ce963eb0181fcc57b4b"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-5S/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-5S/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Mala Arremessada turbo",
+      "action": "golpe-5S-turbo",
+      "file": "production/sprites/final/fujao-esquerda/golpe-5S-turbo.webp",
+      "sha256": "bc8bb4cf9dbffbf0c35d8464a5b125aca87976ee931810fdf71a29c1f37f2812",
+      "bytes": 495370,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "2789d233912f31babcf4dc8e79650ba87bfc995c9431af42587a3f8fe4f8bf72",
+        "f3419a2228e639642c87fbbd4fb756f8d83272993b57a3bdc7768cc37d3a42c3",
+        "79623c8cfce6a6644fc7f5ef9c0a9d9ba09070510ef90d33a976f58d20025f4b",
+        "5f70eaa4c021400b2685cad468200f26d15e05f2027b38f3ef0ac4d39268a134",
+        "63d30b40f0e8973c6ed185bba217feba423262fb3346249a13673b95eb229b1a",
+        "56fb26a57887438334928fa53ec704d5c277d0734363bbeed9c63346bc3a8758"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-5S-turbo/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-5S-turbo/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Mala Esquecida",
+      "action": "golpe-2S",
+      "file": "production/sprites/final/fujao-esquerda/golpe-2S.webp",
+      "sha256": "86469b10c2e17e1a88cb2b5a3dfed1917f86a3f61ce9a0e0ee853fb4969587d9",
+      "bytes": 430462,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "01ca4566f7f3be8c8e60691eabd9cb01223728530ce4a048767d91e53dfd9fe0",
+        "8077a85c8e6576b8cbde1850fa7c67ffa5d57397838d6b55279159d8b5801457",
+        "1f8c596140e4b17a7719ff77287fd39f28927c2070936fda5bff9f4fc402f3b6",
+        "8e58754dbdb3e83be8e11d11f0bdebbd78b7be6fd1bc3ee140b6e9aa7579a2ca",
+        "6f1f2b75042b7a5a45b0ea13455c5ec87a22e2726764bbd6e832682093e07bd3",
+        "7f35e0eb6fec846fe9f440e53cd70c49a63a27b1a42df21a7152e0476479ce9f"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-2S/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-2S/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Fuga",
+      "action": "golpe-4S",
+      "file": "production/sprites/final/fujao-esquerda/golpe-4S.webp",
+      "sha256": "30daf479baaeea99210174b60f54190f87d7614e77ff7c45553036a96cefec05",
+      "bytes": 416908,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "97839a6b32faafaf342bec30372deeb270baf2c4706512c3bfc6c64bca7e5501",
+        "d70a7e12a3d1bb025976ef14a369e21cfaacb91a83f388b760edb3eb0da2afd6",
+        "f1a9f43bcf39d5a61ef6ae985518d705f5d25d40eecaf398a04f6dd8a323a62a",
+        "fe306acb07a1d3b218f8d5987a477bd167de83962977ad8704fad5fd0a960d74",
+        "9d24299e1912e7e8f4d78e2d64b048c95f6f711639eca2d71052a30679f9af3d",
+        "463fe0bbb202e31d0aab6177ef05ccb434741802dff75c3178d63d8a6818e11d"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-4S/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-4S/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Carrinho de Bagagem",
+      "action": "golpe-6S",
+      "file": "production/sprites/final/fujao-esquerda/golpe-6S.webp",
+      "sha256": "b8875ebd3170366c7b923847cb06a2753193b8baeda910c19599dd3db35b66b2",
+      "bytes": 395862,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "3c28fa6b636b5f297e3bb0eadc0482be9ba62c8d744de33f896b3021c5e2a04a",
+        "bac2ecf06bc9ecce7e33db62029fca7e17f391a97afbd2e2fd4ff05442ece15e",
+        "cfaf617bf0c336bb4b0410887548c5e7412581ae99a1384155006c5509d19f78",
+        "6435efbb431b0b61ba54f4bf8069e5b74739f91dfd84a65fe461408390646ac0",
+        "7e87147f868c98c0f026762dfb45c485f867f113c1fcbba6136a1d34e9ca3ce6",
+        "5911eac88fc3954bb2638549fef778c5756748cf7e0eff88bf570ca89e872b0c"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-6S/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-6S/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Carrinho de Bagagem turbo",
+      "action": "golpe-6S-turbo",
+      "file": "production/sprites/final/fujao-esquerda/golpe-6S-turbo.webp",
+      "sha256": "91cf61349628ec2de2f3525d517b807aff9aacb5d48e91b7fcd7928dd3791f47",
+      "bytes": 398990,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "f2d3655deb15ddbb560f2a6b00ba20221bc04f2951dd9863fbadbf5fc065a98c",
+        "2dd7531865bb348a4794b89ad44e85b8ee75acb7cb0f5093b561b5a5291ad615",
+        "6de8e705a62d8c745a9b689f6f231e842254b8ac16decd7b6ab1d0e4d81f2580",
+        "3bc5601694de9534542c8d28bd6dfd9ded497c63bd3bf52723caceb85b471042",
+        "649a5f21dfb30d7d69c771ef23f11d284de0d13a8e2d6e97350791c1146578da",
+        "606f5ef2e4a87ed9dccdecee2d1d0d63b803e3f8e0fe3a8b44d1de7c91f1fa75"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-6S-turbo/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-6S-turbo/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Pista Livre — quatro contatos",
+      "action": "golpe-SA1",
+      "file": "production/sprites/final/fujao-esquerda/golpe-SA1.webp",
+      "sha256": "66395367ac836670cde643c2d4d74b0063d6159572410861376056abd5b2e2d7",
+      "bytes": 504080,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "336a86c12f538979a993d4d85bc03336510e5ca7a6cc73f85bd5a94a6423e0eb",
+        "3b5399f6b3c6151abfb8d92f19164ff7118a3b24e97ea61591e20ce3a1be4a6c",
+        "e6dd116ddb8d0ace33485b0ab716a9afbbfa3e9eb96324b4cce079a28d723f4e",
+        "62a7110b4118b2d1c74647eb2ed33b5fd8d69d450abf24b3f254917e1ab8af4e",
+        "5ef6b4f6b60371f51105b9114789f5a2380f40e2d6b33571113c5466df77730e",
+        "ad0b48683133d00893d40398750576133f5385f5251c539a51b5e9542c9e3f1a"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-SA1/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-SA1/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Esteira Despencando",
+      "action": "golpe-SA3",
+      "file": "production/sprites/final/fujao-esquerda/golpe-SA3.webp",
+      "sha256": "6a935f735ec8c5faf95bd22bd6fcab9e19f3a95434bf9b3d45c55041887cdbc8",
+      "bytes": 518722,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "3c8e2821fc0f3b2accb36e692a421eab1c77994995654c5f2a8d25040aa81c1e",
+        "e644ee89bd100cea40c3eaa846baf13c3fbd380a7731391b9693f11ce7cd6030",
+        "d0fa95593e14f2b588451a32e51264b08f8e9b3a90074ef46d497f7a5a8510a8",
+        "8e3741fdbfc6c5d2a92f1245654f53625907f29ce38221d7fdbf23a8c0d20632",
+        "a4d2de67c7c272315cb02dc0a88f1a2aa2d8b522fa0a53a3ec42c4028b21e826",
+        "44a33c905bb80c171d697a60c8ec7c72868d39947c07ccd62b442ef841b73894"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/golpe-SA3/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/golpe-SA3/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Tentativa de embarque",
+      "action": "embarcar",
+      "file": "production/sprites/final/fujao-esquerda/embarcar.webp",
+      "sha256": "e0ab21e016e933db28260653f54ddd5795a781d4df17b4e9b66a9de3e2bc2c3a",
+      "bytes": 519820,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "5981ecdec224e5f075bbf5087535adce2ba0373d47d80fcb45bc3b9988fc53e3",
+        "41462c5ed46486ec93a8be24950ecf581c66b8655b811e1353db19500d1a1c61",
+        "b19448ccf124aaf13410d05540539617ad3b29dda4fb059daaa1769b63524d86",
+        "dcf1166e28b912a6b18ef603808cc9134f8a42fc3a4d784da4b35051d64fe088",
+        "acf4f8fecc79411243212342afbe0dacb7a0a3ac94a5abe41db452e0e1a5c326",
+        "325f437d19921bb154c697306afb996316e11f96c50931e7e8b7fb09d6e37674"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/embarcar/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/embarcar/grupo-2.png"
+      ]
+    },
+    {
+      "side": "left",
+      "name": "Encurralado",
+      "action": "encurralado",
+      "file": "production/sprites/final/fujao-esquerda/encurralado.webp",
+      "sha256": "f3e13c2da91c60edf36db9c5f6652ffb51e3a7c781bcc4826aa8c8bca86364b6",
+      "bytes": 485128,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "e9793be9fdab5f42e1f38812496f63e42079da2f6f40efddaa8b7cf1e81683ec",
+        "811b99dd8099d334e814c07a463ede0f8586f11ae1adc9c26f73154348f17770",
+        "93c8292000b19abd44b43fdba7b8ac5fcc62a0be3c82927015b391a9174b1cb3",
+        "6c12c173c3bece710c8a868c6162e841b79f309e0ebd7328ad746291c35ebbc3",
+        "4adefb5ebe183447d32bf23cd32deb7101bd0d4e2050b151144f541a9e83f347",
+        "e5ef1063eee87a5761383bae162711e7ee3c38577fc14a0c8cc6305bc75c22a6"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/left/encurralado/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/left/encurralado/grupo-2.png"
+      ]
+    },
+    {
+      "side": "fx",
+      "name": "Mala arremessada",
+      "action": "mala-voando",
+      "file": "production/sprites/final/fujao-fx/mala-voando.webp",
+      "sha256": "505276c975b16745930f2e537b1294764d02a798a5c6581ad1a03f651a65a651",
+      "bytes": 759078,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "162eccd7b00d418d7be4ca983104612aef452ba42307525dbdbbd49a83a96d01",
+        "f957578a5d826338e1f18d0fd72d5f315ee68d33ca8b8e92773b4e5b6768ffa3",
+        "76724df2ee9e4598e88ecb947b05eedae12d4bbf47960e73cb9e470d0b201bb1",
+        "020bd95918110dce1076240a3583599b721051970fbfefaf7caf6498cecde091",
+        "46bce6312663923f66bae6df5864e7c61e717cab2adcc9273984514d5992bfea",
+        "18dee8dc89853a82688a79ce677a9e645a42a633639acd680489f6ebcaa8b4c2"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/fx/mala-voando/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/fx/mala-voando/grupo-2.png"
+      ]
+    },
+    {
+      "side": "fx",
+      "name": "Mala esquecida no chão",
+      "action": "mala-no-chao",
+      "file": "production/sprites/final/fujao-fx/mala-no-chao.webp",
+      "sha256": "58fb25058f24f9ab4a7e1540c7b08a14877cf18457c250b2a8adb668e217eaf1",
+      "bytes": 555556,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "1e93eb751e002d7b432db9e3d686e12d4b61b7e0e95f21bb66c8a2b7936f2290",
+        "47a380d701ab4983d22555e9519205291415670b859aac7a18bb961d34ddeed2",
+        "bf36dfd1bc3c5f33374ad71ef991f545c933878fac988095bed70711d50f6d48",
+        "9ec5205536cd587a28941961901c9d42547a9c09c755b0b71dbbe9e3a5aaf3d3",
+        "79ddeb9f75696d62e77e8c26b99bb793471decf699a1aea64577c3450b01227e",
+        "36094565da17c1a97ea0a51039a5647abfe0acabc03f3c66998f67965835ad01"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/fx/mala-no-chao/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/fx/mala-no-chao/grupo-2.png"
+      ]
+    },
+    {
+      "side": "fx",
+      "name": "Mala despencando",
+      "action": "mala-caindo",
+      "file": "production/sprites/final/fujao-fx/mala-caindo.webp",
+      "sha256": "796f5e5078543d2e55c3374958727b63a4f583cb638cec9bc2724683125dc5e0",
+      "bytes": 787188,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "598babe5251027e61cbd46cee3a3b4cc0f249871f86876712114a361c9b0f587",
+        "0014bd5587478fa8e43cfd3071916c5d4a83707b209e64b0882c84b5ab56386e",
+        "57bca4e847b922b926c2032e594ae819a868b2afc1ace531864bac48c4045270",
+        "ce0741694dc09934df13538a5b176fdd5eb6d09ccad259e67d22b564ec700ed3",
+        "4de303c863438787ab46986f0f276279cde4f587a39b7dd2653154ffd6234e0b",
+        "a0ab0f642efa83d5a05580d8081f511a07352afc0ff22d9aae4add0b172ecf54"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/fx/mala-caindo/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/fx/mala-caindo/grupo-2.png"
+      ]
+    },
+    {
+      "side": "fx",
+      "name": "Impacto de malada",
+      "action": "mala-impacto",
+      "file": "production/sprites/final/fujao-fx/mala-impacto.webp",
+      "sha256": "3fe5fdcc137494f5c69ad868fd8129d52a195a67baad4527840334ebf641b417",
+      "bytes": 240928,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "1108b3ce1866836ee589a75efb24ab2a4472ea77099a1c479d6bc273e89ffa8c",
+        "1ec8bc745dcb6908245bc5e49d87010ba915136d9cc3e08e4bdaba7e368c269c",
+        "dd5b8b059b9d73d0df0b54f2609fc9c1cd59313199dd1d3f376f75836563cf49",
+        "62b74539e313bfb2549ee733fd56729bdf6d3dc9ed46e3d8a2dc2835acc574cb",
+        "f07f56da82657d9c67d7867f3f0baaa8473a74c73349f5ba8db2132f8c3c2642",
+        "9794b71097f128f708ec7f2326636770b7a3029ebf2f6e6570f759d2daa7c354"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/fx/mala-impacto/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/fx/mala-impacto/grupo-2.png"
+      ]
+    },
+    {
+      "side": "fx",
+      "name": "Aviso de mala caindo",
+      "action": "aviso-queda",
+      "file": "production/sprites/final/fujao-fx/aviso-queda.webp",
+      "sha256": "52d5c294e4b69d6044016f2ebd288721fcde68c4a89c99006ea6d25986154756",
+      "bytes": 627332,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "78e434f204012a78061200f22b5a00b18ef6a96b2dc23c5a352269c1e8500e20",
+        "e4d6aa736b319c44368d637fe434be52263df07b81c168f9fcfb731224d5571a",
+        "9e35db9b39eea6cd42c770971e6ae08696dc67b9aba8e37e48816e5081566cba",
+        "ad5e94bc7efcd775facb2cb69947e61737cbb0e71497a9799b90bbc8dd945c6d",
+        "c279dcb812a742536d8d52a4d2475a33766d5c358727f99eff745d185606a895",
+        "21e05a387c06b7b179beabce215f261d3951299ca8b02e69d523e2daa9f85b91"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/fx/aviso-queda/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/fx/aviso-queda/grupo-2.png"
+      ]
+    },
+    {
+      "side": "fx",
+      "name": "Carrinho de bagagem",
+      "action": "carrinho-bagagem",
+      "file": "production/sprites/final/fujao-fx/carrinho-bagagem.webp",
+      "sha256": "a9defa6b8002764e4b2cd1374b2804cc2afecebbaebdb0d63cb81074b2ff7a08",
+      "bytes": 1007800,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "be570aab53c351bef16ae64158cac8a47634e18ba7ce895788d2b34336f946cf",
+        "03cc4ead14663f997e16066d91deaf58b2db6359ba2522a044364ccf3abe210e",
+        "488c19997058b64da9d68c927869ec3441c3926e42459e060b7debd14a931173",
+        "acac976d4dca27a80427b08ddc1a065d5757ff98ec701f6cb310f8a2d9be1e86",
+        "6cecc9e2342d08fd5781788b6f126468deefb7ef46929f5a5ffeda30c68b87be",
+        "0e0e12726dffbb4e381ab140012729ad3dd605f74aeda14e581dfaec95ffe1dc"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/fx/carrinho-bagagem/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/fx/carrinho-bagagem/grupo-2.png"
+      ]
+    },
+    {
+      "side": "fx",
+      "name": "Carrinho turbo",
+      "action": "carrinho-turbo",
+      "file": "production/sprites/final/fujao-fx/carrinho-turbo.webp",
+      "sha256": "d6d54644b9aa52f6e4ea567a188b028ad9b276a24f68b891a8779f8c793d5d88",
+      "bytes": 824728,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "56d65eb1c9cbcdf2f0d533843e16949c7c330baf17d9353239953d1739496e77",
+        "422ec08c76a41094eb016d73fe07184eb6c445ccb4752495cde9e760cdbb7e0c",
+        "7a74e6b0be47422930338037cd78298f586751affb5c40a59cbf16a5b6845651",
+        "65d4a43cbfcd26cfc9a3fa9fe48ff89cf3b25de4ee336a5697c95ffa871610bf",
+        "d4b81e3c8645ca0bdbf075b33ca87b0e7d2035762ccb1ab236a9d192b1862dd0",
+        "124463a6a2ce8be3a52ab3408664cda4d8e52128a0751ec494942957258ddfb9"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/fx/carrinho-turbo/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/fx/carrinho-turbo/grupo-2.png"
+      ]
+    },
+    {
+      "side": "fx",
+      "name": "Poeira da fuga",
+      "action": "fuga-poeira",
+      "file": "production/sprites/final/fujao-fx/fuga-poeira.webp",
+      "sha256": "88412ebb06d5ed37a921acc6da92b6aab7f244f3a38d89e159539cbceff17fb9",
+      "bytes": 213320,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "715e6f45aa36b1666f0fcf12cd226b09e86605ed950c8da28e6a7dbff801641c",
+        "350be9f35f697da0416ed840064f0da1f37a9f9be56e20ced7431a67081bd51e",
+        "d98feac8660ad51f1df59fa7264a59ecc9bf13628087d0c8ac9f4facdffa4b89",
+        "684247784b6b38f54b3379c25c9375f8e51be6865c1fefe1df79c58882fc5072",
+        "025439c8cc86fe7b0abaad90aa14c103719d8f0c970d241a3915d902f435ad15",
+        "f60cb8bf76525a1d22ac67e319b4c57f26e67de24f7c5c4a25bb172b56ea9f73"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/fx/fuga-poeira/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/fx/fuga-poeira/grupo-2.png"
+      ]
+    },
+    {
+      "side": "fx",
+      "name": "Fuga pronta",
+      "action": "fuga-pronta",
+      "file": "production/sprites/final/fujao-fx/fuga-pronta.webp",
+      "sha256": "82916d75295b459f0cbf8f3a3595a95202bd4c27e3ae44662b2590fd686a2b1f",
+      "bytes": 430990,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "e4bc7f3c90607ed55658ab2ceca0df9521b8a5df90149c5698176dad9082fb48",
+        "cadb40979bafc0784702dc56c7f9836f46237fb3b729bb174c20883936847b73",
+        "cd91c9853fd8879758b8de876e8bbdce9d913e61d0f5154a276aa90af32b2cbe",
+        "ccf90d497b5672f305485b18cd1890cd68314fba41f0d47e9d9cfb4492a367b9",
+        "2bea435da62bb60e585d642fd8291261301784dcda6b0a9caa7c7b0c7f4ba40a",
+        "0e7a07679c285742637124274d0622ff614a3de8c39c0832c648f1518ea33d59"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/fx/fuga-pronta/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/fx/fuga-pronta/grupo-2.png"
+      ]
+    },
+    {
+      "side": "fx",
+      "name": "Aviso de encurralamento",
+      "action": "encurralado-aviso",
+      "file": "production/sprites/final/fujao-fx/encurralado-aviso.webp",
+      "sha256": "4ce22105f51364a97b75367a1dd498641a08a7426c6a2d1e90db6f0173aab2ee",
+      "bytes": 487336,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "a612fc1c4e686c30fc4320428ca554e4dab2e4890a45bf1b2cb7498ebd516d6a",
+        "3d02b7cb6cfb461027f22e4004605b72a76953cafdc3f9a8a4081639cdacd979",
+        "81130b2e1de0c6d8947f51097e4afd19b643798fb07a438fb74533202eba5535",
+        "a05cf2856cdbc39321a5282e2805aae9d8c1305eb2be7a88b9742184c7e62409",
+        "fbce0b7fb3c06f6e6c826187a895963bec7e6fadda5c538eda73aa12a1c6b082",
+        "da45dd139f5222a7c35a31f4f86a73e311c68914e0fef9d739b77b8aaf9e3e8a"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/fx/encurralado-aviso/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/fx/encurralado-aviso/grupo-2.png"
+      ]
+    },
+    {
+      "side": "fx",
+      "name": "Progresso do embarque",
+      "action": "embarque-progresso",
+      "file": "production/sprites/final/fujao-fx/embarque-progresso.webp",
+      "sha256": "d985d4d84401df7b241b53b139422281291b9802394997eb735cc2e4459da9e6",
+      "bytes": 434812,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "5078aa2a5e3a0eeb309988bb1a73defe4ddcb2b1143290bf4413197a77134e32",
+        "599be664c4b6e260b37d3257845aa9be985c7d43aabef585c4e43647b906ee19",
+        "c2f88eacb2bfc6734b047e258f78c5eeaf8d1764ce03ae8e9a4a79004334de23",
+        "f6c1a25f53e704a274e56e250fc1b0f45267d1652d4de0cb54dfc42baa7f0179",
+        "bb4d965907b8b0af62995e9e695d34728b8116eb936f20b9cb6849b2e296b5ad",
+        "8a16d529f81e1aa729b229ed4b6720af38088134d2cf05e17733f5a000472b5a"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/fx/embarque-progresso/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/fx/embarque-progresso/grupo-2.png"
+      ]
+    },
+    {
+      "side": "fx",
+      "name": "Cura por embarque",
+      "action": "embarque-cura",
+      "file": "production/sprites/final/fujao-fx/embarque-cura.webp",
+      "sha256": "3352a114722fd3f8cb72d8fe728d888c6387f3168faabe8909442f9a75486357",
+      "bytes": 415972,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "f6e4c6dc8c32b67b6933e42642aac6934b66da184a70fd2daeb67117b8e35db3",
+        "341230a882d3456db569a242e25e29900e9c76695586a612c596f6020ec406c0",
+        "1eb4acc5ae33545b9de12957f32147662f8117426b5452a8758f942c9c6a77c2",
+        "54e79cc8906438388841669a443bc6981def06f81a9a820731792b61df509ec3",
+        "6b8ed66ddeb9b64f3e28ef41c4545df4650178fb95c07bbc289f4c60f36dc352",
+        "f63fd0af300ada9160349bb3a5aa543e528bf6438308340057382435716184e2"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/fx/embarque-cura/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/fx/embarque-cura/grupo-2.png"
+      ]
+    },
+    {
+      "side": "fx",
+      "name": "Embarque negado",
+      "action": "embarque-negado",
+      "file": "production/sprites/final/fujao-fx/embarque-negado.webp",
+      "sha256": "d39a57b142fbc78598b54739ff8c1c07e2e243662b83a610f6bdb922d8479ce8",
+      "bytes": 505588,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "80c497a61f959149a00c9c10bea3a71351722c4b181d0d3d12fbce23bc456fcb",
+        "24fd25f87f36248b744fd1e37cef1bb86a60b58a8421c9d148499e71c6951521",
+        "c3d8d703a3ba14d8459a9e29680ce84ca42afc444b40f897a1a7350f28b455ba",
+        "6256abd4c3f4075107b581e11169e652d9c2c1961d34e53bd2c215959e96e574",
+        "96210302cf157630c8fc2595eb4359899e845d52e5df83f289cb35c607230ad5",
+        "319793d42819902c914082a20c9264cc88333dda9c424c206b5f370bf15ea66a"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/fx/embarque-negado/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/fx/embarque-negado/grupo-2.png"
+      ]
+    },
+    {
+      "side": "fx",
+      "name": "Impacto de Pista Livre",
+      "action": "pista-livre-impacto",
+      "file": "production/sprites/final/fujao-fx/pista-livre-impacto.webp",
+      "sha256": "69f64bcfb29a4e7db9b8aa9e795c52495b644e7be5933d66173a05a93e4ab0c7",
+      "bytes": 337350,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "fd74def18010dda830eb5524204849c800c3273352b61ed8480cf928120d8c6c",
+        "2434c5124a9cccb89493944c56a48b0e1246040f757de0fabf6928850c34e737",
+        "290d178c58e7d46e2c8c5ddf1eaba0665e403a490441f086ca36d449c02a3ac1",
+        "63067e57f0695ecf82fb637ba80c1c4add56e1402bbf00304de1775df4e57db7",
+        "55e0d2513a0d671d9d99ce38e4a65f0be85c12fdbc3558c217787e739030f435",
+        "84fb4d615919ceb2a91104d80d78a88ae26b17e06d0d8f11e50b8756a21f5b2a"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/fx/pista-livre-impacto/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/fx/pista-livre-impacto/grupo-2.png"
+      ]
+    },
+    {
+      "side": "fx",
+      "name": "Esteira do super",
+      "action": "esteira-super",
+      "file": "production/sprites/final/fujao-fx/esteira-super.webp",
+      "sha256": "7d7dd8ee782b92f1f868c27607b9e9df8e1fc7c083c15f750c2959524f1cba09",
+      "bytes": 473434,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "frames": 6,
+      "frameHashes": [
+        "cd955ca46affa431331c7294f2b1bd84d96f25f17138e7c57a2d14de1ee6ac6f",
+        "93b2a228bb635688e587dc81cf0c9df627460f834b5dbf6be287b7279f807b82",
+        "17601b70fd2d3848542941a34c8a893f5409ada3189d4454cf9153c83b1f6e06",
+        "b281e2a6e922fbca81f249f029a7fa9452968f52c59b575bec8becefc7c28c4a",
+        "80af2c1126ac4d992ac6053e60e46489699793f9434262163dfed5a650966000",
+        "b2d48e3ed89df555ccf8559321ae130e19bb4463492fe2b964409c53ff60625e"
+      ],
+      "sourceSheets": [
+        "production/sprites/source/fujao-v1/originais/fx/esteira-super/grupo-1.png",
+        "production/sprites/source/fujao-v1/originais/fx/esteira-super/grupo-2.png"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/parado/grupo-1.png",
+      "sha256": "b87d40547705466165f00218a741beeaf80307a80b5b8d9bf191bab592b0d939",
+      "bytes": 1166387
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/parado/grupo-2.png",
+      "sha256": "61985eb32ab5c3cfb65d42bf3f4132833e6b3dcabff83d1c378000c4e6865322",
+      "bytes": 1188312
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/andar/grupo-1.png",
+      "sha256": "4308334829d766a9e1749cc31717e9f49c66d71b75ed9b0afb06b412ec4e457a",
+      "bytes": 1008713
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/andar/grupo-2.png",
+      "sha256": "9b542941564b517cc8dc7cac9e19770aa0dd01fb94e9e24d36c4dbd941f4df2d",
+      "bytes": 986464
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/andar-tras/grupo-1.png",
+      "sha256": "cf8a573dd0b4e1b3a578f5bc9a02d327d35039af2d6cb5bad779994f71345b18",
+      "bytes": 1225991
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/andar-tras/grupo-2.png",
+      "sha256": "0bd8d2358486276b8ea59bd62ad6577339e39d208c3dcde306fdc1bff605ddde",
+      "bytes": 1148289
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/correr/grupo-1.png",
+      "sha256": "6a6e5a3e4493632f794438f0be6377b2e1e3b95f5138efd2037744cd1e058a1d",
+      "bytes": 1097600
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/correr/grupo-2.png",
+      "sha256": "27a46fedf79a57d73ba1b09793dcd2ddac238aa2c2a61ffbf16f0223cf3eb89c",
+      "bytes": 1029695
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/agachar/grupo-1.png",
+      "sha256": "b52720a9f3d3dcd96d140a2c662b347d47c4c77023a7566e15bec0e966dfb754",
+      "bytes": 1103488
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/agachar/grupo-2.png",
+      "sha256": "69151666925079c860653e670f245dec576783d920cd10a73f73d851418b2982",
+      "bytes": 1236223
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/pulo/grupo-1.png",
+      "sha256": "b3ab19f376756fa0d5c6c15402195ddd2560a33ec216bb7ce31be2ace9f31857",
+      "bytes": 898107
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/pulo/grupo-2.png",
+      "sha256": "a0e76d574aff235b43ffb6ad3d2f7442357870855261593b1590206d48b4b393",
+      "bytes": 968707
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/recuo/grupo-1.png",
+      "sha256": "e73de6a1e7569a3a575f7bb18c757170db64deed6fd289e4610df5b3d094ed85",
+      "bytes": 1072041
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/recuo/grupo-2.png",
+      "sha256": "a2b391cdac6c8da529fd5abd84a3f9e70ed39abd25fbae3afd870e310188d8e1",
+      "bytes": 1139385
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/escape-agarrao/grupo-1.png",
+      "sha256": "c879e2f6f07f7140af0bd4107d7679e0e575ffaa68e7fa57b15943447052e6a2",
+      "bytes": 1044700
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/escape-agarrao/grupo-2.png",
+      "sha256": "5a05cb123f1c0a0de7e6433dde569c98db54e4b6f81f7a8763ed6219c5790284",
+      "bytes": 993436
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/recuperacao-rolamento/grupo-1.png",
+      "sha256": "7e05f4900b55499affbe0540af9db301ce91883d69cd06f78d8f9d577bddf776",
+      "bytes": 836709
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/recuperacao-rolamento/grupo-2.png",
+      "sha256": "dd3e5abe3e0ad5127f95d1b6e6e21d5f1789b88b7d15251cee5f3b094d07bc5f",
+      "bytes": 966271
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/defesa-em-pe/grupo-1.png",
+      "sha256": "504705c10be85ffae10406132040ede4b36e0a19d01944e3478272f1714329ac",
+      "bytes": 1082522
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/defesa-em-pe/grupo-2.png",
+      "sha256": "447be198a3b71a1d5fd261e707ecb0c85d9957517a16c972664b850ceca6009d",
+      "bytes": 989153
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/defesa-agachado/grupo-1.png",
+      "sha256": "ca9644c949e178d3ea9a008c8386ee3efa7bdf07c241c7fc7ca58b376a81ada3",
+      "bytes": 1055689
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/defesa-agachado/grupo-2.png",
+      "sha256": "058fbd23206237711d388a52da206e35b97c3705fcbd6c38266631c0374c2909",
+      "bytes": 991461
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/defesa-no-ar/grupo-1.png",
+      "sha256": "ec3040ad5022bd0bb59aeaafa5af8b352aadea648bf3f7695c0c4c38d83b4fa1",
+      "bytes": 1018538
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/defesa-no-ar/grupo-2.png",
+      "sha256": "f2ff182f78564204c1b6271f907049f4f4f25319236b132bfc0761d045ab30a1",
+      "bytes": 1042207
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/dano-alto/grupo-1.png",
+      "sha256": "ff10ecf6c1f9ad2d15a98eb79b07f95a74cdbe96c2939793bf5ba119b108b8a8",
+      "bytes": 1223856
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/dano-alto/grupo-2.png",
+      "sha256": "6556ee57f7a9b5b5f8f0d969008c2db0faa515e340676ace671e30f797b385b0",
+      "bytes": 1195066
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/dano-baixo/grupo-1.png",
+      "sha256": "4c3c915085ec46e8c5eb1be7d58b0a15ee7616260cf8a25ba01e5956b7b2e5f5",
+      "bytes": 1188807
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/dano-baixo/grupo-2.png",
+      "sha256": "c29d9b2c238a124a80693b87e6655a7501ddb34af70b6ffdcd65e8f9bd4dd56c",
+      "bytes": 1124687
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/dano-no-ar/grupo-1.png",
+      "sha256": "8f6a32236f2324767322fb2b59688db3b575a8d4591c90721d8ba6b40f934bba",
+      "bytes": 1142012
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/dano-no-ar/grupo-2.png",
+      "sha256": "f179c6ed64bffc534a3fd22138bd30623f411b43bd7c871a78d9c182fc5d0909",
+      "bytes": 1242160
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/caido/grupo-1.png",
+      "sha256": "2c3f574f39321423f5762a1d4b9d8ae896719c8a0b40b3334e25b8918523486f",
+      "bytes": 1074222
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/caido/grupo-2.png",
+      "sha256": "e6374d96c7bfd9391cb41660a8601215fb1a81b307d5c2535db60849513a310f",
+      "bytes": 825165
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/levantar/grupo-1.png",
+      "sha256": "d731522ad20d878bd806d8a82357e1ad1e02cffaf8d779badcff797c792308b9",
+      "bytes": 934096
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/levantar/grupo-2.png",
+      "sha256": "682c5dcf6a8f1e0e72f268fe25b7845623e8a6242261b0ab6670d578eb89975d",
+      "bytes": 995962
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/tonto/grupo-1.png",
+      "sha256": "e58a1002e9d9e0747c0ed227d3fa3667535bcef0ff55da785b95aee2fc1228fc",
+      "bytes": 1087744
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/tonto/grupo-2.png",
+      "sha256": "d29c3a072ffdcc15301fc479355d9da378e180f741dd7bf9f6764178b89cdb3a",
+      "bytes": 1135623
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/vitoria/grupo-1.png",
+      "sha256": "4559e2cd0017a90915200c9022d79e5463a2f9b47954bab4d348b8eeec69ad32",
+      "bytes": 1040106
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/vitoria/grupo-2.png",
+      "sha256": "cf0e27cb1c2a90c6157fbc4eb59e3c54f897b83b2d9df8e2369bb54d83797c27",
+      "bytes": 1107186
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-5L/grupo-1.png",
+      "sha256": "7b305d8c7278fb4ef8aaa40f37e2c2e2d08ef5cedefcc894a07a6f77b2a61dba",
+      "bytes": 1120414
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-5L/grupo-2.png",
+      "sha256": "341a9a057055186b178f497ccd52091c3adfde67d443eddfbdec762de5c8c202",
+      "bytes": 1113068
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-5M/grupo-1.png",
+      "sha256": "c09d8a8c1e1bd98c5d785375bab90666f8847873e16a04c7ba84e8eebc1ede61",
+      "bytes": 1199207
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-5M/grupo-2.png",
+      "sha256": "45253859aba401c84449ce0f9646f722685ca1c979ef3db6bce4bc062a0aeec6",
+      "bytes": 1108030
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-5H/grupo-1.png",
+      "sha256": "7bda9649ce0f79adf4291acaefc29cea2e369b3e2aba4eff6abe8d1af4c96797",
+      "bytes": 1148353
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-5H/grupo-2.png",
+      "sha256": "c3ff9247c242d01df6783fe5307edb1c881fa9be1a94ed9369890f44ab997a3d",
+      "bytes": 1112520
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-2L/grupo-1.png",
+      "sha256": "c1a84eb3fe6173a386eb17b9987fbe76a20c0529c6debc53606fe6448dd48fe4",
+      "bytes": 1077395
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-2L/grupo-2.png",
+      "sha256": "c7d57771ab1439706cb51bb6762cb5f74334b3f1432e6e85ff3362d99ea11ba2",
+      "bytes": 1080171
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-2M/grupo-1.png",
+      "sha256": "40331a6db8d84263cebad8f92bdaa7c190040eddc06e42dea74e9dc963951576",
+      "bytes": 1108077
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-2M/grupo-2.png",
+      "sha256": "7776e0b32554429f7895269a4d14d278447704721471d239e364eab86efab605",
+      "bytes": 1067382
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-2H/grupo-1.png",
+      "sha256": "a09fcac0519b5172fecdb009ef3ae18e954c87b0eeaa814a3060adc9491af399",
+      "bytes": 1054984
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-2H/grupo-2.png",
+      "sha256": "bd61fde2db0eaa100b45123c6cb800f76a2f37c05237d637bc1ac429be88840a",
+      "bytes": 1173195
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-3H/grupo-1.png",
+      "sha256": "a0628d2fb7f1cfb6deecd7806e44a5a7cb33c943b9a564f2cb59c911f9494f15",
+      "bytes": 1080434
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-3H/grupo-2.png",
+      "sha256": "9174bd25bee9f0b6ebdbc3fcb1f400b84f27e9287d336b8d5613280848418994",
+      "bytes": 1001579
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-6M/grupo-1.png",
+      "sha256": "e1ca4a9cf8ab6139e0f92e1f011c3a5af890edd30d5c919c2b99d3a11171bce4",
+      "bytes": 1113929
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-6M/grupo-2.png",
+      "sha256": "dda601ecd917f37e22ed015c9cfdd14e37fa8af52d7588201ef7a3ccdabbf162",
+      "bytes": 1121037
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-jL/grupo-1.png",
+      "sha256": "8c29286f7211b364d9d4c4191e8f822e5087f400c13813fbcc80a651c1634ed5",
+      "bytes": 965437
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-jL/grupo-2.png",
+      "sha256": "89a5b50929f5923917c31a58ab6f6ebf6fad6aad5124bec6253a860394288669",
+      "bytes": 980357
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-jM/grupo-1.png",
+      "sha256": "a88f776fe97029f136b6289f0d01869ebc6ec8d1e1ea496b16ac4be5dfdd2c9d",
+      "bytes": 982899
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-jM/grupo-2.png",
+      "sha256": "44742eb250c49870473425e24f35590d3fd38256a55467269ec4cb8f1a893f7f",
+      "bytes": 1063515
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-jH/grupo-1.png",
+      "sha256": "0c17156504fcef7c1362877414d8cd0463b3cfa6df0b82cfcd1fce0b9f8be5c1",
+      "bytes": 997169
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-jH/grupo-2.png",
+      "sha256": "0edb7cf3859354f50c594882464f176aaa0434eab427a094d185f86301e0f5de",
+      "bytes": 987737
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-throw/grupo-1.png",
+      "sha256": "8c2ae7abec2735616c4fa21803263a1c600cba62296364d8d4667c71f0c9cc94",
+      "bytes": 1196197
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-throw/grupo-2.png",
+      "sha256": "b0410b30899a571f585b3bea90c75ddc1aa3606e5cfe3b89f22f629e97e6eab5",
+      "bytes": 1211798
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-blindado/grupo-1.png",
+      "sha256": "e17d253640e128fd4d2b860bb7cf03cd462828fcaebe54b5bcb2cff69a5806b3",
+      "bytes": 1051898
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-blindado/grupo-2.png",
+      "sha256": "fdf8c435d9f665e50c0c88685897f33f2733714ab06542abb852dbbf013711a1",
+      "bytes": 1054283
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-5S/grupo-1.png",
+      "sha256": "a757a42375f8e980303d817d262d4ef24950d5523c28d86509e476e815a3858b",
+      "bytes": 1149656
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-5S/grupo-2.png",
+      "sha256": "a2bc359fa5d4c540d68d309baf6c3d48f821f6444a038e0e3f27828ec8b9ad99",
+      "bytes": 972735
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-5S-turbo/grupo-1.png",
+      "sha256": "61da3c527253d282de7ec9835d162f9676aba7c2b25c3243392cfbbc20201fb1",
+      "bytes": 1152306
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-5S-turbo/grupo-2.png",
+      "sha256": "a0719604a1b11aa3c9d79fa014ca2fa3e97ce7f8c8f6c949731ac599f58a70a8",
+      "bytes": 1006175
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-2S/grupo-1.png",
+      "sha256": "fee1378c99bfabdb8a6b2e6d7de019d00dcb3edbdade383bbe20c93fde2440b2",
+      "bytes": 986858
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-2S/grupo-2.png",
+      "sha256": "6873196731ab967060580c780e2123972de37e4ef721da16995deaec05e5a119",
+      "bytes": 894611
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-4S/grupo-1.png",
+      "sha256": "39f01f6d2470b1998a31c8cb5c1a44410fcd19ca5e613d7adb600505ff901231",
+      "bytes": 955089
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-4S/grupo-2.png",
+      "sha256": "121db7dedaf3f32ea14fa100212f0bef56403da25c2995cc2ab97340695a6843",
+      "bytes": 985666
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-6S/grupo-1.png",
+      "sha256": "a85e4437af4e565398d3735989a8c81aa03a7105e98313ac3742004898cb7bea",
+      "bytes": 908062
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-6S/grupo-2.png",
+      "sha256": "46e69e71300a082d00563601a2d0c7f7628c2633d4bdcc1e7710720ba1fb95ac",
+      "bytes": 927385
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-6S-turbo/grupo-1.png",
+      "sha256": "2b8bebd046132ed34c56fae0bed9e5eb54f37de3ab437fc61c1f10339825fd8f",
+      "bytes": 957954
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-6S-turbo/grupo-2.png",
+      "sha256": "d2678e1aad4cc7bc81a3bee7cc1ae604cb254ca068944ff33a7efd05448532ab",
+      "bytes": 889139
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-SA1/grupo-1.png",
+      "sha256": "da5c209aff5ead27dad71b0a0c62b4cf90a63fcde4ef27e55e088043ba237d05",
+      "bytes": 1110810
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-SA1/grupo-2.png",
+      "sha256": "47a0036a40f82f92e85c006035f65462bb204b91c7432d98a5f7e00da452be00",
+      "bytes": 1064950
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-SA3/grupo-1.png",
+      "sha256": "676187cfbefadf7a67eca5a9534c6836c18aa59cc76abe2dd6defaf032fd4516",
+      "bytes": 1088257
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/golpe-SA3/grupo-2.png",
+      "sha256": "976259be550b9282a66f2dcada4ae24d3e02fcbbf593a95fa93b163db88dddfe",
+      "bytes": 1136707
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/embarcar/grupo-1.png",
+      "sha256": "b9cc7b2563f1080ac3809fbd51133743b616c505912da5a13b54f8f3526c0ba6",
+      "bytes": 1049756
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/embarcar/grupo-2.png",
+      "sha256": "6d90890a502e2fdbea08f244e5338d8c6fd404f367d26c9af4ded0632e43cf4d",
+      "bytes": 1112825
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/encurralado/grupo-1.png",
+      "sha256": "803606c9c7a829487161c7fc9cd2432f10713804bbd26e01074a5d18214a9f61",
+      "bytes": 1110348
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/right/encurralado/grupo-2.png",
+      "sha256": "27722c09c6f348f5930435925689f94158b60e8ec8ba1c405bbbfa69ee55f6b3",
+      "bytes": 1089382
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/parado/grupo-1.png",
+      "sha256": "fdd09144ae1c1fac0868d70ad4604eb9cca2e20ccc67d85a7f1e8ef5d529b546",
+      "bytes": 1123962
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/parado/grupo-2.png",
+      "sha256": "aaa60e593610ab23a492f9b27db1621f162eaa526c042deb4cf88669753288aa",
+      "bytes": 1081651
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/andar/grupo-1.png",
+      "sha256": "7f0dd2fd3f06d8e763f966df669503be06c4632ade236c00ed0a2dad2247f32f",
+      "bytes": 1028982
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/andar/grupo-2.png",
+      "sha256": "fa1fb6cb5ef675202f73b5c4c0ea5fe14829b69c2fdc4e6c6e7a5ef87a103763",
+      "bytes": 1013834
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/andar-tras/grupo-1.png",
+      "sha256": "21d55a83cb20def300fe0adcff3c8d59d1a08ee5c93f70506667e86cb475d2c1",
+      "bytes": 1121128
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/andar-tras/grupo-2.png",
+      "sha256": "d473e76e36bd17b5c03e9e34bc2c3954fa03a8cb7c1eeab6e555e505b5edcd96",
+      "bytes": 1101585
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/correr/grupo-1.png",
+      "sha256": "66dbee81916c339fba9319cb4dffe007388b3c9f9e10b5a5bd44f5c8057244be",
+      "bytes": 1239394
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/correr/grupo-2.png",
+      "sha256": "2d63a11dc0b01809b4ef67820df7c982e4679c83ccb8a5dc57a58cd608abaeed",
+      "bytes": 1080419
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/agachar/grupo-1.png",
+      "sha256": "826e63740d323db54c3e29c019b0bdda5dc6ed81cd6fb3f42e1b0caab1e20eb2",
+      "bytes": 1045546
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/agachar/grupo-2.png",
+      "sha256": "d67c285a0404d7e7082940416cf3d9be1e0e86268f5a4aeebed82dd5b99a1d7f",
+      "bytes": 1150055
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/pulo/grupo-1.png",
+      "sha256": "cb1f157d405224f815159cc4ecc740f95e97d26947d3c53f517c401ee5f38689",
+      "bytes": 892073
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/pulo/grupo-2.png",
+      "sha256": "2ab5171ac0b67cf576d32d436d5738cd50d389a206f5cef12a96ab5ba017cb09",
+      "bytes": 943578
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/recuo/grupo-1.png",
+      "sha256": "fd5e14f45ac17d0d866101abe5c1f9e794b5f0518396a12c065d2b2fbd8a2dc9",
+      "bytes": 933628
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/recuo/grupo-2.png",
+      "sha256": "95e16de5b352c4167c88c2f38508be60f84155b0e6fdaa9351a8dc3cb3ca303a",
+      "bytes": 1059523
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/escape-agarrao/grupo-1.png",
+      "sha256": "a146a64ef1a50d4501e3014fc92be649dbfac80ec4a849408222cfed92682167",
+      "bytes": 973685
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/escape-agarrao/grupo-2.png",
+      "sha256": "22e5b0b862d5cc244b1ba2d0c36793c3a502e6f3656aa16d4b8c715267fd251c",
+      "bytes": 1005466
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/recuperacao-rolamento/grupo-1.png",
+      "sha256": "c4355a95bf745946ca4c3485621348e1cf11f266b58996a9a9360985c64dfdb7",
+      "bytes": 871294
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/recuperacao-rolamento/grupo-2.png",
+      "sha256": "077369da29b8d7709960e939a08bf233e01fbf84cd9a5b296928b95fab10de68",
+      "bytes": 1002254
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/defesa-em-pe/grupo-1.png",
+      "sha256": "ed417192beb9d9711977b6604dbd8f7aa26ad277c0a6b3f1d5487082d38a6833",
+      "bytes": 1027048
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/defesa-em-pe/grupo-2.png",
+      "sha256": "21661ef5788081be2a4fb1c5f1dec5caeb4db4c141643b9a06e64a09bae80d63",
+      "bytes": 941770
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/defesa-agachado/grupo-1.png",
+      "sha256": "49ee649bbb454cf94b59c63a3c84e58558789f4577c7143bc963cf611ab883fa",
+      "bytes": 910525
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/defesa-agachado/grupo-2.png",
+      "sha256": "12c863ecec776b284072cc89ab3f755d3b18d2f03ee60ac7143034fa7bd99dc7",
+      "bytes": 899639
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/defesa-no-ar/grupo-1.png",
+      "sha256": "2f207d74e32511b25d8d62dd58944e023a96b84da5ef3d01b57cbb9a035c86a5",
+      "bytes": 936325
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/defesa-no-ar/grupo-2.png",
+      "sha256": "607bf3cf81f48bd303c589a7da30d34003750bf91759dbb09af987b0737f5cdc",
+      "bytes": 984908
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/dano-alto/grupo-1.png",
+      "sha256": "d13c933c939f748b30ddbc667a1c707bbdb6055a8645887352d356d9a6409c8c",
+      "bytes": 1055943
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/dano-alto/grupo-2.png",
+      "sha256": "e0e0425432c9025be69114c8fedb51eaa4e5c5a2fc20c19c5e275eb814fe203f",
+      "bytes": 1130623
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/dano-baixo/grupo-1.png",
+      "sha256": "99bfd6efb92557805264c5dc901813544ee9103db4f24145ac95c1e8364b8ce0",
+      "bytes": 1009847
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/dano-baixo/grupo-2.png",
+      "sha256": "82ac5c2289cc123310d54b43c8f030e3d3743fd46319e79f51162236e60be9f4",
+      "bytes": 1016618
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/dano-no-ar/grupo-1.png",
+      "sha256": "715009a539124e99de2230d0fddbc26d3dc8b99865693426d12e3ae4f950de6d",
+      "bytes": 1069787
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/dano-no-ar/grupo-2.png",
+      "sha256": "08b91bfc352312f7add753a4632d9b73ec82664da23143656699d34643a8a87a",
+      "bytes": 1035465
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/caido/grupo-1.png",
+      "sha256": "b1ea2b6460c074d9a2ef923fda55fd2081bc38c7c310f59888a2ca7a9a30222f",
+      "bytes": 1012657
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/caido/grupo-2.png",
+      "sha256": "127350e2fd301eb32b141671bac36c4dcfcd51bb05eaf566606869cbd0e8a9c2",
+      "bytes": 798385
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/levantar/grupo-1.png",
+      "sha256": "d333603888629c56961548d2c971ad2599eff3d0c93e2c62d0082e23b349f712",
+      "bytes": 890270
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/levantar/grupo-2.png",
+      "sha256": "d1111d291095140697a7241275b4050600fdd52a99e4e6a470f20ebb35584cf3",
+      "bytes": 1037877
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/tonto/grupo-1.png",
+      "sha256": "cf0b46e3739add6b6038ed1fc79bafcdcef6bfde9a821d1e89d848130259215b",
+      "bytes": 1059891
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/tonto/grupo-2.png",
+      "sha256": "59945182161c07e0fbd864898198720ae986d71b1eca9ff8e19c7b2e421e618a",
+      "bytes": 1074889
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/vitoria/grupo-1.png",
+      "sha256": "599b3a7f17eaeeaf794304e5cd972ff616ac147272a9e2196a888e0093c1f524",
+      "bytes": 849278
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/vitoria/grupo-2.png",
+      "sha256": "e231cde81b58fba162ca8a68d41071820a326a479065e0fbec065f9c4f550602",
+      "bytes": 942098
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-5L/grupo-1.png",
+      "sha256": "fbf8a98720222fe1d9ee8851bb310ea57a1c1844986080ccd6ffc4973471cebc",
+      "bytes": 1061148
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-5L/grupo-2.png",
+      "sha256": "2558ce576ac50325b9e31050e4d1cc8a01ee6a5d216eec07b617dda4f0c40cb4",
+      "bytes": 1075957
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-5M/grupo-1.png",
+      "sha256": "c303ad16b16158446b6ada9a80136baa1fe86f14caef0c7f8df6fc59efce8636",
+      "bytes": 1079563
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-5M/grupo-2.png",
+      "sha256": "211742df0dd698d923d278150cfce3b0977d7a37ffda3c4c75c4cf46770c89da",
+      "bytes": 1030982
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-5H/grupo-1.png",
+      "sha256": "87480011fab712ef19d00e6b807f634fa2a378dc68f635c29fd2b00b0e78eede",
+      "bytes": 1155199
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-5H/grupo-2.png",
+      "sha256": "ece1f8616fc59637d790543f685edae221b7510557eaba60fd30bf8c3c3d207c",
+      "bytes": 1126264
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-2L/grupo-1.png",
+      "sha256": "b18f9763bcb02cea46bd84eab23f7d41e770caa3c598d091d1b906d2feb8c24e",
+      "bytes": 1055136
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-2L/grupo-2.png",
+      "sha256": "ca7eea55a935329ed5ef48ffd8a62b6a9c0d49bcd781ba53318a05618a669f30",
+      "bytes": 1071373
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-2M/grupo-1.png",
+      "sha256": "f4989f192f2ff9726eacc4d68f7270cfdcd085b87c139d310d5d515dc5f7e210",
+      "bytes": 1043672
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-2M/grupo-2.png",
+      "sha256": "b7150ac72476b08ecec19fd1335b1691abd37fe7e7bdf8dac008fd379ca84ce0",
+      "bytes": 1049279
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-2H/grupo-1.png",
+      "sha256": "a52cf4e9bd86013c3173bab7e011d8fc79c230ae13e6b5674690ef9596580b89",
+      "bytes": 1021503
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-2H/grupo-2.png",
+      "sha256": "c5afe272d3c84bb94e58134ceea8385c2ca8b39e087bac65003dffacbfe2e82c",
+      "bytes": 1056090
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-3H/grupo-1.png",
+      "sha256": "81890a54cc6ec2798389d6e05e7aaeee59dbfddc405a99dfcd50f10dbd2bd26b",
+      "bytes": 1057274
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-3H/grupo-2.png",
+      "sha256": "ea3a17202e35abad22794025db384cebb02917e82bebb26291cdee8b19f4b126",
+      "bytes": 1061528
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-6M/grupo-1.png",
+      "sha256": "5c4cd2147f607328ee87815f682bc9f0cd5c993193c68803344c23f6ca338c0f",
+      "bytes": 1046143
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-6M/grupo-2.png",
+      "sha256": "f59e9252c33af33ed6ca6cf38a686e4926ed506e8d51fcc4f7d2147c8fdaec13",
+      "bytes": 1081920
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-jL/grupo-1.png",
+      "sha256": "569138335eac6c7f946e928b3b870427ed58bd7cded042270d1e9b5d26c9d45d",
+      "bytes": 894415
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-jL/grupo-2.png",
+      "sha256": "4721cb9cfb1812a24aa981876271e655a79de8ba9cb9445c0123694b01595994",
+      "bytes": 872648
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-jM/grupo-1.png",
+      "sha256": "856845c8fd5094d0f409d6355119b799fafaf7d5259a27487afa40242780851b",
+      "bytes": 1041066
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-jM/grupo-2.png",
+      "sha256": "e8d108ff23706e930872eefd0d742ca5658cbe215d2b2e32fe0c08fd88534015",
+      "bytes": 982406
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-jH/grupo-1.png",
+      "sha256": "b35994d962895029f56d174acca5e072321cb6790c713c06f371ca5d0911a165",
+      "bytes": 1011003
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-jH/grupo-2.png",
+      "sha256": "1a962212fe2a1284ca187218727831598c812419e8077ad1fc7f7d9d109081fd",
+      "bytes": 1092474
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-throw/grupo-1.png",
+      "sha256": "28bcd20cbca1f16c4003d9136c20ff06fcf4ec781d098774035b1baa469eabe5",
+      "bytes": 1133273
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-throw/grupo-2.png",
+      "sha256": "57a6f7905fb53c86c1ebda8c832c9476ffa52afb5fa7299701534df3529a4aa0",
+      "bytes": 1203538
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-blindado/grupo-1.png",
+      "sha256": "d417bcd2f6b04bd6c6487dde3c8683661ddb6909a71639f800172252557ca23a",
+      "bytes": 937546
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-blindado/grupo-2.png",
+      "sha256": "259520509d170f554314ad20a5459ee619dcde37ea6b650d8d00b63404f80f14",
+      "bytes": 1020516
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-5S/grupo-1.png",
+      "sha256": "e710aaa32daf4b202efb1015dfb7c97dff20ba2aa8d777070e6aafbdfbdb71f8",
+      "bytes": 1099261
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-5S/grupo-2.png",
+      "sha256": "879b0f33c8d403041b68fe0dcca641bbd5cf5a32f1f636bb2fd59c3e6484b24b",
+      "bytes": 1095915
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-5S-turbo/grupo-1.png",
+      "sha256": "a1be6227ab68d0954e55d7098a8b3b4cc7840bfae561a92a2dc069217956175f",
+      "bytes": 1098370
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-5S-turbo/grupo-2.png",
+      "sha256": "f21965307c9145f2d694aa76465d741fdef8d7307a394a13bc8e5b5b456e4f27",
+      "bytes": 979696
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-2S/grupo-1.png",
+      "sha256": "510f00ff89f467b5f9ac5d749051e4f57a3ea64283f82849b38bbfc134407a65",
+      "bytes": 947214
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-2S/grupo-2.png",
+      "sha256": "58451030598313a47adfe5d5268b0f493bac223b12b1310e4e0c2ebf5b7a7e2b",
+      "bytes": 859836
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-4S/grupo-1.png",
+      "sha256": "da3ab700437b382f346894b707db10464039e5181597ec2ca82371487db3f0cf",
+      "bytes": 857714
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-4S/grupo-2.png",
+      "sha256": "a89228d8e822827f8caac76811754537eb953b385ae03d4ae90efc3534e5d07f",
+      "bytes": 927212
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-6S/grupo-1.png",
+      "sha256": "bf3b4ed80d5bcb201347f56ddc3eebed26c4cb256e9c3fe00acaf5f77a43ec07",
+      "bytes": 847492
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-6S/grupo-2.png",
+      "sha256": "a897ff448ee0b72ad50a6990f098a93d97dce5d73d54bc291dbebb25dc6f5604",
+      "bytes": 838417
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-6S-turbo/grupo-1.png",
+      "sha256": "3bfd3b1ba7ad4aa4dfd483d8205cbb2588a0c6bf805a1d55d43e3a7ea2cbb5ed",
+      "bytes": 874979
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-6S-turbo/grupo-2.png",
+      "sha256": "342c4dd920d1d051a5889aab4ec6178b52c6250981d36548d2d0dcbbc0de831c",
+      "bytes": 833950
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-SA1/grupo-1.png",
+      "sha256": "38e1f7794d000b3b3084591e2629e061f6b93625bd81d0609bd24a1325d97bb6",
+      "bytes": 1054134
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-SA1/grupo-2.png",
+      "sha256": "71dba7c7743ea2cd249854cb58cadf8884b87d97dd9c5780a52f73cdd33ae621",
+      "bytes": 1067423
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-SA3/grupo-1.png",
+      "sha256": "79eff8ae23c14bf5ecac7b521d6cc4142257716955c9a529cafd03182f31e89a",
+      "bytes": 1046720
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/golpe-SA3/grupo-2.png",
+      "sha256": "89ec26693da790389d521057a39bf68435ad40eff4998dec755a003ab312646d",
+      "bytes": 1100064
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/embarcar/grupo-1.png",
+      "sha256": "4887cfd5fd0606ae5b8804fafdba501398485953cdc6f5ad8f4560572cfcc7d4",
+      "bytes": 1051062
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/embarcar/grupo-2.png",
+      "sha256": "3ff2c7a8b64401903d6e9e917033bf38fbca4d2a6726448dd605f4feb0760306",
+      "bytes": 1099345
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/encurralado/grupo-1.png",
+      "sha256": "95ad8860d337613105546506048f0fb197e7b572dadb9ee10816b7dc749922c0",
+      "bytes": 1027238
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/left/encurralado/grupo-2.png",
+      "sha256": "92b576e5fe22d30b7e7e760a1f2a44ff4b779a5969e405cd0c427b30cbee89f1",
+      "bytes": 949187
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/mala-voando/grupo-1.png",
+      "sha256": "2fa84d9c47eb8737b63787b0586d2d3aa39fbbcaf4ca289c4e8af3978d73ad68",
+      "bytes": 1010482
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/mala-voando/grupo-2.png",
+      "sha256": "507c93e0b75fdfd29b84d47a4ff82e0a73efcf9093d91644f91844b2d7609b66",
+      "bytes": 1072023
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/mala-no-chao/grupo-1.png",
+      "sha256": "d48650c09ffb89c53bcad5153944e386eb02d74dcc93e3832bb7aad06402a988",
+      "bytes": 978890
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/mala-no-chao/grupo-2.png",
+      "sha256": "4c88ebf08eb0a90fbc33db6fd8aedba77a068b144a756611888aad59fd38aa5a",
+      "bytes": 920557
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/mala-caindo/grupo-1.png",
+      "sha256": "c75ed4565363e4704eeee9d521532d5b4e542728ba8cfcac4262d834f7aa70c2",
+      "bytes": 1046692
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/mala-caindo/grupo-2.png",
+      "sha256": "f26681e4e9e76da3df67293c42818d03d49dca5495ce30c212c8bf21cd4c5ead",
+      "bytes": 923983
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/mala-impacto/grupo-1.png",
+      "sha256": "0878c221f73445078a2c300dae02e614db8bb65c795d4f9162eab3a4173d2fcb",
+      "bytes": 372094
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/mala-impacto/grupo-2.png",
+      "sha256": "ca040d53a899531c31fe3264d5d6540444118219a19b84a4f323cf66f6d81cf1",
+      "bytes": 299444
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/aviso-queda/grupo-1.png",
+      "sha256": "6282aef3f47af50b53a8833bb47dc53cf70653b646c15431b2a599b0ed898bc1",
+      "bytes": 762295
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/aviso-queda/grupo-2.png",
+      "sha256": "34ab13e8b8fe6a13f13dae25af3f83fb496378fd8b074864be4103146695c7be",
+      "bytes": 787952
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/carrinho-bagagem/grupo-1.png",
+      "sha256": "d494ef88be68c04ac600c527609ab17f68cf41245f4d2d79a550b346628eb6aa",
+      "bytes": 1266847
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/carrinho-bagagem/grupo-2.png",
+      "sha256": "5663e995981c247752e08cdd04c1708618b60f4a4ef8ad80bfd63a70377dc695",
+      "bytes": 1232316
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/carrinho-turbo/grupo-1.png",
+      "sha256": "26a510b3aa6556c230ef63e81b94a2af689009b197e66b42cb26d0f1d07bc265",
+      "bytes": 1282688
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/carrinho-turbo/grupo-2.png",
+      "sha256": "a6bb64aae4a997d8ba40136cfed7700758b3387f5a6b79cd3d8c417c143442f9",
+      "bytes": 1317236
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/fuga-poeira/grupo-1.png",
+      "sha256": "0e24f04ec4193531d628d86167151b5e00958c52a02fb4fa3c4c166c73d3cee5",
+      "bytes": 388223
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/fuga-poeira/grupo-2.png",
+      "sha256": "94be70db01dc9921e6ca254b64da4f16273022203106cd2bfe579551e158070d",
+      "bytes": 324902
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/fuga-pronta/grupo-1.png",
+      "sha256": "c40e569a4b67fcee3842792fd2f730b5c89d799f209153e7d5be6a1238519d0e",
+      "bytes": 542952
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/fuga-pronta/grupo-2.png",
+      "sha256": "df7a418fb77e7b9cae3ae0394ba1b5e31d9e6816923135cded928c284e47003d",
+      "bytes": 589737
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/encurralado-aviso/grupo-1.png",
+      "sha256": "9e7d7bea2beaa02fdae2b58c79669207e8477963c4c566c5a45e637b113255cf",
+      "bytes": 650692
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/encurralado-aviso/grupo-2.png",
+      "sha256": "bc101ad21f8be1d78285ca9f02e8fc92c6fd277f005f6e41e7a8f35fa6718753",
+      "bytes": 754271
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/embarque-progresso/grupo-1.png",
+      "sha256": "bcfdcb5a54998da2cd115ef5ee8748ab825fff31ca0dd695129c29293c55f953",
+      "bytes": 553062
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/embarque-progresso/grupo-2.png",
+      "sha256": "0c98df9a738f738a4772b3e181167fde22b5bed4664d1aac8280c3db805474bd",
+      "bytes": 587612
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/embarque-cura/grupo-1.png",
+      "sha256": "3c7861588199399deab8bd06317a7b82b8da4a5fe39c23e20ba4717f1c028f0d",
+      "bytes": 518048
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/embarque-cura/grupo-2.png",
+      "sha256": "ab5e1df693c96e3c4d1ee48a603a2533fda761d81e9cabaf517c943bfeef9c09",
+      "bytes": 518854
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/embarque-negado/grupo-1.png",
+      "sha256": "313da8d6e92d0214558fae3a713c8fc5d503c2a41cc479ca089afa296f394790",
+      "bytes": 866632
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/embarque-negado/grupo-2.png",
+      "sha256": "611c7c297457a779e6b7c3ba2f5a8f643d7c0b48691619384f8fcb062ca6029e",
+      "bytes": 806420
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/pista-livre-impacto/grupo-1.png",
+      "sha256": "8fe1b1fbd8974ec172fe79c56d9e26ac50c5fe4e8345225274f23272bbf5addf",
+      "bytes": 606993
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/pista-livre-impacto/grupo-2.png",
+      "sha256": "4a667dd89fbd10910ce5492be12f4e57f2166d4167507ca5c938b021a0416830",
+      "bytes": 472414
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/esteira-super/grupo-1.png",
+      "sha256": "682d3031caf07ed669b5b9f8140e214601a5dd086bfb3c8835a67b16ea013c52",
+      "bytes": 893923
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/fx/esteira-super/grupo-2.png",
+      "sha256": "532d50cffae412e551dc70834bf1423a20645515ae5713ea10b1afa3089ee131",
+      "bytes": 830231
+    },
+    {
+      "file": "production/sprites/source/fujao-v1/originais/ui/retrato.png",
+      "sha256": "816f8b6957a0b6e204b262448bb110f69df8cc0e09af062eb949cf968cd256c4",
+      "bytes": 1554106
+    }
+  ]
+}

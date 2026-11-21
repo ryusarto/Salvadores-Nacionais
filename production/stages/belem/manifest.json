@@ -1,6 +1,6 @@
 {
   "id": "belem-ver-o-peso",
-  "version": 1,
+  "version": 2,
   "groups": 36,
   "status": "produced-and-integrated",
   "world": {
@@ -318,6 +318,452 @@
       "files": [
         "ui/carregamento.webp"
       ]
+    }
+  ],
+  "supplementalGroups": [
+    {
+      "id": "mastro-bandeirolas",
+      "kind": "prop",
+      "status": "produced",
+      "files": [
+        "props/mastro-bandeirolas.webp"
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "asset": "ceu",
+      "factor": 0
+    },
+    {
+      "asset": "nuvens",
+      "factor": 0.08
+    },
+    {
+      "asset": "horizonte",
+      "factor": 0.18
+    },
+    {
+      "asset": "agua",
+      "factor": 0.18
+    },
+    {
+      "asset": "arquitetura",
+      "factor": 0.42
+    },
+    {
+      "asset": "feira",
+      "factor": 0.78
+    },
+    {
+      "asset": "primeiro-plano",
+      "factor": 1.05
+    }
+  ],
+  "objects": [
+    {
+      "id": "barco-cabine",
+      "asset": "barco-balanco",
+      "x": 1890,
+      "y": 768,
+      "w": 330,
+      "factor": 0.3,
+      "fps": 4,
+      "phase": 0,
+      "band": "boats"
+    },
+    {
+      "id": "barco-vela",
+      "asset": "barco-2",
+      "x": 300,
+      "y": 766,
+      "w": 270,
+      "factor": 0.3,
+      "band": "boats"
+    },
+    {
+      "id": "agua-esquerda",
+      "asset": "agua-ondulacao",
+      "x": 120,
+      "y": 720,
+      "w": 330,
+      "h": 72,
+      "factor": 0.18,
+      "fps": 6,
+      "phase": 1,
+      "opacity": 0.3,
+      "band": "water"
+    },
+    {
+      "id": "agua-direita",
+      "asset": "agua-ondulacao",
+      "x": 1900,
+      "y": 747,
+      "w": 450,
+      "h": 72,
+      "factor": 0.18,
+      "fps": 6,
+      "phase": 4,
+      "opacity": 0.26,
+      "band": "water"
+    },
+    {
+      "id": "reflexo-1",
+      "asset": "reflexos-agua",
+      "x": 1680,
+      "y": 782,
+      "w": 160,
+      "h": 100,
+      "factor": 0.18,
+      "fps": 5,
+      "opacity": 0.25,
+      "band": "water"
+    },
+    {
+      "id": "tenda-1",
+      "asset": "toldo-vento",
+      "x": 250,
+      "y": 819,
+      "w": 310,
+      "factor": 0.78,
+      "fps": 5,
+      "band": "canopies"
+    },
+    {
+      "id": "tenda-2",
+      "asset": "barraca-2",
+      "x": 720,
+      "y": 819,
+      "w": 310,
+      "factor": 0.78,
+      "band": "canopies"
+    },
+    {
+      "id": "tenda-3",
+      "asset": "barraca-3",
+      "x": 1410,
+      "y": 819,
+      "w": 310,
+      "factor": 0.78,
+      "band": "canopies"
+    },
+    {
+      "id": "tenda-4",
+      "asset": "barraca-1",
+      "x": 2210,
+      "y": 819,
+      "w": 310,
+      "factor": 0.78,
+      "band": "canopies"
+    },
+    {
+      "id": "feirante-1",
+      "asset": "npc-feirante",
+      "x": 235,
+      "y": 819,
+      "h": 210,
+      "factor": 0.78,
+      "fps": 4,
+      "band": "people"
+    },
+    {
+      "id": "cliente-1",
+      "asset": "npc-cliente",
+      "x": 880,
+      "y": 821,
+      "h": 215,
+      "factor": 0.78,
+      "fps": 4,
+      "phase": 3,
+      "band": "people"
+    },
+    {
+      "id": "torcedor-1",
+      "asset": "npc-torcedor",
+      "x": 1160,
+      "y": 821,
+      "h": 210,
+      "factor": 0.78,
+      "fps": 5,
+      "phase": 1,
+      "band": "people"
+    },
+    {
+      "id": "feirante-2",
+      "asset": "npc-feirante",
+      "x": 2185,
+      "y": 819,
+      "h": 210,
+      "factor": 0.78,
+      "fps": 4,
+      "phase": 3,
+      "band": "people"
+    },
+    {
+      "id": "banca-1",
+      "asset": "banca-frutas-1",
+      "x": 250,
+      "y": 824,
+      "w": 230,
+      "factor": 0.78,
+      "band": "tables"
+    },
+    {
+      "id": "banca-2",
+      "asset": "banca-frutas-2",
+      "x": 720,
+      "y": 824,
+      "w": 230,
+      "factor": 0.78,
+      "band": "tables"
+    },
+    {
+      "id": "banca-3",
+      "asset": "banca-frutas-1",
+      "x": 1410,
+      "y": 824,
+      "w": 230,
+      "factor": 0.78,
+      "band": "tables"
+    },
+    {
+      "id": "banca-4",
+      "asset": "banca-frutas-2",
+      "x": 2210,
+      "y": 824,
+      "w": 230,
+      "factor": 0.78,
+      "band": "tables"
+    },
+    {
+      "id": "caixas-baixas",
+      "asset": "caixas-1",
+      "x": 500,
+      "y": 825,
+      "w": 90,
+      "factor": 0.78,
+      "band": "details"
+    },
+    {
+      "id": "caixas-saco",
+      "asset": "caixas-2",
+      "x": 1640,
+      "y": 825,
+      "w": 115,
+      "factor": 0.78,
+      "band": "details"
+    },
+    {
+      "id": "caixas-mangas",
+      "asset": "caixas-3",
+      "x": 2370,
+      "y": 825,
+      "w": 110,
+      "factor": 0.78,
+      "band": "details"
+    },
+    {
+      "id": "paneiro-mangas",
+      "asset": "cestos-1",
+      "x": 580,
+      "y": 825,
+      "w": 95,
+      "factor": 0.78,
+      "band": "details"
+    },
+    {
+      "id": "paneiro-acai",
+      "asset": "cestos-2",
+      "x": 1780,
+      "y": 825,
+      "w": 95,
+      "factor": 0.78,
+      "band": "details"
+    },
+    {
+      "id": "mangueira",
+      "asset": "folhagem-vento",
+      "x": 55,
+      "y": 823,
+      "h": 310,
+      "factor": 0.78,
+      "fps": 5,
+      "band": "details"
+    },
+    {
+      "id": "palmeira",
+      "asset": "folhagem-2",
+      "x": 2440,
+      "y": 823,
+      "h": 350,
+      "factor": 0.78,
+      "band": "details"
+    },
+    {
+      "id": "mastro-belem-0",
+      "asset": "mastro-bandeirolas",
+      "x": 300,
+      "y": 826,
+      "h": 540,
+      "factor": 0.78,
+      "band": "flags"
+    },
+    {
+      "id": "mastro-belem-1",
+      "asset": "mastro-bandeirolas",
+      "x": 1100,
+      "y": 826,
+      "h": 540,
+      "factor": 0.78,
+      "band": "flags"
+    },
+    {
+      "id": "mastro-belem-2",
+      "asset": "mastro-bandeirolas",
+      "x": 1700,
+      "y": 826,
+      "h": 540,
+      "factor": 0.78,
+      "band": "flags"
+    },
+    {
+      "id": "mastro-belem-3",
+      "asset": "mastro-bandeirolas",
+      "x": 2500,
+      "y": 826,
+      "h": 540,
+      "factor": 0.78,
+      "band": "flags"
+    },
+    {
+      "id": "bandeiras-vivas",
+      "asset": "bandeirolas-vento",
+      "x": 700.5429456360946,
+      "y": 554.9045662820373,
+      "w": 685.1977305700955,
+      "h": 229.4469464753072,
+      "factor": 0.78,
+      "fps": 6,
+      "band": "flags",
+      "suspension": {
+        "anchors": [
+          {
+            "objectId": "mastro-belem-0",
+            "uv": [
+              0.9013806706114399,
+              0.09926224010731052
+            ],
+            "sprite": [
+              42,
+              343
+            ]
+          },
+          {
+            "objectId": "mastro-belem-1",
+            "uv": [
+              0.10453648915187377,
+              0.09926224010731052
+            ],
+            "sprite": [
+              458,
+              343
+            ]
+          }
+        ],
+        "tolerance": 8
+      }
+    },
+    {
+      "id": "bandeiras-2",
+      "asset": "bandeirolas-2",
+      "x": 2100.5429456360944,
+      "y": 500.2008064999852,
+      "w": 682.1912786210446,
+      "h": 173.39028331618218,
+      "factor": 0.78,
+      "band": "flags",
+      "suspension": {
+        "anchors": [
+          {
+            "objectId": "mastro-belem-2",
+            "uv": [
+              0.9013806706114399,
+              0.09926224010731052
+            ],
+            "sprite": [
+              26,
+              204
+            ]
+          },
+          {
+            "objectId": "mastro-belem-3",
+            "uv": [
+              0.10453648915187377,
+              0.09926224010731052
+            ],
+            "sprite": [
+              486,
+              204
+            ]
+          }
+        ],
+        "tolerance": 8
+      }
+    },
+    {
+      "id": "poste-1",
+      "asset": "poste-1",
+      "x": 1010,
+      "y": 824,
+      "h": 340,
+      "factor": 0.78,
+      "band": "details"
+    },
+    {
+      "id": "poste-2",
+      "asset": "poste-1",
+      "x": 1910,
+      "y": 824,
+      "h": 340,
+      "factor": 0.78,
+      "band": "details"
+    },
+    {
+      "id": "halo-1",
+      "asset": "luz-poste",
+      "x": 1010,
+      "y": 562,
+      "w": 115,
+      "h": 115,
+      "factor": 0.78,
+      "fps": 4,
+      "opacity": 0.35,
+      "band": "lights"
+    },
+    {
+      "id": "halo-2",
+      "asset": "luz-poste",
+      "x": 1910,
+      "y": 562,
+      "w": 115,
+      "h": 115,
+      "factor": 0.78,
+      "fps": 4,
+      "phase": 3,
+      "opacity": 0.35,
+      "band": "lights"
+    },
+    {
+      "id": "poeira-cais",
+      "asset": "poeira-ambiente",
+      "x": 480,
+      "y": 825,
+      "w": 230,
+      "h": 60,
+      "factor": 0.78,
+      "fps": 5,
+      "opacity": 0.16,
+      "band": "dust"
     }
   ],
   "assets": {
@@ -949,8 +1395,8 @@
       "path": "ui/miniatura.webp",
       "kind": "ui",
       "frames": 1,
-      "sha256": "6c342f47b24e49e989d45d2ddcd62b06baa64fd01e99be9a694a9b2b475a937a",
-      "bytes": 206304,
+      "sha256": "1310b43d9e3b5bfdca65a9fcfcbd40733461f6aaa66591199d65cacf0d91a92a",
+      "bytes": 206548,
       "width": 960,
       "height": 540,
       "alpha": false
@@ -969,11 +1415,26 @@
       "path": "ui/carregamento.webp",
       "kind": "ui",
       "frames": 1,
-      "sha256": "36731b6d62bfe260b18ff8ebe82f728b174766be32c906fca7ab4d33b19b612a",
-      "bytes": 758452,
+      "sha256": "a3cf379e8f748539deefce5273a5ea2adc4f418a9cf0874c1fedd945a81fe9a4",
+      "bytes": 760974,
       "width": 1920,
       "height": 1080,
       "alpha": false
+    },
+    "mastro-bandeirolas": {
+      "path": "props/mastro-bandeirolas.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 14644,
+      "sha256": "39f5749c3e4bc5835c7eabc575d3913ca3dbea62353af6befd8c972fd64105c5",
+      "width": 174,
+      "height": 512,
+      "alpha": true,
+      "origin": "reused-palco",
+      "sourceManifest": "../palco/manifest.json",
+      "sourceAsset": "mastro-bandeirolas",
+      "sourcePath": "props/mastro-bandeirolas.webp",
+      "sourceSha256": "39f5749c3e4bc5835c7eabc575d3913ca3dbea62353af6befd8c972fd64105c5"
     }
   }
 }

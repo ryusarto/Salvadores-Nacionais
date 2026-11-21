@@ -1,0 +1,57 @@
+{
+  "passed": false,
+  "buildSHA256": "6226dd27b0f3ff292989645ad2b9da798656bd8917505ccfb8f5c41454952638",
+  "head": "f64e81a86aa89dad5310657b5c7b675a420d79a4",
+  "base": "http://127.0.0.1:54070",
+  "method": "Automação de navegador real com capturas e fixtures explícitas; não é playtest humano.",
+  "menus": {
+    "titleItems": [
+      "story",
+      "versus",
+      "training",
+      "settings"
+    ],
+    "defaultDifficulty": "MÉDIO"
+  },
+  "campaign": [],
+  "stages": [],
+  "errors": [],
+  "network": [],
+  "http": [],
+  "environment": {
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.0.0 Safari/537.36",
+    "canvas": [
+      1920,
+      1080
+    ],
+    "viewport": [
+      1280,
+      720
+    ],
+    "ui": {
+      "loaded": false,
+      "images": 26,
+      "errors": [],
+      "portraits": 12,
+      "icons": 12
+    },
+    "sprites": {
+      "packs": 31,
+      "strips": 881
+    },
+    "stagePacks": [
+      "belem",
+      "aeroporto",
+      "banheiros",
+      "inferno",
+      "mansao",
+      "palco",
+      "washington"
+    ]
+  },
+  "failure": {
+    "message": "Expected values to be strictly equal:\n\nfalse !== true\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at file:///Users/henriqueryusartorelliuchiyama/Downloads/Salvadores-Nacionais/production/qa/scenarios-review/runtime/run-integrated-review.mjs:21:90",
+    "screen": "settings"
+  }
+}

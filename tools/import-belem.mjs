@@ -57,5 +57,6 @@ for(const name of animationNames){const m=await sharp(join(source,name+'.png')).
  await blank(1500,1000).composite(frames.map((input,i)=>({input,left:i%3*500,top:Math.floor(i/3)*500}))).png().toFile(join(source,'pranchas',name+'.png'));
  exports.push({id:name,path:folder+'/'+name+'.webp',frames:record});
 }
-writeFileSync(join(source,'exports.json'),JSON.stringify({alphaNoiseThreshold:12,cell:500,frames:6,animations:exports},null,2)+'\n');
+const reusedMast='production/stages/palco/props/mastro-bandeirolas.webp';copyFileSync(reusedMast,join(root,'props/mastro-bandeirolas.webp'));
+writeFileSync(join(source,'exports.json'),JSON.stringify({alphaNoiseThreshold:12,cell:500,frames:6,animations:exports,reused:[{id:'mastro-bandeirolas',source:reusedMast,sha256:hash(readFileSync(reusedMast))}]},null,2)+'\n');
 console.log('Exported eight bases, seventeen prop variants, eleven six-frame animations.');

@@ -1,0 +1,1497 @@
+{
+  "passed": false,
+  "buildSHA256": "6226dd27b0f3ff292989645ad2b9da798656bd8917505ccfb8f5c41454952638",
+  "head": "f64e81a86aa89dad5310657b5c7b675a420d79a4",
+  "base": "http://127.0.0.1:54070",
+  "method": "Automação de navegador real com capturas e fixtures explícitas; não é playtest humano.",
+  "menus": {
+    "titleItems": [
+      "story",
+      "versus",
+      "training",
+      "settings"
+    ],
+    "defaultDifficulty": "MÉDIO",
+    "reducedEffectsPersisted": true,
+    "controls": true,
+    "versusRivals": 16,
+    "trainingEntry": true,
+    "storyContinue": true,
+    "restart": true
+  },
+  "campaign": [
+    {
+      "chapter": 0,
+      "foe": "zanata",
+      "stage": "belem",
+      "closed": true,
+      "progress": {
+        "trunks": 1
+      }
+    },
+    {
+      "chapter": 1,
+      "foe": "chupetinha",
+      "stage": "palco",
+      "closed": true,
+      "progress": {
+        "trunks": 2
+      }
+    },
+    {
+      "chapter": 2,
+      "foe": "pavanassi",
+      "stage": "banheiros",
+      "closed": true,
+      "progress": {
+        "trunks": 3
+      }
+    },
+    {
+      "chapter": 3,
+      "foe": "fujao",
+      "stage": "aeroporto",
+      "closed": true,
+      "progress": {
+        "trunks": 4
+      }
+    },
+    {
+      "chapter": 4,
+      "foe": "pai-fujao",
+      "stage": "mansao",
+      "closed": true,
+      "progress": {
+        "trunks": 5
+      }
+    },
+    {
+      "chapter": 5,
+      "foe": "laranjao",
+      "stage": "washington",
+      "closed": true,
+      "progress": {
+        "trunks": 6
+      }
+    }
+  ],
+  "stages": [
+    {
+      "spriteErrors": [],
+      "id": "belem",
+      "foe": "zanata",
+      "chapter": 0,
+      "runtime": {
+        "stage": {
+          "ready": true,
+          "loaded": 40,
+          "errors": [],
+          "groups": 36
+        },
+        "audio": {
+          "stage": "belem",
+          "available": true,
+          "active": false,
+          "muted": false,
+          "started": true,
+          "decoded": 6,
+          "gain": 0.6000000238418579,
+          "errors": []
+        },
+        "story": {
+          "chapter": 0,
+          "foe": "zanata"
+        },
+        "sprites": {
+          "trunks": {
+            "agachar": "registered",
+            "andar-tras": "registered",
+            "andar": "decoded",
+            "caido": "registered",
+            "correr": "registered",
+            "dano-alto": "decoded",
+            "dano-baixo": "registered",
+            "dano-no-ar": "registered",
+            "defesa-agachado": "registered",
+            "defesa-em-pe": "decoded",
+            "defesa-no-ar": "registered",
+            "escape-agarrao": "registered",
+            "golpe-2H": "registered",
+            "golpe-2L": "registered",
+            "golpe-2M": "registered",
+            "golpe-2S": "registered",
+            "golpe-3H": "registered",
+            "golpe-4S": "registered",
+            "golpe-5H": "registered",
+            "golpe-5L": "decoded",
+            "golpe-5M": "registered",
+            "golpe-5S": "registered",
+            "golpe-6M": "registered",
+            "golpe-6S": "registered",
+            "golpe-SA1": "registered",
+            "golpe-SA3": "registered",
+            "golpe-blindado": "registered",
+            "golpe-c1": "registered",
+            "golpe-c2": "registered",
+            "golpe-jH": "registered",
+            "golpe-jL": "registered",
+            "golpe-jM": "registered",
+            "golpe-throw": "registered",
+            "levantar": "registered",
+            "parado": "decoded",
+            "pulo": "registered",
+            "recuo": "registered",
+            "recuperacao-rolamento": "registered",
+            "tonto": "registered",
+            "vitoria": "registered"
+          },
+          "trunks-fx": {
+            "ambulancia-queda": "registered",
+            "caes-correr": "registered",
+            "caes-final": "registered",
+            "caes-mordida": "registered",
+            "caes-salto": "registered",
+            "fx-explosao": "registered",
+            "fx-marca": "registered",
+            "fx-mordida": "registered"
+          },
+          "zanata": {
+            "agachar": "registered",
+            "andar-tras": "registered",
+            "andar": "decoded",
+            "caido": "registered",
+            "correr": "registered",
+            "dano-alto": "decoded",
+            "dano-baixo": "registered",
+            "dano-no-ar": "registered",
+            "defesa-agachado": "registered",
+            "defesa-em-pe": "decoded",
+            "defesa-no-ar": "registered",
+            "escape-agarrao": "registered",
+            "golpe-2H": "registered",
+            "golpe-2L": "registered",
+            "golpe-2M": "registered",
+            "golpe-2S-turbo": "registered",
+            "golpe-2S": "registered",
+            "golpe-3H": "registered",
+            "golpe-4S": "registered",
+            "golpe-5H": "registered",
+            "golpe-5L": "decoded",
+            "golpe-5M": "registered",
+            "golpe-5S-turbo": "registered",
+            "golpe-5S": "registered",
+            "golpe-6M": "registered",
+            "golpe-6S-turbo": "registered",
+            "golpe-6S": "registered",
+            "golpe-SA1": "registered",
+            "golpe-SA3": "registered",
+            "golpe-blindado": "registered",
+            "golpe-jH": "registered",
+            "golpe-jL": "registered",
+            "golpe-jM": "registered",
+            "golpe-throw": "registered",
+            "levantar": "registered",
+            "parado": "decoded",
+            "pulo": "registered",
+            "recuo": "registered",
+            "recuperacao-rolamento": "registered",
+            "tonto": "registered",
+            "vitoria": "registered"
+          },
+          "zanata-esquerda": {
+            "agachar": "registered",
+            "andar-tras": "registered",
+            "andar": "decoded",
+            "caido": "registered",
+            "correr": "registered",
+            "dano-alto": "decoded",
+            "dano-baixo": "registered",
+            "dano-no-ar": "registered",
+            "defesa-agachado": "registered",
+            "defesa-em-pe": "decoded",
+            "defesa-no-ar": "registered",
+            "escape-agarrao": "registered",
+            "golpe-2H": "registered",
+            "golpe-2L": "registered",
+            "golpe-2M": "registered",
+            "golpe-2S-turbo": "registered",
+            "golpe-2S": "registered",
+            "golpe-3H": "registered",
+            "golpe-4S": "registered",
+            "golpe-5H": "registered",
+            "golpe-5L": "decoded",
+            "golpe-5M": "registered",
+            "golpe-5S-turbo": "registered",
+            "golpe-5S": "registered",
+            "golpe-6M": "registered",
+            "golpe-6S-turbo": "registered",
+            "golpe-6S": "registered",
+            "golpe-SA1": "registered",
+            "golpe-SA3": "registered",
+            "golpe-blindado": "registered",
+            "golpe-jH": "registered",
+            "golpe-jL": "registered",
+            "golpe-jM": "registered",
+            "golpe-throw": "registered",
+            "levantar": "registered",
+            "parado": "decoded",
+            "pulo": "registered",
+            "recuo": "registered",
+            "recuperacao-rolamento": "registered",
+            "tonto": "registered",
+            "vitoria": "registered"
+          },
+          "zanata-esquerda-fx": {
+            "fx-agulha": "registered",
+            "fx-armadura": "registered",
+            "fx-defesa": "decoded",
+            "fx-estalo": "decoded",
+            "fx-furia": "registered",
+            "fx-impacto": "decoded",
+            "fx-intimacao": "registered",
+            "fx-laco": "registered",
+            "fx-poeira": "registered",
+            "fx-puxao": "registered",
+            "fx-tempestade": "registered",
+            "fx-varredura": "registered"
+          },
+          "zanata-fx": {
+            "fx-agulha": "registered",
+            "fx-armadura": "registered",
+            "fx-defesa": "decoded",
+            "fx-estalo": "decoded",
+            "fx-furia": "registered",
+            "fx-impacto": "decoded",
+            "fx-intimacao": "registered",
+            "fx-laco": "registered",
+            "fx-poeira": "registered",
+            "fx-puxao": "registered",
+            "fx-tempestade": "registered",
+            "fx-varredura": "registered"
+          }
+        }
+      },
+      "inputMoved": {
+        "from": 1040,
+        "to": 1089.6000000000004
+      },
+      "pause": true,
+      "cameras": [
+        0,
+        340,
+        680
+      ],
+      "reduced": {
+        "enabled": true,
+        "shake": 0,
+        "flash": 0
+      },
+      "mobile": {
+        "viewport": [
+          844,
+          390
+        ],
+        "scrollWidth": 844,
+        "canvasCSS": {
+          "x": 75.5,
+          "y": 0,
+          "w": 693,
+          "h": 390
+        },
+        "touch": true
+      },
+      "mechanics": [
+        {
+          "label": "Fúria abaixo de40%",
+          "passed": true
+        }
+      ],
+      "mechanicCaptures": [
+        "fury"
+      ]
+    },
+    {
+      "spriteErrors": [],
+      "id": "palco",
+      "foe": "chupetinha",
+      "chapter": 1,
+      "runtime": {
+        "stage": {
+          "ready": true,
+          "loaded": 78,
+          "errors": [],
+          "prepared": true
+        },
+        "audio": {
+          "stage": "palco",
+          "available": true,
+          "active": false,
+          "muted": false,
+          "started": true,
+          "decoded": 6,
+          "gain": 0.0003560988116078079,
+          "errors": []
+        },
+        "story": {
+          "chapter": 1,
+          "foe": "chupetinha"
+        },
+        "sprites": {
+          "chupetinha": {
+            "agachar": "registered",
+            "andar-tras": "registered",
+            "andar": "decoded",
+            "caido": "registered",
+            "correr": "registered",
+            "dano-alto": "decoded",
+            "dano-baixo": "registered",
+            "dano-no-ar": "registered",
+            "defesa-agachado": "registered",
+            "defesa-em-pe": "decoded",
+            "defesa-no-ar": "registered",
+            "escape-agarrao": "registered",
+            "golpe-2H": "registered",
+            "golpe-2L": "registered",
+            "golpe-2M": "registered",
+            "golpe-2S-turbo": "registered",
+            "golpe-2S": "registered",
+            "golpe-3H": "registered",
+            "golpe-4S": "registered",
+            "golpe-5H": "registered",
+            "golpe-5L": "decoded",
+            "golpe-5M": "registered",
+            "golpe-5S-turbo": "registered",
+            "golpe-5S": "decoded",
+            "golpe-6M": "registered",
+            "golpe-6S-turbo": "registered",
+            "golpe-6S": "registered",
+            "golpe-SA1": "registered",
+            "golpe-SA3": "registered",
+            "golpe-blindado": "registered",
+            "golpe-jH": "registered",
+            "golpe-jL": "registered",
+            "golpe-jM": "registered",
+            "golpe-throw": "registered",
+            "levantar": "registered",
+            "parado": "decoded",
+            "pulo": "registered",
+            "recuo": "registered",
+            "recuperacao-rolamento": "registered",
+            "tonto": "registered",
+            "vitoria": "registered"
+          },
+          "chupetinha-fx": {
+            "arco-mangual": "registered",
+            "celular-ativacao": "registered",
+            "celular-dano": "registered",
+            "celular-live-1": "registered",
+            "celular-live-2": "registered",
+            "celular-live": "registered",
+            "celular-sem-sinal": "decoded",
+            "engajamento": "registered",
+            "impacto-chupeta": "registered",
+            "projetil-chupeta": "registered",
+            "sugada": "registered"
+          },
+          "trunks": {
+            "agachar": "registered",
+            "andar-tras": "registered",
+            "andar": "decoded",
+            "caido": "registered",
+            "correr": "registered",
+            "dano-alto": "decoded",
+            "dano-baixo": "registered",
+            "dano-no-ar": "registered",
+            "defesa-agachado": "registered",
+            "defesa-em-pe": "decoded",
+            "defesa-no-ar": "registered",
+            "escape-agarrao": "registered",
+            "golpe-2H": "registered",
+            "golpe-2L": "registered",
+            "golpe-2M": "registered",
+            "golpe-2S": "registered",
+            "golpe-3H": "registered",
+            "golpe-4S": "registered",
+            "golpe-5H": "registered",
+            "golpe-5L": "decoded",
+            "golpe-5M": "registered",
+            "golpe-5S": "registered",
+            "golpe-6M": "registered",
+            "golpe-6S": "registered",
+            "golpe-SA1": "registered",
+            "golpe-SA3": "registered",
+            "golpe-blindado": "registered",
+            "golpe-c1": "registered",
+            "golpe-c2": "registered",
+            "golpe-jH": "registered",
+            "golpe-jL": "registered",
+            "golpe-jM": "registered",
+            "golpe-throw": "registered",
+            "levantar": "registered",
+            "parado": "decoded",
+            "pulo": "registered",
+            "recuo": "registered",
+            "recuperacao-rolamento": "registered",
+            "tonto": "registered",
+            "vitoria": "registered"
+          },
+          "trunks-fx": {
+            "ambulancia-queda": "registered",
+            "caes-correr": "registered",
+            "caes-final": "registered",
+            "caes-mordida": "registered",
+            "caes-salto": "registered",
+            "fx-explosao": "registered",
+            "fx-marca": "registered",
+            "fx-mordida": "registered"
+          }
+        }
+      },
+      "inputMoved": {
+        "from": 1040,
+        "to": 1089.6000000000004
+      },
+      "pause": true,
+      "cameras": [
+        0,
+        340,
+        680
+      ],
+      "reduced": {
+        "enabled": true,
+        "shake": 0,
+        "flash": 0
+      },
+      "mobile": {
+        "viewport": [
+          844,
+          390
+        ],
+        "scrollWidth": 844,
+        "canvasCSS": {
+          "x": 75.5,
+          "y": 0,
+          "w": 693,
+          "h": 390
+        },
+        "touch": true
+      },
+      "mechanics": [
+        {
+          "label": "Dano liga live",
+          "passed": true
+        },
+        {
+          "label": "Live cura25% do dano",
+          "passed": true,
+          "damage": 366,
+          "netLoss": 274
+        },
+        {
+          "label": "Flash derruba celular",
+          "passed": true
+        }
+      ],
+      "mechanicCaptures": [
+        "live-phone"
+      ]
+    },
+    {
+      "spriteErrors": [],
+      "id": "banheiros",
+      "foe": "pavanassi",
+      "chapter": 2,
+      "runtime": {
+        "stage": {
+          "ready": true,
+          "loaded": 61,
+          "errors": [],
+          "prepared": true
+        },
+        "audio": {
+          "stage": "banheiros",
+          "available": true,
+          "active": false,
+          "muted": false,
+          "started": true,
+          "decoded": 6,
+          "gain": 0.0003560988116078079,
+          "errors": []
+        },
+        "story": {
+          "chapter": 2,
+          "foe": "pavanassi"
+        },
+        "sprites": {
+          "pavanassi": {
+            "agachar": "registered",
+            "andar-tras": "registered",
+            "andar": "decoded",
+            "caido": "registered",
+            "correr": "registered",
+            "dano-alto": "decoded",
+            "dano-baixo": "registered",
+            "dano-emocional": "registered",
+            "dano-no-ar": "registered",
+            "defesa-agachado": "registered",
+            "defesa-em-pe": "decoded",
+            "defesa-no-ar": "registered",
+            "escape-agarrao": "registered",
+            "golpe-2H": "registered",
+            "golpe-2L": "registered",
+            "golpe-2M": "registered",
+            "golpe-2S": "registered",
+            "golpe-3H": "registered",
+            "golpe-4S": "registered",
+            "golpe-5H": "registered",
+            "golpe-5L": "decoded",
+            "golpe-5M": "registered",
+            "golpe-5S-turbo": "registered",
+            "golpe-5S": "registered",
+            "golpe-6M": "registered",
+            "golpe-6S-turbo": "registered",
+            "golpe-6S": "registered",
+            "golpe-SA1": "registered",
+            "golpe-SA3": "registered",
+            "golpe-blindado": "registered",
+            "golpe-jH": "registered",
+            "golpe-jL": "registered",
+            "golpe-jM": "registered",
+            "golpe-throw": "registered",
+            "levantar": "registered",
+            "parado": "decoded",
+            "pulo": "registered",
+            "recuo": "registered",
+            "recuperacao-rolamento": "registered",
+            "tonto": "registered",
+            "vitoria": "registered"
+          },
+          "pavanassi-esquerda": {
+            "agachar": "registered",
+            "andar-tras": "registered",
+            "andar": "decoded",
+            "caido": "registered",
+            "correr": "registered",
+            "dano-alto": "decoded",
+            "dano-baixo": "registered",
+            "dano-emocional": "registered",
+            "dano-no-ar": "registered",
+            "defesa-agachado": "registered",
+            "defesa-em-pe": "decoded",
+            "defesa-no-ar": "registered",
+            "escape-agarrao": "registered",
+            "golpe-2H": "registered",
+            "golpe-2L": "registered",
+            "golpe-2M": "registered",
+            "golpe-2S": "registered",
+            "golpe-3H": "registered",
+            "golpe-4S": "registered",
+            "golpe-5H": "registered",
+            "golpe-5L": "decoded",
+            "golpe-5M": "registered",
+            "golpe-5S-turbo": "registered",
+            "golpe-5S": "registered",
+            "golpe-6M": "registered",
+            "golpe-6S-turbo": "registered",
+            "golpe-6S": "registered",
+            "golpe-SA1": "registered",
+            "golpe-SA3": "registered",
+            "golpe-blindado": "registered",
+            "golpe-jH": "registered",
+            "golpe-jL": "registered",
+            "golpe-jM": "registered",
+            "golpe-throw": "registered",
+            "levantar": "registered",
+            "parado": "decoded",
+            "pulo": "registered",
+            "recuo": "registered",
+            "recuperacao-rolamento": "registered",
+            "tonto": "registered",
+            "vitoria": "registered"
+          },
+          "pavanassi-fx": {
+            "cabine-integridade": "registered",
+            "cabine-quebrar": "registered",
+            "cabine-queda": "registered",
+            "carimbo-impacto": "registered",
+            "carimbo-voador": "registered",
+            "cela-carimbo": "registered",
+            "cerca-erguer": "registered",
+            "cerca-integridade": "registered",
+            "cerca-quebrar": "registered",
+            "decreto-dissolver": "registered",
+            "fila-documentacao": "registered",
+            "lei-seca-impacto": "registered",
+            "proibido-especial": "registered",
+            "proibido-pulo": "registered",
+            "proibido-super": "registered",
+            "veto-arco": "registered"
+          },
+          "trunks": {
+            "agachar": "registered",
+            "andar-tras": "registered",
+            "andar": "decoded",
+            "caido": "registered",
+            "correr": "registered",
+            "dano-alto": "decoded",
+            "dano-baixo": "registered",
+            "dano-no-ar": "registered",
+            "defesa-agachado": "registered",
+            "defesa-em-pe": "decoded",
+            "defesa-no-ar": "registered",
+            "escape-agarrao": "registered",
+            "golpe-2H": "registered",
+            "golpe-2L": "registered",
+            "golpe-2M": "registered",
+            "golpe-2S": "registered",
+            "golpe-3H": "registered",
+            "golpe-4S": "registered",
+            "golpe-5H": "registered",
+            "golpe-5L": "decoded",
+            "golpe-5M": "registered",
+            "golpe-5S": "registered",
+            "golpe-6M": "registered",
+            "golpe-6S": "registered",
+            "golpe-SA1": "registered",
+            "golpe-SA3": "registered",
+            "golpe-blindado": "registered",
+            "golpe-c1": "registered",
+            "golpe-c2": "registered",
+            "golpe-jH": "registered",
+            "golpe-jL": "registered",
+            "golpe-jM": "registered",
+            "golpe-throw": "registered",
+            "levantar": "registered",
+            "parado": "decoded",
+            "pulo": "registered",
+            "recuo": "registered",
+            "recuperacao-rolamento": "registered",
+            "tonto": "registered",
+            "vitoria": "registered"
+          },
+          "trunks-fx": {
+            "ambulancia-queda": "registered",
+            "caes-correr": "registered",
+            "caes-final": "registered",
+            "caes-mordida": "registered",
+            "caes-salto": "registered",
+            "fx-explosao": "registered",
+            "fx-marca": "registered",
+            "fx-mordida": "registered"
+          }
+        }
+      },
+      "inputMoved": {
+        "from": 1040,
+        "to": 1089.6000000000004
+      },
+      "pause": true,
+      "cameras": [
+        0,
+        340,
+        680
+      ],
+      "reduced": {
+        "enabled": true,
+        "shake": 0,
+        "flash": 0
+      },
+      "mobile": {
+        "viewport": [
+          844,
+          390
+        ],
+        "scrollWidth": 844,
+        "canvasCSS": {
+          "x": 75.5,
+          "y": 0,
+          "w": 693,
+          "h": 390
+        },
+        "touch": true
+      },
+      "mechanics": [
+        {
+          "label": "Cerca impede caminhada",
+          "passed": true
+        },
+        {
+          "label": "Cerca cai após golpes",
+          "passed": true
+        },
+        {
+          "label": "Questionar cabine causa dano e derruba cabine",
+          "passed": true,
+          "damage": 1300
+        }
+      ],
+      "mechanicCaptures": [
+        "fence",
+        "cabin"
+      ]
+    },
+    {
+      "spriteErrors": [],
+      "id": "aeroporto",
+      "foe": "fujao",
+      "chapter": 3,
+      "runtime": {
+        "stage": {
+          "ready": true,
+          "loaded": 32,
+          "errors": [],
+          "prepared": true
+        },
+        "audio": {
+          "stage": "aeroporto",
+          "available": true,
+          "active": false,
+          "muted": false,
+          "started": true,
+          "decoded": 6,
+          "gain": 0.0003560988116078079,
+          "errors": []
+        },
+        "story": {
+          "chapter": 3,
+          "foe": "fujao"
+        },
+        "sprites": {
+          "fujao": {
+            "agachar": "registered",
+            "andar-tras": "registered",
+            "andar": "decoded",
+            "caido": "registered",
+            "correr": "registered",
+            "dano-alto": "decoded",
+            "dano-baixo": "registered",
+            "dano-no-ar": "registered",
+            "defesa-agachado": "registered",
+            "defesa-em-pe": "decoded",
+            "defesa-no-ar": "registered",
+            "embarcar": "registered",
+            "encurralado": "registered",
+            "escape-agarrao": "registered",
+            "golpe-2H": "registered",
+            "golpe-2L": "registered",
+            "golpe-2M": "registered",
+            "golpe-2S": "registered",
+            "golpe-3H": "registered",
+            "golpe-4S": "registered",
+            "golpe-5H": "registered",
+            "golpe-5L": "decoded",
+            "golpe-5M": "registered",
+            "golpe-5S-turbo": "registered",
+            "golpe-5S": "registered",
+            "golpe-6M": "registered",
+            "golpe-6S-turbo": "registered",
+            "golpe-6S": "registered",
+            "golpe-SA1": "registered",
+            "golpe-SA3": "registered",
+            "golpe-blindado": "registered",
+            "golpe-jH": "registered",
+            "golpe-jL": "registered",
+            "golpe-jM": "registered",
+            "golpe-throw": "registered",
+            "levantar": "registered",
+            "parado": "decoded",
+            "pulo": "registered",
+            "recuo": "registered",
+            "recuperacao-rolamento": "registered",
+            "tonto": "registered",
+            "vitoria": "registered"
+          },
+          "fujao-esquerda": {
+            "agachar": "registered",
+            "andar-tras": "registered",
+            "andar": "decoded",
+            "caido": "registered",
+            "correr": "registered",
+            "dano-alto": "decoded",
+            "dano-baixo": "registered",
+            "dano-no-ar": "registered",
+            "defesa-agachado": "registered",
+            "defesa-em-pe": "decoded",
+            "defesa-no-ar": "registered",
+            "embarcar": "registered",
+            "encurralado": "registered",
+            "escape-agarrao": "registered",
+            "golpe-2H": "registered",
+            "golpe-2L": "registered",
+            "golpe-2M": "registered",
+            "golpe-2S": "registered",
+            "golpe-3H": "registered",
+            "golpe-4S": "registered",
+            "golpe-5H": "registered",
+            "golpe-5L": "decoded",
+            "golpe-5M": "registered",
+            "golpe-5S-turbo": "registered",
+            "golpe-5S": "decoded",
+            "golpe-6M": "registered",
+            "golpe-6S-turbo": "registered",
+            "golpe-6S": "registered",
+            "golpe-SA1": "registered",
+            "golpe-SA3": "registered",
+            "golpe-blindado": "registered",
+            "golpe-jH": "registered",
+            "golpe-jL": "registered",
+            "golpe-jM": "registered",
+            "golpe-throw": "registered",
+            "levantar": "registered",
+            "parado": "decoded",
+            "pulo": "registered",
+            "recuo": "registered",
+            "recuperacao-rolamento": "registered",
+            "tonto": "registered",
+            "vitoria": "registered"
+          },
+          "fujao-fx": {
+            "aviso-queda": "registered",
+            "carrinho-bagagem": "registered",
+            "carrinho-turbo": "registered",
+            "embarque-cura": "registered",
+            "embarque-negado": "registered",
+            "embarque-progresso": "registered",
+            "encurralado-aviso": "registered",
+            "esteira-super": "registered",
+            "fuga-poeira": "registered",
+            "fuga-pronta": "decoded",
+            "mala-caindo": "registered",
+            "mala-impacto": "registered",
+            "mala-no-chao": "registered",
+            "mala-voando": "registered",
+            "pista-livre-impacto": "registered"
+          },
+          "trunks": {
+            "agachar": "registered",
+            "andar-tras": "registered",
+            "andar": "decoded",
+            "caido": "registered",
+            "correr": "registered",
+            "dano-alto": "decoded",
+            "dano-baixo": "registered",
+            "dano-no-ar": "registered",
+            "defesa-agachado": "registered",
+            "defesa-em-pe": "decoded",
+            "defesa-no-ar": "registered",
+            "escape-agarrao": "registered",
+            "golpe-2H": "registered",
+            "golpe-2L": "registered",
+            "golpe-2M": "registered",
+            "golpe-2S": "registered",
+            "golpe-3H": "registered",
+            "golpe-4S": "registered",
+            "golpe-5H": "registered",
+            "golpe-5L": "decoded",
+            "golpe-5M": "registered",
+            "golpe-5S": "registered",
+            "golpe-6M": "registered",
+            "golpe-6S": "registered",
+            "golpe-SA1": "registered",
+            "golpe-SA3": "registered",
+            "golpe-blindado": "registered",
+            "golpe-c1": "registered",
+            "golpe-c2": "registered",
+            "golpe-jH": "registered",
+            "golpe-jL": "registered",
+            "golpe-jM": "registered",
+            "golpe-throw": "registered",
+            "levantar": "registered",
+            "parado": "decoded",
+            "pulo": "registered",
+            "recuo": "registered",
+            "recuperacao-rolamento": "registered",
+            "tonto": "registered",
+            "vitoria": "registered"
+          },
+          "trunks-fx": {
+            "ambulancia-queda": "registered",
+            "caes-correr": "registered",
+            "caes-final": "registered",
+            "caes-mordida": "registered",
+            "caes-salto": "registered",
+            "fx-explosao": "registered",
+            "fx-marca": "registered",
+            "fx-mordida": "registered"
+          }
+        }
+      },
+      "inputMoved": {
+        "from": 1040,
+        "to": 1089.6000000000004
+      },
+      "pause": true,
+      "cameras": [
+        0,
+        340,
+        680
+      ],
+      "reduced": {
+        "enabled": true,
+        "shake": 0,
+        "flash": 0
+      },
+      "mobile": {
+        "viewport": [
+          844,
+          390
+        ],
+        "scrollWidth": 844,
+        "canvasCSS": {
+          "x": 75.5,
+          "y": 0,
+          "w": 693,
+          "h": 390
+        },
+        "touch": true
+      },
+      "mechanics": [
+        {
+          "label": "Embarque sozinho recupera vida",
+          "passed": true,
+          "stairsX": 2300,
+          "heal": 1400
+        },
+        {
+          "label": "Aproximação nega embarque",
+          "passed": true
+        }
+      ],
+      "mechanicCaptures": [
+        "boarding"
+      ]
+    },
+    {
+      "spriteErrors": [],
+      "id": "mansao",
+      "foe": "pai-fujao",
+      "chapter": 4,
+      "runtime": {
+        "stage": {
+          "ready": true,
+          "loaded": 21,
+          "errors": [],
+          "prepared": true
+        },
+        "audio": {
+          "stage": "mansao",
+          "available": true,
+          "active": false,
+          "muted": false,
+          "started": true,
+          "decoded": 6,
+          "gain": 0.00044917280320078135,
+          "errors": []
+        },
+        "story": {
+          "chapter": 4,
+          "foe": "pai-fujao"
+        },
+        "sprites": {
+          "pai-fujao": {
+            "agachar": "registered",
+            "andar-tras": "registered",
+            "andar": "decoded",
+            "caido": "registered",
+            "correr": "registered",
+            "dano-alto": "decoded",
+            "dano-baixo": "registered",
+            "dano-no-ar": "registered",
+            "defesa-agachado": "registered",
+            "defesa-em-pe": "decoded",
+            "defesa-no-ar": "registered",
+            "escape-agarrao": "registered",
+            "furia-paterna": "registered",
+            "golpe-2H": "registered",
+            "golpe-2L": "registered",
+            "golpe-2M": "registered",
+            "golpe-3H": "registered",
+            "golpe-4S": "registered",
+            "golpe-5H": "registered",
+            "golpe-5L": "decoded",
+            "golpe-5M": "registered",
+            "golpe-5S": "loading",
+            "golpe-6M": "registered",
+            "golpe-6S-turbo": "registered",
+            "golpe-6S": "registered",
+            "golpe-SA1": "registered",
+            "golpe-SA3": "registered",
+            "golpe-blindado": "registered",
+            "golpe-jH": "registered",
+            "golpe-jL": "registered",
+            "golpe-jM": "registered",
+            "golpe-throw": "registered",
+            "levantar": "registered",
+            "parado": "decoded",
+            "pulo": "registered",
+            "reacao-tornozeleira": "registered",
+            "recuo": "registered",
+            "recuperacao-rolamento": "registered",
+            "tonto": "registered",
+            "vitoria": "registered"
+          },
+          "pai-fujao-fx": {
+            "bengala-arco": "registered",
+            "capanga-ataque": "registered",
+            "capanga-correr": "registered",
+            "dinheiro-cura": "registered",
+            "dinheiro-girar": "registered",
+            "dinheiro-impacto": "registered",
+            "foro-cassado": "registered",
+            "foro-escudo": "decoded",
+            "foro-impacto": "registered",
+            "foro-retorno": "registered",
+            "furia-aura": "registered",
+            "impacto": "registered",
+            "prisao-choque": "registered",
+            "prisao-impacto-final": "registered",
+            "prisao-trava": "registered",
+            "telefone-ocupado": "registered",
+            "telefone-pronto": "decoded",
+            "tornozeleira-choque": "registered",
+            "tornozeleira-monitor": "decoded",
+            "tornozeleira-zona": "decoded"
+          },
+          "trunks": {
+            "agachar": "registered",
+            "andar-tras": "registered",
+            "andar": "decoded",
+            "caido": "registered",
+            "correr": "registered",
+            "dano-alto": "decoded",
+            "dano-baixo": "registered",
+            "dano-no-ar": "registered",
+            "defesa-agachado": "registered",
+            "defesa-em-pe": "decoded",
+            "defesa-no-ar": "registered",
+            "escape-agarrao": "registered",
+            "golpe-2H": "registered",
+            "golpe-2L": "registered",
+            "golpe-2M": "registered",
+            "golpe-2S": "registered",
+            "golpe-3H": "registered",
+            "golpe-4S": "registered",
+            "golpe-5H": "registered",
+            "golpe-5L": "decoded",
+            "golpe-5M": "registered",
+            "golpe-5S": "registered",
+            "golpe-6M": "registered",
+            "golpe-6S": "registered",
+            "golpe-SA1": "registered",
+            "golpe-SA3": "registered",
+            "golpe-blindado": "registered",
+            "golpe-c1": "registered",
+            "golpe-c2": "registered",
+            "golpe-jH": "registered",
+            "golpe-jL": "registered",
+            "golpe-jM": "registered",
+            "golpe-throw": "registered",
+            "levantar": "registered",
+            "parado": "decoded",
+            "pulo": "registered",
+            "recuo": "registered",
+            "recuperacao-rolamento": "registered",
+            "tonto": "registered",
+            "vitoria": "registered"
+          },
+          "trunks-fx": {
+            "ambulancia-queda": "registered",
+            "caes-correr": "registered",
+            "caes-final": "registered",
+            "caes-mordida": "registered",
+            "caes-salto": "registered",
+            "fx-explosao": "registered",
+            "fx-marca": "registered",
+            "fx-mordida": "registered"
+          }
+        }
+      },
+      "inputMoved": {
+        "from": 1040,
+        "to": 1089.6000000000004
+      },
+      "pause": true,
+      "cameras": [
+        0,
+        340,
+        680
+      ],
+      "reduced": {
+        "enabled": true,
+        "shake": 0,
+        "flash": 0
+      },
+      "mobile": {
+        "viewport": [
+          844,
+          390
+        ],
+        "scrollWidth": 844,
+        "canvasCSS": {
+          "x": 75.5,
+          "y": 0,
+          "w": 693,
+          "h": 390
+        },
+        "touch": true
+      },
+      "mechanics": [
+        {
+          "label": "Empurrão fora da zona aciona choque",
+          "passed": true,
+          "zoneX": 1560,
+          "zoneR": 420,
+          "damage": 900
+        },
+        {
+          "label": "Foro absorve três primeiros golpes",
+          "passed": true,
+          "damage": [
+            1,
+            1,
+            1,
+            512
+          ]
+        }
+      ],
+      "mechanicCaptures": [
+        "ankle-zone"
+      ]
+    },
+    {
+      "spriteErrors": [],
+      "id": "washington",
+      "foe": "laranjao",
+      "chapter": 5,
+      "runtime": {
+        "stage": {
+          "ready": true,
+          "loaded": 24,
+          "errors": [],
+          "prepared": true
+        },
+        "audio": {
+          "stage": "washington",
+          "available": true,
+          "active": false,
+          "muted": false,
+          "started": true,
+          "decoded": 6,
+          "gain": 0.0003560988116078079,
+          "errors": []
+        },
+        "story": {
+          "chapter": 5,
+          "foe": "laranjao"
+        },
+        "sprites": {
+          "trunks": {
+            "agachar": "registered",
+            "andar-tras": "registered",
+            "andar": "decoded",
+            "caido": "registered",
+            "correr": "registered",
+            "dano-alto": "decoded",
+            "dano-baixo": "registered",
+            "dano-no-ar": "registered",
+            "defesa-agachado": "registered",
+            "defesa-em-pe": "decoded",
+            "defesa-no-ar": "registered",
+            "escape-agarrao": "registered",
+            "golpe-2H": "registered",
+            "golpe-2L": "registered",
+            "golpe-2M": "registered",
+            "golpe-2S": "registered",
+            "golpe-3H": "registered",
+            "golpe-4S": "registered",
+            "golpe-5H": "registered",
+            "golpe-5L": "decoded",
+            "golpe-5M": "registered",
+            "golpe-5S": "registered",
+            "golpe-6M": "registered",
+            "golpe-6S": "registered",
+            "golpe-SA1": "registered",
+            "golpe-SA3": "registered",
+            "golpe-blindado": "registered",
+            "golpe-c1": "registered",
+            "golpe-c2": "registered",
+            "golpe-jH": "registered",
+            "golpe-jL": "registered",
+            "golpe-jM": "registered",
+            "golpe-throw": "registered",
+            "levantar": "registered",
+            "parado": "decoded",
+            "pulo": "registered",
+            "recuo": "registered",
+            "recuperacao-rolamento": "registered",
+            "tonto": "registered",
+            "vitoria": "registered"
+          },
+          "trunks-fx": {
+            "ambulancia-queda": "registered",
+            "caes-correr": "registered",
+            "caes-final": "registered",
+            "caes-mordida": "registered",
+            "caes-salto": "registered",
+            "fx-explosao": "registered",
+            "fx-marca": "registered",
+            "fx-mordida": "registered"
+          }
+        }
+      },
+      "inputMoved": {
+        "from": 1040,
+        "to": 1089.6000000000004
+      },
+      "pause": true,
+      "cameras": [
+        0,
+        340,
+        680
+      ],
+      "reduced": {
+        "enabled": true,
+        "shake": 0,
+        "flash": 0
+      },
+      "mobile": {
+        "viewport": [
+          844,
+          390
+        ],
+        "scrollWidth": 844,
+        "canvasCSS": {
+          "x": 75.5,
+          "y": 0,
+          "w": 693,
+          "h": 390
+        },
+        "touch": true
+      },
+      "mechanics": [
+        {
+          "label": "Fake News cria duas cópias",
+          "passed": true
+        },
+        {
+          "label": "The Wall materializa muralha",
+          "passed": true
+        },
+        {
+          "label": "Muralha impede travessia por salto",
+          "passed": true,
+          "hp": 6
+        },
+        {
+          "label": "Armadura absorve golpe e consome carga",
+          "passed": true
+        }
+      ],
+      "mechanicCaptures": [
+        "clones-shadow",
+        "wall"
+      ]
+    },
+    {
+      "spriteErrors": [],
+      "id": "inferno",
+      "foe": "djabo",
+      "chapter": 6,
+      "runtime": {
+        "stage": {
+          "ready": true,
+          "loaded": 13,
+          "errors": [],
+          "prepared": true
+        },
+        "audio": {
+          "stage": "inferno",
+          "available": true,
+          "active": false,
+          "muted": false,
+          "started": true,
+          "decoded": 6,
+          "gain": 0.0003560988116078079,
+          "errors": []
+        },
+        "story": {
+          "chapter": 6,
+          "foe": "djabo"
+        },
+        "sprites": {
+          "trunks": {
+            "agachar": "registered",
+            "andar-tras": "registered",
+            "andar": "decoded",
+            "caido": "registered",
+            "correr": "registered",
+            "dano-alto": "decoded",
+            "dano-baixo": "registered",
+            "dano-no-ar": "registered",
+            "defesa-agachado": "registered",
+            "defesa-em-pe": "decoded",
+            "defesa-no-ar": "registered",
+            "escape-agarrao": "registered",
+            "golpe-2H": "registered",
+            "golpe-2L": "registered",
+            "golpe-2M": "registered",
+            "golpe-2S": "registered",
+            "golpe-3H": "registered",
+            "golpe-4S": "registered",
+            "golpe-5H": "registered",
+            "golpe-5L": "decoded",
+            "golpe-5M": "registered",
+            "golpe-5S": "registered",
+            "golpe-6M": "registered",
+            "golpe-6S": "registered",
+            "golpe-SA1": "registered",
+            "golpe-SA3": "registered",
+            "golpe-blindado": "registered",
+            "golpe-c1": "registered",
+            "golpe-c2": "registered",
+            "golpe-jH": "registered",
+            "golpe-jL": "registered",
+            "golpe-jM": "registered",
+            "golpe-throw": "registered",
+            "levantar": "registered",
+            "parado": "decoded",
+            "pulo": "registered",
+            "recuo": "registered",
+            "recuperacao-rolamento": "registered",
+            "tonto": "registered",
+            "vitoria": "registered"
+          },
+          "trunks-fx": {
+            "ambulancia-queda": "registered",
+            "caes-correr": "registered",
+            "caes-final": "registered",
+            "caes-mordida": "registered",
+            "caes-salto": "registered",
+            "fx-explosao": "registered",
+            "fx-marca": "registered",
+            "fx-mordida": "registered"
+          }
+        }
+      },
+      "inputMoved": {
+        "from": 1040,
+        "to": 1089.6000000000004
+      },
+      "pause": true,
+      "cameras": [
+        0,
+        340,
+        680
+      ],
+      "reduced": {
+        "enabled": true,
+        "shake": 0,
+        "flash": 0
+      },
+      "mobile": {
+        "viewport": [
+          844,
+          390
+        ],
+        "scrollWidth": 844,
+        "canvasCSS": {
+          "x": 75.5,
+          "y": 0,
+          "w": 693,
+          "h": 390
+        },
+        "touch": true
+      },
+      "mechanics": [
+        {
+          "label": "Inferno Nacional preserva faixa segura360",
+          "passed": true,
+          "safe": [
+            1376.689359988086,
+            1736.689359988086
+          ],
+          "segments": [
+            [
+              110,
+              350
+            ],
+            [
+              350,
+              590
+            ],
+            [
+              590,
+              830
+            ],
+            [
+              830,
+              1070
+            ],
+            [
+              1070,
+              1310
+            ],
+            [
+              1310,
+              1376.689359988086
+            ],
+            [
+              1736.689359988086,
+              1790
+            ],
+            [
+              1790,
+              2030
+            ],
+            [
+              2030,
+              2270
+            ],
+            [
+              2270,
+              2490
+            ]
+          ]
+        }
+      ],
+      "mechanicCaptures": [
+        "warning",
+        "active"
+      ]
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "http": [],
+  "environment": {
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.0.0 Safari/537.36",
+    "canvas": [
+      1920,
+      1080
+    ],
+    "viewport": [
+      1280,
+      720
+    ],
+    "ui": {
+      "loaded": false,
+      "images": 31,
+      "errors": [],
+      "portraits": 15,
+      "icons": 14
+    },
+    "sprites": {
+      "packs": 31,
+      "strips": 881
+    },
+    "stagePacks": [
+      "belem",
+      "aeroporto",
+      "banheiros",
+      "inferno",
+      "mansao",
+      "palco",
+      "washington"
+    ]
+  }
+}

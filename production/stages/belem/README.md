@@ -1,6 +1,6 @@
 # Belém / Ver-o-Peso — cenário produzido
 
-**36 grupos completos, 45 arquivos de entrega:** oito bases, 17 variantes de
+**36 grupos completos, 46 arquivos de entrega:** oito bases, 17 variantes de
 objetos, oito animações, três efeitos, seis áudios e três peças de interface.
 As imagens se inspiram nas três fotos fornecidas pelo usuário: Mercado de
 Ferro e casario do Ver-o-Peso, barcos e paneiros no cais, Catedral da Sé.
@@ -57,3 +57,9 @@ gravação real. `?stage=off` conserva a versão procedural para comparação.
 
 Consulte [a especificação](../../../docs/CENARIO-01-VER-O-PESO.md) e as
 evidências em `production/qa/evidence/belem-*.png`.
+
+## Revisão dos apoios das bandeirolas
+
+As duas fileiras agora se prendem a quatro mastros pintados, com parallax 0,78 solidário, em vez de depender do telhado mais distante. O arquivo `props/mastro-bandeirolas.webp` é reuso byte a byte do palco (SHA256 `39f5749c3e4bc5835c7eabc575d3913ca3dbea62353af6befd8c972fd64105c5`), com origem no manifesto e fonte original preservada no pack do palco. Os 36 grupos originais e 20 mestres gerados permanecem; o arquivo suplementar eleva o inventário a 46.
+
+`src/data/belem-stage.js` é a fonte real das posições; o finalizador também as registra no manifesto. `suspension` declara os quatro nós e os apoios. `node tools/check-stage-hangings.mjs belem` confere geometria e alpha nas seis poses e câmeras 0/340/680 com tolerância 8px. `tools/build-belem-preview.mjs` atualiza a prévia autossuficiente usando o renderer real; `tools/capture-belem-ui.mjs` grava a composição, miniatura e carregamento sem lutadores. Após a captura, o finalizador renova os hashes. Esta revisão de assets não certifica gameplay.

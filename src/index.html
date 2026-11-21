@@ -35,13 +35,17 @@
   #tpause { top: 2vh; left: max(1.5vw, env(safe-area-inset-left)); width: 11vh; height: 8vh; border-radius: 2vh; border: 2px solid rgba(255,255,255,.4); background: rgba(0,0,0,.35); color: #fff; font: 900 3vh Arial, sans-serif; }
   #rotate { display: none; inset: 0; background: #12080c; color: #ffcf2a; font-size: 7vw; align-items: center; justify-content: center; text-align: center; padding: 8vw; font-style: italic; }
   @media (orientation: portrait) { .touch #rotate { display: flex; } }
-  #loading {position:fixed;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3vh;background:#f3c426;color:#17131b;font:italic 900 7vmin Impact,'Arial Black',sans-serif;letter-spacing:.02em;text-align:center;}
-  #loading b {color:#f4e9c9;-webkit-text-stroke:.35vmin #17131b;paint-order:stroke;text-shadow:.6vmin .6vmin 0 #dc3029;line-height:1;}
-  #loading span {font-size:2.6vmin;letter-spacing:.12em;}
-  #loading i {display:block;width:36vmin;height:1.6vmin;border:.4vmin solid #17131b;background:#f4e9c9;overflow:hidden;position:relative;}
-  #loading i::after {content:"";position:absolute;inset:0;width:35%;background:#dc3029;animation:sn-load 1.1s ease-in-out infinite alternate;}
-  @keyframes sn-load {from{transform:translateX(0)}to{transform:translateX(186%)}}
-  @media (prefers-reduced-motion: reduce) { #loading i::after { animation:none; width:100%; } }
+  /* Carregamento no mesmo visual clássico dos menus: fundo preto, letras de pixel douradas e barra em blocos. */
+  #loading {position:fixed;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5vmin;background:#000;}
+  #loading canvas {display:block;image-rendering:pixelated;image-rendering:crisp-edges;}
+  #loading .sn-title {width:min(78vw,120vmin);}
+  #loading .sn-wait {width:min(34vw,52vmin);animation:sn-blink 1s steps(1) infinite;}
+  #loading i {display:block;width:min(46vw,70vmin);height:3.2vmin;border:.8vmin solid #f8c820;background:#000;overflow:hidden;position:relative;box-shadow:0 0 0 .8vmin #000,0 0 0 1.4vmin #5a1000;}
+  #loading i::after {content:"";position:absolute;top:.6vmin;bottom:.6vmin;left:.6vmin;width:30%;background:repeating-linear-gradient(90deg,#ffd848 0 2.4vmin,#ff8c18 2.4vmin 3.2vmin,transparent 3.2vmin 4vmin);animation:sn-load 1.2s steps(8) infinite alternate;}
+  #loading .sr {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);}
+  @keyframes sn-load {from{transform:translateX(0)}to{transform:translateX(225%)}}
+  @keyframes sn-blink {0%{opacity:1}70%{opacity:0}}
+  @media (prefers-reduced-motion: reduce) { #loading i::after { animation:none; width:calc(100% - 1.2vmin); } #loading .sn-wait { animation:none; } }
 
   [hidden] { display:none !important; }
   #accessible-menu { position:fixed;left:var(--canvas-left);top:var(--canvas-top);width:var(--canvas-width);height:var(--canvas-height);z-index:5;pointer-events:none; }
@@ -80,7 +84,46 @@
 </head>
 <body>
 <canvas id="game" width="1920" height="1080" aria-label="Arena de combate Salvadores Nacionais"></canvas>
-<div id="loading" role="status" aria-live="polite"><b>SALVADORES<br>NACIONAIS</b><i></i><span>CARREGANDO…</span></div>
+<div id="loading" role="status" aria-live="polite"><span class="sr">Salvadores Nacionais. Carregando…</span><canvas class="sn-title" aria-hidden="true"></canvas><i></i><canvas class="sn-wait" aria-hidden="true"></canvas></div>
+<script>
+/* Letras 5×7 da fonte de pixel dos menus (só as usadas aqui), desenhadas antes de o jogo carregar. */
+(function () {
+  var G = { S: '.####|#....|#....|.###.|....#|....#|####.', A: '.###.|#...#|#...#|#####|#...#|#...#|#...#', L: '#....|#....|#....|#....|#....|#....|#####',
+    V: '#...#|#...#|#...#|#...#|#...#|.#.#.|..#..', D: '####.|#...#|#...#|#...#|#...#|#...#|####.', O: '.###.|#...#|#...#|#...#|#...#|#...#|.###.',
+    R: '####.|#...#|#...#|####.|#.#..|#..#.|#...#', E: '#####|#....|#....|####.|#....|#....|#####', N: '#...#|#...#|##..#|#.#.#|#..##|#...#|#...#',
+    C: '.###.|#...#|#....|#....|#....|#...#|.###.', I: '###|.#.|.#.|.#.|.#.|.#.|###', G: '.###.|#...#|#....|#.###|#...#|#...#|.####',
+    '…': '.....|.....|.....|.....|.....|.....|#.#.#' };
+  var STY = { gold: [['#fffbe0', '#fff090', '#ffd848', '#ffb428', '#ff8c18', '#f06414', '#d84010'], '#1a0600', '#5a1000'],
+    blue: [['#f0f8ff', '#b8d8ff', '#80b4ff', '#5890ff', '#3c70f0', '#2c58d8', '#2448c0'], '#000428', null] };
+  function draw(cv, lines, style) {
+    var st = STY[style], pts = [], w = 0, gap = 3;
+    lines.forEach(function (line, li) {
+      var x = 0;
+      for (var k = 0; k < line.length; k++) {
+        var rows = G[line[k]].split('|');
+        rows.forEach(function (r, y) { for (var q = 0; q < r.length; q++) if (r[q] === '#') pts.push([x + q, y + li * (7 + gap)]); });
+        x += rows[0].length + 1;
+      }
+      w = Math.max(w, x - 1);
+    });
+    var lw = lines.map(function (line) { var x = 0; for (var k = 0; k < line.length; k++) x += G[line[k]].split('|')[0].length + 1; return x - 1; });
+    var h = lines.length * 7 + (lines.length - 1) * gap;
+    cv.width = w + 4; cv.height = h + 4;
+    var g = cv.getContext('2d');
+    g.fillStyle = '#000'; g.fillRect(0, 0, cv.width, cv.height);
+    // centraliza cada linha
+    var off = [], i = 0;
+    lines.forEach(function (line, li) { off[li] = Math.floor((w - lw[li]) / 2); });
+    pts = pts.map(function (p) { var li = Math.floor(p[1] / (7 + gap)); return [p[0] + off[li] + 2, p[1] + 2, p[1] - li * (7 + gap)]; });
+    if (st[2]) { g.fillStyle = st[2]; pts.forEach(function (p) { g.fillRect(p[0], p[1], 3, 3); }); }
+    g.fillStyle = st[1]; pts.forEach(function (p) { g.fillRect(p[0] - 1, p[1] - 1, 3, 3); });
+    pts.forEach(function (p) { g.fillStyle = st[0][p[2]]; g.fillRect(p[0], p[1], 1, 1); });
+  }
+  var box = document.getElementById('loading');
+  draw(box.querySelector('.sn-title'), ['SALVADORES', 'NACIONAIS'], 'gold');
+  draw(box.querySelector('.sn-wait'), ['CARREGANDO…'], 'blue');
+})();
+</script>
 <button id="sound" type="button" aria-label="Silenciar ou ativar som" aria-pressed="false">SOM: LIGADO</button>
 <script>/*__BUNDLE__*/</script>
 </body>

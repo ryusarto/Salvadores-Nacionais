@@ -1,4 +1,5 @@
 import { drawChupetinhaPhone } from './chupetinha-art.js';
+import { drawPaiZone } from './pai-fujao-art.js';
 import { SYS } from '../data/system.js';
 import { phoneBox, LIVE } from '../data/characters/chupetinha.js';
 import { drawStageProp } from './stage-packs.js';
@@ -370,6 +371,7 @@ export function drawCash(c, x, y, frame, dir) {
 /** Área da tornozeleira no chão, com o aviso; pisca quando ele está quase saindo. */
 export function drawAnkleZone(c, f, zoneX, zoneR, frame) {
   if (f.state === 'ko') return;
+  if (drawPaiZone(c, f, zoneX, zoneR, frame)) return;
   const near = Math.abs(f.x - zoneX) > zoneR - 90;
   c.save();
   c.setLineDash([22, 14]);
@@ -383,6 +385,7 @@ export function drawAnkleZone(c, f, zoneX, zoneR, frame) {
   c.font = "bold 22px Impact, 'Arial Black', sans-serif";
   c.textAlign = 'center';
   c.fillText('ÁREA DA TORNOZELEIRA', zoneX, GY + 72);
+  if (f.ch.id === 'pai-fujao' && f.ch.spriteProfile === 'six-frame') { c.restore(); return; }
   // a própria tornozeleira no pé dele
   c.fillStyle = '#1c1820';
   c.fillRect(f.x - 22, GY - f.y - 34, 44, 18);

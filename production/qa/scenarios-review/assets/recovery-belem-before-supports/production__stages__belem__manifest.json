@@ -1,0 +1,979 @@
+{
+  "id": "belem-ver-o-peso",
+  "version": 1,
+  "groups": 36,
+  "status": "produced-and-integrated",
+  "world": {
+    "viewport": [
+      1920,
+      1080
+    ],
+    "width": 2600,
+    "cameraTravel": 680,
+    "groundY": 930,
+    "rearFloorY": 826
+  },
+  "palette": [
+    "#39365b",
+    "#bb7d97",
+    "#f2b275",
+    "#245e68",
+    "#bb794e",
+    "#ece0b6"
+  ],
+  "assetGroups": [
+    {
+      "id": "ceu",
+      "kind": "layer",
+      "status": "produced",
+      "files": [
+        "layers/ceu.webp"
+      ]
+    },
+    {
+      "id": "nuvens",
+      "kind": "layer",
+      "status": "produced",
+      "files": [
+        "layers/nuvens.webp"
+      ]
+    },
+    {
+      "id": "horizonte",
+      "kind": "layer",
+      "status": "produced",
+      "files": [
+        "layers/horizonte.webp"
+      ]
+    },
+    {
+      "id": "agua",
+      "kind": "layer",
+      "status": "produced",
+      "files": [
+        "layers/agua.webp"
+      ]
+    },
+    {
+      "id": "arquitetura",
+      "kind": "layer",
+      "status": "produced",
+      "files": [
+        "layers/arquitetura.webp"
+      ]
+    },
+    {
+      "id": "feira",
+      "kind": "layer",
+      "status": "produced",
+      "files": [
+        "layers/feira.webp"
+      ]
+    },
+    {
+      "id": "primeiro-plano",
+      "kind": "layer",
+      "status": "produced",
+      "files": [
+        "layers/primeiro-plano.webp"
+      ]
+    },
+    {
+      "id": "calcamento",
+      "kind": "ground",
+      "status": "produced",
+      "files": [
+        "ground/calcamento.webp"
+      ]
+    },
+    {
+      "id": "barraca",
+      "kind": "prop",
+      "status": "produced",
+      "files": [
+        "props/barraca-1.webp",
+        "props/barraca-2.webp",
+        "props/barraca-3.webp"
+      ]
+    },
+    {
+      "id": "banca-frutas",
+      "kind": "prop",
+      "status": "produced",
+      "files": [
+        "props/banca-frutas-1.webp",
+        "props/banca-frutas-2.webp"
+      ]
+    },
+    {
+      "id": "caixas",
+      "kind": "prop",
+      "status": "produced",
+      "files": [
+        "props/caixas-1.webp",
+        "props/caixas-2.webp",
+        "props/caixas-3.webp"
+      ]
+    },
+    {
+      "id": "cestos",
+      "kind": "prop",
+      "status": "produced",
+      "files": [
+        "props/cestos-1.webp",
+        "props/cestos-2.webp"
+      ]
+    },
+    {
+      "id": "poste",
+      "kind": "prop",
+      "status": "produced",
+      "files": [
+        "props/poste-1.webp"
+      ]
+    },
+    {
+      "id": "barco",
+      "kind": "prop",
+      "status": "produced",
+      "files": [
+        "props/barco-1.webp",
+        "props/barco-2.webp"
+      ]
+    },
+    {
+      "id": "folhagem",
+      "kind": "prop",
+      "status": "produced",
+      "files": [
+        "props/folhagem-1.webp",
+        "props/folhagem-2.webp"
+      ]
+    },
+    {
+      "id": "bandeirolas",
+      "kind": "prop",
+      "status": "produced",
+      "files": [
+        "props/bandeirolas-1.webp",
+        "props/bandeirolas-2.webp"
+      ]
+    },
+    {
+      "id": "agua-ondulacao",
+      "kind": "animation",
+      "status": "produced",
+      "files": [
+        "animations/agua-ondulacao.webp"
+      ]
+    },
+    {
+      "id": "barco-balanco",
+      "kind": "animation",
+      "status": "produced",
+      "files": [
+        "animations/barco-balanco.webp"
+      ]
+    },
+    {
+      "id": "toldo-vento",
+      "kind": "animation",
+      "status": "produced",
+      "files": [
+        "animations/toldo-vento.webp"
+      ]
+    },
+    {
+      "id": "bandeirolas-vento",
+      "kind": "animation",
+      "status": "produced",
+      "files": [
+        "animations/bandeirolas-vento.webp"
+      ]
+    },
+    {
+      "id": "folhagem-vento",
+      "kind": "animation",
+      "status": "produced",
+      "files": [
+        "animations/folhagem-vento.webp"
+      ]
+    },
+    {
+      "id": "npc-feirante",
+      "kind": "animation",
+      "status": "produced",
+      "files": [
+        "animations/npc-feirante.webp"
+      ]
+    },
+    {
+      "id": "npc-cliente",
+      "kind": "animation",
+      "status": "produced",
+      "files": [
+        "animations/npc-cliente.webp"
+      ]
+    },
+    {
+      "id": "npc-torcedor",
+      "kind": "animation",
+      "status": "produced",
+      "files": [
+        "animations/npc-torcedor.webp"
+      ]
+    },
+    {
+      "id": "poeira-ambiente",
+      "kind": "environment-fx",
+      "status": "produced",
+      "files": [
+        "fx/poeira-ambiente.webp"
+      ]
+    },
+    {
+      "id": "luz-poste",
+      "kind": "environment-fx",
+      "status": "produced",
+      "files": [
+        "fx/luz-poste.webp"
+      ]
+    },
+    {
+      "id": "reflexos-agua",
+      "kind": "environment-fx",
+      "status": "produced",
+      "files": [
+        "fx/reflexos-agua.webp"
+      ]
+    },
+    {
+      "id": "trilha-intro",
+      "kind": "audio",
+      "status": "produced",
+      "files": [
+        "audio/trilha-intro.ogg"
+      ]
+    },
+    {
+      "id": "trilha-loop",
+      "kind": "audio",
+      "status": "produced",
+      "files": [
+        "audio/trilha-loop.ogg"
+      ]
+    },
+    {
+      "id": "ambiente-feira",
+      "kind": "audio",
+      "status": "produced",
+      "files": [
+        "audio/ambiente-feira.ogg"
+      ]
+    },
+    {
+      "id": "ambiente-agua",
+      "kind": "audio",
+      "status": "produced",
+      "files": [
+        "audio/ambiente-agua.ogg"
+      ]
+    },
+    {
+      "id": "aves",
+      "kind": "audio",
+      "status": "produced",
+      "files": [
+        "audio/aves.ogg"
+      ]
+    },
+    {
+      "id": "vento-tecido",
+      "kind": "audio",
+      "status": "produced",
+      "files": [
+        "audio/vento-tecido.ogg"
+      ]
+    },
+    {
+      "id": "miniatura",
+      "kind": "ui",
+      "status": "produced",
+      "files": [
+        "ui/miniatura.webp"
+      ]
+    },
+    {
+      "id": "titulo",
+      "kind": "ui",
+      "status": "produced",
+      "files": [
+        "ui/titulo.svg"
+      ]
+    },
+    {
+      "id": "carregamento",
+      "kind": "ui",
+      "status": "produced",
+      "files": [
+        "ui/carregamento.webp"
+      ]
+    }
+  ],
+  "assets": {
+    "ceu": {
+      "path": "layers/ceu.webp",
+      "kind": "layer",
+      "frames": 1,
+      "sha256": "f150f54ae0d5128ce47e59a48225a2fde0c64b77c5ab0de15ba13b24fa2afaa3",
+      "bytes": 112644,
+      "width": 1920,
+      "height": 1080,
+      "alpha": false
+    },
+    "nuvens": {
+      "path": "layers/nuvens.webp",
+      "kind": "layer",
+      "frames": 1,
+      "sha256": "9eacaa116d29fbc24d005a2ff49b4630ab48d48abd541afeedb1dfd4e298c2c5",
+      "bytes": 181786,
+      "width": 1975,
+      "height": 1080,
+      "alpha": true
+    },
+    "horizonte": {
+      "path": "layers/horizonte.webp",
+      "kind": "layer",
+      "frames": 1,
+      "sha256": "caf76e2bf3b8f7bd5fb2a5391937e697cc8b9cf651d7c100e13667f9d8782aa8",
+      "bytes": 125002,
+      "width": 2043,
+      "height": 1080,
+      "alpha": true
+    },
+    "agua": {
+      "path": "layers/agua.webp",
+      "kind": "layer",
+      "frames": 1,
+      "sha256": "fe04a2b79d92700d4948bca58ded5951dec7552ea87c63e10abc950fe22ec4cc",
+      "bytes": 57282,
+      "width": 2043,
+      "height": 1080,
+      "alpha": true
+    },
+    "arquitetura": {
+      "path": "layers/arquitetura.webp",
+      "kind": "layer",
+      "frames": 1,
+      "sha256": "e88b8c368aad5389c32510116f499414ec878b3dc5f42f58597a64140a2d4c29",
+      "bytes": 378806,
+      "width": 2206,
+      "height": 1080,
+      "alpha": true
+    },
+    "feira": {
+      "path": "layers/feira.webp",
+      "kind": "layer",
+      "frames": 1,
+      "sha256": "252ef3c816ba9e5c000a0e81ceaee1773fedf87e627c890185d478d75b4777a3",
+      "bytes": 101386,
+      "width": 2451,
+      "height": 1080,
+      "alpha": true
+    },
+    "primeiro-plano": {
+      "path": "layers/primeiro-plano.webp",
+      "kind": "layer",
+      "frames": 1,
+      "sha256": "8f310777c6d60e8a79210caa6dd4001c53fb79b631be4b4fb88d5d22fbecce86",
+      "bytes": 21826,
+      "width": 2634,
+      "height": 1080,
+      "alpha": true
+    },
+    "calcamento": {
+      "path": "ground/calcamento.webp",
+      "kind": "ground",
+      "frames": 1,
+      "sha256": "e44739a5e5596bfa560f3a8aea9232dc0790b68da2677434881d2813fce55883",
+      "bytes": 510992,
+      "width": 1024,
+      "height": 1024,
+      "alpha": false
+    },
+    "barraca-1": {
+      "path": "props/barraca-1.webp",
+      "kind": "prop",
+      "frames": 1,
+      "sha256": "f6a15e948ffd53b5f6e3c5abba20f95c76d819a85e136de6a1f33c9d25c428c4",
+      "bytes": 52524,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "crop": [
+        27,
+        16,
+        459,
+        480
+      ]
+    },
+    "barraca-2": {
+      "path": "props/barraca-2.webp",
+      "kind": "prop",
+      "frames": 1,
+      "sha256": "7338fe600d73a38bc4b28d40ea412375270bfa4850cb762215faf0f3691ccdd1",
+      "bytes": 52538,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "crop": [
+        27,
+        16,
+        458,
+        480
+      ]
+    },
+    "barraca-3": {
+      "path": "props/barraca-3.webp",
+      "kind": "prop",
+      "frames": 1,
+      "sha256": "9faf18e8a860e32fa78d341cd505c5bcabc755b2acb9ce3e75a8bf2ca40f5439",
+      "bytes": 53592,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "crop": [
+        27,
+        16,
+        458,
+        480
+      ]
+    },
+    "banca-frutas-1": {
+      "path": "props/banca-frutas-1.webp",
+      "kind": "prop",
+      "frames": 1,
+      "sha256": "56c0503057454b8a94a1c21594a66a8e3744abd22dfd9b7711a3783045d823a5",
+      "bytes": 86650,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "crop": [
+        16,
+        58,
+        480,
+        397
+      ]
+    },
+    "banca-frutas-2": {
+      "path": "props/banca-frutas-2.webp",
+      "kind": "prop",
+      "frames": 1,
+      "sha256": "aa7b52b574ad90fd95205c1d585346ef607696203fa60a69c688991f8c14f349",
+      "bytes": 84802,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "crop": [
+        16,
+        62,
+        480,
+        389
+      ]
+    },
+    "caixas-1": {
+      "path": "props/caixas-1.webp",
+      "kind": "prop",
+      "frames": 1,
+      "sha256": "d86825b46f51281c1f070ad534869b63e4acbda7c51f26c583c0108ebc1c4c65",
+      "bytes": 96644,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "crop": [
+        16,
+        38,
+        480,
+        437
+      ]
+    },
+    "caixas-2": {
+      "path": "props/caixas-2.webp",
+      "kind": "prop",
+      "frames": 1,
+      "sha256": "7d099ea1ebed5e1eb9ed5d7808e304c7554449f93c41938cd2f515a6ada2e17e",
+      "bytes": 105646,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "crop": [
+        34,
+        16,
+        444,
+        480
+      ]
+    },
+    "caixas-3": {
+      "path": "props/caixas-3.webp",
+      "kind": "prop",
+      "frames": 1,
+      "sha256": "3a9e9e63f0496771956a4225bc2178ef35723d492058cfe99f66dc1e0b93a2d3",
+      "bytes": 77102,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "crop": [
+        16,
+        72,
+        480,
+        368
+      ]
+    },
+    "cestos-1": {
+      "path": "props/cestos-1.webp",
+      "kind": "prop",
+      "frames": 1,
+      "sha256": "047cf9f95c7cdbe160126774aca1f61b678d94771493b2f3d535d6398bf8c13c",
+      "bytes": 80232,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "crop": [
+        16,
+        93,
+        480,
+        327
+      ]
+    },
+    "cestos-2": {
+      "path": "props/cestos-2.webp",
+      "kind": "prop",
+      "frames": 1,
+      "sha256": "edfcd016bf6cf162c12e420b499c3f637a9b8821ac9a211219784cab4e95493c",
+      "bytes": 89134,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "crop": [
+        16,
+        87,
+        480,
+        338
+      ]
+    },
+    "poste-1": {
+      "path": "props/poste-1.webp",
+      "kind": "prop",
+      "frames": 1,
+      "sha256": "babaf1548335714d029e34375faca8fd7cc025d3918dae5eab1914671fca8dcf",
+      "bytes": 20288,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "crop": [
+        212,
+        16,
+        89,
+        480
+      ]
+    },
+    "barco-1": {
+      "path": "props/barco-1.webp",
+      "kind": "prop",
+      "frames": 1,
+      "sha256": "f61ba040f681972b6ca4530a41f75f888d685d1a808371cc80128dfa35873d85",
+      "bytes": 80698,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "crop": [
+        16,
+        81,
+        480,
+        351
+      ]
+    },
+    "barco-2": {
+      "path": "props/barco-2.webp",
+      "kind": "prop",
+      "frames": 1,
+      "sha256": "3fc2489d4a19f2fcb6eb6dab9f898eee669bba402f73495f14608c721c57368f",
+      "bytes": 86462,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "crop": [
+        16,
+        51,
+        480,
+        411
+      ]
+    },
+    "folhagem-1": {
+      "path": "props/folhagem-1.webp",
+      "kind": "prop",
+      "frames": 1,
+      "sha256": "0391c78ab1227abf68cc978c95dd57b869915bb9abd5599f3be14d4ad1ae31bf",
+      "bytes": 94074,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "crop": [
+        57,
+        16,
+        398,
+        480
+      ]
+    },
+    "folhagem-2": {
+      "path": "props/folhagem-2.webp",
+      "kind": "prop",
+      "frames": 1,
+      "sha256": "77bd8b523498e72f8db0bbe9d98e65b2ca15f68cb7dcb1709ac2b11bcdcdcd14",
+      "bytes": 83628,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "crop": [
+        90,
+        16,
+        332,
+        480
+      ]
+    },
+    "bandeirolas-1": {
+      "path": "props/bandeirolas-1.webp",
+      "kind": "prop",
+      "frames": 1,
+      "sha256": "cf9edc74fc39b7db6bc9cc615415fcc04d89118d9357d4183aac4d2980d46a7d",
+      "bytes": 24570,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "crop": [
+        16,
+        186,
+        480,
+        141
+      ]
+    },
+    "bandeirolas-2": {
+      "path": "props/bandeirolas-2.webp",
+      "kind": "prop",
+      "frames": 1,
+      "sha256": "ab1a59ec7a9d39f186383b2e6a1af7d9bb255b37d728b110a7bc8c725b5683bd",
+      "bytes": 23702,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "crop": [
+        16,
+        195,
+        480,
+        122
+      ]
+    },
+    "agua-ondulacao": {
+      "path": "animations/agua-ondulacao.webp",
+      "kind": "animation",
+      "frames": 6,
+      "sha256": "73283648241498cfa90988435fb097900b3a6945efb948fdc350deff93f31efb",
+      "bytes": 71034,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "crop": [
+        53,
+        240,
+        396,
+        65
+      ]
+    },
+    "barco-balanco": {
+      "path": "animations/barco-balanco.webp",
+      "kind": "animation",
+      "frames": 6,
+      "sha256": "59c2210afbc2231bc9e4a616d1e37efe1d7c3cd6152ff5a5c16a2f06a6db8dbd",
+      "bytes": 374170,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "crop": [
+        44,
+        176,
+        415,
+        305
+      ]
+    },
+    "toldo-vento": {
+      "path": "animations/toldo-vento.webp",
+      "kind": "animation",
+      "frames": 6,
+      "sha256": "71b3fa0a8029490298b74597fd53781d7432b0196a793b082a9097e0c171e031",
+      "bytes": 301372,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "crop": [
+        46,
+        34,
+        408,
+        441
+      ]
+    },
+    "bandeirolas-vento": {
+      "path": "animations/bandeirolas-vento.webp",
+      "kind": "animation",
+      "frames": 6,
+      "sha256": "e445a2e626231daeddb67ebfb42ac2912fbc253241e306f2a7908dead7d80d67",
+      "bytes": 177822,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "crop": [
+        32,
+        334,
+        436,
+        146
+      ]
+    },
+    "folhagem-vento": {
+      "path": "animations/folhagem-vento.webp",
+      "kind": "animation",
+      "frames": 6,
+      "sha256": "7cab1a0f36070e138eb304bbadac516f6cb5babf4c37f8273bad585295f0894a",
+      "bytes": 438216,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "crop": [
+        78,
+        55,
+        356,
+        419
+      ]
+    },
+    "npc-feirante": {
+      "path": "animations/npc-feirante.webp",
+      "kind": "animation",
+      "frames": 6,
+      "sha256": "5a2f9df52270fbf7c468e463573a74c74bfb1848bee725a7b0ce8c0ea4ea5ded",
+      "bytes": 287838,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "crop": [
+        129,
+        18,
+        243,
+        456
+      ]
+    },
+    "npc-cliente": {
+      "path": "animations/npc-cliente.webp",
+      "kind": "animation",
+      "frames": 6,
+      "sha256": "59a2915a379ad0b6d7fa4d39e131d4c1a90880a497d352a0eca14208101adcc7",
+      "bytes": 245820,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "crop": [
+        107,
+        18,
+        246,
+        456
+      ]
+    },
+    "npc-torcedor": {
+      "path": "animations/npc-torcedor.webp",
+      "kind": "animation",
+      "frames": 6,
+      "sha256": "7ba6da4e12e9067e1d7d02b79e8f3239112f51d2e380c0232258b95b8940e3b9",
+      "bytes": 190576,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "crop": [
+        146,
+        32,
+        202,
+        442
+      ]
+    },
+    "poeira-ambiente": {
+      "path": "fx/poeira-ambiente.webp",
+      "kind": "environment-fx",
+      "frames": 6,
+      "sha256": "1b08083f7dcef6728954bab4ae6b1356a4aea77261126ab750a380d59505da22",
+      "bytes": 167436,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "crop": [
+        65,
+        151,
+        378,
+        208
+      ]
+    },
+    "luz-poste": {
+      "path": "fx/luz-poste.webp",
+      "kind": "environment-fx",
+      "frames": 6,
+      "sha256": "462128e427692d554a7371abdc06ccca375dbab3f99c3c918e7ea755cd61cde7",
+      "bytes": 131166,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "crop": [
+        117,
+        123,
+        265,
+        265
+      ]
+    },
+    "reflexos-agua": {
+      "path": "fx/reflexos-agua.webp",
+      "kind": "environment-fx",
+      "frames": 6,
+      "sha256": "342ebf215c6e7903305f3813fa6910cdb5b272aa62928fe13967764e75e6d536",
+      "bytes": 112952,
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "crop": [
+        133,
+        159,
+        233,
+        197
+      ]
+    },
+    "trilha-intro": {
+      "path": "audio/trilha-intro.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "sha256": "7491dc87e64c1294835392afe2cd6e2f31def4fdc06e906f176b8bd3536f971e",
+      "bytes": 95702,
+      "file": "production/stages/belem/audio/trilha-intro.ogg",
+      "seconds": 4.363628117913832,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.33242210477240125,
+      "rms": 0.046312896072061224,
+      "loop": false,
+      "origin": "original deterministic synthesis",
+      "bpm": 110
+    },
+    "trilha-loop": {
+      "path": "audio/trilha-loop.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "sha256": "7909993d5d9f557fa08ead80282e2ad5daab78109726cf8f31c7f3de2034996c",
+      "bytes": 366889,
+      "file": "production/stages/belem/audio/trilha-loop.ogg",
+      "seconds": 17.45453514739229,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.3754401977903099,
+      "rms": 0.05746328615314818,
+      "loop": true,
+      "origin": "original deterministic synthesis",
+      "bpm": 110
+    },
+    "ambiente-feira": {
+      "path": "audio/ambiente-feira.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "sha256": "180a6fc53cb2e8e4929f0e3fc8641337cb559047a79481a5db01e394bf4ed6dc",
+      "bytes": 191756,
+      "file": "production/stages/belem/audio/ambiente-feira.ogg",
+      "seconds": 16,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.04409430806343949,
+      "rms": 0.003949952733527829,
+      "loop": true,
+      "origin": "original deterministic synthesis",
+      "bpm": null
+    },
+    "ambiente-agua": {
+      "path": "audio/ambiente-agua.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "sha256": "10cc93e458c536e807dd2f4d1ee61f19c9bf237cdc1ef21b7ea861f0514d234a",
+      "bytes": 254432,
+      "file": "production/stages/belem/audio/ambiente-agua.ogg",
+      "seconds": 16,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.20851815799691406,
+      "rms": 0.035932655695821464,
+      "loop": true,
+      "origin": "original deterministic synthesis",
+      "bpm": null
+    },
+    "aves": {
+      "path": "audio/aves.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "sha256": "ac83c8f8c32e2b1461c12e0e4671a00b5a5b3ce03b2efc006f950900a3063a01",
+      "bytes": 17266,
+      "file": "production/stages/belem/audio/aves.ogg",
+      "seconds": 16,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.02499076713931987,
+      "rms": 0.0026378035962709595,
+      "loop": true,
+      "origin": "original deterministic synthesis",
+      "bpm": null
+    },
+    "vento-tecido": {
+      "path": "audio/vento-tecido.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "sha256": "884cdc669b6150b60f453acea6f86bcd6660734153a6c2ab3eac60c4da50b4ff",
+      "bytes": 247857,
+      "file": "production/stages/belem/audio/vento-tecido.ogg",
+      "seconds": 16,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peak": 0.09246881342918216,
+      "rms": 0.018365268872091774,
+      "loop": true,
+      "origin": "original deterministic synthesis",
+      "bpm": null
+    },
+    "miniatura": {
+      "path": "ui/miniatura.webp",
+      "kind": "ui",
+      "frames": 1,
+      "sha256": "6c342f47b24e49e989d45d2ddcd62b06baa64fd01e99be9a694a9b2b475a937a",
+      "bytes": 206304,
+      "width": 960,
+      "height": 540,
+      "alpha": false
+    },
+    "titulo": {
+      "path": "ui/titulo.svg",
+      "kind": "ui",
+      "frames": 1,
+      "sha256": "7a0cf1e44a9993c839fdd8ff0658700ad1b30913e75ca8da015a07f4f48da320",
+      "bytes": 532,
+      "width": 840,
+      "height": 210,
+      "alpha": true
+    },
+    "carregamento": {
+      "path": "ui/carregamento.webp",
+      "kind": "ui",
+      "frames": 1,
+      "sha256": "36731b6d62bfe260b18ff8ebe82f728b174766be32c906fca7ab4d33b19b612a",
+      "bytes": 758452,
+      "width": 1920,
+      "height": 1080,
+      "alpha": false
+    }
+  }
+}

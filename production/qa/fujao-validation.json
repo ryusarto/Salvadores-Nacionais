@@ -1,0 +1,59 @@
+{
+  "stage": "predeployment validation",
+  "sourceCommit": "342296008fbc6f30034c17a7a3c630c2a18e706a",
+  "ciRun": "https://github.com/ryusarto/Salvadores-Nacionais/actions/runs/44845057557",
+  "buildArtifactId": 14682493066,
+  "tests": {
+    "total": 235,
+    "passed": 235,
+    "failed": 0
+  },
+  "campaign": {
+    "matches": 56,
+    "unfinished": 0
+  },
+  "buildComparison": {
+    "baseline": "c71ad56cdea3489d3fade06914e48c48a7678441",
+    "preserved": {
+      "spritePacks": 28,
+      "strips": 782,
+      "__STAGES": 0,
+      "__STAGEPACKS": 5,
+      "__SPRITEPOSTERS": 0
+    },
+    "fujao": {
+      "fujao": 42,
+      "fujao-esquerda": 42,
+      "fujao-fx": 15
+    },
+    "errors": [],
+    "totalNewStrips": 881,
+    "buildSha256": "374c00ef3b50d2ec1909b4306aec64699f5d190730d84c6490b4daee21025cc9"
+  },
+  "browser": {
+    "environment": "Local Chrome, standard full CI build; existing assets served from public Pages and new Fujão assets from this checkout",
+    "scenes": 48,
+    "decoded": 99,
+    "errors": [],
+    "desktop": [
+      1280,
+      720
+    ],
+    "mobile": [
+      844,
+      390
+    ],
+    "observedStatesVerified": true
+  },
+  "gallery": {
+    "decoded": 99,
+    "sourceLinks": 198,
+    "sourceDownloadsChecked": 2,
+    "errors": []
+  },
+  "review": {
+    "independent": true,
+    "result": "no remaining blockers",
+    "latestCorrection": "3422960 guarded FX event hooks for partial unrelated fighter records; Franco regression and Fujão regression passed"
+  }
+}

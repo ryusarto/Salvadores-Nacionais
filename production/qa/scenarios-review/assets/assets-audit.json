@@ -1,0 +1,4638 @@
+{
+  "scope": "Read-only assets audit of seven current stage packs; no gameplay certification",
+  "passed": true,
+  "checkedRuntimeAssets": 330,
+  "environmentFrames": 396,
+  "findings": [],
+  "unavailable": [],
+  "notes": [
+    {
+      "stage": "palco",
+      "asset": "parapeito",
+      "kind": "legacy-provenance",
+      "message": "Reuse confirmed byte-exact against legacy file omitted from source pack manifest",
+      "path": "production/stages/belem/props/parapeito.webp"
+    },
+    {
+      "stage": "palco",
+      "asset": "titulo",
+      "kind": "typography-portability",
+      "message": "SVG references Bangers without embedding font or outlines; rendering depends on font resolution. Raster graphics are separate."
+    }
+  ],
+  "stages": [
+    {
+      "stage": "belem",
+      "version": 2,
+      "assets": 46,
+      "origins": {
+        "legacy-see-plan": 39,
+        "original deterministic synthesis": 6,
+        "reused-palco": 1
+      },
+      "strips": [
+        {
+          "asset": "agua-ondulacao",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            228
+          ],
+          "bounds": [
+            [
+              135,
+              251,
+              356,
+              294
+            ],
+            [
+              88,
+              250,
+              407,
+              302
+            ],
+            [
+              57,
+              243,
+              441,
+              304
+            ],
+            [
+              53,
+              240,
+              449,
+              305
+            ],
+            [
+              101,
+              242,
+              399,
+              302
+            ],
+            [
+              153,
+              247,
+              365,
+              291
+            ]
+          ],
+          "bases": [
+            293,
+            300,
+            303,
+            303,
+            298,
+            289
+          ],
+          "baseOrMountCenters": [
+            247.5,
+            247.5,
+            255.5,
+            235,
+            243.5,
+            258
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "barco-balanco",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              44,
+              176,
+              456,
+              472
+            ],
+            [
+              45,
+              177,
+              455,
+              468
+            ],
+            [
+              44,
+              176,
+              454,
+              471
+            ],
+            [
+              44,
+              176,
+              456,
+              472
+            ],
+            [
+              45,
+              182,
+              459,
+              481
+            ],
+            [
+              46,
+              179,
+              458,
+              477
+            ]
+          ],
+          "bases": [
+            471,
+            467,
+            470,
+            472,
+            481,
+            476
+          ],
+          "baseOrMountCenters": [
+            246.5,
+            249.5,
+            250,
+            246,
+            231,
+            245.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "toldo-vento",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              48,
+              34,
+              454,
+              474
+            ],
+            [
+              46,
+              34,
+              453,
+              474
+            ],
+            [
+              46,
+              34,
+              451,
+              474
+            ],
+            [
+              48,
+              35,
+              454,
+              475
+            ],
+            [
+              46,
+              34,
+              452,
+              475
+            ],
+            [
+              48,
+              35,
+              454,
+              475
+            ]
+          ],
+          "bases": [
+            474,
+            474,
+            474,
+            474,
+            474,
+            474
+          ],
+          "baseOrMountCenters": [
+            250.5,
+            250.5,
+            250,
+            251,
+            251,
+            250.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "bandeirolas-vento",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              33,
+              334,
+              467,
+              480
+            ],
+            [
+              32,
+              335,
+              467,
+              480
+            ],
+            [
+              33,
+              334,
+              468,
+              466
+            ],
+            [
+              32,
+              335,
+              467,
+              465
+            ],
+            [
+              33,
+              335,
+              467,
+              477
+            ],
+            [
+              33,
+              335,
+              468,
+              480
+            ]
+          ],
+          "bases": [
+            479,
+            479,
+            465,
+            464,
+            476,
+            479
+          ],
+          "baseOrMountCenters": [
+            246.5,
+            259.5,
+            290,
+            256,
+            246,
+            246.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "folhagem-vento",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              80,
+              59,
+              411,
+              474
+            ],
+            [
+              80,
+              57,
+              423,
+              474
+            ],
+            [
+              81,
+              55,
+              434,
+              474
+            ],
+            [
+              78,
+              58,
+              422,
+              474
+            ],
+            [
+              80,
+              59,
+              417,
+              474
+            ],
+            [
+              81,
+              59,
+              412,
+              474
+            ]
+          ],
+          "bases": [
+            474,
+            474,
+            474,
+            474,
+            474,
+            474
+          ],
+          "baseOrMountCenters": [
+            236.5,
+            237,
+            237.5,
+            237,
+            237,
+            237
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-feirante",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              158,
+              19,
+              372,
+              474
+            ],
+            [
+              142,
+              23,
+              355,
+              474
+            ],
+            [
+              129,
+              25,
+              340,
+              474
+            ],
+            [
+              154,
+              18,
+              371,
+              474
+            ],
+            [
+              143,
+              18,
+              356,
+              474
+            ],
+            [
+              134,
+              19,
+              347,
+              474
+            ]
+          ],
+          "bases": [
+            473,
+            473,
+            473,
+            474,
+            474,
+            474
+          ],
+          "baseOrMountCenters": [
+            258.5,
+            243,
+            229,
+            258.5,
+            244.5,
+            233
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-cliente",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              176,
+              18,
+              352,
+              474
+            ],
+            [
+              174,
+              19,
+              352,
+              474
+            ],
+            [
+              119,
+              19,
+              352,
+              474
+            ],
+            [
+              107,
+              19,
+              353,
+              474
+            ],
+            [
+              133,
+              19,
+              353,
+              474
+            ],
+            [
+              176,
+              18,
+              352,
+              474
+            ]
+          ],
+          "bases": [
+            474,
+            474,
+            474,
+            474,
+            474,
+            474
+          ],
+          "baseOrMountCenters": [
+            250,
+            250,
+            249.5,
+            250,
+            250,
+            250
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-torcedor",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              191,
+              32,
+              345,
+              474
+            ],
+            [
+              174,
+              45,
+              337,
+              474
+            ],
+            [
+              146,
+              32,
+              322,
+              474
+            ],
+            [
+              187,
+              34,
+              348,
+              474
+            ],
+            [
+              149,
+              34,
+              333,
+              474
+            ],
+            [
+              151,
+              33,
+              318,
+              474
+            ]
+          ],
+          "bases": [
+            474,
+            474,
+            474,
+            473,
+            473,
+            474
+          ],
+          "baseOrMountCenters": [
+            269,
+            249,
+            234,
+            268,
+            256,
+            243.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "poeira-ambiente",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            243
+          ],
+          "bounds": [
+            [
+              72,
+              159,
+              423,
+              359
+            ],
+            [
+              74,
+              156,
+              443,
+              354
+            ],
+            [
+              76,
+              151,
+              435,
+              356
+            ],
+            [
+              77,
+              158,
+              432,
+              354
+            ],
+            [
+              65,
+              170,
+              411,
+              350
+            ],
+            [
+              71,
+              164,
+              421,
+              352
+            ]
+          ],
+          "bases": [
+            311,
+            310,
+            314,
+            310,
+            307,
+            306
+          ],
+          "baseOrMountCenters": [
+            243.5,
+            240,
+            236.5,
+            238.5,
+            242,
+            249
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "luz-poste",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            252
+          ],
+          "bounds": [
+            [
+              147,
+              149,
+              355,
+              364
+            ],
+            [
+              135,
+              134,
+              369,
+              375
+            ],
+            [
+              117,
+              123,
+              382,
+              388
+            ],
+            [
+              119,
+              123,
+              381,
+              385
+            ],
+            [
+              133,
+              139,
+              363,
+              371
+            ],
+            [
+              148,
+              149,
+              353,
+              361
+            ]
+          ],
+          "bases": [
+            312,
+            329,
+            343,
+            340,
+            330,
+            319
+          ],
+          "baseOrMountCenters": [
+            253.5,
+            252.5,
+            250.5,
+            257,
+            254,
+            253
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "reflexos-agua",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            252
+          ],
+          "bounds": [
+            [
+              134,
+              161,
+              366,
+              356
+            ],
+            [
+              133,
+              161,
+              366,
+              356
+            ],
+            [
+              134,
+              161,
+              366,
+              356
+            ],
+            [
+              133,
+              159,
+              365,
+              355
+            ],
+            [
+              134,
+              159,
+              366,
+              355
+            ],
+            [
+              133,
+              159,
+              366,
+              355
+            ]
+          ],
+          "bases": [
+            355,
+            355,
+            355,
+            354,
+            354,
+            354
+          ],
+          "baseOrMountCenters": [
+            222,
+            239.5,
+            221.5,
+            223,
+            222.5,
+            222
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        }
+      ],
+      "images": 40,
+      "audio": 6,
+      "runtimeBytes": 7337012,
+      "sourceRefs": 0,
+      "sourceHashes": 0,
+      "reuseChecks": 1,
+      "ui": [
+        {
+          "asset": "miniatura",
+          "width": 960,
+          "height": 540,
+          "origin": "legacy-see-plan"
+        },
+        {
+          "asset": "titulo",
+          "width": 840,
+          "height": 210,
+          "origin": "legacy-see-plan"
+        },
+        {
+          "asset": "carregamento",
+          "width": 1920,
+          "height": 1080,
+          "origin": "legacy-see-plan"
+        }
+      ],
+      "manifestSHA": "3a4381c693225bb37848ee77bda9c2d004f9411b54bd3959bcd4683489bdb90c",
+      "generatedMasters": 20,
+      "font": {
+        "available": [
+          "production/ui/comic-v1/fonts/Bangers-Regular.ttf"
+        ],
+        "license": false
+      },
+      "uiCompositionMeanAbsoluteDifference": 2.7527713477366254
+    },
+    {
+      "stage": "palco",
+      "version": 2,
+      "assets": 88,
+      "origins": {
+        "generated": 57,
+        "reused-belem": 21,
+        "typeset": 2,
+        "legacy-see-plan": 6,
+        "derived-composition": 2
+      },
+      "strips": [
+        {
+          "asset": "npc-danca-1",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              165,
+              14,
+              370,
+              482
+            ],
+            [
+              123,
+              17,
+              383,
+              481
+            ],
+            [
+              105,
+              17,
+              373,
+              482
+            ],
+            [
+              120,
+              19,
+              381,
+              482
+            ],
+            [
+              142,
+              18,
+              386,
+              483
+            ],
+            [
+              146,
+              18,
+              367,
+              483
+            ]
+          ],
+          "bases": [
+            481,
+            481,
+            481,
+            481,
+            482,
+            482
+          ],
+          "baseOrMountCenters": [
+            257.5,
+            256.5,
+            253,
+            260.5,
+            256.5,
+            251.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-danca-2",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              149,
+              7,
+              386,
+              488
+            ],
+            [
+              146,
+              10,
+              393,
+              488
+            ],
+            [
+              93,
+              10,
+              402,
+              489
+            ],
+            [
+              125,
+              9,
+              387,
+              489
+            ],
+            [
+              142,
+              9,
+              389,
+              489
+            ],
+            [
+              144,
+              9,
+              378,
+              489
+            ]
+          ],
+          "bases": [
+            487,
+            487,
+            488,
+            488,
+            488,
+            488
+          ],
+          "baseOrMountCenters": [
+            236.5,
+            226.5,
+            194,
+            231.5,
+            213,
+            234.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-torcedor-1",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              191,
+              32,
+              345,
+              474
+            ],
+            [
+              174,
+              45,
+              337,
+              474
+            ],
+            [
+              146,
+              32,
+              322,
+              474
+            ],
+            [
+              187,
+              34,
+              348,
+              474
+            ],
+            [
+              149,
+              34,
+              333,
+              474
+            ],
+            [
+              151,
+              33,
+              318,
+              474
+            ]
+          ],
+          "bases": [
+            474,
+            474,
+            474,
+            473,
+            473,
+            474
+          ],
+          "baseOrMountCenters": [
+            269,
+            249,
+            234,
+            268,
+            256,
+            243.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-torcedor-2",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              130,
+              12,
+              360,
+              491
+            ],
+            [
+              131,
+              12,
+              421,
+              491
+            ],
+            [
+              131,
+              11,
+              423,
+              491
+            ],
+            [
+              131,
+              10,
+              411,
+              491
+            ],
+            [
+              130,
+              11,
+              411,
+              491
+            ],
+            [
+              131,
+              13,
+              382,
+              491
+            ]
+          ],
+          "bases": [
+            490,
+            490,
+            490,
+            490,
+            490,
+            490
+          ],
+          "baseOrMountCenters": [
+            229.5,
+            229.5,
+            229.5,
+            229.5,
+            229.5,
+            229.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-tecnico",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              154,
+              3,
+              364,
+              472
+            ],
+            [
+              114,
+              11,
+              397,
+              471
+            ],
+            [
+              111,
+              28,
+              446,
+              472
+            ],
+            [
+              135,
+              34,
+              429,
+              471
+            ],
+            [
+              118,
+              8,
+              337,
+              471
+            ],
+            [
+              125,
+              8,
+              337,
+              471
+            ]
+          ],
+          "bases": [
+            471,
+            471,
+            471,
+            470,
+            470,
+            470
+          ],
+          "baseOrMountCenters": [
+            259,
+            224.5,
+            223.5,
+            248,
+            227.5,
+            231
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-voluntario",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              164,
+              5,
+              351,
+              484
+            ],
+            [
+              133,
+              21,
+              376,
+              484
+            ],
+            [
+              113,
+              62,
+              400,
+              484
+            ],
+            [
+              152,
+              15,
+              410,
+              483
+            ],
+            [
+              130,
+              5,
+              424,
+              483
+            ],
+            [
+              132,
+              6,
+              315,
+              483
+            ]
+          ],
+          "bases": [
+            483,
+            483,
+            483,
+            482,
+            482,
+            482
+          ],
+          "baseOrMountCenters": [
+            254,
+            229,
+            213.5,
+            243.5,
+            225,
+            224
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-fila-1",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              176,
+              18,
+              352,
+              474
+            ],
+            [
+              174,
+              19,
+              352,
+              474
+            ],
+            [
+              119,
+              19,
+              352,
+              474
+            ],
+            [
+              107,
+              19,
+              353,
+              474
+            ],
+            [
+              133,
+              19,
+              353,
+              474
+            ],
+            [
+              176,
+              18,
+              352,
+              474
+            ]
+          ],
+          "bases": [
+            474,
+            474,
+            474,
+            474,
+            474,
+            474
+          ],
+          "baseOrMountCenters": [
+            250,
+            250,
+            249.5,
+            250,
+            250,
+            250
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-fila-2",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              190,
+              10,
+              319,
+              487
+            ],
+            [
+              176,
+              11,
+              329,
+              487
+            ],
+            [
+              156,
+              10,
+              339,
+              487
+            ],
+            [
+              154,
+              13,
+              344,
+              489
+            ],
+            [
+              162,
+              11,
+              339,
+              489
+            ],
+            [
+              195,
+              10,
+              327,
+              489
+            ]
+          ],
+          "bases": [
+            486,
+            486,
+            486,
+            488,
+            488,
+            488
+          ],
+          "baseOrMountCenters": [
+            245.5,
+            244.5,
+            244,
+            247.5,
+            246.5,
+            250
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "agua-ondulacao",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            228
+          ],
+          "bounds": [
+            [
+              135,
+              251,
+              356,
+              294
+            ],
+            [
+              88,
+              250,
+              407,
+              302
+            ],
+            [
+              57,
+              243,
+              441,
+              304
+            ],
+            [
+              53,
+              240,
+              449,
+              305
+            ],
+            [
+              101,
+              242,
+              399,
+              302
+            ],
+            [
+              153,
+              247,
+              365,
+              291
+            ]
+          ],
+          "bases": [
+            293,
+            300,
+            303,
+            303,
+            298,
+            289
+          ],
+          "baseOrMountCenters": [
+            247.5,
+            247.5,
+            255.5,
+            235,
+            243.5,
+            258
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "barco-balanco",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              44,
+              176,
+              456,
+              472
+            ],
+            [
+              45,
+              177,
+              455,
+              468
+            ],
+            [
+              44,
+              176,
+              454,
+              471
+            ],
+            [
+              44,
+              176,
+              456,
+              472
+            ],
+            [
+              45,
+              182,
+              459,
+              481
+            ],
+            [
+              46,
+              179,
+              458,
+              477
+            ]
+          ],
+          "bases": [
+            471,
+            467,
+            470,
+            472,
+            481,
+            476
+          ],
+          "baseOrMountCenters": [
+            246.5,
+            249.5,
+            250,
+            246,
+            231,
+            245.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "bandeirolas-vento",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              33,
+              334,
+              467,
+              480
+            ],
+            [
+              32,
+              335,
+              467,
+              480
+            ],
+            [
+              33,
+              334,
+              468,
+              466
+            ],
+            [
+              32,
+              335,
+              467,
+              465
+            ],
+            [
+              33,
+              335,
+              467,
+              477
+            ],
+            [
+              33,
+              335,
+              468,
+              480
+            ]
+          ],
+          "bases": [
+            479,
+            479,
+            465,
+            464,
+            476,
+            479
+          ],
+          "baseOrMountCenters": [
+            246.5,
+            259.5,
+            290,
+            256,
+            246,
+            246.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "cortina-vento",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              161,
+              15,
+              332,
+              479
+            ],
+            [
+              160,
+              15,
+              358,
+              479
+            ],
+            [
+              158,
+              15,
+              389,
+              478
+            ],
+            [
+              161,
+              16,
+              362,
+              478
+            ],
+            [
+              160,
+              16,
+              348,
+              478
+            ],
+            [
+              157,
+              15,
+              331,
+              479
+            ]
+          ],
+          "bases": [
+            478,
+            478,
+            477,
+            477,
+            478,
+            478
+          ],
+          "baseOrMountCenters": [
+            246.5,
+            241.5,
+            224,
+            219.5,
+            235.5,
+            243.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "feixe-palco-1",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            252
+          ],
+          "bounds": [
+            [
+              0,
+              0,
+              500,
+              500
+            ],
+            [
+              0,
+              0,
+              500,
+              500
+            ],
+            [
+              0,
+              0,
+              500,
+              500
+            ],
+            [
+              0,
+              0,
+              500,
+              500
+            ],
+            [
+              0,
+              0,
+              500,
+              500
+            ],
+            [
+              0,
+              0,
+              500,
+              500
+            ]
+          ],
+          "bases": [
+            483,
+            484,
+            492,
+            500,
+            489,
+            500
+          ],
+          "baseOrMountCenters": [
+            355.5,
+            343.5,
+            355.5,
+            352,
+            347,
+            374
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "feixe-palco-2",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            252
+          ],
+          "bounds": [
+            [
+              0,
+              0,
+              500,
+              500
+            ],
+            [
+              0,
+              0,
+              500,
+              500
+            ],
+            [
+              0,
+              0,
+              500,
+              500
+            ],
+            [
+              0,
+              0,
+              500,
+              500
+            ],
+            [
+              0,
+              0,
+              500,
+              500
+            ],
+            [
+              0,
+              0,
+              500,
+              500
+            ]
+          ],
+          "bases": [
+            500,
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "baseOrMountCenters": [
+            250,
+            250,
+            250,
+            265.5,
+            250,
+            144.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "poeira",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            243
+          ],
+          "bounds": [
+            [
+              72,
+              159,
+              423,
+              359
+            ],
+            [
+              74,
+              156,
+              443,
+              354
+            ],
+            [
+              76,
+              151,
+              435,
+              356
+            ],
+            [
+              77,
+              158,
+              432,
+              354
+            ],
+            [
+              65,
+              170,
+              411,
+              350
+            ],
+            [
+              71,
+              164,
+              421,
+              352
+            ]
+          ],
+          "bases": [
+            311,
+            310,
+            314,
+            310,
+            307,
+            306
+          ],
+          "baseOrMountCenters": [
+            243.5,
+            240,
+            236.5,
+            238.5,
+            242,
+            249
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "vapor-panelas",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              205,
+              244,
+              297,
+              490
+            ],
+            [
+              183,
+              138,
+              339,
+              490
+            ],
+            [
+              167,
+              56,
+              366,
+              490
+            ],
+            [
+              152,
+              33,
+              416,
+              490
+            ],
+            [
+              165,
+              54,
+              387,
+              490
+            ],
+            [
+              175,
+              186,
+              326,
+              490
+            ]
+          ],
+          "bases": [
+            488,
+            489,
+            488,
+            488,
+            489,
+            488
+          ],
+          "baseOrMountCenters": [
+            247,
+            247,
+            247,
+            248,
+            248.5,
+            248
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "reflexos-agua",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            252
+          ],
+          "bounds": [
+            [
+              134,
+              161,
+              366,
+              356
+            ],
+            [
+              133,
+              161,
+              366,
+              356
+            ],
+            [
+              134,
+              161,
+              366,
+              356
+            ],
+            [
+              133,
+              159,
+              365,
+              355
+            ],
+            [
+              134,
+              159,
+              366,
+              355
+            ],
+            [
+              133,
+              159,
+              366,
+              355
+            ]
+          ],
+          "bases": [
+            355,
+            355,
+            355,
+            354,
+            354,
+            354
+          ],
+          "baseOrMountCenters": [
+            222,
+            239.5,
+            221.5,
+            223,
+            222.5,
+            222
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "halo-poste",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            252
+          ],
+          "bounds": [
+            [
+              147,
+              149,
+              355,
+              364
+            ],
+            [
+              135,
+              134,
+              369,
+              375
+            ],
+            [
+              117,
+              123,
+              382,
+              388
+            ],
+            [
+              119,
+              123,
+              381,
+              385
+            ],
+            [
+              133,
+              139,
+              363,
+              371
+            ],
+            [
+              148,
+              149,
+              353,
+              361
+            ]
+          ],
+          "bases": [
+            312,
+            329,
+            343,
+            340,
+            330,
+            319
+          ],
+          "baseOrMountCenters": [
+            253.5,
+            252.5,
+            250.5,
+            257,
+            254,
+            253
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        }
+      ],
+      "images": 82,
+      "audio": 6,
+      "runtimeBytes": 12625855,
+      "sourceRefs": 57,
+      "sourceHashes": 0,
+      "reuseChecks": 21,
+      "ui": [
+        {
+          "asset": "titulo",
+          "width": 1200,
+          "height": 150,
+          "origin": "typeset"
+        },
+        {
+          "asset": "miniatura",
+          "width": 960,
+          "height": 540,
+          "origin": "derived-composition"
+        },
+        {
+          "asset": "carregamento",
+          "width": 1920,
+          "height": 1080,
+          "origin": "derived-composition"
+        }
+      ],
+      "manifestSHA": "678bf3d74c266ecc5d2e2c0fda4d82aeefe4ee185497aa8bd36e2ab36fe2e1f7",
+      "generatedMasters": 59,
+      "font": {
+        "available": [
+          "production/ui/comic-v1/fonts/Bangers-Regular.ttf"
+        ],
+        "license": true
+      },
+      "uiCompositionMeanAbsoluteDifference": 2.866430041152263
+    },
+    {
+      "stage": "banheiros",
+      "version": 2,
+      "assets": 70,
+      "origins": {
+        "generated": 22,
+        "reused-palco": 34,
+        "see audio/manifest.json": 6,
+        "derived-composition": 2,
+        "typeset": 6
+      },
+      "strips": [
+        {
+          "asset": "npc-acolhimento",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              142,
+              8,
+              342,
+              487
+            ],
+            [
+              142,
+              9,
+              392,
+              487
+            ],
+            [
+              141,
+              8,
+              419,
+              487
+            ],
+            [
+              142,
+              9,
+              438,
+              487
+            ],
+            [
+              142,
+              9,
+              406,
+              487
+            ],
+            [
+              141,
+              9,
+              364,
+              487
+            ]
+          ],
+          "bases": [
+            486,
+            486,
+            486,
+            486,
+            486,
+            486
+          ],
+          "baseOrMountCenters": [
+            246,
+            246,
+            246,
+            246.5,
+            246,
+            246
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-fila-comunidade",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              180,
+              9,
+              343,
+              486
+            ],
+            [
+              147,
+              14,
+              341,
+              486
+            ],
+            [
+              143,
+              9,
+              345,
+              486
+            ],
+            [
+              171,
+              12,
+              370,
+              486
+            ],
+            [
+              167,
+              10,
+              347,
+              486
+            ],
+            [
+              154,
+              9,
+              317,
+              486
+            ]
+          ],
+          "bases": [
+            485,
+            485,
+            485,
+            485,
+            485,
+            485
+          ],
+          "baseOrMountCenters": [
+            261,
+            247.5,
+            220,
+            249.5,
+            244,
+            233.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "bandeira-trans-vento",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              32,
+              107,
+              467,
+              403
+            ],
+            [
+              32,
+              107,
+              467,
+              403
+            ],
+            [
+              31,
+              94,
+              466,
+              407
+            ],
+            [
+              32,
+              108,
+              467,
+              410
+            ],
+            [
+              32,
+              108,
+              467,
+              408
+            ],
+            [
+              31,
+              108,
+              466,
+              404
+            ]
+          ],
+          "bases": [
+            402,
+            402,
+            406,
+            409,
+            407,
+            403
+          ],
+          "baseOrMountCenters": [
+            248.5,
+            246,
+            172.5,
+            248.5,
+            249,
+            247
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "papel-vento",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              101,
+              91,
+              397,
+              410
+            ],
+            [
+              80,
+              82,
+              397,
+              406
+            ],
+            [
+              61,
+              101,
+              404,
+              390
+            ],
+            [
+              91,
+              98,
+              410,
+              403
+            ],
+            [
+              86,
+              84,
+              406,
+              405
+            ],
+            [
+              99,
+              83,
+              405,
+              413
+            ]
+          ],
+          "bases": [
+            409,
+            405,
+            389,
+            403,
+            405,
+            412
+          ],
+          "baseOrMountCenters": [
+            210.5,
+            166,
+            94.5,
+            125,
+            190.5,
+            214
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-fila-1",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              176,
+              18,
+              352,
+              474
+            ],
+            [
+              174,
+              19,
+              352,
+              474
+            ],
+            [
+              119,
+              19,
+              352,
+              474
+            ],
+            [
+              107,
+              19,
+              353,
+              474
+            ],
+            [
+              133,
+              19,
+              353,
+              474
+            ],
+            [
+              176,
+              18,
+              352,
+              474
+            ]
+          ],
+          "bases": [
+            474,
+            474,
+            474,
+            474,
+            474,
+            474
+          ],
+          "baseOrMountCenters": [
+            250,
+            250,
+            249.5,
+            250,
+            250,
+            250
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-fila-2",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              190,
+              10,
+              319,
+              487
+            ],
+            [
+              176,
+              11,
+              329,
+              487
+            ],
+            [
+              156,
+              10,
+              339,
+              487
+            ],
+            [
+              154,
+              13,
+              344,
+              489
+            ],
+            [
+              162,
+              11,
+              339,
+              489
+            ],
+            [
+              195,
+              10,
+              327,
+              489
+            ]
+          ],
+          "bases": [
+            486,
+            486,
+            486,
+            488,
+            488,
+            488
+          ],
+          "baseOrMountCenters": [
+            245.5,
+            244.5,
+            244,
+            247.5,
+            246.5,
+            250
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-voluntario",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              164,
+              5,
+              351,
+              484
+            ],
+            [
+              133,
+              21,
+              376,
+              484
+            ],
+            [
+              113,
+              62,
+              400,
+              484
+            ],
+            [
+              152,
+              15,
+              410,
+              483
+            ],
+            [
+              130,
+              5,
+              424,
+              483
+            ],
+            [
+              132,
+              6,
+              315,
+              483
+            ]
+          ],
+          "bases": [
+            483,
+            483,
+            483,
+            482,
+            482,
+            482
+          ],
+          "baseOrMountCenters": [
+            254,
+            229,
+            213.5,
+            243.5,
+            225,
+            224
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-torcedor-2",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              130,
+              12,
+              360,
+              491
+            ],
+            [
+              131,
+              12,
+              421,
+              491
+            ],
+            [
+              131,
+              11,
+              423,
+              491
+            ],
+            [
+              131,
+              10,
+              411,
+              491
+            ],
+            [
+              130,
+              11,
+              411,
+              491
+            ],
+            [
+              131,
+              13,
+              382,
+              491
+            ]
+          ],
+          "bases": [
+            490,
+            490,
+            490,
+            490,
+            490,
+            490
+          ],
+          "baseOrMountCenters": [
+            229.5,
+            229.5,
+            229.5,
+            229.5,
+            229.5,
+            229.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "agua-ondulacao",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            228
+          ],
+          "bounds": [
+            [
+              135,
+              251,
+              356,
+              294
+            ],
+            [
+              88,
+              250,
+              407,
+              302
+            ],
+            [
+              57,
+              243,
+              441,
+              304
+            ],
+            [
+              53,
+              240,
+              449,
+              305
+            ],
+            [
+              101,
+              242,
+              399,
+              302
+            ],
+            [
+              153,
+              247,
+              365,
+              291
+            ]
+          ],
+          "bases": [
+            293,
+            300,
+            303,
+            303,
+            298,
+            289
+          ],
+          "baseOrMountCenters": [
+            247.5,
+            247.5,
+            255.5,
+            235,
+            243.5,
+            258
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "barco-balanco",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              44,
+              176,
+              456,
+              472
+            ],
+            [
+              45,
+              177,
+              455,
+              468
+            ],
+            [
+              44,
+              176,
+              454,
+              471
+            ],
+            [
+              44,
+              176,
+              456,
+              472
+            ],
+            [
+              45,
+              182,
+              459,
+              481
+            ],
+            [
+              46,
+              179,
+              458,
+              477
+            ]
+          ],
+          "bases": [
+            471,
+            467,
+            470,
+            472,
+            481,
+            476
+          ],
+          "baseOrMountCenters": [
+            246.5,
+            249.5,
+            250,
+            246,
+            231,
+            245.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "bandeirolas-vento",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              33,
+              334,
+              467,
+              480
+            ],
+            [
+              32,
+              335,
+              467,
+              480
+            ],
+            [
+              33,
+              334,
+              468,
+              466
+            ],
+            [
+              32,
+              335,
+              467,
+              465
+            ],
+            [
+              33,
+              335,
+              467,
+              477
+            ],
+            [
+              33,
+              335,
+              468,
+              480
+            ]
+          ],
+          "bases": [
+            479,
+            479,
+            465,
+            464,
+            476,
+            479
+          ],
+          "baseOrMountCenters": [
+            246.5,
+            259.5,
+            290,
+            256,
+            246,
+            246.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "poeira",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            243
+          ],
+          "bounds": [
+            [
+              72,
+              159,
+              423,
+              359
+            ],
+            [
+              74,
+              156,
+              443,
+              354
+            ],
+            [
+              76,
+              151,
+              435,
+              356
+            ],
+            [
+              77,
+              158,
+              432,
+              354
+            ],
+            [
+              65,
+              170,
+              411,
+              350
+            ],
+            [
+              71,
+              164,
+              421,
+              352
+            ]
+          ],
+          "bases": [
+            311,
+            310,
+            314,
+            310,
+            307,
+            306
+          ],
+          "baseOrMountCenters": [
+            243.5,
+            240,
+            236.5,
+            238.5,
+            242,
+            249
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "reflexos-agua",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            252
+          ],
+          "bounds": [
+            [
+              134,
+              161,
+              366,
+              356
+            ],
+            [
+              133,
+              161,
+              366,
+              356
+            ],
+            [
+              134,
+              161,
+              366,
+              356
+            ],
+            [
+              133,
+              159,
+              365,
+              355
+            ],
+            [
+              134,
+              159,
+              366,
+              355
+            ],
+            [
+              133,
+              159,
+              366,
+              355
+            ]
+          ],
+          "bases": [
+            355,
+            355,
+            355,
+            354,
+            354,
+            354
+          ],
+          "baseOrMountCenters": [
+            222,
+            239.5,
+            221.5,
+            223,
+            222.5,
+            222
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "halo-poste",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            252
+          ],
+          "bounds": [
+            [
+              147,
+              149,
+              355,
+              364
+            ],
+            [
+              135,
+              134,
+              369,
+              375
+            ],
+            [
+              117,
+              123,
+              382,
+              388
+            ],
+            [
+              119,
+              123,
+              381,
+              385
+            ],
+            [
+              133,
+              139,
+              363,
+              371
+            ],
+            [
+              148,
+              149,
+              353,
+              361
+            ]
+          ],
+          "bases": [
+            312,
+            329,
+            343,
+            340,
+            330,
+            319
+          ],
+          "baseOrMountCenters": [
+            253.5,
+            252.5,
+            250.5,
+            257,
+            254,
+            253
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        }
+      ],
+      "images": 64,
+      "audio": 6,
+      "runtimeBytes": 9199860,
+      "sourceRefs": 22,
+      "sourceHashes": 0,
+      "reuseChecks": 34,
+      "ui": [
+        {
+          "asset": "miniatura",
+          "width": 960,
+          "height": 540,
+          "origin": "derived-composition"
+        },
+        {
+          "asset": "carregamento",
+          "width": 1920,
+          "height": 1080,
+          "origin": "derived-composition"
+        },
+        {
+          "asset": "titulo",
+          "width": 1200,
+          "height": 150,
+          "origin": "typeset"
+        }
+      ],
+      "manifestSHA": "9ab54baf4efca6e09b9fd1257d2c57cf3cc5af610590ea1a2398238162f47a05",
+      "generatedMasters": 24,
+      "font": {
+        "available": [
+          "production/stages/banheiros/source/Bangers-Regular.ttf",
+          "production/ui/comic-v1/fonts/Bangers-Regular.ttf"
+        ],
+        "license": true
+      },
+      "uiCompositionMeanAbsoluteDifference": 2.7927025462962964
+    },
+    {
+      "stage": "aeroporto",
+      "version": 1,
+      "assets": 41,
+      "origins": {
+        "generated": 17,
+        "reused-banheiros": 9,
+        "typeset": 5,
+        "code-native": 2,
+        "original-synthesis": 6,
+        "derived-composition": 2
+      },
+      "strips": [
+        {
+          "asset": "npc-equipe-pista",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              163,
+              24,
+              354,
+              481
+            ],
+            [
+              81,
+              26,
+              399,
+              481
+            ],
+            [
+              11,
+              25,
+              445,
+              480
+            ],
+            [
+              39,
+              26,
+              490,
+              481
+            ],
+            [
+              10,
+              26,
+              428,
+              480
+            ],
+            [
+              101,
+              25,
+              344,
+              481
+            ]
+          ],
+          "bases": [
+            480,
+            480,
+            480,
+            480,
+            480,
+            480
+          ],
+          "baseOrMountCenters": [
+            264.5,
+            246.5,
+            227.5,
+            265,
+            246.5,
+            228
+          ],
+          "pivot": [
+            250,
+            480
+          ],
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-seguranca",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              163,
+              18,
+              348,
+              481
+            ],
+            [
+              154,
+              19,
+              340,
+              481
+            ],
+            [
+              147,
+              20,
+              333,
+              481
+            ],
+            [
+              178,
+              21,
+              357,
+              481
+            ],
+            [
+              151,
+              19,
+              342,
+              481
+            ],
+            [
+              146,
+              19,
+              334,
+              481
+            ]
+          ],
+          "bases": [
+            480,
+            480,
+            480,
+            480,
+            480,
+            480
+          ],
+          "baseOrMountCenters": [
+            261.5,
+            255.5,
+            248.5,
+            264.5,
+            255,
+            248
+          ],
+          "pivot": [
+            250,
+            480
+          ],
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "biruta-vento",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              57,
+              52,
+              462,
+              481
+            ],
+            [
+              56,
+              52,
+              464,
+              481
+            ],
+            [
+              54,
+              52,
+              468,
+              481
+            ],
+            [
+              58,
+              52,
+              466,
+              481
+            ],
+            [
+              56,
+              53,
+              464,
+              481
+            ],
+            [
+              54,
+              52,
+              463,
+              481
+            ]
+          ],
+          "bases": [
+            480,
+            480,
+            480,
+            480,
+            480,
+            480
+          ],
+          "baseOrMountCenters": [
+            141,
+            140,
+            138,
+            141.5,
+            140.5,
+            138
+          ],
+          "pivot": [
+            250,
+            480
+          ],
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "baliza-pista",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              108,
+              44,
+              417,
+              480
+            ],
+            [
+              97,
+              44,
+              406,
+              480
+            ],
+            [
+              87,
+              45,
+              396,
+              481
+            ],
+            [
+              107,
+              44,
+              417,
+              481
+            ],
+            [
+              97,
+              44,
+              406,
+              481
+            ],
+            [
+              88,
+              44,
+              398,
+              481
+            ]
+          ],
+          "bases": [
+            480,
+            480,
+            480,
+            480,
+            480,
+            480
+          ],
+          "baseOrMountCenters": [
+            262.5,
+            251.5,
+            241.5,
+            262,
+            251.5,
+            242.5
+          ],
+          "pivot": [
+            250,
+            480
+          ],
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-fila-1",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              176,
+              18,
+              352,
+              474
+            ],
+            [
+              174,
+              19,
+              352,
+              474
+            ],
+            [
+              119,
+              19,
+              352,
+              474
+            ],
+            [
+              107,
+              19,
+              353,
+              474
+            ],
+            [
+              133,
+              19,
+              353,
+              474
+            ],
+            [
+              176,
+              18,
+              352,
+              474
+            ]
+          ],
+          "bases": [
+            474,
+            474,
+            474,
+            474,
+            474,
+            474
+          ],
+          "baseOrMountCenters": [
+            250,
+            250,
+            249.5,
+            250,
+            250,
+            250
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-fila-2",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              190,
+              10,
+              319,
+              487
+            ],
+            [
+              176,
+              11,
+              329,
+              487
+            ],
+            [
+              156,
+              10,
+              339,
+              487
+            ],
+            [
+              154,
+              13,
+              344,
+              489
+            ],
+            [
+              162,
+              11,
+              339,
+              489
+            ],
+            [
+              195,
+              10,
+              327,
+              489
+            ]
+          ],
+          "bases": [
+            486,
+            486,
+            486,
+            488,
+            488,
+            488
+          ],
+          "baseOrMountCenters": [
+            245.5,
+            244.5,
+            244,
+            247.5,
+            246.5,
+            250
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-torcedor-2",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              130,
+              12,
+              360,
+              491
+            ],
+            [
+              131,
+              12,
+              421,
+              491
+            ],
+            [
+              131,
+              11,
+              423,
+              491
+            ],
+            [
+              131,
+              10,
+              411,
+              491
+            ],
+            [
+              130,
+              11,
+              411,
+              491
+            ],
+            [
+              131,
+              13,
+              382,
+              491
+            ]
+          ],
+          "bases": [
+            490,
+            490,
+            490,
+            490,
+            490,
+            490
+          ],
+          "baseOrMountCenters": [
+            229.5,
+            229.5,
+            229.5,
+            229.5,
+            229.5,
+            229.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "poeira",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            243
+          ],
+          "bounds": [
+            [
+              72,
+              159,
+              423,
+              359
+            ],
+            [
+              74,
+              156,
+              443,
+              354
+            ],
+            [
+              76,
+              151,
+              435,
+              356
+            ],
+            [
+              77,
+              158,
+              432,
+              354
+            ],
+            [
+              65,
+              170,
+              411,
+              350
+            ],
+            [
+              71,
+              164,
+              421,
+              352
+            ]
+          ],
+          "bases": [
+            311,
+            310,
+            314,
+            310,
+            307,
+            306
+          ],
+          "baseOrMountCenters": [
+            243.5,
+            240,
+            236.5,
+            238.5,
+            242,
+            249
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "papel-vento",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              101,
+              91,
+              397,
+              410
+            ],
+            [
+              80,
+              82,
+              397,
+              406
+            ],
+            [
+              61,
+              101,
+              404,
+              390
+            ],
+            [
+              91,
+              98,
+              410,
+              403
+            ],
+            [
+              86,
+              84,
+              406,
+              405
+            ],
+            [
+              99,
+              83,
+              405,
+              413
+            ]
+          ],
+          "bases": [
+            409,
+            405,
+            389,
+            403,
+            405,
+            412
+          ],
+          "baseOrMountCenters": [
+            210.5,
+            166,
+            94.5,
+            125,
+            190.5,
+            214
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        }
+      ],
+      "images": 35,
+      "audio": 6,
+      "runtimeBytes": 7101537,
+      "sourceRefs": 19,
+      "sourceHashes": 0,
+      "reuseChecks": 9,
+      "ui": [
+        {
+          "asset": "titulo",
+          "width": 1200,
+          "height": 150,
+          "origin": "typeset"
+        },
+        {
+          "asset": "miniatura",
+          "width": 960,
+          "height": 540,
+          "origin": "derived-composition"
+        },
+        {
+          "asset": "carregamento",
+          "width": 1920,
+          "height": 1080,
+          "origin": "derived-composition"
+        }
+      ],
+      "manifestSHA": "7c9bd8fdd1e32686657a4349f2cc733cffe06ce5d844199c7260d3aa2ca51124",
+      "generatedMasters": 17,
+      "font": {
+        "available": [
+          "production/stages/aeroporto/ui/Bangers-Regular.ttf",
+          "production/ui/comic-v1/fonts/Bangers-Regular.ttf"
+        ],
+        "license": true
+      },
+      "uiCompositionMeanAbsoluteDifference": 2.7485018004115225
+    },
+    {
+      "stage": "mansao",
+      "version": 1,
+      "assets": 30,
+      "origins": {
+        "generated": 18,
+        "reused-banheiros": 2,
+        "typeset": 2,
+        "original-synthesis": 6,
+        "derived-composition": 2
+      },
+      "strips": [
+        {
+          "asset": "lustre-balanco",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              88,
+              20,
+              415,
+              468
+            ],
+            [
+              109,
+              19,
+              436,
+              462
+            ],
+            [
+              136,
+              19,
+              460,
+              446
+            ],
+            [
+              118,
+              19,
+              444,
+              456
+            ],
+            [
+              95,
+              20,
+              423,
+              460
+            ],
+            [
+              87,
+              20,
+              415,
+              461
+            ]
+          ],
+          "bases": [
+            467,
+            461,
+            445,
+            455,
+            459,
+            459
+          ],
+          "baseOrMountCenters": [
+            250.5,
+            249.5,
+            250.5,
+            250,
+            250,
+            250.5
+          ],
+          "pivot": [
+            250,
+            20
+          ],
+          "registration": "fixed-upper-mount"
+        },
+        {
+          "asset": "cortinas-vento",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              26,
+              19,
+              468,
+              451
+            ],
+            [
+              26,
+              19,
+              469,
+              451
+            ],
+            [
+              22,
+              19,
+              472,
+              451
+            ],
+            [
+              26,
+              19,
+              468,
+              450
+            ],
+            [
+              31,
+              19,
+              469,
+              451
+            ],
+            [
+              31,
+              19,
+              469,
+              451
+            ]
+          ],
+          "bases": [
+            450,
+            450,
+            450,
+            449,
+            450,
+            450
+          ],
+          "baseOrMountCenters": [
+            250,
+            250.5,
+            250.5,
+            250,
+            250.5,
+            250.5
+          ],
+          "pivot": [
+            250,
+            20
+          ],
+          "registration": "fixed-upper-mount"
+        },
+        {
+          "asset": "fogo-lareira",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              58,
+              223,
+              440,
+              481
+            ],
+            [
+              57,
+              164,
+              439,
+              481
+            ],
+            [
+              55,
+              120,
+              437,
+              481
+            ],
+            [
+              57,
+              141,
+              440,
+              480
+            ],
+            [
+              57,
+              208,
+              439,
+              480
+            ],
+            [
+              56,
+              244,
+              438,
+              480
+            ]
+          ],
+          "bases": [
+            480,
+            480,
+            480,
+            480,
+            480,
+            480
+          ],
+          "baseOrMountCenters": [
+            245.5,
+            244,
+            242,
+            245.5,
+            244.5,
+            244
+          ],
+          "pivot": [
+            250,
+            480
+          ],
+          "registration": "planted-base"
+        },
+        {
+          "asset": "relogio-pendulo",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              165,
+              31,
+              334,
+              481
+            ],
+            [
+              165,
+              32,
+              335,
+              481
+            ],
+            [
+              166,
+              32,
+              335,
+              481
+            ],
+            [
+              165,
+              31,
+              334,
+              481
+            ],
+            [
+              165,
+              31,
+              335,
+              481
+            ],
+            [
+              165,
+              31,
+              335,
+              481
+            ]
+          ],
+          "bases": [
+            480,
+            480,
+            480,
+            480,
+            480,
+            480
+          ],
+          "baseOrMountCenters": [
+            250,
+            250,
+            250,
+            250,
+            250,
+            250
+          ],
+          "pivot": [
+            250,
+            480
+          ],
+          "registration": "planted-base"
+        }
+      ],
+      "images": 24,
+      "audio": 6,
+      "runtimeBytes": 6222506,
+      "sourceRefs": 18,
+      "sourceHashes": 0,
+      "reuseChecks": 2,
+      "ui": [
+        {
+          "asset": "titulo",
+          "width": 1200,
+          "height": 150,
+          "origin": "typeset"
+        },
+        {
+          "asset": "miniatura",
+          "width": 960,
+          "height": 540,
+          "origin": "derived-composition"
+        },
+        {
+          "asset": "carregamento",
+          "width": 1920,
+          "height": 1080,
+          "origin": "derived-composition"
+        }
+      ],
+      "manifestSHA": "7abf76f363de5184ed44fb3cbcc5df1646ae9db2ac87f7f3bfa74895071756d1",
+      "generatedMasters": 19,
+      "font": {
+        "available": [
+          "production/stages/mansao/ui/Bangers-Regular.ttf",
+          "production/ui/comic-v1/fonts/Bangers-Regular.ttf"
+        ],
+        "license": true
+      },
+      "uiCompositionMeanAbsoluteDifference": 3.309917695473251
+    },
+    {
+      "stage": "washington",
+      "version": 1,
+      "assets": 33,
+      "origins": {
+        "generated": 12,
+        "reused-palco": 9,
+        "reused-banheiros": 1,
+        "typeset": 3,
+        "original-synthesis": 6,
+        "derived-composition": 2
+      },
+      "strips": [
+        {
+          "asset": "bandeira-mastro-vento",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              104,
+              32,
+              412,
+              480
+            ],
+            [
+              105,
+              33,
+              431,
+              481
+            ],
+            [
+              105,
+              33,
+              438,
+              481
+            ],
+            [
+              105,
+              32,
+              430,
+              480
+            ],
+            [
+              105,
+              32,
+              422,
+              480
+            ],
+            [
+              105,
+              32,
+              417,
+              480
+            ]
+          ],
+          "bases": [
+            480,
+            480,
+            480,
+            480,
+            480,
+            480
+          ],
+          "baseOrMountCenters": [
+            160,
+            160.5,
+            160.5,
+            160.5,
+            160.5,
+            160.5
+          ],
+          "pivot": [
+            160,
+            480
+          ],
+          "registration": "fixed-mast-base"
+        },
+        {
+          "asset": "jatos-chafariz",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              46,
+              108,
+              452,
+              481
+            ],
+            [
+              36,
+              68,
+              464,
+              482
+            ],
+            [
+              31,
+              55,
+              469,
+              482
+            ],
+            [
+              30,
+              55,
+              471,
+              482
+            ],
+            [
+              34,
+              73,
+              466,
+              482
+            ],
+            [
+              41,
+              89,
+              460,
+              482
+            ]
+          ],
+          "bases": [
+            480,
+            480,
+            480,
+            480,
+            480,
+            480
+          ],
+          "baseOrMountCenters": [
+            250,
+            250.5,
+            250.5,
+            250.5,
+            250,
+            250
+          ],
+          "pivot": [
+            250,
+            480
+          ],
+          "registration": "fixed-water-origin"
+        },
+        {
+          "asset": "npc-voluntario",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              164,
+              5,
+              351,
+              484
+            ],
+            [
+              133,
+              21,
+              376,
+              484
+            ],
+            [
+              113,
+              62,
+              400,
+              484
+            ],
+            [
+              152,
+              15,
+              410,
+              483
+            ],
+            [
+              130,
+              5,
+              424,
+              483
+            ],
+            [
+              132,
+              6,
+              315,
+              483
+            ]
+          ],
+          "bases": [
+            483,
+            483,
+            483,
+            482,
+            482,
+            482
+          ],
+          "baseOrMountCenters": [
+            254,
+            229,
+            213.5,
+            243.5,
+            225,
+            224
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-publico-1",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              191,
+              32,
+              345,
+              474
+            ],
+            [
+              174,
+              45,
+              337,
+              474
+            ],
+            [
+              146,
+              32,
+              322,
+              474
+            ],
+            [
+              187,
+              34,
+              348,
+              474
+            ],
+            [
+              149,
+              34,
+              333,
+              474
+            ],
+            [
+              151,
+              33,
+              318,
+              474
+            ]
+          ],
+          "bases": [
+            474,
+            474,
+            474,
+            473,
+            473,
+            474
+          ],
+          "baseOrMountCenters": [
+            269,
+            249,
+            234,
+            268,
+            256,
+            243.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "npc-publico-2",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              130,
+              12,
+              360,
+              491
+            ],
+            [
+              131,
+              12,
+              421,
+              491
+            ],
+            [
+              131,
+              11,
+              423,
+              491
+            ],
+            [
+              131,
+              10,
+              411,
+              491
+            ],
+            [
+              130,
+              11,
+              411,
+              491
+            ],
+            [
+              131,
+              13,
+              382,
+              491
+            ]
+          ],
+          "bases": [
+            490,
+            490,
+            490,
+            490,
+            490,
+            490
+          ],
+          "baseOrMountCenters": [
+            229.5,
+            229.5,
+            229.5,
+            229.5,
+            229.5,
+            229.5
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        },
+        {
+          "asset": "gotas-agua",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            228
+          ],
+          "bounds": [
+            [
+              135,
+              251,
+              356,
+              294
+            ],
+            [
+              88,
+              250,
+              407,
+              302
+            ],
+            [
+              57,
+              243,
+              441,
+              304
+            ],
+            [
+              53,
+              240,
+              449,
+              305
+            ],
+            [
+              101,
+              242,
+              399,
+              302
+            ],
+            [
+              153,
+              247,
+              365,
+              291
+            ]
+          ],
+          "bases": [
+            293,
+            300,
+            303,
+            303,
+            298,
+            289
+          ],
+          "baseOrMountCenters": [
+            247.5,
+            247.5,
+            255.5,
+            235,
+            243.5,
+            258
+          ],
+          "pivot": null,
+          "registration": "legacy-common-crop"
+        }
+      ],
+      "images": 27,
+      "audio": 6,
+      "runtimeBytes": 6097354,
+      "sourceRefs": 12,
+      "sourceHashes": 0,
+      "reuseChecks": 10,
+      "ui": [
+        {
+          "asset": "titulo",
+          "width": 1400,
+          "height": 150,
+          "origin": "typeset"
+        },
+        {
+          "asset": "miniatura",
+          "width": 960,
+          "height": 540,
+          "origin": "derived-composition"
+        },
+        {
+          "asset": "carregamento",
+          "width": 1920,
+          "height": 1080,
+          "origin": "derived-composition"
+        }
+      ],
+      "manifestSHA": "8baaef39b75eeabf8e34ad2e866e262cdb3c7f1673de7a306000f4dd21bfb486",
+      "generatedMasters": 12,
+      "font": {
+        "available": [
+          "production/stages/washington/ui/Bangers-Regular.ttf",
+          "production/ui/comic-v1/fonts/Bangers-Regular.ttf"
+        ],
+        "license": true
+      },
+      "uiCompositionMeanAbsoluteDifference": 2.9059799382716047
+    },
+    {
+      "stage": "inferno",
+      "version": 2,
+      "assets": 22,
+      "origins": {
+        "generated": 13,
+        "typeset": 1,
+        "original-synthesis": 6,
+        "derived-composition": 2
+      },
+      "strips": [
+        {
+          "asset": "corrente-balanco",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              174,
+              19,
+              326,
+              476
+            ],
+            [
+              174,
+              19,
+              372,
+              467
+            ],
+            [
+              174,
+              19,
+              443,
+              446
+            ],
+            [
+              174,
+              19,
+              385,
+              461
+            ],
+            [
+              174,
+              19,
+              327,
+              472
+            ],
+            [
+              120,
+              19,
+              327,
+              472
+            ]
+          ],
+          "bases": [
+            475,
+            466,
+            445,
+            461,
+            471,
+            471
+          ],
+          "baseOrMountCenters": [
+            250,
+            250,
+            250.5,
+            250,
+            250,
+            250.5
+          ],
+          "pivot": [
+            250,
+            20
+          ],
+          "registration": "fixed-ceiling-mount"
+        },
+        {
+          "asset": "fogo-braseiro",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              120,
+              265,
+              379,
+              481
+            ],
+            [
+              121,
+              183,
+              384,
+              481
+            ],
+            [
+              120,
+              99,
+              379,
+              481
+            ],
+            [
+              120,
+              115,
+              378,
+              481
+            ],
+            [
+              120,
+              197,
+              379,
+              481
+            ],
+            [
+              120,
+              262,
+              379,
+              481
+            ]
+          ],
+          "bases": [
+            480,
+            480,
+            480,
+            480,
+            480,
+            480
+          ],
+          "baseOrMountCenters": [
+            249.5,
+            250,
+            249.5,
+            249.5,
+            249.5,
+            250
+          ],
+          "pivot": [
+            250,
+            480
+          ],
+          "registration": "fixed-base"
+        },
+        {
+          "asset": "lava-distante",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              26,
+              394,
+              475,
+              481
+            ],
+            [
+              25,
+              394,
+              473,
+              481
+            ],
+            [
+              25,
+              394,
+              473,
+              481
+            ],
+            [
+              25,
+              393,
+              474,
+              481
+            ],
+            [
+              27,
+              393,
+              474,
+              481
+            ],
+            [
+              26,
+              393,
+              474,
+              481
+            ]
+          ],
+          "bases": [
+            480,
+            480,
+            480,
+            480,
+            480,
+            480
+          ],
+          "baseOrMountCenters": [
+            250,
+            249.5,
+            249.5,
+            250,
+            250.5,
+            250
+          ],
+          "pivot": [
+            250,
+            480
+          ],
+          "registration": "fixed-base"
+        },
+        {
+          "asset": "almas-coro",
+          "frames": 6,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "bounds": [
+            [
+              70,
+              76,
+              430,
+              480
+            ],
+            [
+              70,
+              76,
+              430,
+              480
+            ],
+            [
+              35,
+              76,
+              437,
+              481
+            ],
+            [
+              64,
+              76,
+              436,
+              481
+            ],
+            [
+              31,
+              76,
+              465,
+              481
+            ],
+            [
+              64,
+              74,
+              437,
+              480
+            ]
+          ],
+          "bases": [
+            480,
+            480,
+            480,
+            480,
+            480,
+            480
+          ],
+          "baseOrMountCenters": [
+            250,
+            250,
+            250.5,
+            250,
+            250,
+            250.5
+          ],
+          "pivot": [
+            250,
+            480
+          ],
+          "registration": "fixed-base"
+        }
+      ],
+      "images": 16,
+      "audio": 6,
+      "runtimeBytes": 4048458,
+      "sourceRefs": 13,
+      "sourceHashes": 13,
+      "reuseChecks": 0,
+      "ui": [
+        {
+          "asset": "titulo",
+          "width": 1400,
+          "height": 150,
+          "origin": "typeset"
+        },
+        {
+          "asset": "miniatura",
+          "width": 960,
+          "height": 540,
+          "origin": "derived-composition"
+        },
+        {
+          "asset": "carregamento",
+          "width": 1920,
+          "height": 1080,
+          "origin": "derived-composition"
+        }
+      ],
+      "manifestSHA": "f8c58d7e09d1a893cdfe65a779e8785f6265ce0fdd5aeb866cadb49f026fd579",
+      "generatedMasters": 16,
+      "font": {
+        "available": [
+          "production/stages/inferno/ui/Bangers-Regular.ttf",
+          "production/ui/comic-v1/fonts/Bangers-Regular.ttf"
+        ],
+        "license": true
+      },
+      "uiCompositionMeanAbsoluteDifference": 1.9552700617283951
+    }
+  ]
+}

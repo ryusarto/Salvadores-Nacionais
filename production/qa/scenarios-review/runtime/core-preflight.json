@@ -1,0 +1,213 @@
+{
+  "passed": true,
+  "kind": "Preflight Node dos probes; não é execução de navegador ou gameplay humano",
+  "sourceHashes": {
+    "src/core/match.js": "a45c7c31021604861b0a7d4d8e34a7f75862d85c73c98f313caf20880377a837",
+    "src/core/combat.js": "133ad2875e7b297c282ac463579d8297a68af260add6780451b927adfb9fddfd",
+    "src/core/entities.js": "14110994d86b91942fb030ef6856c903d02589d679849f54703154ae161ab51f",
+    "src/render/boss-art.js": "b751b8d070fbb91d9d029c6721db751c73b9fbff219c46d7ef6a8a0da04d2d3b",
+    "src/render/stage-packs.js": "c7d47e72191f4e34c91fec188e21c6137e8e54d82b69016443a157260655c154",
+    "src/render/fx.js": "7fb4487c128082f6679dd6e800bed3b0d3d8be5af73fdce69831b1e84f87be62",
+    "src/ui/app.js": "ccde6438e23229101a6b79e78078db59e294abfb44b39ea057c70db3e1db47be",
+    "src/data/characters/zanata.js": "c871bfd7672b4ee3a63d212f74b373ecc43622261ff29931b5fb43743da3b81a",
+    "src/data/characters/chupetinha.js": "ea98634433cacea616c65771bc2926d5be885a82533f731c68b7c37727e1a342",
+    "src/data/characters/pavanassi.js": "4b0ce31350a8cb8ab07760850f0cd90354fcf85edcf8159167432f0b1eaacc08",
+    "src/data/characters/fujao.js": "250d162afd848348f6f4d8f8377b47e7723a35435529524458e6905d1c63c753",
+    "src/data/characters/pai-fujao.js": "4395c0b25ad2922f2b90e8875acda288083cb8bc6741f9ed46ddd3f711e3fde3",
+    "src/data/characters/laranjao.js": "694003e4622eeb86154a3eb6779e0cd4100058a3edb297ea2f7a55b71e9df0be",
+    "src/data/characters/djabo.js": "9f5a5cb45f76d56a66b310e3874fe3d748d3c446b86bbc7571744e9762e5211e"
+  },
+  "results": [
+    {
+      "id": "zanata",
+      "passed": true,
+      "checks": [
+        {
+          "label": "Fúria abaixo de40%",
+          "passed": true
+        }
+      ],
+      "shots": [
+        "fury"
+      ]
+    },
+    {
+      "id": "chupetinha",
+      "passed": true,
+      "checks": [
+        {
+          "label": "Dano liga live",
+          "passed": true
+        },
+        {
+          "label": "Live cura25% do dano",
+          "passed": true,
+          "damage": 366,
+          "netLoss": 274
+        },
+        {
+          "label": "Flash derruba celular",
+          "passed": true
+        }
+      ],
+      "shots": [
+        "live-phone"
+      ]
+    },
+    {
+      "id": "pavanassi",
+      "passed": true,
+      "checks": [
+        {
+          "label": "Cerca impede caminhada",
+          "passed": true
+        },
+        {
+          "label": "Cerca cai após golpes",
+          "passed": true
+        },
+        {
+          "label": "Questionar cabine causa dano e derruba cabine",
+          "passed": true,
+          "damage": 1300
+        }
+      ],
+      "shots": [
+        "fence",
+        "cabin"
+      ]
+    },
+    {
+      "id": "fujao",
+      "passed": true,
+      "checks": [
+        {
+          "label": "Embarque sozinho recupera vida",
+          "passed": true,
+          "stairsX": 2300,
+          "heal": 1400
+        },
+        {
+          "label": "Aproximação nega embarque",
+          "passed": true
+        }
+      ],
+      "shots": [
+        "boarding"
+      ]
+    },
+    {
+      "id": "pai-fujao",
+      "passed": true,
+      "checks": [
+        {
+          "label": "Empurrão fora da zona aciona choque",
+          "passed": true,
+          "zoneX": 1560,
+          "zoneR": 420,
+          "damage": 900
+        },
+        {
+          "label": "Foro absorve três primeiros golpes",
+          "passed": true,
+          "damage": [
+            1,
+            1,
+            1,
+            512
+          ]
+        }
+      ],
+      "shots": [
+        "ankle-zone"
+      ]
+    },
+    {
+      "id": "laranjao",
+      "passed": true,
+      "checks": [
+        {
+          "label": "Fake News cria duas cópias",
+          "passed": true
+        },
+        {
+          "label": "The Wall materializa muralha",
+          "passed": true
+        },
+        {
+          "label": "Muralha impede travessia por salto",
+          "passed": true,
+          "hp": 6
+        },
+        {
+          "label": "Armadura absorve golpe e consome carga",
+          "passed": true
+        }
+      ],
+      "shots": [
+        "clones-shadow",
+        "wall"
+      ]
+    },
+    {
+      "id": "djabo",
+      "passed": true,
+      "checks": [
+        {
+          "label": "Inferno Nacional preserva faixa segura360",
+          "passed": true,
+          "safe": [
+            1376.689359988086,
+            1736.689359988086
+          ],
+          "segments": [
+            [
+              110,
+              350
+            ],
+            [
+              350,
+              590
+            ],
+            [
+              590,
+              830
+            ],
+            [
+              830,
+              1070
+            ],
+            [
+              1070,
+              1310
+            ],
+            [
+              1310,
+              1376.689359988086
+            ],
+            [
+              1736.689359988086,
+              1790
+            ],
+            [
+              1790,
+              2030
+            ],
+            [
+              2030,
+              2270
+            ],
+            [
+              2270,
+              2490
+            ]
+          ]
+        }
+      ],
+      "shots": [
+        "warning",
+        "active"
+      ]
+    }
+  ]
+}
