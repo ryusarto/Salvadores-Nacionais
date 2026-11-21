@@ -126,5 +126,10 @@
   ],
   "limitations": [
     "No human balance playtest"
-  ]
+  ],
+  "fullUnitSuite": {
+    "passed": 246,
+    "failed": 0,
+    "command": "npm test"
+  }
 }
