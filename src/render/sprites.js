@@ -366,6 +366,19 @@ export function drawSpriteLayer(c, id, name, index, { x, y, w, h, face = 1, anch
   return true;
 }
 
+/** Map a dense solid rectangle onto a collider, retaining the complete alpha cell. */
+export function spriteMappedBox(rect, box) {
+  const [x,y,w,h] = rect, sx = box.w/w, sy = box.h/h;
+  return [box.x-x*sx,box.y-y*sy,CELL*sx,CELL*sy];
+}
+export function drawSpriteMapped(c, id, name, index, rect, box) {
+  const s = REG[id] && readyStrip(REG[id],name);
+  if (!s) return false;
+  const i = Math.max(0,Math.min(s.n-1,Math.floor(index)));
+  c.drawImage(s.cv,i*s.size,0,s.size,s.size,...spriteMappedBox(rect,box));
+  return true;
+}
+
 /** Draw a separate effect layer; coordinates are local to the caller. */
 export function drawEffect(c, id, name, p, x, y, w, h = w) {
   const s = REG['fx-' + id] && readyStrip(REG['fx-' + id], name);
@@ -442,7 +455,8 @@ export function drawSprite(c, f, frame) {
   let pick = pickStrip(set, a, f);
   // Enquanto uma tira ainda decodifica, repete o último quadro desenhado em vez
   // de pular para a pose parada ou para o boneco desenhado em código.
-  const last = LAST.get(f);
+  const sampleOwner = f.spriteSource || f;
+  const last = LAST.get(sampleOwner);
   if ((!pick || pick.waiting) && last?.set === set && last.s.cv) pick = last;
   if (!pick?.s) return false;
   let i = pick.i ?? Math.min(pick.s.n - 1, Math.max(0, Math.floor(pick.p * pick.s.n)));
@@ -455,7 +469,7 @@ export function drawSprite(c, f, frame) {
   }
   if (!source) return false;
   const { s, fx } = pick;
-  if (!pick.waiting && pick !== last) LAST.set(f, { set, s, i, p: pick.p, fx, poster: pick.poster, source, denseAlt });
+  if (!pick.waiting && pick !== last) LAST.set(sampleOwner, { set, s, i, p: pick.p, fx, poster: pick.poster, source, denseAlt });
   // correção por tira: algumas pranchas vieram desenhadas maiores ou menores
   const size = CELL * (f.ch.spriteScale || 1) * (f.ch.spriteStripScale?.[s.id]?.[s.name] || 1);
   c.save();

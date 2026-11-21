@@ -1,0 +1,39 @@
+name: Laranjao art validation
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'tools/**'
+      - 'production/sprites/**'
+      - 'production/ui/comic-v1/**'
+      - 'dist/salvadores-nacionais.html'
+      - '.github/workflows/laranjao-art.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run check:campaign
+      - run: npm run build
+      - run: npx playwright-core install --with-deps chromium
+      - name: Browser animation and ability checks
+        run: CHROMIUM_PATH=$(find "$HOME/.cache/ms-playwright" -type f -path '*/chrome-linux*/chrome' | head -1) node tools/smoke-laranjao.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: laranjao-game-and-evidence
+          path: |
+            dist/salvadores-nacionais.html
+            artifacts/laranjao/
+          retention-days: 7

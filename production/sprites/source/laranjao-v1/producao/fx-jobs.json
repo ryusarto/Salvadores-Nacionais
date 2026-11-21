@@ -1,0 +1,1068 @@
+[
+  {
+    "action": "clone-parado",
+    "name": "clone-parado",
+    "description": "EXACT locked Laranjão full-body double. Identical navy suit, red tie, face, orange skin and blond hair. Solid real-person appearance, not ghostly tinted. Hands raised in same idle guard. No shadow, headline or glow.",
+    "phases": [
+      "guarded stance",
+      "small inhale",
+      "highest inhale",
+      "exhale begins",
+      "lowest exhale",
+      "return to initial guard"
+    ],
+    "loop": true,
+    "kind": "helper",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "clone-parado",
+        "group": 1,
+        "file": "fx/originais/clone-parado/grupo-1.png",
+        "source": "generation:exec-8f102ff1-f3e2-428c-9377-f3b3090e3309.png",
+        "prompt": "Use case: stylized-concept. Asset: detailed hand-inked/cel-shaded 2D fighting-game animation for LARANJÃO, matching the locked character model in reference1. Same recognizable older heavy-set man's face, swept golden-blond comb-over, blue-gray eyes, pale eyebrows and orange-tan heavy cheeks/chin. SAME dark navy blue suit jacket and full-length trousers, white collared shirt, long RED necktie ending just below belt, tiny US flag left lapel pin, polished BLACK leather shoes. Stocky heavy adult skeleton; head about1/7 standing height. No cane, ankle tracker, phone, weapons, jewelry or extra objects. Hands are bare. Fine black comic contours, controlled three-tone cel fills, subtle cloth/skin hatching, detailed face/hands consistent with Pai and Chupetinha. Not photorealistic, chibi, vector or plastic3D.\nLayout: exactly THREE new chronological FULL-BODY drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768. Equal square cells, side-view three-quarter camera facing RIGHT, fixed physical scale and camera. Standing body about620px per768px cell. Never enlarge crouched, rolled or airborne compact poses to fill the cell; keep same head size and full adult limb lengths. No clipping, overlapping cells or duplicate mini-cycles; full hair, both hands, tie and both shoes visible with40px clear margin. Root stays local; game handles translation. True zero-alpha RGBA transparent background. NO background, vignette, floor, cast shadow, glow, checkerboard, labels, grid, text or watermark. No clones, projectiles, wall, armor, effects or opponent baked into body. The long red tie follows body motion and never becomes a separate object.\n\nACTION clone-parado. EXACT locked Laranjão full-body double. Identical navy suit, red tie, face, orange skin and blond hair. Solid real-person appearance, not ghostly tinted. Hands raised in same idle guard. No shadow, headline or glow.. Draw ONLY chronological frames1,2,3 of SIX, three drawings left-to-right:\nPose1: guarded stance.\nPose2: small inhale.\nPose3: highest inhale.\nOne continuous seamless loop, pose6 reconnects to pose1.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "clone-parado",
+        "group": 2,
+        "file": "fx/originais/clone-parado/grupo-2.png",
+        "source": "generation:exec-d1270940-3709-451a-95a1-45992653e562.png",
+        "prompt": "Use case: stylized-concept. Asset: detailed hand-inked/cel-shaded 2D fighting-game animation for LARANJÃO, matching the locked character model in reference1. Same recognizable older heavy-set man's face, swept golden-blond comb-over, blue-gray eyes, pale eyebrows and orange-tan heavy cheeks/chin. SAME dark navy blue suit jacket and full-length trousers, white collared shirt, long RED necktie ending just below belt, tiny US flag left lapel pin, polished BLACK leather shoes. Stocky heavy adult skeleton; head about1/7 standing height. No cane, ankle tracker, phone, weapons, jewelry or extra objects. Hands are bare. Fine black comic contours, controlled three-tone cel fills, subtle cloth/skin hatching, detailed face/hands consistent with Pai and Chupetinha. Not photorealistic, chibi, vector or plastic3D.\nLayout: exactly THREE new chronological FULL-BODY drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768. Equal square cells, side-view three-quarter camera facing RIGHT, fixed physical scale and camera. Standing body about620px per768px cell. Never enlarge crouched, rolled or airborne compact poses to fill the cell; keep same head size and full adult limb lengths. No clipping, overlapping cells or duplicate mini-cycles; full hair, both hands, tie and both shoes visible with40px clear margin. Root stays local; game handles translation. True zero-alpha RGBA transparent background. NO background, vignette, floor, cast shadow, glow, checkerboard, labels, grid, text or watermark. No clones, projectiles, wall, armor, effects or opponent baked into body. The long red tie follows body motion and never becomes a separate object.\n\nACTION clone-parado. EXACT locked Laranjão full-body double. Identical navy suit, red tie, face, orange skin and blond hair. Solid real-person appearance, not ghostly tinted. Hands raised in same idle guard. No shadow, headline or glow.. Reference2 is the PREVIOUS THREE DRAWINGS of THIS SAME six-frame action. Continue directly from its RIGHTMOST drawing, matching exact skeleton/head size and face. Draw ONLY chronological frames4,5,6 of SIX, three drawings left-to-right:\nPose4: exhale begins.\nPose5: lowest exhale.\nPose6: return to initial guard.\nOne continuous seamless loop, pose6 reconnects to pose1.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/clone-parado/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "clone-surgir",
+    "name": "clone-surgir",
+    "description": "Orange and cool-blue comic digital streaks form a hollow human-shaped silhouette OUTLINE, empty center. Effect ONLY, no man or clothing.",
+    "phases": [
+      "small scattered blue/orange pixels",
+      "pixels gather around oval human outline",
+      "clear broken silhouette outline",
+      "outline resolves with thin flickering edges",
+      "stray pixels disperse, outline thins",
+      "tiny lingering pixel flecks"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "clone-surgir",
+        "group": 1,
+        "file": "fx/originais/clone-surgir/grupo-1.png",
+        "source": "generation:exec-2da4a218-7093-473a-831d-371693ce0dea.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION clone-surgir. Orange and cool-blue comic digital streaks form a hollow human-shaped silhouette OUTLINE, empty center. Effect ONLY, no man or clothing.. Draw ONLY chronological frames1,2,3 of SIX, three drawings left-to-right:\nPose1: small scattered blue/orange pixels.\nPose2: pixels gather around oval human outline.\nPose3: clear broken silhouette outline.\nOne continuous action, not three separate mini-cycles. Compact poses keep original head size.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "clone-surgir",
+        "group": 2,
+        "file": "fx/originais/clone-surgir/grupo-2.png",
+        "source": "generation:exec-ffd452f9-5050-40ff-99a7-be3f828d135f.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION clone-surgir. Orange and cool-blue comic digital streaks form a hollow human-shaped silhouette OUTLINE, empty center. Effect ONLY, no man or clothing.. Reference2 is the PREVIOUS THREE DRAWINGS of THIS SAME six-frame action. Continue directly from its RIGHTMOST drawing, matching exact skeleton/head size and face. Draw ONLY chronological frames4,5,6 of SIX, three drawings left-to-right:\nPose4: outline resolves with thin flickering edges.\nPose5: stray pixels disperse, outline thins.\nPose6: tiny lingering pixel flecks.\nOne continuous action, not three separate mini-cycles. Compact poses keep original head size.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/clone-surgir/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "clone-romper",
+    "name": "clone-romper",
+    "description": "Orange/blue comic pixel shards disperse from hollow human-sized outline. Effect ONLY, no body.",
+    "phases": [
+      "thin broken human-shaped contour",
+      "cracks spread outward",
+      "radial pixel-shard burst",
+      "shards move farther apart",
+      "small fading fragments",
+      "few tiny fragments vanish"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "clone-romper",
+        "group": 1,
+        "file": "fx/originais/clone-romper/grupo-1.png",
+        "source": "generation:exec-b7662ce5-94c8-4902-b96d-2b620e35287f.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION clone-romper. Orange/blue comic pixel shards disperse from hollow human-sized outline. Effect ONLY, no body.. Draw ONLY chronological frames1,2,3 of SIX, three drawings left-to-right:\nPose1: thin broken human-shaped contour.\nPose2: cracks spread outward.\nPose3: radial pixel-shard burst.\nOne continuous action, not three separate mini-cycles. Compact poses keep original head size.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "clone-romper",
+        "group": 2,
+        "file": "fx/originais/clone-romper/grupo-2.png",
+        "source": "generation:exec-cb05d69c-fcdf-4ca9-bfe1-4d57cb0b8604.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION clone-romper. Orange/blue comic pixel shards disperse from hollow human-sized outline. Effect ONLY, no body.. Reference2 is the PREVIOUS THREE DRAWINGS of THIS SAME six-frame action. Continue directly from its RIGHTMOST drawing, matching exact skeleton/head size and face. Draw ONLY chronological frames4,5,6 of SIX, three drawings left-to-right:\nPose4: shards move farther apart.\nPose5: small fading fragments.\nPose6: few tiny fragments vanish.\nOne continuous action, not three separate mini-cycles. Compact poses keep original head size.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/clone-romper/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "fake-news-troca",
+    "name": "fake-news-troca",
+    "description": "Isolated orange/cool-blue swirling oval warp ring, hollow transparent center. No body.",
+    "phases": [
+      "small twisting curve",
+      "two opposing curved streaks",
+      "complete oval warp ring",
+      "ring twists outward",
+      "ring breaks into short strokes",
+      "few small dissipating strokes"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "fake-news-troca",
+        "group": 1,
+        "file": "fx/originais/fake-news-troca/grupo-1.png",
+        "source": "generation:exec-9fe7c95c-9cf5-4992-b0f7-3b78f94f598e.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION fake-news-troca. Isolated orange/cool-blue swirling oval warp ring, hollow transparent center. No body.. Draw ONLY chronological frames1,2,3 of SIX, three drawings left-to-right:\nPose1: small twisting curve.\nPose2: two opposing curved streaks.\nPose3: complete oval warp ring.\nOne continuous action, not three separate mini-cycles. Compact poses keep original head size.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "fake-news-troca",
+        "group": 2,
+        "file": "fx/originais/fake-news-troca/grupo-2.png",
+        "source": "generation:exec-636fe640-ba34-4d12-b309-fae217684248.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION fake-news-troca. Isolated orange/cool-blue swirling oval warp ring, hollow transparent center. No body.. Reference2 is the PREVIOUS THREE DRAWINGS of THIS SAME six-frame action. Continue directly from its RIGHTMOST drawing, matching exact skeleton/head size and face. Draw ONLY chronological frames4,5,6 of SIX, three drawings left-to-right:\nPose4: ring twists outward.\nPose5: ring breaks into short strokes.\nPose6: few small dissipating strokes.\nOne continuous action, not three separate mini-cycles. Compact poses keep original head size.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/fake-news-troca/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "manchete-placa",
+    "name": "manchete-placa",
+    "description": "Blank cream comic headline plaque with thick dark blue ink outline and tiny orange corner accents. Wide rectangle, slightly irregular speech-bubble tail below. Keep interior cream blank, no text. Fixed dimensions all frames.",
+    "phases": [
+      "steady plaque",
+      "subtle corner flex",
+      "small edge pulse",
+      "opposite edge pulse",
+      "corner relaxes",
+      "back to steady plaque"
+    ],
+    "loop": true,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "manchete-placa",
+        "group": 1,
+        "file": "fx/originais/manchete-placa/grupo-1.png",
+        "source": "generation:exec-3f54c098-d37e-4236-b077-35b35b24f419.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION manchete-placa. Blank cream comic headline plaque with thick dark blue ink outline and tiny orange corner accents. Wide rectangle, slightly irregular speech-bubble tail below. Keep interior cream blank, no text. Fixed dimensions all frames.. Draw ONLY chronological frames1,2,3 of SIX, three drawings left-to-right:\nPose1: steady plaque.\nPose2: subtle corner flex.\nPose3: small edge pulse.\nOne continuous seamless loop, pose6 reconnects to pose1.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "manchete-placa",
+        "group": 2,
+        "file": "fx/originais/manchete-placa/grupo-2.png",
+        "source": "generation:exec-af318a7d-de5e-44a9-a9c1-e0ba21b37f04.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION manchete-placa. Blank cream comic headline plaque with thick dark blue ink outline and tiny orange corner accents. Wide rectangle, slightly irregular speech-bubble tail below. Keep interior cream blank, no text. Fixed dimensions all frames.. Reference2 is the PREVIOUS THREE DRAWINGS of THIS SAME six-frame action. Continue directly from its RIGHTMOST drawing, matching exact skeleton/head size and face. Draw ONLY chronological frames4,5,6 of SIX, three drawings left-to-right:\nPose4: opposite edge pulse.\nPose5: corner relaxes.\nPose6: back to steady plaque.\nOne continuous seamless loop, pose6 reconnects to pose1.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/manchete-placa/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "tuitada-projetil",
+    "name": "tuitada-projetil",
+    "description": "Blue/cyan comic message projectile shaped like a small folded paper note with blank white inset and three short speed fins at back, facing RIGHT. No text, bird or brand.",
+    "phases": [
+      "level paper-message projectile",
+      "slight upward pitch",
+      "most upward pitch",
+      "return level",
+      "slight downward pitch",
+      "return toward level"
+    ],
+    "loop": true,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "tuitada-projetil",
+        "group": 1,
+        "file": "fx/originais/tuitada-projetil/grupo-1.png",
+        "source": "generation:exec-2b06e689-a7a1-4fe9-936d-335c3713643c.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION tuitada-projetil. Blue/cyan comic message projectile shaped like a small folded paper note with blank white inset and three short speed fins at back, facing RIGHT. No text, bird or brand.. Draw ONLY chronological frames1,2,3 of SIX, three drawings left-to-right:\nPose1: level paper-message projectile.\nPose2: slight upward pitch.\nPose3: most upward pitch.\nOne continuous seamless loop, pose6 reconnects to pose1.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "tuitada-projetil",
+        "group": 2,
+        "file": "fx/originais/tuitada-projetil/grupo-2.png",
+        "source": "generation:exec-c29159dd-5b27-451a-90f6-c38a3b6844b8.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION tuitada-projetil. Blue/cyan comic message projectile shaped like a small folded paper note with blank white inset and three short speed fins at back, facing RIGHT. No text, bird or brand.. Reference2 is the PREVIOUS THREE DRAWINGS of THIS SAME six-frame action. Continue directly from its RIGHTMOST drawing, matching exact skeleton/head size and face. Draw ONLY chronological frames4,5,6 of SIX, three drawings left-to-right:\nPose4: return level.\nPose5: slight downward pitch.\nPose6: return toward level.\nOne continuous seamless loop, pose6 reconnects to pose1.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/tuitada-projetil/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "tuitada-impacto",
+    "name": "tuitada-impacto",
+    "description": "Blue/cyan and white comic message impact burst, no object or body.",
+    "phases": [
+      "small blue contact spark",
+      "short sharp blue star",
+      "widest white-cyan ink burst",
+      "burst separates into paper-like shards",
+      "small blue shards disperse",
+      "few tiny blue fragments"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "tuitada-impacto",
+        "group": 1,
+        "file": "fx/originais/tuitada-impacto/grupo-1.png",
+        "source": "generation:exec-6a383d6b-ce24-4834-948c-ea69ff520f75.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION tuitada-impacto. Blue/cyan and white comic message impact burst, no object or body.. Draw ONLY chronological frames1,2,3 of SIX, three drawings left-to-right:\nPose1: small blue contact spark.\nPose2: short sharp blue star.\nPose3: widest white-cyan ink burst.\nOne continuous action, not three separate mini-cycles. Compact poses keep original head size.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "tuitada-impacto",
+        "group": 2,
+        "file": "fx/originais/tuitada-impacto/grupo-2.png",
+        "source": "generation:exec-c5f35f69-4850-4ee2-8de8-32e0d0a5d31c.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION tuitada-impacto. Blue/cyan and white comic message impact burst, no object or body.. Reference2 is the PREVIOUS THREE DRAWINGS of THIS SAME six-frame action. Continue directly from its RIGHTMOST drawing, matching exact skeleton/head size and face. Draw ONLY chronological frames4,5,6 of SIX, three drawings left-to-right:\nPose4: burst separates into paper-like shards.\nPose5: small blue shards disperse.\nPose6: few tiny blue fragments.\nOne continuous action, not three separate mini-cycles. Compact poses keep original head size.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/tuitada-impacto/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "tuitada-turbo-rastro",
+    "name": "tuitada-turbo-rastro",
+    "description": "Short parallel cyan/white doubled message speed trails, horizontal RIGHT direction. No projectile itself.",
+    "phases": [
+      "two small parallel strokes",
+      "strokes lengthen",
+      "maximum doubled speed streaks",
+      "streaks fragment at tail",
+      "short fading fragments",
+      "tiny trailing dots"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "tuitada-turbo-rastro",
+        "group": 1,
+        "file": "fx/originais/tuitada-turbo-rastro/grupo-1.png",
+        "source": "generation:exec-2bfcbebc-d7aa-47f2-9a7b-b878d075d41f.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nACTION tuitada-turbo-rastro: Short parallel cyan/white doubled message speed trails, horizontal RIGHT direction. No projectile itself.. CRITICAL CONTAINMENT: each pair of two SHORT parallel cyan trails is at most360px wide inside a724px square, centered at that square center. Three SEPARATE pairs at x1/6,1/2,5/6. Never make one continuous long streak crossing the row. Individual detached flecks also stay inside its own square.\nDraw ONLY chronological frames1,2,3 of SIX, three new drawings left-to-right:\nPose1: two small parallel strokes.\nPose2: strokes lengthen.\nPose3: maximum doubled speed streaks.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "tuitada-turbo-rastro",
+        "group": 2,
+        "file": "fx/originais/tuitada-turbo-rastro/grupo-2.png",
+        "source": "generation:exec-4a83a5ea-0d40-4b2c-b285-74248bf84d4d.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nACTION tuitada-turbo-rastro: Short parallel cyan/white doubled message speed trails, horizontal RIGHT direction. No projectile itself.. CRITICAL CONTAINMENT: each pair of two SHORT parallel cyan trails is at most360px wide inside a724px square, centered at that square center. Three SEPARATE pairs at x1/6,1/2,5/6. Never make one continuous long streak crossing the row. Individual detached flecks also stay inside its own square.\nReference2 is the PREVIOUS THREE DRAWINGS of THIS same six-frame sequence. Continue from its RIGHTMOST drawing, matching exact scale, object architecture, palette and coordinate system. Draw ONLY chronological frames4,5,6 of SIX, three new drawings left-to-right:\nPose4: streaks fragment at tail.\nPose5: short fading fragments.\nPose6: tiny trailing dots.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/tuitada-turbo-rastro/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "tarifa-coleta",
+    "name": "tarifa-coleta",
+    "description": "Golden energy tokens stream into a small central amber shield symbol. Separate isolated effect, no text/currency numerals.",
+    "phases": [
+      "two tiny gold tokens outside center",
+      "tokens curve inward",
+      "tokens approach small shield",
+      "shield receives bright golden pulse",
+      "short residual curved trails",
+      "small shield settles"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "tarifa-coleta",
+        "group": 1,
+        "file": "fx/originais/tarifa-coleta/grupo-1.png",
+        "source": "generation:exec-8ad24e23-87dc-48c9-b34a-55728aa2435e.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION tarifa-coleta. Golden energy tokens stream into a small central amber shield symbol. Separate isolated effect, no text/currency numerals.. Draw ONLY chronological frames1,2,3 of SIX, three drawings left-to-right:\nPose1: two tiny gold tokens outside center.\nPose2: tokens curve inward.\nPose3: tokens approach small shield.\nOne continuous action, not three separate mini-cycles. Compact poses keep original head size.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "tarifa-coleta",
+        "group": 2,
+        "file": "fx/originais/tarifa-coleta/grupo-2.png",
+        "source": "generation:exec-c28152e7-c06f-41b5-a4a5-fe1ce4988e6f.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION tarifa-coleta. Golden energy tokens stream into a small central amber shield symbol. Separate isolated effect, no text/currency numerals.. Reference2 is the PREVIOUS THREE DRAWINGS of THIS SAME six-frame action. Continue directly from its RIGHTMOST drawing, matching exact skeleton/head size and face. Draw ONLY chronological frames4,5,6 of SIX, three drawings left-to-right:\nPose4: shield receives bright golden pulse.\nPose5: short residual curved trails.\nPose6: small shield settles.\nOne continuous action, not three separate mini-cycles. Compact poses keep original head size.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/tarifa-coleta/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "armadura-carga",
+    "name": "armadura-carga",
+    "description": "Single small thick golden shield armor-charge HUD pip with dark navy outline. Fixed hardware silhouette, center amber facets pulse. No letters/numbers.",
+    "phases": [
+      "dull gold shield",
+      "slight inner light",
+      "brighter inner facets",
+      "peak gold center",
+      "light eases",
+      "back to dull gold"
+    ],
+    "loop": true,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "armadura-carga",
+        "group": 1,
+        "file": "fx/originais/armadura-carga/grupo-1.png",
+        "source": "generation:exec-4563c7f6-12d1-4de2-b1d1-44b7b608758a.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION armadura-carga. Single small thick golden shield armor-charge HUD pip with dark navy outline. Fixed hardware silhouette, center amber facets pulse. No letters/numbers.. Draw ONLY chronological frames1,2,3 of SIX, three drawings left-to-right:\nPose1: dull gold shield.\nPose2: slight inner light.\nPose3: brighter inner facets.\nOne continuous seamless loop, pose6 reconnects to pose1.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "armadura-carga",
+        "group": 2,
+        "file": "fx/originais/armadura-carga/grupo-2.png",
+        "source": "generation:exec-a10a4624-5933-4e75-b7d7-2e089efe694b.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION armadura-carga. Single small thick golden shield armor-charge HUD pip with dark navy outline. Fixed hardware silhouette, center amber facets pulse. No letters/numbers.. Reference2 is the PREVIOUS THREE DRAWINGS of THIS SAME six-frame action. Continue directly from its RIGHTMOST drawing, matching exact skeleton/head size and face. Draw ONLY chronological frames4,5,6 of SIX, three drawings left-to-right:\nPose4: peak gold center.\nPose5: light eases.\nPose6: back to dull gold.\nOne continuous seamless loop, pose6 reconnects to pose1.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/armadura-carga/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "armadura-campo",
+    "name": "armadura-campo",
+    "description": "Tall hollow GOLDEN armor field, empty transparent center, broken angular shield contour large enough to surround full standing man. No person.",
+    "phases": [
+      "steady thin shield outline",
+      "bottom corners brighten",
+      "side facets brighten",
+      "upper facets pulse",
+      "sides relax",
+      "return to steady outline"
+    ],
+    "loop": true,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "armadura-campo",
+        "group": 1,
+        "file": "fx/originais/armadura-campo/grupo-1.png",
+        "source": "generation:exec-4c6c25ce-6558-4438-b913-7c995513ec57.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION armadura-campo. Tall hollow GOLDEN armor field, empty transparent center, broken angular shield contour large enough to surround full standing man. No person.. Draw ONLY chronological frames1,2,3 of SIX, three drawings left-to-right:\nPose1: steady thin shield outline.\nPose2: bottom corners brighten.\nPose3: side facets brighten.\nOne continuous seamless loop, pose6 reconnects to pose1.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "armadura-campo",
+        "group": 2,
+        "file": "fx/originais/armadura-campo/grupo-2.png",
+        "source": "generation:exec-14f44b58-5e24-41f3-b9f8-d20e2d306831.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION armadura-campo. Tall hollow GOLDEN armor field, empty transparent center, broken angular shield contour large enough to surround full standing man. No person.. Reference2 is the PREVIOUS THREE DRAWINGS of THIS SAME six-frame action. Continue directly from its RIGHTMOST drawing, matching exact skeleton/head size and face. Draw ONLY chronological frames4,5,6 of SIX, three drawings left-to-right:\nPose4: upper facets pulse.\nPose5: sides relax.\nPose6: return to steady outline.\nOne continuous seamless loop, pose6 reconnects to pose1.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/armadura-campo/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "armadura-impacto",
+    "name": "armadura-impacto",
+    "description": "Gold shield outline absorbs impact from LEFT. Hollow transparent center, no man.",
+    "phases": [
+      "small left-side contact spark",
+      "left shield face bends inward",
+      "gold impact star at left edge",
+      "shield returns with radial short gold strokes",
+      "strokes fade",
+      "shield settles dimly"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "armadura-impacto",
+        "group": 1,
+        "file": "fx/originais/armadura-impacto/grupo-1.png",
+        "source": "generation:exec-5e7aa573-19ce-46fb-b8b7-a8808e05450e.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nReference2 is the structural reference for THIS effect. Preserve its shield/wall design, palette and ink texture, while drawing the new contained poses below.\nACTION armadura-impacto: Gold shield outline absorbs impact from LEFT. Hollow transparent center, no man.. CRITICAL CONTAINMENT: the entire shield plus every LEFT impact spike is at most520px wide and600px tall per724px square, centered in its square. No part, even a tiny spark, may approach the neighboring cell.\nDraw ONLY chronological frames1,2,3 of SIX, three new drawings left-to-right:\nPose1: small left-side contact spark.\nPose2: left shield face bends inward.\nPose3: gold impact star at left edge.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/armadura-campo/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "armadura-impacto",
+        "group": 2,
+        "file": "fx/originais/armadura-impacto/grupo-2.png",
+        "source": "generation:exec-cc7e7511-3267-4e67-9979-8a0b556128c2.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nReference2 is the structural reference for THIS effect. Preserve its shield/wall design, palette and ink texture, while drawing the new contained poses below.\nACTION armadura-impacto: Gold shield outline absorbs impact from LEFT. Hollow transparent center, no man.. CRITICAL CONTAINMENT: the entire shield plus every LEFT impact spike is at most520px wide and600px tall per724px square, centered in its square. No part, even a tiny spark, may approach the neighboring cell.\nReference3 is the PREVIOUS THREE DRAWINGS of THIS same six-frame sequence. Continue from its RIGHTMOST drawing, matching exact scale, object architecture, palette and coordinate system. Draw ONLY chronological frames4,5,6 of SIX, three new drawings left-to-right:\nPose4: shield returns with radial short gold strokes.\nPose5: strokes fade.\nPose6: shield settles dimly.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/armadura-campo/grupo-1.png",
+          "fx/originais/armadura-impacto/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "armadura-ruptura",
+    "name": "armadura-ruptura",
+    "description": "Golden hollow shield cracks and breaks into small shards. No person.",
+    "phases": [
+      "faint crack on shield",
+      "branching cracks",
+      "shield bursts apart",
+      "fragments drift outward",
+      "small shards dim",
+      "few tiny fading fragments"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "armadura-ruptura",
+        "group": 1,
+        "file": "fx/originais/armadura-ruptura/grupo-1.png",
+        "source": "generation:exec-1cfddb8f-4cb5-4975-a685-c18164088058.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION armadura-ruptura. Golden hollow shield cracks and breaks into small shards. No person.. Draw ONLY chronological frames1,2,3 of SIX, three drawings left-to-right:\nPose1: faint crack on shield.\nPose2: branching cracks.\nPose3: shield bursts apart.\nOne continuous action, not three separate mini-cycles. Compact poses keep original head size.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "armadura-ruptura",
+        "group": 2,
+        "file": "fx/originais/armadura-ruptura/grupo-2.png",
+        "source": "generation:exec-6fb9555e-fa56-4087-a021-8f0bc717f44c.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION armadura-ruptura. Golden hollow shield cracks and breaks into small shards. No person.. Reference2 is the PREVIOUS THREE DRAWINGS of THIS SAME six-frame action. Continue directly from its RIGHTMOST drawing, matching exact skeleton/head size and face. Draw ONLY chronological frames4,5,6 of SIX, three drawings left-to-right:\nPose4: fragments drift outward.\nPose5: small shards dim.\nPose6: few tiny fading fragments.\nOne continuous action, not three separate mini-cycles. Compact poses keep original head size.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/armadura-ruptura/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "tarifaco-rastro",
+    "name": "tarifaco-rastro",
+    "description": "Warm gold and orange horizontal force streak for heavy advancing punch RIGHT. No fist or body.",
+    "phases": [
+      "short horizontal stroke",
+      "widening angular streak",
+      "thick maximum force streak",
+      "trailing streak tears apart",
+      "short dispersed strokes",
+      "tiny fading slashes"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "tarifaco-rastro",
+        "group": 1,
+        "file": "fx/originais/tarifaco-rastro/grupo-1.png",
+        "source": "generation:exec-deacd40b-e593-4e8b-b835-3ae3671bcfe8.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION tarifaco-rastro. Warm gold and orange horizontal force streak for heavy advancing punch RIGHT. No fist or body.. Draw ONLY chronological frames1,2,3 of SIX, three drawings left-to-right:\nPose1: short horizontal stroke.\nPose2: widening angular streak.\nPose3: thick maximum force streak.\nOne continuous action, not three separate mini-cycles. Compact poses keep original head size.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "tarifaco-rastro",
+        "group": 2,
+        "file": "fx/originais/tarifaco-rastro/grupo-2.png",
+        "source": "generation:exec-45326cbf-76dc-4f5b-aba3-96ec6b493932.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION tarifaco-rastro. Warm gold and orange horizontal force streak for heavy advancing punch RIGHT. No fist or body.. Reference2 is the PREVIOUS THREE DRAWINGS of THIS SAME six-frame action. Continue directly from its RIGHTMOST drawing, matching exact skeleton/head size and face. Draw ONLY chronological frames4,5,6 of SIX, three drawings left-to-right:\nPose4: trailing streak tears apart.\nPose5: short dispersed strokes.\nPose6: tiny fading slashes.\nOne continuous action, not three separate mini-cycles. Compact poses keep original head size.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/tarifaco-rastro/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "veto-arco",
+    "name": "veto-arco",
+    "description": "Ascending curved gold/orange comic uppercut slash, lower-left to upper-right, hollow interior. No fist or body.",
+    "phases": [
+      "small rising hook stroke",
+      "arc grows upwards",
+      "large ascending crescent",
+      "crescent follows through high",
+      "arc thins into broken strips",
+      "tiny curved wisps"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "veto-arco",
+        "group": 1,
+        "file": "fx/originais/veto-arco/grupo-1.png",
+        "source": "generation:exec-044cddae-1958-456b-bcd8-afec95125adf.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION veto-arco. Ascending curved gold/orange comic uppercut slash, lower-left to upper-right, hollow interior. No fist or body.. Draw ONLY chronological frames1,2,3 of SIX, three drawings left-to-right:\nPose1: small rising hook stroke.\nPose2: arc grows upwards.\nPose3: large ascending crescent.\nOne continuous action, not three separate mini-cycles. Compact poses keep original head size.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "veto-arco",
+        "group": 2,
+        "file": "fx/originais/veto-arco/grupo-2.png",
+        "source": "generation:exec-294cc298-5fc9-4c69-b511-9afae26868d8.png",
+        "prompt": "Use case: stylized-concept. Asset: isolated detailed comic 2D fighting-game EFFECT for LARANJÃO, reference1 defines comic ink quality and palette only. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas, three equal square cells, same fixed coordinate system and physical effect scale, no zoom. Preserve generous transparent margins, never clip or overlap cells. Crisp dark navy ink outlines, controlled cel-shaded gold/orange or cyan/red as action specifies. TRUE ZERO-ALPHA RGBA background; no matte, backdrop, vignette, floor, shadow, checkerboard, text, letters, numbers, grid or watermark. Effect ONLY: no character or body parts unless explicitly helper. Keep tiny fading fragments naturally tiny in original cell. \nACTION veto-arco. Ascending curved gold/orange comic uppercut slash, lower-left to upper-right, hollow interior. No fist or body.. Reference2 is the PREVIOUS THREE DRAWINGS of THIS SAME six-frame action. Continue directly from its RIGHTMOST drawing, matching exact skeleton/head size and face. Draw ONLY chronological frames4,5,6 of SIX, three drawings left-to-right:\nPose4: crescent follows through high.\nPose5: arc thins into broken strips.\nPose6: tiny curved wisps.\nOne continuous action, not three separate mini-cycles. Compact poses keep original head size.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/veto-arco/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "muralha-queda",
+    "name": "muralha-queda",
+    "description": "Whole complete TALL NARROW golden brick wall, navy outline and gold three-tone facets. Six rows of heavy gold blocks, about1:4 width:height. Full wall always visible, no ground or shadow. Falling motion is handled by game. Tiny gold speed strokes may trail upward without clipping.",
+    "phases": [
+      "wall intact, few upper speed strokes",
+      "more upper speed strokes",
+      "strokes longest",
+      "speed strokes shorten",
+      "few short upper strokes",
+      "intact wall, no speed strokes"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "muralha-queda",
+        "group": 1,
+        "file": "fx/originais/muralha-queda/grupo-1.png",
+        "source": "generation:exec-fc9382da-7163-41a9-8900-469047683281.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nReference2 is the structural reference for THIS effect. Preserve its shield/wall design, palette and ink texture, while drawing the new contained poses below.\nACTION muralha-queda: Whole complete TALL NARROW golden brick wall, navy outline and gold three-tone facets. Six rows of heavy gold blocks, about1:4 width:height. Full wall always visible, no ground or shadow. Falling motion is handled by game. Tiny gold speed strokes may trail upward without clipping.. CRITICAL CONTAINMENT: preserve exact two-column, SIX-row wall structure from reference2. Wall plus upper speed lines is at most600px tall per724px square; leave at least60px clear alpha above everything. Wall itself about520px tall. Upper speed strokes stay SHORT, no more than40px beyond wall top. Complete wall visible in all three poses. Fixed wall size and bottom baseline.\nDraw ONLY chronological frames1,2,3 of SIX, three new drawings left-to-right:\nPose1: wall intact, few upper speed strokes.\nPose2: more upper speed strokes.\nPose3: strokes longest.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "correcoes/rejeitados/fx/muralha-queda/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "muralha-queda",
+        "group": 2,
+        "file": "fx/originais/muralha-queda/grupo-2.png",
+        "source": "generation:exec-48282251-9616-4ecc-b705-61f934bb22d1.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nReference2 is the structural reference for THIS effect. Preserve its shield/wall design, palette and ink texture, while drawing the new contained poses below.\nACTION muralha-queda: Whole complete TALL NARROW golden brick wall, navy outline and gold three-tone facets. Six rows of heavy gold blocks, about1:4 width:height. Full wall always visible, no ground or shadow. Falling motion is handled by game. Tiny gold speed strokes may trail upward without clipping.. CRITICAL CONTAINMENT: preserve exact two-column, SIX-row wall structure from reference2. Wall plus upper speed lines is at most600px tall per724px square; leave at least60px clear alpha above everything. Wall itself about520px tall. Upper speed strokes stay SHORT, no more than40px beyond wall top. Complete wall visible in all three poses. Fixed wall size and bottom baseline.\nReference3 is the PREVIOUS THREE DRAWINGS of THIS same six-frame sequence. Continue from its RIGHTMOST drawing, matching exact scale, object architecture, palette and coordinate system. Draw ONLY chronological frames4,5,6 of SIX, three new drawings left-to-right:\nPose4: speed strokes shorten.\nPose5: few short upper strokes.\nPose6: intact wall, no speed strokes.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "correcoes/rejeitados/fx/muralha-queda/grupo-1.png",
+          "fx/originais/muralha-queda/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "muralha-erguida",
+    "name": "muralha-erguida",
+    "description": "Same whole tall narrow golden brick wall six rows, 1:4 width:height, complete silhouette. No cracks, ground, shadow or debris. Stable architecture and subtle facet sheen.",
+    "phases": [
+      "intact gold brick wall",
+      "subtle light on top bricks",
+      "light moves to upper middle",
+      "light reaches lower middle",
+      "light reaches lowest bricks",
+      "return neutral gold wall"
+    ],
+    "loop": true,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "muralha-erguida",
+        "group": 1,
+        "file": "fx/originais/muralha-erguida/grupo-1.png",
+        "source": "generation:exec-b9680008-0f9a-43ab-8915-cf9958ace1ee.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nReference2 is the LOCKED wall architecture: preserve exactly TWO columns and SIX rows of gold bricks, same outer proportions, navy grout, beveled edges, hatching and block construction. This reference has speed trails; omit those trails for this new action unless explicitly requested.\nACTION muralha-erguida: Same whole tall narrow golden brick wall six rows, 1:4 width:height, complete silhouette. No cracks, ground, shadow or debris. Stable architecture and subtle facet sheen..\nDraw ONLY chronological frames1,2,3 of SIX, three new drawings left-to-right:\nPose1: intact gold brick wall.\nPose2: subtle light on top bricks.\nPose3: light moves to upper middle.\nSeamless loop: frame6 reconnects to frame1. Each frame has its own small change in highlight shape/position, never six exact copies.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/muralha-queda/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "muralha-erguida",
+        "group": 2,
+        "file": "fx/originais/muralha-erguida/grupo-2.png",
+        "source": "generation:exec-8b392b16-4c38-435f-847f-2af63b254479.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nReference2 is the LOCKED wall architecture: preserve exactly TWO columns and SIX rows of gold bricks, same outer proportions, navy grout, beveled edges, hatching and block construction. This reference has speed trails; omit those trails for this new action unless explicitly requested.\nACTION muralha-erguida: Same whole tall narrow golden brick wall six rows, 1:4 width:height, complete silhouette. No cracks, ground, shadow or debris. Stable architecture and subtle facet sheen..\nReference3 is the PREVIOUS THREE DRAWINGS of THIS same six-frame sequence. Continue from its RIGHTMOST drawing, matching exact scale, object architecture, palette and coordinate system. Draw ONLY chronological frames4,5,6 of SIX, three new drawings left-to-right:\nPose4: light reaches lower middle.\nPose5: light reaches lowest bricks.\nPose6: return neutral gold wall.\nSeamless loop: frame6 reconnects to frame1. Each frame has its own small change in highlight shape/position, never six exact copies.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/muralha-queda/grupo-1.png",
+          "fx/originais/muralha-erguida/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "muralha-danos",
+    "name": "muralha-danos",
+    "description": "Same complete tall narrow six-row golden brick wall, 1:4 width:height. Six discrete remaining-health states, NOT six separate collapse actions. Fixed outer silhouette and brick geometry throughout. No rubble outside wall.",
+    "phases": [
+      "6 health, pristine intact gold wall",
+      "5 health, one small thin upper crack",
+      "4 health, two clear cracks on different bricks",
+      "3 health, central branching crack and chipped edges",
+      "2 health, widespread cracks, several chips",
+      "1 health, severely cracked but still full-height standing wall"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "muralha-danos",
+        "group": 1,
+        "file": "fx/originais/muralha-danos/grupo-1.png",
+        "source": "generation:exec-94538644-1759-463e-83b8-3bcb8409368d.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nReference2 is the LOCKED wall architecture: preserve exactly TWO columns and SIX rows of gold bricks, same outer proportions, navy grout, beveled edges, hatching and block construction. This reference has speed trails; omit those trails for this new action unless explicitly requested.\nACTION muralha-danos: Same complete tall narrow six-row golden brick wall, 1:4 width:height. Six discrete remaining-health states, NOT six separate collapse actions. Fixed outer silhouette and brick geometry throughout. No rubble outside wall..\nDraw ONLY chronological frames1,2,3 of SIX, three new drawings left-to-right:\nPose1: 6 health, pristine intact gold wall.\nPose2: 5 health, one small thin upper crack.\nPose3: 4 health, two clear cracks on different bricks.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/muralha-queda/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "muralha-danos",
+        "group": 2,
+        "file": "fx/originais/muralha-danos/grupo-2.png",
+        "source": "generation:exec-c3b32d95-5b12-4ac3-bd9b-0606edea46e5.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nReference2 is the LOCKED wall architecture: preserve exactly TWO columns and SIX rows of gold bricks, same outer proportions, navy grout, beveled edges, hatching and block construction. This reference has speed trails; omit those trails for this new action unless explicitly requested.\nACTION muralha-danos: Same complete tall narrow six-row golden brick wall, 1:4 width:height. Six discrete remaining-health states, NOT six separate collapse actions. Fixed outer silhouette and brick geometry throughout. No rubble outside wall..\nReference3 is the PREVIOUS THREE DRAWINGS of THIS same six-frame sequence. Continue from its RIGHTMOST drawing, matching exact scale, object architecture, palette and coordinate system. Draw ONLY chronological frames4,5,6 of SIX, three new drawings left-to-right:\nPose4: 3 health, central branching crack and chipped edges.\nPose5: 2 health, widespread cracks, several chips.\nPose6: 1 health, severely cracked but still full-height standing wall.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/muralha-queda/grupo-1.png",
+          "fx/originais/muralha-danos/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "muralha-destruir",
+    "name": "muralha-destruir",
+    "description": "Whole same tall narrow golden brick wall collapses into gold debris. Keep original fixed camera and scale as wall shrinks; never enlarge fragments. No floor or cast shadow.",
+    "phases": [
+      "severe cracks across whole standing wall",
+      "blocks start separating and sinking",
+      "upper half falls into large gold chunks",
+      "chunks descend, mostly lower half of original footprint",
+      "small low gold rubble mound",
+      "few tiny low gold fragments"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "muralha-destruir",
+        "group": 1,
+        "file": "fx/originais/muralha-destruir/grupo-1.png",
+        "source": "generation:exec-59fb3a24-4aae-4c70-acbf-9aed70b91cea.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nReference2 is the LOCKED wall architecture: preserve exactly TWO columns and SIX rows of gold bricks, same outer proportions, navy grout, beveled edges, hatching and block construction. This reference has speed trails; omit those trails for this new action unless explicitly requested.\nACTION muralha-destruir: Whole same tall narrow golden brick wall collapses into gold debris. Keep original fixed camera and scale as wall shrinks; never enlarge fragments. No floor or cast shadow..\nDraw ONLY chronological frames1,2,3 of SIX, three new drawings left-to-right:\nPose1: severe cracks across whole standing wall.\nPose2: blocks start separating and sinking.\nPose3: upper half falls into large gold chunks.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/muralha-queda/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "muralha-destruir",
+        "group": 2,
+        "file": "fx/originais/muralha-destruir/grupo-2.png",
+        "source": "generation:exec-141dac92-7eb8-4c43-8caf-ceebc738a429.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nReference2 is the LOCKED wall architecture: preserve exactly TWO columns and SIX rows of gold bricks, same outer proportions, navy grout, beveled edges, hatching and block construction. This reference has speed trails; omit those trails for this new action unless explicitly requested.\nACTION muralha-destruir: Whole same tall narrow golden brick wall collapses into gold debris. Keep original fixed camera and scale as wall shrinks; never enlarge fragments. No floor or cast shadow..\nReference3 is the PREVIOUS THREE DRAWINGS of THIS same six-frame sequence. Continue from its RIGHTMOST drawing, matching exact scale, object architecture, palette and coordinate system. Draw ONLY chronological frames4,5,6 of SIX, three new drawings left-to-right:\nPose4: chunks descend, mostly lower half of original footprint.\nPose5: small low gold rubble mound.\nPose6: few tiny low gold fragments.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/muralha-queda/grupo-1.png",
+          "fx/originais/muralha-destruir/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "muralha-impacto-chao",
+    "name": "muralha-impacto-chao",
+    "description": "Golden wall landing ground-impact effect ONLY, wide flat orange/gold comic dust and angular sparks. No wall, no ground backdrop.",
+    "phases": [
+      "tiny flat contact spark",
+      "wide low gold burst",
+      "maximum broad low dust arc",
+      "dust separates into side wisps",
+      "small low wisps fade",
+      "tiny gold dust specks"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "muralha-impacto-chao",
+        "group": 1,
+        "file": "fx/originais/muralha-impacto-chao/grupo-1.png",
+        "source": "generation:exec-6f5536e0-86bb-498c-b44d-ec6f72af018f.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nACTION muralha-impacto-chao: Golden wall landing ground-impact effect ONLY, wide flat orange/gold comic dust and angular sparks. No wall, no ground backdrop..\nDraw ONLY chronological frames1,2,3 of SIX, three new drawings left-to-right:\nPose1: tiny flat contact spark.\nPose2: wide low gold burst.\nPose3: maximum broad low dust arc.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "muralha-impacto-chao",
+        "group": 2,
+        "file": "fx/originais/muralha-impacto-chao/grupo-2.png",
+        "source": "generation:exec-9a13ce00-7966-41e2-9907-69c336cdd1b5.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nACTION muralha-impacto-chao: Golden wall landing ground-impact effect ONLY, wide flat orange/gold comic dust and angular sparks. No wall, no ground backdrop..\nReference2 is the PREVIOUS THREE DRAWINGS of THIS same six-frame sequence. Continue from its RIGHTMOST drawing, matching exact scale, object architecture, palette and coordinate system. Draw ONLY chronological frames4,5,6 of SIX, three new drawings left-to-right:\nPose4: dust separates into side wisps.\nPose5: small low wisps fade.\nPose6: tiny gold dust specks.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/muralha-impacto-chao/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "banimento-selo",
+    "name": "banimento-selo",
+    "description": "Large red/orange ink-stamp badge, tilted rectangle with jagged comic outline, blank cream center containing simple red crossed-out briefcase pictogram. No words or letters.",
+    "phases": [
+      "small red stamp silhouette",
+      "stamp grows to full size",
+      "firm full stamp impact",
+      "stamp settles slightly",
+      "stamp fades around edge",
+      "small remaining red ink fragments"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "banimento-selo",
+        "group": 1,
+        "file": "fx/originais/banimento-selo/grupo-1.png",
+        "source": "generation:exec-7c571fe7-cc2e-4480-b5e4-87bdcd0eadff.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nACTION banimento-selo: Large red/orange ink-stamp badge, tilted rectangle with jagged comic outline, blank cream center containing simple red crossed-out briefcase pictogram. No words or letters..\nDraw ONLY chronological frames1,2,3 of SIX, three new drawings left-to-right:\nPose1: small red stamp silhouette.\nPose2: stamp grows to full size.\nPose3: firm full stamp impact.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "banimento-selo",
+        "group": 2,
+        "file": "fx/originais/banimento-selo/grupo-2.png",
+        "source": "generation:exec-b49c0fda-96f2-4215-a4ec-bb1912e49721.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nACTION banimento-selo: Large red/orange ink-stamp badge, tilted rectangle with jagged comic outline, blank cream center containing simple red crossed-out briefcase pictogram. No words or letters..\nReference2 is the PREVIOUS THREE DRAWINGS of THIS same six-frame sequence. Continue from its RIGHTMOST drawing, matching exact scale, object architecture, palette and coordinate system. Draw ONLY chronological frames4,5,6 of SIX, three new drawings left-to-right:\nPose4: stamp settles slightly.\nPose5: stamp fades around edge.\nPose6: small remaining red ink fragments.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/banimento-selo/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "banimento-portal",
+    "name": "banimento-portal",
+    "description": "Tall hollow red/orange vertical oval dimensional portal with navy ink accents and transparent interior. No body or silhouette.",
+    "phases": [
+      "short red curved fissure",
+      "fissure opens into narrow oval",
+      "full tall hollow portal",
+      "portal narrows inward",
+      "broken red arc fragments",
+      "few tiny red sparks"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "banimento-portal",
+        "group": 1,
+        "file": "fx/originais/banimento-portal/grupo-1.png",
+        "source": "generation:exec-701d1bd9-66a2-4471-8f74-083185ae6423.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nACTION banimento-portal: Tall hollow red/orange vertical oval dimensional portal with navy ink accents and transparent interior. No body or silhouette..\nDraw ONLY chronological frames1,2,3 of SIX, three new drawings left-to-right:\nPose1: short red curved fissure.\nPose2: fissure opens into narrow oval.\nPose3: full tall hollow portal.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "banimento-portal",
+        "group": 2,
+        "file": "fx/originais/banimento-portal/grupo-2.png",
+        "source": "generation:exec-877e7416-2625-4eef-a427-d02dc93300b2.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nACTION banimento-portal: Tall hollow red/orange vertical oval dimensional portal with navy ink accents and transparent interior. No body or silhouette..\nReference2 is the PREVIOUS THREE DRAWINGS of THIS same six-frame sequence. Continue from its RIGHTMOST drawing, matching exact scale, object architecture, palette and coordinate system. Draw ONLY chronological frames4,5,6 of SIX, three new drawings left-to-right:\nPose4: portal narrows inward.\nPose5: broken red arc fragments.\nPose6: few tiny red sparks.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/banimento-portal/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "banimento-retorno",
+    "name": "banimento-retorno",
+    "description": "Gold and red vertical return flash with low impact burst. No person.",
+    "phases": [
+      "thin vertical gold slit",
+      "slit widens with red edge sparks",
+      "bright hollow vertical beam",
+      "low sharp gold landing burst",
+      "short fading low rays",
+      "few tiny gold flecks"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "banimento-retorno",
+        "group": 1,
+        "file": "fx/originais/banimento-retorno/grupo-1.png",
+        "source": "generation:exec-5dc0972d-f7bf-4ac5-87a2-932d18381393.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nACTION banimento-retorno: Gold and red vertical return flash with low impact burst. No person..\nDraw ONLY chronological frames1,2,3 of SIX, three new drawings left-to-right:\nPose1: thin vertical gold slit.\nPose2: slit widens with red edge sparks.\nPose3: bright hollow vertical beam.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "banimento-retorno",
+        "group": 2,
+        "file": "fx/originais/banimento-retorno/grupo-2.png",
+        "source": "generation:exec-7d51ea0f-ecba-4e22-b262-0397ef9b1953.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nACTION banimento-retorno: Gold and red vertical return flash with low impact burst. No person..\nReference2 is the PREVIOUS THREE DRAWINGS of THIS same six-frame sequence. Continue from its RIGHTMOST drawing, matching exact scale, object architecture, palette and coordinate system. Draw ONLY chronological frames4,5,6 of SIX, three new drawings left-to-right:\nPose4: low sharp gold landing burst.\nPose5: short fading low rays.\nPose6: few tiny gold flecks.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/banimento-retorno/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  },
+  {
+    "action": "impacto",
+    "name": "impacto",
+    "description": "Sharp orange/gold and cream comic strike impact star, fine navy outline. No text or body.",
+    "phases": [
+      "small contact spark",
+      "compact sharp impact star",
+      "widest cream/orange starburst",
+      "star separates into sharp rays",
+      "rays thin and recede",
+      "few tiny orange flecks"
+    ],
+    "loop": false,
+    "kind": "effect",
+    "frames": 6,
+    "status": "generated",
+    "groups": [
+      {
+        "action": "impacto",
+        "group": 1,
+        "file": "fx/originais/impacto/grupo-1.png",
+        "source": "generation:exec-9b4171f4-a7d0-4b8a-bae2-d277e05c235d.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nACTION impacto: Sharp orange/gold and cream comic strike impact star, fine navy outline. No text or body..\nDraw ONLY chronological frames1,2,3 of SIX, three new drawings left-to-right:\nPose1: small contact spark.\nPose2: compact sharp impact star.\nPose3: widest cream/orange starburst.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      },
+      {
+        "action": "impacto",
+        "group": 2,
+        "file": "fx/originais/impacto/grupo-2.png",
+        "source": "generation:exec-acf8b338-4416-4379-80ed-f3d1634c41d5.png",
+        "prompt": "Use case: stylized-concept. Production isolated detailed comic 2D fighting-game EFFECT for LARANJÃO. Reference1 defines ink and cel-shading quality and palette ONLY. EXACTLY THREE chronological effect drawings in ONE HORIZONTAL ROW, 3:1 canvas ideally2304x768, three equal square cells, same fixed coordinate system, camera and effect scale. Crisp dark navy ink contours, fine controlled hatching and three-tone cel shading, clean readable silhouette. TRUE ZERO-ALPHA RGBA transparent background, no matte, vignette, floor, shadow, checkerboard, text, letters, numbers, labels, grid or watermark. Effect ONLY, no man or body parts. Every stroke and particle must remain comfortably INSIDE its own square with at least40px completely transparent margin all sides. No source clipping, no overlap. Fading fragments remain naturally SMALL inside original cell; never zoom to fill frame.\nACTION impacto: Sharp orange/gold and cream comic strike impact star, fine navy outline. No text or body..\nReference2 is the PREVIOUS THREE DRAWINGS of THIS same six-frame sequence. Continue from its RIGHTMOST drawing, matching exact scale, object architecture, palette and coordinate system. Draw ONLY chronological frames4,5,6 of SIX, three new drawings left-to-right:\nPose4: star separates into sharp rays.\nPose5: rays thin and recede.\nPose6: few tiny orange flecks.\nOne chronological action, not three separate mini-cycles.",
+        "refs": [
+          "referencias/corpo-inteiro.png",
+          "fx/originais/impacto/grupo-1.png"
+        ],
+        "tool": "built-in image_gen",
+        "status": "generated"
+      }
+    ]
+  }
+]

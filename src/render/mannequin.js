@@ -4,6 +4,7 @@ import { SYS } from '../data/system.js';
 import { drawPacifier } from './boss-art.js';
 import { hurtbox, worldBox } from '../core/fighter.js';
 import { poseFor } from './poses.js';
+import { drawLaranjaoIdleFallback } from './laranjao-art.js';
 import { drawSprite, hasSprites, hasSpriteStrip } from './sprites.js';
 import { drawChapuhAttack } from './chapuh-art.js';
 import { drawMajisAttack, drawMajisStatus } from './majis-art.js';
@@ -364,7 +365,7 @@ export function drawFighter(c, f, frame) {
   const dark = 0.72;
 
   drawZanataStatus(c, f, frame);
-  const sprite = drawSprite(c, f, frame);
+  const sprite = drawSprite(c, f, frame) || drawLaranjaoIdleFallback(c, f, frame);
   if (!sprite) {
   hair(c, J, ch, false);
   // braço e perna de trás

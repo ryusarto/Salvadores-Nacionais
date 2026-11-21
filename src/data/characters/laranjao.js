@@ -1,4 +1,5 @@
 import { mv, bx, baseNormals, proj } from '../movekit.js';
+import { LARANJAO_SPRITES } from '../laranjao-art.js';
 import { SYS } from '../system.js';
 
 /**
@@ -34,6 +35,7 @@ const fakeNews = {
   make: (st, f) => {
     for (const e of st.ents) if (e.owner === f.side && e.kind === 'clone') e.dead = true;
     const slots = [0, -LAR.spread, LAR.spread].map((d) => Math.max(SYS.WALL_PAD + 20, Math.min(SYS.STAGE_W - SYS.WALL_PAD - 20, f.x + d)));
+    const fromX = f.x;
     const real = Math.floor(st.rng() * slots.length);
     const head = Math.floor(st.rng() * HEADLINES.length);
     f.x = slots[real];
@@ -43,7 +45,8 @@ const fakeNews = {
       st.ents.push({ kind: 'clone', behavior: 'decoy', x, y: 0, w: 150, h: 470, vx: 0, life: LAR.cloneLife, hit: null, delay: 0, age: 0, hitCD: 0,
         id: st.nextId++, owner: f.side, dir: f.face, popText: 'FAKE NEWS!', headline: HEADLINES[(head + i + 1) % HEADLINES.length] });
     });
-    st.events.push({ t: 'pop', str: 'FAKE NEWS!', x: f.x, y: 640, color: '#ff8a3a', size: 48 });
+    st.events.push({ t: 'fakeNews', side: f.side, fromX, x: f.x });
+    st.events.push({ t: 'pop', side: f.side, str: 'FAKE NEWS!', x: f.x, y: 640, color: '#ff8a3a', size: 48 });
     return null;
   },
 };
@@ -79,6 +82,7 @@ const moves = {
 
 export default {
   id: 'laranjao',
+  ...LARANJAO_SPRITES,
   name: 'LARANJÃO',
   style: 'Chefe — enganação e muralhas',
   mechName: 'TARIFA SUPREMA',
@@ -111,13 +115,13 @@ export default {
           gained++;
         }
         if (r.armor >= LAR.armorMax) r.taxAcc = 0;
-        if (gained) st.events.push({ t: 'pop', str: `TARIFA SUPREMA! +${gained} ARMADURA`, x: f.x, y: 620, color: '#f3c426', size: 40 });
+        if (gained) st.events.push({ t: 'pop', side: f.side, str: `TARIFA SUPREMA! +${gained} ARMADURA`, x: f.x, y: 620, color: '#f3c426', size: 40 });
       }
     },
     dmgTakenMul(st, f) {
       if (f.res.armor <= 0) return 1;
       f.res.armor--;
-      st.events.push({ t: 'pop', str: 'TARIFADO!', x: f.x, y: 520, color: '#f3c426', size: 40 });
+      st.events.push({ t: 'pop', side: f.side, str: 'TARIFADO!', x: f.x, y: 520, color: '#f3c426', size: 40 });
       return 0;
     },
     hud(f) {

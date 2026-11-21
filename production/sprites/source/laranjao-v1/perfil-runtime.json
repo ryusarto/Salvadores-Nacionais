@@ -1,0 +1,469 @@
+{
+  "character": "laranjao",
+  "spriteProfile": "six-frame",
+  "spriteScale": 0.76,
+  "spriteStatePhases": true,
+  "spriteRecovery": true,
+  "spriteTimingAdapter": "src/render/laranjao-timing.js (ligado em spriteProgress)",
+  "spriteTurboMoves": [
+    "2S",
+    "6S"
+  ],
+  "spriteStripScale": {
+    "laranjao": {}
+  },
+  "integrationStatus": "integrado no jogo; contrato e validação em docs/LARANJAO-ARTE-V1.md",
+  "integrationRequirements": {
+    "fxMaxDecoded": 10,
+    "timingAdapterRequired": true,
+    "wallSolidBounds": "limites-muralha.json",
+    "cloneOwnerFrameReuse": true
+  },
+  "cues": {
+    "5L": {
+      "startup": 5,
+      "total": 16,
+      "hitWindows": [
+        [
+          6,
+          8
+        ]
+      ],
+      "shots": [],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "5M": {
+      "startup": 8,
+      "total": 26,
+      "hitWindows": [
+        [
+          9,
+          12
+        ]
+      ],
+      "shots": [],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "5H": {
+      "startup": 12,
+      "total": 38,
+      "hitWindows": [
+        [
+          13,
+          17
+        ]
+      ],
+      "shots": [],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "2L": {
+      "startup": 6,
+      "total": 18,
+      "hitWindows": [
+        [
+          7,
+          9
+        ]
+      ],
+      "shots": [],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "2M": {
+      "startup": 9,
+      "total": 28,
+      "hitWindows": [
+        [
+          10,
+          13
+        ]
+      ],
+      "shots": [],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "2H": {
+      "startup": 9,
+      "total": 39,
+      "hitWindows": [
+        [
+          10,
+          15
+        ]
+      ],
+      "shots": [],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "3H": {
+      "startup": 11,
+      "total": 41,
+      "hitWindows": [
+        [
+          12,
+          15
+        ]
+      ],
+      "shots": [],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "6M": {
+      "startup": 20,
+      "total": 40,
+      "hitWindows": [
+        [
+          21,
+          23
+        ]
+      ],
+      "shots": [],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "jL": {
+      "startup": 4,
+      "total": 17,
+      "hitWindows": [
+        [
+          5,
+          13
+        ]
+      ],
+      "shots": [],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "jM": {
+      "startup": 6,
+      "total": 18,
+      "hitWindows": [
+        [
+          7,
+          13
+        ]
+      ],
+      "shots": [],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "jH": {
+      "startup": 8,
+      "total": 20,
+      "hitWindows": [
+        [
+          9,
+          14
+        ]
+      ],
+      "shots": [],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "throw": {
+      "startup": 5,
+      "total": 31,
+      "hitWindows": [
+        [
+          6,
+          8
+        ]
+      ],
+      "shots": [],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "blindado": {
+      "startup": 26,
+      "total": 62,
+      "hitWindows": [
+        [
+          27,
+          30
+        ]
+      ],
+      "shots": [],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "5S": {
+      "startup": 12,
+      "total": 33,
+      "hitWindows": [],
+      "shots": [
+        12
+      ],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "2S": {
+      "startup": 13,
+      "total": 36,
+      "hitWindows": [],
+      "shots": [
+        13
+      ],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "2S-turbo": {
+      "startup": 9,
+      "total": 32,
+      "hitWindows": [],
+      "shots": [
+        9,
+        15
+      ],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "6S": {
+      "startup": 15,
+      "total": 47,
+      "hitWindows": [
+        [
+          16,
+          21
+        ]
+      ],
+      "shots": [],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "6S-turbo": {
+      "startup": 15,
+      "total": 47,
+      "hitWindows": [
+        [
+          16,
+          21
+        ]
+      ],
+      "shots": [],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "4S": {
+      "startup": 6,
+      "total": 43,
+      "hitWindows": [
+        [
+          7,
+          15
+        ]
+      ],
+      "shots": [],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "SA1": {
+      "startup": 14,
+      "total": 45,
+      "hitWindows": [],
+      "shots": [
+        14
+      ],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    },
+    "SA3": {
+      "startup": 16,
+      "total": 68,
+      "hitWindows": [
+        [
+          17,
+          22
+        ]
+      ],
+      "shots": [],
+      "contactPoseIndices": [
+        2,
+        3
+      ],
+      "recoveryPoseIndices": [
+        4,
+        5
+      ]
+    }
+  },
+  "mechanics": {
+    "clones": {
+      "body": "mesma tira e mesmo índice do dono; apenas x e sombra diferem",
+      "idleFallback": "clone-parado",
+      "drawMode": "ghost:true, sem sombra; não trocar por idle independente durante ataques do dono",
+      "spawn": "clone-surgir",
+      "destroy": "clone-romper",
+      "swap": "fake-news-troca",
+      "headline": "manchete-placa",
+      "shadow": "somente o verdadeiro; sombra desenhada pelo motor, nunca embutida nos PNGs"
+    },
+    "armor": {
+      "charges": 3,
+      "field": "armadura-campo",
+      "pip": "armadura-carga",
+      "absorb": "armadura-impacto",
+      "break": "armadura-ruptura",
+      "gain": "tarifa-coleta"
+    },
+    "wall": {
+      "hp": 6,
+      "states": "muralha-danos",
+      "stateIndex": "6 - hp (clamp 0..5)",
+      "fall": "muralha-queda",
+      "idle": "muralha-erguida",
+      "destroy": "muralha-destruir",
+      "land": "muralha-impacto-chao",
+      "collider": [
+        120,
+        640
+      ],
+      "placement": "usar entidade real, sem alterar colisão",
+      "renderFit": "stretch da união dos recortes para e.w × e.h (120×640); não usar contain proporcional"
+    },
+    "banish": {
+      "frames": 120,
+      "stamp": "banimento-selo",
+      "portal": "banimento-portal",
+      "return": "banimento-retorno",
+      "damage": 1500,
+      "returnPhases": {
+        "unbanish": [
+          0,
+          1,
+          2
+        ],
+        "holdUntilLanding": 2,
+        "land": [
+          3,
+          4,
+          5
+        ],
+        "anchor": "unbanish segue altura real; impacto só em evento de pouso"
+      }
+    },
+    "headlines": "texto dinâmico do jogo sobre placa sem letras"
+  }
+}
