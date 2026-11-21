@@ -71,14 +71,16 @@ devem mostrar a ação coletiva e a transformação, além da manchete final.
 ## Arenas e som
 
 A arena segue o capítulo, com variantes próprias para palco e banheiros.
-O palco tem um pacote pintado modular v1 em `production/stages/palco/`,
-com prévia e inventário próprios; os banheiros continuam provisórios.
-Aeroporto, mansão, Washington e inferno
-ainda têm cenários desenhados em código. A arte final segue a fila em
-[PRODUCAO-ARTE.md](PRODUCAO-ARTE.md).
+Os pacotes pintados modulares de palco, banheiros, aeroporto, mansão,
+Washington e inferno ficam em `production/stages/<id>/`, com prévia,
+inventário e documentação próprios. O Inferno encerra esta produção local
+com 22 assets, quatro loops ambientais e seis áudios; os renderers
+programáticos permanecem como fallback. Consulte [PRODUCAO-ARTE.md](PRODUCAO-ARTE.md)
+e o README de cada pack para o estado da entrega e os limites da revisão.
 
 Pacotes em `production/stages/<id>/manifest.json` podem fornecer camadas e
 áudio próprios. A trilha e os ambientes de Belém não são reutilizados
 automaticamente no aeroporto, na mansão, em Washington ou no inferno.
-Sem pacote de áudio da arena, permanecem os sons de combate; a trilha final
-é uma entrega de produção pendente.
+Sem pacote de áudio da arena, permanecem os sons de combate. Os novos
+packs possuem trilhas e ambientes próprios, com fontes e medições
+registradas em seus manifestos de áudio.

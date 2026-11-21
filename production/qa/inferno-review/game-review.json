@@ -1,0 +1,187 @@
+{
+  "verdict": "approved-for-tested-runtime-scope",
+  "environment": {
+    "browser": "158.0.8127.37",
+    "desktop": [
+      1280,
+      720
+    ],
+    "mobile": [
+      844,
+      390
+    ],
+    "canvas": [
+      1920,
+      1080
+    ],
+    "build": "Local build, SHA-checked immutable official sprite proxy only for absent character sprites; new scenery local, not deployed."
+  },
+  "buildSHA256": "f3bc919af789021ed576885a6f23a1c1fcb430ed16697375bb66e40db08c2c31",
+  "inventory": {
+    "stage": {
+      "ready": true,
+      "loaded": 13,
+      "errors": [],
+      "prepared": true
+    },
+    "audio": {
+      "stage": "inferno",
+      "available": true,
+      "active": true,
+      "muted": false,
+      "started": true,
+      "decoded": 6,
+      "gain": 0.6000000238418579,
+      "errors": []
+    },
+    "foe": "djabo",
+    "packs": 26,
+    "strips": 722,
+    "hasDjaboSprites": false
+  },
+  "lazyTitle": "pass",
+  "lazySelection": "pass",
+  "pause": "pass",
+  "mechanics": {
+    "forms": {
+      "initial": 1,
+      "transform": {
+        "form": 2,
+        "hp": 9000,
+        "maxHp": 9000,
+        "state": "frozen",
+        "stun": 100,
+        "invuln": 100,
+        "hitstop": 8
+      },
+      "completedForm": 2,
+      "stepCallsToExitFrozen": 108,
+      "note": "100 effective stun frames plus existing8hitstop frames from the5L fixture; invulnerability counter100. No core timing changed."
+    },
+    "roundReset": {
+      "round": 2,
+      "phase": "intro",
+      "form": 1,
+      "hp": 9000,
+      "entities": 0,
+      "hazardsBeforeKO": 10
+    },
+    "nationalHell": {
+      "safeWidth": 360,
+      "delay": 20,
+      "activeLife": 260,
+      "generatedSegments": 10,
+      "sourceSegments": [
+        {
+          "delay": 20,
+          "life": 260,
+          "l": 110,
+          "r": 350
+        },
+        {
+          "delay": 20,
+          "life": 260,
+          "l": 350,
+          "r": 590
+        },
+        {
+          "delay": 20,
+          "life": 260,
+          "l": 590,
+          "r": 830
+        },
+        {
+          "delay": 20,
+          "life": 260,
+          "l": 830,
+          "r": 1070
+        },
+        {
+          "delay": 20,
+          "life": 260,
+          "l": 1070,
+          "r": 1120
+        },
+        {
+          "delay": 20,
+          "life": 260,
+          "l": 1480,
+          "r": 1550
+        },
+        {
+          "delay": 20,
+          "life": 260,
+          "l": 1550,
+          "r": 1790
+        },
+        {
+          "delay": 20,
+          "life": 260,
+          "l": 1790,
+          "r": 2030
+        },
+        {
+          "delay": 20,
+          "life": 260,
+          "l": 2030,
+          "r": 2270
+        },
+        {
+          "delay": 20,
+          "life": 260,
+          "l": 2270,
+          "r": 2490
+        }
+      ],
+      "additionalCoreGapExample": {
+        "safe": [
+          351.25,
+          711.25
+        ],
+        "actualGaps": [
+          [
+            350,
+            711.25
+          ]
+        ],
+        "extraGaps": [
+          [
+            350,
+            351.25
+          ]
+        ],
+        "note": "Core intentionally skips fragments narrower than30px; guarantee is the declared360safe interval, not that all other positions burn."
+      },
+      "warningTicks19And20": "pass",
+      "life259And260": "pass",
+      "safeDamage": 0,
+      "outsideDamage": 420,
+      "realSA3": {
+        "politician": {
+          "spawnWait": 65,
+          "safe": [
+            1376.689359988086,
+            1736.689359988086
+          ]
+        },
+        "demon": {
+          "spawnWait": 65,
+          "safe": [
+            1376.689359988086,
+            1736.689359988086
+          ]
+        }
+      }
+    },
+    "fixtures": "Actual createMatch/step/applyHit/SA3 generation; neutral inputs except real super button; explicit positions, lethal hit fixture and RNG fixture for safe geometry. Original core functions and values unchanged; createFx clears transient capture overlays."
+  },
+  "errors": [],
+  "failed": [],
+  "httpErrors": [],
+  "limits": [
+    "No human playtest",
+    "No physical device test",
+    "No performance certification",
+    "Djabo character art/fallback preserved from base; task delivers scenery and renderer clipping fix."
+  ]
+}

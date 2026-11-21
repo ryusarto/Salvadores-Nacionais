@@ -1,0 +1,266 @@
+[
+  {
+    "camera": 0,
+    "state": "aviso",
+    "safe": [
+      110,
+      470
+    ],
+    "width": 360,
+    "visibleColumns": 360,
+    "changedPixels": 0
+  },
+  {
+    "camera": 0,
+    "state": "ativo",
+    "safe": [
+      110,
+      470
+    ],
+    "width": 360,
+    "visibleColumns": 360,
+    "changedPixels": 41861
+  },
+  {
+    "camera": 0,
+    "state": "aviso",
+    "safe": [
+      335,
+      695
+    ],
+    "width": 360,
+    "visibleColumns": 360,
+    "changedPixels": 39166
+  },
+  {
+    "camera": 0,
+    "state": "ativo",
+    "safe": [
+      335,
+      695
+    ],
+    "width": 360,
+    "visibleColumns": 360,
+    "changedPixels": 39166
+  },
+  {
+    "camera": 0,
+    "state": "aviso",
+    "safe": [
+      1120,
+      1480
+    ],
+    "width": 360,
+    "visibleColumns": 360,
+    "changedPixels": 36487
+  },
+  {
+    "camera": 0,
+    "state": "ativo",
+    "safe": [
+      1120,
+      1480
+    ],
+    "width": 360,
+    "visibleColumns": 360,
+    "changedPixels": 36487
+  },
+  {
+    "camera": 0,
+    "state": "aviso",
+    "safe": [
+      2130,
+      2490
+    ],
+    "width": 360,
+    "visibleColumns": 0,
+    "changedPixels": 0
+  },
+  {
+    "camera": 0,
+    "state": "ativo",
+    "safe": [
+      2130,
+      2490
+    ],
+    "width": 360,
+    "visibleColumns": 0,
+    "changedPixels": 0
+  },
+  {
+    "camera": 340,
+    "state": "aviso",
+    "safe": [
+      110,
+      470
+    ],
+    "width": 360,
+    "visibleColumns": 130,
+    "changedPixels": 0
+  },
+  {
+    "camera": 340,
+    "state": "ativo",
+    "safe": [
+      110,
+      470
+    ],
+    "width": 360,
+    "visibleColumns": 130,
+    "changedPixels": 0
+  },
+  {
+    "camera": 340,
+    "state": "aviso",
+    "safe": [
+      335,
+      695
+    ],
+    "width": 360,
+    "visibleColumns": 355,
+    "changedPixels": 0
+  },
+  {
+    "camera": 340,
+    "state": "ativo",
+    "safe": [
+      335,
+      695
+    ],
+    "width": 360,
+    "visibleColumns": 355,
+    "changedPixels": 0
+  },
+  {
+    "camera": 340,
+    "state": "aviso",
+    "safe": [
+      1120,
+      1480
+    ],
+    "width": 360,
+    "visibleColumns": 360,
+    "changedPixels": 0
+  },
+  {
+    "camera": 340,
+    "state": "ativo",
+    "safe": [
+      1120,
+      1480
+    ],
+    "width": 360,
+    "visibleColumns": 360,
+    "changedPixels": 0
+  },
+  {
+    "camera": 340,
+    "state": "aviso",
+    "safe": [
+      2130,
+      2490
+    ],
+    "width": 360,
+    "visibleColumns": 130,
+    "changedPixels": 0
+  },
+  {
+    "camera": 340,
+    "state": "ativo",
+    "safe": [
+      2130,
+      2490
+    ],
+    "width": 360,
+    "visibleColumns": 130,
+    "changedPixels": 0
+  },
+  {
+    "camera": 680,
+    "state": "aviso",
+    "safe": [
+      110,
+      470
+    ],
+    "width": 360,
+    "visibleColumns": 0,
+    "changedPixels": 0
+  },
+  {
+    "camera": 680,
+    "state": "ativo",
+    "safe": [
+      110,
+      470
+    ],
+    "width": 360,
+    "visibleColumns": 0,
+    "changedPixels": 0
+  },
+  {
+    "camera": 680,
+    "state": "aviso",
+    "safe": [
+      335,
+      695
+    ],
+    "width": 360,
+    "visibleColumns": 15,
+    "changedPixels": 0
+  },
+  {
+    "camera": 680,
+    "state": "ativo",
+    "safe": [
+      335,
+      695
+    ],
+    "width": 360,
+    "visibleColumns": 15,
+    "changedPixels": 0
+  },
+  {
+    "camera": 680,
+    "state": "aviso",
+    "safe": [
+      1120,
+      1480
+    ],
+    "width": 360,
+    "visibleColumns": 360,
+    "changedPixels": 0
+  },
+  {
+    "camera": 680,
+    "state": "ativo",
+    "safe": [
+      1120,
+      1480
+    ],
+    "width": 360,
+    "visibleColumns": 360,
+    "changedPixels": 0
+  },
+  {
+    "camera": 680,
+    "state": "aviso",
+    "safe": [
+      2130,
+      2490
+    ],
+    "width": 360,
+    "visibleColumns": 360,
+    "changedPixels": 0
+  },
+  {
+    "camera": 680,
+    "state": "ativo",
+    "safe": [
+      2130,
+      2490
+    ],
+    "width": 360,
+    "visibleColumns": 360,
+    "changedPixels": 0
+  }
+]

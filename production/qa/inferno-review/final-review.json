@@ -1,0 +1,279 @@
+{
+  "passed": true,
+  "conclusao": "aprovado para o escopo testado",
+  "jogo": "Salvadores Nacionais",
+  "cenario": "07 — Inferno / Djabo",
+  "branch": "art/cenario-07-inferno-final-20261120",
+  "base": "2d7f197",
+  "revisor": "th_revisor_jogos — revisão independente, sem edição de produção ou Git",
+  "buildSHA256": "f3bc919af789021ed576885a6f23a1c1fcb430ed16697375bb66e40db08c2c31",
+  "manifestSHA256": "589dae1453f72810e16f156daa65341bd07cef31af5e64d9165e2b50c22e73e7",
+  "rendererSHA256": "b73914526cddef9f12e1191a7aabbb867f2dd7234aeebf475e312c7f08bccc7a",
+  "achadosPendentes": [],
+  "contagens": {
+    "assetsRuntime": 22,
+    "bytesRuntime": 4035514,
+    "mestresPNGPreservados": 15,
+    "assetsGeradosSelecionados": 13,
+    "tiras": 4,
+    "quadros": 24,
+    "imagensPrevia": 16,
+    "cardsGaleria": 16,
+    "imagensCenaPreparada": 13,
+    "audiosDecodificados": 6,
+    "testesUnitarios": 11,
+    "casosRendererAtual": 216,
+    "casosRendererAntigo": 216,
+    "casosComposicaoPrevia": 24,
+    "casosComposicaoComTrechoVisivel": 20
+  },
+  "correcaoConfirmada": {
+    "id": "QA-INF-FIRE-01",
+    "problemaAnterior": "O passo visual de28px desenhava a última chama além do span real da entidade, invadindo o intervalo seguro. O alpha do chamador também era sobrescrito.",
+    "reproducao": "Renderer anterior extraído literalmente da base2d7f197. No caso safeL335, a invasão visual chegou a27px.",
+    "antes": {
+      "casosComInvasao": 156,
+      "maiorInvasaoPx": 27
+    },
+    "depois": {
+      "maxPixelsNoSafe": 0,
+      "clipEAlphaRestaurados": true,
+      "avisoEAtivo": true,
+      "cameras": [
+        0,
+        340,
+        680
+      ],
+      "safeL": [
+        110,
+        335,
+        877.25,
+        1120,
+        1723.5,
+        2130
+      ]
+    },
+    "resultado": "Recorte visual e alpha multiplicativo aprovados; geometria e regras do core preservadas."
+  },
+  "previa": {
+    "arquivo": "production/qa/inferno-cenario-offline.html",
+    "resultado": "approved-for-tested-preview-scope",
+    "cameras": [
+      0,
+      340,
+      680
+    ],
+    "poses": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75
+    ],
+    "controles": [
+      "pausa",
+      "avanço",
+      "objetos",
+      "FX",
+      "piso",
+      "efeitos reduzidos incluindo fogo ativo",
+      "galeria/isolamento",
+      "Inferno Nacional aviso/ativo"
+    ],
+    "mobileEmulado": [
+      844,
+      390
+    ],
+    "errosJSHTTPRede": 0,
+    "composicaoSafe": "Após estabilização do baseline,24 combinações de câmera/posição/estado apresentaram zero mudança de pixels completos dentro do intervalo safe visível."
+  },
+  "jogoReal": {
+    "fluxo": "título → Versus → Belga → Djabo → luta no Inferno",
+    "prepared": true,
+    "carregamentoSobDemanda": true,
+    "pausa": "core congelado",
+    "indiceSprites": {
+      "pacotes": 26,
+      "strips": 722
+    },
+    "mecanicas": {
+      "forms": {
+        "initial": 1,
+        "transform": {
+          "form": 2,
+          "hp": 9000,
+          "maxHp": 9000,
+          "state": "frozen",
+          "stun": 100,
+          "invuln": 100,
+          "hitstop": 8
+        },
+        "completedForm": 2,
+        "stepCallsToExitFrozen": 108,
+        "note": "100 effective stun frames plus existing8hitstop frames from the5L fixture; invulnerability counter100. No core timing changed."
+      },
+      "roundReset": {
+        "round": 2,
+        "phase": "intro",
+        "form": 1,
+        "hp": 9000,
+        "entities": 0,
+        "hazardsBeforeKO": 10
+      },
+      "nationalHell": {
+        "safeWidth": 360,
+        "delay": 20,
+        "activeLife": 260,
+        "generatedSegments": 10,
+        "sourceSegments": [
+          {
+            "delay": 20,
+            "life": 260,
+            "l": 110,
+            "r": 350
+          },
+          {
+            "delay": 20,
+            "life": 260,
+            "l": 350,
+            "r": 590
+          },
+          {
+            "delay": 20,
+            "life": 260,
+            "l": 590,
+            "r": 830
+          },
+          {
+            "delay": 20,
+            "life": 260,
+            "l": 830,
+            "r": 1070
+          },
+          {
+            "delay": 20,
+            "life": 260,
+            "l": 1070,
+            "r": 1120
+          },
+          {
+            "delay": 20,
+            "life": 260,
+            "l": 1480,
+            "r": 1550
+          },
+          {
+            "delay": 20,
+            "life": 260,
+            "l": 1550,
+            "r": 1790
+          },
+          {
+            "delay": 20,
+            "life": 260,
+            "l": 1790,
+            "r": 2030
+          },
+          {
+            "delay": 20,
+            "life": 260,
+            "l": 2030,
+            "r": 2270
+          },
+          {
+            "delay": 20,
+            "life": 260,
+            "l": 2270,
+            "r": 2490
+          }
+        ],
+        "additionalCoreGapExample": {
+          "safe": [
+            351.25,
+            711.25
+          ],
+          "actualGaps": [
+            [
+              350,
+              711.25
+            ]
+          ],
+          "extraGaps": [
+            [
+              350,
+              351.25
+            ]
+          ],
+          "note": "Core intentionally skips fragments narrower than30px; guarantee is the declared360safe interval, not that all other positions burn."
+        },
+        "warningTicks19And20": "pass",
+        "life259And260": "pass",
+        "safeDamage": 0,
+        "outsideDamage": 420,
+        "realSA3": {
+          "politician": {
+            "spawnWait": 65,
+            "safe": [
+              1376.689359988086,
+              1736.689359988086
+            ]
+          },
+          "demon": {
+            "spawnWait": 65,
+            "safe": [
+              1376.689359988086,
+              1736.689359988086
+            ]
+          }
+        }
+      },
+      "fixtures": "Actual createMatch/step/applyHit/SA3 generation; neutral inputs except real super button; explicit positions, lethal hit fixture and RNG fixture for safe geometry. Original core functions and values unchanged; createFx clears transient capture overlays."
+    },
+    "errosJSHTTPRede": 0
+  },
+  "precisoes": {
+    "transformacao": "São100 quadros efetivos de stun e contador de invulnerabilidade100. Na fixture com5L e hitstop8 já existente, a saída de frozen ocorre após108 chamadas de step. O timing do core permaneceu intacto.",
+    "seguranca": "A garantia é que o intervalo declarado safe[] de360px permanece sem fogo. O core já descarta fragmentos menores que30px e pode criar outras lacunas. Exemplo confirmado: safe=[351.25,711.25], lacuna total=[350,711.25], com1.25px adicional fora de safe[]. Não se afirma que todos os demais pontos sejam perigosos.",
+    "fixtureDePixels": "A primeira comparação da composição falhou porque renders idênticos sem SA3 mudaram após o terceiro readback e depois estabilizaram. Provável troca GPU→CPU/resampling do Canvas após getImageData é inferência técnica. Seis readbacks idênticos estabilizaram o baseline; todos os casos passaram sem mudar produção. Evidências inicial/corrigida preservadas."
+  },
+  "inspecaoVisual": {
+    "arquivos": [
+      "camera-340.png",
+      "game-active.png",
+      "game-demon.png",
+      "coro-source-dark.png"
+    ],
+    "observado": "Correntes fixadas ao teto, fogo apoiado nos braseiros e decoração atrás da linha826. Piso escuro livre e intervalo sem fogo legível durante o ataque. Ambas as formas existentes do Djabo renderizam. Coro v3 inteiro e sem halo ou matte perceptível sobre fundo escuro.",
+    "coro": {
+      "fonte": "production/stages/inferno/source/generated/almas-coro-v3.png",
+      "alphaResidual": "Alpha1..7 preservado sem modificação; cantos amostrados1..3. A composição sobre#100a16 não mostrou placa perceptível.",
+      "fonteInalterada": true
+    },
+    "fontes": {
+      "fontPresent": true,
+      "licensePresent": true,
+      "fontSHA256": "4160a7311de9342674cce9160cde9fcbb30f48190397d86ff1b70b455af65824",
+      "licenseMentionsOFL": true
+    }
+  },
+  "evidencias": [
+    "assets-review.json",
+    "preview-review.json",
+    "game-review.json",
+    "floor-fire-oracle.json",
+    "floor-fire-27px-oracle.json",
+    "canvas-readback-probe.json",
+    "scene-safe-initial-debug.json",
+    "scene-safe-debug.json",
+    "coro-alpha-review.json"
+  ],
+  "limites": [
+    "Build e prévias locais, sem publicação ou merge nesta revisão. Sprites oficiais ausentes foram servidos por proxy com verificação SHA; a arena nova foi local.",
+    "Djabo conserva a arte corporal/fallback da base2d7f197. O índice26/722 é o da base declarada; esta QA isolada não revisa novidades externas da main.",
+    "Fixtures usam módulos reais de createMatch/step/applyHit e geração SA3; ajustam posição, recurso, golpe letal e RNG para casos observáveis, sem alterar funções/regras de produção.",
+    "Não houve playtest humano, aparelho físico ou certificação de desempenho.",
+    "Não foi repetida a campanha completa ou a narrativa final. Reset de round, formas e hazards foram exercitados no core real.",
+    "Não abrange revisão geral dos demais cenários."
+  ]
+}

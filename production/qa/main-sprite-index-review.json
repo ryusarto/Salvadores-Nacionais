@@ -1,0 +1,73 @@
+{
+  "finding": "QA-GEN-SPRITE-INDEX-01",
+  "severity": "alta",
+  "status": "registrado; correção fora desta entrega local",
+  "observedRef": "origin/main local",
+  "observedSHA": "ac8ee4c6cde4643b7b97b869166055e23493df37",
+  "path": "dist/salvadores-nacionais.html",
+  "global": "window.__SPRITES",
+  "artifactSHA256": "648d16712ae153b64173617fad648c3745c2cdfa3799082cc6af867a8274184d",
+  "actual": {
+    "packs": 2,
+    "strips": 4,
+    "counts": {
+      "belga": 3,
+      "ryuchi": 1
+    }
+  },
+  "oracle": {
+    "type": "Current Git tree is the inventory oracle. The earlier complete release is a historical reference, not the complete current main inventory.",
+    "gitTree": "892a8f3a9d32170ee61d97777fff470ca9db31e4",
+    "referenceSHA": "2d7f197874cfc194d7c65d172b4f5582178b09a3",
+    "referenceGitTree": "dbd2fec0d670b26ba62c32d696c80d6d92ca9b6c",
+    "treesIdentical": false,
+    "packs": 28,
+    "strips": 782,
+    "packIds": [
+      "belga",
+      "belga-fx",
+      "chapuh",
+      "chapuh-fx",
+      "chupetinha",
+      "chupetinha-fx",
+      "dney",
+      "franco",
+      "fx-dney",
+      "fx-franco",
+      "majis",
+      "majis-fx",
+      "mdep",
+      "pai-fujao",
+      "pai-fujao-fx",
+      "pavanassi",
+      "pavanassi-esquerda",
+      "pavanassi-fx",
+      "ryuchi",
+      "ryuchi-esquerda",
+      "ryuchi-esquerda-fx",
+      "ryuchi-fx",
+      "trunks",
+      "trunks-fx",
+      "zanata",
+      "zanata-esquerda",
+      "zanata-esquerda-fx",
+      "zanata-fx"
+    ],
+    "addedSinceReference": {
+      "pai-fujao-fx": 20,
+      "pai-fujao": 40
+    },
+    "referenceInventory": {
+      "packs": 26,
+      "strips": 722
+    }
+  },
+  "impact": "The main release registers only2packs/4strips while its current Git tree contains28packs/782strips, including60new Pai do Fujão strips. Missing registrations prevent those body/FX atlases from being loaded normally and leave fallback drawings.",
+  "reproduction": [
+    "git show ac8ee4c6cde4643b7b97b869166055e23493df37:dist/salvadores-nacionais.html — inspect window.__SPRITES",
+    "git ls-tree -r --name-only ac8ee4c6cde4643b7b97b869166055e23493df37 production/sprites/final",
+    "git rev-parse ac8ee4c6cde4643b7b97b869166055e23493df37:production/sprites/final 2d7f197874cfc194d7c65d172b4f5582178b09a3:production/sprites/final"
+  ],
+  "recommendation": "Rebuild the current menu/Pai do Fujão source with its complete current sprite inventory using a full checkout or a verified index of all28packs/782strips. Preserve the external menu and new character-art changes; do not revert them or replace the current inventory with the older26/722subset.",
+  "scope": "Only local Git snapshots were inspected. Remote deployment was not checked; no main/menu/Pai do Fujão source, branch or remote state was changed. Inferno remains a local independent delivery on the Washington reference with26packs/722strips, pending later integration and general review."
+}

@@ -1,0 +1,414 @@
+{
+  "verdict": "approved-for-tested-preview-scope",
+  "environment": {
+    "browser": "158.0.8127.37",
+    "desktop": [
+      1440,
+      1000
+    ],
+    "mobile": [
+      844,
+      390
+    ],
+    "canvas": [
+      1920,
+      1080
+    ],
+    "build": "local generated offline preview"
+  },
+  "inventory": {
+    "status": {
+      "ready": true,
+      "loaded": 13,
+      "errors": [],
+      "prepared": false
+    },
+    "errors": [],
+    "assets": 22,
+    "images": 16,
+    "cards": 16,
+    "anchors": {
+      "throneBase": {
+        "x": 1300,
+        "y": 708.8932584269663
+      },
+      "stairsBase": {
+        "x": 1300,
+        "y": 826
+      },
+      "ceilingMount": {
+        "x": 900,
+        "y": 30
+      },
+      "portalBase": {
+        "x": 360,
+        "y": 826
+      },
+      "leftBrazier": {
+        "x": 600,
+        "y": 526
+      },
+      "rightBrazier": {
+        "x": 2100,
+        "y": 526
+      },
+      "fightFeet": {
+        "x": 1300,
+        "y": 930
+      },
+      "backgroundLavaEdge": {
+        "x": 1300,
+        "y": 815
+      }
+    },
+    "world": {
+      "width": 2600,
+      "height": 1080,
+      "viewWidth": 1920,
+      "cameraMax": 680,
+      "feetY": 930,
+      "groundTopY": 826
+    }
+  },
+  "cameras": {
+    "0": "f18e693388ea5c50694b7fea461505587408e09570b93d88f2cbfd123b4e7b60",
+    "340": "6c30e634156a45d8ba84e53fa1b53a9a0d5b84296d991644a2a5302111838f19",
+    "680": "b4651b75cae8b643df2ec80edd89142feea921d8bcabbbdba2706452f213f6e4"
+  },
+  "sceneSafe": [
+    {
+      "camera": 0,
+      "state": "aviso",
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "visibleColumns": 360,
+      "changedPixels": 0
+    },
+    {
+      "camera": 0,
+      "state": "ativo",
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "visibleColumns": 360,
+      "changedPixels": 0
+    },
+    {
+      "camera": 0,
+      "state": "aviso",
+      "safe": [
+        335,
+        695
+      ],
+      "width": 360,
+      "visibleColumns": 360,
+      "changedPixels": 0
+    },
+    {
+      "camera": 0,
+      "state": "ativo",
+      "safe": [
+        335,
+        695
+      ],
+      "width": 360,
+      "visibleColumns": 360,
+      "changedPixels": 0
+    },
+    {
+      "camera": 0,
+      "state": "aviso",
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "visibleColumns": 360,
+      "changedPixels": 0
+    },
+    {
+      "camera": 0,
+      "state": "ativo",
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "visibleColumns": 360,
+      "changedPixels": 0
+    },
+    {
+      "camera": 0,
+      "state": "aviso",
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "visibleColumns": 0,
+      "changedPixels": 0
+    },
+    {
+      "camera": 0,
+      "state": "ativo",
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "visibleColumns": 0,
+      "changedPixels": 0
+    },
+    {
+      "camera": 340,
+      "state": "aviso",
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "visibleColumns": 130,
+      "changedPixels": 0
+    },
+    {
+      "camera": 340,
+      "state": "ativo",
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "visibleColumns": 130,
+      "changedPixels": 0
+    },
+    {
+      "camera": 340,
+      "state": "aviso",
+      "safe": [
+        335,
+        695
+      ],
+      "width": 360,
+      "visibleColumns": 355,
+      "changedPixels": 0
+    },
+    {
+      "camera": 340,
+      "state": "ativo",
+      "safe": [
+        335,
+        695
+      ],
+      "width": 360,
+      "visibleColumns": 355,
+      "changedPixels": 0
+    },
+    {
+      "camera": 340,
+      "state": "aviso",
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "visibleColumns": 360,
+      "changedPixels": 0
+    },
+    {
+      "camera": 340,
+      "state": "ativo",
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "visibleColumns": 360,
+      "changedPixels": 0
+    },
+    {
+      "camera": 340,
+      "state": "aviso",
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "visibleColumns": 130,
+      "changedPixels": 0
+    },
+    {
+      "camera": 340,
+      "state": "ativo",
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "visibleColumns": 130,
+      "changedPixels": 0
+    },
+    {
+      "camera": 680,
+      "state": "aviso",
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "visibleColumns": 0,
+      "changedPixels": 0
+    },
+    {
+      "camera": 680,
+      "state": "ativo",
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "visibleColumns": 0,
+      "changedPixels": 0
+    },
+    {
+      "camera": 680,
+      "state": "aviso",
+      "safe": [
+        335,
+        695
+      ],
+      "width": 360,
+      "visibleColumns": 15,
+      "changedPixels": 0
+    },
+    {
+      "camera": 680,
+      "state": "ativo",
+      "safe": [
+        335,
+        695
+      ],
+      "width": 360,
+      "visibleColumns": 15,
+      "changedPixels": 0
+    },
+    {
+      "camera": 680,
+      "state": "aviso",
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "visibleColumns": 360,
+      "changedPixels": 0
+    },
+    {
+      "camera": 680,
+      "state": "ativo",
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "visibleColumns": 360,
+      "changedPixels": 0
+    },
+    {
+      "camera": 680,
+      "state": "aviso",
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "visibleColumns": 360,
+      "changedPixels": 0
+    },
+    {
+      "camera": 680,
+      "state": "ativo",
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "visibleColumns": 360,
+      "changedPixels": 0
+    }
+  ],
+  "sceneSafeMethod": "Paused frame0, heroes/diagnostic markers hidden. Six identical readbacks stabilize the Canvas backend before baseline; initial readback transitions reproduced without SA3 in canvas-readback-probe.json. No production modified.",
+  "poseFrames": [
+    0,
+    15,
+    30,
+    45,
+    60,
+    75
+  ],
+  "filters": {
+    "objects": true,
+    "effects": true,
+    "ground": true
+  },
+  "pause": "pass",
+  "step": "pass",
+  "reducedEffects": "pass, including active floor fire",
+  "gallery": "pass",
+  "isolatedAsset": "corrente-balanco",
+  "audio": [
+    {
+      "id": "trilha-intro",
+      "duration": 4.444444444444445,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "trilha-loop",
+      "duration": 35.55555555555556,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "ambiente-caverna",
+      "duration": 16,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "vento-profundo",
+      "duration": 16,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "audio-lava-distante",
+      "duration": 16,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "correntes",
+      "duration": 16,
+      "channels": 2,
+      "sampleRate": 44100
+    }
+  ],
+  "mobile": {
+    "width": 844,
+    "scrollWidth": 844,
+    "canvas": 796
+  },
+  "errors": [],
+  "failed": [],
+  "httpErrors": [],
+  "limits": [
+    "No human playtest",
+    "No physical device test",
+    "Not a deployed game build"
+  ]
+}

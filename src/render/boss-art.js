@@ -588,7 +588,10 @@ export function drawThrownTrident(c, x, y, dir) {
 export function drawFloorFire(c, e, gy, frame) {
   const l = e.x - e.w / 2;
   c.save();
-  c.globalAlpha = e.delay > 0 ? 0.4 : 1;
+  // Partial end flames must not cross the entity edge into the safe interval.
+  // These vertical bounds exceed the generated flame extent; only its width is trimmed.
+  c.beginPath(); c.rect(l, gy - 128, e.w, 136); c.clip();
+  c.globalAlpha *= e.delay > 0 ? 0.4 : 1;
   for (let x = l; x < l + e.w; x += 28) {
     const h = 50 + Math.sin(frame * 0.4 + x * 0.05) * 22 + ((x * 7) % 30);
     const g = c.createLinearGradient(0, gy, 0, gy - h);

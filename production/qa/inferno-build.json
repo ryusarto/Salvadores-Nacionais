@@ -1,0 +1,40 @@
+{
+  "stage": "inferno",
+  "baseMain": "2d7f197874cfc194d7c65d172b4f5582178b09a3",
+  "spritePacks": 26,
+  "spriteReferences": 722,
+  "spritePosters": 0,
+  "characterArt": "official index preserved exactly; all URLs checked against the official Git tree and character artwork unchanged",
+  "assets": 22,
+  "runtimeBytes": 4035514,
+  "ground": {
+    "asset": "basalto",
+    "projection": "flat"
+  },
+  "manifestSHA256": "589dae1453f72810e16f156daa65341bd07cef31af5e64d9165e2b50c22e73e7",
+  "htmlSHA256": "f3bc919af789021ed576885a6f23a1c1fcb430ed16697375bb66e40db08c2c31",
+  "reproduction": "node tools/build-stage-release.mjs --stage=inferno --base=2d7f197874cfc194d7c65d172b4f5582178b09a3 --report=production/qa/inferno-build.json",
+  "limits": [
+    "stage assets and required UI packs must be present locally",
+    "full character artwork was not downloaded by this sparse-checkout build; official URLs are preserved"
+  ],
+  "stageAssets": {
+    "belem": 45,
+    "aeroporto": 41,
+    "banheiros": 70,
+    "inferno": 22,
+    "mansao": 30,
+    "palco": 88,
+    "washington": 33
+  },
+  "audioKeys": [
+    "trilha-intro",
+    "trilha-loop",
+    "ambiente-caverna",
+    "vento-profundo",
+    "audio-lava-distante",
+    "correntes"
+  ],
+  "integrationScope": "Local independent scenario07 on the Washington production reference2d7f197. Later upstream menu/Pai do Fujão changes are not integrated into this build.",
+  "upstreamInventoryFinding": "main-sprite-index-review.json records the separate current-main artifact issue; local QA requires26/722, not the partial2/4."
+}
