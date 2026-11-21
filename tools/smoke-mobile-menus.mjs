@@ -73,7 +73,7 @@ try {
   await tap(p, 'pause-3'); await p.locator('[data-action="control-reset"]').waitFor({ state: 'visible' });
   await tap(p, 'back'); await p.waitForFunction(() => !__app.sub);
   await p.setViewportSize({ width: 844, height: 390 }); await p.waitForFunction(() => !__app.systemPaused);
-  await tap(p, 'pause-0'); await p.waitForFunction(() => !__app.paused && __app.st.frame > 2);
+  await tap(p, 'pause-0'); await p.waitForFunction(() => !__app.paused && __app.st.phase === 'fight' && __app.st.frame > 2);
   await p.locator('#tpause').tap(); await p.waitForFunction(() => __app.paused); await usable(p);
   await tap(p, 'pause-1'); await p.waitForFunction(() => __app.sub === 'combos'); await usable(p);
   await p.screenshot({ path: `${output}/landscape-combos.png` });
@@ -103,7 +103,7 @@ try {
   if (mobilePage) {
     await mobilePage.screenshot({ path: `${output}/failure.png` }).catch(() => {});
     await writeFile(`${output}/failure.json`, JSON.stringify({ error: String(error), checks, errors,
-      state: await mobilePage.evaluate(() => ({ screen: __app.screen, sub: __app.sub, paused: __app.paused,
+      state: await mobilePage.evaluate(() => ({ screen: __app.screen, sub: __app.sub, paused: __app.paused, phase: __app.st?.phase,
         menu: document.querySelector('#accessible-menu')?.innerText })).catch(() => null) }, null, 2));
   }
   throw error;
