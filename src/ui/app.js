@@ -16,6 +16,7 @@ import { drawEffect, prepareSprites, spritePacksFor } from '../render/sprites.js
 import { drawFighter, drawBoxes } from '../render/mannequin.js';
 import { drawLivePhone, drawBanStamp, drawAnkleZone, drawHeadline, drawFired, drawGoldArmor, drawWings } from '../render/boss-art.js';
 import { drawPavanassiStatus } from '../render/pavanassi-art.js';
+import { drawFujaoStatus } from '../render/fujao-art.js';
 import { drawPaiStatus } from '../render/pai-fujao-art.js';
 import { drawInfernoStage } from '../render/inferno-stage.js';
 import { drawWashingtonStage } from '../render/washington-stage.js';
@@ -617,6 +618,7 @@ export function createApp(canvas, devices, opts = {}) {
       if (f.ch.id === 'chupetinha') drawLivePhone(c, f, app.frame);
       drawBanStamp(c, f, BAN_LABEL);
       drawPavanassiStatus(c, f, app.frame);
+      drawFujaoStatus(c, f, app.frame);
       drawPaiStatus(c, f, app.frame, 'front');
       if (f.ch.id === 'laranjao' && f.res.headline && st.ents.some((e) => e.kind === 'clone' && e.owner === f.side)) drawHeadline(c, f.x, SYS.GROUND_Y - f.y - 560, f.res.headline);
       if (absorb && absorb.t / absorb.dur > .35) {

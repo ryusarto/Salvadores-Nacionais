@@ -2,11 +2,16 @@ import { twelveFrameProgress } from './twelve-frame-timing.js';
 import { chupetinhaProgress } from './chupetinha-timing.js';
 import { paiProgress } from './pai-fujao-timing.js';
 import { SYS } from '../data/system.js';
+import { fujaoProgress } from './fujao-timing.js';
 
 const progress = value => Math.max(0, Math.min(0.999, value));
 
 /** Art-only timeline. Combat windows and simulation state remain authoritative. */
 export function spriteProgress(f, animation) {
+  if (f.ch?.id === 'fujao' && f.ch.spriteProfile === 'six-frame') {
+    const p = fujaoProgress(f);
+    if (p !== null) return p;
+  }
   if (f.ch?.spriteProfile === 'twelve-frame') return twelveFrameProgress(f, animation);
   if (f.ch?.id === 'chupetinha' && f.ch.spriteProfile === 'six-frame') return chupetinhaProgress(f, animation);
   if (f.ch?.id === 'pai-fujao' && f.ch.spriteProfile === 'six-frame') return paiProgress(f, animation);

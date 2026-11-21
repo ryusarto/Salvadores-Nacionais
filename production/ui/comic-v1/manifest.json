@@ -230,18 +230,18 @@
       "width": 768,
       "height": 1024,
       "alpha": true,
-      "sha256": "5416e2884bcf9b4569b32e3a9b78902669c7a6405cf4339b1688c33ac9c24046",
-      "bytes": 15698,
-      "provisional": true
+      "sha256": "34fb4d72d9e2e91ba9c4f112f33d2bf51deaa9a30cfc961ef2b01b1d40937b57",
+      "bytes": 518942,
+      "provisional": false
     },
     "icon-fujao": {
       "path": "icons/fujao.webp",
       "width": 256,
       "height": 256,
       "alpha": true,
-      "sha256": "6fdc657ac45e800913cd95129c20054683039ea97bb72721b45fa1442500f596",
-      "bytes": 3954,
-      "provisional": true
+      "sha256": "cd6aa5f6aa7be2ad0e7f04dad3400aca5d74536d9e635c00abb8e0d530086fb1",
+      "bytes": 62826,
+      "provisional": false
     },
     "portrait-pai-fujao": {
       "path": "portraits/pai-fujao.webp",

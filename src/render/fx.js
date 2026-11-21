@@ -10,6 +10,7 @@ import { drawTrunksEntity, drawTrunksParticle } from './trunks-art.js';
 import { drawBelgaEntity, drawBelgaParticle } from './belga-art.js';
 import { drawRyuchiEntity, drawRyuchiParticle } from './ryuchi-art.js';
 import { drawPavanassiEntity, drawPavanassiParticle } from './pavanassi-art.js';
+import { drawFujaoEntity, drawFujaoParticle, fujaoEventArt } from './fujao-art.js';
 import { drawPacifier, drawStamp, drawFence, drawCabin, drawBag, drawHenchman, drawCash, drawTweet, drawGoldWall, drawFireball, drawFireColumn, drawThrownTrident, drawFloorFire } from './boss-art.js';
 
 /**
@@ -34,6 +35,8 @@ export function fxEvents(fx, st) {
   for (const e of st.events) {
     const sy = GY - (e.y || 0);
     const actor = st.f[e.side];
+    const fujaoArt = fujaoEventArt(e, st);
+    if (fujaoArt && !fx.parts.some(p => p.id === 'fujao-fx' && p.name === fujaoArt.name && p.t === 0 && p.x === fujaoArt.x)) fx.parts.push({ k: 'sprite', id: 'fujao-fx', ...fujaoArt, t: 0 });
     for (const art of paiEventArt(e, st)) fx.parts.push({ k: 'pai-fujao', ...art, t: 0 });
     const chupetinhaArt = chupetinhaEventArt(e, st);
     if (chupetinhaArt) fx.parts.push({ k: 'chupetinha', ...chupetinhaArt, t: 0 });
@@ -229,7 +232,7 @@ export function drawEntities(c, st) {
       continue;
     }
     if (e.kind === 'mala' || e.kind === 'mala-voando' || e.kind === 'mala-caindo') {
-      drawBag(c, e, x, y, GY, st.frame);
+      if (!drawFujaoEntity(c, e, owner?.ch.id)) drawBag(c, e, x, y, GY, st.frame);
       c.restore();
       continue;
     }
@@ -410,6 +413,7 @@ export function fxDrawFront(c, fx, st) {
     if (p.k === 'absorb') continue;
     if (p.k === 'pai-fujao') { drawPaiParticle(c, p, st); continue; }
     if (p.k === 'sprite' && p.id === 'pavanassi-fx') { drawPavanassiParticle(c,p); continue; }
+    if (p.k === 'sprite' && p.id === 'fujao-fx') { drawFujaoParticle(c,p); continue; }
     if (p.k === 'chupetinha') { drawChupetinhaParticle(c, p); continue; }
     if (p.k === 'sprite' && ['zanata-fx','zanata-esquerda-fx'].includes(p.id)) { drawZanataParticle(c,p); continue; }
     if (p.k === 'sprite' && p.id === 'ryuchi-fx') { drawRyuchiParticle(c, p); continue; }

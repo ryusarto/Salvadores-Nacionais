@@ -1,0 +1,1755 @@
+{
+  "character": "fujao",
+  "frames": 6,
+  "cell": [
+    500,
+    500
+  ],
+  "expectedEffects": 15,
+  "effects": [
+    {
+      "action": "mala-voando",
+      "name": "Mala arremessada",
+      "loop": true,
+      "frames": 6,
+      "file": "tiras/fx/mala-voando.png",
+      "board": "pranchas/fx/mala-voando.png",
+      "runtime": "runtime/fujao-fx/mala-voando.webp",
+      "master": "mestres-768/fx/mala-voando.png",
+      "anchor": "center",
+      "crop": [
+        40,
+        59,
+        420,
+        382
+      ],
+      "sourceStamp": "1794964277729.8142:1794964961636.4155",
+      "sourceSheets": [
+        "originais/fx/mala-voando/grupo-1.png",
+        "originais/fx/mala-voando/grupo-2.png"
+      ],
+      "uniqueFrames": 6,
+      "warnings": [],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "sha256": "845dc4db56883789c20d72f7cdc1ca7c0ac207cedc96eaa2c325d9ba100b8454",
+          "bounds": {
+            "l": 70,
+            "t": 87,
+            "w": 358,
+            "h": 308,
+            "b": 394,
+            "count": 86996,
+            "edge": 0,
+            "zeroFraction": 0.6397
+          },
+          "individualSha256": "5d40bcfd698f2cb7090ec8feeeb767a9be83b222543bb3e157660b28ffffd3bb"
+        },
+        {
+          "frame": 2,
+          "sha256": "a2d592b9fc1018f565d69ea20cc145b4fad665cb29946e439e6c4eb2da07a3b0",
+          "bounds": {
+            "l": 51,
+            "t": 94,
+            "w": 376,
+            "h": 321,
+            "b": 414,
+            "count": 86337,
+            "edge": 0,
+            "zeroFraction": 0.646852
+          },
+          "individualSha256": "c52090685771492bcb3ba7cc6d96ebe5d6716982a7b220483ee73a8778f50b8e"
+        },
+        {
+          "frame": 3,
+          "sha256": "468ca43b1a6a7c07219979b19a1c1615c5c9a72e25f4ef5ceb8395763858a28a",
+          "bounds": {
+            "l": 50,
+            "t": 68,
+            "w": 396,
+            "h": 356,
+            "b": 423,
+            "count": 93392,
+            "edge": 0,
+            "zeroFraction": 0.61726
+          },
+          "individualSha256": "ad445785f3a9e407b551c70cff71391599336f1a9a23a75b150f8cdc4d95d3ec"
+        },
+        {
+          "frame": 4,
+          "sha256": "4ff51a33ceaa58e2d35a89137df637000c5595976dfcefa78fb3e5bb6aabad86",
+          "bounds": {
+            "l": 48,
+            "t": 80,
+            "w": 397,
+            "h": 355,
+            "b": 434,
+            "count": 93116,
+            "edge": 0,
+            "zeroFraction": 0.619188
+          },
+          "individualSha256": "b39470db4a1137862712da34d4c3aa43523819c639b637ee21fbfa788f1639f3"
+        },
+        {
+          "frame": 5,
+          "sha256": "fe11375ee8f43d79c7dd113478ad1fc44314fe52ae3be777dc7e80be357a2016",
+          "bounds": {
+            "l": 40,
+            "t": 59,
+            "w": 420,
+            "h": 382,
+            "b": 440,
+            "count": 106310,
+            "edge": 0,
+            "zeroFraction": 0.566784
+          },
+          "individualSha256": "fa38e42c91f6c067ee90a8944e35f1b265574d037051fb66adf639ae1f0fa032"
+        },
+        {
+          "frame": 6,
+          "sha256": "a52e432898282a6cabae5ee10c9ded14410e884067226c2045cf60f5e39a3c44",
+          "bounds": {
+            "l": 54,
+            "t": 62,
+            "w": 374,
+            "h": 344,
+            "b": 405,
+            "count": 100399,
+            "edge": 0,
+            "zeroFraction": 0.59022
+          },
+          "individualSha256": "369536314eeec160d1c6217ea5a13c45d21d3269ec29b27534b5155f2e955a60"
+        }
+      ]
+    },
+    {
+      "action": "mala-no-chao",
+      "name": "Mala esquecida no chão",
+      "loop": true,
+      "frames": 6,
+      "file": "tiras/fx/mala-no-chao.png",
+      "board": "pranchas/fx/mala-no-chao.png",
+      "runtime": "runtime/fujao-fx/mala-no-chao.webp",
+      "master": "mestres-768/fx/mala-no-chao.png",
+      "anchor": "center",
+      "crop": [
+        40,
+        135,
+        420,
+        230
+      ],
+      "sourceStamp": "1794964296268.822:1794964334549.4563",
+      "sourceSheets": [
+        "originais/fx/mala-no-chao/grupo-1.png",
+        "originais/fx/mala-no-chao/grupo-2.png"
+      ],
+      "uniqueFrames": 6,
+      "warnings": [],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "sha256": "cc7c71060256e698556ff6e4077879881c899d1a2e4ad09dd7baf10be0afd545",
+          "bounds": {
+            "l": 40,
+            "t": 141,
+            "w": 418,
+            "h": 223,
+            "b": 363,
+            "count": 82319,
+            "edge": 0,
+            "zeroFraction": 0.665576
+          },
+          "individualSha256": "e2d21f3ee76db3c98009e506b0f13c332f4863709af16646eb5ffb95af04d972"
+        },
+        {
+          "frame": 2,
+          "sha256": "c1fa2b9fa29a86e7434f10a2428238c4c40ec716d3b9bf9a825a8369bedc22d9",
+          "bounds": {
+            "l": 41,
+            "t": 140,
+            "w": 418,
+            "h": 224,
+            "b": 363,
+            "count": 82384,
+            "edge": 0,
+            "zeroFraction": 0.665396
+          },
+          "individualSha256": "2baddf1ae9f5d9af6ce2e2d4c4c6711ea1885d30fb81b853edae8b97c5ed7a33"
+        },
+        {
+          "frame": 3,
+          "sha256": "0f2122452ebc1a24f04d6c66fe6470d905fdcca4d2903a1d44a47014cbda5c7e",
+          "bounds": {
+            "l": 42,
+            "t": 135,
+            "w": 418,
+            "h": 229,
+            "b": 363,
+            "count": 82573,
+            "edge": 0,
+            "zeroFraction": 0.66468
+          },
+          "individualSha256": "47beb455e57c5aa3116cff9f77758a061c55284cb470d92d71be5a8b33709934"
+        },
+        {
+          "frame": 4,
+          "sha256": "a9efb37e6bee7e696a75d374ab244e9596958784b3db5e8489bdb0dbc616fa39",
+          "bounds": {
+            "l": 41,
+            "t": 139,
+            "w": 417,
+            "h": 226,
+            "b": 364,
+            "count": 82137,
+            "edge": 0,
+            "zeroFraction": 0.665104
+          },
+          "individualSha256": "a9d057a64761f460c0573274df45b2ceb689e9b382e2230b6112572cbfa5f98f"
+        },
+        {
+          "frame": 5,
+          "sha256": "9c93890ea9868d7ee5c2f038b7a70bd6aad07cd779cc2bc90ce4ab8d144eb54e",
+          "bounds": {
+            "l": 41,
+            "t": 138,
+            "w": 418,
+            "h": 227,
+            "b": 364,
+            "count": 82103,
+            "edge": 0,
+            "zeroFraction": 0.664816
+          },
+          "individualSha256": "cfd9883a37ad9980eb994aa3524d8968bfd654f44f8b0ec77296fbd3046f8f40"
+        },
+        {
+          "frame": 6,
+          "sha256": "bc3542ac3084c895f4f190548b590b5505d3b184a062cdb6d786968ea22b374c",
+          "bounds": {
+            "l": 42,
+            "t": 138,
+            "w": 417,
+            "h": 227,
+            "b": 364,
+            "count": 82121,
+            "edge": 0,
+            "zeroFraction": 0.665028
+          },
+          "individualSha256": "cd750ffaedae1f36d6944627d0e3dfe7510a481ae7e9a626025c8c340d8ed17b"
+        }
+      ]
+    },
+    {
+      "action": "mala-caindo",
+      "name": "Mala despencando",
+      "loop": false,
+      "frames": 6,
+      "file": "tiras/fx/mala-caindo.png",
+      "board": "pranchas/fx/mala-caindo.png",
+      "runtime": "runtime/fujao-fx/mala-caindo.webp",
+      "master": "mestres-768/fx/mala-caindo.png",
+      "anchor": "center",
+      "crop": [
+        40,
+        44,
+        420,
+        413
+      ],
+      "sourceStamp": "1794964359753.4297:1794964402019.689",
+      "sourceSheets": [
+        "originais/fx/mala-caindo/grupo-1.png",
+        "originais/fx/mala-caindo/grupo-2.png"
+      ],
+      "uniqueFrames": 6,
+      "warnings": [],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "sha256": "bd92d36c5bad947fb431eec88e2579ac80c32da7ffe77eda5fdf25a4531f7f83",
+          "bounds": {
+            "l": 71,
+            "t": 52,
+            "w": 366,
+            "h": 370,
+            "b": 421,
+            "count": 110255,
+            "edge": 0,
+            "zeroFraction": 0.539692
+          },
+          "individualSha256": "5e161a66037c367204180ae04f40049d2482512d0adbdb479c675b3728983fa4"
+        },
+        {
+          "frame": 2,
+          "sha256": "f36784f9e4c5b4def1580ad3e8f9938a2b738091af39bfb6c430b1f2742cefa5",
+          "bounds": {
+            "l": 61,
+            "t": 59,
+            "w": 391,
+            "h": 374,
+            "b": 432,
+            "count": 108050,
+            "edge": 0,
+            "zeroFraction": 0.550596
+          },
+          "individualSha256": "be9452b1f89f4abd29a4462582d7ea77d62703f51a078b3328f97c9e828e4f53"
+        },
+        {
+          "frame": 3,
+          "sha256": "1cfd2bc29421c0d8123e8cc760958e24901f4f2b44cbe77ae0d82f1a0955194d",
+          "bounds": {
+            "l": 55,
+            "t": 82,
+            "w": 405,
+            "h": 358,
+            "b": 439,
+            "count": 105488,
+            "edge": 0,
+            "zeroFraction": 0.566832
+          },
+          "individualSha256": "47382f9c951e24bb2ad47c0597a68a68acc0b8862e2e84054ba6575216070ed1"
+        },
+        {
+          "frame": 4,
+          "sha256": "ab05a8004a9de0805f89c4f638af9b682386c1a8ad67d9f7c33002076eb614c9",
+          "bounds": {
+            "l": 176,
+            "t": 44,
+            "w": 227,
+            "h": 413,
+            "b": 456,
+            "count": 63038,
+            "edge": 0,
+            "zeroFraction": 0.741168
+          },
+          "individualSha256": "43d790b5235db5353d7d11f55be68b1e87776c79d7b06482f3de4f1e425c15c3"
+        },
+        {
+          "frame": 5,
+          "sha256": "b4c502d6266ba64fa483283851e8dc97558eb102dcd113fc6378aab4e195a6e0",
+          "bounds": {
+            "l": 45,
+            "t": 69,
+            "w": 412,
+            "h": 386,
+            "b": 454,
+            "count": 118729,
+            "edge": 0,
+            "zeroFraction": 0.51546
+          },
+          "individualSha256": "58b8f68ee75c9d896986076fef3dbae94ed9935956ff6d87e0bebd5bd56cf0b7"
+        },
+        {
+          "frame": 6,
+          "sha256": "62c9c16f7cb4990283868e533c05020cc3d824eb34f32ed97d345b1bbd7188cd",
+          "bounds": {
+            "l": 40,
+            "t": 79,
+            "w": 391,
+            "h": 369,
+            "b": 447,
+            "count": 119386,
+            "edge": 0,
+            "zeroFraction": 0.512344
+          },
+          "individualSha256": "8c50530f2e5f9d6858194abcb92f0c2020f098427a6998e334a5adf13063e453"
+        }
+      ]
+    },
+    {
+      "action": "mala-impacto",
+      "name": "Impacto de malada",
+      "loop": false,
+      "frames": 6,
+      "file": "tiras/fx/mala-impacto.png",
+      "board": "pranchas/fx/mala-impacto.png",
+      "runtime": "runtime/fujao-fx/mala-impacto.webp",
+      "master": "mestres-768/fx/mala-impacto.png",
+      "anchor": "center",
+      "crop": [
+        40,
+        65,
+        420,
+        371
+      ],
+      "sourceStamp": "1794964380932.4146:1794964982393.3003",
+      "sourceSheets": [
+        "originais/fx/mala-impacto/grupo-1.png",
+        "originais/fx/mala-impacto/grupo-2.png"
+      ],
+      "uniqueFrames": 6,
+      "warnings": [],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "sha256": "4c0c333406bcdece5c11139d48c71b26ee810aee906e0b749474297593f51a36",
+          "bounds": {
+            "l": 212,
+            "t": 214,
+            "w": 102,
+            "h": 94,
+            "b": 307,
+            "count": 3353,
+            "edge": 0,
+            "zeroFraction": 0.983188
+          },
+          "individualSha256": "c7d4ffcf922c0236783ad53d7c1d7bb6d853979e836bc649c88b46f2781b6386"
+        },
+        {
+          "frame": 2,
+          "sha256": "359aee00278117469cbcfb57fc53092708dd6c7510599a076dfbbaf395d7ea96",
+          "bounds": {
+            "l": 114,
+            "t": 140,
+            "w": 269,
+            "h": 226,
+            "b": 365,
+            "count": 16601,
+            "edge": 0,
+            "zeroFraction": 0.9226
+          },
+          "individualSha256": "f27024ecabe551ddf079dba3dab2322a0f61456e14e7ea09fc6a5ac629c77b44"
+        },
+        {
+          "frame": 3,
+          "sha256": "7645a212311d2b3ed634a345d66c3731c9ee62bc66a4e024f98ae65ac6239896",
+          "bounds": {
+            "l": 40,
+            "t": 65,
+            "w": 420,
+            "h": 371,
+            "b": 435,
+            "count": 50645,
+            "edge": 0,
+            "zeroFraction": 0.779452
+          },
+          "individualSha256": "976557da595d5ca482b2dbf5e4853574679cdd2b1dcf61be26e6850361e99af4"
+        },
+        {
+          "frame": 4,
+          "sha256": "de7d15b03ee9ee65a5218bd1509f091fcda7a007b8effc63e3047196619b570c",
+          "bounds": {
+            "l": 96,
+            "t": 79,
+            "w": 335,
+            "h": 334,
+            "b": 412,
+            "count": 29316,
+            "edge": 0,
+            "zeroFraction": 0.859284
+          },
+          "individualSha256": "4a675ed21d7aed1d2af0f671142ed6ef740097b11633c70cc621735e4168303a"
+        },
+        {
+          "frame": 5,
+          "sha256": "3cecc5a9845155b3f212fa2038d2248e3c0d8ad9d49abda44dc139ea99cfe27f",
+          "bounds": {
+            "l": 111,
+            "t": 137,
+            "w": 280,
+            "h": 258,
+            "b": 394,
+            "count": 7095,
+            "edge": 0,
+            "zeroFraction": 0.960236
+          },
+          "individualSha256": "6a1c4da9c3df5f8c019e13ae33506e7de3dcaf168dcb51017e7d3e8c59d86682"
+        },
+        {
+          "frame": 6,
+          "sha256": "7a49076dd7cfa5a93555be9fad68ba2c0b1bd7c71df935647794af2f14824bdb",
+          "bounds": {
+            "l": 101,
+            "t": 161,
+            "w": 259,
+            "h": 222,
+            "b": 382,
+            "count": 1198,
+            "edge": 0,
+            "zeroFraction": 0.99002
+          },
+          "individualSha256": "4140c23a1c90422d85e4390f5aab61417fa149bc30b66b05d25420bcac2f4295"
+        }
+      ]
+    },
+    {
+      "action": "aviso-queda",
+      "name": "Aviso de mala caindo",
+      "loop": true,
+      "frames": 6,
+      "file": "tiras/fx/aviso-queda.png",
+      "board": "pranchas/fx/aviso-queda.png",
+      "runtime": "runtime/fujao-fx/aviso-queda.webp",
+      "master": "mestres-768/fx/aviso-queda.png",
+      "anchor": "center",
+      "crop": [
+        43,
+        40,
+        415,
+        420
+      ],
+      "sourceStamp": "1794964445260.445:1794964494512.462",
+      "sourceSheets": [
+        "originais/fx/aviso-queda/grupo-1.png",
+        "originais/fx/aviso-queda/grupo-2.png"
+      ],
+      "uniqueFrames": 6,
+      "warnings": [],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "sha256": "360ce1d1665838f0121ee596d0194aa9c5beb48601ed7bacb759e36a75d320ce",
+          "bounds": {
+            "l": 85,
+            "t": 80,
+            "w": 339,
+            "h": 343,
+            "b": 422,
+            "count": 48830,
+            "edge": 0,
+            "zeroFraction": 0.761856
+          },
+          "individualSha256": "9688f02aaaafbd4401dfad5fd583db2ae527da73587bae1a822b1f31ecb454b6"
+        },
+        {
+          "frame": 2,
+          "sha256": "d0f8a4ca7d8171193a3761db0981291bf0514a8cdaef1ce3cda14a67160c8070",
+          "bounds": {
+            "l": 59,
+            "t": 57,
+            "w": 381,
+            "h": 386,
+            "b": 442,
+            "count": 64902,
+            "edge": 0,
+            "zeroFraction": 0.691352
+          },
+          "individualSha256": "3d5d7c27154e8543a4734e9ef0c1b3572282b53a88bc824bbc49730f950f54a3"
+        },
+        {
+          "frame": 3,
+          "sha256": "eb97508a378a8b47e5dc0f6e400559a1fa5b08af179a983bcf41e0bbb8990c9c",
+          "bounds": {
+            "l": 43,
+            "t": 40,
+            "w": 411,
+            "h": 418,
+            "b": 457,
+            "count": 76793,
+            "edge": 0,
+            "zeroFraction": 0.64546
+          },
+          "individualSha256": "ac3ce003bdf42d120dfbebe4ba1ae6c871c0a5868b3936d571e969f845278413"
+        },
+        {
+          "frame": 4,
+          "sha256": "2e6b75b980dd52d1ca255c626614ef446ddd20b2555d39eccb6e44f3a803cd72",
+          "bounds": {
+            "l": 69,
+            "t": 60,
+            "w": 373,
+            "h": 385,
+            "b": 444,
+            "count": 66932,
+            "edge": 0,
+            "zeroFraction": 0.700568
+          },
+          "individualSha256": "1ea007966cb7b67d352bddd5d4e0e1de0bc424d5b5f5f61e730bd0748fd97a6b"
+        },
+        {
+          "frame": 5,
+          "sha256": "9722efeb049f814a41716b88a7434fc47f7f3598a1c69cabc0eb47b8703f7db9",
+          "bounds": {
+            "l": 49,
+            "t": 42,
+            "w": 409,
+            "h": 418,
+            "b": 459,
+            "count": 93005,
+            "edge": 0,
+            "zeroFraction": 0.599128
+          },
+          "individualSha256": "2fbd9ccf83ed5cccefb72cf6b1c56cb467aeacb8fbdabd3d0a69c53090ce5ece"
+        },
+        {
+          "frame": 6,
+          "sha256": "6176e8644956df299db350e9d06bc91c367481bbc8df735fac3a3796bb6fdce8",
+          "bounds": {
+            "l": 63,
+            "t": 64,
+            "w": 366,
+            "h": 376,
+            "b": 439,
+            "count": 62923,
+            "edge": 0,
+            "zeroFraction": 0.72072
+          },
+          "individualSha256": "895b1ef7c7b7b7128511b41527c50adbe2454cf0a8bcaea679d95c18016e9bca"
+        }
+      ]
+    },
+    {
+      "action": "carrinho-bagagem",
+      "name": "Carrinho de bagagem",
+      "loop": true,
+      "frames": 6,
+      "file": "tiras/fx/carrinho-bagagem.png",
+      "board": "pranchas/fx/carrinho-bagagem.png",
+      "runtime": "runtime/fujao-fx/carrinho-bagagem.webp",
+      "master": "mestres-768/fx/carrinho-bagagem.png",
+      "anchor": "center",
+      "crop": [
+        46,
+        40,
+        408,
+        420
+      ],
+      "sourceStamp": "1794964471218.0984:1794964518012.223",
+      "sourceSheets": [
+        "originais/fx/carrinho-bagagem/grupo-1.png",
+        "originais/fx/carrinho-bagagem/grupo-2.png"
+      ],
+      "uniqueFrames": 6,
+      "warnings": [],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "sha256": "be90f066b92279cf269854331032f7688a6f5a5d530e43f1bb208e4555a56fa5",
+          "bounds": {
+            "l": 46,
+            "t": 45,
+            "w": 397,
+            "h": 414,
+            "b": 458,
+            "count": 107872,
+            "edge": 0,
+            "zeroFraction": 0.551032
+          },
+          "individualSha256": "6bff739e959d822d19527d4d0aa92b56e8acedd4e65b8405fbfd918cc14b887b"
+        },
+        {
+          "frame": 2,
+          "sha256": "47b029f38605d99a1642258f33dee3ff9183774959d9bde707adefd43d80720d",
+          "bounds": {
+            "l": 47,
+            "t": 46,
+            "w": 399,
+            "h": 412,
+            "b": 457,
+            "count": 107729,
+            "edge": 0,
+            "zeroFraction": 0.550044
+          },
+          "individualSha256": "c07492d071d9c07f6500c9085a279585c908bd932cface060cef1ceab39ffa94"
+        },
+        {
+          "frame": 3,
+          "sha256": "404b333474190e9b069a4befca83dc1ede0cda108cb27253f015af45ff3df661",
+          "bounds": {
+            "l": 47,
+            "t": 41,
+            "w": 399,
+            "h": 417,
+            "b": 457,
+            "count": 109066,
+            "edge": 0,
+            "zeroFraction": 0.544756
+          },
+          "individualSha256": "b3355a60e74a7a964fde3f3e9115a643771461a9fa0c5649d9d9097c45a3f4ed"
+        },
+        {
+          "frame": 4,
+          "sha256": "789007be6bf61cd067d67e28aefde5cbe4063655854e7c0a0f8ec9596ef82fab",
+          "bounds": {
+            "l": 68,
+            "t": 40,
+            "w": 385,
+            "h": 420,
+            "b": 459,
+            "count": 107727,
+            "edge": 0,
+            "zeroFraction": 0.553732
+          },
+          "individualSha256": "dfba192d8df281eb6765a7fc427cf7f311e3aa1f0b0f4b5183ead74a41170c5e"
+        },
+        {
+          "frame": 5,
+          "sha256": "be063f52696101e8835ffd80fdcc5e88210d5b18cc5686ad8512fbe220ef8995",
+          "bounds": {
+            "l": 58,
+            "t": 41,
+            "w": 395,
+            "h": 419,
+            "b": 459,
+            "count": 108716,
+            "edge": 0,
+            "zeroFraction": 0.54976
+          },
+          "individualSha256": "d7d8b781440e76148fa5c46c362a7ef7f3316dff8dd5f68dd1083c0f4e6ed602"
+        },
+        {
+          "frame": 6,
+          "sha256": "9b07d2010b4db7e7c7f1bb5e0c59eb2d73b0afd8bf50589db42c661c784dcdd4",
+          "bounds": {
+            "l": 54,
+            "t": 41,
+            "w": 400,
+            "h": 419,
+            "b": 459,
+            "count": 110307,
+            "edge": 0,
+            "zeroFraction": 0.543016
+          },
+          "individualSha256": "345138a8ceedfdfcd2f43117a8179e8d9a8a806158775f9f6d717acf10e7df24"
+        }
+      ]
+    },
+    {
+      "action": "carrinho-turbo",
+      "name": "Carrinho turbo",
+      "loop": true,
+      "frames": 6,
+      "file": "tiras/fx/carrinho-turbo.png",
+      "board": "pranchas/fx/carrinho-turbo.png",
+      "runtime": "runtime/fujao-fx/carrinho-turbo.webp",
+      "master": "mestres-768/fx/carrinho-turbo.png",
+      "anchor": "center",
+      "crop": [
+        40,
+        53,
+        420,
+        395
+      ],
+      "sourceStamp": "1794964546783.2532:1794964592334.8386",
+      "sourceSheets": [
+        "originais/fx/carrinho-turbo/grupo-1.png",
+        "originais/fx/carrinho-turbo/grupo-2.png"
+      ],
+      "uniqueFrames": 6,
+      "warnings": [],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "sha256": "c6cc906cf1093b73ddbc2387a786f34fc11ba8a874dd80aa89a7aaba261c8a87",
+          "bounds": {
+            "l": 74,
+            "t": 83,
+            "w": 354,
+            "h": 360,
+            "b": 442,
+            "count": 83455,
+            "edge": 0,
+            "zeroFraction": 0.65042
+          },
+          "individualSha256": "6609fddcd707d94f0dea215ed0d2a9ffdfebf54aca72d8e90a7caba7ed8e614a"
+        },
+        {
+          "frame": 2,
+          "sha256": "66330c6678f2ecee9eec95e482ab3036225492d5fe1455c431975152e1fe3676",
+          "bounds": {
+            "l": 59,
+            "t": 85,
+            "w": 377,
+            "h": 358,
+            "b": 442,
+            "count": 88231,
+            "edge": 0,
+            "zeroFraction": 0.626956
+          },
+          "individualSha256": "959b9e221545dac5b7ffa8a1ec213b3111c9bc8b466b8233feeb060d65bd2b0d"
+        },
+        {
+          "frame": 3,
+          "sha256": "3d60dd7aa62eb886fb7393e4a15617d633390427bc2e7f58e18915e9c9dc526a",
+          "bounds": {
+            "l": 40,
+            "t": 53,
+            "w": 405,
+            "h": 391,
+            "b": 443,
+            "count": 93122,
+            "edge": 0,
+            "zeroFraction": 0.600532
+          },
+          "individualSha256": "e43e15fb7484ec3b5713c07295681ca532ad86fde479a99b53c8a7835ff439ca"
+        },
+        {
+          "frame": 4,
+          "sha256": "6d453ba198a46b6d4c567c889c3e038033239a80bfcda165467821d169d5faff",
+          "bounds": {
+            "l": 73,
+            "t": 76,
+            "w": 387,
+            "h": 372,
+            "b": 447,
+            "count": 85461,
+            "edge": 0,
+            "zeroFraction": 0.636484
+          },
+          "individualSha256": "c69d6de5fb82b16c211b92b2c5ed049fb6e5e99ce4554dc2a11e71af4a3765af"
+        },
+        {
+          "frame": 5,
+          "sha256": "cd7528997e5cc262248edbbf261ce1f9423f033ba2e3421d85f892049947289c",
+          "bounds": {
+            "l": 69,
+            "t": 54,
+            "w": 379,
+            "h": 390,
+            "b": 443,
+            "count": 93369,
+            "edge": 0,
+            "zeroFraction": 0.607448
+          },
+          "individualSha256": "bca4bd7ac42219bdc670e3e0939b0429442e9daaf4fa2aa66460a3dcec181f48"
+        },
+        {
+          "frame": 6,
+          "sha256": "b67836b80e553cce6b096cc06139d3f7e6d0898d9dfd961c0f6de7d67a469dea",
+          "bounds": {
+            "l": 78,
+            "t": 65,
+            "w": 355,
+            "h": 379,
+            "b": 443,
+            "count": 89050,
+            "edge": 0,
+            "zeroFraction": 0.62774
+          },
+          "individualSha256": "50e80947f0a69eac5aef6bc432ecd83e50fabd3b2e23e327148355d87d26eff1"
+        }
+      ]
+    },
+    {
+      "action": "fuga-poeira",
+      "name": "Poeira da fuga",
+      "loop": false,
+      "frames": 6,
+      "file": "tiras/fx/fuga-poeira.png",
+      "board": "pranchas/fx/fuga-poeira.png",
+      "runtime": "runtime/fujao-fx/fuga-poeira.webp",
+      "master": "mestres-768/fx/fuga-poeira.png",
+      "anchor": "center",
+      "crop": [
+        40,
+        161,
+        420,
+        179
+      ],
+      "sourceStamp": "1794964565764.2568:1794964611252.0525",
+      "sourceSheets": [
+        "originais/fx/fuga-poeira/grupo-1.png",
+        "originais/fx/fuga-poeira/grupo-2.png"
+      ],
+      "uniqueFrames": 6,
+      "warnings": [],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "sha256": "005412ea93f0370a56bf4cac06644eaddb4dd8a078c637bf09894605c1655411",
+          "bounds": {
+            "l": 151,
+            "t": 242,
+            "w": 190,
+            "h": 95,
+            "b": 336,
+            "count": 10214,
+            "edge": 0,
+            "zeroFraction": 0.954564
+          },
+          "individualSha256": "298e389bb0a0c17a51019c5a1f86804041ee8591c2c494aa00886cdba362b92a"
+        },
+        {
+          "frame": 2,
+          "sha256": "fdaece379eb924f1bc48462bd30320a966368b99aef8275c01f19faf8715f5fc",
+          "bounds": {
+            "l": 79,
+            "t": 195,
+            "w": 319,
+            "h": 142,
+            "b": 336,
+            "count": 26953,
+            "edge": 0,
+            "zeroFraction": 0.885364
+          },
+          "individualSha256": "538ecfcd955959d6d72c2722620599234de13b4da0bc28b68b9dd86465b6053e"
+        },
+        {
+          "frame": 3,
+          "sha256": "75e2b5e365d54a39dbb45067210e91dd38b732aac86d1f3164e6db15fe3e4e5d",
+          "bounds": {
+            "l": 40,
+            "t": 161,
+            "w": 420,
+            "h": 179,
+            "b": 339,
+            "count": 46965,
+            "edge": 0,
+            "zeroFraction": 0.803616
+          },
+          "individualSha256": "2c2a951c4003c57906f2eef20bc96a57aad06c8c317eaf327066a4306a02c585"
+        },
+        {
+          "frame": 4,
+          "sha256": "a61f7632794f56bb74d03e777d337edf9bcbda6cf394ba9e31cce1a5197ab006",
+          "bounds": {
+            "l": 73,
+            "t": 163,
+            "w": 372,
+            "h": 177,
+            "b": 339,
+            "count": 37805,
+            "edge": 0,
+            "zeroFraction": 0.839836
+          },
+          "individualSha256": "78c0692d203df3cfafc692b486c290337ecfdab6f82383b925980215b5d832ec"
+        },
+        {
+          "frame": 5,
+          "sha256": "15e98182193f6dcd88a3ad91e937dc100a2b28eb69ca5497da52b26c138bcb5f",
+          "bounds": {
+            "l": 91,
+            "t": 199,
+            "w": 332,
+            "h": 137,
+            "b": 335,
+            "count": 15830,
+            "edge": 0,
+            "zeroFraction": 0.928708
+          },
+          "individualSha256": "8fcc85c1070fb7c333ed9c517d8b357d5e2d2a24acb12c295f6226ac837a3e1c"
+        },
+        {
+          "frame": 6,
+          "sha256": "2fdbfc702fe797fb73eeb5a7413936961fcf293c72d214bc5b7e42c466a805b7",
+          "bounds": {
+            "l": 109,
+            "t": 218,
+            "w": 241,
+            "h": 86,
+            "b": 303,
+            "count": 2747,
+            "edge": 0,
+            "zeroFraction": 0.984608
+          },
+          "individualSha256": "23d5d68b711d22b166c3d9d0fdf9d72a35291d94fa9426a8696919a9911e4f93"
+        }
+      ]
+    },
+    {
+      "action": "fuga-pronta",
+      "name": "Fuga pronta",
+      "loop": true,
+      "frames": 6,
+      "file": "tiras/fx/fuga-pronta.png",
+      "board": "pranchas/fx/fuga-pronta.png",
+      "runtime": "runtime/fujao-fx/fuga-pronta.webp",
+      "master": "mestres-768/fx/fuga-pronta.png",
+      "anchor": "center",
+      "crop": [
+        40,
+        124,
+        420,
+        253
+      ],
+      "sourceStamp": "1794964630780.2686:1794964671081.7463",
+      "sourceSheets": [
+        "originais/fx/fuga-pronta/grupo-1.png",
+        "originais/fx/fuga-pronta/grupo-2.png"
+      ],
+      "uniqueFrames": 6,
+      "warnings": [],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "sha256": "729deb1645899f018f58987d24381a6aaebcd571cd95e0f0e28cbe1be36273f9",
+          "bounds": {
+            "l": 40,
+            "t": 124,
+            "w": 384,
+            "h": 227,
+            "b": 350,
+            "count": 41230,
+            "edge": 0,
+            "zeroFraction": 0.824616
+          },
+          "individualSha256": "dc13ec30b5356463799fdd9edaaef673dfeb3d5055273b8489c7f6d49b7cac0f"
+        },
+        {
+          "frame": 2,
+          "sha256": "7926627218578dd10cffa2acef810abc3b4d15521323048674c7ef522a7aaa4f",
+          "bounds": {
+            "l": 40,
+            "t": 124,
+            "w": 384,
+            "h": 234,
+            "b": 357,
+            "count": 46788,
+            "edge": 0,
+            "zeroFraction": 0.801408
+          },
+          "individualSha256": "54ad798d07772bd6e2c5c10777b5168201fd56a97b87438080ab213e5b89cf11"
+        },
+        {
+          "frame": 3,
+          "sha256": "38ffe3ddc900354fec020fb419ee3336513555f2dec02ba942918d5785c8312c",
+          "bounds": {
+            "l": 40,
+            "t": 124,
+            "w": 406,
+            "h": 251,
+            "b": 374,
+            "count": 54192,
+            "edge": 0,
+            "zeroFraction": 0.771388
+          },
+          "individualSha256": "3e38eb31ba2b08c059a863c206f805ac1252fa9ff9917ad52272f7481b566665"
+        },
+        {
+          "frame": 4,
+          "sha256": "ce5a7b1bd12567126eac516d7d4b0bb2d6d22799dd4cbf439551e694c862050d",
+          "bounds": {
+            "l": 41,
+            "t": 124,
+            "w": 419,
+            "h": 253,
+            "b": 376,
+            "count": 58024,
+            "edge": 0,
+            "zeroFraction": 0.75446
+          },
+          "individualSha256": "673374242eeee6510b9810355748edcf46f282be946f535f2e7e8ce47d5b3dbb"
+        },
+        {
+          "frame": 5,
+          "sha256": "55e6d4d6af5c0a645287aab37aba290822de6a299ded3abdc2a3bdcb1e85bfd7",
+          "bounds": {
+            "l": 46,
+            "t": 124,
+            "w": 378,
+            "h": 235,
+            "b": 358,
+            "count": 47424,
+            "edge": 0,
+            "zeroFraction": 0.799096
+          },
+          "individualSha256": "88190fb4cadebb01fac87fd07a0349e37517303378d13942994f98e786c6c5fc"
+        },
+        {
+          "frame": 6,
+          "sha256": "ee6a8843eb41c7ea270f31f246a843583495448570d605ca58075eea149ce9ce",
+          "bounds": {
+            "l": 49,
+            "t": 124,
+            "w": 378,
+            "h": 233,
+            "b": 356,
+            "count": 44594,
+            "edge": 0,
+            "zeroFraction": 0.811196
+          },
+          "individualSha256": "ee33bc8e601d621fc8ff46db6c816193b8bf55d0ca087a859171e09d17563ed0"
+        }
+      ]
+    },
+    {
+      "action": "encurralado-aviso",
+      "name": "Aviso de encurralamento",
+      "loop": true,
+      "frames": 6,
+      "file": "tiras/fx/encurralado-aviso.png",
+      "board": "pranchas/fx/encurralado-aviso.png",
+      "runtime": "runtime/fujao-fx/encurralado-aviso.webp",
+      "master": "mestres-768/fx/encurralado-aviso.png",
+      "anchor": "center",
+      "crop": [
+        40,
+        53,
+        420,
+        394
+      ],
+      "sourceStamp": "1794964651226.4646:1794964692923.499",
+      "sourceSheets": [
+        "originais/fx/encurralado-aviso/grupo-1.png",
+        "originais/fx/encurralado-aviso/grupo-2.png"
+      ],
+      "uniqueFrames": 6,
+      "warnings": [],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "sha256": "07d373b1ea1941283e4a292c12fd342fd67eaa4b53a66a8a56a32b270395490c",
+          "bounds": {
+            "l": 46,
+            "t": 201,
+            "w": 406,
+            "h": 228,
+            "b": 428,
+            "count": 65507,
+            "edge": 0,
+            "zeroFraction": 0.719172
+          },
+          "individualSha256": "3b6b45ba68e01077edf43a40802c6af9986affd683b686dc43ec79c9586de7d1"
+        },
+        {
+          "frame": 2,
+          "sha256": "3c02bc1495718c661a9b7886039bc06dd7754ca15e00d6899e8ad562593ad085",
+          "bounds": {
+            "l": 69,
+            "t": 205,
+            "w": 365,
+            "h": 224,
+            "b": 428,
+            "count": 65435,
+            "edge": 0,
+            "zeroFraction": 0.720752
+          },
+          "individualSha256": "05ee3a97c2fcf47a21bdfb3b1b7a6155412e22e70d7455838264557a633c193e"
+        },
+        {
+          "frame": 3,
+          "sha256": "3a81241a4963f42a2c561f3703568b6670d97b81446b8123e3b45a715b6f66be",
+          "bounds": {
+            "l": 79,
+            "t": 58,
+            "w": 338,
+            "h": 372,
+            "b": 429,
+            "count": 75473,
+            "edge": 0,
+            "zeroFraction": 0.675308
+          },
+          "individualSha256": "67ebd8d6bb7be699d781ca453df55a64f42fc6a45beb724cc1c0afd68f138dd9"
+        },
+        {
+          "frame": 4,
+          "sha256": "6d4379a7cc1486661f87d78d3863f450ce09b7101fa5ddbdf3e374166dcfa96e",
+          "bounds": {
+            "l": 93,
+            "t": 53,
+            "w": 316,
+            "h": 392,
+            "b": 444,
+            "count": 80436,
+            "edge": 0,
+            "zeroFraction": 0.662396
+          },
+          "individualSha256": "236b4f704da66a0d1b3b727483362c08bce6a460153dd709d7e61c61ee0781d0"
+        },
+        {
+          "frame": 5,
+          "sha256": "7bcb740e8a4087d5588c5c7a0c3f5b971bc1b5584a92b5776990a5ce3458c7de",
+          "bounds": {
+            "l": 67,
+            "t": 64,
+            "w": 369,
+            "h": 382,
+            "b": 445,
+            "count": 83956,
+            "edge": 0,
+            "zeroFraction": 0.640396
+          },
+          "individualSha256": "ffbe9d5adbda51a3008c6d80cba35285bb2d7e807f4db09b18990ef53f142a28"
+        },
+        {
+          "frame": 6,
+          "sha256": "9c241f6819bfe4c64639ef92dbac76bf46f65af285028f995fa4a99afdfa566d",
+          "bounds": {
+            "l": 40,
+            "t": 204,
+            "w": 420,
+            "h": 243,
+            "b": 446,
+            "count": 73985,
+            "edge": 0,
+            "zeroFraction": 0.690872
+          },
+          "individualSha256": "d1f0e9a12672645f24bfbb6144b2c56ccd58e2abe51e76da7f28ae3bdff7edaa"
+        }
+      ]
+    },
+    {
+      "action": "embarque-progresso",
+      "name": "Progresso do embarque",
+      "loop": true,
+      "frames": 6,
+      "file": "tiras/fx/embarque-progresso.png",
+      "board": "pranchas/fx/embarque-progresso.png",
+      "runtime": "runtime/fujao-fx/embarque-progresso.webp",
+      "master": "mestres-768/fx/embarque-progresso.png",
+      "anchor": "center",
+      "crop": [
+        40,
+        118,
+        420,
+        265
+      ],
+      "sourceStamp": "1794964712097.0347:1794964753976.0747",
+      "sourceSheets": [
+        "originais/fx/embarque-progresso/grupo-1.png",
+        "originais/fx/embarque-progresso/grupo-2.png"
+      ],
+      "uniqueFrames": 6,
+      "warnings": [],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "sha256": "b2b0917cfc2e02cc768e51e02c46b2d9ab5ebf964eeeb11a2a9eb5ac50df3608",
+          "bounds": {
+            "l": 62,
+            "t": 185,
+            "w": 380,
+            "h": 198,
+            "b": 382,
+            "count": 68342,
+            "edge": 0,
+            "zeroFraction": 0.719368
+          },
+          "individualSha256": "552bb0ea3df0be117ead82077ba1c5587b3f99d7f2d91e5cb452d6aa136f9e4f"
+        },
+        {
+          "frame": 2,
+          "sha256": "6df81237bd82362816189856b016807d7fc556d4d39d47e7f7f4514157ec5c89",
+          "bounds": {
+            "l": 61,
+            "t": 146,
+            "w": 379,
+            "h": 199,
+            "b": 344,
+            "count": 68221,
+            "edge": 0,
+            "zeroFraction": 0.717608
+          },
+          "individualSha256": "54d5e4e5f67a3870c8b1d96e0de9719a4ec42263bd15dc103efaa4153c9057ac"
+        },
+        {
+          "frame": 3,
+          "sha256": "5413e353d7f16ce435e80c82f2d4512d903d55fbebdc1e7051e1cffde131fd8a",
+          "bounds": {
+            "l": 61,
+            "t": 118,
+            "w": 379,
+            "h": 204,
+            "b": 321,
+            "count": 69794,
+            "edge": 0,
+            "zeroFraction": 0.712092
+          },
+          "individualSha256": "9eb1f50cfed684782c546a3a652c3d23650a4b7b5eba7749b049f50e96efd321"
+        },
+        {
+          "frame": 4,
+          "sha256": "781bc1ee19ac0c5a2c1e33caea4ed52f9da8baddf88e5f6b3f8714acac1a34c0",
+          "bounds": {
+            "l": 61,
+            "t": 126,
+            "w": 399,
+            "h": 227,
+            "b": 352,
+            "count": 73747,
+            "edge": 0,
+            "zeroFraction": 0.697592
+          },
+          "individualSha256": "463dde9354fc6e50d355290151f6e449d05c5fdc107e8463899d6b3c8169f063"
+        },
+        {
+          "frame": 5,
+          "sha256": "69d65ebec4966e195bff8e7d954775b4504746b06b9315d2f291febe2dbdcf9c",
+          "bounds": {
+            "l": 51,
+            "t": 149,
+            "w": 399,
+            "h": 200,
+            "b": 348,
+            "count": 75631,
+            "edge": 0,
+            "zeroFraction": 0.68646
+          },
+          "individualSha256": "0f3fbee5009481cebc285f2cc3a5c3dabcead10b9249bea0398680db1cab0da3"
+        },
+        {
+          "frame": 6,
+          "sha256": "5f90c94a6ea28ec293c8b261c7719948c6036f3c1941c3c563ac0959dad57385",
+          "bounds": {
+            "l": 40,
+            "t": 165,
+            "w": 401,
+            "h": 195,
+            "b": 359,
+            "count": 74196,
+            "edge": 0,
+            "zeroFraction": 0.694712
+          },
+          "individualSha256": "2fe09b2dea0498da83a58d149e806048f7f3e505079bd4bc2b0aaf1251a31055"
+        }
+      ]
+    },
+    {
+      "action": "embarque-cura",
+      "name": "Cura por embarque",
+      "loop": false,
+      "frames": 6,
+      "file": "tiras/fx/embarque-cura.png",
+      "board": "pranchas/fx/embarque-cura.png",
+      "runtime": "runtime/fujao-fx/embarque-cura.webp",
+      "master": "mestres-768/fx/embarque-cura.png",
+      "anchor": "center",
+      "crop": [
+        51,
+        40,
+        399,
+        420
+      ],
+      "sourceStamp": "1794964734289.1528:1794964778166.502",
+      "sourceSheets": [
+        "originais/fx/embarque-cura/grupo-1.png",
+        "originais/fx/embarque-cura/grupo-2.png"
+      ],
+      "uniqueFrames": 6,
+      "warnings": [],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "sha256": "6c62beb541d437e741e9dc51100595162366fd7d0a8c927f092db63a3552c7a5",
+          "bounds": {
+            "l": 94,
+            "t": 241,
+            "w": 311,
+            "h": 218,
+            "b": 458,
+            "count": 38863,
+            "edge": 0,
+            "zeroFraction": 0.828904
+          },
+          "individualSha256": "7a8abf81333a28a0df1878af5c3f7843499e263bddfe1bfa94a6301a12d1f91b"
+        },
+        {
+          "frame": 2,
+          "sha256": "857a488c16fb06239950897ae1e04db92a2661e396d071137600c041ea93128a",
+          "bounds": {
+            "l": 63,
+            "t": 153,
+            "w": 365,
+            "h": 306,
+            "b": 458,
+            "count": 48793,
+            "edge": 0,
+            "zeroFraction": 0.780668
+          },
+          "individualSha256": "8ec954fff99b43ed3281b22d4d1d74e96c2a9885bcb72f033d79e4d234eccea6"
+        },
+        {
+          "frame": 3,
+          "sha256": "68ce139ea8d0f1b5b4bb93dd57e51ff03efa5d76c1e5e8e3649f1f704392264d",
+          "bounds": {
+            "l": 51,
+            "t": 63,
+            "w": 383,
+            "h": 396,
+            "b": 458,
+            "count": 73390,
+            "edge": 0,
+            "zeroFraction": 0.684044
+          },
+          "individualSha256": "c4ec65fc4418b07b85d994b823aa47c1598751c9b531ae5837cc8a935723c6e7"
+        },
+        {
+          "frame": 4,
+          "sha256": "5cd7fec1d2e4cf7df8335f78f1043f164f5cdee48a4de15e5b3717c49c66041d",
+          "bounds": {
+            "l": 123,
+            "t": 40,
+            "w": 327,
+            "h": 420,
+            "b": 459,
+            "count": 65447,
+            "edge": 0,
+            "zeroFraction": 0.714972
+          },
+          "individualSha256": "1e758ffec2463ddd9a05611ce7beef66080b35728d87af6966c2fe56bbd89716"
+        },
+        {
+          "frame": 5,
+          "sha256": "2eda0dca07364652403c9c4dd22cd4a79301e2ee50653a2a4f4aac5803f1fd95",
+          "bounds": {
+            "l": 105,
+            "t": 94,
+            "w": 287,
+            "h": 366,
+            "b": 459,
+            "count": 47020,
+            "edge": 0,
+            "zeroFraction": 0.796424
+          },
+          "individualSha256": "43a246b56cd801d960cf5386ce13ada415f66b6c64bb9659bf9f797728c6714e"
+        },
+        {
+          "frame": 6,
+          "sha256": "b9e4d7775fdc8d1f65e92b9e154fbd40b813074d4fef90d531401f1e9c45f237",
+          "bounds": {
+            "l": 83,
+            "t": 112,
+            "w": 283,
+            "h": 348,
+            "b": 459,
+            "count": 40142,
+            "edge": 0,
+            "zeroFraction": 0.826292
+          },
+          "individualSha256": "663c3c763037f8d3bb8887c523210c3f9ce8e589c1bff906b31bbd0adfb51457"
+        }
+      ]
+    },
+    {
+      "action": "embarque-negado",
+      "name": "Embarque negado",
+      "loop": false,
+      "frames": 6,
+      "file": "tiras/fx/embarque-negado.png",
+      "board": "pranchas/fx/embarque-negado.png",
+      "runtime": "runtime/fujao-fx/embarque-negado.webp",
+      "master": "mestres-768/fx/embarque-negado.png",
+      "anchor": "center",
+      "crop": [
+        40,
+        110,
+        420,
+        281
+      ],
+      "sourceStamp": "1794964798610.42:1794964838715.6309",
+      "sourceSheets": [
+        "originais/fx/embarque-negado/grupo-1.png",
+        "originais/fx/embarque-negado/grupo-2.png"
+      ],
+      "uniqueFrames": 6,
+      "warnings": [],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "sha256": "a624a6df794432006f3b19646679177e2a9bccdc2f46e977ae8b2f16d9a94958",
+          "bounds": {
+            "l": 43,
+            "t": 137,
+            "w": 393,
+            "h": 252,
+            "b": 388,
+            "count": 77726,
+            "edge": 0,
+            "zeroFraction": 0.68228
+          },
+          "individualSha256": "de8750f3d655d6acdc8e7b8a55b972731a3e1b00d83e93c6fb765b54c8e80f12"
+        },
+        {
+          "frame": 2,
+          "sha256": "c82a88ac0598b92f7c40ce97343a4bc93520595cf507f57bb534d84db95d9b51",
+          "bounds": {
+            "l": 40,
+            "t": 132,
+            "w": 392,
+            "h": 256,
+            "b": 387,
+            "count": 91100,
+            "edge": 0,
+            "zeroFraction": 0.628164
+          },
+          "individualSha256": "80ef200fabd0752f279386707e66f399e6fba2ef39d38f63819e3e6942fc6c5e"
+        },
+        {
+          "frame": 3,
+          "sha256": "91320f3653428b1647a111a2b34e5b5df9871504dcbe326af5256ddd874b0a8a",
+          "bounds": {
+            "l": 40,
+            "t": 135,
+            "w": 399,
+            "h": 256,
+            "b": 390,
+            "count": 97512,
+            "edge": 0,
+            "zeroFraction": 0.604904
+          },
+          "individualSha256": "c0e2ec178084c50bdd2a4df3dac21759c7d50cff99b95f57a89c8fbcbfac423b"
+        },
+        {
+          "frame": 4,
+          "sha256": "7c5944ef0b468b04a8eed3c4af590ee088068bd1b93cae7df0fe24b3854813f8",
+          "bounds": {
+            "l": 61,
+            "t": 123,
+            "w": 373,
+            "h": 265,
+            "b": 387,
+            "count": 74505,
+            "edge": 0,
+            "zeroFraction": 0.692376
+          },
+          "individualSha256": "6603f802014be73bcbc03e6bce60b9d58ebe84735ce1eee13bc19056a9691ade"
+        },
+        {
+          "frame": 5,
+          "sha256": "f62dda2beccb8e83e768b6e4867b76108b15486e8059b352f3075dc2932ebe0b",
+          "bounds": {
+            "l": 53,
+            "t": 110,
+            "w": 407,
+            "h": 270,
+            "b": 379,
+            "count": 78022,
+            "edge": 0,
+            "zeroFraction": 0.675644
+          },
+          "individualSha256": "b8b0c5e2a1892084b62921d21c19b1b52bf6579cc225f48c0a52f71007ddeaa4"
+        },
+        {
+          "frame": 6,
+          "sha256": "0215b334ee95e11a397ab575ae335807ddd3da6e2048a7e340f8fdd21f15e864",
+          "bounds": {
+            "l": 54,
+            "t": 152,
+            "w": 351,
+            "h": 228,
+            "b": 379,
+            "count": 75925,
+            "edge": 0,
+            "zeroFraction": 0.685612
+          },
+          "individualSha256": "265a430ab141ceb97a74e53b262868f73d5cb89577d7bec7371b9d6d07483174"
+        }
+      ]
+    },
+    {
+      "action": "pista-livre-impacto",
+      "name": "Impacto de Pista Livre",
+      "loop": false,
+      "frames": 6,
+      "file": "tiras/fx/pista-livre-impacto.png",
+      "board": "pranchas/fx/pista-livre-impacto.png",
+      "runtime": "runtime/fujao-fx/pista-livre-impacto.webp",
+      "master": "mestres-768/fx/pista-livre-impacto.png",
+      "anchor": "center",
+      "crop": [
+        40,
+        50,
+        420,
+        401
+      ],
+      "sourceStamp": "1794965000741.4714:1794964862515.007",
+      "sourceSheets": [
+        "originais/fx/pista-livre-impacto/grupo-1.png",
+        "originais/fx/pista-livre-impacto/grupo-2.png"
+      ],
+      "uniqueFrames": 6,
+      "warnings": [],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "sha256": "488fc94c0d8d4ac9ec7c207b30431db35f71754bf20e4e12d72ff2bcfcb5a08f",
+          "bounds": {
+            "l": 161,
+            "t": 179,
+            "w": 175,
+            "h": 151,
+            "b": 329,
+            "count": 6297,
+            "edge": 0,
+            "zeroFraction": 0.965788
+          },
+          "individualSha256": "790fe5e417e5e691a2963d1ce9f93e8042ce80c62d3ed531fc8c55e48df4fe3c"
+        },
+        {
+          "frame": 2,
+          "sha256": "6ac351ca8b073fbd70cb678694d5ef56341d61a1c4c67d92cddd76526ed0e2ce",
+          "bounds": {
+            "l": 64,
+            "t": 113,
+            "w": 357,
+            "h": 269,
+            "b": 381,
+            "count": 22014,
+            "edge": 0,
+            "zeroFraction": 0.894656
+          },
+          "individualSha256": "6a5110692df156cba9b4ceb81a8404d1b3ad25bc05df4ab8bc044bf4bf005098"
+        },
+        {
+          "frame": 3,
+          "sha256": "17c4ef5994cb7751dc0e812c5f0f8d1bb1980878f652c4bc0f05190e97406ab7",
+          "bounds": {
+            "l": 40,
+            "t": 50,
+            "w": 420,
+            "h": 380,
+            "b": 429,
+            "count": 59762,
+            "edge": 0,
+            "zeroFraction": 0.726196
+          },
+          "individualSha256": "c2ab60bc835ed3e12ab1f0aa4975eec9533d5c08aba0e85b418b972dadd902fa"
+        },
+        {
+          "frame": 4,
+          "sha256": "682e39b9e97cf704851391f51f1ed6e871e1ce9fd4ea0963d94a4f68f202826a",
+          "bounds": {
+            "l": 72,
+            "t": 51,
+            "w": 375,
+            "h": 400,
+            "b": 450,
+            "count": 33921,
+            "edge": 0,
+            "zeroFraction": 0.823124
+          },
+          "individualSha256": "bc796a7fe02f788b951534afc32813a68d790250cb2e54b5a46143e18859ff33"
+        },
+        {
+          "frame": 5,
+          "sha256": "9e2e8545960292d85e2c4c01c05c28c22d5252ba0505b3e0a6cc93d416f88add",
+          "bounds": {
+            "l": 87,
+            "t": 74,
+            "w": 325,
+            "h": 354,
+            "b": 427,
+            "count": 10344,
+            "edge": 0,
+            "zeroFraction": 0.941992
+          },
+          "individualSha256": "eac0ee10f4e5c6bc1ad9692612f51bb1ccf54bec417ea678ff40a972535d5344"
+        },
+        {
+          "frame": 6,
+          "sha256": "85a1e0df23f2768a8906935ff614a4aba513373d75b2d81692f499b843b81cfa",
+          "bounds": {
+            "l": 120,
+            "t": 124,
+            "w": 275,
+            "h": 270,
+            "b": 393,
+            "count": 1921,
+            "edge": 0,
+            "zeroFraction": 0.984904
+          },
+          "individualSha256": "c5c69d4815edfab2b5610881556890d21b69e2c324208bd9e318b2db718b0c16"
+        }
+      ]
+    },
+    {
+      "action": "esteira-super",
+      "name": "Esteira do super",
+      "loop": true,
+      "frames": 6,
+      "file": "tiras/fx/esteira-super.png",
+      "board": "pranchas/fx/esteira-super.png",
+      "runtime": "runtime/fujao-fx/esteira-super.webp",
+      "master": "mestres-768/fx/esteira-super.png",
+      "anchor": "center",
+      "crop": [
+        40,
+        128,
+        420,
+        245
+      ],
+      "sourceStamp": "1794964886638.041:1794964903915.4746",
+      "sourceSheets": [
+        "originais/fx/esteira-super/grupo-1.png",
+        "originais/fx/esteira-super/grupo-2.png"
+      ],
+      "uniqueFrames": 6,
+      "warnings": [],
+      "frameMeta": [
+        {
+          "frame": 1,
+          "sha256": "a6e2b7bde1d88f94aba71f3770b9d10044a04ff6dde1aaf06ca652bd285a8e37",
+          "bounds": {
+            "l": 40,
+            "t": 128,
+            "w": 420,
+            "h": 239,
+            "b": 366,
+            "count": 64733,
+            "edge": 0,
+            "zeroFraction": 0.732432
+          },
+          "individualSha256": "15d1c1b398245ee862510f3aa8f8acd25bde0b6ed74a0f397b1ebe7e45558de0"
+        },
+        {
+          "frame": 2,
+          "sha256": "29753aff2d542a0f33993fdc297bf9cc7671a97c36e1792614c3066311d77bb8",
+          "bounds": {
+            "l": 40,
+            "t": 131,
+            "w": 420,
+            "h": 236,
+            "b": 366,
+            "count": 65261,
+            "edge": 0,
+            "zeroFraction": 0.73068
+          },
+          "individualSha256": "bdf0cc92dfcb5b1a57cf417fc7de115d7e2e1e279d093dcb052fc3fce73667b7"
+        },
+        {
+          "frame": 3,
+          "sha256": "200964b2b283217b267378145e6f60a4f9941c58dc1759f29361506842924f50",
+          "bounds": {
+            "l": 40,
+            "t": 137,
+            "w": 420,
+            "h": 230,
+            "b": 366,
+            "count": 65326,
+            "edge": 0,
+            "zeroFraction": 0.730136
+          },
+          "individualSha256": "10b18028eda30450d5f77a430371d25c55c139fc1e70ab2ded1f568391d955f2"
+        },
+        {
+          "frame": 4,
+          "sha256": "7d590897ba4cc8c69f96e9f9d5484ef49ca444ffcce66a119c2ca5add883def3",
+          "bounds": {
+            "l": 41,
+            "t": 163,
+            "w": 416,
+            "h": 210,
+            "b": 372,
+            "count": 64535,
+            "edge": 0,
+            "zeroFraction": 0.735292
+          },
+          "individualSha256": "f85b901fe6d155204b6ccb56214132e217ee998c09757475bb1c2810d1998caa"
+        },
+        {
+          "frame": 5,
+          "sha256": "158df4982a926d00273675681ab489e9c6b023ace0c98c5d45eda95d67a3a136",
+          "bounds": {
+            "l": 41,
+            "t": 172,
+            "w": 418,
+            "h": 201,
+            "b": 372,
+            "count": 60422,
+            "edge": 0,
+            "zeroFraction": 0.751828
+          },
+          "individualSha256": "a8c93be49d337578776fece1609421b79a0ace77f138825603d765caab4f4b71"
+        },
+        {
+          "frame": 6,
+          "sha256": "267d2528f218358ab6de3d9e0527a61a3e7d13b56d6440d7c15a2f2aed620bdc",
+          "bounds": {
+            "l": 40,
+            "t": 129,
+            "w": 420,
+            "h": 244,
+            "b": 372,
+            "count": 66245,
+            "edge": 0,
+            "zeroFraction": 0.728456
+          },
+          "individualSha256": "899267b655e5893a79f1817244737cd8c36802893914e7b2dee9d743a0eccb03"
+        }
+      ]
+    }
+  ],
+  "missing": [],
+  "complete": true,
+  "generatedEffects": 15,
+  "generatedDrawings": 90
+}
