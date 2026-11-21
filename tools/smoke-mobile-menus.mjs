@@ -7,7 +7,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 const port = 8791, base = process.env.MOBILE_MENU_BASE_URL || `http://127.0.0.1:${port}`;
 const output = process.env.MOBILE_MENU_ARTIFACT_DIR || 'artifacts/mobile-menus';
 await mkdir(output, { recursive: true });
-let server, browser;
+let server, browser, mobilePage;
 const errors = [], checks = [];
 const screen = (page, expected) => page.waitForFunction(value => __app.screen === value, expected);
 const tap = (page, id) => page.locator(`[data-action="${id}"]`).tap();
@@ -44,7 +44,7 @@ try {
   }
   browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true });
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 2 });
-  const p = await context.newPage(); p.setDefaultTimeout(90000);
+  const p = mobilePage = await context.newPage(); p.setDefaultTimeout(90000);
   p.on('pageerror', e => errors.push(e.message));
   p.on('response', r => { if (r.status() >= 400 && !r.url().endsWith('/favicon.ico')) errors.push(`${r.status()} ${r.url()}`); });
   await p.goto(base); await p.waitForFunction(() => __app?.frame > 5 && !document.getElementById('loading'));
@@ -66,10 +66,11 @@ try {
   await p.waitForFunction(() => __app.systemPaused && __app.paused);
   const frozen = await p.evaluate(() => __app.st.frame); await p.waitForTimeout(250);
   assert.equal(await p.evaluate(() => __app.st.frame), frozen); assert.ok(await p.locator('[data-action="pause-0"]').isDisabled());
-  await tap(p, 'pause-2'); assert.ok(await p.locator('.mobile-menu-details dt').count() > 5); await usable(p);
+  await tap(p, 'pause-2');
+  await p.waitForFunction(() => __app.sub === 'moves' && document.querySelectorAll('.mobile-menu-details dt').length > 5); await usable(p);
   await p.screenshot({ path: `${output}/portrait-moves.png` });
   await tap(p, 'back'); await p.waitForFunction(() => !__app.sub);
-  await tap(p, 'pause-3'); assert.ok(await p.locator('[data-action="control-reset"]').isVisible());
+  await tap(p, 'pause-3'); await p.locator('[data-action="control-reset"]').waitFor({ state: 'visible' });
   await tap(p, 'back'); await p.waitForFunction(() => !__app.sub);
   await p.setViewportSize({ width: 844, height: 390 }); await p.waitForFunction(() => !__app.systemPaused);
   await tap(p, 'pause-0'); await p.waitForFunction(() => !__app.paused && __app.st.frame > 2);
@@ -98,4 +99,12 @@ try {
   assert.deepEqual(errors, []);
   const report = { passed: true, scope: 'Chrome viewport/touch emulation only', checks, errors, date: new Date().toISOString() };
   await writeFile(`${output}/result.json`, JSON.stringify(report, null, 2)); console.log(JSON.stringify(report));
+} catch (error) {
+  if (mobilePage) {
+    await mobilePage.screenshot({ path: `${output}/failure.png` }).catch(() => {});
+    await writeFile(`${output}/failure.json`, JSON.stringify({ error: String(error), checks, errors,
+      state: await mobilePage.evaluate(() => ({ screen: __app.screen, sub: __app.sub, paused: __app.paused,
+        menu: document.querySelector('#accessible-menu')?.innerText })).catch(() => null) }, null, 2));
+  }
+  throw error;
 } finally { await browser?.close(); server?.kill('SIGTERM'); }
