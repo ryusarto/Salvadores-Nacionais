@@ -49,3 +49,34 @@ test('Fujão boarding result icons follow the actual simulation events', () => {
   assert.equal(fujaoEventArt({ t: 'pop', str: 'EMBARQUE NEGADO!', x: 2000 }, st).name, 'embarque-negado');
   assert.equal(fujaoEventArt({ t: 'pop', str: 'QUASE EMBARCOU! +VIDA', x: 2000 }, st).name, 'embarque-cura');
 });
+
+// Contract checks use the committed assets, including the independently drawn sources.
+import {readFileSync,readdirSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import sharp from 'sharp';
+import {STATE_ANIMS} from '../../src/render/anim.js';
+import {registerSprites,spriteSetId} from '../../src/render/sprites.js';
+import {spriteOptions} from '../../src/render/sprite-profiles.js';
+import {drawFujaoLayer} from '../../src/render/fujao-art.js';
+
+test('Fujão delivers every state, move, turbo and context pose with original sources',async()=>{
+ const root=new URL('../../',import.meta.url),m=JSON.parse(readFileSync(new URL('production/sprites/source/fujao-v1/runtime-manifest.json',root)));
+ const required=[...Object.keys(STATE_ANIMS),...Object.keys(fujao.moves).map(k=>'golpe-'+k),...fujao.spriteTurboMoves.map(k=>'golpe-'+k+'-turbo'),'embarcar','encurralado'].sort();
+ assert.equal(required.length,42);assert.equal(m.animations.length,99);assert.equal(m.sources.length,199);assert.equal(m.totalDrawings,594);
+ for(const id of ['fujao','fujao-esquerda'])assert.deepEqual(readdirSync(new URL('production/sprites/final/'+id,root)).sort(),required.map(k=>k+'.webp').sort());
+ assert.equal(readdirSync(new URL('production/sprites/final/fujao-fx',root)).length,15);
+ const hash=b=>createHash('sha256').update(b).digest('hex'),hashes=new Set();
+ for(const a of m.animations){const bytes=readFileSync(new URL(a.file,root)),meta=await sharp(bytes).metadata();assert.equal(hash(bytes),a.sha256,a.file);assert.equal(meta.width,3000);assert.equal(meta.height,500);assert.ok(meta.hasAlpha);assert.equal(a.sourceSheets.length,2);const frames=[];for(let i=0;i<6;i++)frames.push(hash(await sharp(bytes).extract({left:i*500,top:0,width:500,height:500}).ensureAlpha().raw().toBuffer()));assert.deepEqual(frames,a.frameHashes,a.file);assert.equal(new Set(frames).size,6,a.file);hashes.add(a.sha256)}
+ assert.equal(hashes.size,99,'distinct atlases across both facings and effects');
+ for(const s of m.sources)assert.equal(hash(readFileSync(new URL(s.file,root))),s.sha256,s.file);
+ assert.equal(spriteSetId({ch:fujao,face:1}),'fujao');assert.equal(spriteSetId({ch:fujao,face:-1}),'fujao-esquerda');
+ for(const id of ['fujao','fujao-esquerda','fujao-fx']){const o=spriteOptions(id,[fujao]);assert.equal(o.frames,6);assert.equal(o.cellSize,500);assert.equal(o.trueAlpha,true)}
+});
+test('Fujão FX crops include the whole cart in 500px runtime cells',async(t)=>{
+ const previous=globalThis.Image;t.after(()=>{globalThis.Image=previous});
+ globalThis.Image=class{naturalWidth=3000;naturalHeight=500;set src(url){queueMicrotask(()=>this.onload())}};
+ await registerSprites('fujao-fx',{'carrinho-bagagem':'cart'},{trueAlpha:true,frames:6,cellSize:500,material:false});
+ let draw;const c={save(){},restore(){},translate(){},scale(){},drawImage(...a){draw=a}};
+ assert.ok(drawFujaoLayer(c,'carrinho-bagagem',4,{x:0,y:0,w:270,h:300,anchor:'bottom'}));
+ const expected=[2046,40,408,420];for(let i=0;i<4;i++)assert.ok(Math.abs(draw[i+1]-expected[i])<1e-6,'source crop '+i);
+});

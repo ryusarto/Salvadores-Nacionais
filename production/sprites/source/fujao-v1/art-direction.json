@@ -1,0 +1,694 @@
+{
+  "note": "Consolidated final art direction and choreography, not a verbatim reconstruction of every tool prompt. Exact per-sheet prompt JSONs are retained beside original PNGs when available in the production folder.",
+  "tool": "built-in image_gen",
+  "style": "Cartoon comic book fighter, strong dark outlines, flat local colors and 2–3 cel-shaded shadows. No photographic skin texture.",
+  "identity": "Approved broad forehead, short side-parted dark hair with restrained gray temples, small deep-set hazel/green eyes, straight brows, medium rounded nose, fuller cheeks, short rounded chin, thin lips. Charcoal suit, open white shirt, brown leather shoes, aviator sunglasses on head; one brown suitcase.",
+  "sides": "Native drawings for each direction, no mirrored body pack",
+  "format": {
+    "frames": 6,
+    "nativeSheetsPerAnimation": 2,
+    "nativePosesPerSheet": 3,
+    "atlas": [
+      3000,
+      500
+    ],
+    "cell": [
+      500,
+      500
+    ],
+    "foot": [
+      250,
+      456
+    ]
+  },
+  "actions": [
+    {
+      "action": "parado",
+      "name": "Guarda / respiração",
+      "loop": true,
+      "poses": [
+        "balanced ready stance, suitcase at rear hip, sunglasses on top of head, free fist guarding chest",
+        "inhale; shoulders rise slightly, free fist advances slightly",
+        "soft knee bend as body weight settles, suitcase tilts slightly",
+        "exhale, rise gently from settled guard, suitcase begins to level",
+        "shift weight back toward front foot, jacket hem sways",
+        "return smoothly toward initial balanced guard, suitcase steady"
+      ]
+    },
+    {
+      "action": "andar",
+      "name": "Andar para frente",
+      "loop": true,
+      "poses": [
+        "front foot heel steps forward, suitcase near hip",
+        "weight passes onto front foot",
+        "rear foot lifts, knee passing",
+        "rear foot plants ahead, arms counterbalance",
+        "weight passes over newly planted foot",
+        "other foot starts next step, closing loop"
+      ]
+    },
+    {
+      "action": "andar-tras",
+      "name": "Andar para trás",
+      "loop": true,
+      "poses": [
+        "rear foot reaches backward while guarding",
+        "weight shifts to rear foot",
+        "front foot begins to withdraw",
+        "front foot passes toward rear foot",
+        "front foot plants into guard width",
+        "settled guard beginning next backward step"
+      ]
+    },
+    {
+      "action": "correr",
+      "name": "Corrida",
+      "loop": true,
+      "poses": [
+        "NEAR knee lifted FORWARD, FAR leg pushing BACK; suitcase-holding arm swings BACK and free arm swings FORWARD",
+        "NEAR boot reaches ahead in a moderate running stride, FAR leg extended behind; suitcase stays behind rear hip",
+        "NEAR foot lands below pelvis, FAR knee begins to pass; suitcase arm starts swinging toward middle",
+        "FAR knee lifts FORWARD, NEAR leg pushes BACK; suitcase-holding arm swings FORWARD and free arm swings BACK, opposite to phase 1",
+        "FAR boot stretches ahead, NEAR leg behind; suitcase arm clearly forward and free fist clearly back, opposite to phase 2",
+        "FAR foot lands below pelvis, NEAR knee begins to pass; suitcase arm swings toward rear again, closing the loop"
+      ]
+    },
+    {
+      "action": "agachar",
+      "name": "Agachar",
+      "loop": false,
+      "poses": [
+        "standing with knees beginning to bend",
+        "knees bend, torso lowers",
+        "half crouch suitcase tucked close",
+        "deep crouch balanced",
+        "settle onto bent legs with guard",
+        "held deep crouching guard"
+      ]
+    },
+    {
+      "action": "pulo",
+      "name": "Pulo",
+      "loop": false,
+      "poses": [
+        "upward jump with bent legs and upright torso",
+        "ascending with thighs tucked",
+        "apex with knees tucked, suitcase secure",
+        "begin descent, legs extend slightly",
+        "descending with knees ready for landing",
+        "knees bent in compact landing preparation"
+      ]
+    },
+    {
+      "action": "recuo",
+      "name": "Recuo evasivo",
+      "loop": false,
+      "poses": [
+        "guard and shift weight to front foot",
+        "push backward, torso leans away",
+        "backward hop, both feet clear, suitcase held tight",
+        "rear foot reaches landing",
+        "land onto rear foot knees bent",
+        "regain original guard"
+      ]
+    },
+    {
+      "action": "escape-agarrao",
+      "name": "Escape de agarrão",
+      "loop": false,
+      "poses": [
+        "arms tightly braced in front, suitcase tucked",
+        "left forearm wedges outward",
+        "shoulders twist to break opponent grip, no opponent drawn",
+        "left hand pushes outward to create distance",
+        "take a small step backward",
+        "guard restored"
+      ]
+    },
+    {
+      "action": "recuperacao-rolamento",
+      "name": "Recuperação por rolamento",
+      "loop": false,
+      "poses": [
+        "low seated curled posture",
+        "tuck head and roll over back",
+        "side-on compact roll shoulders near ground",
+        "feet rotate down under body",
+        "crouched recovery one hand assisting, suitcase still in right",
+        "rise into guard"
+      ]
+    },
+    {
+      "action": "defesa-em-pe",
+      "name": "Defesa em pé",
+      "loop": false,
+      "poses": [
+        "ready guard",
+        "left forearm rises before face",
+        "brace standing guard, suitcase tight at chest",
+        "recoil slightly from blocked hit",
+        "recover stance, forearm still up",
+        "steady blocking guard"
+      ]
+    },
+    {
+      "action": "defesa-agachado",
+      "name": "Defesa agachada",
+      "loop": false,
+      "poses": [
+        "low crouch guard",
+        "left forearm protects face, right suitcase near ribs",
+        "tight compact blocking crouch",
+        "crouched blocked-hit recoil",
+        "readjust crouched balance",
+        "held crouch guard"
+      ]
+    },
+    {
+      "action": "defesa-no-ar",
+      "name": "Defesa no ar",
+      "loop": false,
+      "poses": [
+        "airborne knees bent",
+        "forearms close before upper body",
+        "compact aerial block, suitcase secured",
+        "airborne blocked-hit recoil",
+        "legs prepare to descend",
+        "airborne guard maintained"
+      ]
+    },
+    {
+      "action": "dano-alto",
+      "name": "Dano alto",
+      "loop": false,
+      "poses": [
+        "head just reacting to a hit",
+        "chin and shoulders jerk backward",
+        "torso arches back, left hand opens",
+        "strongest upper-body recoil, feet still under him",
+        "regain balance with bent knees",
+        "recover toward guard with pained expression"
+      ]
+    },
+    {
+      "action": "dano-baixo",
+      "name": "Dano baixo",
+      "loop": false,
+      "poses": [
+        "abdomen reacts to a low body hit",
+        "torso folds forward",
+        "left hand goes toward abdomen, suitcase secure",
+        "deep crouched painful recoil",
+        "rises slightly while hunched",
+        "regain guarded crouch"
+      ]
+    },
+    {
+      "action": "dano-no-ar",
+      "name": "Dano no ar",
+      "loop": false,
+      "poses": [
+        "airborne hit recoil head back",
+        "torso thrown backward legs loose",
+        "body rotates backward slightly",
+        "airborne on back diagonal, knees bent",
+        "falling with head back and feet forward",
+        "falling side-on, arms instinctively bracing"
+      ]
+    },
+    {
+      "action": "caido",
+      "name": "Queda / nocaute",
+      "loop": false,
+      "poses": [
+        "knees buckle and upper body tips back",
+        "hip approaches ground",
+        "back and shoulders nearing ground",
+        "lying on back diagonally, head toward rear, feet toward front",
+        "settle fully on ground, suitcase in relaxed right hand",
+        "rest lying defeated, no standing pose"
+      ]
+    },
+    {
+      "action": "levantar",
+      "name": "Levantar",
+      "loop": false,
+      "poses": [
+        "lying on side after knockdown",
+        "left hand braces against ground",
+        "seated, knees draw in",
+        "one knee beneath body",
+        "crouched standing recovery",
+        "return to fighting guard"
+      ]
+    },
+    {
+      "action": "tonto",
+      "name": "Tonto",
+      "loop": true,
+      "poses": [
+        "slumped shoulders, dazed expression, suitcase lowered",
+        "sway forward, knees weak",
+        "sway left and eyes unfocused",
+        "sway backward, left hand touches brow",
+        "sway to opposite side",
+        "slump toward starting dazed posture"
+      ]
+    },
+    {
+      "action": "vitoria",
+      "name": "Vitória",
+      "loop": false,
+      "poses": [
+        "lower guard and straighten proudly",
+        "lift wooden decree suitcase to chest",
+        "hold suitcase proudly aloft",
+        "left hand points arrogantly ahead",
+        "chin lifted smug bureaucratic expression",
+        "hold triumphant raised-suitcase pose"
+      ]
+    },
+    {
+      "action": "golpe-5L",
+      "name": "Leve",
+      "loop": false,
+      "poses": [
+        "neutral guard",
+        "draw left fist slightly back",
+        "quick left straight jab fully extended at upper chest height",
+        "jab reaches longest contact extension",
+        "left arm retracts",
+        "return to guard"
+      ]
+    },
+    {
+      "action": "golpe-5M",
+      "name": "Médio",
+      "loop": false,
+      "poses": [
+        "shift weight forward",
+        "pull left fist and rotate torso slightly",
+        "step into strong left straight punch at torso height",
+        "longest punch extension",
+        "retract fist and uncoil torso",
+        "return to guard"
+      ]
+    },
+    {
+      "action": "golpe-5H",
+      "name": "Malada",
+      "loop": false,
+      "poses": [
+        "guard with suitcase held near rear hip",
+        "draw suitcase behind shoulder with elbow bent, wind up torso",
+        "rotate hips and start horizontal suitcase swing toward opponent",
+        "full horizontal suitcase strike at waist/chest height, free hand balances",
+        "suitcase passes contact line, rear heel pivots through follow-through",
+        "retract suitcase toward rear hip and recover guard"
+      ]
+    },
+    {
+      "action": "golpe-2L",
+      "name": "Leve baixo",
+      "loop": false,
+      "poses": [
+        "crouch preparation",
+        "weight settles on bent support leg",
+        "front foot snaps low forward near shin height",
+        "low kick fully extended",
+        "kicking foot withdraws",
+        "return to crouch guard"
+      ]
+    },
+    {
+      "action": "golpe-2M",
+      "name": "Médio baixo",
+      "loop": false,
+      "poses": [
+        "low guard preparation",
+        "torso tilts as support leg bends",
+        "rear leg swings long low kick forward",
+        "long low sweeping kick at shin height",
+        "leg retracts",
+        "return to crouching guard"
+      ]
+    },
+    {
+      "action": "golpe-2H",
+      "name": "Gancho",
+      "loop": false,
+      "poses": [
+        "deep crouch, left fist low",
+        "twist torso and load legs",
+        "left uppercut rises from crouch",
+        "left fist reaches high uppercut contact, body rises",
+        "elbow folds downward",
+        "settle into guard"
+      ]
+    },
+    {
+      "action": "golpe-3H",
+      "name": "Rasteira",
+      "loop": false,
+      "poses": [
+        "deep crouch",
+        "drop body low, left hand balancing",
+        "extend one leg straight forward along ground",
+        "maximum low sweep extension, support knee bent",
+        "sweeping leg retracts",
+        "return to crouch"
+      ]
+    },
+    {
+      "action": "golpe-6M",
+      "name": "Golpe de cima",
+      "loop": false,
+      "poses": [
+        "standing guard",
+        "raise left fist above shoulder",
+        "left arm arcs downward from overhead",
+        "downward fist contact at opponent shoulder height",
+        "arm retracts and body rises",
+        "guard restored"
+      ]
+    },
+    {
+      "action": "golpe-jL",
+      "name": "Aéreo leve",
+      "loop": false,
+      "poses": [
+        "airborne compact knees",
+        "left fist prepares",
+        "left jab in air at chest height",
+        "airborne jab extension",
+        "left arm retracts",
+        "compact aerial guard"
+      ]
+    },
+    {
+      "action": "golpe-jM",
+      "name": "Aéreo médio",
+      "loop": false,
+      "poses": [
+        "airborne knees bent",
+        "hip rotates toward opponent",
+        "one boot extends into airborne horizontal kick",
+        "full airborne side kick extension",
+        "knee folds back",
+        "airborne landing preparation"
+      ]
+    },
+    {
+      "action": "golpe-jH",
+      "name": "Aéreo forte",
+      "loop": false,
+      "poses": [
+        "airborne suitcase held close",
+        "right suitcase lifts high, knees bent",
+        "suitcase driven diagonally downward ahead",
+        "heavy downward airborne suitcase contact",
+        "suitcase retracts",
+        "compact landing preparation"
+      ]
+    },
+    {
+      "action": "golpe-throw",
+      "name": "Agarrão",
+      "loop": false,
+      "poses": [
+        "left hand reaches forward, suitcase secured in right",
+        "left hand grips an imagined lapel, no opponent",
+        "pull imaginary opponent close while body twists",
+        "pivot hips and drive left arm forward to throw",
+        "complete release with hand open",
+        "recover fighting guard"
+      ]
+    },
+    {
+      "action": "golpe-blindado",
+      "name": "Golpe blindado",
+      "loop": false,
+      "poses": [
+        "brace body low with crossed arms",
+        "load shoulder back, left elbow bent, suitcase tucked",
+        "step and drive left shoulder and forearm forward",
+        "full armored shoulder strike extension",
+        "follow through then decelerate",
+        "return to guard"
+      ]
+    },
+    {
+      "action": "golpe-5S",
+      "name": "Mala Arremessada",
+      "loop": false,
+      "poses": [
+        "guard with exactly one suitcase held",
+        "draw suitcase back with bent elbow and rotate torso",
+        "begin forward throwing swing; suitcase still firmly in hand",
+        "release gesture with EMPTY throwing hand extended; NO suitcase or projectile in this frame",
+        "follow-through with both hands EMPTY; no spare suitcase handle",
+        "recover guard with EMPTY throwing hand returning to rear hip; projectile is a separate game layer"
+      ]
+    },
+    {
+      "action": "golpe-5S-turbo",
+      "name": "Mala Arremessada turbo",
+      "loop": false,
+      "poses": [
+        "lower explosive ready stance, suitcase in hand",
+        "deeper rear swing; rear knee loads weight",
+        "fast lunging forward throw preparation, suitcase still held",
+        "powerful fully extended release, EMPTY throwing hand; no projectile or bag",
+        "deeper torso follow-through and rear leg pushes off; both hands empty",
+        "brake into guard; empty throwing arm returns to hip"
+      ]
+    },
+    {
+      "action": "golpe-2S",
+      "name": "Mala Esquecida",
+      "loop": false,
+      "poses": [
+        "stand holding suitcase at rear hip",
+        "bend knees and lower held suitcase toward ground ahead",
+        "deep crouch; suitcase lowered near shoes but still held",
+        "release suitcase onto ground: fingers open; body only, no suitcase in this frame",
+        "remain low briefly and withdraw EMPTY hand",
+        "rise back toward fighting guard; EMPTY hand at hip"
+      ]
+    },
+    {
+      "action": "golpe-4S",
+      "name": "Fuga",
+      "loop": false,
+      "poses": [
+        "sudden alarm, bend knees, suitcase clutched in front, sunglasses slide down over eyes",
+        "drop suitcase: EMPTY hand opens beside rear hip, torso twists away",
+        "sprint BACKWARD AWAY from opponent while still glancing toward facing direction; no suitcase",
+        "opposite running stride backward, jacket streams forward, EMPTY arms counterbalance",
+        "plant far foot and brake sideways, empty hands guard face",
+        "recover wary guard, EMPTY hand ready, sunglasses pushed back onto head"
+      ]
+    },
+    {
+      "action": "golpe-6S",
+      "name": "Carrinho de Bagagem",
+      "loop": false,
+      "poses": [
+        "crouched ready stance with BOTH hands EMPTY near waist; cart is separate",
+        "lean forward; both EMPTY hands reaching toward invisible cart handle ahead",
+        "rear foot pushes off; hands grip invisible handle at waist height ahead; NO cart or suitcase",
+        "strong driving step, torso forward, both empty hands pushing handle at front waist height",
+        "opposite knee advances, both hands keep pushing invisible handle, body leans",
+        "brake, shoulders come up, both EMPTY hands release imaginary handle and recover guard"
+      ]
+    },
+    {
+      "action": "golpe-6S-turbo",
+      "name": "Carrinho de Bagagem turbo",
+      "loop": false,
+      "poses": [
+        "low explosive stance, both hands EMPTY; cart separate",
+        "deeper lean with empty hands forward at waist, rear heel loaded",
+        "long powerful push-off, gripping invisible handle ahead; no cart or suitcase",
+        "maximum forward drive, rear leg stretched behind and jacket flared",
+        "opposite forceful stride, both hands stay on invisible cart handle",
+        "hard braking stance, torso recoils slightly and EMPTY hands release handle"
+      ]
+    },
+    {
+      "action": "golpe-SA1",
+      "name": "Pista Livre — quatro contatos",
+      "loop": false,
+      "poses": [
+        "deep charging preparation, one suitcase behind shoulder",
+        "FIRST CONTACT: rush shoulder and held suitcase forward at chest/waist height",
+        "SECOND CONTACT: opposite running stride, drive suitcase diagonally upward",
+        "THIRD CONTACT: twist torso and deliver short forward backhand suitcase strike",
+        "FOURTH CONTACT: final powerful upward suitcase body-check, rear heel drives forward",
+        "brake in wide stance and retract held suitcase to recover guard"
+      ]
+    },
+    {
+      "action": "golpe-SA3",
+      "name": "Esteira Despencando",
+      "loop": false,
+      "poses": [
+        "stand holding suitcase near rear hip, free hand ready",
+        "look upward and raise free hand, suitcase remains held",
+        "free arm points sharply overhead to order first luggage drop",
+        "free hand sweeps laterally overhead to command successive drops",
+        "free arm makes final decisive downward command; held suitcase stays low",
+        "lower free hand and settle back into guard with suitcase; no conveyor or falling bags in body drawing"
+      ]
+    },
+    {
+      "action": "embarcar",
+      "name": "Tentativa de embarque",
+      "loop": true,
+      "poses": [
+        "guard at boarding stairs, suitcase held, glance behind toward escape",
+        "turn shoulders slightly toward flight direction while keeping side-facing silhouette",
+        "shift weight forward and lift front heel slightly to prepare step; feet remain close to ground baseline",
+        "take a small determined step in place while gripping suitcase, free hand beckons toward plane",
+        "look anxiously back over shoulder while continuing boarding posture",
+        "return toward initial poised-to-board position, suitcase and shoulder settle"
+      ]
+    },
+    {
+      "action": "encurralado",
+      "name": "Encurralado",
+      "loop": true,
+      "poses": [
+        "wary guard, suitcase held tighter, glance back toward blocked escape",
+        "shoulders tense, free palm opens at chest, worried eyebrows",
+        "lean away from opponent slightly, knees bend while suitcase stays close",
+        "flinch toward wall behind but stop, raised free hand defensive",
+        "draw held suitcase protectively nearer torso and look forward",
+        "settle into nervous compact guard, feet still grounded"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "action": "mala-voando",
+      "name": "Mala arremessada",
+      "sourceSheets": [
+        "originais/fx/mala-voando/grupo-1.png",
+        "originais/fx/mala-voando/grupo-2.png"
+      ]
+    },
+    {
+      "action": "mala-no-chao",
+      "name": "Mala esquecida no chão",
+      "sourceSheets": [
+        "originais/fx/mala-no-chao/grupo-1.png",
+        "originais/fx/mala-no-chao/grupo-2.png"
+      ]
+    },
+    {
+      "action": "mala-caindo",
+      "name": "Mala despencando",
+      "sourceSheets": [
+        "originais/fx/mala-caindo/grupo-1.png",
+        "originais/fx/mala-caindo/grupo-2.png"
+      ]
+    },
+    {
+      "action": "mala-impacto",
+      "name": "Impacto de malada",
+      "sourceSheets": [
+        "originais/fx/mala-impacto/grupo-1.png",
+        "originais/fx/mala-impacto/grupo-2.png"
+      ]
+    },
+    {
+      "action": "aviso-queda",
+      "name": "Aviso de mala caindo",
+      "sourceSheets": [
+        "originais/fx/aviso-queda/grupo-1.png",
+        "originais/fx/aviso-queda/grupo-2.png"
+      ]
+    },
+    {
+      "action": "carrinho-bagagem",
+      "name": "Carrinho de bagagem",
+      "sourceSheets": [
+        "originais/fx/carrinho-bagagem/grupo-1.png",
+        "originais/fx/carrinho-bagagem/grupo-2.png"
+      ]
+    },
+    {
+      "action": "carrinho-turbo",
+      "name": "Carrinho turbo",
+      "sourceSheets": [
+        "originais/fx/carrinho-turbo/grupo-1.png",
+        "originais/fx/carrinho-turbo/grupo-2.png"
+      ]
+    },
+    {
+      "action": "fuga-poeira",
+      "name": "Poeira da fuga",
+      "sourceSheets": [
+        "originais/fx/fuga-poeira/grupo-1.png",
+        "originais/fx/fuga-poeira/grupo-2.png"
+      ]
+    },
+    {
+      "action": "fuga-pronta",
+      "name": "Fuga pronta",
+      "sourceSheets": [
+        "originais/fx/fuga-pronta/grupo-1.png",
+        "originais/fx/fuga-pronta/grupo-2.png"
+      ]
+    },
+    {
+      "action": "encurralado-aviso",
+      "name": "Aviso de encurralamento",
+      "sourceSheets": [
+        "originais/fx/encurralado-aviso/grupo-1.png",
+        "originais/fx/encurralado-aviso/grupo-2.png"
+      ]
+    },
+    {
+      "action": "embarque-progresso",
+      "name": "Progresso do embarque",
+      "sourceSheets": [
+        "originais/fx/embarque-progresso/grupo-1.png",
+        "originais/fx/embarque-progresso/grupo-2.png"
+      ]
+    },
+    {
+      "action": "embarque-cura",
+      "name": "Cura por embarque",
+      "sourceSheets": [
+        "originais/fx/embarque-cura/grupo-1.png",
+        "originais/fx/embarque-cura/grupo-2.png"
+      ]
+    },
+    {
+      "action": "embarque-negado",
+      "name": "Embarque negado",
+      "sourceSheets": [
+        "originais/fx/embarque-negado/grupo-1.png",
+        "originais/fx/embarque-negado/grupo-2.png"
+      ]
+    },
+    {
+      "action": "pista-livre-impacto",
+      "name": "Impacto de Pista Livre",
+      "sourceSheets": [
+        "originais/fx/pista-livre-impacto/grupo-1.png",
+        "originais/fx/pista-livre-impacto/grupo-2.png"
+      ]
+    },
+    {
+      "action": "esteira-super",
+      "name": "Esteira do super",
+      "sourceSheets": [
+        "originais/fx/esteira-super/grupo-1.png",
+        "originais/fx/esteira-super/grupo-2.png"
+      ]
+    }
+  ]
+}

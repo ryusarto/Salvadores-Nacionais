@@ -1,0 +1,607 @@
+{
+  "animations": 99,
+  "body": 84,
+  "effects": 15,
+  "drawings": 594,
+  "nativeSheets": 198,
+  "portrait": true,
+  "atlases": [
+    {
+      "file": "runtime/fujao/parado.webp",
+      "sha256": "388ad6abb5dfed720e2f263b5311995e88a4c3559970f44757f6dab28f2e8889",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/andar.webp",
+      "sha256": "8dbfffcf786234a41d74c8cf087fc067baf22b31c64393c2b1ee5a1c07bd77e6",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/andar-tras.webp",
+      "sha256": "f877c847fe21278de964ea3754159b367b5c1f922043b781074eca990d2d8357",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/correr.webp",
+      "sha256": "5d3069e514247cd2754f9ab11fa9eeff2be3f34aea030e62f671d638bd6bc713",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/agachar.webp",
+      "sha256": "6992904f7727c799c728584f743d81eee07753ff82b6ed3ccc2e2fc216641285",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/pulo.webp",
+      "sha256": "cb45af8a82e59a9f66f482b4918e84eb4e1f2bddf0f719a3bb1644f9c3bfe274",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/recuo.webp",
+      "sha256": "6b0472c0759868a6055d739064878645c1a9776f4ccaaba69ca0cd2c45a51818",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/escape-agarrao.webp",
+      "sha256": "f528ea76ba55b1365d274bbbdf8c8f319c17f1bb6d5229ae4bd78f4ccb6697e6",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/recuperacao-rolamento.webp",
+      "sha256": "03302c5b8e8763a32c8b842f34f6c68bcdd3abd5dee3f37b85dcb016ad873647",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/defesa-em-pe.webp",
+      "sha256": "7cebe0ab7a45b94946c298b5667df772a08da547446b14f5343e345452d62738",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/defesa-agachado.webp",
+      "sha256": "aba6e4bbd3b3ec479ba72c1e48b75d14519aeb7edd23c83c5a7e1c5c65cb5184",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/defesa-no-ar.webp",
+      "sha256": "7b3ab4bbac3183b70e8742a5009a497063b734d97687192030ab531876d709c5",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/dano-alto.webp",
+      "sha256": "8022ee0d35c75dcd1dd94d04978f4ec9c3ba10ce063a32c7e3a3f544d3fef3aa",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/dano-baixo.webp",
+      "sha256": "05824526437b133388142b72f2335d1de8bc904487d1df0129b4e8ac55c81f29",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/dano-no-ar.webp",
+      "sha256": "32a443d4c6b7bd65b4a712ee91ef2b4d8d1acb27fff1f88ea636cf166f30de8d",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/caido.webp",
+      "sha256": "62a5a52fb493e00bc2994732ce7063c54892f8d2785a1dac6f2d9be9de967245",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/levantar.webp",
+      "sha256": "49338640846bbd3946d5f808bd0bc0b7b4c8567bdf578c2d304328ac7baddc56",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/tonto.webp",
+      "sha256": "dcdcce5d418919b1b31f6d4d4cea3fa544ca3ace1897f9e725bd8eb3b25629e5",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/vitoria.webp",
+      "sha256": "d54f0745d39ce6e2dcde8d6b5ec40efdb2be11acc5aa9b4e750190f0b3e13930",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-5L.webp",
+      "sha256": "8e072d3fe527d79977d60ba8e4fc032c0c9f05640216eb2c3a98654d82a266a3",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-5M.webp",
+      "sha256": "f11b92aa82477f565e9693cec906f677b6a43274c848312445bcec26797c27ba",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-5H.webp",
+      "sha256": "e8d9b1e086ab57ec09848838aaeab193d6a22979e382efcd933406a48ebc009c",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-2L.webp",
+      "sha256": "15a14d98f5f2fd4e312ef84c5bd5b7ee7183b9f96936d9b8a4ae9761e271a968",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-2M.webp",
+      "sha256": "8a5af7d1af9a3722f77b15aef760ec77dcd82fd52ca7a6cb7f222db5d170eba7",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-2H.webp",
+      "sha256": "2c9ee48827adc208bfe787042bef4f8ea3e36c47a92dbe34593efdc71116a50f",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-3H.webp",
+      "sha256": "ce2d4ff82de59e48388d366a0cdf3556e4708142bf0e5387766e1ff5c9f78ad5",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-6M.webp",
+      "sha256": "65cdb086d510b82ee9708985ae8909ae97d3521cfa25c59d7df8a630cc09fc1e",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-jL.webp",
+      "sha256": "a7eefd525ee9686278ce918342df7d2299ffb722d208ea929f1f01b12ac49eb9",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-jM.webp",
+      "sha256": "8dfe027e8f2b27e8edd867665fcee186ad53b7a6487f7ab166f9baa4e4c15f63",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-jH.webp",
+      "sha256": "c0117a20a59446535241e343be8abf3fefa9f1747f563ccb094740e31d3a4b27",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-throw.webp",
+      "sha256": "1f3d903b66afab3b608c5656b1345e06bd51449d7d986d64d27dfa67595ca520",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-blindado.webp",
+      "sha256": "8a285f4addc1acfbc13602bcd3ac699753e9b376d1711f0a366a02d83202f793",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-5S.webp",
+      "sha256": "950135616b3219f7db2b0c111768a7b7c37d342deebabf66148de373dc95e00b",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-5S-turbo.webp",
+      "sha256": "0e5e806fb3a8d7afe32512be2da95c33c909fe2c7fe5ec645c1eb1ae104444c9",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-2S.webp",
+      "sha256": "ef5a79182b7e5e26476afe04ddcaeefdc04b023d2201831eb7236238caf3d3c9",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-4S.webp",
+      "sha256": "078834e866460b28c1331897127b4207c19feb253380fef199bdeaf3c814c4a7",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-6S.webp",
+      "sha256": "2355ea7f8d950300c968d2d612eedcf2b7122659a1d2451711b1a4b1223a773c",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-6S-turbo.webp",
+      "sha256": "c16852b0514175be95931c7bbc4dcbb23006f169075a09082130da0f14d23a5b",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-SA1.webp",
+      "sha256": "307966b94ee40e3b7f4dac882968ce2729453641a122a68ffb06126f9a989fbd",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/golpe-SA3.webp",
+      "sha256": "98ed552d6369aea5e984999cbb5808ff562926ac4d5de0e0897fb6722c96ee97",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/embarcar.webp",
+      "sha256": "2257e528adfe4ab4c67c301b1eff2764fd67993efb2b4a79b68541320e5e9321",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao/encurralado.webp",
+      "sha256": "4474172ffe952548ce1e22b3f28378a68d4d5fda79dd8c59470a46b9d33558ac",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/parado.webp",
+      "sha256": "d8a85ffa208a14c90c4653865d8e10eb6c91054e187ec6acf947483656a4c315",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/andar.webp",
+      "sha256": "1432b6579d9d2d39d3feb3773132c5f96b4a28be81cd13cd97f57d65383d708a",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/andar-tras.webp",
+      "sha256": "1b65118f1c490bb869a443af5448fbc21edf93f9418c3c9e844af52899877153",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/correr.webp",
+      "sha256": "58a9ef8f591cc5e32b2f20a2a56eee0af8f1d99e31139a2dc37e382f010c13f5",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/agachar.webp",
+      "sha256": "b713775eebc7883025b5adca31cf873a6e8f46e975eedd69dcddcec0683548e3",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/pulo.webp",
+      "sha256": "9d7111f98e9bec3b2289eec84589a750cfa78bc599c1d69c0f9463dfe8352c96",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/recuo.webp",
+      "sha256": "c3a9ec5f5552606e84ccd14f52864a88c5148fa2924f1e99a1c76f51c6d7635b",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/escape-agarrao.webp",
+      "sha256": "816c1165611044bc5c61b663b0184eb0a8c825bfc6f112ed701cb00d46ce33ed",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/recuperacao-rolamento.webp",
+      "sha256": "7942f26118c85bc689bd4b200ba63a2d9cc373fe10fb3a6bb84aa212aa393911",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/defesa-em-pe.webp",
+      "sha256": "ff84f2865908032c008decb5d3cbba4d1934f7c74cfef42e4090787e68f06f4a",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/defesa-agachado.webp",
+      "sha256": "375f2615f848a8b24c1c404a2677d1761c75af59122be44cadcf9186930d95fb",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/defesa-no-ar.webp",
+      "sha256": "0a93960cf9a051c7ab5b6fd8a5acb4568f6a475d2ceb3144db0804ec197c1e98",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/dano-alto.webp",
+      "sha256": "dcde90d82b1b30cbb1cb52d6de4f14f62a05c12a3184720e835dc26c350c8dea",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/dano-baixo.webp",
+      "sha256": "44a1dd7819c6462b402a82ce6017a2144d59f33f879a7da074cc85b3b57488fb",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/dano-no-ar.webp",
+      "sha256": "db34e088ff330909829dc949cc6213898d639932b1b994fe8ce9faf6d28d1191",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/caido.webp",
+      "sha256": "2b1818cbccfcfa25c02d5bdd838cc0c1b5bed1731aebd643f7ac8ce72e6757ea",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/levantar.webp",
+      "sha256": "ed1fac917deb54798b6c1c39c0a0958e01802508de0f4ca2f71ae3bb7b7c5604",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/tonto.webp",
+      "sha256": "91e3d582eba1f7acd22dc58e1431ab8721ed636196a7d8191cad640aeb590251",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/vitoria.webp",
+      "sha256": "71cddab3a01f479d9d4ad8583c11868c7e6ef5fb67c156d2dc858fc7b21c40d9",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-5L.webp",
+      "sha256": "faffd52c4f2eddd37407dc609f04b118e8be0f187df342e9b2a5e5818dfb46c6",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-5M.webp",
+      "sha256": "72f57bec060ab97fd3908216f7b5f62f1c49d982633f0cc215f491ccc654b408",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-5H.webp",
+      "sha256": "58987b7dba7abeab209befa0f3563e060f8e67d014d84e5242382e2fe007f511",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-2L.webp",
+      "sha256": "a4d35879536c699ee90b11ccf9d551f3276bc830912b20926ccde7c14260b930",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-2M.webp",
+      "sha256": "8e9719794b8e79504afb9fee50b2603f6eb959b85898af09fa5e116627804e4f",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-2H.webp",
+      "sha256": "e23eee3351bcd017762ca61cec87e9a7d38ee6d44341b23bf4bb93632ad37fee",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-3H.webp",
+      "sha256": "6f1f423232405f17be9e985ca9eeec42ca514b530777ffc0f4c1796a3d4a8707",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-6M.webp",
+      "sha256": "1b36dcb85d2bc300c5c8787caa8e8112ebef1dd88e29cd1c4b68df4e188bbae1",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-jL.webp",
+      "sha256": "c82e5201968e04cadc438cbe4715696efcd9d51dfc00221b93f5a8b2e9fd68dc",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-jM.webp",
+      "sha256": "ec87fd9a8fc76c14a31f5eacd496ffa24cc0d8c4b97bddd53a2a85d45243d3a0",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-jH.webp",
+      "sha256": "b382652c43001e4d87f84c506777cc974e11f643fcd00322826183a536a38490",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-throw.webp",
+      "sha256": "fba5625dcd8fc346f54511d80e39b85f0ad8b78db342a9624dac1aabdbcf5874",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-blindado.webp",
+      "sha256": "1e8d0d1be7fc986c6b4f74a35ba2f101bcb276b4f11afcc90c1bd1cbb524186b",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-5S.webp",
+      "sha256": "b53ff162dbad2d8ca321e7e3796264674db49729511f2a4226f750983d5dc282",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-5S-turbo.webp",
+      "sha256": "bc8bb4cf9dbffbf0c35d8464a5b125aca87976ee931810fdf71a29c1f37f2812",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-2S.webp",
+      "sha256": "86469b10c2e17e1a88cb2b5a3dfed1917f86a3f61ce9a0e0ee853fb4969587d9",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-4S.webp",
+      "sha256": "30daf479baaeea99210174b60f54190f87d7614e77ff7c45553036a96cefec05",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-6S.webp",
+      "sha256": "b8875ebd3170366c7b923847cb06a2753193b8baeda910c19599dd3db35b66b2",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-6S-turbo.webp",
+      "sha256": "91cf61349628ec2de2f3525d517b807aff9aacb5d48e91b7fcd7928dd3791f47",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-SA1.webp",
+      "sha256": "66395367ac836670cde643c2d4d74b0063d6159572410861376056abd5b2e2d7",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/golpe-SA3.webp",
+      "sha256": "6a935f735ec8c5faf95bd22bd6fcab9e19f3a95434bf9b3d45c55041887cdbc8",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/embarcar.webp",
+      "sha256": "e0ab21e016e933db28260653f54ddd5795a781d4df17b4e9b66a9de3e2bc2c3a",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-esquerda/encurralado.webp",
+      "sha256": "f3e13c2da91c60edf36db9c5f6652ffb51e3a7c781bcc4826aa8c8bca86364b6",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-fx/mala-voando.webp",
+      "sha256": "505276c975b16745930f2e537b1294764d02a798a5c6581ad1a03f651a65a651",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-fx/mala-no-chao.webp",
+      "sha256": "58fb25058f24f9ab4a7e1540c7b08a14877cf18457c250b2a8adb668e217eaf1",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-fx/mala-caindo.webp",
+      "sha256": "796f5e5078543d2e55c3374958727b63a4f583cb638cec9bc2724683125dc5e0",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-fx/mala-impacto.webp",
+      "sha256": "3fe5fdcc137494f5c69ad868fd8129d52a195a67baad4527840334ebf641b417",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-fx/aviso-queda.webp",
+      "sha256": "52d5c294e4b69d6044016f2ebd288721fcde68c4a89c99006ea6d25986154756",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-fx/carrinho-bagagem.webp",
+      "sha256": "a9defa6b8002764e4b2cd1374b2804cc2afecebbaebdb0d63cb81074b2ff7a08",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-fx/carrinho-turbo.webp",
+      "sha256": "d6d54644b9aa52f6e4ea567a188b028ad9b276a24f68b891a8779f8c793d5d88",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-fx/fuga-poeira.webp",
+      "sha256": "88412ebb06d5ed37a921acc6da92b6aab7f244f3a38d89e159539cbceff17fb9",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-fx/fuga-pronta.webp",
+      "sha256": "82916d75295b459f0cbf8f3a3595a95202bd4c27e3ae44662b2590fd686a2b1f",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-fx/encurralado-aviso.webp",
+      "sha256": "4ce22105f51364a97b75367a1dd498641a08a7426c6a2d1e90db6f0173aab2ee",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-fx/embarque-progresso.webp",
+      "sha256": "d985d4d84401df7b241b53b139422281291b9802394997eb735cc2e4459da9e6",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-fx/embarque-cura.webp",
+      "sha256": "3352a114722fd3f8cb72d8fe728d888c6387f3168faabe8909442f9a75486357",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-fx/embarque-negado.webp",
+      "sha256": "d39a57b142fbc78598b54739ff8c1c07e2e243662b83a610f6bdb922d8479ce8",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-fx/pista-livre-impacto.webp",
+      "sha256": "69f64bcfb29a4e7db9b8aa9e795c52495b644e7be5933d66173a05a93e4ab0c7",
+      "frames": 6,
+      "unique": 6
+    },
+    {
+      "file": "runtime/fujao-fx/esteira-super.webp",
+      "sha256": "7d7dd8ee782b92f1f868c27607b9e9df8e1fc7c083c15f750c2959524f1cba09",
+      "frames": 6,
+      "unique": 6
+    }
+  ],
+  "errors": [],
+  "tool": "built-in image_gen",
+  "published": false
+}
