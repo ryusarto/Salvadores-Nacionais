@@ -37,8 +37,10 @@ export function createMobileMenu(root, heading, summary, list, actions) {
     const { screen = '', sub = '', preview, opponent, chapter } = meta;
     const key = `${screen}:${sub}`;
     if (key !== screenKey) { body.scrollTop = 0; artKey = ''; screenKey = key; }
-    root.dataset.screen = screen; root.dataset.sub = sub || '';
-    root.dataset.layout = screen === 'title' ? 'title' : ['select', 'selectFoe'].includes(screen) ? 'select' : screen === 'vs' ? 'versus' : screen.startsWith('story') ? 'story' : 'list';
+    if (root.dataset.screen !== screen) root.dataset.screen = screen;
+    if (root.dataset.sub !== (sub || '')) root.dataset.sub = sub || '';
+    const layout = screen === 'title' ? 'title' : ['select', 'selectFoe'].includes(screen) ? 'select' : screen === 'vs' ? 'versus' : screen.startsWith('story') ? 'story' : 'list';
+    if (root.dataset.layout !== layout) root.dataset.layout = layout;
     const touch = document.documentElement.classList.contains('touch');
     if (!touch) return;
     pixelLabel(title, titleText, 'gold', screen === 'title' ? 340 : 600);
@@ -51,7 +53,8 @@ export function createMobileMenu(root, heading, summary, list, actions) {
     logo.hidden = screen !== 'title' || !logoReady;
     title.hidden = screen === 'title' && logoReady;
     const portraitFight = screen === 'fight' && innerHeight > innerWidth;
-    hint.textContent = portraitFight ? 'Vire o celular de lado para retomar a luta.' : screen === 'title' ? 'TOQUE PARA ESCOLHER' : '';
+    const hintText = portraitFight ? 'Vire o celular de lado para retomar a luta.' : screen === 'title' ? 'TOQUE PARA ESCOLHER' : '';
+    if (hint.textContent !== hintText) hint.textContent = hintText;
     hint.hidden = !hint.textContent;
     const showMap = screen === 'storyMap';
     art.hidden = !preview && !showMap;
