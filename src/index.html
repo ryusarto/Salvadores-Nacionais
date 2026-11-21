@@ -34,7 +34,7 @@
   .tb-x { border-color: rgba(255,122,46,.9); color: #ffb37a; }
   #tpause { top: 2vh; left: max(1.5vw, env(safe-area-inset-left)); width: 11vh; height: 8vh; border-radius: 2vh; border: 2px solid rgba(255,255,255,.4); background: rgba(0,0,0,.35); color: #fff; font: 900 3vh Arial, sans-serif; }
   #rotate { display: none; inset: 0; background: #12080c; color: #ffcf2a; font-size: 7vw; align-items: center; justify-content: center; text-align: center; padding: 8vw; font-style: italic; }
-  @media (orientation: portrait) { .touch #rotate { display: flex; } }
+  @media (orientation: portrait) { .touch body[data-screen="fight"][data-paused="false"] #rotate { display: flex; } }
   /* Carregamento no mesmo visual clássico dos menus: fundo preto, letras de pixel douradas e barra em blocos. */
   #loading {position:fixed;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5vmin;background:#000;}
   #loading canvas {display:block;image-rendering:pixelated;image-rendering:crisp-edges;}
@@ -53,6 +53,7 @@
   #accessible-menu nav {position:absolute;inset:0;pointer-events:none;}
   #accessible-menu button {position:absolute;pointer-events:auto;opacity:0;cursor:pointer;border:3px solid #f3c426;}
   #accessible-menu button:focus-visible {opacity:1;background:#17131b;color:#f4e9c9;font:24px SNComic,Arial,sans-serif;outline:4px solid #f3c426;}
+  #accessible-menu button img {width:32px;height:32px;object-fit:contain;}
   #touch:not([data-live="true"]) #dpad,#touch:not([data-live="true"]) #btns,#touch:not([data-live="true"]) #tpause,#touch:not([data-live="true"]) #question {display:none;}
   #tpause {min-width:44px;min-height:44px;}
   .tb-t {grid-column:2;transform:none;width:100%;height:44px;border-radius:10px;font-size:14px;}
@@ -67,17 +68,95 @@
   .large-buttons {--touch-size:17vh;}
   .left-handed #dpad {left:auto;right:3vw;}
   .left-handed #btns {right:auto;left:2.5vw;}
-  .touch #accessible-menu {inset:0;width:auto;height:auto;padding:16px max(20px,env(safe-area-inset-right)) 16px max(20px,env(safe-area-inset-left));box-sizing:border-box;background:#f4e9c9;color:#17131b;display:flex;flex-direction:column;gap:8px;pointer-events:auto;overflow:auto;}
-  .touch #accessible-menu h1,.touch #accessible-menu p {position:static;width:auto;height:auto;overflow:visible;clip-path:none;margin:0;}
-  .touch #accessible-menu h1 {font:clamp(22px,5vh,34px) SNComic,Arial,sans-serif;}
-  .touch #accessible-menu p {font:16px/1.35 Arial,sans-serif;max-width:75ch;}
-  .touch #accessible-menu nav {position:static;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;pointer-events:auto;}
-  .touch #accessible-menu button {position:static;opacity:1;width:auto!important;height:auto!important;min-height:48px;border:2px solid #17131b;background:#f3c426;color:#17131b;font:18px SNComic,Arial,sans-serif;padding:8px;}
-  .touch #accessible-menu button[aria-pressed="true"] {background:#dc3029;color:#fff;}
-  .touch #accessible-menu button:focus-visible {outline:3px solid #17131b;outline-offset:2px;}
-  .touch #accessible-menu button {display:flex;align-items:center;justify-content:center;gap:8px;}
-  .touch #accessible-menu button img {width:44px;height:44px;object-fit:contain;}
-  #accessible-menu button img {width:32px;height:32px;object-fit:contain;}
+  /* PC keeps its canvas hit targets. Touch reflows the same actions and art. */
+  #accessible-menu .mobile-menu-title,#accessible-menu .mobile-menu-logo,
+  #accessible-menu .mobile-button-label,#accessible-menu .mobile-menu-art {display:none;}
+  #accessible-menu .mobile-menu-details {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);}
+  #accessible-menu .mobile-menu-hint {display:none;}
+  #touch {z-index:4;}
+  .touch body[data-menu-open="true"] {touch-action:pan-y;}
+  .touch #accessible-menu {
+    inset:0;width:100%;height:100%;height:100dvh;box-sizing:border-box;
+    padding:max(12px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));
+    display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:12px;
+    background:#080b51;color:#f2e6c4;pointer-events:auto;overflow:hidden;
+    font:15px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;
+    background-image:radial-gradient(#1a287d 1px,transparent 1px);background-size:6px 6px;
+  }
+  .touch #accessible-menu * {box-sizing:border-box;}
+  .touch #accessible-menu .mobile-menu-header {border-bottom:2px solid #f8c820;padding:4px 0 10px;min-width:0;}
+  .touch #accessible-menu .mobile-menu-title {display:block;background:transparent;image-rendering:pixelated;max-width:100%;width:auto;height:auto;max-height:68px;}
+  .touch #accessible-menu .mobile-menu-logo {display:block;background:transparent;image-rendering:pixelated;width:min(80vw,370px);height:auto;margin:auto;max-height:26dvh;object-fit:contain;}
+  .touch #accessible-menu h1 {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);}
+  .touch #accessible-menu p {position:static;width:auto;height:auto;overflow:visible;clip-path:none;margin:0;}
+  .touch #accessible-menu .mobile-menu-hint {display:block;color:#86cfff;font-size:12px;text-align:center;margin-top:10px;}
+  .touch #accessible-menu .mobile-menu-body {min-height:0;min-width:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;touch-action:pan-y;-webkit-overflow-scrolling:touch;scrollbar-color:#f8c820 #050829;display:flex;gap:16px;align-items:flex-start;padding:4px;}
+  .touch #accessible-menu .mobile-menu-content {flex:1;min-width:0;}
+  .touch #accessible-menu .mobile-menu-content>p {color:#d9e4ff;margin:0 0 14px;overflow-wrap:anywhere;}
+  .touch #accessible-menu .mobile-menu-content>p:empty {display:none;}
+  .touch #accessible-menu nav {position:static;inset:auto;pointer-events:auto;}
+  .touch #accessible-menu nav[aria-label="Escolhas"] {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+  .touch #accessible-menu button {
+    position:relative;left:auto!important;top:auto!important;opacity:1;width:100%!important;height:auto!important;
+    min-width:0;min-height:52px;padding:10px 12px;border:2px solid #526be1;border-radius:0;
+    background:#070c39;color:#f2e6c4;display:flex;align-items:center;justify-content:center;gap:8px;
+    box-shadow:inset 0 0 0 2px #020517;font:inherit;touch-action:pan-y;-webkit-tap-highlight-color:transparent;
+  }
+  .touch #accessible-menu button:active {background:#202d85;}
+  .touch #accessible-menu button[aria-pressed="true"] {border-color:#ffd848;background:#25184e;box-shadow:inset 0 0 0 2px #63321b;}
+  .touch #accessible-menu button:focus-visible {outline:3px solid #fff6bd;outline-offset:2px;}
+  .touch #accessible-menu button:disabled {opacity:.5;cursor:default;}
+  .touch #accessible-menu .menu-button-text {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);}
+  .touch #accessible-menu .mobile-button-label {display:block;background:transparent;image-rendering:pixelated;max-width:100%;width:auto;height:auto;pointer-events:none;}
+  .touch #accessible-menu button img {width:52px;height:52px;object-fit:contain;image-rendering:pixelated;flex-shrink:0;}
+  .touch #accessible-menu .mobile-menu-art {display:block;width:clamp(120px,23vw,220px);flex-shrink:0;position:sticky;top:0;border:2px solid #526be1;background:linear-gradient(#1329ad,#080b51);box-shadow:inset 0 0 0 3px #030724;}
+  .touch #accessible-menu .mobile-menu-art canvas {width:100%;height:auto;background:transparent;image-rendering:pixelated;}
+  .touch #accessible-menu .mobile-menu-actions {display:grid;grid-template-columns:minmax(100px,1fr) minmax(140px,2fr);gap:10px;padding:10px 4px 0;border-top:2px solid #526be1;background:#080b51;}
+  .touch #accessible-menu .mobile-menu-actions button[data-role="back"] {grid-column:1;grid-row:1;}
+  .touch #accessible-menu .mobile-menu-actions button[data-role="primary"] {grid-column:2;grid-row:1;border-color:#ffd848;background:#25184e;}
+  .touch #accessible-menu .mobile-menu-actions button:only-child {grid-column:1/-1;}
+  .touch #accessible-menu[data-layout="select"] nav[aria-label="Escolhas"] {grid-template-columns:repeat(4,minmax(0,1fr));}
+  .touch #accessible-menu[data-layout="select"] button[data-role="fighter"] {flex-direction:column;padding:6px;gap:4px;min-height:96px;}
+  .touch #accessible-menu[data-layout="select"] .mobile-button-label {object-fit:contain;}
+  .touch #accessible-menu[data-layout="title"] {background:#000;background-image:none;}
+  .touch #accessible-menu[data-layout="title"] .mobile-menu-header {border:0;align-self:center;}
+  .touch #accessible-menu[data-layout="title"] .mobile-menu-body {display:flex;align-items:center;justify-content:center;}
+  .touch #accessible-menu[data-layout="title"] .mobile-menu-content {flex:none;width:min(100%,520px);}
+  .touch #accessible-menu[data-layout="title"] nav[aria-label="Escolhas"] {grid-template-columns:1fr;}
+  .touch #accessible-menu[data-layout="title"] button {background:#000;border-color:transparent;}
+  .touch #accessible-menu[data-layout="title"] button[aria-pressed="true"] {border-color:#ffd848;background:#09051c;box-shadow:inset 4px 0 #ffd848;}
+  .touch #accessible-menu[data-layout="versus"] .mobile-menu-art {width:clamp(180px,35vw,280px);}
+  .touch #accessible-menu[data-layout="story"] .mobile-menu-content>p {white-space:pre-line;font-size:16px;line-height:1.65;}
+  .touch #accessible-menu .mobile-menu-details {position:static;width:auto;height:auto;overflow:visible;clip-path:none;display:grid;grid-template-columns:minmax(90px,1fr) 2fr;gap:0;margin:12px 0;}
+  .touch #accessible-menu .mobile-menu-details dt,.touch #accessible-menu .mobile-menu-details dd {margin:0;padding:12px 8px;border-bottom:1px solid #526be1;overflow-wrap:anywhere;}
+  .touch #accessible-menu .mobile-menu-details dt {color:#86dfff;}
+  @media (orientation:portrait) {
+    .touch #accessible-menu .mobile-menu-body {flex-direction:column;}
+    .touch #accessible-menu .mobile-menu-art {position:static;width:140px;align-self:center;}
+    .touch #accessible-menu .mobile-menu-content {width:100%;flex:none;}
+    .touch #accessible-menu[data-layout="select"] nav[aria-label="Escolhas"] {grid-template-columns:repeat(3,minmax(0,1fr));}
+    .touch #accessible-menu[data-layout="select"] .mobile-menu-art {display:none;}
+    .touch #accessible-menu[data-layout="versus"] .mobile-menu-art {width:200px;}
+    .touch #accessible-menu[data-layout="title"] .mobile-menu-body {flex-direction:row;}
+    .touch #accessible-menu nav[aria-label="Escolhas"] {grid-template-columns:1fr;}
+  }
+  @media (max-height:450px) and (orientation:landscape) {
+    .touch #accessible-menu {gap:8px;padding-top:max(6px,env(safe-area-inset-top));padding-bottom:max(6px,env(safe-area-inset-bottom));font-size:13px;}
+    .touch #accessible-menu .mobile-menu-header {padding-bottom:6px;}
+    .touch #accessible-menu .mobile-menu-title {max-height:40px;}
+    .touch #accessible-menu .mobile-menu-actions {padding-top:6px;}
+    .touch #accessible-menu .mobile-menu-content>p {margin-bottom:8px;}
+    .touch #accessible-menu .mobile-menu-art {width:140px;}
+    .touch #accessible-menu[data-layout="title"] {grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1fr);gap:24px;}
+    .touch #accessible-menu[data-layout="title"] .mobile-menu-logo {max-height:50dvh;width:100%;}
+    .touch #accessible-menu[data-layout="title"] .mobile-menu-title {max-height:none;}
+    .touch #accessible-menu[data-layout="title"] .mobile-menu-hint {margin-top:16px;}
+    .touch #accessible-menu[data-layout="title"] button {min-height:48px;padding:6px;}
+    .touch #accessible-menu[data-layout="select"] .mobile-menu-art {width:120px;}
+  }
+  @media (max-width:359px) {
+    .touch #accessible-menu[data-layout="select"] nav[aria-label="Escolhas"] {grid-template-columns:repeat(2,minmax(0,1fr));}
+  }
   .tb.tb-t {width:100%;height:44px;min-height:44px;transform:none;}
   .touch #sound {display:none;}
 </style>
