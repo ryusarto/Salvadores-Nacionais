@@ -1,0 +1,100 @@
+{
+  "passed": true,
+  "baseMain": "982197fb37844c45d612f82d5d224518ebbaca29",
+  "current": {
+    "__SPRITES": {
+      "packs": 31,
+      "references": 881,
+      "gitFiles": 881,
+      "missing": 0,
+      "extra": 0,
+      "duplicates": 0
+    },
+    "__SPRITEPOSTERS": {
+      "packs": 0,
+      "references": 0,
+      "gitFiles": 0,
+      "missing": 0,
+      "extra": 0,
+      "duplicates": 0
+    }
+  },
+  "negativeControl": {
+    "ref": "ac8ee4c6cde4643b7b97b869166055e23493df37",
+    "actualPacks": 2,
+    "actualStrips": 4,
+    "treeFiles": 782
+  },
+  "checks": [
+    {
+      "name": "complete current-main inventory",
+      "passed": true,
+      "audit": {
+        "__SPRITES": {
+          "packs": 31,
+          "references": 881,
+          "gitFiles": 881,
+          "missing": 0,
+          "extra": 0,
+          "duplicates": 0
+        },
+        "__SPRITEPOSTERS": {
+          "packs": 0,
+          "references": 0,
+          "gitFiles": 0,
+          "missing": 0,
+          "extra": 0,
+          "duplicates": 0
+        }
+      }
+    },
+    {
+      "name": "one missing current strip",
+      "passed": true,
+      "rejected": true,
+      "message": "__SPRITES omits 1 Git runtime file(s): production/sprites/final/belga/agachar.webp"
+    },
+    {
+      "name": "historical partial ac8 release",
+      "passed": true,
+      "rejected": true,
+      "message": "__SPRITES omits 778 Git runtime file(s): production/sprites/final/belga-fx/fx-bate-estaca.webp, production/sprites/final/belga-fx/fx-bpm.webp, production/sprites/final/belga-fx/fx-direto.webp, production/sprites/final/belga-fx/fx-gancho.webp, production/sprites/final/belga-fx/fx-jab.webp, production/sprites/final/belga-fx/fx-pendulo.webp, production/sprites/final/belga-fx/vinil-girar.webp, production/sprites/final/belga-fx/vinil-impacto.webp"
+    },
+    {
+      "name": "complete strips and first-frame posters",
+      "passed": true
+    },
+    {
+      "name": "missing poster",
+      "passed": true,
+      "rejected": true,
+      "message": "__SPRITEPOSTERS omits 1 Git runtime file(s): production/sprites/final/demo/__first-parado.webp"
+    },
+    {
+      "name": "duplicate strip URL",
+      "passed": true,
+      "rejected": true,
+      "message": "__SPRITES duplicates production/sprites/final/demo/parado.webp"
+    },
+    {
+      "name": "wrong pack slot",
+      "passed": true,
+      "rejected": true,
+      "message": "sprite pack must match its Git directory: production/sprites/final/demo/parado.webp"
+    },
+    {
+      "name": "poster substituted for a strip",
+      "passed": true,
+      "rejected": true,
+      "message": "__SPRITES references a missing file or wrong asset type: production/sprites/final/demo/__first-parado.webp"
+    },
+    {
+      "name": "malformed cache hash",
+      "passed": true,
+      "rejected": true,
+      "message": "official sprite cache hash production/sprites/final/demo/parado.webp"
+    }
+  ],
+  "reproduction": "node production/qa/scenarios-review/build-index-guard.mjs",
+  "scope": "Pure index gate and local Git snapshots; no character blobs downloaded, no build performed, no Git mutations."
+}

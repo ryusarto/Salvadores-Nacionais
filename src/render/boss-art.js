@@ -448,20 +448,22 @@ export function drawGoldWall(c, e, gy) {
   c.translate(0, (1 - rise) * e.h);
   c.lineWidth = 6;
   c.strokeStyle = OUT;
-  const g = c.createLinearGradient(l, 0, l + e.w, 0);
-  g.addColorStop(0, '#b8862a');
-  g.addColorStop(0.5, '#f3d26a');
-  g.addColorStop(1, '#b8862a');
-  c.fillStyle = g;
-  c.fillRect(l, top, e.w, e.h);
-  c.strokeRect(l, top, e.w, e.h);
-  c.strokeStyle = 'rgba(90,60,10,.6)';
-  c.lineWidth = 3;
-  for (let y = top + 50; y < gy; y += 50) {
-    c.beginPath();
-    c.moveTo(l, y);
-    c.lineTo(l + e.w, y);
-    c.stroke();
+  if (!drawStageProp(c, 'washington', 'muralha-interativa', { x: e.x, y: gy, w: e.w, h: e.h })) {
+    const g = c.createLinearGradient(l, 0, l + e.w, 0);
+    g.addColorStop(0, '#b8862a');
+    g.addColorStop(0.5, '#f3d26a');
+    g.addColorStop(1, '#b8862a');
+    c.fillStyle = g;
+    c.fillRect(l, top, e.w, e.h);
+    c.strokeRect(l, top, e.w, e.h);
+    c.strokeStyle = 'rgba(90,60,10,.6)';
+    c.lineWidth = 3;
+    for (let y = top + 50; y < gy; y += 50) {
+      c.beginPath();
+      c.moveTo(l, y);
+      c.lineTo(l + e.w, y);
+      c.stroke();
+    }
   }
   c.fillStyle = OUT;
   c.font = "bold 30px Impact, 'Arial Black', sans-serif";
@@ -589,7 +591,10 @@ export function drawThrownTrident(c, x, y, dir) {
 export function drawFloorFire(c, e, gy, frame) {
   const l = e.x - e.w / 2;
   c.save();
-  c.globalAlpha = e.delay > 0 ? 0.4 : 1;
+  // Partial end flames must not cross the entity edge into the safe interval.
+  // These vertical bounds exceed the generated flame extent; only its width is trimmed.
+  c.beginPath(); c.rect(l, gy - 128, e.w, 136); c.clip();
+  c.globalAlpha *= e.delay > 0 ? 0.4 : 1;
   for (let x = l; x < l + e.w; x += 28) {
     const h = 50 + Math.sin(frame * 0.4 + x * 0.05) * 22 + ((x * 7) % 30);
     const g = c.createLinearGradient(0, gy, 0, gy - h);

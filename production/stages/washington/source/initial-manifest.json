@@ -1,0 +1,180 @@
+{
+  "id": "washington",
+  "status": "initial-production-not-integrated",
+  "world": {
+    "width": 2600,
+    "height": 1080,
+    "cameraMax": 680,
+    "feetY": 930,
+    "groundTopY": 826
+  },
+  "assets": {
+    "ceu-washington": {
+      "path": "runtime/ceu-washington.webp",
+      "width": 1920,
+      "height": 1080,
+      "frames": 1,
+      "source": "source/generated/ceu-washington.png",
+      "sourceCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "sha256": "6e575573ad5793198f5dc1f10e9b2bdeff9cb8423cdbaacb2af5907ae1fc174c"
+    },
+    "palacio-branco": {
+      "path": "runtime/palacio-branco.webp",
+      "width": 1600,
+      "height": 511,
+      "frames": 1,
+      "source": "source/generated/palacio-branco.png",
+      "sourceCrop": [
+        14,
+        22,
+        2144,
+        685
+      ],
+      "sha256": "61e5675fe87db465b4351174fb167b181d860f88ace5875bec15ad563a34b0c7"
+    },
+    "gramado": {
+      "path": "runtime/gramado.webp",
+      "width": 2600,
+      "height": 400,
+      "frames": 1,
+      "source": "source/generated/gramado.png",
+      "sourceCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "sha256": "20a2b5cc95112baf0627b36c5a11352323655b47cc566a3c1179cabb8f871f82"
+    },
+    "obelisco": {
+      "path": "runtime/obelisco.webp",
+      "width": 197,
+      "height": 1000,
+      "frames": 1,
+      "source": "source/generated/obelisco.png",
+      "sourceCrop": [
+        360,
+        12,
+        298,
+        1511
+      ],
+      "sha256": "bc39d6bf3c8b711bf625f7c460f0accd2658878657dddad059a3e75036b61888"
+    },
+    "chafariz-base": {
+      "path": "runtime/chafariz-base.webp",
+      "width": 768,
+      "height": 376,
+      "frames": 1,
+      "source": "source/generated/chafariz-base.png",
+      "sourceCrop": [
+        38,
+        28,
+        1699,
+        831
+      ],
+      "sha256": "e6afc0269cd8624aeaad0dd55a90352f9ee5c11dffe40aab7afdce7aedf49e23"
+    },
+    "bandeira-mastro-vento": {
+      "path": "runtime/bandeira-mastro-vento.webp",
+      "width": 3000,
+      "height": 500,
+      "frames": 6,
+      "cellWidth": 500,
+      "crop": [
+        104,
+        32,
+        334,
+        449
+      ],
+      "pivot": [
+        160,
+        480
+      ],
+      "registrations": [
+        [
+          1,
+          18
+        ],
+        [
+          12,
+          19
+        ],
+        [
+          23,
+          19
+        ],
+        [
+          2,
+          18
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          23,
+          18
+        ]
+      ],
+      "source": "source/generated/bandeira-mastro-vento.png",
+      "sha256": "d283f4a35b9006ad325009b5826dff49bec7c14c2c264b50b69397e274a91dcc"
+    }
+  },
+  "objects": [
+    {
+      "asset": "obelisco",
+      "x": 1510,
+      "y": 735,
+      "h": 590,
+      "factor": 0.15
+    },
+    {
+      "asset": "palacio-branco",
+      "x": 1300,
+      "y": 799,
+      "w": 1500,
+      "factor": 0.45
+    },
+    {
+      "asset": "chafariz-base",
+      "x": 260,
+      "y": 825,
+      "w": 280,
+      "factor": 0.78
+    },
+    {
+      "asset": "bandeira-mastro-vento",
+      "x": 373.71937639198217,
+      "y": 826,
+      "w": 342.1826280623608,
+      "h": 460,
+      "factor": 0.9
+    },
+    {
+      "asset": "bandeira-mastro-vento",
+      "x": 1293.7193763919822,
+      "y": 826,
+      "w": 342.1826280623608,
+      "h": 460,
+      "factor": 0.9
+    },
+    {
+      "asset": "bandeira-mastro-vento",
+      "x": 2263.719376391982,
+      "y": 826,
+      "w": 342.1826280623608,
+      "h": 460,
+      "factor": 0.9
+    }
+  ],
+  "notes": [
+    "Primeiro lote: seis assets; chafariz ainda sem jatos; cenário ainda não integrado nem validado em combate.",
+    "Muralha, clones e armadura continuam entidades de gameplay; nunca pintar no fundo.",
+    "Somente o chefe verdadeiro tem sombra; preservar gramado simples."
+  ]
+}

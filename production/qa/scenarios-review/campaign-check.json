@@ -1,0 +1,342 @@
+{
+  "games": 56,
+  "unfinished": 0,
+  "results": [
+    {
+      "hero": "franco",
+      "boss": "zanata",
+      "winner": 0,
+      "frames": 7345
+    },
+    {
+      "hero": "franco",
+      "boss": "chupetinha",
+      "winner": 0,
+      "frames": 9405
+    },
+    {
+      "hero": "franco",
+      "boss": "pavanassi",
+      "winner": 0,
+      "frames": 4457
+    },
+    {
+      "hero": "franco",
+      "boss": "fujao",
+      "winner": 0,
+      "frames": 4902
+    },
+    {
+      "hero": "franco",
+      "boss": "pai-fujao",
+      "winner": 0,
+      "frames": 10371
+    },
+    {
+      "hero": "franco",
+      "boss": "laranjao",
+      "winner": 0,
+      "frames": 10404
+    },
+    {
+      "hero": "franco",
+      "boss": "djabo",
+      "winner": 0,
+      "frames": 10940
+    },
+    {
+      "hero": "belga",
+      "boss": "zanata",
+      "winner": 0,
+      "frames": 4698
+    },
+    {
+      "hero": "belga",
+      "boss": "chupetinha",
+      "winner": 0,
+      "frames": 9783
+    },
+    {
+      "hero": "belga",
+      "boss": "pavanassi",
+      "winner": 1,
+      "frames": 9338
+    },
+    {
+      "hero": "belga",
+      "boss": "fujao",
+      "winner": 0,
+      "frames": 7534
+    },
+    {
+      "hero": "belga",
+      "boss": "pai-fujao",
+      "winner": 0,
+      "frames": 7817
+    },
+    {
+      "hero": "belga",
+      "boss": "laranjao",
+      "winner": 0,
+      "frames": 10354
+    },
+    {
+      "hero": "belga",
+      "boss": "djabo",
+      "winner": 0,
+      "frames": 6704
+    },
+    {
+      "hero": "majis",
+      "boss": "zanata",
+      "winner": 0,
+      "frames": 6642
+    },
+    {
+      "hero": "majis",
+      "boss": "chupetinha",
+      "winner": 0,
+      "frames": 8197
+    },
+    {
+      "hero": "majis",
+      "boss": "pavanassi",
+      "winner": 0,
+      "frames": 13365
+    },
+    {
+      "hero": "majis",
+      "boss": "fujao",
+      "winner": 0,
+      "frames": 6774
+    },
+    {
+      "hero": "majis",
+      "boss": "pai-fujao",
+      "winner": 0,
+      "frames": 6955
+    },
+    {
+      "hero": "majis",
+      "boss": "laranjao",
+      "winner": 1,
+      "frames": 9752
+    },
+    {
+      "hero": "majis",
+      "boss": "djabo",
+      "winner": 1,
+      "frames": 7178
+    },
+    {
+      "hero": "trunks",
+      "boss": "zanata",
+      "winner": 0,
+      "frames": 6316
+    },
+    {
+      "hero": "trunks",
+      "boss": "chupetinha",
+      "winner": 0,
+      "frames": 5395
+    },
+    {
+      "hero": "trunks",
+      "boss": "pavanassi",
+      "winner": 0,
+      "frames": 6515
+    },
+    {
+      "hero": "trunks",
+      "boss": "fujao",
+      "winner": 1,
+      "frames": 9313
+    },
+    {
+      "hero": "trunks",
+      "boss": "pai-fujao",
+      "winner": 1,
+      "frames": 13360
+    },
+    {
+      "hero": "trunks",
+      "boss": "laranjao",
+      "winner": 0,
+      "frames": 5909
+    },
+    {
+      "hero": "trunks",
+      "boss": "djabo",
+      "winner": 0,
+      "frames": 10673
+    },
+    {
+      "hero": "ryuchi",
+      "boss": "zanata",
+      "winner": 0,
+      "frames": 4372
+    },
+    {
+      "hero": "ryuchi",
+      "boss": "chupetinha",
+      "winner": 1,
+      "frames": 10023
+    },
+    {
+      "hero": "ryuchi",
+      "boss": "pavanassi",
+      "winner": 0,
+      "frames": 11960
+    },
+    {
+      "hero": "ryuchi",
+      "boss": "fujao",
+      "winner": 0,
+      "frames": 6983
+    },
+    {
+      "hero": "ryuchi",
+      "boss": "pai-fujao",
+      "winner": 0,
+      "frames": 6047
+    },
+    {
+      "hero": "ryuchi",
+      "boss": "laranjao",
+      "winner": 1,
+      "frames": 6444
+    },
+    {
+      "hero": "ryuchi",
+      "boss": "djabo",
+      "winner": 0,
+      "frames": 5991
+    },
+    {
+      "hero": "mdep",
+      "boss": "zanata",
+      "winner": 0,
+      "frames": 5537
+    },
+    {
+      "hero": "mdep",
+      "boss": "chupetinha",
+      "winner": 0,
+      "frames": 10405
+    },
+    {
+      "hero": "mdep",
+      "boss": "pavanassi",
+      "winner": 0,
+      "frames": 6721
+    },
+    {
+      "hero": "mdep",
+      "boss": "fujao",
+      "winner": 1,
+      "frames": 7832
+    },
+    {
+      "hero": "mdep",
+      "boss": "pai-fujao",
+      "winner": 0,
+      "frames": 9186
+    },
+    {
+      "hero": "mdep",
+      "boss": "laranjao",
+      "winner": 0,
+      "frames": 9108
+    },
+    {
+      "hero": "mdep",
+      "boss": "djabo",
+      "winner": 1,
+      "frames": 6386
+    },
+    {
+      "hero": "chapuh",
+      "boss": "zanata",
+      "winner": 0,
+      "frames": 5190
+    },
+    {
+      "hero": "chapuh",
+      "boss": "chupetinha",
+      "winner": 0,
+      "frames": 8868
+    },
+    {
+      "hero": "chapuh",
+      "boss": "pavanassi",
+      "winner": 0,
+      "frames": 6349
+    },
+    {
+      "hero": "chapuh",
+      "boss": "fujao",
+      "winner": 1,
+      "frames": 8054
+    },
+    {
+      "hero": "chapuh",
+      "boss": "pai-fujao",
+      "winner": 0,
+      "frames": 7936
+    },
+    {
+      "hero": "chapuh",
+      "boss": "laranjao",
+      "winner": 0,
+      "frames": 5850
+    },
+    {
+      "hero": "chapuh",
+      "boss": "djabo",
+      "winner": 1,
+      "frames": 6845
+    },
+    {
+      "hero": "dney",
+      "boss": "zanata",
+      "winner": 0,
+      "frames": 4453
+    },
+    {
+      "hero": "dney",
+      "boss": "chupetinha",
+      "winner": 0,
+      "frames": 7133
+    },
+    {
+      "hero": "dney",
+      "boss": "pavanassi",
+      "winner": 1,
+      "frames": 12122
+    },
+    {
+      "hero": "dney",
+      "boss": "fujao",
+      "winner": 0,
+      "frames": 6800
+    },
+    {
+      "hero": "dney",
+      "boss": "pai-fujao",
+      "winner": 0,
+      "frames": 5697
+    },
+    {
+      "hero": "dney",
+      "boss": "laranjao",
+      "winner": 0,
+      "frames": 6708
+    },
+    {
+      "hero": "dney",
+      "boss": "djabo",
+      "winner": 1,
+      "frames": 6553
+    }
+  ]
+}

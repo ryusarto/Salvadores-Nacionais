@@ -1,0 +1,991 @@
+{
+  "safeWidth": 360,
+  "cases": [
+    {
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52077,
+      "maxAlpha": 102,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 51911,
+      "maxAlpha": 51,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52254,
+      "maxAlpha": 102,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52104,
+      "maxAlpha": 51,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52270,
+      "maxAlpha": 102,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52104,
+      "maxAlpha": 51,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52205,
+      "maxAlpha": 255,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52091,
+      "maxAlpha": 128,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52384,
+      "maxAlpha": 255,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52257,
+      "maxAlpha": 128,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52405,
+      "maxAlpha": 255,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52277,
+      "maxAlpha": 128,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 51979,
+      "maxAlpha": 102,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 51809,
+      "maxAlpha": 51,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52198,
+      "maxAlpha": 102,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52038,
+      "maxAlpha": 51,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 51977,
+      "maxAlpha": 102,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 51811,
+      "maxAlpha": 51,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52127,
+      "maxAlpha": 255,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 51993,
+      "maxAlpha": 128,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52336,
+      "maxAlpha": 255,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52201,
+      "maxAlpha": 128,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52115,
+      "maxAlpha": 255,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        110,
+        470
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 51987,
+      "maxAlpha": 128,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        877.25,
+        1237.25
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52144,
+      "maxAlpha": 102,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        877.25,
+        1237.25
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 51983,
+      "maxAlpha": 51,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        877.25,
+        1237.25
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52194,
+      "maxAlpha": 102,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        877.25,
+        1237.25
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52029,
+      "maxAlpha": 51,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        877.25,
+        1237.25
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52317,
+      "maxAlpha": 102,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        877.25,
+        1237.25
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52157,
+      "maxAlpha": 51,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        877.25,
+        1237.25
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52282,
+      "maxAlpha": 255,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        877.25,
+        1237.25
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52158,
+      "maxAlpha": 128,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        877.25,
+        1237.25
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52326,
+      "maxAlpha": 255,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        877.25,
+        1237.25
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52197,
+      "maxAlpha": 128,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        877.25,
+        1237.25
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52456,
+      "maxAlpha": 255,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        877.25,
+        1237.25
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 0,
+      "firePixels": 52325,
+      "maxAlpha": 128,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1723.5,
+        2083.5
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 51795,
+      "maxAlpha": 102,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1723.5,
+        2083.5
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 51642,
+      "maxAlpha": 51,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1723.5,
+        2083.5
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52078,
+      "maxAlpha": 102,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1723.5,
+        2083.5
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 51917,
+      "maxAlpha": 51,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1723.5,
+        2083.5
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 51830,
+      "maxAlpha": 102,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1723.5,
+        2083.5
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 51676,
+      "maxAlpha": 51,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1723.5,
+        2083.5
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 51918,
+      "maxAlpha": 255,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1723.5,
+        2083.5
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 51807,
+      "maxAlpha": 128,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1723.5,
+        2083.5
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52204,
+      "maxAlpha": 255,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1723.5,
+        2083.5
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52081,
+      "maxAlpha": 128,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1723.5,
+        2083.5
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 51962,
+      "maxAlpha": 255,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        1723.5,
+        2083.5
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 51838,
+      "maxAlpha": 128,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52060,
+      "maxAlpha": 102,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 51896,
+      "maxAlpha": 51,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52244,
+      "maxAlpha": 102,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52088,
+      "maxAlpha": 51,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52212,
+      "maxAlpha": 102,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52058,
+      "maxAlpha": 51,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52203,
+      "maxAlpha": 255,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52072,
+      "maxAlpha": 128,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52368,
+      "maxAlpha": 255,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52244,
+      "maxAlpha": 128,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52344,
+      "maxAlpha": 255,
+      "clipRestored": true
+    },
+    {
+      "safe": [
+        2130,
+        2490
+      ],
+      "width": 360,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "opacityRestored": true,
+      "segments": 9,
+      "safePixels": 0,
+      "firePixels": 52220,
+      "maxAlpha": 128,
+      "clipRestored": true
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "beforeFix": {
+    "safePixelsObserved": 841,
+    "callerOpacityIgnored": true,
+    "firstWarningCase": {
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 1,
+      "opacityRestored": true,
+      "segments": 10,
+      "safePixels": 53,
+      "firePixels": 53206,
+      "maxAlpha": 163,
+      "clipRestored": true
+    }
+  },
+  "rendererSHA256": "b73914526cddef9f12e1191a7aabbb867f2dd7234aeebf475e312c7f08bccc7a",
+  "testSHA256": "3b91fd7dc480f813254a9314d83c9e5c2adebb18b85944438c8a257b61c0767b",
+  "reproduction": "INFERNO_FIRE_REPORT=/tmp/inferno-floor-fire-browser.json node tests/browser/inferno-floor-fire.mjs",
+  "method": "Native Chrome Canvas pixel reads, production drawFloorFire and production SA3 generator; no gameplay tick or damage applied."
+}

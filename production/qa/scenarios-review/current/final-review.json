@@ -1,0 +1,780 @@
+{
+  "passed": true,
+  "conclusion": "Aprovado para a integração atual no escopo proporcional testado; sem achados abertos. CI com checkout completo continua necessário.",
+  "date": "2026-11-20",
+  "reviewer": "/root/aeroporto_revisao",
+  "scope": "Delta Laranjão PR39 e visita rápida aos sete cenários; campanha/menu completos reaproveitados por hash/trechos idênticos.",
+  "buildSHA256": "77a601215ea8b150f20f51155726658bcef8c2a009c2d7c42009ae3201a59420",
+  "officialBase": "ce1ae12cf3babc49917f49f225af426b44f713cc",
+  "approvedPriorIntegration": "5446091",
+  "counts": {
+    "stagesVisited": 7,
+    "stagePacks": 7,
+    "runtimeStageAssets": 330,
+    "spritePacks": 33,
+    "spriteStrips": 945,
+    "posters": 0,
+    "newLaranjaoStripsAvailable": 40,
+    "newLaranjaoFxAvailable": 24,
+    "sceneImagesLoaded": 269,
+    "audioBuffersDecoded": 42,
+    "sceneCameraViews": 9,
+    "laranjaoMechanicCaptures": 10,
+    "laranjaoCoreFxChecks": 17,
+    "nativeWallBoundsCases": 3,
+    "infernoActiveCameraViews": 3,
+    "mobileViewportViews": 1,
+    "unitPassed": 7,
+    "unitFileNotInitialized": 1
+  },
+  "executed": {
+    "method": "Menus e lutas Versus reais; snapshots das mecânicas via core e FX real com posições/recursos explícitos. Capturas training congeladas, não playtest humano.",
+    "environment": {
+      "browser": "Google Chrome158 headless via playwright-core",
+      "desktopViewport": [
+        1280,
+        720
+      ],
+      "mobileEmulatedViewport": [
+        844,
+        390
+      ],
+      "canvas": [
+        1920,
+        1080
+      ],
+      "serving": "Build local; proxy apenas para sprites oficiais ausentes, com SHA12/commit imutável verificados pelo servidor do programador."
+    },
+    "stages": [
+      {
+        "stage": "belem",
+        "runtime": {
+          "stage": {
+            "ready": true,
+            "loaded": 40,
+            "errors": [],
+            "groups": 36
+          },
+          "audio": {
+            "stage": "belem",
+            "available": true,
+            "active": false,
+            "muted": false,
+            "started": true,
+            "decoded": 6,
+            "gain": 0.14423315227031708,
+            "errors": []
+          },
+          "foe": "zanata"
+        },
+        "input": {
+          "from": 1040,
+          "to": 1089.6000000000004
+        },
+        "pause": true,
+        "resume": true,
+        "cameras": [
+          340
+        ],
+        "reduced": {
+          "shake": 0,
+          "flash": 0
+        },
+        "mechanics": null,
+        "mobile": null,
+        "spriteErrors": []
+      },
+      {
+        "stage": "palco",
+        "runtime": {
+          "stage": {
+            "ready": true,
+            "loaded": 78,
+            "errors": [],
+            "prepared": true
+          },
+          "audio": {
+            "stage": "palco",
+            "available": true,
+            "active": false,
+            "muted": false,
+            "started": true,
+            "decoded": 6,
+            "gain": 0.24030683934688568,
+            "errors": []
+          },
+          "foe": "chupetinha"
+        },
+        "input": {
+          "from": 1040,
+          "to": 1083.4000000000003
+        },
+        "pause": true,
+        "resume": true,
+        "cameras": [
+          340
+        ],
+        "reduced": {
+          "shake": 0,
+          "flash": 0
+        },
+        "mechanics": null,
+        "mobile": null,
+        "spriteErrors": []
+      },
+      {
+        "stage": "banheiros",
+        "runtime": {
+          "stage": {
+            "ready": true,
+            "loaded": 61,
+            "errors": [],
+            "prepared": true
+          },
+          "audio": {
+            "stage": "banheiros",
+            "available": true,
+            "active": false,
+            "muted": false,
+            "started": true,
+            "decoded": 6,
+            "gain": 0.3012119233608246,
+            "errors": []
+          },
+          "foe": "pavanassi"
+        },
+        "input": {
+          "from": 1040,
+          "to": 1089.6000000000004
+        },
+        "pause": true,
+        "resume": true,
+        "cameras": [
+          340
+        ],
+        "reduced": {
+          "shake": 0,
+          "flash": 0
+        },
+        "mechanics": null,
+        "mobile": null,
+        "spriteErrors": []
+      },
+      {
+        "stage": "aeroporto",
+        "runtime": {
+          "stage": {
+            "ready": true,
+            "loaded": 32,
+            "errors": [],
+            "prepared": true
+          },
+          "audio": {
+            "stage": "aeroporto",
+            "available": true,
+            "active": false,
+            "muted": false,
+            "started": true,
+            "decoded": 6,
+            "gain": 0.19009070098400116,
+            "errors": []
+          },
+          "foe": "fujao"
+        },
+        "input": {
+          "from": 1040,
+          "to": 1089.6000000000004
+        },
+        "pause": true,
+        "resume": true,
+        "cameras": [
+          340
+        ],
+        "reduced": {
+          "shake": 0,
+          "flash": 0
+        },
+        "mechanics": null,
+        "mobile": null,
+        "spriteErrors": []
+      },
+      {
+        "stage": "mansao",
+        "runtime": {
+          "stage": {
+            "ready": true,
+            "loaded": 21,
+            "errors": [],
+            "prepared": true
+          },
+          "audio": {
+            "stage": "mansao",
+            "available": true,
+            "active": false,
+            "muted": false,
+            "started": true,
+            "decoded": 6,
+            "gain": 0.17844346165657043,
+            "errors": []
+          },
+          "foe": "pai-fujao"
+        },
+        "input": {
+          "from": 1040,
+          "to": 1114.4000000000005
+        },
+        "pause": true,
+        "resume": true,
+        "cameras": [
+          340
+        ],
+        "reduced": {
+          "shake": 0,
+          "flash": 0
+        },
+        "mechanics": null,
+        "mobile": null,
+        "spriteErrors": []
+      },
+      {
+        "stage": "washington",
+        "runtime": {
+          "stage": {
+            "ready": true,
+            "loaded": 24,
+            "errors": [],
+            "prepared": true
+          },
+          "audio": {
+            "stage": "washington",
+            "available": true,
+            "active": false,
+            "muted": false,
+            "started": true,
+            "decoded": 6,
+            "gain": 0.23943914473056793,
+            "errors": []
+          },
+          "foe": "laranjao"
+        },
+        "input": {
+          "from": 1040,
+          "to": 1083.4000000000003
+        },
+        "pause": true,
+        "resume": true,
+        "cameras": [
+          0,
+          340,
+          680
+        ],
+        "reduced": {
+          "shake": 0,
+          "flash": 0
+        },
+        "mechanics": {
+          "checks": [
+            {
+              "passed": true,
+              "label": "Fake News cria duas cópias"
+            },
+            {
+              "passed": true,
+              "label": "Muralha nasce com seis HP"
+            },
+            {
+              "passed": true,
+              "label": "Muralha perde um HP por golpe 1",
+              "hp": 5
+            },
+            {
+              "passed": true,
+              "label": "Muralha perde um HP por golpe 2",
+              "hp": 4
+            },
+            {
+              "passed": true,
+              "label": "Muralha perde um HP por golpe 3",
+              "hp": 3
+            },
+            {
+              "passed": true,
+              "label": "Muralha perde um HP por golpe 4",
+              "hp": 2
+            },
+            {
+              "passed": true,
+              "label": "Muralha perde um HP por golpe 5",
+              "hp": 1
+            },
+            {
+              "passed": true,
+              "label": "Muralha perde um HP por golpe 6",
+              "hp": 0
+            },
+            {
+              "passed": true,
+              "label": "Sexto golpe derruba muralha"
+            },
+            {
+              "passed": true,
+              "label": "Limite de armadura três cargas"
+            },
+            {
+              "passed": true,
+              "label": "Armadura absorve e consome carga 1"
+            },
+            {
+              "passed": true,
+              "label": "Armadura absorve e consome carga 2"
+            },
+            {
+              "passed": true,
+              "label": "Armadura absorve e consome carga 3"
+            },
+            {
+              "passed": true,
+              "label": "Super real aciona banimento",
+              "remaining": 119
+            },
+            {
+              "passed": true,
+              "label": "Banido fica imune a golpe"
+            },
+            {
+              "passed": true,
+              "label": "Retorno aplica dano previsto",
+              "damage": 1500,
+              "steps": 119
+            },
+            {
+              "passed": true,
+              "label": "FX de retorno acompanha vítima e explode ao pousar",
+              "landSteps": 24
+            }
+          ],
+          "shots": [
+            "clones",
+            "clone-fx",
+            "wall-6",
+            "wall-3",
+            "wall-1",
+            "armor-3",
+            "armor-1",
+            "banished",
+            "return",
+            "landed"
+          ]
+        },
+        "mobile": {
+          "width": 844,
+          "scrollWidth": 844,
+          "touch": true
+        },
+        "spriteErrors": []
+      },
+      {
+        "stage": "inferno",
+        "runtime": {
+          "stage": {
+            "ready": true,
+            "loaded": 13,
+            "errors": [],
+            "prepared": true
+          },
+          "audio": {
+            "stage": "inferno",
+            "available": true,
+            "active": false,
+            "muted": false,
+            "started": true,
+            "decoded": 6,
+            "gain": 0.004579759668558836,
+            "errors": []
+          },
+          "foe": "djabo"
+        },
+        "input": {
+          "from": 1040,
+          "to": 1125.626619832318
+        },
+        "pause": true,
+        "resume": true,
+        "cameras": [
+          340
+        ],
+        "reduced": {
+          "shake": 0,
+          "flash": 0
+        },
+        "mechanics": {
+          "checks": [
+            {
+              "label": "Inferno Nacional preserva faixa segura360",
+              "passed": true,
+              "safe": [
+                1376.689359988086,
+                1736.689359988086
+              ],
+              "segments": [
+                [
+                  110,
+                  350
+                ],
+                [
+                  350,
+                  590
+                ],
+                [
+                  590,
+                  830
+                ],
+                [
+                  830,
+                  1070
+                ],
+                [
+                  1070,
+                  1310
+                ],
+                [
+                  1310,
+                  1376.689359988086
+                ],
+                [
+                  1736.689359988086,
+                  1790
+                ],
+                [
+                  1790,
+                  2030
+                ],
+                [
+                  2030,
+                  2270
+                ],
+                [
+                  2270,
+                  2490
+                ]
+              ]
+            }
+          ]
+        },
+        "mobile": null,
+        "spriteErrors": []
+      }
+    ],
+    "wallBounds": {
+      "passed": true,
+      "method": "Funções reais do adaptador nativo; três estados do collider120x640. Não depende de mestres ausentes.",
+      "rows": [
+        {
+          "hp": 6,
+          "asset": "muralha-erguida",
+          "index": 2,
+          "actual": [
+            1540,
+            290,
+            120,
+            639.9999999999999
+          ],
+          "expected": [
+            1540,
+            290,
+            120,
+            640
+          ]
+        },
+        {
+          "hp": 3,
+          "asset": "muralha-danos",
+          "index": 3,
+          "actual": [
+            1540,
+            290,
+            119.99999999999999,
+            640
+          ],
+          "expected": [
+            1540,
+            290,
+            120,
+            640
+          ]
+        },
+        {
+          "hp": 1,
+          "asset": "muralha-danos",
+          "index": 5,
+          "actual": [
+            1540,
+            290,
+            120,
+            640
+          ],
+          "expected": [
+            1540,
+            290,
+            120,
+            640
+          ]
+        }
+      ]
+    },
+    "unit": {
+      "passed": 7,
+      "filesNotInitialized": 1,
+      "reason": "production/sprites/source/laranjao-v1/runtime-manifest.json ausente no checkout parcial; ver laranjao-targeted.tap. Não é suíte totalmente verde nem defeito de gameplay."
+    },
+    "errors": {
+      "javascript": [],
+      "network": [],
+      "http": []
+    }
+  },
+  "visualInspection": {
+    "inspected": [
+      "seven-current.jpg",
+      "laranjao-current.jpg",
+      "washington-clones.png",
+      "washington-wall-6.png",
+      "washington-wall-1.png",
+      "washington-mobile.png"
+    ],
+    "result": "Novo Laranjão legível e apoiado no piso. Duas cópias compartilham pose/aparência/manchetes; somente o original tem sombra de chão. Surgimento/troca aparece igualmente nos candidatos. Armadura e cargas legíveis. Muralha nativa mantém altura/apoio, com rachaduras visíveis em HP3/1; o sexto golpe remove a entidade. Banimento oculta a vítima; retorno segue sua posição no ar e o efeito de pouso acontece no chão. Nenhuma regressão visual aberta nas sete visitas rápidas.",
+    "nativeWallDecision": "Precedência da muralha nativa PR39 é comportamento desejado esclarecido pelo coordenador; packWashington permanece fallback. A mudança de precedência não foi tratada como defeito.",
+    "stageAssets": "Os sete manifestos são idênticos à revisão982; apoios/alpha/todos os quadros já revisados permanecem evidência anterior, sem alegar repetição exaustiva agora."
+  },
+  "sourceReuse": {
+    "proof": "source-review.json",
+    "unchangedFiles": [
+      {
+        "path": "src/core/match.js",
+        "before": "a45c7c31021604861b0a7d4d8e34a7f75862d85c73c98f313caf20880377a837",
+        "after": "a45c7c31021604861b0a7d4d8e34a7f75862d85c73c98f313caf20880377a837",
+        "unchanged": true
+      },
+      {
+        "path": "src/core/combat.js",
+        "before": "133ad2875e7b297c282ac463579d8297a68af260add6780451b927adfb9fddfd",
+        "after": "133ad2875e7b297c282ac463579d8297a68af260add6780451b927adfb9fddfd",
+        "unchanged": true
+      },
+      {
+        "path": "src/core/entities.js",
+        "before": "14110994d86b91942fb030ef6856c903d02589d679849f54703154ae161ab51f",
+        "after": "14110994d86b91942fb030ef6856c903d02589d679849f54703154ae161ab51f",
+        "unchanged": true
+      },
+      {
+        "path": "src/data/characters/djabo.js",
+        "before": "9f5a5cb45f76d56a66b310e3874fe3d748d3c446b86bbc7571744e9762e5211e",
+        "after": "9f5a5cb45f76d56a66b310e3874fe3d748d3c446b86bbc7571744e9762e5211e",
+        "unchanged": true
+      },
+      {
+        "path": "src/render/boss-art.js",
+        "before": "b751b8d070fbb91d9d029c6721db751c73b9fbff219c46d7ef6a8a0da04d2d3b",
+        "after": "b751b8d070fbb91d9d029c6721db751c73b9fbff219c46d7ef6a8a0da04d2d3b",
+        "unchanged": true
+      },
+      {
+        "path": "src/render/stage-packs.js",
+        "before": "c7d47e72191f4e34c91fec188e21c6137e8e54d82b69016443a157260655c154",
+        "after": "c7d47e72191f4e34c91fec188e21c6137e8e54d82b69016443a157260655c154",
+        "unchanged": true
+      },
+      {
+        "path": "src/render/belem-stage.js",
+        "before": "f9e23af82a0802eda6317ff7512e97cc2a6ccc48f4c2f2e91ea98c1f9bdf1015",
+        "after": "f9e23af82a0802eda6317ff7512e97cc2a6ccc48f4c2f2e91ea98c1f9bdf1015",
+        "unchanged": true
+      },
+      {
+        "path": "src/data/belem-stage.js",
+        "before": "c90e8624405d632540a529f3a78d663906e0d5f6da86c1dbe9fa21b6cd619d05",
+        "after": "c90e8624405d632540a529f3a78d663906e0d5f6da86c1dbe9fa21b6cd619d05",
+        "unchanged": true
+      },
+      {
+        "path": "src/data/stages.js",
+        "before": "cf630441f37e21a825a398070aaec296f83c848dbcfe0237c29f35e2d55ee297",
+        "after": "cf630441f37e21a825a398070aaec296f83c848dbcfe0237c29f35e2d55ee297",
+        "unchanged": true
+      },
+      {
+        "path": "src/ui/story.js",
+        "before": "f7060b9a4cdbb2619243482265f0dac9492eb57291c28a2fb80a7d15122b5a92",
+        "after": "f7060b9a4cdbb2619243482265f0dac9492eb57291c28a2fb80a7d15122b5a92",
+        "unchanged": true
+      },
+      {
+        "path": "src/data/story.js",
+        "before": "ee30acc29f4d9c52fb042bad2eb33192a5a64fc05a252ce8d8342998e0097899",
+        "after": "ee30acc29f4d9c52fb042bad2eb33192a5a64fc05a252ce8d8342998e0097899",
+        "unchanged": true
+      },
+      {
+        "path": "src/ui/preferences.js",
+        "before": "572b6cf5edf808985bbbd78201396a03d25d86c865b4f720924dad3689183f6a",
+        "after": "572b6cf5edf808985bbbd78201396a03d25d86c865b4f720924dad3689183f6a",
+        "unchanged": true
+      },
+      {
+        "path": "src/ui/retro-screens.js",
+        "before": "93182d034ec5e16d2dd1c6e49d422b78e750c28e850ad87bb393962dd1ef0727",
+        "after": "93182d034ec5e16d2dd1c6e49d422b78e750c28e850ad87bb393962dd1ef0727",
+        "unchanged": true
+      },
+      {
+        "path": "src/render/retro-ui.js",
+        "before": "1f0a4689e5e85661ff814bef9a1e9446b95d81bb664dac31c5315fbd00ec5e83",
+        "after": "1f0a4689e5e85661ff814bef9a1e9446b95d81bb664dac31c5315fbd00ec5e83",
+        "unchanged": true
+      },
+      {
+        "path": "src/ui/story-screens.js",
+        "before": "2f64e814a5e610ae8a70dfdc1ce046471c61818504e96198e3f5d4a99f3d83ea",
+        "after": "2f64e814a5e610ae8a70dfdc1ce046471c61818504e96198e3f5d4a99f3d83ea",
+        "unchanged": true
+      },
+      {
+        "path": "src/index.html",
+        "before": "09018b18e70ed6e2ea2b330980d932763486d54a4c37e2ff7e2f3b455ee85939",
+        "after": "09018b18e70ed6e2ea2b330980d932763486d54a4c37e2ff7e2f3b455ee85939",
+        "unchanged": true
+      }
+    ],
+    "appSlices": [
+      {
+        "start": "  function tick() {",
+        "end": "  function backdrop() {",
+        "sha256": "d949aea0c385648c19afbc5c4418c4e1c22c6ca1867c10e4cafe077fb237834b",
+        "unchanged": true
+      },
+      {
+        "start": "  function syncAccessibleMenus() {",
+        "end": "  function render() {",
+        "sha256": "bfb9f5ee7c63bae998757607bb6ce2d009fc31fb37daffaaa96ec6192e8c24c5",
+        "unchanged": true
+      },
+      {
+        "start": "  function startStory() {",
+        "end": "  function setDiff(i) {",
+        "sha256": "70e286343273ebab853fd3436c28d012d6be91b462cda6ff4f5e6fd33d2a2ec5",
+        "unchanged": true
+      },
+      {
+        "start": "const MENU =",
+        "end": "const PAUSE =",
+        "sha256": "958e7032e9e3b8bbb97b1c9813313fe71043af5a78a8f094c955fb269f108cff",
+        "unchanged": true
+      }
+    ],
+    "stageManifestHashes": {
+      "belem": "3a4381c693225bb37848ee77bda9c2d004f9411b54bd3959bcd4683489bdb90c",
+      "palco": "678bf3d74c266ecc5d2e2c0fda4d82aeefe4ee185497aa8bd36e2ab36fe2e1f7",
+      "banheiros": "9ab54baf4efca6e09b9fd1257d2c57cf3cc5af610590ea1a2398238162f47a05",
+      "aeroporto": "7c9bd8fdd1e32686657a4349f2cc733cffe06ce5d844199c7260d3aa2ca51124",
+      "mansao": "7abf76f363de5184ed44fb3cbcc5df1646ae9db2ac87f7f3bfa74895071756d1",
+      "washington": "8baaef39b75eeabf8e34ad2e866e262cdb3c7f1673de7a306000f4dd21bfb486",
+      "inferno": "f8c58d7e09d1a893cdfe65a779e8785f6265ce0fdd5aeb866cadb49f026fd579"
+    },
+    "indexAudit": {
+      "__SPRITES": {
+        "packs": 33,
+        "references": 945,
+        "gitFiles": 945,
+        "missing": 0,
+        "extra": 0,
+        "duplicates": 0
+      },
+      "__SPRITEPOSTERS": {
+        "packs": 0,
+        "references": 0,
+        "gitFiles": 0,
+        "missing": 0,
+        "extra": 0,
+        "duplicates": 0
+      }
+    },
+    "indexesIdenticalToOfficial": true
+  },
+  "reusedEvidence": [
+    {
+      "report": "../runtime/final-review.json",
+      "baseline": "5446091",
+      "scope": "Campanha completa/sete capítulos, menusPR36, restart/continue/finais/progresso,21vistas e7viewports; provas de16arquivos e4trechos relevantes do app idênticos em source-review.json.",
+      "repeatedNow": "Sete entradas Versus reais, input/pausa/retomada/áudio/render; Washington aprofundado.",
+      "notClaimedAsRerun": true
+    },
+    {
+      "report": "../../inferno-review/final-review.json",
+      "scope": "216 casos do clip/alpha, duas formas/transformação/reset/timing; core/Djabo/boss-art idênticos.",
+      "repeatedNow": "Inferno carregado nesta build e SA3 forma1 ativo nas câmeras0/340/680; geometria360 validada.",
+      "notClaimedAsRerun": true
+    },
+    {
+      "report": "../../inferno-review-v2/final-review.json",
+      "scope": "Seis poses de esqueletos, fogo ambiental e comparações pixel anteriores; manifestoInferno idêntico.",
+      "notClaimedAsRerun": true
+    }
+  ],
+  "findings": [],
+  "limitations": [
+    "Automação de navegador e inspeção de capturas; sem playtest humano, controle físico ou telefone real.",
+    "Viewport mobile emulado; não certifica ergonomia/multitouch, latência ou desempenho.",
+    "A bateria unitária de arte não inicializou por runtime-manifest.json ausente no checkout parcial; sete testes disponíveis passaram. Não se declara suíte totalmente verde; CI completo precisa validar esses mestres.",
+    "Não foram baixadas ou exercitadas todas as945tiras. Inventário bidirecional comprova referências, não inspeção de todos os quadros de personagem.",
+    "Muralha120×640 foi validada pelas funções reais do adaptador em6/3/1HP; os seis golpes e remoção usaram core real. Não é um oráculo pixel de todas as animações.",
+    "safe[] garante360 px sem fogo; o core pode omitir fragmentos menores que30 e criar lacunas adicionais.",
+    "Campanha/menu completos são evidência anterior por fonte idêntica, explicitamente reaproveitada; sem nova vitória humana ou nova campanha integral nesta revisão.",
+    "PR37 continua fora do escopo e não foi presumido integrado; sem ensaio profundo de desempenho.",
+    "Não houve alteração de produção/Git, publicação ou merge pelo revisor."
+  ],
+  "privacy": "Prefixo pessoal do repositório normalizado para<repo> somente nos novos logs/reports. Hashes de fontes e assets não alterados; runtime982 congelado permaneceu intacto.",
+  "evidence": {
+    "scripts": [
+      "run-current.mjs",
+      "review-source.mjs",
+      "laranjao-probes.mjs",
+      "make-contacts.mjs",
+      "finalize-current.mjs"
+    ],
+    "reports": [
+      "source-review.json",
+      "browser-review.json",
+      "wall-bounds.json",
+      "laranjao-targeted.tap"
+    ],
+    "captures": [
+      "aeroporto-camera-340.png",
+      "banheiros-camera-340.png",
+      "belem-camera-340.png",
+      "inferno-active-camera-0.png",
+      "inferno-active-camera-340.png",
+      "inferno-active-camera-680.png",
+      "inferno-camera-340.png",
+      "laranjao-current.jpg",
+      "mansao-camera-340.png",
+      "palco-camera-340.png",
+      "seven-current.jpg",
+      "washington-armor-1.png",
+      "washington-armor-3.png",
+      "washington-banished.png",
+      "washington-camera-0.png",
+      "washington-camera-340.png",
+      "washington-camera-680.png",
+      "washington-clone-fx.png",
+      "washington-clones.png",
+      "washington-landed.png",
+      "washington-mobile.png",
+      "washington-return.png",
+      "washington-wall-1.png",
+      "washington-wall-3.png",
+      "washington-wall-6.png"
+    ]
+  },
+  "processes": "Runner encerrou normalmente e browser.close() executou no finally. Proxy55022 pertence ao programador, que será avisado para encerrar."
+}

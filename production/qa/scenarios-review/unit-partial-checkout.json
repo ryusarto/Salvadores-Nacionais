@@ -1,0 +1,26 @@
+{
+  "phase": "initial local partial checkout, before Belem suspension fix",
+  "exitCode": 1,
+  "tests": 226,
+  "pass": 209,
+  "fail": 17,
+  "duration_ms": 1335.340959,
+  "missingArtPaths": [
+    "<repo>/production/sprites/final/dney/andar-tras.webp",
+    "<repo>/production/sprites/final/chapuh/",
+    "<repo>/production/sprites/source/chupetinha-v3/runtime-manifest.json",
+    "<repo>/production/sprites/final/franco/parado.webp",
+    "<repo>/production/sprites/source/fujao-v1/runtime-manifest.json",
+    "<repo>/production/sprites/final/majis/",
+    "<repo>/production/sprites/source/majis-v2/quadros-768/parado-1.png",
+    "<repo>/production/sprites/source/mdep-v3/manifest.json",
+    "<repo>/production/sprites/source/pai-fujao-v1/runtime-manifest.json",
+    "<repo>/production/sprites/source/pavanassi-v1/runtime-manifest.json",
+    "<repo>/production/sprites/final/trunks/",
+    "<repo>/production/sprites/source/trunks-v3/manifest.json",
+    "<repo>/production/sprites/source/zanata-v1/manifest-direita.json"
+  ],
+  "scope": "Partial sprite checkout. Source/atlas absence is a local validation limit, not accepted as a passing full suite. Full checkout CI must pass before merge.",
+  "followUp": "Belem-specific updated tests were executed independently after the fix (5/5); the complete source/atlas-dependent suite remains subject to full-checkout CI before merge.",
+  "pathNormalization": "Local checkout prefix replaced with <repo> for the public report."
+}

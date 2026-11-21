@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "buildSHA256": "6226dd27b0f3ff292989645ad2b9da798656bd8917505ccfb8f5c41454952638",
+  "method": "Entrada real Versus seguida de fixture core de embarque; somente recaptura visual no canto natural.",
+  "checks": [
+    {
+      "label": "Embarque sozinho recupera vida",
+      "passed": true,
+      "stairsX": 2300,
+      "heal": 1400
+    },
+    {
+      "label": "Aproximação nega embarque",
+      "passed": true
+    }
+  ],
+  "camera": 680,
+  "bossX": 2300,
+  "heroX": 1400,
+  "board": 40,
+  "errors": [],
+  "http": []
+}

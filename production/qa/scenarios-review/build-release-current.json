@@ -1,0 +1,85 @@
+{
+  "stage": "inferno",
+  "baseMain": "ce1ae12cf3babc49917f49f225af426b44f713cc",
+  "officialReleaseSHA256": "5e7e1b306b818d6c9eed93ff7a11d311890a230ddae1b53d253ce52dcc53d4b9",
+  "spritePacks": 33,
+  "spriteReferences": 945,
+  "spritePosters": 0,
+  "spriteIndexAudit": {
+    "__SPRITES": {
+      "packs": 33,
+      "references": 945,
+      "gitFiles": 945,
+      "missing": 0,
+      "extra": 0,
+      "duplicates": 0
+    },
+    "__SPRITEPOSTERS": {
+      "packs": 0,
+      "references": 0,
+      "gitFiles": 0,
+      "missing": 0,
+      "extra": 0,
+      "duplicates": 0
+    }
+  },
+  "characterArt": "official index is complete in both directions against the current Git tree, preserved without changes; no character artwork changed",
+  "assets": 22,
+  "runtimeBytes": 4048458,
+  "ground": {
+    "asset": "basalto",
+    "projection": "flat"
+  },
+  "manifestSHA256": "f8c58d7e09d1a893cdfe65a779e8785f6265ce0fdd5aeb866cadb49f026fd579",
+  "stageAssets": {
+    "belem": 46,
+    "aeroporto": 41,
+    "banheiros": 70,
+    "inferno": 22,
+    "mansao": 30,
+    "palco": 88,
+    "washington": 33
+  },
+  "htmlSHA256": "77a601215ea8b150f20f51155726658bcef8c2a009c2d7c42009ae3201a59420",
+  "reproduction": "node tools/build-stage-release.mjs --stage=inferno --base=ce1ae12cf3babc49917f49f225af426b44f713cc --report=production/qa/scenarios-review/build-release-current.json",
+  "limits": [
+    "stage assets and required UI packs must be present locally",
+    "full character artwork is not downloaded by this sparse-checkout build; every official strip/poster URL is checked for exact Git-tree coverage"
+  ],
+  "totalStageAssets": 330,
+  "currentLaranjaoPacks": {
+    "laranjao": 40,
+    "laranjao-fx": 24
+  },
+  "characterGitTreeSHA": "4bcb032a9244e6ccd2f98c8e40c32f6858bde0b8",
+  "priorReviewedBaseline": {
+    "report": "build-release.json",
+    "baseMain": "982197fb37844c45d612f82d5d224518ebbaca29",
+    "htmlSHA256": "6226dd27b0f3ff292989645ad2b9da798656bd8917505ccfb8f5c41454952638"
+  },
+  "scope": "Current maince1 integration preserves new Laranjão40+24FX, current Fujão/Pai art and menus, and all seven scene packs including Belém supports and Inferno visualv2.",
+  "qaStatus": "passed current runtime delta review; full-checkout CI required before merge",
+  "qaReview": {
+    "file": "current/final-review.json",
+    "passed": true,
+    "sha256": "2086bf06fb6ddcbf6cca32ca3fe149dd843eb12a50211f25a07e15dbb2672b8c",
+    "scope": "Current Laranjão art/shared FX plus seven-arena smoke; prior complete runtime review remains preserved."
+  },
+  "qaProxy": {
+    "baseMain": "ce1ae12cf3babc49917f49f225af426b44f713cc",
+    "buildSHA256": "77a601215ea8b150f20f51155726658bcef8c2a009c2d7c42009ae3201a59420",
+    "verifiedRemoteSprites": 276,
+    "downloadedBytes": 119180590,
+    "cachedBytes": 119180590,
+    "cacheLimit": 201326592,
+    "cacheEntries": 276,
+    "active": 0,
+    "pid": 19651,
+    "closed": true,
+    "sessionExitCode": 0,
+    "serverScript": "build-server-current.mjs",
+    "ownBrowserSessionsLaunched": 0,
+    "reviewerBrowserCloseConfirmed": true
+  },
+  "lock": "LOCK — current ce1 build and QA cleanup acknowledged; no further writes by the build/proxy agent."
+}

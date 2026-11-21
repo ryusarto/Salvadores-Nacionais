@@ -1,0 +1,512 @@
+{
+  "fontEvidence": {
+    "fontPresent": true,
+    "licensePresent": true,
+    "fontSHA256": "4160a7311de9342674cce9160cde9fcbb30f48190397d86ff1b70b455af65824",
+    "licenseMentionsOFL": true
+  },
+  "verdict": "approved-for-static-assets-scope",
+  "assets": 22,
+  "sourcePNGs": 15,
+  "stripsCount": 4,
+  "framesCount": 24,
+  "runtimeBytes": 4035514,
+  "manifestSHA256": "589dae1453f72810e16f156daa65341bd07cef31af5e64d9165e2b50c22e73e7",
+  "interactive": [],
+  "anchors": {
+    "throneBase": {
+      "x": 1300,
+      "y": 708.8932584269663
+    },
+    "stairsBase": {
+      "x": 1300,
+      "y": 826
+    },
+    "ceilingMount": {
+      "x": 900,
+      "y": 30
+    },
+    "portalBase": {
+      "x": 360,
+      "y": 826
+    },
+    "leftBrazier": {
+      "x": 600,
+      "y": 526
+    },
+    "rightBrazier": {
+      "x": 2100,
+      "y": 526
+    },
+    "fightFeet": {
+      "x": 1300,
+      "y": 930
+    },
+    "backgroundLavaEdge": {
+      "x": 1300,
+      "y": 815
+    }
+  },
+  "world": {
+    "width": 2600,
+    "height": 1080,
+    "viewWidth": 1920,
+    "cameraMax": 680,
+    "feetY": 930,
+    "groundTopY": 826
+  },
+  "strips": {
+    "corrente-balanco": {
+      "frames": [
+        {
+          "bounds": [
+            174,
+            19,
+            326,
+            476
+          ],
+          "opaqueBounds": [
+            174,
+            20,
+            326,
+            475
+          ],
+          "baseCenter": 255,
+          "edgePixels": 0,
+          "rgbaSHA256": "3094258b527870a3999e7c66ad78ce8aaa0eee4921b04f47d08e925eec2162fc"
+        },
+        {
+          "bounds": [
+            174,
+            19,
+            372,
+            467
+          ],
+          "opaqueBounds": [
+            174,
+            20,
+            371,
+            466
+          ],
+          "baseCenter": 331.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "c734e5d50a114f42a70248ed2fa470c0420c85e920f817c7b6bf13dd4d06949b"
+        },
+        {
+          "bounds": [
+            174,
+            19,
+            443,
+            446
+          ],
+          "opaqueBounds": [
+            175,
+            20,
+            442,
+            445
+          ],
+          "baseCenter": 399.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "e295fde1694975bf0be7a8c341e3d71168782e44c320c5a095aa51829ff8e3a1"
+        },
+        {
+          "bounds": [
+            174,
+            19,
+            385,
+            461
+          ],
+          "opaqueBounds": [
+            174,
+            20,
+            384,
+            461
+          ],
+          "baseCenter": 344,
+          "edgePixels": 0,
+          "rgbaSHA256": "6fdafd0bb1ce33b82b5bba7b9236519882592ba924cc06e373c6e6915b5b7f62"
+        },
+        {
+          "bounds": [
+            174,
+            19,
+            327,
+            472
+          ],
+          "opaqueBounds": [
+            174,
+            20,
+            326,
+            471
+          ],
+          "baseCenter": 240.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "b8a781ef62972013b0e3b4ff96ae413c15d833933e0c07313a21238a77a9d6fa"
+        },
+        {
+          "bounds": [
+            120,
+            19,
+            327,
+            472
+          ],
+          "opaqueBounds": [
+            121,
+            20,
+            326,
+            471
+          ],
+          "baseCenter": 163,
+          "edgePixels": 0,
+          "rgbaSHA256": "a8caa1e86178d1127c994eb7f711105e131694904898114425c38b57c83fac49"
+        }
+      ],
+      "registration": "fixed-ceiling-mount",
+      "pivot": [
+        250,
+        20
+      ],
+      "source": "source/generated/corrente-balanco.png"
+    },
+    "fogo-braseiro": {
+      "frames": [
+        {
+          "bounds": [
+            120,
+            265,
+            379,
+            481
+          ],
+          "opaqueBounds": [
+            121,
+            266,
+            378,
+            480
+          ],
+          "baseCenter": 249.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "fbd844e1f9d100cecc30dd828cfe857ac997338c144af1b1620dabda229c9c52"
+        },
+        {
+          "bounds": [
+            121,
+            183,
+            384,
+            481
+          ],
+          "opaqueBounds": [
+            121,
+            183,
+            383,
+            480
+          ],
+          "baseCenter": 250,
+          "edgePixels": 0,
+          "rgbaSHA256": "c2146f9e1328a6b345c28bde0e74fcf4000ae419b20239b9a307546181673a7e"
+        },
+        {
+          "bounds": [
+            120,
+            99,
+            379,
+            481
+          ],
+          "opaqueBounds": [
+            121,
+            100,
+            378,
+            480
+          ],
+          "baseCenter": 249.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "a8ef6016a071c1708495a80623395a36aebfacf266230ca84ba0980166a722ef"
+        },
+        {
+          "bounds": [
+            120,
+            115,
+            378,
+            481
+          ],
+          "opaqueBounds": [
+            121,
+            116,
+            377,
+            480
+          ],
+          "baseCenter": 249,
+          "edgePixels": 0,
+          "rgbaSHA256": "82f0c7bf4e4457d2776c354a187ac691fc103d1f1e6d95b1a1edf4ac22843767"
+        },
+        {
+          "bounds": [
+            120,
+            197,
+            379,
+            481
+          ],
+          "opaqueBounds": [
+            121,
+            198,
+            378,
+            480
+          ],
+          "baseCenter": 249.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "618985c1bb62d21b8441994cb1ed0917004e7cab1b0977e49a2149e7cd55ccfa"
+        },
+        {
+          "bounds": [
+            120,
+            262,
+            379,
+            481
+          ],
+          "opaqueBounds": [
+            121,
+            262,
+            379,
+            480
+          ],
+          "baseCenter": 250,
+          "edgePixels": 0,
+          "rgbaSHA256": "42f9098e462271bb980a1c84e6360b1ca84dd0ce5e8c68e8b2c72f616d579696"
+        }
+      ],
+      "registration": "fixed-base",
+      "pivot": [
+        250,
+        480
+      ],
+      "source": "source/generated/fogo-braseiro.png"
+    },
+    "lava-distante": {
+      "frames": [
+        {
+          "bounds": [
+            26,
+            394,
+            475,
+            481
+          ],
+          "opaqueBounds": [
+            27,
+            395,
+            474,
+            480
+          ],
+          "baseCenter": 250.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "bb6f240c5cbc6fd297871ee3cf7982ab6cf95649e6b97564b752295c42b4c675"
+        },
+        {
+          "bounds": [
+            25,
+            394,
+            473,
+            481
+          ],
+          "opaqueBounds": [
+            27,
+            395,
+            471,
+            480
+          ],
+          "baseCenter": 249,
+          "edgePixels": 0,
+          "rgbaSHA256": "cd6940f7ee056c4da2e3aeb28c8aaa32dbb4ce9962980d9fb2c22b97ae35b37f"
+        },
+        {
+          "bounds": [
+            25,
+            394,
+            473,
+            481
+          ],
+          "opaqueBounds": [
+            27,
+            395,
+            472,
+            480
+          ],
+          "baseCenter": 249.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "292de019f747c71793e127d3b12e2786195ec07992b69aadeecee40c2b0fe871"
+        },
+        {
+          "bounds": [
+            25,
+            393,
+            474,
+            481
+          ],
+          "opaqueBounds": [
+            26,
+            394,
+            472,
+            480
+          ],
+          "baseCenter": 249,
+          "edgePixels": 0,
+          "rgbaSHA256": "95094747c0d228e530dd408c7dc719c4cb8763e8429e9f4f93bad197754b20c2"
+        },
+        {
+          "bounds": [
+            27,
+            393,
+            474,
+            481
+          ],
+          "opaqueBounds": [
+            28,
+            393,
+            473,
+            480
+          ],
+          "baseCenter": 250.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "bd14b2af4be6cfddad95cad90e897237169c313558a6731f1b0d619b7c4182f8"
+        },
+        {
+          "bounds": [
+            26,
+            393,
+            474,
+            481
+          ],
+          "opaqueBounds": [
+            27,
+            394,
+            473,
+            480
+          ],
+          "baseCenter": 250,
+          "edgePixels": 0,
+          "rgbaSHA256": "a652b647d372c9da39396fde5090c45d290ed8d45abc825ccc72f45a00b9ffc5"
+        }
+      ],
+      "registration": "fixed-base",
+      "pivot": [
+        250,
+        480
+      ],
+      "source": "source/generated/lava-distante.png"
+    },
+    "almas-coro": {
+      "frames": [
+        {
+          "bounds": [
+            73,
+            84,
+            426,
+            481
+          ],
+          "opaqueBounds": [
+            74,
+            85,
+            425,
+            480
+          ],
+          "baseCenter": 249.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "33b96c98bc2d9b8f9f6ac9ec73e5fc947bf00113cacbc7d1a6506d21ddbf4945"
+        },
+        {
+          "bounds": [
+            71,
+            84,
+            428,
+            481
+          ],
+          "opaqueBounds": [
+            72,
+            85,
+            427,
+            480
+          ],
+          "baseCenter": 249.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "f2328428e7398647f87eca7360c1ebe731908dd5c9c34a47b9150c89229b3cd0"
+        },
+        {
+          "bounds": [
+            34,
+            84,
+            430,
+            481
+          ],
+          "opaqueBounds": [
+            35,
+            85,
+            429,
+            480
+          ],
+          "baseCenter": 250,
+          "edgePixels": 0,
+          "rgbaSHA256": "685d2ff3f3004e0414739406a356c315c72fd16f121c97a99dc922f10b0ee357"
+        },
+        {
+          "bounds": [
+            69,
+            89,
+            429,
+            482
+          ],
+          "opaqueBounds": [
+            72,
+            90,
+            428,
+            480
+          ],
+          "baseCenter": 250,
+          "edgePixels": 0,
+          "rgbaSHA256": "4a60149a15597d67c3507b23326b2f09eb01247c2adb18698afa11a1360fac06"
+        },
+        {
+          "bounds": [
+            43,
+            89,
+            456,
+            483
+          ],
+          "opaqueBounds": [
+            44,
+            90,
+            454,
+            480
+          ],
+          "baseCenter": 250.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "1682faff168b33047bdc1e98bee9db2aa4979fda14e8597fc14b03cca267f4ba"
+        },
+        {
+          "bounds": [
+            72,
+            89,
+            431,
+            483
+          ],
+          "opaqueBounds": [
+            73,
+            90,
+            428,
+            480
+          ],
+          "baseCenter": 250.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "360fc2bdfd9dee19659849bbe06cd94e5db67c3e9076e893162e967b74b24c65"
+        }
+      ],
+      "registration": "fixed-base",
+      "pivot": [
+        250,
+        480
+      ],
+      "source": "source/generated/almas-coro-v3.png"
+    }
+  },
+  "errors": [],
+  "limits": [
+    "Hashes/dimensions/crops/alpha registration; selected rendered visual inspection is reported separately."
+  ]
+}

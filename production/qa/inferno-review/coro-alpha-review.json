@@ -1,0 +1,47 @@
+{
+  "source": "production/stages/inferno/source/generated/almas-coro-v3.png",
+  "width": 1536,
+  "height": 1024,
+  "residualAlpha1to7Pixels": 856958,
+  "cellCornerRGBA": [
+    [
+      148,
+      142,
+      140,
+      1
+    ],
+    [
+      143,
+      137,
+      135,
+      1
+    ],
+    [
+      143,
+      136,
+      134,
+      1
+    ],
+    [
+      50,
+      47,
+      47,
+      3
+    ],
+    [
+      45,
+      41,
+      41,
+      2
+    ],
+    [
+      43,
+      40,
+      40,
+      3
+    ]
+  ],
+  "cornerMaxAlpha": 3,
+  "sourceUnmodified": true,
+  "darkComposite": "coro-source-dark.png"
+}

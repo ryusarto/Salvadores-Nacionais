@@ -1,0 +1,53 @@
+{
+  "stage": "inferno",
+  "baseMain": "2d7f197874cfc194d7c65d172b4f5582178b09a3",
+  "spritePacks": 26,
+  "spriteReferences": 722,
+  "spritePosters": 0,
+  "characterArt": "official index preserved exactly; all URLs checked against the official Git tree and character artwork unchanged",
+  "assets": 22,
+  "runtimeBytes": 4048458,
+  "ground": {
+    "asset": "basalto",
+    "projection": "flat"
+  },
+  "manifestSHA256": "f8c58d7e09d1a893cdfe65a779e8785f6265ce0fdd5aeb866cadb49f026fd579",
+  "htmlSHA256": "578779fca019f7636f30962d69f47bf60469b3a4e439a4201d3ced4b6dacb179",
+  "reproduction": "node tools/build-stage-release.mjs --stage=inferno --base=2d7f197874cfc194d7c65d172b4f5582178b09a3 --report=production/qa/inferno-build.json",
+  "limits": [
+    "stage assets and required UI packs must be present locally",
+    "full character artwork was not downloaded by this sparse-checkout build; official URLs are preserved"
+  ],
+  "visualRevision": 2,
+  "stageAssets": {
+    "belem": 45,
+    "aeroporto": 41,
+    "banheiros": 70,
+    "inferno": 22,
+    "mansao": 30,
+    "palco": 88,
+    "washington": 33
+  },
+  "audioKeys": [
+    "trilha-intro",
+    "trilha-loop",
+    "ambiente-caverna",
+    "vento-profundo",
+    "audio-lava-distante",
+    "correntes"
+  ],
+  "integrationScope": "Local visual revision2 on the Washington production reference2d7f197. Current upstream menu/Pai do Fujão changes are outside this build.",
+  "visualChange": "Skeleton choir selected; eight larger background fire groups plus two braziers. No gameplay, renderer or audio changes in this revision.",
+  "upstreamInventoryFinding": "main-sprite-index-review.json records the separate current-main inventory issue; local QA requires26/722.",
+  "visualReview": {
+    "file": "inferno-review-v2/final-review.json",
+    "passed": true,
+    "sha256": "b954b493147849930ab1165944da5e4bff9caa67768a69a20f7781f185c087ba",
+    "findings": 0
+  },
+  "qaProcesses": {
+    "proxyPid": 2278,
+    "proxy": "closed with SIGTERM; session27740 exit0",
+    "browsers": "reviewer confirmed browser.close; no temporary Playwright process found in final inventory"
+  }
+}

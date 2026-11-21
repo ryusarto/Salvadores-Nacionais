@@ -1,0 +1,1447 @@
+{
+  "totalPNGs": 167,
+  "notes": "Counts include preserved historical revisions and shared originals; no generated painting was changed in this review.",
+  "stages": [
+    {
+      "stage": "belem",
+      "masters": 20,
+      "records": [
+        {
+          "path": "production/stages/belem/source/agua-ondulacao.png",
+          "bytes": 1196774,
+          "sha256": "ae5411e1a73b80922518b1397b7ee636c8d344dd3ce5611a97850455cccc685b",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/belem/source/agua.png",
+          "bytes": 1872940,
+          "sha256": "cac1a76f5646721d96f88206b64852aec7a4feddb2da5e73eab435568d52bd33",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": false
+        },
+        {
+          "path": "production/stages/belem/source/architecture.png",
+          "bytes": 1941815,
+          "sha256": "04b7bba7057aaa786db738429d69bc7b435f1638c3826db57658c1955013bf2b",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/belem/source/bandeirolas-vento.png",
+          "bytes": 1476692,
+          "sha256": "fa9b80a3bdb06311cad3d5361380afa33c7912493c5f89f7c642c29a589d3a64",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/belem/source/barco-balanco.png",
+          "bytes": 2131005,
+          "sha256": "59c4c408adc003e284c83ba0d645215f4de02d737ad835261f5d0938caf9d27b",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/belem/source/calcamento.png",
+          "bytes": 3340220,
+          "sha256": "6a54d586418c9eb5361df7784f76eefa557e161a8722687d0db3e52fb4402290",
+          "width": 1254,
+          "height": 1254,
+          "hasAlpha": false
+        },
+        {
+          "path": "production/stages/belem/source/ceu.png",
+          "bytes": 1795657,
+          "sha256": "a6bd4c438e72e146531451bc1c501730a40b9198adca243594a23e292e6f5241",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": false
+        },
+        {
+          "path": "production/stages/belem/source/folhagem-vento.png",
+          "bytes": 2252792,
+          "sha256": "a94386cbd234307cab6416e92445b324b8adf2fbe0bd05c8bd0a7b1ba8dbc182",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/belem/source/horizonte.png",
+          "bytes": 581495,
+          "sha256": "a7e196024c95a467fee8b5dcae3f4cb0f2ca1aa639b553c9b1fb1fc972e6dbf3",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/belem/source/luz-poste.png",
+          "bytes": 1487841,
+          "sha256": "0737728c73753ffb7acb89a4dbd0adbc07a1ffeeddc9432efdcb568199a122cd",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/belem/source/npc-cliente.png",
+          "bytes": 1823442,
+          "sha256": "182e7bf49b7b6a34b3005c2e2157e5af1e5591fe50b7f557ea15bac20dbcf182",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/belem/source/npc-feirante.png",
+          "bytes": 2052705,
+          "sha256": "98eddc66556b4f46761b1222a488ec2ab1a71194f85f7291199a5e658a7d0598",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/belem/source/npc-torcedor.png",
+          "bytes": 1607957,
+          "sha256": "8d65cc9958894e7ff9ddc07fe6ff49099450311d4316644a09a89f1285cc6bd5",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/belem/source/nuvens.png",
+          "bytes": 1422422,
+          "sha256": "fcee90065ca68a84ca74e0830d8725c11ac1773878f79922f8da738e13a301e6",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/belem/source/poeira-ambiente.png",
+          "bytes": 1476156,
+          "sha256": "cbb2f2bdc25ad77a2b4615c2f7e94187c5eef3155ed7bb203dd7f3a72bb22cf3",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/belem/source/props-ambiente.png",
+          "bytes": 1983802,
+          "sha256": "09843a48813db599504ee6027876c33d86f56b59d03c7ce013de7da924a9e2b1",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/belem/source/props-cais.png",
+          "bytes": 2570257,
+          "sha256": "36283a9d823e5c8c9e49ff03b488a890815f618743f0ad55a217379d10200cdf",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/belem/source/props-feira.png",
+          "bytes": 2087592,
+          "sha256": "fb106b8a78f0bfd077787341db03190204ca4fc20be55514cdcbbb1ad1fda1d9",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/belem/source/reflexos-agua.png",
+          "bytes": 1384535,
+          "sha256": "31ba7b589084a5bc3aa5eb42ed7536dc97786960834d7c2350dcda23b4a61038",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/belem/source/toldo-vento.png",
+          "bytes": 2003306,
+          "sha256": "2ad577f624072dfd7efff656e14a9a680780bfc7ecd9072a1ec25faa7245eeee",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        }
+      ],
+      "prompts": null,
+      "sourceExports": {
+        "path": "production/stages/belem/source/exports.json",
+        "sha256": "c71b5ca32f6bcd9b5a1af84f6d0701e87141f2e2aed53dcbbe350c057f8c9ad1"
+      }
+    },
+    {
+      "stage": "palco",
+      "masters": 59,
+      "records": [
+        {
+          "path": "production/stages/palco/source/generated/agua-v2.png",
+          "bytes": 1749388,
+          "sha256": "bc5d94520208dd5e2d6926ef4c9de68fb04716634bc14f2d7d63213446743085",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": false
+        },
+        {
+          "path": "production/stages/palco/source/generated/agua.png",
+          "bytes": 1576230,
+          "sha256": "9af9dccfc642d3081c38c6e4b4889b371201824dec85f98b762ce49a08b19d09",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": false
+        },
+        {
+          "path": "production/stages/palco/source/generated/bancada-tecnica.png",
+          "bytes": 868750,
+          "sha256": "206d2d5be756ad8d70e710413d7f51a25324214e685526cc9a73561f3c19d2fe",
+          "width": 1774,
+          "height": 887,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/cabos-1.png",
+          "bytes": 1470704,
+          "sha256": "9354b9dc128b19e46ff844c8a84ab61fb4b5af52d61bfc74318b4afda2827468",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/cabos-2.png",
+          "bytes": 496866,
+          "sha256": "bc4798085bb44bdcdab0bdcd5f67f60a0c47127830913ef9ca010643ba5c018e",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/cabos-3.png",
+          "bytes": 787164,
+          "sha256": "323bf0daa7e9b43d8d9f68128851ebad0cc77523200804f728e32c2b72a890c9",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/casario-1.png",
+          "bytes": 2620506,
+          "sha256": "33fd05adb5ee8243a009b887da1fc4cc6db14358003243a8befc41ca6b6ebbb1",
+          "width": 1175,
+          "height": 1338,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/casario-2.png",
+          "bytes": 3015939,
+          "sha256": "a72396f3e6b4311f6385bce1aa3a8f0052009bc9c6e7cecf274c5b842f57606e",
+          "width": 1070,
+          "height": 1470,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/casario-3.png",
+          "bytes": 2887294,
+          "sha256": "ca5ac431503b9ae32e7bf325208f5ee02d70c59e09a7347f37ae8f3bd7a089ed",
+          "width": 1312,
+          "height": 1199,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/catedral.png",
+          "bytes": 2751073,
+          "sha256": "ab61a4519a8281b56a64b4a8056ac953ae5373324abdaa689e6e69c4ea9fac93",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/ceu-noite.png",
+          "bytes": 1993790,
+          "sha256": "9faab2512788c96c638dffbd3a838062886ed4159cbff5e627b74d928a8113ba",
+          "width": 1672,
+          "height": 941,
+          "hasAlpha": false
+        },
+        {
+          "path": "production/stages/palco/source/generated/cobertura-palco.png",
+          "bytes": 1132912,
+          "sha256": "2064cb6766999633c5477ff2669bd2e4ef2f8700bd88b8dca1566ea34ed1cc4a",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/cortina-1.png",
+          "bytes": 2373923,
+          "sha256": "c139be746bc4bfc1f9fef3b57c4a2d153a5fd04d5b2ed49bcfed16530575961e",
+          "width": 1024,
+          "height": 1536,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/cortina-2.png",
+          "bytes": 2044680,
+          "sha256": "b3ad32b5a6b98187d2fa6564965b46d6740c342bf74251ed5b37d512652264ad",
+          "width": 1024,
+          "height": 1536,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/cortina-vento.png",
+          "bytes": 1794016,
+          "sha256": "4106ac6ec04f7aae9beab89f4986678c31a71183afbb5e0add036f1263429685",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/escada-palco.png",
+          "bytes": 2037218,
+          "sha256": "a4a608a780339a587e2527cf37fe424010dfdca8dfd3ada360b1f37602414438",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/faixa-base.png",
+          "bytes": 3090864,
+          "sha256": "742d5b1ee0bee62ee081752e2c13c59b689687b1f22d7ab2a7047afaf16d022c",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/feixe-palco-1.png",
+          "bytes": 2003144,
+          "sha256": "d8182c45ac15d73970bdbeb23d2d716364144287d662227b499c35fb75fa521f",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/feixe-palco-2.png",
+          "bytes": 2030934,
+          "sha256": "bdb28a1f1596d81d8de6443fec1d95270663f0809fc161aec8002281731b0417",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/gradil-1.png",
+          "bytes": 1942279,
+          "sha256": "653b28fa1d8ad33805994c25e8bfe31ef606fe1f00ac17842a5deff5f6093f68",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/gradil-2.png",
+          "bytes": 1092759,
+          "sha256": "51c5fe952e0e8e96aba7cd00153a54bf9f17a81da923a7c1bf0754960cbe6ee2",
+          "width": 1774,
+          "height": 887,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/horizonte.png",
+          "bytes": 371892,
+          "sha256": "2ec0e3467355892d9776957e361ef75a3e97b2b41894e72ac5799983baa05319",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/marmitas-1.png",
+          "bytes": 2752674,
+          "sha256": "b608cd8e716031608908f80812905b70fc9644e346bc0f75ee6a22bcf9ed0e99",
+          "width": 1774,
+          "height": 887,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/marmitas-2.png",
+          "bytes": 2288349,
+          "sha256": "b715491c0757aaf3cb704c016658c72273862ea447ccbab663f298d5457ae714",
+          "width": 1774,
+          "height": 887,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/mastro-bandeirolas.png",
+          "bytes": 1063063,
+          "sha256": "f2038272c20d553c4936e335de2820c94651de2da933ace84813472e4ca63923",
+          "width": 1024,
+          "height": 1536,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/mercado-ferro.png",
+          "bytes": 2385998,
+          "sha256": "783cfbda8f0ef629065de65e0eb25fc14be1ae322b89ea05f7cd336dab02d497",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/mesa-comida-1.png",
+          "bytes": 1651566,
+          "sha256": "3b015bb6c5dd9c9484371dca06e0995a42ba4b5e16ed1712631af11bbc1e09f7",
+          "width": 1774,
+          "height": 887,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/mesa-comida-2.png",
+          "bytes": 1073435,
+          "sha256": "e58bc6c428f6197d89c2d156fa87ff0c9cdc5ad7cc7f472794f665362833f89b",
+          "width": 1774,
+          "height": 887,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/mesa-mixagem.png",
+          "bytes": 2600196,
+          "sha256": "32bd560f42e3f18684e36128a6f6a09dadce373d345077d3faaa7aa93b27ca88",
+          "width": 1774,
+          "height": 887,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/microfone-palco.png",
+          "bytes": 1901574,
+          "sha256": "2269713eae341ed86c060658e89e084ee694fdbaad42b47c4cbdd1939a0b600d",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/npc-danca-1-v2.png",
+          "bytes": 1997633,
+          "sha256": "20d4e7796ce40df9765248c81e55cad79d2e9ebbfd6c2e3846b8ac0350b46214",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/npc-danca-1.png",
+          "bytes": 2255126,
+          "sha256": "f9d3e6cb7e40e72afe6d055f6f8ba48e1332f454c79390c1be3df4cd53974793",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/npc-danca-2.png",
+          "bytes": 1990815,
+          "sha256": "568c147f67443187e46e71ae967b90fed46aa1d43e3025b8615271644f7e985b",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/npc-fila-2.png",
+          "bytes": 1792591,
+          "sha256": "a90b162e5a781ec3ce5b0424f67ae32ebf67786a09e13f5197475f933c348a75",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/npc-tecnico.png",
+          "bytes": 1913250,
+          "sha256": "87e1c1e059e12cc5ea21809f1f9cf2a3f293c97f09ef7ef6bfdeb29c161c947d",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/npc-torcedor-2.png",
+          "bytes": 2134771,
+          "sha256": "3576c49e81e9c3574b807c6673806d1c3cd2c39458b17292e6c7de6a6b2b5b21",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/npc-voluntario.png",
+          "bytes": 2030600,
+          "sha256": "b75c4f53d54d1ca61a821da121655d4770b61f5966084cdb8378a82192929645",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/nuvem-1.png",
+          "bytes": 1327112,
+          "sha256": "b9bb35130f240ce97c20528c8dbf656cf3749e7d858d6765bff9722a5b53ccb8",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/nuvem-2.png",
+          "bytes": 1011270,
+          "sha256": "39e550b2e445e38ce506b05802aca676d442a9a9c77550b864f7b8f0d2167284",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/nuvem-3.png",
+          "bytes": 541833,
+          "sha256": "62f3ea56847048acab583e3770b5f2373675b2e411ec407fea2048115430a1de",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/panela-1.png",
+          "bytes": 2708544,
+          "sha256": "cdeee53919b58f508851ece246308a6c9b7b396002144448f3ea3a7f240fdac2",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/panela-2.png",
+          "bytes": 2543258,
+          "sha256": "9c3fb78a241246bcf61ac02ce17201e5121fde9c009439057549732a0aba4b59",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/pedestal-1.png",
+          "bytes": 1129122,
+          "sha256": "4f01cab0c13162d46e031cf123cc790f10f028f5a716c6a3c99fb2ec9303d37d",
+          "width": 1024,
+          "height": 1536,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/pedestal-2.png",
+          "bytes": 982958,
+          "sha256": "d3f23a5ab6799ad765032094316c700acb716695ece4ca737db73bed7550a148",
+          "width": 1024,
+          "height": 1536,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/refletor-1.png",
+          "bytes": 1613897,
+          "sha256": "1c7f544ef5dc85fbc417e7fc0e567ea59cd654a5fb636792a70665450ad998a8",
+          "width": 1312,
+          "height": 1199,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/refletor-2.png",
+          "bytes": 1910816,
+          "sha256": "9f2410eb7375c06c12c69c7d73f6995ded89544ee16a6bdfc989ed4cdcfa8f96",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/refletor-3.png",
+          "bytes": 1880093,
+          "sha256": "09170e2795e61f9cbc21aaf8cd2a0c4359adfffa324c9065f175ada84d0c8216",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/retorno-1.png",
+          "bytes": 2519123,
+          "sha256": "1ad4aaa242521ca53d84ebe6db02aeb5184fc28ae74a170df77f0056b9431515",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/retorno-2.png",
+          "bytes": 2724750,
+          "sha256": "53c5f85131bb6b107403fe4afc009f9481aa09e8a92e798ec8a45e04026377b9",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/saia-palco.png",
+          "bytes": 1763318,
+          "sha256": "7b14500489421f88c1f4392b4154ce6ecf5a75d4cf1cc697ee99f17de6ce8605",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/subwoofer-1.png",
+          "bytes": 2869915,
+          "sha256": "dd22214f0edbd1ae4b84412253556ee32e1823b9e792dc6a098281e339c3feda",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/subwoofer-2.png",
+          "bytes": 2617698,
+          "sha256": "893036bdda40f773b934c5fe1f7803bac4a068e9024349a15ee6daa9c4ae12b5",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/tablado.png",
+          "bytes": 1457117,
+          "sha256": "e16ddfc1145b058f8d9c8d7c89769c56cca755930788874e674ad66d0551a46f",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/torre-som-1.png",
+          "bytes": 2695631,
+          "sha256": "7a38c0cc35775cbafff51e87d9e70e8cf05895984bbadd7ad711973cc6fd0420",
+          "width": 1024,
+          "height": 1536,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/torre-som-2.png",
+          "bytes": 2765838,
+          "sha256": "b27f8e2f71b35433c3b06f1128d7d6afd5e3cef4f997ba9d3539670400e31a9e",
+          "width": 1024,
+          "height": 1536,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/trelica-horizontal.png",
+          "bytes": 863541,
+          "sha256": "71ca5dca8e311eb80d4240bdfd635efa8ea5bdfc62e73745906478b6e073e775",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/trelica-vertical-1.png",
+          "bytes": 1360207,
+          "sha256": "34d549385e95b1256389106417851aabe8a3926f2cd3e29a4ca3442d1457f513",
+          "width": 724,
+          "height": 2172,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/trelica-vertical-2.png",
+          "bytes": 1548695,
+          "sha256": "1658f0a68a6fc85722f415e76cf555b7fe1066f392f55289ad72072ff1abcd6b",
+          "width": 724,
+          "height": 2172,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/palco/source/generated/vapor-panelas.png",
+          "bytes": 1565563,
+          "sha256": "945fe4f3930f072b50132bb25f553d10cc5a13443bbe320502d1a6dc2d0987be",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        }
+      ],
+      "prompts": {
+        "path": "production/stages/palco/source/prompts-completos.json",
+        "sha256": "ee5c2d4b0bffa4966f4beff630dc7cb0e61b48ba4cc628bf4ccd9ff0ff1a9bab"
+      },
+      "sourceExports": {
+        "path": "production/stages/palco/source/exports.json",
+        "sha256": "393cd9173646ea27346e8f550ca1214fa079cb4e9aed22029d8808bfe4891bea"
+      }
+    },
+    {
+      "stage": "banheiros",
+      "masters": 24,
+      "records": [
+        {
+          "path": "production/stages/banheiros/source/generated/bandeira-trans-vento.png",
+          "bytes": 2292345,
+          "sha256": "7280419c651d0fcf5029483a2e5b0000883925b24f1255f333367bf59c46e208",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/banheiro-acessivel-v2.png",
+          "bytes": 2159751,
+          "sha256": "cb3b826cede2e6d8483bb952927d33aae0ef9ee42b86eed2fd6669b0e3be2f13",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/banheiro-acessivel.png",
+          "bytes": 2276229,
+          "sha256": "4d697cfddf80db6daced3d83219f775001357dc88a9a529c0c873e796406254d",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/banheiro-azul.png",
+          "bytes": 2291604,
+          "sha256": "424248d6a056f60da86fcb4aacc4001b7d6162c8f915e64ba109fdc7d88cca24",
+          "width": 1064,
+          "height": 1478,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/banheiro-verde.png",
+          "bytes": 2153567,
+          "sha256": "5794acb3504431a9d5882dfd76fb2eb2bf0bdc997b6e63811bcb7a47b0847f1d",
+          "width": 1060,
+          "height": 1484,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/cabine-fiscal.png",
+          "bytes": 2596439,
+          "sha256": "fd86fb7b2865e3d3c7c39f3bd738dd9e6941d56d7ee628a4c4880bec4e31b7ad",
+          "width": 843,
+          "height": 1864,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/carimbo-fiscal.png",
+          "bytes": 1480450,
+          "sha256": "3df4698d86933eafa94a747465e59b2948242bc79a39cb3beff306a68fcea8a9",
+          "width": 1254,
+          "height": 1254,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/cerca-fiscal.png",
+          "bytes": 1279385,
+          "sha256": "fea13d9553c88ee3b70402d2f1de3cf04b322c4af15a01d857d5760745c5c44d",
+          "width": 724,
+          "height": 2172,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/cone-servico.png",
+          "bytes": 1528735,
+          "sha256": "d58eeb9477177ae628916a7b5b528d610469635dab6947bfb34113f0e4232394",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/documentos.png",
+          "bytes": 2067572,
+          "sha256": "6d5c70d622538b6892cb2002cdb925e7575e9b18bb2795ee70a5d127fff74b49",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/lavatorio.png",
+          "bytes": 1915591,
+          "sha256": "bfc6c0de905b5d6c4d87638c40536a9d3eef7152ba52d4f19e4b2a4e618863ed",
+          "width": 1312,
+          "height": 1199,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/lixeira.png",
+          "bytes": 1283790,
+          "sha256": "dd607500a7662c774888d4a95ffd3ddb7093c01975fc43080495cec3771ece59",
+          "width": 1275,
+          "height": 1233,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/mangueira.png",
+          "bytes": 1511369,
+          "sha256": "ca022610c40b32f92da5ff5cfc73a73c606ffc40985282308c43197be49edffc",
+          "width": 2164,
+          "height": 726,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/mastro-bandeirolas.png",
+          "bytes": 1063063,
+          "sha256": "f2038272c20d553c4936e335de2820c94651de2da933ace84813472e4ca63923",
+          "width": 1024,
+          "height": 1536,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/npc-acolhimento.png",
+          "bytes": 1953948,
+          "sha256": "d506df66fa57b9515416b148b1504573f371f66ba06e7fc6f4ffd02b6260d6a8",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/npc-fila-comunidade.png",
+          "bytes": 1961515,
+          "sha256": "3fb9d7840dbb8270c4b9bef4af2766df733f9b63cc29944502b27342c728a269",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/papel-vento-v2.png",
+          "bytes": 1810106,
+          "sha256": "7201b8f1beef4fe9a4c784ccd135eb58dfe258c999d76dc2da03fbb7a7a3b2b7",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/papel-vento.png",
+          "bytes": 1872937,
+          "sha256": "ecb359d8c9662b16269fa9608af9a8ed816bf081b252af0b4cbb0c44dceb3a6d",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/placa-pedestal.png",
+          "bytes": 1047580,
+          "sha256": "4a93bb87e7cc0892b10c2a24501d1dc25e02623d43e2ac6e31d548a5ac967cbb",
+          "width": 1942,
+          "height": 809,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/poca-agua.png",
+          "bytes": 749296,
+          "sha256": "008dc9e4ec52e461a5c10a76fed9a35206d5b39c158253c9ca4d7478df4fbf00",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/prancheta.png",
+          "bytes": 1904435,
+          "sha256": "5a3b6f550487c33b4db4c53324d14536f8900799b700022debdc6dc20c8ae8cb",
+          "width": 1199,
+          "height": 1312,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/reservatorio.png",
+          "bytes": 2022347,
+          "sha256": "10eea0664997a6d47e68a7d2c9e3998be99e1e49cff00d2e0704ac5ff1182425",
+          "width": 1199,
+          "height": 1312,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/rolo-papel.png",
+          "bytes": 2011053,
+          "sha256": "39f329d4ad55b2c3c05f0c360422186514ea79e0b74975e6d2d2eabf295131dc",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/banheiros/source/generated/tenda-servico.png",
+          "bytes": 1891999,
+          "sha256": "84bf837072b85b851e5ecfe2071bb5a4d3c17797353d6310734b79f01b8b9833",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        }
+      ],
+      "prompts": {
+        "path": "production/stages/banheiros/source/prompts-completos.json",
+        "sha256": "1fa043986e3f65684181d01fca1210973ed6aa35b73a8fa662b2117168c13acc"
+      },
+      "sourceExports": {
+        "path": "production/stages/banheiros/source/exports.json",
+        "sha256": "08d190484504c27e9d5323bf61c1fe9e82cb1ca3294915bdd7937f74f0f9438f"
+      }
+    },
+    {
+      "stage": "aeroporto",
+      "masters": 17,
+      "records": [
+        {
+          "path": "production/stages/aeroporto/source/generated/asfalto.png",
+          "bytes": 3243986,
+          "sha256": "20c8bf52b05908976fda8140b0c761e3a22e4bf9ac7cba97067ebd410828ff4a",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": false
+        },
+        {
+          "path": "production/stages/aeroporto/source/generated/aviao-executivo.png",
+          "bytes": 1578590,
+          "sha256": "f7b32ddd7ed72f8c07f833f0107409b61c04bfb07cd985576c958842148e93ca",
+          "width": 1983,
+          "height": 793,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/aeroporto/source/generated/baliza-pista.png",
+          "bytes": 2320807,
+          "sha256": "c8420f2deb0c8776d2c11539430653f6d6b05670be63833df2b95f08bc5a00b6",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/aeroporto/source/generated/biruta-vento.png",
+          "bytes": 1786695,
+          "sha256": "4361aacb7953ddfb99f6249d9ec1efdc91c794c6ac56eaf1586adde360bf04ff",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/aeroporto/source/generated/carreta-bagagem.png",
+          "bytes": 1568057,
+          "sha256": "c00ea74d2353f4a336716c2d8417e5a5b3b584cdbd9a61f85c0e2ae788c71cb9",
+          "width": 1983,
+          "height": 793,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/aeroporto/source/generated/cerca-aeroporto.png",
+          "bytes": 1985870,
+          "sha256": "a9cc2579c5c672ea14098d4ce6c3a9dbd1f29a6e3800141639a27defd62994b8",
+          "width": 2019,
+          "height": 779,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/aeroporto/source/generated/ceu-entardecer.png",
+          "bytes": 2439300,
+          "sha256": "b135dab4517035f88e7d7f1a00855e3b8d2953d2503227c2de53d4c8f2b4d6e9",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": false
+        },
+        {
+          "path": "production/stages/aeroporto/source/generated/escada-embarque.png",
+          "bytes": 2290158,
+          "sha256": "b10b1b718ee1cb867dab8e087a276628eb724d91032f9d35ece49632cbf884e9",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/aeroporto/source/generated/hangar.png",
+          "bytes": 2612278,
+          "sha256": "fb83e9e3412bf7a6536e28f76a2ced6887127e46642aafca69ca83fbce9bbcce",
+          "width": 2095,
+          "height": 751,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/aeroporto/source/generated/npc-equipe-pista.png",
+          "bytes": 2051936,
+          "sha256": "5adf445242ca3538a0486b88e541ebeb224ae39a820e76dad29e0765470c7990",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/aeroporto/source/generated/npc-seguranca.png",
+          "bytes": 1964608,
+          "sha256": "17aedba9cdb1e3e6ba3ebb31e5c962934b27d170da46aa65f941431608deb035",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/aeroporto/source/generated/pilha-malas.png",
+          "bytes": 3231454,
+          "sha256": "a9648f7d9bfe585494c96e933b5ecbbd17d1788f8817f782876835b3c01d9a62",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/aeroporto/source/generated/placa-embarque.png",
+          "bytes": 2208763,
+          "sha256": "f8e94bbbbdbce464936398b9e2b7dcf140434723d28b252bb986b56064e9b54e",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/aeroporto/source/generated/poste-refletores.png",
+          "bytes": 1434172,
+          "sha256": "e170fdbea7be0172f89a62b80428514156e8ee309fcca439f12f9ef944f93609",
+          "width": 1024,
+          "height": 1536,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/aeroporto/source/generated/terminal.png",
+          "bytes": 2186403,
+          "sha256": "95272569566ad184e3f58190f04a14dff7b6efab3bf48ede5defb19d44ad95c7",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/aeroporto/source/generated/torre-controle.png",
+          "bytes": 1438575,
+          "sha256": "699d3e35d0cc0c094d42df6d26a88db6071da8c572f7a50bced22f0104c55bb7",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/aeroporto/source/generated/trator-bagagem.png",
+          "bytes": 2270150,
+          "sha256": "9ab37cb93dbb80f4f7036b46971e74481633ed96d2f7925d50fbd9b53a9c4479",
+          "width": 1774,
+          "height": 887,
+          "hasAlpha": true
+        }
+      ],
+      "prompts": {
+        "path": "production/stages/aeroporto/source/prompts-completos.json",
+        "sha256": "399a320aaf27289dd3a1e27d78be5c5a92710aa6e1c843ef2dcae089f42d10b0"
+      },
+      "sourceExports": {
+        "path": "production/stages/aeroporto/source/exports.json",
+        "sha256": "2d36348b2b1f43273291d5b7c4a8d24eeb39624ab401b764959bcb87e3269623"
+      }
+    },
+    {
+      "stage": "mansao",
+      "masters": 19,
+      "records": [
+        {
+          "path": "production/stages/mansao/source/generated/arandela.png",
+          "bytes": 2079505,
+          "sha256": "ab89485ec77356994784e931fa3f2c9145bb2fa6f2f709693238fcfaf28e3669",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/mansao/source/generated/cortinas-vento-v2.png",
+          "bytes": 2358018,
+          "sha256": "686b792c9d47373e01651801577be54f592ebe24b64f297622357f466a22a6b6",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/mansao/source/generated/cortinas-vento.png",
+          "bytes": 2698353,
+          "sha256": "402b2ea6765d2f64356d45629d3e5da330f3905191a0afb2d1038550484b695e",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/mansao/source/generated/fogo-lareira.png",
+          "bytes": 2004205,
+          "sha256": "2f5aa0ad128e0485ebb71d8712e39b241208c1b4f0aaf3304dcfb5a508d9fd92",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/mansao/source/generated/lambri.png",
+          "bytes": 2073479,
+          "sha256": "1c38a1addd759b54a3661feecca2e08383c011f02b614773269e46ff246b922d",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/mansao/source/generated/lareira-marmore.png",
+          "bytes": 2218053,
+          "sha256": "9682c9a674ee3119e7ae26885350eec001264107d3a9c21830c3ef47be40168c",
+          "width": 1374,
+          "height": 1145,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/mansao/source/generated/lustre-balanco.png",
+          "bytes": 2236718,
+          "sha256": "a20c150302046b5a93a163d41224939b102bb00845ec8acfad060a8b4e8de76b",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/mansao/source/generated/marmore.png",
+          "bytes": 2819325,
+          "sha256": "97c8c599bc05f2c3adaec898c2f934017a9f07e5f4aae78b61ae24db4c575946",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": false
+        },
+        {
+          "path": "production/stages/mansao/source/generated/mesa-telefone.png",
+          "bytes": 1464472,
+          "sha256": "e2ba3b5f02c20ca72e9e9c27f44fda8b620553b01bb47a56cc3f60ed049611f3",
+          "width": 1254,
+          "height": 1254,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/mansao/source/generated/moldura-janela.png",
+          "bytes": 2406382,
+          "sha256": "8362300d067bb2248cdd01afc881868b51978fdd1720dd493a122c425b76bdf3",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/mansao/source/generated/palmeira-vaso.png",
+          "bytes": 1805424,
+          "sha256": "fba47e63480bf094a1eea4c2063072b8647226f15fec60425a910ceb420fd81b",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/mansao/source/generated/parede-bordo.png",
+          "bytes": 2495187,
+          "sha256": "a5a69dd247c2972ad50fe4251aea01c99efae598c68bcc63e6cf2091194d54a2",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": false
+        },
+        {
+          "path": "production/stages/mansao/source/generated/porta-capangas.png",
+          "bytes": 3114881,
+          "sha256": "1426aee5483e5bb95d030dbcc706cb096b72348d9b344beb5792b17019735840",
+          "width": 1024,
+          "height": 1536,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/mansao/source/generated/relogio-pendulo.png",
+          "bytes": 1924412,
+          "sha256": "02f8147a0f52922fa4c51b7fc91ca442d51065944257f81bb314bf49f54d2bda",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/mansao/source/generated/retrato-fujao.png",
+          "bytes": 3277427,
+          "sha256": "a920d7a91a265a4f43890ab5634da68dd8795ac4661fc65d0d919cff4911c9cd",
+          "width": 1100,
+          "height": 1429,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/mansao/source/generated/sanca-dourada.png",
+          "bytes": 1206358,
+          "sha256": "45f6ae35b53b2f7c9b66d2a161432edb9d058ecc46888e04cb8c419d3f4ae1b4",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/mansao/source/generated/sofa-bordo.png",
+          "bytes": 2961413,
+          "sha256": "8f68f39ae4f78cc52a51246c152e0d9bf345ac29714d6aa5a82e6cb01f37784b",
+          "width": 1860,
+          "height": 846,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/mansao/source/generated/telefone-preto.png",
+          "bytes": 2919255,
+          "sha256": "a012fdaeda2e31aa5e5be7034f3fbac71cc6d10bb8a99e878412107f607569b4",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/mansao/source/generated/vista-jardim.png",
+          "bytes": 3754581,
+          "sha256": "c5705cb72d768081874ad87c993cd65ff59a247f51b12f7301604d35a528a6fe",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": false
+        }
+      ],
+      "prompts": {
+        "path": "production/stages/mansao/source/prompts-completos.json",
+        "sha256": "c25f2556abd6f8a0bf283071fe530a8dd086bf1f34205a2933207950bbbd9796"
+      },
+      "sourceExports": {
+        "path": "production/stages/mansao/source/exports.json",
+        "sha256": "eee7fa65a78ad99e8efb6b3a3f21068e50e92b75af9770aedc1a3294149a0a3f"
+      }
+    },
+    {
+      "stage": "washington",
+      "masters": 12,
+      "records": [
+        {
+          "path": "production/stages/washington/source/generated/banco.png",
+          "bytes": 2089975,
+          "sha256": "5ab1815a1e21b23e234b225718891f869460b0fe39e2766453c079d45d201fec",
+          "width": 1774,
+          "height": 887,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/washington/source/generated/bandeira-mastro-vento.png",
+          "bytes": 1883595,
+          "sha256": "6166eabefb789efbdabd0c8dfb1880a42ce0670724b08d7a7ee27192da73941d",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/washington/source/generated/cerca-baixa.png",
+          "bytes": 1427653,
+          "sha256": "cd4ae82a0b1964bde9e9a36520884219620accdad705bc3c1d1217db8039ab68",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/washington/source/generated/ceu-washington.png",
+          "bytes": 3053505,
+          "sha256": "1e919409f1d12d8c614085cd9c8f145b6810c2754bc751bbca11b8c0c54952e9",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": false
+        },
+        {
+          "path": "production/stages/washington/source/generated/chafariz-base.png",
+          "bytes": 2277929,
+          "sha256": "b3a393f210446448888ffef226b09969ceae22b8442445b7ad0bddcd65360d1b",
+          "width": 1774,
+          "height": 887,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/washington/source/generated/gramado.png",
+          "bytes": 3674681,
+          "sha256": "79d163e859a92d53ee03fc148ab05487cb35c33ce565ee3c9e6a988aa028ea44",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": false
+        },
+        {
+          "path": "production/stages/washington/source/generated/jatos-chafariz.png",
+          "bytes": 2624096,
+          "sha256": "63ee57d68b04acaab3bbc6dd829bd31b2351d02d9035055b78095153ef784925",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/washington/source/generated/muralha-interativa.png",
+          "bytes": 2192805,
+          "sha256": "3ea8c35b4ec56a9cb80f9cd77a27f812a9a814e1e39a83b592919db579903aa6",
+          "width": 1024,
+          "height": 1536,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/washington/source/generated/obelisco.png",
+          "bytes": 1566379,
+          "sha256": "e473e13b7de49ab6927c98ded4c86341b6b1fcdafe7a74e5d5170f43f6e6563a",
+          "width": 1024,
+          "height": 1536,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/washington/source/generated/palacio-branco.png",
+          "bytes": 2910970,
+          "sha256": "fac28843d84083d02f63eab0d83669e8ee924719fa9d08723604dce2118512d0",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/washington/source/generated/poste-jardim.png",
+          "bytes": 1156610,
+          "sha256": "96425f9adfb51283d5a81e91fd6a26d1afd231e3841aba9cfdb07747b6707b44",
+          "width": 1024,
+          "height": 1536,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/washington/source/generated/sebe.png",
+          "bytes": 2021867,
+          "sha256": "9da71649f2db79bd81cf3a7cd6f9fe9c8a7e8d71a879093faf18edc001d02c76",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        }
+      ],
+      "prompts": {
+        "path": "production/stages/washington/source/prompts-completos.json",
+        "sha256": "906d4951d3100460050667b54798d3b47b1eb28b109b6609909c3ad47f7c278e"
+      },
+      "sourceExports": {
+        "path": "production/stages/washington/source/exports.json",
+        "sha256": "7a25fe1a176bb6d297e4649e1c2e6e2a4348b784d34dfb2cde0bcdfb3565f381"
+      }
+    },
+    {
+      "stage": "inferno",
+      "masters": 16,
+      "records": [
+        {
+          "path": "production/stages/inferno/source/generated/almas-coro-v2.png",
+          "bytes": 2994453,
+          "sha256": "0d68f26f8b057e4b059b40697fe9a62c86f4cdbf4405e7d67c2632939fb02b69",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/inferno/source/generated/almas-coro-v3.png",
+          "bytes": 2670067,
+          "sha256": "5658ab2f6a592dfcf0156e4a8ee9044c4ae09e5118ee7f544ae64e12f65392ba",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/inferno/source/generated/almas-coro.png",
+          "bytes": 3120292,
+          "sha256": "1549eb70a857d2f33fb412a9b557cfc4a572576d1cfde3f9957b200e9e303919",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/inferno/source/generated/basalto.png",
+          "bytes": 2388955,
+          "sha256": "d1676ff0d5df21e12adeeedfebcca451fe9263778d4e8ea8bdb247a7340454fb",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": false
+        },
+        {
+          "path": "production/stages/inferno/source/generated/ceu-infernal.png",
+          "bytes": 2267032,
+          "sha256": "6b39bbdddc931587f81107744020121cf340ca7acc5e4e8474acdc22912fd0d2",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": false
+        },
+        {
+          "path": "production/stages/inferno/source/generated/coluna-braseiro.png",
+          "bytes": 2056176,
+          "sha256": "11dfb2ec4aa00f896c5bada53c238bb469751bf223e4de5bc4f70355f4ea6952",
+          "width": 724,
+          "height": 2172,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/inferno/source/generated/corrente-balanco.png",
+          "bytes": 1610445,
+          "sha256": "37c77a3ba590f1fb8a685e84b710a64c037a3faf98d0cd649b731cfdaa4b399f",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/inferno/source/generated/escadaria.png",
+          "bytes": 2463047,
+          "sha256": "4ba8cdca7b08ffc04a376df3fc9fb16b55a7d41bcf3b1bac6e8ed68081029db3",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/inferno/source/generated/esqueletos-coro.png",
+          "bytes": 2522399,
+          "sha256": "40ddd4592e76119bf055fd3750f18be26282eb8121773cf52955342c5edb09b2",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/inferno/source/generated/fogo-braseiro.png",
+          "bytes": 1724596,
+          "sha256": "3e15bd060b2cdcf00b6a71c0b747726c8b13cc2817c13ebda07bc638afec43bc",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/inferno/source/generated/grilhao-rompido.png",
+          "bytes": 1473147,
+          "sha256": "63b95dc1d6dd7b4214f7f365734abca3cd8982b4e2c09b708b34a19e3af7d374",
+          "width": 1774,
+          "height": 887,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/inferno/source/generated/lava-distante.png",
+          "bytes": 1348268,
+          "sha256": "54c094d56a14be540e40d51cbbfc37e54217423f7a9982f562f27deee43ae29f",
+          "width": 1536,
+          "height": 1024,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/inferno/source/generated/portal.png",
+          "bytes": 1902132,
+          "sha256": "606349cd72153400071ac3955cf307179393c083a201d53df2ccd46cbeffb11a",
+          "width": 1312,
+          "height": 1199,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/inferno/source/generated/rochedos.png",
+          "bytes": 1836741,
+          "sha256": "162f684eb9268ead49842828a53621c816a5d8bcdb43a9f5d3a6a0f0bcc7f0a9",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/inferno/source/generated/teto-rochoso.png",
+          "bytes": 1382619,
+          "sha256": "61f2ba4975bb73db031d14a6ddb045e51b9bbfa9fdabcc1ad182cce632a176ea",
+          "width": 2172,
+          "height": 724,
+          "hasAlpha": true
+        },
+        {
+          "path": "production/stages/inferno/source/generated/trono.png",
+          "bytes": 2882590,
+          "sha256": "1c0672ef288f2206408ef8569357be5238a271812e16648e4072cba2db208da4",
+          "width": 935,
+          "height": 1682,
+          "hasAlpha": true
+        }
+      ],
+      "prompts": {
+        "path": "production/stages/inferno/source/prompts-completos.json",
+        "sha256": "cb06e4b5b8d365b5bd6e7b9d4489dc9632f072e5aeaee6037266cfe78df0d0ac"
+      },
+      "sourceExports": {
+        "path": "production/stages/inferno/source/exports.json",
+        "sha256": "8b6e092d3ef6f1fde1d5447b6f9b694a6ebb244b2cb06a0895aa5f9a2289670e"
+      }
+    }
+  ],
+  "references": [
+    {
+      "stage": "mansao",
+      "path": "production/stages/mansao/source/referencias/fujao-modelo-aprovado.png",
+      "sha256": "b87d40547705466165f00218a741beeaf80307a80b5b8d9bf191bab592b0d939",
+      "expected": "b87d40547705466165f00218a741beeaf80307a80b5b8d9bf191bab592b0d939",
+      "passed": true
+    }
+  ],
+  "referencedSourcesPassed": true
+}

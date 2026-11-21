@@ -1,0 +1,169 @@
+{
+  "chapter": 7,
+  "version": 2,
+  "boss": "djabo",
+  "stage": "inferno",
+  "basis": [
+    "docs/MODO-HISTORIA.md",
+    "docs/PRODUCAO-ARTE.md ART-19",
+    "src/data/characters/djabo.js"
+  ],
+  "status": "ready-for-review",
+  "groups": [
+    {
+      "slug": "ceu-infernal",
+      "path": "layers/ceu-infernal.webp",
+      "kind": "layer",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "rochedos",
+      "path": "props/rochedos.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "basalto",
+      "path": "ground/basalto.webp",
+      "kind": "ground",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "trono",
+      "path": "props/trono.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "escadaria",
+      "path": "props/escadaria.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "portal",
+      "path": "props/portal.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "coluna-braseiro",
+      "path": "props/coluna-braseiro.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "teto-rochoso",
+      "path": "props/teto-rochoso.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "grilhao-rompido",
+      "path": "props/grilhao-rompido.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated"
+    },
+    {
+      "slug": "corrente-balanco",
+      "path": "animations/corrente-balanco.webp",
+      "kind": "animation",
+      "frames": 6,
+      "origin": "generated"
+    },
+    {
+      "slug": "fogo-braseiro",
+      "path": "fx/fogo-braseiro.webp",
+      "kind": "fx",
+      "frames": 6,
+      "origin": "generated"
+    },
+    {
+      "slug": "lava-distante",
+      "path": "fx/lava-distante.webp",
+      "kind": "fx",
+      "frames": 6,
+      "origin": "generated"
+    },
+    {
+      "slug": "almas-coro",
+      "path": "animations/almas-coro.webp",
+      "kind": "animation",
+      "frames": 6,
+      "origin": "generated"
+    },
+    {
+      "slug": "titulo",
+      "path": "ui/titulo.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "origin": "typeset"
+    },
+    {
+      "slug": "trilha-intro",
+      "path": "audio/trilha-intro.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "trilha-loop",
+      "path": "audio/trilha-loop.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "ambiente-caverna",
+      "path": "audio/ambiente-caverna.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "vento-profundo",
+      "path": "audio/vento-profundo.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "audio-lava-distante",
+      "path": "audio/lava-distante.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "correntes",
+      "path": "audio/correntes.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis"
+    },
+    {
+      "slug": "miniatura",
+      "path": "ui/miniatura.webp",
+      "kind": "image",
+      "frames": 1,
+      "origin": "derived-composition"
+    },
+    {
+      "slug": "carregamento",
+      "path": "ui/carregamento.webp",
+      "kind": "image",
+      "frames": 1,
+      "origin": "derived-composition"
+    }
+  ],
+  "pending": []
+}

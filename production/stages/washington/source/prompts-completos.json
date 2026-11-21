@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "ceu-washington",
+    "prompt": "Use case: illustration-story. Asset type: independent opaque SKY background for Salvadores Nacionais Washington arena. Wide landscape3:2 edge-to-edge dusk sky, muted indigo blue at top blending dusty lavender into warm pale amber near low horizon, a few soft long ink-hatched violet clouds. Detailed hand-painted Brazilian graphic novel with subtle paper grain, fine crosshatching, restrained halftone, same visual family as the existing airport arena. Calm subdued sky for readable fighter silhouettes. Sky only, no buildings, monuments, ground, flags, people, lettering or logos. Full bleed opaque.",
+    "tool": "built-in ImageGen",
+    "source": "source/generated/ceu-washington.png"
+  },
+  {
+    "slug": "palacio-branco",
+    "prompt": "Use case: illustration-story. Asset type: independent palace architecture layer for Salvadores Nacionais Washington fighting arena. Hand-painted detailed Brazilian graphic novel game art matching Salvadores Nacionais, warm amber sunset highlights, muted violet shadows, dark crisp ink contours, fine crosshatching and subtle halftone/paper texture. Camera frontal horizontal 2D fighting arena with restrained depth. Full isolated subject inside 6% transparent padding; actual transparent alpha background, no ground patch or aura, no letters, logos or watermark. ONE complete white neoclassical presidential palace, broad symmetrical central portico with six columns and triangular pediment, two low windowed wings, cream white stone with warm dusk glints and muted violet shadows. Straight frontal elevation about3.5 times wider than high, complete facade and roof, modest wide stairs attached at center, flat baseline. No flag or flagpole, no people, no vehicles, no lawn, no sky, no fountain, no lettering. Fictional comic interpretation of Washington's white presidential palace; isolated full building on true transparent alpha.",
+    "tool": "built-in ImageGen",
+    "source": "source/generated/palacio-branco.png"
+  },
+  {
+    "slug": "gramado",
+    "prompt": "Use case: illustration-story. Asset type: opaque lawn floor texture for Salvadores Nacionais Washington fighting arena. Wide landscape3:2, full bleed surface of neatly cut medium-value muted sage and olive green grass, seen at a shallow downward angle, quiet fine painted grass strokes and gentle mowing bands. Detailed hand-painted Brazilian comic texture with restrained dark ink hatching, warm sunset light, muted violet shading, subtle paper texture. Important: low contrast evenly illuminated grass, no painted shadows of people, no dark patches shaped like characters, so the live shadow distinguishes real boss from clones. No sky/horizon, buildings, flowers, fences, markings, flags, people, debris, lettering. Grass only edge to edge.",
+    "tool": "built-in ImageGen",
+    "source": "source/generated/gramado.png"
+  },
+  {
+    "slug": "obelisco",
+    "prompt": "Use case: illustration-story. Asset type: independent distant OBELISK for Salvadores Nacionais Washington arena. Hand-painted detailed Brazilian graphic novel game art matching Salvadores Nacionais, warm amber sunset highlights, muted violet shadows, dark crisp ink contours, fine crosshatching and subtle halftone/paper texture. Camera frontal horizontal 2D fighting arena with restrained depth. Full isolated subject inside 6% transparent padding; actual transparent alpha background, no ground patch or aura, no letters, logos or watermark. ONE tall slender pale cream stone obelisk inspired by the Washington Monument, narrow square shaft tapering toward a short pyramidal pointed top, subtle rectangular stone block seams, minimal low square footing. Whole monument including tip and base visible with clear padding; straight frontal elevation and restrained cool lavender shaded right side, amber sunset edge on left. Only the isolated obelisk, no trees, buildings, ground, sky, people, flags or writing. True alpha outside stone silhouette.",
+    "tool": "built-in ImageGen",
+    "source": "source/generated/obelisco.png"
+  },
+  {
+    "slug": "bandeira-mastro-vento",
+    "prompt": "Use case: illustration-story. Asset type: six-frame animated torn US-style FLAG ON MAST for Salvadores Nacionais Washington arena. Hand-painted detailed Brazilian graphic novel game art matching Salvadores Nacionais, warm amber sunset highlights, muted violet shadows, dark crisp ink contours, fine crosshatching and subtle halftone/paper texture. Camera frontal horizontal 2D fighting arena with restrained depth. Full isolated subject inside 6% transparent padding; actual transparent alpha background, no ground patch or aura, no letters, logos or watermark. EXACTLY SIX full views of the SAME tall metal flagpole with a heavy low concrete base, round brass finial, attached halyard and a faded American stars-and-stripes flag flying RIGHT, frayed/torn free end. Fabric physically tied to pole at TWO points by halyard/rings visible in EVERY pose. Only cloth ripples gently; pole/base/finial and attachment points stay fixed, feet on same baseline. Exactly3columns by2rows of equal square cells, one ENTIRE pole/base/flag in each, ample8% margins. Full pole height about3times flag height, flag upperleft canton navy with small white stars, alternating red/cream stripes. No labels, grids, buildings, sky, ground patch or people. Actual transparent alpha around all six isolated assets.",
+    "tool": "built-in ImageGen",
+    "source": "source/generated/bandeira-mastro-vento.png"
+  },
+  {
+    "slug": "chafariz-base",
+    "prompt": "Use case: illustration-story. Asset type: independent FOUNTAIN basin architecture prop for Salvadores Nacionais Washington arena. Hand-painted detailed Brazilian graphic novel game art matching Salvadores Nacionais, warm amber sunset highlights, muted violet shadows, dark crisp ink contours, fine crosshatching and subtle halftone/paper texture. Camera frontal horizontal 2D fighting arena with restrained depth. Full isolated subject inside 6% transparent padding; actual transparent alpha background, no ground patch or aura, no letters, logos or watermark. ONE low round cream stone park fountain seen front at shallow angle, broad elliptical water basin on sturdy stepped circular plinth, small simple central pedestal with two shallow bowls. Pale blue still water surface inside basin. No flying water jets; these will be animated separately. Aged stone seams, warm dusk highlights, cool lavender shadow side. Entire base and bowl visible with generous margins. No lawn, trees, sky, palace, people, letters, logos or large external shadow patch. Actual transparent alpha outside stone and basin silhouette.",
+    "tool": "built-in ImageGen",
+    "source": "source/generated/chafariz-base.png"
+  },
+  {
+    "slug": "cerca-baixa",
+    "prompt": "Use case: illustration-story. Asset type: independent low garden fence for Salvadores Nacionais Washington arena. Hand-painted detailed Brazilian graphic novel game art matching Salvadores Nacionais: warm amber sunset highlights, muted violet shadows, dark crisp ink outlines, fine crosshatching, subtle halftone and paper texture. Camera frontal horizontal2D fighting arena with restrained3/4 depth. Complete isolated subject fully inside6% clear margins, actual transparent alpha background with no ground patch or external aura, no letters, logos or watermark. One wide low segment of dark wrought iron perimeter fence, elegant simple spear-tip pickets joined physically by two horizontal rails and two stronger end posts with low rectangular stone footings. Entire segment straight frontal elevation, about4times wider than tall. All posts and feet visible; true alpha through picket gaps and outside silhouette. No flags, people, lawn, wall, signs, sky, surrounding scenery.",
+    "tool": "built-in ImageGen",
+    "source": "source/generated/cerca-baixa.png"
+  },
+  {
+    "slug": "sebe",
+    "prompt": "Use case: illustration-story. Asset type: independent low clipped HEDGE prop for Salvadores Nacionais Washington lawn. Hand-painted detailed Brazilian graphic novel game art matching Salvadores Nacionais: warm amber sunset highlights, muted violet shadows, dark crisp ink outlines, fine crosshatching, subtle halftone and paper texture. Camera frontal horizontal2D fighting arena with restrained3/4 depth. Complete isolated subject fully inside6% clear margins, actual transparent alpha background with no ground patch or external aura, no letters, logos or watermark. One long rounded rectangular neatly trimmed dark green hedge, dense small leaf clusters, rounded top, flat bottom cut line, warm sunset light touching upper leaves, violet shade along bottom. About3times wider than tall, front elevation. Whole shrub visible with generous clear padding. No separate soil patch, pot, flowers, fence, sky, people or other objects. True transparent alpha outside foliage; restrained dark green distinct from olive grass.",
+    "tool": "built-in ImageGen",
+    "source": "source/generated/sebe.png"
+  },
+  {
+    "slug": "banco",
+    "prompt": "Use case: illustration-story. Asset type: separate park bench for Salvadores Nacionais Washington arena. Hand-painted detailed Brazilian graphic novel game art matching Salvadores Nacionais: warm amber sunset highlights, muted violet shadows, dark crisp ink outlines, fine crosshatching, subtle halftone and paper texture. Camera frontal horizontal2D fighting arena with restrained3/4 depth. Complete isolated subject fully inside6% clear margins, actual transparent alpha background with no ground patch or external aura, no letters, logos or watermark. ONE traditional low park bench, warm dark brown wooden seat and back slats, sturdy black wrought iron curved armrests and two sets of feet. Whole bench visible in straight frontal view with a little seat top visible, about2times wider than high, all feet on same level. No people, cushions, bags, plants, pavement, grass, text or environment. True transparent alpha outside complete bench, ample clear margin.",
+    "tool": "built-in ImageGen",
+    "source": "source/generated/banco.png"
+  },
+  {
+    "slug": "poste-jardim",
+    "prompt": "Use case: illustration-story. Asset type: independent garden lamp for Salvadores Nacionais Washington arena. Hand-painted detailed Brazilian graphic novel game art matching Salvadores Nacionais: warm amber sunset highlights, muted violet shadows, dark crisp ink outlines, fine crosshatching, subtle halftone and paper texture. Camera frontal horizontal2D fighting arena with restrained3/4 depth. Complete isolated subject fully inside6% clear margins, actual transparent alpha background with no ground patch or external aura, no letters, logos or watermark. ONE tall slender black iron park lamppost, square lantern with warm pale amber glass at top, simple finial, solid narrow post and heavy flared bolted base. Whole lamp visible including base, straight frontal elevation, restrained gold glints on black metal. Lantern firmly attached to pole; no external glowing haze. No flag, plants, lawn, pavement, people or words. True transparent background.",
+    "tool": "built-in ImageGen",
+    "source": "source/generated/poste-jardim.png"
+  },
+  {
+    "slug": "jatos-chafariz",
+    "prompt": "Use case: illustration-story. Asset type: standalone six-frame WATER JETS for fountain in Salvadores Nacionais Washington. Hand-painted detailed Brazilian graphic novel game art matching Salvadores Nacionais: warm amber sunset highlights, muted violet shadows, dark crisp ink outlines, fine crosshatching, subtle halftone and paper texture. Camera frontal horizontal2D fighting arena with restrained3/4 depth. Complete isolated subject fully inside6% clear margins, actual transparent alpha background with no ground patch or external aura, no letters, logos or watermark. EXACTLY SIX sequential poses of the SAME small tiered fountain water flow: central narrow upward jet opening into a gentle rounded spray crown, pale blue water spilling downward in two compact symmetric cascades, clear droplets around edges. Fixed central vertical axis, fixed emission point and splash baseline across all frames, water shapes change gently. Layout exactly3columns by2rows, equal square cells, no overlap; all water inside10% transparent margins, base at85% cell height. WATER ONLY, no stone fountain/bowls/objects, no sky, no scene, no glow clouds, no grids or words. Actual alpha0 background and transparent gaps inside sprays; bright outlined comic water is visible against dark or pale architecture.",
+    "tool": "built-in ImageGen",
+    "source": "source/generated/jatos-chafariz.png"
+  },
+  {
+    "slug": "muralha-interativa",
+    "prompt": "Use case: illustration-story. Asset type: single interactive golden WALL PILLAR sprite for Salvadores Nacionais Laranjão boss. Hand-painted detailed Brazilian graphic novel game art matching Salvadores Nacionais: warm amber sunset highlights, muted violet shadows, dark crisp ink outlines, fine crosshatching, subtle halftone and paper texture. Camera frontal horizontal2D fighting arena with restrained3/4 depth. Complete isolated subject fully inside6% clear margins, actual transparent alpha background with no ground patch or external aura, no letters, logos or watermark. ONE upright narrow rectangular barrier made of heavy gold metal bricks stacked in alternating masonry courses, exaggerated satirical ostentation, warm golden front, dark brass left edge, muted violet shadow on right. Strong intact silhouette, width about1/5 of height, flat level top and heavy flat bottom, entire column visible with generous transparent margins. Undamaged state only: NO cracks, no rubble, no glow cloud, no flames, no symbols, no writing, no ground or people. Hand inked graphic novel clear structure readable when drawn120px wide640px tall. True transparent alpha outside gold bricks; not a background landscape.",
+    "tool": "built-in ImageGen",
+    "source": "source/generated/muralha-interativa.png"
+  }
+]

@@ -1,0 +1,86 @@
+{
+  "stage": "inferno",
+  "baseMain": "982197fb37844c45d612f82d5d224518ebbaca29",
+  "officialReleaseSHA256": "374c00ef3b50d2ec1909b4306aec64699f5d190730d84c6490b4daee21025cc9",
+  "spritePacks": 31,
+  "spriteReferences": 881,
+  "spritePosters": 0,
+  "spriteIndexAudit": {
+    "__SPRITES": {
+      "packs": 31,
+      "references": 881,
+      "gitFiles": 881,
+      "missing": 0,
+      "extra": 0,
+      "duplicates": 0
+    },
+    "__SPRITEPOSTERS": {
+      "packs": 0,
+      "references": 0,
+      "gitFiles": 0,
+      "missing": 0,
+      "extra": 0,
+      "duplicates": 0
+    }
+  },
+  "characterArt": "official index is complete in both directions against the current Git tree, preserved without changes; no character artwork changed",
+  "assets": 22,
+  "runtimeBytes": 4048458,
+  "ground": {
+    "asset": "basalto",
+    "projection": "flat"
+  },
+  "manifestSHA256": "f8c58d7e09d1a893cdfe65a779e8785f6265ce0fdd5aeb866cadb49f026fd579",
+  "stageAssets": {
+    "belem": 46,
+    "aeroporto": 41,
+    "banheiros": 70,
+    "inferno": 22,
+    "mansao": 30,
+    "palco": 88,
+    "washington": 33
+  },
+  "htmlSHA256": "6226dd27b0f3ff292989645ad2b9da798656bd8917505ccfb8f5c41454952638",
+  "reproduction": "node tools/build-stage-release.mjs --stage=inferno --base=982197fb37844c45d612f82d5d224518ebbaca29 --report=production/qa/scenarios-review/build-release.json",
+  "limits": [
+    "stage assets and required UI packs must be present locally",
+    "full character artwork is not downloaded by this sparse-checkout build; every official strip/poster URL is checked for exact Git-tree coverage"
+  ],
+  "totalStageAssets": 330,
+  "currentBossPacks": {
+    "fujao": 42,
+    "fujao-esquerda": 42,
+    "fujao-fx": 15,
+    "pai-fujao": 40,
+    "pai-fujao-fx": 20
+  },
+  "scope": "Integrated source from main982197f, including current menus and Fujão/Pai do Fujão art, plus Washington, Inferno visualv2 and the final Belém bunting-support correction.",
+  "indexGuardChecks": "build-index-guard.json",
+  "indexGuardIndependentReview": "runtime/integration-static.json",
+  "qaStatus": "passed local runtime review; frozen baseline982; full-checkout CI required before merge",
+  "qaReview": {
+    "file": "runtime/final-review.json",
+    "passed": true,
+    "sha256": "ab6af58bf866812fcfaf4c8e6886fd6eeee7e4355ff2d19c13c552228d8c9131",
+    "stages": 7,
+    "coreChecks": 16,
+    "openFindings": 0
+  },
+  "qaProxy": {
+    "baseMain": "982197fb37844c45d612f82d5d224518ebbaca29",
+    "buildSHA256": "6226dd27b0f3ff292989645ad2b9da798656bd8917505ccfb8f5c41454952638",
+    "verifiedRemoteSprites": 420,
+    "downloadedBytes": 176414686,
+    "cachedBytes": 176414686,
+    "cacheLimit": 201326592,
+    "cacheEntries": 420,
+    "active": 0,
+    "pid": 16846,
+    "closed": true,
+    "sessionExitCode": 0,
+    "serverScript": "build-server.mjs",
+    "ownBrowserSessionsLaunched": 0,
+    "reviewerBrowserCloseConfirmed": true
+  },
+  "lock": "LOCK — build, index guard and runtime QA acknowledgement complete; no further writes by the build/proxy agent to this baseline."
+}

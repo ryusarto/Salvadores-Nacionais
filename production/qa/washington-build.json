@@ -1,0 +1,21 @@
+{
+  "stage": "washington",
+  "baseMain": "547b10f9ca8eb11c4b95b7c22b335e3f5435b78c",
+  "spritePacks": 26,
+  "spriteReferences": 722,
+  "spritePosters": 0,
+  "characterArt": "official index preserved exactly; all URLs checked against the official Git tree and character artwork unchanged",
+  "assets": 33,
+  "runtimeBytes": 6097354,
+  "ground": {
+    "asset": "gramado",
+    "projection": "flat"
+  },
+  "manifestSHA256": "8baaef39b75eeabf8e34ad2e866e262cdb3c7f1673de7a306000f4dd21bfb486",
+  "htmlSHA256": "8f04154ffa58d80a5691de3964005e1f891bf73e3a027913c1867707fe3c2d6f",
+  "reproduction": "node tools/build-stage-release.mjs --stage=washington --base=547b10f9ca8eb11c4b95b7c22b335e3f5435b78c --report=production/qa/washington-build.json",
+  "limits": [
+    "stage assets and required UI packs must be present locally",
+    "full character artwork was not downloaded by this sparse-checkout build; official URLs are preserved"
+  ]
+}

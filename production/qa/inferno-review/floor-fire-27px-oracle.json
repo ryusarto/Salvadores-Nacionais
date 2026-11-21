@@ -1,0 +1,1385 @@
+{
+  "safeWidth": 360,
+  "delay": 20,
+  "life": 260,
+  "cases": [
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 0,
+      "firePixels": 37180,
+      "maxAlpha": 102,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 0,
+      "firePixels": 37080,
+      "maxAlpha": 51,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 0,
+      "firePixels": 37258,
+      "maxAlpha": 102,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 0,
+      "firePixels": 37142,
+      "maxAlpha": 51,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 0,
+      "firePixels": 37241,
+      "maxAlpha": 102,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 0,
+      "firePixels": 37137,
+      "maxAlpha": 51,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 0,
+      "firePixels": 37288,
+      "maxAlpha": 255,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 0,
+      "firePixels": 37186,
+      "maxAlpha": 128,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 0,
+      "firePixels": 37329,
+      "maxAlpha": 255,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 0,
+      "firePixels": 37258,
+      "maxAlpha": 128,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 0,
+      "firePixels": 37332,
+      "maxAlpha": 255,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 0,
+      "firePixels": 37247,
+      "maxAlpha": 128,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 0,
+      "firePixels": 39997,
+      "maxAlpha": 102,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 0,
+      "firePixels": 39865,
+      "maxAlpha": 51,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 0,
+      "firePixels": 40633,
+      "maxAlpha": 102,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 0,
+      "firePixels": 40515,
+      "maxAlpha": 51,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 0,
+      "firePixels": 40031,
+      "maxAlpha": 102,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 0,
+      "firePixels": 39908,
+      "maxAlpha": 51,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 0,
+      "firePixels": 40125,
+      "maxAlpha": 255,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 0,
+      "firePixels": 40003,
+      "maxAlpha": 128,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 0,
+      "firePixels": 40715,
+      "maxAlpha": 255,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 0,
+      "firePixels": 40633,
+      "maxAlpha": 128,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 0,
+      "firePixels": 40129,
+      "maxAlpha": 255,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 0,
+      "firePixels": 40039,
+      "maxAlpha": 128,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 46199,
+      "maxAlpha": 102,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 46049,
+      "maxAlpha": 51,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 46666,
+      "maxAlpha": 102,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 46527,
+      "maxAlpha": 51,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 45975,
+      "maxAlpha": 102,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 45832,
+      "maxAlpha": 51,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 46333,
+      "maxAlpha": 255,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 46207,
+      "maxAlpha": 128,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 46771,
+      "maxAlpha": 255,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 46669,
+      "maxAlpha": 128,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 46093,
+      "maxAlpha": 255,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 45985,
+      "maxAlpha": 128,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    }
+  ],
+  "oldCases": [
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 645,
+      "firePixels": 38493,
+      "maxAlpha": 163,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 645,
+      "firePixels": 38493,
+      "maxAlpha": 163,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 989,
+      "firePixels": 38678,
+      "maxAlpha": 163,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 989,
+      "firePixels": 38678,
+      "maxAlpha": 163,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 846,
+      "firePixels": 38585,
+      "maxAlpha": 163,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 846,
+      "firePixels": 38585,
+      "maxAlpha": 163,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 647,
+      "firePixels": 38608,
+      "maxAlpha": 255,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 647,
+      "firePixels": 38608,
+      "maxAlpha": 255,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 990,
+      "firePixels": 38750,
+      "maxAlpha": 255,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 990,
+      "firePixels": 38750,
+      "maxAlpha": 255,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 846,
+      "firePixels": 38673,
+      "maxAlpha": 255,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 0,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 360,
+      "safePixels": 846,
+      "firePixels": 38673,
+      "maxAlpha": 255,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 565,
+      "firePixels": 41340,
+      "maxAlpha": 163,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 565,
+      "firePixels": 41340,
+      "maxAlpha": 163,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 869,
+      "firePixels": 42025,
+      "maxAlpha": 163,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 869,
+      "firePixels": 42025,
+      "maxAlpha": 163,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 740,
+      "firePixels": 41442,
+      "maxAlpha": 163,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 740,
+      "firePixels": 41442,
+      "maxAlpha": 163,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 566,
+      "firePixels": 41475,
+      "maxAlpha": 255,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 566,
+      "firePixels": 41475,
+      "maxAlpha": 255,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 870,
+      "firePixels": 42107,
+      "maxAlpha": 255,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 870,
+      "firePixels": 42107,
+      "maxAlpha": 255,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 741,
+      "firePixels": 41541,
+      "maxAlpha": 255,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 340,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 355,
+      "safePixels": 741,
+      "firePixels": 41541,
+      "maxAlpha": 255,
+      "spillSpan": 27,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 47105,
+      "maxAlpha": 163,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 20,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 47105,
+      "maxAlpha": 163,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 47360,
+      "maxAlpha": 163,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 20,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 47360,
+      "maxAlpha": 163,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 46861,
+      "maxAlpha": 163,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 20,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 46861,
+      "maxAlpha": 163,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 47243,
+      "maxAlpha": 255,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 0,
+      "frame": 0,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 47243,
+      "maxAlpha": 255,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 47461,
+      "maxAlpha": 255,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 0,
+      "frame": 11,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 47461,
+      "maxAlpha": 255,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 1,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 46980,
+      "maxAlpha": 255,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    },
+    {
+      "safe": [
+        335,
+        695
+      ],
+      "camera": 680,
+      "delay": 0,
+      "frame": 37,
+      "callerAlpha": 0.5,
+      "segments": 9,
+      "coreGeometry": true,
+      "visibleSafeColumns": 15,
+      "safePixels": 0,
+      "firePixels": 46980,
+      "maxAlpha": 255,
+      "spillSpan": 0,
+      "clipRestored": true,
+      "alphaRestored": true
+    }
+  ],
+  "beforeLeaks": 24,
+  "beforeMaxSpillSpan": 27,
+  "beforeMaxSafePixels": 990,
+  "afterMaxSafePixels": 0,
+  "passed": true,
+  "errors": [],
+  "method": "Real SA3 generator and renderer. Old drawFloorFire extracted verbatim from local base2d7f197; current renderer tested at3camera offsets,5safe positions including fractions,warning/active,3frames and2caller alpha values. No production files changed.",
+  "guarantee": "The declared safe[] interval is360px and has no rendered fire in full interior pixel columns. Existing core skips hazard fragments narrower than30px, so other uncovered gaps may exist; this test does not assert that the complement of safe[] is entirely hazardous."
+}

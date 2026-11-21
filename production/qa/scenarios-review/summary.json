@@ -1,0 +1,109 @@
+{
+  "date": "2026-11-20",
+  "status": "revisão local aprovada",
+  "passed": true,
+  "officialBase": "ce1ae12cf3babc49917f49f225af426b44f713cc",
+  "buildSHA256": "77a601215ea8b150f20f51155726658bcef8c2a009c2d7c42009ae3201a59420",
+  "stageCount": 7,
+  "assets": 330,
+  "environmentStrips": 66,
+  "environmentFrames": 396,
+  "spritePacks": 33,
+  "spriteStrips": 945,
+  "stages": [
+    {
+      "id": "belem",
+      "name": "Belém — Ver-o-Peso",
+      "assets": 46,
+      "status": "aprovado no escopo testado"
+    },
+    {
+      "id": "palco",
+      "name": "Belém — Palco",
+      "assets": 88,
+      "status": "aprovado no escopo testado"
+    },
+    {
+      "id": "banheiros",
+      "name": "Banheiros químicos",
+      "assets": 70,
+      "status": "aprovado no escopo testado"
+    },
+    {
+      "id": "aeroporto",
+      "name": "Aeroporto",
+      "assets": 41,
+      "status": "aprovado no escopo testado"
+    },
+    {
+      "id": "mansao",
+      "name": "Mansão",
+      "assets": 30,
+      "status": "aprovado no escopo testado"
+    },
+    {
+      "id": "washington",
+      "name": "Washington",
+      "assets": 33,
+      "status": "aprovado no escopo testado"
+    },
+    {
+      "id": "inferno",
+      "name": "Inferno",
+      "assets": 22,
+      "status": "aprovado no escopo testado"
+    }
+  ],
+  "fixes": [
+    {
+      "id": "ART-BEL-01",
+      "status": "closed",
+      "change": "Quatro mastros pintados e quatro nós explícitos, com mesmo parallax das duas fileiras de bandeirolas de Belém."
+    },
+    {
+      "id": "RELEASE-INDEX-GUARD",
+      "status": "validated",
+      "change": "Índice de sprites deve cobrir integralmente a árvore Git; índices parciais e posters omitidos são rejeitados antes da build."
+    }
+  ],
+  "campaign": {
+    "games": 56,
+    "unfinished": 0,
+    "method": "Simulação real do core nas 56 combinações; navegação/continue/finais/saves exercitados com resultados injetados explicitamente."
+  },
+  "currentValidation": {
+    "stagesVisited": 7,
+    "stagePacks": 7,
+    "runtimeStageAssets": 330,
+    "spritePacks": 33,
+    "spriteStrips": 945,
+    "posters": 0,
+    "newLaranjaoStripsAvailable": 40,
+    "newLaranjaoFxAvailable": 24,
+    "sceneImagesLoaded": 269,
+    "audioBuffersDecoded": 42,
+    "sceneCameraViews": 9,
+    "laranjaoMechanicCaptures": 10,
+    "laranjaoCoreFxChecks": 17,
+    "nativeWallBoundsCases": 3,
+    "infernoActiveCameraViews": 3,
+    "mobileViewportViews": 1,
+    "unitPassed": 7,
+    "unitFileNotInitialized": 1
+  },
+  "evidenceReuse": "Campanha/menu/21 vistas e 7 viewports mobile da integração 5446091 reaproveitados após prova por 16 arquivos, 4 trechos do app e 7 manifestos idênticos. Sete visitas atuais e Washington aprofundado executados novamente.216 casos do Inferno não foram apresentados como nova execução.",
+  "findingsOpen": [],
+  "fullCheckoutCIRequiredBeforeMerge": true,
+  "ciScope": "A suíte local parcial não foi declarada totalmente verde; fontes/atlases de personagens ausentes serão verificados pelos workflows de checkout completo antes do merge.",
+  "limits": [
+    "Automação no Chrome e inspeção de capturas; sem playtest humano, telefone físico ou certificação de desempenho.",
+    "Não houve inspeção de todos os quadros das 945 tiras de personagens; cobertura de índice é distinta de exercício visual."
+  ],
+  "reports": {
+    "assets/assets-audit.json": "9027ae456a921c112a8046002ccc1c1a35d13d632027b2d18d55e402cb9949aa",
+    "assets/visual-review.json": "65aa4bce894d901f724f870c1f0d8dfc159222f08e5ddefdce4a20a84e236a56",
+    "runtime/final-review.json": "ab6af58bf866812fcfaf4c8e6886fd6eeee7e4355ff2d19c13c552228d8c9131",
+    "current/final-review.json": "2086bf06fb6ddcbf6cca32ca3fe149dd843eb12a50211f25a07e15dbb2672b8c",
+    "current/source-review.json": "0fef9f937c0ed3510aecd2289efaf5d730118dc83f3ddd93b66420669358762b"
+  }
+}

@@ -1,0 +1,431 @@
+{
+  "passed": true,
+  "buildSHA256": "77a601215ea8b150f20f51155726658bcef8c2a009c2d7c42009ae3201a59420",
+  "official": "ce1ae12cf3babc49917f49f225af426b44f713cc",
+  "baseline": "5446091",
+  "scope": "Delta Laranjão PR39 e visita rápida aos sete cenários; campanha/menu completos reaproveitados por hash/trechos idênticos.",
+  "stages": [
+    {
+      "stage": "belem",
+      "runtime": {
+        "stage": {
+          "ready": true,
+          "loaded": 40,
+          "errors": [],
+          "groups": 36
+        },
+        "audio": {
+          "stage": "belem",
+          "available": true,
+          "active": false,
+          "muted": false,
+          "started": true,
+          "decoded": 6,
+          "gain": 0.14423315227031708,
+          "errors": []
+        },
+        "foe": "zanata"
+      },
+      "input": {
+        "from": 1040,
+        "to": 1089.6000000000004
+      },
+      "pause": true,
+      "resume": true,
+      "cameras": [
+        340
+      ],
+      "reduced": {
+        "shake": 0,
+        "flash": 0
+      },
+      "mechanics": null,
+      "mobile": null,
+      "spriteErrors": []
+    },
+    {
+      "stage": "palco",
+      "runtime": {
+        "stage": {
+          "ready": true,
+          "loaded": 78,
+          "errors": [],
+          "prepared": true
+        },
+        "audio": {
+          "stage": "palco",
+          "available": true,
+          "active": false,
+          "muted": false,
+          "started": true,
+          "decoded": 6,
+          "gain": 0.24030683934688568,
+          "errors": []
+        },
+        "foe": "chupetinha"
+      },
+      "input": {
+        "from": 1040,
+        "to": 1083.4000000000003
+      },
+      "pause": true,
+      "resume": true,
+      "cameras": [
+        340
+      ],
+      "reduced": {
+        "shake": 0,
+        "flash": 0
+      },
+      "mechanics": null,
+      "mobile": null,
+      "spriteErrors": []
+    },
+    {
+      "stage": "banheiros",
+      "runtime": {
+        "stage": {
+          "ready": true,
+          "loaded": 61,
+          "errors": [],
+          "prepared": true
+        },
+        "audio": {
+          "stage": "banheiros",
+          "available": true,
+          "active": false,
+          "muted": false,
+          "started": true,
+          "decoded": 6,
+          "gain": 0.3012119233608246,
+          "errors": []
+        },
+        "foe": "pavanassi"
+      },
+      "input": {
+        "from": 1040,
+        "to": 1089.6000000000004
+      },
+      "pause": true,
+      "resume": true,
+      "cameras": [
+        340
+      ],
+      "reduced": {
+        "shake": 0,
+        "flash": 0
+      },
+      "mechanics": null,
+      "mobile": null,
+      "spriteErrors": []
+    },
+    {
+      "stage": "aeroporto",
+      "runtime": {
+        "stage": {
+          "ready": true,
+          "loaded": 32,
+          "errors": [],
+          "prepared": true
+        },
+        "audio": {
+          "stage": "aeroporto",
+          "available": true,
+          "active": false,
+          "muted": false,
+          "started": true,
+          "decoded": 6,
+          "gain": 0.19009070098400116,
+          "errors": []
+        },
+        "foe": "fujao"
+      },
+      "input": {
+        "from": 1040,
+        "to": 1089.6000000000004
+      },
+      "pause": true,
+      "resume": true,
+      "cameras": [
+        340
+      ],
+      "reduced": {
+        "shake": 0,
+        "flash": 0
+      },
+      "mechanics": null,
+      "mobile": null,
+      "spriteErrors": []
+    },
+    {
+      "stage": "mansao",
+      "runtime": {
+        "stage": {
+          "ready": true,
+          "loaded": 21,
+          "errors": [],
+          "prepared": true
+        },
+        "audio": {
+          "stage": "mansao",
+          "available": true,
+          "active": false,
+          "muted": false,
+          "started": true,
+          "decoded": 6,
+          "gain": 0.17844346165657043,
+          "errors": []
+        },
+        "foe": "pai-fujao"
+      },
+      "input": {
+        "from": 1040,
+        "to": 1114.4000000000005
+      },
+      "pause": true,
+      "resume": true,
+      "cameras": [
+        340
+      ],
+      "reduced": {
+        "shake": 0,
+        "flash": 0
+      },
+      "mechanics": null,
+      "mobile": null,
+      "spriteErrors": []
+    },
+    {
+      "stage": "washington",
+      "runtime": {
+        "stage": {
+          "ready": true,
+          "loaded": 24,
+          "errors": [],
+          "prepared": true
+        },
+        "audio": {
+          "stage": "washington",
+          "available": true,
+          "active": false,
+          "muted": false,
+          "started": true,
+          "decoded": 6,
+          "gain": 0.23943914473056793,
+          "errors": []
+        },
+        "foe": "laranjao"
+      },
+      "input": {
+        "from": 1040,
+        "to": 1083.4000000000003
+      },
+      "pause": true,
+      "resume": true,
+      "cameras": [
+        0,
+        340,
+        680
+      ],
+      "reduced": {
+        "shake": 0,
+        "flash": 0
+      },
+      "mechanics": {
+        "checks": [
+          {
+            "passed": true,
+            "label": "Fake News cria duas cópias"
+          },
+          {
+            "passed": true,
+            "label": "Muralha nasce com seis HP"
+          },
+          {
+            "passed": true,
+            "label": "Muralha perde um HP por golpe 1",
+            "hp": 5
+          },
+          {
+            "passed": true,
+            "label": "Muralha perde um HP por golpe 2",
+            "hp": 4
+          },
+          {
+            "passed": true,
+            "label": "Muralha perde um HP por golpe 3",
+            "hp": 3
+          },
+          {
+            "passed": true,
+            "label": "Muralha perde um HP por golpe 4",
+            "hp": 2
+          },
+          {
+            "passed": true,
+            "label": "Muralha perde um HP por golpe 5",
+            "hp": 1
+          },
+          {
+            "passed": true,
+            "label": "Muralha perde um HP por golpe 6",
+            "hp": 0
+          },
+          {
+            "passed": true,
+            "label": "Sexto golpe derruba muralha"
+          },
+          {
+            "passed": true,
+            "label": "Limite de armadura três cargas"
+          },
+          {
+            "passed": true,
+            "label": "Armadura absorve e consome carga 1"
+          },
+          {
+            "passed": true,
+            "label": "Armadura absorve e consome carga 2"
+          },
+          {
+            "passed": true,
+            "label": "Armadura absorve e consome carga 3"
+          },
+          {
+            "passed": true,
+            "label": "Super real aciona banimento",
+            "remaining": 119
+          },
+          {
+            "passed": true,
+            "label": "Banido fica imune a golpe"
+          },
+          {
+            "passed": true,
+            "label": "Retorno aplica dano previsto",
+            "damage": 1500,
+            "steps": 119
+          },
+          {
+            "passed": true,
+            "label": "FX de retorno acompanha vítima e explode ao pousar",
+            "landSteps": 24
+          }
+        ],
+        "shots": [
+          "clones",
+          "clone-fx",
+          "wall-6",
+          "wall-3",
+          "wall-1",
+          "armor-3",
+          "armor-1",
+          "banished",
+          "return",
+          "landed"
+        ]
+      },
+      "mobile": {
+        "width": 844,
+        "scrollWidth": 844,
+        "touch": true
+      },
+      "spriteErrors": []
+    },
+    {
+      "stage": "inferno",
+      "runtime": {
+        "stage": {
+          "ready": true,
+          "loaded": 13,
+          "errors": [],
+          "prepared": true
+        },
+        "audio": {
+          "stage": "inferno",
+          "available": true,
+          "active": false,
+          "muted": false,
+          "started": true,
+          "decoded": 6,
+          "gain": 0.004579759668558836,
+          "errors": []
+        },
+        "foe": "djabo"
+      },
+      "input": {
+        "from": 1040,
+        "to": 1125.626619832318
+      },
+      "pause": true,
+      "resume": true,
+      "cameras": [
+        340
+      ],
+      "reduced": {
+        "shake": 0,
+        "flash": 0
+      },
+      "mechanics": {
+        "checks": [
+          {
+            "label": "Inferno Nacional preserva faixa segura360",
+            "passed": true,
+            "safe": [
+              1376.689359988086,
+              1736.689359988086
+            ],
+            "segments": [
+              [
+                110,
+                350
+              ],
+              [
+                350,
+                590
+              ],
+              [
+                590,
+                830
+              ],
+              [
+                830,
+                1070
+              ],
+              [
+                1070,
+                1310
+              ],
+              [
+                1310,
+                1376.689359988086
+              ],
+              [
+                1736.689359988086,
+                1790
+              ],
+              [
+                1790,
+                2030
+              ],
+              [
+                2030,
+                2270
+              ],
+              [
+                2270,
+                2490
+              ]
+            ]
+          }
+        ]
+      },
+      "mobile": null,
+      "spriteErrors": []
+    }
+  ],
+  "errors": [],
+  "http": [],
+  "network": [],
+  "method": "Menus e lutas Versus reais; snapshots das mecânicas via core e FX real com posições/recursos explícitos. Capturas training congeladas, não playtest humano."
+}

@@ -1,0 +1,152 @@
+{
+  "verdict": "approved-for-tested-preview-scope",
+  "environment": {
+    "browser": "158.0.8127.37",
+    "desktop": [
+      1440,
+      1000
+    ],
+    "mobile": [
+      844,
+      390
+    ],
+    "canvas": [
+      1920,
+      1080
+    ],
+    "build": "local generated offline preview"
+  },
+  "inventory": {
+    "status": {
+      "ready": true,
+      "loaded": 24,
+      "errors": [],
+      "prepared": false
+    },
+    "errors": [],
+    "assets": 33,
+    "images": 27,
+    "cards": 27,
+    "anchors": {
+      "fountainNozzle": {
+        "x": 1900,
+        "y": 692.0208333333334
+      },
+      "fountainBase": {
+        "x": 1900,
+        "y": 826
+      },
+      "communityTable": {
+        "x": 400,
+        "y": 688
+      },
+      "fightFeet": {
+        "x": 1300,
+        "y": 930
+      }
+    },
+    "world": {
+      "width": 2600,
+      "height": 1080,
+      "viewWidth": 1920,
+      "cameraMax": 680,
+      "feetY": 930,
+      "groundTopY": 826
+    }
+  },
+  "cameras": {
+    "0": "dff2011fe182764556ea1e5b643c8ff572ea801521b118736d52d52ded85484d",
+    "340": "e7dfca8e91bc34fa86743961f9c78ab87af4a3c01d23002653e10a1000e07d52",
+    "680": "c3c4d5a1873166c8f6be7e60073cb955dbe2ca6eb67d238a6539a59cd1be04e9"
+  },
+  "shadowEvidence": {
+    "calls": [
+      {
+        "x": 1680,
+        "y": 936,
+        "rx": 105,
+        "ry": 16
+      }
+    ],
+    "realX": 1680,
+    "clones": [
+      1420,
+      1940
+    ]
+  },
+  "shadowMethod": "Read-only ellipse call instrumentation forwards the native Canvas method unchanged; heroes hidden, exactly one shadow call for the real Laranjao, none for the two clones.",
+  "poseFrames": [
+    0,
+    15,
+    30,
+    45,
+    60,
+    75
+  ],
+  "filters": {
+    "objects": true,
+    "effects": true,
+    "ground": true
+  },
+  "pause": "pass",
+  "step": "pass",
+  "reducedEffects": "pass",
+  "gallery": "pass",
+  "wallHP": [
+    6,
+    3,
+    1
+  ],
+  "armor": 3,
+  "audio": [
+    {
+      "id": "trilha-intro",
+      "duration": 4.137913832199547,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "trilha-loop",
+      "duration": 33.10344671201814,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "ambiente-gramado",
+      "duration": 16,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "vento",
+      "duration": 16,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "agua-chafariz",
+      "duration": 16,
+      "channels": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "publico",
+      "duration": 16,
+      "channels": 2,
+      "sampleRate": 44100
+    }
+  ],
+  "mobile": {
+    "width": 844,
+    "scrollWidth": 844,
+    "canvas": 796
+  },
+  "errors": [],
+  "failed": [],
+  "httpErrors": [],
+  "limits": [
+    "No human playtest",
+    "No physical device test",
+    "Not a deployed game build"
+  ]
+}

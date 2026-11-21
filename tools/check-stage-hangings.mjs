@@ -7,8 +7,10 @@ import sharp from 'sharp';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const cameras=[0,340,680],alphaRadius=5,alphaThreshold=12,maxTolerance=8;
-const stages=process.argv.slice(2).length?process.argv.slice(2):['palco','banheiros'];
-assert.ok(stages.every(id=>['palco','banheiros'].includes(id)),'Usage: node tools/check-stage-hangings.mjs [palco] [banheiros]');
+const stageArgs=process.argv.slice(2).filter(a=>!a.startsWith('--report='));
+const stages=stageArgs.length?stageArgs:['belem','palco','banheiros'];
+const reportPath=resolve(root,process.argv.find(a=>a.startsWith('--report='))?.slice(9)||'production/qa/stage-hangings.json');
+assert.ok(stages.every(id=>['belem','palco','banheiros'].includes(id)),'Usage: node tools/check-stage-hangings.mjs [belem] [palco] [banheiros]');
 const isHanging=asset=>asset.startsWith('bandeirolas-')||asset==='bandeira-trans-vento';
 const finite=(v,fallback)=>Number.isFinite(v)?v:fallback;
 const pair=(value,label)=>{
@@ -119,7 +121,7 @@ for(const stage of stages){
  }catch(error){report.errors.push(`${stage}: ${error.message}`);}
 }
 report.status=report.errors.length?'fail':'pass';
-mkdirSync(join(root,'production/qa'),{recursive:true});
-writeFileSync(join(root,'production/qa/stage-hangings.json'),JSON.stringify(report,null,2)+'\n');
+mkdirSync(dirname(reportPath),{recursive:true});
+writeFileSync(reportPath,JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({status:report.status,stages:report.stages.map(s=>({stage:s.stage,hangings:s.hangings.length,anchors:s.hangings.reduce((n,h)=>n+h.anchors.length,0)})),errors:report.errors}));
 assert.deepEqual(report.errors,[],'Physical hanging QA failed; see production/qa/stage-hangings.json');

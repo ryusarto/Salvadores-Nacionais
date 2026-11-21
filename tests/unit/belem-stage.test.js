@@ -4,8 +4,8 @@ import{BELEM_LAYERS,BELEM_OBJECTS,stageFrame,stageLayerWidth}from'../../src/data
 import{loadBelemStage,drawBelemStage,drawBelemGround,belemStageStatus}from'../../src/render/belem-stage.js';
 const root=new URL('../../production/stages/belem/',import.meta.url);
 const manifest=()=>JSON.parse(readFileSync(new URL('manifest.json',root)));
-test('Belém has all 36 produced groups, 45 delivered files and intact source hashes',async()=>{
- const m=manifest();assert.equal(m.groups,36);assert.equal(m.assetGroups.length,36);assert.equal(Object.keys(m.assets).length,45);
+test('Belém has all 36 produced groups, 46 delivered files and intact source hashes',async()=>{
+ const m=manifest();assert.equal(m.groups,36);assert.equal(m.assetGroups.length,36);assert.equal(Object.keys(m.assets).length,46);
  for(const g of m.assetGroups)assert.equal(g.status,'produced',g.id);
  for(const[id,a]of Object.entries(m.assets)){
   const bytes=readFileSync(new URL(a.path,root));assert.equal(createHash('sha256').update(bytes).digest('hex'),a.sha256,id);
@@ -38,4 +38,11 @@ test('Ground covers every scanline and moves exactly with fighters at their foot
  const a=capture(0),b=capture(10);
  for(let y=826;y<1080;y+=2){const row=b.filter(v=>v[6]===y);assert.ok(row.length);assert.ok(row[0][5]<=0);assert.ok(row.at(-1)[5]+row.at(-1)[7]>=1920);}
  const footA=a.find(v=>v[6]===930),footB=b.find(v=>v[6]===930);assert.equal(footA[5]-footB[5],10);
+});
+
+test('Both bunting rows use four painted supports at the same depth and explicit knots',()=>{
+ const m=manifest(),mast=m.assets['mastro-bandeirolas'];assert.equal(mast.origin,'reused-palco');assert.equal(mast.sourceAsset,'mastro-bandeirolas');assert.equal(mast.sha256,mast.sourceSha256);assert.equal(mast.sha256,'39f5749c3e4bc5835c7eabc575d3913ca3dbea62353af6befd8c972fd64105c5');
+ assert.deepEqual(m.objects,BELEM_OBJECTS);assert.equal(m.supplementalGroups.length,1);assert.equal(m.assetGroups.length,36);
+ const supports=BELEM_OBJECTS.filter(o=>o.asset==='mastro-bandeirolas');assert.equal(supports.length,4);
+ for(const o of BELEM_OBJECTS.filter(o=>o.asset.startsWith('bandeirolas-'))){assert.equal(o.suspension.anchors.length,2);for(const a of o.suspension.anchors){const pole=supports.find(p=>p.id===a.objectId);assert.ok(pole);assert.equal(pole.factor,o.factor);assert.equal(pole.y,826);assert.equal(o.suspension.tolerance,8);}}
 });

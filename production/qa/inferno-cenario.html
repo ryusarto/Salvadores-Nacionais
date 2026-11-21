@@ -1,0 +1,1245 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Inferno — Arena final do Djabo | Assets separados</title><style>
+*{box-sizing:border-box}body{margin:0;background:#101a23;color:#eee5d2;font:15px system-ui,sans-serif}main{max-width:1440px;margin:auto;padding:24px}h1{font:42px Georgia,serif;margin:4px 0 8px}.eyebrow{color:#e7b767;letter-spacing:2px;font-size:12px}p{color:#abb6bf}canvas#stage{width:100%;height:auto;display:block;background:#1d2232;border-radius:8px}.bar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:15px 0}button,a{font:inherit}button{background:#e8c583;border:0;border-radius:5px;padding:9px 13px;color:#18202a;cursor:pointer}a{color:#e8c583}label{display:inline-flex;gap:6px;align-items:center}#camera{width:200px}#gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}article{background:#1e2a34;padding:12px;border-radius:7px;min-width:0}article canvas{width:100%;height:180px;background:repeating-conic-gradient(#293742 0% 25%,#31404b 0% 50%) 50%/18px 18px}article h3{font-size:15px;overflow-wrap:anywhere}article p{font-size:12px}article a{display:inline-block;margin:12px}#audio{display:grid;grid-template-columns:200px 1fr;gap:15px}#audio audio{width:100%;max-width:500px}h2{font:28px Georgia,serif;margin-top:35px}#status{font-size:13px}@media(max-width:600px){main{padding:12px}h1{font-size:29px}#audio{grid-template-columns:1fr}#camera{width:160px}}
+</style><main><div class="eyebrow">SALVADORES NACIONAIS · CENÁRIO 07</div><h1>Inferno — Arena final do Djabo</h1><p>Caverna, arquitetura infernal, lava distante e objetos em peças independentes. Cada arquivo pode ser inspecionado e baixado na galeria.</p><p id="status">Carregando os assets…</p><canvas id="stage" width="1920" height="1080"></canvas>
+<div class="bar"><button id="pause">Pausar</button><button id="step">+15 quadros</button><label>Câmera <input id="camera" type="range" min="0" max="680" value="340"><span id="cameraValue">340</span></label><span>Quadro <span id="frame">0</span></span><button id="scene">Ver cenário</button><button id="download">Baixar composição</button></div>
+<div class="bar"><label><input id="heroes" type="checkbox" checked>Lutadores em escala</label><label><input id="feet" type="checkbox">Linha dos pés</label><label><input id="objects" type="checkbox" checked>Objetos e arquitetura</label><label><input id="effects" type="checkbox" checked>Efeitos ambientais</label><label><input id="ground" type="checkbox" checked>Piso</label><label><input id="reduce" type="checkbox">Efeitos reduzidos</label></div><div class="bar"><label><input id="hell" type="checkbox">Demonstrar Inferno Nacional</label><label>Estado <select id="hell-state"><option value="aviso">Aviso — 20 quadros</option><option value="ativo">Ativo</option></select></label><label>Início seguro <input id="safe" type="range" min="110" max="2130" value="1120" step="1"><span id="safeValue">1120</span></label><label><input id="mark-safe" type="checkbox" checked>Marcar geometria segura</label><label><input id="anchors" type="checkbox">Pontos de apoio</label></div><p>Demonstração visual: segmentos gerados pelo SA3 real e desenhados pelo renderer do jogo, com trecho seguro de 360px. Os estados são fixos e não aplicam dano nem simulam combate. A marca ciano é um diagnóstico da geometria e não fica pintada no piso. Belga e Ryuchi servem apenas como referência de escala.</p><p id="selected">Composição completa</p>
+<h2>Assets separados</h2><div id="gallery"></div><h2>Trilha e ambientes</h2><p>Tema final original a 108 BPM com coro sintetizado sem palavras, baixo e percussão; ambientes de caverna, vento profundo, lava distante e correntes. Sem gravações externas ou vozes. Use os controles abaixo para ouvir cada arquivo.</p><div id="audio"></div></main><script>(() => {
+  // src/render/belem-stage.js
+  function drawBelemGround(c, texture, cam) {
+    const top = 826;
+    for (let y = top; y < 1080; y += 2) {
+      const q = (y - top) / (1080 - top), scale = 1 + (y - 930) / 260, tile = 1024 * scale;
+      const row = Math.floor(1024 * (1 - 1 / (1 + q * 2))) % 1024;
+      const offset = ((cam * scale + 960 * (scale - 1)) % tile + tile) % tile;
+      for (let x = -offset; x < 1920; x += tile) c.drawImage(texture, 0, row, 1024, 2, x, y, tile, 2);
+    }
+    const shade = c.createLinearGradient(0, top, 0, 1080);
+    shade.addColorStop(0, "rgba(27,17,43,.25)");
+    shade.addColorStop(1, "rgba(27,17,43,.12)");
+    c.fillStyle = shade;
+    c.fillRect(0, top, 1920, 254);
+    c.fillStyle = "#353139";
+    c.fillRect(0, top - 2, 1920, 3);
+  }
+
+  // src/render/stage-packs.js
+  var packs = /* @__PURE__ */ new Map();
+  var catalog = /* @__PURE__ */ new Map();
+  var requests = /* @__PURE__ */ new Map();
+  function requestStageArt(id) {
+    if (packs.has(id) || !catalog.has(id)) return requests.get(id);
+    if (!requests.has(id)) requests.set(id, loadStageArt({ [id]: catalog.get(id) }, { prepare: true }));
+    return requests.get(id);
+  }
+  var finite = (v, fallback) => Number.isFinite(v) ? v : fallback;
+  var clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+  async function loadStageArt(all, { prepare = false } = {}) {
+    await Promise.all(Object.entries(all).filter(([id]) => id !== "belem").map(async ([id, pack]) => {
+      packs.delete(id);
+      if (!Array.isArray(pack.layers) || !pack.layers.length || !pack.assets) return;
+      const used = [...pack.layers, ...pack.objects || [], ...pack.foreground || []].map((o) => o.asset);
+      if (pack.ground) used.push(pack.ground.asset);
+      used.push(...pack.interactive || []);
+      const essential = pack.essential || used;
+      const images = /* @__PURE__ */ new Map(), errors = [];
+      await Promise.all([...new Set(used)].map(async (key) => {
+        const a = pack.assets[key];
+        if (!a || a.kind === "audio") {
+          errors.push(key);
+          return;
+        }
+        try {
+          const img = new Image();
+          img.decoding = "async";
+          img.src = a.url;
+          await img.decode();
+          if (!(img.width > 0 && img.height > 0)) throw Error("empty image");
+          images.set(key, img);
+        } catch {
+          errors.push(key);
+        }
+      }));
+      if (!(essential.length && essential.every((key) => images.has(key)))) return;
+      const item = { pack, images, errors, loaded: images.size, fast: null };
+      if (prepare && canPrepare()) {
+        try {
+          item.fast = await prepareStage(pack, images);
+          item.images = new Map((pack.interactive || []).filter((key) => images.has(key)).map((key) => [key, images.get(key)]));
+        } catch {
+          item.fast = null;
+        }
+      }
+      packs.set(id, item);
+    }));
+  }
+  function stageArtStatus(id) {
+    const item = packs.get(id);
+    return { ready: !!item, loaded: item?.loaded || 0, errors: [...item?.errors || []], prepared: !!item?.fast };
+  }
+  var canPrepare = () => typeof OffscreenCanvas === "function" || typeof document !== "undefined";
+  var makeCanvas = (w, h) => typeof OffscreenCanvas === "function" ? new OffscreenCanvas(w, h) : Object.assign(document.createElement("canvas"), { width: w, height: h });
+  var yieldTask = () => new Promise((resolve) => setTimeout(resolve, 0));
+  function geometry(a, size, o) {
+    const frames = a.frames || 1, cellW = a.cellWidth || size.width / frames;
+    const [sx, sy, sw, sh] = a.crop || [0, 0, cellW, size.height];
+    const h = o.h ?? (o.w ? o.w * sh / sw : sh), w = o.w ?? h * sw / sh;
+    return { frames, cellW, sx, sy, sw, sh, w, h, x: o.x - w / 2, y: o.y - h, factor: finite(o.factor, 1), alpha: clamp(finite(o.opacity, 1), 0, 1) };
+  }
+  function planStageObjects(list, assets, sizes) {
+    const ops = [];
+    for (const o of list || []) {
+      const a = assets[o.asset], size = sizes.get(o.asset);
+      if (!a || !size) continue;
+      const g = geometry(a, size, o);
+      if (g.frames > 1) {
+        ops.push({ type: "anim", key: o.asset, fps: o.fps, phase: o.phase, ...g });
+        continue;
+      }
+      const last = ops.at(-1);
+      const run = last?.type === "bake" && last.factor === g.factor ? last : null;
+      const item = { key: o.asset, ...g };
+      if (run) run.items.push(item);
+      else ops.push({ type: "bake", factor: g.factor, items: [item] });
+    }
+    for (const op of ops) if (op.type === "bake") {
+      const x0 = Math.floor(Math.min(...op.items.map((i) => i.x))), y0 = Math.floor(Math.min(...op.items.map((i) => i.y)));
+      const x1 = Math.ceil(Math.max(...op.items.map((i) => i.x + i.w))), y1 = Math.ceil(Math.max(...op.items.map((i) => i.y + i.h)));
+      op.box = { x: x0, y: y0, w: Math.max(1, x1 - x0), h: Math.max(1, y1 - y0) };
+    }
+    return ops;
+  }
+  async function prepareStage(pack, images) {
+    const prepared = [];
+    for (const list of [pack.objects, pack.foreground]) {
+      const ops = planStageObjects(list, pack.assets, images);
+      for (const op of ops) {
+        if (op.type === "bake") {
+          const cv = makeCanvas(op.box.w, op.box.h), g = cv.getContext("2d");
+          g.imageSmoothingEnabled = true;
+          g.imageSmoothingQuality = "high";
+          for (const i of op.items) {
+            g.globalAlpha = i.alpha;
+            g.drawImage(images.get(i.key), i.sx, i.sy, i.sw, i.sh, i.x - op.box.x, i.y - op.box.y, i.w, i.h);
+          }
+          op.cv = cv;
+        } else {
+          const cw = Math.max(1, Math.ceil(op.w)), ch = Math.max(1, Math.ceil(op.h));
+          const cv = makeCanvas(cw * op.frames, ch), g = cv.getContext("2d");
+          g.imageSmoothingEnabled = true;
+          g.imageSmoothingQuality = "high";
+          for (let f = 0; f < op.frames; f++) g.drawImage(images.get(op.key), op.sx + f * op.cellW, op.sy, op.sw, op.sh, f * cw, 0, op.w, op.h);
+          op.cv = cv;
+          op.cw = cw;
+        }
+        op.items = null;
+        await yieldTask();
+      }
+      prepared.push(ops);
+    }
+    const layers = pack.layers.map((layer) => ({ layer, img: images.get(layer.asset) })).filter((l) => l.img);
+    const ground = pack.ground && images.get(pack.ground.asset);
+    return { layers, objects: prepared[0], foreground: prepared[1], ground, groundCache: null, groundCam: null };
+  }
+  function drawPrepared(c, ops, camera, frame, reducedEffects) {
+    for (const op of ops) {
+      if (op.type === "bake") {
+        const x = Math.round(op.box.x - camera * op.factor);
+        if (x + op.box.w < 0 || x > 1920) continue;
+        c.globalAlpha = 1;
+        c.drawImage(op.cv, x, op.box.y);
+      } else {
+        const x = Math.round(op.x - camera * op.factor);
+        if (x + op.w < 0 || x > 1920) continue;
+        const f = stageAnimationFrame(reducedEffects ? 0 : frame, op.fps, op.frames, op.phase);
+        c.globalAlpha = op.alpha;
+        c.drawImage(op.cv, f * op.cw, 0, op.w, op.h, x, Math.round(op.y), op.w, op.h);
+      }
+    }
+    c.globalAlpha = 1;
+  }
+  function drawPackGround(c, pack, image, camera) {
+    const ground = pack.ground, flat = ground.projection === "flat";
+    const y = flat ? finite(ground.y, finite(pack.world?.groundTopY, 826)) : 826;
+    const height = flat ? finite(ground.height, finite(pack.world?.height, 1080) - y) : 254;
+    if (flat) {
+      const width = finite(ground.width, finite(pack.world?.width, 2600));
+      c.drawImage(image, finite(ground.x, 0) - camera * finite(ground.factor, 1), y, width, height);
+    } else drawBelemGround(c, image, camera);
+    if (ground.shade) {
+      c.save();
+      c.fillStyle = ground.shade;
+      c.fillRect(0, y, 1920, height);
+      c.restore();
+    }
+  }
+  var GROUND_TOP = 820;
+  function drawPreparedGround(c, pack, fast, camera) {
+    if (pack.ground.projection === "flat") {
+      drawPackGround(c, pack, fast.ground, camera);
+      return;
+    }
+    const pixel = Math.round(camera);
+    fast.groundCache ??= makeCanvas(1920, 1080 - GROUND_TOP);
+    if (fast.groundCam !== pixel) {
+      const g = fast.groundCache.getContext("2d");
+      g.setTransform(1, 0, 0, 1, 0, 0);
+      g.clearRect(0, 0, 1920, 1080 - GROUND_TOP);
+      g.setTransform(1, 0, 0, 1, 0, -GROUND_TOP);
+      drawPackGround(g, pack, fast.ground, pixel);
+      fast.groundCam = pixel;
+    }
+    c.drawImage(fast.groundCache, 0, GROUND_TOP);
+  }
+  function drawFast(c, item, camera, frame, options) {
+    const { pack, fast } = item;
+    c.save();
+    for (const { layer, img } of fast.layers) {
+      const height = layer.height ?? 1080, width = layer.width ?? img.width * height / img.height;
+      c.globalAlpha = clamp(finite(layer.opacity, 1), 0, 1);
+      c.drawImage(img, (layer.x || 0) - camera * finite(layer.factor, 1), layer.y || 0, width, height);
+    }
+    drawPrepared(c, fast.objects, camera, frame, options.reducedEffects);
+    if (fast.ground) drawPreparedGround(c, pack, fast, camera);
+    drawPrepared(c, fast.foreground, camera, frame, options.reducedEffects);
+    c.restore();
+    return true;
+  }
+  function stageAnimationFrame(frame, fps = 5, count = 6, phase = 0) {
+    const n = Math.max(1, Math.floor(finite(count, 1)));
+    return ((Math.floor(Math.max(0, finite(frame, 0)) * Math.max(0, finite(fps, 5)) / 60) + Math.floor(finite(phase, 0))) % n + n) % n;
+  }
+  function object(c, item, o, cam, frame, reducedEffects, cull = true) {
+    const a = item.pack.assets[o.asset], img = item.images.get(o.asset);
+    if (!a || !img) return false;
+    const frames = a.frames || 1, cellW = a.cellWidth || img.width / frames;
+    const [sx, sy, sw, sh] = a.crop || [0, 0, cellW, img.height];
+    const h = o.h ?? (o.w ? o.w * sh / sw : sh), w = o.w ?? h * sw / sh;
+    const x = o.x - cam * finite(o.factor, 1) - w / 2, y = o.y - h;
+    if (cull && (x + w < 0 || x > 1920)) return true;
+    const f = frames > 1 ? stageAnimationFrame(reducedEffects ? 0 : frame, o.fps, frames, o.phase) : 0;
+    c.save();
+    c.globalAlpha = clamp(finite(o.opacity, 1), 0, 1);
+    c.drawImage(img, sx + f * cellW, sy, sw, sh, x, y, w, h);
+    c.restore();
+    return true;
+  }
+  function drawStageArt(c, id, cam, frame = 0, options = {}) {
+    const item = packs.get(id);
+    if (!item) {
+      void requestStageArt(id);
+      return false;
+    }
+    const camera = clamp(finite(cam, 0), 0, 680), { pack } = item;
+    if (item.fast) return drawFast(c, item, camera, frame, options);
+    for (const layer of pack.layers) {
+      const img = item.images.get(layer.asset);
+      if (!img) continue;
+      const height = layer.height ?? 1080, width = layer.width ?? img.width * height / img.height;
+      c.save();
+      c.globalAlpha = clamp(finite(layer.opacity, 1), 0, 1);
+      c.drawImage(img, (layer.x || 0) - camera * finite(layer.factor, 1), layer.y || 0, width, height);
+      c.restore();
+    }
+    for (const o of pack.objects || []) object(c, item, o, camera, frame, options.reducedEffects);
+    if (pack.ground && item.images.has(pack.ground.asset)) {
+      drawPackGround(c, pack, item.images.get(pack.ground.asset), camera);
+    }
+    for (const o of pack.foreground || []) object(c, item, o, camera, frame, options.reducedEffects);
+    return true;
+  }
+
+  // src/data/system.js
+  var SYS = {
+    FPS: 60,
+    VIEW_W: 1920,
+    VIEW_H: 1080,
+    STAGE_W: 2600,
+    GROUND_Y: 930,
+    // y de tela onde ficam os pés
+    WALL_PAD: 110,
+    // distância mínima do centro do lutador até a parede
+    MAX_DIST: 1500,
+    // separação máxima entre lutadores (câmera)
+    START_GAP: 520,
+    HP: 1e4,
+    ROUNDS_TO_WIN: 2,
+    ROUND_SECONDS: 99,
+    INTRO_FRAMES: 110,
+    KO_FRAMES: 150,
+    GRAVITY: 1.9,
+    JUMP: { pre: 4, vy: 36, vxF: 9.5, vxB: -8.5, land: 3, landAttack: 5 },
+    DASH: { frames: 17, speed: 17, runSpeed: 12.5, runStop: 7, tapWindow: 12 },
+    BACKDASH: { frames: 21, speed: 13, throwInv: 9 },
+    BODY: {
+      stand: { x: -70, y: 0, w: 140, h: 480 },
+      crouch: { x: -75, y: 0, w: 150, h: 300 },
+      air: { x: -70, y: 70, w: 140, h: 380 },
+      down: { x: -160, y: 0, w: 320, h: 90 },
+      push: 150
+      // largura da caixa de empurrão
+    },
+    MOTION: { first: 30, last: 12 },
+    // janelas (quadros) das sequências → ← e ↓ →
+    CMD_BTN: { c1: "L", c2: "M" },
+    // botão que fecha cada sequência
+    BUFFER: 7,
+    // quadros que um botão apertado cedo continua valendo
+    SIMUL: 3,
+    // janela para dois botões contarem como "juntos"
+    HITSTOP: { L: 8, M: 10, H: 13, S: 12, X: 18, block: -2, proj: 7 },
+    PUSH_DECAY: 0.8,
+    // Escala de dano por número do golpe no combo (1º, 2º, 3º...)
+    SCALING: [1, 1, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1],
+    SUPER_MIN_SCALE: 0.5,
+    COUNTER: { dmg: 1.2, stun: 2, punishStun: 4 },
+    JUGGLE_MAX: 6,
+    // acertos no ar antes do rival ficar imune: o golpe que levanta + até 5 golpes aéreos, em qualquer ordem
+    CHIP: 0.25,
+    // Garra: com pouca vida, o lutador recebe menos dano. [fração de vida, multiplicador]
+    GUTS: [[0.15, 0.76], [0.3, 0.88]],
+    // Tontura: apanhar muito em pouco tempo deixa tonto. Esvazia sozinha quando o lutador para de apanhar.
+    DIZZY_METER: { max: 3400, decayDelay: 100, decay: 34, immune: 540 },
+    // Empurrão na defesa: Leve + Médio enquanto defende afasta o atacante.
+    PUSHBLOCK: { cost: 1e3, push: 44 },
+    // Rolamento: apertar um botão de golpe ao cair evita ficar deitado.
+    TECH_ROLL: { frames: 24, speed: 11, window: 10 },
+    // Pulo alto depois do Gancho, para combo aéreo.
+    // `float` é a velocidade de subida dada ao adversário lançado, para os dois subirem juntos.
+    SUPER_JUMP: { vy: 1.2, vx: 5, float: 27, minY: 120 },
+    // Proteção contra agarrões seguidos: cada agarrão sofrido aumenta a imunidade ao levantar.
+    THROW_PROTECT: { extra: 14, window: 420 },
+    KNOCKDOWN: { soft: 28, hard: 52, wakeup: 14, wakeThrowInv: 7 },
+    CRUMPLE: 62,
+    DIZZY: 110,
+    THROW: { tech: 9, hold: 14, dmg: 1200, range: 150 },
+    GINGA: {
+      max: 6e3,
+      pip: 1e3,
+      regen: 10,
+      // por quadro
+      regenPause: 50,
+      // quadros sem recarga depois de gastar
+      blockPause: 30,
+      airGuard: 1.5,
+      // defender no ar gasta mais Ginga
+      perfectWindow: 3,
+      perfectFreeze: 16,
+      rushRaw: 1e3,
+      rushCancel: 3e3,
+      blindado: 1e3,
+      turbo: 2e3,
+      onHitGain: 120,
+      burnoutRegen: 8.5,
+      // recarga quando Sem Fôlego (~12s)
+      burnoutBlockstun: 4
+    },
+    RUSH: { frames: 22, speed: 21, bonusStun: 4, bonusFrames: 30 },
+    // dmg: multiplicador de dano [jogador, CPU] contra heróis; bossDmg: contra os
+    // chefes do Modo História (cada chefe já tem as próprias regras e vida).
+    // A CPU fica mais forte pelo nível e, nos heróis, também pelo dano.
+    DIFFICULTY: [
+      { name: "F\xC1CIL", level: 0, dmg: [1.1, 0.6], bossDmg: [1, 1] },
+      { name: "NORMAL", level: 1, dmg: [1, 0.85], bossDmg: [1.12, 0.6] },
+      { name: "DIF\xCDCIL", level: 2, dmg: [1.12, 0.65], bossDmg: [1.15, 0.45] }
+    ],
+    // Super de 3 barras: +25% de dano e, dentro de combo, nunca cai abaixo de 80% (o de 1 barra cai até 50%).
+    SUPER: { max: 3e3, stock: 1e3, perDmgDealt: 0.1, perDmgTaken: 0.06, whiffSpecial: 30, bigDmg: 1.25, bigMinScale: 0.8 }
+  };
+
+  // src/data/movekit.js
+  var STRENGTH = {
+    L: { hitstun: 14, blockstun: 11, push: [70, 60], ginga: 200, stop: SYS.HITSTOP.L },
+    M: { hitstun: 18, blockstun: 14, push: [105, 95], ginga: 350, stop: SYS.HITSTOP.M },
+    H: { hitstun: 22, blockstun: 17, push: [150, 135], ginga: 550, stop: SYS.HITSTOP.H },
+    S: { hitstun: 22, blockstun: 17, push: [140, 130], ginga: 600, stop: SYS.HITSTOP.S },
+    X: { hitstun: 30, blockstun: 22, push: [200, 180], ginga: 0, stop: SYS.HITSTOP.X }
+  };
+  var DEFAULT_CANCEL = {
+    L: ["chain", "special", "super", "rush"],
+    M: ["chain", "special", "super", "rush"],
+    H: ["special", "super", "rush"],
+    S: ["super"],
+    X: []
+  };
+  function mv(def) {
+    const btn = def.btn || "S";
+    const base2 = STRENGTH[btn] || STRENGTH.S;
+    const m = {
+      name: def.name || "?",
+      type: def.type || (btn === "X" ? "super" : btn === "S" ? "special" : "normal"),
+      btn,
+      startup: def.startup ?? 6,
+      active: def.active ?? 3,
+      recovery: def.recovery ?? 12,
+      anim: def.anim || ["punchWind", "punchM"],
+      air: !!def.air,
+      crouch: !!def.crouch,
+      cancel: def.cancel || DEFAULT_CANCEL[btn] || [],
+      motion: def.motion || [],
+      inv: def.inv || [],
+      armor: def.armor || null,
+      spawn: def.spawn || [],
+      hold: def.hold || null,
+      cost: def.cost || {},
+      tags: def.tags || [],
+      fx: def.fx || null,
+      weapon: def.weapon || null,
+      landCancel: def.landCancel ?? true,
+      flags: def.flags || {}
+    };
+    const raw = def.hits || (def.box ? [{}] : []);
+    m.hits = raw.map((h, idx) => ({
+      from: h.from ?? m.startup + 1,
+      to: h.to ?? m.startup + m.active,
+      box: h.box || def.box,
+      dmg: h.dmg ?? def.dmg ?? 0,
+      hitstun: h.hitstun ?? def.hitstun ?? base2.hitstun,
+      blockstun: h.blockstun ?? def.blockstun ?? base2.blockstun,
+      push: h.push || def.push || base2.push,
+      guard: h.guard || def.guard || "mid",
+      launch: h.launch || def.launch || null,
+      kd: h.kd || def.kd || null,
+      crumple: h.crumple ?? def.crumple ?? false,
+      ginga: h.ginga ?? def.ginga ?? base2.ginga,
+      chip: h.chip ?? def.chip ?? (m.type === "normal" ? 0 : SYS.CHIP),
+      // em golpes de vários acertos, só o último tem a pausa de impacto cheia
+      stop: h.stop ?? def.stop ?? (idx < raw.length - 1 ? Math.min(base2.stop, 5) : base2.stop),
+      effects: h.effects || def.effects || [],
+      juggle: h.juggle ?? def.juggle ?? 1,
+      pull: h.pull ?? def.pull ?? 0
+    }));
+    const lifts = m.type !== "super" && m.hits.some((h) => h.launch && h.launch[1] >= 20);
+    if (lifts && !m.air && !def.flags?.landEnds && !m.cancel.includes("jump")) m.cancel = [...m.cancel, "jump"];
+    if (lifts && (m.air || def.flags?.landEnds)) m.flags = { ...m.flags, chase: true };
+    m.total = def.total ?? m.startup + m.active + m.recovery;
+    for (const h of m.hits) m.total = Math.max(m.total, h.to + 1);
+    m.range = def.range ?? (m.hits.length ? Math.max(...m.hits.map((h) => h.box.x + h.box.w)) : 0);
+    if (def.turbo) m.turbo = mv({ ...def, ...def.turbo, turbo: null, isTurbo: true });
+    m.isTurbo = !!def.isTurbo;
+    return m;
+  }
+  var bx = (x, y, w, h) => ({ x, y, w, h });
+  function baseNormals(o = {}) {
+    const r = o.reach ?? 1;
+    const d = o.dmg ?? 1;
+    const s = o.speed ?? 0;
+    const a = { L: "punchL", M: "punchM", H: "punchH", lowL: "kickLow", lowM: "sweepM", up: "upper", sweep: "sweep", over: "overhead", jL: "jPunch", jM: "jKick", jH: "jHeavy", ...o.anims || {} };
+    const W = (n) => Math.round(n * r);
+    const D = (n) => Math.round(n * d);
+    return {
+      "5L": mv({ name: "Leve", btn: "L", startup: 4 + s, active: 3, recovery: 8, box: bx(30, 290, W(160), 80), dmg: D(300), anim: ["punchWind", a.L], tags: ["poke", "close"] }),
+      "5M": mv({ name: "M\xE9dio", btn: "M", startup: 7 + s, active: 4, recovery: 14, box: bx(30, 270, W(215), 100), dmg: D(600), anim: ["punchWind", a.M], motion: [{ from: 3, to: 8, vx: 5 }], tags: ["poke", "mid"] }),
+      "5H": mv({ name: "Forte", btn: "H", startup: 11 + s, active: 5, recovery: 21, box: bx(30, 250, W(250), 130), dmg: D(900), anim: ["heavyWind", a.H], motion: [{ from: 5, to: 12, vx: 7 }], tags: ["poke", "mid", "heavy"] }),
+      "2L": mv({ name: "Leve Baixo", btn: "L", startup: 5 + s, active: 3, recovery: 9, crouch: true, guard: "low", box: bx(30, 30, W(170), 80), dmg: D(250), anim: ["crouch", a.lowL], tags: ["poke", "close", "low"] }),
+      "2M": mv({ name: "M\xE9dio Baixo", btn: "M", startup: 8 + s, active: 4, recovery: 15, crouch: true, guard: "low", box: bx(30, 20, W(240), 80), dmg: D(550), anim: ["crouch", a.lowM], tags: ["poke", "mid", "low"] }),
+      "2H": mv({ name: "Gancho", btn: "H", startup: 8 + s, active: 6, recovery: 24, crouch: true, box: bx(10, 220, 175, 360), dmg: D(850), launch: [3, 31], motion: [{ from: 2, to: 8, vx: 5 }], anim: ["crouch", a.up], inv: [{ from: 4, to: 13, type: "air" }], cancel: ["special", "super", "jump"], tags: ["antiair", "launcher"] }),
+      "3H": mv({ name: "Rasteira", btn: "H", startup: 10 + s, active: 4, recovery: 26, crouch: true, guard: "low", box: bx(30, 0, W(270), 70), dmg: D(800), kd: "hard", launch: [6, 12], anim: ["crouch", a.sweep], cancel: ["super"], tags: ["low", "knockdown", "mid"] }),
+      "6M": mv({ name: "Golpe de Cima", btn: "M", startup: 20, active: 3, recovery: 17, guard: "high", box: bx(30, 230, W(190), 230), dmg: D(600), anim: ["overWind", a.over], cancel: ["super"], motion: [{ from: 8, to: 20, vx: 5 }], tags: ["overhead", "close"] }),
+      jL: mv({ name: "A\xE9reo Leve", btn: "L", air: true, startup: 4, active: 9, recovery: 4, guard: "high", box: bx(10, 130, W(160), 130), dmg: D(300), anim: ["jumpUp", a.jL], cancel: ["chain"], tags: ["air"] }),
+      jM: mv({ name: "A\xE9reo M\xE9dio", btn: "M", air: true, startup: 6, active: 7, recovery: 5, guard: "high", box: bx(0, 80, W(200), 150), dmg: D(500), anim: ["jumpUp", a.jM], cancel: ["chain"], tags: ["air", "crossup"] }),
+      jH: mv({ name: "A\xE9reo Forte", btn: "H", air: true, startup: 8, active: 6, recovery: 6, guard: "high", box: bx(10, 20, W(190), 220), dmg: D(800), hitstun: 24, anim: ["jumpUp", a.jH], cancel: [], tags: ["air", "jumpin"] }),
+      throw: mv({ name: "Agarr\xE3o", btn: "L", type: "throw", startup: 5, active: 3, recovery: 23, guard: "throw", box: bx(20, 140, SYS.THROW.range, 260), dmg: SYS.THROW.dmg, anim: ["throwReach", "throwReach"], cancel: [], tags: ["throw"] }),
+      blindado: mv({ name: "Golpe Blindado", btn: "H", type: "utility", startup: 26, active: 4, recovery: 32, box: bx(20, 220, W(250), 170), dmg: D(800), crumple: true, ginga: 1e3, push: [60, 260], hitstun: 30, blockstun: 22, anim: ["blindWind", "blindHit"], armor: { from: 1, to: 26, hits: 2 }, motion: [{ from: 18, to: 28, vx: 9 }], cancel: [], cost: { ginga: SYS.GINGA.blindado }, tags: ["armor"] })
+    };
+  }
+  function proj(def) {
+    return {
+      kind: def.kind || "shot",
+      x: def.x ?? 110,
+      y: def.y ?? 300,
+      vx: def.vx ?? 14,
+      vy: def.vy ?? 0,
+      g: def.g ?? 0,
+      w: def.w ?? 70,
+      h: def.h ?? 60,
+      life: def.life ?? 120,
+      delay: def.delay ?? 0,
+      hitsLeft: def.hits ?? 1,
+      behavior: def.behavior || "fly",
+      color: def.color || "#ffe27a",
+      hit: {
+        dmg: def.dmg ?? 600,
+        hitstun: def.hitstun ?? 20,
+        blockstun: def.blockstun ?? 15,
+        push: def.push || [90, 80],
+        guard: def.guard || "mid",
+        launch: def.launch || null,
+        kd: def.kd || null,
+        crumple: false,
+        ginga: def.ginga ?? 500,
+        chip: def.chip ?? SYS.CHIP,
+        stop: def.stop ?? SYS.HITSTOP.proj,
+        effects: def.effects || [],
+        juggle: def.juggle ?? 1,
+        pull: 0
+      },
+      ...def.extra || {}
+    };
+  }
+
+  // src/data/characters/djabo.js
+  var DJ = {
+    transformFrames: 100,
+    suck: SYS.GINGA.pip,
+    fireDmg: 70,
+    fireLife: 260,
+    safeW: 360
+    // largura do trecho seguro no Inferno Nacional
+  };
+  var stamp = (o = {}) => proj({
+    kind: "carimbo",
+    x: 100,
+    y: 300,
+    w: 70,
+    h: 60,
+    vx: 14,
+    life: 100,
+    dmg: 600,
+    color: "#c8102e",
+    effects: [{ t: "ban", frames: 200 }],
+    ...o
+  });
+  var bag = { make: (st, f) => ({ kind: "mala", behavior: "puddle", x: 90, y: 0, w: 120, h: 60, vx: 0, life: 420, hitsLeft: 0, hit: null, color: "#8a5a2a", slip: 46, delay: 0 }) };
+  var wall = {
+    make: (st, f) => {
+      const old = st.ents.find((e) => e.owner === f.side && e.kind === "muralha");
+      if (old) old.dead = true;
+      return { kind: "muralha", behavior: "barrier", x: 220, y: 0, w: 110, h: 640, hitH: 640, vx: 0, life: 300, hp: 4, hit: null, delay: 0, breakText: "A MURALHA CAIU!" };
+    }
+  };
+  var fireball = (o = {}) => proj({ kind: "fogo", x: 100, y: 300, w: 90, h: 80, vx: 15, life: 110, dmg: 750, color: "#ff6a1a", ...o });
+  var column = (delay, dx = 0) => ({
+    make: (st, f) => proj({
+      kind: "coluna",
+      behavior: "strike",
+      x: 0,
+      y: 0,
+      w: 200,
+      h: 760,
+      vx: 0,
+      delay,
+      life: 10,
+      dmg: 1100,
+      hitstun: 30,
+      blockstun: 22,
+      push: [0, 50],
+      launch: [3, 28],
+      kd: "hard",
+      color: "#ff6a1a",
+      extra: { at_opponent: true, delay0: delay, ox: dx }
+    })
+  });
+  var nationalHell = {
+    make: (st, f) => {
+      for (const e of st.ents) if (e.owner === f.side && e.kind === "chao-fogo") e.dead = true;
+      const left = SYS.WALL_PAD;
+      const right = SYS.STAGE_W - SYS.WALL_PAD;
+      const safeL = left + st.rng() * (right - left - DJ.safeW);
+      const safeR = safeL + DJ.safeW;
+      f.res.safe = [safeL, safeR];
+      const W = 240;
+      for (let x = left; x < right; x += W) {
+        const a = Math.max(x, left);
+        const b = Math.min(x + W, right);
+        for (const [l, r] of [[a, Math.min(b, safeL)], [Math.max(a, safeR), b]]) {
+          if (r - l < 30) continue;
+          st.ents.push({
+            kind: "chao-fogo",
+            behavior: "fly",
+            x: (l + r) / 2,
+            y: 0,
+            w: r - l,
+            h: 90,
+            vx: 0,
+            vy: 0,
+            g: 0,
+            life: DJ.fireLife,
+            delay: 20,
+            delay0: 20,
+            age: 0,
+            hitCD: 0,
+            hitsLeft: 99,
+            id: st.nextId++,
+            owner: f.side,
+            dir: f.face,
+            hit: { dmg: DJ.fireDmg, hitstun: 2, blockstun: 2, push: [0, 0], guard: "unblock", launch: null, kd: null, crumple: false, ginga: 0, chip: 0, stop: 0, effects: [], juggle: 0, pull: 0 }
+          });
+        }
+      }
+      st.events.push({ t: "pop", str: "INFERNO NACIONAL!", x: f.x, y: 680, color: "#ff6a1a", size: 56 });
+      return null;
+    }
+  };
+  var hellSuper = mv({
+    name: "Inferno Nacional",
+    btn: "X",
+    startup: 14,
+    active: 1,
+    recovery: 40,
+    anim: ["superWind", "burst"],
+    cost: { super: 3e3 },
+    inv: [{ from: 1, to: 20, type: "all" }],
+    spawn: [{ at: 14, ...nationalHell }],
+    range: 2600,
+    tags: ["super", "big"]
+  });
+  var politicianMoves = {
+    ...baseNormals({ reach: 1.1, dmg: 1.15, anims: { H: "swing" } }),
+    "5H": mv({ name: "Cetro", btn: "H", startup: 12, active: 5, recovery: 23, box: bx(30, 230, 300, 140), dmg: 1e3, anim: ["swingWind", "swing"], weapon: "tridente", tags: ["poke", "mid", "heavy"] }),
+    "5S": mv({ name: "Carimbo Roubado", startup: 13, active: 1, recovery: 24, anim: ["castWind", "cast"], spawn: [{ at: 13, ...stamp() }], range: 1400, tags: ["zone", "far"] }),
+    "6S": mv({ name: "La\xE7o Roubado", weapon: "whip", startup: 18, active: 4, recovery: 26, box: bx(80, 240, 620, 100), dmg: 500, hitstun: 38, pull: 520, anim: ["whipWind", "whipHi"], fx: "lasso", tags: ["far", "pull"] }),
+    "4S": mv({ name: "Sugada Roubada", startup: 11, active: 5, recovery: 24, box: bx(40, 220, 230, 140), dmg: 750, hitstun: 26, anim: ["punchWind", "punchH"], motion: [{ from: 4, to: 13, vx: 11 }], tags: ["close", "suck"] }),
+    "2S": mv({ name: "Mala Roubada", startup: 8, active: 1, recovery: 16, crouch: true, anim: ["crouch", "crouch"], spawn: [{ at: 8, ...bag }], range: 300, tags: ["zone", "trap"] }),
+    SA1: mv({ name: "Muralha Roubada", btn: "X", startup: 14, active: 1, recovery: 30, anim: ["superWind", "burst"], cost: { super: 1e3 }, inv: [{ from: 1, to: 16, type: "all" }], spawn: [{ at: 14, ...wall }], range: 500, tags: ["super", "zone"] }),
+    SA3: hellSuper
+  };
+  var demonMoves = {
+    ...baseNormals({ reach: 1.15, dmg: 1.1, speed: -1, anims: { H: "swing" } }),
+    "5H": mv({ name: "Tridente de Fogo", btn: "H", startup: 11, active: 6, recovery: 22, box: bx(30, 220, 380, 120), dmg: 1100, anim: ["swingWind", "swing"], weapon: "tridente", fx: "crack", tags: ["poke", "mid", "heavy", "far"] }),
+    "5S": mv({
+      name: "Bola de Fogo",
+      startup: 12,
+      active: 1,
+      recovery: 20,
+      anim: ["castWind", "cast"],
+      spawn: [{ at: 12, ...fireball() }],
+      range: 1400,
+      tags: ["zone", "far"],
+      turbo: { startup: 9, spawn: [{ at: 9, ...fireball({ vx: 19, dmg: 850 }) }] }
+    }),
+    "6S": mv({ name: "Arremesso do Tridente", startup: 15, active: 1, recovery: 24, anim: ["swingWind", "swing"], spawn: [{ at: 15, ...proj({ kind: "tridente", x: 100, y: 280, w: 160, h: 50, vx: 22, life: 70, hits: 2, dmg: 600, color: "#ff6a1a" }) }], range: 1500, tags: ["zone", "far"] }),
+    "2S": mv({ name: "Coluna do Inferno", startup: 14, active: 1, recovery: 26, anim: ["superWind", "burst"], spawn: [{ at: 14, ...column(34) }], range: 1500, tags: ["zone", "far"] }),
+    // Mergulho: sobe batendo as asas e cai em cima do herói.
+    "4S": mv({
+      name: "Mergulho",
+      startup: 6,
+      active: 20,
+      recovery: 22,
+      box: bx(0, 0, 220, 300),
+      dmg: 1100,
+      launch: [6, 18],
+      kd: "hard",
+      anim: ["riseWind", "jHeavy"],
+      inv: [{ from: 1, to: 10, type: "strike" }],
+      motion: [{ from: 6, to: 14, vx: 9, vy: 26 }],
+      flags: { landEnds: true, landRecovery: 18 },
+      cancel: [],
+      tags: ["antiair", "reversal"]
+    }),
+    SA1: mv({
+      name: "Chamas do Djabo",
+      btn: "X",
+      startup: 9,
+      active: 24,
+      recovery: 34,
+      anim: ["superWind", "burst"],
+      cost: { super: 1e3 },
+      inv: [{ from: 1, to: 10, type: "all" }],
+      spawn: [{ at: 10, ...column(14, -220) }, { at: 12, ...column(20, 0) }, { at: 14, ...column(26, 220) }],
+      range: 1500,
+      tags: ["super"]
+    }),
+    SA3: hellSuper
+  };
+  var base = {
+    id: "djabo",
+    name: "DJABO",
+    boss: true,
+    place: "INFERNO",
+    stage: "inferno",
+    // cenário próprio (src/render/inferno-stage.js)
+    walkF: 5.2,
+    walkB: 4.6,
+    jumpScale: 0.95,
+    hpScale: 0.9,
+    // cada forma tem uma barra; as duas somam 1,8×
+    ai: { aggression: 0.62, block: 0.6, antiAir: 0.7, range: "mid" }
+  };
+  var demon = {
+    ...base,
+    style: "Chefe final \u2014 o Dem\xF4nio",
+    mechName: "O DEM\xD4NIO",
+    mechDesc: "Fogo, tridente e voo. No Inferno Nacional, procure o trecho do ch\xE3o sem fogo.",
+    colors: { skin: "#c8342a", top: "#2a0e12", top2: "#5a1a1e", bottom: "#2a0e12", accent: "#f3c426", hair: "#1c0a0c", shoe: "#1c0a0c" },
+    look: { hair: "horns", weapon: "tridente", sleeves: "none" },
+    walkF: 6.2,
+    moves: demonMoves,
+    form: 2
+  };
+  var djabo = {
+    ...base,
+    style: "Chefe final \u2014 o Pol\xEDtico",
+    mechName: "O POL\xCDTICO",
+    mechDesc: "Usa um golpe de cada chefe. Zerou a vida? Ainda n\xE3o acabou.",
+    colors: { skin: "#e2a88a", top: "#141018", top2: "#f4f0ea", bottom: "#141018", accent: "#c8102e", hair: "#1c1418", shoe: "#0c0a0c" },
+    look: { hair: "spikes", weapon: "tridente", sleeves: "long" },
+    moves: politicianMoves,
+    form: 1,
+    mech: {
+      init(f) {
+        f.res = { safe: null };
+      },
+      beforeKo(st, f) {
+        if (f.ch.form !== 1) return false;
+        f.ch = demon;
+        f.hp = f.maxHp;
+        f.state = "frozen";
+        f.sf = 0;
+        f.move = null;
+        f.moveKey = null;
+        f.stun = DJ.transformFrames;
+        f.y = 0;
+        f.vx = 0;
+        f.vy = 0;
+        f.comboHits = 0;
+        f.comboDmg = 0;
+        f.juggle = 0;
+        f.status.invuln = DJ.transformFrames;
+        f.super = SYS.SUPER.max;
+        st.events.push({ t: "pop", str: "O TERNO QUEIMA!", x: f.x, y: 640, color: "#ff6a1a", size: 56 });
+        st.events.push({ t: "transform", side: f.side, x: f.x });
+        return true;
+      },
+      onHit(st, f, d, h, src) {
+        if (src.type !== "move" || !src.m.tags.includes("suck") || d.hp <= 0) return;
+        const stolen = Math.min(DJ.suck, Math.max(0, d.ginga));
+        d.ginga -= DJ.suck;
+        d.gingaPause = SYS.GINGA.regenPause;
+        if (d.ginga <= 0) {
+          d.ginga = 0;
+          if (!d.burnout) {
+            d.burnout = true;
+            st.events.push({ t: "burnout", side: d.side });
+          }
+        }
+        if (!f.burnout) f.ginga = Math.min(SYS.GINGA.max, f.ginga + stolen);
+        st.events.push({ t: "pop", str: "SUGADA ROUBADA!", x: d.x, y: 480, color: "#ff8fc0", size: 40 });
+      },
+      hud(f, o, st) {
+        const fire = st && st.ents.some((e) => e.owner === f.side && e.kind === "chao-fogo");
+        if (fire) return { label: "INFERNO", pips: 0, value: 0, ready: true, readyText: "ACHE O CH\xC3O SEM FOGO", color: "#ff6a1a" };
+        return f.ch.form === 1 ? { label: "FASE", pips: 2, value: 1, ready: false, text: "O POL\xCDTICO", color: "#c8102e" } : { label: "FASE", pips: 2, value: 2, ready: true, readyText: "O DEM\xD4NIO", color: "#ff6a1a" };
+      },
+      aiPlan(st, f, o, dist, rnd) {
+        if (f.ch.form === 1) {
+          if (dist > 420 && !o.status.ban && rnd() < 0.14) return { key: "5S" };
+          if (dist > 300 && dist < 650 && rnd() < 0.08) return { key: "6S" };
+          if (dist < 230 && rnd() < 0.1) return { key: "4S" };
+          if (dist > 250 && dist < 450 && rnd() < 0.02) return { key: "2S" };
+          return null;
+        }
+        if (dist > 400 && rnd() < 0.14) return { key: "5S" };
+        if (dist > 350 && rnd() < 0.06) return { key: "2S" };
+        if (dist > 500 && rnd() < 0.05) return { key: "6S" };
+        return null;
+      }
+    }
+  };
+  demon.mech = djabo.mech;
+  var djabo_default = djabo;
+
+  // src/data/chupetinha-art.js
+  var CHUPETINHA_SPRITES = {
+    "spriteProfile": "six-frame",
+    "spriteScale": 0.76,
+    "spriteRecovery": true,
+    "spriteTurboMoves": [
+      "5S",
+      "6S",
+      "2S"
+    ],
+    "spriteStripScale": {
+      "chupetinha": {
+        "golpe-5M": 1.037273883105276,
+        "golpe-5H": 1.05112098591372,
+        "golpe-2M": 1.0486033308576392,
+        "golpe-6S": 1.169450773549516,
+        "golpe-6S-turbo": 1.1681919460214756,
+        "golpe-2S": 1.1065093971474969,
+        "golpe-2S-turbo": 1.120356499955941,
+        "golpe-SA3": 1.0989564319792549
+      }
+    }
+  };
+
+  // src/data/characters/chupetinha.js
+  var LIVE = {
+    heal: 0.25,
+    // fração do dano que volta como vida
+    signal: 3,
+    // golpes no celular para derrubar a live
+    offFrames: 360,
+    // tempo sem sinal
+    suck: SYS.GINGA.pip
+    // Ginga roubada pela Sugada
+  };
+  function worldBox(f, box) {
+    const l = f.face > 0 ? f.x + box.x : f.x - box.x - box.w;
+    return { l, r: l + box.w, b: f.y + box.y, t: f.y + box.y + box.h };
+  }
+  var overlap = (a, b) => a.l < b.r && a.r > b.l && a.b < b.t && a.t > b.b;
+  function phoneBox(f) {
+    return worldBox(f, { x: -50, y: 440, w: 120, h: 110 });
+  }
+  var flail = (o) => mv({ weapon: "whip", ...o });
+  var spit = (o = {}) => proj({ kind: "chupeta", x: 90, y: 330, w: 60, h: 50, vx: 15, life: 90, dmg: 550, color: "#ff8fc0", ...o, extra: { art: "chupeta", ...o.extra } });
+  var moves = {
+    ...baseNormals({ reach: 1, dmg: 0.95, anims: { H: "kickHigh" } }),
+    "5M": flail({ name: "Chupetada", btn: "M", startup: 9, active: 4, recovery: 18, box: bx(60, 250, 330, 90), dmg: 560, anim: ["whipWind", "whipHi"], tags: ["poke", "mid", "far"] }),
+    "5H": flail({ name: "Mangual de Chupeta", btn: "H", startup: 14, active: 5, recovery: 25, box: bx(60, 220, 450, 120), dmg: 880, anim: ["whipWind", "whipHi"], tags: ["poke", "far", "heavy"] }),
+    "2M": flail({ name: "Chupetada Baixa", btn: "M", startup: 10, active: 4, recovery: 19, crouch: true, guard: "low", box: bx(60, 10, 360, 80), dmg: 500, anim: ["crouch", "whipLow"], tags: ["poke", "mid", "low"] }),
+    "5S": mv({
+      name: "Cuspe de Chupeta",
+      startup: 13,
+      active: 1,
+      recovery: 24,
+      anim: ["castWind", "cast"],
+      spawn: [{ at: 13, ...spit() }],
+      range: 1400,
+      tags: ["zone", "far"],
+      turbo: { startup: 10, spawn: [{ at: 10, ...spit({ dmg: 450, vx: 17 }) }, { at: 16, ...spit({ dmg: 450, vx: 17, y: 230 }) }] }
+    }),
+    // Sugada: avança e morde com a chupeta. No acerto, rouba um gomo de Ginga.
+    "6S": flail({
+      name: "Sugada",
+      startup: 12,
+      active: 5,
+      recovery: 24,
+      box: bx(40, 220, 230, 140),
+      dmg: 700,
+      hitstun: 26,
+      anim: ["whipWind", "whipHi"],
+      motion: [{ from: 4, to: 14, vx: 11 }],
+      tags: ["close", "suck"],
+      turbo: { startup: 9, dmg: 900 }
+    }),
+    "2S": flail({
+      name: "Chupeta Rasteira",
+      startup: 15,
+      active: 5,
+      recovery: 28,
+      crouch: true,
+      guard: "low",
+      box: bx(70, 0, 520, 70),
+      dmg: 780,
+      launch: [6, 12],
+      kd: "hard",
+      anim: ["crouch", "whipLow"],
+      cancel: [],
+      tags: ["far", "low", "knockdown"],
+      turbo: { startup: 11, dmg: 980 }
+    }),
+    // Birra: pula batendo pé e chupeta para cima. Vence pulos.
+    "4S": mv({
+      name: "Birra",
+      startup: 5,
+      active: 10,
+      recovery: 28,
+      box: bx(0, 180, 200, 360),
+      dmg: 950,
+      launch: [5, 28],
+      anim: ["riseWind", "kickHigh"],
+      fx: "rise",
+      inv: [{ from: 1, to: 9, type: "strike" }],
+      motion: [{ from: 5, to: 10, vx: 3, vy: 24 }],
+      flags: { landEnds: true, landRecovery: 15 },
+      cancel: [],
+      tags: ["antiair", "reversal"]
+    }),
+    SA1: mv({
+      name: "Chuva de Chupetas",
+      btn: "X",
+      startup: 10,
+      active: 1,
+      recovery: 36,
+      anim: ["castWind", "cast"],
+      cost: { super: 1e3 },
+      inv: [{ from: 1, to: 10, type: "all" }],
+      spawn: [0, 1, 2, 3, 4].map((i) => ({ at: 10 + i * 4, ...spit({ dmg: 380, vx: 15 + i, vy: 14 + i * 3, g: 0.9, y: 380, hits: 1, launch: i === 4 ? [8, 20] : null }) })),
+      range: 1300,
+      tags: ["super"]
+    }),
+    // Live Patrocinada: a live volta com sinal cheio e a corrente varre a tela.
+    SA3: flail({
+      name: "Live Patrocinada",
+      btn: "X",
+      startup: 12,
+      active: 30,
+      recovery: 44,
+      anim: ["whipWind", "whipHi"],
+      fx: "crack",
+      cost: { super: 3e3 },
+      hits: [0, 1, 2, 3, 4, 5].map((i) => ({ from: 13 + i * 5, to: 15 + i * 5, box: bx(40, 80 + i % 2 * 140, 640, 220), dmg: i === 5 ? 1300 : 420, hitstun: 30, push: [10, 30], launch: i === 5 ? [13, 26] : null, kd: "hard" })),
+      inv: [{ from: 1, to: 13, type: "all" }],
+      tags: ["super", "big"]
+    })
+  };
+  function goLive(st, f) {
+    if (f.res.live || f.res.offT > 0) return;
+    f.res.live = true;
+    f.res.signal = LIVE.signal;
+    st.events.push({ t: "pop", str: "EST\xC3O ME CENSURANDO!", x: f.x, y: 600, color: "#ff4fa0", size: 46 });
+    st.events.push({ t: "live", side: f.side, on: true, x: f.x });
+  }
+  function dropLive(st, f, why) {
+    f.res.live = false;
+    f.res.signal = 0;
+    f.res.offT = LIVE.offFrames;
+    st.events.push({ t: "pop", str: why === "flash" ? "FLASH! SEM SINAL!" : "SEM SINAL!", x: f.x, y: 620, color: "#9ff5e8", size: 48 });
+    st.events.push({ t: "live", side: f.side, on: false, x: f.x });
+  }
+  function phoneStruck(st, f, o) {
+    const box = phoneBox(f);
+    const seen = f.res.phoneSeen;
+    if (o.state === "attack") {
+      const m = o.move;
+      const id = o.hitDone;
+      for (const h of m.hits) {
+        if (seen.has(id)) break;
+        if (o.sf < h.from || o.sf > h.to) continue;
+        if (m.fx === "flash") {
+          const wb = worldBox(o, h.box);
+          if (overlap({ ...wb, b: 0, t: 9999 }, box)) return seen.add(id), "flash";
+        }
+        if (overlap(worldBox(o, h.box), box)) return seen.add(id), "hit";
+      }
+    }
+    for (const e of st.ents) {
+      if (e.owner === f.side || !e.hit || e.delay > 0 || seen.has(`e${e.id}`)) continue;
+      if (overlap({ l: e.x - e.w / 2, r: e.x + e.w / 2, b: e.y, t: e.y + e.h }, box)) return seen.add(`e${e.id}`), "hit";
+    }
+    return null;
+  }
+  var chupetinha_default = {
+    id: "chupetinha",
+    ...CHUPETINHA_SPRITES,
+    name: "CHUPETINHA",
+    style: "Chefe \u2014 m\xE9dia dist\xE2ncia",
+    mechName: "EST\xC3O ME CENSURANDO!",
+    mechDesc: "Ao apanhar, liga a live: 25% do dano volta como vida. Acerte o celular sobre a cabe\xE7a dele para derrubar o sinal.",
+    colors: { skin: "#e8b894", top: "#2f5d9e", top2: "#f4f0ea", bottom: "#24304a", accent: "#ff8fc0", hair: "#3a2a1a", shoe: "#141016" },
+    look: { hair: "curly", weapon: "chupeta", sleeves: "long" },
+    walkF: 5.6,
+    walkB: 4.6,
+    jumpScale: 0.95,
+    hpScale: 1.15,
+    boss: true,
+    place: "BEL\xC9M \u2014 FRENTE DO PALCO",
+    moves,
+    mech: {
+      init(f) {
+        f.res = { live: false, signal: 0, offT: 0, lastHp: f.hp, healShown: 0, phoneSeen: /* @__PURE__ */ new Set() };
+      },
+      tick(st, f, o) {
+        const r = f.res;
+        if (r.phoneSeen.size > 40) r.phoneSeen = /* @__PURE__ */ new Set();
+        if (r.healShown > 0) r.healShown--;
+        if (r.offT > 0 && --r.offT === 0) st.events.push({ t: "pop", str: "SINAL VOLTOU", x: f.x, y: 600, color: "#d8d0dc", size: 34 });
+        const lost = r.lastHp - f.hp;
+        if (lost > 0 && f.hp > 0) {
+          if (r.live) {
+            const heal = Math.max(1, Math.round(lost * LIVE.heal));
+            f.hp = Math.min(f.maxHp, f.hp + heal);
+            if (!r.healShown) {
+              st.events.push({ t: "pop", str: "+ENGAJAMENTO", x: f.x, y: 560, color: "#ff4fa0", size: 36 });
+              r.healShown = 45;
+            }
+          } else goLive(st, f);
+        }
+        r.lastHp = f.hp;
+        if (r.live && f.hp > 0) {
+          const hit = phoneStruck(st, f, o);
+          if (hit === "flash") dropLive(st, f, "flash");
+          else if (hit) {
+            r.signal--;
+            st.events.push({ t: "pop", str: `SINAL ${r.signal}/${LIVE.signal}`, x: f.x, y: 640, color: "#9ff5e8", size: 34 });
+            if (r.signal <= 0) dropLive(st, f, "hit");
+          }
+        }
+      },
+      onHit(st, f, d, h, src) {
+        if (src.type !== "move" || !src.m.tags.includes("suck") || d.hp <= 0) return;
+        const stolen = Math.min(LIVE.suck, Math.max(0, d.ginga));
+        d.ginga -= LIVE.suck;
+        d.gingaPause = SYS.GINGA.regenPause;
+        if (d.ginga <= 0) {
+          d.ginga = 0;
+          if (!d.burnout) {
+            d.burnout = true;
+            st.events.push({ t: "burnout", side: d.side });
+          }
+        }
+        if (!f.burnout) f.ginga = Math.min(SYS.GINGA.max, f.ginga + stolen);
+        st.events.push({ t: "pop", str: "SUGOU A GINGA!", x: d.x, y: 480, color: "#ff8fc0", size: 40 });
+      },
+      onMoveStart(st, f, m) {
+        if (m.name === "Live Patrocinada") {
+          f.res.offT = 0;
+          f.res.live = false;
+          goLive(st, f);
+        }
+      },
+      hud(f) {
+        const r = f.res;
+        if (r.live) return { label: "AO VIVO", pips: LIVE.signal, value: r.signal, ready: true, readyText: "AO VIVO", color: "#ff4fa0" };
+        if (r.offT > 0) return { label: "AO VIVO", pips: 0, value: 0, text: `SEM SINAL ${Math.ceil(r.offT / 60)}s`, ready: false, color: "#9ff5e8" };
+        return { label: "AO VIVO", pips: 0, value: 0, text: "DESLIGADO", ready: false, color: "#ff4fa0" };
+      },
+      aiPlan(st, f, o, dist, rnd) {
+        if (dist < 240 && rnd() < 0.22) return { key: "6S" };
+        if (dist > 460 && rnd() < 0.18) return { key: "5S" };
+        return null;
+      }
+    },
+    ai: { aggression: 0.55, block: 0.5, antiAir: 0.6, range: "mid" }
+  };
+
+  // src/render/anim.js
+  var FOOT = { x: 0.5, y: 700 / 768 };
+
+  // src/render/chupetinha-art.js
+  var GY = SYS.GROUND_Y;
+
+  // src/render/boss-art.js
+  var GY2 = SYS.GROUND_Y;
+  function drawFloorFire(c, e, gy, frame) {
+    const l = e.x - e.w / 2;
+    c.save();
+    c.beginPath();
+    c.rect(l, gy - 128, e.w, 136);
+    c.clip();
+    c.globalAlpha *= e.delay > 0 ? 0.4 : 1;
+    for (let x = l; x < l + e.w; x += 28) {
+      const h = 50 + Math.sin(frame * 0.4 + x * 0.05) * 22 + x * 7 % 30;
+      const g = c.createLinearGradient(0, gy, 0, gy - h);
+      g.addColorStop(0, "#ffd25a");
+      g.addColorStop(1, "rgba(255,90,20,0)");
+      c.fillStyle = g;
+      c.beginPath();
+      c.moveTo(x, gy + 6);
+      c.quadraticCurveTo(x + 14, gy - h, x + 28, gy + 6);
+      c.fill();
+    }
+    c.restore();
+  }
+
+  // inferno-preview-entry.js
+  (async () => {
+    const pack = { "id": "inferno", "version": 2, "status": "ready-for-review", "groups": 22, "world": { "width": 2600, "height": 1080, "viewWidth": 1920, "cameraMax": 680, "feetY": 930, "groundTopY": 826 }, "essential": ["ceu-infernal", "basalto", "trono", "escadaria", "rochedos"], "interactive": [], "layers": [{ "asset": "ceu-infernal", "factor": 0, "width": 1920, "height": 1080 }], "objects": [{ "id": "rochedos-0", "asset": "rochedos", "x": 1300, "y": 826, "w": 2800, "h": 610, "factor": 0.3, "opacity": 0.85 }, { "id": "lava-distante-1", "asset": "lava-distante", "x": 1300, "y": 815, "w": 2800, "h": 85, "factor": 0.2, "fps": 4, "opacity": 0.68 }, { "id": "fogo-braseiro-2", "asset": "fogo-braseiro", "x": 130, "y": 805, "h": 180, "factor": 0.2, "fps": 4, "phase": 0, "opacity": 0.82, "support": { "type": "background-lava-surface", "point": { "x": 130, "y": 805 } } }, { "id": "fogo-braseiro-3", "asset": "fogo-braseiro", "x": 450, "y": 805, "h": 235, "factor": 0.2, "fps": 4, "phase": 2, "opacity": 0.82, "support": { "type": "background-lava-surface", "point": { "x": 450, "y": 805 } } }, { "id": "fogo-braseiro-4", "asset": "fogo-braseiro", "x": 760, "y": 805, "h": 275, "factor": 0.2, "fps": 4, "phase": 4, "opacity": 0.82, "support": { "type": "background-lava-surface", "point": { "x": 760, "y": 805 } } }, { "id": "fogo-braseiro-5", "asset": "fogo-braseiro", "x": 1040, "y": 805, "h": 240, "factor": 0.2, "fps": 4, "phase": 1, "opacity": 0.82, "support": { "type": "background-lava-surface", "point": { "x": 1040, "y": 805 } } }, { "id": "fogo-braseiro-6", "asset": "fogo-braseiro", "x": 1560, "y": 805, "h": 250, "factor": 0.2, "fps": 4, "phase": 5, "opacity": 0.82, "support": { "type": "background-lava-surface", "point": { "x": 1560, "y": 805 } } }, { "id": "fogo-braseiro-7", "asset": "fogo-braseiro", "x": 1870, "y": 805, "h": 290, "factor": 0.2, "fps": 4, "phase": 3, "opacity": 0.82, "support": { "type": "background-lava-surface", "point": { "x": 1870, "y": 805 } } }, { "id": "fogo-braseiro-8", "asset": "fogo-braseiro", "x": 2200, "y": 805, "h": 230, "factor": 0.2, "fps": 4, "phase": 1, "opacity": 0.82, "support": { "type": "background-lava-surface", "point": { "x": 2200, "y": 805 } } }, { "id": "fogo-braseiro-9", "asset": "fogo-braseiro", "x": 2480, "y": 805, "h": 210, "factor": 0.2, "fps": 4, "phase": 4, "opacity": 0.82, "support": { "type": "background-lava-surface", "point": { "x": 2480, "y": 805 } } }, { "id": "portal-10", "asset": "portal", "x": 360, "y": 826, "h": 570, "factor": 0.65 }, { "id": "almas-coro-11", "asset": "almas-coro", "x": 360, "y": 819, "h": 255, "factor": 0.65, "fps": 4 }, { "id": "escadaria-12", "asset": "escadaria", "x": 1300, "y": 826, "w": 660, "factor": 0.6 }, { "id": "trono-13", "asset": "trono", "x": 1300, "y": 708.8932584269663, "h": 550, "factor": 0.6 }, { "id": "teto-rochoso-14", "asset": "teto-rochoso", "x": 1300, "y": 315, "w": 2600, "h": 315, "factor": 0.8 }, { "id": "corrente-balanco-15", "asset": "corrente-balanco", "x": 403.7800875273523, "y": 374.24507658643324, "w": 243.8402625820569, "h": 345, "factor": 0.8, "fps": 4, "phase": 0, "support": { "type": "integral-ceiling-rock-mount", "point": { "x": 380, "y": 30 }, "pivot": [250, 20] } }, { "id": "corrente-balanco-16", "asset": "corrente-balanco", "x": 919.2997811816192, "y": 309.38730853391684, "w": 197.89934354485774, "h": 280, "factor": 0.8, "fps": 4, "phase": 1, "support": { "type": "integral-ceiling-rock-mount", "point": { "x": 900, "y": 30 }, "pivot": [250, 20] } }, { "id": "corrente-balanco-17", "asset": "corrente-balanco", "x": 1822.0568927789934, "y": 349.29978118161927, "w": 226.1706783369803, "h": 320, "factor": 0.8, "fps": 4, "phase": 3, "support": { "type": "integral-ceiling-rock-mount", "point": { "x": 1800, "y": 30 }, "pivot": [250, 20] } }, { "id": "corrente-balanco-18", "asset": "corrente-balanco", "x": 2318.6105032822757, "y": 299.40919037199126, "w": 190.83150984682712, "h": 270, "factor": 0.8, "fps": 4, "phase": 4, "support": { "type": "integral-ceiling-rock-mount", "point": { "x": 2300, "y": 30 }, "pivot": [250, 20] } }, { "id": "coluna-braseiro-19", "asset": "coluna-braseiro", "x": 600, "y": 826, "h": 320, "factor": 0.85 }, { "id": "fogo-braseiro-20", "asset": "fogo-braseiro", "x": 600, "y": 526, "h": 175, "factor": 0.85, "fps": 4, "support": { "type": "brazier-bowl", "point": { "x": 600, "y": 526 } } }, { "id": "coluna-braseiro-21", "asset": "coluna-braseiro", "x": 2100, "y": 826, "h": 320, "factor": 0.85 }, { "id": "fogo-braseiro-22", "asset": "fogo-braseiro", "x": 2100, "y": 526, "h": 175, "factor": 0.85, "fps": 4, "support": { "type": "brazier-bowl", "point": { "x": 2100, "y": 526 } } }, { "id": "grilhao-rompido-23", "asset": "grilhao-rompido", "x": 740, "y": 825, "w": 130, "factor": 0.75 }, { "id": "grilhao-rompido-24", "asset": "grilhao-rompido", "x": 2170, "y": 825, "w": 110, "factor": 0.75 }], "ground": { "asset": "basalto", "projection": "flat" }, "foreground": [], "anchors": { "throneBase": { "x": 1300, "y": 708.8932584269663 }, "stairsBase": { "x": 1300, "y": 826 }, "ceilingMount": { "x": 900, "y": 30 }, "portalBase": { "x": 360, "y": 826 }, "leftBrazier": { "x": 600, "y": 526 }, "rightBrazier": { "x": 2100, "y": 526 }, "fightFeet": { "x": 1300, "y": 930 }, "backgroundLavaEdge": { "x": 1300, "y": 815 } }, "assets": { "ceu-infernal": { "path": "layers/ceu-infernal.webp", "kind": "layer", "frames": 1, "bytes": 212472, "sha256": "cc1b6e0b0a14dfdd26a9d9d583faa95e2892eba932d95057b9fc6421c9216dfb", "origin": "generated", "source": "source/generated/ceu-infernal.png", "sourceCrop": [0, 0, 1536, 1024], "sourceWidth": 1536, "sourceHeight": 1024, "sourceSha256": "6b39bbdddc931587f81107744020121cf340ca7acc5e4e8474acdc22912fd0d2", "width": 1920, "height": 1080, "alpha": false }, "rochedos": { "path": "props/rochedos.webp", "kind": "prop", "frames": 1, "bytes": 213928, "sha256": "a116476857e1427451c0e2b3b141cbc9c1578fa5ae8c080afe48ea9401683778", "origin": "generated", "source": "source/generated/rochedos.png", "sourceCrop": [0, 158, 2172, 681], "sourceWidth": 2172, "sourceHeight": 724, "sourceSha256": "162f684eb9268ead49842828a53621c816a5d8bcdb43a9f5d3a6a0f0bcc7f0a9", "width": 1600, "height": 385, "alpha": true }, "basalto": { "path": "ground/basalto.webp", "kind": "ground", "frames": 1, "bytes": 174304, "sha256": "a2b8ca54b7d67872d53bb989deddb3022a9d205cbd85b9bf0045a698179170df", "origin": "generated", "source": "source/generated/basalto.png", "sourceCrop": [0, 0, 1536, 1024], "sourceWidth": 1536, "sourceHeight": 1024, "sourceSha256": "d1676ff0d5df21e12adeeedfebcca451fe9263778d4e8ea8bdb247a7340454fb", "width": 2600, "height": 610, "alpha": false }, "trono": { "path": "props/trono.webp", "kind": "prop", "frames": 1, "bytes": 210322, "sha256": "3a955bf1b330bb35dd9e3318a907aee4b1060e88544bd6f8a122bc80bd4fbf60", "origin": "generated", "source": "source/generated/trono.png", "sourceCrop": [19, 6, 911, 1657], "sourceWidth": 935, "sourceHeight": 1682, "sourceSha256": "1c0672ef288f2206408ef8569357be5238a271812e16648e4072cba2db208da4", "width": 553, "height": 1024, "alpha": true }, "escadaria": { "path": "props/escadaria.webp", "kind": "prop", "frames": 1, "bytes": 137922, "sha256": "9d32cd3f06fb25c1093d5a563d314c9091bde4205951b99ff1778adb4122fd83", "origin": "generated", "source": "source/generated/escadaria.png", "sourceCrop": [18, 133, 2154, 639], "sourceWidth": 2172, "sourceHeight": 724, "sourceSha256": "4ba8cdca7b08ffc04a376df3fc9fb16b55a7d41bcf3b1bac6e8ed68081029db3", "width": 1100, "height": 261, "alpha": true }, "portal": { "path": "props/portal.webp", "kind": "prop", "frames": 1, "bytes": 271258, "sha256": "54e0315edce8a59abbd3dcff14fa068d9a31c597a0614e03f43f320db576ffa3", "origin": "generated", "source": "source/generated/portal.png", "sourceCrop": [19, 4, 1294, 1182], "sourceWidth": 1312, "sourceHeight": 1199, "sourceSha256": "606349cd72153400071ac3955cf307179393c083a201d53df2ccd46cbeffb11a", "width": 1024, "height": 946, "alpha": true }, "coluna-braseiro": { "path": "props/coluna-braseiro.webp", "kind": "prop", "frames": 1, "bytes": 89730, "sha256": "2026790f80623ae0217c7565a167fd4c75407b6e271a6e49c94d76f70f3eb2cc", "origin": "generated", "source": "source/generated/coluna-braseiro.png", "sourceCrop": [22, 103, 694, 2139], "sourceWidth": 724, "sourceHeight": 2172, "sourceSha256": "11dfb2ec4aa00f896c5bada53c238bb469751bf223e4de5bc4f70355f4ea6952", "width": 297, "height": 900, "alpha": true }, "teto-rochoso": { "path": "props/teto-rochoso.webp", "kind": "prop", "frames": 1, "bytes": 168286, "sha256": "4c42210572a3d17ad2ea0e50d7d70498d769c92741356251b70daf9757831859", "origin": "generated", "source": "source/generated/teto-rochoso.png", "sourceCrop": [11, 58, 2161, 658], "sourceWidth": 2172, "sourceHeight": 724, "sourceSha256": "61f2ba4975bb73db031d14a6ddb045e51b9bbfa9fdabcc1ad182cce632a176ea", "width": 1600, "height": 447, "alpha": true }, "grilhao-rompido": { "path": "props/grilhao-rompido.webp", "kind": "prop", "frames": 1, "bytes": 54438, "sha256": "6d85c0acfe93dc77fe789a370d8f6f7547e7efcf78a04b15940347a6b044394f", "origin": "generated", "source": "source/generated/grilhao-rompido.png", "sourceCrop": [49, 158, 1732, 752], "sourceWidth": 1774, "sourceHeight": 887, "sourceSha256": "63b95dc1d6dd7b4214f7f365734abca3cd8982b4e2c09b708b34a19e3af7d374", "width": 600, "height": 212, "alpha": true }, "corrente-balanco": { "path": "animations/corrente-balanco.webp", "kind": "animation", "frames": 6, "bytes": 192864, "sha256": "bbee33b3d85dda3326854e7141f8d9e95d0e87eb9b194c828b12f47b8d65e633", "origin": "generated", "source": "source/generated/corrente-balanco.png", "cellWidth": 500, "cellHeight": 500, "crop": [120, 19, 323, 457], "frameBounds": [[174, 19, 326, 476], [174, 19, 372, 467], [174, 19, 443, 446], [174, 19, 385, 461], [174, 19, 327, 472], [120, 19, 327, 472]], "registrations": [[0, 1], [0, 1], [0, 1], [0, 0], [0, 0], [0, 0]], "frameHashes": ["f405764329a71f5086e26151b2aa1bebdc08e3a9875ddb68208590c05024d589", "f89463202a4b961182f5fae817b838bd39a49078dae4a2eed7033ec6c99f6611", "a67969821efe305a0767c1f6c3c1fa9ae7fbe35026024ddb74bb8a0cbe0d0732", "3f4f7d202396837b45365f55d9a09ea3a19306d0d07e85fb4fff61c0d626efca", "3717960c00c82af28bf07d289e9e7802755ff5704476c5a7a3db306c0f7e0de7", "1b3da63ceb7bbde8b9347350a713a5edd03fb82abc0bfef4cd895a7a9ac8a886"], "registrationThresholds": [127, 127, 127, 127, 127, 127], "pivot": [250, 20], "registration": "fixed-ceiling-mount", "fps": 4, "sourceSha256": "37c77a3ba590f1fb8a685e84b710a64c037a3faf98d0cd649b731cfdaa4b399f", "width": 3e3, "height": 500, "alpha": true }, "fogo-braseiro": { "path": "fx/fogo-braseiro.webp", "kind": "fx", "frames": 6, "bytes": 229898, "sha256": "077baf8351459a6c0a47c34ec5f420c5ff308aeb73c5cb096cf9a234659549e0", "origin": "generated", "source": "source/generated/fogo-braseiro.png", "cellWidth": 500, "cellHeight": 500, "crop": [120, 99, 264, 382], "frameBounds": [[120, 265, 379, 481], [121, 183, 384, 481], [120, 99, 379, 481], [120, 115, 378, 481], [120, 197, 379, 481], [120, 262, 379, 481]], "registrations": [[-2, 52], [9, 52], [18, 52], [-2, 57], [8, 57], [18, 57]], "frameHashes": ["9d1d42208ac233ad23129fbfacdfdd158271c2f68a53109f63c7e0fe5e8d7d29", "51bdf137e29a3d8409391ce76d1ef2f5e4e5370cf57329ea41ae2e885eccb7dc", "2581b1e77f0b38a44f0a42ad47c64c6bc236db84fa16e351d1bc5f94608fe58e", "c3924370ff51700d448367ffaa6055d06c4b4a95073a1431d250dfc2fb8c6baa", "4074cb85308b550e31a88c451e72bf08439b39aa2271038b827d12769c24b107", "071389c4e1b70bbcef80cef4a19896d604be21ed2bc65aef1af97abf967eaf2a"], "registrationThresholds": [127, 127, 127, 127, 127, 127], "pivot": [250, 480], "registration": "fixed-base", "fps": 4, "sourceSha256": "3e15bd060b2cdcf00b6a71c0b747726c8b13cc2817c13ebda07bc638afec43bc", "width": 3e3, "height": 500, "alpha": true }, "lava-distante": { "path": "fx/lava-distante.webp", "kind": "fx", "frames": 6, "bytes": 168226, "sha256": "6cfa0989c80cfed71e768103fd406638ddf35b3e2b941d50ec66419a62af2b51", "origin": "generated", "source": "source/generated/lava-distante.png", "cellWidth": 500, "cellHeight": 500, "crop": [25, 393, 450, 88], "frameBounds": [[26, 394, 475, 481], [25, 394, 473, 481], [25, 394, 473, 481], [25, 393, 474, 481], [27, 393, 474, 481], [26, 393, 474, 481]], "registrations": [[1, 158], [-2, 158], [-2, 158], [0, 157], [0, 157], [-1, 157]], "frameHashes": ["526dc81e194af2defa182b35877bcf64f668866d6e9b400c7213a06f5abb1b8d", "0d6532a581148255653d6bfaa52b61fb346699625323fc794a5dc4ab07c1b980", "37aec1f3aa77b62d22b80659aacdda15a09afcac4454b31c982c504fe250a3c4", "3d010f9ce29c5ebfd19cc5636efd40496e7215f675e9a7b1a35f85e4bad3dfdf", "d0f640a658a62e3dbff170d28f3ab915d8a1b9a0980d5bdba5b8056464cc11e7", "9eac93a9e29deb820927282626b261564cff9119d7d2a42381efb81c0af4e4b4"], "registrationThresholds": [127, 127, 127, 127, 127, 127], "pivot": [250, 480], "registration": "fixed-base", "fps": 4, "sourceSha256": "54c094d56a14be540e40d51cbbfc37e54217423f7a9982f562f27deee43ae29f", "width": 3e3, "height": 500, "alpha": true }, "almas-coro": { "path": "animations/almas-coro.webp", "kind": "animation", "frames": 6, "bytes": 703610, "sha256": "906f78f812fa85d34e6f41a4e9719f9d9cd06cef0d261ab6d4797158a22f233d", "origin": "generated", "source": "source/generated/esqueletos-coro.png", "cellWidth": 500, "cellHeight": 500, "crop": [31, 74, 434, 407], "frameBounds": [[70, 76, 430, 480], [70, 76, 430, 480], [35, 76, 437, 481], [64, 76, 436, 481], [31, 76, 465, 481], [64, 74, 437, 480]], "registrations": [[9, 33], [9, 33], [0, 33], [1, 33], [0, 33], [-2, 32]], "frameHashes": ["c073bf000bb11ee04f5a09291159d9cf8f7fae7714a9ec9361d9d05fed920e60", "2d2270a0d27e7c1cffc526933d57d4248b9355bdf7e9f3526b0e0aacda5f2fbb", "e5b12aa811009cf3e2133cd2b3889af3396e0b9087a427e85f722bf9c15956a4", "1d7fc8b734beb82c28ebbc57e970df2607f275a77aa170ceaa7fe1d45e2e55c8", "a99af7cc035f0887f5668a691f813d89757fa68e6202492ebf12918e1a57170c", "e7696f3f43f962a3d6388cd43c7733a4525031489730a0b908d256cf5d564030"], "registrationThresholds": [127, 127, 127, 127, 127, 127], "pivot": [250, 480], "registration": "fixed-base", "fps": 4, "sourceSha256": "40ddd4592e76119bf055fd3750f18be26282eb8121773cf52955342c5edb09b2", "width": 3e3, "height": 500, "alpha": true }, "titulo": { "path": "ui/titulo.webp", "kind": "graphic", "frames": 1, "bytes": 9582, "sha256": "478293fdf1fc5d62db614bf42ed6d73ef0e63fee901aa1baa67adf28cff6717a", "origin": "typeset", "text": "INFERNO \u2014 O \xDALTIMO REFR\xC3O", "font": "ui/Bangers-Regular.ttf", "width": 1400, "height": 150, "alpha": false }, "trilha-intro": { "path": "audio/trilha-intro.ogg", "kind": "audio", "frames": 1, "bytes": 33730, "sha256": "dddd7d97018f53192dd7b07cebf80b0ceb2c3f02c61e06925ba743e870809798", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "trilha-loop": { "path": "audio/trilha-loop.ogg", "kind": "audio", "frames": 1, "bytes": 238823, "sha256": "3684cf0cd9919aacddb9205b43799da1468fc685420f36a367812f66fc85591c", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "ambiente-caverna": { "path": "audio/ambiente-caverna.ogg", "kind": "audio", "frames": 1, "bytes": 151236, "sha256": "7c628c18e88dc54b9435ae1d16f01e43e029675725d2d722b25f14c356a9127c", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "vento-profundo": { "path": "audio/vento-profundo.ogg", "kind": "audio", "frames": 1, "bytes": 151697, "sha256": "17e3166a25b4afb85a847479e5ec53ba0318074c96bf0db94bfc5fa8e45d3748", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "audio-lava-distante": { "path": "audio/lava-distante.ogg", "kind": "audio", "frames": 1, "bytes": 153342, "sha256": "9258f15a7856e5318d9bdf043e255b2555295e971465a3f2616d44898d93129c", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "correntes": { "path": "audio/correntes.ogg", "kind": "audio", "frames": 1, "bytes": 15802, "sha256": "821205ebf08a6c95742d8dfdb65e046f3fb8aa4e8050831a8191d52c78841b7b", "origin": "original-synthesis", "sourceManifest": "audio/manifest.json" }, "miniatura": { "path": "ui/miniatura.webp", "kind": "image", "frames": 1, "bytes": 99432, "sha256": "5445fdddae88cc3316fe0925d72b1c602191d28f8e9468d667c34d03d7b3250c", "origin": "derived-composition", "width": 960, "height": 540, "alpha": false }, "carregamento": { "path": "ui/carregamento.webp", "kind": "image", "frames": 1, "bytes": 367556, "sha256": "a047f773c821be4b8560fa4f77c165877b2c5057e1ba9230562e595ec2a4a3cf", "origin": "derived-composition", "width": 1920, "height": 1080, "alpha": false } }, "missing": [], "notes": ["Arena final: trono vazio, correntes e coro de tr\xEAs esqueletos sustentando o refr\xE3o, revis\xE3o visual solicitada pelo usu\xE1rio.", "Basalto neutro sem fogo/lava/safezone pintados no ch\xE3o de combate.", "Lava decorativa termina em y815, atr\xE1s do topo do piso y826; oito grupos de fogo ambiental se apoiam na lava distante em y805 e dois braseiros elevados sustentam chamas ampliadas nas cubas laterais.", "Correntes incluem fixa\xE7\xE3o em rocha; seus apoios e teto compartilham parallax0.8.", "Ataques, aviso e faixa segura do Inferno Nacional continuam desenhados pelas entidades reais do core; interactive vazio.", "Mestres PNG e prompts integrais preservados, s\xF3 crop/registro/escala uniforme/packing e WebP na exporta\xE7\xE3o.", "\xC1udio procedural original e medi\xE7\xF5es em audio/manifest.json; chave audio-lava-distante evita colis\xE3o com strip visual.", "A entrega n\xE3o altera corpo, transforma\xE7\xE3o, dano ou hitboxes do Djabo."] };
+    for (const a of Object.values(pack.assets)) a.url ??= "../stages/inferno/" + a.path;
+    const original = [...pack.objects], front = [...pack.foreground];
+    const cv = document.querySelector("#stage"), ctx = cv.getContext("2d"), images = /* @__PURE__ */ new Map(), cards = [], errors = [];
+    let frame = 0, paused = false, cam = 340, last = performance.now(), solo = null;
+    const hero = new Image();
+    const heroURL = "../sprites/final/belga/parado.webp";
+    const hero2 = new Image();
+    const hero2URL = "../sprites/final/ryuchi/parado.webp";
+    if (heroURL) hero.src = heroURL;
+    if (hero2URL) hero2.src = hero2URL;
+    const controls = { camera: document.querySelector("#camera"), pause: document.querySelector("#pause"), feet: document.querySelector("#feet"), heroes: document.querySelector("#heroes"), reduce: document.querySelector("#reduce"), objects: document.querySelector("#objects"), fx: document.querySelector("#effects"), ground: document.querySelector("#ground"), hell: document.querySelector("#hell"), hellState: document.querySelector("#hell-state"), safe: document.querySelector("#safe"), markSafe: document.querySelector("#mark-safe"), anchors: document.querySelector("#anchors") };
+    const safeMax = SYS.STAGE_W - SYS.WALL_PAD - DJ.safeW;
+    controls.safe.min = SYS.WALL_PAD;
+    controls.safe.max = safeMax;
+    function makeHell(left = +controls.safe.value) {
+      left = Math.max(SYS.WALL_PAD, Math.min(safeMax, left));
+      const st = { ents: [], nextId: 1, events: [], rng: () => (left - SYS.WALL_PAD) / (safeMax - SYS.WALL_PAD) };
+      const owner = { side: 1, face: -1, x: 1900, res: {} };
+      djabo_default.moves.SA3.spawn[0].make(st, owner);
+      return { entities: st.ents, safe: owner.res.safe };
+    }
+    function picture(c, a, img, x, y, w, h, at = controls.reduce.checked ? 0 : frame) {
+      const n = a.frames || 1, cw = a.cellWidth || img.width / n;
+      const [sx, sy, sw, sh] = a.crop || [0, 0, cw, img.height];
+      const scale = Math.min(w / sw, h / sh), f = n > 1 ? stageAnimationFrame(at, 4, n) : 0;
+      c.drawImage(img, sx + f * cw, sy, sw, sh, x + (w - sw * scale) / 2, y + (h - sh * scale) / 2, sw * scale, sh * scale);
+    }
+    function fighter(img, x, flip = false) {
+      if (!img.complete || !img.width) return;
+      ctx.save();
+      ctx.translate(x - cam, 930);
+      if (flip) ctx.scale(-1, 1);
+      ctx.fillStyle = "rgba(10,5,15,.30)";
+      ctx.beginPath();
+      ctx.ellipse(0, 4, 86, 16, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.drawImage(img, 0, 0, 500, 500, -250, -456, 500, 500);
+      ctx.restore();
+    }
+    function draw() {
+      ctx.clearRect(0, 0, 1920, 1080);
+      if (solo) {
+        ctx.fillStyle = "#28313b";
+        ctx.fillRect(0, 0, 1920, 1080);
+        const a = pack.assets[solo], im = images.get(solo);
+        if (im) picture(ctx, a, im, 150, 80, 1620, 900);
+      } else {
+        pack.objects = original.filter((o) => controls.objects.checked || pack.assets[o.asset].kind === "layer").filter((o) => controls.fx.checked || !(pack.assets[o.asset].path?.startsWith("fx/") || ["fx", "environment-fx"].includes(pack.assets[o.asset].kind)));
+        pack.foreground = controls.objects.checked ? front.filter((o) => controls.fx.checked || !(pack.assets[o.asset].path?.startsWith("fx/") || ["fx", "environment-fx"].includes(pack.assets[o.asset].kind))) : [];
+        const savedGround = pack.ground;
+        if (!controls.ground.checked) pack.ground = null;
+        drawStageArt(ctx, "inferno", cam, Math.floor(frame), { reducedEffects: controls.reduce.checked });
+        pack.ground = savedGround;
+        if (controls.heroes.checked) {
+          fighter(hero2, 950);
+          fighter(hero, 1650, true);
+        }
+        if (controls.hell.checked) {
+          const demo = makeHell(), warning = controls.hellState.value === "aviso", at = Math.floor(controls.reduce.checked ? 0 : frame);
+          const [left, right] = demo.safe;
+          ctx.save();
+          ctx.translate(-cam, 0);
+          for (const e of demo.entities) drawFloorFire(ctx, { ...e, delay: warning ? e.delay0 : 0 }, SYS.GROUND_Y, at);
+          if (controls.markSafe.checked) {
+            ctx.strokeStyle = "#68f2db";
+            ctx.lineWidth = 3;
+            ctx.setLineDash([10, 7]);
+            ctx.strokeRect(left, 905, right - left, 58);
+            ctx.setLineDash([]);
+            ctx.fillStyle = "#b9fff0";
+            ctx.font = "22px sans-serif";
+            ctx.textAlign = "center";
+            ctx.fillText("TRECHO SEM FOGO \xB7 " + DJ.safeW + " px", (left + right) / 2, 998);
+          }
+          ctx.restore();
+        }
+        if (controls.anchors.checked) {
+          ctx.save();
+          ctx.translate(-cam, 0);
+          ctx.strokeStyle = "#ffd76e";
+          ctx.fillStyle = "#ffd76e";
+          ctx.lineWidth = 3;
+          ctx.font = "20px sans-serif";
+          for (const [label, a] of Object.entries(pack.anchors || {})) {
+            const p = Array.isArray(a) ? { x: a[0], y: a[1] } : a;
+            if (!p || !Number.isFinite(p.x) || !Number.isFinite(p.y)) continue;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 8, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.fillText(label, p.x + 12, p.y - 12);
+          }
+          ctx.restore();
+        }
+        if (controls.feet.checked) {
+          ctx.strokeStyle = "#57e4d0";
+          ctx.lineWidth = 3;
+          ctx.beginPath();
+          ctx.moveTo(0, 930);
+          ctx.lineTo(1920, 930);
+          ctx.stroke();
+          ctx.font = "24px sans-serif";
+          ctx.fillStyle = "#57e4d0";
+          ctx.fillText("P\xC9S Y=930", 25, 920);
+        }
+      }
+      document.querySelector("#frame").textContent = Math.floor(frame);
+      document.querySelector("#cameraValue").textContent = cam;
+      document.querySelector("#safeValue").textContent = controls.safe.value;
+      document.querySelector("#selected").textContent = solo || "Composi\xE7\xE3o completa";
+    }
+    controls.safe.oninput = draw;
+    controls.camera.oninput = () => {
+      cam = +controls.camera.value;
+      draw();
+    };
+    controls.pause.onclick = () => {
+      paused = !paused;
+      controls.pause.textContent = paused ? "Continuar" : "Pausar";
+    };
+    document.querySelector("#step").onclick = () => {
+      paused = true;
+      frame += 15;
+      controls.pause.textContent = "Continuar";
+      draw();
+    };
+    document.querySelector("#scene").onclick = () => {
+      solo = null;
+      draw();
+    };
+    document.querySelector("#download").onclick = () => {
+      draw();
+      const a = document.createElement("a");
+      a.download = "inferno-camera-" + cam + ".png";
+      a.href = cv.toDataURL();
+      a.click();
+    };
+    for (const el of Object.values(controls)) if (el.tagName === "INPUT" && el.type === "checkbox" || el.tagName === "SELECT") el.onchange = draw;
+    await Promise.all(Object.entries(pack.assets).filter(([, a]) => a.kind !== "audio").map(async ([id, a]) => {
+      const im = new Image();
+      im.src = a.url;
+      try {
+        await im.decode();
+        images.set(id, im);
+      } catch {
+        errors.push(id);
+        return;
+      }
+      const card = document.createElement("article"), label = document.createElement("h3"), canvas = document.createElement("canvas"), button = document.createElement("button"), link = document.createElement("a"), small = document.createElement("p");
+      canvas.width = 240;
+      canvas.height = 180;
+      label.textContent = id;
+      small.textContent = (a.frames || 1) + " quadro(s) \xB7 " + (a.origin || a.kind);
+      button.textContent = "Ver isolado";
+      button.onclick = () => {
+        solo = id;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        draw();
+      };
+      link.textContent = "Baixar arquivo";
+      link.href = a.url;
+      link.download = id + "." + a.path.split(".").pop();
+      card.append(canvas, label, small, button, link);
+      document.querySelector("#gallery").append(card);
+      cards.push({ canvas, a, im });
+    }));
+    await loadStageArt({ inferno: pack });
+    await Promise.allSettled([...heroURL ? [hero.decode()] : [], ...hero2URL ? [hero2.decode()] : []]);
+    document.querySelector("#status").textContent = Object.keys(pack.assets).length + " assets \xB7 " + images.size + " imagens carregadas \xB7 " + (stageArtStatus("inferno").ready ? "cen\xE1rio pronto" : "falha de carga") + (errors.length ? " \xB7 falhas: " + errors.join(", ") : "");
+    for (const [id, a] of Object.entries(pack.assets).filter(([, a2]) => a2.kind === "audio")) {
+      const label = document.createElement("label"), audio = document.createElement("audio");
+      label.textContent = id;
+      audio.controls = true;
+      audio.src = a.url;
+      audio.loop = id !== "trilha-intro";
+      document.querySelector("#audio").append(label, audio);
+    }
+    let galleryTick = 0;
+    function loop(now) {
+      if (!paused) frame += Math.min(100, now - last) * 0.06;
+      last = now;
+      draw();
+      if (now - galleryTick > 180) {
+        galleryTick = now;
+        for (const { canvas, a, im } of cards) {
+          const c = canvas.getContext("2d");
+          c.clearRect(0, 0, 240, 180);
+          picture(c, a, im, 5, 5, 230, 170);
+        }
+      }
+      requestAnimationFrame(loop);
+    }
+    window.infernoPreview = { pack, status: () => stageArtStatus("inferno"), setFrame: (n) => {
+      paused = true;
+      frame = Math.max(0, n);
+      draw();
+    }, setCamera: (n) => {
+      cam = Math.max(0, Math.min(680, n));
+      controls.camera.value = cam;
+      draw();
+    }, showScene: () => {
+      solo = null;
+      draw();
+    }, setHell: (active, state = "aviso", left = 1120) => {
+      controls.hell.checked = !!active;
+      controls.hellState.value = state === "ativo" ? "ativo" : "aviso";
+      controls.safe.value = Math.max(SYS.WALL_PAD, Math.min(safeMax, left));
+      solo = null;
+      draw();
+    }, safeGeometry: () => {
+      const demo = makeHell();
+      return { left: demo.safe[0], right: demo.safe[1], width: DJ.safeW, delay: controls.hellState.value === "aviso" ? demo.entities[0]?.delay0 ?? 20 : 0, segments: demo.entities.map((e) => ({ left: e.x - e.w / 2, right: e.x + e.w / 2 })) };
+    }, errors };
+    document.body.dataset.ready = "true";
+    requestAnimationFrame(loop);
+  })();
+})();
+</script></html>

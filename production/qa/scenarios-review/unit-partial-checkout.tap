@@ -1,0 +1,1815 @@
+TAP version 13
+# Subtest: painted airport floor stays registered to world coordinates over the full camera range
+ok 1 - painted airport floor stays registered to world coordinates over the full camera range
+  ---
+  duration_ms: 2.168625
+  type: 'test'
+  ...
+# Subtest: airport foreground stairs remain above the floor with the same world camera
+ok 2 - airport foreground stairs remain above the floor with the same world camera
+  ---
+  duration_ms: 0.323041
+  type: 'test'
+  ...
+# Subtest: an unavailable essential airport floor preserves the complete procedural fallback
+ok 3 - an unavailable essential airport floor preserves the complete procedural fallback
+  ---
+  duration_ms: 0.286417
+  type: 'test'
+  ...
+# Subtest: existing arenas keep the tiled perspective while flat ground honors optional bounds
+ok 4 - existing arenas keep the tiled perspective while flat ground honors optional bounds
+  ---
+  duration_ms: 1.609208
+  type: 'test'
+  ...
+# Subtest: runtime baking preserves flat airport and marble floors, shade and world registration
+ok 5 - runtime baking preserves flat airport and marble floors, shade and world registration
+  ---
+  duration_ms: 8.356667
+  type: 'test'
+  ...
+# Subtest: a CPU usa golpes no ar e o Golpe Blindado
+ok 6 - a CPU usa golpes no ar e o Golpe Blindado
+  ---
+  duration_ms: 281.081958
+  type: 'test'
+  ...
+# Subtest: o Ryuchi da CPU entra na Postura e acerta o contra-ataque e o corte carregado
+ok 7 - o Ryuchi da CPU entra na Postura e acerta o contra-ataque e o corte carregado
+  ---
+  duration_ms: 244.364666
+  type: 'test'
+  ...
+# Subtest: dentro da postura o Ryuchi decide pelo que o rival faz
+ok 8 - dentro da postura o Ryuchi decide pelo que o rival faz
+  ---
+  duration_ms: 0.386125
+  type: 'test'
+  ...
+# Subtest: sequência do plano do personagem sai virada para o rival
+ok 9 - sequência do plano do personagem sai virada para o rival
+  ---
+  duration_ms: 0.141375
+  type: 'test'
+  ...
+# Subtest: a dificuldade sobe nos dois sentidos: nível da CPU e dano contra heróis
+ok 10 - a dificuldade sobe nos dois sentidos: nível da CPU e dano contra heróis
+  ---
+  duration_ms: 0.077875
+  type: 'test'
+  ...
+# Subtest: o Gancho levanta, o pulo alto persegue e o combo aéreo é livre (qualquer ordem)
+ok 11 - o Gancho levanta, o pulo alto persegue e o combo aéreo é livre (qualquer ordem)
+  ---
+  duration_ms: 8.417708
+  type: 'test'
+  ...
+# Subtest: combo aéreo tem limite: nada passa do teto de acertos no ar, e só existe um pulo
+ok 12 - combo aéreo tem limite: nada passa do teto de acertos no ar, e só existe um pulo
+  ---
+  duration_ms: 11.433916
+  type: 'test'
+  ...
+# Subtest: todo golpe que levanta alto abre combo aéreo (cancela em pulo ou persegue ao cair)
+ok 13 - todo golpe que levanta alto abre combo aéreo (cancela em pulo ou persegue ao cair)
+  ---
+  duration_ms: 0.650875
+  type: 'test'
+  ...
+# Subtest: o Gancho alcança mais longe (rival a 280 de distância)
+ok 14 - o Gancho alcança mais longe (rival a 280 de distância)
+  ---
+  duration_ms: 1.114916
+  type: 'test'
+  ...
+# Subtest: o super de 3 barras vale a pena: mais dano e escala mínima maior no combo
+ok 15 - o super de 3 barras vale a pena: mais dano e escala mínima maior no combo
+  ---
+  duration_ms: 0.121625
+  type: 'test'
+  ...
+# Subtest: walk selects forward/backward art relative to facing on either side
+ok 16 - walk selects forward/backward art relative to facing on either side
+  ---
+  duration_ms: 1.014291
+  type: 'test'
+  ...
+# Subtest: backdash plays all four poses within its actual 21-frame duration
+ok 17 - backdash plays all four poses within its actual 21-frame duration
+  ---
+  duration_ms: 0.69025
+  type: 'test'
+  ...
+# Subtest: backdash timing is local, restarts on a new dash, and clamps at end
+ok 18 - backdash timing is local, restarts on a new dash, and clamps at end
+  ---
+  duration_ms: 0.130958
+  type: 'test'
+  ...
+# Subtest: throw escape keeps its held pose instead of using backdash timing
+ok 19 - throw escape keeps its held pose instead of using backdash timing
+  ---
+  duration_ms: 0.126916
+  type: 'test'
+  ...
+# Subtest: Dney physical strikes display contact throughout their real hit windows
+ok 20 - Dney physical strikes display contact throughout their real hit windows
+  ---
+  duration_ms: 0.335209
+  type: 'test'
+  ...
+# Subtest: Dney recovery actions animate all frames; throw release uses the impact pose
+ok 21 - Dney recovery actions animate all frames; throw release uses the impact pose
+  ---
+  duration_ms: 0.211334
+  type: 'test'
+  ...
+# Subtest: Dney new actions have distinct image files and no obsolete aliases
+not ok 22 - Dney new actions have distinct image files and no obsolete aliases
+  ---
+  duration_ms: 0.281792
+  type: 'test'
+  location: '<repo>/tests/unit/animation.test.js:62:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '<repo>/production/sprites/final/dney/andar-tras.webp'"
+  code: 'ENOENT'
+  stack: |-
+    Object.openSync (node:fs:782:18)
+    readFileSync (node:fs:628:35)
+    TestContext.<anonymous> (file://<repo>/tests/unit/animation.test.js:66:15)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: a gameplay entity requests the unvisited arena once and keeps its fallback until ready
+ok 23 - a gameplay entity requests the unvisited arena once and keeps its fallback until ready
+  ---
+  duration_ms: 1.893625
+  type: 'test'
+  ...
+# Subtest: interactive prop failure leaves scenery ready and restores the procedural entity
+ok 24 - interactive prop failure leaves scenery ready and restores the procedural entity
+  ---
+  duration_ms: 0.518291
+  type: 'test'
+  ...
+# Subtest: painted barriers retain world placement, live labels, lock and damage overlays
+ok 25 - painted barriers retain world placement, live labels, lock and damage overlays
+  ---
+  duration_ms: 0.514209
+  type: 'test'
+  ...
+# Subtest: prop strips honor a shared crop, the simulation clock, and caller opacity
+ok 26 - prop strips honor a shared crop, the simulation clock, and caller opacity
+  ---
+  duration_ms: 0.323
+  type: 'test'
+  ...
+# Subtest: irmãos: Franco x Chapuh têm falas próprias no começo do round
+ok 27 - irmãos: Franco x Chapuh têm falas próprias no começo do round
+  ---
+  duration_ms: 4.1035
+  type: 'test'
+  ...
+# Subtest: irmãos: quando o Antônio morde o Franco, ele reclama
+ok 28 - irmãos: quando o Antônio morde o Franco, ele reclama
+  ---
+  duration_ms: 3.92225
+  type: 'test'
+  ...
+# Subtest: o Chapuh às vezes chama o pinscher de Antônio, em qualquer luta
+ok 29 - o Chapuh às vezes chama o pinscher de Antônio, em qualquer luta
+  ---
+  duration_ms: 4.472
+  type: 'test'
+  ...
+# Subtest: a campanha dos irmãos começa contra Zanata, sem diálogo de duelo entre aliados
+ok 30 - a campanha dos irmãos começa contra Zanata, sem diálogo de duelo entre aliados
+  ---
+  duration_ms: 0.17825
+  type: 'test'
+  ...
+# Subtest: Belém has all 36 produced groups, 45 delivered files and intact source hashes
+ok 31 - Belém has all 36 produced groups, 45 delivered files and intact source hashes
+  ---
+  duration_ms: 1148.850541
+  type: 'test'
+  ...
+# Subtest: Layer canvases cover the entire camera travel; objects stay behind the fighting floor
+ok 32 - Layer canvases cover the entire camera travel; objects stay behind the fighting floor
+  ---
+  duration_ms: 0.642167
+  type: 'test'
+  ...
+# Subtest: Missing essential art retains the procedural stage without any duplicate draw
+ok 33 - Missing essential art retains the procedural stage without any duplicate draw
+  ---
+  duration_ms: 0.248791
+  type: 'test'
+  ...
+# Subtest: Ground covers every scanline and moves exactly with fighters at their foot plane
+ok 34 - Ground covers every scanline and moves exactly with fighters at their foot plane
+  ---
+  duration_ms: 0.548875
+  type: 'test'
+  ...
+# Subtest: Belga has dedicated six-frame art for every state and move
+not ok 35 - Belga has dedicated six-frame art for every state and move
+  ---
+  duration_ms: 2.653792
+  type: 'test'
+  location: '<repo>/tests/unit/belga-art.test.js:16:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+    -   'agachar',
+        'andar',
+    -   'andar-tras',
+    -   'caido',
+    -   'correr',
+    -   'dano-alto',
+    -   'dano-baixo',
+    -   'dano-no-ar',
+    -   'defesa-agachado',
+    -   'defesa-em-pe',
+    -   'defesa-no-ar',
+    -   'escape-agarrao',
+    -   'golpe-2H',
+    -   'golpe-2L',
+    -   'golpe-2M',
+    -   'golpe-2S',
+    -   'golpe-3H',
+    -   'golpe-4S',
+    -   'golpe-5H',
+        'golpe-5L',
+    -   'golpe-5M',
+    -   'golpe-5S',
+    -   'golpe-6M',
+    -   'golpe-6S',
+    -   'golpe-SA1',
+    -   'golpe-SA3',
+    -   'golpe-blindado',
+    -   'golpe-c1',
+    -   'golpe-c2',
+    -   'golpe-jH',
+    -   'golpe-jL',
+    -   'golpe-jM',
+    -   'golpe-throw',
+    -   'levantar',
+        'parado',
+    -   'pulo',
+    -   'recuo',
+    -   'recuperacao-rolamento',
+    -   'tonto',
+    -   'vitoria'
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: 'agachar'
+    1: 'andar'
+    2: 'andar-tras'
+    3: 'caido'
+    4: 'correr'
+    5: 'dano-alto'
+    6: 'dano-baixo'
+    7: 'dano-no-ar'
+    8: 'defesa-agachado'
+    9: 'defesa-em-pe'
+    10: 'defesa-no-ar'
+    11: 'escape-agarrao'
+    12: 'golpe-2H'
+    13: 'golpe-2L'
+    14: 'golpe-2M'
+    15: 'golpe-2S'
+    16: 'golpe-3H'
+    17: 'golpe-4S'
+    18: 'golpe-5H'
+    19: 'golpe-5L'
+    20: 'golpe-5M'
+    21: 'golpe-5S'
+    22: 'golpe-6M'
+    23: 'golpe-6S'
+    24: 'golpe-SA1'
+    25: 'golpe-SA3'
+    26: 'golpe-blindado'
+    27: 'golpe-c1'
+    28: 'golpe-c2'
+    29: 'golpe-jH'
+    30: 'golpe-jL'
+    31: 'golpe-jM'
+    32: 'golpe-throw'
+    33: 'levantar'
+    34: 'parado'
+    35: 'pulo'
+    36: 'recuo'
+    37: 'recuperacao-rolamento'
+    38: 'tonto'
+    39: 'vitoria'
+  actual:
+    0: 'andar'
+    1: 'golpe-5L'
+    2: 'parado'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file://<repo>/tests/unit/belga-art.test.js:23:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.start (node:internal/test_runner/test:1262:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: Belga contact and recovery art respects turbo and all five BPM levels
+ok 36 - Belga contact and recovery art respects turbo and all five BPM levels
+  ---
+  duration_ms: 2.738375
+  type: 'test'
+  ...
+# Subtest: vinyl art follows all three and seven existing projectiles and their owner
+ok 37 - vinyl art follows all three and seven existing projectiles and their owner
+  ---
+  duration_ms: 0.284083
+  type: 'test'
+  ...
+# Subtest: Um-Dois effects distinguish both hits, disappear between them, and Pêndulo follows invulnerability
+ok 38 - Um-Dois effects distinguish both hits, disappear between them, and Pêndulo follows invulnerability
+  ---
+  duration_ms: 0.585125
+  type: 'test'
+  ...
+# Subtest: Chapuh has 40 dedicated strips and 8 separate effects, without duplicate placeholders
+not ok 39 - Chapuh has 40 dedicated strips and 8 separate effects, without duplicate placeholders
+  ---
+  duration_ms: 0.383833
+  type: 'test'
+  location: '<repo>/tests/unit/chapuh-art.test.js:13:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, scandir '<repo>/production/sprites/final/chapuh/'"
+  code: 'ENOENT'
+  stack: |-
+    readdirSync (node:fs:1956:26)
+    TestContext.<anonymous> (file://<repo>/tests/unit/chapuh-art.test.js:16:17)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.start (node:internal/test_runner/test:1262:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: every Chapuh move holds contact at the actual hit or spawn window
+ok 40 - every Chapuh move holds contact at the actual hit or spawn window
+  ---
+  duration_ms: 0.466666
+  type: 'test'
+  ...
+# Subtest: Chapuh guard and damage play four local phases and hold the final pose
+ok 41 - Chapuh guard and damage play four local phases and hold the final pose
+  ---
+  duration_ms: 0.382959
+  type: 'test'
+  ...
+# Subtest: paint effects follow both regular and turbo hit windows and do not affect other characters
+ok 42 - paint effects follow both regular and turbo hit windows and do not affect other characters
+  ---
+  duration_ms: 0.151
+  type: 'test'
+  ...
+# Subtest: all spawned Chapuh objects select their own helper/effect sprite, including landed paint
+ok 43 - all spawned Chapuh objects select their own helper/effect sprite, including landed paint
+  ---
+  duration_ms: 0.454375
+  type: 'test'
+  ...
+# node:fs:782
+#   return binding.open(
+#                  ^
+# Error: ENOENT: no such file or directory, open '<repo>/production/sprites/source/chupetinha-v3/runtime-manifest.json'
+#     at Object.openSync (node:fs:782:18)
+#     at readFileSync (node:fs:628:35)
+#     at file://<repo>/tests/unit/chupetinha-art.test.js:20:29
+#     at ModuleJob.run (node:internal/modules/esm/module_job:569:25)
+#     at async node:internal/modules/esm/loader:650:26
+#     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5) {
+#   errno: -2,
+#   code: 'ENOENT',
+#   syscall: 'open',
+#   path: '<repo>/production/sprites/source/chupetinha-v3/runtime-manifest.json'
+# }
+# Node.js v26.13.1
+# Subtest: tests/unit/chupetinha-art.test.js
+not ok 10 - tests/unit/chupetinha-art.test.js
+  ---
+  duration_ms: 142.750958
+  type: 'test'
+  location: '<repo>/tests/unit/chupetinha-art.test.js:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: Chupetinha — ao apanhar, liga a live: ESTÃO ME CENSURANDO!
+ok 45 - Chupetinha — ao apanhar, liga a live: ESTÃO ME CENSURANDO!
+  ---
+  duration_ms: 5.631334
+  type: 'test'
+  ...
+# Subtest: Chupetinha — com a live no ar, 25% do dano volta como vida
+ok 46 - Chupetinha — com a live no ar, 25% do dano volta como vida
+  ---
+  duration_ms: 0.670542
+  type: 'test'
+  ...
+# Subtest: Chupetinha — cada golpe no celular derruba uma barra; sem sinal, a live cai
+ok 47 - Chupetinha — cada golpe no celular derruba uma barra; sem sinal, a live cai
+  ---
+  duration_ms: 3.434834
+  type: 'test'
+  ...
+# Subtest: Chupetinha — o flash da câmera do Franco derruba a live de uma vez
+ok 48 - Chupetinha — o flash da câmera do Franco derruba a live de uma vez
+  ---
+  duration_ms: 0.374875
+  type: 'test'
+  ...
+# Subtest: Chupetinha — a Sugada rouba um gomo de Ginga
+ok 49 - Chupetinha — a Sugada rouba um gomo de Ginga
+  ---
+  duration_ms: 0.269666
+  type: 'test'
+  ...
+# Subtest: lista de combos: todo herói tem pelo menos 3 combos
+ok 50 - lista de combos: todo herói tem pelo menos 3 combos
+  ---
+  duration_ms: 0.339625
+  type: 'test'
+  ...
+# Subtest: lista de combos: cada combo da lista funciona de verdade no jogo
+ok 51 - lista de combos: cada combo da lista funciona de verdade no jogo
+  ---
+  duration_ms: 21.056042
+  type: 'test'
+  ...
+# Subtest: The opening poster includes all eight heroes without duplicates
+ok 52 - The opening poster includes all eight heroes without duplicates
+  ---
+  duration_ms: 0.588125
+  type: 'test'
+  ...
+# Subtest: The whole roster has matching original portrait and HUD icon deliveries
+ok 53 - The whole roster has matching original portrait and HUD icon deliveries
+  ---
+  duration_ms: 26.16025
+  type: 'test'
+  ...
+# Subtest: Approved fighters share the same measured standing height and ground plane
+not ok 54 - Approved fighters share the same measured standing height and ground plane
+  ---
+  duration_ms: 0.265417
+  type: 'test'
+  location: '<repo>/tests/unit/comic-ui.test.js:16:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '<repo>/production/sprites/final/franco/parado.webp'"
+  code: 'ENOENT'
+  stack: |-
+    Object.openSync (node:fs:782:18)
+    readFileSync (node:fs:628:35)
+    TestContext.<anonymous> (file://<repo>/tests/unit/comic-ui.test.js:18:37)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: HUD meters clamp safely and preserve partial stock and partial Ginga
+ok 55 - HUD meters clamp safely and preserve partial stock and partial Ginga
+  ---
+  duration_ms: 0.304708
+  type: 'test'
+  ...
+# Subtest: Damage trail holds during a combo and animation advances once per game frame
+ok 56 - Damage trail holds during a combo and animation advances once per game frame
+  ---
+  duration_ms: 0.1565
+  type: 'test'
+  ...
+# Subtest: Render material leaves original images available when disabled or outside a browser
+ok 57 - Render material leaves original images available when disabled or outside a browser
+  ---
+  duration_ms: 0.117458
+  type: 'test'
+  ...
+# Subtest: Body-attached charge and evasion art follow the corrected character scale
+ok 58 - Body-attached charge and evasion art follow the corrected character scale
+  ---
+  duration_ms: 0.199833
+  type: 'test'
+  ...
+# Subtest: dados: todo golpe de todo personagem é válido
+ok 59 - dados: todo golpe de todo personagem é válido
+  ---
+  duration_ms: 4.014583
+  type: 'test'
+  ...
+# Subtest: acerto: Leve de perto causa dano e atordoa; de longe erra
+ok 60 - acerto: Leve de perto causa dano e atordoa; de longe erra
+  ---
+  duration_ms: 1.973792
+  type: 'test'
+  ...
+# Subtest: defesa: segurar para trás defende; baixo e de cima exigem a defesa certa
+ok 61 - defesa: segurar para trás defende; baixo e de cima exigem a defesa certa
+  ---
+  duration_ms: 1.8135
+  type: 'test'
+  ...
+# Subtest: combo: Leve > Médio > Forte emenda e o dano escala
+ok 62 - combo: Leve > Médio > Forte emenda e o dano escala
+  ---
+  duration_ms: 0.328667
+  type: 'test'
+  ...
+# Subtest: agarrão: vence a defesa e pode ser escapado
+ok 63 - agarrão: vence a defesa e pode ser escapado
+  ---
+  duration_ms: 0.803167
+  type: 'test'
+  ...
+# Subtest: defesa no botão: em pé, agachado e no ar; no tempo exato é perfeita
+ok 64 - defesa no botão: em pé, agachado e no ar; no tempo exato é perfeita
+  ---
+  duration_ms: 2.752042
+  type: 'test'
+  ...
+# Subtest: Sem Fôlego: defender demais zera a Ginga e passa a tomar dano na defesa
+ok 65 - Sem Fôlego: defender demais zera a Ginga e passa a tomar dano na defesa
+  ---
+  duration_ms: 0.391375
+  type: 'test'
+  ...
+# Subtest: Golpe Blindado: aguenta um golpe e derruba
+ok 66 - Golpe Blindado: aguenta um golpe e derruba
+  ---
+  duration_ms: 0.788792
+  type: 'test'
+  ...
+# Subtest: Arrancada: →→ durante a defesa gasta Ginga e avança
+ok 67 - Arrancada: →→ durante a defesa gasta Ginga e avança
+  ---
+  duration_ms: 0.197125
+  type: 'test'
+  ...
+# Subtest: super: só sai com barra, gasta a barra e congela a tela
+ok 68 - super: só sai com barra, gasta a barra e congela a tela
+  ---
+  duration_ms: 0.174833
+  type: 'test'
+  ...
+# Subtest: movimento: pulo, corrida e recuo
+ok 69 - movimento: pulo, corrida e recuo
+  ---
+  duration_ms: 2.600667
+  type: 'test'
+  ...
+# Subtest: nocaute e rounds: quem zera a vida perde o round; 2 rounds vencem a luta
+ok 70 - nocaute e rounds: quem zera a vida perde o round; 2 rounds vencem a luta
+  ---
+  duration_ms: 3.566625
+  type: 'test'
+  ...
+# Subtest: paredes: ninguém sai do cenário nem atravessa o outro
+ok 71 - paredes: ninguém sai do cenário nem atravessa o outro
+  ---
+  duration_ms: 2.24875
+  type: 'test'
+  ...
+# Subtest: determinismo: mesma semente, mesma luta
+ok 72 - determinismo: mesma semente, mesma luta
+  ---
+  duration_ms: 50.69025
+  type: 'test'
+  ...
+# Subtest: IA: todos os personagens terminam uma luta contra a chefe
+ok 73 - IA: todos os personagens terminam uma luta contra a chefe
+  ---
+  duration_ms: 467.322833
+  type: 'test'
+  ...
+# Subtest: sequências: → ← + Leve e ↓ → + Médio soltam os golpes de comando de todo herói
+ok 74 - sequências: → ← + Leve e ↓ → + Médio soltam os golpes de comando de todo herói
+  ---
+  duration_ms: 2.547
+  type: 'test'
+  ...
+# Subtest: Djabo — zerar a vida na primeira forma vira o Demônio com a vida cheia
+ok 75 - Djabo — zerar a vida na primeira forma vira o Demônio com a vida cheia
+  ---
+  duration_ms: 3.379834
+  type: 'test'
+  ...
+# Subtest: Djabo — golpes roubados: o Carimbo proíbe golpes e a Sugada rouba Ginga
+ok 76 - Djabo — golpes roubados: o Carimbo proíbe golpes e a Sugada rouba Ginga
+  ---
+  duration_ms: 0.789
+  type: 'test'
+  ...
+# Subtest: Djabo — Coluna do Inferno avisa no chão antes de subir
+ok 77 - Djabo — Coluna do Inferno avisa no chão antes de subir
+  ---
+  duration_ms: 0.674125
+  type: 'test'
+  ...
+# Subtest: Djabo — Inferno Nacional: fogo no chão inteiro, menos o trecho seguro
+ok 78 - Djabo — Inferno Nacional: fogo no chão inteiro, menos o trecho seguro
+  ---
+  duration_ms: 1.421916
+  type: 'test'
+  ...
+# Subtest: Franco turbo variants do not rename the other integrated characters' strips
+ok 79 - Franco turbo variants do not rename the other integrated characters' strips
+  ---
+  duration_ms: 0.595083
+  type: 'test'
+  ...
+# Subtest: Franco has dedicated art for every move, state and turbo
+not ok 80 - Franco has dedicated art for every move, state and turbo
+  ---
+  duration_ms: 0.4015
+  type: 'test'
+  location: '<repo>/tests/unit/franco-art.test.js:18:1'
+  failureType: 'testCodeFailure'
+  error: 'parado'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file://<repo>/tests/unit/franco-art.test.js:20:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: suction is triggered by a confirmed Obra-Prima hit, never a miss or block
+ok 81 - suction is triggered by a confirmed Obra-Prima hit, never a miss or block
+  ---
+  duration_ms: 9.306417
+  type: 'test'
+  ...
+# Subtest: Fujão art releases bags exactly at normal and turbo spawns
+ok 82 - Fujão art releases bags exactly at normal and turbo spawns
+  ---
+  duration_ms: 0.587584
+  type: 'test'
+  ...
+# Subtest: Fujão four super contacts and five drops follow distinct native poses
+ok 83 - Fujão four super contacts and five drops follow distinct native poses
+  ---
+  duration_ms: 0.298833
+  type: 'test'
+  ...
+# Subtest: Fujão escape releases at frame two and running art cycles until braking
+ok 84 - Fujão escape releases at frame two and running art cycles until braking
+  ---
+  duration_ms: 0.073125
+  type: 'test'
+  ...
+# Subtest: Fujão boarding and corner art only override idle
+ok 85 - Fujão boarding and corner art only override idle
+  ---
+  duration_ms: 0.173667
+  type: 'test'
+  ...
+# Subtest: Fujão suitcase visuals preserve simulation dimensions and other owners
+ok 86 - Fujão suitcase visuals preserve simulation dimensions and other owners
+  ---
+  duration_ms: 0.117209
+  type: 'test'
+  ...
+# Subtest: Fujão boarding result icons follow the actual simulation events
+ok 87 - Fujão boarding result icons follow the actual simulation events
+  ---
+  duration_ms: 0.083416
+  type: 'test'
+  ...
+# Subtest: Fujão delivers every state, move, turbo and context pose with original sources
+not ok 88 - Fujão delivers every state, move, turbo and context pose with original sources
+  ---
+  duration_ms: 0.193542
+  type: 'test'
+  location: '<repo>/tests/unit/fujao-art.test.js:62:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '<repo>/production/sprites/source/fujao-v1/runtime-manifest.json'"
+  code: 'ENOENT'
+  stack: |-
+    Object.openSync (node:fs:782:18)
+    readFileSync (node:fs:628:35)
+    TestContext.<anonymous> (file://<repo>/tests/unit/fujao-art.test.js:63:60)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: Fujão FX crops include the whole cart in 500px runtime cells
+ok 89 - Fujão FX crops include the whole cart in 500px runtime cells
+  ---
+  duration_ms: 0.467833
+  type: 'test'
+  ...
+# Subtest: unrelated FX events tolerate partial fighter records
+ok 90 - unrelated FX events tolerate partial fighter records
+  ---
+  duration_ms: 0.064125
+  type: 'test'
+  ...
+# Subtest: Fujão — longe do canto, foge no segundo golpe do combo
+ok 91 - Fujão — longe do canto, foge no segundo golpe do combo
+  ---
+  duration_ms: 5.325583
+  type: 'test'
+  ...
+# Subtest: Fujão — encurralado, não foge e o combo entra inteiro
+ok 92 - Fujão — encurralado, não foge e o combo entra inteiro
+  ---
+  duration_ms: 0.83025
+  type: 'test'
+  ...
+# Subtest: Fujão — sozinho perto da escada, embarca e recupera vida; chegar perto nega
+ok 93 - Fujão — sozinho perto da escada, embarca e recupera vida; chegar perto nega
+  ---
+  duration_ms: 6.683
+  type: 'test'
+  ...
+# Subtest: Fujão — quem corre por cima da mala esquecida tropeça
+ok 94 - Fujão — quem corre por cima da mala esquecida tropeça
+  ---
+  duration_ms: 0.503667
+  type: 'test'
+  ...
+# Subtest: Laranjão — Fake News: duas cópias; golpe na cópia é gasto e não machuca o verdadeiro
+ok 95 - Laranjão — Fake News: duas cópias; golpe na cópia é gasto e não machuca o verdadeiro
+  ---
+  duration_ms: 4.750583
+  type: 'test'
+  ...
+# Subtest: Laranjão — Tarifa Suprema: o Super gasto pelo herói vira armadura que anula golpes
+ok 96 - Laranjão — Tarifa Suprema: o Super gasto pelo herói vira armadura que anula golpes
+  ---
+  duration_ms: 1.257791
+  type: 'test'
+  ...
+# Subtest: Laranjão — THE WALL: a muralha não dá para pular
+ok 97 - Laranjão — THE WALL: a muralha não dá para pular
+  ---
+  duration_ms: 1.0635
+  type: 'test'
+  ...
+# Subtest: Laranjão — You're Fired!: o herói some, não apanha e cai de volta tomando dano
+ok 98 - Laranjão — You're Fired!: o herói some, não apanha e cai de volta tomando dano
+  ---
+  duration_ms: 0.5425
+  type: 'test'
+  ...
+# Subtest: Majis supplies 40 dedicated animations and eight distinct FX with 768px cells
+not ok 99 - Majis supplies 40 dedicated animations and eight distinct FX with 768px cells
+  ---
+  duration_ms: 0.416916
+  type: 'test'
+  location: '<repo>/tests/unit/majis-art.test.js:11:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, scandir '<repo>/production/sprites/final/majis/'"
+  code: 'ENOENT'
+  stack: |-
+    readdirSync (node:fs:1956:26)
+    TestContext.<anonymous> (file://<repo>/tests/unit/majis-art.test.js:13:85)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.start (node:internal/test_runner/test:1262:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: every Majis move, including turbo versions, shows contact at real hit/spawn time
+ok 100 - every Majis move, including turbo versions, shows contact at real hit/spawn time
+  ---
+  duration_ms: 0.491625
+  type: 'test'
+  ...
+# Subtest: sonic projectiles and traps keep their art through normal/turbo lifetime
+ok 101 - sonic projectiles and traps keep their art through normal/turbo lifetime
+  ---
+  duration_ms: 0.160709
+  type: 'test'
+  ...
+# Subtest: quake pulses respect gaps and final hit; tremor overlay is conditional
+ok 102 - quake pulses respect gaps and final hit; tremor overlay is conditional
+  ---
+  duration_ms: 0.3725
+  type: 'test'
+  ...
+# Subtest: forward plus keyboard L uses the corrected Majis heavy strip
+ok 103 - forward plus keyboard L uses the corrected Majis heavy strip
+  ---
+  duration_ms: 3.134959
+  type: 'test'
+  ...
+# Subtest: Majis heavy wind-up, overhead and victory keep the actual idle pixel height
+not ok 104 - Majis heavy wind-up, overhead and victory keep the actual idle pixel height
+  ---
+  duration_ms: 13.465375
+  type: 'test'
+  location: '<repo>/tests/unit/majis-scale.test.js:18:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '<repo>/production/sprites/source/majis-v2/quadros-768/parado-1.png'"
+  code: 'ENOENT'
+  stack: |-
+    Object.openSync (node:fs:782:18)
+    readFileSync (node:fs:628:35)
+    frame (file://<repo>/tests/unit/majis-scale.test.js:8:37)
+    TestContext.<anonymous> (file://<repo>/tests/unit/majis-scale.test.js:19:31)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: corrected compact poses do not enlarge the Majis head to fill a cell
+not ok 105 - corrected compact poses do not enlarge the Majis head to fill a cell
+  ---
+  duration_ms: 0.144834
+  type: 'test'
+  location: '<repo>/tests/unit/majis-scale.test.js:31:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '<repo>/production/sprites/source/majis-v2/quadros-768/parado-1.png'"
+  code: 'ENOENT'
+  stack: |-
+    Object.openSync (node:fs:782:18)
+    readFileSync (node:fs:628:35)
+    frame (file://<repo>/tests/unit/majis-scale.test.js:8:37)
+    TestContext.<anonymous> (file://<repo>/tests/unit/majis-scale.test.js:32:37)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# node:fs:782
+#   return binding.open(
+#                  ^
+# Error: ENOENT: no such file or directory, open '<repo>/production/sprites/source/mdep-v3/manifest.json'
+#     at Object.openSync (node:fs:782:18)
+#     at readFileSync (node:fs:628:35)
+#     at file://<repo>/tests/unit/mdep-art.test.js:12:27
+#     at ModuleJob.run (node:internal/modules/esm/module_job:569:25)
+#     at async node:internal/modules/esm/loader:650:26
+#     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5) {
+#   errno: -2,
+#   code: 'ENOENT',
+#   syscall: 'open',
+#   path: '<repo>/production/sprites/source/mdep-v3/manifest.json'
+# }
+# Node.js v26.13.1
+# Subtest: tests/unit/mdep-art.test.js
+not ok 22 - tests/unit/mdep-art.test.js
+  ---
+  duration_ms: 139.642458
+  type: 'test'
+  location: '<repo>/tests/unit/mdep-art.test.js:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: Franco — Compasso: 2 especiais diferentes liberam o FINAL turbinado e mais forte
+ok 107 - Franco — Compasso: 2 especiais diferentes liberam o FINAL turbinado e mais forte
+  ---
+  duration_ms: 7.978959
+  type: 'test'
+  ...
+# Subtest: Belga — BPM: acertos sobem o ritmo, encurtam a recuperação e levar golpe derruba
+ok 108 - Belga — BPM: acertos sobem o ritmo, encurtam a recuperação e levar golpe derruba
+  ---
+  duration_ms: 2.23175
+  type: 'test'
+  ...
+# Subtest: Majis — Frio: 3 acúmulos congelam o rival
+ok 109 - Majis — Frio: 3 acúmulos congelam o rival
+  ---
+  duration_ms: 1.530834
+  type: 'test'
+  ...
+# Subtest: Trunks — Chamada: uma marca por vez, e o ataque cai depois do tempo
+ok 110 - Trunks — Chamada: uma marca por vez, e o ataque cai depois do tempo
+  ---
+  duration_ms: 2.008917
+  type: 'test'
+  ...
+# Subtest: Ryuchi — Postura: o Fio carrega com o tempo e o contra-ataque responde a um golpe
+ok 111 - Ryuchi — Postura: o Fio carrega com o tempo e o contra-ataque responde a um golpe
+  ---
+  duration_ms: 1.497416
+  type: 'test'
+  ...
+# Subtest: M'Dep — Rajada: Embalo emenda um especial em outro; pulo duplo
+ok 112 - M'Dep — Rajada: Embalo emenda um especial em outro; pulo duplo
+  ---
+  duration_ms: 1.661417
+  type: 'test'
+  ...
+# Subtest: Chapuh — Tinta e Pinscher: poça faz escorregar; cachorro tem tempo de volta
+ok 113 - Chapuh — Tinta e Pinscher: poça faz escorregar; cachorro tem tempo de volta
+  ---
+  duration_ms: 2.209208
+  type: 'test'
+  ...
+# Subtest: Dney — Munição: tiros gastam balas, sem bala falha, recarga e Tiro Certeiro
+ok 114 - Dney — Munição: tiros gastam balas, sem bala falha, recarga e Tiro Certeiro
+  ---
+  duration_ms: 6.943167
+  type: 'test'
+  ...
+# Subtest: Zanata — Fúria: com pouca vida o chicote recupera mais rápido
+ok 115 - Zanata — Fúria: com pouca vida o chicote recupera mais rápido
+  ---
+  duration_ms: 0.649375
+  type: 'test'
+  ...
+# Subtest: Ryuchi — Leve, Leve, Leve solta os Três Cortes, mesmo sem acertar
+ok 116 - Ryuchi — Leve, Leve, Leve solta os Três Cortes, mesmo sem acertar
+  ---
+  duration_ms: 0.489292
+  type: 'test'
+  ...
+# Subtest: golpes temáticos: flash do Franco, pisada do Dep, mordida do Trunks e jato do Chapuh causam dano
+ok 117 - golpes temáticos: flash do Franco, pisada do Dep, mordida do Trunks e jato do Chapuh causam dano
+  ---
+  duration_ms: 1.055542
+  type: 'test'
+  ...
+# Subtest: supplemental empty or FX-only preparation keeps both selected bodies drawable
+ok 118 - supplemental empty or FX-only preparation keeps both selected bodies drawable
+  ---
+  duration_ms: 1.757542
+  type: 'test'
+  ...
+# Subtest: a late supplemental preload cannot reactivate a cancelled fighter or discard the next selection
+ok 119 - a late supplemental preload cannot reactivate a cancelled fighter or discard the next selection
+  ---
+  duration_ms: 5.786584
+  type: 'test'
+  ...
+# Subtest: runtime baking releases decorative atlases but keeps independently drawn gameplay props
+ok 120 - runtime baking releases decorative atlases but keeps independently drawn gameplay props
+  ---
+  duration_ms: 2.11875
+  type: 'test'
+  ...
+# Subtest: explicit art previews remain editable after loading even when browser baking is available
+ok 121 - explicit art previews remain editable after loading even when browser baking is available
+  ---
+  duration_ms: 7.362917
+  type: 'test'
+  ...
+# Subtest: mirror palette keeps skin and outlines, shifts clothes and whites
+ok 122 - mirror palette keeps skin and outlines, shifts clothes and whites
+  ---
+  duration_ms: 1.375
+  type: 'test'
+  ...
+# node:fs:782
+#   return binding.open(
+#                  ^
+# Error: ENOENT: no such file or directory, open '<repo>/production/sprites/source/pai-fujao-v1/runtime-manifest.json'
+#     at Object.openSync (node:fs:782:18)
+#     at readFileSync (node:fs:628:35)
+#     at file://<repo>/tests/unit/pai-fujao-art.test.js:20:27
+#     at ModuleJob.run (node:internal/modules/esm/module_job:569:25)
+#     at async node:internal/modules/esm/loader:650:26
+#     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5) {
+#   errno: -2,
+#   code: 'ENOENT',
+#   syscall: 'open',
+#   path: '<repo>/production/sprites/source/pai-fujao-v1/runtime-manifest.json'
+# }
+# Node.js v26.13.1
+# Subtest: tests/unit/pai-fujao-art.test.js
+not ok 26 - tests/unit/pai-fujao-art.test.js
+  ---
+  duration_ms: 244.517917
+  type: 'test'
+  location: '<repo>/tests/unit/pai-fujao-art.test.js:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: Pai do Fujão — Foro Privilegiado: os 3 primeiros golpes do combo não fazem dano
+ok 124 - Pai do Fujão — Foro Privilegiado: os 3 primeiros golpes do combo não fazem dano
+  ---
+  duration_ms: 1.907
+  type: 'test'
+  ...
+# Subtest: Pai do Fujão — o agarrão fura a imunidade
+ok 125 - Pai do Fujão — o agarrão fura a imunidade
+  ---
+  duration_ms: 0.936042
+  type: 'test'
+  ...
+# Subtest: Pai do Fujão — andando, não sai da área; empurrado para fora, a tornozeleira dá choque
+ok 126 - Pai do Fujão — andando, não sai da área; empurrado para fora, a tornozeleira dá choque
+  ---
+  duration_ms: 2.154875
+  type: 'test'
+  ...
+# Subtest: Pai do Fujão — Vingança Paterna abaixo de metade da vida
+ok 127 - Pai do Fujão — Vingança Paterna abaixo de metade da vida
+  ---
+  duration_ms: 0.106583
+  type: 'test'
+  ...
+# Subtest: Pai do Fujão — a ligação manda um capanga; a linha fica ocupada
+ok 128 - Pai do Fujão — a ligação manda um capanga; a linha fica ocupada
+  ---
+  duration_ms: 1.157458
+  type: 'test'
+  ...
+# Subtest: Pai do Fujão — depois de segurar 6 golpes, o foro é cassado e volta depois
+ok 129 - Pai do Fujão — depois de segurar 6 golpes, o foro é cassado e volta depois
+  ---
+  duration_ms: 3.766792
+  type: 'test'
+  ...
+# Subtest: unvisited arenas do not download; the first draw requests one complete pack
+ok 130 - unvisited arenas do not download; the first draw requests one complete pack
+  ---
+  duration_ms: 0.756666
+  type: 'test'
+  ...
+# Subtest: six-frame ambient loop follows the game clock and wraps cleanly
+ok 131 - six-frame ambient loop follows the game clock and wraps cleanly
+  ---
+  duration_ms: 0.313458
+  type: 'test'
+  ...
+# Subtest: empty packs cannot suppress the complete fallback
+ok 132 - empty packs cannot suppress the complete fallback
+  ---
+  duration_ms: 0.058375
+  type: 'test'
+  ...
+# Subtest: an essential decode failure invalidates the entire pack including an earlier load
+ok 133 - an essential decode failure invalidates the entire pack including an earlier load
+  ---
+  duration_ms: 0.108708
+  type: 'test'
+  ...
+# Subtest: repeated props share a decode and optional failures do not erase the scene
+ok 134 - repeated props share a decode and optional failures do not erase the scene
+  ---
+  duration_ms: 0.159041
+  type: 'test'
+  ...
+# Subtest: sprite crop, world parallax and reduced-effects pose are applied independently
+ok 135 - sprite crop, world parallax and reduced-effects pose are applied independently
+  ---
+  duration_ms: 0.113792
+  type: 'test'
+  ...
+# Subtest: prepared stage keeps draw order: consecutive still props share a layer, animations stay separate
+ok 136 - prepared stage keeps draw order: consecutive still props share a layer, animations stay separate
+  ---
+  duration_ms: 0.694208
+  type: 'test'
+  ...
+# Subtest: Carimbaço: four distinct contacts never appear during preparation
+ok 137 - Carimbaço: four distinct contacts never appear during preparation
+  ---
+  duration_ms: 1.573666
+  type: 'test'
+  ...
+# Subtest: Lei Seca: three actual contacts select their own drawings
+ok 138 - Lei Seca: three actual contacts select their own drawings
+  ---
+  duration_ms: 0.108084
+  type: 'test'
+  ...
+# Subtest: double fence: two spawn gestures and both recovery drawings
+ok 139 - double fence: two spawn gestures and both recovery drawings
+  ---
+  duration_ms: 0.092917
+  type: 'test'
+  ...
+# Subtest: A Pergunta: emotional reaction holds its last drawing, then clears
+ok 140 - A Pergunta: emotional reaction holds its last drawing, then clears
+  ---
+  duration_ms: 1.530625
+  type: 'test'
+  ...
+# Subtest: independent facing packs and FX use the six-frame alpha profile
+ok 141 - independent facing packs and FX use the six-frame alpha profile
+  ---
+  duration_ms: 0.123625
+  type: 'test'
+  ...
+# Subtest: barrier art follows real HP without changing the entity
+ok 142 - barrier art follows real HP without changing the entity
+  ---
+  duration_ms: 0.239083
+  type: 'test'
+  ...
+# Subtest: Pavanassi delivers every state, move, turbo and FX with intact original sources
+not ok 143 - Pavanassi delivers every state, move, turbo and FX with intact original sources
+  ---
+  duration_ms: 0.181667
+  type: 'test'
+  location: '<repo>/tests/unit/pavanassi-art.test.js:46:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '<repo>/production/sprites/source/pavanassi-v1/runtime-manifest.json'"
+  code: 'ENOENT'
+  stack: |-
+    Object.openSync (node:fs:782:18)
+    readFileSync (node:fs:628:35)
+    TestContext.<anonymous> (file://<repo>/tests/unit/pavanassi-art.test.js:47:60)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: Pavanassi — o Carimbo de Decreto proíbe especiais, depois pulo; a proibição passa
+ok 144 - Pavanassi — o Carimbo de Decreto proíbe especiais, depois pulo; a proibição passa
+  ---
+  duration_ms: 6.328041
+  type: 'test'
+  ...
+# Subtest: Pavanassi — a Cerca de Separação segura o herói a pé e cai com 3 golpes
+ok 145 - Pavanassi — a Cerca de Separação segura o herói a pé e cai com 3 golpes
+  ---
+  duration_ms: 11.4885
+  type: 'test'
+  ...
+# Subtest: Pavanassi — dá para pular a Cerca de Separação
+ok 146 - Pavanassi — dá para pular a Cerca de Separação
+  ---
+  duration_ms: 1.566042
+  type: 'test'
+  ...
+# Subtest: Pavanassi — encostar na cabine prende na fila; apertar botões solta mais rápido
+ok 147 - Pavanassi — encostar na cabine prende na fila; apertar botões solta mais rápido
+  ---
+  duration_ms: 1.463833
+  type: 'test'
+  ...
+# Subtest: Pavanassi — A PERGUNTA perto da cabine: dano emocional, tontura e a cabine desaba
+ok 148 - Pavanassi — A PERGUNTA perto da cabine: dano emocional, tontura e a cabine desaba
+  ---
+  duration_ms: 0.243292
+  type: 'test'
+  ...
+# Subtest: Pavanassi — barreiras seguram os projéteis do herói
+ok 149 - Pavanassi — barreiras seguram os projéteis do herói
+  ---
+  duration_ms: 0.408708
+  type: 'test'
+  ...
+# Subtest: Garra: com pouca vida o lutador recebe menos dano
+ok 150 - Garra: com pouca vida o lutador recebe menos dano
+  ---
+  duration_ms: 4.361167
+  type: 'test'
+  ...
+# Subtest: Tontura: apanhar muito em sequência deixa tonto; a barra esvazia sozinha
+ok 151 - Tontura: apanhar muito em sequência deixa tonto; a barra esvazia sozinha
+  ---
+  duration_ms: 3.000083
+  type: 'test'
+  ...
+# Subtest: Empurrão na defesa: Leve + Médio afasta o atacante e gasta Ginga
+ok 152 - Empurrão na defesa: Leve + Médio afasta o atacante e gasta Ginga
+  ---
+  duration_ms: 0.942083
+  type: 'test'
+  ...
+# Subtest: Rolamento: apertar um botão ao cair levanta rolando; queda forte não permite
+ok 153 - Rolamento: apertar um botão ao cair levanta rolando; queda forte não permite
+  ---
+  duration_ms: 1.646042
+  type: 'test'
+  ...
+# Subtest: Combo aéreo: Gancho + ↑ dá pulo alto e os golpes aéreos emendam
+ok 154 - Combo aéreo: Gancho + ↑ dá pulo alto e os golpes aéreos emendam
+  ---
+  duration_ms: 2.024292
+  type: 'test'
+  ...
+# Subtest: Defesa no ar: segura um golpe por pulo, o seguinte quebra a guarda
+ok 155 - Defesa no ar: segura um golpe por pulo, o seguinte quebra a guarda
+  ---
+  duration_ms: 1.08725
+  type: 'test'
+  ...
+# Subtest: Agarrões seguidos: cada agarrão sofrido aumenta a imunidade ao levantar
+ok 156 - Agarrões seguidos: cada agarrão sofrido aumenta a imunidade ao levantar
+  ---
+  duration_ms: 1.345625
+  type: 'test'
+  ...
+# Subtest: Golpe de apertar repetido: apertar Especial várias vezes aumenta os acertos da Pressão Nacional
+ok 157 - Golpe de apertar repetido: apertar Especial várias vezes aumenta os acertos da Pressão Nacional
+  ---
+  duration_ms: 1.92375
+  type: 'test'
+  ...
+# Subtest: KO no Treino restaura postura, entidades, buffers e permite outro acerto
+ok 158 - KO no Treino restaura postura, entidades, buffers e permite outro acerto
+  ---
+  duration_ms: 2.842542
+  type: 'test'
+  ...
+# Subtest: reset manual do Treino não altera partidas normais
+ok 159 - reset manual do Treino não altera partidas normais
+  ---
+  duration_ms: 0.190125
+  type: 'test'
+  ...
+# Subtest: Djabo reinicia na forma política a cada round e preserva a pontuação
+ok 160 - Djabo reinicia na forma política a cada round e preserva a pontuação
+  ---
+  duration_ms: 4.284875
+  type: 'test'
+  ...
+# Subtest: a arena segue o capítulo e os chefes de Belém têm variantes próprias
+ok 161 - a arena segue o capítulo e os chefes de Belém têm variantes próprias
+  ---
+  duration_ms: 0.210375
+  type: 'test'
+  ...
+# Subtest: perfis de sprite seguem a ficha, inclusive lados independentes e efeitos
+ok 162 - perfis de sprite seguem a ficha, inclusive lados independentes e efeitos
+  ---
+  duration_ms: 0.27325
+  type: 'test'
+  ...
+# Subtest: tutorial distingue etapa cumprida de etapa pulada
+ok 163 - tutorial distingue etapa cumprida de etapa pulada
+  ---
+  duration_ms: 0.709958
+  type: 'test'
+  ...
+# Subtest: opções rejeitam tipos inválidos vindos do armazenamento
+ok 164 - opções rejeitam tipos inválidos vindos do armazenamento
+  ---
+  duration_ms: 0.1835
+  type: 'test'
+  ...
+# Subtest: treino recupera o estado e permite novos acertos depois de KO
+ok 165 - treino recupera o estado e permite novos acertos depois de KO
+  ---
+  duration_ms: 10.198875
+  type: 'test'
+  ...
+# Subtest: paleta alternativa acompanha todos os rounds
+ok 166 - paleta alternativa acompanha todos os rounds
+  ---
+  duration_ms: 6.488791
+  type: 'test'
+  ...
+# Subtest: defesa da CPU no ar produz o botão que a guarda exige
+ok 167 - defesa da CPU no ar produz o botão que a guarda exige
+  ---
+  duration_ms: 0.481
+  type: 'test'
+  ...
+# Subtest: CPU não escolhe cortes internos fora da postura
+ok 168 - CPU não escolhe cortes internos fora da postura
+  ---
+  duration_ms: 57.144
+  type: 'test'
+  ...
+# Subtest: nova preparação recupera imagem que falhou sem repetir no render
+ok 169 - nova preparação recupera imagem que falhou sem repetir no render
+  ---
+  duration_ms: 22.569209
+  type: 'test'
+  ...
+# Subtest: paletas de roupa distinguem heróis e preservam pele
+ok 170 - paletas de roupa distinguem heróis e preservam pele
+  ---
+  duration_ms: 0.409
+  type: 'test'
+  ...
+# Subtest: erro ao preparar pixels não deixa a tela de versus esperando para sempre
+ok 171 - erro ao preparar pixels não deixa a tela de versus esperando para sempre
+  ---
+  duration_ms: 0.332959
+  type: 'test'
+  ...
+# Subtest: Ryuchi has 114 dedicated animations with complete six-frame native views
+not ok 172 - Ryuchi has 114 dedicated animations with complete six-frame native views
+  ---
+  duration_ms: 9.582042
+  type: 'test'
+  location: '<repo>/tests/unit/ryuchi-art.test.js:18:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+    -   'agachar',
+    -   'andar',
+    -   'andar-tras',
+    -   'caido',
+    -   'correr',
+    -   'dano-alto',
+    -   'dano-baixo',
+    -   'dano-no-ar',
+    -   'defesa-agachado',
+    -   'defesa-em-pe',
+    -   'defesa-no-ar',
+    -   'escape-agarrao',
+    -   'golpe-2H',
+    -   'golpe-2L',
+    -   'golpe-2M',
+    -   'golpe-2S',
+    -   'golpe-3H',
+    -   'golpe-4S',
+    -   'golpe-5H',
+    -   'golpe-5L',
+    -   'golpe-5LL',
+    -   'golpe-5LLL',
+    -   'golpe-5M',
+    -   'golpe-5S',
+    -   'golpe-6M',
+    -   'golpe-6S',
+    -   'golpe-SA1',
+    -   'golpe-SA3',
+    -   'golpe-blindado',
+    -   'golpe-c1',
+    -   'golpe-c2',
+    -   'golpe-jH',
+    -   'golpe-jL',
+    -   'golpe-jM',
+    -   'golpe-stCtr',
+    -   'golpe-stL',
+    -   'golpe-stM',
+    -   'golpe-stRel0',
+    -   'golpe-stRel1',
+    -   'golpe-stRel2',
+    -   'golpe-stRel3',
+    -   'golpe-throw',
+    -   'levantar',
+        'parado',
+    -   'pulo',
+    -   'recuo',
+    -   'recuperacao-rolamento',
+    -   'tonto',
+    -   'vitoria'
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: 'agachar'
+    1: 'andar'
+    2: 'andar-tras'
+    3: 'caido'
+    4: 'correr'
+    5: 'dano-alto'
+    6: 'dano-baixo'
+    7: 'dano-no-ar'
+    8: 'defesa-agachado'
+    9: 'defesa-em-pe'
+    10: 'defesa-no-ar'
+    11: 'escape-agarrao'
+    12: 'golpe-2H'
+    13: 'golpe-2L'
+    14: 'golpe-2M'
+    15: 'golpe-2S'
+    16: 'golpe-3H'
+    17: 'golpe-4S'
+    18: 'golpe-5H'
+    19: 'golpe-5L'
+    20: 'golpe-5LL'
+    21: 'golpe-5LLL'
+    22: 'golpe-5M'
+    23: 'golpe-5S'
+    24: 'golpe-6M'
+    25: 'golpe-6S'
+    26: 'golpe-SA1'
+    27: 'golpe-SA3'
+    28: 'golpe-blindado'
+    29: 'golpe-c1'
+    30: 'golpe-c2'
+    31: 'golpe-jH'
+    32: 'golpe-jL'
+    33: 'golpe-jM'
+    34: 'golpe-stCtr'
+    35: 'golpe-stL'
+    36: 'golpe-stM'
+    37: 'golpe-stRel0'
+    38: 'golpe-stRel1'
+    39: 'golpe-stRel2'
+    40: 'golpe-stRel3'
+    41: 'golpe-throw'
+    42: 'levantar'
+    43: 'parado'
+    44: 'pulo'
+    45: 'recuo'
+    46: 'recuperacao-rolamento'
+    47: 'tonto'
+    48: 'vitoria'
+  actual:
+    0: 'parado'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file://<repo>/tests/unit/ryuchi-art.test.js:25:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.start (node:internal/test_runner/test:1262:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: all Ryuchi contacts including voice pulses follow actual base/turbo windows
+ok 173 - all Ryuchi contacts including voice pulses follow actual base/turbo windows
+  ---
+  duration_ms: 7.052458
+  type: 'test'
+  ...
+# Subtest: held charge cycles only its three sheathed poses at actual frozen state frame
+ok 174 - held charge cycles only its three sheathed poses at actual frozen state frame
+  ---
+  duration_ms: 1.072417
+  type: 'test'
+  ...
+# Subtest: sword waves use owner-specific art, parry and scream layers respect actual windows
+ok 175 - sword waves use owner-specific art, parry and scream layers respect actual windows
+  ---
+  duration_ms: 1.136708
+  type: 'test'
+  ...
+# Subtest: native facing packs and FX replace legacy Ryuchi trails, rings and waves
+ok 176 - native facing packs and FX replace legacy Ryuchi trails, rings and waves
+  ---
+  duration_ms: 0.797625
+  type: 'test'
+  ...
+# Subtest: large transparent strips load on demand, deduplicate requests and evict safely
+ok 177 - large transparent strips load on demand, deduplicate requests and evict safely
+  ---
+  duration_ms: 2.44975
+  type: 'test'
+  ...
+# Subtest: characters without lazy loading still await all their strips
+ok 178 - characters without lazy loading still await all their strips
+  ---
+  duration_ms: 0.574375
+  type: 'test'
+  ...
+# Subtest: nothing downloads at startup; only the packs of the two fighters are prepared
+ok 179 - nothing downloads at startup; only the packs of the two fighters are prepared
+  ---
+  duration_ms: 5.061083
+  type: 'test'
+  ...
+# Subtest: the exact full-resolution first drawing replaces the previous action while its strip decodes
+ok 180 - the exact full-resolution first drawing replaces the previous action while its strip decodes
+  ---
+  duration_ms: 1.868917
+  type: 'test'
+  ...
+# Subtest: a late image from a cancelled selection cannot restore an inactive decoded pack
+ok 181 - a late image from a cancelled selection cannot restore an inactive decoded pack
+  ---
+  duration_ms: 1.422042
+  type: 'test'
+  ...
+# Subtest: independently drawn directions use the same alternate costume colors
+ok 182 - independently drawn directions use the same alternate costume colors
+  ---
+  duration_ms: 0.278375
+  type: 'test'
+  ...
+# Subtest: alternate dense sprites recolor only the visible 768px cell and reuse it
+ok 183 - alternate dense sprites recolor only the visible 768px cell and reuse it
+  ---
+  duration_ms: 2.014125
+  type: 'test'
+  ...
+# Subtest: per-strip scale evens out strips drawn smaller than the idle pose
+ok 184 - per-strip scale evens out strips drawn smaller than the idle pose
+  ---
+  duration_ms: 1.279125
+  type: 'test'
+  ...
+# Subtest: the Majis note is drawn big enough to read, without touching its hitbox
+ok 185 - the Majis note is drawn big enough to read, without touching its hitbox
+  ---
+  duration_ms: 0.0895
+  type: 'test'
+  ...
+# Subtest: both rifle supers keep the rifle aimed throughout every actual shot
+ok 186 - both rifle supers keep the rifle aimed throughout every actual shot
+  ---
+  duration_ms: 1.219666
+  type: 'test'
+  ...
+# Subtest: ten-frame art follows hit windows without changing combat data
+ok 187 - ten-frame art follows hit windows without changing combat data
+  ---
+  duration_ms: 0.236625
+  type: 'test'
+  ...
+# Subtest: unprofiled characters keep their original animation progress
+ok 188 - unprofiled characters keep their original animation progress
+  ---
+  duration_ms: 0.12275
+  type: 'test'
+  ...
+# Subtest: held crouch stays low and knockdown selects the settled pose
+ok 189 - held crouch stays low and knockdown selects the settled pose
+  ---
+  duration_ms: 0.110375
+  type: 'test'
+  ...
+# Subtest: guard and reaction art advance while combat counters stay unchanged
+ok 190 - guard and reaction art advance while combat counters stay unchanged
+  ---
+  duration_ms: 0.189042
+  type: 'test'
+  ...
+# Subtest: jump drawings follow ascent, apex and descent continuously
+ok 191 - jump drawings follow ascent, apex and descent continuously
+  ---
+  duration_ms: 0.159375
+  type: 'test'
+  ...
+# Subtest: mirror palette pixels are identical to the previous main-thread recolor
+ok 192 - mirror palette pixels are identical to the previous main-thread recolor
+  ---
+  duration_ms: 15.053625
+  type: 'test'
+  ...
+# Subtest: background key-out clears the flat corner color only from the edges and cell seams
+ok 193 - background key-out clears the flat corner color only from the edges and cell seams
+  ---
+  duration_ms: 0.6085
+  type: 'test'
+  ...
+# Subtest: the worker source runs on its own, even after minification
+ok 194 - the worker source runs on its own, even after minification
+  ---
+  duration_ms: 57.434625
+  type: 'test'
+  ...
+# Subtest: without worker support the reader keeps the main-thread path
+ok 195 - without worker support the reader keeps the main-thread path
+  ---
+  duration_ms: 0.122958
+  type: 'test'
+  ...
+# Subtest: a História começa na Zanata e enfrenta somente os sete chefes, com todos os heróis
+ok 196 - a História começa na Zanata e enfrenta somente os sete chefes, com todos os heróis
+  ---
+  duration_ms: 0.924625
+  type: 'test'
+  ...
+# Subtest: cada abertura apresenta colaboração, e cada diálogo apresenta o chefe do capítulo
+ok 197 - cada abertura apresenta colaboração, e cada diálogo apresenta o chefe do capítulo
+  ---
+  duration_ms: 0.414666
+  type: 'test'
+  ...
+# Subtest: vencer um chefe salva o capítulo e desbloqueia o próximo, preservando outros heróis
+ok 198 - vencer um chefe salva o capítulo e desbloqueia o próximo, preservando outros heróis
+  ---
+  duration_ms: 0.20175
+  type: 'test'
+  ...
+# Subtest: continuar repete o chefe atual sem introduzir aliados
+ok 199 - continuar repete o chefe atual sem introduzir aliados
+  ---
+  duration_ms: 0.048708
+  type: 'test'
+  ...
+# Subtest: JSON inválido e valores inválidos de progresso não quebram a campanha
+ok 200 - JSON inválido e valores inválidos de progresso não quebram a campanha
+  ---
+  duration_ms: 0.092542
+  type: 'test'
+  ...
+# Subtest: checkpoint retoma o chefe e os continues, e salva progresso separado por herói
+ok 201 - checkpoint retoma o chefe e os continues, e salva progresso separado por herói
+  ---
+  duration_ms: 0.135583
+  type: 'test'
+  ...
+# Subtest: checkpoints antigos de duelos, bloqueados ou fora do intervalo são descartados sem apagar capítulos
+ok 202 - checkpoints antigos de duelos, bloqueados ou fora do intervalo são descartados sem apagar capítulos
+  ---
+  duration_ms: 0.068166
+  type: 'test'
+  ...
+# Subtest: todas as lutas da campanha terminam no motor
+ok 203 - todas as lutas da campanha terminam no motor
+  ---
+  duration_ms: 261.2065
+  type: 'test'
+  ...
+# Subtest: o final de cada herói encerra a fome e libera a galeria pelo progresso
+ok 204 - o final de cada herói encerra a fome e libera a galeria pelo progresso
+  ---
+  duration_ms: 0.221958
+  type: 'test'
+  ...
+# Subtest: mapa permite revisitar apenas capítulos concluídos ou o próximo chefe
+ok 205 - mapa permite revisitar apenas capítulos concluídos ou o próximo chefe
+  ---
+  duration_ms: 0.193833
+  type: 'test'
+  ...
+# Subtest: four-pose export keeps each drawing and excludes neighbouring pixels
+ok 206 - four-pose export keeps each drawing and excludes neighbouring pixels
+  ---
+  duration_ms: 14.86725
+  type: 'test'
+  ...
+# Subtest: clipping at the original atlas edge remains visible to the delivery gate
+ok 207 - clipping at the original atlas edge remains visible to the delivery gate
+  ---
+  duration_ms: 6.885625
+  type: 'test'
+  ...
+# Subtest: Trunks has dedicated art for every state and move; old aliases cannot override it
+not ok 208 - Trunks has dedicated art for every state and move; old aliases cannot override it
+  ---
+  duration_ms: 0.625667
+  type: 'test'
+  location: '<repo>/tests/unit/trunks-art.test.js:15:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, scandir '<repo>/production/sprites/final/trunks/'"
+  code: 'ENOENT'
+  stack: |-
+    readdirSync (node:fs:1956:26)
+    TestContext.<anonymous> (file://<repo>/tests/unit/trunks-art.test.js:19:17)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.start (node:internal/test_runner/test:1262:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: all Trunks moves hold contact during the actual hit/spawn window, including turbo
+ok 209 - all Trunks moves hold contact during the actual hit/spawn window, including turbo
+  ---
+  duration_ms: 0.928625
+  type: 'test'
+  ...
+# Subtest: every new Trunks image is one animation with six 500px cells and no enlargement
+not ok 210 - every new Trunks image is one animation with six 500px cells and no enlargement
+  ---
+  duration_ms: 0.124
+  type: 'test'
+  location: '<repo>/tests/unit/trunks-art.test.js:40:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '<repo>/production/sprites/source/trunks-v3/manifest.json'"
+  code: 'ENOENT'
+  stack: |-
+    Object.openSync (node:fs:782:18)
+    readFileSync (node:fs:628:35)
+    TestContext.<anonymous> (file://<repo>/tests/unit/trunks-art.test.js:42:22)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: bite layer appears only during the bite hitbox, on ground and in air
+ok 211 - bite layer appears only during the bite hitbox, on ground and in air
+  ---
+  duration_ms: 0.114875
+  type: 'test'
+  ...
+# Subtest: the eight SA3 dogs, delayed marks and ambulance use their own art without changing behavior
+ok 212 - the eight SA3 dogs, delayed marks and ambulance use their own art without changing behavior
+  ---
+  duration_ms: 2.287833
+  type: 'test'
+  ...
+# Subtest: dense timelines remain monotonic and put real attack contacts in the contact drawings
+ok 213 - dense timelines remain monotonic and put real attack contacts in the contact drawings
+  ---
+  duration_ms: 3.03875
+  type: 'test'
+  ...
+# Subtest: held crouch finishes its twelve drawings and stays low
+ok 214 - held crouch finishes its twelve drawings and stays low
+  ---
+  duration_ms: 0.214166
+  type: 'test'
+  ...
+# Subtest: walking enters the first drawing and plays all twelve using local state time
+ok 215 - walking enters the first drawing and plays all twelve using local state time
+  ---
+  duration_ms: 0.336625
+  type: 'test'
+  ...
+# Subtest: profile-driven reader preserves legacy, ten-frame and independent six-frame packs
+ok 216 - profile-driven reader preserves legacy, ten-frame and independent six-frame packs
+  ---
+  duration_ms: 0.623209
+  type: 'test'
+  ...
+# Subtest: jump drawings follow takeoff, airborne motion and forward landing recovery
+ok 217 - jump drawings follow takeoff, airborne motion and forward landing recovery
+  ---
+  duration_ms: 1.197917
+  type: 'test'
+  ...
+# Subtest: the shared registration route supports dense art and arbitrary independent pack names
+ok 218 - the shared registration route supports dense art and arbitrary independent pack names
+  ---
+  duration_ms: 0.604833
+  type: 'test'
+  ...
+# Subtest: standing reactions never switch to a crouching drawing just because the combo count changes
+ok 219 - standing reactions never switch to a crouching drawing just because the combo count changes
+  ---
+  duration_ms: 0.15225
+  type: 'test'
+  ...
+# Subtest: every current Franco move displays at least ten real drawings without extending combat duration
+ok 220 - every current Franco move displays at least ten real drawings without extending combat duration
+  ---
+  duration_ms: 0.413041
+  type: 'test'
+  ...
+# Subtest: an unvisited wall requests its arena once and retains the procedural fallback until ready
+ok 221 - an unvisited wall requests its arena once and retains the procedural fallback until ready
+  ---
+  duration_ms: 1.035583
+  type: 'test'
+  ...
+# Subtest: painted wall keeps rise, caller opacity, live label and cracks for each remaining HP
+ok 222 - painted wall keeps rise, caller opacity, live label and cracks for each remaining HP
+  ---
+  duration_ms: 0.210708
+  type: 'test'
+  ...
+# Subtest: optional painted-wall failure keeps the scenery usable and the full gameplay fallback
+ok 223 - optional painted-wall failure keeps the scenery usable and the full gameplay fallback
+  ---
+  duration_ms: 0.178416
+  type: 'test'
+  ...
+# Subtest: Zanata tem todos os estados, golpes, turbos e efeitos nos dois sentidos com seis poses únicas
+not ok 224 - Zanata tem todos os estados, golpes, turbos e efeitos nos dois sentidos com seis poses únicas
+  ---
+  duration_ms: 0.664709
+  type: 'test'
+  location: '<repo>/tests/unit/zanata-art.test.js:14:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '<repo>/production/sprites/source/zanata-v1/manifest-direita.json'"
+  code: 'ENOENT'
+  stack: |-
+    Object.openSync (node:fs:782:18)
+    readFileSync (node:fs:628:35)
+    TestContext.<anonymous> (file://<repo>/tests/unit/zanata-art.test.js:20:22)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.start (node:internal/test_runner/test:1262:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: poses de contato seguem as janelas reais, inclusive dois contatos do turbo e supers
+ok 225 - poses de contato seguem as janelas reais, inclusive dois contatos do turbo e supers
+  ---
+  duration_ms: 0.643625
+  type: 'test'
+  ...
+# Subtest: FX de chicote, laço, varredura, salto e supers correspondem às caixas ativas
+ok 226 - FX de chicote, laço, varredura, salto e supers correspondem às caixas ativas
+  ---
+  duration_ms: 0.170959
+  type: 'test'
+  ...
+1..226
+# tests 226
+# suites 0
+# pass 209
+# fail 17
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1335.340959

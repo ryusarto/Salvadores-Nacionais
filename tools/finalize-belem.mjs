@@ -1,6 +1,7 @@
 import sharp from 'sharp';
 import {readFileSync,writeFileSync,existsSync} from 'node:fs';
 import {createHash} from 'node:crypto';
+import {BELEM_LAYERS,BELEM_OBJECTS} from '../src/data/belem-stage.js';
 const root='production/stages/belem',plan=JSON.parse(readFileSync(root+'/PLANO.json'));
 const uiFrom=process.argv.find(a=>a.startsWith('--ui-from='))?.slice(10);
 if(uiFrom){await sharp(uiFrom).resize(1920,1080).webp({quality:95}).toFile(root+'/ui/carregamento.webp');await sharp(uiFrom).resize(960,540).webp({quality:93}).toFile(root+'/ui/miniatura.webp');}
@@ -20,8 +21,12 @@ for(const group of plan.assetGroups){const files=[];
  }
  group.files=files;group.status=files.length===group.variants?'produced':'pending-export';groups.push({id:group.id,kind:group.group,status:group.status,files});
 }
+const origin=JSON.parse(readFileSync('production/stages/palco/manifest.json')).assets['mastro-bandeirolas'],mastBytes=readFileSync(root+'/props/mastro-bandeirolas.webp');
+const mastSHA=createHash('sha256').update(mastBytes).digest('hex');if(mastSHA!==origin.sha256)throw Error('Mast reuse changed');
+assets['mastro-bandeirolas']={path:'props/mastro-bandeirolas.webp',kind:'prop',frames:1,bytes:mastBytes.length,sha256:mastSHA,width:origin.width,height:origin.height,alpha:true,origin:'reused-palco',sourceManifest:'../palco/manifest.json',sourceAsset:'mastro-bandeirolas',sourcePath:origin.path,sourceSha256:origin.sha256};
+const supplementalGroups=[{id:'mastro-bandeirolas',kind:'prop',status:'produced',files:['props/mastro-bandeirolas.webp']}];
 const complete=groups.every(g=>g.status==='produced');
 plan.status=complete?'produced-and-integrated':'exporting';plan.basis='Original game art inspired by the three user-provided Belém photographs: Ver-o-Peso market, fishing boats, Sé cathedral. Warm dusk palette; 2.5D side view.';
 writeFileSync(root+'/PLANO.json',JSON.stringify(plan,null,2)+'\n');
-writeFileSync(root+'/manifest.json',JSON.stringify({id:'belem-ver-o-peso',version:1,groups:36,status:plan.status,world:plan.world,palette:['#39365b','#bb7d97','#f2b275','#245e68','#bb794e','#ece0b6'],assetGroups:groups,assets},null,2)+'\n');
+writeFileSync(root+'/manifest.json',JSON.stringify({id:'belem-ver-o-peso',version:2,groups:36,status:plan.status,world:plan.world,palette:['#39365b','#bb7d97','#f2b275','#245e68','#bb794e','#ece0b6'],assetGroups:groups,supplementalGroups,layers:BELEM_LAYERS.map(l=>({asset:l.id,factor:l.factor})),objects:BELEM_OBJECTS,assets},null,2)+'\n');
 console.log(Object.keys(assets).length+' files; '+groups.filter(g=>g.status==='produced').length+'/36 groups complete.');

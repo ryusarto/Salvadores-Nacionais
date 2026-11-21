@@ -1,0 +1,40 @@
+node:fs:782
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open '<repo>/production/sprites/source/laranjao-v1/runtime-manifest.json'
+    at Object.openSync (node:fs:782:18)
+    at readFileSync (node:fs:628:35)
+    at file://<repo>/tests/unit/laranjao-art.test.js:20:29
+    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)
+    at async node:internal/modules/esm/loader:650:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '<repo>/production/sprites/source/laranjao-v1/runtime-manifest.json'
+}
+
+Node.js v26.13.1
+✖ tests/unit/laranjao-art.test.js (176.460833ms)
+✔ Laranjão — Fake News: duas cópias; golpe na cópia é gasto e não machuca o verdadeiro (2.900333ms)
+✔ Laranjão — Tarifa Suprema: o Super gasto pelo herói vira armadura que anula golpes (1.621625ms)
+✔ Laranjão — THE WALL: a muralha não dá para pular (1.6655ms)
+✔ Laranjão — You're Fired!: o herói some, não apanha e cai de volta tomando dano (0.797833ms)
+✔ an unvisited wall requests its arena once and retains the procedural fallback until ready (1.852083ms)
+✔ painted wall keeps rise, caller opacity, live label and cracks for each remaining HP (0.262666ms)
+✔ optional painted-wall failure keeps the scenery usable and the full gameplay fallback (0.456292ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 182.309917
+
+✖ failing tests:
+
+test at tests/unit/laranjao-art.test.js:1:1
+✖ tests/unit/laranjao-art.test.js (176.460833ms)
+  'test failed'

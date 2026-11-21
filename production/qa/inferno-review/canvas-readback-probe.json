@@ -1,0 +1,68 @@
+{
+  "hellEnabled": false,
+  "frame": 0,
+  "camera": 0,
+  "draws": [
+    {
+      "draw": 0,
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "frame": "0"
+    },
+    {
+      "draw": 1,
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "frame": "0"
+    },
+    {
+      "draw": 2,
+      "changedPixels": 205637,
+      "maxChannelDelta": 68,
+      "frame": "0"
+    },
+    {
+      "draw": 3,
+      "changedPixels": 205637,
+      "maxChannelDelta": 68,
+      "frame": "0"
+    },
+    {
+      "draw": 4,
+      "changedPixels": 205637,
+      "maxChannelDelta": 68,
+      "frame": "0"
+    },
+    {
+      "draw": 5,
+      "changedPixels": 205637,
+      "maxChannelDelta": 68,
+      "frame": "0"
+    },
+    {
+      "draw": 6,
+      "changedPixels": 205637,
+      "maxChannelDelta": 68,
+      "frame": "0"
+    },
+    {
+      "draw": 7,
+      "changedPixels": 205637,
+      "maxChannelDelta": 68,
+      "frame": "0"
+    },
+    {
+      "draw": 8,
+      "changedPixels": 205637,
+      "maxChannelDelta": 68,
+      "frame": "0"
+    },
+    {
+      "draw": 9,
+      "changedPixels": 205637,
+      "maxChannelDelta": 68,
+      "frame": "0"
+    }
+  ],
+  "note": "Repeated identical scene renders with no SA3, paused frame0. Detects baseline differences unrelated to floor fire."
+}

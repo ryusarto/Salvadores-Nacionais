@@ -1,0 +1,711 @@
+{
+  "assets": {
+    "ceu-infernal": {
+      "path": "layers/ceu-infernal.webp",
+      "kind": "layer",
+      "frames": 1,
+      "bytes": 212472,
+      "sha256": "cc1b6e0b0a14dfdd26a9d9d583faa95e2892eba932d95057b9fc6421c9216dfb",
+      "origin": "generated",
+      "source": "source/generated/ceu-infernal.png",
+      "sourceCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "sourceWidth": 1536,
+      "sourceHeight": 1024,
+      "sourceSha256": "6b39bbdddc931587f81107744020121cf340ca7acc5e4e8474acdc22912fd0d2",
+      "width": 1920,
+      "height": 1080,
+      "alpha": false
+    },
+    "rochedos": {
+      "path": "props/rochedos.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 213928,
+      "sha256": "a116476857e1427451c0e2b3b141cbc9c1578fa5ae8c080afe48ea9401683778",
+      "origin": "generated",
+      "source": "source/generated/rochedos.png",
+      "sourceCrop": [
+        0,
+        158,
+        2172,
+        681
+      ],
+      "sourceWidth": 2172,
+      "sourceHeight": 724,
+      "sourceSha256": "162f684eb9268ead49842828a53621c816a5d8bcdb43a9f5d3a6a0f0bcc7f0a9",
+      "width": 1600,
+      "height": 385,
+      "alpha": true
+    },
+    "basalto": {
+      "path": "ground/basalto.webp",
+      "kind": "ground",
+      "frames": 1,
+      "bytes": 174304,
+      "sha256": "a2b8ca54b7d67872d53bb989deddb3022a9d205cbd85b9bf0045a698179170df",
+      "origin": "generated",
+      "source": "source/generated/basalto.png",
+      "sourceCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "sourceWidth": 1536,
+      "sourceHeight": 1024,
+      "sourceSha256": "d1676ff0d5df21e12adeeedfebcca451fe9263778d4e8ea8bdb247a7340454fb",
+      "width": 2600,
+      "height": 610,
+      "alpha": false
+    },
+    "trono": {
+      "path": "props/trono.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 210322,
+      "sha256": "3a955bf1b330bb35dd9e3318a907aee4b1060e88544bd6f8a122bc80bd4fbf60",
+      "origin": "generated",
+      "source": "source/generated/trono.png",
+      "sourceCrop": [
+        19,
+        6,
+        911,
+        1657
+      ],
+      "sourceWidth": 935,
+      "sourceHeight": 1682,
+      "sourceSha256": "1c0672ef288f2206408ef8569357be5238a271812e16648e4072cba2db208da4",
+      "width": 553,
+      "height": 1024,
+      "alpha": true
+    },
+    "escadaria": {
+      "path": "props/escadaria.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 137922,
+      "sha256": "9d32cd3f06fb25c1093d5a563d314c9091bde4205951b99ff1778adb4122fd83",
+      "origin": "generated",
+      "source": "source/generated/escadaria.png",
+      "sourceCrop": [
+        18,
+        133,
+        2154,
+        639
+      ],
+      "sourceWidth": 2172,
+      "sourceHeight": 724,
+      "sourceSha256": "4ba8cdca7b08ffc04a376df3fc9fb16b55a7d41bcf3b1bac6e8ed68081029db3",
+      "width": 1100,
+      "height": 261,
+      "alpha": true
+    },
+    "portal": {
+      "path": "props/portal.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 271258,
+      "sha256": "54e0315edce8a59abbd3dcff14fa068d9a31c597a0614e03f43f320db576ffa3",
+      "origin": "generated",
+      "source": "source/generated/portal.png",
+      "sourceCrop": [
+        19,
+        4,
+        1294,
+        1182
+      ],
+      "sourceWidth": 1312,
+      "sourceHeight": 1199,
+      "sourceSha256": "606349cd72153400071ac3955cf307179393c083a201d53df2ccd46cbeffb11a",
+      "width": 1024,
+      "height": 946,
+      "alpha": true
+    },
+    "coluna-braseiro": {
+      "path": "props/coluna-braseiro.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 89730,
+      "sha256": "2026790f80623ae0217c7565a167fd4c75407b6e271a6e49c94d76f70f3eb2cc",
+      "origin": "generated",
+      "source": "source/generated/coluna-braseiro.png",
+      "sourceCrop": [
+        22,
+        103,
+        694,
+        2139
+      ],
+      "sourceWidth": 724,
+      "sourceHeight": 2172,
+      "sourceSha256": "11dfb2ec4aa00f896c5bada53c238bb469751bf223e4de5bc4f70355f4ea6952",
+      "width": 297,
+      "height": 900,
+      "alpha": true
+    },
+    "teto-rochoso": {
+      "path": "props/teto-rochoso.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 168286,
+      "sha256": "4c42210572a3d17ad2ea0e50d7d70498d769c92741356251b70daf9757831859",
+      "origin": "generated",
+      "source": "source/generated/teto-rochoso.png",
+      "sourceCrop": [
+        11,
+        58,
+        2161,
+        658
+      ],
+      "sourceWidth": 2172,
+      "sourceHeight": 724,
+      "sourceSha256": "61f2ba4975bb73db031d14a6ddb045e51b9bbfa9fdabcc1ad182cce632a176ea",
+      "width": 1600,
+      "height": 447,
+      "alpha": true
+    },
+    "grilhao-rompido": {
+      "path": "props/grilhao-rompido.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 54438,
+      "sha256": "6d85c0acfe93dc77fe789a370d8f6f7547e7efcf78a04b15940347a6b044394f",
+      "origin": "generated",
+      "source": "source/generated/grilhao-rompido.png",
+      "sourceCrop": [
+        49,
+        158,
+        1732,
+        752
+      ],
+      "sourceWidth": 1774,
+      "sourceHeight": 887,
+      "sourceSha256": "63b95dc1d6dd7b4214f7f365734abca3cd8982b4e2c09b708b34a19e3af7d374",
+      "width": 600,
+      "height": 212,
+      "alpha": true
+    },
+    "corrente-balanco": {
+      "path": "animations/corrente-balanco.webp",
+      "kind": "animation",
+      "frames": 6,
+      "bytes": 192864,
+      "sha256": "bbee33b3d85dda3326854e7141f8d9e95d0e87eb9b194c828b12f47b8d65e633",
+      "origin": "generated",
+      "source": "source/generated/corrente-balanco.png",
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "crop": [
+        120,
+        19,
+        323,
+        457
+      ],
+      "frameBounds": [
+        [
+          174,
+          19,
+          326,
+          476
+        ],
+        [
+          174,
+          19,
+          372,
+          467
+        ],
+        [
+          174,
+          19,
+          443,
+          446
+        ],
+        [
+          174,
+          19,
+          385,
+          461
+        ],
+        [
+          174,
+          19,
+          327,
+          472
+        ],
+        [
+          120,
+          19,
+          327,
+          472
+        ]
+      ],
+      "registrations": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "frameHashes": [
+        "f405764329a71f5086e26151b2aa1bebdc08e3a9875ddb68208590c05024d589",
+        "f89463202a4b961182f5fae817b838bd39a49078dae4a2eed7033ec6c99f6611",
+        "a67969821efe305a0767c1f6c3c1fa9ae7fbe35026024ddb74bb8a0cbe0d0732",
+        "3f4f7d202396837b45365f55d9a09ea3a19306d0d07e85fb4fff61c0d626efca",
+        "3717960c00c82af28bf07d289e9e7802755ff5704476c5a7a3db306c0f7e0de7",
+        "1b3da63ceb7bbde8b9347350a713a5edd03fb82abc0bfef4cd895a7a9ac8a886"
+      ],
+      "registrationThresholds": [
+        127,
+        127,
+        127,
+        127,
+        127,
+        127
+      ],
+      "pivot": [
+        250,
+        20
+      ],
+      "registration": "fixed-ceiling-mount",
+      "fps": 4,
+      "sourceSha256": "37c77a3ba590f1fb8a685e84b710a64c037a3faf98d0cd649b731cfdaa4b399f",
+      "width": 3000,
+      "height": 500,
+      "alpha": true
+    },
+    "fogo-braseiro": {
+      "path": "fx/fogo-braseiro.webp",
+      "kind": "fx",
+      "frames": 6,
+      "bytes": 229898,
+      "sha256": "077baf8351459a6c0a47c34ec5f420c5ff308aeb73c5cb096cf9a234659549e0",
+      "origin": "generated",
+      "source": "source/generated/fogo-braseiro.png",
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "crop": [
+        120,
+        99,
+        264,
+        382
+      ],
+      "frameBounds": [
+        [
+          120,
+          265,
+          379,
+          481
+        ],
+        [
+          121,
+          183,
+          384,
+          481
+        ],
+        [
+          120,
+          99,
+          379,
+          481
+        ],
+        [
+          120,
+          115,
+          378,
+          481
+        ],
+        [
+          120,
+          197,
+          379,
+          481
+        ],
+        [
+          120,
+          262,
+          379,
+          481
+        ]
+      ],
+      "registrations": [
+        [
+          -2,
+          52
+        ],
+        [
+          9,
+          52
+        ],
+        [
+          18,
+          52
+        ],
+        [
+          -2,
+          57
+        ],
+        [
+          8,
+          57
+        ],
+        [
+          18,
+          57
+        ]
+      ],
+      "frameHashes": [
+        "9d1d42208ac233ad23129fbfacdfdd158271c2f68a53109f63c7e0fe5e8d7d29",
+        "51bdf137e29a3d8409391ce76d1ef2f5e4e5370cf57329ea41ae2e885eccb7dc",
+        "2581b1e77f0b38a44f0a42ad47c64c6bc236db84fa16e351d1bc5f94608fe58e",
+        "c3924370ff51700d448367ffaa6055d06c4b4a95073a1431d250dfc2fb8c6baa",
+        "4074cb85308b550e31a88c451e72bf08439b39aa2271038b827d12769c24b107",
+        "071389c4e1b70bbcef80cef4a19896d604be21ed2bc65aef1af97abf967eaf2a"
+      ],
+      "registrationThresholds": [
+        127,
+        127,
+        127,
+        127,
+        127,
+        127
+      ],
+      "pivot": [
+        250,
+        480
+      ],
+      "registration": "fixed-base",
+      "fps": 4,
+      "sourceSha256": "3e15bd060b2cdcf00b6a71c0b747726c8b13cc2817c13ebda07bc638afec43bc",
+      "width": 3000,
+      "height": 500,
+      "alpha": true
+    },
+    "lava-distante": {
+      "path": "fx/lava-distante.webp",
+      "kind": "fx",
+      "frames": 6,
+      "bytes": 168226,
+      "sha256": "6cfa0989c80cfed71e768103fd406638ddf35b3e2b941d50ec66419a62af2b51",
+      "origin": "generated",
+      "source": "source/generated/lava-distante.png",
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "crop": [
+        25,
+        393,
+        450,
+        88
+      ],
+      "frameBounds": [
+        [
+          26,
+          394,
+          475,
+          481
+        ],
+        [
+          25,
+          394,
+          473,
+          481
+        ],
+        [
+          25,
+          394,
+          473,
+          481
+        ],
+        [
+          25,
+          393,
+          474,
+          481
+        ],
+        [
+          27,
+          393,
+          474,
+          481
+        ],
+        [
+          26,
+          393,
+          474,
+          481
+        ]
+      ],
+      "registrations": [
+        [
+          1,
+          158
+        ],
+        [
+          -2,
+          158
+        ],
+        [
+          -2,
+          158
+        ],
+        [
+          0,
+          157
+        ],
+        [
+          0,
+          157
+        ],
+        [
+          -1,
+          157
+        ]
+      ],
+      "frameHashes": [
+        "526dc81e194af2defa182b35877bcf64f668866d6e9b400c7213a06f5abb1b8d",
+        "0d6532a581148255653d6bfaa52b61fb346699625323fc794a5dc4ab07c1b980",
+        "37aec1f3aa77b62d22b80659aacdda15a09afcac4454b31c982c504fe250a3c4",
+        "3d010f9ce29c5ebfd19cc5636efd40496e7215f675e9a7b1a35f85e4bad3dfdf",
+        "d0f640a658a62e3dbff170d28f3ab915d8a1b9a0980d5bdba5b8056464cc11e7",
+        "9eac93a9e29deb820927282626b261564cff9119d7d2a42381efb81c0af4e4b4"
+      ],
+      "registrationThresholds": [
+        127,
+        127,
+        127,
+        127,
+        127,
+        127
+      ],
+      "pivot": [
+        250,
+        480
+      ],
+      "registration": "fixed-base",
+      "fps": 4,
+      "sourceSha256": "54c094d56a14be540e40d51cbbfc37e54217423f7a9982f562f27deee43ae29f",
+      "width": 3000,
+      "height": 500,
+      "alpha": true
+    },
+    "almas-coro": {
+      "path": "animations/almas-coro.webp",
+      "kind": "animation",
+      "frames": 6,
+      "bytes": 703610,
+      "sha256": "906f78f812fa85d34e6f41a4e9719f9d9cd06cef0d261ab6d4797158a22f233d",
+      "origin": "generated",
+      "source": "source/generated/esqueletos-coro.png",
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "crop": [
+        31,
+        74,
+        434,
+        407
+      ],
+      "frameBounds": [
+        [
+          70,
+          76,
+          430,
+          480
+        ],
+        [
+          70,
+          76,
+          430,
+          480
+        ],
+        [
+          35,
+          76,
+          437,
+          481
+        ],
+        [
+          64,
+          76,
+          436,
+          481
+        ],
+        [
+          31,
+          76,
+          465,
+          481
+        ],
+        [
+          64,
+          74,
+          437,
+          480
+        ]
+      ],
+      "registrations": [
+        [
+          9,
+          33
+        ],
+        [
+          9,
+          33
+        ],
+        [
+          0,
+          33
+        ],
+        [
+          1,
+          33
+        ],
+        [
+          0,
+          33
+        ],
+        [
+          -2,
+          32
+        ]
+      ],
+      "frameHashes": [
+        "c073bf000bb11ee04f5a09291159d9cf8f7fae7714a9ec9361d9d05fed920e60",
+        "2d2270a0d27e7c1cffc526933d57d4248b9355bdf7e9f3526b0e0aacda5f2fbb",
+        "e5b12aa811009cf3e2133cd2b3889af3396e0b9087a427e85f722bf9c15956a4",
+        "1d7fc8b734beb82c28ebbc57e970df2607f275a77aa170ceaa7fe1d45e2e55c8",
+        "a99af7cc035f0887f5668a691f813d89757fa68e6202492ebf12918e1a57170c",
+        "e7696f3f43f962a3d6388cd43c7733a4525031489730a0b908d256cf5d564030"
+      ],
+      "registrationThresholds": [
+        127,
+        127,
+        127,
+        127,
+        127,
+        127
+      ],
+      "pivot": [
+        250,
+        480
+      ],
+      "registration": "fixed-base",
+      "fps": 4,
+      "sourceSha256": "40ddd4592e76119bf055fd3750f18be26282eb8121773cf52955342c5edb09b2",
+      "width": 3000,
+      "height": 500,
+      "alpha": true
+    },
+    "titulo": {
+      "path": "ui/titulo.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "bytes": 9582,
+      "sha256": "478293fdf1fc5d62db614bf42ed6d73ef0e63fee901aa1baa67adf28cff6717a",
+      "origin": "typeset",
+      "text": "INFERNO — O ÚLTIMO REFRÃO",
+      "font": "ui/Bangers-Regular.ttf",
+      "width": 1400,
+      "height": 150,
+      "alpha": false
+    },
+    "trilha-intro": {
+      "path": "audio/trilha-intro.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 33730,
+      "sha256": "dddd7d97018f53192dd7b07cebf80b0ceb2c3f02c61e06925ba743e870809798",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "trilha-loop": {
+      "path": "audio/trilha-loop.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 238823,
+      "sha256": "3684cf0cd9919aacddb9205b43799da1468fc685420f36a367812f66fc85591c",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "ambiente-caverna": {
+      "path": "audio/ambiente-caverna.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 151236,
+      "sha256": "7c628c18e88dc54b9435ae1d16f01e43e029675725d2d722b25f14c356a9127c",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "vento-profundo": {
+      "path": "audio/vento-profundo.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 151697,
+      "sha256": "17e3166a25b4afb85a847479e5ec53ba0318074c96bf0db94bfc5fa8e45d3748",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "audio-lava-distante": {
+      "path": "audio/lava-distante.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 153342,
+      "sha256": "9258f15a7856e5318d9bdf043e255b2555295e971465a3f2616d44898d93129c",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "correntes": {
+      "path": "audio/correntes.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 15802,
+      "sha256": "821205ebf08a6c95742d8dfdb65e046f3fb8aa4e8050831a8191d52c78841b7b",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "miniatura": {
+      "path": "ui/miniatura.webp",
+      "kind": "image",
+      "frames": 1,
+      "bytes": 99432,
+      "sha256": "5445fdddae88cc3316fe0925d72b1c602191d28f8e9468d667c34d03d7b3250c",
+      "origin": "derived-composition",
+      "width": 960,
+      "height": 540,
+      "alpha": false
+    },
+    "carregamento": {
+      "path": "ui/carregamento.webp",
+      "kind": "image",
+      "frames": 1,
+      "bytes": 367556,
+      "sha256": "a047f773c821be4b8560fa4f77c165877b2c5057e1ba9230562e595ec2a4a3cf",
+      "origin": "derived-composition",
+      "width": 1920,
+      "height": 1080,
+      "alpha": false
+    }
+  },
+  "missing": []
+}

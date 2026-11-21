@@ -1,0 +1,91 @@
+{
+  "passed": true,
+  "scope": "One-form visual smoke on new background; real Inferno Nacional",
+  "buildSHA256": "578779fca019f7636f30962d69f47bf60469b3a4e439a4201d3ced4b6dacb179",
+  "runtime": {
+    "stage": {
+      "ready": true,
+      "loaded": 13,
+      "errors": [],
+      "prepared": true
+    },
+    "audio": {
+      "stage": "inferno",
+      "available": true,
+      "active": true,
+      "muted": false,
+      "started": true,
+      "decoded": 6,
+      "gain": 0.6000000238418579,
+      "errors": []
+    },
+    "foe": "djabo",
+    "packs": 26,
+    "strips": 722
+  },
+  "smoke": {
+    "form": 1,
+    "safe": [
+      1376.689359988086,
+      1736.689359988086
+    ],
+    "width": 360,
+    "segments": [
+      [
+        110,
+        350
+      ],
+      [
+        350,
+        590
+      ],
+      [
+        590,
+        830
+      ],
+      [
+        830,
+        1070
+      ],
+      [
+        1070,
+        1310
+      ],
+      [
+        1310,
+        1376.689359988086
+      ],
+      [
+        1736.689359988086,
+        1790
+      ],
+      [
+        1790,
+        2030
+      ],
+      [
+        2030,
+        2270
+      ],
+      [
+        2270,
+        2490
+      ]
+    ],
+    "method": "Real SA3 input and core step; explicit positions, transient FX cleared. Only one form smoke; v1 lifecycle/timing not repeated."
+  },
+  "pause": true,
+  "cameras": [
+    0,
+    340,
+    680
+  ],
+  "mobile": [
+    844,
+    390
+  ],
+  "errors": [],
+  "failed": [],
+  "http": [],
+  "reusedEvidence": "../inferno-review/game-review.json"
+}

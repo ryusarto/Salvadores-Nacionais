@@ -1,0 +1,254 @@
+{
+  "passed": true,
+  "conclusion": "Aprovado para o escopo visual v2 e smoke automatizado descrito; nenhuma falha verificável encontrada.",
+  "date": "2026-11-20",
+  "reviewer": "/root/aeroporto_revisao — revisão independente; nenhuma edição de produção ou Git",
+  "scope": "Troca dos três NPCs por esqueletos e ampliação do fogo ambiental; renderer/core/áudio preservados.",
+  "environment": {
+    "browser": "Google Chrome 158.0.8127.37, headless via playwright-core",
+    "os": "macOS",
+    "preview": "Prévia offline local",
+    "game": "Build local servida em http://127.0.0.1:50048; proxy apenas para sprites oficiais ausentes, validados por SHA pelo servidor de QA",
+    "previewViewport": [
+      1440,
+      1000
+    ],
+    "gameViewport": [
+      1280,
+      720
+    ],
+    "mobileEmulatedViewport": [
+      844,
+      390
+    ],
+    "canvas": [
+      1920,
+      1080
+    ]
+  },
+  "buildSHA256": "578779fca019f7636f30962d69f47bf60469b3a4e439a4201d3ced4b6dacb179",
+  "manifestSHA256": "f8c58d7e09d1a893cdfe65a779e8785f6265ce0fdd5aeb866cadb49f026fd579",
+  "counts": {
+    "runtimeAssets": 22,
+    "runtimeBytes": 4048458,
+    "imagesDecoded": 16,
+    "sceneImagesPrepared": 13,
+    "audioBuffersDecoded": 6,
+    "animationStrips": 4,
+    "animationFrames": 24,
+    "skeletons": 3,
+    "skeletonPoses": 6,
+    "backgroundFlames": 8,
+    "brazierFlames": 2,
+    "spritePacks": 26,
+    "spriteStrips": 722
+  },
+  "newChecks": {
+    "integrity": "SHA, bytes e dimensões dos 22 assets; 24 quadros dentro dos crops, sem pixels alpha>12 nas bordas das células; fonte e licença presentes.",
+    "visual": "Inspeção do contato de seis poses sobre fundo escuro: três corpos inteiros, mãos/pés preservados, sem matte ou halo perceptível. Cenas capturadas nas câmeras 0/340/680; correntes ancoradas no teto e chamas apoiadas nos braseiros. Fogo novo atrás do trono/esqueletos, sem ocluir esses elementos nas vistas inspecionadas; piso de combate escuro e limpo.",
+    "backgroundGeometry": {
+      "lavaFlameBaseline": 805,
+      "maxAllowedBackgroundBaseline": 815,
+      "fightFloorTop": 826,
+      "flameHeights": [
+        180,
+        235,
+        275,
+        240,
+        250,
+        290,
+        230,
+        210
+      ],
+      "brazierFlameHeight": 175,
+      "foregroundObjects": 0,
+      "drawOrder": "Oito chamas de lava antes do trono e do coro; braseiros sobre suas bacias."
+    },
+    "preview": {
+      "cameras": [
+        0,
+        340,
+        680
+      ],
+      "poses": [
+        0,
+        15,
+        30,
+        45,
+        60,
+        75
+      ],
+      "pause": true,
+      "step": true,
+      "reducedEffects": true,
+      "galleryIsolatedSkeleton": true,
+      "mobileNoHorizontalOverflow": true,
+      "safeComparisons": [
+        {
+          "camera": 0,
+          "state": "aviso",
+          "safe": [
+            1120,
+            1480
+          ],
+          "width": 360,
+          "changedPixels": 0
+        },
+        {
+          "camera": 0,
+          "state": "ativo",
+          "safe": [
+            1120,
+            1480
+          ],
+          "width": 360,
+          "changedPixels": 0
+        },
+        {
+          "camera": 340,
+          "state": "aviso",
+          "safe": [
+            1120,
+            1480
+          ],
+          "width": 360,
+          "changedPixels": 0
+        },
+        {
+          "camera": 340,
+          "state": "ativo",
+          "safe": [
+            1120,
+            1480
+          ],
+          "width": 360,
+          "changedPixels": 0
+        },
+        {
+          "camera": 680,
+          "state": "aviso",
+          "safe": [
+            1120,
+            1480
+          ],
+          "width": 360,
+          "changedPixels": 0
+        },
+        {
+          "camera": 680,
+          "state": "ativo",
+          "safe": [
+            1120,
+            1480
+          ],
+          "width": 360,
+          "changedPixels": 0
+        }
+      ],
+      "baseline": "Seis leituras de Canvas idêntico antes da referência, para estabilizar readback; não houve divergência nesta bateria v2."
+    },
+    "game": {
+      "entry": "Menu → Versus → Belga → Djabo → luta e carregamento preparados. Pausa real confirmada.",
+      "fixture": "Depois da entrada real, RAF suspenso; createMatch e entrada X reais no core para Inferno Nacional da forma 1. Posições explícitas; modo training usado somente para renderização congelada e FX transitórios limpos.",
+      "prepared": true,
+      "safe": [
+        1376.689359988086,
+        1736.689359988086
+      ],
+      "safeWidth": 360,
+      "segments": [
+        [
+          110,
+          350
+        ],
+        [
+          350,
+          590
+        ],
+        [
+          590,
+          830
+        ],
+        [
+          830,
+          1070
+        ],
+        [
+          1070,
+          1310
+        ],
+        [
+          1310,
+          1376.689359988086
+        ],
+        [
+          1736.689359988086,
+          1790
+        ],
+        [
+          1790,
+          2030
+        ],
+        [
+          2030,
+          2270
+        ],
+        [
+          2270,
+          2490
+        ]
+      ],
+      "cameras": [
+        0,
+        340,
+        680
+      ],
+      "audio": "Seis buffers decodificados e subsistema ativo, sem erros; avaliação auditiva humana não executada.",
+      "mobile": "Viewport alterado a 844×390 e Canvas renderizado; game-mobile.png contém o Canvas interno, não comprova toda a interface mobile."
+    },
+    "runtimeErrors": {
+      "page": [],
+      "network": [],
+      "http": []
+    }
+  },
+  "reusedEvidence": {
+    "baseline": "5efa45d",
+    "proof": "source-proof.json — nove arquivos de renderer, app, personagens e core com SHA idêntico; seis áudios também idênticos.",
+    "report": "../inferno-review/final-review.json",
+    "notRepeated": [
+      "216 casos do oráculo de clipping/alpha do renderer e comparação anterior",
+      "Duas formas, transformação, reset de rodada e limpeza de hazards",
+      "Timing de aviso20/vida260 e stun100 efetivos mais hitstop8 na fixture de cinco hits"
+    ],
+    "reason": "Mudança restrita a assets e placements; a revisão v2 repete somente os caminhos afetados.",
+    "safeSemantics": "safe[] garante 360 px sem fogo. O core pode omitir fragmentos menores que30 px e deixar lacunas adicionais; não se afirma que sejam os únicos360 px seguros."
+  },
+  "evidence": [
+    "assets-review.json",
+    "source-proof.json",
+    "preview-review.json",
+    "game-review.json",
+    "technical-complete.json",
+    "run-review.mjs",
+    "skeletons-six-poses-dark.png",
+    "camera-0.png",
+    "camera-340.png",
+    "camera-680.png",
+    "pose-{0,15,30,45,60,75}.png",
+    "skeleton-isolated-{0,15,30,45,60,75}.png",
+    "preview-mobile.png",
+    "game-warning.png",
+    "game-active-camera-{0,340,680}.png",
+    "game-mobile.png"
+  ],
+  "findings": [],
+  "limits": [
+    "Automação de navegador e inspeção de imagens; não é playtest humano.",
+    "Dispositivo mobile apenas emulado; sem certificação de controles touch ou medição de desempenho.",
+    "Smoke da forma1 nesta revisão; ciclo completo e oráculos amplos são evidências anteriores explicitamente reaproveitadas.",
+    "Sprites corporais e fallback do Djabo permanecem os oficiais da base declarada26/722.",
+    "Build local/proxy de QA; publicação e integração Git não executadas pelo revisor."
+  ],
+  "processes": "Runner concluiu com browser.close() no finally; servidor pertence ao programador e será encerrado por ele após aviso."
+}

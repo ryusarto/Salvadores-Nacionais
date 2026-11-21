@@ -1,0 +1,139 @@
+{
+  "passed": true,
+  "currentReleaseSHA256": "6226dd27b0f3ff292989645ad2b9da798656bd8917505ccfb8f5c41454952638",
+  "currentReleaseAudit": {
+    "__SPRITES": {
+      "packs": 31,
+      "references": 881,
+      "gitFiles": 881,
+      "missing": 0,
+      "extra": 0,
+      "duplicates": 0
+    },
+    "__SPRITEPOSTERS": {
+      "packs": 0,
+      "references": 0,
+      "gitFiles": 0,
+      "missing": 0,
+      "extra": 0,
+      "duplicates": 0
+    }
+  },
+  "indexesIdenticalToOfficial": true,
+  "reusedCore": [
+    {
+      "path": "src/core/match.js",
+      "previous": "a45c7c31021604861b0a7d4d8e34a7f75862d85c73c98f313caf20880377a837",
+      "current": "a45c7c31021604861b0a7d4d8e34a7f75862d85c73c98f313caf20880377a837",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/combat.js",
+      "previous": "133ad2875e7b297c282ac463579d8297a68af260add6780451b927adfb9fddfd",
+      "current": "133ad2875e7b297c282ac463579d8297a68af260add6780451b927adfb9fddfd",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/entities.js",
+      "previous": "14110994d86b91942fb030ef6856c903d02589d679849f54703154ae161ab51f",
+      "current": "14110994d86b91942fb030ef6856c903d02589d679849f54703154ae161ab51f",
+      "unchanged": true
+    },
+    {
+      "path": "src/data/characters/djabo.js",
+      "previous": "9f5a5cb45f76d56a66b310e3874fe3d748d3c446b86bbc7571744e9762e5211e",
+      "current": "9f5a5cb45f76d56a66b310e3874fe3d748d3c446b86bbc7571744e9762e5211e",
+      "unchanged": true
+    }
+  ],
+  "review": "Revisão técnica independente, somente leitura de produção",
+  "officialMain": "982197f",
+  "officialAudit": {
+    "__SPRITES": {
+      "packs": 31,
+      "references": 881,
+      "gitFiles": 881,
+      "missing": 0,
+      "extra": 0,
+      "duplicates": 0
+    },
+    "__SPRITEPOSTERS": {
+      "packs": 0,
+      "references": 0,
+      "gitFiles": 0,
+      "missing": 0,
+      "extra": 0,
+      "duplicates": 0
+    }
+  },
+  "guardChecks": [
+    {
+      "case": "índice válido com strip e poster",
+      "passed": true
+    },
+    {
+      "case": "omissão reversa",
+      "passed": true
+    },
+    {
+      "case": "pack incorreto",
+      "passed": true
+    },
+    {
+      "case": "chave incorreta",
+      "passed": true
+    },
+    {
+      "case": "poster no índice corporal",
+      "passed": true
+    },
+    {
+      "case": "referência duplicada",
+      "passed": true
+    },
+    {
+      "case": "arquivo ausente na árvore",
+      "passed": true
+    },
+    {
+      "case": "cache hash ausente",
+      "passed": true
+    },
+    {
+      "case": "cache hash inválido",
+      "passed": true
+    },
+    {
+      "case": "release parcial real ac8ee4c rejeitada",
+      "passed": true
+    }
+  ],
+  "bossArtFunctions": [
+    {
+      "name": "drawFloorFire",
+      "unchangedFrom": "f64e81a",
+      "sha256": "cf45850cbc9b852a2ff8cbba3139528917d43b8247d55b33e96417f5240d5466"
+    },
+    {
+      "name": "drawGoldWall",
+      "unchangedFrom": "f64e81a",
+      "sha256": "bd54fd42135a4e4a27838e2cea3649690839193a56c0f21a0704272ec6028d47"
+    },
+    {
+      "name": "drawAnkleZone",
+      "unchangedFrom": "982197f",
+      "sha256": "bc24eeabf0d9dde580a500368c68d31b36de8858d05b612a53853c96c7e3a915"
+    }
+  ],
+  "mergeHooks": [
+    "Pai zone e entidade",
+    "Fujão eventos/entidade",
+    "Floor fire clip e globalAlpha multiplicativo",
+    "Muralha pintada/fallback preservados"
+  ],
+  "limits": [
+    "Gate verifica cobertura bidirecional, slots, tipos, duplicação e formato SHA12; o conteúdo de todos os sprites remotos não foi baixado por esta revisão.",
+    "Proxy e execução integrada verificam arquivos efetivamente solicitados; preservação byte exata do índice oficial será conferida na build final.",
+    "Nenhum resultado de PR37 foi incorporado ou assumido como merge."
+  ]
+}
