@@ -1,0 +1,2796 @@
+{
+  "character": "pai-fujao",
+  "version": 1,
+  "bodyAnimations": 40,
+  "bodyFrames": 240,
+  "effectAnimations": 20,
+  "effectFrames": 120,
+  "alpha": "true",
+  "compression": "lossless WebP",
+  "cell": 500,
+  "bodyFoot": [
+    250,
+    456
+  ],
+  "runtimeProfile": {
+    "spriteProfile": "six-frame",
+    "spriteScale": 0.76,
+    "spriteRecovery": true,
+    "spriteTurboMoves": [
+      "6S"
+    ],
+    "spriteStripScale": {
+      "pai-fujao": {
+        "golpe-5H": 1.091318824616709,
+        "golpe-2M": 1.060232480456843,
+        "golpe-3H": 1.1217035714737869,
+        "golpe-throw": 1.0292832997835086
+      }
+    },
+    "spriteStatePhases": true
+  },
+  "sequences": [
+    {
+      "name": "parado",
+      "file": "production/sprites/final/pai-fujao/parado.webp",
+      "source": "tiras/parado.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 47984,
+          "edgePixels": 0,
+          "sha256": "d935494070fd019e9484deab9b439431681416da719e26abe79abfc8bfbedc59"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 48648,
+          "edgePixels": 0,
+          "sha256": "27dc7995626aae49be7ec563b33cf1047f14065c4a9f426359b7558cfb78a85f"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 48997,
+          "edgePixels": 0,
+          "sha256": "924a49d7617de73ab5cec5b91d7f0c8202aa35cf6fce7a7b0ee10c098f0c97ee"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 48378,
+          "edgePixels": 0,
+          "sha256": "a8aa66c09e13fb105237d5692c99e9f4b55e14b2a93c5f32662e19a9a6e8e8e6"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 47970,
+          "edgePixels": 0,
+          "sha256": "bd0d238c1082a4c9fc5fa37684779f790b399a4f8007ae8bc25fd598cc0351db"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 47812,
+          "edgePixels": 0,
+          "sha256": "f78b5e4700daa5732d67dc5d61f7af8fb9e81a8f1359e2bab26050d88897d127"
+        }
+      ],
+      "sha256": "0e975f5bbfd5af52031ab768110d534775b376382504d374524412c4ec5f57d3",
+      "bytes": 540628
+    },
+    {
+      "name": "andar",
+      "file": "production/sprites/final/pai-fujao/andar.webp",
+      "source": "tiras/andar.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 42035,
+          "edgePixels": 0,
+          "sha256": "6124dc0f04587ae9a1586d3fcd3e2ef4f73ce3d3871265576886c88b3d265ff5"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 39284,
+          "edgePixels": 0,
+          "sha256": "e01e5195e900742074da28864e28ad199620b3a5d10d48e93ae70882ed0fdd0d"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 40105,
+          "edgePixels": 0,
+          "sha256": "64873470fb80714dd560422dcfdfd014d636dd88ba680a855941d620d9c6f5db"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 42267,
+          "edgePixels": 0,
+          "sha256": "856f775a7bb18293465212b868fd59f379dd2cc5d8fa06bb3328b03f3a0fc94d"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 39022,
+          "edgePixels": 0,
+          "sha256": "542f7d1731910b3b98d6d82b6249ac1e978aedd101c9d55ef67d3d152128779d"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 38694,
+          "edgePixels": 0,
+          "sha256": "b0156a71eccb961676db98bbd482cf38d28935e802d34cc2ea862545cd66621a"
+        }
+      ],
+      "sha256": "472796a4c07b91a2d0f08e1a9711405ab07722834f043c28073b64f425be0155",
+      "bytes": 459440
+    },
+    {
+      "name": "andar-tras",
+      "file": "production/sprites/final/pai-fujao/andar-tras.webp",
+      "source": "tiras/andar-tras.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 46123,
+          "edgePixels": 0,
+          "sha256": "51b08830c8302939ebfd075b4c0edaa7336eb92fd2f3c6215df7fb7837bbb13e"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 47209,
+          "edgePixels": 0,
+          "sha256": "90f85bee3650e6df288439892eb7bc4a02d7a54907b10ac2bbaf022b1bed0174"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 44520,
+          "edgePixels": 0,
+          "sha256": "a87ef11b2087468c02003c6313ee7104ff8b219cb6e6bb054ce504a83ad00aa7"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 46676,
+          "edgePixels": 0,
+          "sha256": "7c444cb47d5aa9e99bd8b72c3c3bc08223d8e1a0bffafa0dff3dcf774371b69d"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 48148,
+          "edgePixels": 0,
+          "sha256": "934e9d58413db34fba94edafc9c4cb4bf671f3624b41f43669727bffbac86eb7"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 45203,
+          "edgePixels": 0,
+          "sha256": "502fbb384ab75345aa2659c859509cbcbfb0a4ab4b54789acca8a8e4a01e411d"
+        }
+      ],
+      "sha256": "2960584c5ac0d1bf25ac3a055b9010676a462dae53b9ff7b59b3ba83308939e4",
+      "bytes": 505574
+    },
+    {
+      "name": "correr",
+      "file": "production/sprites/final/pai-fujao/correr.webp",
+      "source": "tiras/correr.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 50904,
+          "edgePixels": 0,
+          "sha256": "230be87b5558dad7aec7b23899f0b39b665ccc2d38442eba3e90e88d08076aa9"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 51834,
+          "edgePixels": 0,
+          "sha256": "08bd102e362572178e8c3abd16a66b3f895397a141e357920acef38cea519f31"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 51092,
+          "edgePixels": 0,
+          "sha256": "2e561ec7caa106b8091f2d85a6bff674c055c56806ad6dc10c6fcf68913baa87"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 49761,
+          "edgePixels": 0,
+          "sha256": "e39d496b17a1ac5f11b70e41eae90c4f8446e74682090241cec44ba87517d8a9"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 50763,
+          "edgePixels": 0,
+          "sha256": "dad681c9cb693abeb457e29d9b89f74f22984390e768d2cf88ab9e56e5ab097e"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 53091,
+          "edgePixels": 0,
+          "sha256": "7d7a381780e8f6dbbb6d9b67684ffeda60ad70bf6b5f96723ec7ee821a914efe"
+        }
+      ],
+      "sha256": "be7b44bb578fc817fd3bccd8dab68cb16f1ad11450f625de23fab6307495f8bf",
+      "bytes": 574854
+    },
+    {
+      "name": "agachar",
+      "file": "production/sprites/final/pai-fujao/agachar.webp",
+      "source": "tiras/agachar.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 46843,
+          "edgePixels": 0,
+          "sha256": "d53c26c541b050425849e9375fe090aed6681d3afcf84908a740171b9353914c"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 47947,
+          "edgePixels": 0,
+          "sha256": "9bee11af637aeeae6006b3757afc4e356956a2e10e5815cb7ecca8a584ffc9af"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 42793,
+          "edgePixels": 0,
+          "sha256": "fd2564e7fa033d39b747bfbda24f53655eaf3d5becc5f5f72d044e532c9f30e7"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 66875,
+          "edgePixels": 0,
+          "sha256": "086d61330824a45eb8636fdff03ecb33f25ec8b5555a4be7c3a21ce3bfdeec1d"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 63793,
+          "edgePixels": 0,
+          "sha256": "11958e61458a2e2b2ec62c42dcd16cfab8ee9b2dc389d3b1ec64f5eb7a9ff397"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 61815,
+          "edgePixels": 0,
+          "sha256": "b913ece828cd19ccb53bececb53cb5f31323eed78b2e32b493180fafef031c7a"
+        }
+      ],
+      "sha256": "a8d0bee77bd9850802a398c2bb5f1d719c73bf2e2cfa524c2dc1412b6acf2d89",
+      "bytes": 592762
+    },
+    {
+      "name": "pulo",
+      "file": "production/sprites/final/pai-fujao/pulo.webp",
+      "source": "tiras/pulo.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 46794,
+          "edgePixels": 0,
+          "sha256": "fb7b27ffec10c4bc9e9edfd4fdbafb07c7e8744b4eb7bd1b31afe1ca6cb71302"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 49700,
+          "edgePixels": 0,
+          "sha256": "83cda545d4fbc6ff56339ade7f0a99d32b4aa25b10f3862e7e081671e11be6bd"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 42610,
+          "edgePixels": 0,
+          "sha256": "bb1f28f85e392d26591c6e14ce1fc3ad898e65efc6e0fed8cf78bf245bfe5d11"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 37895,
+          "edgePixels": 0,
+          "sha256": "30a08e43289ac498e34e4928ec6894f32faf4ddf56a84a0ef88e8dcf803f4d35"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 44576,
+          "edgePixels": 0,
+          "sha256": "c5283961226e72a157f5fc969ffe5a43425ab15f87d3ab67da9019ada10c1911"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 48023,
+          "edgePixels": 0,
+          "sha256": "7bb446207265507a938346544387d65bd1d3034c0326702494a7eb1f816b5419"
+        }
+      ],
+      "sha256": "f8968d7c2b409165ca80fe353da9c7d3ac4247809f544d0cec6d7954e7cd0587",
+      "bytes": 517444
+    },
+    {
+      "name": "recuo",
+      "file": "production/sprites/final/pai-fujao/recuo.webp",
+      "source": "tiras/recuo.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 50692,
+          "edgePixels": 0,
+          "sha256": "245dba16c530f6364bb2b568239582b0e6401d5d4b9f0919392d254c3c6ee946"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 50687,
+          "edgePixels": 0,
+          "sha256": "a164e1363c9a757e4f9d01a52164e1e8a9bcbfa6ae11db659df0af42c60011dc"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 43075,
+          "edgePixels": 0,
+          "sha256": "2c7c151243918e1871de31e7ec85e1b879fc907e2dd1adee93e80c2ab49fe3e6"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 48621,
+          "edgePixels": 0,
+          "sha256": "3f1557001178beee5da87bf71a3a8312522e81b7a427a78c5ed2414b08ede97c"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 50960,
+          "edgePixels": 0,
+          "sha256": "fd3cf54676f15cee82e1d7621f810351cc774018247a4267616ae2de96bc665f"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 49933,
+          "edgePixels": 0,
+          "sha256": "604145b8fd14459e73ebdd57c0df60908a73b018045d7b7b6b41308da6c5a680"
+        }
+      ],
+      "sha256": "5fbc4d95f17a24fcdbe2102158632cf40e5dc56b8f97445dcee003e71f58f0c9",
+      "bytes": 554118
+    },
+    {
+      "name": "escape-agarrao",
+      "file": "production/sprites/final/pai-fujao/escape-agarrao.webp",
+      "source": "tiras/escape-agarrao.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 53068,
+          "edgePixels": 0,
+          "sha256": "7e18b45c0189a694e6d09a3826a46249dfbfce356d392b8145217e9550bc35a5"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 54051,
+          "edgePixels": 0,
+          "sha256": "e9e09efd0435268e1987c21812ea7c00eee116fd92a1ec0c23f777542f759200"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 57534,
+          "edgePixels": 0,
+          "sha256": "ee3cd681a2c70e33413e3c0d3959f94f0dd9568515b5b9e31df68c8871e0a26d"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 55030,
+          "edgePixels": 0,
+          "sha256": "19731f099c04fc22723cb24841d579f91060edee4d8f6ca33c5c5db28f249403"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 52521,
+          "edgePixels": 0,
+          "sha256": "cd35d714feb90249653a9528a52f300a7b35826ea377184b3155ab5cdc9e8956"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 52723,
+          "edgePixels": 0,
+          "sha256": "c7e6e152ea4167ecae989e61bbe0898011820ab144bc1ce3a8259b674fdfd155"
+        }
+      ],
+      "sha256": "ef42e80cec0e578014a42a3e0cf52c4953dc4c423e4080cc5354c767ef6868eb",
+      "bytes": 597698
+    },
+    {
+      "name": "recuperacao-rolamento",
+      "file": "production/sprites/final/pai-fujao/recuperacao-rolamento.webp",
+      "source": "tiras/recuperacao-rolamento.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 74188,
+          "edgePixels": 0,
+          "sha256": "c84ee09dc3fcd9703f804b166b6bc15267856a1152cd2756f72a68c2633f4435"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 77624,
+          "edgePixels": 0,
+          "sha256": "0b640c7c2f37ee5f6084c63f2ac32e67850f6a6cd2691de5e3a76ad8e08451e7"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 71054,
+          "edgePixels": 0,
+          "sha256": "322d771f05f842007ceec8d5a4155575e520407216c32f3d34159ec32d232276"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 74172,
+          "edgePixels": 0,
+          "sha256": "53ec102edde157e4d6c81dca75a5984a4280b422af726dccfa079733fc6a606e"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 62145,
+          "edgePixels": 0,
+          "sha256": "7d5a351f06e08910149aa7566486fe3bd1d7815bd8f5e5f6000972e03b0f90fb"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 53802,
+          "edgePixels": 0,
+          "sha256": "d8f107728d5f151dd0938865593f2e40596a68e0b623f4e3dbeb8d131f848450"
+        }
+      ],
+      "sha256": "e75f432da3190ba425bab9fcdc3d454427144b88edc1d4412b91b450b51c371e",
+      "bytes": 719478
+    },
+    {
+      "name": "defesa-em-pe",
+      "file": "production/sprites/final/pai-fujao/defesa-em-pe.webp",
+      "source": "tiras/defesa-em-pe.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 50796,
+          "edgePixels": 0,
+          "sha256": "67c3f45604599c771df1a18787b6f665f414ac76416616c913e624316abfb414"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 50131,
+          "edgePixels": 0,
+          "sha256": "0ff0c370fb816469890ae92208b96b9d3a6ad8d35619026c63b9c0f7d6aeb0bd"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 48945,
+          "edgePixels": 0,
+          "sha256": "08fd0c4660c69c9d9ec95ab701a79810bd5acdc4f2d14bdfbf18a20fe13894ef"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 51012,
+          "edgePixels": 0,
+          "sha256": "be85c9c671a366d98ac73e73cfb0dfe2ab83c344573e45ecf15fbc8af8578f08"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 50700,
+          "edgePixels": 0,
+          "sha256": "a93b80209919bd2b7f5af79b00450f4bd550b3ad4a8d1245f06444353c7602e4"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 50692,
+          "edgePixels": 0,
+          "sha256": "133974bd4e45269dd65f79ca81caec2395f0433a8a79ff6da5b7200984ff849e"
+        }
+      ],
+      "sha256": "445b6b8da192208fe02b060deee3ee6021020de4f739749b3fd04c8c39aaede3",
+      "bytes": 543574
+    },
+    {
+      "name": "defesa-agachado",
+      "file": "production/sprites/final/pai-fujao/defesa-agachado.webp",
+      "source": "tiras/defesa-agachado.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 81434,
+          "edgePixels": 0,
+          "sha256": "14a26f8c47e13889fef4d74bf6000e625f337ca4fd6412d0be6f7d232e56e233"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 73541,
+          "edgePixels": 0,
+          "sha256": "59a613b4ab1b3b9772136f383dd5c8d51cc205ea845c9b81ec25cde8036fe041"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 67667,
+          "edgePixels": 0,
+          "sha256": "d24d48c80afaf493eec28f8e179bb7d9ee2d02d04352276265f7959ee4a99f37"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 70924,
+          "edgePixels": 0,
+          "sha256": "ac4b48f37036853699604612122ed9d18d5479bce20732be573b7e9cdef1ccd5"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 76076,
+          "edgePixels": 0,
+          "sha256": "bd3d15ced5218665429df6ab667d22490ca338ddc5c2eeae94f1b0f65d797a2e"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 77871,
+          "edgePixels": 0,
+          "sha256": "489b6c7b14efbfae5e2663454bdc08f3b2313f59b123c703fc5c3c0df5babf8f"
+        }
+      ],
+      "sha256": "bea284e25fe04c11f664cb949fb21b01b36eb397b61e53546e7b73d78aca86d3",
+      "bytes": 765098
+    },
+    {
+      "name": "defesa-no-ar",
+      "file": "production/sprites/final/pai-fujao/defesa-no-ar.webp",
+      "source": "tiras/defesa-no-ar.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 70126,
+          "edgePixels": 0,
+          "sha256": "e823d96bf87483d380a4d9a92fcae9f6f013342c1cfa41dbf8ac840da95fdf82"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 57945,
+          "edgePixels": 0,
+          "sha256": "a999e5098c1d65f40f2b8b03b6dc9535cd407ee6d7dd88882252ec9720a7ed70"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 67782,
+          "edgePixels": 0,
+          "sha256": "45070e6b4c9cc66f8c00c896dbe8ec08fc1aed25f4972c4a62fede417953cee2"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 62488,
+          "edgePixels": 0,
+          "sha256": "9e26638d3583f6d8227787b6bddc256b5ae3a7eda3e3d73dc0044828d03f9603"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 62442,
+          "edgePixels": 0,
+          "sha256": "39c13b9ac33b8b07e99bab76b8ec186ca5ae6565ca003ad2439f5dacd7f767b3"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 62816,
+          "edgePixels": 0,
+          "sha256": "407ffcc94d3de5e4c46be892afa3f16d99dbd6eea06ce2e8b37e6c39acd171f9"
+        }
+      ],
+      "sha256": "a51e0fa1a4fac784aa31bb61c8e9ae566b6fc4129a972445af52c6b2a8f4790b",
+      "bytes": 684408
+    },
+    {
+      "name": "dano-alto",
+      "file": "production/sprites/final/pai-fujao/dano-alto.webp",
+      "source": "tiras/dano-alto.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 50896,
+          "edgePixels": 0,
+          "sha256": "80703d519b6a1dd7a35d8ab23aa7c1cf36ce372c1eaa03296fa088875d8b60da"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 53791,
+          "edgePixels": 0,
+          "sha256": "fa2c4a7b3e700356d3d6b4cd552e1fd6235651f60ee6ef39a123e780fa8e07cf"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 55004,
+          "edgePixels": 0,
+          "sha256": "5f429c4b5f023af9de4da64ae307bce952d353f72bf903bb6550bcb8a2157e53"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 51504,
+          "edgePixels": 0,
+          "sha256": "6203e15d5cca90638a172b96100b24aea2041efb5db070312632b9c287d0e579"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 53807,
+          "edgePixels": 0,
+          "sha256": "ef21fdd4ba7178877144166ccfbbc22f63d886c9a80e91f81495ce1023dac67e"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 52074,
+          "edgePixels": 0,
+          "sha256": "45e576f721d1a9c327467a49f9ec124397247c67e6d06bbddda0eb3e6bca2292"
+        }
+      ],
+      "sha256": "f6cc3333e63d9b490f8f414a6979c23bc57375f3e52e4241489516ee207e326a",
+      "bytes": 594260
+    },
+    {
+      "name": "dano-baixo",
+      "file": "production/sprites/final/pai-fujao/dano-baixo.webp",
+      "source": "tiras/dano-baixo.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 66537,
+          "edgePixels": 0,
+          "sha256": "468708369b517e18437e3d5fefdab48dd601b7d3636998cdcff62526298216c6"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 68899,
+          "edgePixels": 0,
+          "sha256": "3b6aac01150c28a66bd9230fe8c50fe79dd9542feb4e62f2a4cd5992eeb63927"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 72682,
+          "edgePixels": 0,
+          "sha256": "fc54a2cd5f191c585f8328efa35cfebf95cf4ec3206602fdd3306be0953c1c2c"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 70152,
+          "edgePixels": 0,
+          "sha256": "127584c81b8ecfaddeb80a6db91da91b906598ea9cac4a27cbdd1a9723fe37fa"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 68741,
+          "edgePixels": 0,
+          "sha256": "a1ad6eccd381543a0d21f562fbfcc34fb41f1d1ff1f93968ac0e5a26d8073173"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 64886,
+          "edgePixels": 0,
+          "sha256": "0ab8c341497885e600b730e62e819b0fb5eb188d0279cdbb7de174a951b2f5c1"
+        }
+      ],
+      "sha256": "e818b95a219ccc9b9a2cff7916e7fd8779080c5d9ba9016a6f36909bef161026",
+      "bytes": 751526
+    },
+    {
+      "name": "dano-no-ar",
+      "file": "production/sprites/final/pai-fujao/dano-no-ar.webp",
+      "source": "tiras/dano-no-ar.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 70001,
+          "edgePixels": 0,
+          "sha256": "9135e1ebcbbcdff7cb968c040980846d601b65d6193bc113cf0268525732375a"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 65620,
+          "edgePixels": 0,
+          "sha256": "a2036198a9c5336c3953330969638931b95dad5399d9381ef5e972e79436f78e"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 56704,
+          "edgePixels": 0,
+          "sha256": "abf968464dc53b006ff9c5365ef466b5cb8edb7f345639994be2a05a51d8f678"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 58960,
+          "edgePixels": 0,
+          "sha256": "4ecd9f22b63b8facf6424fb9975deba622ab7d3dde03f777e3908168149ae7cb"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 65907,
+          "edgePixels": 0,
+          "sha256": "3a4ace6f86c8e776d314b42d973c8dddf0b525fe9111366f41af0d3f44bb3279"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 69645,
+          "edgePixels": 0,
+          "sha256": "7c46c9e7f12a2e40313aac869004658a46ae84c8b89a478c47c52a0570d02814"
+        }
+      ],
+      "sha256": "ca392a2e46a774f6b3901e3c06c9841cbd125538ac6d247a9282ce55520a2026",
+      "bytes": 695228
+    },
+    {
+      "name": "caido",
+      "file": "production/sprites/final/pai-fujao/caido.webp",
+      "source": "tiras/caido.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 54875,
+          "edgePixels": 0,
+          "sha256": "572a67e0575fd803bf3dc6dae55409c94a1cfd30a6eb0a2ccacf7eec63bcfaae"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 54795,
+          "edgePixels": 0,
+          "sha256": "b124abc4fe8b463d275100facd75228cace4f8b5818f8aac3145b989b457abc1"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 56171,
+          "edgePixels": 0,
+          "sha256": "42349bb9fa4e4e55c904f81b90c8d589535e54e838e329de109bc11e592debb0"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 49078,
+          "edgePixels": 0,
+          "sha256": "41a89ea2fbbc4038e7b1c37eee87e11600f45d41be5d0a70c2582373bee9b269"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 43864,
+          "edgePixels": 0,
+          "sha256": "f244f6353c107b5ac2a2b11ba9551a7feb7be337f08d869c9f934276c3bbda15"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 40147,
+          "edgePixels": 0,
+          "sha256": "d87d2d468c779a85801f1f3b1ebdbccef1cc404b04786e35f271ef793fbfd8e7"
+        }
+      ],
+      "sha256": "426a46ad71c06cfcc08b94ca8a18e954e3396f7c91c748a21a196cbec1839c8e",
+      "bytes": 548272
+    },
+    {
+      "name": "levantar",
+      "file": "production/sprites/final/pai-fujao/levantar.webp",
+      "source": "tiras/levantar.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 30239,
+          "edgePixels": 0,
+          "sha256": "ddb9470784a036a16d9b5323f19da4183febcf1b0dbc5175234a527a0ee2dd83"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 46635,
+          "edgePixels": 0,
+          "sha256": "2ebb075dfc938663f33996d90d521511aa6782c64a1e19cbfa79929ffe0243fc"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 48302,
+          "edgePixels": 0,
+          "sha256": "1003850fb56e93f5e2d7b1537d66ee8341f69ac78a09a3e52766fd6f9f4f2055"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 43191,
+          "edgePixels": 0,
+          "sha256": "58f9114d08eff9f59a4f59c44efc0eabb8cc414db0b78e91bf2eebc81fe9d27e"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 43483,
+          "edgePixels": 0,
+          "sha256": "d85c79b90e458707329e028423ebde4f976e16dbdcb48114af03786dddcdd73b"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 48352,
+          "edgePixels": 0,
+          "sha256": "f803e114605122b1163bed68eb69da1a4ac6ba3f741cc8a522e76f9349971a4e"
+        }
+      ],
+      "sha256": "0266b8c79d65ad50132f8f03a8b4bec45b6128ad088df112dd6df276a1eca344",
+      "bytes": 482634
+    },
+    {
+      "name": "tonto",
+      "file": "production/sprites/final/pai-fujao/tonto.webp",
+      "source": "tiras/tonto.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 48330,
+          "edgePixels": 0,
+          "sha256": "42e21a1a66961ccc30f99c7673342ee3422843dbb444b6f7c27793e19cc5175a"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 52361,
+          "edgePixels": 0,
+          "sha256": "df0b975b625451a2abc5236746624a8e2703906f492235f82bd372c501c01145"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 53977,
+          "edgePixels": 0,
+          "sha256": "3a2a128f0bba589f7ff1427b66e43c902a4cfafc2e580b98d52182b1ea9b67f0"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 57061,
+          "edgePixels": 0,
+          "sha256": "433e07c6eb97248c72e801907a3fe340a22bb206f5e45cbe2ef17503069a960e"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 57583,
+          "edgePixels": 0,
+          "sha256": "cbdcc3d7ca519fd6e8c780f2f9c83585c2cb9aac0cc55149d1849363eaaff633"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 56278,
+          "edgePixels": 0,
+          "sha256": "1414b098f9f63535a2befdd74ce27d2d912a187138485375b7af7005938326db"
+        }
+      ],
+      "sha256": "57df790a274c45d48cebde2a51957d8227a49e8fc6f6b7e18c2421582296e1bf",
+      "bytes": 610264
+    },
+    {
+      "name": "vitoria",
+      "file": "production/sprites/final/pai-fujao/vitoria.webp",
+      "source": "tiras/vitoria.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 43373,
+          "edgePixels": 0,
+          "sha256": "898a5a70cb613df13c6112bb20505b85ea7646805886412ec029c17cca3ef588"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 44022,
+          "edgePixels": 0,
+          "sha256": "1adc4bc9cdf19ca4ec85c5a97ada377184bc49d03912f877bfc305203afe44c7"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 44912,
+          "edgePixels": 0,
+          "sha256": "51f66af2c3c02a8e45e7238c84409c50b3406062505f5ab6a61571d9831fb31c"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 46445,
+          "edgePixels": 0,
+          "sha256": "012b2a8027f76765aa15656d9cc7143862e4099270ccdf780ad15c56dd43c210"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 48307,
+          "edgePixels": 0,
+          "sha256": "8a37ea7c45210d623f2cfa72da4417a9b126c8617c7a6a7ccce0bb7b790ae027"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 44962,
+          "edgePixels": 0,
+          "sha256": "52816948dd86a80072f610beeec0d5edb3153e18ee3f1c9dc97f46b9aa5e74cb"
+        }
+      ],
+      "sha256": "56c1fde29f5df0d32648eae65648349aca55f3e24801dbd0cb95f741089f8d46",
+      "bytes": 503550
+    },
+    {
+      "name": "golpe-5L",
+      "file": "production/sprites/final/pai-fujao/golpe-5L.webp",
+      "source": "tiras/golpe-5L.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 49425,
+          "edgePixels": 0,
+          "sha256": "0e2a8800a37be7fdef29b01235b568dfe11db3caa3f9467a8ba9aac65030ddfc"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 50073,
+          "edgePixels": 0,
+          "sha256": "6eb82f15aeb37ba3a6a3132e3caf899ae4de543878a54570e571e0b1c5688945"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 51595,
+          "edgePixels": 0,
+          "sha256": "010e0498e70de62dc67906ec09b160763ed6b74d8c6365d4f9806cd50024187c"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 52102,
+          "edgePixels": 0,
+          "sha256": "c94ab94174fc18e7a0dd38eb03e12ab8285939c80c61d6717de1e1dabf2b2366"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 49467,
+          "edgePixels": 0,
+          "sha256": "6b3e4ca0f85d26da106c723c6e87892f9c0a9cee67621d5153f4e28a01df5852"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 49780,
+          "edgePixels": 0,
+          "sha256": "b5cc7e40846bd93ed4584304f16b3e15c3d12cc7a59f01aa5ac5191abe351a2b"
+        }
+      ],
+      "sha256": "5f48cffbe2bc5f14ac2ec6f91308542cc0cf5e42d32b83d5bfa4bfbfe73ad1c1",
+      "bytes": 551888
+    },
+    {
+      "name": "golpe-5M",
+      "file": "production/sprites/final/pai-fujao/golpe-5M.webp",
+      "source": "tiras/golpe-5M.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 47370,
+          "edgePixels": 0,
+          "sha256": "3b4df3611f8a2ac91d835db9cade95c96894e1960deb1df9a5cf5dba5610afd9"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 50698,
+          "edgePixels": 0,
+          "sha256": "925946ae5e128800d6819abe9a182ea4dd4b62bd9bae6382b9b49718243779ee"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 54294,
+          "edgePixels": 0,
+          "sha256": "95ae827169013b8646b0a35fd59d30754e9d33062aef5e85affe3ed500521c5a"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 51787,
+          "edgePixels": 0,
+          "sha256": "9d0c4aa70b4a27e64705160fb468aeab7b3eb0bc38489d39f2d5d2f584be6f96"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 49180,
+          "edgePixels": 0,
+          "sha256": "669c82e9b3e0b6e243489b5796d6099877731d8959e26ce2b6869431fb624f37"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 45100,
+          "edgePixels": 0,
+          "sha256": "04ae06b3ff1a26290a12bcdf84974abef478e00f05c4c8fc392d85499e1ea1d4"
+        }
+      ],
+      "sha256": "241ba73dc90ae0351e4d1b7095be8adbfc70b14adb21dce91ab1ddb722b35555",
+      "bytes": 560984
+    },
+    {
+      "name": "golpe-5H",
+      "file": "production/sprites/final/pai-fujao/golpe-5H.webp",
+      "source": "tiras/golpe-5H.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 39905,
+          "edgePixels": 0,
+          "sha256": "ab89b8dfde875130dd77d175cdb45968c8390b803473b5dddf5d8dca2d0100d8"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 41998,
+          "edgePixels": 0,
+          "sha256": "00afc85317485bb90098d5318abeb1cfa1f92fe737a0d00c985a0546a094a7fe"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 40542,
+          "edgePixels": 0,
+          "sha256": "ff3fd8a4d85241a79bf216bd5ea830e6dbe445b259170b3625a005e744543fa2"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 40795,
+          "edgePixels": 0,
+          "sha256": "3a476612dc104f5fe234269211f19aa10bc43fbb259f7468b07a722717a739a5"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 42121,
+          "edgePixels": 0,
+          "sha256": "cf08de4cd10c2c0185d12d384f67caa113fda2a82158d64f0c28dcb732a449c1"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 40932,
+          "edgePixels": 0,
+          "sha256": "a8e5019e2e1141ee7ece4dc13fe2e004cadaa0562434de58ad71674c7a6fb6a5"
+        }
+      ],
+      "sha256": "55b3659ae617641315fea216c51b9b96b19c3b91dbf20b10347ff0a04af94ac8",
+      "bytes": 458786
+    },
+    {
+      "name": "golpe-2L",
+      "file": "production/sprites/final/pai-fujao/golpe-2L.webp",
+      "source": "tiras/golpe-2L.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 65053,
+          "edgePixels": 0,
+          "sha256": "678865f2dddf598a3b62bcd9f5d4033cb6b6b6ef76cd64508990776be538df20"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 64433,
+          "edgePixels": 0,
+          "sha256": "136baf0084dec1fa144031bf6e2b5abfc97bffd224b4903592c18306f4fb01ec"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 64469,
+          "edgePixels": 0,
+          "sha256": "483e5398665758acfdb581f5bc886a769fb44831afa7063556a9ae20c3364a9f"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 68866,
+          "edgePixels": 0,
+          "sha256": "c98bbec9ad1bfa370054e05a10008b52808b1e02d3dc346fcd2804a7ce8f13c6"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 64829,
+          "edgePixels": 0,
+          "sha256": "f5edcc035241606cc9792cdf39f239d863db756594ded8e16863ee327967fa76"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 67560,
+          "edgePixels": 0,
+          "sha256": "9448947f4526105fd46a05f178e8fd756d0d746f5bfc2394eb00efa53624ece0"
+        }
+      ],
+      "sha256": "6f608b57f7c8d633d14ce5e2402102438bf21a57d0c0c86cb40d59a879391a85",
+      "bytes": 726414
+    },
+    {
+      "name": "golpe-2M",
+      "file": "production/sprites/final/pai-fujao/golpe-2M.webp",
+      "source": "tiras/golpe-2M.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 58256,
+          "edgePixels": 0,
+          "sha256": "92b03dc18654d48cce9e75b0e0986240a19fd041a4b551223e6a2cec8d6e3a5d"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 63194,
+          "edgePixels": 0,
+          "sha256": "7789bcbb2b6c35f4246791c037d76164c08be716eb9ca2ecdfa6be90de525c75"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 60583,
+          "edgePixels": 0,
+          "sha256": "810315cc2aa98e68fbdf9a90f25028e90eeeb612a887e05cfadadee94d125237"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 59471,
+          "edgePixels": 0,
+          "sha256": "cf71cb6391bf8cf7ee8f1905c9bed05d36a692b1e556854fb10db8f7f43c0f71"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 59189,
+          "edgePixels": 0,
+          "sha256": "87520aa2a9915d45ae5d1746c17f395d1a4a329a3dc738c05783b0f11e402433"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 57706,
+          "edgePixels": 0,
+          "sha256": "8e5dbd2cc35528bb4446ce71e352a3926db640166609883014ede6052c89059c"
+        }
+      ],
+      "sha256": "cee59bf7a0f19429fc03fdda831d7ace5785d1cbc9761cf2aa2dd06e3b55e975",
+      "bytes": 670534
+    },
+    {
+      "name": "golpe-2H",
+      "file": "production/sprites/final/pai-fujao/golpe-2H.webp",
+      "source": "tiras/golpe-2H.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 52233,
+          "edgePixels": 0,
+          "sha256": "3cb8b18ca17acf256cbd9c2e57a3cd80337b9ab811c37ff295f040728c82166e"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 50922,
+          "edgePixels": 0,
+          "sha256": "c4c017c254864fbdcd2b4b8049144babdab4217fca8eed6bc5538e7440fb9e97"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 56615,
+          "edgePixels": 0,
+          "sha256": "bd678524037b60575245b427c6f18632c18006ad72db872753d546c85ec93581"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 58189,
+          "edgePixels": 0,
+          "sha256": "f5f3a5e173739ad611641010d398a6fecbe20711e4ddccd2485cac1b9ede51c6"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 54146,
+          "edgePixels": 0,
+          "sha256": "29781a83d75804b7de0e6461668cc458472f0d34d401aee093e0399faa1e8dc1"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 53214,
+          "edgePixels": 0,
+          "sha256": "181a8507d2f5812c0c33b436812b8d042d1fc76b6505a7b118af4256849e6f75"
+        }
+      ],
+      "sha256": "51e00ea26a576c7e029a868f022a07ffc8ff5cdd81f4934e8f31746be7d12c46",
+      "bytes": 601874
+    },
+    {
+      "name": "golpe-3H",
+      "file": "production/sprites/final/pai-fujao/golpe-3H.webp",
+      "source": "tiras/golpe-3H.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 43677,
+          "edgePixels": 0,
+          "sha256": "3f0e30858f7d79bbcea49426fb3ba04e66a149827dc25ffc7c667021a00616f9"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 49971,
+          "edgePixels": 0,
+          "sha256": "d8c6c0a35c9e207036bce9077a226c5a9bf5a609352fc0a0ee54fb165d4f38d3"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 50063,
+          "edgePixels": 0,
+          "sha256": "b6e54e885f91423fa5a53c230e3dd6cfb81a7ed47f53bc7450eb55a00f8a2a19"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 47567,
+          "edgePixels": 0,
+          "sha256": "cfb14ddca80bb91c07fb40e8bcbff4fdb84202b7ab178552736b42519771126c"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 46041,
+          "edgePixels": 0,
+          "sha256": "deda933fa387f2e7f08cb9d4cde3e6e7689189e91867d14a327cda01c090708c"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 44137,
+          "edgePixels": 0,
+          "sha256": "476723753beec0abf94589a6766c22f897f92ed43e23d138fff845889acda13f"
+        }
+      ],
+      "sha256": "91235303eac46bc4f58ef7f7d283e49a9f79c0ed916c5d4d4516c6dd165decec",
+      "bytes": 533278
+    },
+    {
+      "name": "golpe-6M",
+      "file": "production/sprites/final/pai-fujao/golpe-6M.webp",
+      "source": "tiras/golpe-6M.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 46398,
+          "edgePixels": 0,
+          "sha256": "1a1ea0e9d28df822e824426e202a000f1a4b56b87a945fdf3f9056967010ef09"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 52608,
+          "edgePixels": 0,
+          "sha256": "d0064e7e639ba7dfa01595a028d19fbf920949094f07b5b3492b3bd1586c108d"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 49661,
+          "edgePixels": 0,
+          "sha256": "a7a2d1c5bebe65bc29eb60b0147407c72e9aecb49aa57bb7dd9fe5041b35dcca"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 55080,
+          "edgePixels": 0,
+          "sha256": "d94ee53715c22990dea0de3ed08d7801268fc8357ec2d519203c457775036e5e"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 53587,
+          "edgePixels": 0,
+          "sha256": "d5fd1758db698c4eadee3f691f381947d1beab0e868c5324cf2d1301bab5b29d"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 49007,
+          "edgePixels": 0,
+          "sha256": "52c2c91346f83973a2bbffd1605b70fbdeb023fff3da0c483beb58dc7844a788"
+        }
+      ],
+      "sha256": "a8176431aeed0eedb98fefa4ac2bbd3e6b955f1f2e0807b6382eeeb4a80267fb",
+      "bytes": 579536
+    },
+    {
+      "name": "golpe-jL",
+      "file": "production/sprites/final/pai-fujao/golpe-jL.webp",
+      "source": "tiras/golpe-jL.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 57447,
+          "edgePixels": 0,
+          "sha256": "fb7f32cd2e18d6cfefab855bb7d13d563ef10f39c1530e485ab1de8b9b6aa0d8"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 60334,
+          "edgePixels": 0,
+          "sha256": "8ec9c894fb1b2997adc765bd92783bfc54c93834908bb1ae010819667e8a4cd6"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 61265,
+          "edgePixels": 0,
+          "sha256": "a8dac17750f6a07df32589ef646d330f0043cad0179c1b861c330792df5ad1de"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 63360,
+          "edgePixels": 0,
+          "sha256": "780f4bbd6c65f9d9b448ea78e626c5dbab4552a804a517d95d344a68125bd9e6"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 61052,
+          "edgePixels": 0,
+          "sha256": "dec4f65eb3cfa31ad10ee7f208fba329a735e03b6ba97e3b1953f62a764f0e62"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 58586,
+          "edgePixels": 0,
+          "sha256": "80ed42e54dfea6735b4ee75718f7cad3b1359db866d5d57afb0c80d7172920c3"
+        }
+      ],
+      "sha256": "f7cefdddb79212636e29d638ba3347b9ff8eeb76f012f82f4d22cb5938102549",
+      "bytes": 660358
+    },
+    {
+      "name": "golpe-jM",
+      "file": "production/sprites/final/pai-fujao/golpe-jM.webp",
+      "source": "tiras/golpe-jM.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 49735,
+          "edgePixels": 0,
+          "sha256": "5e36d32f7caec8c39541228525b1f82ad5f922368f04369d3b3884f38326eb51"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 50834,
+          "edgePixels": 0,
+          "sha256": "fb9c505054527a2590f3a2b1097c893ba6f356d07d7c2d3cb2d2e779ff139f8c"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 49473,
+          "edgePixels": 0,
+          "sha256": "bb4c3468f42f1705eeb775af1c1c5c568dcd022844435af16430cec69343b370"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 53684,
+          "edgePixels": 0,
+          "sha256": "aa09c0dad877363dba3ef0028e44477939642a4bf356812ffe101f745531cddf"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 55684,
+          "edgePixels": 0,
+          "sha256": "8b8ede837198451d830e98e2d1ddebd6ad98c89962053ffa7248d5c00231261c"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 51493,
+          "edgePixels": 0,
+          "sha256": "9d706fcb6440824b25aa02baf78cd7f9dbc6d1fe693565ae47d28decb5ac0da3"
+        }
+      ],
+      "sha256": "45c475a199cbca492ee5f52949b63b9b2e12a9ed30860b531ca7f36db3095911",
+      "bytes": 606014
+    },
+    {
+      "name": "golpe-jH",
+      "file": "production/sprites/final/pai-fujao/golpe-jH.webp",
+      "source": "tiras/golpe-jH.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 53593,
+          "edgePixels": 0,
+          "sha256": "8cfbc1641102030f49933c5b510eafd3a96a84f2d53414c10c87a207495e262b"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 56365,
+          "edgePixels": 0,
+          "sha256": "7bbaecdc76da2b403273d26b50e80f3b61f5b28523b1ce04ce1d1db43770c92d"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 61066,
+          "edgePixels": 0,
+          "sha256": "ffdd4da4fece6e9a37921e2ebf8e2bdb8ed605379eed1a1724203da3f832115d"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 64639,
+          "edgePixels": 0,
+          "sha256": "303e5a7cdbf1d3b4f08205f1bb803dae27f428998258f6d9991db0c0f3ba2417"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 61661,
+          "edgePixels": 0,
+          "sha256": "667b68994038ca012d7e14fa8b1c61b2e53943febdb9508aecfeb6d19fea0ce8"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 58866,
+          "edgePixels": 0,
+          "sha256": "f7eedb4b1f06a6a247a75b25bd0e33876ccee652478ea05b74aaecb0f9e445d6"
+        }
+      ],
+      "sha256": "8164488e67afca1652f2132c86817c70988c53b94ffcf48a7945b84e2bbbda31",
+      "bytes": 666810
+    },
+    {
+      "name": "golpe-throw",
+      "file": "production/sprites/final/pai-fujao/golpe-throw.webp",
+      "source": "tiras/golpe-throw.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 43264,
+          "edgePixels": 0,
+          "sha256": "3869653e5e84d8365551ee2743feeea049902453f821809a08311adc2c8e2975"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 50714,
+          "edgePixels": 0,
+          "sha256": "79c8d226041323a2bcee35ef47036a6f68263ec575088b37b313792353b881d2"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 55678,
+          "edgePixels": 0,
+          "sha256": "3c7f1f1f9c9c98b7e25dac93d064673c76f4ec3a2db177d981c324912f147130"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 53211,
+          "edgePixels": 0,
+          "sha256": "a4eb6c85ad09119ac0bb74fbfba2a5e635d86799f082b2230e57b3650d1bfd82"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 49668,
+          "edgePixels": 0,
+          "sha256": "e47c1acb3e7b00a6ba58a52036840cad45398972e1b2981bc5591a48f662a5d2"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 45862,
+          "edgePixels": 0,
+          "sha256": "976867dfcf2a92453e1909b279fb952bc3ef3366088b02c01d69c07ff6c28683"
+        }
+      ],
+      "sha256": "fa7afd9f69f5398a3cb6ea64b98133151de32e05f74a5c172a4cd0b1b6b4f0a9",
+      "bytes": 579238
+    },
+    {
+      "name": "golpe-blindado",
+      "file": "production/sprites/final/pai-fujao/golpe-blindado.webp",
+      "source": "tiras/golpe-blindado.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 46019,
+          "edgePixels": 0,
+          "sha256": "5c2e666888403d90118b50a7cf8ea2c66a6cb85ca3ca4298dc162848530bb5bd"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 57610,
+          "edgePixels": 0,
+          "sha256": "5a7a769519c044657757abf70892e89bd15d402274c32d698bdd1915aca93bd3"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 57498,
+          "edgePixels": 0,
+          "sha256": "b940d5568c95d2e90fe32977a46f575f7f3316b715854ce72bcbf3c415cd112b"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 55904,
+          "edgePixels": 0,
+          "sha256": "2449ba4bb161823ae2c289d5329c8c6c7ae458c2d4af1c7eb588d20bcc69b1be"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 55568,
+          "edgePixels": 0,
+          "sha256": "e7cf40b22fb2c431ba01590512a144f694af88664b2afec4ddba97066656ac3c"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 47283,
+          "edgePixels": 0,
+          "sha256": "de7c7b4c9be9cbdbc1b3966f3cd30fb4e4f77fdcbf31501f7ff5f5cc83aca9b3"
+        }
+      ],
+      "sha256": "2badef05b6df21546b8e145a1c76bc84acb809ad4b4d29a6a781ff027db84d73",
+      "bytes": 595060
+    },
+    {
+      "name": "golpe-5S",
+      "file": "production/sprites/final/pai-fujao/golpe-5S.webp",
+      "source": "tiras/golpe-5S.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 49020,
+          "edgePixels": 0,
+          "sha256": "c4167d3bbdf1ac67a5f44a7ace3f407d49759db07da2b682da3c98cece5c9145"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 49282,
+          "edgePixels": 0,
+          "sha256": "6aa98d4f1e8f857af6cef95fd483c76dcb7489804746084e21bceb5186c5b22b"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 49904,
+          "edgePixels": 0,
+          "sha256": "8334348726ff2ee097d6321608c09532f89772b44ac589de1e8725dc3bb6e452"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 50759,
+          "edgePixels": 0,
+          "sha256": "b503a682e3ae9817aafaba7126cc7b354dabc87d9acca73abf28a6f350f803bf"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 50137,
+          "edgePixels": 0,
+          "sha256": "dbfd47ae8837778d262e6d3c15f880526a03e83f255dd989c1baf31341aa5a21"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 49764,
+          "edgePixels": 0,
+          "sha256": "7329d13f584282790accc9bd2641f676124b2ad6b1b1ce8e44797a745ae46187"
+        }
+      ],
+      "sha256": "419cfe61bde9ebf60389949e3bb4c18a9db3b7cbd22f3048293ec174147c4675",
+      "bytes": 542594
+    },
+    {
+      "name": "golpe-6S",
+      "file": "production/sprites/final/pai-fujao/golpe-6S.webp",
+      "source": "tiras/golpe-6S.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 46233,
+          "edgePixels": 0,
+          "sha256": "a82515e72ec09f1ec31b7fd4612abb61caa8f8ede67b7a90a3fc70e75af0f466"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 55613,
+          "edgePixels": 0,
+          "sha256": "9af400f65ede7cc45c79166f4038c008c4ba7ce6e4e9685276f707444bd7c35a"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 55877,
+          "edgePixels": 0,
+          "sha256": "75a7d0b1f1ed7ca3560f0e5c0f85a6e42bae4832ee778b88d0f9a45e927edd13"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 55199,
+          "edgePixels": 0,
+          "sha256": "06c0503b689c0eee7d4262531cb072d169e4de88ebe1d6300a75b797d8c12383"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 53072,
+          "edgePixels": 0,
+          "sha256": "615689a57f284664837c59ec8ed3a58e46960651a01a0c933b21802750564f0c"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 48233,
+          "edgePixels": 0,
+          "sha256": "986e1cad8c59308d79d0a5f18593cb0f992d4a263ebc2c0dffe8605116858ec9"
+        }
+      ],
+      "sha256": "20c39e95d1cf3af0c49a932e8c50c3600164bbbe18fe074ee1b78e92d54e0dc4",
+      "bytes": 585018
+    },
+    {
+      "name": "golpe-6S-turbo",
+      "file": "production/sprites/final/pai-fujao/golpe-6S-turbo.webp",
+      "source": "tiras/golpe-6S-turbo.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 48542,
+          "edgePixels": 0,
+          "sha256": "4f6a4d6a728ee595f4f53d5ea682cd53cc59eb4115854ed0cd5a80ff29b1f16b"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 58423,
+          "edgePixels": 0,
+          "sha256": "f5f530835ce26c4388acf84f5cc5822840f41755beb0685e8f82183f7f4709f3"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 59082,
+          "edgePixels": 0,
+          "sha256": "3b4f9529c6ef851a82e02c2889001bacde1b23635fbde38fea1b345f41509a36"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 58843,
+          "edgePixels": 0,
+          "sha256": "3d04ad380c1197f6b1a4eb59e8707a065f2bcff20cd0e78f024ea741ad1668f8"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 58299,
+          "edgePixels": 0,
+          "sha256": "788d99161ff0d5b370e60c3efdeafbd46daaaae7578f554a0c6b08b345c995e0"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 49630,
+          "edgePixels": 0,
+          "sha256": "5cfd4aa592d16b2420cf62ed03765bc3c04b025fd51c65e1b9c0f0cceccb9810"
+        }
+      ],
+      "sha256": "fd3dad1251dfabbae12eb1326d421c048018725938d0ea6626863a4e938deada",
+      "bytes": 599754
+    },
+    {
+      "name": "golpe-4S",
+      "file": "production/sprites/final/pai-fujao/golpe-4S.webp",
+      "source": "tiras/golpe-4S.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 47454,
+          "edgePixels": 0,
+          "sha256": "c8c67019983ce940211c3e23ffa5ea8ab046486bdec869d8528f632f8f40e2ce"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 49880,
+          "edgePixels": 0,
+          "sha256": "89427cb0b28c65783fd30a0f2d8b1db5b3e38a1879b46ea5f526ced001a8d7a9"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 46296,
+          "edgePixels": 0,
+          "sha256": "244db7db2def7f66492fecc6eba38fa959b422451e691c2292be61471486025c"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 46665,
+          "edgePixels": 0,
+          "sha256": "90673d9d5563b387428893e2313166bafa1492df8304201f25fb8d33c63cdfb4"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 47619,
+          "edgePixels": 0,
+          "sha256": "b4cf0831b20a5eb24f92637fafea82393dd3d2ce762863294b23f0af36fdc6ad"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 46875,
+          "edgePixels": 0,
+          "sha256": "ad5efdb4982c3ca7f9ad927758e00911df56889f00b53da7df1f02877dd556cd"
+        }
+      ],
+      "sha256": "b416496ce25d460d0d588dbaa103a0c783ffeb4be4fee7a51c4ace16c1ce87f8",
+      "bytes": 545634
+    },
+    {
+      "name": "golpe-SA1",
+      "file": "production/sprites/final/pai-fujao/golpe-SA1.webp",
+      "source": "tiras/golpe-SA1.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 48568,
+          "edgePixels": 0,
+          "sha256": "374a00cf11108b46aac5b284fa6c6905ed3d51a9d8eab63531e4780696f26c90"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 48727,
+          "edgePixels": 0,
+          "sha256": "71eef2d10a88ca796120e51484257f312ef7e1ee5b68dea35a2a3dd9f7e94348"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 54252,
+          "edgePixels": 0,
+          "sha256": "c19b526e52e1010bcb7a689075658789f415036be6cc321de70d5177b9576f7b"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 55934,
+          "edgePixels": 0,
+          "sha256": "ee80004c3add47fc4663e42694fce475df69b6959661e80a1973206669cba116"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 53100,
+          "edgePixels": 0,
+          "sha256": "7a2acfbe059181831e797822c6be11daa031966404d4add0916ddd9e8e13febe"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 52778,
+          "edgePixels": 0,
+          "sha256": "6f92379e630b7264c4760148231399d1ef98e386ce6429870ff39b6bc9bb4b1d"
+        }
+      ],
+      "sha256": "daab8ed478726cd9620ed30ef6a372572e56a7a8b6ce38ff03f14ff97cedc3d6",
+      "bytes": 573414
+    },
+    {
+      "name": "golpe-SA3",
+      "file": "production/sprites/final/pai-fujao/golpe-SA3.webp",
+      "source": "tiras/golpe-SA3.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 52280,
+          "edgePixels": 0,
+          "sha256": "50662897b28fd77c00247412dee8b81717d8954e04185f52970e0c745132eca2"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 53943,
+          "edgePixels": 0,
+          "sha256": "8001cde5e4a31ea14370b9bda62cd2c569805acbc3981ee8cd82d0a9b05b0429"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 55069,
+          "edgePixels": 0,
+          "sha256": "584dc2cf5b1547c74b77f5fc5704de7a1e65edc4c66e2e1b4b392382108c3502"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 56311,
+          "edgePixels": 0,
+          "sha256": "285a2f737ec2c50edbb7059130ddd6c0218b3d89fc15bc91730bbb813cdb732a"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 52224,
+          "edgePixels": 0,
+          "sha256": "09f3c719720a3613b9ff235d74133436956c9c1ee8a50162e89c480a55bd9b98"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 52429,
+          "edgePixels": 0,
+          "sha256": "1efc1779df3f1182bcd8a77d275293e84f5f2901f68ac8de09cc9bdcf49bf793"
+        }
+      ],
+      "sha256": "8399a5c536c3c5a7cd422a364c9dbbd72558cd70b916e1b21e31581d78d702d5",
+      "bytes": 606236
+    },
+    {
+      "name": "reacao-tornozeleira",
+      "file": "production/sprites/final/pai-fujao/reacao-tornozeleira.webp",
+      "source": "tiras/reacao-tornozeleira.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 49272,
+          "edgePixels": 0,
+          "sha256": "4c99caffb79af3d3bd61112bebbb5e62eeff67d4948242ef8709a98d4cba0cf4"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 53161,
+          "edgePixels": 0,
+          "sha256": "8a349a39644c760c7590c1ade21d3e2f85cb00bb36ce3bd45c65965600810692"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 53707,
+          "edgePixels": 0,
+          "sha256": "ee7ef0b7df24db3cccc4fe505a265cb8fc6712dbf8ca1dafd6ab82be6cd31eab"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 54839,
+          "edgePixels": 0,
+          "sha256": "6b7e27709c25bd7ce5d88398e22f106282b0176c2dfe96e916263c20c5ce9e07"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 55146,
+          "edgePixels": 0,
+          "sha256": "cea55924157488348c1917668a764832f6fdbd4cd01fb210597b26be30c29926"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 56050,
+          "edgePixels": 0,
+          "sha256": "8483f542d064d2d3f111e117a9d401e3b1cfb2c60050c530def06176ae8cdbf6"
+        }
+      ],
+      "sha256": "5c6b28b56375dde904ff460a3dd16cd474ffec39e58b83350eb13e6a4225dfe2",
+      "bytes": 604080
+    },
+    {
+      "name": "furia-paterna",
+      "file": "production/sprites/final/pai-fujao/furia-paterna.webp",
+      "source": "tiras/furia-paterna.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 44783,
+          "edgePixels": 0,
+          "sha256": "7c4f3a2df7aca04d632975fde110a8a57dfbb332dc68b25fc578a3ff88caf6e6"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 47045,
+          "edgePixels": 0,
+          "sha256": "ff1c7b36bbf5e7622d61919e5594d8e36a41c5f3a2130ed516bd66e2be4918c7"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 47438,
+          "edgePixels": 0,
+          "sha256": "082918e7b90101c2095a43b0900cc6116fe39ba6be14ba3c4349d34eb1c5cd36"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 51097,
+          "edgePixels": 0,
+          "sha256": "7a3bdf78932cac4382dee9e1304f71aeb767a91356311f6ffb252a531584e388"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 50650,
+          "edgePixels": 0,
+          "sha256": "f6056dc9833929a827eaf314871fc6bc4927d06af823c40c215363fb9b8a6c0d"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 50636,
+          "edgePixels": 0,
+          "sha256": "30602e825a0e7cbec0159421c533acf49370066d48c899b60fd175c0107b28bd"
+        }
+      ],
+      "sha256": "d6086c39c87539cae17a4287a69e4932c0d6046c90f6547919e6ff27b7bb9e35",
+      "bytes": 545376
+    }
+  ],
+  "effects": [
+    {
+      "name": "capanga-correr",
+      "file": "production/sprites/final/pai-fujao-fx/capanga-correr.webp",
+      "source": "fx/tiras/capanga-correr.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 47920,
+          "edgePixels": 0,
+          "sha256": "1998021993e09744495920701e3dab996c833eb55fda983c09c9a1005ac5690c"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 45629,
+          "edgePixels": 0,
+          "sha256": "5ccdb60b166b8169c946386190416669995149056beae6791c0473d22095b638"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 47071,
+          "edgePixels": 0,
+          "sha256": "dbb06cee682c114eb4653e36fb2fd2a45733eb4db9fced9e25a36d0d163fd761"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 49227,
+          "edgePixels": 0,
+          "sha256": "32931a2956d8471f37ded2a8aefa11a371b0197c9507b2c6823e3f98198f24a9"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 46867,
+          "edgePixels": 0,
+          "sha256": "9b5e1c3d61fe6a9d5a29194da7dc79b6b8d7cd3e7e8e63433de6e01149264a99"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 47300,
+          "edgePixels": 0,
+          "sha256": "868c878d59339c002005832b527ca74b217123896b03b1f8cd6bf0b8a07eb32e"
+        }
+      ],
+      "sha256": "866005b33336628851ca381c525b46b06d5c9853bdb38555a5e193117baed917",
+      "bytes": 491556
+    },
+    {
+      "name": "capanga-ataque",
+      "file": "production/sprites/final/pai-fujao-fx/capanga-ataque.webp",
+      "source": "fx/tiras/capanga-ataque.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 43060,
+          "edgePixels": 0,
+          "sha256": "45a0f3fa55080ac3be75ac635f2a27ca1ff3f7574fc154343e7a9f91ee24be66"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 48036,
+          "edgePixels": 0,
+          "sha256": "09bc71656a45da37af3824ecd929f6643415aa13b288d6b5fe9cafbd29267a19"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 46129,
+          "edgePixels": 0,
+          "sha256": "8cade52b52144dbc7e5a7e11b028a0187d704816657deac8dfe26717d3f2ca94"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 47285,
+          "edgePixels": 0,
+          "sha256": "4892e6797f980e753fd8b2c1aa10d14c5a96c63e97aff45f768c5699f9142193"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 42664,
+          "edgePixels": 0,
+          "sha256": "13385c5fbb5635b1a2588290181f8a03974efe011ccb71570beb3f6503553117"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 44976,
+          "edgePixels": 0,
+          "sha256": "f1beaee03c015ed89034d0239ced8cc5bd8504f63aa39b6c9413a009ef684fe4"
+        }
+      ],
+      "sha256": "53145e0951c931d2401acdea68453250260f7549a77246a525a284997739a5ea",
+      "bytes": 457188
+    },
+    {
+      "name": "dinheiro-girar",
+      "file": "production/sprites/final/pai-fujao-fx/dinheiro-girar.webp",
+      "source": "fx/tiras/dinheiro-girar.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 55989,
+          "edgePixels": 0,
+          "sha256": "34b72bfad481f135a00f4c4dd8a39ff4f19200e52674262bbba2043942890882"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 34643,
+          "edgePixels": 0,
+          "sha256": "c6040f736a31399498e740e799e38191c5d0836250d322dcea6d70c02cbe53b2"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 20776,
+          "edgePixels": 0,
+          "sha256": "85da5a8c3bcd9656e58982e32388339c7949c572010975efb91e9b70180ca218"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 41604,
+          "edgePixels": 0,
+          "sha256": "abbb24fd0c5f07fceee6413158a23c43a4882884f4522cff194e9535e62124d1"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 50501,
+          "edgePixels": 0,
+          "sha256": "70b4fc1eee9332b7e179627ee5b8ec742e0bf551b6f07884420059af8f470a81"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 55942,
+          "edgePixels": 0,
+          "sha256": "17eaa505275f82c8f2cade9e0f333286f46a205021b48fed3c2d0944436231bf"
+        }
+      ],
+      "sha256": "a3de121e58325dc9069b0b0df138d0e88021a12e3587dcecf36b0a1b5c8e6dd4",
+      "bytes": 431200
+    },
+    {
+      "name": "dinheiro-impacto",
+      "file": "production/sprites/final/pai-fujao-fx/dinheiro-impacto.webp",
+      "source": "fx/tiras/dinheiro-impacto.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 1116,
+          "edgePixels": 0,
+          "sha256": "db064f669afe5bcd116f2b128938c85a5a56f82d6d6ba3379a0eae074f00539d"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 11833,
+          "edgePixels": 0,
+          "sha256": "1a530ac9dcc702d46ff66ebe0b30aa3332a06b6bc96ce1c41a88bb9b0cef39e8"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 38858,
+          "edgePixels": 0,
+          "sha256": "6167939f3e5ed15cb83fcd65632e87b5a575dc8193c7f7daee50034801ca13fe"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 19901,
+          "edgePixels": 0,
+          "sha256": "027373a8a1e9ea0c212a332f7219bd5a03735c0fb24ff7e1cdcc084a8db952f9"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 5752,
+          "edgePixels": 0,
+          "sha256": "996c644a8481b5baa127c0dbdbd85949b9792fb04235348cf654268032d4834e"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 1442,
+          "edgePixels": 0,
+          "sha256": "306f0c65417a4074dd6b15398038fd181fa251c4088d9414d1057bea8a075a81"
+        }
+      ],
+      "sha256": "eec5658ec2687e949fb60d4b41634c543cf885fe193fac2c53ad94d15fa843f7",
+      "bytes": 256228
+    },
+    {
+      "name": "dinheiro-cura",
+      "file": "production/sprites/final/pai-fujao-fx/dinheiro-cura.webp",
+      "source": "fx/tiras/dinheiro-cura.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 4125,
+          "edgePixels": 0,
+          "sha256": "b099d5c5474dcf5317d9174e116d271e6e37f374318d8b2bebf6e30765f825ff"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 10678,
+          "edgePixels": 0,
+          "sha256": "7ab7a116a73dc68f4c0f337d2e52949ab14983e3b7b0fe225e3f2797d9640132"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 10299,
+          "edgePixels": 0,
+          "sha256": "09a29a9ccae39beed06f94d4357404d77bc01638f614d8993b340d657a6545c6"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 10367,
+          "edgePixels": 0,
+          "sha256": "86e223e9faf5d56335fadbc3d3f757a916ec3011ebbf571c5f567051dc6a0e65"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 8166,
+          "edgePixels": 0,
+          "sha256": "fe9bc4a42b251a2be23d3f03d1bf6f5803e573e3ce80c41417b8bbd03ea04ed8"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 5304,
+          "edgePixels": 0,
+          "sha256": "abebf9568f1758e252ff50fa9493f748827a86fb207f959a7e48110bdb9e1074"
+        }
+      ],
+      "sha256": "b8dba8fcdd198dbef42baa5b8dc016f579db6cc5542803753e65aaf9a6d139c3",
+      "bytes": 215574
+    },
+    {
+      "name": "bengala-arco",
+      "file": "production/sprites/final/pai-fujao-fx/bengala-arco.webp",
+      "source": "fx/tiras/bengala-arco.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 2514,
+          "edgePixels": 0,
+          "sha256": "1f12564534db87f2651d5dfdb59e6b0f4a8e503165c78ba5eba25bec7b5c8de1"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 9834,
+          "edgePixels": 0,
+          "sha256": "2798162660e3f83a9e5365d15670411d1bf6d39a4320612188991f16aa58ee90"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 23033,
+          "edgePixels": 0,
+          "sha256": "b6420b295c328b6be0eb5891aff37e97a9b0970310ce6434e2701d739644e4dd"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 11050,
+          "edgePixels": 0,
+          "sha256": "3ee2d7a219c58fbfddbd625d34914137debc965985d95df50fcdcf0399e5dacf"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 3270,
+          "edgePixels": 0,
+          "sha256": "e7cd696cc024eee381badf501921288dcb511fee349425b2326e3b36f86c0d3d"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 682,
+          "edgePixels": 0,
+          "sha256": "3c5cae367c508e43e5a9c38eafef15935fa212048bc8a6e64ce8e1f46317a932"
+        }
+      ],
+      "sha256": "8ffd7e3b22fdd968feca330c23b07f64643b75ff77db84d46678cb57c7ec0447",
+      "bytes": 175748
+    },
+    {
+      "name": "impacto",
+      "file": "production/sprites/final/pai-fujao-fx/impacto.webp",
+      "source": "fx/tiras/impacto.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 2942,
+          "edgePixels": 0,
+          "sha256": "28ca67d33a22a9fa96800fd3186cb5dd0028a1a0d7d78d5725a942d6d2c133cc"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 20947,
+          "edgePixels": 0,
+          "sha256": "c99a280613a52adfa43a16b9ca0a95c37297626ec18ed732d59dd40674ba4c5e"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 54745,
+          "edgePixels": 0,
+          "sha256": "44499098a2c6b699b8939c052595f296f19070fe5482cfc57652ec7ecf6ff935"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 28964,
+          "edgePixels": 0,
+          "sha256": "df90c7b50a32152c7677c6e6b472db92c28c8fba2eaa05b1bc09341257db40ad"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 3446,
+          "edgePixels": 0,
+          "sha256": "e94b6e2ae5c9025dec372720329495f15b3626ccb698cc64db3607600f9cdc82"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 864,
+          "edgePixels": 0,
+          "sha256": "33245c19ee9473451c0eb5144f9203d2ad1da67c46cce8c3e390bd956557469a"
+        }
+      ],
+      "sha256": "f9546803d916f4070a940ad6dfadd08d905fb9961d1f59fea9115882ce267c1a",
+      "bytes": 332668
+    },
+    {
+      "name": "telefone-pronto",
+      "file": "production/sprites/final/pai-fujao-fx/telefone-pronto.webp",
+      "source": "fx/tiras/telefone-pronto.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 80773,
+          "edgePixels": 0,
+          "sha256": "f03b65d9f3c10f5c24d9f267232d35d83d61c83b67dae948c830293b3b5b74b1"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 80121,
+          "edgePixels": 0,
+          "sha256": "2c28a04910ce4d43282ed33ca4212acbd9d9ae2cdab80c1a6dbe87fc8b698910"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 81452,
+          "edgePixels": 0,
+          "sha256": "d41d99554637b6e7263146f4d10ed91dbd67507f330b67e6d3a6fe3d07a9d716"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 81383,
+          "edgePixels": 0,
+          "sha256": "f1d7b4982ee103a53b57e3417249245a5ddaf9d60f5e888251b85ff5b722d621"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 81446,
+          "edgePixels": 0,
+          "sha256": "70a8ab498e11d4907fd6dd8be4f6258cabfa894da64604bbd72f55d757311af4"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 84206,
+          "edgePixels": 0,
+          "sha256": "8b693cb21a142649b4bba8f50181d4a51dca71475c8a6d8cbb9da4c99b9e6bbe"
+        }
+      ],
+      "sha256": "28a276a7f5f0dc2c16fc7e5697f1ec1b73c6f1c0ff04f0758ed19d2e2ba9e114",
+      "bytes": 465342
+    },
+    {
+      "name": "telefone-ocupado",
+      "file": "production/sprites/final/pai-fujao-fx/telefone-ocupado.webp",
+      "source": "fx/tiras/telefone-ocupado.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 85500,
+          "edgePixels": 0,
+          "sha256": "317d428ec42142d30ce069f0e85f976970eddb8d571d808bfadcbbceed14bb6c"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 84713,
+          "edgePixels": 0,
+          "sha256": "3cbc9984ca3b2eacffbd4a22b8a91a208bf02036578c2fd58b00b80dde481c43"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 86040,
+          "edgePixels": 0,
+          "sha256": "d249f023079e575b6da7e329c9d1149a61de517be745c46cba55b2dbffed81bc"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 86230,
+          "edgePixels": 0,
+          "sha256": "db09ba91048b498b2575919b386c3ce9dbc4acb7e4b14cf4c66ef2df327468f6"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 86033,
+          "edgePixels": 0,
+          "sha256": "5b2ea02d61da557fcc3c4bb3211ecf19c38d7ac99b89c0a9476af2c74c575e04"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 86518,
+          "edgePixels": 0,
+          "sha256": "ba6d8fb5df0efbbac05b15545bd4dd0d587da5f6789ec4145da009bd77a0047d"
+        }
+      ],
+      "sha256": "b53b31954d4434181da24b665574e8acf7268313f65ebadc23eb28999921c53a",
+      "bytes": 482310
+    },
+    {
+      "name": "foro-escudo",
+      "file": "production/sprites/final/pai-fujao-fx/foro-escudo.webp",
+      "source": "fx/tiras/foro-escudo.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 21663,
+          "edgePixels": 0,
+          "sha256": "7673299acebffa821d6af728767d2f06a2b0a3214911efc47d320326c9cc13ab"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 22211,
+          "edgePixels": 0,
+          "sha256": "cc9bb53c5594fe895ca6d57a11b41df76d25d00fb73d2a2022968d6b7bb55bd5"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 23243,
+          "edgePixels": 0,
+          "sha256": "027b71aa65b58c934214ccc1006ac65619b7941d1db025b61a1e516ccba181a6"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 24125,
+          "edgePixels": 0,
+          "sha256": "a0edb7f092f14ba7cced42a80ce26cde9f1715238ec0c393a15ad7f52803ea8b"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 23076,
+          "edgePixels": 0,
+          "sha256": "83dec2cc200ccd15adc767b418aec0a0ad3260d9be55ae47c77ea5742e883aaf"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 23177,
+          "edgePixels": 0,
+          "sha256": "810f319b0dbbe12117119bcb4e38538b915d369f42a417280f19111a4d3a80fc"
+        }
+      ],
+      "sha256": "e62005457c88624505ea90303cc196c62163b8f8b63a914ab295a76f60cfd30e",
+      "bytes": 478108
+    },
+    {
+      "name": "foro-impacto",
+      "file": "production/sprites/final/pai-fujao-fx/foro-impacto.webp",
+      "source": "fx/tiras/foro-impacto.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 29435,
+          "edgePixels": 0,
+          "sha256": "8a4019e10b176271d90cc5f72828b75f53bb2eb45d814ea3c9921a7db1fcf701"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 31650,
+          "edgePixels": 0,
+          "sha256": "8d4e1920eb21399a0e5a00d7dd82ace10651c84a186bf74944da84d76d46d51c"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 49549,
+          "edgePixels": 0,
+          "sha256": "1bdee7b30ccc1a19d27bec4cbdf99855f2075dbc72dbe3ea61a1944a9b119315"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 50835,
+          "edgePixels": 0,
+          "sha256": "135a592140302b26989dcb01b36c8d85d6afe1e4d13d4ad7a6d545d8f39a3b46"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 34789,
+          "edgePixels": 0,
+          "sha256": "6594924459a8a8c5f4b54c5a9f7fc9bbcc80840f7ae064a2347a0c72a36e4eca"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 32661,
+          "edgePixels": 0,
+          "sha256": "9640166184e66659097111c089fba07486e45e54b2735de8902ee15a432b51b5"
+        }
+      ],
+      "sha256": "f246284b92c922a05c106a676fba44969380078bf69f511152b2b4b594a5b54f",
+      "bytes": 750374
+    },
+    {
+      "name": "foro-cassado",
+      "file": "production/sprites/final/pai-fujao-fx/foro-cassado.webp",
+      "source": "fx/tiras/foro-cassado.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 28549,
+          "edgePixels": 0,
+          "sha256": "ff44d6e0268942d36b6e789731d3ff1bb7191fbd199884f0f99c2df2fca5faff"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 29051,
+          "edgePixels": 0,
+          "sha256": "f53c9306d964b9a06e90587094e16c057fdbe3654539cfcd6efa0e35b68f1875"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 29210,
+          "edgePixels": 0,
+          "sha256": "e08f5b6a1c069b4d6da43ce52a794da0433bcc7eb47e286f428cbba8bb999af7"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 24700,
+          "edgePixels": 0,
+          "sha256": "6610738d84c82b862bf141eb9771238cbc34bf84a4d136d840005d0992d96b93"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 2533,
+          "edgePixels": 0,
+          "sha256": "2791f572565ce06dbe9cceece03634492bbdc513046710b009fc7936829eb188"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 482,
+          "edgePixels": 0,
+          "sha256": "f40b9508bf0b11a74d9165a6e19473bf220d4e2f295f65a96bd450f71d21cb75"
+        }
+      ],
+      "sha256": "506e4470b52b34586f3455a3ec42384e54182f88c63f87075f2c1a9c24761ecf",
+      "bytes": 332010
+    },
+    {
+      "name": "foro-retorno",
+      "file": "production/sprites/final/pai-fujao-fx/foro-retorno.webp",
+      "source": "fx/tiras/foro-retorno.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 2575,
+          "edgePixels": 0,
+          "sha256": "cee85cfa1944dde43b4f9960288832ed0eef0021169f9127c5b53851e7929208"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 12367,
+          "edgePixels": 0,
+          "sha256": "77c3fc24008bd9a1d27f75f1b58458420d0325532ec739d97d9e2da7e16a793b"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 16170,
+          "edgePixels": 0,
+          "sha256": "21666a17ed824a8c8a062b7063b060fe53f49d9a93a595b130e4a77c17726e9c"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 26648,
+          "edgePixels": 0,
+          "sha256": "608c5f2db12b2374ab2bff808c01e74b8595f34fc0f3c04a5a25eaf5ea56ffa0"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 27815,
+          "edgePixels": 0,
+          "sha256": "aa936f804395f2275b2475d43a97ed414981c6a05f1e4b7da494074aa997deca"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 22946,
+          "edgePixels": 0,
+          "sha256": "f448914a896e7042513ac5cde6d047849cc96f20371405ce388c0674ea3b6016"
+        }
+      ],
+      "sha256": "5ba31b49fb7e77fe2fe7352e2102c4075948b9e25b46c8447e3f95b09b5d42f8",
+      "bytes": 390912
+    },
+    {
+      "name": "tornozeleira-monitor",
+      "file": "production/sprites/final/pai-fujao-fx/tornozeleira-monitor.webp",
+      "source": "fx/tiras/tornozeleira-monitor.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 96154,
+          "edgePixels": 0,
+          "sha256": "edec879cb8398952b5fa635d7452c4d79d63c2f8b74946f94ba364abfd1164a7"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 96113,
+          "edgePixels": 0,
+          "sha256": "de2e88df024b3658afe87b3431751656405dfd31befa4f41ed41b223bebe80c9"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 96082,
+          "edgePixels": 0,
+          "sha256": "3201070caaa7dbd54a2f497841e9329c5efef0f267ae80b49502b1cd8079c7d4"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 97073,
+          "edgePixels": 0,
+          "sha256": "ccf2bf5f5d1106410aada4daeee6d2c34e6bb8b5101b5ad3e8f30160154572b0"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 96975,
+          "edgePixels": 0,
+          "sha256": "f5cd14b4ad7202e20dee4b1427f5f9f643ec7ff08e2b2d76e0fc4e0f283b9a1f"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 97021,
+          "edgePixels": 0,
+          "sha256": "229f785bb8ded0428e16f136e9c372fee485b5f945c7be004b6bb69bf35041fd"
+        }
+      ],
+      "sha256": "12cf8e7d3ee9117bc62d3927b280b26305be59a827ab88b6e1bd4b00c5013fb0",
+      "bytes": 823694
+    },
+    {
+      "name": "tornozeleira-choque",
+      "file": "production/sprites/final/pai-fujao-fx/tornozeleira-choque.webp",
+      "source": "fx/tiras/tornozeleira-choque.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 1329,
+          "edgePixels": 0,
+          "sha256": "06b418cef24c6afb345d2d2ebb9ec061df1847c6a8308a882f85a13eea3b75f2"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 4846,
+          "edgePixels": 0,
+          "sha256": "4c6c9f34a10df3877976cb6c10aec7b67271087606ac5f3c13e81e697549c1da"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 12255,
+          "edgePixels": 0,
+          "sha256": "cfbc7acaa13c84cee7ffa5c7639a8b371898e7c52da6e759b2e2c93d17783269"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 9299,
+          "edgePixels": 0,
+          "sha256": "42ad35b8786f4832b9877afe197b6e7f3f569e5e6cb04c55b58295959adc7ca1"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 2315,
+          "edgePixels": 0,
+          "sha256": "f189d32b06e0677c7e5ccded0d8c576795b27ee604c7e835970dbde7d22bf3b9"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 1212,
+          "edgePixels": 0,
+          "sha256": "40156436e2c514d377834040ee80256c5d78694ac2b6da843f0cce1d64d73b88"
+        }
+      ],
+      "sha256": "33da6a44b94cf42efadccaae7900a0df8a2c3f9506b9bdb50759fea63e8c7714",
+      "bytes": 149984
+    },
+    {
+      "name": "tornozeleira-zona",
+      "file": "production/sprites/final/pai-fujao-fx/tornozeleira-zona.webp",
+      "source": "fx/tiras/tornozeleira-zona.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 12423,
+          "edgePixels": 0,
+          "sha256": "78824d2b8f86803147ebd6434a6da987b743426c1ed04c411595bf6fde42dd0d"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 18146,
+          "edgePixels": 0,
+          "sha256": "42be734c9c0c8c694ce3760010b92c26e5eb96ab0631ccf0d84a413faf9cfcf1"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 15285,
+          "edgePixels": 0,
+          "sha256": "5cb7057d5a72521be6cfc16d328cb8fb150e04ec0a203959af22892b91cdce0e"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 27916,
+          "edgePixels": 0,
+          "sha256": "3b3cbaa4764c90e89548762f9d8c7f2aad1dd81722388ef9ae683e4df194ef8e"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 22924,
+          "edgePixels": 0,
+          "sha256": "7af43c4ae8c4cd3ba55be5be1fe960689e261292f9efb2680968a33a263627cb"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 30392,
+          "edgePixels": 0,
+          "sha256": "79a026ea34c2e300e05c3ddcb2204a1e9f9a121b57dc5e991ea52fd73bca9aee"
+        }
+      ],
+      "sha256": "1b7c4b2d67046a5a86cbc3c8439431d5786a32e0b3daad5c3536343f2cc7411b",
+      "bytes": 390540
+    },
+    {
+      "name": "prisao-trava",
+      "file": "production/sprites/final/pai-fujao-fx/prisao-trava.webp",
+      "source": "fx/tiras/prisao-trava.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 71750,
+          "edgePixels": 0,
+          "sha256": "30dc6b306c58a565da496be82f5bb5f5d77cce90e05e8068190bfe907629ae63"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 73567,
+          "edgePixels": 0,
+          "sha256": "1bac2f087151a5f740ab5bbeb2817368f0e5ad42ae54e7a557934b3af92f9abd"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 74915,
+          "edgePixels": 0,
+          "sha256": "4fd192134d9fecaf4d674590b35e001b80af38d904662eade23368841820d028"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 79618,
+          "edgePixels": 0,
+          "sha256": "83927e8c590c058107b815b8248310edad6db62d3089fffe5e32447849ec8414"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 80540,
+          "edgePixels": 0,
+          "sha256": "18dc69cb1704cf1b49d6d3b91b029ab3565120832469200a24a797bcfc2c7f9f"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 79492,
+          "edgePixels": 0,
+          "sha256": "e8f05e5aa297df98c00cb1a4ea147feb886df36b5f717d1164f80cdefdde1d7a"
+        }
+      ],
+      "sha256": "f0b851b08ccd861fef888d312c3cbb9a75f7edcda59e42583cb7ebc6dd676e2f",
+      "bytes": 715388
+    },
+    {
+      "name": "prisao-choque",
+      "file": "production/sprites/final/pai-fujao-fx/prisao-choque.webp",
+      "source": "fx/tiras/prisao-choque.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 5268,
+          "edgePixels": 0,
+          "sha256": "c4722979ac801271e50fc1b26cdfd8f3e7b15b1dd3e4fb7c6f8b6735de9f96ec"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 16046,
+          "edgePixels": 0,
+          "sha256": "9b6c082d110ec961b53859dc9012ce629fd6c18cbc5bebf74814c015a283ff85"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 32511,
+          "edgePixels": 0,
+          "sha256": "5be92fd9dc42e491128471082066bf60646cfc6dc7fa3e1d97102199a4d6b530"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 20545,
+          "edgePixels": 0,
+          "sha256": "626b8dd14236a49a63106e08235a5fc66aa54ac59358dca5a33436ac2e2f2981"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 7422,
+          "edgePixels": 0,
+          "sha256": "a004546a48ab88ee4706af332b8c3f3e246f179143ea1954d867c2a287752bac"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 2396,
+          "edgePixels": 0,
+          "sha256": "afc7267a0a6ea66fb4555fed0983fcf18e686d0983f794b4d2a4ae806421a4a4"
+        }
+      ],
+      "sha256": "9228c0e699ab8e8abffb4e7836f4fb7544a445bfeb0411adb2fa7a74a6ea8856",
+      "bytes": 457186
+    },
+    {
+      "name": "prisao-impacto-final",
+      "file": "production/sprites/final/pai-fujao-fx/prisao-impacto-final.webp",
+      "source": "fx/tiras/prisao-impacto-final.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 1796,
+          "edgePixels": 0,
+          "sha256": "dbb71b337c62a837e08901b1eeed3fb1e93085f51d996307a752efde8e4ac9d6"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 15905,
+          "edgePixels": 0,
+          "sha256": "013041790dc828ff5a1faebb7b60ba05f517bfc4037f94640ccee484bd717b86"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 48769,
+          "edgePixels": 0,
+          "sha256": "e960f5362903ddd99bd9afbf8361b6dc72ae830d864cdc67d439b2bf8de7d5ec"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 35896,
+          "edgePixels": 0,
+          "sha256": "589512af91f34593fc3710a4e91f1f1a0544b9e1fb078931f06e03e6ef52e7ff"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 7354,
+          "edgePixels": 0,
+          "sha256": "73b1494057cdeb4710d0bd0bcfd58851ef73b90d4d752f23bf9370f243e5846c"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 1001,
+          "edgePixels": 0,
+          "sha256": "37964020b46b67ca6c9b9732c992cfd82a74acfc9d91a1c4cbbcd5ed887bd768"
+        }
+      ],
+      "sha256": "26d528b2cc2ef17805c7eea0130ec49e4c7cae5b96a986183397fd8b2a4a5a85",
+      "bytes": 420758
+    },
+    {
+      "name": "furia-aura",
+      "file": "production/sprites/final/pai-fujao-fx/furia-aura.webp",
+      "source": "fx/tiras/furia-aura.png",
+      "cell": 500,
+      "frames": [
+        {
+          "index": 0,
+          "visiblePixels": 7904,
+          "edgePixels": 0,
+          "sha256": "15b9e5b91d1912b3e662ed6f1ed91482b78765e9669c6b2548e62dc3f80c0b62"
+        },
+        {
+          "index": 1,
+          "visiblePixels": 18787,
+          "edgePixels": 0,
+          "sha256": "31f3a624d15e08668812cbe2e9ce29e608200737fb3d08aa55738dd5d8e606c9"
+        },
+        {
+          "index": 2,
+          "visiblePixels": 30368,
+          "edgePixels": 0,
+          "sha256": "7359e82dfb2cb670e06df0b7bb1e8bc8b1fae8e288640bcdc4db8b3218f5f191"
+        },
+        {
+          "index": 3,
+          "visiblePixels": 28076,
+          "edgePixels": 0,
+          "sha256": "48f069552068c85aa9d1fe1e1f8fa0107bc0dcbb5649e5cc05939548e36a1042"
+        },
+        {
+          "index": 4,
+          "visiblePixels": 18304,
+          "edgePixels": 0,
+          "sha256": "f5e740f1bc48bd064228a6f8a72acdf3c4ae201211c15768095147a1d0133230"
+        },
+        {
+          "index": 5,
+          "visiblePixels": 11828,
+          "edgePixels": 0,
+          "sha256": "d35befe806ae1c41f0b81e7b1aa41d204ab99dab955fa1109983029a5941f0db"
+        }
+      ],
+      "sha256": "9fb44d5b0a473fec6ed42b912ccdb09007d3d9193d92f59b31f0d7944f7c859f",
+      "bytes": 530882
+    }
+  ]
+}
