@@ -46,7 +46,7 @@ Fazer as pistas funcionarem em tamanho pequeno, sem depender só de vermelho/ver
 | ART-16 | Aeroporto | Pista, avião, escada e referência de embarque; contraste compatível com Belém; chão de luta plano e legível |
 | ART-17 | Mansão, interior | Sala, telefone, retrato do filho, lustre e sofá; zona da tornozeleira destaca sem parecer decoração |
 | ART-18 | Washington | Palácio, gramado, bandeiras e muralha; detalhe de cenário não apaga clones, sombra e armadura |
-| ART-19 | Inferno | Pacote modular v1 produzido: 22 assets, quatro tiras/24 quadros e seis áudios; trono e correntes apoiados, fogo decorativo elevado e trecho seguro real. Fontes, prévia e evidências em `production/stages/inferno/README.md` |
+| ART-19 | Inferno | Pacote modular v1 produzido: 22 assets, quatro tiras/24 quadros e seis áudios; trono e correntes apoiados, coro de esqueletos, fogo ambiental ampliado e trecho seguro real. Fontes, prévia e evidências em `production/stages/inferno/README.md` |
 | ART-20 | Sequência HQ da campanha | Apenas após ajustar texto/ritmo: ação coletiva e comida, transições de local, revelação dos mandantes, libertação e final de cada herói |
 
 Os pacotes modulares das arenas ficam em `production/stages/<id>/`, com inventário e prévia próprios. Os renderers programáticos permanecem como fallback. Consulte o README e os relatórios de cada entrega para distinguir produção, integração e revisão; produzir uma imagem não conclui a integração no combate.

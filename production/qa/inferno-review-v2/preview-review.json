@@ -1,0 +1,99 @@
+{
+  "passed": true,
+  "scope": "Visual v2 only",
+  "inventory": {
+    "images": 16,
+    "cards": 16,
+    "status": {
+      "ready": true,
+      "loaded": 13,
+      "errors": [],
+      "prepared": false
+    },
+    "errors": []
+  },
+  "cameras": [
+    0,
+    340,
+    680
+  ],
+  "poses": [
+    0,
+    15,
+    30,
+    45,
+    60,
+    75
+  ],
+  "pause": true,
+  "step": true,
+  "reduced": true,
+  "safe": [
+    {
+      "camera": 0,
+      "state": "aviso",
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "changedPixels": 0
+    },
+    {
+      "camera": 0,
+      "state": "ativo",
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "changedPixels": 0
+    },
+    {
+      "camera": 340,
+      "state": "aviso",
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "changedPixels": 0
+    },
+    {
+      "camera": 340,
+      "state": "ativo",
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "changedPixels": 0
+    },
+    {
+      "camera": 680,
+      "state": "aviso",
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "changedPixels": 0
+    },
+    {
+      "camera": 680,
+      "state": "ativo",
+      "safe": [
+        1120,
+        1480
+      ],
+      "width": 360,
+      "changedPixels": 0
+    }
+  ],
+  "baseline": "Six paused identical readbacks before the baseline; unchanged Canvas behavior documented in v1.",
+  "mobile": {
+    "width": 844,
+    "scrollWidth": 844
+  },
+  "audio": "Unchanged hashes; v1 decode evidence reused, not rerun here."
+}

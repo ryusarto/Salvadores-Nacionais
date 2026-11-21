@@ -4,7 +4,7 @@ from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
 import json,hashlib,shutil,sys,os
 ROOT=Path(__file__).resolve().parents[1];P=ROOT/'production/stages/inferno';S=P/'source'
-DEFAULT=Path('/Users/henriqueryusartorelliuchiyama/Library/CloudStorage/Dropbox/T&H/Salvadores-Nacionais/arte-revisao/cenario-07-inferno-v1')
+DEFAULT=Path('/Users/henriqueryusartorelliuchiyama/Library/CloudStorage/Dropbox/T&H/Salvadores-Nacionais/arte-revisao/cenario-07-inferno-v2')
 external=Path(os.environ.get('INFERNO_SOURCE',str(DEFAULT)));assets={};missing=[]
 for d in ['source/generated','source/pranchas','layers','ground','props','animations','fx','graphics','ui']:(P/d).mkdir(parents=True,exist_ok=True)
 source_folder=external/'source/generated' if (external/'source/generated').exists() else S/'generated'
@@ -30,7 +30,7 @@ for k,(folder,limit) in static.items():
  else:im=im.crop(box);im.thumbnail((limit,limit),Image.Resampling.LANCZOS)
  path=folder+'/'+k+'.webp';im.save(P/path,'WEBP',quality=92,method=4,exact=True);record(k,path,'layer' if folder=='layers' else 'ground' if folder=='ground' else 'prop',origin='generated',source='source/generated/'+src.name,sourceCrop=list(box),sourceWidth=original[0],sourceHeight=original[1])
 for k in ['corrente-balanco','fogo-braseiro','lava-distante','almas-coro']:
- name=next((v for v in ['almas-coro-v3.png','almas-coro.png'] if (S/'generated'/v).exists()),'almas-coro.png') if k=='almas-coro' else k+'.png'
+ name='esqueletos-coro.png' if k=='almas-coro' else k+'.png'
  src=S/'generated'/name
  if not src.exists():missing.append(k);continue
  im=Image.open(src).convert('RGBA');strip=Image.new('RGBA',(3000,500));sheet=Image.new('RGBA',(1500,1000));boxes=[];offsets=[];hashes=[];pivots=[];thresholds=[];hanging=k=='corrente-balanco'

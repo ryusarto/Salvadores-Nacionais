@@ -514,89 +514,89 @@
       "path": "animations/almas-coro.webp",
       "kind": "animation",
       "frames": 6,
-      "bytes": 721540,
-      "sha256": "765ab0cc52f5138323dea87900cad333a35bfacc49842e2cdf1d1a59dde77565",
+      "bytes": 703610,
+      "sha256": "906f78f812fa85d34e6f41a4e9719f9d9cd06cef0d261ab6d4797158a22f233d",
       "origin": "generated",
-      "source": "source/generated/almas-coro-v3.png",
+      "source": "source/generated/esqueletos-coro.png",
       "cellWidth": 500,
       "cellHeight": 500,
       "crop": [
-        34,
-        84,
-        422,
-        399
+        31,
+        74,
+        434,
+        407
       ],
       "frameBounds": [
         [
-          73,
-          84,
-          426,
-          481
-        ],
-        [
-          71,
-          84,
-          428,
-          481
-        ],
-        [
-          34,
-          84,
+          70,
+          76,
           430,
+          480
+        ],
+        [
+          70,
+          76,
+          430,
+          480
+        ],
+        [
+          35,
+          76,
+          437,
           481
         ],
         [
-          69,
-          89,
-          429,
-          482
+          64,
+          76,
+          436,
+          481
         ],
         [
-          43,
-          89,
-          456,
-          483
+          31,
+          76,
+          465,
+          481
         ],
         [
-          72,
-          89,
-          431,
-          483
+          64,
+          74,
+          437,
+          480
         ]
       ],
       "registrations": [
         [
-          0,
-          37
+          9,
+          33
+        ],
+        [
+          9,
+          33
         ],
         [
           0,
-          37
+          33
         ],
         [
-          -11,
-          37
+          1,
+          33
         ],
         [
-          -3,
-          42
+          0,
+          33
         ],
         [
-          -4,
-          42
-        ],
-        [
-          -10,
-          42
+          -2,
+          32
         ]
       ],
       "frameHashes": [
-        "7deed385c51812e4ebe0a1d1b1cc8f94026f8a724ac3d8ed6c78fca2f967c80c",
-        "52cf26ddec1ea0bf8b38c20c871e3bede26714f6d5c7b7a3347541088dd3c48b",
-        "cea1d5a0b320b02c22436a6c1b6c9ecbc1df1721f998943ad048cf1ee1b7d053",
-        "e59fb078565c99184ff1ee5704152778ee7e29881411d23b3eaf7ff803feb97f",
-        "c07781fe12dcdced9a6011cbce9a4a7dbc31e51cfaf404ef0aebbe5de2ab5560",
-        "b8f1225003904c0d3292f7d30ed6709c03edf2ef041624b1f8094f70a82a8450"
+        "c073bf000bb11ee04f5a09291159d9cf8f7fae7714a9ec9361d9d05fed920e60",
+        "2d2270a0d27e7c1cffc526933d57d4248b9355bdf7e9f3526b0e0aacda5f2fbb",
+        "e5b12aa811009cf3e2133cd2b3889af3396e0b9087a427e85f722bf9c15956a4",
+        "1d7fc8b734beb82c28ebbc57e970df2607f275a77aa170ceaa7fe1d45e2e55c8",
+        "a99af7cc035f0887f5668a691f813d89757fa68e6202492ebf12918e1a57170c",
+        "e7696f3f43f962a3d6388cd43c7733a4525031489730a0b908d256cf5d564030"
       ],
       "registrationThresholds": [
         127,
@@ -612,7 +612,7 @@
       ],
       "registration": "fixed-base",
       "fps": 4,
-      "sourceSha256": "5658ab2f6a592dfcf0156e4a8ee9044c4ae09e5118ee7f544ae64e12f65392ba",
+      "sourceSha256": "40ddd4592e76119bf055fd3750f18be26282eb8121773cf52955342c5edb09b2",
       "width": 3000,
       "height": 500,
       "alpha": true
@@ -688,8 +688,8 @@
       "path": "ui/miniatura.webp",
       "kind": "image",
       "frames": 1,
-      "bytes": 94942,
-      "sha256": "16db07bc77f5084e6a0566f7bdf2095a339eb85064a2b470a2b52c71d481f48b",
+      "bytes": 99432,
+      "sha256": "5445fdddae88cc3316fe0925d72b1c602191d28f8e9468d667c34d03d7b3250c",
       "origin": "derived-composition",
       "width": 960,
       "height": 540,
@@ -699,8 +699,8 @@
       "path": "ui/carregamento.webp",
       "kind": "image",
       "frames": 1,
-      "bytes": 341172,
-      "sha256": "7b03e91b137b4954e068ca847d41e64ecb21c408fb4102cb3f816b83f9b457ee",
+      "bytes": 367556,
+      "sha256": "a047f773c821be4b8560fa4f77c165877b2c5057e1ba9230562e595ec2a4a3cf",
       "origin": "derived-composition",
       "width": 1920,
       "height": 1080,

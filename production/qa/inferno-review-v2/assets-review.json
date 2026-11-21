@@ -1,0 +1,430 @@
+{
+  "passed": true,
+  "assets": 22,
+  "runtimeBytes": 4048458,
+  "manifestSHA256": "f8c58d7e09d1a893cdfe65a779e8785f6265ce0fdd5aeb866cadb49f026fd579",
+  "strips": {
+    "corrente-balanco": {
+      "source": "source/generated/corrente-balanco.png",
+      "frames": [
+        {
+          "bounds": [
+            174,
+            19,
+            326,
+            476
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            174,
+            19,
+            372,
+            467
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            174,
+            19,
+            443,
+            446
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            174,
+            19,
+            385,
+            461
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            174,
+            19,
+            327,
+            472
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            120,
+            19,
+            327,
+            472
+          ],
+          "edgePixels": 0
+        }
+      ]
+    },
+    "fogo-braseiro": {
+      "source": "source/generated/fogo-braseiro.png",
+      "frames": [
+        {
+          "bounds": [
+            120,
+            265,
+            379,
+            481
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            121,
+            183,
+            384,
+            481
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            120,
+            99,
+            379,
+            481
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            120,
+            115,
+            378,
+            481
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            120,
+            197,
+            379,
+            481
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            120,
+            262,
+            379,
+            481
+          ],
+          "edgePixels": 0
+        }
+      ]
+    },
+    "lava-distante": {
+      "source": "source/generated/lava-distante.png",
+      "frames": [
+        {
+          "bounds": [
+            26,
+            394,
+            475,
+            481
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            25,
+            394,
+            473,
+            481
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            25,
+            394,
+            473,
+            481
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            25,
+            393,
+            474,
+            481
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            27,
+            393,
+            474,
+            481
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            26,
+            393,
+            474,
+            481
+          ],
+          "edgePixels": 0
+        }
+      ]
+    },
+    "almas-coro": {
+      "source": "source/generated/esqueletos-coro.png",
+      "frames": [
+        {
+          "bounds": [
+            70,
+            76,
+            430,
+            480
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            70,
+            76,
+            430,
+            480
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            35,
+            76,
+            437,
+            481
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            64,
+            76,
+            436,
+            481
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            31,
+            76,
+            465,
+            481
+          ],
+          "edgePixels": 0
+        },
+        {
+          "bounds": [
+            64,
+            74,
+            437,
+            480
+          ],
+          "edgePixels": 0
+        }
+      ]
+    }
+  },
+  "errors": [],
+  "lava": [
+    {
+      "id": "fogo-braseiro-2",
+      "asset": "fogo-braseiro",
+      "x": 130,
+      "y": 805,
+      "h": 180,
+      "factor": 0.2,
+      "fps": 4,
+      "phase": 0,
+      "opacity": 0.82,
+      "support": {
+        "type": "background-lava-surface",
+        "point": {
+          "x": 130,
+          "y": 805
+        }
+      }
+    },
+    {
+      "id": "fogo-braseiro-3",
+      "asset": "fogo-braseiro",
+      "x": 450,
+      "y": 805,
+      "h": 235,
+      "factor": 0.2,
+      "fps": 4,
+      "phase": 2,
+      "opacity": 0.82,
+      "support": {
+        "type": "background-lava-surface",
+        "point": {
+          "x": 450,
+          "y": 805
+        }
+      }
+    },
+    {
+      "id": "fogo-braseiro-4",
+      "asset": "fogo-braseiro",
+      "x": 760,
+      "y": 805,
+      "h": 275,
+      "factor": 0.2,
+      "fps": 4,
+      "phase": 4,
+      "opacity": 0.82,
+      "support": {
+        "type": "background-lava-surface",
+        "point": {
+          "x": 760,
+          "y": 805
+        }
+      }
+    },
+    {
+      "id": "fogo-braseiro-5",
+      "asset": "fogo-braseiro",
+      "x": 1040,
+      "y": 805,
+      "h": 240,
+      "factor": 0.2,
+      "fps": 4,
+      "phase": 1,
+      "opacity": 0.82,
+      "support": {
+        "type": "background-lava-surface",
+        "point": {
+          "x": 1040,
+          "y": 805
+        }
+      }
+    },
+    {
+      "id": "fogo-braseiro-6",
+      "asset": "fogo-braseiro",
+      "x": 1560,
+      "y": 805,
+      "h": 250,
+      "factor": 0.2,
+      "fps": 4,
+      "phase": 5,
+      "opacity": 0.82,
+      "support": {
+        "type": "background-lava-surface",
+        "point": {
+          "x": 1560,
+          "y": 805
+        }
+      }
+    },
+    {
+      "id": "fogo-braseiro-7",
+      "asset": "fogo-braseiro",
+      "x": 1870,
+      "y": 805,
+      "h": 290,
+      "factor": 0.2,
+      "fps": 4,
+      "phase": 3,
+      "opacity": 0.82,
+      "support": {
+        "type": "background-lava-surface",
+        "point": {
+          "x": 1870,
+          "y": 805
+        }
+      }
+    },
+    {
+      "id": "fogo-braseiro-8",
+      "asset": "fogo-braseiro",
+      "x": 2200,
+      "y": 805,
+      "h": 230,
+      "factor": 0.2,
+      "fps": 4,
+      "phase": 1,
+      "opacity": 0.82,
+      "support": {
+        "type": "background-lava-surface",
+        "point": {
+          "x": 2200,
+          "y": 805
+        }
+      }
+    },
+    {
+      "id": "fogo-braseiro-9",
+      "asset": "fogo-braseiro",
+      "x": 2480,
+      "y": 805,
+      "h": 210,
+      "factor": 0.2,
+      "fps": 4,
+      "phase": 4,
+      "opacity": 0.82,
+      "support": {
+        "type": "background-lava-surface",
+        "point": {
+          "x": 2480,
+          "y": 805
+        }
+      }
+    }
+  ],
+  "braziers": [
+    {
+      "id": "fogo-braseiro-20",
+      "asset": "fogo-braseiro",
+      "x": 600,
+      "y": 526,
+      "h": 175,
+      "factor": 0.85,
+      "fps": 4,
+      "support": {
+        "type": "brazier-bowl",
+        "point": {
+          "x": 600,
+          "y": 526
+        }
+      }
+    },
+    {
+      "id": "fogo-braseiro-22",
+      "asset": "fogo-braseiro",
+      "x": 2100,
+      "y": 526,
+      "h": 175,
+      "factor": 0.85,
+      "fps": 4,
+      "support": {
+        "type": "brazier-bowl",
+        "point": {
+          "x": 2100,
+          "y": 526
+        }
+      }
+    }
+  ],
+  "foreground": [],
+  "skeletonSource": "source/generated/esqueletos-coro.png",
+  "audioHashesUnchanged": 6,
+  "fontPresent": true,
+  "licensePresent": true
+}

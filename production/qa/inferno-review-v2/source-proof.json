@@ -1,0 +1,60 @@
+{
+  "baseline": "5efa45d",
+  "files": [
+    {
+      "path": "src/render/boss-art.js",
+      "base": "b73914526cddef9f12e1191a7aabbb867f2dd7234aeebf475e312c7f08bccc7a",
+      "current": "b73914526cddef9f12e1191a7aabbb867f2dd7234aeebf475e312c7f08bccc7a",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/stage-packs.js",
+      "base": "c7d47e72191f4e34c91fec188e21c6137e8e54d82b69016443a157260655c154",
+      "current": "c7d47e72191f4e34c91fec188e21c6137e8e54d82b69016443a157260655c154",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/mannequin.js",
+      "base": "27ab3233c6c28922573f1acd02810f9cfd1e16a879bf56eb2c50aa5be7958fb4",
+      "current": "27ab3233c6c28922573f1acd02810f9cfd1e16a879bf56eb2c50aa5be7958fb4",
+      "unchanged": true
+    },
+    {
+      "path": "src/ui/app.js",
+      "base": "423baf33a6fa24c54e257d676ab87a3e62059c8f334f5aead440289ff3014c0a",
+      "current": "423baf33a6fa24c54e257d676ab87a3e62059c8f334f5aead440289ff3014c0a",
+      "unchanged": true
+    },
+    {
+      "path": "src/data/characters/djabo.js",
+      "base": "9f5a5cb45f76d56a66b310e3874fe3d748d3c446b86bbc7571744e9762e5211e",
+      "current": "9f5a5cb45f76d56a66b310e3874fe3d748d3c446b86bbc7571744e9762e5211e",
+      "unchanged": true
+    },
+    {
+      "path": "src/data/system.js",
+      "base": "d4bc8becc508115996f5ec127bde43d394feb7764c4b5e03b39c61f20be4732c",
+      "current": "d4bc8becc508115996f5ec127bde43d394feb7764c4b5e03b39c61f20be4732c",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/match.js",
+      "base": "a45c7c31021604861b0a7d4d8e34a7f75862d85c73c98f313caf20880377a837",
+      "current": "a45c7c31021604861b0a7d4d8e34a7f75862d85c73c98f313caf20880377a837",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/combat.js",
+      "base": "133ad2875e7b297c282ac463579d8297a68af260add6780451b927adfb9fddfd",
+      "current": "133ad2875e7b297c282ac463579d8297a68af260add6780451b927adfb9fddfd",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/entities.js",
+      "base": "14110994d86b91942fb030ef6856c903d02589d679849f54703154ae161ab51f",
+      "current": "14110994d86b91942fb030ef6856c903d02589d679849f54703154ae161ab51f",
+      "unchanged": true
+    }
+  ],
+  "reusedEvidence": "../inferno-review/final-review.json — 216 renderer cases and transformation/reset/lifetime; not repeated in v2."
+}

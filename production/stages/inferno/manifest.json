@@ -1,6 +1,6 @@
 {
   "id": "inferno",
-  "version": 1,
+  "version": 2,
   "status": "ready-for-review",
   "groups": 22,
   "world": {
@@ -50,7 +50,151 @@
       "opacity": 0.68
     },
     {
-      "id": "portal-2",
+      "id": "fogo-braseiro-2",
+      "asset": "fogo-braseiro",
+      "x": 130,
+      "y": 805,
+      "h": 180,
+      "factor": 0.2,
+      "fps": 4,
+      "phase": 0,
+      "opacity": 0.82,
+      "support": {
+        "type": "background-lava-surface",
+        "point": {
+          "x": 130,
+          "y": 805
+        }
+      }
+    },
+    {
+      "id": "fogo-braseiro-3",
+      "asset": "fogo-braseiro",
+      "x": 450,
+      "y": 805,
+      "h": 235,
+      "factor": 0.2,
+      "fps": 4,
+      "phase": 2,
+      "opacity": 0.82,
+      "support": {
+        "type": "background-lava-surface",
+        "point": {
+          "x": 450,
+          "y": 805
+        }
+      }
+    },
+    {
+      "id": "fogo-braseiro-4",
+      "asset": "fogo-braseiro",
+      "x": 760,
+      "y": 805,
+      "h": 275,
+      "factor": 0.2,
+      "fps": 4,
+      "phase": 4,
+      "opacity": 0.82,
+      "support": {
+        "type": "background-lava-surface",
+        "point": {
+          "x": 760,
+          "y": 805
+        }
+      }
+    },
+    {
+      "id": "fogo-braseiro-5",
+      "asset": "fogo-braseiro",
+      "x": 1040,
+      "y": 805,
+      "h": 240,
+      "factor": 0.2,
+      "fps": 4,
+      "phase": 1,
+      "opacity": 0.82,
+      "support": {
+        "type": "background-lava-surface",
+        "point": {
+          "x": 1040,
+          "y": 805
+        }
+      }
+    },
+    {
+      "id": "fogo-braseiro-6",
+      "asset": "fogo-braseiro",
+      "x": 1560,
+      "y": 805,
+      "h": 250,
+      "factor": 0.2,
+      "fps": 4,
+      "phase": 5,
+      "opacity": 0.82,
+      "support": {
+        "type": "background-lava-surface",
+        "point": {
+          "x": 1560,
+          "y": 805
+        }
+      }
+    },
+    {
+      "id": "fogo-braseiro-7",
+      "asset": "fogo-braseiro",
+      "x": 1870,
+      "y": 805,
+      "h": 290,
+      "factor": 0.2,
+      "fps": 4,
+      "phase": 3,
+      "opacity": 0.82,
+      "support": {
+        "type": "background-lava-surface",
+        "point": {
+          "x": 1870,
+          "y": 805
+        }
+      }
+    },
+    {
+      "id": "fogo-braseiro-8",
+      "asset": "fogo-braseiro",
+      "x": 2200,
+      "y": 805,
+      "h": 230,
+      "factor": 0.2,
+      "fps": 4,
+      "phase": 1,
+      "opacity": 0.82,
+      "support": {
+        "type": "background-lava-surface",
+        "point": {
+          "x": 2200,
+          "y": 805
+        }
+      }
+    },
+    {
+      "id": "fogo-braseiro-9",
+      "asset": "fogo-braseiro",
+      "x": 2480,
+      "y": 805,
+      "h": 210,
+      "factor": 0.2,
+      "fps": 4,
+      "phase": 4,
+      "opacity": 0.82,
+      "support": {
+        "type": "background-lava-surface",
+        "point": {
+          "x": 2480,
+          "y": 805
+        }
+      }
+    },
+    {
+      "id": "portal-10",
       "asset": "portal",
       "x": 360,
       "y": 826,
@@ -58,7 +202,7 @@
       "factor": 0.65
     },
     {
-      "id": "almas-coro-3",
+      "id": "almas-coro-11",
       "asset": "almas-coro",
       "x": 360,
       "y": 819,
@@ -67,7 +211,7 @@
       "fps": 4
     },
     {
-      "id": "escadaria-4",
+      "id": "escadaria-12",
       "asset": "escadaria",
       "x": 1300,
       "y": 826,
@@ -75,7 +219,7 @@
       "factor": 0.6
     },
     {
-      "id": "trono-5",
+      "id": "trono-13",
       "asset": "trono",
       "x": 1300,
       "y": 708.8932584269663,
@@ -83,7 +227,7 @@
       "factor": 0.6
     },
     {
-      "id": "teto-rochoso-6",
+      "id": "teto-rochoso-14",
       "asset": "teto-rochoso",
       "x": 1300,
       "y": 315,
@@ -92,7 +236,7 @@
       "factor": 0.8
     },
     {
-      "id": "corrente-balanco-7",
+      "id": "corrente-balanco-15",
       "asset": "corrente-balanco",
       "x": 403.7800875273523,
       "y": 374.24507658643324,
@@ -114,7 +258,7 @@
       }
     },
     {
-      "id": "corrente-balanco-8",
+      "id": "corrente-balanco-16",
       "asset": "corrente-balanco",
       "x": 919.2997811816192,
       "y": 309.38730853391684,
@@ -136,7 +280,7 @@
       }
     },
     {
-      "id": "corrente-balanco-9",
+      "id": "corrente-balanco-17",
       "asset": "corrente-balanco",
       "x": 1822.0568927789934,
       "y": 349.29978118161927,
@@ -158,7 +302,7 @@
       }
     },
     {
-      "id": "corrente-balanco-10",
+      "id": "corrente-balanco-18",
       "asset": "corrente-balanco",
       "x": 2318.6105032822757,
       "y": 299.40919037199126,
@@ -180,7 +324,7 @@
       }
     },
     {
-      "id": "coluna-braseiro-11",
+      "id": "coluna-braseiro-19",
       "asset": "coluna-braseiro",
       "x": 600,
       "y": 826,
@@ -188,11 +332,11 @@
       "factor": 0.85
     },
     {
-      "id": "fogo-braseiro-12",
+      "id": "fogo-braseiro-20",
       "asset": "fogo-braseiro",
       "x": 600,
       "y": 526,
-      "h": 145,
+      "h": 175,
       "factor": 0.85,
       "fps": 4,
       "support": {
@@ -204,7 +348,7 @@
       }
     },
     {
-      "id": "coluna-braseiro-13",
+      "id": "coluna-braseiro-21",
       "asset": "coluna-braseiro",
       "x": 2100,
       "y": 826,
@@ -212,11 +356,11 @@
       "factor": 0.85
     },
     {
-      "id": "fogo-braseiro-14",
+      "id": "fogo-braseiro-22",
       "asset": "fogo-braseiro",
       "x": 2100,
       "y": 526,
-      "h": 145,
+      "h": 175,
       "factor": 0.85,
       "fps": 4,
       "support": {
@@ -228,7 +372,7 @@
       }
     },
     {
-      "id": "grilhao-rompido-15",
+      "id": "grilhao-rompido-23",
       "asset": "grilhao-rompido",
       "x": 740,
       "y": 825,
@@ -236,7 +380,7 @@
       "factor": 0.75
     },
     {
-      "id": "grilhao-rompido-16",
+      "id": "grilhao-rompido-24",
       "asset": "grilhao-rompido",
       "x": 2170,
       "y": 825,
@@ -798,89 +942,89 @@
       "path": "animations/almas-coro.webp",
       "kind": "animation",
       "frames": 6,
-      "bytes": 721540,
-      "sha256": "765ab0cc52f5138323dea87900cad333a35bfacc49842e2cdf1d1a59dde77565",
+      "bytes": 703610,
+      "sha256": "906f78f812fa85d34e6f41a4e9719f9d9cd06cef0d261ab6d4797158a22f233d",
       "origin": "generated",
-      "source": "source/generated/almas-coro-v3.png",
+      "source": "source/generated/esqueletos-coro.png",
       "cellWidth": 500,
       "cellHeight": 500,
       "crop": [
-        34,
-        84,
-        422,
-        399
+        31,
+        74,
+        434,
+        407
       ],
       "frameBounds": [
         [
-          73,
-          84,
-          426,
-          481
-        ],
-        [
-          71,
-          84,
-          428,
-          481
-        ],
-        [
-          34,
-          84,
+          70,
+          76,
           430,
+          480
+        ],
+        [
+          70,
+          76,
+          430,
+          480
+        ],
+        [
+          35,
+          76,
+          437,
           481
         ],
         [
-          69,
-          89,
-          429,
-          482
+          64,
+          76,
+          436,
+          481
         ],
         [
-          43,
-          89,
-          456,
-          483
+          31,
+          76,
+          465,
+          481
         ],
         [
-          72,
-          89,
-          431,
-          483
+          64,
+          74,
+          437,
+          480
         ]
       ],
       "registrations": [
         [
-          0,
-          37
+          9,
+          33
+        ],
+        [
+          9,
+          33
         ],
         [
           0,
-          37
+          33
         ],
         [
-          -11,
-          37
+          1,
+          33
         ],
         [
-          -3,
-          42
+          0,
+          33
         ],
         [
-          -4,
-          42
-        ],
-        [
-          -10,
-          42
+          -2,
+          32
         ]
       ],
       "frameHashes": [
-        "7deed385c51812e4ebe0a1d1b1cc8f94026f8a724ac3d8ed6c78fca2f967c80c",
-        "52cf26ddec1ea0bf8b38c20c871e3bede26714f6d5c7b7a3347541088dd3c48b",
-        "cea1d5a0b320b02c22436a6c1b6c9ecbc1df1721f998943ad048cf1ee1b7d053",
-        "e59fb078565c99184ff1ee5704152778ee7e29881411d23b3eaf7ff803feb97f",
-        "c07781fe12dcdced9a6011cbce9a4a7dbc31e51cfaf404ef0aebbe5de2ab5560",
-        "b8f1225003904c0d3292f7d30ed6709c03edf2ef041624b1f8094f70a82a8450"
+        "c073bf000bb11ee04f5a09291159d9cf8f7fae7714a9ec9361d9d05fed920e60",
+        "2d2270a0d27e7c1cffc526933d57d4248b9355bdf7e9f3526b0e0aacda5f2fbb",
+        "e5b12aa811009cf3e2133cd2b3889af3396e0b9087a427e85f722bf9c15956a4",
+        "1d7fc8b734beb82c28ebbc57e970df2607f275a77aa170ceaa7fe1d45e2e55c8",
+        "a99af7cc035f0887f5668a691f813d89757fa68e6202492ebf12918e1a57170c",
+        "e7696f3f43f962a3d6388cd43c7733a4525031489730a0b908d256cf5d564030"
       ],
       "registrationThresholds": [
         127,
@@ -896,7 +1040,7 @@
       ],
       "registration": "fixed-base",
       "fps": 4,
-      "sourceSha256": "5658ab2f6a592dfcf0156e4a8ee9044c4ae09e5118ee7f544ae64e12f65392ba",
+      "sourceSha256": "40ddd4592e76119bf055fd3750f18be26282eb8121773cf52955342c5edb09b2",
       "width": 3000,
       "height": 500,
       "alpha": true
@@ -972,8 +1116,8 @@
       "path": "ui/miniatura.webp",
       "kind": "image",
       "frames": 1,
-      "bytes": 94942,
-      "sha256": "16db07bc77f5084e6a0566f7bdf2095a339eb85064a2b470a2b52c71d481f48b",
+      "bytes": 99432,
+      "sha256": "5445fdddae88cc3316fe0925d72b1c602191d28f8e9468d667c34d03d7b3250c",
       "origin": "derived-composition",
       "width": 960,
       "height": 540,
@@ -983,8 +1127,8 @@
       "path": "ui/carregamento.webp",
       "kind": "image",
       "frames": 1,
-      "bytes": 341172,
-      "sha256": "7b03e91b137b4954e068ca847d41e64ecb21c408fb4102cb3f816b83f9b457ee",
+      "bytes": 367556,
+      "sha256": "a047f773c821be4b8560fa4f77c165877b2c5057e1ba9230562e595ec2a4a3cf",
       "origin": "derived-composition",
       "width": 1920,
       "height": 1080,
@@ -993,9 +1137,9 @@
   },
   "missing": [],
   "notes": [
-    "Arena final: trono vazio, correntes e almas sustentando o refrão conforme roteiro.",
+    "Arena final: trono vazio, correntes e coro de três esqueletos sustentando o refrão, revisão visual solicitada pelo usuário.",
     "Basalto neutro sem fogo/lava/safezone pintados no chão de combate.",
-    "Lava decorativa termina em y815, atrás do topo do piso y826; fogo de braseiros é elevado e se apoia nas cubas laterais.",
+    "Lava decorativa termina em y815, atrás do topo do piso y826; oito grupos de fogo ambiental se apoiam na lava distante em y805 e dois braseiros elevados sustentam chamas ampliadas nas cubas laterais.",
     "Correntes incluem fixação em rocha; seus apoios e teto compartilham parallax0.8.",
     "Ataques, aviso e faixa segura do Inferno Nacional continuam desenhados pelas entidades reais do core; interactive vazio.",
     "Mestres PNG e prompts integrais preservados, só crop/registro/escala uniforme/packing e WebP na exportação.",
