@@ -35,10 +35,10 @@ export function drawFujaoStatus(c, f, frame) {
   if (name) drawFujaoLayer(c, name, Math.floor(frame / 6) % 6, { x: f.x, y: SYS.GROUND_Y - f.y - 545, w: 120, h: 95 });
 }
 export function fujaoEventArt(e, st) {
-  const actor = st.f[e.side], f = st.f.find(f => f.ch.id === 'fujao' && (e.x == null || Math.abs(f.x - e.x) < 50));
-  if (e.t === 'hit' && actor?.ch.id === 'fujao' && ['5H', 'jH', '5S', '6S', 'SA1', 'SA3'].includes(e.key)) return { name: e.key === 'SA1' ? 'pista-livre-impacto' : 'mala-impacto', x: e.x, y: SYS.GROUND_Y - e.y, w: 240, h: 220, dur: 18 };
+  const actor = st.f[e.side], f = st.f.find(f => f.ch?.id === 'fujao' && (e.x == null || Math.abs(f.x - e.x) < 50));
+  if (e.t === 'hit' && actor?.ch?.id === 'fujao' && ['5H', 'jH', '5S', '6S', 'SA1', 'SA3'].includes(e.key)) return { name: e.key === 'SA1' ? 'pista-livre-impacto' : 'mala-impacto', x: e.x, y: SYS.GROUND_Y - e.y, w: 240, h: 220, dur: 18 };
   if (e.t === 'strike' && e.kind === 'mala-caindo') return { name: 'mala-impacto', x: e.x, y: SYS.GROUND_Y - 65, w: 230, h: 170, dur: 18 };
-  if ((e.t === 'escape' || e.t === 'move' && e.key === '4S') && actor?.ch.id === 'fujao') return { name: 'fuga-poeira', x: e.x ?? actor.x, y: SYS.GROUND_Y, w: 280, h: 130, anchor: 'bottom', dur: 24 };
+  if ((e.t === 'escape' || e.t === 'move' && e.key === '4S') && actor?.ch?.id === 'fujao') return { name: 'fuga-poeira', x: e.x ?? actor.x, y: SYS.GROUND_Y, w: 280, h: 130, anchor: 'bottom', dur: 24 };
   if (e.t === 'pop' && f) {
     const name = e.str === 'EMBARQUE NEGADO!' ? 'embarque-negado' : e.str.startsWith('QUASE EMBARCOU!') ? 'embarque-cura' : null;
     if (name) return { name, x: f.x, y: SYS.GROUND_Y - 600, w: 180, h: 160, dur: 30 };

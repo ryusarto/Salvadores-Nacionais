@@ -80,3 +80,10 @@ test('Fujão FX crops include the whole cart in 500px runtime cells',async(t)=>{
  assert.ok(drawFujaoLayer(c,'carrinho-bagagem',4,{x:0,y:0,w:270,h:300,anchor:'bottom'}));
  const expected=[2046,40,408,420];for(let i=0;i<4;i++)assert.ok(Math.abs(draw[i+1]-expected[i])<1e-6,'source crop '+i);
 });
+
+test('unrelated FX events tolerate partial fighter records',()=>{
+ const st={f:[{x:500},{}]};
+ assert.equal(fujaoEventArt({t:'hit',side:0,key:'5H',x:500},st),null);
+ assert.equal(fujaoEventArt({t:'move',side:1,key:'4S'},st),null);
+ assert.equal(fujaoEventArt({t:'pop',str:'OTHER EVENT',x:500},st),null);
+});
