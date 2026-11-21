@@ -224,6 +224,7 @@ export function createApp(canvas, devices, opts = {}) {
 
   /** Começa o desafio de um combo; com demo = true, a CPU mostra como se faz. */
   function startCombo(combo, demo) {
+    if (app.systemPaused) return;
     const st = app.st;
     const mid = SYS.STAGE_W / 2;
     st.f[0].x = mid - 90;
@@ -344,7 +345,9 @@ export function createApp(canvas, devices, opts = {}) {
     const nav = (n, len) => (app[n] = (app[n] + len + (pr.down || (horiz && pr.right) ? 1 : 0) - (pr.up || (horiz && pr.left) ? 1 : 0)) % len);
     const ok = pr.start || pr.L || pr.S || pr.ok;
     const back = pr.back || pr.M || pr.cancel;
-    if (app.systemPaused) return;
+    // Portrait freezes combat, but the pause menu must still allow controls,
+    // move lists and Exit. Hidden tabs remain fully suspended.
+    if (app.systemPaused && (document.hidden || app.screen !== 'fight' || !app.paused)) return;
     if (pr.up || pr.down || pr.left || pr.right) sfx.menu();
     if (ok) sfx.ok();
 
@@ -453,7 +456,7 @@ export function createApp(canvas, devices, opts = {}) {
       if (app.paused) {
         // START nas telas internas da pausa volta direto para a luta; na lista da pausa ele
         // confirma a opção marcada (como em todos os menus), e a pausa abre em CONTINUAR.
-        if (pr.start && app.sub) { app.paused = false; app.sub = null; return; }
+        if (pr.start && app.sub) { if (!app.systemPaused) app.paused = false; app.sub = null; return; }
         if (app.sub === 'moves') {
           if (ok || back) app.sub = null;
         } else if (app.sub === 'controls') {
@@ -468,10 +471,10 @@ export function createApp(canvas, devices, opts = {}) {
           else if (ok) app.sub = null;
         } else {
           nav('pcur', PAUSE.length);
-          if (back) app.paused = false;
+          if (back) app.paused = app.systemPaused;
           else if (ok) {
             const item = PAUSE[app.pcur];
-            if (item === 'CONTINUAR') app.paused = false;
+            if (item === 'CONTINUAR') { if (!app.systemPaused) app.paused = false; }
             else if (item === 'LISTA DE COMBOS') {
               app.sub = 'combos';
               app.ccur = 0;
@@ -481,7 +484,7 @@ export function createApp(canvas, devices, opts = {}) {
               app.kcur = 0;
               app.remap = 0;
             } else if (item === 'SOM') toggleSound();
-            else if (item === 'REINICIAR LUTA') startFight();
+            else if (item === 'REINICIAR LUTA') { if (!app.systemPaused) startFight(); }
             else { app.screen = 'title'; app.paused = false; app.sub = null; }
           }
         }
@@ -852,8 +855,9 @@ export function createApp(canvas, devices, opts = {}) {
     } else if (app.screen === 'vs') {
       title = `${HEROES[app.hero].name} × ${app.foe.name}`; description = app.mode === 'story' ? 'Os Salvadores lutam juntos contra os chefes da turnê.' : app.foe.mechDesc;
       add('fight', app.vsReady ? 'Começar luta' : 'Carregando lutadores…', 650, 800, 620, 200, () => press('ok'));
+      items.at(-1).disabled = !app.vsReady; items.at(-1).busy = !app.vsReady;
     } else if (app.screen === 'result') {
-      title = app.st.winner === null ? 'Empate' : app.st.winner === 0 ? 'Vitória!' : 'Derrota';
+      title = app.st.winner === null ? 'Empate' : app.mode === 'vs2' ? `${app.st.winner + 1}P VENCE!` : app.st.winner === 0 ? 'Vitória!' : 'Derrota';
       RESULT.forEach((label, i) => add(`result-${i}`, label, 880, 681 + i * 91, 850, 64, () => choose('cur', i), app.cur === i));
     } else if (app.screen === 'settings') {
       title = 'Opções';
@@ -864,6 +868,7 @@ export function createApp(canvas, devices, opts = {}) {
     } else if (app.screen === 'controls' || (app.screen === 'fight' && app.paused && app.sub === 'controls')) {
       title = 'Controles'; description = 'Toque: direcional e botões na luta. Teclado: WASD/setas, J/K/L, I especial, U defesa, O agarrão, P super. Conecte um controle para remapear.';
       ACTIONS.forEach(([key, label], i) => { const r = controlRow(i); add(`control-${key}`, label, r.x, r.y, r.w, r.h, () => choose('kcur', i), app.kcur === i); });
+      { const r = controlRow(ACTIONS.length); add('control-reset', 'Restaurar padrão', r.x, r.y, r.w, r.h, () => choose('kcur', ACTIONS.length)); }
     } else if (app.screen === 'fight' && app.paused) {
       title = 'Pausado'; description = bossHint();
       if (app.sub === 'moves') { title = 'Lista de golpes'; description = Object.entries(app.st.f[0].ch.moves).filter(([key]) => key !== 'click').map(([key, m]) => `${KEY_LABEL[key] || key}: ${m.name}`).join(' · '); }
@@ -874,10 +879,38 @@ export function createApp(canvas, devices, opts = {}) {
     } else if (app.screen === 'select2') {
       title = 'Versus 2 jogadores'; description = 'Cada jogador entra e escolhe com seu próprio controle. O teclado pode ser um dos jogadores.';
     }
-    if (app.screen !== 'title' && items.length && !['storyIntro', 'storyEnd', 'storyTalk', 'storyMap'].includes(app.screen)) add('back', 'Voltar', 20, 1018, 500, 62, () => press('back'));
+    const movesPage = app.screen === 'fight' && app.paused && app.sub === 'moves';
+    if (app.screen !== 'title' && (items.length || movesPage) && !['storyIntro', 'storyEnd', 'storyTalk', 'storyMap'].includes(app.screen)) add('back', 'Voltar', 20, 1018, 500, 62, () => press('back'));
     // A connected gamepad remains responsible for its own player slot; no synthetic joins.
     if (!items.length && app.screen === 'select2') add('back', 'Voltar', 20, 1018, 500, 62, () => press('back'));
-    syncMenu(title, description, items);
+    const selecting = app.screen === 'select' || app.screen === 'selectFoe';
+    const preview = app.screen === 'result' ? app.st.f[app.st.winner ?? 0].ch : selecting ? (app.screen === 'selectFoe' ? FOES[app.foeCur] : HEROES[app.hero]) :
+      ['vs', 'select2', 'gallery', 'storyIntro', 'storyEnd', 'storyTalk', 'storyMap', 'storyLose'].includes(app.screen) ? HEROES[app.hero] : null;
+    const details = [];
+    if (app.screen === 'result') details.push(
+      { label: 'TEMPO DE LUTA', value: `${Math.round(app.stats.frames / 60)} S` },
+      { label: 'COMBO MÁXIMO', value: `${app.stats.maxCombo} ACERTOS` },
+      { label: 'DANO CAUSADO', value: String(app.stats.dmg) },
+      { label: 'ROUNDS', value: `${app.st.f[0].rounds} × ${app.st.f[1].rounds}` });
+    if (app.screen === 'select2') {
+      [app.hero, app.hero2].forEach((hero, i) => details.push({ label: `JOGADOR ${i + 1}`, value: `${HEROES[hero].name} · ${app.slots[i] == null ? 'Aguardando controle' : srcName(app.slots[i])} · ${app.ready[i] ? 'PRONTO' : 'Escolhendo'}` }));
+    }
+    if (app.screen === 'fight' && app.paused && app.sub === 'moves') {
+      description = 'Golpes e comandos do seu Salvador.';
+      for (const [key, m] of Object.entries(app.st.f[0].ch.moves)) if (key !== 'click') details.push({ label: KEY_LABEL[key] || key, value: m.name });
+    }
+    if (app.screen === 'controls' || app.screen === 'fight' && app.sub === 'controls') {
+      const g = glyphs(devices);
+      for (const item of items) if (item.id.startsWith('control-') && item.id !== 'control-reset') {
+        const key = item.id.slice(8), i = ACTIONS.findIndex(([action]) => action === key);
+        const pad = Object.entries(devices.padMap).filter(([, action]) => action === key).map(([b]) => PS_NAMES[b] || `B${b}`).join(' / ');
+        item.label += ` · ${app.remap && app.kcur === i ? 'Aperte o botão novo…' : devices.padName ? pad || '—' : g[key] || key}`;
+      }
+    }
+    if (app.systemPaused && app.screen === 'fight') for (const item of items) {
+      if (['pause-0', 'pause-5'].includes(item.id) || item.id.startsWith('combo-') || item.id.startsWith('demo-')) item.disabled = true;
+    }
+    return syncMenu(title, description, items, { screen: app.screen, sub: app.sub, preview, opponent: app.screen === 'vs' ? app.foe : app.screen === 'select2' ? HEROES[app.hero2] : null, chapter: app.story?.chapter, details });
   }
 
   function render() {
@@ -886,8 +919,11 @@ export function createApp(canvas, devices, opts = {}) {
     setStageAudioActive(app.screen === 'fight' && !app.paused && !document.hidden);
     c.setTransform(canvas.width / W, 0, 0, canvas.height / H, 0, 0);
     app.onRender?.();
-    syncAccessibleMenus();
+    const touchMenu = syncAccessibleMenus();
     document.body.dataset.paused = String(app.paused || app.systemPaused);
+    // The responsive native menu fully covers the canvas; avoid rendering the
+    // same PC menu underneath it on every frame.
+    if (touchMenu) return;
     if(drawComicScreen(c,app,{menu:MENU,options:OPTIONS.map(([id,label])=>[id,optionLabel(id,label)]),srcName,keys:{pad:devices.kind==='controle'}})){drawNotice();return;}
     if (app.screen === 'fight') drawFight();
     else if (app.screen === 'controls') drawControls();
