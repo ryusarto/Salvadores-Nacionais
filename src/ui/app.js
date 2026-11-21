@@ -13,8 +13,9 @@ import { createBrain, aiInput } from '../core/ai.js';
 import { EMPTY_INPUT } from '../core/input.js';
 import { buildStage, drawStage } from '../render/stage.js';
 import { drawEffect, prepareSprites, spritePacksFor } from '../render/sprites.js';
+import { laranjaoClone, drawLaranjaoStatus, drawLaranjaoHeadline, drawLaranjaoBanish } from '../render/laranjao-art.js';
 import { drawFighter, drawBoxes } from '../render/mannequin.js';
-import { drawLivePhone, drawBanStamp, drawAnkleZone, drawHeadline, drawFired, drawGoldArmor, drawWings } from '../render/boss-art.js';
+import { drawLivePhone, drawBanStamp, drawAnkleZone, drawFired, drawWings } from '../render/boss-art.js';
 import { drawPavanassiStatus } from '../render/pavanassi-art.js';
 import { drawFujaoStatus } from '../render/fujao-art.js';
 import { drawPaiStatus } from '../render/pai-fujao-art.js';
@@ -593,15 +594,19 @@ export function createApp(canvas, devices, opts = {}) {
     for (const e of st.ents) {
       if (e.kind !== 'clone') continue;
       const owner = st.f[e.owner];
-      drawFighter(c, { ...owner, x: e.x, ghost: true }, app.frame + 7);
-      drawHeadline(c, e.x, SYS.GROUND_Y - 560, e.headline);
+      if (e.dead || owner.status.banished > 0) continue;
+      const clone = laranjaoClone(owner, e, app.frame);
+      drawLaranjaoStatus(c, clone.fighter, app.frame, 'back');
+      drawFighter(c, clone.fighter, clone.frame);
+      drawLaranjaoStatus(c, clone.fighter, app.frame, 'front');
+      drawLaranjaoHeadline(c, clone.fighter, e.headline, app.frame);
     }
     for (const f of order) {
       if (f.status.banished > 0) {
-        drawFired(c, f, app.frame);
+        if (!st.f.some(o => o.ch.id === 'laranjao') || !drawLaranjaoBanish(c, f)) drawFired(c, f, app.frame);
         continue;
       }
-      if (f.ch.id === 'laranjao') drawGoldArmor(c, f, app.frame);
+      drawLaranjaoStatus(c, f, app.frame, 'back');
       if (f.ch.id === 'djabo' && f.ch.form === 2) drawWings(c, f, app.frame);
       const absorb = fx.parts.find(p => p.k === 'absorb' && p.side === f.side);
       c.save();
@@ -620,7 +625,8 @@ export function createApp(canvas, devices, opts = {}) {
       drawPavanassiStatus(c, f, app.frame);
       drawFujaoStatus(c, f, app.frame);
       drawPaiStatus(c, f, app.frame, 'front');
-      if (f.ch.id === 'laranjao' && f.res.headline && st.ents.some((e) => e.kind === 'clone' && e.owner === f.side)) drawHeadline(c, f.x, SYS.GROUND_Y - f.y - 560, f.res.headline);
+      drawLaranjaoStatus(c, f, app.frame, 'front');
+      if (f.ch.id === 'laranjao' && f.res.headline && st.ents.some((e) => e.kind === 'clone' && e.owner === f.side)) drawLaranjaoHeadline(c, f, f.res.headline, app.frame);
       if (absorb && absorb.t / absorb.dur > .35) {
         c.translate(f.x, SYS.GROUND_Y - f.y);
         c.scale(absorb.face,1);

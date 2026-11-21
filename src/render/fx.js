@@ -1,3 +1,4 @@
+import { syncLaranjaoFx, queueLaranjaoEvent, drawLaranjaoParticle, drawLaranjaoEntity } from './laranjao-art.js';
 import { chupetinhaEventArt, drawChupetinhaEntity, drawChupetinhaParticle } from './chupetinha-art.js';
 import { paiEventArt, drawPaiEntity, drawPaiParticle } from './pai-fujao-art.js';
 import { drawZanataParticle } from './zanata-art.js';
@@ -32,9 +33,11 @@ function dust(fx, x, n = 6, pow = 1) {
 
 /** Consome os eventos do quadro. `names` traz os nomes dos lutadores para os avisos. */
 export function fxEvents(fx, st) {
+  syncLaranjaoFx(fx, st);
   for (const e of st.events) {
     const sy = GY - (e.y || 0);
     const actor = st.f[e.side];
+    queueLaranjaoEvent(fx, e, st);
     const fujaoArt = fujaoEventArt(e, st);
     if (fujaoArt && !fx.parts.some(p => p.id === 'fujao-fx' && p.name === fujaoArt.name && p.t === 0 && p.x === fujaoArt.x)) fx.parts.push({ k: 'sprite', id: 'fujao-fx', ...fujaoArt, t: 0 });
     for (const art of paiEventArt(e, st)) fx.parts.push({ k: 'pai-fujao', ...art, t: 0 });
@@ -114,7 +117,16 @@ export function fxEvents(fx, st) {
       case 'canvas': fx.parts.push({ k: 'canvas', x: e.x, t: 0, dur: 70 }); fx.flash = 0.5; break;
       case 'slip': pop(fx, 'ESCORREGOU!', e.x, GY - 500, '#ffd24a', 50, 60); dust(fx, e.x, 6); break;
       case 'dazzle': fx.parts.push({ k: 'spark', x: e.x, y: GY - 400, r: 60, t: 0, dur: 20, color: '#fff', rot: 0 }); break;
-      case 'pop': pop(fx, e.str, e.x, GY - (e.y || 520), e.color || '#fff', e.size || 50, e.dur || 60); break;
+      case 'pop': {
+        const owner = e.str === 'FAKE NEWS!' || e.str?.startsWith('TARIFA SUPREMA!') ? st.f.find(f => f.ch?.id === 'laranjao' && f.side === e.side) : null;
+        const copies = owner ? (st.ents || []).filter(c => c.kind === 'clone' && !c.dead && c.owner === owner.side) : [];
+        // Native swap/collection FX and identical pips already signal these events
+        // on every candidate. A second pop would cover the dynamic claim plaques.
+        if (owner && copies.length) break;
+        const targets = [e.x];
+        for (const x of targets) pop(fx, e.str, x, GY - (e.y || 520), e.color || '#fff', e.size || 50, e.dur || 60);
+        break;
+      }
       case 'dizzy': pop(fx, 'TONTO!', e.x, GY - 560, '#ffe14a', 70, 80); break;
       case 'pushblock': fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 120, t: 0, dur: 16, color: '#35d6c0' }); pop(fx, 'EMPURRÃO!', e.x, sy - 130, '#35d6c0', 44); break;
       case 'grab': if (!['ryuchi','zanata'].includes(actor?.ch.id)) fx.parts.push({ k: 'ring', x: e.x, y: sy, r: 50, t: 0, dur: 10, color: '#fff' }); break;
@@ -211,6 +223,7 @@ export function drawEntities(c, st) {
       c.restore();
       continue; // as cópias são desenhadas junto com os lutadores (src/ui/app.js)
     }
+    if (drawLaranjaoEntity(c, e, owner?.ch?.id)) { c.restore(); continue; }
     if (e.kind === 'tuite') {
       drawTweet(c, x, y, e.dir, st.frame);
       c.restore();
@@ -411,6 +424,7 @@ export function fxDrawFront(c, fx, st) {
   for (const p of fx.parts) {
     const t = p.t / p.dur;
     if (p.k === 'absorb') continue;
+    if (p.k === 'laranjao') { drawLaranjaoParticle(c, p, st); continue; }
     if (p.k === 'pai-fujao') { drawPaiParticle(c, p, st); continue; }
     if (p.k === 'sprite' && p.id === 'pavanassi-fx') { drawPavanassiParticle(c,p); continue; }
     if (p.k === 'sprite' && p.id === 'fujao-fx') { drawFujaoParticle(c,p); continue; }

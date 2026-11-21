@@ -14,7 +14,9 @@
     "art:zanata": "node tools/import-zanata.mjs && node tools/zanata-preview.mjs",
     "test:zanata": "npm run build && node tools/smoke-zanata.mjs",
     "test:pavanassi": "npm run build && node tools/smoke-pavanassi.mjs",
-    "test:fujao": "npm run build && node tools/smoke-fujao.mjs"
+    "test:fujao": "npm run build && node tools/smoke-fujao.mjs",
+    "art:laranjao": "node tools/import-laranjao.mjs && node tools/laranjao-preview.mjs",
+    "test:laranjao": "npm run build && node tools/smoke-laranjao.mjs"
   },
   "repository": {
     "type": "git",

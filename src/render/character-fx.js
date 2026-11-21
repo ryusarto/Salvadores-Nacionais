@@ -1,3 +1,4 @@
+import { drawLaranjaoAttack } from './laranjao-art.js';
 import { drawEffect } from './sprites.js';
 import { drawPavanassiAttack } from './pavanassi-art.js';
 import { drawFujaoAttack } from './fujao-art.js';
@@ -6,6 +7,7 @@ import { drawPaiAttack } from './pai-fujao-art.js';
 // Pure presentation: hitboxes, damage and movement remain in the simulation.
 export function drawCharacterFx(c, f) {
   if (f.state !== 'attack') return false;
+  if (f.ch.id === 'laranjao') return drawLaranjaoAttack(c, f);
   if (f.ch.id === 'fujao') return drawFujaoAttack(c, f);
   if (f.ch.id === 'pavanassi') return drawPavanassiAttack(c, f);
   if (f.ch.id === 'pai-fujao') return drawPaiAttack(c, f);

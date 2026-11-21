@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-20",
+  "reviewer": "agente independente de revisão de jogos",
+  "status": "approved-for-reviewed-scope",
+  "scope": [
+    "cobertura de estados, movimentos e efeitos",
+    "escala física das fontes compactas regeneradas",
+    "transparência das correções de throw e Fake News",
+    "mapeamento temporal e separação entre retorno e pouso"
+  ],
+  "timingTests": {
+    "passed": 3,
+    "moveVariants": 21
+  },
+  "findingsResolved": [
+    "zoom de poses compactas",
+    "matte em duas fontes de corpo",
+    "adaptador de timing explícito",
+    "encaixe da muralha120x640",
+    "retorno de banimento separado do pouso",
+    "separação entre calibração física e encaixe na célula"
+  ],
+  "limitations": [
+    "a revisão independente não executou o Laranjão no jogo",
+    "a exportação final tem verificação automatizada separada em validacao.json"
+  ]
+}

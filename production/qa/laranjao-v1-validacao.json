@@ -1,0 +1,130 @@
+{
+  "passed": true,
+  "scenes": 80,
+  "checks": {
+    "inventory": {
+      "laranjao": 40,
+      "laranjao-fx": 24,
+      "fujao": 42,
+      "fujao-esquerda": 42,
+      "pai-fujao": 40,
+      "chupetinha": 41
+    },
+    "5S": {
+      "events": [
+        "fakeNews",
+        "pop"
+      ],
+      "kinds": [
+        "clone"
+      ],
+      "names": [
+        "clone-surgir",
+        "fake-news-troca"
+      ]
+    },
+    "2S": {
+      "events": [
+        "spawn"
+      ],
+      "kinds": [
+        "tuite"
+      ],
+      "names": [
+        "clone-romper"
+      ]
+    },
+    "2S-turbo": {
+      "events": [
+        "spawn",
+        "spawn"
+      ],
+      "kinds": [
+        "tuite"
+      ],
+      "names": []
+    },
+    "6S": {
+      "events": [
+        "hit"
+      ],
+      "kinds": [],
+      "names": [
+        "impacto"
+      ]
+    },
+    "6S-turbo": {
+      "events": [
+        "hit"
+      ],
+      "kinds": [],
+      "names": [
+        "impacto"
+      ]
+    },
+    "4S": {
+      "events": [
+        "hit"
+      ],
+      "kinds": [],
+      "names": [
+        "impacto"
+      ]
+    },
+    "SA1": {
+      "events": [
+        "spawn"
+      ],
+      "kinds": [
+        "muralha"
+      ],
+      "names": []
+    },
+    "SA3": {
+      "events": [
+        "banish",
+        "hit"
+      ],
+      "kinds": [],
+      "names": [
+        "muralha-destruir",
+        "impacto"
+      ]
+    },
+    "return": {
+      "returned": true,
+      "landed": true,
+      "early": false,
+      "airFrames": 23
+    },
+    "decoded": 64
+  },
+  "errors": [],
+  "date": "2026-11-21T02:07:16.974Z",
+  "focusedTests": {
+    "passed": 15,
+    "failed": 0
+  },
+  "campaign": {
+    "games": 56,
+    "unfinished": 0
+  },
+  "generalBrowser": "passed: desktop menus, campaign entry, full rival selector, touch tools, orientation pause, settings persistence",
+  "independentReview": {
+    "status": "approved-static-and-automated",
+    "seedReproductions": 20,
+    "findingsResolved": [
+      "native effects identical on all candidates",
+      "duplicate activation/tariff captions do not cover the dynamic claim plaques"
+    ]
+  },
+  "visualReview": [
+    "native body and scale",
+    "Fake News headlines, armor and shadow clue",
+    "Tarifaco and Veto contacts",
+    "six wall HP states and destruction"
+  ],
+  "limitations": [
+    "No human balance playtest"
+  ]
+}

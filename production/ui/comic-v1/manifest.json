@@ -266,18 +266,18 @@
       "width": 768,
       "height": 1024,
       "alpha": true,
-      "sha256": "12755bd9def6d89d2304a392d7b69e716152d7e73d18b923e8527aae00471161",
-      "bytes": 18670,
-      "provisional": true
+      "sha256": "bceb16f862137cb4be5367f177a2fe53bac4cc5ecf460809d89edbecaece5997",
+      "bytes": 819556,
+      "provisional": false
     },
     "icon-laranjao": {
       "path": "icons/laranjao.webp",
       "width": 256,
       "height": 256,
       "alpha": true,
-      "sha256": "cddd44d619de1805ec41fd6dc1d390621ad3be8cb0b73048ed2b1f61646443fa",
-      "bytes": 4198,
-      "provisional": true
+      "sha256": "d62a9791da20c0b3fcc834173d1cdaf85c4aa378554ac00a8cafcac57bd19f45",
+      "bytes": 77156,
+      "provisional": false
     },
     "portrait-djabo": {
       "path": "portraits/djabo.webp",
