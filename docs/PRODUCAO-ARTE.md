@@ -120,3 +120,7 @@ prompts e SHA-256. O render acompanha os contatos dos supers, as duas cercas
 do turbo, a integridade das barreiras e a reação à Pergunta. Regras e colisões
 permanecem no motor. [Inventário e validação](PAVANASSI-ARTE-V1.md) e
 [galeria dos dois sentidos](../production/qa/pavanassi-v1.html).
+
+## Laranjão v1 entregue
+
+O chefe do capítulo 6 tem 40 animações de corpo e 24 sequências de efeitos, todas com seis quadros: 384 desenhos integrados. Fake News, Tarifa Suprema, Tuitada, Tarifaço, Veto, muralha com seis estados e banimento com retorno até o pouso usam os atlas aprovados. Retrato e ícone também foram atualizados. [Contrato e validação](LARANJAO-ARTE-V1.md) e [galeria](../production/qa/laranjao-v1.html).

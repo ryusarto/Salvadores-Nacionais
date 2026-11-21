@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "method": "Funções reais do adaptador nativo; três estados do collider120x640. Não depende de mestres ausentes.",
+  "rows": [
+    {
+      "hp": 6,
+      "asset": "muralha-erguida",
+      "index": 2,
+      "actual": [
+        1540,
+        290,
+        120,
+        639.9999999999999
+      ],
+      "expected": [
+        1540,
+        290,
+        120,
+        640
+      ]
+    },
+    {
+      "hp": 3,
+      "asset": "muralha-danos",
+      "index": 3,
+      "actual": [
+        1540,
+        290,
+        119.99999999999999,
+        640
+      ],
+      "expected": [
+        1540,
+        290,
+        120,
+        640
+      ]
+    },
+    {
+      "hp": 1,
+      "asset": "muralha-danos",
+      "index": 5,
+      "actual": [
+        1540,
+        290,
+        120,
+        640
+      ],
+      "expected": [
+        1540,
+        290,
+        120,
+        640
+      ]
+    }
+  ]
+}

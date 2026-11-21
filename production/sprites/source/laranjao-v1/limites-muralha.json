@@ -1,0 +1,401 @@
+{
+  "cell": [
+    500,
+    500
+  ],
+  "collider": [
+    120,
+    640
+  ],
+  "note": "Limites do corpo denso, excluindo linhas finas acima. Desenhar a célula inteira com transformação que mapeia solidRect ao collider; não cortar as linhas externas.",
+  "destinationFormula": {
+    "scaleX": "entity.w / rect.w",
+    "scaleY": "entity.h / rect.h",
+    "left": "entity.x - entity.w/2 - rect.x*scaleX",
+    "top": "GROUND_Y - entity.y - entity.h - rect.y*scaleY",
+    "width": "500*scaleX",
+    "height": "500*scaleY"
+  },
+  "records": {
+    "muralha-queda": {
+      "mapping": "Usar solidRect do índice atual, incluindo desenho fora deste retângulo para manter linhas de velocidade.",
+      "frames": [
+        {
+          "index": 0,
+          "solidRect500": [
+            180,
+            125,
+            169,
+            327
+          ],
+          "solidRect768": [
+            276.48,
+            192,
+            259.584,
+            502.272
+          ]
+        },
+        {
+          "index": 1,
+          "solidRect500": [
+            161,
+            124,
+            176,
+            328
+          ],
+          "solidRect768": [
+            247.296,
+            190.464,
+            270.336,
+            503.808
+          ]
+        },
+        {
+          "index": 2,
+          "solidRect500": [
+            150,
+            124,
+            190,
+            328
+          ],
+          "solidRect768": [
+            230.4,
+            190.464,
+            291.84,
+            503.808
+          ]
+        },
+        {
+          "index": 3,
+          "solidRect500": [
+            174,
+            123,
+            174,
+            329
+          ],
+          "solidRect768": [
+            267.264,
+            188.928,
+            267.264,
+            505.344
+          ]
+        },
+        {
+          "index": 4,
+          "solidRect500": [
+            162,
+            124,
+            175,
+            328
+          ],
+          "solidRect768": [
+            248.832,
+            190.464,
+            268.8,
+            503.808
+          ]
+        },
+        {
+          "index": 5,
+          "solidRect500": [
+            158,
+            124,
+            175,
+            328
+          ],
+          "solidRect768": [
+            242.688,
+            190.464,
+            268.8,
+            503.808
+          ]
+        }
+      ]
+    },
+    "muralha-erguida": {
+      "mapping": "Usar solidRect do índice atual, incluindo desenho fora deste retângulo para manter linhas de velocidade.",
+      "frames": [
+        {
+          "index": 0,
+          "solidRect500": [
+            166,
+            90,
+            176,
+            328
+          ],
+          "solidRect768": [
+            254.976,
+            138.24,
+            270.336,
+            503.808
+          ]
+        },
+        {
+          "index": 1,
+          "solidRect500": [
+            166,
+            90,
+            176,
+            328
+          ],
+          "solidRect768": [
+            254.976,
+            138.24,
+            270.336,
+            503.808
+          ]
+        },
+        {
+          "index": 2,
+          "solidRect500": [
+            166,
+            90,
+            176,
+            328
+          ],
+          "solidRect768": [
+            254.976,
+            138.24,
+            270.336,
+            503.808
+          ]
+        },
+        {
+          "index": 3,
+          "solidRect500": [
+            167,
+            90,
+            175,
+            329
+          ],
+          "solidRect768": [
+            256.512,
+            138.24,
+            268.8,
+            505.344
+          ]
+        },
+        {
+          "index": 4,
+          "solidRect500": [
+            167,
+            90,
+            175,
+            329
+          ],
+          "solidRect768": [
+            256.512,
+            138.24,
+            268.8,
+            505.344
+          ]
+        },
+        {
+          "index": 5,
+          "solidRect500": [
+            167,
+            90,
+            175,
+            329
+          ],
+          "solidRect768": [
+            256.512,
+            138.24,
+            268.8,
+            505.344
+          ]
+        }
+      ]
+    },
+    "muralha-danos": {
+      "mapping": "Usar solidRect do índice atual, incluindo desenho fora deste retângulo para manter linhas de velocidade.",
+      "frames": [
+        {
+          "index": 0,
+          "solidRect500": [
+            179,
+            59,
+            197,
+            385
+          ],
+          "solidRect768": [
+            274.944,
+            90.624,
+            302.592,
+            591.36
+          ]
+        },
+        {
+          "index": 1,
+          "solidRect500": [
+            152,
+            59,
+            196,
+            385
+          ],
+          "solidRect768": [
+            233.472,
+            90.624,
+            301.056,
+            591.36
+          ]
+        },
+        {
+          "index": 2,
+          "solidRect500": [
+            124,
+            59,
+            196,
+            385
+          ],
+          "solidRect768": [
+            190.464,
+            90.624,
+            301.056,
+            591.36
+          ]
+        },
+        {
+          "index": 3,
+          "solidRect500": [
+            177,
+            58,
+            199,
+            386
+          ],
+          "solidRect768": [
+            271.872,
+            89.088,
+            305.664,
+            592.896
+          ]
+        },
+        {
+          "index": 4,
+          "solidRect500": [
+            148,
+            58,
+            202,
+            386
+          ],
+          "solidRect768": [
+            227.328,
+            89.088,
+            310.272,
+            592.896
+          ]
+        },
+        {
+          "index": 5,
+          "solidRect500": [
+            122,
+            58,
+            201,
+            386
+          ],
+          "solidRect768": [
+            187.392,
+            89.088,
+            308.736,
+            592.896
+          ]
+        }
+      ]
+    },
+    "muralha-destruir": {
+      "mapping": "Usar solidRect do índice0 para todos os índices; os destroços encolhem naturalmente.",
+      "frames": [
+        {
+          "index": 0,
+          "solidRect500": [
+            178,
+            124,
+            173,
+            328
+          ],
+          "solidRect768": [
+            273.408,
+            190.464,
+            265.728,
+            503.808
+          ]
+        },
+        {
+          "index": 1,
+          "solidRect500": [
+            150,
+            125,
+            203,
+            327
+          ],
+          "solidRect768": [
+            230.4,
+            192,
+            311.808,
+            502.272
+          ]
+        },
+        {
+          "index": 2,
+          "solidRect500": [
+            140,
+            156,
+            203,
+            296
+          ],
+          "solidRect768": [
+            215.04,
+            239.616,
+            311.808,
+            454.656
+          ]
+        },
+        {
+          "index": 3,
+          "solidRect500": [
+            154,
+            255,
+            197,
+            193
+          ],
+          "solidRect768": [
+            236.544,
+            391.68,
+            302.592,
+            296.448
+          ]
+        },
+        {
+          "index": 4,
+          "solidRect500": [
+            143,
+            389,
+            211,
+            51
+          ],
+          "solidRect768": [
+            219.648,
+            597.504,
+            324.096,
+            78.336
+          ]
+        },
+        {
+          "index": 5,
+          "solidRect500": [
+            144,
+            418,
+            201,
+            18
+          ],
+          "solidRect768": [
+            221.184,
+            642.048,
+            308.736,
+            27.648
+          ]
+        }
+      ]
+    }
+  }
+}

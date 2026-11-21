@@ -57,3 +57,7 @@ A nova revisão independente está em `production/qa/inferno-review-v2/final-rev
 O smoke em Versus carregou a arena preparada e exerceu o Inferno Nacional da primeira forma no core real. Nove arquivos de código e os seis áudios permanecem idênticos ao commit `5efa45d`; os 216 casos amplos, transformação e timings da primeira revisão foram reaproveitados por essa equivalência, sem alegar nova execução. A inspeção mobile do jogo capturou o Canvas interno; não certifica toda a interface touch. Sem playtest humano ou aparelho físico.
 
 A entrega revisada pode ser recriada após o commit com `python3 tools/package-inferno-delivery.py --repo CAMINHO_DO_REPOSITORIO --dest PASTA_DA_ENTREGA_V2`. O empacotador exige revisão aprovada, confere hashes da build/manifesto/assets e testa o CRC do ZIP. Os mestres humanos históricos são preservados, mas a fonte selecionada do coro é somente `source/generated/esqueletos-coro.png`.
+
+## Integração geral dos cenários
+
+As entregas standalone anteriores descritas acima preservam suas bases históricas. A integração geral posterior incorpora a main `ce1ae12`, com os menus e os kits atuais do Fujão, Pai do Fujão e Laranjão, sem alterar os 22 assets deste pack. O índice atual é comprovado contra o inventário Git completo, em vez de reutilizar o subconjunto antigo de 26 pacotes. Evidências da revisão dos sete cenários estão em `production/qa/scenarios-review/`; a verificação após a arte nova do Laranjão fica em `current/`.

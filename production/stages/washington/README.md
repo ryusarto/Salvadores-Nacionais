@@ -51,3 +51,7 @@ No Versus real, foram confirmados clones, muralha 6→3→1→quebra por projét
 A build local preserva o índice oficial de 26 pacotes/722 tiras; em checkout esparso pode ser reproduzida com `node tools/build-stage-release.mjs --stage=washington`, conforme opções do script. Os sprites ausentes na QA vieram da versão publicada com verificação de hash; o mapa novo foi servido localmente. O Laranjão conserva sua representação corporal da main: esta entrega produz cenário e muralha, não um kit novo do personagem.
 
 O áudio pode ser regenerado por `python3 tools/create-washington-audio-lite.py`, com FFmpeg disponível (`FFMPEG_PATH` opcional). Não houve publicação desta entrega de Washington; integração ao jogo local e revisão em navegador não equivalem a playtest humano ou teste em aparelho físico.
+
+## Integração com a arte atual do Laranjão
+
+A revisão geral incorpora a main `ce1ae12`, incluindo as 40 tiras corporais e os 24 FX nativos do Laranjão. Quando decodificada, a muralha nativa do personagem tem precedência, conforme essa integração; a peça `muralha-interativa` deste pack permanece como fallback visual do renderer. Ambas seguem a entidade e seus pontos de vida. Nenhuma muralha é pintada no fundo. A revisão atual de câmera, clones, sombra, armadura e desgaste está em `production/qa/scenarios-review/current/`; a revisão anterior em `washington-review/` é histórica.
