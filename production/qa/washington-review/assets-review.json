@@ -1,0 +1,698 @@
+{
+  "fontEvidence": {
+    "fontPresent": true,
+    "licensePresent": true,
+    "fontSHA256": "4160a7311de9342674cce9160cde9fcbb30f48190397d86ff1b70b455af65824",
+    "licenseMentionsOFL": true
+  },
+  "verdict": "approved-for-static-assets-scope",
+  "assets": 33,
+  "sourcePNGs": 12,
+  "stripsCount": 6,
+  "framesCount": 36,
+  "runtimeBytes": 6097354,
+  "manifestSHA256": "8baaef39b75eeabf8e34ad2e866e262cdb3c7f1673de7a306000f4dd21bfb486",
+  "interactive": [
+    "muralha-interativa"
+  ],
+  "anchors": {
+    "fountainNozzle": {
+      "x": 1900,
+      "y": 692.0208333333334
+    },
+    "fountainBase": {
+      "x": 1900,
+      "y": 826
+    },
+    "communityTable": {
+      "x": 400,
+      "y": 688
+    },
+    "fightFeet": {
+      "x": 1300,
+      "y": 930
+    }
+  },
+  "world": {
+    "width": 2600,
+    "height": 1080,
+    "viewWidth": 1920,
+    "cameraMax": 680,
+    "feetY": 930,
+    "groundTopY": 826
+  },
+  "strips": {
+    "bandeira-mastro-vento": {
+      "frames": [
+        {
+          "bounds": [
+            104,
+            32,
+            412,
+            480
+          ],
+          "opaqueBounds": [
+            105,
+            33,
+            411,
+            480
+          ],
+          "baseCenter": 160,
+          "edgePixels": 0,
+          "rgbaSHA256": "b381c71d3ff912e0850ec6e077303c020492c1971de9715da49d93bdb359a81f"
+        },
+        {
+          "bounds": [
+            105,
+            33,
+            431,
+            481
+          ],
+          "opaqueBounds": [
+            106,
+            33,
+            430,
+            480
+          ],
+          "baseCenter": 160.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "68f070f7fa9eb0ed9949e0355dbf918adfabb6f1499e6f671946261099f81943"
+        },
+        {
+          "bounds": [
+            105,
+            33,
+            438,
+            481
+          ],
+          "opaqueBounds": [
+            106,
+            34,
+            436,
+            480
+          ],
+          "baseCenter": 160.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "58ef4edaa7d98b1f1c475f4232b9050ffbcb033dee1eca9f1dfaf6e991beb523"
+        },
+        {
+          "bounds": [
+            105,
+            32,
+            430,
+            480
+          ],
+          "opaqueBounds": [
+            106,
+            33,
+            429,
+            480
+          ],
+          "baseCenter": 160.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "ae9e5d055f60f9ee81699fea204a04e1159de680cfa979316147070281b752c8"
+        },
+        {
+          "bounds": [
+            105,
+            32,
+            422,
+            480
+          ],
+          "opaqueBounds": [
+            106,
+            32,
+            421,
+            480
+          ],
+          "baseCenter": 160.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "c45df0e6ba91da86d8626709b4b4b5a14ade4736aa5a6c976370c4cd29fb5f62"
+        },
+        {
+          "bounds": [
+            105,
+            32,
+            417,
+            480
+          ],
+          "opaqueBounds": [
+            106,
+            33,
+            416,
+            480
+          ],
+          "baseCenter": 160.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "a74542fd49453eb8774d074f2ac53e9b1428c4f93262925058b0d37f8b48958e"
+        }
+      ],
+      "registration": "fixed-mast-base",
+      "pivot": [
+        160,
+        480
+      ],
+      "source": "source/generated/bandeira-mastro-vento.png"
+    },
+    "jatos-chafariz": {
+      "frames": [
+        {
+          "bounds": [
+            46,
+            108,
+            452,
+            481
+          ],
+          "opaqueBounds": [
+            47,
+            109,
+            451,
+            480
+          ],
+          "baseCenter": 249,
+          "edgePixels": 0,
+          "rgbaSHA256": "6ba321b01a090ac07544a4e1b3c5b4e2e3f4a4d499fb62bc1a76daa803d21be2"
+        },
+        {
+          "bounds": [
+            36,
+            68,
+            464,
+            482
+          ],
+          "opaqueBounds": [
+            37,
+            70,
+            464,
+            480
+          ],
+          "baseCenter": 250.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "0d2b948e3cadce32ced263b6cbd02e64be3a3d70f8a3cfc4ae006bb0321e916a"
+        },
+        {
+          "bounds": [
+            31,
+            55,
+            469,
+            482
+          ],
+          "opaqueBounds": [
+            32,
+            57,
+            469,
+            480
+          ],
+          "baseCenter": 250.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "d0a37de2188eb5efef31a6f9cbf9769aca589b89d54c8cfdf0f4dcac5b03d0cb"
+        },
+        {
+          "bounds": [
+            30,
+            55,
+            471,
+            482
+          ],
+          "opaqueBounds": [
+            31,
+            57,
+            470,
+            480
+          ],
+          "baseCenter": 250.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "683948d1bd6007652675e9efc8d0d229a43cf267cb4602912438e635d1dc81cf"
+        },
+        {
+          "bounds": [
+            34,
+            73,
+            466,
+            482
+          ],
+          "opaqueBounds": [
+            35,
+            74,
+            465,
+            480
+          ],
+          "baseCenter": 250,
+          "edgePixels": 0,
+          "rgbaSHA256": "624886fb005544886e271a5fd81ae71179fad813d8b3a15eddb56995792cce13"
+        },
+        {
+          "bounds": [
+            41,
+            89,
+            460,
+            482
+          ],
+          "opaqueBounds": [
+            41,
+            90,
+            459,
+            480
+          ],
+          "baseCenter": 250,
+          "edgePixels": 0,
+          "rgbaSHA256": "4402121c785f6d9cac0415667f870d7ab8db7ee9b9ae56832654f61e34019bce"
+        }
+      ],
+      "registration": "fixed-water-origin",
+      "pivot": [
+        250,
+        480
+      ],
+      "source": "source/generated/jatos-chafariz.png"
+    },
+    "npc-voluntario": {
+      "frames": [
+        {
+          "bounds": [
+            164,
+            5,
+            351,
+            484
+          ],
+          "opaqueBounds": [
+            165,
+            7,
+            350,
+            483
+          ],
+          "baseCenter": 254,
+          "edgePixels": 0,
+          "rgbaSHA256": "fa8cc882a5760d692547b6791a9e59f369f1dee3254a6301601a760b1e6072c9"
+        },
+        {
+          "bounds": [
+            133,
+            21,
+            376,
+            484
+          ],
+          "opaqueBounds": [
+            134,
+            22,
+            376,
+            483
+          ],
+          "baseCenter": 229,
+          "edgePixels": 0,
+          "rgbaSHA256": "48364c0aef14a1ffd06ab80e83030fb887bf8b2e84d853ec5d9f1658c080435a"
+        },
+        {
+          "bounds": [
+            113,
+            62,
+            400,
+            484
+          ],
+          "opaqueBounds": [
+            114,
+            63,
+            399,
+            483
+          ],
+          "baseCenter": 213.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "b733f03a5c7a7a699df8c0cb35213a96ac29aaedda1112fb3c36d497af46563f"
+        },
+        {
+          "bounds": [
+            152,
+            15,
+            410,
+            483
+          ],
+          "opaqueBounds": [
+            153,
+            16,
+            409,
+            482
+          ],
+          "baseCenter": 243.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "6061002a6e59a6872cb702e600780c5807c289b71b2d39d8fff1a8f2ff1deb58"
+        },
+        {
+          "bounds": [
+            130,
+            5,
+            424,
+            483
+          ],
+          "opaqueBounds": [
+            131,
+            6,
+            423,
+            482
+          ],
+          "baseCenter": 225,
+          "edgePixels": 0,
+          "rgbaSHA256": "ea17d2d50e96b761466fb3b16badef96968e039e1d9b57505418c4317b54471b"
+        },
+        {
+          "bounds": [
+            132,
+            6,
+            315,
+            483
+          ],
+          "opaqueBounds": [
+            133,
+            7,
+            314,
+            482
+          ],
+          "baseCenter": 224,
+          "edgePixels": 0,
+          "rgbaSHA256": "841d504365435a890085a53e090f6ac96c55bd3c6e1d056d2633af01af4cd795"
+        }
+      ]
+    },
+    "npc-publico-1": {
+      "frames": [
+        {
+          "bounds": [
+            191,
+            32,
+            345,
+            474
+          ],
+          "opaqueBounds": [
+            192,
+            33,
+            345,
+            474
+          ],
+          "baseCenter": 269,
+          "edgePixels": 0,
+          "rgbaSHA256": "ca3aad2b53d8f3a1ad10d6f70980005342982b73d6d4949f53fb70b98f7de60f"
+        },
+        {
+          "bounds": [
+            174,
+            45,
+            337,
+            474
+          ],
+          "opaqueBounds": [
+            174,
+            45,
+            336,
+            474
+          ],
+          "baseCenter": 249,
+          "edgePixels": 0,
+          "rgbaSHA256": "3e2568d8446e4011937a6abb29d3b1dafb4f4047accfa2b317299fec1130dc9c"
+        },
+        {
+          "bounds": [
+            146,
+            32,
+            322,
+            474
+          ],
+          "opaqueBounds": [
+            146,
+            33,
+            321,
+            474
+          ],
+          "baseCenter": 234,
+          "edgePixels": 0,
+          "rgbaSHA256": "f50978c3a2d5f6f3face593c5899e316938883fe19a91203e7fc19c2907f7cf6"
+        },
+        {
+          "bounds": [
+            187,
+            34,
+            348,
+            474
+          ],
+          "opaqueBounds": [
+            187,
+            34,
+            348,
+            473
+          ],
+          "baseCenter": 268,
+          "edgePixels": 0,
+          "rgbaSHA256": "5faaa69bf9aa3d7d2e66bb8b6d63d7cd087e7db6f77f0f5fe0beb4c37d6b4a43"
+        },
+        {
+          "bounds": [
+            149,
+            34,
+            333,
+            474
+          ],
+          "opaqueBounds": [
+            149,
+            35,
+            332,
+            473
+          ],
+          "baseCenter": 256,
+          "edgePixels": 0,
+          "rgbaSHA256": "c3fd3575418beab407cd5ee5420eb2d2e4f1393fe89da39e1beef0beb4fdd982"
+        },
+        {
+          "bounds": [
+            151,
+            33,
+            318,
+            474
+          ],
+          "opaqueBounds": [
+            151,
+            34,
+            317,
+            474
+          ],
+          "baseCenter": 243.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "092421c3c051c2bc3aef0f0c839e60d7212e78437887c1f75ee3f2b5aa3f4fb5"
+        }
+      ]
+    },
+    "npc-publico-2": {
+      "frames": [
+        {
+          "bounds": [
+            130,
+            12,
+            360,
+            491
+          ],
+          "opaqueBounds": [
+            131,
+            13,
+            359,
+            490
+          ],
+          "baseCenter": 229.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "95d4ce2156e561c93b61c05a1b86843a87658313e1e70d5b0684959a55cc39ae"
+        },
+        {
+          "bounds": [
+            131,
+            12,
+            421,
+            491
+          ],
+          "opaqueBounds": [
+            132,
+            13,
+            420,
+            490
+          ],
+          "baseCenter": 229.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "80b2022b71774fd214bf5a192c5aabb277919751e14e8acb18a04db1dc191f1e"
+        },
+        {
+          "bounds": [
+            131,
+            11,
+            423,
+            491
+          ],
+          "opaqueBounds": [
+            132,
+            12,
+            423,
+            490
+          ],
+          "baseCenter": 229.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "560fcccf161bdc233eaea7827101b23200d1c164fde98721b86233f7b095452d"
+        },
+        {
+          "bounds": [
+            131,
+            10,
+            411,
+            491
+          ],
+          "opaqueBounds": [
+            132,
+            12,
+            410,
+            490
+          ],
+          "baseCenter": 229.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "40f7085f411fdd5bd9986ff3884e3fd277ac56b5cb6a98f8ea04d8941d96e0cf"
+        },
+        {
+          "bounds": [
+            130,
+            11,
+            411,
+            491
+          ],
+          "opaqueBounds": [
+            131,
+            13,
+            410,
+            490
+          ],
+          "baseCenter": 229.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "2a9079d655f7f53ebce9a381f256288b19de804e9f817f29ebd19059ffa28fc9"
+        },
+        {
+          "bounds": [
+            131,
+            13,
+            382,
+            491
+          ],
+          "opaqueBounds": [
+            132,
+            15,
+            381,
+            490
+          ],
+          "baseCenter": 229.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "4fbf22fe5e0119a0e087d7f64215b10c61436c90123dd6832aa62e38337a794e"
+        }
+      ]
+    },
+    "gotas-agua": {
+      "frames": [
+        {
+          "bounds": [
+            135,
+            251,
+            356,
+            294
+          ],
+          "opaqueBounds": [
+            152,
+            252,
+            343,
+            293
+          ],
+          "baseCenter": 247.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "765200c22f4f0400bc05f5e4ea2032e423e673ceaabab575b818de27168a0b66"
+        },
+        {
+          "bounds": [
+            88,
+            250,
+            407,
+            302
+          ],
+          "opaqueBounds": [
+            106,
+            251,
+            389,
+            300
+          ],
+          "baseCenter": 247.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "e57aaa359de8968637fda682a996203b720acb3fa83dbcdb4ee4a07769a9219a"
+        },
+        {
+          "bounds": [
+            57,
+            243,
+            441,
+            304
+          ],
+          "opaqueBounds": [
+            81,
+            244,
+            422,
+            303
+          ],
+          "baseCenter": 251.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "d2dfabd141160c9eb945c1e0584da3cff8c1f247171d517b5e68d7f2c49421cc"
+        },
+        {
+          "bounds": [
+            53,
+            240,
+            449,
+            305
+          ],
+          "opaqueBounds": [
+            87,
+            242,
+            427,
+            303
+          ],
+          "baseCenter": 258.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "127d66a7b70af0748dc8e6a1aba64286c266584bf8eb20e9509fc5be49acf7d7"
+        },
+        {
+          "bounds": [
+            101,
+            242,
+            399,
+            302
+          ],
+          "opaqueBounds": [
+            155,
+            243,
+            358,
+            298
+          ],
+          "baseCenter": 256.5,
+          "edgePixels": 0,
+          "rgbaSHA256": "a29837770990c578804359db42484c9297c263bcfa86c54d92c6d4291ded78c8"
+        },
+        {
+          "bounds": [
+            153,
+            247,
+            365,
+            291
+          ],
+          "opaqueBounds": [
+            171,
+            248,
+            345,
+            289
+          ],
+          "baseCenter": 258,
+          "edgePixels": 0,
+          "rgbaSHA256": "0c61d9eca6cad8dc57b6f27d2d35871b64aa59883e625b6b91ca290d6e697966"
+        }
+      ]
+    }
+  },
+  "errors": [],
+  "limits": [
+    "Hashes/dimensions/crops/alpha registration; selected rendered visual inspection is reported separately."
+  ]
+}

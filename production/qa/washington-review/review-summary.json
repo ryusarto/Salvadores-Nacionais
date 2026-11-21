@@ -1,0 +1,187 @@
+{
+  "conclusao": "aprovado para o escopo testado",
+  "jogo": "Salvadores Nacionais",
+  "cenario": "06 — Washington / Laranjão",
+  "branch": "art/cenario-06-washington-laranjao-20261118",
+  "revisor": "th_revisor_jogos — revisão independente, sem edição de produção ou Git",
+  "buildSHA256": "8f04154ffa58d80a5691de3964005e1f891bf73e3a027913c1867707fe3c2d6f",
+  "manifestSHA256": "8baaef39b75eeabf8e34ad2e866e262cdb3c7f1673de7a306000f4dd21bfb486",
+  "rendererSHA256": "917136d8d31a2da37b383ff850a27d5073d693cf1829b84aeba5e4f92bb976a5",
+  "achadosPendentes": [],
+  "evidencias": {
+    "revisaoTecnica": "drawGoldWall usa prop opcional e mantém fallback completo, rise, posição/tamanho do core, opacidade do chamador, texto vivo e rachaduras por HP. Sem mudança de regras.",
+    "testes": {
+      "comando": "node --test tests/unit/washington-stage.test.js tests/unit/laranjao.test.js tests/unit/banheiros-stage.test.js tests/unit/merge-loading-regression.test.js",
+      "total": 15,
+      "aprovados": 15,
+      "falhas": 0
+    },
+    "assets": {
+      "runtime": 33,
+      "bytesRuntime": 6097354,
+      "mestresPNG": 12,
+      "tiras": 6,
+      "quadros": 36,
+      "integridade": "33 hashes e tamanhos conferidos;36 quadros contidos nos crops e sem conteúdo visível nas bordas.",
+      "apoios": "Bandeiras incluem mastros e bases físicas nos seis quadros, base opaca y480; água mantém origem fixa no chafariz, também base opaca y480. Bandeiras repetidas usam o mesmo asset e suas instâncias permanecem apoiadas.",
+      "fontes": {
+        "fontPresent": true,
+        "licensePresent": true,
+        "fontSHA256": "4160a7311de9342674cce9160cde9fcbb30f48190397d86ff1b70b455af65824",
+        "licenseMentionsOFL": true
+      }
+    },
+    "previa": {
+      "imagensDecodificadas": 27,
+      "cardsGaleria": 27,
+      "audioDecodificado": 6,
+      "cameras": [
+        0,
+        340,
+        680
+      ],
+      "poses": [
+        0,
+        15,
+        30,
+        45,
+        60,
+        75
+      ],
+      "controles": [
+        "pausa",
+        "avanço",
+        "objetos",
+        "FX",
+        "piso",
+        "efeitos reduzidos",
+        "galeria e isolamento",
+        "clones",
+        "muralha6/3/1HP",
+        "armadura3"
+      ],
+      "mobile": [
+        844,
+        390
+      ],
+      "sombra": {
+        "calls": [
+          {
+            "x": 1680,
+            "y": 936,
+            "rx": 105,
+            "ry": 16
+          }
+        ],
+        "realX": 1680,
+        "clones": [
+          1420,
+          1940
+        ]
+      },
+      "errosJSHTTPRede": 0
+    },
+    "jogo": {
+      "fluxo": "título → Versus → Belga → Laranjão → Washington",
+      "carregamentoSobDemanda": "Nenhum asset da arena antes da escolha do adversário;24 imagens em cena, prepared:true e seis buffers de áudio.",
+      "pausa": "core congelado",
+      "indiceOficial": "26 pacotes /722 strips",
+      "mecanicas": {
+        "clones": {
+          "created": 2,
+          "decoyAbsorbedAttack": true,
+          "remainingAfterHit": 1,
+          "realDamage": 0
+        },
+        "wall": {
+          "hp": 6,
+          "damaged": [
+            3,
+            1
+          ],
+          "broken": true,
+          "blocksJump": true
+        },
+        "armor": {
+          "max": 3,
+          "tax": 0.5,
+          "damage": [
+            1,
+            1,
+            1,
+            458
+          ],
+          "remaining": 0,
+          "fixture": "Super resource values3000→0 drive the actual core tax hook; no hook patched."
+        },
+        "banish": {
+          "frames": 120,
+          "hitMissWhileBanished": true,
+          "returnDamage": 1500
+        },
+        "fixtures": "Actual createMatch/step/applyHit/spawnEntity modules, real5S/SA1 moves and projectiles; explicit fighter/resource positions only, neutral inputs otherwise. createFx resets transient overlays for clear captures."
+      },
+      "sombra": {
+        "calls": [
+          {
+            "x": 900,
+            "y": 936,
+            "rx": 105,
+            "ry": 16
+          },
+          {
+            "x": 1240,
+            "y": 936,
+            "rx": 105,
+            "ry": 16
+          }
+        ],
+        "heroX": 900,
+        "realX": 1240,
+        "clones": [
+          1500,
+          1760
+        ]
+      },
+      "muralhaPintada": [
+        {
+          "url": "http://127.0.0.1:63314/production/stages/washington/props/muralha-interativa.webp?v=6050c4fed16e",
+          "args": [
+            0,
+            0,
+            337,
+            1024,
+            1120,
+            290,
+            120,
+            640
+          ]
+        }
+      ],
+      "errosJSHTTPRede": 0
+    },
+    "inspecaoVisual": {
+      "capturas": [
+        "camera-0.png",
+        "camera-340.png",
+        "clones-shadow.png",
+        "game-wall1.png"
+      ],
+      "observado": "Mastros com base no chão e tecido preso; jatos ligados ao chafariz; microfone em escala sobre a mesa; grupo comunitário lateral e placas MESAS ABERTAS/RAP CONTRA A FOME legíveis em Bangers. Corredor de combate livre. Sombra do Laranjão real legível no gramado, clones sem sombra. Muralha pintada com texto e rachaduras legíveis."
+    }
+  },
+  "metodoSombra": "Instrumentação apenas de observação da função Canvas ellipse, encaminhando o método nativo sem alterar o desenho. Prévia sem heróis registrou uma sombra no chefe real e zero nos clones; jogo registrou somente herói e chefe real. Confirmado também nas capturas.",
+  "relatorios": [
+    "assets-review.json",
+    "preview-review.json",
+    "game-review.json"
+  ],
+  "limites": [
+    "Build local não publicada; sprites oficiais ausentes foram servidos por proxy com verificação SHA. Arte da arena foi local.",
+    "Laranjão mantém a representação corporal/fallback existente na main; esta entrega produz cenário e prop da muralha.",
+    "Fixtures do core ajustam posições/recursos e usam createMatch/step/applyHit/spawnEntity reais; não alteram regras, dano, hitboxes ou tempos. Armadura foi observada com quedas de recurso3000→0 e o hook de tarifa real.",
+    "Dano mínimo1 em golpes anulados pela armadura é comportamento já existente do core.",
+    "Não houve playtest humano, aparelho físico ou certificação de desempenho.",
+    "A revisão não cobre produção do cenário07."
+  ]
+}

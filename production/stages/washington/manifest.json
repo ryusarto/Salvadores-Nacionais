@@ -1,0 +1,1020 @@
+{
+  "id": "washington",
+  "version": 1,
+  "status": "delivered-v1",
+  "groups": 33,
+  "world": {
+    "width": 2600,
+    "height": 1080,
+    "viewWidth": 1920,
+    "cameraMax": 680,
+    "feetY": 930,
+    "groundTopY": 826
+  },
+  "essential": [
+    "ceu-washington",
+    "palacio-branco",
+    "gramado",
+    "bandeira-mastro-vento"
+  ],
+  "interactive": [
+    "muralha-interativa"
+  ],
+  "layers": [
+    {
+      "asset": "ceu-washington",
+      "factor": 0,
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "asset": "gramado",
+      "x": -100,
+      "y": 730,
+      "width": 2900,
+      "height": 96,
+      "factor": 0.2
+    }
+  ],
+  "objects": [
+    {
+      "id": "obelisco-0",
+      "asset": "obelisco",
+      "x": 1510,
+      "y": 735,
+      "h": 590,
+      "factor": 0.15
+    },
+    {
+      "id": "palacio-branco-1",
+      "asset": "palacio-branco",
+      "x": 1300,
+      "y": 799,
+      "w": 1500,
+      "factor": 0.45
+    },
+    {
+      "id": "sebe-2",
+      "asset": "sebe",
+      "x": 80,
+      "y": 826,
+      "w": 510,
+      "h": 74,
+      "factor": 0.65
+    },
+    {
+      "id": "sebe-3",
+      "asset": "sebe",
+      "x": 570,
+      "y": 826,
+      "w": 510,
+      "h": 74,
+      "factor": 0.65
+    },
+    {
+      "id": "sebe-4",
+      "asset": "sebe",
+      "x": 1060,
+      "y": 826,
+      "w": 510,
+      "h": 74,
+      "factor": 0.65
+    },
+    {
+      "id": "sebe-5",
+      "asset": "sebe",
+      "x": 1550,
+      "y": 826,
+      "w": 510,
+      "h": 74,
+      "factor": 0.65
+    },
+    {
+      "id": "sebe-6",
+      "asset": "sebe",
+      "x": 2040,
+      "y": 826,
+      "w": 510,
+      "h": 74,
+      "factor": 0.65
+    },
+    {
+      "id": "sebe-7",
+      "asset": "sebe",
+      "x": 2530,
+      "y": 826,
+      "w": 510,
+      "h": 74,
+      "factor": 0.65
+    },
+    {
+      "id": "cerca-baixa-8",
+      "asset": "cerca-baixa",
+      "x": 300,
+      "y": 826,
+      "w": 590,
+      "h": 105,
+      "factor": 0.72
+    },
+    {
+      "id": "cerca-baixa-9",
+      "asset": "cerca-baixa",
+      "x": 880,
+      "y": 826,
+      "w": 590,
+      "h": 105,
+      "factor": 0.72
+    },
+    {
+      "id": "cerca-baixa-10",
+      "asset": "cerca-baixa",
+      "x": 1460,
+      "y": 826,
+      "w": 590,
+      "h": 105,
+      "factor": 0.72
+    },
+    {
+      "id": "cerca-baixa-11",
+      "asset": "cerca-baixa",
+      "x": 2040,
+      "y": 826,
+      "w": 590,
+      "h": 105,
+      "factor": 0.72
+    },
+    {
+      "id": "cerca-baixa-12",
+      "asset": "cerca-baixa",
+      "x": 2620,
+      "y": 826,
+      "w": 590,
+      "h": 105,
+      "factor": 0.72
+    },
+    {
+      "id": "bandeira-mastro-vento-13",
+      "asset": "bandeira-mastro-vento",
+      "x": 373.71937639198217,
+      "y": 826,
+      "w": 342.1826280623608,
+      "h": 460,
+      "factor": 0.9,
+      "fps": 4,
+      "support": {
+        "type": "integral-mast-base",
+        "base": {
+          "x": 260,
+          "y": 826
+        },
+        "pivot": [
+          160,
+          480
+        ]
+      }
+    },
+    {
+      "id": "bandeira-mastro-vento-14",
+      "asset": "bandeira-mastro-vento",
+      "x": 1293.7193763919822,
+      "y": 826,
+      "w": 342.1826280623608,
+      "h": 460,
+      "factor": 0.9,
+      "fps": 4,
+      "support": {
+        "type": "integral-mast-base",
+        "base": {
+          "x": 1180,
+          "y": 826
+        },
+        "pivot": [
+          160,
+          480
+        ]
+      }
+    },
+    {
+      "id": "bandeira-mastro-vento-15",
+      "asset": "bandeira-mastro-vento",
+      "x": 2263.719376391982,
+      "y": 826,
+      "w": 342.1826280623608,
+      "h": 460,
+      "factor": 0.9,
+      "fps": 4,
+      "support": {
+        "type": "integral-mast-base",
+        "base": {
+          "x": 2150,
+          "y": 826
+        },
+        "pivot": [
+          160,
+          480
+        ]
+      }
+    },
+    {
+      "id": "tenda-apoio-16",
+      "asset": "tenda-apoio",
+      "x": 400,
+      "y": 826,
+      "w": 600,
+      "factor": 0.78
+    },
+    {
+      "id": "aviso-mesas-17",
+      "asset": "aviso-mesas",
+      "x": 295,
+      "y": 505,
+      "w": 190,
+      "h": 45,
+      "factor": 0.78
+    },
+    {
+      "id": "aviso-rap-18",
+      "asset": "aviso-rap",
+      "x": 515,
+      "y": 505,
+      "w": 220,
+      "h": 45,
+      "factor": 0.78
+    },
+    {
+      "id": "npc-voluntario-19",
+      "asset": "npc-voluntario",
+      "x": 380,
+      "y": 826,
+      "h": 235,
+      "factor": 0.78,
+      "fps": 4
+    },
+    {
+      "id": "mesa-comunitaria-20",
+      "asset": "mesa-comunitaria",
+      "x": 400,
+      "y": 826,
+      "w": 330,
+      "factor": 0.78
+    },
+    {
+      "id": "panela-21",
+      "asset": "panela",
+      "x": 320,
+      "y": 688,
+      "w": 76,
+      "factor": 0.78
+    },
+    {
+      "id": "marmitas-22",
+      "asset": "marmitas",
+      "x": 455,
+      "y": 688,
+      "w": 105,
+      "factor": 0.78
+    },
+    {
+      "id": "caixa-som-23",
+      "asset": "caixa-som",
+      "x": 535,
+      "y": 826,
+      "h": 195,
+      "factor": 0.78
+    },
+    {
+      "id": "microfone-24",
+      "asset": "microfone",
+      "x": 475,
+      "y": 688,
+      "w": 65,
+      "factor": 0.78
+    },
+    {
+      "id": "npc-publico-1-25",
+      "asset": "npc-publico-1",
+      "x": 720,
+      "y": 826,
+      "h": 230,
+      "factor": 0.78,
+      "fps": 4,
+      "phase": 1
+    },
+    {
+      "id": "npc-publico-2-26",
+      "asset": "npc-publico-2",
+      "x": 905,
+      "y": 826,
+      "h": 225,
+      "factor": 0.78,
+      "fps": 4,
+      "phase": 3
+    },
+    {
+      "id": "banco-27",
+      "asset": "banco",
+      "x": 2300,
+      "y": 826,
+      "w": 285,
+      "factor": 0.78
+    },
+    {
+      "id": "poste-jardim-28",
+      "asset": "poste-jardim",
+      "x": 45,
+      "y": 826,
+      "h": 490,
+      "factor": 0.78
+    },
+    {
+      "id": "poste-jardim-29",
+      "asset": "poste-jardim",
+      "x": 2530,
+      "y": 826,
+      "h": 490,
+      "factor": 0.78
+    },
+    {
+      "id": "chafariz-base-30",
+      "asset": "chafariz-base",
+      "x": 1900,
+      "y": 826,
+      "w": 290,
+      "factor": 0.78
+    },
+    {
+      "id": "jatos-chafariz-31",
+      "asset": "jatos-chafariz",
+      "x": 1900,
+      "y": 692.0208333333334,
+      "w": 140,
+      "factor": 0.78,
+      "fps": 4
+    },
+    {
+      "id": "gotas-agua-32",
+      "asset": "gotas-agua",
+      "x": 1900,
+      "y": 796,
+      "w": 215,
+      "h": 30,
+      "factor": 0.78,
+      "fps": 4,
+      "opacity": 0.45
+    }
+  ],
+  "ground": {
+    "asset": "gramado",
+    "projection": "flat"
+  },
+  "foreground": [],
+  "anchors": {
+    "fountainNozzle": {
+      "x": 1900,
+      "y": 692.0208333333334
+    },
+    "fountainBase": {
+      "x": 1900,
+      "y": 826
+    },
+    "communityTable": {
+      "x": 400,
+      "y": 688
+    },
+    "fightFeet": {
+      "x": 1300,
+      "y": 930
+    }
+  },
+  "assets": {
+    "ceu-washington": {
+      "path": "layers/ceu-washington.webp",
+      "kind": "layer",
+      "frames": 1,
+      "bytes": 460910,
+      "sha256": "6e575573ad5793198f5dc1f10e9b2bdeff9cb8423cdbaacb2af5907ae1fc174c",
+      "width": 1920,
+      "height": 1080,
+      "alpha": false,
+      "origin": "generated",
+      "source": "source/generated/ceu-washington.png",
+      "sourceCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ]
+    },
+    "palacio-branco": {
+      "path": "props/palacio-branco.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 335818,
+      "sha256": "61e5675fe87db465b4351174fb167b181d860f88ace5875bec15ad563a34b0c7",
+      "width": 1600,
+      "height": 511,
+      "alpha": true,
+      "origin": "generated",
+      "source": "source/generated/palacio-branco.png",
+      "sourceCrop": [
+        14,
+        22,
+        2144,
+        685
+      ]
+    },
+    "gramado": {
+      "path": "ground/gramado.webp",
+      "kind": "ground",
+      "frames": 1,
+      "bytes": 252036,
+      "sha256": "20a2b5cc95112baf0627b36c5a11352323655b47cc566a3c1179cabb8f871f82",
+      "width": 2600,
+      "height": 400,
+      "alpha": false,
+      "origin": "generated",
+      "source": "source/generated/gramado.png",
+      "sourceCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ]
+    },
+    "obelisco": {
+      "path": "props/obelisco.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 70752,
+      "sha256": "bc39d6bf3c8b711bf625f7c460f0accd2658878657dddad059a3e75036b61888",
+      "width": 197,
+      "height": 1000,
+      "alpha": true,
+      "origin": "generated",
+      "source": "source/generated/obelisco.png",
+      "sourceCrop": [
+        360,
+        12,
+        298,
+        1511
+      ]
+    },
+    "chafariz-base": {
+      "path": "props/chafariz-base.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 105384,
+      "sha256": "e6afc0269cd8624aeaad0dd55a90352f9ee5c11dffe40aab7afdce7aedf49e23",
+      "width": 768,
+      "height": 376,
+      "alpha": true,
+      "origin": "generated",
+      "source": "source/generated/chafariz-base.png",
+      "sourceCrop": [
+        38,
+        28,
+        1699,
+        831
+      ]
+    },
+    "bandeira-mastro-vento": {
+      "path": "animations/bandeira-mastro-vento.webp",
+      "kind": "animation",
+      "frames": 6,
+      "bytes": 293206,
+      "sha256": "d283f4a35b9006ad325009b5826dff49bec7c14c2c264b50b69397e274a91dcc",
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "origin": "generated",
+      "source": "source/generated/bandeira-mastro-vento.png",
+      "crop": [
+        104,
+        32,
+        334,
+        449
+      ],
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "pivot": [
+        160,
+        480
+      ],
+      "registrations": [
+        [
+          1,
+          18
+        ],
+        [
+          12,
+          19
+        ],
+        [
+          23,
+          19
+        ],
+        [
+          2,
+          18
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          23,
+          18
+        ]
+      ],
+      "fps": 4,
+      "registration": "fixed-mast-base"
+    },
+    "cerca-baixa": {
+      "path": "props/cerca-baixa.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 200860,
+      "sha256": "4c6baa88deaf27316502b425959a1179557670b44b4eb6e756c73c7a030181a8",
+      "width": 1400,
+      "height": 426,
+      "alpha": true,
+      "origin": "generated",
+      "source": "source/generated/cerca-baixa.png",
+      "sourceCrop": [
+        19,
+        41,
+        2135,
+        649
+      ]
+    },
+    "sebe": {
+      "path": "props/sebe.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 114572,
+      "sha256": "49400c83e8c3cb2165086422b0d962ad0fa3ecedb36c714991ac5845e79d0035",
+      "width": 900,
+      "height": 198,
+      "alpha": true,
+      "origin": "generated",
+      "source": "source/generated/sebe.png",
+      "sourceCrop": [
+        83,
+        143,
+        2006,
+        441
+      ]
+    },
+    "banco": {
+      "path": "props/banco.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 139448,
+      "sha256": "9009f48480761964300db5278488947b88d4a46064bde526624dab693d1659b5",
+      "width": 900,
+      "height": 385,
+      "alpha": true,
+      "origin": "generated",
+      "source": "source/generated/banco.png",
+      "sourceCrop": [
+        35,
+        113,
+        1704,
+        729
+      ]
+    },
+    "poste-jardim": {
+      "path": "props/poste-jardim.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 48030,
+      "sha256": "8f659562f364a6b4d379ca4ee262296895a27fe7ad90abe7a25fcb55a18cc97d",
+      "width": 173,
+      "height": 1024,
+      "alpha": true,
+      "origin": "generated",
+      "source": "source/generated/poste-jardim.png",
+      "sourceCrop": [
+        383,
+        14,
+        255,
+        1509
+      ]
+    },
+    "muralha-interativa": {
+      "path": "props/muralha-interativa.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 199908,
+      "sha256": "6050c4fed16e2def33b57f9936dc033ffaa341ec0380de21618f521d54e80b9d",
+      "width": 337,
+      "height": 1024,
+      "alpha": true,
+      "origin": "generated",
+      "source": "source/generated/muralha-interativa.png",
+      "sourceCrop": [
+        280,
+        79,
+        463,
+        1407
+      ]
+    },
+    "jatos-chafariz": {
+      "path": "fx/jatos-chafariz.webp",
+      "kind": "fx",
+      "frames": 6,
+      "bytes": 687630,
+      "sha256": "7a89ad2e1bd38328014f8d59a519a68ebbfa2db5db5ce9ca1c6e42fe38df32df",
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "origin": "generated",
+      "source": "source/generated/jatos-chafariz.png",
+      "cellWidth": 500,
+      "cellHeight": 500,
+      "crop": [
+        30,
+        55,
+        441,
+        427
+      ],
+      "frameBounds": [
+        [
+          46,
+          108,
+          452,
+          481
+        ],
+        [
+          36,
+          68,
+          464,
+          482
+        ],
+        [
+          31,
+          55,
+          469,
+          482
+        ],
+        [
+          30,
+          55,
+          471,
+          482
+        ],
+        [
+          34,
+          73,
+          466,
+          482
+        ],
+        [
+          41,
+          89,
+          460,
+          482
+        ]
+      ],
+      "pivot": [
+        250,
+        480
+      ],
+      "registrations": [
+        [
+          11,
+          35
+        ],
+        [
+          14,
+          36
+        ],
+        [
+          12,
+          36
+        ],
+        [
+          11,
+          34
+        ],
+        [
+          15,
+          34
+        ],
+        [
+          15,
+          34
+        ]
+      ],
+      "fps": 4,
+      "registration": "fixed-water-origin"
+    },
+    "mesa-comunitaria": {
+      "path": "props/mesa-comunitaria.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 48192,
+      "sha256": "6b84493c38688370542bafb0d365f91fa47ee8779bf801e5c601af6e3739474c",
+      "width": 512,
+      "height": 253,
+      "alpha": true,
+      "origin": "reused-palco",
+      "sourceManifest": "../palco/manifest.json",
+      "sourceAsset": "mesa-comida-1",
+      "sourcePath": "props/mesa-comida-1.webp",
+      "sourceSha256": "6b84493c38688370542bafb0d365f91fa47ee8779bf801e5c601af6e3739474c"
+    },
+    "panela": {
+      "path": "props/panela.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 71896,
+      "sha256": "9bb619f65fd9827afcdc9f4c63d7cb220bdfcb532559e64c17b3835b213038de",
+      "width": 512,
+      "height": 355,
+      "alpha": true,
+      "origin": "reused-palco",
+      "sourceManifest": "../palco/manifest.json",
+      "sourceAsset": "panela-1",
+      "sourcePath": "props/panela-1.webp",
+      "sourceSha256": "9bb619f65fd9827afcdc9f4c63d7cb220bdfcb532559e64c17b3835b213038de"
+    },
+    "marmitas": {
+      "path": "props/marmitas.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 72704,
+      "sha256": "4365545c73bded7128f534050048a5829eee91737495aa8dbe8af32d94e57a24",
+      "width": 512,
+      "height": 231,
+      "alpha": true,
+      "origin": "reused-palco",
+      "sourceManifest": "../palco/manifest.json",
+      "sourceAsset": "marmitas-1",
+      "sourcePath": "props/marmitas-1.webp",
+      "sourceSha256": "4365545c73bded7128f534050048a5829eee91737495aa8dbe8af32d94e57a24"
+    },
+    "microfone": {
+      "path": "props/microfone.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 58894,
+      "sha256": "6dee53fb05fe846a2f49810fb490df9a4465c836407ae27c31deda7eaaef5fdb",
+      "width": 512,
+      "height": 369,
+      "alpha": true,
+      "origin": "reused-palco",
+      "sourceManifest": "../palco/manifest.json",
+      "sourceAsset": "microfone-palco",
+      "sourcePath": "props/microfone-palco.webp",
+      "sourceSha256": "6dee53fb05fe846a2f49810fb490df9a4465c836407ae27c31deda7eaaef5fdb"
+    },
+    "caixa-som": {
+      "path": "props/caixa-som.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 61072,
+      "sha256": "2daffc645ca12b233b6598f1cbe136f1404a3864b5ee8e0ad835d439708ff4ba",
+      "width": 228,
+      "height": 512,
+      "alpha": true,
+      "origin": "reused-palco",
+      "sourceManifest": "../palco/manifest.json",
+      "sourceAsset": "torre-som-1",
+      "sourcePath": "props/torre-som-1.webp",
+      "sourceSha256": "2daffc645ca12b233b6598f1cbe136f1404a3864b5ee8e0ad835d439708ff4ba"
+    },
+    "tenda-apoio": {
+      "path": "props/tenda-apoio.webp",
+      "kind": "prop",
+      "frames": 1,
+      "bytes": 123426,
+      "sha256": "afb630047c385cc36bd87ec24bb619acbd5a62c8b90c66bfba4e13180e75aa98",
+      "width": 768,
+      "height": 616,
+      "alpha": true,
+      "origin": "reused-banheiros",
+      "sourceManifest": "../banheiros/manifest.json",
+      "sourceAsset": "tenda-servico",
+      "sourcePath": "props/tenda-servico.webp",
+      "sourceSha256": "afb630047c385cc36bd87ec24bb619acbd5a62c8b90c66bfba4e13180e75aa98"
+    },
+    "npc-voluntario": {
+      "path": "animations/npc-voluntario.webp",
+      "kind": "animation",
+      "frames": 6,
+      "bytes": 409726,
+      "sha256": "0393bd467cd8e57db987a8f67e720d4cc7734f8af6da2f95eef0cbb14d22d980",
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "origin": "reused-palco",
+      "sourceManifest": "../palco/manifest.json",
+      "sourceAsset": "npc-voluntario",
+      "sourcePath": "animations/npc-voluntario.webp",
+      "sourceSha256": "0393bd467cd8e57db987a8f67e720d4cc7734f8af6da2f95eef0cbb14d22d980",
+      "crop": [
+        113,
+        5,
+        311,
+        479
+      ],
+      "cellWidth": 500,
+      "cellHeight": 500
+    },
+    "npc-publico-1": {
+      "path": "animations/npc-publico-1.webp",
+      "kind": "animation",
+      "frames": 6,
+      "bytes": 190576,
+      "sha256": "7ba6da4e12e9067e1d7d02b79e8f3239112f51d2e380c0232258b95b8940e3b9",
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "origin": "reused-palco",
+      "sourceManifest": "../palco/manifest.json",
+      "sourceAsset": "npc-torcedor-1",
+      "sourcePath": "animations/npc-torcedor-1.webp",
+      "sourceSha256": "7ba6da4e12e9067e1d7d02b79e8f3239112f51d2e380c0232258b95b8940e3b9",
+      "crop": [
+        146,
+        32,
+        202,
+        442
+      ],
+      "cellWidth": 500,
+      "cellHeight": 500
+    },
+    "npc-publico-2": {
+      "path": "animations/npc-publico-2.webp",
+      "kind": "animation",
+      "frames": 6,
+      "bytes": 417326,
+      "sha256": "bfbfc5ad65d4498b9f9261055d78845813b16b9ab0481b8f89d3084875e935fa",
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "origin": "reused-palco",
+      "sourceManifest": "../palco/manifest.json",
+      "sourceAsset": "npc-torcedor-2",
+      "sourcePath": "animations/npc-torcedor-2.webp",
+      "sourceSha256": "bfbfc5ad65d4498b9f9261055d78845813b16b9ab0481b8f89d3084875e935fa",
+      "crop": [
+        130,
+        10,
+        293,
+        481
+      ],
+      "cellWidth": 500,
+      "cellHeight": 500
+    },
+    "gotas-agua": {
+      "path": "fx/gotas-agua.webp",
+      "kind": "fx",
+      "frames": 6,
+      "bytes": 71034,
+      "sha256": "73283648241498cfa90988435fb097900b3a6945efb948fdc350deff93f31efb",
+      "width": 3000,
+      "height": 500,
+      "alpha": true,
+      "origin": "reused-palco",
+      "sourceManifest": "../palco/manifest.json",
+      "sourceAsset": "agua-ondulacao",
+      "sourcePath": "animations/agua-ondulacao.webp",
+      "sourceSha256": "73283648241498cfa90988435fb097900b3a6945efb948fdc350deff93f31efb",
+      "crop": [
+        53,
+        240,
+        396,
+        65
+      ],
+      "cellWidth": 500,
+      "cellHeight": 500
+    },
+    "aviso-mesas": {
+      "path": "graphics/aviso-mesas.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "bytes": 5558,
+      "sha256": "524c566d79c110dbe307f070a55ced6cecf5dea35af963ea3cb72b7b766add75",
+      "width": 600,
+      "height": 140,
+      "alpha": false,
+      "origin": "typeset",
+      "text": "MESAS ABERTAS",
+      "font": "ui/Bangers-Regular.ttf"
+    },
+    "aviso-rap": {
+      "path": "graphics/aviso-rap.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "bytes": 6404,
+      "sha256": "c7129a05641149cd94e89954eb458441854d385e131a2698745e7f55f226badd",
+      "width": 700,
+      "height": 140,
+      "alpha": false,
+      "origin": "typeset",
+      "text": "RAP CONTRA A FOME",
+      "font": "ui/Bangers-Regular.ttf"
+    },
+    "titulo": {
+      "path": "ui/titulo.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "bytes": 12218,
+      "sha256": "78a6bd5d1f2a64090006362b263848dbe3bc2cd026a593fbaa33639057dcfb9b",
+      "width": 1400,
+      "height": 150,
+      "alpha": false,
+      "origin": "typeset",
+      "text": "WASHINGTON — A TURNÊ CONTRA A FOME",
+      "font": "ui/Bangers-Regular.ttf"
+    },
+    "trilha-intro": {
+      "path": "audio/trilha-intro.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 33710,
+      "sha256": "e1cad079c2de83c4c8866a92b1cc348fccbb40b3313405b37bbc62139f15a8f4",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "trilha-loop": {
+      "path": "audio/trilha-loop.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 249745,
+      "sha256": "131c4cf83fe6f9be43c8f288cb90f5d69f696827beee06340cddba71d09bb7dd",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "ambiente-gramado": {
+      "path": "audio/ambiente-gramado.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 152760,
+      "sha256": "f044620f3b850936bcb2465338d3690c6a0da5f467d758ae09e96563eaee126d",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "vento": {
+      "path": "audio/vento.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 153582,
+      "sha256": "593bc26679e2c66e75e2565796fd97f7012e61634bae509eee82ca1e9234720c",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "agua-chafariz": {
+      "path": "audio/agua-chafariz.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 166462,
+      "sha256": "f9b37bfccd579c76f7b5d2af6a17844d24f57080f44668f2a98ad8556483f34d",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "publico": {
+      "path": "audio/publico.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "bytes": 149857,
+      "sha256": "4c933936078a08965b3f3d232624808103ceb73d92722d4ad179e7186c0153d9",
+      "origin": "original-synthesis",
+      "sourceManifest": "audio/manifest.json"
+    },
+    "miniatura": {
+      "path": "ui/miniatura.webp",
+      "kind": "image",
+      "frames": 1,
+      "bytes": 158700,
+      "sha256": "0aa91c349816439db8f21ae261ccd0d0dd82a135daa67b93276ad4622dc97435",
+      "width": 960,
+      "height": 540,
+      "alpha": false,
+      "origin": "derived-composition"
+    },
+    "carregamento": {
+      "path": "ui/carregamento.webp",
+      "kind": "image",
+      "frames": 1,
+      "bytes": 574958,
+      "sha256": "a2a97e233ea527cc3b19c5c7eca4a73f2a8353b00a52abde84e51eda1be0513b",
+      "width": 1920,
+      "height": 1080,
+      "alpha": false,
+      "origin": "derived-composition"
+    }
+  },
+  "missing": [],
+  "notes": [
+    "Arena do capítulo06 em Washington. Cenário separado das entidades de gameplay.",
+    "O gramado não contém sombras pintadas de pessoas; o verdadeiro Laranjão mantém sua sombra dinâmica e os clones continuam sem sombra.",
+    "A muralha interativa não aparece no fundo: drawGoldWall usa o asset somente na entidade, preservando HP/rachaduras/dimensões e fallback.",
+    "Bandeiras incluem mastros, base e amarrações em todos os seis quadros.",
+    "Apoio comunitário mantém público, comida e som atrás da luta, sem novas colisões.",
+    "Mestres PNG e prompts preservados em source/. Reusos têm origem e hash por asset.",
+    "Áudio original e medições em audio/manifest.json."
+  ]
+}

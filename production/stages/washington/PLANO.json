@@ -1,0 +1,273 @@
+{
+  "chapter": 6,
+  "boss": "laranjao",
+  "stage": "washington",
+  "status": "delivered-v1",
+  "groups": [
+    {
+      "slug": "ceu-washington",
+      "path": "layers/ceu-washington.webp",
+      "kind": "layer",
+      "frames": 1,
+      "origin": "generated",
+      "status": "exportado"
+    },
+    {
+      "slug": "palacio-branco",
+      "path": "props/palacio-branco.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated",
+      "status": "exportado"
+    },
+    {
+      "slug": "gramado",
+      "path": "ground/gramado.webp",
+      "kind": "ground",
+      "frames": 1,
+      "origin": "generated",
+      "status": "exportado"
+    },
+    {
+      "slug": "obelisco",
+      "path": "props/obelisco.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated",
+      "status": "exportado"
+    },
+    {
+      "slug": "chafariz-base",
+      "path": "props/chafariz-base.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated",
+      "status": "exportado"
+    },
+    {
+      "slug": "bandeira-mastro-vento",
+      "path": "animations/bandeira-mastro-vento.webp",
+      "kind": "animation",
+      "frames": 6,
+      "origin": "generated",
+      "status": "exportado"
+    },
+    {
+      "slug": "cerca-baixa",
+      "path": "props/cerca-baixa.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated",
+      "status": "exportado"
+    },
+    {
+      "slug": "sebe",
+      "path": "props/sebe.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated",
+      "status": "exportado"
+    },
+    {
+      "slug": "banco",
+      "path": "props/banco.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated",
+      "status": "exportado"
+    },
+    {
+      "slug": "poste-jardim",
+      "path": "props/poste-jardim.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated",
+      "status": "exportado"
+    },
+    {
+      "slug": "muralha-interativa",
+      "path": "props/muralha-interativa.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "generated",
+      "status": "exportado"
+    },
+    {
+      "slug": "jatos-chafariz",
+      "path": "fx/jatos-chafariz.webp",
+      "kind": "fx",
+      "frames": 6,
+      "origin": "generated",
+      "status": "exportado"
+    },
+    {
+      "slug": "mesa-comunitaria",
+      "path": "props/mesa-comunitaria.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "reused-palco",
+      "status": "exportado"
+    },
+    {
+      "slug": "panela",
+      "path": "props/panela.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "reused-palco",
+      "status": "exportado"
+    },
+    {
+      "slug": "marmitas",
+      "path": "props/marmitas.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "reused-palco",
+      "status": "exportado"
+    },
+    {
+      "slug": "microfone",
+      "path": "props/microfone.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "reused-palco",
+      "status": "exportado"
+    },
+    {
+      "slug": "caixa-som",
+      "path": "props/caixa-som.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "reused-palco",
+      "status": "exportado"
+    },
+    {
+      "slug": "tenda-apoio",
+      "path": "props/tenda-apoio.webp",
+      "kind": "prop",
+      "frames": 1,
+      "origin": "reused-banheiros",
+      "status": "exportado"
+    },
+    {
+      "slug": "npc-voluntario",
+      "path": "animations/npc-voluntario.webp",
+      "kind": "animation",
+      "frames": 6,
+      "origin": "reused-palco",
+      "status": "exportado"
+    },
+    {
+      "slug": "npc-publico-1",
+      "path": "animations/npc-publico-1.webp",
+      "kind": "animation",
+      "frames": 6,
+      "origin": "reused-palco",
+      "status": "exportado"
+    },
+    {
+      "slug": "npc-publico-2",
+      "path": "animations/npc-publico-2.webp",
+      "kind": "animation",
+      "frames": 6,
+      "origin": "reused-palco",
+      "status": "exportado"
+    },
+    {
+      "slug": "gotas-agua",
+      "path": "fx/gotas-agua.webp",
+      "kind": "fx",
+      "frames": 6,
+      "origin": "reused-palco",
+      "status": "exportado"
+    },
+    {
+      "slug": "aviso-mesas",
+      "path": "graphics/aviso-mesas.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "origin": "typeset",
+      "status": "exportado"
+    },
+    {
+      "slug": "aviso-rap",
+      "path": "graphics/aviso-rap.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "origin": "typeset",
+      "status": "exportado"
+    },
+    {
+      "slug": "titulo",
+      "path": "ui/titulo.webp",
+      "kind": "graphic",
+      "frames": 1,
+      "origin": "typeset",
+      "status": "exportado"
+    },
+    {
+      "slug": "trilha-intro",
+      "path": "audio/trilha-intro.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis",
+      "status": "exportado"
+    },
+    {
+      "slug": "trilha-loop",
+      "path": "audio/trilha-loop.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis",
+      "status": "exportado"
+    },
+    {
+      "slug": "ambiente-gramado",
+      "path": "audio/ambiente-gramado.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis",
+      "status": "exportado"
+    },
+    {
+      "slug": "vento",
+      "path": "audio/vento.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis",
+      "status": "exportado"
+    },
+    {
+      "slug": "agua-chafariz",
+      "path": "audio/agua-chafariz.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis",
+      "status": "exportado"
+    },
+    {
+      "slug": "publico",
+      "path": "audio/publico.ogg",
+      "kind": "audio",
+      "frames": 1,
+      "origin": "original-synthesis",
+      "status": "exportado"
+    },
+    {
+      "slug": "miniatura",
+      "path": "ui/miniatura.webp",
+      "kind": "image",
+      "frames": 1,
+      "origin": "derived-composition",
+      "status": "exportado"
+    },
+    {
+      "slug": "carregamento",
+      "path": "ui/carregamento.webp",
+      "kind": "image",
+      "frames": 1,
+      "origin": "derived-composition",
+      "status": "exportado"
+    }
+  ],
+  "pending": []
+}

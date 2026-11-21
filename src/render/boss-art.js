@@ -445,20 +445,22 @@ export function drawGoldWall(c, e, gy) {
   c.translate(0, (1 - rise) * e.h);
   c.lineWidth = 6;
   c.strokeStyle = OUT;
-  const g = c.createLinearGradient(l, 0, l + e.w, 0);
-  g.addColorStop(0, '#b8862a');
-  g.addColorStop(0.5, '#f3d26a');
-  g.addColorStop(1, '#b8862a');
-  c.fillStyle = g;
-  c.fillRect(l, top, e.w, e.h);
-  c.strokeRect(l, top, e.w, e.h);
-  c.strokeStyle = 'rgba(90,60,10,.6)';
-  c.lineWidth = 3;
-  for (let y = top + 50; y < gy; y += 50) {
-    c.beginPath();
-    c.moveTo(l, y);
-    c.lineTo(l + e.w, y);
-    c.stroke();
+  if (!drawStageProp(c, 'washington', 'muralha-interativa', { x: e.x, y: gy, w: e.w, h: e.h })) {
+    const g = c.createLinearGradient(l, 0, l + e.w, 0);
+    g.addColorStop(0, '#b8862a');
+    g.addColorStop(0.5, '#f3d26a');
+    g.addColorStop(1, '#b8862a');
+    c.fillStyle = g;
+    c.fillRect(l, top, e.w, e.h);
+    c.strokeRect(l, top, e.w, e.h);
+    c.strokeStyle = 'rgba(90,60,10,.6)';
+    c.lineWidth = 3;
+    for (let y = top + 50; y < gy; y += 50) {
+      c.beginPath();
+      c.moveTo(l, y);
+      c.lineTo(l + e.w, y);
+      c.stroke();
+    }
   }
   c.fillStyle = OUT;
   c.font = "bold 30px Impact, 'Arial Black', sans-serif";

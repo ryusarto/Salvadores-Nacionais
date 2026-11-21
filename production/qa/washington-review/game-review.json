@@ -1,0 +1,127 @@
+{
+  "verdict": "approved-for-tested-runtime-scope",
+  "environment": {
+    "browser": "158.0.8127.37",
+    "desktop": [
+      1280,
+      720
+    ],
+    "mobile": [
+      844,
+      390
+    ],
+    "canvas": [
+      1920,
+      1080
+    ],
+    "build": "Local build with immutable SHA-checked official sprite proxy only for absent sprites. Washington artwork local; not deployed."
+  },
+  "buildSHA256": "8f04154ffa58d80a5691de3964005e1f891bf73e3a027913c1867707fe3c2d6f",
+  "inventory": {
+    "stage": {
+      "ready": true,
+      "loaded": 24,
+      "errors": [],
+      "prepared": true
+    },
+    "audio": {
+      "stage": "washington",
+      "available": true,
+      "active": true,
+      "muted": false,
+      "started": true,
+      "decoded": 6,
+      "gain": 0.6000000238418579,
+      "errors": []
+    },
+    "foe": "laranjao",
+    "packs": 26,
+    "strips": 722,
+    "hasLaranjaoSprites": false
+  },
+  "lazyTitle": "pass",
+  "lazySelection": "pass",
+  "pause": "pass",
+  "mechanics": {
+    "clones": {
+      "created": 2,
+      "decoyAbsorbedAttack": true,
+      "remainingAfterHit": 1,
+      "realDamage": 0
+    },
+    "wall": {
+      "hp": 6,
+      "damaged": [
+        3,
+        1
+      ],
+      "broken": true,
+      "blocksJump": true
+    },
+    "armor": {
+      "max": 3,
+      "tax": 0.5,
+      "damage": [
+        1,
+        1,
+        1,
+        458
+      ],
+      "remaining": 0,
+      "fixture": "Super resource values3000→0 drive the actual core tax hook; no hook patched."
+    },
+    "banish": {
+      "frames": 120,
+      "hitMissWhileBanished": true,
+      "returnDamage": 1500
+    },
+    "fixtures": "Actual createMatch/step/applyHit/spawnEntity modules, real5S/SA1 moves and projectiles; explicit fighter/resource positions only, neutral inputs otherwise. createFx resets transient overlays for clear captures."
+  },
+  "wallEvidence": [
+    {
+      "url": "http://127.0.0.1:63314/production/stages/washington/props/muralha-interativa.webp?v=6050c4fed16e",
+      "args": [
+        0,
+        0,
+        337,
+        1024,
+        1120,
+        290,
+        120,
+        640
+      ]
+    }
+  ],
+  "shadowEvidence": {
+    "calls": [
+      {
+        "x": 900,
+        "y": 936,
+        "rx": 105,
+        "ry": 16
+      },
+      {
+        "x": 1240,
+        "y": 936,
+        "rx": 105,
+        "ry": 16
+      }
+    ],
+    "heroX": 900,
+    "realX": 1240,
+    "clones": [
+      1500,
+      1760
+    ]
+  },
+  "shadowMethod": "Read-only native ellipse call instrumentation; only hero and real boss issue floor-shadow ellipses, two clone positions do not.",
+  "errors": [],
+  "failed": [],
+  "httpErrors": [],
+  "limits": [
+    "No human playtest",
+    "No physical device test",
+    "No performance certification",
+    "Laranjao uses existing character artwork/fallback; new delivery is scenery."
+  ]
+}
