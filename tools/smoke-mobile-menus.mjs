@@ -1,3 +1,4 @@
+import { completedStoryFixture, confirmMap } from './menu-smoke-helpers.mjs';
 // Browser regression for responsive menus; viewport/touch emulation, not physical-device certification.
 import { chromium } from 'playwright-core';
 import assert from 'node:assert/strict';
@@ -44,6 +45,7 @@ try {
   }
   browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true });
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 2 });
+  await completedStoryFixture(context);
   const p = mobilePage = await context.newPage(); p.setDefaultTimeout(90000);
   p.on('pageerror', e => errors.push(e.message));
   p.on('response', r => { if (r.status() >= 400 && !r.url().endsWith('/favicon.ico')) errors.push(`${r.status()} ${r.url()}`); });
@@ -62,7 +64,7 @@ try {
   await swipeMenu(p); await screen(p, 'selectFoe'); checks.push('touch swipe scrolls rivals without navigating');
   await tap(p, 'pick-14'); assert.equal(await p.evaluate(() => __app.foeCur), 14); await p.screenshot({ path: `${output}/portrait-rivals.png` });
   await tap(p, 'back'); await screen(p, 'select'); await tap(p, 'back'); await screen(p, 'title'); checks.push('complete hero/rival selectors and fixed confirm/back');
-  await tap(p, 'training'); await screen(p, 'select'); await tap(p, 'pick-0'); await tap(p, 'confirm-selection'); await screen(p, 'fight');
+  await tap(p, 'training'); await screen(p, 'select'); await tap(p, 'pick-0'); await tap(p, 'confirm-selection'); await screen(p, 'selectFoe'); await tap(p, 'pick-8'); await tap(p, 'confirm-selection'); await confirmMap(p); await screen(p, 'fight');
   await p.waitForFunction(() => __app.systemPaused && __app.paused);
   const frozen = await p.evaluate(() => __app.st.frame); await p.waitForTimeout(250);
   assert.equal(await p.evaluate(() => __app.st.frame), frozen); assert.ok(await p.locator('[data-action="pause-0"]').isDisabled());

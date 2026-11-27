@@ -1,3 +1,4 @@
+import { completedStoryFixture, confirmMap } from './menu-smoke-helpers.mjs';
 import {chromium} from 'playwright-core';
 import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
@@ -14,12 +15,12 @@ try{
  browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||(process.platform==='darwin'?'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome':'/usr/bin/chromium'),headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
  const page=await browser.newPage({viewport:{width:1280,height:720}});page.setDefaultTimeout(120000);
  page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400&&!r.url().endsWith('/favicon.ico'))errors.push(`${r.status()} ${r.url()}`)});
- await page.goto(base,{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>window.__app?.frame>10&&!document.getElementById('loading'));
+ await completedStoryFixture(page);await page.goto(base,{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>window.__app?.frame>10&&!document.getElementById('loading'));
  const inventory=await page.evaluate(()=>Object.fromEntries(['pai-fujao','pai-fujao-fx'].map(id=>[id,Object.keys(window.__SPRITES[id]||{}).length])));
  assert.deepEqual(inventory,{'pai-fujao':40,'pai-fujao-fx':20});
  const tap=async id=>page.locator(`[data-action="${id}"]`).click();
  await tap('versus');await page.waitForFunction(()=>window.__app.screen==='select');await tap('pick-0');await tap('confirm-selection');await page.waitForFunction(()=>window.__app.screen==='selectFoe');
- await page.locator('[data-action^="pick-"]').filter({hasText:'PAI DO FUJÃO'}).click();await tap('confirm-selection');await page.waitForFunction(()=>window.__app.screen==='fight'&&window.__app.st.phase==='fight');
+ await page.locator('[data-action^="pick-"]').filter({hasText:'PAI DO FUJÃO'}).click();await tap('confirm-selection');await confirmMap(page, 'mansao');await page.waitForFunction(()=>window.__app.screen==='fight'&&window.__app.st.phase==='fight');
  assert.equal(await page.evaluate(()=>window.__app.foe.id),'pai-fujao');
  await page.evaluate(()=>{const a=window.__app;a.mode='training';a.dummy=0;a.st.training=true;cancelAnimationFrame(a.raf)});
  for(const face of [1,-1])for(const key of ['idle','5L','5H','5S','6S','6S-turbo','4S','SA1','SA3']){

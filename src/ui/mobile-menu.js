@@ -1,4 +1,5 @@
 import { ptext, ptextWidth, pwrap, pixelPortrait, goldLogo, drawWorldMap } from '../render/retro-ui.js';
+import { drawStagePreview, stagePreviewKey } from './stage-select.js';
 
 // The touch menu uses the same pixel lettering, portraits and logo as the PC.
 // Canvases are decorative: the native headings/buttons remain the accessible UI.
@@ -16,7 +17,7 @@ export function pixelLabel(canvas, label, style = 'cream', maxWidth = 260) {
 export function menuRole(id) {
   if (id.startsWith('pick-')) return 'fighter';
   if (['back', 'previous'].includes(id)) return 'back';
-  if (['confirm-selection', 'next', 'fight'].includes(id)) return 'primary';
+  if (['confirm-selection', 'confirm-stage', 'next', 'fight'].includes(id)) return 'primary';
   return 'option';
 }
 
@@ -34,7 +35,7 @@ export function createMobileMenu(root, heading, summary, list, actions) {
   root.replaceChildren(header, body, actions);
   let screenKey = '', detailKey = '', artKey = '', logoReady = false;
   return function sync(meta, titleText, items) {
-    const { screen = '', sub = '', preview, opponent, chapter } = meta;
+    const { screen = '', sub = '', preview, opponent, chapter, stagePreview } = meta;
     const key = `${screen}:${sub}`;
     if (key !== screenKey) { body.scrollTop = 0; artKey = ''; screenKey = key; }
     if (root.dataset.screen !== screen) root.dataset.screen = screen;
@@ -57,11 +58,16 @@ export function createMobileMenu(root, heading, summary, list, actions) {
     if (hint.textContent !== hintText) hint.textContent = hintText;
     hint.hidden = !hint.textContent;
     const showMap = screen === 'storyMap';
-    art.hidden = !preview && !showMap;
-    const nextArt = `${screen}|${preview?.id}|${opponent?.id}|${chapter ?? ''}`;
+    art.hidden = !preview && !showMap && !stagePreview;
+    const stageId = stagePreview === 'random' ? null : stagePreview;
+    const nextArt = stagePreview ? stagePreviewKey(stageId) : `${screen}|${preview?.id}|${opponent?.id}|${chapter ?? ''}`;
     if (!art.hidden && artKey !== nextArt) {
+      const width = stagePreview ? 640 : 220, height = stagePreview ? 360 : 220;
+      if (portrait.width !== width || portrait.height !== height) { portrait.width = width; portrait.height = height; }
       const c = portrait.getContext('2d'); c.clearRect(0, 0, portrait.width, portrait.height);
-      if (showMap) {
+      if (stagePreview) {
+        drawStagePreview(c, stageId, 0, 0, width, height); artKey = nextArt;
+      } else if (showMap) {
         drawWorldMap(c, 10, 55, 200, 2);
         ptext(c, `CAPÍTULO ${(chapter ?? 0) + 1}`, 110, 180, 2, 'gold'); artKey = nextArt;
       } else if (preview) {
@@ -82,7 +88,8 @@ export function createMobileMenu(root, heading, summary, list, actions) {
     details.hidden = !rows.length;
     for (const button of root.querySelectorAll('button[data-action]')) {
       const item = items.find(item => item.id === button.dataset.action);
-      pixelLabel(button.querySelector('.mobile-button-label'), item.label, item.selected ? 'gold' : 'cream', item.id.startsWith('pick-') ? 96 : 260);
+      const width = item.id.startsWith('pick-') ? 96 : item.id.startsWith('stage-') ? 140 : 260;
+      pixelLabel(button.querySelector('.mobile-button-label'), item.label, item.selected ? 'gold' : 'cream', width);
     }
   };
 }

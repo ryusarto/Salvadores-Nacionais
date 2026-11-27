@@ -266,7 +266,7 @@ function lose(c, a, keys) {
 }
 
 /** Miniatura do cenário próprio de um chefe (aeroporto). Retorna false para usar a de Belém. */
-export function drawStageThumb(c, ch, x, y, w, h) {
+export function drawStageThumb(c, ch, x, y, w, h, options = {}) {
   const stage = BOSS_STAGES[ch?.stage];
   if (!stage) return false;
   c.save();
@@ -275,7 +275,7 @@ export function drawStageThumb(c, ch, x, y, w, h) {
   c.clip();
   c.translate(x, y);
   c.scale(w / 1920, h / 1080);
-  if (!drawStageArt(c, ch.stage, 680)) stage[1](c, 680, 0);
+  if (!drawStageArt(c, ch.stage, 680, 0, options)) stage[1](c, 680, 0);
   c.restore();
   return true;
 }

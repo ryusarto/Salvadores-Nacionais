@@ -4,6 +4,9 @@ on:
     paths:
       - 'src/**'
       - 'tools/smoke-mobile-menus.mjs'
+      - 'tools/smoke-stage-selection.mjs'
+      - 'tools/menu-smoke-helpers.mjs'
+      - 'tests/**'
       - '.github/workflows/mobile-menu.yml'
   workflow_dispatch:
 permissions:
@@ -24,9 +27,13 @@ jobs:
       - run: npx playwright-core install --with-deps chromium
       - name: Portrait, landscape, touch menus and PC regression
         run: CHROMIUM_PATH=$(find "$HOME/.cache/ms-playwright" -type f -path '*/chrome-linux*/chrome' | head -1) node tools/smoke-mobile-menus.mjs
+      - name: Map selection and campaign boss unlocks
+        run: CHROMIUM_PATH=$(find "$HOME/.cache/ms-playwright" -type f -path '*/chrome-linux*/chrome' | head -1) node tools/smoke-stage-selection.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: mobile-menu-evidence
-          path: artifacts/mobile-menus/
+          path: |
+            artifacts/mobile-menus/
+            artifacts/stage-selection/
           retention-days: 7

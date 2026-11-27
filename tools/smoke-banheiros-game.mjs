@@ -1,3 +1,4 @@
+import { completedStoryFixture, confirmMap } from './menu-smoke-helpers.mjs';
 import {chromium} from 'playwright-core';
 import {spawn} from 'node:child_process';
 import {writeFileSync,mkdirSync,existsSync} from 'node:fs';
@@ -14,7 +15,7 @@ try{
  browser=await chromium.launch({executablePath,headless:true});
  const page=await browser.newPage({viewport:{width:1280,height:720}}),errors=[],requests=[];
  page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>requests.push(r.url()));
- await page.goto('http://127.0.0.1:'+port+'/production/qa/banheiros-game.html');
+ await completedStoryFixture(page);await page.goto('http://127.0.0.1:'+port+'/production/qa/banheiros-game.html');
  await page.waitForFunction(()=>window.__app?.frame>10&&!document.getElementById('loading'),null,{timeout:90000});
  const stageRequests=()=>requests.filter(x=>x.includes('/stages/banheiros/'));
  assert.equal(stageRequests().length,0,'banheiros must not download in title menu');
@@ -22,7 +23,7 @@ try{
  await tap('versus');await page.waitForFunction(()=>window.__app.screen==='select');
  await tap('pick-1');await tap('confirm-selection');await page.waitForFunction(()=>window.__app.screen==='selectFoe');
  assert.equal(stageRequests().length,0,'banheiros must not download before foe selection');
- await tap('pick-10');await tap('confirm-selection');
+ await tap('pick-10');await tap('confirm-selection');await confirmMap(page, 'banheiros');
  await page.waitForFunction(()=>window.__app.screen==='fight'&&window.__app.st.phase==='fight');
  await page.waitForFunction(()=>window.__stageArtStatus('banheiros').ready,null,{timeout:90000});
  await page.waitForFunction(()=>window.__stageAudioStatus().decoded===6,null,{timeout:90000});

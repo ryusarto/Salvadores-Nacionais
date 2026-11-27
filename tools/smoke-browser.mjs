@@ -1,3 +1,4 @@
+import { confirmMap } from './menu-smoke-helpers.mjs';
 import {chromium} from 'playwright-core';
 import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
@@ -25,16 +26,19 @@ try{
  assert.equal(await p.evaluate(()=>window.__app.foe.id),'zanata');
  await p.screenshot({path:'artifacts/smoke/story-zanata.png'});
  await p.keyboard.press('Enter');await p.waitForFunction(()=>window.__app.paused);await tap(p,'pause-6');await p.waitForFunction(()=>window.__app.screen==='title');
+ // Completed-story save fixture for the full-grid/art check; unlock progression is tested separately.
+ await p.evaluate(()=>localStorage.setItem('sn-historia',JSON.stringify({franco:7})));
  await tap(p,'versus');await p.waitForFunction(()=>window.__app.screen==='select');await tap(p,'pick-0');await tap(p,'confirm-selection');await p.waitForFunction(()=>window.__app.screen==='selectFoe');
  // All sixteen choices must fit above the description panel in desktop coordinates.
  const rects=await p.locator('[data-action^="pick-"]').evaluateAll(items=>items.map(e=>{const r=e.getBoundingClientRect();return{x:r.x,y:r.y,bottom:r.bottom}}));
  assert.equal(rects.length,16);assert.ok(rects.every(r=>r.bottom<746*720/1080));
  await p.screenshot({path:'artifacts/smoke/rival-selector.png'});
- await tap(p,'pick-14');await tap(p,'confirm-selection');await p.waitForFunction(()=>window.__app.screen==='fight');assert.equal(await p.evaluate(()=>window.__app.foe.id),'djabo');
+ await tap(p,'pick-14');await tap(p,'confirm-selection');await confirmMap(p,'inferno');await p.waitForFunction(()=>window.__app.screen==='fight');assert.equal(await p.evaluate(()=>window.__app.foe.id),'djabo');
  const audio=await p.evaluate(()=>window.__stageAudioStatus());assert.equal(audio.stage,'inferno');assert.equal(audio.started,false,'não reutiliza música/ambiente de Belém');
  const mobile=await browser.newContext({viewport:{width:844,height:390},isMobile:true,hasTouch:true,deviceScaleFactor:2}),m=await load(mobile);
  await m.screenshot({path:'artifacts/smoke/mobile-title.png'});
  assert.equal(await m.locator('#dpad').isVisible(),false);await tap(m,'training');await m.waitForFunction(()=>window.__app.screen==='select');await tap(m,'pick-0');await tap(m,'confirm-selection');
+ await m.waitForFunction(()=>window.__app.screen==='selectFoe');await tap(m,'pick-1');await tap(m,'confirm-selection');await confirmMap(m);
  await m.waitForFunction(()=>window.__app.screen==='fight'&&window.__app.st.phase==='fight');
  await m.locator('#training-tools [data-k="dummy"]').tap();await m.waitForFunction(()=>window.__app.dummy===1);
  await m.locator('#training-tools [data-k="boxes"]').tap();await m.waitForFunction(()=>window.__app.boxes);

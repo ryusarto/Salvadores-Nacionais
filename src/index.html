@@ -126,6 +126,9 @@
   .touch #accessible-menu[data-layout="title"] button {background:#000;border-color:transparent;}
   .touch #accessible-menu[data-layout="title"] button[aria-pressed="true"] {border-color:#ffd848;background:#09051c;box-shadow:inset 4px 0 #ffd848;}
   .touch #accessible-menu[data-layout="versus"] .mobile-menu-art {width:clamp(180px,35vw,280px);}
+  .touch #accessible-menu[data-screen="selectStage"] .mobile-menu-art {width:clamp(220px,35vw,360px);}
+  .touch #accessible-menu[data-screen="selectStage"] nav[aria-label="Escolhas"] {grid-template-columns:repeat(2,minmax(0,1fr));}
+  @media (max-width:359px) { .touch #accessible-menu[data-screen="selectStage"] nav[aria-label="Escolhas"] {grid-template-columns:1fr;} }
   .touch #accessible-menu[data-layout="story"] .mobile-menu-content>p {white-space:pre-line;font-size:16px;line-height:1.65;}
   .touch #accessible-menu .mobile-menu-details {position:static;width:auto;height:auto;overflow:visible;clip-path:none;display:grid;grid-template-columns:minmax(90px,1fr) 2fr;gap:0;margin:12px 0;}
   .touch #accessible-menu .mobile-menu-details dt,.touch #accessible-menu .mobile-menu-details dd {margin:0;padding:12px 8px;border-bottom:1px solid #526be1;overflow-wrap:anywhere;}
@@ -137,6 +140,7 @@
     .touch #accessible-menu[data-layout="select"] nav[aria-label="Escolhas"] {grid-template-columns:repeat(3,minmax(0,1fr));}
     .touch #accessible-menu[data-layout="select"] .mobile-menu-art {display:none;}
     .touch #accessible-menu[data-layout="versus"] .mobile-menu-art {width:200px;}
+    .touch #accessible-menu[data-screen="selectStage"] .mobile-menu-art {width:min(100%,320px);}
     .touch #accessible-menu[data-layout="title"] .mobile-menu-body {flex-direction:row;}
     .touch #accessible-menu nav[aria-label="Escolhas"] {grid-template-columns:1fr;}
   }

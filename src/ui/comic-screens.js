@@ -1,15 +1,14 @@
-import{HEROES,BOSSES}from'../data/characters/index.js';
+import{HEROES}from'../data/characters/index.js';
 import{RETRO as R,ptext,ptextWidth,pwrap,pixelPortrait,pixelBox,playerTag,navyBackground}from'../render/retro-ui.js';
 import{drawBelemPresentation}from'../render/belem-stage.js';
 import{drawStoryScreen,drawStoryVsTag,storyPlace,drawStageThumb,BOSS_STAGES}from'./story-screens.js';
 import {encounterStage} from '../data/stages.js';
 import {HERO_ENDINGS,CHAPTERS} from '../data/story.js';
 import {loadProgress} from './story.js';
+import {drawStageSelect} from './stage-select.js';
 import {drawRetroScreen,FOE_GRID,controlsHint,faceFlip} from './retro-screens.js';
 const W=1920,H=1080;
 export const TITLE_CAST=[['ryuchi',1100,150,330,440],['mdep',1390,165,330,440],['majis',1665,130,330,440],['franco',900,420,360,480],['chapuh',1240,410,360,480],['dney',1580,410,360,480],['belga',1080,660,390,520],['trunks',1500,650,420,560]];
-/** Rivais do Versus CPU: os heróis, os chefes e, por último, a opção aleatória (null). */
-export const FOES=[...HEROES,...BOSSES,null];
 export const FOE_COLS=FOE_GRID;
 /** Fundo dividido na diagonal: vermelho do 1P à esquerda, azul do rival à direita. */
 function splitBackground(c){
@@ -76,6 +75,6 @@ function gallery(c,a,keys){
  controlsHint(c,1045,keys,'VOLTAR',null);
 }
 export function drawComicScreen(c,a,{menu,options,srcName,keys}){
- if(drawRetroScreen(c,a,{menu,options,srcName,keys,foes:FOES}))return true;
- switch(a.screen){case'gallery':gallery(c,a,keys);break;case'vs':versus(c,a);break;case'result':result(c,a,keys);break;default:if(!drawStoryScreen(c,a,keys))return false;}return true;
+ if(drawRetroScreen(c,a,{menu,options,srcName,keys,foes:a.foes}))return true;
+ switch(a.screen){case'selectStage':drawStageSelect(c,a,keys);break;case'gallery':gallery(c,a,keys);break;case'vs':versus(c,a);break;case'result':result(c,a,keys);break;default:if(!drawStoryScreen(c,a,keys))return false;}return true;
 }
