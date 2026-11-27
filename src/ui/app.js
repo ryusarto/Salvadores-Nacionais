@@ -1,4 +1,6 @@
-import { encounterStage } from '../data/stages.js';
+import { encounterStage, STAGES, stageName, canChooseStage } from '../data/stages.js';
+import { stageCard, stageConfirm } from './stage-select.js';
+import { availableRivals } from './rivals.js';
 import { drawEventStage } from '../render/event-stage.js';
 import { drawStageArt, requestStageArt } from '../render/stage-packs.js';
 import { warmBelemStage } from '../render/belem-stage.js';
@@ -33,7 +35,7 @@ import { COMBOS } from '../data/combos.js';
 import { createTracker, trackCombo, createRunner, runnerInput, runnerDone, stepLabel } from '../core/combos.js';
 import { audioEvents, sfx, setStageAudioActive, selectStageAudio } from './audio.js';
 import { banterEvents } from './banter.js';
-import {drawComicScreen,drawComicPause,FOES,FOE_COLS} from './comic-screens.js';
+import {drawComicScreen,drawComicPause,FOE_COLS} from './comic-screens.js';
 import {comicBackground} from '../render/comic-ui.js';
 import { titleItem, optionItem, heroCards, foeCards, chapterBox } from './retro-screens.js';
 import { RETRO as R, ptext, ptextWidth, pwrap, pixelBox, navyBackground, headerBar } from '../render/retro-ui.js';
@@ -76,9 +78,11 @@ export function createApp(canvas, devices, opts = {}) {
   c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';
   const syncMenu = createMenuAccess(canvas);
   const preferences = loadPreferences();
+  const progress = loadProgress(), foes = availableRivals(progress);
   if (globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches) preferences.reducedEffects = true;
   const app = {
-    preferences, lesson: null, systemPaused: false, screen: 'title', cur: 0, mode: 'story', hero: 0, foe: null, foeCur: FOES.length - 1,
+    preferences, progress, foes, lesson: null, systemPaused: false, screen: 'title', cur: 0, mode: 'story', hero: 0, foe: null, foeCur: foes.length - 1,
+    stageId: null, stageCur: 0, stageFrom: 'selectFoe',
     st: null, brain: null, fx: createFx(), hud: createHud(), layers: buildStage(),
     cam: (SYS.STAGE_W - W) / 2, frame: 0, paused: false, pcur: 0, sub: null, ccur: 0, kcur: 0, remap: 0, trial: null, demo: null, demoT: 0, inputLog: [], lastIn: null,
     boxes: !!opts.boxes, dummy: 0, level: SYS.DIFFICULTY[loadDiff()].level, diff: loadDiff(), stats: null, overT: 0, vsT: 0,
@@ -91,6 +95,27 @@ export function createApp(canvas, devices, opts = {}) {
     if (id === 'diff') return `${label}: ${SYS.DIFFICULTY[app.diff].name}`;
     if (id in preferences) return `${label}: ${preferences[id] ? 'SIM' : 'NÃO'}`;
     return label;
+  }
+
+  function refreshRivals() {
+    const saved = loadProgress();
+    for (const [id, done] of Object.entries(app.progress)) saved[id] = Math.max(saved[id] || 0, done);
+    app.progress = saved;
+    const id = app.foes[app.foeCur]?.id;
+    app.foes = availableRivals(saved);
+    app.foeCur = id ? Math.max(0, app.foes.findIndex(foe => foe?.id === id)) : app.foes.length - 1;
+  }
+
+  function enterRivalSelect() {
+    refreshRivals();
+    app.screen = 'selectFoe';
+  }
+
+  function enterStageSelect() {
+    app.stageFrom = app.screen;
+    app.stageCur = STAGES.findIndex(stage => stage.id === encounterStage(app));
+    if (app.stageCur < 0) app.stageCur = 0;
+    app.screen = 'selectStage';
   }
 
   function startFight() {
@@ -134,9 +159,9 @@ export function createApp(canvas, devices, opts = {}) {
 
   function pickFoe() {
     if (app.mode === 'story') app.foe = app.story ? ALL[currentFight(app.story).foe] : BOSSES[0];
-    else if (['training', 'tutorial'].includes(app.mode)) app.foe = app.mode === 'tutorial' ? HEROES[1] : BOSSES[0];
+    else if (['training', 'tutorial'].includes(app.mode)) app.foe = HEROES[1];
     else {
-      const pool = [...HEROES, ...BOSSES];
+      const pool = availableRivals(app.progress).filter(Boolean);
       app.foe = pool[Math.floor(Math.random() * pool.length)];
     }
   }
@@ -224,6 +249,7 @@ export function createApp(canvas, devices, opts = {}) {
 
   /** Começa o desafio de um combo; com demo = true, a CPU mostra como se faz. */
   function startCombo(combo, demo) {
+    if (app.systemPaused) return;
     const st = app.st;
     const mid = SYS.STAGE_W / 2;
     st.f[0].x = mid - 90;
@@ -319,7 +345,10 @@ export function createApp(canvas, devices, opts = {}) {
       app.screen = 'storyTalk';
       return;
     }
-    saveCleared(run);
+    const saved = saveCleared(run);
+    for (const [id, done] of Object.entries(app.progress)) saved[id] = Math.max(saved[id] || 0, done);
+    app.progress = saved;
+    refreshRivals();
     app.storyPages = closingPages(run, shortName(HEROES[app.hero]));
     app.screen = 'storyEnd';
   }
@@ -344,7 +373,9 @@ export function createApp(canvas, devices, opts = {}) {
     const nav = (n, len) => (app[n] = (app[n] + len + (pr.down || (horiz && pr.right) ? 1 : 0) - (pr.up || (horiz && pr.left) ? 1 : 0)) % len);
     const ok = pr.start || pr.L || pr.S || pr.ok;
     const back = pr.back || pr.M || pr.cancel;
-    if (app.systemPaused) return;
+    // Portrait freezes combat, but the pause menu must still allow controls,
+    // move lists and Exit. Hidden tabs remain fully suspended.
+    if (app.systemPaused && (document.hidden || app.screen !== 'fight' || !app.paused)) return;
     if (pr.up || pr.down || pr.left || pr.right) sfx.menu();
     if (ok) sfx.ok();
 
@@ -353,6 +384,7 @@ export function createApp(canvas, devices, opts = {}) {
       if (ok && MENU[app.cur][0] === 'settings') { app.screen = 'settings'; app.kcur = 0; }
       else if (ok) {
         app.mode = MENU[app.cur][0];
+        app.stageId = null;
         app.screen = 'select';
       }
     } else if (app.screen === 'settings') {
@@ -376,7 +408,7 @@ export function createApp(canvas, devices, opts = {}) {
         app.screen = 'select';
       } else if (r === 'go') {
         app.foe = HEROES[app.hero2];
-        enterVs();
+        enterStageSelect();
       }
     } else if (app.screen === 'controls') {
       if (controlsTick(pr, ok, back)) { app.screen = 'settings'; app.kcur = OPTIONS.findIndex(([o]) => o === 'controls'); }
@@ -384,7 +416,7 @@ export function createApp(canvas, devices, opts = {}) {
       const n = HEROES.length;
       app.hero = (app.hero + n + (pr.right ? 1 : 0) - (pr.left ? 1 : 0) + (pr.down ? 4 : 0) - (pr.up ? 4 : 0)) % n;
       if (back) app.screen = app.mode === 'tutorial' ? 'settings' : 'title';
-      if (ok && app.mode === 'versus') app.screen = 'selectFoe';
+      if (ok && ['versus', 'training'].includes(app.mode)) enterRivalSelect();
       else if (ok && app.mode === 'story') startStory();
       else if (ok) {
         pickFoe();
@@ -427,19 +459,31 @@ export function createApp(canvas, devices, opts = {}) {
         startFight();
       } else if (ok) app.screen = 'title';
     } else if (app.screen === 'selectFoe') {
-      const n = FOES.length;
+      const n = app.foes.length;
       app.foeCur = (app.foeCur + n + (pr.right ? 1 : 0) - (pr.left ? 1 : 0) + (pr.down ? FOE_COLS : 0) - (pr.up ? FOE_COLS : 0)) % n;
       if (back) app.screen = 'select';
       else if (ok) {
-        const pool = FOES.filter(Boolean);
-        app.foe = FOES[app.foeCur] || pool[Math.floor(Math.random() * pool.length)];
+        const pool = app.foes.filter(Boolean);
+        app.foe = app.foes[app.foeCur] || pool[Math.floor(Math.random() * pool.length)];
+        enterStageSelect();
+      }
+    } else if (app.screen === 'selectStage') {
+      const n = STAGES.length + 1;
+      const move = (pr.right ? 1 : 0) - (pr.left ? 1 : 0) + (pr.down ? 2 : 0) - (pr.up ? 2 : 0);
+      app.stageCur = (app.stageCur + n + move) % n;
+      if (back) {
+        app.screen = app.stageFrom;
+        if (app.screen === 'select2') app.ready = [false, false];
+      } else if (ok) {
+        app.stageId = STAGES[app.stageCur]?.id || STAGES[Math.floor(Math.random() * STAGES.length)].id;
         enterVs();
       }
     } else if (app.screen === 'vs') {
       app.vsT++;
       if (back) {
-        app.ready = [false, false];
-        app.screen = app.mode === 'vs2' ? 'select2' : app.mode === 'versus' ? 'selectFoe' : app.mode === 'story' ? 'storyMap' : 'select';
+        app.vsToken++;
+        if (canChooseStage(app.mode)) app.screen = 'selectStage';
+        else app.screen = app.mode === 'story' ? 'storyMap' : 'select';
       }
       else if (app.vsReady && ((ok && app.vsT > 20) || app.vsT > 240)) startFight();
     } else if (app.screen === 'fight') {
@@ -453,7 +497,7 @@ export function createApp(canvas, devices, opts = {}) {
       if (app.paused) {
         // START nas telas internas da pausa volta direto para a luta; na lista da pausa ele
         // confirma a opção marcada (como em todos os menus), e a pausa abre em CONTINUAR.
-        if (pr.start && app.sub) { app.paused = false; app.sub = null; return; }
+        if (pr.start && app.sub) { if (!app.systemPaused) app.paused = false; app.sub = null; return; }
         if (app.sub === 'moves') {
           if (ok || back) app.sub = null;
         } else if (app.sub === 'controls') {
@@ -468,10 +512,10 @@ export function createApp(canvas, devices, opts = {}) {
           else if (ok) app.sub = null;
         } else {
           nav('pcur', PAUSE.length);
-          if (back) app.paused = false;
+          if (back) app.paused = app.systemPaused;
           else if (ok) {
             const item = PAUSE[app.pcur];
-            if (item === 'CONTINUAR') app.paused = false;
+            if (item === 'CONTINUAR') { if (!app.systemPaused) app.paused = false; }
             else if (item === 'LISTA DE COMBOS') {
               app.sub = 'combos';
               app.ccur = 0;
@@ -481,7 +525,7 @@ export function createApp(canvas, devices, opts = {}) {
               app.kcur = 0;
               app.remap = 0;
             } else if (item === 'SOM') toggleSound();
-            else if (item === 'REINICIAR LUTA') startFight();
+            else if (item === 'REINICIAR LUTA') { if (!app.systemPaused) startFight(); }
             else { app.screen = 'title'; app.paused = false; app.sub = null; }
           }
         }
@@ -830,12 +874,22 @@ export function createApp(canvas, devices, opts = {}) {
     let title = 'Salvadores Nacionais', description = '';
     if (app.screen === 'title') MENU.forEach(([id, label], i) => { const r = titleItem(i); add(id, label, r.x, r.y, r.w, r.h, () => choose('cur', i), app.cur === i, () => { app.cur = i; }); });
     else if (app.screen === 'select' || app.screen === 'selectFoe') {
-      const rival = app.screen === 'selectFoe', list = rival ? FOES : HEROES, field = rival ? 'foeCur' : 'hero';
+      const rival = app.screen === 'selectFoe', list = rival ? app.foes : HEROES, field = rival ? 'foeCur' : 'hero';
       title = rival ? 'Escolha o rival' : 'Escolha seu Salvador';
       const ch = list[app[field]]; description = ch ? `${ch.name} · ${ch.style}. ${ch.mechDesc}` : 'Surpresa: um rival será sorteado.';
+      if (rival) description += '\nDerrote chefes na História para liberá-los aqui.';
       const boxes = rival ? foeCards(list.length) : heroCards(app.mode === 'story');
       list.forEach((ch, i) => { const r = boxes[i]; add(`pick-${i}`, ch?.name || 'Aleatório', r.x, r.y, r.w, r.h, () => { app[field] = i; }, app[field] === i, () => { app[field] = i; }); items.at(-1).icon = globalThis.__COMIC_UI?.assets['icon-' + ch?.id]?.url; });
       add('confirm-selection', 'Confirmar escolha', 660, 985, 600, 50, () => press('ok'));
+    } else if (app.screen === 'selectStage') {
+      title = 'Escolha o mapa';
+      description = `${app.mode === 'training' ? 'Treino' : app.mode === 'vs2' ? 'Versus · 2 jogadores' : 'Versus CPU'} · ${stageName(STAGES[app.stageCur]?.id)}`;
+      [...STAGES, { id: 'random', name: 'ALEATÓRIO' }].forEach((stage, i) => {
+        const r = stageCard(i);
+        add(`stage-${stage.id}`, stage.name, r.x, r.y, r.w, r.h, () => { app.stageCur = i; }, app.stageCur === i, () => { app.stageCur = i; });
+      });
+      const r = stageConfirm;
+      add('confirm-stage', 'Confirmar mapa', r.x, r.y, r.w, r.h, () => press('ok'));
     } else if (['storyIntro', 'storyEnd', 'storyTalk', 'storyMap', 'storyLose'].includes(app.screen)) {
       const run = app.story; title = `Capítulo ${run.chapter + 1} · ${CHAPTERS[run.chapter].place}`;
       if (app.screen === 'storyIntro' || app.screen === 'storyEnd') description = app.storyPages[run.page] || '';
@@ -850,10 +904,11 @@ export function createApp(canvas, devices, opts = {}) {
         add('previous', app.screen === 'storyMap' ? 'Menu' : 'Página anterior', 30, 1018, 650, 62, () => press('back'));
       }
     } else if (app.screen === 'vs') {
-      title = `${HEROES[app.hero].name} × ${app.foe.name}`; description = app.mode === 'story' ? 'Os Salvadores lutam juntos contra os chefes da turnê.' : app.foe.mechDesc;
+      title = `${HEROES[app.hero].name} × ${app.foe.name}`; description = `Mapa: ${stageName(encounterStage(app))}. ${app.mode === 'story' ? 'Os Salvadores lutam juntos contra os chefes da turnê.' : app.foe.mechDesc}`;
       add('fight', app.vsReady ? 'Começar luta' : 'Carregando lutadores…', 650, 800, 620, 200, () => press('ok'));
+      items.at(-1).disabled = !app.vsReady; items.at(-1).busy = !app.vsReady;
     } else if (app.screen === 'result') {
-      title = app.st.winner === null ? 'Empate' : app.st.winner === 0 ? 'Vitória!' : 'Derrota';
+      title = app.st.winner === null ? 'Empate' : app.mode === 'vs2' ? `${app.st.winner + 1}P VENCE!` : app.st.winner === 0 ? 'Vitória!' : 'Derrota';
       RESULT.forEach((label, i) => add(`result-${i}`, label, 880, 681 + i * 91, 850, 64, () => choose('cur', i), app.cur === i));
     } else if (app.screen === 'settings') {
       title = 'Opções';
@@ -864,6 +919,7 @@ export function createApp(canvas, devices, opts = {}) {
     } else if (app.screen === 'controls' || (app.screen === 'fight' && app.paused && app.sub === 'controls')) {
       title = 'Controles'; description = 'Toque: direcional e botões na luta. Teclado: WASD/setas, J/K/L, I especial, U defesa, O agarrão, P super. Conecte um controle para remapear.';
       ACTIONS.forEach(([key, label], i) => { const r = controlRow(i); add(`control-${key}`, label, r.x, r.y, r.w, r.h, () => choose('kcur', i), app.kcur === i); });
+      { const r = controlRow(ACTIONS.length); add('control-reset', 'Restaurar padrão', r.x, r.y, r.w, r.h, () => choose('kcur', ACTIONS.length)); }
     } else if (app.screen === 'fight' && app.paused) {
       title = 'Pausado'; description = bossHint();
       if (app.sub === 'moves') { title = 'Lista de golpes'; description = Object.entries(app.st.f[0].ch.moves).filter(([key]) => key !== 'click').map(([key, m]) => `${KEY_LABEL[key] || key}: ${m.name}`).join(' · '); }
@@ -874,20 +930,52 @@ export function createApp(canvas, devices, opts = {}) {
     } else if (app.screen === 'select2') {
       title = 'Versus 2 jogadores'; description = 'Cada jogador entra e escolhe com seu próprio controle. O teclado pode ser um dos jogadores.';
     }
-    if (app.screen !== 'title' && items.length && !['storyIntro', 'storyEnd', 'storyTalk', 'storyMap'].includes(app.screen)) add('back', 'Voltar', 20, 1018, 500, 62, () => press('back'));
+    const movesPage = app.screen === 'fight' && app.paused && app.sub === 'moves';
+    if (app.screen !== 'title' && (items.length || movesPage) && !['storyIntro', 'storyEnd', 'storyTalk', 'storyMap'].includes(app.screen)) add('back', 'Voltar', 20, 1018, 500, 62, () => press('back'));
     // A connected gamepad remains responsible for its own player slot; no synthetic joins.
     if (!items.length && app.screen === 'select2') add('back', 'Voltar', 20, 1018, 500, 62, () => press('back'));
-    syncMenu(title, description, items);
+    const selecting = app.screen === 'select' || app.screen === 'selectFoe';
+    const preview = app.screen === 'result' ? app.st.f[app.st.winner ?? 0].ch : selecting ? (app.screen === 'selectFoe' ? app.foes[app.foeCur] : HEROES[app.hero]) :
+      ['vs', 'select2', 'gallery', 'storyIntro', 'storyEnd', 'storyTalk', 'storyMap', 'storyLose'].includes(app.screen) ? HEROES[app.hero] : null;
+    const details = [];
+    if (app.screen === 'result') details.push(
+      { label: 'TEMPO DE LUTA', value: `${Math.round(app.stats.frames / 60)} S` },
+      { label: 'COMBO MÁXIMO', value: `${app.stats.maxCombo} ACERTOS` },
+      { label: 'DANO CAUSADO', value: String(app.stats.dmg) },
+      { label: 'ROUNDS', value: `${app.st.f[0].rounds} × ${app.st.f[1].rounds}` });
+    if (app.screen === 'select2') {
+      [app.hero, app.hero2].forEach((hero, i) => details.push({ label: `JOGADOR ${i + 1}`, value: `${HEROES[hero].name} · ${app.slots[i] == null ? 'Aguardando controle' : srcName(app.slots[i])} · ${app.ready[i] ? 'PRONTO' : 'Escolhendo'}` }));
+    }
+    if (app.screen === 'fight' && app.paused && app.sub === 'moves') {
+      description = 'Golpes e comandos do seu Salvador.';
+      for (const [key, m] of Object.entries(app.st.f[0].ch.moves)) if (key !== 'click') details.push({ label: KEY_LABEL[key] || key, value: m.name });
+    }
+    if (app.screen === 'controls' || app.screen === 'fight' && app.sub === 'controls') {
+      const g = glyphs(devices);
+      for (const item of items) if (item.id.startsWith('control-') && item.id !== 'control-reset') {
+        const key = item.id.slice(8), i = ACTIONS.findIndex(([action]) => action === key);
+        const pad = Object.entries(devices.padMap).filter(([, action]) => action === key).map(([b]) => PS_NAMES[b] || `B${b}`).join(' / ');
+        item.label += ` · ${app.remap && app.kcur === i ? 'Aperte o botão novo…' : devices.padName ? pad || '—' : g[key] || key}`;
+      }
+    }
+    if (app.systemPaused && app.screen === 'fight') for (const item of items) {
+      if (['pause-0', 'pause-5'].includes(item.id) || item.id.startsWith('combo-') || item.id.startsWith('demo-')) item.disabled = true;
+    }
+    return syncMenu(title, description, items, { screen: app.screen, sub: app.sub, preview, opponent: app.screen === 'vs' ? app.foe : app.screen === 'select2' ? HEROES[app.hero2] : null, chapter: app.story?.chapter, details,
+      stagePreview: app.screen === 'selectStage' ? STAGES[app.stageCur]?.id || 'random' : null });
   }
 
   function render() {
     if(document.body.dataset.screen!==app.screen)document.body.dataset.screen=app.screen;
-    selectStageAudio(encounterStage(app));
+    if (app.screen !== 'selectStage') selectStageAudio(encounterStage(app));
     setStageAudioActive(app.screen === 'fight' && !app.paused && !document.hidden);
     c.setTransform(canvas.width / W, 0, 0, canvas.height / H, 0, 0);
     app.onRender?.();
-    syncAccessibleMenus();
+    const touchMenu = syncAccessibleMenus();
     document.body.dataset.paused = String(app.paused || app.systemPaused);
+    // The responsive native menu fully covers the canvas; avoid rendering the
+    // same PC menu underneath it on every frame.
+    if (touchMenu) return;
     if(drawComicScreen(c,app,{menu:MENU,options:OPTIONS.map(([id,label])=>[id,optionLabel(id,label)]),srcName,keys:{pad:devices.kind==='controle'}})){drawNotice();return;}
     if (app.screen === 'fight') drawFight();
     else if (app.screen === 'controls') drawControls();

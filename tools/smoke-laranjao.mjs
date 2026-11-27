@@ -1,3 +1,4 @@
+import { completedStoryFixture, confirmMap } from './menu-smoke-helpers.mjs';
 import { chromium } from 'playwright-core';
 import assert from 'node:assert/strict';
 import { mkdir, writeFile, readFile } from 'node:fs/promises';
@@ -9,9 +10,9 @@ try{
  browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--no-sandbox']});
  if(!process.env.LARANJAO_BASE_URL){let output='';server=spawn(process.execPath,['tools/dev-server.mjs','--port=8783'],{stdio:['ignore','pipe','pipe']});server.stdout.on('data',b=>output+=b);server.stderr.on('data',b=>output+=b);for(let n=0;n<200&&!output.includes('Servidor de desenvolvimento');n++){if(server.exitCode!==null)throw Error(output);await new Promise(r=>setTimeout(r,50));}assert.ok(output.includes('Servidor de desenvolvimento'),output);}
  const page=await browser.newPage({viewport:{width:1280,height:720}});page.setDefaultTimeout(90000);page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400&&!r.url().endsWith('/favicon.ico'))errors.push(r.status()+' '+r.url());});
- await page.goto(base,{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>window.__app?.frame>10&&!document.getElementById('loading'));
+ await completedStoryFixture(page);await page.goto(base,{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>window.__app?.frame>10&&!document.getElementById('loading'));
  checks.inventory=await page.evaluate(()=>Object.fromEntries(['laranjao','laranjao-fx','fujao','fujao-esquerda','pai-fujao','chupetinha'].map(id=>[id,Object.keys(window.__SPRITES[id]||{}).length])));assert.deepEqual(checks.inventory,{laranjao:40,'laranjao-fx':24,fujao:42,'fujao-esquerda':42,'pai-fujao':40,chupetinha:41});
- const tap=async id=>page.locator(`[data-action="${id}"]`).click();await tap('versus');await page.waitForFunction(()=>window.__app.screen==='select');await tap('pick-0');await tap('confirm-selection');await page.waitForFunction(()=>window.__app.screen==='selectFoe');await page.locator('[data-action^="pick-"]').filter({hasText:'LARANJÃO'}).click();await tap('confirm-selection');await page.waitForFunction(()=>window.__app.screen==='fight'&&window.__app.st.phase==='fight');await page.evaluate(()=>{const a=window.__app;a.mode='training';a.dummy=0;a.st.training=true;cancelAnimationFrame(a.raf);});
+ const tap=async id=>page.locator(`[data-action="${id}"]`).click();await tap('versus');await page.waitForFunction(()=>window.__app.screen==='select');await tap('pick-0');await tap('confirm-selection');await page.waitForFunction(()=>window.__app.screen==='selectFoe');await page.locator('[data-action^="pick-"]').filter({hasText:'LARANJÃO'}).click();await tap('confirm-selection');await confirmMap(page, 'washington');await page.waitForFunction(()=>window.__app.screen==='fight'&&window.__app.st.phase==='fight');await page.evaluate(()=>{const a=window.__app;a.mode='training';a.dummy=0;a.st.training=true;cancelAnimationFrame(a.raf);});
  // Every animation must be requested through the real game renderer, on both facings.
  const m=JSON.parse(await readFile('production/sprites/source/laranjao-v1/runtime-manifest.json'));
  for(const face of[1,-1])for(const action of m.sequences.map(a=>a.name)){

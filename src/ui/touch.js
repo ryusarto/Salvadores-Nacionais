@@ -18,7 +18,8 @@ export function createTouch(devices, root = document.body) {
     if (!app) return;
     const portrait = document.documentElement.classList.contains('touch') && innerHeight > innerWidth;
     reset();
-    if (portrait || document.hidden) app.interrupt(portrait ? 'portrait' : 'hidden');
+    if (document.hidden) app.interrupt('hidden');
+    else if (portrait && app.screen === 'fight') app.interrupt('portrait');
     else app.releaseInterruption();
   };
   const show = () => { document.documentElement.classList.add('touch'); orientation(); };
@@ -47,11 +48,12 @@ export function createTouch(devices, root = document.body) {
   window.addEventListener('touchstart',show,{once:true,passive:true});
   window.addEventListener('resize',orientation);
   document.addEventListener('visibilitychange',orientation);
-  window.addEventListener('blur',()=>{reset();app?.interrupt('blur');});
+  window.addEventListener('blur',()=>{reset();app?.interrupt('blur');orientation();});
   if(window.matchMedia?.('(pointer: coarse)').matches)show();
-  let wasLive=false;
+  let wasLive=false, lastScreen='';
   return {show,bind(value){app=value;orientation();},sync(){
     if(!app)return;
+    if(lastScreen!==app.screen){lastScreen=app.screen;orientation();}
     const live=app.screen==='fight'&&!app.paused&&!app.systemPaused;
     if(wasLive&&!live)reset();wasLive=live;
     wrap.dataset.live=String(live);

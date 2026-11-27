@@ -217,7 +217,7 @@ export function drawStageProp(c, stageId, asset, options) {
 }
 export function drawStageArt(c, id, cam, frame = 0, options = {}) {
   const item = packs.get(id);
-  if (!item) { void requestStageArt(id); return false; }
+  if (!item) { if (options.request !== false) void requestStageArt(id); return false; }
   const camera = clamp(finite(cam, 0), 0, 680), { pack } = item;
   if (item.fast) return drawFast(c, item, camera, frame, options);
   for (const layer of pack.layers) {

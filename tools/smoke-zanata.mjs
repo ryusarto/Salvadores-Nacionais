@@ -1,3 +1,4 @@
+import { completedStoryFixture, confirmMap } from './menu-smoke-helpers.mjs';
 import {chromium} from 'playwright-core';
 import {spawn} from 'node:child_process';
 import {mkdirSync,readFileSync} from 'node:fs';
@@ -9,8 +10,9 @@ try{
  for(let i=0;i<100&&!ready;i++){if(server.exitCode!==null)throw Error(logs);await new Promise(r=>setTimeout(r,50));}assert.ok(ready);
  browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
  const p=await browser.newPage({viewport:{width:1280,height:720}});p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400&&!r.url().endsWith('/favicon.ico'))errors.push(`${r.status()} ${r.url()}`);});
- await p.goto(base);await p.waitForFunction(()=>window.__app?.frame>10&&!document.getElementById('loading'));
+ await completedStoryFixture(p);await p.goto(base);await p.waitForFunction(()=>window.__app?.frame>10&&!document.getElementById('loading'));
  for(const id of ['training','pick-0','confirm-selection']){await p.locator(`[data-action="${id}"]`).click();await p.waitForTimeout(100);}
+ await p.waitForFunction(()=>window.__app.screen==='selectFoe');await p.locator('[data-action="pick-8"]').click();await p.locator('[data-action="confirm-selection"]').click();await confirmMap(p);
  await p.waitForFunction(()=>window.__app.screen==='fight'&&window.__app.st.phase==='fight'&&!window.__app.fx.big);
  await p.evaluate(()=>cancelAnimationFrame(window.__app.raf));
  for(const face of [-1,1])for(const key of ['idle','5S','2S','SA1','SA3']){

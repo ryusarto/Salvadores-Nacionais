@@ -1,3 +1,4 @@
+import { completedStoryFixture, confirmMap } from './menu-smoke-helpers.mjs';
 import {chromium} from 'playwright-core';
 import {spawn} from 'node:child_process';
 import {writeFileSync,mkdirSync} from 'node:fs';
@@ -13,14 +14,14 @@ try{
  const page=await browser.newPage({viewport:{width:1280,height:720}}),errors=[],requests=[];
  page.on('pageerror',e=>errors.push(e.message));
  page.on('request',r=>requests.push(r.url()));
- await page.goto('http://127.0.0.1:'+port+'/production/qa/palco-game.html');
+ await completedStoryFixture(page);await page.goto('http://127.0.0.1:'+port+'/production/qa/palco-game.html');
  await page.waitForFunction(()=>window.__app?.frame>10&&!document.getElementById('loading'));
  assert.equal(requests.filter(x=>x.includes('/stages/palco/')).length,0,'palco should not download in title menu');
  const tap=async id=>page.locator('[data-action="'+id+'"]').click();
  await tap('versus');await page.waitForFunction(()=>window.__app.screen==='select');
  await tap('pick-1');await tap('confirm-selection');
  await page.waitForFunction(()=>window.__app.screen==='selectFoe');
- await tap('pick-9');await tap('confirm-selection');
+ await tap('pick-9');await tap('confirm-selection');await confirmMap(page, 'palco');
  await page.waitForFunction(()=>window.__app.screen==='fight'&&window.__app.st.phase==='fight');
  await page.waitForFunction(()=>window.__stageArtStatus('palco').ready);
  await page.evaluate(()=>{

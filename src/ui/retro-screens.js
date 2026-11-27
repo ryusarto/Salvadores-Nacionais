@@ -146,19 +146,20 @@ function selectClassic(c, a, keys) {
   controlsHint(c, 1010, keys);
 }
 
-/** Escolha do rival da CPU: heróis, chefes e o aleatório numa grade 8×2. */
+/** Só os rivais liberados ocupam lugares na grade, sem cartões de chefes ocultos. */
 function selectFoe(c, a, keys, foes) {
   classicFrame(c, 'ESCOLHA O RIVAL');
   const cards = foeCards(foes.length);
   foes.forEach((ch, i) => { const sel = i === a.foeCur; fighterCard(c, ch, cards[i].x, cards[i].y, cards[i].w, cards[i].h, { cursor: sel ? R.blue : null, nameU: 3, plate: true }); if (ch?.boss) ptext(c, 'CHEFE', cards[i].x + cards[i].w / 2, cards[i].y + 26, 2, 'red'); });
   const cur = cards[a.foeCur];
-  if (blink(a, 50)) playerTag(c, 'CPU', cur.x + cur.w - 120, cur.y - 34, R.blue, 5);
+  if (blink(a, 50)) playerTag(c, a.mode === 'training' ? 'TREINO' : 'CPU', cur.x + cur.w - 120, cur.y - 34, R.blue, 5);
   playerPanel(c, 0, '1P', HEROES[a.hero], R.red);
-  playerPanel(c, 1, 'CPU', foes[a.foeCur], R.blue);
+  playerPanel(c, 1, a.mode === 'training' ? 'TREINO' : 'CPU', foes[a.foeCur], R.blue);
   const rival = foes[a.foeCur];
-  ptext(c, rival ? `${rival.style.toUpperCase()} • ${rival.mechName}` : 'O RIVAL É SORTEADO ENTRE HERÓIS E CHEFES', W / 2, 735, 4, 'silver', 'center', 1100);
+  ptext(c, rival ? `${rival.style.toUpperCase()} • ${rival.mechName}` : 'SORTEIO ENTRE OS LUTADORES LIBERADOS', W / 2, 735, 4, 'silver', 'center', 1100);
   if (rival) pwrap(rival.mechDesc.toUpperCase(), 1080, 3).slice(0, 3).forEach((l, i) => ptext(c, l, W / 2, 790 + i * 36, 3, 'cream'));
-  joinHint(c, a, 940);
+  ptext(c, 'DERROTE CHEFES NA HISTÓRIA PARA LIBERÁ-LOS AQUI', W / 2, 920, 3, 'blue');
+  if (a.mode === 'versus') joinHint(c, a, 960);
   controlsHint(c, 1010, keys);
 }
 
